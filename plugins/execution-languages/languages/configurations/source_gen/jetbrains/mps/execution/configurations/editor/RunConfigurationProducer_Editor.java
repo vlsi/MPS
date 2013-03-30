@@ -109,8 +109,9 @@ public class RunConfigurationProducer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_col7k7_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_col7k7_a2a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_col7k7_b2a(EditorContext editorContext, SNode node) {

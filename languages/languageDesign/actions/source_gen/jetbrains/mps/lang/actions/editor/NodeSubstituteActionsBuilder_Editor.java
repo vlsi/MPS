@@ -162,8 +162,9 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_nhjrih_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_nhjrih_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_nhjrih_b1a(EditorContext editorContext, SNode node) {
@@ -214,8 +215,9 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_nhjrih_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_nhjrih_a1b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_nhjrih_b1b1a(EditorContext editorContext, SNode node) {
@@ -274,8 +276,9 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_nhjrih_a4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_nhjrih_a4b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_nhjrih_b4b1a(EditorContext editorContext, SNode node) {
@@ -348,8 +351,9 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_nhjrih_a5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_nhjrih_a5b1a");
+    return editorCell;
   }
 
   private EditorCell createConstant_nhjrih_b5b1a(EditorContext editorContext, SNode node) {
@@ -440,8 +444,9 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_nhjrih_a9b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_nhjrih_a9b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_nhjrih_b9b1a(EditorContext editorContext, SNode node) {

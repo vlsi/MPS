@@ -325,8 +325,9 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_gmtuod_a9c0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_gmtuod_a9c0");
+    return editorCell;
   }
 
   private EditorCell createConstant_gmtuod_b9c0(EditorContext editorContext, SNode node) {

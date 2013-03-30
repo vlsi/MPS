@@ -294,8 +294,9 @@ public class Module_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_iuuvkg_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_iuuvkg_a4a");
+    return editorCell;
   }
 
   private EditorCell createConstant_iuuvkg_b4a(EditorContext editorContext, SNode node) {
@@ -340,8 +341,9 @@ public class Module_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_iuuvkg_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_iuuvkg_a5a");
+    return editorCell;
   }
 
   private EditorCell createConstant_iuuvkg_b5a(EditorContext editorContext, SNode node) {
@@ -405,8 +407,9 @@ public class Module_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_iuuvkg_a7a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_iuuvkg_a7a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_iuuvkg_b7a(EditorContext editorContext, SNode node) {

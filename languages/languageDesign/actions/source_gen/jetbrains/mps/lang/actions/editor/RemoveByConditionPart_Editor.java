@@ -63,8 +63,9 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_kx3b3w_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_kx3b3w_a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_kx3b3w_b1a(EditorContext editorContext, SNode node) {

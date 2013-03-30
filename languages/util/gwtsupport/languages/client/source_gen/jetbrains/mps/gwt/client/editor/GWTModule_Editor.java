@@ -118,8 +118,9 @@ public class GWTModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qbj93y_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_qbj93y_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_qbj93y_c0(EditorContext editorContext, SNode node) {
@@ -134,8 +135,9 @@ public class GWTModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qbj93y_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_qbj93y_a2a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_qbj93y_b2a(EditorContext editorContext, SNode node) {
@@ -205,8 +207,9 @@ public class GWTModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qbj93y_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_qbj93y_a3a");
+    return editorCell;
   }
 
   private EditorCell createCollection_qbj93y_e0(EditorContext editorContext, SNode node) {

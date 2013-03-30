@@ -126,8 +126,9 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_tl5ft1_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_tl5ft1_a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_tl5ft1_b1a(EditorContext editorContext, SNode node) {

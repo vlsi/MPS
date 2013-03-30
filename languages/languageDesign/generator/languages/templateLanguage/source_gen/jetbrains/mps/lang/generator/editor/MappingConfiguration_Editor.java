@@ -198,8 +198,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g6pxeq_a1c0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_g6pxeq_b1c0(EditorContext editorContext, SNode node) {
@@ -292,8 +293,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1e0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g6pxeq_a1e0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_g6pxeq_b1e0(EditorContext editorContext, SNode node) {
@@ -383,8 +385,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1g0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g6pxeq_a1g0");
+    return editorCell;
   }
 
   private EditorCell createRefNode_g6pxeq_b1g0(EditorContext editorContext, SNode node) {
@@ -447,8 +450,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1i0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g6pxeq_a1i0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_g6pxeq_b1i0(EditorContext editorContext, SNode node) {
@@ -545,8 +549,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1k0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g6pxeq_a1k0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_g6pxeq_b1k0(EditorContext editorContext, SNode node) {
@@ -642,8 +647,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1m0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g6pxeq_a1m0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_g6pxeq_b1m0(EditorContext editorContext, SNode node) {
@@ -739,8 +745,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1o0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g6pxeq_a1o0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_g6pxeq_b1o0(EditorContext editorContext, SNode node) {
@@ -836,8 +843,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1q0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g6pxeq_a1q0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_g6pxeq_b1q0(EditorContext editorContext, SNode node) {
@@ -933,8 +941,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1s0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g6pxeq_a1s0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_g6pxeq_b1s0(EditorContext editorContext, SNode node) {
@@ -1031,8 +1040,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1u0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g6pxeq_a1u0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_g6pxeq_b1u0(EditorContext editorContext, SNode node) {
@@ -1129,8 +1139,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1w0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g6pxeq_a1w0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_g6pxeq_b1w0(EditorContext editorContext, SNode node) {

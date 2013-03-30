@@ -80,8 +80,9 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_o92gz8_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_o92gz8_a1a");
+    return editorCell;
   }
 
   private EditorCell createConstant_o92gz8_b1a(EditorContext editorContext, SNode node) {

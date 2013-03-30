@@ -124,8 +124,9 @@ public class Child_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_xbt7a0_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_xbt7a0_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_xbt7a0_b1a(EditorContext editorContext, SNode node) {
@@ -238,8 +239,9 @@ public class Child_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_xbt7a0_a3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_xbt7a0_a3b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_xbt7a0_b3b1a(EditorContext editorContext, SNode node) {
@@ -322,8 +324,9 @@ public class Child_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_xbt7a0_a5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_xbt7a0_a5b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_xbt7a0_b5b1a(EditorContext editorContext, SNode node) {

@@ -233,8 +233,9 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_xfdsch_a1h0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_xfdsch_a1h0");
+    return editorCell;
   }
 
   private EditorCell createCollection_xfdsch_b1h0(EditorContext editorContext, SNode node) {
@@ -423,8 +424,9 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_xfdsch_a0c1b7a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_xfdsch_a0c1b7a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_xfdsch_b2b1h0(EditorContext editorContext, SNode node) {

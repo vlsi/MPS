@@ -200,8 +200,9 @@ public class Antcall_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_xq8xtf_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_xq8xtf_a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_xq8xtf_b1a(EditorContext editorContext, SNode node) {

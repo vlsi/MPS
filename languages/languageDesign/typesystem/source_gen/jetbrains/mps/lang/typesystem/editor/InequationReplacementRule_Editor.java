@@ -246,8 +246,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_gjcmhj_a7a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_gjcmhj_a7a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_gjcmhj_b7a(EditorContext editorContext, SNode node) {

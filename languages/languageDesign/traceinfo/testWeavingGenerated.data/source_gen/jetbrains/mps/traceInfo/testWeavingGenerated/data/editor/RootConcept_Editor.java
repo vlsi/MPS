@@ -76,8 +76,9 @@ public class RootConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_aw3qer_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_aw3qer_a2a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_aw3qer_b2a(EditorContext editorContext, SNode node) {
@@ -140,8 +141,9 @@ public class RootConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_aw3qer_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_aw3qer_a4a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_aw3qer_b4a(EditorContext editorContext, SNode node) {
@@ -204,8 +206,9 @@ public class RootConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_aw3qer_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_aw3qer_a6a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_aw3qer_b6a(EditorContext editorContext, SNode node) {
@@ -268,8 +271,9 @@ public class RootConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_aw3qer_a8a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_aw3qer_a8a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_aw3qer_b8a(EditorContext editorContext, SNode node) {

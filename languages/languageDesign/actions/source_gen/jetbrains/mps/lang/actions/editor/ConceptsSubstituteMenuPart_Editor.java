@@ -66,8 +66,9 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_a32wui_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_a32wui_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_a32wui_b1a(EditorContext editorContext, SNode node) {
@@ -103,8 +104,9 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_a32wui_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_a32wui_a1b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_a32wui_b1b1a(EditorContext editorContext, SNode node) {

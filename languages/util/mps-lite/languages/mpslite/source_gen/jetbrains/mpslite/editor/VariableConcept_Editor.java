@@ -125,8 +125,9 @@ public class VariableConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_a82r9c_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_a82r9c_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_a82r9c_b1a(EditorContext editorContext, SNode node) {

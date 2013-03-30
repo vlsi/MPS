@@ -145,8 +145,9 @@ public class GeometryHandler_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_l8zkiy_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_l8zkiy_a1a");
+    return editorCell;
   }
 
   private EditorCell createConstant_l8zkiy_b1a(EditorContext editorContext, SNode node) {

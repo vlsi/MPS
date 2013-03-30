@@ -71,8 +71,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_o3c6bg_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_o3c6bg_a1a");
+    return editorCell;
   }
 
   private EditorCell createConstant_o3c6bg_b1a(EditorContext editorContext, SNode node) {
@@ -206,8 +207,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_o3c6bg_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_o3c6bg_a2a");
+    return editorCell;
   }
 
   private EditorCell createCollection_o3c6bg_b2a(EditorContext editorContext, SNode node) {

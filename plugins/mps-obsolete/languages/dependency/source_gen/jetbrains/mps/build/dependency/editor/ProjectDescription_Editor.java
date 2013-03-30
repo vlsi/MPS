@@ -164,8 +164,9 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_pz3u9w_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_pz3u9w_a3a");
+    return editorCell;
   }
 
   private EditorCell createCollection_pz3u9w_b3a(EditorContext editorContext, SNode node) {
@@ -247,8 +248,9 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_pz3u9w_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_pz3u9w_a4a");
+    return editorCell;
   }
 
   private EditorCell createCollection_pz3u9w_b4a(EditorContext editorContext, SNode node) {
@@ -330,8 +332,9 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_pz3u9w_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_pz3u9w_a5a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_pz3u9w_b5a(EditorContext editorContext, SNode node) {

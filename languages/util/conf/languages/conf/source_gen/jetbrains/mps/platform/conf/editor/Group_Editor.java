@@ -94,8 +94,9 @@ public class Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_o84zp2_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_o84zp2_a1a0");
+    return editorCell;
   }
 
   private EditorCell createConstant_o84zp2_b1a0(EditorContext editorContext, SNode node) {
@@ -169,8 +170,9 @@ public class Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_o84zp2_a2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_o84zp2_a2a0");
+    return editorCell;
   }
 
   private EditorCell createConstant_o84zp2_b2a0(EditorContext editorContext, SNode node) {
@@ -261,8 +263,9 @@ public class Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_o84zp2_a3a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_o84zp2_a3a0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_o84zp2_b3a0(EditorContext editorContext, SNode node) {

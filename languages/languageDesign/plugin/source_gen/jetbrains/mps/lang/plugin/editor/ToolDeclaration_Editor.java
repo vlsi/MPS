@@ -139,8 +139,9 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_du6pr9_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_du6pr9_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_du6pr9_b1a(EditorContext editorContext, SNode node) {

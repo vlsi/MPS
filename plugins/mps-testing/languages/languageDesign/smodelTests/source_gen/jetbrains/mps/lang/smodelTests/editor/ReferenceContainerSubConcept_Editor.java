@@ -89,8 +89,9 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_j13i3b_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_j13i3b_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_j13i3b_b1a(EditorContext editorContext, SNode node) {

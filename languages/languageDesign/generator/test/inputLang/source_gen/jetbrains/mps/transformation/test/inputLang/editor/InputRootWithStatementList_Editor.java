@@ -148,8 +148,9 @@ public class InputRootWithStatementList_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_9a4nm0_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_9a4nm0_a4a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_9a4nm0_b4a(EditorContext editorContext, SNode node) {

@@ -142,8 +142,9 @@ public class EventHandlerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_79xui9_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_79xui9_b0");
+    return editorCell;
   }
 
   private EditorCell createCollection_79xui9_c0(EditorContext editorContext, SNode node) {
@@ -199,8 +200,9 @@ public class EventHandlerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_79xui9_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_79xui9_b2a");
+    return editorCell;
   }
 
   private EditorCell createCollection_79xui9_c2a(EditorContext editorContext, SNode node) {
@@ -239,8 +241,9 @@ public class EventHandlerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_79xui9_d2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_79xui9_d2a");
+    return editorCell;
   }
 
   private EditorCell createCollection_79xui9_e2a(EditorContext editorContext, SNode node) {
@@ -302,8 +305,9 @@ public class EventHandlerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_79xui9_f2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_79xui9_f2a");
+    return editorCell;
   }
 
   private EditorCell createConstant_79xui9_g2a(EditorContext editorContext, SNode node) {

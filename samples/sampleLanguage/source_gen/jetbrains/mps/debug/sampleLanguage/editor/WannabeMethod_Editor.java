@@ -126,8 +126,9 @@ public class WannabeMethod_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_7k1qaw_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_7k1qaw_a2a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_7k1qaw_b2a(EditorContext editorContext, SNode node) {

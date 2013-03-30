@@ -382,8 +382,9 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_ueqr71_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_ueqr71_a2a");
+    return editorCell;
   }
 
   private EditorCell createCollection_ueqr71_b2a(EditorContext editorContext, SNode node) {

@@ -94,8 +94,9 @@ public class Action_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_8bscln_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_8bscln_a1a");
+    return editorCell;
   }
 
   private EditorCell createConstant_8bscln_b1a(EditorContext editorContext, SNode node) {
@@ -169,8 +170,9 @@ public class Action_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_8bscln_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_8bscln_a2a");
+    return editorCell;
   }
 
   private EditorCell createConstant_8bscln_b2a(EditorContext editorContext, SNode node) {
@@ -247,8 +249,9 @@ public class Action_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_8bscln_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_8bscln_a3a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_8bscln_b3a(EditorContext editorContext, SNode node) {

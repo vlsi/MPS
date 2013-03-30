@@ -90,8 +90,9 @@ public class CompartmentProviderStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bdyu74_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_bdyu74_a1a0");
+    return editorCell;
   }
 
   private EditorCell createRefNode_bdyu74_b1a0(EditorContext editorContext, SNode node) {

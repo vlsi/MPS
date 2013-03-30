@@ -135,8 +135,9 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_cuxtnd_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_cuxtnd_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_cuxtnd_b1a(EditorContext editorContext, SNode node) {

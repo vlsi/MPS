@@ -138,8 +138,9 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_robprv_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_robprv_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_robprv_b1a(EditorContext editorContext, SNode node) {
@@ -293,8 +294,9 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_robprv_a4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_robprv_a4b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_robprv_b4b1a(EditorContext editorContext, SNode node) {

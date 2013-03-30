@@ -177,8 +177,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_b0");
+    return editorCell;
   }
 
   private EditorCell createCollection_c5f0a4_c0(EditorContext editorContext, SNode node) {
@@ -195,8 +196,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_a2a");
+    return editorCell;
   }
 
   private EditorCell createConstant_c5f0a4_b2a(EditorContext editorContext, SNode node) {
@@ -235,8 +237,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_d0");
+    return editorCell;
   }
 
   private EditorCell createCollection_c5f0a4_e0(EditorContext editorContext, SNode node) {
@@ -255,8 +258,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_a4a");
+    return editorCell;
   }
 
   private EditorCell createConstant_c5f0a4_b4a(EditorContext editorContext, SNode node) {
@@ -391,8 +395,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_f0");
+    return editorCell;
   }
 
   private EditorCell createCollection_c5f0a4_g0(EditorContext editorContext, SNode node) {
@@ -408,8 +413,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_a6a");
+    return editorCell;
   }
 
   private EditorCell createConstant_c5f0a4_b6a(EditorContext editorContext, SNode node) {
@@ -488,8 +494,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_h0");
+    return editorCell;
   }
 
   private EditorCell createCollection_c5f0a4_i0(EditorContext editorContext, SNode node) {
@@ -505,8 +512,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_a8a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_a8a");
+    return editorCell;
   }
 
   private EditorCell createConstant_c5f0a4_b8a(EditorContext editorContext, SNode node) {
@@ -585,8 +593,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_j0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_j0");
+    return editorCell;
   }
 
   private EditorCell createCollection_c5f0a4_k0(EditorContext editorContext, SNode node) {
@@ -602,8 +611,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_a01a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_a01a");
+    return editorCell;
   }
 
   private EditorCell createConstant_c5f0a4_b01a(EditorContext editorContext, SNode node) {
@@ -682,8 +692,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_l0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_l0");
+    return editorCell;
   }
 
   private EditorCell createCollection_c5f0a4_m0(EditorContext editorContext, SNode node) {
@@ -699,8 +710,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_a21a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_a21a");
+    return editorCell;
   }
 
   private EditorCell createConstant_c5f0a4_b21a(EditorContext editorContext, SNode node) {
@@ -779,8 +791,9 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c5f0a4_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c5f0a4_n0");
+    return editorCell;
   }
 
   private EditorCell createCollection_c5f0a4_o0(EditorContext editorContext, SNode node) {

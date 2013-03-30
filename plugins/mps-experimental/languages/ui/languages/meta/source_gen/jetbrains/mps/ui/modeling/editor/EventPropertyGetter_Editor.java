@@ -185,8 +185,9 @@ public class EventPropertyGetter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_w9w689_a1b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_w9w689_a1b0a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_w9w689_b1b0a(EditorContext editorContext, SNode node) {

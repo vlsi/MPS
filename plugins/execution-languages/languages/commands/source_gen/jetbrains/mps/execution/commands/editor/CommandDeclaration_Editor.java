@@ -98,8 +98,9 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_y485ry_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_y485ry_a1a");
+    return editorCell;
   }
 
   private EditorCell createConstant_y485ry_b1a(EditorContext editorContext, SNode node) {
@@ -158,8 +159,9 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_y485ry_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_y485ry_a3a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_y485ry_b3a(EditorContext editorContext, SNode node) {
@@ -235,8 +237,9 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_y485ry_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_y485ry_a5a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_y485ry_b5a(EditorContext editorContext, SNode node) {

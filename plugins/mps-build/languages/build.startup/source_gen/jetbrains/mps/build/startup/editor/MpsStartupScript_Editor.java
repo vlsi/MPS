@@ -172,8 +172,9 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_gszs7u_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_gszs7u_a6a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_gszs7u_b6a(EditorContext editorContext, SNode node) {
@@ -249,8 +250,9 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_gszs7u_a9a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_gszs7u_a9a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_gszs7u_b9a(EditorContext editorContext, SNode node) {

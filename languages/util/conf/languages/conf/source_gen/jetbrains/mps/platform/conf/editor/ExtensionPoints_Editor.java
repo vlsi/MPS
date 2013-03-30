@@ -52,8 +52,9 @@ public class ExtensionPoints_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_cw3nt1_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_cw3nt1_a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_cw3nt1_b1a(EditorContext editorContext, SNode node) {

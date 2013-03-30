@@ -123,8 +123,9 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_i2dquw_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_i2dquw_b0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_i2dquw_c0(EditorContext editorContext, SNode node) {
@@ -187,8 +188,9 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_i2dquw_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_i2dquw_d0");
+    return editorCell;
   }
 
   private EditorCell createCollection_i2dquw_e0(EditorContext editorContext, SNode node) {
@@ -227,8 +229,9 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_i2dquw_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_i2dquw_f0");
+    return editorCell;
   }
 
   private EditorCell createCollection_i2dquw_g0(EditorContext editorContext, SNode node) {
@@ -267,8 +270,9 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_i2dquw_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_i2dquw_h0");
+    return editorCell;
   }
 
   private EditorCell createCollection_i2dquw_i0(EditorContext editorContext, SNode node) {

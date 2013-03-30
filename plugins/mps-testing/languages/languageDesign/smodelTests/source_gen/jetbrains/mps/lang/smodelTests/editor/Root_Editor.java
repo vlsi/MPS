@@ -123,8 +123,9 @@ public class Root_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_30aiet_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_30aiet_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_30aiet_b1a(EditorContext editorContext, SNode node) {
@@ -161,8 +162,9 @@ public class Root_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_30aiet_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_30aiet_a1b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_30aiet_b1b1a(EditorContext editorContext, SNode node) {
@@ -245,8 +247,9 @@ public class Root_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_30aiet_a3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_30aiet_a3b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_30aiet_b3b1a(EditorContext editorContext, SNode node) {
@@ -329,8 +332,9 @@ public class Root_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_30aiet_a5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_30aiet_a5b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_30aiet_b5b1a(EditorContext editorContext, SNode node) {

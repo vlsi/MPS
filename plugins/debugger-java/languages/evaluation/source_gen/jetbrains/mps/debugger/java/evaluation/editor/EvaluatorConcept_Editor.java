@@ -99,8 +99,9 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_6rl195_a0b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_6rl195_a0b0a");
+    return editorCell;
   }
 
   private EditorCell createConstant_6rl195_b0b0a(EditorContext editorContext, SNode node) {
@@ -140,8 +141,9 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_6rl195_a1b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_6rl195_a1b0a");
+    return editorCell;
   }
 
   private EditorCell createConstant_6rl195_b1b0a(EditorContext editorContext, SNode node) {
@@ -181,8 +183,9 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_6rl195_a2b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_6rl195_a2b0a");
+    return editorCell;
   }
 
   private EditorCell createConstant_6rl195_b2b0a(EditorContext editorContext, SNode node) {

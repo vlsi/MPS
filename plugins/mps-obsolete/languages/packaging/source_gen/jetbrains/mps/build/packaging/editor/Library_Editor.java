@@ -90,8 +90,9 @@ public class Library_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_x0ve1k_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_x0ve1k_a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_x0ve1k_b1a(EditorContext editorContext, SNode node) {

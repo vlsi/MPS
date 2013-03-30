@@ -124,8 +124,9 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_asco8r_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_asco8r_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_asco8r_b1a(EditorContext editorContext, SNode node) {

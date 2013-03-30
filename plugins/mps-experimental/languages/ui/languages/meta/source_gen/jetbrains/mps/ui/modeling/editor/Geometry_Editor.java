@@ -62,8 +62,9 @@ public class Geometry_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_e5wnal_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_e5wnal_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_e5wnal_c0(EditorContext editorContext, SNode node) {
@@ -79,8 +80,9 @@ public class Geometry_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_e5wnal_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_e5wnal_a2a");
+    return editorCell;
   }
 
   private EditorCell createConstant_e5wnal_b2a(EditorContext editorContext, SNode node) {

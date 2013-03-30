@@ -165,8 +165,9 @@ public class UIObjectFactory_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_d4wil6_a1c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_d4wil6_a1c0a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_d4wil6_b1c0a(EditorContext editorContext, SNode node) {

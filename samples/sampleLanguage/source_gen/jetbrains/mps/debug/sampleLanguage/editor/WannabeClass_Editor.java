@@ -86,8 +86,9 @@ public class WannabeClass_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_c8aenb_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_c8aenb_a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_c8aenb_b1a(EditorContext editorContext, SNode node) {

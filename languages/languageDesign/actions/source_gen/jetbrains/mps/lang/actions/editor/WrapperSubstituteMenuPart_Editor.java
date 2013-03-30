@@ -124,8 +124,9 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_b2q5d2_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_b2q5d2_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_b2q5d2_b1a(EditorContext editorContext, SNode node) {
@@ -161,8 +162,9 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_b2q5d2_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_b2q5d2_a1b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_b2q5d2_b1b1a(EditorContext editorContext, SNode node) {
@@ -194,8 +196,9 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_b2q5d2_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_b2q5d2_a2a");
+    return editorCell;
   }
 
   private EditorCell createCollection_b2q5d2_b2a(EditorContext editorContext, SNode node) {
@@ -263,8 +266,9 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_b2q5d2_a1b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_b2q5d2_a1b2a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_b2q5d2_b1b2a(EditorContext editorContext, SNode node) {
@@ -296,8 +300,9 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_b2q5d2_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_b2q5d2_a3a");
+    return editorCell;
   }
 
   private EditorCell createCollection_b2q5d2_b3a(EditorContext editorContext, SNode node) {
@@ -343,8 +348,9 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_b2q5d2_a1b3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_b2q5d2_a1b3a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_b2q5d2_b1b3a(EditorContext editorContext, SNode node) {

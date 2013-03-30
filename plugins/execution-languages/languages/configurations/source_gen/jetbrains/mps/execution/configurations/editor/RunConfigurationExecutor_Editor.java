@@ -78,8 +78,9 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g7zihj_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g7zihj_a1a");
+    return editorCell;
   }
 
   private EditorCell createConstant_g7zihj_b1a(EditorContext editorContext, SNode node) {
@@ -188,8 +189,9 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g7zihj_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g7zihj_a2a");
+    return editorCell;
   }
 
   private EditorCell createComponent_g7zihj_b2a(EditorContext editorContext, SNode node) {
@@ -250,8 +252,9 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g7zihj_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g7zihj_a6a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_g7zihj_b6a(EditorContext editorContext, SNode node) {
@@ -284,8 +287,9 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g7zihj_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g7zihj_a0");
+    return editorCell;
   }
 
   private EditorCell createConstant_g7zihj_b0(EditorContext editorContext, SNode node) {

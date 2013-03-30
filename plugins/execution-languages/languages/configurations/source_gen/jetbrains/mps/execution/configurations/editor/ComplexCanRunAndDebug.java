@@ -88,8 +88,9 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_2konf7_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_2konf7_a1a");
+    return editorCell;
   }
 
   private EditorCell createConstant_2konf7_b1a(EditorContext editorContext, SNode node) {
@@ -165,8 +166,9 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_2konf7_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_2konf7_a2a");
+    return editorCell;
   }
 
   private EditorCell createCollection_2konf7_b2a(EditorContext editorContext, SNode node) {

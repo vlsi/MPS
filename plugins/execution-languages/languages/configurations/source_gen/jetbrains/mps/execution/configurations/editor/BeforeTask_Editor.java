@@ -157,8 +157,9 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bndx6c_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_bndx6c_a2a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_bndx6c_b2a(EditorContext editorContext, SNode node) {

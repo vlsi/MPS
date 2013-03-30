@@ -100,8 +100,9 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_e0yr07_a0b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_e0yr07_a0b0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_e0yr07_b1a(EditorContext editorContext, SNode node) {
@@ -221,8 +222,9 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_e0yr07_a0e0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_e0yr07_a0e0");
+    return editorCell;
   }
 
   private EditorCell createRefNode_e0yr07_b4a(EditorContext editorContext, SNode node) {

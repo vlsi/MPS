@@ -90,8 +90,9 @@ public class UIObjectProviderStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_3fvv40_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_3fvv40_a1a0");
+    return editorCell;
   }
 
   private EditorCell createRefNode_3fvv40_b1a0(EditorContext editorContext, SNode node) {

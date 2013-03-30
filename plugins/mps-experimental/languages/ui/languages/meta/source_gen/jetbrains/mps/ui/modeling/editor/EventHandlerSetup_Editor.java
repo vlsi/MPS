@@ -160,8 +160,9 @@ public class EventHandlerSetup_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_5c1jtb_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_5c1jtb_a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_5c1jtb_b1a(EditorContext editorContext, SNode node) {

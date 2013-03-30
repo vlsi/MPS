@@ -92,8 +92,9 @@ public class ForceLayoutCode_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_owhuo5_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_owhuo5_a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_owhuo5_b1a(EditorContext editorContext, SNode node) {

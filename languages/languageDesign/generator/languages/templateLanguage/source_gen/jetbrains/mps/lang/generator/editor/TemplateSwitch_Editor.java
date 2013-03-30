@@ -166,8 +166,9 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_q42gqn_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_q42gqn_a2a");
+    return editorCell;
   }
 
   private EditorCell createCollection_q42gqn_b2a(EditorContext editorContext, SNode node) {

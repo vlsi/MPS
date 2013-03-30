@@ -144,8 +144,9 @@ public class ContainerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_nnzj8o_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_nnzj8o_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_nnzj8o_b1a(EditorContext editorContext, SNode node) {
@@ -195,8 +196,9 @@ public class ContainerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_nnzj8o_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_nnzj8o_a2a");
+    return editorCell;
   }
 
   private EditorCell createCollection_nnzj8o_b2a(EditorContext editorContext, SNode node) {
@@ -246,8 +248,9 @@ public class ContainerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_nnzj8o_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_nnzj8o_a3a");
+    return editorCell;
   }
 
   private EditorCell createCollection_nnzj8o_b3a(EditorContext editorContext, SNode node) {
@@ -297,8 +300,9 @@ public class ContainerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_nnzj8o_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_nnzj8o_a4a");
+    return editorCell;
   }
 
   private EditorCell createCollection_nnzj8o_b4a(EditorContext editorContext, SNode node) {
@@ -348,8 +352,9 @@ public class ContainerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_nnzj8o_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_nnzj8o_a5a");
+    return editorCell;
   }
 
   private EditorCell createCollection_nnzj8o_b5a(EditorContext editorContext, SNode node) {

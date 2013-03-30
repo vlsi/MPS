@@ -92,13 +92,15 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_a1fgw3_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_a1fgw3_d0");
+    return editorCell;
   }
 
   private EditorCell createIndentCell_a1fgw3_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_a1fgw3_e0");
+    return editorCell;
   }
 
   private EditorCell createConstant_a1fgw3_f0(EditorContext editorContext, SNode node) {
@@ -109,13 +111,15 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_a1fgw3_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_a1fgw3_g0");
+    return editorCell;
   }
 
   private EditorCell createIndentCell_a1fgw3_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_a1fgw3_h0");
+    return editorCell;
   }
 
   private EditorCell createRefNode_a1fgw3_i0(EditorContext editorContext, SNode node) {

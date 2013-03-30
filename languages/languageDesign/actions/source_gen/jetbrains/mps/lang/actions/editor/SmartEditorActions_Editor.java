@@ -110,8 +110,9 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_703hqq_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_703hqq_a3a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_703hqq_b3a(EditorContext editorContext, SNode node) {
@@ -188,8 +189,9 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_703hqq_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_703hqq_a6a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_703hqq_b6a(EditorContext editorContext, SNode node) {

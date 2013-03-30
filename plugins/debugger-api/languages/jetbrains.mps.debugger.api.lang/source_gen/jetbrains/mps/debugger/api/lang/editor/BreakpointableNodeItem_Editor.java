@@ -77,8 +77,9 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_4n0rw6_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_4n0rw6_a1a0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_4n0rw6_b1a0(EditorContext editorContext, SNode node) {
@@ -156,8 +157,9 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_4n0rw6_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_4n0rw6_a1b0");
+    return editorCell;
   }
 
   private EditorCell createRefNode_4n0rw6_b1b0(EditorContext editorContext, SNode node) {
@@ -196,8 +198,9 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_4n0rw6_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_4n0rw6_a3a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_4n0rw6_b3a(EditorContext editorContext, SNode node) {

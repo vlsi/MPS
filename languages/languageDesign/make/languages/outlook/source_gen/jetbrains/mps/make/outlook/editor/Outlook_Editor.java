@@ -94,8 +94,9 @@ public class Outlook_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qlzo2n_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_qlzo2n_a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_qlzo2n_b1a(EditorContext editorContext, SNode node) {

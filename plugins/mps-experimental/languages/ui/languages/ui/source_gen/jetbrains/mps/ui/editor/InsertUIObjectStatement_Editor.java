@@ -61,8 +61,9 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g3syp0_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_g3syp0_a0a0");
+    return editorCell;
   }
 
   private EditorCell createComponent_g3syp0_b0a0(EditorContext editorContext, SNode node) {

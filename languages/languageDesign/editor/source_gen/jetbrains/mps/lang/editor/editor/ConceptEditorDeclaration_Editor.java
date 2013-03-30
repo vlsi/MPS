@@ -126,8 +126,9 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_cth9w3_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_cth9w3_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_cth9w3_b1a(EditorContext editorContext, SNode node) {
@@ -164,8 +165,9 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_cth9w3_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_cth9w3_a1b1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_cth9w3_b1b1a(EditorContext editorContext, SNode node) {
@@ -199,8 +201,9 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_cth9w3_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_cth9w3_a2a");
+    return editorCell;
   }
 
   private EditorCell createCollection_cth9w3_b2a(EditorContext editorContext, SNode node) {
@@ -248,8 +251,9 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_cth9w3_a2b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_cth9w3_a2b2a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_cth9w3_b2b2a(EditorContext editorContext, SNode node) {

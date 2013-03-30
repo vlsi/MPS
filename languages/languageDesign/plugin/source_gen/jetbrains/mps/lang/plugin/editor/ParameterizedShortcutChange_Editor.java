@@ -187,8 +187,9 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_ecw4ny_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_ecw4ny_a1b0");
+    return editorCell;
   }
 
   private EditorCell createRefNode_ecw4ny_b1b0(EditorContext editorContext, SNode node) {

@@ -49,8 +49,9 @@ public class EditorComponent extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_8q27zs_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_8q27zs_a0");
+    return editorCell;
   }
 
   private EditorCell createCollection_8q27zs_b0(EditorContext editorContext, SNode node) {
@@ -86,8 +87,9 @@ public class EditorComponent extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_8q27zs_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_8q27zs_a1b0");
+    return editorCell;
   }
 
   private EditorCell createRefNode_8q27zs_b1b0(EditorContext editorContext, SNode node) {

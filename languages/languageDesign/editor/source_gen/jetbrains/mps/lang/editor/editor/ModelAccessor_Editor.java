@@ -141,8 +141,9 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bwxq1q_a1a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_bwxq1q_a1a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_bwxq1q_b1a1a(EditorContext editorContext, SNode node) {
@@ -217,8 +218,9 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bwxq1q_a4a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_bwxq1q_a4a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_bwxq1q_b4a1a(EditorContext editorContext, SNode node) {
@@ -293,8 +295,9 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bwxq1q_a7a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_bwxq1q_a7a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_bwxq1q_b7a1a(EditorContext editorContext, SNode node) {

@@ -113,8 +113,9 @@ public class ContextViewWrapper_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_3d0cie_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_3d0cie_a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_3d0cie_b1a(EditorContext editorContext, SNode node) {

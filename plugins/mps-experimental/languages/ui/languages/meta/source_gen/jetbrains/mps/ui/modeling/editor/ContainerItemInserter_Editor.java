@@ -162,8 +162,9 @@ public class ContainerItemInserter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_pd4z9l_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_pd4z9l_a1a");
+    return editorCell;
   }
 
   private EditorCell createRefNode_pd4z9l_b1a(EditorContext editorContext, SNode node) {

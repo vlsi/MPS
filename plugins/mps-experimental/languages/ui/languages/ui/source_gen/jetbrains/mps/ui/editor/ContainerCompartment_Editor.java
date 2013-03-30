@@ -123,8 +123,9 @@ public class ContainerCompartment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_6q4kdp_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_6q4kdp_a1a0");
+    return editorCell;
   }
 
   private EditorCell createCollection_6q4kdp_b1a0(EditorContext editorContext, SNode node) {

@@ -215,8 +215,9 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_th2ud5_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_th2ud5_a4a");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_th2ud5_b4a(EditorContext editorContext, SNode node) {

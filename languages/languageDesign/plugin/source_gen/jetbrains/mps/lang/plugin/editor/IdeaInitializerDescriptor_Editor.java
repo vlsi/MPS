@@ -382,8 +382,9 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bmlzqh_a1j0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_bmlzqh_a1j0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_bmlzqh_b1j0(EditorContext editorContext, SNode node) {

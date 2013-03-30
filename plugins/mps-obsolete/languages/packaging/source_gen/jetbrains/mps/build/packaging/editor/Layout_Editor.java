@@ -117,8 +117,9 @@ public class Layout_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_ybaf4h_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_ybaf4h_a2a");
+    return editorCell;
   }
 
   private EditorCell createCollection_ybaf4h_b2a(EditorContext editorContext, SNode node) {
@@ -493,8 +494,9 @@ public class Layout_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_ybaf4h_a1f0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_ybaf4h_a1f0");
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_ybaf4h_b1f0(EditorContext editorContext, SNode node) {

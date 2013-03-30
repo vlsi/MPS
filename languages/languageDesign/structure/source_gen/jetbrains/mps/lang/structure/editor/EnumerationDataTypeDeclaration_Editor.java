@@ -96,8 +96,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_tm8wum_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setCellId("Indent_tm8wum_a1a");
+    return editorCell;
   }
 
   private EditorCell createCollection_tm8wum_b1a(EditorContext editorContext, SNode node) {
