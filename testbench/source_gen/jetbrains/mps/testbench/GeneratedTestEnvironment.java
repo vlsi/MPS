@@ -18,7 +18,7 @@ public class GeneratedTestEnvironment extends Environment {
   private static boolean cachesInvalidated = false;
 
   public void init(Map<String, File> libraries) {
-    super.init(Collections.<String,String>emptyMap(), false, libraries, Level.INFO, new Testbench.LoggingHandlerAdapter());
+    super.init(Collections.<String,String>emptyMap(), false, libraries, Level.INFO, null);
   }
 
   public void setup() {

@@ -53,7 +53,9 @@ public class Environment {
   public void setup() {
     BasicConfigurator.configure(new ConsoleAppender(new SimpleLayout()));
     Logger.getRootLogger().setLevel(myLogLevel);
-    jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
+    if (myMessageHandler != null) {
+      jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
+    }
     MpsPlatform.init();
     MPSCore.getInstance().setTestMode();
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
@@ -76,7 +78,9 @@ public class Environment {
       this.myLibraryContibutor = null;
     }
     MpsPlatform.dispose();
-    jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
+    if (myMessageHandler != null) {
+      jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
+    }
   }
 
   public Project createDummyProject() {

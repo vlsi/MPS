@@ -16,8 +16,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.logging.ILoggingHandler;
-import jetbrains.mps.logging.LogEntry;
 
 public class Testbench {
   /*package*/ static final Logger LOG = Logger.getLogger(Testbench.class);
@@ -66,43 +64,6 @@ public class Testbench {
       });
     } catch (Exception e) {
       throw new RuntimeException(e);
-    }
-  }
-
-  public static void initLogging() {
-    jetbrains.mps.logging.Logger.addLoggingHandler(new Testbench.LoggingHandlerAdapter());
-  }
-
-  public static class LoggingHandlerAdapter implements ILoggingHandler {
-    public LoggingHandlerAdapter() {
-    }
-
-    public void info(LogEntry e) {
-      LOG.info(e.getMessage());
-    }
-
-    public void warning(LogEntry e) {
-      LOG.warn(e.getMessage());
-    }
-
-    public void debug(LogEntry e) {
-      LOG.debug(e.getMessage());
-    }
-
-    public void error(LogEntry e) {
-      if (e.getThrowable() != null) {
-        LOG.error(e.getThrowable());
-      } else {
-        LOG.error(e.getMessage());
-      }
-    }
-
-    public void fatal(LogEntry e) {
-      if (e.getThrowable() != null) {
-        LOG.fatal(e.getThrowable());
-      } else {
-        LOG.fatal(e.getMessage());
-      }
     }
   }
 }

@@ -10,9 +10,9 @@ import org.junit.runner.notification.RunNotifier;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
-import jetbrains.mps.testbench.Testbench;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.testbench.Testbench;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -52,7 +52,6 @@ public class MPSOpenProjectRunner extends Runner {
     String projectPath = getProjectPath(testClass);
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
-    Testbench.initLogging();
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
     initPathMacros();

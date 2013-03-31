@@ -115,7 +115,6 @@ public class ProjectTestHelper {
   private void init() {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.ERROR);
-    Testbench.initLogging();
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
     Testbench.initLibs();

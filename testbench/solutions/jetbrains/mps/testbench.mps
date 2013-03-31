@@ -413,12 +413,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8597743085639790519">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8597743085639790520">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3kmv.~Testbench" resolveInfo="Testbench" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3kmv.~Testbench%dinitLogging()%cvoid" resolveInfo="initLogging" />
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8597743085639790521">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8597743085639790522">
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="86um.~IdeMain" resolveInfo="IdeMain" />
