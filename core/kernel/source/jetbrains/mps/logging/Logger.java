@@ -32,7 +32,11 @@ public abstract class Logger {
   private static volatile Engine ourEngine;
 
   static {
-    ourEngine = new Log4jEngine();
+    initDefaultEngine();
+  }
+
+  private static void initDefaultEngine() {
+    setEngine(new Log4jEngine());
   }
 
   public static void setEngine(Engine engine) {
@@ -52,18 +56,18 @@ public abstract class Logger {
   }
 
   public static void addLoggingHandler(ILoggingHandler lh) {
-    getEngine().addHandler(lh);
+    ourEngine.addHandler(lh);
   }
 
   public static void removeLoggingHandler(ILoggingHandler lh) {
-    getEngine().removeHandler(lh);
+    ourEngine.removeHandler(lh);
   }
 
   /**
    * @param "OFF", "FATAL", "ERROR", "WARN" ...
    */
   public static String setThreshold(String threshold) {
-    return getEngine().setThreshold(threshold);
+    return ourEngine.setThreshold(threshold);
   }
 
   //--------------------------

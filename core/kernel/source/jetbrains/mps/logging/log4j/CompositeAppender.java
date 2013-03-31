@@ -52,8 +52,14 @@ public class CompositeAppender extends AppenderSkeleton {
     }
   }
 
-  public static CompositeAppender getInstance() {
+  public static synchronized CompositeAppender getInstance() {
     Logger rootLogger = Logger.getRootLogger();
-    return (CompositeAppender) rootLogger.getAppender("MPS");
+    CompositeAppender compositeAppender = (CompositeAppender) rootLogger.getAppender("MPS");
+    if (compositeAppender == null) {
+      compositeAppender = new CompositeAppender();
+      rootLogger.addAppender(compositeAppender);
+    }
+    return compositeAppender;
   }
+
 }
