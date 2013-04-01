@@ -78,7 +78,7 @@ public class ConsoleTool extends BaseProjectTool {
     btnPanel.setLayout(new FlowLayout());
     btnPanel.add(new JButton(new AbstractAction("Execute") {
       public void actionPerformed(ActionEvent p0) {
-        ModelAccess.instance().runWriteAction(new Runnable() {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             TemporaryModels.getInstance().fixImports(myModel);
             if ((myLastCommand != null)) {
