@@ -19,21 +19,13 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.Logger.Engine;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Log4jEngine implements Engine {
-  private static final Map<ILoggingHandler, HandlerAppender> ourHandlers = new HashMap<ILoggingHandler, HandlerAppender>();
-
-  public static synchronized void addLoggingHandler(ILoggingHandler handler) {
-    HandlerAppender appender = new HandlerAppender(handler);
-    ourHandlers.put(handler, appender);
-    CompositeAppender.getInstance().addLoggingHandler(appender);
+  public static void addLoggingHandler(ILoggingHandler handler) {
+    MpsAppender.getInstance().addAppender(handler);
   }
 
-  public static synchronized void removeLoggingHandler(ILoggingHandler handler) {
-    HandlerAppender appender = ourHandlers.remove(handler);
-    CompositeAppender.getInstance().removeLoggingHandler(appender);
+  public static void removeLoggingHandler(ILoggingHandler handler) {
+    MpsAppender.getInstance().removeAppender(handler);
   }
 
   @Override

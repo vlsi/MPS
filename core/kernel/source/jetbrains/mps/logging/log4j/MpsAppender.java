@@ -19,39 +19,51 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.log4j.spi.ThrowableInformation;
 
-class HandlerAppender extends AppenderSkeleton {
-  private final ILoggingHandler myHandler;
+import java.util.ArrayList;
+import java.util.List;
 
-  public HandlerAppender(ILoggingHandler handler) {
-    myHandler = handler;
+public class MpsAppender extends AppenderSkeleton {
+  public static final String NAME = "MPS";
+  private final List<ILoggingHandler> myHandlers = new ArrayList<ILoggingHandler>();
+
+  public synchronized void addAppender(ILoggingHandler appender) {
+    myHandlers.add(appender);
+  }
+
+  public synchronized void removeAppender(ILoggingHandler appender) {
+    myHandlers.remove(appender);
   }
 
   @Override
-  protected void append(LoggingEvent event) {
-    LogEntry logEntry = createLogEntry(event);
-    if (event.level.equals(Level.FATAL)) {
-      myHandler.fatal(logEntry);
-    } else if (event.level.equals(Level.ERROR)) {
-      myHandler.error(logEntry);
-    } else if (event.level.equals(Level.WARN)) {
-      myHandler.warning(logEntry);
-    } else if (event.level.equals(Level.INFO)) {
-      myHandler.info(logEntry);
-    } else if (event.level.equals(Level.DEBUG)) {
-      myHandler.debug(logEntry);
+  protected synchronized void append(LoggingEvent event) {
+    for (ILoggingHandler handler : myHandlers) {
+      LogEntry logEntry = createLogEntry(event);
+      if (event.level.equals(Level.FATAL)) {
+        handler.fatal(logEntry);
+      } else if (event.level.equals(Level.ERROR)) {
+        handler.error(logEntry);
+      } else if (event.level.equals(Level.WARN)) {
+        handler.warning(logEntry);
+      } else if (event.level.equals(Level.INFO)) {
+        handler.info(logEntry);
+      } else if (event.level.equals(Level.DEBUG)) {
+        handler.debug(logEntry);
+      }
     }
   }
 
   @Override
   public boolean requiresLayout() {
-    return false;
+    return true;
   }
 
   @Override
-  public void close() {
+  public synchronized void close() {
+    myHandlers.clear();
   }
 
   public LogEntry createLogEntry(LoggingEvent event) {
@@ -70,4 +82,16 @@ class HandlerAppender extends AppenderSkeleton {
       return new LogEntry(event.categoryName, renderedMessage, null, message);
     }
   }
+
+  public static synchronized MpsAppender getInstance() {
+    Logger rootLogger = Logger.getRootLogger();
+    MpsAppender mpsAppender = (MpsAppender) rootLogger.getAppender(NAME);
+    if (mpsAppender == null) {
+      mpsAppender = new MpsAppender();
+      mpsAppender.setName(NAME);
+      rootLogger.addAppender(mpsAppender);
+    }
+    return mpsAppender;
+  }
+
 }
