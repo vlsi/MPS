@@ -106,7 +106,7 @@ public class BaseLanguageCommand_Behavior {
                     Method[] methods = Class.forName(className.value, true, loader.value).getMethods();
                     for (Method method : methods) {
                       if (method.getName().equals("main")) {
-                        method.invoke(null, new String[0]);
+                        method.invoke(null, new Object[]{new String[0]});
                       }
                     }
                   } catch (ClassNotFoundException ignore) {

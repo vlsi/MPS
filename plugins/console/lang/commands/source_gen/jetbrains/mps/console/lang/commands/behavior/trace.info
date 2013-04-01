@@ -32,7 +32,7 @@
     <nodeInfo nodeId="718322957961353715" fileName="BaseLanguageCommand_Behavior.java" startLine="98" startPosition="0" endLine="99" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="718322957961353747" fileName="BaseLanguageCommand_Behavior.java" startLine="101" startPosition="39" endLine="102" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5336086527850067449" fileName="BaseLanguageCommand_Behavior.java" startLine="105" startPosition="23" endLine="106" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5336086527850330335" fileName="BaseLanguageCommand_Behavior.java" startLine="108" startPosition="60" endLine="109" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5336086527850330335" fileName="BaseLanguageCommand_Behavior.java" startLine="108" startPosition="60" endLine="109" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="62239170982903308" fileName="BaseLanguageCommand_Behavior.java" startLine="112" startPosition="59" endLine="113" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5336086527851389487" fileName="BaseLanguageCommand_Behavior.java" startLine="114" startPosition="59" endLine="115" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5336086527851497594" fileName="BaseLanguageCommand_Behavior.java" startLine="116" startPosition="62" endLine="117" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -71,7 +71,7 @@
     <scopeInfo nodeId="3732264744266842662" fileName="BaseLanguageCommand_Behavior.java" startLine="78" startPosition="33" endLine="79" endPosition="84" />
     <scopeInfo nodeId="5487985028841942842" fileName="BaseLanguageCommand_Behavior.java" startLine="95" startPosition="35" endLine="96" endPosition="27" />
     <scopeInfo nodeId="5487985028841942852" fileName="BaseLanguageCommand_Behavior.java" startLine="101" startPosition="39" endLine="102" endPosition="129" />
-    <scopeInfo nodeId="5336086527850214752" fileName="BaseLanguageCommand_Behavior.java" startLine="108" startPosition="60" endLine="109" endPosition="59" />
+    <scopeInfo nodeId="5336086527850214752" fileName="BaseLanguageCommand_Behavior.java" startLine="108" startPosition="60" endLine="109" endPosition="73" />
     <scopeInfo nodeId="5487985028841942898" fileName="BaseLanguageCommand_Behavior.java" startLine="112" startPosition="0" endLine="113" endPosition="70">
       <varInfo nodeId="5487985028841942899" varName="ignore" />
     </scopeInfo>
