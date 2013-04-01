@@ -14,9 +14,9 @@ import jetbrains.mps.project.ModuleContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.ide.editor.NodeEditor;
 import javax.swing.JComponent;
 import java.awt.Color;
+import jetbrains.mps.ide.editor.NodeEditor;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.Set;
@@ -61,20 +61,17 @@ public class EmbeddableEditor {
   private final SModel myModel;
   private boolean myModelCreated;
   private SNode myNode;
-  private final boolean myIsEditable;
 
 
   public EmbeddableEditor(Project p, _FunctionTypes._void_P1_E0<? super SModel> modelInitializer, boolean editable) {
     myModel = TemporaryModels.getInstance().create(!(editable), TempModuleOptions.forDefaultModule());
     modelInitializer.invoke(myModel);
-    myIsEditable = editable;
     myContext = new ModuleContext(myModel.getModule(), p);
     myModelCreated = true;
   }
 
-  public EmbeddableEditor(Project p, SModel model, boolean editable) {
+  public EmbeddableEditor(Project p, SModel model) {
     myModel = model;
-    myIsEditable = editable;
     myContext = new ModuleContext(myModel.getModule(), p);
     myModelCreated = false;
   }
@@ -83,10 +80,6 @@ public class EmbeddableEditor {
     myNode = node;
     myNodeEditor = new MPSFileNodeEditor(myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode));
     Editor editor = myNodeEditor.getNodeEditor();
-    if (editor instanceof NodeEditor) {
-      NodeEditor nodeEditor = (NodeEditor) editor;
-      nodeEditor.getCurrentEditorComponent().setReadOnly(!(myIsEditable));
-    }
     if (myPanel == null) {
       myPanel = new EmbeddableEditorPanel(myNodeEditor);
     } else {

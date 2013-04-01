@@ -46,7 +46,7 @@ public class EvaluationPanel extends EvaluationUi {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SNode node = myEvaluationModel.getNode();
-        myEditor = new EmbeddableEditor(myEvaluationModel.getContext().getProject(), node.getModel(), true);
+        myEditor = new EmbeddableEditor(myEvaluationModel.getContext().getProject(), node.getModel());
         myEditor.editNode(node);
       }
     });
@@ -105,7 +105,7 @@ public class EvaluationPanel extends EvaluationUi {
         if (myResultEditor == null) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              myResultEditor = new EmbeddableEditor(myEvaluationModel.getContext().getProject(), generatedResult.getModel(), false);
+              myResultEditor = new EmbeddableEditor(myEvaluationModel.getContext().getProject(), generatedResult.getModel());
             }
           });
           myTabbedPane.add("Generated Result", myResultEditor.getComponenet());

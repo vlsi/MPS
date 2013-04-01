@@ -293,7 +293,7 @@ public class State {
       if (!myOperationStack.empty()) {
         myOperationStack.pop();
       } else {
-        LOG.warning("Operation stack in type system state was empty");
+       LOG.warning("Operation stack in type system state was empty");
       }
     } else {
       operation.execute(this);   //do not store unneeded operations
