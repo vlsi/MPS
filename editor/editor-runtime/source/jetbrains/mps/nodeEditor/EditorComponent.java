@@ -1015,13 +1015,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           SModel model = node.getModel();
           assert model != null : "Can't edit a node that is not registered in a model";
           setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
-          setReadOnly(model.isReadOnly());
+          myReadOnly = model.isReadOnly();
         } else {
           myNodePointer = null;
           myVirtualFile = null;
           setOperationContext(null);
           setEditorContext(new EditorContext(EditorComponent.this, null, null));
-          setReadOnly(true);
+          myReadOnly = true;
         }
         getTypeCheckingContext();
 
@@ -2822,10 +2822,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public boolean isReadOnly() {
     return myReadOnly;
-  }
-
-  public void setReadOnly(boolean readOnly) {
-    myReadOnly = readOnly;
   }
 
   public void setPopupMenuEnabled(boolean popupMenuEnabled) {
