@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CompositeAppender extends AppenderSkeleton {
+  public static final String NAME = "MPS";
   private final List<Appender> myAppenders = new ArrayList<Appender>();
 
   public synchronized void addLoggingHandler(Appender appender) {
@@ -54,9 +55,10 @@ public class CompositeAppender extends AppenderSkeleton {
 
   public static synchronized CompositeAppender getInstance() {
     Logger rootLogger = Logger.getRootLogger();
-    CompositeAppender compositeAppender = (CompositeAppender) rootLogger.getAppender("MPS");
+    CompositeAppender compositeAppender = (CompositeAppender) rootLogger.getAppender(NAME);
     if (compositeAppender == null) {
       compositeAppender = new CompositeAppender();
+      compositeAppender.setName(NAME);
       rootLogger.addAppender(compositeAppender);
     }
     return compositeAppender;
