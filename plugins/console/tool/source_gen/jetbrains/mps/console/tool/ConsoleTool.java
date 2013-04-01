@@ -94,6 +94,7 @@ public class ConsoleTool extends BaseProjectTool {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             if ((SNodeOperations.getPrevSibling(myLastCommand) == null)) {
+
               return;
             }
             myLastCommand = SNodeOperations.cast(SNodeOperations.getPrevSibling(myLastCommand), "jetbrains.mps.console.lang.structure.ConsoleCommand");
