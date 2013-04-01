@@ -7,12 +7,12 @@ import javax.swing.JPanel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
+import jetbrains.mps.project.ModuleContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
@@ -22,12 +22,13 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.kernel.model.TempModelCreator;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 
 public class ConsoleTool extends BaseProjectTool {
   private JPanel myMainComponent;
@@ -35,6 +36,7 @@ public class ConsoleTool extends BaseProjectTool {
   private SNode myRoot;
   private UIEditorComponent myEditor;
   private SNode myLastCommand;
+  private ModuleContext myContext;
 
 
   public ConsoleTool(Project project) {
@@ -57,7 +59,8 @@ public class ConsoleTool extends BaseProjectTool {
     final jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        ConsoleTool.this.myEditor = new UIEditorComponent(new ModuleContext(myModel.getModule(), project), null);
+        ConsoleTool.this.myContext = new ModuleContext(myModel.getModule(), project);
+        ConsoleTool.this.myEditor = new UIEditorComponent(ConsoleTool.this.myContext, null);
         ((SModelInternal) myModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.console.lang", Language.class).getModuleReference());
         ((SModelInternal) myModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.console.lang.commands", Language.class).getModuleReference());
         ((SModelInternal) myModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
@@ -75,8 +78,9 @@ public class ConsoleTool extends BaseProjectTool {
     btnPanel.setLayout(new FlowLayout());
     btnPanel.add(new JButton(new AbstractAction("Execute") {
       public void actionPerformed(ActionEvent p0) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
+            TemporaryModels.getInstance().fixImports(myModel);
             if ((myLastCommand != null)) {
               BehaviorReflection.invokeVirtual(Void.class, myLastCommand, "virtual_execute_757553790980855637", new Object[]{project});
             }
@@ -93,7 +97,7 @@ public class ConsoleTool extends BaseProjectTool {
               return;
             }
             myLastCommand = SNodeOperations.cast(SNodeOperations.getPrevSibling(myLastCommand), "jetbrains.mps.console.lang.structure.ConsoleCommand");
-            myEditor.editNode(myLastCommand);
+            myEditor.editNode(myLastCommand, myContext);
           }
         });
       }
@@ -106,7 +110,7 @@ public class ConsoleTool extends BaseProjectTool {
               return;
             }
             myLastCommand = SNodeOperations.cast(SNodeOperations.getNextSibling(myLastCommand), "jetbrains.mps.console.lang.structure.ConsoleCommand");
-            myEditor.editNode(myLastCommand);
+            myEditor.editNode(myLastCommand, myContext);
           }
         });
       }
@@ -119,7 +123,7 @@ public class ConsoleTool extends BaseProjectTool {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ConsoleTool.this.myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "command", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", null));
-        myEditor.editNode(myLastCommand);
+        myEditor.editNode(myLastCommand, myContext);
       }
     });
   }
@@ -138,7 +142,7 @@ public class ConsoleTool extends BaseProjectTool {
     super.doRegister();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        ConsoleTool.this.myModel = TempModelCreator.createTempModel();
+        ConsoleTool.this.myModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
       }
     });
   }
@@ -149,7 +153,7 @@ public class ConsoleTool extends BaseProjectTool {
   protected void doUnregister() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        TempModelCreator.disposeTempModel(myModel);
+        TemporaryModels.getInstance().dispose(myModel);
       }
     });
     super.doUnregister();

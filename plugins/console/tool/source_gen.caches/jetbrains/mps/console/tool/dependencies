@@ -16,7 +16,6 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.kernel.model.TempModelCreator" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -29,6 +28,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
+    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.tools.BaseProjectTool" />
