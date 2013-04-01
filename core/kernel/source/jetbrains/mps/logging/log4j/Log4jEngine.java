@@ -16,6 +16,7 @@
 package jetbrains.mps.logging.log4j;
 
 import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.logging.LogUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.Logger.Engine;
 
@@ -45,6 +46,6 @@ public class Log4jEngine implements Engine {
 
   @Override
   public String setThreshold(String threshold) {
-    return Log4jUtil.setThreshold(threshold);
+    return LogUtil.setThreshold(threshold);
   }
 }

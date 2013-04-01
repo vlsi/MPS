@@ -19,7 +19,7 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-class MessageObject {
+public class MessageObject {
   private final String myMessage;
   private final Object myHintObject;
 
