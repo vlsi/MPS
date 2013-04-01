@@ -17,12 +17,16 @@ package jetbrains.mps.smodel.tempmodel;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -50,6 +54,24 @@ class TempModule extends AbstractModule implements SModule, MPSModuleOwner {
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     return myDescriptor;
+  }
+
+  public void updateDependencies() {
+    //this is a simplified version of MissingDependenciesFixer.fixDependencies, but it only adds a module if it's not in
+    //direct dependencies, regardless to module scope
+    for (SModel model : getOwnModelDescriptors()) {
+      for (SModel modelImport : model.getModelScope().getModels()) {
+        SModule anotherModule = modelImport.getModule();
+        if (anotherModule == null || anotherModule == this) continue;
+        if (new GlobalModuleDependenciesManager(this).getModules(Deptype.VISIBLE).contains(anotherModule)) continue;
+
+        addDependency(anotherModule.getModuleReference(), false);
+      }
+      for (SLanguage lang : model.getModelScope().getLanguages()) {
+        if (new GlobalModuleDependenciesManager(this).getUsedLanguages().contains(lang)) continue;
+        addUsedLanguage(lang.getModule().getModuleReference());
+      }
+    }
   }
 
   @NotNull
