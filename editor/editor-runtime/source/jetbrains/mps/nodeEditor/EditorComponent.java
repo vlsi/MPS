@@ -991,7 +991,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  protected boolean notifiesCreation(){
+  protected boolean notifiesCreation() {
     return false;
   }
 
@@ -1013,8 +1013,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           myVirtualFile = !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
           setOperationContext(operationContext);
           SModel model = node.getModel();
+          assert model != null : "Can't edit a node that is not registered in a model";
           setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
-          setReadOnly(model == null || model.isReadOnly());
+          setReadOnly(model.isReadOnly());
         } else {
           myNodePointer = null;
           myVirtualFile = null;
