@@ -3275,7 +3275,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     @Override
     public void modelRemoved(SModel modelDescriptor) {
       if (myModelDescriptorsWithListener.contains(modelDescriptor)) {
-        if (myNode != null && myNode.getModel().getReference().equals(modelDescriptor.getReference())) {
+        if (myNode != null && myNode.getModel() != null && myNode.getModel().getReference().equals(modelDescriptor.getReference())) {
           myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
         }
       }
