@@ -130,11 +130,26 @@ public interface SModel {
    */
   interface Problem {
 
+    enum Kind {
+      Load,
+      Save
+    }
+
+    /**
+     * Returns whether it was a save or load problem. Save problems can arise when AST content
+     * doesn't fit into the persistence format.
+     */
+    Kind getKind();
+
+    /**
+     * When line and column are available, returns the location of the stream, where the problem occurred,
+     * or just plain text description of the location otherwise.
+     */
+    String getLocation();
+
     int getColumn();
 
     int getLine();
-
-    String getLocation();
 
     String getText();
 
@@ -143,6 +158,9 @@ public interface SModel {
      */
     boolean isError();
 
+    /**
+     * The incomplete node (when available) for load problems, or a node which caused troubles during save operation.
+     */
     SNode getNode();
   }
 }

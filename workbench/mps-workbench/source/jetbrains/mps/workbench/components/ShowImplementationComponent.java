@@ -21,13 +21,13 @@ import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.popup.JBPopup;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._void_P1_E0;
 import com.intellij.ui.CollectionComboBoxModel;
 import com.intellij.ui.ColoredListCellRenderer;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.SideBorder;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -35,6 +35,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -58,8 +59,6 @@ public class ShowImplementationComponent extends JPanel {
 
   private List<ImplementationNode> myImplNodes;
 
-  private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
-
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
     ModelAccess.assertLegalRead();
 
@@ -69,7 +68,13 @@ public class ShowImplementationComponent extends JPanel {
       myImplNodes.add(new ImplementationNode(node));
     }
 
-    myEditor = new EmbeddableEditor(context, myModelOwner, myImplNodes.get(0).myNode, false);
+    myEditor = new EmbeddableEditor(context.getProject(), new _void_P1_E0<SModel>() {
+      @Override
+      public void invoke(SModel sModel) {
+        sModel.addRootNode(myImplNodes.get(0).myNode);
+      }
+    }, false);
+    myEditor.editNode(myImplNodes.get(0).myNode);
     myProject = context.getProject();
 
     init();
@@ -92,9 +97,7 @@ public class ShowImplementationComponent extends JPanel {
     for (ImplementationNode node : myImplNodes) {
       node.dispose();
     }
-    //TODO: add internal isDisposed to Editor
     myEditor.disposeEditor();
-    myModelOwner.unregisterModelOwner();
   }
 
   private ActionToolbar createToolbar() {
@@ -131,7 +134,7 @@ public class ShowImplementationComponent extends JPanel {
         myLocationLabel.setText(myImplNodes.get(index).myModuleName);
         myLocationLabel.setIcon(myImplNodes.get(index).myModuleIcon);
         myCountLabel.setText((index + 1) + " of " + myImplNodes.size());
-        myEditor.setNode(myImplNodes.get(index).myNode);
+        myEditor.editNode(myImplNodes.get(index).myNode);
         myEditor.setBackground(StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() : new Color(255, 255, 215));
         mySelectedIndex = index;
         myEditorPanel.repaint();
@@ -228,7 +231,7 @@ public class ShowImplementationComponent extends JPanel {
     @Override
     public void update(AnActionEvent e) {
       e.getPresentation().setEnabled(myNodeChooser != null
-        && myNodeChooser.getSelectedIndex() > 0);
+          && myNodeChooser.getSelectedIndex() > 0);
     }
   }
 
@@ -247,7 +250,7 @@ public class ShowImplementationComponent extends JPanel {
     @Override
     public void update(AnActionEvent e) {
       e.getPresentation().setEnabled(myNodeChooser != null
-        && myNodeChooser.getSelectedIndex() < myNodeChooser.getItemCount() - 1);
+          && myNodeChooser.getSelectedIndex() < myNodeChooser.getItemCount() - 1);
     }
   }
 

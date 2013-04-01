@@ -29,6 +29,7 @@ import java.util.List;
  */
 public class PersistenceProblem implements SModel.Problem {
 
+  private final Kind myKind;
   private final String text;
   private final String location;
   private final boolean isError;
@@ -36,17 +37,18 @@ public class PersistenceProblem implements SModel.Problem {
   private final int column;
   private final SNode anchor;
 
-  public PersistenceProblem(String text, String location, boolean error, int line, int column, SNode anchor) {
+  public PersistenceProblem(Kind kind, String text, String location, boolean error, int line, int column, SNode anchor) {
+    this.myKind = kind;
     this.text = text;
     this.location = location;
-    isError = error;
+    this.isError = error;
     this.line = line;
     this.column = column;
     this.anchor = anchor;
   }
 
-  public PersistenceProblem(String text, String location, boolean error) {
-    this(text, location, error, -1, -1, null);
+  public PersistenceProblem(Kind kind, String text, String location, boolean error) {
+    this(kind, text, location, error, -1, -1, null);
   }
 
   @Override
@@ -57,6 +59,11 @@ public class PersistenceProblem implements SModel.Problem {
   @Override
   public int getLine() {
     return line;
+  }
+
+  @Override
+  public Kind getKind() {
+    return myKind;
   }
 
   @Override
@@ -79,18 +86,18 @@ public class PersistenceProblem implements SModel.Problem {
     return anchor;
   }
 
-  public static Problem fromIMessage(IMessage message) {
+  public static Problem fromIMessage(Kind kind, IMessage message) {
     if (message == null) {
       return null;
     }
     SNode anchor = message.getHintObject() instanceof SNode ? (SNode) message.getHintObject() : null;
-    return new PersistenceProblem(message.getText(), null, message.getKind() == MessageKind.ERROR, -1, -1, anchor);
+    return new PersistenceProblem(kind, message.getText(), null, message.getKind() == MessageKind.ERROR, -1, -1, anchor);
   }
 
-  public static Iterable<Problem> fromIMessages(Iterable<IMessage> seq) {
+  public static Iterable<Problem> fromIMessages(Kind kind, Iterable<IMessage> seq) {
     List<Problem> result = new ArrayList<Problem>();
     for (IMessage m : seq) {
-      result.add(fromIMessage(m));
+      result.add(fromIMessage(kind, m));
     }
     return result;
   }

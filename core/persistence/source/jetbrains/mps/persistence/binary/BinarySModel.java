@@ -18,6 +18,7 @@ package jetbrains.mps.persistence.binary;
 import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem.Kind;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.annotations.NotNull;
@@ -75,7 +76,7 @@ public class BinarySModel extends SModel {
     @Override
     public Iterable<Problem> getProblems() {
       return Collections.<Problem>singleton(
-        new PersistenceProblem(myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
+        new PersistenceProblem(Kind.Load, myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
     }
   }
 }
