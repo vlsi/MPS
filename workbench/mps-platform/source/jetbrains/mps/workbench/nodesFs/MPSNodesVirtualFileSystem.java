@@ -145,10 +145,18 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
             if (resolved == null) {
               return null;
             }
+            SNode node = resolved.resolve(MPSModuleRepository.getInstance());
+            if (node == null) {
+              return null;
+            }
             return getFileFor(resolved);
           } else if (path.startsWith(MPSModelVirtualFile.MODEL_PREFIX)) {
             final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(
                 path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
+            SModel model = modelReference.resolve(MPSModuleRepository.getInstance());
+            if (model == null) {
+              return null;
+            }
             return getFileFor(modelReference);
           }
         } catch (IllegalArgumentException e) {
