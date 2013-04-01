@@ -42,9 +42,15 @@ class TempModule extends AbstractModule implements SModule, MPSModuleOwner {
     SModuleId id = ModuleId.regular();
     SModuleReference reference = new ModuleReference("TempModule_" + id, id);
     setModuleReference(reference);
-    myDescriptor = new ModuleDescriptor();
+    myDescriptor = new ModuleDescriptor(){
+      @Override
+      public boolean getCompileInMPS() {
+        return true;
+      }
+    };
     myDescriptor.getModelRootDescriptors().addAll(modelRoots);
     setModuleDescriptor(myDescriptor, false);
+    updateFacets();
   }
 
   public boolean isHidden() {

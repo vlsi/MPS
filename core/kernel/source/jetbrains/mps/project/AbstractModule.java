@@ -466,7 +466,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     return facet;
   }
 
-  private void updateFacets() {
+  protected void updateFacets() {
     ModelAccess.assertLegalWrite();
 
     ModuleDescriptor descriptor = getModuleDescriptor();
