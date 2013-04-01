@@ -43,13 +43,13 @@ public class TemporaryModels {
 
   //singleton part end
 
-  private Map<TempModel,TempModuleOptions> myCreatedModels = new THashMap<TempModel, TempModuleOptions>();
+  private Map<TempModel, TempModuleOptions> myCreatedModels = new THashMap<TempModel, TempModuleOptions>();
 
-  public SModel create(boolean readOnly,@NotNull TempModuleOptions mp) {
+  public SModel create(boolean readOnly, @NotNull TempModuleOptions mp) {
     SModule module = mp.createModule();
 
     TempModel model = new TempModel(readOnly);
-    myCreatedModels.put(model,mp);
+    myCreatedModels.put(model, mp);
     SModelRepository.getInstance().registerModelDescriptor(model, module);
 
     return model;
@@ -59,7 +59,11 @@ public class TemporaryModels {
     assert model instanceof TempModel : "TemporaryModels is asked to handle non-temporary model " + model.getModelName();
 
     SModelOperations.validateLanguagesAndImports(model, false, true);
-    MissingDependenciesFixer.fixDependencies(model);
+    if (model.getModule() instanceof TempModule) {
+      ((TempModule) model.getModule()).updateDependencies();
+    } else {
+      MissingDependenciesFixer.fixDependencies(model);
+    }
   }
 
   public void dispose(SModel model) {
@@ -70,7 +74,7 @@ public class TemporaryModels {
     module.disposeModule();
   }
 
-  public static boolean isTemporary(SModel model){
+  public static boolean isTemporary(SModel model) {
     return model instanceof TempModel;
   }
 }
