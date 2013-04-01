@@ -12,12 +12,11 @@ import jetbrains.mps.util.Computable;
 import javax.swing.JComponent;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.refactoring.renameLanguage.LanguageRenamer;
 import java.util.Set;
 import java.util.LinkedHashSet;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.project.MPSProject;
@@ -68,7 +67,7 @@ public class RenameLanguageDialog extends RenameDialog {
     final boolean needToRegenerate = myRegenerateLanguage.getModel().isSelected();
 
     final String fqName = getCurrentValue();
-    if (MPSModuleRepository.getInstance().getModuleByFqName(fqName) != null) {
+    if (ModuleRepositoryFacade.getInstance().getModule(fqName, Language.class) != null) {
       setErrorText("Duplicate language name");
       return;
     }

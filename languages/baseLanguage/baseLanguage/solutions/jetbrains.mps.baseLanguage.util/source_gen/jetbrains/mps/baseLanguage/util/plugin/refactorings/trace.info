@@ -2522,7 +2522,7 @@
     <nodeInfo nodeId="8492459591399164723" fileName="IntroduceFieldRefactoring.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldInitialization" />
     <nodeInfo nodeId="4001355776228202865" fileName="IntroduceFieldRefactoring.java" startLine="32" startPosition="32" endLine="33" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399164737" fileName="IntroduceFieldRefactoring.java" startLine="33" startPosition="26" endLine="34" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399164742" fileName="IntroduceFieldRefactoring.java" startLine="35" startPosition="71" endLine="36" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399164742" fileName="IntroduceFieldRefactoring.java" startLine="35" startPosition="66" endLine="36" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399164773" fileName="IntroduceFieldRefactoring.java" startLine="37" startPosition="12" endLine="38" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4038232163186941059" fileName="IntroduceFieldRefactoring.java" startLine="40" startPosition="20" endLine="41" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399164790" fileName="IntroduceFieldRefactoring.java" startLine="42" startPosition="5" endLine="43" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2663,7 +2663,7 @@
     <nodeInfo nodeId="8492459591399164734" fileName="IntroduceFieldRefactoring.java" startLine="31" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoring#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="8492459591399164727" fileName="IntroduceFieldRefactoring.java" startLine="25" startPosition="38" endLine="25" endPosition="38" />
     <scopeInfo nodeId="8492459591399164731" fileName="IntroduceFieldRefactoring.java" startLine="28" startPosition="21" endLine="28" endPosition="21" />
-    <scopeInfo nodeId="8492459591399164741" fileName="IntroduceFieldRefactoring.java" startLine="35" startPosition="71" endLine="36" endPosition="205" />
+    <scopeInfo nodeId="8492459591399164741" fileName="IntroduceFieldRefactoring.java" startLine="35" startPosition="66" endLine="36" endPosition="205" />
     <scopeInfo nodeId="8492459591399164772" fileName="IntroduceFieldRefactoring.java" startLine="37" startPosition="12" endLine="38" endPosition="158" />
     <scopeInfo nodeId="4038232163186941058" fileName="IntroduceFieldRefactoring.java" startLine="40" startPosition="20" endLine="41" endPosition="70" />
     <scopeInfo nodeId="8492459591399164826" fileName="IntroduceFieldRefactoring.java" startLine="46" startPosition="72" endLine="47" endPosition="203" />
