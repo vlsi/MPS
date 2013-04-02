@@ -70,7 +70,7 @@ public class TextPreviewModel_Action extends BaseAction {
     try {
       MakeSession session = new MakeSession(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, true);
       if (IMakeService.INSTANCE.get().openNewSession(session)) {
-        TextPreviewUtil.previewModelText(session, ((IOperationContext) MapSequence.fromMap(_params).get("context")), TextPreviewModel_Action.this.modelToGenerate(_params));
+        TextPreviewUtil.previewModelText(session, ((IOperationContext) MapSequence.fromMap(_params).get("context")), TextPreviewModel_Action.this.modelToGenerate(_params), null);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "TextPreviewModel", t);

@@ -5,6 +5,8 @@ package jetbrains.mps.ide.make;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
@@ -21,6 +23,7 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.resources.FResource;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.util.NameUtil;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.project.Project;
@@ -34,7 +37,7 @@ public class TextPreviewUtil {
   public TextPreviewUtil() {
   }
 
-  public static void previewModelText(final MakeSession session, final IOperationContext context, final SModel md) {
+  public static void previewModelText(final MakeSession session, final IOperationContext context, final SModel md, @Nullable final SNodeReference rootNode) {
     IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
 
     IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
@@ -54,7 +57,11 @@ public class TextPreviewUtil {
           if (result.isSucessful()) {
             FResource fres = (FResource) Sequence.fromIterable(result.output()).first();
 
-            final TextPreviewFile tfile = new TextPreviewFile(NameUtil.compactNamespace(md.getModelName()) + "/text", "Generated text for " + md.getModelName(), fres.contents());
+            String fileToOpen = (rootNode != null ?
+              MapSequence.fromMap(fres.rootNodeNames()).get(rootNode) :
+              null
+            );
+            final TextPreviewFile tfile = new TextPreviewFile(NameUtil.compactNamespace(md.getModelName()) + "/text", "Generated text for " + md.getModelName(), fres.contents(), fileToOpen);
 
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
