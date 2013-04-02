@@ -65,6 +65,7 @@ public class ConsoleTool extends BaseProjectTool {
         ((SModelInternal) myModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.console.lang.commands", Language.class).getModuleReference());
         ((SModelInternal) myModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
         ConsoleTool.this.myRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.lang.structure.Console", null);
+        myEditor.editNode(myRoot, myContext);
       }
     });
     nextCommand();
@@ -98,7 +99,7 @@ public class ConsoleTool extends BaseProjectTool {
               return;
             }
             myLastCommand = SNodeOperations.cast(SNodeOperations.getPrevSibling(myLastCommand), "jetbrains.mps.console.lang.structure.ConsoleCommand");
-            myEditor.editNode(myLastCommand, myContext);
+            // <node> 
           }
         });
       }
@@ -111,7 +112,7 @@ public class ConsoleTool extends BaseProjectTool {
               return;
             }
             myLastCommand = SNodeOperations.cast(SNodeOperations.getNextSibling(myLastCommand), "jetbrains.mps.console.lang.structure.ConsoleCommand");
-            myEditor.editNode(myLastCommand, myContext);
+            // <node> 
           }
         });
       }
@@ -124,7 +125,7 @@ public class ConsoleTool extends BaseProjectTool {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ConsoleTool.this.myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "command", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", null));
-        myEditor.editNode(myLastCommand, myContext);
+        // <node> 
       }
     });
   }
