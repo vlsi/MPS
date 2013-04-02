@@ -22,9 +22,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.log4j.Priority;
 import java.util.List;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NodeBySeveralConcepts_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -126,7 +128,9 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
       clone.myState = (NodeBySeveralConcepts_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -169,7 +173,7 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     return myEditorEx;
   }
 
-  private static Logger LOG = Logger.getLogger(NodeBySeveralConcepts_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(NodeBySeveralConcepts_Configuration.class);
 
   public static boolean isNotEmpty_8tyej6_a0c0a0b(String str) {
     return str != null && str.length() > 0;

@@ -10,8 +10,10 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import org.apache.log4j.Priority;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class AntSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -65,7 +67,9 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
       clone.myState = (AntSettings_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -108,5 +112,5 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
     return myEditorEx;
   }
 
-  private static Logger LOG = Logger.getLogger(AntSettings_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(AntSettings_Configuration.class);
 }

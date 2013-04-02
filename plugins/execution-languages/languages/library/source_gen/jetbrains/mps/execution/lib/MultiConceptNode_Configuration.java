@@ -22,9 +22,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.Priority;
 import java.util.List;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MultiConceptNode_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
@@ -137,7 +139,9 @@ public class MultiConceptNode_Configuration implements IPersistentConfiguration,
       clone.myState = (MultiConceptNode_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -180,7 +184,7 @@ public class MultiConceptNode_Configuration implements IPersistentConfiguration,
     return myEditorEx;
   }
 
-  private static Logger LOG = Logger.getLogger(MultiConceptNode_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(MultiConceptNode_Configuration.class);
 
   private static SNode check_u1vs2g_a0a0a2a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
