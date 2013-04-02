@@ -94,6 +94,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.AbstractBreakpoint" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.requests.ClassPrepareRequestor" />
