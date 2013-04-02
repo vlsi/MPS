@@ -45,7 +45,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.apache.log4j.LogManager;
 
 public class CollectTests_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -120,7 +119,7 @@ public class CollectTests_Action extends BaseAction {
   }
 
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
-    final Logger LOG = Logger.getLogger("jetbrains.mps.testbench.suite");
+    final Logger LOG = LogManager.getLogger("jetbrains.mps.testbench.suite");
     final SModel model = ((SModel) MapSequence.fromMap(_params).get("modelDesc"));
     final Wrappers._T<List<SModuleReference>> solutions = new Wrappers._T<List<SModuleReference>>();
     final Wrappers._T<List<SModuleReference>> existing = new Wrappers._T<List<SModuleReference>>();
@@ -226,5 +225,5 @@ public class CollectTests_Action extends BaseAction {
     }).toListSequence();
   }
 
-  protected static org.apache.log4j.Logger LOG = LogManager.getLogger(CollectTests_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CollectTests_Action.class);
 }

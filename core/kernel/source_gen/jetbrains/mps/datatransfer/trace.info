@@ -19,7 +19,7 @@
     <nodeInfo nodeId="1058093769519031406" fileName="AbstractManager.java" startLine="49" startPosition="32" endLine="50" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1058093769519031421" fileName="AbstractManager.java" startLine="52" startPosition="15" endLine="53" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1058093769519031435" fileName="AbstractManager.java" startLine="54" startPosition="33" endLine="55" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519031458" fileName="AbstractManager.java" startLine="57" startPosition="16" endLine="58" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519031458" fileName="AbstractManager.java" startLine="57" startPosition="16" endLine="58" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1058093769519031469" fileName="AbstractManager.java" startLine="59" startPosition="9" endLine="60" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1058093769519031475" fileName="AbstractManager.java" startLine="61" startPosition="7" endLine="62" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2481791643076228577" fileName="AbstractManager.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractManager#()V" />
@@ -29,7 +29,7 @@
     <nodeInfo nodeId="7084145171935594019" fileName="AbstractManager.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unload#()V" />
     <nodeInfo nodeId="1058093769519031419" fileName="AbstractManager.java" startLine="51" startPosition="41" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1058093769518981030" fileName="AbstractManager.java" startLine="12" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadListener" />
-    <nodeInfo nodeId="1058093769519031495" fileName="AbstractManager.java" startLine="39" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Descriptor#(Ljava/lang/String;Ljetbrains/mps/smodel/Language;Ljetbrains/mps/logging/Logger;)V" />
+    <nodeInfo nodeId="1058093769519031495" fileName="AbstractManager.java" startLine="39" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Descriptor#(Ljava/lang/String;Ljetbrains/mps/smodel/Language;Lorg/apache/log4j/Logger;)V" />
     <nodeInfo nodeId="1058093769519031417" fileName="AbstractManager.java" startLine="50" startPosition="102" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1058093769519031400" fileName="AbstractManager.java" startLine="48" startPosition="28" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1058093769519031396" fileName="AbstractManager.java" startLine="48" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInstance#()null" />
@@ -43,7 +43,7 @@
       <varInfo nodeId="1058093769519031432" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="1058093769519031434" fileName="AbstractManager.java" startLine="54" startPosition="33" endLine="55" endPosition="27" />
-    <scopeInfo nodeId="1058093769519031457" fileName="AbstractManager.java" startLine="57" startPosition="16" endLine="58" endPosition="121" />
+    <scopeInfo nodeId="1058093769519031457" fileName="AbstractManager.java" startLine="57" startPosition="16" endLine="58" endPosition="118" />
     <scopeInfo nodeId="2481791643076228577" fileName="AbstractManager.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="1720905492960355658" fileName="AbstractManager.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1058093769518980213" fileName="AbstractManager.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />

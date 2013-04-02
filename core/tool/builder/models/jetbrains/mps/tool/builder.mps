@@ -2972,10 +2972,10 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7736196594002444524">
             <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7736196594002447027">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7736196594002447026">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="^" resolveInfo="level" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7736196594002217530" resolveInfo="level" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7736196594002447028">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="equals" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~Priority%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7736196594002444599">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ajxo.~Level" resolveInfo="Level" />
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ajxo.~Level%dFATAL" resolveInfo="FATAL" />
@@ -2985,10 +2985,10 @@
             <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7736196594002444536">
               <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7736196594002447416">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7736196594002447415">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="^" resolveInfo="level" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7736196594002217530" resolveInfo="level" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7736196594002447417">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="equals" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~Priority%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7736196594002444604">
                     <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ajxo.~Level" resolveInfo="Level" />
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ajxo.~Level%dERROR" resolveInfo="ERROR" />
@@ -2998,10 +2998,10 @@
               <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7736196594002444548">
                 <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7736196594002446685">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7736196594002446684">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="^" resolveInfo="level" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7736196594002217530" resolveInfo="level" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7736196594002446686">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="equals" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~Priority%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7736196594002444609">
                       <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ajxo.~Level" resolveInfo="Level" />
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ajxo.~Level%dWARN" resolveInfo="WARN" />
@@ -3011,10 +3011,10 @@
                 <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7736196594002444560">
                   <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7736196594002447822">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7736196594002447821">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="^" resolveInfo="level" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7736196594002217530" resolveInfo="level" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7736196594002447823">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="equals" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~Priority%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7736196594002444614">
                         <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ajxo.~Level" resolveInfo="Level" />
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ajxo.~Level%dINFO" resolveInfo="INFO" />
@@ -3024,10 +3024,10 @@
                   <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7736196594002444572">
                     <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7736196594002448088">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7736196594002448087">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="^" resolveInfo="level" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7736196594002217530" resolveInfo="level" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7736196594002448089">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="equals" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~Priority%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7736196594002444619">
                           <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ajxo.~Level" resolveInfo="Level" />
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ajxo.~Level%dDEBUG" resolveInfo="DEBUG" />

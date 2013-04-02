@@ -9,7 +9,6 @@ import org.jdom.Element;
 import org.jdom.Document;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
-import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,7 +26,7 @@ public abstract class ElementCreator {
       String output = xmlOutputter.outputString(document);
       textGen.append(output);
     } catch (Exception e) {
-      Logger.getLogger(Document.class).error(e);
+      LogManager.getLogger(Document.class).error(e);
     }
   }
 

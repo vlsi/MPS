@@ -6,10 +6,10 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.reloading.ReloadAdapter" />
     <classNode dependClassName="jetbrains.mps.reloading.ReloadListener" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
   </dependency>
   <dependency className="jetbrains.mps.datatransfer.CopyPasteManager" file="CopyPasteManager.java">
     <classNode dependClassName="java.lang.IllegalStateException" />

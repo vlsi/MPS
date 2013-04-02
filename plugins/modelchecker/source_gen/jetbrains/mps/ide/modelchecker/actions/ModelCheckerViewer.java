@@ -32,7 +32,6 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -186,7 +185,7 @@ public abstract class ModelCheckerViewer extends JPanel {
         }
       });
     } catch (Throwable t) {
-      Logger.getLogger(ModelCheckerViewer.class).error("An error occured while model checking:\n" + t);
+      LogManager.getLogger(ModelCheckerViewer.class).error("An error occured while model checking:\n" + t);
     }
 
   }

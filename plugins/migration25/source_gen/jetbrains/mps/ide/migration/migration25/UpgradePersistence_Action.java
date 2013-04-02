@@ -24,7 +24,6 @@ import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.io.IOException;
-import org.apache.log4j.LogManager;
 
 public class UpgradePersistence_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -61,7 +60,7 @@ public class UpgradePersistence_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Logger LOG = Logger.getLogger("jetbrains.mps.ide.migration.UpgradePersistence_Action");
+      Logger LOG = LogManager.getLogger("jetbrains.mps.ide.migration.UpgradePersistence_Action");
 
       final MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
       for (SModule module : mpsProject.getModulesWithGenerators()) {
@@ -105,5 +104,5 @@ public class UpgradePersistence_Action extends BaseAction {
     }
   }
 
-  protected static org.apache.log4j.Logger LOG = LogManager.getLogger(UpgradePersistence_Action.class);
+  protected static Logger LOG = LogManager.getLogger(UpgradePersistence_Action.class);
 }
