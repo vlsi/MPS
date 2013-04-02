@@ -15,10 +15,14 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", "jetbrains.mps.baseLanguage.structure.StatementList", false, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.console.lang.structure.ConsoleCommand"}, new String[]{}, new String[]{});
+      case 1:
+        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.FindUsagesCommand", "jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", false, new String[]{"jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand"}, new String[]{}, new String[]{});
+      case 2:
+        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.ModelStatisticsCommand", "jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", false, new String[]{"jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand"}, new String[]{}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", "jetbrains.mps.console.lang.commands.structure.FindUsagesCommand", "jetbrains.mps.console.lang.commands.structure.ModelStatisticsCommand"};
 }

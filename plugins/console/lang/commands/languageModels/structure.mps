@@ -7,10 +7,21 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="eynw" modelUID="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.lang.structure)" version="-1" implicit="yes" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
+  <import index="3xdn" modelUID="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.lang.commands.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5464054275389846505">
       <property name="name" nameId="tpck.1169194664001" value="BaseLanguageCommand" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8899274441241545834">
+      <property name="name" nameId="tpck.1169194664001" value="ModelStatisticsCommand" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="statistics" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5464054275389846505" resolveInfo="BaseLanguageCommand" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8899274441241550347">
+      <property name="name" nameId="tpck.1169194664001" value="FindUsagesCommand" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5464054275389846505" resolveInfo="BaseLanguageCommand" />
     </node>
   </roots>
   <root id="5464054275389846505">
@@ -18,5 +29,14 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.757553790980855626" resolveInfo="ConsoleCommand" />
     </node>
   </root>
+  <root id="8899274441241545834">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8899274441241642746">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="model" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tp25.559557797393017698" resolveInfo="ModelReferenceExpression" />
+    </node>
+  </root>
+  <root id="8899274441241550347" />
 </model>
 

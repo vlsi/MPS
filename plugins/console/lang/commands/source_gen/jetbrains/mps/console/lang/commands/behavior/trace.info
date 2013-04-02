@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BaseLanguageCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BaseLanguageCommand_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="FindUsagesCommand_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.FindUsagesCommand_BehaviorDescriptor" />
+  <unitInfo fileName="ModelStatisticsCommand_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.ModelStatisticsCommand_BehaviorDescriptor" />
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.lang.commands.behavior)/5464054275389853151">
     <nodeInfo nodeId="6085445418775341737" fileName="BaseLanguageCommand_Behavior.java" startLine="48" startPosition="96" endLine="49" endPosition="375" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6085445418775341706" fileName="BaseLanguageCommand_Behavior.java" startLine="49" startPosition="375" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
