@@ -19,8 +19,8 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import java.util.List;
 
 public class Mps30LoggingToLog4jMigration_MigrationScript extends BaseMigrationScript {
   public Mps30LoggingToLog4jMigration_MigrationScript(IOperationContext operationContext) {
@@ -65,6 +65,15 @@ public class Mps30LoggingToLog4jMigration_MigrationScript extends BaseMigrationS
           }
         }) != null)) {
           // we have to keep using mps Logger 
+          // just change the constructor 
+          if (SLinkOperations.getTarget(node, "initializer", true) != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "initializer", true), "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
+            SNode call = SNodeOperations.cast(SLinkOperations.getTarget(node, "initializer", true), "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+            if (SLinkOperations.getTarget(call, "baseMethodDeclaration", false) == SLinkOperations.getTarget(_quotation_createNode_t030w_a0a1a2a2a0a(), "baseMethodDeclaration", false)) {
+              SLinkOperations.setTarget(node, "initializer", _quotation_createNode_t030w_a0a0a1a2a2a0a(ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).first()), true);
+            } else {
+              SLinkOperations.setTarget(node, "initializer", _quotation_createNode_t030w_a0a0a0b0c0c0a0(ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).first()), true);
+            }
+          }
         } else {
           // migrate to log4j Logger 
 
@@ -139,6 +148,72 @@ public class Mps30LoggingToLog4jMigration_MigrationScript extends BaseMigrationS
     SNodeAccessUtil.setProperty(quotedNode_2, "value", "");
     quotedNode_1.addChild("actualArgument", quotedNode_2);
     return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_t030w_a0a1a2a2a0a() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), facade.createNodeId("~Logger.getLogger(java.lang.Class):jetbrains.mps.logging.Logger")));
+    quotedNode_1.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", quotedNode_1, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), facade.createNodeId("~Logger")));
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.addChild("expression", quotedNode_4);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_5, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Class")));
+    quotedNode_3.addChild("type", quotedNode_5);
+    quotedNode_2.addChild("expression", quotedNode_3);
+    quotedNode_1.addChild("actualArgument", quotedNode_2);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_t030w_a0a0a1a2a2a0a(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    SNode quotedNode_6 = null;
+    SNode quotedNode_7 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_2, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), facade.createNodeId("~Logger.getLogger(org.apache.log4j.Logger):jetbrains.mps.logging.Logger")));
+    quotedNode_2.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", quotedNode_2, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), facade.createNodeId("~Logger")));
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)"), facade.createNodeId("~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger")));
+    quotedNode_3.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", quotedNode_3, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)"), facade.createNodeId("~LogManager")));
+    quotedNode_4 = (SNode) parameter_1;
+    if (quotedNode_4 != null) {
+      quotedNode_3.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_4));
+    }
+    quotedNode_2.addChild("actualArgument", quotedNode_3);
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_t030w_a0a0a0b0c0c0a0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    SNode quotedNode_6 = null;
+    SNode quotedNode_7 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_2, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), facade.createNodeId("~Logger.getLogger(org.apache.log4j.Logger):jetbrains.mps.logging.Logger")));
+    quotedNode_2.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", quotedNode_2, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), facade.createNodeId("~Logger")));
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)"), facade.createNodeId("~LogManager.getLogger(java.lang.String):org.apache.log4j.Logger")));
+    quotedNode_3.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", quotedNode_3, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)"), facade.createNodeId("~LogManager")));
+    quotedNode_4 = (SNode) parameter_1;
+    if (quotedNode_4 != null) {
+      quotedNode_3.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_4));
+    }
+    quotedNode_2.addChild("actualArgument", quotedNode_3);
+    return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_t030w_a0a2a0c0a0() {
