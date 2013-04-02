@@ -3727,6 +3727,10 @@
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660797" resolveInfo="preview" />
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
     </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2457869113652000690">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991215587" resolveInfo="NodeActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.2457869113650131246" resolveInfo="showGeneratedText" />
+    </node>
   </root>
   <root id="8610665572788515366">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8610665572788515367">
