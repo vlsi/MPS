@@ -8,12 +8,12 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.resolve.ScopeResolver;
 import jetbrains.mps.smodel.ModuleOperationContext;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -52,32 +52,44 @@ public class Mps30LoggingToLog4jMigration_MigrationScript extends BaseMigrationS
       }
 
       public void doUpdateInstanceNode(final SNode node) {
-        SLinkOperations.setTarget(node, "type", _quotation_createNode_t030w_a0a0a0a(), true);
-        SNode methodCall = SNodeOperations.cast(SLinkOperations.getTarget(node, "initializer", true), "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
-        if (SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == SLinkOperations.getTarget(_quotation_createNode_t030w_a0a2a0a(), "baseMethodDeclaration", false)) {
-          SNodeOperations.replaceWithAnother(methodCall, _quotation_createNode_t030w_a0a0a2a0a(SLinkOperations.getTargets(methodCall, "actualArgument", true)));
-        } else if (SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == SLinkOperations.getTarget(_quotation_createNode_t030w_a0a0c0a0(), "baseMethodDeclaration", false)) {
-          SNodeOperations.replaceWithAnother(methodCall, _quotation_createNode_t030w_a0a0a0c0a0(SLinkOperations.getTargets(methodCall, "actualArgument", true)));
-        }
-        SModelOperations.validateLanguagesAndImports(SNodeOperations.getModel(node), true, true);
-
         SNode containingRoot = SNodeOperations.getContainingRoot(node);
         Iterable<SNode> references = ListSequence.fromList(SNodeOperations.getDescendants(containingRoot, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SLinkOperations.getTarget(it, "variableDeclaration", false) == node && SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.DotExpression");
           }
         });
-        ScopeResolver resolver = new ScopeResolver();
-        ModuleOperationContext context = new ModuleOperationContext(SNodeOperations.getModel(node).getModule());
-        for (SNode ref : Sequence.fromIterable(references)) {
-          SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(ref), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
-          if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
-            MigrationUtil.migrateInstanceMethodCall(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), resolver, context);
-          } else {
-            for (SReference r : Sequence.fromIterable(SNodeOperations.getReferences(operation))) {
-              resolver.resolve(r, operation, context);
+        if ((Sequence.fromIterable(references).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+            return SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") && !(MigrationUtil.isLog4jCall(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
+          }
+        }) != null)) {
+          // we have to keep using mps Logger 
+        } else {
+          // migrate to log4j Logger 
+
+          SLinkOperations.setTarget(node, "type", _quotation_createNode_t030w_a0a2a0c0a0(), true);
+          SNode methodCall = SNodeOperations.cast(SLinkOperations.getTarget(node, "initializer", true), "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+          if (SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == SLinkOperations.getTarget(_quotation_createNode_t030w_a0a4a0c0a0(), "baseMethodDeclaration", false)) {
+            SNodeOperations.replaceWithAnother(methodCall, _quotation_createNode_t030w_a0a0a4a0c0a0(SLinkOperations.getTargets(methodCall, "actualArgument", true)));
+          } else if (SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == SLinkOperations.getTarget(_quotation_createNode_t030w_a0a0e0a2a0a(), "baseMethodDeclaration", false)) {
+            SNodeOperations.replaceWithAnother(methodCall, _quotation_createNode_t030w_a0a0a0e0a2a0a(SLinkOperations.getTargets(methodCall, "actualArgument", true)));
+          }
+          SModelOperations.validateLanguagesAndImports(SNodeOperations.getModel(node), true, true);
+
+          ScopeResolver resolver = new ScopeResolver();
+          ModuleOperationContext context = new ModuleOperationContext(SNodeOperations.getModel(node).getModule());
+          for (SNode ref : Sequence.fromIterable(references)) {
+            SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(ref), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+            if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
+              MigrationUtil.migrateInstanceMethodCall(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), resolver, context);
+            } else {
+              for (SReference r : Sequence.fromIterable(SNodeOperations.getReferences(operation))) {
+                resolver.resolve(r, operation, context);
+              }
             }
           }
+
         }
 
         SModelOperations.validateLanguagesAndImports(SNodeOperations.getModel(node), true, true);
@@ -129,7 +141,7 @@ public class Mps30LoggingToLog4jMigration_MigrationScript extends BaseMigrationS
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_t030w_a0a0a0a() {
+  private static SNode _quotation_createNode_t030w_a0a2a0c0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -137,7 +149,7 @@ public class Mps30LoggingToLog4jMigration_MigrationScript extends BaseMigrationS
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_t030w_a0a2a0a() {
+  private static SNode _quotation_createNode_t030w_a0a4a0c0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -150,7 +162,7 @@ public class Mps30LoggingToLog4jMigration_MigrationScript extends BaseMigrationS
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_t030w_a0a0a2a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_t030w_a0a0a4a0c0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -166,7 +178,7 @@ public class Mps30LoggingToLog4jMigration_MigrationScript extends BaseMigrationS
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_t030w_a0a0a0c0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_t030w_a0a0a0e0a2a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -184,7 +196,7 @@ public class Mps30LoggingToLog4jMigration_MigrationScript extends BaseMigrationS
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_t030w_a0a0c0a0() {
+  private static SNode _quotation_createNode_t030w_a0a0e0a2a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
