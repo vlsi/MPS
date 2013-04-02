@@ -5,8 +5,6 @@
     <classNode dependClassName="com.intellij.ide.structureView.StructureViewBuilder" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.IdeActions" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
-    <classNode dependClassName="com.intellij.openapi.editor.colors.EditorColorsManager" />
-    <classNode dependClassName="com.intellij.openapi.editor.colors.EditorFontType" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorLocation" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorStateLevel" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -18,7 +16,6 @@
     <classNode dependClassName="com.intellij.ui.tabs.UiDecorator" />
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="java.awt.Graphics" />
@@ -36,12 +33,12 @@
     <classNode dependClassName="javax.swing.JTextArea" />
     <classNode dependClassName="javax.swing.JViewport" />
     <classNode dependClassName="javax.swing.SwingConstants" />
-    <classNode dependClassName="javax.swing.border.CompoundBorder" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
-    <classNode dependClassName="javax.swing.border.LineBorder" />
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
     <classNode dependClassName="javax.swing.event.ChangeListener" />
     <classNode dependClassName="jetbrains.mps.ide.make.TextPreviewFile" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

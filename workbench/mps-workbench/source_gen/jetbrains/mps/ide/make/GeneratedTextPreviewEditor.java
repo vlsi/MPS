@@ -27,13 +27,10 @@ import com.intellij.ui.tabs.UiDecorator;
 import java.awt.Insets;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
 import javax.swing.JTextArea;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Font;
-import com.intellij.openapi.editor.colors.EditorColorsManager;
-import com.intellij.openapi.editor.colors.EditorFontType;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.JViewport;
@@ -173,33 +170,34 @@ public class GeneratedTextPreviewEditor extends UserDataHolderBase implements Fi
 
   private JComponent createTabContents(CharSequence text) {
     final JPanel panel = new JPanel(new BorderLayout());
-    panel.setBorder(new CompoundBorder(new EmptyBorder(1, 1, 1, 1), new LineBorder(Color.LIGHT_GRAY, 1)));
-    panel.setBackground(Color.WHITE);
+    panel.setBorder(new EmptyBorder(0, 0, 0, 0));
 
     JTextArea ta = new JTextArea(text.toString());
+    ta.setBorder(new EmptyBorder(10, 10, 10, 10));
     ta.setEditable(false);
+    ta.setBackground(StyleRegistry.getInstance().getEditorBackground());
+    ta.setForeground(StyleRegistry.getInstance().getEditorForeground());
 
-    Font font = EditorColorsManager.getInstance().getGlobalScheme().getFont(EditorFontType.PLAIN);
+    Font font = EditorSettings.getInstance().getDefaultEditorFont();
     if (font != null) {
       ta.setFont(font);
     }
 
     final JScrollPane sp = ScrollPaneFactory.createScrollPane(ta, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-    sp.setBorder(new LineBorder(Color.LIGHT_GRAY));
-    sp.setBackground(Color.WHITE);
+    sp.setBorder(new EmptyBorder(0, 0, 0, 0));
     panel.add(sp, BorderLayout.CENTER);
     sp.setRowHeader(new JViewport() {
       @Override
       public Dimension getPreferredSize() {
-        return new Dimension(27, sp.getViewport().getViewRect().height);
+        return new Dimension(22, sp.getViewport().getViewRect().height);
       }
 
       @Override
       protected void paintComponent(Graphics graphics) {
         Rectangle cb = graphics.getClipBounds();
-        graphics.setColor(Color.WHITE);
+        graphics.setColor(StyleRegistry.getInstance().getColor("GUTTER_BACKGROUND"));
         graphics.fillRect(cb.x, cb.y, cb.width, cb.height);
-        UIUtil.drawVDottedLine((Graphics2D) graphics, 22, cb.y, cb.y + cb.height, null, Color.GRAY);
+        UIUtil.drawVDottedLine((Graphics2D) graphics, 21, cb.y, cb.y + cb.height, null, StyleRegistry.getInstance().getColor("TEARLINE_COLOR"));
       }
     });
 

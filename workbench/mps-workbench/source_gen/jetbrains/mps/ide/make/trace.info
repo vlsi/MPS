@@ -1,223 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428921112">
-    <nodeInfo nodeId="173672751428921666" fileName="GeneratedTextPreviewEditor.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="file" />
-    <nodeInfo nodeId="173672751428921669" fileName="GeneratedTextPreviewEditor.java" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
-    <nodeInfo nodeId="173672751428921672" fileName="GeneratedTextPreviewEditor.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="tabs" />
-    <nodeInfo nodeId="173672751428921675" fileName="GeneratedTextPreviewEditor.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="panel" />
-    <nodeInfo nodeId="173672751428921222" fileName="GeneratedTextPreviewEditor.java" startLine="55" startPosition="76" endLine="56" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921228" fileName="GeneratedTextPreviewEditor.java" startLine="56" startPosition="21" endLine="57" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921234" fileName="GeneratedTextPreviewEditor.java" startLine="57" startPosition="27" endLine="58" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921248" fileName="GeneratedTextPreviewEditor.java" startLine="63" startPosition="57" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921255" fileName="GeneratedTextPreviewEditor.java" startLine="69" startPosition="50" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921262" fileName="GeneratedTextPreviewEditor.java" startLine="75" startPosition="65" endLine="76" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921290" fileName="GeneratedTextPreviewEditor.java" startLine="96" startPosition="28" endLine="97" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921296" fileName="GeneratedTextPreviewEditor.java" startLine="101" startPosition="31" endLine="102" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921326" fileName="GeneratedTextPreviewEditor.java" startLine="114" startPosition="83" endLine="115" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921334" fileName="GeneratedTextPreviewEditor.java" startLine="123" startPosition="27" endLine="124" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921343" fileName="GeneratedTextPreviewEditor.java" startLine="129" startPosition="52" endLine="130" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921351" fileName="GeneratedTextPreviewEditor.java" startLine="134" startPosition="25" endLine="135" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921355" fileName="GeneratedTextPreviewEditor.java" startLine="135" startPosition="22" endLine="136" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921364" fileName="GeneratedTextPreviewEditor.java" startLine="141" startPosition="36" endLine="142" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921369" fileName="GeneratedTextPreviewEditor.java" startLine="145" startPosition="23" endLine="146" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921385" fileName="GeneratedTextPreviewEditor.java" startLine="150" startPosition="7" endLine="151" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921397" fileName="GeneratedTextPreviewEditor.java" startLine="152" startPosition="39" endLine="153" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921419" fileName="GeneratedTextPreviewEditor.java" startLine="157" startPosition="51" endLine="158" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428921431" fileName="GeneratedTextPreviewEditor.java" startLine="158" startPosition="216" endLine="159" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921436" fileName="GeneratedTextPreviewEditor.java" startLine="159" startPosition="33" endLine="160" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921471" fileName="GeneratedTextPreviewEditor.java" startLine="167" startPosition="55" endLine="168" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921481" fileName="GeneratedTextPreviewEditor.java" startLine="170" startPosition="7" endLine="171" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921497" fileName="GeneratedTextPreviewEditor.java" startLine="174" startPosition="59" endLine="175" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428921504" fileName="GeneratedTextPreviewEditor.java" startLine="175" startPosition="56" endLine="176" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921520" fileName="GeneratedTextPreviewEditor.java" startLine="176" startPosition="106" endLine="177" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921525" fileName="GeneratedTextPreviewEditor.java" startLine="177" startPosition="37" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428921526" fileName="GeneratedTextPreviewEditor.java" startLine="178" startPosition="0" endLine="179" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428921534" fileName="GeneratedTextPreviewEditor.java" startLine="179" startPosition="50" endLine="180" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921539" fileName="GeneratedTextPreviewEditor.java" startLine="180" startPosition="26" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428921540" fileName="GeneratedTextPreviewEditor.java" startLine="181" startPosition="0" endLine="182" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428921551" fileName="GeneratedTextPreviewEditor.java" startLine="183" startPosition="23" endLine="184" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921559" fileName="GeneratedTextPreviewEditor.java" startLine="185" startPosition="5" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428921560" fileName="GeneratedTextPreviewEditor.java" startLine="186" startPosition="0" endLine="187" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428921567" fileName="GeneratedTextPreviewEditor.java" startLine="187" startPosition="152" endLine="188" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921574" fileName="GeneratedTextPreviewEditor.java" startLine="188" startPosition="51" endLine="189" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921579" fileName="GeneratedTextPreviewEditor.java" startLine="189" startPosition="34" endLine="190" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921597" fileName="GeneratedTextPreviewEditor.java" startLine="193" startPosition="43" endLine="194" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921615" fileName="GeneratedTextPreviewEditor.java" startLine="198" startPosition="56" endLine="199" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="173672751428921621" fileName="GeneratedTextPreviewEditor.java" startLine="199" startPosition="48" endLine="200" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921626" fileName="GeneratedTextPreviewEditor.java" startLine="200" startPosition="39" endLine="201" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921642" fileName="GeneratedTextPreviewEditor.java" startLine="201" startPosition="59" endLine="202" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921661" fileName="GeneratedTextPreviewEditor.java" startLine="204" startPosition="7" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="173672751428921662" fileName="GeneratedTextPreviewEditor.java" startLine="205" startPosition="0" endLine="206" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921135" fileName="GeneratedTextPreviewEditor.java" startLine="210" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegate" />
-    <nodeInfo nodeId="173672751428921116" fileName="GeneratedTextPreviewEditor.java" startLine="212" startPosition="40" endLine="213" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="173672751428921119" fileName="GeneratedTextPreviewEditor.java" startLine="213" startPosition="32" endLine="214" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921125" fileName="GeneratedTextPreviewEditor.java" startLine="214" startPosition="31" endLine="215" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921142" fileName="GeneratedTextPreviewEditor.java" startLine="219" startPosition="43" endLine="220" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921151" fileName="GeneratedTextPreviewEditor.java" startLine="224" startPosition="32" endLine="225" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921161" fileName="GeneratedTextPreviewEditor.java" startLine="230" startPosition="42" endLine="231" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921180" fileName="GeneratedTextPreviewEditor.java" startLine="237" startPosition="52" endLine="238" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921184" fileName="GeneratedTextPreviewEditor.java" startLine="240" startPosition="53" endLine="241" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921192" fileName="GeneratedTextPreviewEditor.java" startLine="243" startPosition="59" endLine="244" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921201" fileName="GeneratedTextPreviewEditor.java" startLine="245" startPosition="7" endLine="246" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921218" fileName="GeneratedTextPreviewEditor.java" startLine="255" startPosition="87" endLine="256" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921381" fileName="GeneratedTextPreviewEditor.java" startLine="148" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljavax/swing/event/ChangeEvent;)V" />
-    <nodeInfo nodeId="173672751428921205" fileName="GeneratedTextPreviewEditor.java" startLine="251" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorStateStub#()V" />
-    <nodeInfo nodeId="173672751428921264" fileName="GeneratedTextPreviewEditor.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removePropertyChangeListener#(Ljava/beans/PropertyChangeListener;)V" />
-    <nodeInfo nodeId="173672751428921271" fileName="GeneratedTextPreviewEditor.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPropertyChangeListener#(Ljava/beans/PropertyChangeListener;)V" />
-    <nodeInfo nodeId="173672751428921278" fileName="GeneratedTextPreviewEditor.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deselectNotify#()V" />
-    <nodeInfo nodeId="173672751428921282" fileName="GeneratedTextPreviewEditor.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectNotify#()V" />
-    <nodeInfo nodeId="173672751428921298" fileName="GeneratedTextPreviewEditor.java" startLine="105" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setState#(Lcom/intellij/openapi/fileEditor/FileEditorState;)V" />
-    <nodeInfo nodeId="173672751428921395" fileName="GeneratedTextPreviewEditor.java" startLine="151" startPosition="75" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="173672751428921549" fileName="GeneratedTextPreviewEditor.java" startLine="182" startPosition="98" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428921174" fileName="GeneratedTextPreviewEditor.java" startLine="236" startPosition="50" endLine="239" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428921182" fileName="GeneratedTextPreviewEditor.java" startLine="239" startPosition="7" endLine="242" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428921190" fileName="GeneratedTextPreviewEditor.java" startLine="242" startPosition="7" endLine="245" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="173672751428921286" fileName="GeneratedTextPreviewEditor.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
-    <nodeInfo nodeId="173672751428921292" fileName="GeneratedTextPreviewEditor.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isModified#()Z" />
-    <nodeInfo nodeId="173672751428921318" fileName="GeneratedTextPreviewEditor.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeMergedWith#(Lcom/intellij/openapi/fileEditor/FileEditorState;Lcom/intellij/openapi/fileEditor/FileEditorStateLevel;)Z" />
-    <nodeInfo nodeId="173672751428921377" fileName="GeneratedTextPreviewEditor.java" startLine="146" startPosition="34" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921593" fileName="GeneratedTextPreviewEditor.java" startLine="192" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
-    <nodeInfo nodeId="173672751428921138" fileName="GeneratedTextPreviewEditor.java" startLine="218" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requestFocusInWindow#()Z" />
-    <nodeInfo nodeId="173672751428921147" fileName="GeneratedTextPreviewEditor.java" startLine="223" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requestFocus#()V" />
-    <nodeInfo nodeId="173672751428921210" fileName="GeneratedTextPreviewEditor.java" startLine="254" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeMergedWith#(Lcom/intellij/openapi/fileEditor/FileEditorState;Lcom/intellij/openapi/fileEditor/FileEditorStateLevel;)Z" />
-    <nodeInfo nodeId="173672751428921220" fileName="GeneratedTextPreviewEditor.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedTextPreviewEditor#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/make/TextPreviewFile;)V" />
-    <nodeInfo nodeId="173672751428921243" fileName="GeneratedTextPreviewEditor.java" startLine="61" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStructureViewBuilder#()Lcom/intellij/ide/structureView/StructureViewBuilder;" />
-    <nodeInfo nodeId="173672751428921250" fileName="GeneratedTextPreviewEditor.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentLocation#()Lcom/intellij/openapi/fileEditor/FileEditorLocation;" />
-    <nodeInfo nodeId="173672751428921257" fileName="GeneratedTextPreviewEditor.java" startLine="73" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackgroundHighlighter#()Lcom/intellij/codeHighlighting/BackgroundEditorHighlighter;" />
-    <nodeInfo nodeId="173672751428921338" fileName="GeneratedTextPreviewEditor.java" startLine="127" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="173672751428921347" fileName="GeneratedTextPreviewEditor.java" startLine="133" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="173672751428921359" fileName="GeneratedTextPreviewEditor.java" startLine="139" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="173672751428921415" fileName="GeneratedTextPreviewEditor.java" startLine="157" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTabs#()Lcom/intellij/ui/TabbedPaneWrapper/AsJBTabs;" />
-    <nodeInfo nodeId="173672751428921466" fileName="GeneratedTextPreviewEditor.java" startLine="165" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDecoration#()Lcom/intellij/ui/tabs/UiDecorator/UiDecoration;" />
-    <nodeInfo nodeId="173672751428921114" fileName="GeneratedTextPreviewEditor.java" startLine="212" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Panel#(Ljavax/swing/JComponent;)V" />
-    <nodeInfo nodeId="173672751428921156" fileName="GeneratedTextPreviewEditor.java" startLine="228" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requestDefaultFocus#()Z" />
-    <nodeInfo nodeId="173672751428921313" fileName="GeneratedTextPreviewEditor.java" startLine="111" startPosition="72" endLine="117" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="173672751428921328" fileName="GeneratedTextPreviewEditor.java" startLine="120" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="173672751428921444" fileName="GeneratedTextPreviewEditor.java" startLine="163" startPosition="40" endLine="170" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921609" fileName="GeneratedTextPreviewEditor.java" startLine="197" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
-    <nodeInfo nodeId="173672751428921305" fileName="GeneratedTextPreviewEditor.java" startLine="109" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getState#(Lcom/intellij/openapi/fileEditor/FileEditorStateLevel;)Lcom/intellij/openapi/fileEditor/FileEditorState;" />
-    <nodeInfo nodeId="173672751428921438" fileName="GeneratedTextPreviewEditor.java" startLine="163" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="decorate#(Lcom/intellij/ui/tabs/JBTabs;)V" />
-    <nodeInfo nodeId="173672751428921366" fileName="GeneratedTextPreviewEditor.java" startLine="145" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="173672751428921585" fileName="GeneratedTextPreviewEditor.java" startLine="190" startPosition="39" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="173672751428921166" fileName="GeneratedTextPreviewEditor.java" startLine="234" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="173672751428921493" fileName="GeneratedTextPreviewEditor.java" startLine="174" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTabContents#(Ljava/lang/CharSequence;)Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="173672751428921270" fileName="GeneratedTextPreviewEditor.java" startLine="80" startPosition="86" endLine="80" endPosition="86" />
-    <scopeInfo nodeId="173672751428921277" fileName="GeneratedTextPreviewEditor.java" startLine="84" startPosition="83" endLine="84" endPosition="83" />
-    <scopeInfo nodeId="173672751428921281" fileName="GeneratedTextPreviewEditor.java" startLine="88" startPosition="32" endLine="88" endPosition="32" />
-    <scopeInfo nodeId="173672751428921285" fileName="GeneratedTextPreviewEditor.java" startLine="92" startPosition="30" endLine="92" endPosition="30" />
-    <scopeInfo nodeId="173672751428921304" fileName="GeneratedTextPreviewEditor.java" startLine="106" startPosition="56" endLine="106" endPosition="56" />
-    <scopeInfo nodeId="173672751428921382" fileName="GeneratedTextPreviewEditor.java" startLine="148" startPosition="51" endLine="148" endPosition="51" />
-    <scopeInfo nodeId="173672751428921208" fileName="GeneratedTextPreviewEditor.java" startLine="251" startPosition="30" endLine="251" endPosition="30" />
-    <scopeInfo nodeId="173672751428921247" fileName="GeneratedTextPreviewEditor.java" startLine="63" startPosition="57" endLine="64" endPosition="16" />
-    <scopeInfo nodeId="173672751428921254" fileName="GeneratedTextPreviewEditor.java" startLine="69" startPosition="50" endLine="70" endPosition="16" />
-    <scopeInfo nodeId="173672751428921261" fileName="GeneratedTextPreviewEditor.java" startLine="75" startPosition="65" endLine="76" endPosition="16" />
-    <scopeInfo nodeId="173672751428921289" fileName="GeneratedTextPreviewEditor.java" startLine="96" startPosition="28" endLine="97" endPosition="16" />
-    <scopeInfo nodeId="173672751428921295" fileName="GeneratedTextPreviewEditor.java" startLine="101" startPosition="31" endLine="102" endPosition="17" />
-    <scopeInfo nodeId="173672751428921325" fileName="GeneratedTextPreviewEditor.java" startLine="114" startPosition="83" endLine="115" endPosition="21" />
-    <scopeInfo nodeId="173672751428921333" fileName="GeneratedTextPreviewEditor.java" startLine="123" startPosition="27" endLine="124" endPosition="26" />
-    <scopeInfo nodeId="173672751428921342" fileName="GeneratedTextPreviewEditor.java" startLine="129" startPosition="52" endLine="130" endPosition="39" />
-    <scopeInfo nodeId="173672751428921363" fileName="GeneratedTextPreviewEditor.java" startLine="141" startPosition="36" endLine="142" endPosition="17" />
-    <scopeInfo nodeId="173672751428921396" fileName="GeneratedTextPreviewEditor.java" startLine="152" startPosition="39" endLine="153" endPosition="59" />
-    <scopeInfo nodeId="173672751428921470" fileName="GeneratedTextPreviewEditor.java" startLine="167" startPosition="55" endLine="168" endPosition="74" />
-    <scopeInfo nodeId="173672751428921550" fileName="GeneratedTextPreviewEditor.java" startLine="183" startPosition="23" endLine="184" endPosition="23" />
-    <scopeInfo nodeId="173672751428921596" fileName="GeneratedTextPreviewEditor.java" startLine="193" startPosition="43" endLine="194" endPosition="72" />
-    <scopeInfo nodeId="173672751428921141" fileName="GeneratedTextPreviewEditor.java" startLine="219" startPosition="43" endLine="220" endPosition="45" />
-    <scopeInfo nodeId="173672751428921150" fileName="GeneratedTextPreviewEditor.java" startLine="224" startPosition="32" endLine="225" endPosition="30" />
-    <scopeInfo nodeId="173672751428921160" fileName="GeneratedTextPreviewEditor.java" startLine="230" startPosition="42" endLine="231" endPosition="44" />
-    <scopeInfo nodeId="173672751428921179" fileName="GeneratedTextPreviewEditor.java" startLine="237" startPosition="52" endLine="238" endPosition="47" />
-    <scopeInfo nodeId="173672751428921183" fileName="GeneratedTextPreviewEditor.java" startLine="240" startPosition="53" endLine="241" endPosition="20" />
-    <scopeInfo nodeId="173672751428921191" fileName="GeneratedTextPreviewEditor.java" startLine="243" startPosition="59" endLine="244" endPosition="39" />
-    <scopeInfo nodeId="173672751428921217" fileName="GeneratedTextPreviewEditor.java" startLine="255" startPosition="87" endLine="256" endPosition="19" />
-    <scopeInfo nodeId="173672751428921350" fileName="GeneratedTextPreviewEditor.java" startLine="134" startPosition="25" endLine="136" endPosition="17" />
-    <scopeInfo nodeId="173672751428921381" fileName="GeneratedTextPreviewEditor.java" startLine="148" startPosition="0" endLine="150" endPosition="0">
+    <nodeInfo nodeId="173672751428921666" fileName="GeneratedTextPreviewEditor.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="file" />
+    <nodeInfo nodeId="173672751428921669" fileName="GeneratedTextPreviewEditor.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
+    <nodeInfo nodeId="173672751428921672" fileName="GeneratedTextPreviewEditor.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="tabs" />
+    <nodeInfo nodeId="173672751428921675" fileName="GeneratedTextPreviewEditor.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="panel" />
+    <nodeInfo nodeId="173672751428921222" fileName="GeneratedTextPreviewEditor.java" startLine="52" startPosition="76" endLine="53" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921228" fileName="GeneratedTextPreviewEditor.java" startLine="53" startPosition="21" endLine="54" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921234" fileName="GeneratedTextPreviewEditor.java" startLine="54" startPosition="27" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921248" fileName="GeneratedTextPreviewEditor.java" startLine="60" startPosition="57" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921255" fileName="GeneratedTextPreviewEditor.java" startLine="66" startPosition="50" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921262" fileName="GeneratedTextPreviewEditor.java" startLine="72" startPosition="65" endLine="73" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921290" fileName="GeneratedTextPreviewEditor.java" startLine="93" startPosition="28" endLine="94" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921296" fileName="GeneratedTextPreviewEditor.java" startLine="98" startPosition="31" endLine="99" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921326" fileName="GeneratedTextPreviewEditor.java" startLine="111" startPosition="83" endLine="112" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921334" fileName="GeneratedTextPreviewEditor.java" startLine="120" startPosition="27" endLine="121" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921343" fileName="GeneratedTextPreviewEditor.java" startLine="126" startPosition="52" endLine="127" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921351" fileName="GeneratedTextPreviewEditor.java" startLine="131" startPosition="25" endLine="132" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921355" fileName="GeneratedTextPreviewEditor.java" startLine="132" startPosition="22" endLine="133" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921364" fileName="GeneratedTextPreviewEditor.java" startLine="138" startPosition="36" endLine="139" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921369" fileName="GeneratedTextPreviewEditor.java" startLine="142" startPosition="23" endLine="143" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921385" fileName="GeneratedTextPreviewEditor.java" startLine="147" startPosition="7" endLine="148" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921397" fileName="GeneratedTextPreviewEditor.java" startLine="149" startPosition="39" endLine="150" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921419" fileName="GeneratedTextPreviewEditor.java" startLine="154" startPosition="51" endLine="155" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428921431" fileName="GeneratedTextPreviewEditor.java" startLine="155" startPosition="216" endLine="156" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921436" fileName="GeneratedTextPreviewEditor.java" startLine="156" startPosition="33" endLine="157" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921471" fileName="GeneratedTextPreviewEditor.java" startLine="164" startPosition="55" endLine="165" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921481" fileName="GeneratedTextPreviewEditor.java" startLine="167" startPosition="7" endLine="168" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921497" fileName="GeneratedTextPreviewEditor.java" startLine="171" startPosition="59" endLine="172" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428921504" fileName="GeneratedTextPreviewEditor.java" startLine="172" startPosition="56" endLine="173" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921525" fileName="GeneratedTextPreviewEditor.java" startLine="173" startPosition="49" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428921526" fileName="GeneratedTextPreviewEditor.java" startLine="174" startPosition="0" endLine="175" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3926323277339463873" fileName="GeneratedTextPreviewEditor.java" startLine="175" startPosition="50" endLine="176" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921534" fileName="GeneratedTextPreviewEditor.java" startLine="176" startPosition="50" endLine="177" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3926323277339260063" fileName="GeneratedTextPreviewEditor.java" startLine="177" startPosition="26" endLine="178" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3926323277339318300" fileName="GeneratedTextPreviewEditor.java" startLine="178" startPosition="72" endLine="179" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921539" fileName="GeneratedTextPreviewEditor.java" startLine="179" startPosition="72" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428921540" fileName="GeneratedTextPreviewEditor.java" startLine="180" startPosition="0" endLine="181" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428921551" fileName="GeneratedTextPreviewEditor.java" startLine="182" startPosition="23" endLine="183" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921559" fileName="GeneratedTextPreviewEditor.java" startLine="184" startPosition="5" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428921560" fileName="GeneratedTextPreviewEditor.java" startLine="185" startPosition="0" endLine="186" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428921567" fileName="GeneratedTextPreviewEditor.java" startLine="186" startPosition="152" endLine="187" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921579" fileName="GeneratedTextPreviewEditor.java" startLine="187" startPosition="46" endLine="188" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921597" fileName="GeneratedTextPreviewEditor.java" startLine="191" startPosition="43" endLine="192" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921615" fileName="GeneratedTextPreviewEditor.java" startLine="196" startPosition="56" endLine="197" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="173672751428921621" fileName="GeneratedTextPreviewEditor.java" startLine="197" startPosition="48" endLine="198" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921626" fileName="GeneratedTextPreviewEditor.java" startLine="198" startPosition="85" endLine="199" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921642" fileName="GeneratedTextPreviewEditor.java" startLine="199" startPosition="59" endLine="200" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921661" fileName="GeneratedTextPreviewEditor.java" startLine="202" startPosition="7" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="173672751428921662" fileName="GeneratedTextPreviewEditor.java" startLine="203" startPosition="0" endLine="204" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921135" fileName="GeneratedTextPreviewEditor.java" startLine="208" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegate" />
+    <nodeInfo nodeId="173672751428921116" fileName="GeneratedTextPreviewEditor.java" startLine="210" startPosition="40" endLine="211" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="173672751428921119" fileName="GeneratedTextPreviewEditor.java" startLine="211" startPosition="32" endLine="212" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921125" fileName="GeneratedTextPreviewEditor.java" startLine="212" startPosition="31" endLine="213" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921142" fileName="GeneratedTextPreviewEditor.java" startLine="217" startPosition="43" endLine="218" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921151" fileName="GeneratedTextPreviewEditor.java" startLine="222" startPosition="32" endLine="223" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921161" fileName="GeneratedTextPreviewEditor.java" startLine="228" startPosition="42" endLine="229" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921180" fileName="GeneratedTextPreviewEditor.java" startLine="235" startPosition="52" endLine="236" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921184" fileName="GeneratedTextPreviewEditor.java" startLine="238" startPosition="53" endLine="239" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921192" fileName="GeneratedTextPreviewEditor.java" startLine="241" startPosition="59" endLine="242" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921201" fileName="GeneratedTextPreviewEditor.java" startLine="243" startPosition="7" endLine="244" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921218" fileName="GeneratedTextPreviewEditor.java" startLine="253" startPosition="87" endLine="254" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921381" fileName="GeneratedTextPreviewEditor.java" startLine="145" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljavax/swing/event/ChangeEvent;)V" />
+    <nodeInfo nodeId="173672751428921205" fileName="GeneratedTextPreviewEditor.java" startLine="249" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorStateStub#()V" />
+    <nodeInfo nodeId="173672751428921264" fileName="GeneratedTextPreviewEditor.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removePropertyChangeListener#(Ljava/beans/PropertyChangeListener;)V" />
+    <nodeInfo nodeId="173672751428921271" fileName="GeneratedTextPreviewEditor.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPropertyChangeListener#(Ljava/beans/PropertyChangeListener;)V" />
+    <nodeInfo nodeId="173672751428921278" fileName="GeneratedTextPreviewEditor.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deselectNotify#()V" />
+    <nodeInfo nodeId="173672751428921282" fileName="GeneratedTextPreviewEditor.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectNotify#()V" />
+    <nodeInfo nodeId="173672751428921298" fileName="GeneratedTextPreviewEditor.java" startLine="102" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setState#(Lcom/intellij/openapi/fileEditor/FileEditorState;)V" />
+    <nodeInfo nodeId="173672751428921395" fileName="GeneratedTextPreviewEditor.java" startLine="148" startPosition="75" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="173672751428921549" fileName="GeneratedTextPreviewEditor.java" startLine="181" startPosition="68" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428921174" fileName="GeneratedTextPreviewEditor.java" startLine="234" startPosition="50" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428921182" fileName="GeneratedTextPreviewEditor.java" startLine="237" startPosition="7" endLine="240" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428921190" fileName="GeneratedTextPreviewEditor.java" startLine="240" startPosition="7" endLine="243" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="173672751428921286" fileName="GeneratedTextPreviewEditor.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
+    <nodeInfo nodeId="173672751428921292" fileName="GeneratedTextPreviewEditor.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isModified#()Z" />
+    <nodeInfo nodeId="173672751428921318" fileName="GeneratedTextPreviewEditor.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeMergedWith#(Lcom/intellij/openapi/fileEditor/FileEditorState;Lcom/intellij/openapi/fileEditor/FileEditorStateLevel;)Z" />
+    <nodeInfo nodeId="173672751428921377" fileName="GeneratedTextPreviewEditor.java" startLine="143" startPosition="34" endLine="147" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921593" fileName="GeneratedTextPreviewEditor.java" startLine="190" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
+    <nodeInfo nodeId="173672751428921138" fileName="GeneratedTextPreviewEditor.java" startLine="216" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requestFocusInWindow#()Z" />
+    <nodeInfo nodeId="173672751428921147" fileName="GeneratedTextPreviewEditor.java" startLine="221" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requestFocus#()V" />
+    <nodeInfo nodeId="173672751428921210" fileName="GeneratedTextPreviewEditor.java" startLine="252" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeMergedWith#(Lcom/intellij/openapi/fileEditor/FileEditorState;Lcom/intellij/openapi/fileEditor/FileEditorStateLevel;)Z" />
+    <nodeInfo nodeId="173672751428921220" fileName="GeneratedTextPreviewEditor.java" startLine="52" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedTextPreviewEditor#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/make/TextPreviewFile;)V" />
+    <nodeInfo nodeId="173672751428921243" fileName="GeneratedTextPreviewEditor.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStructureViewBuilder#()Lcom/intellij/ide/structureView/StructureViewBuilder;" />
+    <nodeInfo nodeId="173672751428921250" fileName="GeneratedTextPreviewEditor.java" startLine="64" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentLocation#()Lcom/intellij/openapi/fileEditor/FileEditorLocation;" />
+    <nodeInfo nodeId="173672751428921257" fileName="GeneratedTextPreviewEditor.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackgroundHighlighter#()Lcom/intellij/codeHighlighting/BackgroundEditorHighlighter;" />
+    <nodeInfo nodeId="173672751428921338" fileName="GeneratedTextPreviewEditor.java" startLine="124" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="173672751428921347" fileName="GeneratedTextPreviewEditor.java" startLine="130" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="173672751428921359" fileName="GeneratedTextPreviewEditor.java" startLine="136" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="173672751428921415" fileName="GeneratedTextPreviewEditor.java" startLine="154" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTabs#()Lcom/intellij/ui/TabbedPaneWrapper/AsJBTabs;" />
+    <nodeInfo nodeId="173672751428921466" fileName="GeneratedTextPreviewEditor.java" startLine="162" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDecoration#()Lcom/intellij/ui/tabs/UiDecorator/UiDecoration;" />
+    <nodeInfo nodeId="173672751428921114" fileName="GeneratedTextPreviewEditor.java" startLine="210" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Panel#(Ljavax/swing/JComponent;)V" />
+    <nodeInfo nodeId="173672751428921156" fileName="GeneratedTextPreviewEditor.java" startLine="226" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requestDefaultFocus#()Z" />
+    <nodeInfo nodeId="173672751428921313" fileName="GeneratedTextPreviewEditor.java" startLine="108" startPosition="72" endLine="114" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="173672751428921328" fileName="GeneratedTextPreviewEditor.java" startLine="117" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="173672751428921444" fileName="GeneratedTextPreviewEditor.java" startLine="160" startPosition="40" endLine="167" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921609" fileName="GeneratedTextPreviewEditor.java" startLine="195" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
+    <nodeInfo nodeId="173672751428921305" fileName="GeneratedTextPreviewEditor.java" startLine="106" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getState#(Lcom/intellij/openapi/fileEditor/FileEditorStateLevel;)Lcom/intellij/openapi/fileEditor/FileEditorState;" />
+    <nodeInfo nodeId="173672751428921438" fileName="GeneratedTextPreviewEditor.java" startLine="160" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="decorate#(Lcom/intellij/ui/tabs/JBTabs;)V" />
+    <nodeInfo nodeId="173672751428921366" fileName="GeneratedTextPreviewEditor.java" startLine="142" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="173672751428921585" fileName="GeneratedTextPreviewEditor.java" startLine="188" startPosition="39" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="173672751428921166" fileName="GeneratedTextPreviewEditor.java" startLine="232" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="173672751428921493" fileName="GeneratedTextPreviewEditor.java" startLine="171" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTabContents#(Ljava/lang/CharSequence;)Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="173672751428921270" fileName="GeneratedTextPreviewEditor.java" startLine="77" startPosition="86" endLine="77" endPosition="86" />
+    <scopeInfo nodeId="173672751428921277" fileName="GeneratedTextPreviewEditor.java" startLine="81" startPosition="83" endLine="81" endPosition="83" />
+    <scopeInfo nodeId="173672751428921281" fileName="GeneratedTextPreviewEditor.java" startLine="85" startPosition="32" endLine="85" endPosition="32" />
+    <scopeInfo nodeId="173672751428921285" fileName="GeneratedTextPreviewEditor.java" startLine="89" startPosition="30" endLine="89" endPosition="30" />
+    <scopeInfo nodeId="173672751428921304" fileName="GeneratedTextPreviewEditor.java" startLine="103" startPosition="56" endLine="103" endPosition="56" />
+    <scopeInfo nodeId="173672751428921382" fileName="GeneratedTextPreviewEditor.java" startLine="145" startPosition="51" endLine="145" endPosition="51" />
+    <scopeInfo nodeId="173672751428921208" fileName="GeneratedTextPreviewEditor.java" startLine="249" startPosition="30" endLine="249" endPosition="30" />
+    <scopeInfo nodeId="173672751428921247" fileName="GeneratedTextPreviewEditor.java" startLine="60" startPosition="57" endLine="61" endPosition="16" />
+    <scopeInfo nodeId="173672751428921254" fileName="GeneratedTextPreviewEditor.java" startLine="66" startPosition="50" endLine="67" endPosition="16" />
+    <scopeInfo nodeId="173672751428921261" fileName="GeneratedTextPreviewEditor.java" startLine="72" startPosition="65" endLine="73" endPosition="16" />
+    <scopeInfo nodeId="173672751428921289" fileName="GeneratedTextPreviewEditor.java" startLine="93" startPosition="28" endLine="94" endPosition="16" />
+    <scopeInfo nodeId="173672751428921295" fileName="GeneratedTextPreviewEditor.java" startLine="98" startPosition="31" endLine="99" endPosition="17" />
+    <scopeInfo nodeId="173672751428921325" fileName="GeneratedTextPreviewEditor.java" startLine="111" startPosition="83" endLine="112" endPosition="21" />
+    <scopeInfo nodeId="173672751428921333" fileName="GeneratedTextPreviewEditor.java" startLine="120" startPosition="27" endLine="121" endPosition="26" />
+    <scopeInfo nodeId="173672751428921342" fileName="GeneratedTextPreviewEditor.java" startLine="126" startPosition="52" endLine="127" endPosition="39" />
+    <scopeInfo nodeId="173672751428921363" fileName="GeneratedTextPreviewEditor.java" startLine="138" startPosition="36" endLine="139" endPosition="17" />
+    <scopeInfo nodeId="173672751428921396" fileName="GeneratedTextPreviewEditor.java" startLine="149" startPosition="39" endLine="150" endPosition="59" />
+    <scopeInfo nodeId="173672751428921470" fileName="GeneratedTextPreviewEditor.java" startLine="164" startPosition="55" endLine="165" endPosition="74" />
+    <scopeInfo nodeId="173672751428921550" fileName="GeneratedTextPreviewEditor.java" startLine="182" startPosition="23" endLine="183" endPosition="23" />
+    <scopeInfo nodeId="173672751428921596" fileName="GeneratedTextPreviewEditor.java" startLine="191" startPosition="43" endLine="192" endPosition="72" />
+    <scopeInfo nodeId="173672751428921141" fileName="GeneratedTextPreviewEditor.java" startLine="217" startPosition="43" endLine="218" endPosition="45" />
+    <scopeInfo nodeId="173672751428921150" fileName="GeneratedTextPreviewEditor.java" startLine="222" startPosition="32" endLine="223" endPosition="30" />
+    <scopeInfo nodeId="173672751428921160" fileName="GeneratedTextPreviewEditor.java" startLine="228" startPosition="42" endLine="229" endPosition="44" />
+    <scopeInfo nodeId="173672751428921179" fileName="GeneratedTextPreviewEditor.java" startLine="235" startPosition="52" endLine="236" endPosition="47" />
+    <scopeInfo nodeId="173672751428921183" fileName="GeneratedTextPreviewEditor.java" startLine="238" startPosition="53" endLine="239" endPosition="20" />
+    <scopeInfo nodeId="173672751428921191" fileName="GeneratedTextPreviewEditor.java" startLine="241" startPosition="59" endLine="242" endPosition="39" />
+    <scopeInfo nodeId="173672751428921217" fileName="GeneratedTextPreviewEditor.java" startLine="253" startPosition="87" endLine="254" endPosition="19" />
+    <scopeInfo nodeId="173672751428921350" fileName="GeneratedTextPreviewEditor.java" startLine="131" startPosition="25" endLine="133" endPosition="17" />
+    <scopeInfo nodeId="173672751428921381" fileName="GeneratedTextPreviewEditor.java" startLine="145" startPosition="0" endLine="147" endPosition="0">
       <varInfo nodeId="173672751428921381" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921205" fileName="GeneratedTextPreviewEditor.java" startLine="251" startPosition="0" endLine="253" endPosition="0" />
-    <scopeInfo nodeId="173672751428921221" fileName="GeneratedTextPreviewEditor.java" startLine="55" startPosition="76" endLine="58" endPosition="11" />
-    <scopeInfo nodeId="173672751428921264" fileName="GeneratedTextPreviewEditor.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="173672751428921205" fileName="GeneratedTextPreviewEditor.java" startLine="249" startPosition="0" endLine="251" endPosition="0" />
+    <scopeInfo nodeId="173672751428921221" fileName="GeneratedTextPreviewEditor.java" startLine="52" startPosition="76" endLine="55" endPosition="11" />
+    <scopeInfo nodeId="173672751428921264" fileName="GeneratedTextPreviewEditor.java" startLine="76" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="173672751428921267" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921271" fileName="GeneratedTextPreviewEditor.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="173672751428921271" fileName="GeneratedTextPreviewEditor.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="173672751428921274" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921278" fileName="GeneratedTextPreviewEditor.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="173672751428921282" fileName="GeneratedTextPreviewEditor.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="173672751428921298" fileName="GeneratedTextPreviewEditor.java" startLine="105" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="173672751428921278" fileName="GeneratedTextPreviewEditor.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="173672751428921282" fileName="GeneratedTextPreviewEditor.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="173672751428921298" fileName="GeneratedTextPreviewEditor.java" startLine="102" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="173672751428921301" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921395" fileName="GeneratedTextPreviewEditor.java" startLine="151" startPosition="75" endLine="154" endPosition="5">
+    <scopeInfo nodeId="173672751428921395" fileName="GeneratedTextPreviewEditor.java" startLine="148" startPosition="75" endLine="151" endPosition="5">
       <varInfo nodeId="173672751428921409" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921418" fileName="GeneratedTextPreviewEditor.java" startLine="157" startPosition="51" endLine="160" endPosition="20">
+    <scopeInfo nodeId="173672751428921418" fileName="GeneratedTextPreviewEditor.java" startLine="154" startPosition="51" endLine="157" endPosition="20">
       <varInfo nodeId="173672751428921420" varName="asjbtabs" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921115" fileName="GeneratedTextPreviewEditor.java" startLine="212" startPosition="40" endLine="215" endPosition="41" />
-    <scopeInfo nodeId="173672751428921286" fileName="GeneratedTextPreviewEditor.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="173672751428921292" fileName="GeneratedTextPreviewEditor.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="173672751428921318" fileName="GeneratedTextPreviewEditor.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="173672751428921115" fileName="GeneratedTextPreviewEditor.java" startLine="210" startPosition="40" endLine="213" endPosition="41" />
+    <scopeInfo nodeId="173672751428921286" fileName="GeneratedTextPreviewEditor.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="173672751428921292" fileName="GeneratedTextPreviewEditor.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="173672751428921318" fileName="GeneratedTextPreviewEditor.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="173672751428921321" varName="p0" />
       <varInfo nodeId="173672751428921323" varName="p1" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921593" fileName="GeneratedTextPreviewEditor.java" startLine="192" startPosition="0" endLine="196" endPosition="0" />
-    <scopeInfo nodeId="173672751428921614" fileName="GeneratedTextPreviewEditor.java" startLine="198" startPosition="56" endLine="202" endPosition="100">
+    <scopeInfo nodeId="173672751428921593" fileName="GeneratedTextPreviewEditor.java" startLine="190" startPosition="0" endLine="194" endPosition="0" />
+    <scopeInfo nodeId="173672751428921614" fileName="GeneratedTextPreviewEditor.java" startLine="196" startPosition="56" endLine="200" endPosition="144">
       <varInfo nodeId="173672751428921616" varName="cb" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921138" fileName="GeneratedTextPreviewEditor.java" startLine="218" startPosition="0" endLine="222" endPosition="0" />
-    <scopeInfo nodeId="173672751428921147" fileName="GeneratedTextPreviewEditor.java" startLine="223" startPosition="0" endLine="227" endPosition="0" />
-    <scopeInfo nodeId="173672751428921210" fileName="GeneratedTextPreviewEditor.java" startLine="254" startPosition="0" endLine="258" endPosition="0">
+    <scopeInfo nodeId="173672751428921138" fileName="GeneratedTextPreviewEditor.java" startLine="216" startPosition="0" endLine="220" endPosition="0" />
+    <scopeInfo nodeId="173672751428921147" fileName="GeneratedTextPreviewEditor.java" startLine="221" startPosition="0" endLine="225" endPosition="0" />
+    <scopeInfo nodeId="173672751428921210" fileName="GeneratedTextPreviewEditor.java" startLine="252" startPosition="0" endLine="256" endPosition="0">
       <varInfo nodeId="173672751428921215" varName="level" />
       <varInfo nodeId="173672751428921213" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921220" fileName="GeneratedTextPreviewEditor.java" startLine="55" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="173672751428921220" fileName="GeneratedTextPreviewEditor.java" startLine="52" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="173672751428921239" varName="file" />
       <varInfo nodeId="173672751428921237" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921243" fileName="GeneratedTextPreviewEditor.java" startLine="61" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="173672751428921250" fileName="GeneratedTextPreviewEditor.java" startLine="67" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="173672751428921257" fileName="GeneratedTextPreviewEditor.java" startLine="73" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="173672751428921338" fileName="GeneratedTextPreviewEditor.java" startLine="127" startPosition="0" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="173672751428921347" fileName="GeneratedTextPreviewEditor.java" startLine="133" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="173672751428921359" fileName="GeneratedTextPreviewEditor.java" startLine="139" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="173672751428921415" fileName="GeneratedTextPreviewEditor.java" startLine="157" startPosition="0" endLine="162" endPosition="0" />
-    <scopeInfo nodeId="173672751428921466" fileName="GeneratedTextPreviewEditor.java" startLine="165" startPosition="0" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="173672751428921114" fileName="GeneratedTextPreviewEditor.java" startLine="212" startPosition="0" endLine="217" endPosition="0">
+    <scopeInfo nodeId="173672751428921243" fileName="GeneratedTextPreviewEditor.java" startLine="58" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="173672751428921250" fileName="GeneratedTextPreviewEditor.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="173672751428921257" fileName="GeneratedTextPreviewEditor.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="173672751428921338" fileName="GeneratedTextPreviewEditor.java" startLine="124" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="173672751428921347" fileName="GeneratedTextPreviewEditor.java" startLine="130" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="173672751428921359" fileName="GeneratedTextPreviewEditor.java" startLine="136" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="173672751428921415" fileName="GeneratedTextPreviewEditor.java" startLine="154" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="173672751428921466" fileName="GeneratedTextPreviewEditor.java" startLine="162" startPosition="0" endLine="167" endPosition="0" />
+    <scopeInfo nodeId="173672751428921114" fileName="GeneratedTextPreviewEditor.java" startLine="210" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="173672751428921130" varName="delegate" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921156" fileName="GeneratedTextPreviewEditor.java" startLine="228" startPosition="0" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="173672751428921312" fileName="GeneratedTextPreviewEditor.java" startLine="111" startPosition="72" endLine="117" endPosition="6" />
-    <scopeInfo nodeId="173672751428921328" fileName="GeneratedTextPreviewEditor.java" startLine="120" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="173672751428921609" fileName="GeneratedTextPreviewEditor.java" startLine="197" startPosition="0" endLine="204" endPosition="0">
+    <scopeInfo nodeId="173672751428921156" fileName="GeneratedTextPreviewEditor.java" startLine="226" startPosition="0" endLine="231" endPosition="0" />
+    <scopeInfo nodeId="173672751428921312" fileName="GeneratedTextPreviewEditor.java" startLine="108" startPosition="72" endLine="114" endPosition="6" />
+    <scopeInfo nodeId="173672751428921328" fileName="GeneratedTextPreviewEditor.java" startLine="117" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="173672751428921609" fileName="GeneratedTextPreviewEditor.java" startLine="195" startPosition="0" endLine="202" endPosition="0">
       <varInfo nodeId="173672751428921612" varName="graphics" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921443" fileName="GeneratedTextPreviewEditor.java" startLine="163" startPosition="40" endLine="171" endPosition="65" />
-    <scopeInfo nodeId="173672751428921368" fileName="GeneratedTextPreviewEditor.java" startLine="145" startPosition="23" endLine="154" endPosition="5" />
-    <scopeInfo nodeId="173672751428921305" fileName="GeneratedTextPreviewEditor.java" startLine="109" startPosition="0" endLine="119" endPosition="0">
+    <scopeInfo nodeId="173672751428921443" fileName="GeneratedTextPreviewEditor.java" startLine="160" startPosition="40" endLine="168" endPosition="65" />
+    <scopeInfo nodeId="173672751428921368" fileName="GeneratedTextPreviewEditor.java" startLine="142" startPosition="23" endLine="151" endPosition="5" />
+    <scopeInfo nodeId="173672751428921305" fileName="GeneratedTextPreviewEditor.java" startLine="106" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="173672751428921308" varName="level" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921438" fileName="GeneratedTextPreviewEditor.java" startLine="163" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="173672751428921438" fileName="GeneratedTextPreviewEditor.java" startLine="160" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="173672751428921441" varName="jbTabs" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921173" fileName="GeneratedTextPreviewEditor.java" startLine="236" startPosition="50" endLine="246" endPosition="18" />
-    <scopeInfo nodeId="173672751428921366" fileName="GeneratedTextPreviewEditor.java" startLine="145" startPosition="0" endLine="156" endPosition="0" />
-    <scopeInfo nodeId="173672751428921166" fileName="GeneratedTextPreviewEditor.java" startLine="234" startPosition="0" endLine="248" endPosition="0">
+    <scopeInfo nodeId="173672751428921173" fileName="GeneratedTextPreviewEditor.java" startLine="234" startPosition="50" endLine="244" endPosition="18" />
+    <scopeInfo nodeId="173672751428921366" fileName="GeneratedTextPreviewEditor.java" startLine="142" startPosition="0" endLine="153" endPosition="0" />
+    <scopeInfo nodeId="173672751428921166" fileName="GeneratedTextPreviewEditor.java" startLine="232" startPosition="0" endLine="246" endPosition="0">
       <varInfo nodeId="173672751428921169" varName="dataId" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921496" fileName="GeneratedTextPreviewEditor.java" startLine="174" startPosition="59" endLine="206" endPosition="17">
+    <scopeInfo nodeId="173672751428921496" fileName="GeneratedTextPreviewEditor.java" startLine="171" startPosition="59" endLine="204" endPosition="17">
       <varInfo nodeId="173672751428921541" varName="font" />
       <varInfo nodeId="173672751428921498" varName="panel" />
       <varInfo nodeId="173672751428921561" varName="sp" />
       <varInfo nodeId="173672751428921527" varName="ta" />
     </scopeInfo>
-    <scopeInfo nodeId="173672751428921493" fileName="GeneratedTextPreviewEditor.java" startLine="174" startPosition="0" endLine="208" endPosition="0">
+    <scopeInfo nodeId="173672751428921493" fileName="GeneratedTextPreviewEditor.java" startLine="171" startPosition="0" endLine="206" endPosition="0">
       <varInfo nodeId="173672751428921664" varName="text" />
     </scopeInfo>
-    <unitInfo nodeId="173672751428921381" fileName="GeneratedTextPreviewEditor.java" startLine="147" startPosition="31" endLine="150" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$2" />
-    <unitInfo nodeId="173672751428921316" fileName="GeneratedTextPreviewEditor.java" startLine="112" startPosition="15" endLine="117" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$1" />
-    <unitInfo nodeId="173672751428921464" fileName="GeneratedTextPreviewEditor.java" startLine="164" startPosition="129" endLine="170" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$3" />
-    <unitInfo nodeId="173672751428921203" fileName="GeneratedTextPreviewEditor.java" startLine="250" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$EditorStateStub" />
-    <unitInfo nodeId="173672751428921591" fileName="GeneratedTextPreviewEditor.java" startLine="191" startPosition="24" endLine="204" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$4" />
-    <unitInfo nodeId="173672751428921113" fileName="GeneratedTextPreviewEditor.java" startLine="209" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$Panel" />
-    <unitInfo nodeId="173672751428921112" fileName="GeneratedTextPreviewEditor.java" startLine="49" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor" />
+    <unitInfo nodeId="173672751428921381" fileName="GeneratedTextPreviewEditor.java" startLine="144" startPosition="31" endLine="147" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$2" />
+    <unitInfo nodeId="173672751428921316" fileName="GeneratedTextPreviewEditor.java" startLine="109" startPosition="15" endLine="114" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$1" />
+    <unitInfo nodeId="173672751428921464" fileName="GeneratedTextPreviewEditor.java" startLine="161" startPosition="129" endLine="167" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$3" />
+    <unitInfo nodeId="173672751428921203" fileName="GeneratedTextPreviewEditor.java" startLine="248" startPosition="0" endLine="257" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$EditorStateStub" />
+    <unitInfo nodeId="173672751428921591" fileName="GeneratedTextPreviewEditor.java" startLine="189" startPosition="24" endLine="202" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$4" />
+    <unitInfo nodeId="173672751428921113" fileName="GeneratedTextPreviewEditor.java" startLine="207" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$Panel" />
+    <unitInfo nodeId="173672751428921112" fileName="GeneratedTextPreviewEditor.java" startLine="46" startPosition="0" endLine="258" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor" />
   </root>
   <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428921679">
     <nodeInfo nodeId="173672751428921691" fileName="GeneratedTextPreviewEditorProvider.java" startLine="23" startPosition="39" endLine="24" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
