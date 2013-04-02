@@ -16,59 +16,41 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.openapi.components.ProjectComponent;
-import jetbrains.mps.logging.ILoggingHandler;
-import jetbrains.mps.logging.LogEntry;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.logging.MpsAppenderSkeleton;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import org.apache.log4j.Level;
+import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class MessageViewLoggingHandler implements ILoggingHandler, ProjectComponent {
+public class MessageViewLoggingHandler extends MpsAppenderSkeleton implements ProjectComponent {
   private MessagesViewTool myMessagesView;
 
   public MessageViewLoggingHandler(MessagesViewTool messagesView) {
+    super("MESSAGE_VIEW_" + messagesView.getComponentName());
     myMessagesView = messagesView;
   }
 
   @Override
-  public void info(LogEntry e) {
-    add(MessageKind.INFORMATION, e);
-  }
-
-  @Override
-  public void warning(LogEntry e) {
-    add(MessageKind.WARNING, e);
-  }
-
-  @Override
-  public void debug(LogEntry e) {
-  }
-
-  @Override
-  public void error(LogEntry e) {
-    add(MessageKind.ERROR, e);
-  }
-
-  @Override
-  public void fatal(LogEntry e) {
-    add(MessageKind.ERROR, e);
-  }
-
-  private void add(MessageKind kind, LogEntry e) {
-    Message message = new Message(kind, e.getSourceClass(), e.getMessage());
-    message.setHintObject(e.getHintObject());
-    message.setException(e.getThrowable());
+  protected void append(@NotNull Priority level, @NotNull String categoryName, @NotNull String messageText, @Nullable Throwable t,
+      @Nullable Object hintObject) {
+    MessageKind kind = MessageKind.fromPriority(level);
+    if (kind == null) return;
+    Message message = new Message(kind, categoryName, messageText);
+    message.setHintObject(hintObject);
+    message.setException(t);
     myMessagesView.add(message);
   }
 
   @Override
   public void projectOpened() {
-    Logger.addLoggingHandler(this);
+    this.register();
   }
 
   @Override
   public void projectClosed() {
-    Logger.removeLoggingHandler(this);
+    this.unRegister();
   }
 
   @Override

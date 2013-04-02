@@ -7,7 +7,7 @@ import java.io.File;
 import org.apache.log4j.Level;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import jetbrains.mps.project.PathMacrosProvider;
-import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.logging.MpsAppenderSkeleton;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.SimpleLayout;
@@ -37,12 +37,12 @@ public class Environment {
   protected Level myLogLevel;
   protected SetLibraryContributor myLibraryContibutor;
   private PathMacrosProvider myMacroProvider;
-  protected ILoggingHandler myMessageHandler;
+  protected MpsAppenderSkeleton myMessageHandler;
 
   public Environment() {
   }
 
-  public void init(Map<String, String> macro, boolean isLoadBootstarpLibraries, Map<String, File> libraries, Level logLevel, ILoggingHandler lh) {
+  public void init(Map<String, String> macro, boolean isLoadBootstarpLibraries, Map<String, File> libraries, Level logLevel, MpsAppenderSkeleton lh) {
     myMacro = macro;
     myLoadBootstrapLibraries = isLoadBootstarpLibraries;
     myLibraries = libraries;
@@ -54,7 +54,7 @@ public class Environment {
     BasicConfigurator.configure(new ConsoleAppender(new SimpleLayout()));
     Logger.getRootLogger().setLevel(myLogLevel);
     if (myMessageHandler != null) {
-      jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
+      myMessageHandler.register();
     }
     MpsPlatform.init();
     MPSCore.getInstance().setTestMode();
@@ -79,7 +79,7 @@ public class Environment {
     }
     MpsPlatform.dispose();
     if (myMessageHandler != null) {
-      jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
+      myMessageHandler.unRegister();
     }
   }
 

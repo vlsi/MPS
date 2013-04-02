@@ -24,13 +24,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.logging.MpsAppenderSkeleton;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.logging.LogEntry;
-import jetbrains.mps.messages.MessageKind;
+import org.apache.log4j.Priority;
 import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 
 public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   private CountDownLatch myLatch = new CountDownLatch(1);
@@ -170,7 +169,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     TaskState() {
     }
 
-    public static class RelayingLoggingHandler implements ILoggingHandler {
+    public static class RelayingLoggingHandler extends MpsAppenderSkeleton {
       private static Tuples._2<ThreadGroup, IMessageHandler> GROUP_HANDLER;
       private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
         @Override
@@ -188,43 +187,19 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       }
 
       public void startRelaying() {
-        Logger.addLoggingHandler(this);
+        this.register();
       }
 
       public void stopRelaying() {
-        Logger.removeLoggingHandler(this);
+        this.unRegister();
       }
 
       @Override
-      public void fatal(LogEntry entry) {
-        handle(MessageKind.ERROR, entry);
-      }
-
-      @Override
-      public void error(LogEntry entry) {
-        handle(MessageKind.ERROR, entry);
-      }
-
-      @Override
-      public void debug(LogEntry entry) {
-        handle(MessageKind.INFORMATION, entry);
-      }
-
-      @Override
-      public void warning(LogEntry entry) {
-        handle(MessageKind.WARNING, entry);
-      }
-
-      @Override
-      public void info(LogEntry entry) {
-        handle(MessageKind.INFORMATION, entry);
-      }
-
-      private void handle(MessageKind kind, LogEntry e) {
+      protected void append(@NotNull Priority priority, @NotNull String categoryName, @NotNull String messageText, @Nullable Throwable throwable, @Nullable Object object) {
         IMessageHandler mh = messageHandler.get();
         if (mh != null) {
-          Message message = new Message(kind, e.getSourceClass(), e.getMessage());
-          message.setHintObject(e.getHintObject());
+          Message message = new Message(MessageKind.fromPriority(priority), messageText);
+          message.setHintObject(object);
           mh.handle(message);
         }
       }

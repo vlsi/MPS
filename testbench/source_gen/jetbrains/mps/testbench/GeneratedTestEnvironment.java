@@ -24,7 +24,9 @@ public class GeneratedTestEnvironment extends Environment {
   public void setup() {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(myLogLevel);
-    jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
+    if (myMessageHandler != null) {
+      myMessageHandler.register();
+    }
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
 
     setProperties(true);

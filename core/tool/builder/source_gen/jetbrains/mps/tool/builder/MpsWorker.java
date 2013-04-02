@@ -47,8 +47,10 @@ import org.apache.log4j.Level;
 import jetbrains.mps.tool.builder.util.PathManager;
 import java.io.StringWriter;
 import java.io.PrintWriter;
-import jetbrains.mps.logging.ILoggingHandler;
-import jetbrains.mps.logging.LogEntry;
+import jetbrains.mps.logging.MpsAppenderSkeleton;
+import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
+import org.jetbrains.annotations.Nullable;
 import java.util.LinkedHashSet;
 
 public abstract class MpsWorker {
@@ -370,40 +372,33 @@ public abstract class MpsWorker {
     return writer.getBuffer();
   }
 
-  public class MyMessageHandlerAppender implements ILoggingHandler {
+  public class MyMessageHandlerAppender extends MpsAppenderSkeleton {
     public MyMessageHandlerAppender() {
     }
 
-    @Override
-    public void info(LogEntry e) {
-      MpsWorker.this.info(e.getMessage());
-    }
-
-    @Override
-    public void warning(LogEntry e) {
-      MpsWorker.this.warning(e.getMessage());
-    }
-
-    @Override
-    public void debug(LogEntry e) {
-      MpsWorker.this.debug(e.getMessage());
-    }
-
-    @Override
-    public void error(LogEntry e) {
-      if (e.getThrowable() != null) {
-        MpsWorker.this.log(e.getThrowable());
-      } else {
-        MpsWorker.this.error(e.getMessage());
-      }
-    }
-
-    @Override
-    public void fatal(LogEntry e) {
-      if (e.getThrowable() != null) {
-        MpsWorker.this.log(e.getThrowable());
-      } else {
-        MpsWorker.this.error(e.getMessage());
+    protected void append(@NotNull Priority level, @NotNull String categoryName, @NotNull String messageText, @Nullable Throwable throwable, @Nullable Object object) {
+      if (level.equals(Level.FATAL)) {
+        if (throwable != null) {
+          MpsWorker.this.log(throwable);
+        } else {
+          MpsWorker.this.error(messageText);
+        }
+      } else
+      if (level.equals(Level.ERROR)) {
+        if (throwable != null) {
+          MpsWorker.this.log(throwable);
+        } else {
+          MpsWorker.this.error(messageText);
+        }
+      } else
+      if (level.equals(Level.WARN)) {
+        MpsWorker.this.warning(messageText);
+      } else
+      if (level.equals(Level.INFO)) {
+        MpsWorker.this.info(messageText);
+      } else
+      if (level.equals(Level.DEBUG)) {
+        MpsWorker.this.debug(messageText);
       }
     }
   }

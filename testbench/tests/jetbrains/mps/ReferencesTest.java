@@ -15,23 +15,32 @@
  */
 package jetbrains.mps;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.logging.MpsAppenderSkeleton;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.Computable;
+import org.apache.log4j.Priority;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import java.util.ArrayList;
@@ -48,8 +57,8 @@ public class ReferencesTest extends BaseMPSTest {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         new ModuleMaker().make(
-          new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
-          new EmptyProgressMonitor());
+            new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
+            new EmptyProgressMonitor());
 
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
@@ -59,28 +68,21 @@ public class ReferencesTest extends BaseMPSTest {
     final List<String> errors = new ArrayList<String>();
     final List<String> fatals = new ArrayList<String>();
 
-    ILoggingHandler handler = new ILoggingHandler() {
-      public void info(LogEntry e) {
-      }
-
-      public void warning(LogEntry e) {
-      }
-
-      public void debug(LogEntry e) {
-      }
-
-      public void error(LogEntry e) {
-        System.out.println("error: " + e.getMessage());
-        errors.add(e.getMessage());
-      }
-
-      public void fatal(LogEntry e) {
-        System.out.println("fatal: " + e.getMessage());
-        fatals.add(e.getMessage());
+    MpsAppenderSkeleton handler = new MpsAppenderSkeleton() {
+      @Override
+      protected void append(@NotNull Priority level, @NotNull String categoryName, @NotNull String message, @Nullable Throwable t,
+          @Nullable Object hintObject) {
+        if (level.equals(org.apache.log4j.Level.ERROR)) {
+          System.out.println("error: " + message);
+          errors.add(message);
+        } else if (level.equals(org.apache.log4j.Level.FATAL)) {
+          System.out.println("fatal: " + message);
+          fatals.add(message);
+        }
       }
     };
 
-    Logger.addLoggingHandler(handler);
+    handler.register();
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -95,7 +97,7 @@ public class ReferencesTest extends BaseMPSTest {
       }
     });
 
-    Logger.removeLoggingHandler(handler);
+    handler.unRegister();
 
     assertTrue(errors.isEmpty());
     assertTrue(fatals.isEmpty());

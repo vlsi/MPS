@@ -16,7 +16,15 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.GenerationParametersProvider;
+import jetbrains.mps.generator.GenerationParametersProviderEx;
+import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.ModelGenerationPlan;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
@@ -25,23 +33,39 @@ import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
-import jetbrains.mps.generator.runtime.*;
-import jetbrains.mps.logging.ILoggingHandler;
-import jetbrains.mps.logging.LogEntry;
-import jetbrains.mps.logging.LoggingHandlerAdapter;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
+import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.logging.MpsAppenderSkeleton;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.progress.ProgressMonitor;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
+import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Igor Alshannikov
@@ -60,7 +84,7 @@ class GenerationSession {
   private final boolean myDiscardTransients;
   private final boolean myKeepFinalOutput;
   private final ProgressMonitor myProgressMonitor;
-  private ILoggingHandler myLoggingHandler;
+  private MpsAppenderSkeleton myLoggingHandler;
   private final GenerationSessionLogger myLogger;
   private DependenciesBuilder myDependenciesBuilder;
   private Map<String, Object> myParameters;
@@ -74,8 +98,8 @@ class GenerationSession {
   private GenerationOptions myGenerationOptions;
 
   GenerationSession(@NotNull org.jetbrains.mps.openapi.model.SModel inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
-            ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
-            IPerformanceTracer tracer, GenerationOptions generationOptions) {
+      ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
+      IPerformanceTracer tracer, GenerationOptions generationOptions) {
     myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
@@ -98,13 +122,13 @@ class GenerationSession {
     GenerationParametersProvider parametersProvider = myGenerationOptions.getParametersProvider();
     ttrace.push("analyzing dependencies", false);
     Collection<String> additionalLanguages =
-      parametersProvider instanceof GenerationParametersProviderEx
-        ? ((GenerationParametersProviderEx) parametersProvider).getAdditionalLanguages(myOriginalInputModel)
-        : null;
+        parametersProvider instanceof GenerationParametersProviderEx
+            ? ((GenerationParametersProviderEx) parametersProvider).getAdditionalLanguages(myOriginalInputModel)
+            : null;
     ModelGenerationPlan customPlan = myGenerationOptions.getCustomPlan(myOriginalInputModel);
     myGenerationPlan = customPlan != null
-      ? new GenerationPlan(myOriginalInputModel, customPlan)
-      : new GenerationPlan(myOriginalInputModel, additionalLanguages);
+        ? new GenerationPlan(myOriginalInputModel, customPlan)
+        : new GenerationPlan(myOriginalInputModel, additionalLanguages);
     if (!checkGenerationPlan(myGenerationPlan)) {
       if (myGenerationOptions.isStrictMode()) {
         throw new GenerationCanceledException();
@@ -120,7 +144,8 @@ class GenerationSession {
         myParameters = null;
       }
 
-      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myInvocationContext, myGenerationOptions, myGenerationPlan.getSignature(), myParameters, null);
+      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myInvocationContext, myGenerationOptions,
+          myGenerationPlan.getSignature(), myParameters, null);
       myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
 
       if (incrementalHandler.canOptimize()) {
@@ -132,11 +157,12 @@ class GenerationSession {
           myLogger.info("generated files are up-to-date");
           ttrace.pop();
           return new GenerationStatus(myOriginalInputModel, null,
-            myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
+              myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
         }
 
         if (!incrementalHandler.getRequiredRoots().isEmpty() || incrementalHandler.requireConditionals()) {
-          myLogger.info((!incrementalHandler.requireConditionals() ? "" : "descriptors and ") + incrementalHandler.getRequiredRoots().size() + " roots can be used from cache");
+          myLogger.info((!incrementalHandler.requireConditionals() ? "" :
+              "descriptors and ") + incrementalHandler.getRequiredRoots().size() + " roots can be used from cache");
         }
 
         if (myGenerationOptions.getTracingMode() != GenerationOptions.TRACE_OFF) {
@@ -207,8 +233,8 @@ class GenerationSession {
         }
 
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
-          myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
-          myLogger.getWarningCount() > 0, false);
+            myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
+            myLogger.getWarningCount() > 0, false);
         success = generationStatus.isOk();
         return generationStatus;
       } catch (GenerationCanceledException gce) {
@@ -241,7 +267,8 @@ class GenerationSession {
   private SModel executeMajorStep(SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
     myMinorStep = -1;
 
-    List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(myGenerationPlan.getMappingConfigurations(myMajorStep));
+    List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(
+        myGenerationPlan.getMappingConfigurations(myMajorStep));
     if (mappingConfigurations.isEmpty()) {
       if (inputModel.getRootNodes().iterator().hasNext()) {
         myLogger.warning("skip model \"" + inputModel.getReference().getModelName() + "\" : no generator available");
@@ -253,12 +280,14 @@ class GenerationSession {
     }
 
     // -- replace context
-    mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, inputModel, myGenerationPlan, myParameters, mySessionContext);
+    mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, inputModel, myGenerationPlan,
+        myParameters, mySessionContext);
     myLogger.setOperationContext(mySessionContext);
 
     // -- filter mapping configurations
     Iterator<TemplateMappingConfiguration> it = mappingConfigurations.iterator();
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, null, inputModel, null, myGenerationOptions, myDependenciesBuilder, ttrace);
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, null, inputModel, null, myGenerationOptions,
+        myDependenciesBuilder, ttrace);
     while (it.hasNext()) {
       TemplateMappingConfiguration c = it.next();
       try {
@@ -320,7 +349,8 @@ class GenerationSession {
     // primary mapping
     // -----------------------
     if (myLogger.needsInfo()) {
-      myLogger.info("generating model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentOutputModel.getReference().getModelName() + "'");
+      myLogger.info(
+          "generating model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentOutputModel.getReference().getModelName() + "'");
     }
     boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager);
     if (!somethingHasBeenGenerated) {
@@ -370,7 +400,7 @@ class GenerationSession {
           List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(transientModel.getReference());
           for (Pair<SNode, SNode> pair : pairs) {
             myLogger.error(pair.o1, "rule: " + SNodeUtil.getDebugText(pair.o1),
-              GeneratorUtil.describe(pair.o2, "input"));
+                GeneratorUtil.describe(pair.o2, "input"));
           }
         } else {
           myLogger.error("to get more diagnostic generate model with the 'save transient models' option");
@@ -394,13 +424,16 @@ class GenerationSession {
   }
 
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
-                 RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
+      RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     boolean hasChanges;
     myDependenciesBuilder.setOutputModel(currentOutputModel, myMajorStep, myMinorStep);
     final TemplateGenerator tg =
-      myGenerationOptions.isGenerateInParallel()
-        ? new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace)
-        : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
+        myGenerationOptions.isGenerateInParallel()
+            ?
+            new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel,
+                myGenerationOptions, myDependenciesBuilder, ttrace)
+            : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions,
+            myDependenciesBuilder, ttrace);
     if (tg instanceof ParallelTemplateGenerator) {
       hasChanges = GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
         @Override
@@ -444,7 +477,8 @@ class GenerationSession {
       ttrace.push("model clone", false);
       SModel currentInputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info("clone model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentInputModel_clone.getReference().getModelName() + "'");
+        myLogger.info(
+            "clone model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentInputModel_clone.getReference().getModelName() + "'");
       }
       CloneUtil.cloneModelWithImports(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
       ttrace.pop();
@@ -462,18 +496,21 @@ class GenerationSession {
     boolean preProcessed = false;
     for (TemplateMappingScript preMappingScript : preMappingScripts) {
       if (preMappingScript.getKind() != TemplateMappingScript.PREPROCESS) {
-        myLogger.warning(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "skip script " + preMappingScript.getLongName() + " - wrong script kind");
+        myLogger.warning(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()),
+            "skip script " + preMappingScript.getLongName() + " - wrong script kind");
         continue;
       }
       if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "pre-process " + preMappingScript.getLongName());
       }
-      TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
+      TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel,
+          currentInputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
       try {
         templateGenerator.getDefaultExecutionContext(null).executeScript(preMappingScript, currentInputModel);
       } catch (Exception t) {
         myLogger.handleException(t);
-        myLogger.error(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "error executing script " + preMappingScript.getLongName() + " (see exception)");
+        myLogger.error(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()),
+            "error executing script " + preMappingScript.getLongName() + " (see exception)");
         throw new GenerationFailureException(t);
       }
       preProcessed = true;
@@ -518,18 +555,21 @@ class GenerationSession {
     boolean postProcessed = false;
     for (TemplateMappingScript postMappingScript : postMappingScripts) {
       if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {
-        myLogger.warning(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "skip script " + postMappingScript.getLongName() + " - wrong script kind");
+        myLogger.warning(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()),
+            "skip script " + postMappingScript.getLongName() + " - wrong script kind");
         continue;
       }
       if (myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "post-process " + postMappingScript.getLongName());
       }
-      TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel, myGenerationOptions, myDependenciesBuilder, ttrace);
+      TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel,
+          myGenerationOptions, myDependenciesBuilder, ttrace);
       try {
         templateGenerator.getDefaultExecutionContext(null).executeScript(postMappingScript, currentModel);
       } catch (Exception t) {
         myLogger.handleException(t);
-        myLogger.error(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "error executing script " + postMappingScript.getLongName() + " (see exception)");
+        myLogger.error(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()),
+            "error executing script " + postMappingScript.getLongName() + " (see exception)");
         throw new GenerationFailureException(t);
       }
       postProcessed = true;
@@ -558,7 +598,7 @@ class GenerationSession {
 
   private void recycleWasteModel(@NotNull SModel model) {
     SModel md = model;
-    if (model .getModule() instanceof TransientModelsModule) {
+    if (model.getModule() instanceof TransientModelsModule) {
       ttrace.push("recycling", false);
       ((jetbrains.mps.smodel.SModelInternal) model).disposeFastNodeFinder();
       if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
@@ -633,17 +673,17 @@ class GenerationSession {
     }
   }
 
-  public ILoggingHandler getLoggingHandler() {
+  public MpsAppenderSkeleton getLoggingHandler() {
     if (myLoggingHandler == null) {
-      myLoggingHandler = new LoggingHandlerAdapter() {
+      myLoggingHandler = new MpsAppenderSkeleton() {
         @Override
-        public void addLogEntry(LogEntry e) {
+        protected void append(@NotNull Priority level, @NotNull String categoryName, @NotNull String message, @Nullable Throwable t,
+            @Nullable Object hintObject) {
           if (mySessionContext == null) return;
-          Object o = e.getHintObject();
-          if (o instanceof SNode) {
-            mySessionContext.keepTransientModel(((SNode) o).getModel(), false);
-          } else if (o instanceof NodeWithContext) {
-            SNode node = ((NodeWithContext) o).getNode().resolve(MPSModuleRepository.getInstance());
+          if (hintObject instanceof SNode) {
+            mySessionContext.keepTransientModel(((SNode) hintObject).getModel(), false);
+          } else if (hintObject instanceof NodeWithContext) {
+            SNode node = ((NodeWithContext) hintObject).getNode().resolve(MPSModuleRepository.getInstance());
             if (node != null) {
               mySessionContext.keepTransientModel(node.getModel(), false);
             }
