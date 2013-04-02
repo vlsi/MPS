@@ -12,6 +12,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.util.SNodeOperations;
@@ -20,7 +21,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CheckModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.General.ModelChecker;
@@ -57,7 +59,9 @@ public class CheckModel_Action extends BaseAction {
         event.getPresentation().setEnabled(!(modelsToCheck.isEmpty()));
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CheckModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CheckModel", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -110,9 +114,11 @@ public class CheckModel_Action extends BaseAction {
         ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModel(modelsToCheck.get(0), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CheckModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CheckModel", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CheckModel_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CheckModel_Action.class);
 }

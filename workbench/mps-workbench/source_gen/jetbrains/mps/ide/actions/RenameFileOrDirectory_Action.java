@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -18,7 +19,8 @@ import javax.swing.SwingUtilities;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RenameFileOrDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,7 +40,9 @@ public class RenameFileOrDirectory_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RenameFileOrDirectory", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "RenameFileOrDirectory", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -89,7 +93,9 @@ public class RenameFileOrDirectory_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RenameFileOrDirectory", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "RenameFileOrDirectory", t);
+      }
     }
   }
 
@@ -105,7 +111,7 @@ public class RenameFileOrDirectory_Action extends BaseAction {
     return false;
   }
 
-  private static Logger LOG = Logger.getLogger(RenameFileOrDirectory_Action.class);
+  protected static Logger LOG = LogManager.getLogger(RenameFileOrDirectory_Action.class);
 
   private static VirtualFile check_g7rid4_a0b0a(VirtualFile checkedDotOperand, String result) {
     if (null != checkedDotOperand) {

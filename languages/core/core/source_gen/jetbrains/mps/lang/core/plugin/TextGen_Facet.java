@@ -49,6 +49,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.cleanup.CleanupManager;
+import org.apache.log4j.Priority;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -58,7 +59,8 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class TextGen_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -245,7 +247,9 @@ public class TextGen_Facet extends IFacet.Stub {
                         return s + it.calcApproximateSize_internal();
                       }
                     });
-                    LOG.info("approximate handlers size: " + handlersSize / 1000 / 1000 + " mb");
+                    if (LOG.isInfoEnabled()) {
+                      LOG.info("approximate handlers size: " + handlersSize / 1000 / 1000 + " mb");
+                    }
 
                     int overallRootsCount = ListSequence.fromList(currentInput).select(new ISelector<GResource, SModel>() {
                       public SModel select(GResource it) {
@@ -256,8 +260,12 @@ public class TextGen_Facet extends IFacet.Stub {
                         return s + IterableUtil.asCollection(it.getRootNodes()).size();
                       }
                     });
-                    LOG.info("roots count: " + overallRootsCount);
-                    LOG.info("models count: " + ListSequence.fromList(currentInput).count());
+                    if (LOG.isInfoEnabled()) {
+                      LOG.info("roots count: " + overallRootsCount);
+                    }
+                    if (LOG.isInfoEnabled()) {
+                      LOG.info("models count: " + ListSequence.fromList(currentInput).count());
+                    }
                   }
 
                   // flush stream handlers 
@@ -313,19 +321,33 @@ public class TextGen_Facet extends IFacet.Stub {
                   ListSequence.fromList(currentInput).clear();
                 }
               } catch (Exception e) {
-                LOG.error("Exception while textGen", e);
+                if (LOG.isEnabledFor(Priority.ERROR)) {
+                  LOG.error("Exception while textGen", e);
+                }
                 throw new RuntimeException(e);
               } finally {
                 engine.shutdown();
                 monitor.currentProgress().finishWork("Writing");
                 long overallTime = System.currentTimeMillis() - textGenStartTime;
                 if (false) {
-                  LOG.info("text gen prepare time: " + prepareTime);
-                  LOG.info("text gen generate time: " + generateTime.value);
-                  LOG.info("text gen flush time: " + flushTime.value);
-                  LOG.info("text gen clean up time: " + cleanUpTime.value);
-                  LOG.info("text gen write transaction overhead time: " + transactionOverheadTime);
-                  LOG.info("text gen overhead time: " + (overallTime - prepareTime - generateTime.value - cleanUpTime.value - flushTime.value));
+                  if (LOG.isInfoEnabled()) {
+                    LOG.info("text gen prepare time: " + prepareTime);
+                  }
+                  if (LOG.isInfoEnabled()) {
+                    LOG.info("text gen generate time: " + generateTime.value);
+                  }
+                  if (LOG.isInfoEnabled()) {
+                    LOG.info("text gen flush time: " + flushTime.value);
+                  }
+                  if (LOG.isInfoEnabled()) {
+                    LOG.info("text gen clean up time: " + cleanUpTime.value);
+                  }
+                  if (LOG.isInfoEnabled()) {
+                    LOG.info("text gen write transaction overhead time: " + transactionOverheadTime);
+                  }
+                  if (LOG.isInfoEnabled()) {
+                    LOG.info("text gen overhead time: " + (overallTime - prepareTime - generateTime.value - cleanUpTime.value - flushTime.value));
+                  }
                 }
               }
             default:
@@ -575,5 +597,5 @@ public class TextGen_Facet extends IFacet.Stub {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(TextGen_Facet.class);
+  protected static Logger LOG = LogManager.getLogger(TextGen_Facet.class);
 }

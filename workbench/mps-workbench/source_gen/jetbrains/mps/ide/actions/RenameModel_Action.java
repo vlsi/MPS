@@ -12,10 +12,12 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.refactoring.RenameModelDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RenameModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -48,7 +50,9 @@ public class RenameModel_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RenameModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "RenameModel", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -83,9 +87,11 @@ public class RenameModel_Action extends BaseAction {
     try {
       new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).show();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RenameModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "RenameModel", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(RenameModel_Action.class);
+  protected static Logger LOG = LogManager.getLogger(RenameModel_Action.class);
 }

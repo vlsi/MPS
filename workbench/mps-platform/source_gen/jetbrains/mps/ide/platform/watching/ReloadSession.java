@@ -10,7 +10,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.SubProgressKind;
 import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ReloadSession {
   private final Set<FSChangesWatcher.IReloadListener> myReloadListeners;
@@ -69,7 +70,9 @@ public class ReloadSession {
         }
       });
     } finally {
-      LOG.info("Reload finished.");
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Reload finished.");
+      }
       monitor.done();
       fireReloadFinished();
     }
@@ -87,5 +90,5 @@ public class ReloadSession {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ReloadSession.class);
+  protected static Logger LOG = LogManager.getLogger(ReloadSession.class);
 }

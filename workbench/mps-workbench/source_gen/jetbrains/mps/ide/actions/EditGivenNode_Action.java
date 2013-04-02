@@ -8,13 +8,15 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class EditGivenNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,7 +40,9 @@ public class EditGivenNode_Action extends BaseAction {
     try {
       event.getPresentation().setText(EditGivenNode_Action.this.text);
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "EditGivenNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "EditGivenNode", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -62,7 +66,9 @@ public class EditGivenNode_Action extends BaseAction {
     try {
       NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNodePointer) EditGivenNode_Action.this.targetNode).resolve(MPSModuleRepository.getInstance()), true, true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "EditGivenNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "EditGivenNode", t);
+      }
     }
   }
 
@@ -86,5 +92,5 @@ public class EditGivenNode_Action extends BaseAction {
     return "";
   }
 
-  private static Logger LOG = Logger.getLogger(EditGivenNode_Action.class);
+  protected static Logger LOG = LogManager.getLogger(EditGivenNode_Action.class);
 }

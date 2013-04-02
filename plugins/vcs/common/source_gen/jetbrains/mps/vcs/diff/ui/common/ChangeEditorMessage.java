@@ -38,7 +38,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
@@ -413,7 +415,9 @@ __switch__:
     if (currentNodeIndex == nodeIndex - 1) {
       return null;
     }
-    LOG.warning("Could not find child cell index for deleted child: currentNodeIndex=" + currentNodeIndex + ", total cells=" + collectionCell.getCellsCount() + ", requested nodeIndex=" + nodeIndex);
+    if (LOG.isEnabledFor(Priority.WARN)) {
+      LOG.warn("Could not find child cell index for deleted child: currentNodeIndex=" + currentNodeIndex + ", total cells=" + collectionCell.getCellsCount() + ", requested nodeIndex=" + nodeIndex);
+    }
     return null;
   }
 
@@ -421,7 +425,7 @@ __switch__:
     public boolean isChangeConflicted(ModelChange change);
   }
 
-  private static Logger LOG = Logger.getLogger(ChangeEditorMessage.class);
+  protected static Logger LOG = LogManager.getLogger(ChangeEditorMessage.class);
 
   private static ModelAccessor check_myu41h_a0a0a41(EditorCell_Property checkedDotOperand) {
     if (null != checkedDotOperand) {

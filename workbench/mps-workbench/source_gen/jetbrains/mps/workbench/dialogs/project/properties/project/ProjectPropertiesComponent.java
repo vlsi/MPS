@@ -4,7 +4,8 @@ package jetbrains.mps.workbench.dialogs.project.properties.project;
 
 import com.intellij.ui.components.JBPanel;
 import org.jetbrains.mps.openapi.ui.Modifiable;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.StandaloneMPSProject;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
@@ -36,7 +37,7 @@ import javax.swing.AbstractListModel;
 import java.util.List;
 
 public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
-  private static final Logger LOG = Logger.getLogger(ProjectPropertiesComponent.class);
+  private static final Logger LOG = LogManager.getLogger(ProjectPropertiesComponent.class);
   private StandaloneMPSProject myProject;
   private ProjectProperties myProperties = new ProjectProperties();
   private ProjectPrefsExtraPanel[] myExtraPanels;

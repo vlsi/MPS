@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
@@ -27,7 +28,8 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import jetbrains.mps.workbench.goTo.NavigateCallback;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +49,9 @@ public class GoToModel_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToModel", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -101,9 +105,11 @@ public class GoToModel_Action extends BaseAction {
 
       popup.invoke(new NavigateCallback(), ModalityState.current(), true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToModel", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(GoToModel_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToModel_Action.class);
 }

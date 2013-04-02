@@ -37,8 +37,10 @@ import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.IOException;
+import org.apache.log4j.Priority;
 import jetbrains.mps.project.structure.model.ModelRootManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ModuleDescriptorPersistence {
   private static final String HEADER_PATTERN = ".*<(language|dev-kit|solution)[^>]+(namespace|name)=\\\"([^\"]+)\\\"[^>]+uuid=\\\"([^\"]+)\\\".*";
@@ -336,7 +338,9 @@ public class ModuleDescriptorPersistence {
         }
       }
     } catch (IOException e) {
-      LOG.error("", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", e);
+      }
     } finally {
       FileUtil.closeFileSafe(r);
     }
@@ -352,5 +356,5 @@ public class ModuleDescriptorPersistence {
   }
 
 
-  private static Logger LOG = Logger.getLogger(ModuleDescriptorPersistence.class);
+  protected static Logger LOG = LogManager.getLogger(ModuleDescriptorPersistence.class);
 }

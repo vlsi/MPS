@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -30,7 +31,8 @@ import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class PasteNode_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Menu_paste;
@@ -59,7 +61,9 @@ public class PasteNode_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "PasteNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "PasteNode", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -138,7 +142,9 @@ public class PasteNode_Action extends BaseAction {
         }
       }, ((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "PasteNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "PasteNode", t);
+      }
     }
   }
 
@@ -156,5 +162,5 @@ public class PasteNode_Action extends BaseAction {
     return PasteNode_Action.this.getPasteData(_params) != null;
   }
 
-  private static Logger LOG = Logger.getLogger(PasteNode_Action.class);
+  protected static Logger LOG = LogManager.getLogger(PasteNode_Action.class);
 }

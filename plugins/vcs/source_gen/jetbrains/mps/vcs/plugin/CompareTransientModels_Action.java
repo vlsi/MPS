@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -21,7 +22,8 @@ import jetbrains.mps.extapi.model.SModelBase;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CompareTransientModels_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Diff;
@@ -48,7 +50,9 @@ public class CompareTransientModels_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CompareTransientModels", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CompareTransientModels", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -83,11 +87,13 @@ public class CompareTransientModels_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CompareTransientModels", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CompareTransientModels", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CompareTransientModels_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CompareTransientModels_Action.class);
 
   private static boolean eq_5whyyr_a0a0a3(Object a, Object b) {
     return (a != null ?

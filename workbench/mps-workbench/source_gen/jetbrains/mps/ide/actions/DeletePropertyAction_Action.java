@@ -11,9 +11,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.smodel.PropertyTreeNode;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DeletePropertyAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -44,7 +46,9 @@ public class DeletePropertyAction_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "DeletePropertyAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "DeletePropertyAction", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -67,9 +71,11 @@ public class DeletePropertyAction_Action extends BaseAction {
       PropertyTreeNode propNode = (PropertyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
       SNodeAccessUtil.setProperty(propsNode.getSNode(), propNode.getProperty(), null);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "DeletePropertyAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "DeletePropertyAction", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(DeletePropertyAction_Action.class);
+  protected static Logger LOG = LogManager.getLogger(DeletePropertyAction_Action.class);
 }

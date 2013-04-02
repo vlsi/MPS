@@ -14,12 +14,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class AddMissingDependency_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -56,7 +58,9 @@ public class AddMissingDependency_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "AddMissingDependency", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "AddMissingDependency", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -93,9 +97,11 @@ public class AddMissingDependency_Action extends BaseAction {
       }
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "AddMissingDependency", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "AddMissingDependency", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(AddMissingDependency_Action.class);
+  protected static Logger LOG = LogManager.getLogger(AddMissingDependency_Action.class);
 }

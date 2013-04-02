@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import org.apache.log4j.Priority;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -49,7 +50,8 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -182,7 +184,9 @@ public class ConceptPropertiesHelper {
     for (SNode conceptPropertyDecl : SetSequence.fromSet(conceptPropertyDeclarations)) {
       SNode method = replaceConceptPropertyDeclarations(conceptPropertyDecl, conceptPropertyUsages);
       if (method == null) {
-        LOG.error("ERROR. Concept property declaration" + SPropertyOperations.getString(conceptPropertyDecl, "name") + " in " + SNodeOperations.getAncestor(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false) + " was not migrated. Its instances and accesses won't be migrated too");
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("ERROR. Concept property declaration" + SPropertyOperations.getString(conceptPropertyDecl, "name") + " in " + SNodeOperations.getAncestor(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false) + " was not migrated. Its instances and accesses won't be migrated too");
+        }
         continue;
       }
 
@@ -199,7 +203,9 @@ public class ConceptPropertiesHelper {
     for (SNode conceptLinkDecl : SetSequence.fromSet(conceptLinkDeclarations)) {
       SNode method = replaceConceptLinkDeclaration(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), conceptLinkUsages);
       if (method == null) {
-        LOG.error("ERROR. Concept link declaration" + SPropertyOperations.getString(conceptLinkDecl, "name") + " in " + SNodeOperations.getAncestor(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false) + " was not migrated. Its instances and accesses won't be migrated too");
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("ERROR. Concept link declaration" + SPropertyOperations.getString(conceptLinkDecl, "name") + " in " + SNodeOperations.getAncestor(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false) + " was not migrated. Its instances and accesses won't be migrated too");
+        }
         continue;
       }
 
@@ -500,7 +506,9 @@ public class ConceptPropertiesHelper {
   private boolean addMethodToBehavior(SNode concept, SNode method) {
     SNode childConceptBehavior = SNodeOperations.cast(MigrationUtil.getOrCreateConceptAspectInstance(LanguageAspect.BEHAVIOR, concept, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptBehavior")), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
     if (childConceptBehavior == null) {
-      LOG.error("ERROR. Behavior for concept " + AbstractConceptDeclaration_Behavior.call_getPresentation_2450081617266859256(concept) + " does not exist or cannot be created");
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("ERROR. Behavior for concept " + AbstractConceptDeclaration_Behavior.call_getPresentation_2450081617266859256(concept) + " does not exist or cannot be created");
+      }
       return false;
     } else {
       ListSequence.fromList(SLinkOperations.getTargets(childConceptBehavior, "method", true)).addElement(method);
@@ -646,7 +654,7 @@ public class ConceptPropertiesHelper {
     return "Migration: migrate and remove concept properties and links";
   }
 
-  private static Logger LOG = Logger.getLogger(ConceptPropertiesHelper.class);
+  protected static Logger LOG = LogManager.getLogger(ConceptPropertiesHelper.class);
 
   private static SNode _quotation_createNode_azpnkk_a0f0t(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

@@ -8,11 +8,13 @@ import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RollbackChanges_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Reset;
@@ -32,7 +34,9 @@ public class RollbackChanges_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RollbackChanges", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "RollbackChanges", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -52,9 +56,11 @@ public class RollbackChanges_Action extends BaseAction {
     try {
       ChangesStripActionsHelper.rollbackChanges(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RollbackChanges", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "RollbackChanges", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(RollbackChanges_Action.class);
+  protected static Logger LOG = LogManager.getLogger(RollbackChanges_Action.class);
 }

@@ -16,7 +16,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 /**
  * This is a map from 'Feature' to arbitrary value. Also it stores which features are ancestors of
@@ -127,7 +129,9 @@ public class FeatureForestMap<V> {
         if (t instanceof InterruptedException || check_tcy57o_a0a0a0a0a0p(t) instanceof InterruptedException) {
           // ignore 
         } else {
-          LOG.error("Exception on firing featureStateChanged event", t);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("Exception on firing featureStateChanged event", t);
+          }
         }
       }
     }
@@ -139,7 +143,9 @@ public class FeatureForestMap<V> {
 
   private static void log(String msg) {
     if (ourLoggingEnabled) {
-      LOG.error(msg);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error(msg);
+      }
     }
   }
 
@@ -158,7 +164,7 @@ public class FeatureForestMap<V> {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(FeatureForestMap.class);
+  protected static Logger LOG = LogManager.getLogger(FeatureForestMap.class);
 
   private static Throwable check_tcy57o_a0a0a0a0a0p(Throwable checkedDotOperand) {
     if (null != checkedDotOperand) {

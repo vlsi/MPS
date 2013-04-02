@@ -10,9 +10,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class StepOver_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.TraceOver;
@@ -35,7 +37,9 @@ public class StepOver_Action extends BaseAction {
         event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled());
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "StepOver", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "StepOver", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -55,9 +59,11 @@ public class StepOver_Action extends BaseAction {
     try {
       DebugActionsUtil.getDebugSession(event).stepOver();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "StepOver", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "StepOver", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(StepOver_Action.class);
+  protected static Logger LOG = LogManager.getLogger(StepOver_Action.class);
 }

@@ -14,6 +14,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.util.io.ZipUtil;
 import com.intellij.openapi.application.PathManager;
 import java.io.FilenameFilter;
+import org.apache.log4j.Priority;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.util.ModelVersion;
 import jetbrains.mps.util.UnzipUtil;
@@ -26,7 +27,8 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MergeBackupUtil {
   public MergeBackupUtil() {
@@ -66,7 +68,9 @@ public class MergeBackupUtil {
       FileUtil.zip(tmp, file);
       FileUtil.delete(tmp);
     } catch (IOException e) {
-      LOG.error("", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", e);
+      }
     }
   }
 
@@ -92,7 +96,9 @@ public class MergeBackupUtil {
         }
       });
       if (files == null || files.length != 1) {
-        LOG.error("Wrong zip contents");
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Wrong zip contents");
+        }
       }
       file = files[0];
       char[] fileText = com.intellij.openapi.util.io.FileUtil.loadFileText(file);
@@ -138,5 +144,5 @@ public class MergeBackupUtil {
     }, false);
   }
 
-  private static Logger LOG = Logger.getLogger(MergeBackupUtil.class);
+  protected static Logger LOG = LogManager.getLogger(MergeBackupUtil.class);
 }

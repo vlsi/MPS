@@ -13,6 +13,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -28,7 +29,8 @@ import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.ide.projectPane.SortUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NewSubTestModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.TestModel;
@@ -58,7 +60,9 @@ public class NewSubTestModel_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "NewSubTestModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "NewSubTestModel", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -109,7 +113,9 @@ public class NewSubTestModel_Action extends BaseAction {
       });
       ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(result.value, false);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "NewSubTestModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "NewSubTestModel", t);
+      }
     }
   }
 
@@ -137,5 +143,5 @@ public class NewSubTestModel_Action extends BaseAction {
     return builder.toString();
   }
 
-  private static Logger LOG = Logger.getLogger(NewSubTestModel_Action.class);
+  protected static Logger LOG = LogManager.getLogger(NewSubTestModel_Action.class);
 }

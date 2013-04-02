@@ -4,7 +4,9 @@ package jetbrains.mps.nanoc.debug;
 
 import com.intellij.execution.process.ProcessHandler;
 import java.io.OutputStreamWriter;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ProcessUtil {
   public ProcessUtil() {
@@ -16,9 +18,11 @@ public class ProcessUtil {
       outputStreamWriter.append(text);
       outputStreamWriter.flush();
     } catch (Throwable t) {
-      LOG.error("", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ProcessUtil.class);
+  protected static Logger LOG = LogManager.getLogger(ProcessUtil.class);
 }

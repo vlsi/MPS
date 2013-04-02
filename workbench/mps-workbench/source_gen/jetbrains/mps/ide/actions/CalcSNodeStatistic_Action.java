@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.HashMap;
@@ -15,7 +16,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CalcSNodeStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,7 +37,9 @@ public class CalcSNodeStatistic_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CalcSNodeStatistic", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CalcSNodeStatistic", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -84,14 +88,24 @@ public class CalcSNodeStatistic_Action extends BaseAction {
         }
       });
 
-      LOG.warning("Property size statistic: " + propertiesStatistic);
-      LOG.warning("Refs size statistic: " + refsStatistic);
-      LOG.warning("Children size statistic: " + childrenStatistic);
-      LOG.warning("Zeros statistic: " + zeros.value);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("Property size statistic: " + propertiesStatistic);
+      }
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("Refs size statistic: " + refsStatistic);
+      }
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("Children size statistic: " + childrenStatistic);
+      }
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("Zeros statistic: " + zeros.value);
+      }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CalcSNodeStatistic", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CalcSNodeStatistic", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CalcSNodeStatistic_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CalcSNodeStatistic_Action.class);
 }

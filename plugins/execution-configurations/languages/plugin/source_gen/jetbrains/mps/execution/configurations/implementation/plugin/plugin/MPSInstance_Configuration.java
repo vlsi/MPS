@@ -21,6 +21,7 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.vfs.FileSystem;
+import org.apache.log4j.Priority;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -31,7 +32,8 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MPSInstance_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -177,7 +179,9 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
       clone.myState = (MPSInstance_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -241,7 +245,7 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     return MPSInstance_Configuration_RunProfileState.canExecute(executorId);
   }
 
-  private static Logger LOG = Logger.getLogger(MPSInstance_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(MPSInstance_Configuration.class);
 
   public static boolean isEmpty_uovwmm_a0a0a0b(String str) {
     return str == null || str.length() == 0;

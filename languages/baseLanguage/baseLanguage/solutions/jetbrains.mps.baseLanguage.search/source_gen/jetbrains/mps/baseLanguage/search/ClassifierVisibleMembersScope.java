@@ -10,10 +10,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.log4j.Priority;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 @Deprecated
 public class ClassifierVisibleMembersScope extends AbstractSearchScope {
@@ -44,7 +46,9 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   @Override
   public boolean isInScope(SNode node) {
     if (myContextNode == null || !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
-      LOG.error("isInScope(" + node + ") - context is null or not ClassifierMember");
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("isInScope(" + node + ") - context is null or not ClassifierMember");
+      }
       return super.isInScope(node);
     }
     return myClassifierScope.getClassifierNodes().contains(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) && isVisible(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
@@ -72,5 +76,5 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     return VisibilityUtil.isVisible(myContextNode, member);
   }
 
-  private static Logger LOG = Logger.getLogger(ClassifierVisibleMembersScope.class);
+  protected static Logger LOG = LogManager.getLogger(ClassifierVisibleMembersScope.class);
 }

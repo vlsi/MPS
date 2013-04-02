@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.diff.DiffProvider;
@@ -15,7 +16,8 @@ import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.vcs.changes.BinaryContentRevision;
 import com.intellij.openapi.vcs.VcsException;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class BaseVersionUtil {
   private BaseVersionUtil() {
@@ -28,7 +30,9 @@ public class BaseVersionUtil {
   @Nullable
   public static Object getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
     if (ModelAccess.instance().canRead()) {
-      LOG.error("BaseVersionUtil.getBaseVersionContent() is invoked from read action: possible deadlock", new IllegalStateException());
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("BaseVersionUtil.getBaseVersionContent() is invoked from read action: possible deadlock", new IllegalStateException());
+      }
     }
     try {
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
@@ -52,10 +56,12 @@ public class BaseVersionUtil {
       }
       return revision.getContent();
     } catch (VcsException ex) {
-      LOG.warning("VcsException during getting base version content: ", ex);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("VcsException during getting base version content: ", ex);
+      }
       return null;
     }
   }
 
-  private static Logger LOG = Logger.getLogger(BaseVersionUtil.class);
+  protected static Logger LOG = LogManager.getLogger(BaseVersionUtil.class);
 }

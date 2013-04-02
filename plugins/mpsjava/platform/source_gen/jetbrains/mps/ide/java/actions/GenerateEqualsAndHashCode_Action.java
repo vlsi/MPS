@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -24,7 +25,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -62,7 +64,9 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GenerateEqualsAndHashCode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GenerateEqualsAndHashCode", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -182,7 +186,9 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(_quotation_createNode_x9xljz_a0a53a0(resultReference));
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(equalsDeclaration);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GenerateEqualsAndHashCode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GenerateEqualsAndHashCode", t);
+      }
     }
   }
 
@@ -190,7 +196,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
 
-  private static Logger LOG = Logger.getLogger(GenerateEqualsAndHashCode_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GenerateEqualsAndHashCode_Action.class);
 
   private static SNode _quotation_createNode_x9xljz_a0m0a(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

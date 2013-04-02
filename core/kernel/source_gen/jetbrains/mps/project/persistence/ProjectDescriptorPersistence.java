@@ -19,12 +19,14 @@ import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConf
 import java.io.OutputStream;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
+import org.apache.log4j.Priority;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ProjectDescriptorPersistence {
   private ProjectDescriptorPersistence() {
@@ -87,7 +89,9 @@ public class ProjectDescriptorPersistence {
       Document doc = new Document(projectElement);
       JDOMUtil.writeDocument(doc, os);
     } catch (Exception e) {
-      LOG.error("", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", e);
+      }
     }
   }
 
@@ -162,5 +166,5 @@ public class ProjectDescriptorPersistence {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ProjectDescriptorPersistence.class);
+  protected static Logger LOG = LogManager.getLogger(ProjectDescriptorPersistence.class);
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -37,7 +38,8 @@ import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.StereotypeProvider;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NewModelFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -77,7 +79,9 @@ public class NewModelFromSource_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "NewModelFromSource", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "NewModelFromSource", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -186,7 +190,9 @@ public class NewModelFromSource_Action extends BaseAction {
         ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "NewModelFromSource", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "NewModelFromSource", t);
+      }
     }
   }
 
@@ -208,5 +214,5 @@ public class NewModelFromSource_Action extends BaseAction {
     return null;
   }
 
-  private static Logger LOG = Logger.getLogger(NewModelFromSource_Action.class);
+  protected static Logger LOG = LogManager.getLogger(NewModelFromSource_Action.class);
 }

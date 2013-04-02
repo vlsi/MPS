@@ -10,7 +10,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.ArrayList;
 import java.io.File;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ListCommandPart extends AbstractCommandPart implements CommandPart {
   public ListCommandPart(List<? extends Object> list) {
@@ -55,12 +57,14 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
       }
       return result;
     } else {
-      LOG.error("Unknown type of command part " + item);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Unknown type of command part " + item);
+      }
     }
     return ListSequence.fromList(new ArrayList<String>());
   }
 
-  private static Logger LOG = Logger.getLogger(ListCommandPart.class);
+  protected static Logger LOG = LogManager.getLogger(ListCommandPart.class);
 
   public static boolean isNotEmpty_zceotc_a0a0b0d(String str) {
     return str != null && str.length() > 0;

@@ -22,6 +22,7 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
@@ -36,7 +37,8 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Java_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -93,7 +95,9 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
     {
@@ -101,7 +105,9 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       if (fieldElement != null) {
         myRunParameters.readExternal(fieldElement);
       } else {
-        LOG.debug("Element " + "myRunParameters" + " in " + this.getClass().getName() + " was null.");
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("Element " + "myRunParameters" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
   }
@@ -124,7 +130,9 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       clone.myRunParameters = (JavaRunParameters_Configuration) myRunParameters.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -179,5 +187,5 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
   }
 
-  private static Logger LOG = Logger.getLogger(Java_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(Java_Configuration.class);
 }

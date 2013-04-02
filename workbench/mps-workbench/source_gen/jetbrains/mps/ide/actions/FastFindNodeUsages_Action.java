@@ -10,6 +10,7 @@ import java.util.Map;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -17,7 +18,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FastFindNodeUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -45,7 +47,9 @@ public class FastFindNodeUsages_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FastFindNodeUsages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "FastFindNodeUsages", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -87,9 +91,11 @@ public class FastFindNodeUsages_Action extends BaseAction {
     try {
       new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModel) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FastFindNodeUsages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "FastFindNodeUsages", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(FastFindNodeUsages_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FastFindNodeUsages_Action.class);
 }

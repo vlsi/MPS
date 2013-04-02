@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -34,7 +35,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.editor.util.GoToHelper;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToInheritedClassifier_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -61,7 +63,9 @@ public class GoToInheritedClassifier_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToInheritedClassifier", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToInheritedClassifier", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -158,9 +162,11 @@ public class GoToInheritedClassifier_Action extends BaseAction {
       });
       GoToHelper.showInheritedClassesMenu(nodes, GoToHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent()), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(GoToInheritedClassifier_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToInheritedClassifier_Action.class);
 }

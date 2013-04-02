@@ -4,7 +4,8 @@ package jetbrains.mps.plugin;
 
 import java.rmi.server.UnicastRemoteObject;
 import com.intellij.openapi.components.ProjectComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
 import java.rmi.RemoteException;
 import jetbrains.mps.MPSCore;
@@ -41,7 +42,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Computable;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
-  private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
+  private static final Logger LOG = LogManager.getLogger(MPSProjectIDEHandler.class);
   private Project myProject;
 
   public MPSProjectIDEHandler(Project project) throws RemoteException {

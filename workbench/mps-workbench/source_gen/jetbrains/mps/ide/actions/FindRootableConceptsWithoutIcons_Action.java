@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.progress.ProgressManager;
@@ -30,7 +31,8 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -50,7 +52,9 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindRootableConceptsWithoutIcons", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "FindRootableConceptsWithoutIcons", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -103,11 +107,13 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindRootableConceptsWithoutIcons", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "FindRootableConceptsWithoutIcons", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(FindRootableConceptsWithoutIcons_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FindRootableConceptsWithoutIcons_Action.class);
 
   public static boolean isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a0a0a5(String str) {
     return str == null || str.length() == 0;

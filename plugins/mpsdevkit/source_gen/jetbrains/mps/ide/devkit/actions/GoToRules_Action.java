@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -16,7 +17,8 @@ import jetbrains.mps.ide.actions.nodes.GoToRulesHelper;
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToRules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -36,7 +38,9 @@ public class GoToRules_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToRules", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToRules", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -76,9 +80,11 @@ public class GoToRules_Action extends BaseAction {
     try {
       GoToRulesHelper.go(((Frame) MapSequence.fromMap(_params).get("frame")), ((EditorCell) MapSequence.fromMap(_params).get("cell")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToRules", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToRules", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(GoToRules_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToRules_Action.class);
 }

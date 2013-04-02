@@ -26,6 +26,7 @@ import jetbrains.mps.baseLanguage.javastub.asm.ASMClassType;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMPrimitiveType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMEnumValue;
+import org.apache.log4j.Priority;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMArrayType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMVarArgType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMParameterizedType;
@@ -37,7 +38,8 @@ import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -500,10 +502,12 @@ public class ClassifierUpdater {
       addClassifierReference(res, "classifier", (ASMClassType) value);
       return res;
     }
-    LOG.error("couldn't create annotation value from " + ((value == null ?
-      "" :
-      value.getClass().getName()
-    )) + " : " + value);
+    if (LOG.isEnabledFor(Priority.ERROR)) {
+      LOG.error("couldn't create annotation value from " + ((value == null ?
+        "" :
+        value.getClass().getName()
+      )) + " : " + value);
+    }
     return null;
   }
 
@@ -581,7 +585,9 @@ public class ClassifierUpdater {
     if (type instanceof ASMUnboundedType) {
       return _quotation_createNode_ol94f8_a0a61a62(cm);
     }
-    LOG.error("Can't convert type " + type + " class : ");
+    if (LOG.isEnabledFor(Priority.ERROR)) {
+      LOG.error("Can't convert type " + type + " class : ");
+    }
     return _quotation_createNode_ol94f8_a81a62(cm);
   }
 
@@ -642,7 +648,7 @@ public class ClassifierUpdater {
     return mySkipPrivate;
   }
 
-  private static Logger LOG = Logger.getLogger(ClassifierUpdater.class);
+  protected static Logger LOG = LogManager.getLogger(ClassifierUpdater.class);
 
   private static SNode _quotation_createNode_ol94f8_a0a5a5(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

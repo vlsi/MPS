@@ -10,6 +10,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -21,7 +22,8 @@ import jetbrains.mps.debug.api.programState.ILocation;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ExportThreads_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Export;
@@ -45,7 +47,9 @@ public class ExportThreads_Action extends BaseAction {
         event.getPresentation().setVisible(true);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ExportThreads", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ExportThreads", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -99,9 +103,11 @@ public class ExportThreads_Action extends BaseAction {
         }
       }, ModalityState.NON_MODAL);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ExportThreads", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ExportThreads", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ExportThreads_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ExportThreads_Action.class);
 }

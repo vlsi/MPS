@@ -8,6 +8,7 @@ import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -20,7 +21,8 @@ import com.intellij.ide.IdeBundle;
 import com.intellij.ide.projectView.ProjectView;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NewFile_Action extends BaseAction {
   private static final Icon ICON = AllIcons.FileTypes.Any_type;
@@ -40,7 +42,9 @@ public class NewFile_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "NewFile", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "NewFile", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -102,9 +106,11 @@ public class NewFile_Action extends BaseAction {
         });
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "NewFile", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "NewFile", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(NewFile_Action.class);
+  protected static Logger LOG = LogManager.getLogger(NewFile_Action.class);
 }

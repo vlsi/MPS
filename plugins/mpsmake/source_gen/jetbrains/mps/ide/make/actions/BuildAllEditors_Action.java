@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -21,7 +22,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class BuildAllEditors_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -41,7 +43,9 @@ public class BuildAllEditors_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "BuildAllEditors", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "BuildAllEditors", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -77,9 +81,11 @@ public class BuildAllEditors_Action extends BaseAction {
 
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models.value, null, null, null), true).executeAction();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "BuildAllEditors", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "BuildAllEditors", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(BuildAllEditors_Action.class);
+  protected static Logger LOG = LogManager.getLogger(BuildAllEditors_Action.class);
 }

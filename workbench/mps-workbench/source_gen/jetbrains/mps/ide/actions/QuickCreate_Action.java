@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -20,7 +21,8 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class QuickCreate_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -40,7 +42,9 @@ public class QuickCreate_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "QuickCreate", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "QuickCreate", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -76,9 +80,11 @@ public class QuickCreate_Action extends BaseAction {
       }
       popup.value.showInBestPositionFor(event.getDataContext());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "QuickCreate", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "QuickCreate", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(QuickCreate_Action.class);
+  protected static Logger LOG = LogManager.getLogger(QuickCreate_Action.class);
 }

@@ -10,13 +10,15 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.build.generictasks.taskfromjar.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ImportAntStuff_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,7 +45,9 @@ public class ImportAntStuff_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ImportAntStuff", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ImportAntStuff", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -64,9 +68,13 @@ public class ImportAntStuff_Action extends BaseAction {
       Language language = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.generictasks", Language.class);
       ImportAntStuff_Action.this.importTasks(language, SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.generated", "")), Generator.Modes.CORE, _params);
       ImportAntStuff_Action.this.importTasks(language, SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.optional", "")), Generator.Modes.JUNIT, _params);
-      LOG.info("Import completed.");
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Import completed.");
+      }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ImportAntStuff", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ImportAntStuff", t);
+      }
     }
   }
 
@@ -75,5 +83,5 @@ public class ImportAntStuff_Action extends BaseAction {
     new Generator().generateTasks(model, m, new SModel[]{SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.generated", "")), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.optional", ""))});
   }
 
-  private static Logger LOG = Logger.getLogger(ImportAntStuff_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ImportAntStuff_Action.class);
 }

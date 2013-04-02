@@ -11,8 +11,10 @@ import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CopyOldNodes_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Copy;
@@ -39,7 +41,9 @@ public class CopyOldNodes_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CopyOldNodes", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CopyOldNodes", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -59,9 +63,11 @@ public class CopyOldNodes_Action extends BaseAction {
     try {
       ChangesStripActionsHelper.copyOldNodes(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CopyOldNodes", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CopyOldNodes", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CopyOldNodes_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CopyOldNodes_Action.class);
 }

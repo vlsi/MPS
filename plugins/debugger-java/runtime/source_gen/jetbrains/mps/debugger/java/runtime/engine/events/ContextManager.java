@@ -13,10 +13,12 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
 import com.sun.jdi.request.EventRequest;
+import org.apache.log4j.Priority;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ContextManager {
   private final List<EventContext> mySuspendedContexts = ListSequence.fromList(new ArrayList<EventContext>());
@@ -81,7 +83,9 @@ public class ContextManager {
           // Patches.MAC_RESUME_VM_HACK &&  
           // Its funny, but second resume solves the problem 
         } else {
-          LOG.error("", e);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("", e);
+          }
           break;
         }
       }
@@ -127,7 +131,7 @@ public class ContextManager {
     return SetSequence.fromSet(myEvaluatedThreads).contains(threadReference);
   }
 
-  private static Logger LOG = Logger.getLogger(ContextManager.class);
+  protected static Logger LOG = LogManager.getLogger(ContextManager.class);
 
   private static boolean eq_toclu7_a0a0a01(Object a, Object b) {
     return (a != null ?

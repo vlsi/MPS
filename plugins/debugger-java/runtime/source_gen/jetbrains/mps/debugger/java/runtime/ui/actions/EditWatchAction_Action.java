@@ -8,10 +8,12 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi;
+import org.apache.log4j.Priority;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class EditWatchAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,7 +33,9 @@ public class EditWatchAction_Action extends BaseAction {
     try {
       event.getPresentation().setVisible(EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext()) != null && EvaluationUi.DEBUG_SESSION.getData(event.getDataContext()) != null);
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "EditWatchAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "EditWatchAction", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -52,9 +56,11 @@ public class EditWatchAction_Action extends BaseAction {
       }
       session.getEvaluationProvider().showEditWatchDialog(MPSCommonDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), container);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "EditWatchAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "EditWatchAction", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(EditWatchAction_Action.class);
+  protected static Logger LOG = LogManager.getLogger(EditWatchAction_Action.class);
 }

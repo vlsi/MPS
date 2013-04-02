@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import java.util.ArrayList;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -28,7 +29,8 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class SetNodePackage_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -59,7 +61,9 @@ public class SetNodePackage_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "SetNodePackage", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "SetNodePackage", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -128,7 +132,9 @@ public class SetNodePackage_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "SetNodePackage", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "SetNodePackage", t);
+      }
     }
   }
 
@@ -156,5 +162,5 @@ public class SetNodePackage_Action extends BaseAction {
     return result;
   }
 
-  private static Logger LOG = Logger.getLogger(SetNodePackage_Action.class);
+  protected static Logger LOG = LogManager.getLogger(SetNodePackage_Action.class);
 }

@@ -5,7 +5,8 @@ package jetbrains.mps.ide.make;
 import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.make.IMakeService;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import jetbrains.mps.make.MakeSession;
 import java.util.concurrent.atomic.AtomicReference;
@@ -62,7 +63,7 @@ import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.IMessage;
 
 public class WorkbenchMakeService extends AbstractMakeService implements IMakeService, ApplicationComponent {
-  private static Logger LOG = Logger.getLogger(WorkbenchMakeService.class);
+  private static Logger LOG = LogManager.getLogger(WorkbenchMakeService.class);
   private static WorkbenchMakeService INSTANCE = null;
   private AtomicMarkableReference<MakeSession> currentSessionStickyMark = new AtomicMarkableReference<MakeSession>(null, false);
   private volatile AtomicReference<Future<IResult>> currentProcess = new AtomicReference<Future<IResult>>();

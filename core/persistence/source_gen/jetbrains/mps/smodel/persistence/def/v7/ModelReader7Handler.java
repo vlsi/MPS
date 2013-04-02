@@ -23,9 +23,11 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.apache.log4j.Priority;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
   private static String[] EMPTY_ARRAY = new String[0];
@@ -527,7 +529,9 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         Pair<Boolean, SNodeReference> pptr = fieldhelper.readLink_internal(child[1]);
         SNodeReference ptr = pptr.o2;
         if (ptr == null || ptr.getModelReference() == null) {
-          LOG.error("couldn't create reference '" + child[0] + "' from " + child[1]);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("couldn't create reference '" + child[0] + "' from " + child[1]);
+          }
           return;
         }
         StaticReference ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ((SNodePointer) ptr).getNodeId(), child[2]);
@@ -618,5 +622,5 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ModelReader7Handler.class);
+  protected static Logger LOG = LogManager.getLogger(ModelReader7Handler.class);
 }

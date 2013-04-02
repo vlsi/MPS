@@ -13,6 +13,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
@@ -20,7 +21,8 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.IGenerationTracer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowGenerationTrace_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -49,7 +51,9 @@ public class ShowGenerationTrace_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowGenerationTrace", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowGenerationTrace", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -90,7 +94,9 @@ public class ShowGenerationTrace_Action extends BaseAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "No tracing data available");
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowGenerationTrace", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowGenerationTrace", t);
+      }
     }
   }
 
@@ -98,5 +104,5 @@ public class ShowGenerationTrace_Action extends BaseAction {
     return (GenerationTracer) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IGenerationTracer.class);
   }
 
-  private static Logger LOG = Logger.getLogger(ShowGenerationTrace_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowGenerationTrace_Action.class);
 }

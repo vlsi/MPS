@@ -23,8 +23,10 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.apache.log4j.Priority;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 @Deprecated
 public class ReachableClassifiersScope extends AbstractClassifiersScope {
@@ -166,7 +168,9 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
           }
         });
 
-        LOG.warning(warning.toString());
+        if (LOG.isEnabledFor(Priority.WARN)) {
+          LOG.warn(warning.toString());
+        }
         return null;
       }
       return ListSequence.fromList(classifiers).getElement(0);
@@ -187,5 +191,5 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ReachableClassifiersScope.class);
+  protected static Logger LOG = LogManager.getLogger(ReachableClassifiersScope.class);
 }

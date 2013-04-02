@@ -20,6 +20,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -40,7 +41,8 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class InternalActionsUtils {
   public InternalActionsUtils() {
@@ -63,7 +65,9 @@ public class InternalActionsUtils {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
-        LOG.warning("Modules: " + Sequence.fromIterable(modules).count());
+        if (LOG.isEnabledFor(Priority.WARN)) {
+          LOG.warn("Modules: " + Sequence.fromIterable(modules).count());
+        }
         modelReferences.value = Sequence.fromIterable(modules).translate(new ITranslator2<IModule, SModel>() {
           public Iterable<SModel> translate(IModule it) {
             return it.getModels();
@@ -73,7 +77,9 @@ public class InternalActionsUtils {
             return it.getReference();
           }
         });
-        LOG.warning("Models: " + Sequence.fromIterable(modelReferences.value).count());
+        if (LOG.isEnabledFor(Priority.WARN)) {
+          LOG.warn("Models: " + Sequence.fromIterable(modelReferences.value).count());
+        }
       }
     });
 
@@ -87,7 +93,9 @@ public class InternalActionsUtils {
             // hack for conf stubs 
             UnregisteredNodes.instance().clear();
             if (num.value++ % 100 == 0) {
-              LOG.warning("Model num: " + num.value + ", name: " + SModelStereotype.withoutStereotype(modelRef.getModelName()));
+              if (LOG.isEnabledFor(Priority.WARN)) {
+                LOG.warn("Model num: " + num.value + ", name: " + SModelStereotype.withoutStereotype(modelRef.getModelName()));
+              }
             }
             SModel model = SModelRepository.getInstance().getModelDescriptor(modelRef);
             if (model != null) {
@@ -95,7 +103,9 @@ public class InternalActionsUtils {
                 try {
                   nodeCallback.invoke(node);
                 } catch (Throwable t) {
-                  LOG.error("Exception in callback for node " + node, t);
+                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                    LOG.error("Exception in callback for node " + node, t);
+                  }
                 }
               }
             }
@@ -146,5 +156,5 @@ public class InternalActionsUtils {
     project.getComponent(UsagesViewTool.class).findUsages(provider, new SearchQuery(GlobalScope.getInstance()), false, true, false, "Nothing");
   }
 
-  private static Logger LOG = Logger.getLogger(InternalActionsUtils.class);
+  protected static Logger LOG = LogManager.getLogger(InternalActionsUtils.class);
 }

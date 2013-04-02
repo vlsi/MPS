@@ -33,6 +33,7 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import org.apache.log4j.Priority;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -68,7 +69,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ChangesTracking {
   private Project myProject;
@@ -193,7 +195,9 @@ public class ChangesTracking {
     } else {
       Object content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
       if (content == null && status != FileStatus.NOT_CHANGED) {
-        LOG.error("Base version content is null while file status is " + status);
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Base version content is null while file status is " + status);
+        }
       }
       if (content == null) {
         return;
@@ -220,7 +224,9 @@ public class ChangesTracking {
             "warn: "
           )).append(p.getText()).append("\n");
         }
-        LOG.warning(sb.toString());
+        if (LOG.isEnabledFor(Priority.WARN)) {
+          LOG.warn(sb.toString());
+        }
         return;
       }
     }
@@ -588,7 +594,7 @@ public class ChangesTracking {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ChangesTracking.class);
+  protected static Logger LOG = LogManager.getLogger(ChangesTracking.class);
 
   private static SModel check_5iuzi5_a0a0a52(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {

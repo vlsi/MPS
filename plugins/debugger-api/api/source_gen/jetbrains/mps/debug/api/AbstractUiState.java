@@ -11,7 +11,9 @@ import java.util.Collections;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public abstract class AbstractUiState {
   protected static final int NO_FRAME = -1;
@@ -104,11 +106,13 @@ public abstract class AbstractUiState {
         try {
           command.invoke();
         } catch (Throwable t) {
-          LOG.error("", t);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("", t);
+          }
         }
       }
     });
   }
 
-  private static Logger LOG = Logger.getLogger(AbstractUiState.class);
+  protected static Logger LOG = LogManager.getLogger(AbstractUiState.class);
 }

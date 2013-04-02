@@ -6,7 +6,7 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
 
 public abstract class AbstractManager {
   private ReloadListener myReloadListener = new ReloadAdapter() {
@@ -55,7 +55,7 @@ public abstract class AbstractManager {
             myLog.error(t);
           }
         } else {
-          myLog.warning("Class not found (probably code for corresponding model should be regenerated): " + myClassName);
+          myLog.warn("Class not found (probably code for corresponding model should be regenerated): " + myClassName);
         }
         myWasInitialized = true;
       }

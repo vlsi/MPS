@@ -7,6 +7,7 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import org.apache.log4j.Priority;
 import java.lang.reflect.Method;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -15,7 +16,8 @@ import com.intellij.execution.BeforeRunTask;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask> extends BeforeRunTaskProvider<T> {
   private final String myName;
@@ -68,7 +70,9 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     try {
       return task.execute(PlatformDataKeys.PROJECT.getData(context));
     } catch (Throwable t) {
-      LOG.error("Error during executing provider " + (myAlias + "(" + this.getClass().getName() + ")"), t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Error during executing provider " + (myAlias + "(" + this.getClass().getName() + ")"), t);
+      }
     }
     return false;
   }
@@ -88,11 +92,17 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
       return (Boolean) configureMethod.invoke(task, parameters);
     } catch (NoSuchMethodException e) {
     } catch (InvocationTargetException e) {
-      LOG.error("", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", e);
+      }
     } catch (IllegalAccessException e) {
-      LOG.error("", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", e);
+      }
     } catch (ClassCastException e) {
-      LOG.error("", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", e);
+      }
     }
     return false;
   }
@@ -133,7 +143,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     public abstract boolean execute(Project project);
   }
 
-  private static Logger LOG = Logger.getLogger(BaseMpsBeforeTaskProvider.class);
+  protected static Logger LOG = LogManager.getLogger(BaseMpsBeforeTaskProvider.class);
 
   private static boolean eq_xh6sei_a0a0a0a0a0a3a0a01(Object a, Object b) {
     return (a != null ?

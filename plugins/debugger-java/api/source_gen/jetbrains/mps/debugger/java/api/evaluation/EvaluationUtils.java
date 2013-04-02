@@ -21,9 +21,11 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy;
 import com.sun.jdi.InvocationException;
 import com.sun.jdi.InvalidTypeException;
+import org.apache.log4j.Priority;
 import com.sun.jdi.ClassNotLoadedException;
 import com.sun.jdi.IncompatibleThreadStateException;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public abstract class EvaluationUtils {
   protected static EvaluationUtils INSTANCE;
@@ -139,15 +141,25 @@ public abstract class EvaluationUtils {
     try {
       return invocatable.invoke();
     } catch (InvalidEvaluatedExpressionException e) {
-      LOG.warning("", e);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("", e);
+      }
     } catch (InvocationTargetEvaluationException e) {
-      LOG.warning("", e);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("", e);
+      }
     } catch (TargetVMEvaluationException e) {
-      LOG.warning("", e);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("", e);
+      }
     } catch (JdiRuntimeExceptionEvaluationException e) {
-      LOG.info("", e);
+      if (LOG.isInfoEnabled()) {
+        LOG.info("", e);
+      }
     } catch (EvaluationException e) {
-      LOG.debug("", e);
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("", e);
+      }
     }
     return failure;
   }
@@ -187,5 +199,5 @@ static interface EvaluationInvocatable<T> {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(EvaluationUtils.class);
+  protected static Logger LOG = LogManager.getLogger(EvaluationUtils.class);
 }

@@ -13,13 +13,15 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NewAspectModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +49,9 @@ public class NewAspectModel_Action extends BaseAction {
         NewAspectModel_Action.this.setEnabledState(event.getPresentation(), false);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "NewAspectModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "NewAspectModel", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -78,7 +82,9 @@ public class NewAspectModel_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "NewAspectModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "NewAspectModel", t);
+      }
     }
   }
 
@@ -96,5 +102,5 @@ public class NewAspectModel_Action extends BaseAction {
     return object.getName();
   }
 
-  private static Logger LOG = Logger.getLogger(NewAspectModel_Action.class);
+  protected static Logger LOG = LogManager.getLogger(NewAspectModel_Action.class);
 }

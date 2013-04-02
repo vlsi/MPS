@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -18,7 +19,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CompileProject_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,7 +40,9 @@ public class CompileProject_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CompileProject", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CompileProject", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -64,9 +68,11 @@ public class CompileProject_Action extends BaseAction {
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(SModule.class)));
       ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Compiling", modules, false));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CompileProject", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CompileProject", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CompileProject_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CompileProject_Action.class);
 }

@@ -21,6 +21,7 @@ import jetbrains.mps.workbench.MPSApplicationInfo;
 import jetbrains.mps.MPSCore;
 import java.net.URL;
 import java.io.IOException;
+import org.apache.log4j.Priority;
 import java.io.InputStream;
 import java.io.OutputStream;
 import jetbrains.mps.util.ReadUtil;
@@ -58,7 +59,8 @@ import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -141,7 +143,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     try {
       copyIcon(sourceUrl.openStream(), targetDir, targetName);
     } catch (IOException e) {
-      LOG.error("Can't copy icon into " + targetDir + " as " + targetName + ".", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Can't copy icon into " + targetDir + " as " + targetName + ".", e);
+      }
     }
   }
 
@@ -157,7 +161,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       out.write(ReadUtil.read(sourceStream));
       out.close();
     } catch (IOException e) {
-      LOG.error("Can't copy icon into " + targetDir + " as " + targetName + ".", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Can't copy icon into " + targetDir + " as " + targetName + ".", e);
+      }
     } finally {
       if (out != null) {
         try {
@@ -226,7 +232,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       String relativeToModuleProjectPath = Context.defaultContext().getRelativePathHelper(targetModelDescriptor).makeRelative(myProject.getBasePath());
       SPropertyOperations.set(buildProject, "internalBaseDirectory", relativeToModuleProjectPath);
     } catch (RelativePathHelper.PathException e) {
-      LOG.warning("Can't calculate project path relative to module " + targetModelDescriptor.getModule(), e);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("Can't calculate project path relative to module " + targetModelDescriptor.getModule(), e);
+      }
     }
 
     // deps and macro 
@@ -305,7 +313,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       try {
         new ModuleLoader(module, visible, pathConverter, null).importRequired();
       } catch (ModuleLoader.ModuleLoaderException ex) {
-        LOG.error(ex.getMessage());
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error(ex.getMessage());
+        }
       }
     }
 
@@ -384,7 +394,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     try {
       path = createPathFromFullPath(module.getDescriptorFile().getPath());
     } catch (RelativePathHelper.PathException e) {
-      LOG.warning("Can't make relative path from build model base directory to module " + module, e);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("Can't make relative path from build model base directory to module " + module, e);
+      }
       return null;
     }
 
@@ -425,7 +437,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(BuildGeneratorImpl.class);
+  protected static Logger LOG = LogManager.getLogger(BuildGeneratorImpl.class);
 
   private static SNode _quotation_createNode_un708i_a0a0r0n() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

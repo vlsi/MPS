@@ -8,6 +8,7 @@ import jetbrains.mps.plugins.PluginReloader;
 import jetbrains.mps.plugins.PluginReloadingListener;
 import jetbrains.mps.ide.IdeMain;
 import com.intellij.openapi.util.InvalidDataException;
+import org.apache.log4j.Priority;
 import java.util.List;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
@@ -34,7 +35,8 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jdom.Element;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RunConfigurationsStateManager implements ProjectComponent {
   private final Project myProject;
@@ -83,7 +85,9 @@ public class RunConfigurationsStateManager implements ProjectComponent {
         myState.restoreState();
         myState = null;
       } catch (InvalidDataException e) {
-        LOG.error("Can't read execution configurations state.", e);
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Can't read execution configurations state.", e);
+        }
       }
     }
   }
@@ -101,10 +105,14 @@ public class RunConfigurationsStateManager implements ProjectComponent {
           while (d_it.hasNext()) {
             d_var = d_it.next();
             if (d_var.getAttachedContent() == null) {
-              LOG.warning("Attached content of descriptor " + d_var.getDisplayName() + " is null.");
+              if (LOG.isEnabledFor(Priority.WARN)) {
+                LOG.warn("Attached content of descriptor " + d_var.getDisplayName() + " is null.");
+              }
             } else
             if (d_var.getAttachedContent().getManager() == null) {
-              LOG.warning("Manager of attached content of descriptor " + d_var.getDisplayName() + " is null.");
+              if (LOG.isEnabledFor(Priority.WARN)) {
+                LOG.warn("Manager of attached content of descriptor " + d_var.getDisplayName() + " is null.");
+              }
             } else {
               d_var.getAttachedContent().getManager().removeAllContents(true);
             }
@@ -118,7 +126,9 @@ public class RunConfigurationsStateManager implements ProjectComponent {
         myState = new RunConfigurationsStateManager.State();
         getRunManager().clearAll();
       } catch (WriteExternalException e) {
-        LOG.error("Can't save run configurations state.", e);
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Can't save run configurations state.", e);
+        }
       }
     }
   }
@@ -215,5 +225,5 @@ public class RunConfigurationsStateManager implements ProjectComponent {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(RunConfigurationsStateManager.class);
+  protected static Logger LOG = LogManager.getLogger(RunConfigurationsStateManager.class);
 }

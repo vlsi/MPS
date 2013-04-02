@@ -7,6 +7,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModel;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Pair;
@@ -14,7 +15,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ReadHelper {
   private SModelReference myModelRef;
@@ -32,7 +34,9 @@ public class ReadHelper {
 
   public void addImportToModel(SModel model, String index, String modelUID, int version, boolean implicit) {
     if (modelUID == null) {
-      LOG.error("Error loading import element for index " + index + " in " + myModelRef);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Error loading import element for index " + index + " in " + myModelRef);
+      }
       return;
     }
     SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(modelUID);
@@ -84,12 +88,16 @@ public class ReadHelper {
     int ix = s.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     if (ix <= 0) {
       // no model ID - fqName is here 
-      LOG.error("Broken reference to type=" + s + " in model " + myModelRef);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Broken reference to type=" + s + " in model " + myModelRef);
+      }
       return s.substring(ix + 1);
     }
     SModelReference modelRef = getSModelReference(s.substring(0, ix));
     if (modelRef == null) {
-      LOG.error("couldn't create node '" + s.substring(ix + 1) + "' : import for index [" + s.substring(0, ix) + "] not found");
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("couldn't create node '" + s.substring(ix + 1) + "' : import for index [" + s.substring(0, ix) + "] not found");
+      }
       return s.substring(ix + 1);
     } else {
       return SModelStereotype.withoutStereotype(modelRef.getModelName()) + "." + s.substring(ix + 1);
@@ -104,5 +112,5 @@ public class ReadHelper {
     return s;
   }
 
-  private static Logger LOG = Logger.getLogger(ReadHelper.class);
+  protected static Logger LOG = LogManager.getLogger(ReadHelper.class);
 }

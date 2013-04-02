@@ -10,6 +10,7 @@ import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.SNodeOperations;
@@ -17,7 +18,8 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MakeFieldStatic_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -44,7 +46,9 @@ public class MakeFieldStatic_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MakeFieldStatic", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "MakeFieldStatic", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -82,9 +86,11 @@ public class MakeFieldStatic_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MakeFieldStatic", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "MakeFieldStatic", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(MakeFieldStatic_Action.class);
+  protected static Logger LOG = LogManager.getLogger(MakeFieldStatic_Action.class);
 }

@@ -11,13 +11,15 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
+import org.apache.log4j.Priority;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 
 public class CopyValueAction_Action extends BaseAction {
@@ -41,7 +43,9 @@ public class CopyValueAction_Action extends BaseAction {
         event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CopyValueAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CopyValueAction", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -75,11 +79,13 @@ public class CopyValueAction_Action extends BaseAction {
       Value jdiValue = ((JavaValue) value).getValue();
       CopyPasteUtil.copyTextToClipboard(EvaluationUtils.getInstance().getStringPresentation(jdiValue, thread));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CopyValueAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CopyValueAction", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CopyValueAction_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CopyValueAction_Action.class);
 
   private static ThreadReference check_d54g7t_a0i0a(JavaThread checkedDotOperand) {
     if (null != checkedDotOperand) {

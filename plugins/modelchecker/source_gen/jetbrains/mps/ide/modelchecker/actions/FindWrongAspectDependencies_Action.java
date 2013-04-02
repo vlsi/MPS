@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -25,7 +26,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FindWrongAspectDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,7 +47,9 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindWrongAspectDependencies", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "FindWrongAspectDependencies", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -74,7 +78,9 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
       }));
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(models, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new WrongAspectDependenciesFinder());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindWrongAspectDependencies", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "FindWrongAspectDependencies", t);
+      }
     }
   }
 
@@ -91,5 +97,5 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     return false;
   }
 
-  private static Logger LOG = Logger.getLogger(FindWrongAspectDependencies_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FindWrongAspectDependencies_Action.class);
 }

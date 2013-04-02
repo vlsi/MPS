@@ -10,11 +10,13 @@ import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowModuleBootstrapDependency_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,7 +47,9 @@ public class ShowModuleBootstrapDependency_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowModuleBootstrapDependency", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowModuleBootstrapDependency", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -69,11 +73,13 @@ public class ShowModuleBootstrapDependency_Action extends BaseAction {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowBootstrapDep(as_b70vs2_a0a0a0a0g(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.ULangDependencyNode.class));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowModuleBootstrapDependency", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowModuleBootstrapDependency", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowModuleBootstrapDependency_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowModuleBootstrapDependency_Action.class);
 
   private static <T> T as_b70vs2_a0a0a3(Object o, Class<T> type) {
     return (type.isInstance(o) ?

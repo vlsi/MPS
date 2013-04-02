@@ -1226,158 +1226,158 @@
     <unitInfo nodeId="3044950653914725182" fileName="ParamFeatureSizeFun_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ypath.behavior.ParamFeatureSizeFun_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905a7(jetbrains.mps.ypath.behavior)/4581582910845361824">
-    <nodeInfo nodeId="4581582910845361825" fileName="FeatureUtil.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4581582910845361834" fileName="FeatureUtil.java" startLine="27" startPosition="114" endLine="28" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845361845" fileName="FeatureUtil.java" startLine="30" startPosition="11" endLine="31" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845361854" fileName="FeatureUtil.java" startLine="31" startPosition="142" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845361860" fileName="FeatureUtil.java" startLine="33" startPosition="29" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910845361867" fileName="FeatureUtil.java" startLine="36" startPosition="5" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845361881" fileName="FeatureUtil.java" startLine="40" startPosition="100" endLine="41" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845361892" fileName="FeatureUtil.java" startLine="43" startPosition="11" endLine="44" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845361900" fileName="FeatureUtil.java" startLine="44" startPosition="135" endLine="45" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845361906" fileName="FeatureUtil.java" startLine="46" startPosition="29" endLine="47" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910845361913" fileName="FeatureUtil.java" startLine="49" startPosition="5" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845362085" fileName="FeatureUtil.java" startLine="53" startPosition="80" endLine="54" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845362096" fileName="FeatureUtil.java" startLine="56" startPosition="11" endLine="57" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845362105" fileName="FeatureUtil.java" startLine="58" startPosition="29" endLine="59" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910845362112" fileName="FeatureUtil.java" startLine="61" startPosition="5" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845362124" fileName="FeatureUtil.java" startLine="65" startPosition="82" endLine="66" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845362135" fileName="FeatureUtil.java" startLine="68" startPosition="11" endLine="69" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845362145" fileName="FeatureUtil.java" startLine="70" startPosition="29" endLine="71" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910845362152" fileName="FeatureUtil.java" startLine="73" startPosition="5" endLine="74" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845362159" fileName="FeatureUtil.java" startLine="77" startPosition="80" endLine="78" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845362168" fileName="FeatureUtil.java" startLine="79" startPosition="21" endLine="80" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845362187" fileName="FeatureUtil.java" startLine="83" startPosition="42" endLine="84" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845362195" fileName="FeatureUtil.java" startLine="85" startPosition="38" endLine="86" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910845362209" fileName="FeatureUtil.java" startLine="88" startPosition="39" endLine="89" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910845362221" fileName="FeatureUtil.java" startLine="90" startPosition="13" endLine="91" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910845362231" fileName="FeatureUtil.java" startLine="91" startPosition="77" endLine="92" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845362240" fileName="FeatureUtil.java" startLine="96" startPosition="5" endLine="97" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845927483" fileName="FeatureUtil.java" startLine="100" startPosition="64" endLine="101" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845927369" fileName="FeatureUtil.java" startLine="104" startPosition="79" endLine="105" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845927381" fileName="FeatureUtil.java" startLine="105" startPosition="185" endLine="106" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845927390" fileName="FeatureUtil.java" startLine="106" startPosition="162" endLine="107" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845927400" fileName="FeatureUtil.java" startLine="107" startPosition="99" endLine="108" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4581582910845927412" fileName="FeatureUtil.java" startLine="109" startPosition="32" endLine="110" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910845927422" fileName="FeatureUtil.java" startLine="111" startPosition="5" endLine="112" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845362207" fileName="FeatureUtil.java" startLine="87" startPosition="18" endLine="90" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4581582910845362248" fileName="FeatureUtil.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFeatureDesign#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/ypath/design/IFeatureDesign;" />
-    <nodeInfo nodeId="4581582910845927410" fileName="FeatureUtil.java" startLine="108" startPosition="131" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4581582910845362094" fileName="FeatureUtil.java" startLine="55" startPosition="22" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4581582910845362133" fileName="FeatureUtil.java" startLine="67" startPosition="21" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4581582910845361843" fileName="FeatureUtil.java" startLine="29" startPosition="22" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4581582910845361890" fileName="FeatureUtil.java" startLine="42" startPosition="22" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4581582910845362193" fileName="FeatureUtil.java" startLine="84" startPosition="115" endLine="90" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4581582910845362092" fileName="FeatureUtil.java" startLine="54" startPosition="108" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4581582910845362131" fileName="FeatureUtil.java" startLine="66" startPosition="93" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4581582910845361841" fileName="FeatureUtil.java" startLine="28" startPosition="108" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4581582910845361888" fileName="FeatureUtil.java" startLine="41" startPosition="82" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4581582910845927354" fileName="FeatureUtil.java" startLine="104" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFeatureDesign#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljetbrains/mps/ypath/design/IFeatureDesign;" />
-    <nodeInfo nodeId="4581582910845362077" fileName="FeatureUtil.java" startLine="53" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isSingleTargetCardinality#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4581582910845362114" fileName="FeatureUtil.java" startLine="65" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTargetType#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4581582910845362183" fileName="FeatureUtil.java" startLine="83" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4581582910845361830" fileName="FeatureUtil.java" startLine="27" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getterExpression#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4581582910845361877" fileName="FeatureUtil.java" startLine="40" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getterExpression#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4581582910845362178" fileName="FeatureUtil.java" startLine="81" startPosition="55" endLine="94" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4581582910845362176" fileName="FeatureUtil.java" startLine="80" startPosition="78" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4581582910845362166" fileName="FeatureUtil.java" startLine="78" startPosition="99" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4581582910845362154" fileName="FeatureUtil.java" startLine="77" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="4581582910845361856" fileName="FeatureUtil.java" startLine="33" startPosition="0" endLine="34" endPosition="28">
+    <nodeInfo nodeId="4581582910845361825" fileName="FeatureUtil.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="4581582910845361834" fileName="FeatureUtil.java" startLine="28" startPosition="114" endLine="29" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845361845" fileName="FeatureUtil.java" startLine="31" startPosition="11" endLine="32" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845361854" fileName="FeatureUtil.java" startLine="32" startPosition="142" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845361860" fileName="FeatureUtil.java" startLine="34" startPosition="29" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4581582910845361867" fileName="FeatureUtil.java" startLine="37" startPosition="5" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845361881" fileName="FeatureUtil.java" startLine="41" startPosition="100" endLine="42" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845361892" fileName="FeatureUtil.java" startLine="44" startPosition="11" endLine="45" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845361900" fileName="FeatureUtil.java" startLine="45" startPosition="135" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845361906" fileName="FeatureUtil.java" startLine="47" startPosition="29" endLine="48" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4581582910845361913" fileName="FeatureUtil.java" startLine="50" startPosition="5" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845362085" fileName="FeatureUtil.java" startLine="54" startPosition="80" endLine="55" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845362096" fileName="FeatureUtil.java" startLine="57" startPosition="11" endLine="58" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845362105" fileName="FeatureUtil.java" startLine="59" startPosition="29" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4581582910845362112" fileName="FeatureUtil.java" startLine="62" startPosition="5" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845362124" fileName="FeatureUtil.java" startLine="66" startPosition="82" endLine="67" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845362135" fileName="FeatureUtil.java" startLine="69" startPosition="11" endLine="70" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845362145" fileName="FeatureUtil.java" startLine="71" startPosition="29" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4581582910845362152" fileName="FeatureUtil.java" startLine="74" startPosition="5" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845362159" fileName="FeatureUtil.java" startLine="78" startPosition="80" endLine="79" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845362168" fileName="FeatureUtil.java" startLine="80" startPosition="21" endLine="81" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845362187" fileName="FeatureUtil.java" startLine="84" startPosition="42" endLine="85" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845362195" fileName="FeatureUtil.java" startLine="86" startPosition="38" endLine="87" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4581582910845362209" fileName="FeatureUtil.java" startLine="89" startPosition="39" endLine="90" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4581582910845362221" fileName="FeatureUtil.java" startLine="91" startPosition="13" endLine="92" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4581582910845362231" fileName="FeatureUtil.java" startLine="92" startPosition="77" endLine="93" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845362240" fileName="FeatureUtil.java" startLine="97" startPosition="5" endLine="98" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845927483" fileName="FeatureUtil.java" startLine="101" startPosition="64" endLine="102" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845927369" fileName="FeatureUtil.java" startLine="105" startPosition="79" endLine="106" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845927381" fileName="FeatureUtil.java" startLine="106" startPosition="185" endLine="107" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845927390" fileName="FeatureUtil.java" startLine="107" startPosition="162" endLine="108" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845927400" fileName="FeatureUtil.java" startLine="108" startPosition="99" endLine="109" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4581582910845927412" fileName="FeatureUtil.java" startLine="110" startPosition="32" endLine="111" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4581582910845927422" fileName="FeatureUtil.java" startLine="112" startPosition="5" endLine="113" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845362207" fileName="FeatureUtil.java" startLine="88" startPosition="18" endLine="91" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4581582910845362248" fileName="FeatureUtil.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFeatureDesign#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/ypath/design/IFeatureDesign;" />
+    <nodeInfo nodeId="4581582910845927410" fileName="FeatureUtil.java" startLine="109" startPosition="131" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4581582910845362094" fileName="FeatureUtil.java" startLine="56" startPosition="22" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4581582910845362133" fileName="FeatureUtil.java" startLine="68" startPosition="21" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4581582910845361843" fileName="FeatureUtil.java" startLine="30" startPosition="22" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4581582910845361890" fileName="FeatureUtil.java" startLine="43" startPosition="22" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4581582910845362193" fileName="FeatureUtil.java" startLine="85" startPosition="115" endLine="91" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4581582910845362092" fileName="FeatureUtil.java" startLine="55" startPosition="108" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4581582910845362131" fileName="FeatureUtil.java" startLine="67" startPosition="93" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4581582910845361841" fileName="FeatureUtil.java" startLine="29" startPosition="108" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4581582910845361888" fileName="FeatureUtil.java" startLine="42" startPosition="82" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4581582910845927354" fileName="FeatureUtil.java" startLine="105" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFeatureDesign#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljetbrains/mps/ypath/design/IFeatureDesign;" />
+    <nodeInfo nodeId="4581582910845362077" fileName="FeatureUtil.java" startLine="54" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isSingleTargetCardinality#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4581582910845362114" fileName="FeatureUtil.java" startLine="66" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTargetType#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4581582910845362183" fileName="FeatureUtil.java" startLine="84" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4581582910845361830" fileName="FeatureUtil.java" startLine="28" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getterExpression#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4581582910845361877" fileName="FeatureUtil.java" startLine="41" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getterExpression#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4581582910845362178" fileName="FeatureUtil.java" startLine="82" startPosition="55" endLine="95" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910845362176" fileName="FeatureUtil.java" startLine="81" startPosition="78" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4581582910845362166" fileName="FeatureUtil.java" startLine="79" startPosition="99" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4581582910845362154" fileName="FeatureUtil.java" startLine="78" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="4581582910845361856" fileName="FeatureUtil.java" startLine="34" startPosition="0" endLine="35" endPosition="28">
       <varInfo nodeId="4581582910845361857" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845361859" fileName="FeatureUtil.java" startLine="33" startPosition="29" endLine="34" endPosition="28" />
-    <scopeInfo nodeId="4581582910845361902" fileName="FeatureUtil.java" startLine="46" startPosition="0" endLine="47" endPosition="28">
+    <scopeInfo nodeId="4581582910845361859" fileName="FeatureUtil.java" startLine="34" startPosition="29" endLine="35" endPosition="28" />
+    <scopeInfo nodeId="4581582910845361902" fileName="FeatureUtil.java" startLine="47" startPosition="0" endLine="48" endPosition="28">
       <varInfo nodeId="4581582910845361903" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845361905" fileName="FeatureUtil.java" startLine="46" startPosition="29" endLine="47" endPosition="28" />
-    <scopeInfo nodeId="4581582910845362095" fileName="FeatureUtil.java" startLine="56" startPosition="11" endLine="57" endPosition="52" />
-    <scopeInfo nodeId="4581582910845362101" fileName="FeatureUtil.java" startLine="58" startPosition="0" endLine="59" endPosition="28">
+    <scopeInfo nodeId="4581582910845361905" fileName="FeatureUtil.java" startLine="47" startPosition="29" endLine="48" endPosition="28" />
+    <scopeInfo nodeId="4581582910845362095" fileName="FeatureUtil.java" startLine="57" startPosition="11" endLine="58" endPosition="52" />
+    <scopeInfo nodeId="4581582910845362101" fileName="FeatureUtil.java" startLine="59" startPosition="0" endLine="60" endPosition="28">
       <varInfo nodeId="4581582910845362102" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362104" fileName="FeatureUtil.java" startLine="58" startPosition="29" endLine="59" endPosition="28" />
-    <scopeInfo nodeId="4581582910845362134" fileName="FeatureUtil.java" startLine="68" startPosition="11" endLine="69" endPosition="49" />
-    <scopeInfo nodeId="4581582910845362141" fileName="FeatureUtil.java" startLine="70" startPosition="0" endLine="71" endPosition="28">
+    <scopeInfo nodeId="4581582910845362104" fileName="FeatureUtil.java" startLine="59" startPosition="29" endLine="60" endPosition="28" />
+    <scopeInfo nodeId="4581582910845362134" fileName="FeatureUtil.java" startLine="69" startPosition="11" endLine="70" endPosition="49" />
+    <scopeInfo nodeId="4581582910845362141" fileName="FeatureUtil.java" startLine="71" startPosition="0" endLine="72" endPosition="28">
       <varInfo nodeId="4581582910845362142" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362144" fileName="FeatureUtil.java" startLine="70" startPosition="29" endLine="71" endPosition="28" />
-    <scopeInfo nodeId="4581582910845362194" fileName="FeatureUtil.java" startLine="85" startPosition="38" endLine="86" endPosition="78" />
-    <scopeInfo nodeId="4581582910845362208" fileName="FeatureUtil.java" startLine="88" startPosition="39" endLine="89" endPosition="72" />
-    <scopeInfo nodeId="4581582910845362251" fileName="FeatureUtil.java" startLine="100" startPosition="64" endLine="101" endPosition="47" />
-    <scopeInfo nodeId="4581582910845927411" fileName="FeatureUtil.java" startLine="109" startPosition="32" endLine="110" endPosition="62" />
-    <scopeInfo nodeId="4581582910845361844" fileName="FeatureUtil.java" startLine="30" startPosition="11" endLine="32" endPosition="20">
+    <scopeInfo nodeId="4581582910845362144" fileName="FeatureUtil.java" startLine="71" startPosition="29" endLine="72" endPosition="28" />
+    <scopeInfo nodeId="4581582910845362194" fileName="FeatureUtil.java" startLine="86" startPosition="38" endLine="87" endPosition="78" />
+    <scopeInfo nodeId="4581582910845362208" fileName="FeatureUtil.java" startLine="89" startPosition="39" endLine="90" endPosition="72" />
+    <scopeInfo nodeId="4581582910845362251" fileName="FeatureUtil.java" startLine="101" startPosition="64" endLine="102" endPosition="47" />
+    <scopeInfo nodeId="4581582910845927411" fileName="FeatureUtil.java" startLine="110" startPosition="32" endLine="111" endPosition="62" />
+    <scopeInfo nodeId="4581582910845361844" fileName="FeatureUtil.java" startLine="31" startPosition="11" endLine="33" endPosition="20">
       <varInfo nodeId="4581582910845361846" varName="expr" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845361891" fileName="FeatureUtil.java" startLine="43" startPosition="11" endLine="45" endPosition="20">
+    <scopeInfo nodeId="4581582910845361891" fileName="FeatureUtil.java" startLine="44" startPosition="11" endLine="46" endPosition="20">
       <varInfo nodeId="4581582910845361893" varName="expr" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362248" fileName="FeatureUtil.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="4581582910845362248" fileName="FeatureUtil.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="4581582910845362307" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362093" fileName="FeatureUtil.java" startLine="55" startPosition="22" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="4581582910845362132" fileName="FeatureUtil.java" startLine="67" startPosition="21" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="4581582910845361842" fileName="FeatureUtil.java" startLine="29" startPosition="22" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="4581582910845361889" fileName="FeatureUtil.java" startLine="42" startPosition="22" endLine="48" endPosition="7" />
-    <scopeInfo nodeId="4581582910845927357" fileName="FeatureUtil.java" startLine="104" startPosition="79" endLine="112" endPosition="25">
+    <scopeInfo nodeId="4581582910845362093" fileName="FeatureUtil.java" startLine="56" startPosition="22" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="4581582910845362132" fileName="FeatureUtil.java" startLine="68" startPosition="21" endLine="73" endPosition="7" />
+    <scopeInfo nodeId="4581582910845361842" fileName="FeatureUtil.java" startLine="30" startPosition="22" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="4581582910845361889" fileName="FeatureUtil.java" startLine="43" startPosition="22" endLine="49" endPosition="7" />
+    <scopeInfo nodeId="4581582910845927357" fileName="FeatureUtil.java" startLine="105" startPosition="79" endLine="113" endPosition="25">
       <varInfo nodeId="4581582910845927401" varName="featureDesign" />
       <varInfo nodeId="4581582910845927382" varName="featureName" />
       <varInfo nodeId="4581582910845927391" varName="fqClassName" />
       <varInfo nodeId="4581582910845927370" varName="treepathAspectName" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362084" fileName="FeatureUtil.java" startLine="53" startPosition="80" endLine="62" endPosition="16">
+    <scopeInfo nodeId="4581582910845362084" fileName="FeatureUtil.java" startLine="54" startPosition="80" endLine="63" endPosition="16">
       <varInfo nodeId="4581582910845362086" varName="gfd" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362123" fileName="FeatureUtil.java" startLine="65" startPosition="82" endLine="74" endPosition="16">
+    <scopeInfo nodeId="4581582910845362123" fileName="FeatureUtil.java" startLine="66" startPosition="82" endLine="75" endPosition="16">
       <varInfo nodeId="4581582910845362125" varName="fd" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362186" fileName="FeatureUtil.java" startLine="83" startPosition="42" endLine="92" endPosition="25">
+    <scopeInfo nodeId="4581582910845362186" fileName="FeatureUtil.java" startLine="84" startPosition="42" endLine="93" endPosition="25">
       <varInfo nodeId="4581582910845362188" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845361833" fileName="FeatureUtil.java" startLine="27" startPosition="114" endLine="37" endPosition="16">
+    <scopeInfo nodeId="4581582910845361833" fileName="FeatureUtil.java" startLine="28" startPosition="114" endLine="38" endPosition="16">
       <varInfo nodeId="4581582910845361835" varName="gfd" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845361880" fileName="FeatureUtil.java" startLine="40" startPosition="100" endLine="50" endPosition="16">
+    <scopeInfo nodeId="4581582910845361880" fileName="FeatureUtil.java" startLine="41" startPosition="100" endLine="51" endPosition="16">
       <varInfo nodeId="4581582910845361882" varName="gfd" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845927354" fileName="FeatureUtil.java" startLine="104" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="4581582910845927354" fileName="FeatureUtil.java" startLine="105" startPosition="0" endLine="115" endPosition="0">
       <varInfo nodeId="4581582910845927359" varName="feature" />
       <varInfo nodeId="4581582910845927362" varName="suffix" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362077" fileName="FeatureUtil.java" startLine="53" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="4581582910845362077" fileName="FeatureUtil.java" startLine="54" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="4581582910845362078" varName="feature" />
       <varInfo nodeId="4581582910845362080" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362114" fileName="FeatureUtil.java" startLine="65" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="4581582910845362114" fileName="FeatureUtil.java" startLine="66" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="4581582910845362115" varName="feature" />
       <varInfo nodeId="4581582910845362117" varName="nodeType" />
       <varInfo nodeId="4581582910845362119" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362183" fileName="FeatureUtil.java" startLine="83" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="4581582910845362183" fileName="FeatureUtil.java" startLine="84" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="4581582910845362183" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845361830" fileName="FeatureUtil.java" startLine="27" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="4581582910845361830" fileName="FeatureUtil.java" startLine="28" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="4581582910845361869" varName="feature" />
       <varInfo nodeId="4581582910845361875" varName="generator" />
       <varInfo nodeId="4581582910845361873" varName="param" />
       <varInfo nodeId="4581582910845361871" varName="srcExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845361877" fileName="FeatureUtil.java" startLine="40" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="4581582910845361877" fileName="FeatureUtil.java" startLine="41" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="4581582910845361915" varName="feature" />
       <varInfo nodeId="4581582910845361919" varName="generator" />
       <varInfo nodeId="4581582910845361917" varName="srcExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362177" fileName="FeatureUtil.java" startLine="81" startPosition="55" endLine="94" endPosition="28" />
-    <scopeInfo nodeId="4581582910845362167" fileName="FeatureUtil.java" startLine="79" startPosition="21" endLine="95" endPosition="7">
+    <scopeInfo nodeId="4581582910845362177" fileName="FeatureUtil.java" startLine="82" startPosition="55" endLine="95" endPosition="28" />
+    <scopeInfo nodeId="4581582910845362167" fileName="FeatureUtil.java" startLine="80" startPosition="21" endLine="96" endPosition="7">
       <varInfo nodeId="4581582910845362169" varName="params" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362158" fileName="FeatureUtil.java" startLine="77" startPosition="80" endLine="97" endPosition="57">
+    <scopeInfo nodeId="4581582910845362158" fileName="FeatureUtil.java" startLine="78" startPosition="80" endLine="98" endPosition="57">
       <varInfo nodeId="4581582910845362160" varName="fd" />
     </scopeInfo>
-    <scopeInfo nodeId="4581582910845362154" fileName="FeatureUtil.java" startLine="77" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="4581582910845362154" fileName="FeatureUtil.java" startLine="78" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="4581582910845362244" varName="feature" />
       <varInfo nodeId="4581582910845362246" varName="nodeType" />
     </scopeInfo>
-    <unitInfo nodeId="4581582910845362183" fileName="FeatureUtil.java" startLine="82" startPosition="56" endLine="94" endPosition="9" unitName="jetbrains.mps.ypath.behavior.FeatureUtil$1" />
-    <unitInfo nodeId="4581582910845361824" fileName="FeatureUtil.java" startLine="24" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ypath.behavior.FeatureUtil" />
+    <unitInfo nodeId="4581582910845362183" fileName="FeatureUtil.java" startLine="83" startPosition="56" endLine="95" endPosition="9" unitName="jetbrains.mps.ypath.behavior.FeatureUtil$1" />
+    <unitInfo nodeId="4581582910845361824" fileName="FeatureUtil.java" startLine="25" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.ypath.behavior.FeatureUtil" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905a7(jetbrains.mps.ypath.behavior)/4581582910845553759">
     <nodeInfo nodeId="4581582910845553759" fileName="GenericParamFeature_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

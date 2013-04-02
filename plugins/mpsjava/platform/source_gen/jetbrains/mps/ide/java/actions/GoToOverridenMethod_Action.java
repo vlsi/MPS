@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -34,7 +35,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToOverridenMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -61,7 +63,9 @@ public class GoToOverridenMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridenMethod", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridenMethod", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -124,7 +128,9 @@ public class GoToOverridenMethod_Action extends BaseAction {
         }
       }).toListSequence(), GoToHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent()), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))), methodName[0]);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
+      }
     }
   }
 
@@ -149,5 +155,5 @@ public class GoToOverridenMethod_Action extends BaseAction {
     return result;
   }
 
-  private static Logger LOG = Logger.getLogger(GoToOverridenMethod_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToOverridenMethod_Action.class);
 }

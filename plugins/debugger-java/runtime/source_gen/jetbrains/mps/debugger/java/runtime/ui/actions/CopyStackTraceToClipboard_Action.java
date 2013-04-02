@@ -8,10 +8,12 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.apache.log4j.Priority;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CopyStackTraceToClipboard_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,7 +33,9 @@ public class CopyStackTraceToClipboard_Action extends BaseAction {
     try {
       event.getPresentation().setVisible(MPSCommonDataKeys.EXCEPTION.getData(event.getDataContext()) != null);
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CopyStackTraceToClipboard", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CopyStackTraceToClipboard", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -55,9 +59,11 @@ public class CopyStackTraceToClipboard_Action extends BaseAction {
       trowable.printStackTrace(new PrintWriter(writer));
       CopyPasteUtil.copyTextToClipboard(writer.toString());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CopyStackTraceToClipboard", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CopyStackTraceToClipboard", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CopyStackTraceToClipboard_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CopyStackTraceToClipboard_Action.class);
 }

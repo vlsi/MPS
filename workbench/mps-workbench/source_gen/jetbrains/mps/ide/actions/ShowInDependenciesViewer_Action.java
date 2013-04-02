@@ -11,12 +11,14 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
 import jetbrains.mps.ide.depanalyzer.DependencyUtil;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowInDependenciesViewer_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +49,9 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowInDependenciesViewer", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowInDependenciesViewer", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -78,11 +82,13 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
       IModule to = treeNode.getModule();
       DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.getLink().linktype == DependencyUtil.LinkType.UsesLanguage, true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowInDependenciesViewer", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowInDependenciesViewer", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowInDependenciesViewer_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowInDependenciesViewer_Action.class);
 
   private static IModule check_hezs1a_a0b0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {

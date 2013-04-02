@@ -10,6 +10,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -29,7 +30,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class EvaluateExpression_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Debugger.EvaluateExpression;
@@ -52,7 +54,9 @@ public class EvaluateExpression_Action extends BaseAction {
         event.getPresentation().setEnabled(evaluationProvider != null && evaluationProvider.canEvaluate());
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "EvaluateExpression", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "EvaluateExpression", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -95,9 +99,11 @@ public class EvaluateExpression_Action extends BaseAction {
         evaluationProvider.showEvaluationDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), nodePointers);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "EvaluateExpression", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "EvaluateExpression", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(EvaluateExpression_Action.class);
+  protected static Logger LOG = LogManager.getLogger(EvaluateExpression_Action.class);
 }

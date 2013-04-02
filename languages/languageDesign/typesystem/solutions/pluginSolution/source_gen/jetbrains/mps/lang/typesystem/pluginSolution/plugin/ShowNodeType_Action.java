@@ -8,6 +8,7 @@ import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -24,7 +25,8 @@ import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowNodeType_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Type;
@@ -44,7 +46,9 @@ public class ShowNodeType_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeType", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeType", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -110,9 +114,11 @@ public class ShowNodeType_Action extends BaseAction {
         });
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowNodeType", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowNodeType", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowNodeType_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowNodeType_Action.class);
 }

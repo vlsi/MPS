@@ -28,6 +28,7 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.vfs.VfsUtil;
 import java.io.IOException;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -41,7 +42,8 @@ import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NewGeneratorDialog extends DialogWrapper {
   private JPanel myContenetPane;
@@ -143,7 +145,9 @@ public class NewGeneratorDialog extends DialogWrapper {
           newGenerator.value = createNewGenerator(mySourceLanguage, templateModelsPath, name);
           adjustTemplateModel(mySourceLanguage, newGenerator.value);
         } catch (IOException e) {
-          LOG.error("", e);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("", e);
+          }
           newGenerator.value = null;
         }
       }
@@ -200,5 +204,5 @@ public class NewGeneratorDialog extends DialogWrapper {
     templateModel.save();
   }
 
-  private static Logger LOG = Logger.getLogger(NewGeneratorDialog.class);
+  protected static Logger LOG = LogManager.getLogger(NewGeneratorDialog.class);
 }

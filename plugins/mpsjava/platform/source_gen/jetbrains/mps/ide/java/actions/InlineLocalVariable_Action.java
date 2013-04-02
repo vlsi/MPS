@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
@@ -26,7 +27,8 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferen
 import com.intellij.openapi.ui.Messages;
 import java.awt.Frame;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class InlineLocalVariable_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -54,7 +56,9 @@ public class InlineLocalVariable_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "InlineLocalVariable", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "InlineLocalVariable", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -143,9 +147,11 @@ public class InlineLocalVariable_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "InlineLocalVariable", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "InlineLocalVariable", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(InlineLocalVariable_Action.class);
+  protected static Logger LOG = LogManager.getLogger(InlineLocalVariable_Action.class);
 }

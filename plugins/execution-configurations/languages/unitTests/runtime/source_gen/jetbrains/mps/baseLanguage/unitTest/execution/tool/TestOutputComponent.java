@@ -23,10 +23,12 @@ import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import com.intellij.util.io.IOUtil;
 import java.io.IOException;
+import org.apache.log4j.Priority;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class TestOutputComponent implements TestView {
   private static final int MAX_SIZE = 10000;
@@ -297,7 +299,9 @@ public class TestOutputComponent implements TestView {
         stream.flush();
         ListSequence.fromList(myChildren).clear();
       } catch (IOException e) {
-        LOG.error("Cant write messages for " + myMethod, e);
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Cant write messages for " + myMethod, e);
+        }
       } finally {
         if (stream != null) {
           try {
@@ -333,7 +337,9 @@ public class TestOutputComponent implements TestView {
             }
 
           } catch (IOException e) {
-            LOG.error("Cant read messages for test " + myMethod, e);
+            if (LOG.isEnabledFor(Priority.ERROR)) {
+              LOG.error("Cant read messages for test " + myMethod, e);
+            }
           } finally {
             if (stream != null) {
               try {
@@ -364,7 +370,7 @@ public class TestOutputComponent implements TestView {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(TestOutputComponent.class);
+  protected static Logger LOG = LogManager.getLogger(TestOutputComponent.class);
 
   private static boolean neq_r62oz9_a0a0a11(Object a, Object b) {
     return !((a != null ?

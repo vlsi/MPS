@@ -10,6 +10,7 @@ import jetbrains.mps.ide.editor.util.GoToHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -17,7 +18,8 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToOverridingMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -44,7 +46,9 @@ public class GoToOverridingMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridingMethod", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridingMethod", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -81,7 +85,9 @@ public class GoToOverridingMethod_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
       GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((Project) MapSequence.fromMap(_params).get("project")), GoToOverridingMethod_Action.this.getFinderName(_params), GoToHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent()));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
+      }
     }
   }
 
@@ -89,5 +95,5 @@ public class GoToOverridingMethod_Action extends BaseAction {
     return "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder";
   }
 
-  private static Logger LOG = Logger.getLogger(GoToOverridingMethod_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToOverridingMethod_Action.class);
 }

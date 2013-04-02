@@ -7,10 +7,12 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MovePluginsOutOfLanguages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -30,7 +32,9 @@ public class MovePluginsOutOfLanguages_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MovePluginsOutOfLanguages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "MovePluginsOutOfLanguages", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -50,9 +54,11 @@ public class MovePluginsOutOfLanguages_Action extends BaseAction {
     try {
       new PluginMoveHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).move();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MovePluginsOutOfLanguages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "MovePluginsOutOfLanguages", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(MovePluginsOutOfLanguages_Action.class);
+  protected static Logger LOG = LogManager.getLogger(MovePluginsOutOfLanguages_Action.class);
 }

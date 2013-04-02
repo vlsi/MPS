@@ -10,6 +10,7 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
@@ -18,7 +19,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RenamePackage_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,7 +47,9 @@ public class RenamePackage_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RenamePackage", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "RenamePackage", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -92,9 +96,11 @@ public class RenamePackage_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RenamePackage", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "RenamePackage", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(RenamePackage_Action.class);
+  protected static Logger LOG = LogManager.getLogger(RenamePackage_Action.class);
 }

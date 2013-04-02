@@ -112,106 +112,106 @@
     <unitInfo nodeId="6168415856807657134" fileName="ITarget.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget" />
   </root>
   <root nodeRef="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)/6168415856807659069">
-    <nodeInfo nodeId="6168415856807662021" fileName="FacetRegistry.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6168415856807659170" fileName="FacetRegistry.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="6168415856807659070" fileName="FacetRegistry.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="facetMap" />
-    <nodeInfo nodeId="4867764537727385687" fileName="FacetRegistry.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="facetsForLanguages" />
-    <nodeInfo nodeId="4867764537727490029" fileName="FacetRegistry.java" startLine="30" startPosition="38" endLine="31" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6168415856807659091" fileName="FacetRegistry.java" startLine="35" startPosition="69" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6168415856807659095" fileName="FacetRegistry.java" startLine="37" startPosition="5" endLine="38" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4867764537727392156" fileName="FacetRegistry.java" startLine="38" startPosition="62" endLine="39" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6168415856807659118" fileName="FacetRegistry.java" startLine="43" startPosition="72" endLine="44" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6168415856807659122" fileName="FacetRegistry.java" startLine="45" startPosition="5" endLine="46" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4867764537727673862" fileName="FacetRegistry.java" startLine="48" startPosition="59" endLine="49" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8855298915862262346" fileName="FacetRegistry.java" startLine="54" startPosition="40" endLine="55" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5215469770656067210" fileName="FacetRegistry.java" startLine="56" startPosition="26" endLine="57" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788471824034063068" fileName="FacetRegistry.java" startLine="58" startPosition="23" endLine="59" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788471824034063089" fileName="FacetRegistry.java" startLine="59" startPosition="84" endLine="60" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788471824034063116" fileName="FacetRegistry.java" startLine="61" startPosition="26" endLine="62" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5145917501578463085" fileName="FacetRegistry.java" startLine="65" startPosition="5" endLine="66" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5145917501578463089" fileName="FacetRegistry.java" startLine="66" startPosition="39" endLine="67" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6168415856807659134" fileName="FacetRegistry.java" startLine="67" startPosition="75" endLine="68" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4867764537728103946" fileName="FacetRegistry.java" startLine="73" startPosition="59" endLine="74" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4867764537728210687" fileName="FacetRegistry.java" startLine="77" startPosition="58" endLine="78" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6168415856807659144" fileName="FacetRegistry.java" startLine="83" startPosition="47" endLine="84" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6168415856807659155" fileName="FacetRegistry.java" startLine="88" startPosition="27" endLine="89" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6168415856807659160" fileName="FacetRegistry.java" startLine="89" startPosition="35" endLine="90" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6168415856807659167" fileName="FacetRegistry.java" startLine="91" startPosition="5" endLine="92" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6168415856807659176" fileName="FacetRegistry.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FacetRegistry#()V" />
-    <nodeInfo nodeId="6168415856807659083" fileName="FacetRegistry.java" startLine="34" startPosition="64" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6168415856807659109" fileName="FacetRegistry.java" startLine="42" startPosition="46" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4867764537727668914" fileName="FacetRegistry.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
-    <nodeInfo nodeId="7788471824034063097" fileName="FacetRegistry.java" startLine="60" startPosition="35" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4867764537728098633" fileName="FacetRegistry.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
-    <nodeInfo nodeId="4867764537728205947" fileName="FacetRegistry.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/make/facet/IFacet;" />
-    <nodeInfo nodeId="6168415856807659141" fileName="FacetRegistry.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allFacets#()Ljava/util/Map;" />
-    <nodeInfo nodeId="6168415856807659079" fileName="FacetRegistry.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="register#(Ljetbrains/mps/make/facet/IFacet;)V" />
-    <nodeInfo nodeId="6168415856807659153" fileName="FacetRegistry.java" startLine="87" startPosition="45" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4867764537727778197" fileName="FacetRegistry.java" startLine="46" startPosition="61" endLine="51" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4867764537727338103" fileName="FacetRegistry.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="register#(Ljava/lang/String;Ljetbrains/mps/make/facet/IFacet;)V" />
-    <nodeInfo nodeId="5215469770656067206" fileName="FacetRegistry.java" startLine="57" startPosition="66" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6168415856807659150" fileName="FacetRegistry.java" startLine="87" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/make/facet/FacetRegistry;" />
-    <nodeInfo nodeId="4867764537728085907" fileName="FacetRegistry.java" startLine="71" startPosition="80" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8855298915862262352" fileName="FacetRegistry.java" startLine="55" startPosition="62" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6168415856807659105" fileName="FacetRegistry.java" startLine="42" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregister#(Ljetbrains/mps/make/facet/IFacet;)V" />
-    <nodeInfo nodeId="4867764537728076293" fileName="FacetRegistry.java" startLine="71" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFacetsForLanguage#(Ljava/lang/String;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6168415856807659131" fileName="FacetRegistry.java" startLine="54" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="lookup#(Ljetbrains/mps/make/facet/IFacet/Name;)Ljetbrains/mps/make/facet/IFacet;" />
-    <scopeInfo nodeId="6168415856807659178" fileName="FacetRegistry.java" startLine="26" startPosition="27" endLine="26" endPosition="27" />
-    <scopeInfo nodeId="6168415856807659082" fileName="FacetRegistry.java" startLine="30" startPosition="38" endLine="31" endPosition="26" />
-    <scopeInfo nodeId="6168415856807659090" fileName="FacetRegistry.java" startLine="35" startPosition="69" endLine="36" endPosition="63" />
-    <scopeInfo nodeId="6168415856807659117" fileName="FacetRegistry.java" startLine="43" startPosition="72" endLine="44" endPosition="59" />
-    <scopeInfo nodeId="4867764537727668915" fileName="FacetRegistry.java" startLine="48" startPosition="59" endLine="49" endPosition="40" />
-    <scopeInfo nodeId="7788471824034063098" fileName="FacetRegistry.java" startLine="61" startPosition="26" endLine="62" endPosition="21" />
-    <scopeInfo nodeId="4867764537728098634" fileName="FacetRegistry.java" startLine="73" startPosition="59" endLine="74" endPosition="49" />
-    <scopeInfo nodeId="4867764537728205948" fileName="FacetRegistry.java" startLine="77" startPosition="58" endLine="78" endPosition="23" />
-    <scopeInfo nodeId="6168415856807659143" fileName="FacetRegistry.java" startLine="83" startPosition="47" endLine="84" endPosition="49" />
-    <scopeInfo nodeId="6168415856807659176" fileName="FacetRegistry.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="6168415856807659154" fileName="FacetRegistry.java" startLine="88" startPosition="27" endLine="90" endPosition="57" />
-    <scopeInfo nodeId="4867764537727668914" fileName="FacetRegistry.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
+    <nodeInfo nodeId="6168415856807662021" fileName="FacetRegistry.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6168415856807659170" fileName="FacetRegistry.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="6168415856807659070" fileName="FacetRegistry.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="facetMap" />
+    <nodeInfo nodeId="4867764537727385687" fileName="FacetRegistry.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="facetsForLanguages" />
+    <nodeInfo nodeId="4867764537727490029" fileName="FacetRegistry.java" startLine="31" startPosition="38" endLine="32" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6168415856807659091" fileName="FacetRegistry.java" startLine="36" startPosition="69" endLine="37" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6168415856807659095" fileName="FacetRegistry.java" startLine="38" startPosition="5" endLine="39" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4867764537727392156" fileName="FacetRegistry.java" startLine="39" startPosition="62" endLine="40" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6168415856807659118" fileName="FacetRegistry.java" startLine="44" startPosition="72" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6168415856807659122" fileName="FacetRegistry.java" startLine="46" startPosition="5" endLine="47" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4867764537727673862" fileName="FacetRegistry.java" startLine="49" startPosition="59" endLine="50" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8855298915862262346" fileName="FacetRegistry.java" startLine="55" startPosition="40" endLine="56" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5215469770656067210" fileName="FacetRegistry.java" startLine="57" startPosition="26" endLine="58" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788471824034063068" fileName="FacetRegistry.java" startLine="59" startPosition="23" endLine="60" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788471824034063089" fileName="FacetRegistry.java" startLine="60" startPosition="84" endLine="61" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788471824034063116" fileName="FacetRegistry.java" startLine="62" startPosition="26" endLine="63" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5145917501578463085" fileName="FacetRegistry.java" startLine="66" startPosition="5" endLine="67" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5145917501578463089" fileName="FacetRegistry.java" startLine="67" startPosition="39" endLine="68" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6168415856807659134" fileName="FacetRegistry.java" startLine="68" startPosition="75" endLine="69" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4867764537728103946" fileName="FacetRegistry.java" startLine="74" startPosition="59" endLine="75" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4867764537728210687" fileName="FacetRegistry.java" startLine="78" startPosition="58" endLine="79" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6168415856807659144" fileName="FacetRegistry.java" startLine="84" startPosition="47" endLine="85" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6168415856807659155" fileName="FacetRegistry.java" startLine="89" startPosition="27" endLine="90" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6168415856807659160" fileName="FacetRegistry.java" startLine="90" startPosition="35" endLine="91" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6168415856807659167" fileName="FacetRegistry.java" startLine="92" startPosition="5" endLine="93" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6168415856807659176" fileName="FacetRegistry.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FacetRegistry#()V" />
+    <nodeInfo nodeId="6168415856807659083" fileName="FacetRegistry.java" startLine="35" startPosition="64" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6168415856807659109" fileName="FacetRegistry.java" startLine="43" startPosition="46" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4867764537727668914" fileName="FacetRegistry.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
+    <nodeInfo nodeId="7788471824034063097" fileName="FacetRegistry.java" startLine="61" startPosition="35" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4867764537728098633" fileName="FacetRegistry.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
+    <nodeInfo nodeId="4867764537728205947" fileName="FacetRegistry.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/make/facet/IFacet;" />
+    <nodeInfo nodeId="6168415856807659141" fileName="FacetRegistry.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allFacets#()Ljava/util/Map;" />
+    <nodeInfo nodeId="6168415856807659079" fileName="FacetRegistry.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="register#(Ljetbrains/mps/make/facet/IFacet;)V" />
+    <nodeInfo nodeId="6168415856807659153" fileName="FacetRegistry.java" startLine="88" startPosition="45" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4867764537727778197" fileName="FacetRegistry.java" startLine="47" startPosition="61" endLine="52" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4867764537727338103" fileName="FacetRegistry.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="register#(Ljava/lang/String;Ljetbrains/mps/make/facet/IFacet;)V" />
+    <nodeInfo nodeId="5215469770656067206" fileName="FacetRegistry.java" startLine="58" startPosition="66" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6168415856807659150" fileName="FacetRegistry.java" startLine="88" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/make/facet/FacetRegistry;" />
+    <nodeInfo nodeId="4867764537728085907" fileName="FacetRegistry.java" startLine="72" startPosition="80" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8855298915862262352" fileName="FacetRegistry.java" startLine="56" startPosition="62" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6168415856807659105" fileName="FacetRegistry.java" startLine="43" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregister#(Ljetbrains/mps/make/facet/IFacet;)V" />
+    <nodeInfo nodeId="4867764537728076293" fileName="FacetRegistry.java" startLine="72" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFacetsForLanguage#(Ljava/lang/String;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6168415856807659131" fileName="FacetRegistry.java" startLine="55" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="lookup#(Ljetbrains/mps/make/facet/IFacet/Name;)Ljetbrains/mps/make/facet/IFacet;" />
+    <scopeInfo nodeId="6168415856807659178" fileName="FacetRegistry.java" startLine="27" startPosition="27" endLine="27" endPosition="27" />
+    <scopeInfo nodeId="6168415856807659082" fileName="FacetRegistry.java" startLine="31" startPosition="38" endLine="32" endPosition="26" />
+    <scopeInfo nodeId="6168415856807659090" fileName="FacetRegistry.java" startLine="36" startPosition="69" endLine="37" endPosition="63" />
+    <scopeInfo nodeId="6168415856807659117" fileName="FacetRegistry.java" startLine="44" startPosition="72" endLine="45" endPosition="59" />
+    <scopeInfo nodeId="4867764537727668915" fileName="FacetRegistry.java" startLine="49" startPosition="59" endLine="50" endPosition="40" />
+    <scopeInfo nodeId="7788471824034063098" fileName="FacetRegistry.java" startLine="62" startPosition="26" endLine="63" endPosition="21" />
+    <scopeInfo nodeId="4867764537728098634" fileName="FacetRegistry.java" startLine="74" startPosition="59" endLine="75" endPosition="49" />
+    <scopeInfo nodeId="4867764537728205948" fileName="FacetRegistry.java" startLine="78" startPosition="58" endLine="79" endPosition="23" />
+    <scopeInfo nodeId="6168415856807659143" fileName="FacetRegistry.java" startLine="84" startPosition="47" endLine="85" endPosition="49" />
+    <scopeInfo nodeId="6168415856807659176" fileName="FacetRegistry.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="6168415856807659154" fileName="FacetRegistry.java" startLine="89" startPosition="27" endLine="91" endPosition="57" />
+    <scopeInfo nodeId="4867764537727668914" fileName="FacetRegistry.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="4867764537727668914" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4867764537728098633" fileName="FacetRegistry.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="4867764537728098633" fileName="FacetRegistry.java" startLine="74" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="4867764537728098633" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4867764537728205947" fileName="FacetRegistry.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="4867764537728205947" fileName="FacetRegistry.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="4867764537728205947" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6168415856807659141" fileName="FacetRegistry.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="6168415856807659079" fileName="FacetRegistry.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="6168415856807659141" fileName="FacetRegistry.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="6168415856807659079" fileName="FacetRegistry.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="6168415856807659103" varName="facet" />
     </scopeInfo>
-    <scopeInfo nodeId="4867764537727338106" fileName="FacetRegistry.java" startLine="34" startPosition="64" endLine="39" endPosition="113" />
-    <scopeInfo nodeId="5215469770656067207" fileName="FacetRegistry.java" startLine="58" startPosition="23" endLine="63" endPosition="9">
+    <scopeInfo nodeId="4867764537727338106" fileName="FacetRegistry.java" startLine="35" startPosition="64" endLine="40" endPosition="113" />
+    <scopeInfo nodeId="5215469770656067207" fileName="FacetRegistry.java" startLine="59" startPosition="23" endLine="64" endPosition="9">
       <varInfo nodeId="7788471824034063090" varName="fct" />
       <varInfo nodeId="7788471824034063069" varName="fm" />
     </scopeInfo>
-    <scopeInfo nodeId="6168415856807659152" fileName="FacetRegistry.java" startLine="87" startPosition="45" endLine="92" endPosition="20" />
-    <scopeInfo nodeId="4867764537727338103" fileName="FacetRegistry.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="6168415856807659152" fileName="FacetRegistry.java" startLine="88" startPosition="45" endLine="93" endPosition="20" />
+    <scopeInfo nodeId="4867764537727338103" fileName="FacetRegistry.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="4867764537727340220" varName="facet" />
       <varInfo nodeId="4867764537727342195" varName="languageNamespace" />
     </scopeInfo>
-    <scopeInfo nodeId="6168415856807659150" fileName="FacetRegistry.java" startLine="87" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="8855298915862262353" fileName="FacetRegistry.java" startLine="56" startPosition="26" endLine="64" endPosition="7">
+    <scopeInfo nodeId="6168415856807659150" fileName="FacetRegistry.java" startLine="88" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="8855298915862262353" fileName="FacetRegistry.java" startLine="57" startPosition="26" endLine="65" endPosition="7">
       <varInfo nodeId="5215469770656067211" varName="lr" />
     </scopeInfo>
-    <scopeInfo nodeId="6168415856807659108" fileName="FacetRegistry.java" startLine="42" startPosition="46" endLine="51" endPosition="8" />
-    <scopeInfo nodeId="4867764537728076296" fileName="FacetRegistry.java" startLine="71" startPosition="80" endLine="80" endPosition="7" />
-    <scopeInfo nodeId="6168415856807659105" fileName="FacetRegistry.java" startLine="42" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="6168415856807659108" fileName="FacetRegistry.java" startLine="43" startPosition="46" endLine="52" endPosition="8" />
+    <scopeInfo nodeId="4867764537728076296" fileName="FacetRegistry.java" startLine="72" startPosition="80" endLine="81" endPosition="7" />
+    <scopeInfo nodeId="6168415856807659105" fileName="FacetRegistry.java" startLine="43" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="6168415856807659129" varName="facet" />
     </scopeInfo>
-    <scopeInfo nodeId="4867764537728076293" fileName="FacetRegistry.java" startLine="71" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="4867764537728076293" fileName="FacetRegistry.java" startLine="72" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="4867764537728080774" varName="languageNamespace" />
     </scopeInfo>
-    <scopeInfo nodeId="6168415856807659133" fileName="FacetRegistry.java" startLine="54" startPosition="40" endLine="68" endPosition="49">
+    <scopeInfo nodeId="6168415856807659133" fileName="FacetRegistry.java" startLine="55" startPosition="40" endLine="69" endPosition="49">
       <varInfo nodeId="8855298915862262347" varName="langReg" />
     </scopeInfo>
-    <scopeInfo nodeId="6168415856807659131" fileName="FacetRegistry.java" startLine="54" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="6168415856807659131" fileName="FacetRegistry.java" startLine="55" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="6168415856807659139" varName="fn" />
     </scopeInfo>
-    <unitInfo nodeId="4867764537727668914" fileName="FacetRegistry.java" startLine="47" startPosition="147" endLine="51" endPosition="5" unitName="jetbrains.mps.make.facet.FacetRegistry$1" />
-    <unitInfo nodeId="4867764537728098633" fileName="FacetRegistry.java" startLine="72" startPosition="61" endLine="76" endPosition="5" unitName="jetbrains.mps.make.facet.FacetRegistry$2" />
-    <unitInfo nodeId="4867764537728205947" fileName="FacetRegistry.java" startLine="76" startPosition="18" endLine="80" endPosition="5" unitName="jetbrains.mps.make.facet.FacetRegistry$3" />
-    <unitInfo nodeId="6168415856807659069" fileName="FacetRegistry.java" startLine="20" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.make.facet.FacetRegistry" />
+    <unitInfo nodeId="4867764537727668914" fileName="FacetRegistry.java" startLine="48" startPosition="147" endLine="52" endPosition="5" unitName="jetbrains.mps.make.facet.FacetRegistry$1" />
+    <unitInfo nodeId="4867764537728098633" fileName="FacetRegistry.java" startLine="73" startPosition="61" endLine="77" endPosition="5" unitName="jetbrains.mps.make.facet.FacetRegistry$2" />
+    <unitInfo nodeId="4867764537728205947" fileName="FacetRegistry.java" startLine="77" startPosition="18" endLine="81" endPosition="5" unitName="jetbrains.mps.make.facet.FacetRegistry$3" />
+    <unitInfo nodeId="6168415856807659069" fileName="FacetRegistry.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.make.facet.FacetRegistry" />
   </root>
   <root nodeRef="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)/7219266275016638568">
     <nodeInfo nodeId="7219266275016638571" fileName="ITargetEx.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />

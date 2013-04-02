@@ -13,6 +13,7 @@ import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.depanalyzer.DependencyUtil;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -27,7 +28,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.IModule;
 
 public class SafeDeleteModuleDependency_Action extends BaseAction {
@@ -59,7 +61,9 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "SafeDeleteModuleDependency", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "SafeDeleteModuleDependency", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -99,7 +103,9 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
       }
       SafeDeleteModuleDependency_Action.this.removeDependency(from, to, _params);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "SafeDeleteModuleDependency", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "SafeDeleteModuleDependency", t);
+      }
     }
   }
 
@@ -121,7 +127,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).resetAll();
   }
 
-  private static Logger LOG = Logger.getLogger(SafeDeleteModuleDependency_Action.class);
+  protected static Logger LOG = LogManager.getLogger(SafeDeleteModuleDependency_Action.class);
 
   private static IModule check_bai5av_a0a0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {

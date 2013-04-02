@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JOptionPane;
@@ -31,7 +32,8 @@ import jetbrains.mps.ide.StereotypeProvider;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NewModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Model;
@@ -71,7 +73,9 @@ public class NewModel_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "NewModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "NewModel", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -137,7 +141,9 @@ public class NewModel_Action extends BaseAction {
         ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "NewModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "NewModel", t);
+      }
     }
   }
 
@@ -190,5 +196,5 @@ public class NewModel_Action extends BaseAction {
     return ((IModule) MapSequence.fromMap(_params).get("module")).getModuleName();
   }
 
-  private static Logger LOG = Logger.getLogger(NewModel_Action.class);
+  protected static Logger LOG = LogManager.getLogger(NewModel_Action.class);
 }

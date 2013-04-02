@@ -7,13 +7,15 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.devkit.cellExplorer.CellPropertiesWindow;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Frame;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CellProperties_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,7 +35,9 @@ public class CellProperties_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CellProperties", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CellProperties", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -57,9 +61,11 @@ public class CellProperties_Action extends BaseAction {
     try {
       new CellPropertiesWindow(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((Frame) MapSequence.fromMap(_params).get("frame")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CellProperties", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CellProperties", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CellProperties_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CellProperties_Action.class);
 }

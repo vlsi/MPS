@@ -10,6 +10,7 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.progress.ProgressManager;
@@ -20,7 +21,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CleanModule_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +49,9 @@ public class CleanModule_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CleanModule", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CleanModule", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -81,9 +85,11 @@ public class CleanModule_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CleanModule", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CleanModule", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CleanModule_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CleanModule_Action.class);
 }

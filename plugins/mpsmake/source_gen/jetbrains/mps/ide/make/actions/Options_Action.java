@@ -7,7 +7,9 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Options_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,7 +36,9 @@ public class Options_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "Options", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "Options", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -49,9 +53,11 @@ public class Options_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "Options", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "Options", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(Options_Action.class);
+  protected static Logger LOG = LogManager.getLogger(Options_Action.class);
 }

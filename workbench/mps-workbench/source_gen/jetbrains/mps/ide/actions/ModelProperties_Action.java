@@ -9,6 +9,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
@@ -18,7 +19,8 @@ import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.properties.StandardDialogs;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ModelProperties_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Settings;
@@ -45,7 +47,9 @@ public class ModelProperties_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ModelProperties", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ModelProperties", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -90,9 +94,11 @@ public class ModelProperties_Action extends BaseAction {
         StandardDialogs.createModelPropertiesDialog(((SModel) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).show();
       */
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ModelProperties", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ModelProperties", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ModelProperties_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ModelProperties_Action.class);
 }

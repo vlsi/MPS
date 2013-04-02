@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder;
@@ -20,7 +21,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToUsageInMappingConfig_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -59,7 +61,9 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToUsageInMappingConfig", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToUsageInMappingConfig", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -93,9 +97,11 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
       MappingConfigFinder finder = new MappingConfigFinder(((Generator) ((IModule) MapSequence.fromMap(_params).get("module"))), SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))));
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finder), new SearchQuery(null), false, false, false, "No usages found");
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToUsageInMappingConfig", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToUsageInMappingConfig", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(GoToUsageInMappingConfig_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToUsageInMappingConfig_Action.class);
 }

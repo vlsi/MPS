@@ -7,10 +7,12 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Find_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,7 +33,9 @@ public class Find_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "Find", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "Find", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -51,9 +55,11 @@ public class Find_Action extends BaseAction {
     try {
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSearchPanel().activate();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "Find", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "Find", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(Find_Action.class);
+  protected static Logger LOG = LogManager.getLogger(Find_Action.class);
 }

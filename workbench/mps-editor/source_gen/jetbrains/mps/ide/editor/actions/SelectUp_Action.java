@@ -9,9 +9,11 @@ import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class SelectUp_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,7 +40,9 @@ public class SelectUp_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "SelectUp", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "SelectUp", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -58,9 +62,11 @@ public class SelectUp_Action extends BaseAction {
     try {
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.SELECT_UP);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "SelectUp", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "SelectUp", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(SelectUp_Action.class);
+  protected static Logger LOG = LogManager.getLogger(SelectUp_Action.class);
 }

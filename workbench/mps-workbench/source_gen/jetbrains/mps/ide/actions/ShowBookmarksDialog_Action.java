@@ -7,12 +7,14 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.bookmark.BookmarkManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.bookmark.BookmarksDialog;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowBookmarksDialog_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,7 +34,9 @@ public class ShowBookmarksDialog_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowBookmarksDialog", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowBookmarksDialog", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -54,9 +58,11 @@ public class ShowBookmarksDialog_Action extends BaseAction {
       BookmarksDialog dialog = new BookmarksDialog(((Project) MapSequence.fromMap(_params).get("project")), bookmarkManager);
       dialog.show();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowBookmarksDialog", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowBookmarksDialog", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowBookmarksDialog_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowBookmarksDialog_Action.class);
 }

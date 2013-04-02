@@ -10,11 +10,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.generator.GeneratedQueriesOpener;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NavigateToGeneratedQuery_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -44,7 +46,9 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "NavigateToGeneratedQuery", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "NavigateToGeneratedQuery", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -74,9 +78,11 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
       SNode fun = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.ConceptFunction", true, false);
       GeneratedQueriesOpener.openQueryMethod(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext(), fun);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "NavigateToGeneratedQuery", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "NavigateToGeneratedQuery", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(NavigateToGeneratedQuery_Action.class);
+  protected static Logger LOG = LogManager.getLogger(NavigateToGeneratedQuery_Action.class);
 }

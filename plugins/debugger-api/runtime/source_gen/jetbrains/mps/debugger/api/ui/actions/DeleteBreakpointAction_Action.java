@@ -10,12 +10,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DeleteBreakpointAction_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Debug.DeleteBreakpoint;
@@ -38,7 +40,9 @@ public class DeleteBreakpointAction_Action extends BaseAction {
         event.getPresentation().setEnabled(breakpoint != null);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "DeleteBreakpointAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "DeleteBreakpointAction", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -67,9 +71,11 @@ public class DeleteBreakpointAction_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "DeleteBreakpointAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "DeleteBreakpointAction", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(DeleteBreakpointAction_Action.class);
+  protected static Logger LOG = LogManager.getLogger(DeleteBreakpointAction_Action.class);
 }

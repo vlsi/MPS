@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
@@ -20,7 +21,8 @@ import jetbrains.mps.ide.java.platform.refactorings.LocalVariableIntroducer;
 import java.awt.Frame;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JOptionPane;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class IntroduceVariable_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +49,9 @@ public class IntroduceVariable_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "IntroduceVariable", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "IntroduceVariable", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -98,9 +102,11 @@ public class IntroduceVariable_Action extends BaseAction {
         JOptionPane.showMessageDialog(((EditorComponent) MapSequence.fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "IntroduceVariable", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "IntroduceVariable", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(IntroduceVariable_Action.class);
+  protected static Logger LOG = LogManager.getLogger(IntroduceVariable_Action.class);
 }

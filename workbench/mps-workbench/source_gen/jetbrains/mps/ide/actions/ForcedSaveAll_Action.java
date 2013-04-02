@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
@@ -19,7 +20,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ForcedSaveAll_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,7 +41,9 @@ public class ForcedSaveAll_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ForcedSaveAll", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ForcedSaveAll", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -83,9 +87,11 @@ public class ForcedSaveAll_Action extends BaseAction {
         model.save();
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ForcedSaveAll", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ForcedSaveAll", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ForcedSaveAll_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ForcedSaveAll_Action.class);
 }

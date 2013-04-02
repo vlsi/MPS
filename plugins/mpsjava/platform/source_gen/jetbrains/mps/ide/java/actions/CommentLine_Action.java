@@ -13,9 +13,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CommentLine_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -53,7 +55,9 @@ public class CommentLine_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CommentLine", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CommentLine", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -95,7 +99,9 @@ public class CommentLine_Action extends BaseAction {
         SLinkOperations.setTarget(commentPart, "commentedStatement", statement, true);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CommentLine", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CommentLine", t);
+      }
     }
   }
 
@@ -107,5 +113,5 @@ public class CommentLine_Action extends BaseAction {
     return SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.SingleLineComment", true, false);
   }
 
-  private static Logger LOG = Logger.getLogger(CommentLine_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CommentLine_Action.class);
 }

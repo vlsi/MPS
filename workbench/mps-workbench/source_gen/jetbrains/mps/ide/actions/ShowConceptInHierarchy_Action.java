@@ -8,6 +8,7 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -19,7 +20,8 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowConceptInHierarchy_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowHierarchy;
@@ -46,7 +48,9 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowConceptInHierarchy", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowConceptInHierarchy", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -85,7 +89,9 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
       tool.showItemInHierarchy(ShowConceptInHierarchy_Action.this.getConceptNode(_params), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       tool.openToolLater(true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowConceptInHierarchy", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowConceptInHierarchy", t);
+      }
     }
   }
 
@@ -116,5 +122,5 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
     return SNodeOperations.cast(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
 
-  private static Logger LOG = Logger.getLogger(ShowConceptInHierarchy_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowConceptInHierarchy_Action.class);
 }

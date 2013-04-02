@@ -11,10 +11,12 @@ import java.util.Map;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ViewBreakpointSourceAction_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.ShowSource;
@@ -37,7 +39,9 @@ public class ViewBreakpointSourceAction_Action extends BaseAction {
         event.getPresentation().setEnabled(breakpoint != null && breakpoint instanceof ILocationBreakpoint);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ViewBreakpointSourceAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ViewBreakpointSourceAction", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -61,9 +65,11 @@ public class ViewBreakpointSourceAction_Action extends BaseAction {
       }
       BreakpointsUtil.openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), (ILocationBreakpoint) breakpoint, false, true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ViewBreakpointSourceAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ViewBreakpointSourceAction", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ViewBreakpointSourceAction_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ViewBreakpointSourceAction_Action.class);
 }

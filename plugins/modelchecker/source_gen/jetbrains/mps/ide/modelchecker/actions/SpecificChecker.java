@@ -9,13 +9,15 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public abstract class SpecificChecker {
   public SpecificChecker() {
@@ -26,7 +28,9 @@ public abstract class SpecificChecker {
   protected static void addIssue(List<SearchResult<ModelCheckerIssue>> results, SNode node, String message, String severity, String issueType, IModelCheckerFix fix) {
     if (filterIssue(node)) {
       if (SNodeOperations.getContainingRoot(node) == null) {
-        LOG.error("Node without containing root", new IllegalStateException());
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Node without containing root", new IllegalStateException());
+        }
       }
       ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForNode(node, message, fix, severity, issueType));
     }
@@ -58,5 +62,5 @@ public abstract class SpecificChecker {
     return true;
   }
 
-  private static Logger LOG = Logger.getLogger(SpecificChecker.class);
+  protected static Logger LOG = LogManager.getLogger(SpecificChecker.class);
 }

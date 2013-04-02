@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -18,7 +19,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowMembers_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,7 +47,9 @@ public class ShowMembers_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowMembers", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowMembers", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -98,9 +102,11 @@ public class ShowMembers_Action extends BaseAction {
       popup.setTitle(title.value);
       popup.show();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowMembers", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowMembers", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowMembers_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowMembers_Action.class);
 }

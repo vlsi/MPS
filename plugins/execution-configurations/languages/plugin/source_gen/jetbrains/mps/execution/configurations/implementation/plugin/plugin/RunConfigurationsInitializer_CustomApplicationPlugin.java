@@ -11,8 +11,10 @@ import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.openapi.extensions.ExtensionPoint;
 import com.intellij.openapi.extensions.Extensions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.apache.log4j.Priority;
 import com.intellij.util.containers.ContainerUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private List<ConfigurationType> myRegisteredKinds = ListSequence.fromList(new ArrayList<ConfigurationType>());
@@ -51,7 +53,9 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
         try {
           return (Class<ConfigurationType>) getClass().getClassLoader().loadClass(className);
         } catch (ClassNotFoundException cl) {
-          LOG.error("Can not find configuration type " + className + ". Check languages dependency.", cl);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("Can not find configuration type " + className + ". Check languages dependency.", cl);
+          }
           return (Class<ConfigurationType>) null;
         }
       }
@@ -95,5 +99,5 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
     ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).clear();
   }
 
-  private static Logger LOG = Logger.getLogger(RunConfigurationsInitializer_CustomApplicationPlugin.class);
+  protected static Logger LOG = LogManager.getLogger(RunConfigurationsInitializer_CustomApplicationPlugin.class);
 }

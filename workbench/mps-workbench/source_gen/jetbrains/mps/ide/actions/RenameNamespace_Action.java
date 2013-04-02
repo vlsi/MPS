@@ -10,6 +10,7 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JOptionPane;
@@ -20,7 +21,8 @@ import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RenameNamespace_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +49,9 @@ public class RenameNamespace_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RenameNamespace", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "RenameNamespace", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -90,7 +94,9 @@ public class RenameNamespace_Action extends BaseAction {
       }
       RenameNamespace_Action.this.getProjectPane(_params).rebuild();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RenameNamespace", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "RenameNamespace", t);
+      }
     }
   }
 
@@ -98,5 +104,5 @@ public class RenameNamespace_Action extends BaseAction {
     return ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
   }
 
-  private static Logger LOG = Logger.getLogger(RenameNamespace_Action.class);
+  protected static Logger LOG = LogManager.getLogger(RenameNamespace_Action.class);
 }

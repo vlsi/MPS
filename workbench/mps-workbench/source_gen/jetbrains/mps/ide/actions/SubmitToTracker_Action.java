@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
@@ -20,7 +21,8 @@ import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.ide.blame.perform.Response;
 import javax.swing.JOptionPane;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class SubmitToTracker_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -52,7 +54,9 @@ public class SubmitToTracker_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "SubmitToTracker", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "SubmitToTracker", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -105,13 +109,17 @@ public class SubmitToTracker_Action extends BaseAction {
           JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
         } else {
           JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
-          LOG.error("Submit failed: " + message, response.getThrowable());
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("Submit failed: " + message, response.getThrowable());
+          }
         }
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "SubmitToTracker", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "SubmitToTracker", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(SubmitToTracker_Action.class);
+  protected static Logger LOG = LogManager.getLogger(SubmitToTracker_Action.class);
 }

@@ -7,13 +7,15 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DoNotSuppressErrors_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,7 +35,9 @@ public class DoNotSuppressErrors_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "DoNotSuppressErrors", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "DoNotSuppressErrors", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -53,9 +57,11 @@ public class DoNotSuppressErrors_Action extends BaseAction {
     try {
       AttributeOperations.setAttribute(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")), null);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "DoNotSuppressErrors", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "DoNotSuppressErrors", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(DoNotSuppressErrors_Action.class);
+  protected static Logger LOG = LogManager.getLogger(DoNotSuppressErrors_Action.class);
 }

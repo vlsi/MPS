@@ -15,7 +15,8 @@ import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debugger.java.api.ui.Icons;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class JavaThread extends ProxyForJava implements IThread {
   @NotNull
@@ -43,9 +44,13 @@ public class JavaThread extends ProxyForJava implements IThread {
         myStackFrames.add(new JavaStackFrame(this, i));
       }
     } catch (IncompatibleThreadStateException ex) {
-      LOG.debug("IncompatibleThreadStateException", ex);
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("IncompatibleThreadStateException", ex);
+      }
     } catch (AbsentInformationException e) {
-      LOG.debug("AbsecntInformationException", e);
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("AbsecntInformationException", e);
+      }
     }
   }
 
@@ -122,5 +127,5 @@ public class JavaThread extends ProxyForJava implements IThread {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(JavaThread.class);
+  protected static Logger LOG = LogManager.getLogger(JavaThread.class);
 }

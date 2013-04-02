@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.Set;
@@ -27,7 +28,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +49,9 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindUnusedAndDeprecatedConcepts", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "FindUnusedAndDeprecatedConcepts", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -87,9 +91,11 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
 
       InternalActionsUtils.showUsagesViewForNodes(((Project) MapSequence.fromMap(_params).get("project")), concepts);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindUnusedAndDeprecatedConcepts", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "FindUnusedAndDeprecatedConcepts", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(FindUnusedAndDeprecatedConcepts_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FindUnusedAndDeprecatedConcepts_Action.class);
 }

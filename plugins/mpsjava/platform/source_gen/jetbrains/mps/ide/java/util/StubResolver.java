@@ -38,8 +38,10 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
@@ -106,7 +108,9 @@ public class StubResolver {
     int cnt = StubResolver.resolveReferences(toResolve, models, context);
 
     new OptimizeImportsHelper(context).optimizeModelImports(model);
-    LOG.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
+    if (LOG.isInfoEnabled()) {
+      LOG.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
+    }
   }
 
   public void resolveInModels(List<SModel> models, IOperationContext context) {
@@ -154,7 +158,9 @@ public class StubResolver {
           }
         });
         if (ListSequence.fromList(resolved).count() > 1) {
-          LOG.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + SModelStereotype.withoutStereotype(modelRef.getModelName()));
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + SModelStereotype.withoutStereotype(modelRef.getModelName()));
+          }
         }
         if (ListSequence.fromList(resolved).count() > 0) {
           SNodeAccessUtil.setReferenceTarget(node, SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
@@ -167,7 +173,7 @@ public class StubResolver {
     return cnt;
   }
 
-  private static Logger LOG = Logger.getLogger(StubResolver.class);
+  protected static Logger LOG = LogManager.getLogger(StubResolver.class);
 
   private static SModelReference check_ar1im2_a0d0a0c0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {

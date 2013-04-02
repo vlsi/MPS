@@ -15,7 +15,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ClassConcept_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -64,7 +66,9 @@ public class ClassConcept_TextGen extends SNodeTextGen {
         try {
           unitName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Object[]{});
         } catch (Throwable t) {
-          LOG.error("Can't calculate unit name for a node " + node + ".", t);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("Can't calculate unit name for a node " + node + ".", t);
+          }
         }
         TraceInfoGenerationUtil.fillUnitInfo(this, node, unitName);
       }
@@ -75,5 +79,5 @@ public class ClassConcept_TextGen extends SNodeTextGen {
     return "java";
   }
 
-  private static Logger LOG = Logger.getLogger(ClassConcept_TextGen.class);
+  protected static Logger LOG = LogManager.getLogger(ClassConcept_TextGen.class);
 }

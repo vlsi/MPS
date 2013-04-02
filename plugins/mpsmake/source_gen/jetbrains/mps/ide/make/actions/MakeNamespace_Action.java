@@ -13,13 +13,15 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MakeNamespace_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -61,7 +63,9 @@ public class MakeNamespace_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MakeNamespace", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "MakeNamespace", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -90,7 +94,9 @@ public class MakeNamespace_Action extends BaseAction {
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, MakeNamespace_Action.this.selectedModules(_params), null), MakeNamespace_Action.this.cleanMake).executeAction();
 
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MakeNamespace", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "MakeNamespace", t);
+      }
     }
   }
 
@@ -114,5 +120,5 @@ public class MakeNamespace_Action extends BaseAction {
     return modules;
   }
 
-  private static Logger LOG = Logger.getLogger(MakeNamespace_Action.class);
+  protected static Logger LOG = LogManager.getLogger(MakeNamespace_Action.class);
 }

@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -25,7 +26,8 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class PrintIScopeAndIModuleMethodsUsages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,7 +47,9 @@ public class PrintIScopeAndIModuleMethodsUsages_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "PrintIScopeAndIModuleMethodsUsages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "PrintIScopeAndIModuleMethodsUsages", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -66,7 +70,9 @@ public class PrintIScopeAndIModuleMethodsUsages_Action extends BaseAction {
       PrintIScopeAndIModuleMethodsUsages_Action.this.printMethodsUsages(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)", "~IScope"), _params);
       PrintIScopeAndIModuleMethodsUsages_Action.this.printMethodsUsages(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~IModule"), _params);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "PrintIScopeAndIModuleMethodsUsages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "PrintIScopeAndIModuleMethodsUsages", t);
+      }
     }
   }
 
@@ -96,5 +102,5 @@ public class PrintIScopeAndIModuleMethodsUsages_Action extends BaseAction {
     System.out.println('\n');
   }
 
-  private static Logger LOG = Logger.getLogger(PrintIScopeAndIModuleMethodsUsages_Action.class);
+  protected static Logger LOG = LogManager.getLogger(PrintIScopeAndIModuleMethodsUsages_Action.class);
 }

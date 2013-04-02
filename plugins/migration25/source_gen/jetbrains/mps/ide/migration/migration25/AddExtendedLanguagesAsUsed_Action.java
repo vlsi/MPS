@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.AbstractModule;
@@ -18,7 +19,8 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class AddExtendedLanguagesAsUsed_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,7 +40,9 @@ public class AddExtendedLanguagesAsUsed_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "AddExtendedLanguagesAsUsed", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "AddExtendedLanguagesAsUsed", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -68,9 +72,11 @@ public class AddExtendedLanguagesAsUsed_Action extends BaseAction {
         module.save();
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "AddExtendedLanguagesAsUsed", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "AddExtendedLanguagesAsUsed", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(AddExtendedLanguagesAsUsed_Action.class);
+  protected static Logger LOG = LogManager.getLogger(AddExtendedLanguagesAsUsed_Action.class);
 }

@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.apache.log4j.Priority;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
@@ -31,7 +32,8 @@ import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -78,7 +80,9 @@ public class ClassConcept_Behavior {
       return true;
     }
     if (SetSequence.fromSet(visited).contains(thisNode)) {
-      LOG.error("circular hierarchy in class " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("circular hierarchy in class " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+      }
       return false;
     }
     if (Classifier_Behavior.call_isSame_4855996797771684010(thisNode, nodeToCompare)) {
@@ -93,7 +97,9 @@ public class ClassConcept_Behavior {
 
   public static boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(thisNode)) {
-      LOG.error("circular hierarchy in class " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("circular hierarchy in class " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+      }
       return false;
     }
     if (SLinkOperations.getTarget(thisNode, "superclass", true) == null) {
@@ -256,7 +262,9 @@ public class ClassConcept_Behavior {
       }
 
       if ((superClass == null)) {
-        LOG.warning("Superclass classifier is null for not java.lang.Object classifier in " + thisNode);
+        if (LOG.isEnabledFor(Priority.WARN)) {
+          LOG.warn("Superclass classifier is null for not java.lang.Object classifier in " + thisNode);
+        }
         return new EmptyScope();
       }
 
@@ -435,7 +443,7 @@ public class ClassConcept_Behavior {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}, new Object[]{});
   }
 
-  private static Logger LOG = Logger.getLogger(ClassConcept_Behavior.class);
+  protected static Logger LOG = LogManager.getLogger(ClassConcept_Behavior.class);
 
   private static SNode _quotation_createNode_xjj00_a0b0j() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

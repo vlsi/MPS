@@ -15,6 +15,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -33,7 +34,8 @@ import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ReRunMergeFromBackup_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -71,7 +73,9 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ReRunMergeFromBackup", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ReRunMergeFromBackup", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -117,14 +121,18 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
           DiffManager.getInstance().getDiffTool().show(mergeRequest);
           return;
         } catch (IOException e) {
-          LOG.warning("", e);
+          if (LOG.isEnabledFor(Priority.WARN)) {
+            LOG.warn("", e);
+          }
           // Skip this backup 
           continue;
         }
       }
       Messages.showInfoMessage("No suitable backup files for " + ((SModel) MapSequence.fromMap(_params).get("model")).getReference().getModelName() + "was not found.", "No Backup Files Found");
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);
+      }
     }
   }
 
@@ -154,5 +162,5 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ReRunMergeFromBackup_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ReRunMergeFromBackup_Action.class);
 }

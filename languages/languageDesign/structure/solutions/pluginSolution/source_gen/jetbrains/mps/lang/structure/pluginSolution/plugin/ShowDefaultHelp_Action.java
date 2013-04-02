@@ -12,8 +12,10 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowDefaultHelp_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -41,7 +43,9 @@ public class ShowDefaultHelp_Action extends BaseAction {
         event.getPresentation().setText("Show Help for " + NameUtil.capitalize(defaultHelp.getName()));
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowDefaultHelp", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowDefaultHelp", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -65,9 +69,11 @@ public class ShowDefaultHelp_Action extends BaseAction {
     try {
       HelpHelper.showHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowDefaultHelp", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowDefaultHelp", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowDefaultHelp_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowDefaultHelp_Action.class);
 }

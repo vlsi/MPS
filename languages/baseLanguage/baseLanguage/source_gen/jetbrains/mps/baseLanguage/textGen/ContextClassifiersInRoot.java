@@ -6,13 +6,15 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.log4j.Priority;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ContextClassifiersInRoot {
   private SimpleCache<Tuples._2<SNode, String>, Map<String, String>> contextClassifiersCache;
@@ -40,7 +42,9 @@ public class ContextClassifiersInRoot {
       contextNode = SNodeOperations.getParent(contextNode);
     }
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      LOG.warning("contextNode is classifier in getContextClassifiers: " + contextNode);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("contextNode is classifier in getContextClassifiers: " + contextNode);
+      }
       return Collections.emptyMap();
     }
 
@@ -73,7 +77,9 @@ public class ContextClassifiersInRoot {
         } else if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           processNestedClassifiers = !("superclass".equals(sourceChildRole) || "implementedInterface".equals(sourceChildRole));
         } else {
-          LOG.warning("Illegal classifier node in bl textgen: " + current);
+          if (LOG.isEnabledFor(Priority.WARN)) {
+            LOG.warn("Illegal classifier node in bl textgen: " + current);
+          }
         }
 
         // todo: is it true? had a bug with it. Look like nested classifier has more priority then class with same name 
@@ -119,5 +125,5 @@ public class ContextClassifiersInRoot {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ContextClassifiersInRoot.class);
+  protected static Logger LOG = LogManager.getLogger(ContextClassifiersInRoot.class);
 }

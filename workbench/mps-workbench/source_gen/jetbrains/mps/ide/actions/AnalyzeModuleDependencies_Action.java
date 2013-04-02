@@ -11,11 +11,13 @@ import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class AnalyzeModuleDependencies_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowModuleDependencies;
@@ -42,7 +44,9 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "AnalyzeModuleDependencies", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "AnalyzeModuleDependencies", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -68,9 +72,11 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
       tool.setModules(((List<IModule>) MapSequence.fromMap(_params).get("modules")));
       tool.openToolLater(true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "AnalyzeModuleDependencies", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "AnalyzeModuleDependencies", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(AnalyzeModuleDependencies_Action.class);
+  protected static Logger LOG = LogManager.getLogger(AnalyzeModuleDependencies_Action.class);
 }

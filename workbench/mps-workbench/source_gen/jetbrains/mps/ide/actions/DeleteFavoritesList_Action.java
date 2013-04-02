@@ -10,11 +10,13 @@ import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.projectView.ProjectView;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DeleteFavoritesList_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -41,7 +43,9 @@ public class DeleteFavoritesList_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "DeleteFavoritesList", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "DeleteFavoritesList", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -67,9 +71,11 @@ public class DeleteFavoritesList_Action extends BaseAction {
       }
       favoritesManager.removeFavoritesList(pane.getSubId());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "DeleteFavoritesList", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "DeleteFavoritesList", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(DeleteFavoritesList_Action.class);
+  protected static Logger LOG = LogManager.getLogger(DeleteFavoritesList_Action.class);
 }

@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -30,7 +31,8 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class SModelUtil {
   private static ConcurrentMap<String, SNode> myFQNameToConcepDecl = new ConcurrentHashMap<String, SNode>();
@@ -66,7 +68,9 @@ public class SModelUtil {
         }
       }
     }
-    LOG.warning("couldn't find node by fqname: " + nodeFQName);
+    if (LOG.isEnabledFor(Priority.WARN)) {
+      LOG.warn("couldn't find node by fqname: " + nodeFQName);
+    }
     return null;
   }
 
@@ -251,7 +255,7 @@ public class SModelUtil {
     return SPropertyOperations.getString(link, "role");
   }
 
-  private static Logger LOG = Logger.getLogger(SModelUtil.class);
+  protected static Logger LOG = LogManager.getLogger(SModelUtil.class);
 
   private static boolean eq_74see4_a0a0q(Object a, Object b) {
     return (a != null ?

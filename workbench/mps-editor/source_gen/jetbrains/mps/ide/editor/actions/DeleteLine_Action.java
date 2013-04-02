@@ -9,6 +9,7 @@ import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -28,7 +29,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DeleteLine_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -55,7 +57,9 @@ public class DeleteLine_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "DeleteLine", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "DeleteLine", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -133,9 +137,11 @@ public class DeleteLine_Action extends BaseAction {
         cellToSelect.home();
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "DeleteLine", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "DeleteLine", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(DeleteLine_Action.class);
+  protected static Logger LOG = LogManager.getLogger(DeleteLine_Action.class);
 }

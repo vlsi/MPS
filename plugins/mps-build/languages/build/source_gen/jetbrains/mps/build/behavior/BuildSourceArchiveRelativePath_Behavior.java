@@ -11,10 +11,12 @@ import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import org.apache.log4j.Priority;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -50,7 +52,9 @@ public class BuildSourceArchiveRelativePath_Behavior {
   public static String call_getUnpackPath_8563603456895534343(SNode thisNode, Context context) {
     TemplateQueryContext generationContext = context.getGenerationContext();
     if (generationContext == null) {
-      LOG.error("Can not calculate ant path for " + thisNode + " outside of a generator.");
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Can not calculate ant path for " + thisNode + " outside of a generator.");
+      }
       return null;
     }
     DependenciesHelper helper = new DependenciesHelper(generationContext, SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildProject", false, false));
@@ -92,7 +96,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
     return SLinkOperations.getTarget(_quotation_createNode_ll2z5f_a0a0h(), "target", false);
   }
 
-  private static Logger LOG = Logger.getLogger(BuildSourceArchiveRelativePath_Behavior.class);
+  protected static Logger LOG = LogManager.getLogger(BuildSourceArchiveRelativePath_Behavior.class);
 
   private static SNode _quotation_createNode_ll2z5f_a0b0g(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

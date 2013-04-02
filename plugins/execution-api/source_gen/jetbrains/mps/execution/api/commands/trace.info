@@ -302,82 +302,86 @@
     <unitInfo nodeId="6868250101935611940" fileName="AbstractCommandPart.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.execution.api.commands.AbstractCommandPart" />
   </root>
   <root nodeRef="r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)/6868250101935612520">
-    <nodeInfo nodeId="6868250101935613588" fileName="ListCommandPart.java" startLine="16" startPosition="55" endLine="17" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="6868250101935612547" fileName="ListCommandPart.java" startLine="21" startPosition="57" endLine="22" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868250101935612833" fileName="ListCommandPart.java" startLine="23" startPosition="12" endLine="24" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="20421432219326571" fileName="ListCommandPart.java" startLine="30" startPosition="52" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="20421432219326496" fileName="ListCommandPart.java" startLine="37" startPosition="23" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="20421432219326510" fileName="ListCommandPart.java" startLine="41" startPosition="55" endLine="42" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="20421432219326526" fileName="ListCommandPart.java" startLine="44" startPosition="38" endLine="45" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="20421432219326536" fileName="ListCommandPart.java" startLine="46" startPosition="48" endLine="47" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="20421432219326549" fileName="ListCommandPart.java" startLine="49" startPosition="45" endLine="50" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="20421432219326584" fileName="ListCommandPart.java" startLine="51" startPosition="42" endLine="52" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="20421432219326618" fileName="ListCommandPart.java" startLine="53" startPosition="41" endLine="54" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="20421432219326629" fileName="ListCommandPart.java" startLine="55" startPosition="7" endLine="56" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="20421432219326558" fileName="ListCommandPart.java" startLine="57" startPosition="12" endLine="58" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="20421432219326567" fileName="ListCommandPart.java" startLine="59" startPosition="5" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868250101935612520" fileName="ListCommandPart.java" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="20421432219326520" fileName="ListCommandPart.java" startLine="65" startPosition="63" endLine="66" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868250101935612831" fileName="ListCommandPart.java" startLine="23" startPosition="10" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="20421432219326556" fileName="ListCommandPart.java" startLine="57" startPosition="10" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868250101935613580" fileName="ListCommandPart.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListCommandPart#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="6868250101935612751" fileName="ListCommandPart.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Object;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="20421432219326494" fileName="ListCommandPart.java" startLine="36" startPosition="61" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="20421432219326508" fileName="ListCommandPart.java" startLine="40" startPosition="33" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="20421432219326534" fileName="ListCommandPart.java" startLine="45" startPosition="52" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="20421432219326599" fileName="ListCommandPart.java" startLine="52" startPosition="75" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="20421432219326520" fileName="ListCommandPart.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_zceotc_a0a0b0d#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="6868250101935612538" fileName="ListCommandPart.java" startLine="20" startPosition="83" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868250101935612747" fileName="ListCommandPart.java" startLine="28" startPosition="69" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868250101935612522" fileName="ListCommandPart.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListCommandPart#(Ljava/util/List;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6868250101935612740" fileName="ListCommandPart.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommands#(Ljava/util/List;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="20421432219326503" fileName="ListCommandPart.java" startLine="39" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="20421432219326487" fileName="ListCommandPart.java" startLine="36" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommandsFromItem#(Ljava/lang/Object;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="6868250101935613583" fileName="ListCommandPart.java" startLine="16" startPosition="55" endLine="17" endPosition="21" />
-    <scopeInfo nodeId="6868250101935612540" fileName="ListCommandPart.java" startLine="21" startPosition="57" endLine="22" endPosition="37" />
-    <scopeInfo nodeId="6868250101935612832" fileName="ListCommandPart.java" startLine="23" startPosition="12" endLine="24" endPosition="91" />
-    <scopeInfo nodeId="6868250101935612752" fileName="ListCommandPart.java" startLine="30" startPosition="52" endLine="31" endPosition="60" />
-    <scopeInfo nodeId="20421432219326495" fileName="ListCommandPart.java" startLine="37" startPosition="23" endLine="38" endPosition="60" />
-    <scopeInfo nodeId="20421432219326509" fileName="ListCommandPart.java" startLine="41" startPosition="55" endLine="42" endPosition="72" />
-    <scopeInfo nodeId="20421432219326535" fileName="ListCommandPart.java" startLine="46" startPosition="48" endLine="47" endPosition="48" />
-    <scopeInfo nodeId="20421432219326548" fileName="ListCommandPart.java" startLine="49" startPosition="45" endLine="50" endPosition="51" />
-    <scopeInfo nodeId="20421432219326600" fileName="ListCommandPart.java" startLine="53" startPosition="41" endLine="54" endPosition="98" />
-    <scopeInfo nodeId="20421432219326557" fileName="ListCommandPart.java" startLine="57" startPosition="12" endLine="58" endPosition="56" />
-    <scopeInfo nodeId="20421432219326520" fileName="ListCommandPart.java" startLine="65" startPosition="63" endLine="66" endPosition="43" />
-    <scopeInfo nodeId="6868250101935613580" fileName="ListCommandPart.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="6868250101935613588" fileName="ListCommandPart.java" startLine="18" startPosition="55" endLine="19" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="6868250101935612547" fileName="ListCommandPart.java" startLine="23" startPosition="57" endLine="24" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868250101935612833" fileName="ListCommandPart.java" startLine="25" startPosition="12" endLine="26" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="20421432219326571" fileName="ListCommandPart.java" startLine="32" startPosition="52" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="20421432219326496" fileName="ListCommandPart.java" startLine="39" startPosition="23" endLine="40" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="20421432219326510" fileName="ListCommandPart.java" startLine="43" startPosition="55" endLine="44" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="20421432219326526" fileName="ListCommandPart.java" startLine="46" startPosition="38" endLine="47" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="20421432219326536" fileName="ListCommandPart.java" startLine="48" startPosition="48" endLine="49" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="20421432219326549" fileName="ListCommandPart.java" startLine="51" startPosition="45" endLine="52" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="20421432219326584" fileName="ListCommandPart.java" startLine="53" startPosition="42" endLine="54" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="20421432219326618" fileName="ListCommandPart.java" startLine="55" startPosition="41" endLine="56" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="20421432219326629" fileName="ListCommandPart.java" startLine="57" startPosition="7" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="20421432219326558" fileName="ListCommandPart.java" startLine="60" startPosition="45" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="20421432219326567" fileName="ListCommandPart.java" startLine="63" startPosition="5" endLine="64" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6868250101935612520" fileName="ListCommandPart.java" startLine="67" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="20421432219326520" fileName="ListCommandPart.java" startLine="69" startPosition="63" endLine="70" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6868250101935612831" fileName="ListCommandPart.java" startLine="25" startPosition="10" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6868250101935613580" fileName="ListCommandPart.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListCommandPart#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="6868250101935612751" fileName="ListCommandPart.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Object;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="20421432219326494" fileName="ListCommandPart.java" startLine="38" startPosition="61" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="20421432219326508" fileName="ListCommandPart.java" startLine="42" startPosition="33" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="20421432219326534" fileName="ListCommandPart.java" startLine="47" startPosition="52" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="20421432219326599" fileName="ListCommandPart.java" startLine="54" startPosition="75" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="20421432219326558" fileName="ListCommandPart.java" startLine="59" startPosition="12" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="20421432219326558" fileName="ListCommandPart.java" startLine="59" startPosition="12" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="20421432219326520" fileName="ListCommandPart.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_zceotc_a0a0b0d#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="20421432219326556" fileName="ListCommandPart.java" startLine="59" startPosition="10" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6868250101935612538" fileName="ListCommandPart.java" startLine="22" startPosition="83" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868250101935612747" fileName="ListCommandPart.java" startLine="30" startPosition="69" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6868250101935612522" fileName="ListCommandPart.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListCommandPart#(Ljava/util/List;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6868250101935612740" fileName="ListCommandPart.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommands#(Ljava/util/List;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="20421432219326503" fileName="ListCommandPart.java" startLine="41" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="20421432219326487" fileName="ListCommandPart.java" startLine="38" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommandsFromItem#(Ljava/lang/Object;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="6868250101935613583" fileName="ListCommandPart.java" startLine="18" startPosition="55" endLine="19" endPosition="21" />
+    <scopeInfo nodeId="6868250101935612540" fileName="ListCommandPart.java" startLine="23" startPosition="57" endLine="24" endPosition="37" />
+    <scopeInfo nodeId="6868250101935612832" fileName="ListCommandPart.java" startLine="25" startPosition="12" endLine="26" endPosition="91" />
+    <scopeInfo nodeId="6868250101935612752" fileName="ListCommandPart.java" startLine="32" startPosition="52" endLine="33" endPosition="60" />
+    <scopeInfo nodeId="20421432219326495" fileName="ListCommandPart.java" startLine="39" startPosition="23" endLine="40" endPosition="60" />
+    <scopeInfo nodeId="20421432219326509" fileName="ListCommandPart.java" startLine="43" startPosition="55" endLine="44" endPosition="72" />
+    <scopeInfo nodeId="20421432219326535" fileName="ListCommandPart.java" startLine="48" startPosition="48" endLine="49" endPosition="48" />
+    <scopeInfo nodeId="20421432219326548" fileName="ListCommandPart.java" startLine="51" startPosition="45" endLine="52" endPosition="51" />
+    <scopeInfo nodeId="20421432219326600" fileName="ListCommandPart.java" startLine="55" startPosition="41" endLine="56" endPosition="98" />
+    <scopeInfo nodeId="20421432219326558" fileName="ListCommandPart.java" startLine="60" startPosition="45" endLine="61" endPosition="58" />
+    <scopeInfo nodeId="20421432219326520" fileName="ListCommandPart.java" startLine="69" startPosition="63" endLine="70" endPosition="43" />
+    <scopeInfo nodeId="6868250101935613580" fileName="ListCommandPart.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="6868250101935613584" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="6868250101935612751" fileName="ListCommandPart.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="6868250101935612751" fileName="ListCommandPart.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="6868250101935612751" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="20421432219326507" fileName="ListCommandPart.java" startLine="40" startPosition="33" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="20421432219326599" fileName="ListCommandPart.java" startLine="52" startPosition="75" endLine="55" endPosition="7">
+    <scopeInfo nodeId="20421432219326507" fileName="ListCommandPart.java" startLine="42" startPosition="33" endLine="45" endPosition="7" />
+    <scopeInfo nodeId="20421432219326599" fileName="ListCommandPart.java" startLine="54" startPosition="75" endLine="57" endPosition="7">
       <varInfo nodeId="20421432219326602" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="20421432219326520" fileName="ListCommandPart.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="20421432219326557" fileName="ListCommandPart.java" startLine="59" startPosition="12" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="20421432219326558" fileName="ListCommandPart.java" startLine="59" startPosition="12" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="20421432219326520" fileName="ListCommandPart.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="20421432219326520" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="20421432219326525" fileName="ListCommandPart.java" startLine="44" startPosition="38" endLine="48" endPosition="7">
+    <scopeInfo nodeId="20421432219326525" fileName="ListCommandPart.java" startLine="46" startPosition="38" endLine="50" endPosition="7">
       <varInfo nodeId="20421432219326485" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="6868250101935612525" fileName="ListCommandPart.java" startLine="20" startPosition="83" endLine="25" endPosition="5" />
-    <scopeInfo nodeId="6868250101935612746" fileName="ListCommandPart.java" startLine="28" startPosition="69" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="20421432219326566" fileName="ListCommandPart.java" startLine="51" startPosition="42" endLine="56" endPosition="20">
+    <scopeInfo nodeId="6868250101935612525" fileName="ListCommandPart.java" startLine="22" startPosition="83" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="6868250101935612746" fileName="ListCommandPart.java" startLine="30" startPosition="69" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="20421432219326566" fileName="ListCommandPart.java" startLine="53" startPosition="42" endLine="58" endPosition="20">
       <varInfo nodeId="20421432219326585" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6868250101935612522" fileName="ListCommandPart.java" startLine="20" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="6868250101935612522" fileName="ListCommandPart.java" startLine="22" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="6868250101935612528" varName="list" />
       <varInfo nodeId="6868250101935612534" varName="separator" />
     </scopeInfo>
-    <scopeInfo nodeId="6868250101935612740" fileName="ListCommandPart.java" startLine="28" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="6868250101935612740" fileName="ListCommandPart.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="6868250101935612739" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="20421432219326493" fileName="ListCommandPart.java" startLine="36" startPosition="61" endLine="60" endPosition="58" />
-    <scopeInfo nodeId="20421432219326487" fileName="ListCommandPart.java" startLine="36" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="20421432219326493" fileName="ListCommandPart.java" startLine="38" startPosition="61" endLine="64" endPosition="58" />
+    <scopeInfo nodeId="20421432219326487" fileName="ListCommandPart.java" startLine="38" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="20421432219326486" varName="item" />
     </scopeInfo>
-    <unitInfo nodeId="6868250101935612751" fileName="ListCommandPart.java" startLine="29" startPosition="53" endLine="33" endPosition="5" unitName="jetbrains.mps.execution.api.commands.ListCommandPart$1" />
-    <unitInfo nodeId="6868250101935612520" fileName="ListCommandPart.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.execution.api.commands.ListCommandPart" />
+    <unitInfo nodeId="6868250101935612751" fileName="ListCommandPart.java" startLine="31" startPosition="53" endLine="35" endPosition="5" unitName="jetbrains.mps.execution.api.commands.ListCommandPart$1" />
+    <unitInfo nodeId="6868250101935612520" fileName="ListCommandPart.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.execution.api.commands.ListCommandPart" />
   </root>
   <root nodeRef="r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)/7656658799535004846">
     <nodeInfo nodeId="4642461663337170636" fileName="KeyValueCommandPart.java" startLine="12" startPosition="85" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

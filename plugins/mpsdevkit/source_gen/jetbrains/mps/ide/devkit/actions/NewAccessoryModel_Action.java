@@ -11,6 +11,7 @@ import java.util.Map;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -24,7 +25,8 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NewAccessoryModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Models.AccessoryModel;
@@ -47,7 +49,9 @@ public class NewAccessoryModel_Action extends BaseAction {
         "New "
       )) + "Accesory Model");
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "NewAccessoryModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "NewAccessoryModel", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -101,9 +105,11 @@ public class NewAccessoryModel_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "NewAccessoryModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "NewAccessoryModel", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(NewAccessoryModel_Action.class);
+  protected static Logger LOG = LogManager.getLogger(NewAccessoryModel_Action.class);
 }

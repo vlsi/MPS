@@ -70,98 +70,102 @@
     <unitInfo nodeId="3926595287074919987" fileName="NewSolutionDialog.java" startLine="17" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog" />
   </root>
   <root nodeRef="r:8bdc9cf5-28de-48ab-8b85-36b2d96bc635(jetbrains.mps.ide.newModuleDialogs)/8412685000766424914">
-    <nodeInfo nodeId="8412685000766483631" fileName="NewLanguageDialog.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="8412685000766495012" fileName="NewLanguageDialog.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
-    <nodeInfo nodeId="8412685000766495015" fileName="NewLanguageDialog.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myError" />
-    <nodeInfo nodeId="8412685000766495019" fileName="NewLanguageDialog.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguageSettings" />
-    <nodeInfo nodeId="2683439310175387741" fileName="NewLanguageDialog.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFolder" />
-    <nodeInfo nodeId="8412685000766484018" fileName="NewLanguageDialog.java" startLine="30" startPosition="77" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8412685000766484021" fileName="NewLanguageDialog.java" startLine="31" startPosition="48" endLine="32" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766484024" fileName="NewLanguageDialog.java" startLine="32" startPosition="29" endLine="33" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766484027" fileName="NewLanguageDialog.java" startLine="33" startPosition="27" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766484030" fileName="NewLanguageDialog.java" startLine="34" startPosition="35" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8412685000766484031" fileName="NewLanguageDialog.java" startLine="35" startPosition="0" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2683439310175395066" fileName="NewLanguageDialog.java" startLine="36" startPosition="24" endLine="37" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766484035" fileName="NewLanguageDialog.java" startLine="37" startPosition="36" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8412685000766484036" fileName="NewLanguageDialog.java" startLine="38" startPosition="0" endLine="39" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000767387032" fileName="NewLanguageDialog.java" startLine="50" startPosition="49" endLine="51" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000767387039" fileName="NewLanguageDialog.java" startLine="52" startPosition="43" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766588904" fileName="NewLanguageDialog.java" startLine="57" startPosition="5" endLine="58" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8412685000766942560" fileName="NewLanguageDialog.java" startLine="63" startPosition="21" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8412685000766942561" fileName="NewLanguageDialog.java" startLine="65" startPosition="5" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8412685000766942562" fileName="NewLanguageDialog.java" startLine="66" startPosition="0" endLine="67" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766942564" fileName="NewLanguageDialog.java" startLine="67" startPosition="23" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8412685000767423686" fileName="NewLanguageDialog.java" startLine="70" startPosition="28" endLine="71" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2683439310175341168" fileName="NewLanguageDialog.java" startLine="71" startPosition="161" endLine="72" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000767471789" fileName="NewLanguageDialog.java" startLine="72" startPosition="83" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1176953486634037668" fileName="NewLanguageDialog.java" startLine="75" startPosition="61" endLine="76" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176953486634091531" fileName="NewLanguageDialog.java" startLine="76" startPosition="151" endLine="77" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176953486634189780" fileName="NewLanguageDialog.java" startLine="79" startPosition="61" endLine="80" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176953486634284618" fileName="NewLanguageDialog.java" startLine="80" startPosition="151" endLine="81" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4152098816593719214" fileName="NewLanguageDialog.java" startLine="83" startPosition="33" endLine="84" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4152098816593725236" fileName="NewLanguageDialog.java" startLine="84" startPosition="21" endLine="85" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000767453763" fileName="NewLanguageDialog.java" startLine="86" startPosition="9" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8412685000767415887" fileName="NewLanguageDialog.java" startLine="87" startPosition="0" endLine="88" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766920533" fileName="NewLanguageDialog.java" startLine="95" startPosition="52" endLine="96" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3678080938080533073" fileName="NewLanguageDialog.java" startLine="101" startPosition="33" endLine="102" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8412685000766622120" fileName="NewLanguageDialog.java" startLine="105" startPosition="27" endLine="106" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766622131" fileName="NewLanguageDialog.java" startLine="106" startPosition="142" endLine="107" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766622134" fileName="NewLanguageDialog.java" startLine="107" startPosition="26" endLine="108" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8412685000766424914" fileName="NewLanguageDialog.java" startLine="111" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="8412685000767387034" fileName="NewLanguageDialog.java" startLine="51" startPosition="41" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8412685000766942556" fileName="NewLanguageDialog.java" startLine="62" startPosition="31" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3678080938080528276" fileName="NewLanguageDialog.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLangauge#()Ljetbrains/mps/smodel/Language;" />
-    <nodeInfo nodeId="5154621356648615843" fileName="NewLanguageDialog.java" startLine="74" startPosition="13" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5154621356648634254" fileName="NewLanguageDialog.java" startLine="78" startPosition="11" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8412685000766920525" fileName="NewLanguageDialog.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="8412685000766622118" fileName="NewLanguageDialog.java" startLine="105" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#()Z" />
-    <nodeInfo nodeId="8412685000767387028" fileName="NewLanguageDialog.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateLanguageLocation#()V" />
-    <nodeInfo nodeId="8412685000766460613" fileName="NewLanguageDialog.java" startLine="30" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewLanguageDialog#(Ljetbrains/mps/project/Project;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8412685000767360445" fileName="NewLanguageDialog.java" startLine="44" startPosition="37" endLine="56" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4152098816593683168" fileName="NewLanguageDialog.java" startLine="73" startPosition="0" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8412685000766588866" fileName="NewLanguageDialog.java" startLine="43" startPosition="44" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8412685000766425670" fileName="NewLanguageDialog.java" startLine="42" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="8412685000766942569" fileName="NewLanguageDialog.java" startLine="70" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="8412685000766942565" fileName="NewLanguageDialog.java" startLine="68" startPosition="0" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766913496" fileName="NewLanguageDialog.java" startLine="61" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
-    <scopeInfo nodeId="8412685000767387038" fileName="NewLanguageDialog.java" startLine="52" startPosition="43" endLine="53" endPosition="20" />
-    <scopeInfo nodeId="8412685000766942559" fileName="NewLanguageDialog.java" startLine="63" startPosition="21" endLine="64" endPosition="13" />
-    <scopeInfo nodeId="8412685000766920530" fileName="NewLanguageDialog.java" startLine="95" startPosition="52" endLine="96" endPosition="61" />
-    <scopeInfo nodeId="3678080938080528279" fileName="NewLanguageDialog.java" startLine="101" startPosition="33" endLine="102" endPosition="20" />
-    <scopeInfo nodeId="5154621356648615844" fileName="NewLanguageDialog.java" startLine="75" startPosition="61" endLine="77" endPosition="94">
+    <nodeInfo nodeId="8412685000766483631" fileName="NewLanguageDialog.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="8412685000766495012" fileName="NewLanguageDialog.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
+    <nodeInfo nodeId="8412685000766495015" fileName="NewLanguageDialog.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myError" />
+    <nodeInfo nodeId="8412685000766495019" fileName="NewLanguageDialog.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguageSettings" />
+    <nodeInfo nodeId="2683439310175387741" fileName="NewLanguageDialog.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFolder" />
+    <nodeInfo nodeId="8412685000766484018" fileName="NewLanguageDialog.java" startLine="32" startPosition="77" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8412685000766484021" fileName="NewLanguageDialog.java" startLine="33" startPosition="48" endLine="34" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000766484024" fileName="NewLanguageDialog.java" startLine="34" startPosition="29" endLine="35" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000766484027" fileName="NewLanguageDialog.java" startLine="35" startPosition="27" endLine="36" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000766484030" fileName="NewLanguageDialog.java" startLine="36" startPosition="35" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8412685000766484031" fileName="NewLanguageDialog.java" startLine="37" startPosition="0" endLine="38" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2683439310175395066" fileName="NewLanguageDialog.java" startLine="38" startPosition="24" endLine="39" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000766484035" fileName="NewLanguageDialog.java" startLine="39" startPosition="36" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8412685000766484036" fileName="NewLanguageDialog.java" startLine="40" startPosition="0" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000767387032" fileName="NewLanguageDialog.java" startLine="52" startPosition="49" endLine="53" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000767387039" fileName="NewLanguageDialog.java" startLine="54" startPosition="43" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000766588904" fileName="NewLanguageDialog.java" startLine="59" startPosition="5" endLine="60" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8412685000766942560" fileName="NewLanguageDialog.java" startLine="65" startPosition="21" endLine="66" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8412685000766942561" fileName="NewLanguageDialog.java" startLine="67" startPosition="5" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8412685000766942562" fileName="NewLanguageDialog.java" startLine="68" startPosition="0" endLine="69" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000766942564" fileName="NewLanguageDialog.java" startLine="69" startPosition="23" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8412685000767423686" fileName="NewLanguageDialog.java" startLine="72" startPosition="28" endLine="73" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2683439310175341168" fileName="NewLanguageDialog.java" startLine="73" startPosition="161" endLine="74" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000767471789" fileName="NewLanguageDialog.java" startLine="74" startPosition="83" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1176953486634037668" fileName="NewLanguageDialog.java" startLine="77" startPosition="61" endLine="78" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176953486634091531" fileName="NewLanguageDialog.java" startLine="78" startPosition="151" endLine="79" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1176953486634189780" fileName="NewLanguageDialog.java" startLine="81" startPosition="61" endLine="82" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1176953486634284618" fileName="NewLanguageDialog.java" startLine="82" startPosition="151" endLine="83" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4152098816593719214" fileName="NewLanguageDialog.java" startLine="85" startPosition="33" endLine="86" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4152098816593725236" fileName="NewLanguageDialog.java" startLine="87" startPosition="49" endLine="88" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000767453763" fileName="NewLanguageDialog.java" startLine="90" startPosition="9" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8412685000767415887" fileName="NewLanguageDialog.java" startLine="91" startPosition="0" endLine="92" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000766920533" fileName="NewLanguageDialog.java" startLine="99" startPosition="52" endLine="100" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3678080938080533073" fileName="NewLanguageDialog.java" startLine="105" startPosition="33" endLine="106" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8412685000766622120" fileName="NewLanguageDialog.java" startLine="109" startPosition="27" endLine="110" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000766622131" fileName="NewLanguageDialog.java" startLine="110" startPosition="142" endLine="111" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000766622134" fileName="NewLanguageDialog.java" startLine="111" startPosition="26" endLine="112" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8412685000766424914" fileName="NewLanguageDialog.java" startLine="115" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="8412685000767387034" fileName="NewLanguageDialog.java" startLine="53" startPosition="41" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8412685000766942556" fileName="NewLanguageDialog.java" startLine="64" startPosition="31" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4152098816593725236" fileName="NewLanguageDialog.java" startLine="86" startPosition="21" endLine="89" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4152098816593725236" fileName="NewLanguageDialog.java" startLine="86" startPosition="21" endLine="89" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3678080938080528276" fileName="NewLanguageDialog.java" startLine="105" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLangauge#()Ljetbrains/mps/smodel/Language;" />
+    <nodeInfo nodeId="5154621356648615843" fileName="NewLanguageDialog.java" startLine="76" startPosition="13" endLine="80" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5154621356648634254" fileName="NewLanguageDialog.java" startLine="80" startPosition="11" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8412685000766920525" fileName="NewLanguageDialog.java" startLine="97" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="8412685000766622118" fileName="NewLanguageDialog.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#()Z" />
+    <nodeInfo nodeId="8412685000767387028" fileName="NewLanguageDialog.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateLanguageLocation#()V" />
+    <nodeInfo nodeId="8412685000766460613" fileName="NewLanguageDialog.java" startLine="32" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewLanguageDialog#(Ljetbrains/mps/project/Project;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8412685000767360445" fileName="NewLanguageDialog.java" startLine="46" startPosition="37" endLine="58" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000766588866" fileName="NewLanguageDialog.java" startLine="45" startPosition="44" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4152098816593683168" fileName="NewLanguageDialog.java" startLine="75" startPosition="0" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8412685000766425670" fileName="NewLanguageDialog.java" startLine="44" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="8412685000766942569" fileName="NewLanguageDialog.java" startLine="72" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="8412685000766942565" fileName="NewLanguageDialog.java" startLine="70" startPosition="0" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8412685000766913496" fileName="NewLanguageDialog.java" startLine="63" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
+    <scopeInfo nodeId="8412685000767387038" fileName="NewLanguageDialog.java" startLine="54" startPosition="43" endLine="55" endPosition="20" />
+    <scopeInfo nodeId="8412685000766942559" fileName="NewLanguageDialog.java" startLine="65" startPosition="21" endLine="66" endPosition="13" />
+    <scopeInfo nodeId="4152098816593725236" fileName="NewLanguageDialog.java" startLine="87" startPosition="49" endLine="88" endPosition="67" />
+    <scopeInfo nodeId="8412685000766920530" fileName="NewLanguageDialog.java" startLine="99" startPosition="52" endLine="100" endPosition="61" />
+    <scopeInfo nodeId="3678080938080528279" fileName="NewLanguageDialog.java" startLine="105" startPosition="33" endLine="106" endPosition="20" />
+    <scopeInfo nodeId="5154621356648615844" fileName="NewLanguageDialog.java" startLine="77" startPosition="61" endLine="79" endPosition="94">
       <varInfo nodeId="1176953486634037669" varName="runtimeSolution" />
     </scopeInfo>
-    <scopeInfo nodeId="5154621356648634255" fileName="NewLanguageDialog.java" startLine="79" startPosition="61" endLine="81" endPosition="94">
+    <scopeInfo nodeId="5154621356648634255" fileName="NewLanguageDialog.java" startLine="81" startPosition="61" endLine="83" endPosition="94">
       <varInfo nodeId="1176953486634189781" varName="sandboxSolution" />
     </scopeInfo>
-    <scopeInfo nodeId="4152098816593683171" fileName="NewLanguageDialog.java" startLine="83" startPosition="0" endLine="85" endPosition="65">
+    <scopeInfo nodeId="4152098816593725236" fileName="NewLanguageDialog.java" startLine="86" startPosition="21" endLine="89" endPosition="11" />
+    <scopeInfo nodeId="3678080938080528276" fileName="NewLanguageDialog.java" startLine="105" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="8412685000766622119" fileName="NewLanguageDialog.java" startLine="109" startPosition="27" endLine="112" endPosition="27" />
+    <scopeInfo nodeId="8412685000767387031" fileName="NewLanguageDialog.java" startLine="52" startPosition="49" endLine="56" endPosition="11" />
+    <scopeInfo nodeId="4152098816593683171" fileName="NewLanguageDialog.java" startLine="85" startPosition="0" endLine="89" endPosition="11">
       <varInfo nodeId="4152098816593683173" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4152098816593683177" fileName="NewLanguageDialog.java" startLine="83" startPosition="33" endLine="85" endPosition="65" />
-    <scopeInfo nodeId="3678080938080528276" fileName="NewLanguageDialog.java" startLine="101" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="8412685000766622119" fileName="NewLanguageDialog.java" startLine="105" startPosition="27" endLine="108" endPosition="27" />
-    <scopeInfo nodeId="8412685000767387031" fileName="NewLanguageDialog.java" startLine="50" startPosition="49" endLine="54" endPosition="11" />
-    <scopeInfo nodeId="8412685000766920525" fileName="NewLanguageDialog.java" startLine="93" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="8412685000766622118" fileName="NewLanguageDialog.java" startLine="105" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="8412685000767387028" fileName="NewLanguageDialog.java" startLine="49" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="4152098816593683170" fileName="NewLanguageDialog.java" startLine="74" startPosition="13" endLine="82" endPosition="11" />
-    <scopeInfo nodeId="8412685000766460615" fileName="NewLanguageDialog.java" startLine="30" startPosition="77" endLine="39" endPosition="11" />
-    <scopeInfo nodeId="8412685000766460613" fileName="NewLanguageDialog.java" startLine="30" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="4152098816593683177" fileName="NewLanguageDialog.java" startLine="85" startPosition="33" endLine="89" endPosition="11" />
+    <scopeInfo nodeId="8412685000766920525" fileName="NewLanguageDialog.java" startLine="97" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="8412685000766622118" fileName="NewLanguageDialog.java" startLine="109" startPosition="0" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="8412685000767387028" fileName="NewLanguageDialog.java" startLine="51" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="4152098816593683170" fileName="NewLanguageDialog.java" startLine="76" startPosition="13" endLine="84" endPosition="11" />
+    <scopeInfo nodeId="8412685000766460615" fileName="NewLanguageDialog.java" startLine="32" startPosition="77" endLine="41" endPosition="11" />
+    <scopeInfo nodeId="8412685000766460613" fileName="NewLanguageDialog.java" startLine="32" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="8412685000766483432" varName="project" />
       <varInfo nodeId="2683439310175192250" varName="virtualFolder" />
     </scopeInfo>
-    <scopeInfo nodeId="8412685000766588870" fileName="NewLanguageDialog.java" startLine="44" startPosition="37" endLine="56" endPosition="8" />
-    <scopeInfo nodeId="8412685000766425675" fileName="NewLanguageDialog.java" startLine="43" startPosition="44" endLine="58" endPosition="30" />
-    <scopeInfo nodeId="8412685000766425670" fileName="NewLanguageDialog.java" startLine="42" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="8412685000766942570" fileName="NewLanguageDialog.java" startLine="70" startPosition="28" endLine="88" endPosition="28">
+    <scopeInfo nodeId="8412685000766588870" fileName="NewLanguageDialog.java" startLine="46" startPosition="37" endLine="58" endPosition="8" />
+    <scopeInfo nodeId="8412685000766425675" fileName="NewLanguageDialog.java" startLine="45" startPosition="44" endLine="60" endPosition="30" />
+    <scopeInfo nodeId="8412685000766425670" fileName="NewLanguageDialog.java" startLine="44" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="8412685000766942570" fileName="NewLanguageDialog.java" startLine="72" startPosition="28" endLine="92" endPosition="28">
       <varInfo nodeId="8412685000767423687" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="8412685000766942569" fileName="NewLanguageDialog.java" startLine="70" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="8412685000766913500" fileName="NewLanguageDialog.java" startLine="62" startPosition="31" endLine="90" endPosition="7" />
-    <scopeInfo nodeId="8412685000766913496" fileName="NewLanguageDialog.java" startLine="61" startPosition="0" endLine="92" endPosition="0" />
-    <unitInfo nodeId="8412685000767387014" fileName="NewLanguageDialog.java" startLine="45" startPosition="31" endLine="56" endPosition="7" unitName="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog$1" />
-    <unitInfo nodeId="8412685000766942569" fileName="NewLanguageDialog.java" startLine="69" startPosition="80" endLine="90" endPosition="5" unitName="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog$2" />
-    <unitInfo nodeId="8412685000766424914" fileName="NewLanguageDialog.java" startLine="21" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog" />
+    <scopeInfo nodeId="8412685000766942569" fileName="NewLanguageDialog.java" startLine="72" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="8412685000766913500" fileName="NewLanguageDialog.java" startLine="64" startPosition="31" endLine="94" endPosition="7" />
+    <scopeInfo nodeId="8412685000766913496" fileName="NewLanguageDialog.java" startLine="63" startPosition="0" endLine="96" endPosition="0" />
+    <unitInfo nodeId="8412685000767387014" fileName="NewLanguageDialog.java" startLine="47" startPosition="31" endLine="58" endPosition="7" unitName="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog$1" />
+    <unitInfo nodeId="8412685000766942569" fileName="NewLanguageDialog.java" startLine="71" startPosition="80" endLine="94" endPosition="5" unitName="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog$2" />
+    <unitInfo nodeId="8412685000766424914" fileName="NewLanguageDialog.java" startLine="23" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog" />
   </root>
 </debugInfo>
 

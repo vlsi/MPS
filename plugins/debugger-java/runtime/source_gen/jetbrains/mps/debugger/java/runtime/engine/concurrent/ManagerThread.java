@@ -9,7 +9,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ManagerThread {
   private final BlockingQueue<IManagerCommand> myCommandQueue = new LinkedBlockingQueue<IManagerCommand>();
@@ -98,14 +100,18 @@ public class ManagerThread {
             try {
               command.cancel();
             } catch (Throwable t) {
-              LOG.error("Command " + command + " threw an exception.", t);
+              if (LOG.isEnabledFor(Priority.ERROR)) {
+                LOG.error("Command " + command + " threw an exception.", t);
+              }
             }
           }
         }
       } catch (InterruptedException ignore) {
         // do what? 
       }
-      LOG.debug("Thread " + this + " finished working.");
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("Thread " + this + " finished working.");
+      }
     }
 
     private void processCommand(IManagerCommand command) {
@@ -116,10 +122,12 @@ public class ManagerThread {
           command.invoke();
         }
       } catch (Throwable t) {
-        LOG.error("Command " + command + " threw an exception.", t);
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Command " + command + " threw an exception.", t);
+        }
       }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ManagerThread.class);
+  protected static Logger LOG = LogManager.getLogger(ManagerThread.class);
 }

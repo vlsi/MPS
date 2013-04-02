@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
@@ -29,7 +30,8 @@ import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ReportModelMergeProblem_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -61,7 +63,9 @@ public class ReportModelMergeProblem_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ReportModelMergeProblem", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ReportModelMergeProblem", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -133,7 +137,9 @@ public class ReportModelMergeProblem_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ReportModelMergeProblem", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ReportModelMergeProblem", t);
+      }
     }
   }
 
@@ -141,7 +147,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
     Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "No merge backups available, that is MPS merge was not invoked.", "Model Merge Problem");
   }
 
-  private static Logger LOG = Logger.getLogger(ReportModelMergeProblem_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ReportModelMergeProblem_Action.class);
 
   public static boolean isNotEmpty_6wdzvw_a0a0a0a0a0b0d(String str) {
     return str != null && str.length() > 0;

@@ -11,10 +11,12 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Escape_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +49,9 @@ public class Escape_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "Escape", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "Escape", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -86,11 +90,13 @@ public class Escape_Action extends BaseAction {
       }
 
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "Escape", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "Escape", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(Escape_Action.class);
+  protected static Logger LOG = LogManager.getLogger(Escape_Action.class);
 
   private static void check_h8krww_a0a0g0a(Selection checkedDotOperand) {
     if (null != checkedDotOperand) {

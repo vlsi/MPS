@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
@@ -20,7 +21,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class HighlightCellDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -40,7 +42,9 @@ public class HighlightCellDependencies_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "HighlightCellDependencies", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "HighlightCellDependencies", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -81,9 +85,11 @@ public class HighlightCellDependencies_Action extends BaseAction {
       }
       highlightManager.repaintAndRebuildEditorMessages();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "HighlightCellDependencies", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "HighlightCellDependencies", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(HighlightCellDependencies_Action.class);
+  protected static Logger LOG = LogManager.getLogger(HighlightCellDependencies_Action.class);
 }

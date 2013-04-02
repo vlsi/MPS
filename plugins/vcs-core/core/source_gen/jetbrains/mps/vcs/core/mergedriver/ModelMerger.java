@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import org.apache.log4j.Priority;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -20,7 +21,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import java.io.IOException;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 /*package*/ class ModelMerger extends SimpleMerger {
   private String myModelName;
@@ -40,13 +42,17 @@ import jetbrains.mps.logging.Logger;
     DefaultSModel localModel;
     DefaultSModel latestModel;
     try {
-      LOG.info("Reading models...");
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Reading models...");
+      }
       baseModel = ModelPersistence.readModel(new String(baseContent.getData(), FileUtil.DEFAULT_CHARSET), false);
       myModelName = baseModel.getReference().getModelName();
       localModel = ModelPersistence.readModel(new String(localContent.getData(), FileUtil.DEFAULT_CHARSET), false);
       latestModel = ModelPersistence.readModel(new String(latestContent.getData(), FileUtil.DEFAULT_CHARSET), false);
     } catch (ModelReadException e) {
-      LOG.error("Exception while reading models", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Exception while reading models", e);
+      }
       return backup(baseContent, localContent, latestContent);
     }
 
@@ -56,16 +62,22 @@ import jetbrains.mps.logging.Logger;
     if (baseP >= 7 && localP >= 7 && latestP >= 7 || baseP < 7 && localP < 7 && latestP < 7) {
       // ok, can merge 
     } else {
-      LOG.error(String.format("%s: Conflicting model persistence versions", myModelName));
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error(String.format("%s: Conflicting model persistence versions", myModelName));
+      }
       return backup(baseContent, localContent, latestContent);
     }
     if (!(roleIdsHandler.isConsistent())) {
-      LOG.error(String.format("%s: Inconsistent structure ids or import versions", myModelName));
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error(String.format("%s: Inconsistent structure ids or import versions", myModelName));
+      }
       return backup(baseContent, localContent, latestContent);
     }
 
     try {
-      LOG.info("Merging " + baseModel.getReference() + "...");
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Merging " + baseModel.getReference() + "...");
+      }
       final MergeSession mergeSession = MergeSession.createMergeSession(baseModel, localModel, latestModel);
       int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange c) {
@@ -73,7 +85,9 @@ import jetbrains.mps.logging.Logger;
         }
       }).count();
       if (conflictingChangesCount == 0) {
-        LOG.info(String.format("%s: %d changes detected: %d local and %d latest.", myModelName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), ListSequence.fromList(mergeSession.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeSession.getRepositoryChangeSet().getModelChanges()).count()));
+        if (LOG.isInfoEnabled()) {
+          LOG.info(String.format("%s: %d changes detected: %d local and %d latest.", myModelName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), ListSequence.fromList(mergeSession.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeSession.getRepositoryChangeSet().getModelChanges()).count()));
+        }
         Runnable applyAction = new Runnable() {
           public void run() {
             mergeSession.applyChanges(mergeSession.getAllChanges());
@@ -81,18 +95,26 @@ import jetbrains.mps.logging.Logger;
         };
         ModelAccess.instance().runReadAction(applyAction);
         if (mergeSession.hasIdsToRestore()) {
-          LOG.info(String.format("%s: node id duplication detected, should merge in UI.", myModelName));
+          if (LOG.isInfoEnabled()) {
+            LOG.info(String.format("%s: node id duplication detected, should merge in UI.", myModelName));
+          }
         } else {
           String resultString = ModelPersistence.modelToString(mergeSession.getResultModel());
-          LOG.info(String.format("%s: merged successfully.", myModelName));
+          if (LOG.isInfoEnabled()) {
+            LOG.info(String.format("%s: merged successfully.", myModelName));
+          }
           backup(baseContent, localContent, latestContent);
           return MultiTuple.<Integer,byte[]>from(MERGED, resultString.getBytes(FileUtil.DEFAULT_CHARSET));
         }
       } else {
-        LOG.info(String.format("%s: %d changes detected, %d of them are conflicting", myModelName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), conflictingChangesCount));
+        if (LOG.isInfoEnabled()) {
+          LOG.info(String.format("%s: %d changes detected, %d of them are conflicting", myModelName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), conflictingChangesCount));
+        }
       }
     } catch (Throwable e) {
-      LOG.error("Exception while merging", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Exception while merging", e);
+      }
       return backup(baseContent, localContent, latestContent);
     }
 
@@ -103,13 +125,17 @@ import jetbrains.mps.logging.Logger;
     try {
       File zipModel = MergeDriverBackupUtil.zipModel(new byte[][]{baseContent.getData(), localContent.getData(), latestContent.getData()}, myModelName);
       if (zipModel != null) {
-        LOG.info("Saved merge backup to " + zipModel);
+        if (LOG.isInfoEnabled()) {
+          LOG.info("Saved merge backup to " + zipModel);
+        }
       }
     } catch (IOException e) {
-      LOG.error(String.format("%s: exception while backuping", myModelName), e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error(String.format("%s: exception while backuping", myModelName), e);
+      }
     }
     return null;
   }
 
-  private static Logger LOG = Logger.getLogger(ModelMerger.class);
+  protected static Logger LOG = LogManager.getLogger(ModelMerger.class);
 }

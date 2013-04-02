@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import java.util.List;
@@ -33,7 +34,8 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Point;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowImplementations_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -60,7 +62,9 @@ public class ShowImplementations_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowImplementations", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowImplementations", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -143,9 +147,11 @@ public class ShowImplementations_Action extends BaseAction {
         null
       ));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowImplementations", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowImplementations", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowImplementations_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowImplementations_Action.class);
 }

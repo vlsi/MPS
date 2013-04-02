@@ -16,8 +16,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import org.apache.log4j.Priority;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -123,7 +125,9 @@ public class AnonymousClass_Behavior {
       }
       IClassifierType_Behavior.call_populateMembers_7405920559687241253(superClass, context, classifierType);
     } else {
-      LOG.warning("Superclass of Anonymous class is not ClassConcept or Interface");
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("Superclass of Anonymous class is not ClassConcept or Interface");
+      }
     }
   }
 
@@ -161,7 +165,7 @@ public class AnonymousClass_Behavior {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), callerConceptFqName, "virtual_getFqName_1213877404258", new Class[]{SNode.class}, new Object[]{});
   }
 
-  private static Logger LOG = Logger.getLogger(AnonymousClass_Behavior.class);
+  protected static Logger LOG = LogManager.getLogger(AnonymousClass_Behavior.class);
 
   private static SNode _quotation_createNode_mhnjwj_a0a3(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

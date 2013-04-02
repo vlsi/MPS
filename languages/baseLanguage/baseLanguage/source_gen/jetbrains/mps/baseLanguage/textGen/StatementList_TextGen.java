@@ -12,7 +12,9 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class StatementList_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -30,12 +32,14 @@ public class StatementList_TextGen extends SNodeTextGen {
         try {
           scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
         } catch (Throwable t) {
-          LOG.error("Can't calculate scope variables for a node " + node + ".", t);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("Can't calculate scope variables for a node " + node + ".", t);
+          }
         }
         TraceInfoGenerationUtil.fillScopeInfo(this, node, scopeVariables);
       }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(StatementList_TextGen.class);
+  protected static Logger LOG = LogManager.getLogger(StatementList_TextGen.class);
 }

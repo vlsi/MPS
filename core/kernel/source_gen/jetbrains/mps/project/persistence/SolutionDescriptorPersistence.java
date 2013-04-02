@@ -13,9 +13,11 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.util.xml.XmlUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.io.OutputStream;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class SolutionDescriptorPersistence {
   public static final String SOURCE_PATH = "sourcePath";
@@ -95,7 +97,9 @@ public class SolutionDescriptorPersistence {
 
   public static void saveSolutionDescriptor(IFile file, SolutionDescriptor descriptor, MacroHelper macroHelper) {
     if (file.isReadOnly()) {
-      LOG.error("Can't save " + file.getPath());
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Can't save " + file.getPath());
+      }
       return;
     }
 
@@ -143,11 +147,13 @@ public class SolutionDescriptorPersistence {
       OutputStream os = file.openOutputStream();
       JDOMUtil.writeDocument(new Document(result), os);
     } catch (Exception e) {
-      LOG.error("", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", e);
+      }
     }
 
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
 
-  private static Logger LOG = Logger.getLogger(SolutionDescriptorPersistence.class);
+  protected static Logger LOG = LogManager.getLogger(SolutionDescriptorPersistence.class);
 }

@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -19,7 +20,8 @@ import com.intellij.openapi.command.CommandProcessorEx;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MigrationScript_APIMigration_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,7 +41,9 @@ public class MigrationScript_APIMigration_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MigrationScript_APIMigration", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "MigrationScript_APIMigration", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -71,9 +75,11 @@ public class MigrationScript_APIMigration_Action extends BaseAction {
         executor.execAsCommand(((Frame) MapSequence.fromMap(_params).get("frame")));
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MigrationScript_APIMigration", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "MigrationScript_APIMigration", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(MigrationScript_APIMigration_Action.class);
+  protected static Logger LOG = LogManager.getLogger(MigrationScript_APIMigration_Action.class);
 }

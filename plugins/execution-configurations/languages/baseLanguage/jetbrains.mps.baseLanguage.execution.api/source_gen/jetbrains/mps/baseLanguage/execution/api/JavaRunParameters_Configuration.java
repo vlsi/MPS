@@ -10,8 +10,10 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import org.apache.log4j.Priority;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class JavaRunParameters_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -49,7 +51,9 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
       clone.myState = (JavaRunParameters_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -90,5 +94,5 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
     return myEditorEx;
   }
 
-  private static Logger LOG = Logger.getLogger(JavaRunParameters_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(JavaRunParameters_Configuration.class);
 }

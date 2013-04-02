@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import org.apache.log4j.Priority;
 import jetbrains.mps.generator.traceInfo.TraceDown;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -47,7 +48,8 @@ import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -192,12 +194,16 @@ public class Java_Command {
     SModel model = SNodeOperations.getModel(node);
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
-      LOG.error("No trace.info found for model " + model + ". Check that model is generated.");
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("No trace.info found for model " + model + ". Check that model is generated.");
+      }
       return null;
     } else {
       Iterable<String> unitNames = (Iterable<String>) TraceDown.unitNames(node);
       if (Sequence.fromIterable(unitNames).isEmpty()) {
-        LOG.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
+        }
         return null;
       } else if ((int) Sequence.fromIterable(unitNames).count() == 1) {
         return Sequence.fromIterable(unitNames).first();
@@ -339,7 +345,7 @@ public class Java_Command {
     };
   }
 
-  private static Logger LOG = Logger.getLogger(Java_Command.class);
+  protected static Logger LOG = LogManager.getLogger(Java_Command.class);
 
   private static int check_yvpt_a0c0a2(CommandPart checkedDotOperand) {
     if (null != checkedDotOperand) {

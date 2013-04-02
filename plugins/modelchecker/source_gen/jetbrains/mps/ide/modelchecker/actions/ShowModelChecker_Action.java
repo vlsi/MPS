@@ -10,8 +10,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowModelChecker_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,7 +40,9 @@ public class ShowModelChecker_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowModelChecker", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowModelChecker", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -68,9 +72,11 @@ public class ShowModelChecker_Action extends BaseAction {
         tool.getToolWindow().activate(null);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowModelChecker", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowModelChecker", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowModelChecker_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowModelChecker_Action.class);
 }

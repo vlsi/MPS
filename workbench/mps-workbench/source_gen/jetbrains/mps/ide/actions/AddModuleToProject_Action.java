@@ -11,10 +11,12 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class AddModuleToProject_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -46,7 +48,9 @@ public class AddModuleToProject_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "AddModuleToProject", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "AddModuleToProject", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -75,9 +79,11 @@ public class AddModuleToProject_Action extends BaseAction {
         ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).update();
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "AddModuleToProject", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "AddModuleToProject", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(AddModuleToProject_Action.class);
+  protected static Logger LOG = LogManager.getLogger(AddModuleToProject_Action.class);
 }

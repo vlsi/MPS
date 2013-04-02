@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -28,7 +29,8 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class AddModelImportByRoot_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -48,7 +50,9 @@ public class AddModelImportByRoot_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "AddModelImportByRoot", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "AddModelImportByRoot", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -118,7 +122,9 @@ public class AddModelImportByRoot_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "AddModelImportByRoot", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "AddModelImportByRoot", t);
+      }
     }
   }
 
@@ -136,7 +142,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
     return null;
   }
 
-  private static Logger LOG = Logger.getLogger(AddModelImportByRoot_Action.class);
+  protected static Logger LOG = LogManager.getLogger(AddModelImportByRoot_Action.class);
 
   public static boolean isEmpty_3mx29z_a0a0b0c0g(String str) {
     return str == null || str.length() == 0;

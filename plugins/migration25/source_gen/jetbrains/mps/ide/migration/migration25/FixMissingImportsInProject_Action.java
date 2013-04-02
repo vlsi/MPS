@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.Queue;
@@ -29,7 +30,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FixMissingImportsInProject_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -49,7 +51,9 @@ public class FixMissingImportsInProject_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FixMissingImportsInProject", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "FixMissingImportsInProject", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -103,9 +107,11 @@ public class FixMissingImportsInProject_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FixMissingImportsInProject", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "FixMissingImportsInProject", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(FixMissingImportsInProject_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FixMissingImportsInProject_Action.class);
 }

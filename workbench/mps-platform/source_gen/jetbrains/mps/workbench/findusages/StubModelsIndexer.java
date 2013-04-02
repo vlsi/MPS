@@ -11,11 +11,13 @@ import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileContent;
 import java.util.Collections;
 import org.jetbrains.asm4.ClassReader;
+import org.apache.log4j.Priority;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class StubModelsIndexer implements ApplicationComponent {
   public StubModelsIndexer() {
@@ -52,7 +54,9 @@ public class StubModelsIndexer implements ApplicationComponent {
       try {
         reader = new ClassReader(bytes);
       } catch (Throwable t) {
-        LOG.error("bytes length: " + bytes.length, t);
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("bytes length: " + bytes.length, t);
+        }
         return Collections.emptyMap();
       }
       ASMClass ac = new ASMClass(reader);
@@ -67,5 +71,5 @@ public class StubModelsIndexer implements ApplicationComponent {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(StubModelsIndexer.class);
+  protected static Logger LOG = LogManager.getLogger(StubModelsIndexer.class);
 }

@@ -8,7 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ReloadRequired_QuickFix extends QuickFix_Runtime {
   public ReloadRequired_QuickFix() {
@@ -36,10 +38,12 @@ public class ReloadRequired_QuickFix extends QuickFix_Runtime {
       visible.collect();
       new ModuleLoader(module, visible, pathConverter, null).importRequired();
     } catch (ModuleLoader.ModuleLoaderException ex) {
-      LOG.error(ex.getMessage(), ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error(ex.getMessage(), ex);
+      }
       // TODO report? 
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ReloadRequired_QuickFix.class);
+  protected static Logger LOG = LogManager.getLogger(ReloadRequired_QuickFix.class);
 }

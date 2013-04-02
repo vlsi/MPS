@@ -33,6 +33,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import org.apache.log4j.Priority;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -41,7 +42,8 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class LanguageEditorChecker extends BaseEditorChecker {
   private boolean myMessagesChanged = false;
@@ -176,12 +178,16 @@ public class LanguageEditorChecker extends BaseEditorChecker {
 
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     if (sNode == null) {
-      LOG.error("edited node is null");
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("edited node is null");
+      }
       return result;
 
     }
     if (sNodePointer == null) {
-      LOG.error("edited NodePointer is null");
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("edited NodePointer is null");
+      }
       return result;
     }
 
@@ -240,5 +246,5 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     errorsComponent.clear();
   }
 
-  private static Logger LOG = Logger.getLogger(LanguageEditorChecker.class);
+  protected static Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
 }

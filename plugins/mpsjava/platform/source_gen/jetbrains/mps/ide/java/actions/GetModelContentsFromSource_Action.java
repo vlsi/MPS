@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
@@ -22,7 +23,8 @@ import jetbrains.mps.vfs.IFile;
 import java.awt.Frame;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GetModelContentsFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -53,7 +55,9 @@ public class GetModelContentsFromSource_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GetModelContentsFromSource", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GetModelContentsFromSource", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -128,9 +132,11 @@ public class GetModelContentsFromSource_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GetModelContentsFromSource", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GetModelContentsFromSource", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(GetModelContentsFromSource_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GetModelContentsFromSource_Action.class);
 }

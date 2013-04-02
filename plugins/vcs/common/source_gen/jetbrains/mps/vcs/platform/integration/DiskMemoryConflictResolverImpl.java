@@ -21,13 +21,15 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
+import org.apache.log4j.Priority;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.util.ModelVersion;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   public DiskMemoryConflictResolverImpl() {
@@ -112,7 +114,9 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
       FileUtil.delete(tmp);
       return zipfile;
     } catch (IOException e) {
-      LOG.error("Cannot create backup during resolving disk-memory conflict for " + SNodeOperations.getModelLongName(inMemory), e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Cannot create backup during resolving disk-memory conflict for " + SNodeOperations.getModelLongName(inMemory), e);
+      }
       throw new RuntimeException(e);
     }
   }
@@ -122,7 +126,9 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     try {
       onDisk = ModelPersistence.readModel(new FileDataSource(modelFile), false);
     } catch (ModelReadException e) {
-      LOG.error("Could not read model", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Could not read model", e);
+      }
     }
     Project project = ProjectManager.getInstance().getOpenProjects()[0];
     final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, ((SModelBase) inMemory).getSModelInternal(), project, "Filesystem version (Read-Only)", "Memory Version");
@@ -150,5 +156,5 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(DiskMemoryConflictResolverImpl.class);
+  protected static Logger LOG = LogManager.getLogger(DiskMemoryConflictResolverImpl.class);
 }

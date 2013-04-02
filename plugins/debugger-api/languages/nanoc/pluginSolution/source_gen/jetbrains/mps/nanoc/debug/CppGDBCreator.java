@@ -14,8 +14,10 @@ import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.nanoc.debug.events.GDBEventsAdapter;
 import com.intellij.execution.process.ProcessHandler;
 import java.io.OutputStreamWriter;
+import org.apache.log4j.Priority;
 import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CppGDBCreator extends AbstractDebugSessionCreator {
   private CppDebugSession myDebugSession;
@@ -47,7 +49,9 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
           outputStreamWriter.write("-gdb-exit\n");
           outputStreamWriter.flush();
         } catch (Throwable t) {
-          LOG.error("", t);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("", t);
+          }
         }
       }
     });
@@ -68,5 +72,5 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CppGDBCreator.class);
+  protected static Logger LOG = LogManager.getLogger(CppGDBCreator.class);
 }

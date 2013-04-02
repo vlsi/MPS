@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -16,7 +17,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToSource_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -36,7 +38,9 @@ public class GoToSource_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToSource", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToSource", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -69,9 +73,11 @@ public class GoToSource_Action extends BaseAction {
         }
       }, ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToSource", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToSource", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(GoToSource_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToSource_Action.class);
 }

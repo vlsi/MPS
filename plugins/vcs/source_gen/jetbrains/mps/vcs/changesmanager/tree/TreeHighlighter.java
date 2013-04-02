@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.extapi.model.EditableSModel;
@@ -49,7 +50,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.util.containers.MultiMap;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class TreeHighlighter implements TreeMessageOwner {
   private Map<FileStatus, TreeMessage> myTreeMessages = MapSequence.fromMap(new HashMap<FileStatus, TreeMessage>());
@@ -149,7 +151,9 @@ public class TreeHighlighter implements TreeMessageOwner {
         if (myFeaturesHolder.getNodesByFeature(feature).contains(node)) {
           myFeaturesHolder.removeNodeWithFeature(feature, node);
         } else {
-          LOG.error("trying to remove tree node which was not registered: " + node.getClass().getName() + " " + feature);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("trying to remove tree node which was not registered: " + node.getClass().getName() + " " + feature);
+          }
         }
       }
       unhighlightNode(node);
@@ -421,5 +425,5 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(TreeHighlighter.class);
+  protected static Logger LOG = LogManager.getLogger(TreeHighlighter.class);
 }

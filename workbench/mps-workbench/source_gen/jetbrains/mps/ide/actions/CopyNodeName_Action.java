@@ -10,8 +10,10 @@ import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CopyNodeName_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,7 +40,9 @@ public class CopyNodeName_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CopyNodeName", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CopyNodeName", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -58,9 +62,11 @@ public class CopyNodeName_Action extends BaseAction {
     try {
       CopyPasteUtil.copyTextToClipboard(SNodeOperations.getModelLongName(((SNode) MapSequence.fromMap(_params).get("node")).getModel()) + "." + ((SNode) MapSequence.fromMap(_params).get("node")).getName());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CopyNodeName", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CopyNodeName", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CopyNodeName_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CopyNodeName_Action.class);
 }

@@ -9,13 +9,15 @@ import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.editor.runtime.ExtractComponentUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ExtractComponent_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,7 +44,9 @@ public class ExtractComponent_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ExtractComponent", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ExtractComponent", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -78,9 +82,11 @@ public class ExtractComponent_Action extends BaseAction {
     try {
       ExtractComponentUtil.extractComponent(((SNode) MapSequence.fromMap(_params).get("node")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ExtractComponent", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ExtractComponent", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ExtractComponent_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ExtractComponent_Action.class);
 }

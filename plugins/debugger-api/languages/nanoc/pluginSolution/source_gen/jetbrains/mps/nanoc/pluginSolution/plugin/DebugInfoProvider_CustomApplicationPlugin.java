@@ -17,7 +17,9 @@ import jetbrains.mps.debug.api.BreakpointCreatorsManager;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.DebuggerNotPresentException;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private Set<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myCreators = SetSequence.fromSet(new HashSet<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>());
@@ -46,7 +48,9 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
           try {
             return Debuggers.getInstance().getDebuggerByNameSafe("Cpp").createBreakpoint(debuggableNode, "CPP_LINE_BREAKPOINT", project);
           } catch (DebuggerNotPresentException e) {
-            LOG.warning("Exception while creating breakpoint for node" + debuggableNode, e);
+            if (LOG.isEnabledFor(Priority.WARN)) {
+              LOG.warn("Exception while creating breakpoint for node" + debuggableNode, e);
+            }
             return null;
           }
 
@@ -72,5 +76,5 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators).clear();
   }
 
-  private static Logger LOG = Logger.getLogger(DebugInfoProvider_CustomApplicationPlugin.class);
+  protected static Logger LOG = LogManager.getLogger(DebugInfoProvider_CustomApplicationPlugin.class);
 }
