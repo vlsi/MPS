@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -28,7 +29,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class CloneUtil {
-  private static final Logger LOG = Logger.getLogger(CloneUtil.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(CloneUtil.class));
 
   /**
    * Creates cloned model, each node in target model has the same nodeId that corresponding node in source model

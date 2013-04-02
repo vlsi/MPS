@@ -5,6 +5,7 @@ import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MPSPsiElement<T> extends FakePsiElement {
-  private static final Logger LOG = Logger.getLogger(MPSPsiElement.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(MPSPsiElement.class));
 
   private Object myItem;
 

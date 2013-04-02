@@ -56,6 +56,7 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ListMap;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -78,7 +79,7 @@ import java.util.Set;
  * Created Sep 14, 2003
  */
 public abstract class EditorCell_Basic implements EditorCell {
-  public static final Logger LOG = Logger.getLogger(EditorCell_Basic.class);
+  public static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorCell_Basic.class));
 
   public static final int BRACKET_WIDTH = 7;
 

@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -48,7 +49,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 public class ReferencesTest extends BaseMPSTest {
-  private static final Logger LOG = Logger.getLogger(ReferencesTest.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ReferencesTest.class));
 
   public void testBrokenReferences() {
     IdeMain.setTestMode(TestMode.CORE_TEST);

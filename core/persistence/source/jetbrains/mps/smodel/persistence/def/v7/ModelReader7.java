@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.refactoring.ModelLinkMap;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
@@ -44,7 +45,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.List;
 
 public class ModelReader7 implements IModelReader {
-  private static final Logger LOG = Logger.getLogger(ModelReader7.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ModelReader7.class));
 
   private ReadHelper myHelper;
   private ModelLinkMap myLinkMap;

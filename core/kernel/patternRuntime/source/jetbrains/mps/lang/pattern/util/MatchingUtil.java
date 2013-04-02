@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.util.IterableUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -28,7 +29,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.*;
 
 public class MatchingUtil {
-  private static final Logger LOG = Logger.getLogger(MatchingUtil.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(MatchingUtil.class));
 
   public static boolean matchNodes(SNode node1, SNode node2) {
     return matchNodes(node1, node2, IMatchModifier.DEFAULT, true);

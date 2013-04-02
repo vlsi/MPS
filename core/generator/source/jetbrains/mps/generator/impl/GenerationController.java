@@ -33,6 +33,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -40,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerationController implements ITaskPoolProvider {
-  protected static Logger LOG = Logger.getLogger(GenerationController.class);
+  protected static Logger LOG = Logger.getLogger(LogManager.getLogger(GenerationController.class));
 
   private final TransientModelsProvider myTransientModelsProvider;
   private List<? extends SModel> myInputModels;

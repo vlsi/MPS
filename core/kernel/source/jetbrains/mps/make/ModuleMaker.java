@@ -40,6 +40,7 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -55,7 +56,7 @@ import java.util.*;
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
 public class ModuleMaker {
-  private static final Logger LOG = Logger.getLogger(ModuleMaker.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ModuleMaker.class));
 
   private final static int MAX_ERRORS = 100;
 

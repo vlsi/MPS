@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
+
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
@@ -186,7 +189,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       if (ourErrorReportedRefs.contains(this)) return;
       ourErrorReportedRefs.add(this);
 
-      Logger log = Logger.getLogger(this.getClass());
+      Logger log = Logger.getLogger(LogManager.getLogger(this.getClass()));
       log.error("\ncouldn't resolve reference '" + getRole() + "' from " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getSourceNode()),
           validNode(getSourceNode()));
       if (message != null) log.error(" -- " + message);

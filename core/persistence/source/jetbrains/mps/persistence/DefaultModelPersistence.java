@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelHeader;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -47,7 +48,7 @@ import java.util.Map;
  */
 public class DefaultModelPersistence implements CoreComponent, ModelFactory {
 
-  private static final Logger LOG = Logger.getLogger(DefaultModelPersistence.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(DefaultModelPersistence.class));
 
   @Override
   public void init() {

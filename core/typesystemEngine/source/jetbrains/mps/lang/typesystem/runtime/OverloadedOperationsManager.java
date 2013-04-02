@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -24,7 +25,7 @@ import jetbrains.mps.util.CollectionUtil;
 import java.util.*;
 
 public class OverloadedOperationsManager {
-  private static final Logger LOG = Logger.getLogger(OverloadedOperationsManager.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(OverloadedOperationsManager.class));
 
   private RuleSet<IOverloadedOpsTypesProvider> myOperationsToTypeProviders =
     new RuleSet<IOverloadedOpsTypesProvider>();

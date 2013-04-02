@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
+
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -58,7 +61,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class SNode implements org.jetbrains.mps.openapi.model.SNode {
-  private static final Logger LOG = Logger.getLogger(SNode.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SNode.class));
   private static final String[] EMPTY_ARRAY = new String[0];
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;

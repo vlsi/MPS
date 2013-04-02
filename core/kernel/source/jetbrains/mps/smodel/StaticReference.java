@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
+
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -85,7 +88,7 @@ public final class StaticReference extends SReferenceBase {
     if (targetModel == null) return null;
 
     if (jetbrains.mps.util.SNodeOperations.isModelDisposed(targetModel)) {
-      Logger log = Logger.getLogger(this.getClass());
+      Logger log = Logger.getLogger(LogManager.getLogger(this.getClass()));
       StringBuilder sb = new StringBuilder();
       sb.append("target model ");
       sb.append(targetModel.toString());

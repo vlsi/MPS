@@ -17,6 +17,7 @@ package jetbrains.mps.textGen;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
@@ -28,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TraceInfoGenerationUtil {
-  private static final Logger LOG = Logger.getLogger(TraceInfoGenerationUtil.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(TraceInfoGenerationUtil.class));
   public static final String POSITION_INFO = "POSITION_INFO";
   public static final String SCOPE_INFO = "SCOPE_INFO";
   public static final String UNIT_INFO = "UNIT_INFO";

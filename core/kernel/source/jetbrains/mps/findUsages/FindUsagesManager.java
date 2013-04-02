@@ -21,6 +21,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelOperations;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.StaticReference;
@@ -37,7 +38,7 @@ import java.util.Collection;
 import java.util.Set;
 
 public class FindUsagesManager {
-  private static final Logger LOG = Logger.getLogger(FindUsagesManager.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(FindUsagesManager.class));
 
   public static FindUsagesManager getInstance() {
     return new FindUsagesManager();
