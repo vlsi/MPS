@@ -186,7 +186,7 @@ public class GenerationController implements ITaskPoolProvider {
 
     monitor.start(inputModel.getModelName(), 10);
     try {
-      Logger.getEngine().addHandler(generationSession.getLoggingHandler());
+      Logger.addLoggingHandler(generationSession.getLoggingHandler());
       if (!myGenerationHandler.canHandle(inputModel)) {
         LOG.error("Can't generate " + inputModel.getModelName());
         return true;
@@ -225,7 +225,7 @@ public class GenerationController implements ITaskPoolProvider {
         // never happens
       }
     } finally {
-      Logger.getEngine().removeHandler(generationSession.getLoggingHandler());
+      Logger.removeLoggingHandler(generationSession.getLoggingHandler());
       generationSession.discardTransients();
 
       monitor.done();

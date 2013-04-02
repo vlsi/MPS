@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.logging;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
+@Deprecated
+@ToRemove(version = 3.0)
 public class LogEntry {
   private String mySourceClass;
   private String myMessage;

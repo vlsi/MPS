@@ -15,59 +15,57 @@
  */
 package jetbrains.mps.logging;
 
-import jetbrains.mps.logging.log4j.Log4jEngine;
+import jetbrains.mps.logging.log4j.MpsAppender;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
 
 public abstract class Logger {
-  public interface Engine {
-    Logger getLogger(String name);
 
-    void addHandler(ILoggingHandler handler);
-
-    void removeHandler(ILoggingHandler handler);
-
-    String setThreshold(String threshold);
-  }
-
-  private static volatile Engine ourEngine;
-
-  static {
-    initDefaultEngine();
-  }
-
-  private static void initDefaultEngine() {
-    setEngine(new Log4jEngine());
-  }
-
-  public static void setEngine(Engine engine) {
-    ourEngine = engine;
-  }
-
-  public static Engine getEngine() {
-    return ourEngine;
-  }
-
+  /**
+   * Use constructor from org.apache.log4j.Logger
+   */
+  @Deprecated
+  @ToRemove(version = 3.0)
   public static synchronized Logger getLogger(Class cls) {
     return getLogger(cls.getName());
   }
 
+
+  /**
+   * Use constructor from org.apache.log4j.Logger
+   */
+  @Deprecated
+  @ToRemove(version = 3.0)
   public static synchronized Logger getLogger(String name) {
-    return ourEngine.getLogger(name);
+    return getLogger(LogManager.getLogger(name));
   }
 
+  public static synchronized Logger getLogger(org.apache.log4j.Logger logger) {
+    return new Log4jLogger(logger);
+  }
+
+  /**
+   * Use log4j appenders
+   */
+  @Deprecated
   public static void addLoggingHandler(ILoggingHandler lh) {
-    ourEngine.addHandler(lh);
+    MpsAppender.getInstance().addAppender(lh);
   }
 
+  /**
+   * Use log4j appenders
+   */
+  @Deprecated
   public static void removeLoggingHandler(ILoggingHandler lh) {
-    ourEngine.removeHandler(lh);
+    MpsAppender.getInstance().removeAppender(lh);
   }
 
   /**
    * @param "OFF", "FATAL", "ERROR", "WARN" ...
    */
   public static String setThreshold(String threshold) {
-    return ourEngine.setThreshold(threshold);
+    return Log4jUtil.setThreshold(threshold);
   }
 
   //--------------------------

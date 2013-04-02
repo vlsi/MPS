@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.logging.log4j;
+package jetbrains.mps.logging;
 
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-class MessageObject {
+public class MessageObject {
   private final String myMessage;
   private final Object myHintObject;
 

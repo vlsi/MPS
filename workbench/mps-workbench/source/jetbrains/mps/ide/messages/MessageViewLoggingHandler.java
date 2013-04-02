@@ -63,12 +63,12 @@ public class MessageViewLoggingHandler implements ILoggingHandler, ProjectCompon
 
   @Override
   public void projectOpened() {
-    Logger.getEngine().addHandler(this);
+    Logger.addLoggingHandler(this);
   }
 
   @Override
   public void projectClosed() {
-    Logger.getEngine().removeHandler(this);
+    Logger.removeLoggingHandler(this);
   }
 
   @Override

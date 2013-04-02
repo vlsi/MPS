@@ -17,18 +17,29 @@ package jetbrains.mps.logging.log4j;
 
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
-import org.apache.log4j.AppenderSkeleton;
+import jetbrains.mps.logging.MpsAppenderSkeleton;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggingEvent;
-import org.apache.log4j.spi.ThrowableInformation;
+import org.apache.log4j.Priority;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MpsAppender extends AppenderSkeleton {
+/**
+ * Used only for handlers support.
+ */
+@Deprecated
+@ToRemove(version = 3.0)
+public class MpsAppender extends MpsAppenderSkeleton {
   public static final String NAME = "MPS";
   private final List<ILoggingHandler> myHandlers = new ArrayList<ILoggingHandler>();
+
+  public MpsAppender() {
+    super(NAME);
+  }
 
   public synchronized void addAppender(ILoggingHandler appender) {
     myHandlers.add(appender);
@@ -39,26 +50,21 @@ public class MpsAppender extends AppenderSkeleton {
   }
 
   @Override
-  protected synchronized void append(LoggingEvent event) {
+  protected void append(@NotNull Priority level, @NotNull String categoryName, @NotNull String message, @Nullable Throwable t, @Nullable Object hintObject) {
     for (ILoggingHandler handler : myHandlers) {
-      LogEntry logEntry = createLogEntry(event);
-      if (event.level.equals(Level.FATAL)) {
+      LogEntry logEntry = new LogEntry(categoryName, message, t, hintObject);
+      if (level.equals(Level.FATAL)) {
         handler.fatal(logEntry);
-      } else if (event.level.equals(Level.ERROR)) {
+      } else if (level.equals(Level.ERROR)) {
         handler.error(logEntry);
-      } else if (event.level.equals(Level.WARN)) {
+      } else if (level.equals(Level.WARN)) {
         handler.warning(logEntry);
-      } else if (event.level.equals(Level.INFO)) {
+      } else if (level.equals(Level.INFO)) {
         handler.info(logEntry);
-      } else if (event.level.equals(Level.DEBUG)) {
+      } else if (level.equals(Level.DEBUG)) {
         handler.debug(logEntry);
       }
     }
-  }
-
-  @Override
-  public boolean requiresLayout() {
-    return true;
   }
 
   @Override
@@ -66,30 +72,11 @@ public class MpsAppender extends AppenderSkeleton {
     myHandlers.clear();
   }
 
-  public LogEntry createLogEntry(LoggingEvent event) {
-    ThrowableInformation throwableInformation = event.getThrowableInformation();
-    String renderedMessage = event.getRenderedMessage();
-    Object message = event.getMessage();
-    if (renderedMessage != null && renderedMessage.equals(message)) {
-      message = null;
-    } else if (message instanceof MessageObject) {
-      renderedMessage = ((MessageObject) message).getMessage();
-      message = ((MessageObject) message).getHintObject();
-    }
-    if (throwableInformation != null) {
-      return new LogEntry(event.categoryName, renderedMessage, throwableInformation.getThrowable(), message);
-    } else {
-      return new LogEntry(event.categoryName, renderedMessage, null, message);
-    }
-  }
-
   public static synchronized MpsAppender getInstance() {
-    Logger rootLogger = Logger.getRootLogger();
-    MpsAppender mpsAppender = (MpsAppender) rootLogger.getAppender(NAME);
+    MpsAppender mpsAppender = (MpsAppender) Logger.getRootLogger().getAppender(NAME);
     if (mpsAppender == null) {
       mpsAppender = new MpsAppender();
-      mpsAppender.setName(NAME);
-      rootLogger.addAppender(mpsAppender);
+      mpsAppender.register();
     }
     return mpsAppender;
   }

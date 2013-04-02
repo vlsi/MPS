@@ -80,7 +80,7 @@ public class ReferencesTest extends BaseMPSTest {
       }
     };
 
-    Logger.getEngine().addHandler(handler);
+    Logger.addLoggingHandler(handler);
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -95,7 +95,7 @@ public class ReferencesTest extends BaseMPSTest {
       }
     });
 
-    Logger.getEngine().removeHandler(handler);
+    Logger.removeLoggingHandler(handler);
 
     assertTrue(errors.isEmpty());
     assertTrue(fatals.isEmpty());

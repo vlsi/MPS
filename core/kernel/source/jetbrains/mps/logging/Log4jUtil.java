@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.logging.log4j;
+package jetbrains.mps.logging;
 
-import jetbrains.mps.logging.log4j.MessageObject;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Level;
 import org.jetbrains.annotations.NonNls;

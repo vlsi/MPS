@@ -13,20 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.logging.log4j;
+package jetbrains.mps.logging;
 
-import jetbrains.mps.logging.Logger;
-import org.apache.log4j.LogManager;
-
-class Log4jLogger extends Logger {
+public class Log4jLogger extends Logger {
   private final org.apache.log4j.Logger myLogger;
 
-  public static Engine getFactory() {
-    return new Log4jEngine();
-  }
-
-  public Log4jLogger(String name) {
-    myLogger = LogManager.getLogger(name);
+  public Log4jLogger(org.apache.log4j.Logger logger) {
+    myLogger = logger;
   }
 
   @Override
