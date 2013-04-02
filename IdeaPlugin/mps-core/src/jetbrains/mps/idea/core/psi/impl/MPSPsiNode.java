@@ -22,11 +22,13 @@ import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -49,6 +51,8 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   private final String myContainingRole;
   private String myName;
   private Map<String, String> myProperties;
+
+  private boolean isCopy = false;
 
   public MPSPsiNode(SNodeId id, String concept, String containingRole) {
     myId = id;
@@ -91,6 +95,13 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return getContainingRoot();
   }
 
+  @Override
+  public MPSPsiNode copy() {
+    MPSPsiNode clone = (MPSPsiNode) clone();
+    clone.isCopy = true;
+    return clone;
+  }
+
   void setProperty(String key, String value) {
     // TODO
     if (key.equals("name")) {
@@ -98,6 +109,23 @@ public class MPSPsiNode extends MPSPsiNodeBase {
       return;
     }
     myProperties.put(key, value);
+  }
+
+  // Used for changing name from idea through PSI (in refactorings)
+  protected void setNameProperty(final String name) {
+    setProperty("name", name);
+
+    if (!isCopy) {
+      // really modifying the model
+      ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+        @Override
+        public void run() {
+          SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
+          if (node == null) return;
+          node.setProperty("name", name);
+        }
+      }, new MPSProject(getProject()));
+    }
   }
 
   protected <T extends PsiElement> T getReferenceTarget(String role, @NotNull Class<T> aClass) {

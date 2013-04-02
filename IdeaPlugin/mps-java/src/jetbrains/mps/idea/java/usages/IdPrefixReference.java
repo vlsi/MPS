@@ -36,6 +36,9 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Map;
+import java.util.Set;
+
 /**
  * danilla 3/24/13
  */
@@ -90,26 +93,7 @@ public class IdPrefixReference implements PsiReference {
     assert myTarget instanceof SNodePointer;
     NodePtr target = new NodePtr(myTarget.getModelReference(), ((SNodePointer) myTarget).getNodeId());
 
-    myParent.getProject().getComponent(MoveRenameBatch.class).recordUsage(target, new RenameHandler() {
-      @Override
-      public void handleRename(NodePtr oldNode, NodePtr newNode) {
-        SNode source = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance());
-        String oldId = source.getReference(myRole).getTargetNodeId().toString();
-        String newId = oldId.replaceFirst(oldNode.getNodeId().toString(), newNode.getNodeId().toString());
-        source.setReference(myRole, StaticReference.create(myRole, source, newNode.getSModelReference(), new Foreign(newId)));
-
-        // add model import if needed
-        if (!oldNode.getSModelReference().equals(newNode.getSModelReference())) {
-          SModel model = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance()).getModel();
-          SModelReference newTargetModel = newNode.getSModelReference();
-
-          assert model instanceof SModelInternal;
-          assert newTargetModel instanceof jetbrains.mps.smodel.SModelReference;
-
-          ((SModelInternal) model).addModelImport((jetbrains.mps.smodel.SModelReference) newTargetModel, true);
-        }
-      }
-    });
+    myParent.getProject().getComponent(MoveRenameBatch.class).recordUsage(target, new IdPrefixRenameHandler());
 
 
   }
@@ -130,5 +114,32 @@ public class IdPrefixReference implements PsiReference {
   @Override
   public boolean isSoft() {
     return false;
+  }
+
+  private class IdPrefixRenameHandler implements RenameHandler {
+    @Override
+    public void handleRename(NodePtr oldNode, NodePtr newNode) {
+      SNode source = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance());
+      String oldId = source.getReference(myRole).getTargetNodeId().toString();
+      String newId = oldId.replaceFirst(oldNode.getNodeId().toString(), newNode.getNodeId().toString());
+
+      // let's see if this target is not already handled by normal SReference
+      if (myParent.getProject().getComponent(MoveRenameBatch.class).isHandledAsSReference(oldNode)) {
+        return;
+      }
+
+      source.setReference(myRole, StaticReference.create(myRole, source, newNode.getSModelReference(), new Foreign(newId)));
+
+      // add model import if needed
+      if (!oldNode.getSModelReference().equals(newNode.getSModelReference())) {
+        SModel model = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance()).getModel();
+        SModelReference newTargetModel = newNode.getSModelReference();
+
+        assert model instanceof SModelInternal;
+        assert newTargetModel instanceof jetbrains.mps.smodel.SModelReference;
+
+        ((SModelInternal) model).addModelImport((jetbrains.mps.smodel.SModelReference) newTargetModel, true);
+      }
+    }
   }
 }

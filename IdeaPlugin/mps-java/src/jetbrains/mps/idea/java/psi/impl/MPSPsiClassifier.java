@@ -49,7 +49,6 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   public MPSPsiClassifier(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
     addChildLast(new MPSPsiMethodModifierList());
-//    addChildLast(null, new MPSPsiTypeParamList());
   }
 
   @Nullable
@@ -273,7 +272,7 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
 
   @Override
   public PsiElement setName(@NonNls @NotNull String name) throws IncorrectOperationException {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    throw new IncorrectOperationException();
   }
 
   @Nullable
