@@ -23,11 +23,10 @@ import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 
 public class ConsoleTool extends BaseProjectTool {
@@ -82,6 +81,7 @@ public class ConsoleTool extends BaseProjectTool {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             TemporaryModels.getInstance().fixImports(myModel);
+            myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "command", true)).last();
             if ((myLastCommand != null)) {
               BehaviorReflection.invokeVirtual(Void.class, myLastCommand, "virtual_execute_757553790980855637", new Object[]{project});
             }
@@ -124,7 +124,7 @@ public class ConsoleTool extends BaseProjectTool {
   private void nextCommand() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        ConsoleTool.this.myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "command", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", null));
+        // <node> 
         // <node> 
       }
     });
