@@ -17,8 +17,10 @@ import java.util.Iterator;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import org.apache.log4j.Priority;
 import jetbrains.mps.intentions.IntentionDescriptor;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ReloadModulesFromDisk_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -97,7 +99,9 @@ public class ReloadModulesFromDisk_Intention implements IntentionFactory {
             visible.collect();
             new ModuleLoader(module_var, visible, pathConverter, null).importRequired();
           } catch (ModuleLoader.ModuleLoaderException ex) {
-            LOG.error(ex.getMessage(), ex);
+            if (LOG.isEnabledFor(Priority.ERROR)) {
+              LOG.error(ex.getMessage(), ex);
+            }
             // TODO report? 
           }
         }
@@ -109,5 +113,5 @@ public class ReloadModulesFromDisk_Intention implements IntentionFactory {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ReloadModulesFromDisk_Intention.class);
+  protected static Logger LOG = LogManager.getLogger(ReloadModulesFromDisk_Intention.class);
 }

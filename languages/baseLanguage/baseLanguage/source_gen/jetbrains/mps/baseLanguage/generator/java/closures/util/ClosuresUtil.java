@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.generator.java.closures.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Condition;
+import org.apache.log4j.Priority;
 import java.util.List;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -19,7 +20,8 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.HashMap;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ClosuresUtil {
   private static Object CLOSURE_CONTEXT_DATA = new Object();
@@ -41,7 +43,9 @@ public class ClosuresUtil {
     return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(node, new Condition<SNode>() {
       public boolean met(SNode n) {
         if (!(n instanceof SNode)) {
-          LOG.warning("method findEnclosingClosureContextOwner in " + ClosuresUtil.class.toString() + " operates only with the instances of SNode class");
+          if (LOG.isEnabledFor(Priority.WARN)) {
+            LOG.warn("method findEnclosingClosureContextOwner in " + ClosuresUtil.class.toString() + " operates only with the instances of SNode class");
+          }
           return false;
         }
         return isClosureContextOwner(((SNode) n));
@@ -230,5 +234,5 @@ public class ClosuresUtil {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ClosuresUtil.class);
+  protected static Logger LOG = LogManager.getLogger(ClosuresUtil.class);
 }
