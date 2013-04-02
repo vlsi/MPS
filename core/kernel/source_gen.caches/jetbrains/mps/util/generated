@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2bhlbr9v9c8krbq0x48tbiawsfbjdcf">
+<dependencies version="2" modelHash="1ch2bo1lsu57w10jkedj9pz559jmiz3">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -82,7 +82,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="StringsIO.java" />
   </source>
-  <source id="5755638771828906585" name="ModuleNameUtil" hash="-1ygfwpd3eoovu5hc8r2jj4bbyif00lt">
+  <source id="5755638771828906585" name="ModuleNameUtil" hash="2tmia6n17hbfsoejqcv98ru915famd7">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModuleNameUtil.java" />
   </source>

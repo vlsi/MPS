@@ -4,14 +4,12 @@ package jetbrains.mps.lang.test.runtime;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.idea.LoggerFactory;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.ProjectModels;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelRepository;
 
 public abstract class BaseTransformationTest4 implements TransformationTest {
   public static final String PATH_MACRO_PREFIX = "path.macro.";
@@ -19,7 +17,6 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
   private SModel myModel;
   private SModel myTransientModel;
   private Project myProject;
-  private TemporaryModelOwner myModelOwner;
 
   public BaseTransformationTest4() {
     Logger.setFactory(LoggerFactory.getInstance());
@@ -56,11 +53,15 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
   @Override
   public void init() {
-    this.myModelOwner = new TemporaryModelOwner();
-    this.myTransientModel = ProjectModels.createDescriptorFor(true);
+    this.myTransientModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
     CloneUtil.cloneModelWithImports(this.myModel, this.myTransientModel, false);
-    SModelOperations.validateLanguagesAndImports(this.myTransientModel, false, false);
-    SModelRepository.getInstance().registerModelDescriptor(this.myTransientModel, this.myModelOwner);
+    TemporaryModels.getInstance().fixImports(myTransientModel);
+  }
+
+  @Override
+  public void dispose() {
+    TemporaryModels.getInstance().dispose(myTransientModel);
+    myTransientModel = null;
   }
 
   @Override
@@ -86,10 +87,5 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
   @Override
   public void setProject(Project project) {
     myProject = project;
-  }
-
-  @Override
-  public TemporaryModelOwner getModelOwner() {
-    return myModelOwner;
   }
 }

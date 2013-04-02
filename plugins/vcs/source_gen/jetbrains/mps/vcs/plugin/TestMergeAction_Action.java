@@ -25,6 +25,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import java.io.IOException;
 import jetbrains.mps.logging.Logger;
 
 public class TestMergeAction_Action extends BaseAction {
@@ -100,7 +101,11 @@ public class TestMergeAction_Action extends BaseAction {
                 if (!(iFile.exists())) {
                   iFile.createNewFile();
                 }
-                ModelPersistence.saveModel(result, new FileDataSource(iFile));
+                try {
+                  ModelPersistence.saveModel(result, new FileDataSource(iFile));
+                } catch (IOException e) {
+                  LOG.error("Cannot save model.", e);
+                }
               }
             });
           }

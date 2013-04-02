@@ -23,7 +23,7 @@ public class ModuleData implements NodeData {
 
   @Override
   public String getText() {
-    return this.myModule.getModuleFqName();
+    return this.myModule.getModuleName();
   }
 
   @Override

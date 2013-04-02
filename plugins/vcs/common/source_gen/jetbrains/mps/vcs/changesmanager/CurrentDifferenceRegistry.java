@@ -91,7 +91,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
 
   public void updateLoadedModels() {
     for (SModel md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
-      if (md instanceof EditableSModel && !(((EditableSModel) md).isReadOnly())) {
+      if (md instanceof EditableSModel && !(md.isReadOnly())) {
         updateModel(md);
       }
     }

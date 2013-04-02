@@ -121,7 +121,7 @@ public class QueriesGenerated {
     IModule m = MPSModuleRepository.getInstance().getModule(ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getModuleReference_1250389701475344624", new Object[]{})));
     if (m instanceof Generator) {
       Generator g = (Generator) m;
-      return g.getSourceLanguage().getModuleFqName() + "/" + g.getModuleFqName();
+      return g.getSourceLanguage().getModuleName() + "/" + g.getModuleName();
     } else {
       _context.showErrorMessage(_context.getNode(), "referenced generator is not available: " + _context.getNode());
       return "????";

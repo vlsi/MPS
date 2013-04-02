@@ -113,7 +113,7 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText_internal(IModule parameterObject) {
-      return parameterObject.getModuleFqName();
+      return parameterObject.getModuleName();
     }
   }
 

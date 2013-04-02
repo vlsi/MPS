@@ -30,7 +30,7 @@ public class GlobalScopeMinusTransient extends FilteredScope {
 
   @Override
   protected boolean acceptModule(SModule module) {
-    return module instanceof TransientModelsModule;
+    return !(module instanceof TransientModelsModule);
   }
 
   @Override

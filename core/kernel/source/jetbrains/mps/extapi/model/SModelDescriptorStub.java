@@ -111,6 +111,16 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
 
   // Not SModel-specific listener notifications
 
+  protected void fireModelProblemsUpdated() {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.problemsUpdated(this);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
   protected void fireBeforeModelFileChanged(SModelFileChangedEvent event) {
     for (SModelListener sModelListener : getModelListeners()) {
       try {

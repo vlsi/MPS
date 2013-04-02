@@ -95,9 +95,9 @@ public class NewGeneratorDialog extends DialogWrapper {
   }
 
   private void updateTemplateModelsDir() {
-    IFile descriptorFile = mySourceLanguage.getDescriptorFile();
-    assert descriptorFile != null;
-    String path = descriptorFile.getParent().getPath();
+    IFile moduleDir = mySourceLanguage.getModuleSourceDir();
+    assert moduleDir != null;
+    String path = moduleDir.getPath();
     String modelsDir = path + File.separatorChar + "generator" + File.separatorChar + "template";
     myTemplateModelsDir.setText(modelsDir);
   }
@@ -179,12 +179,12 @@ public class NewGeneratorDialog extends DialogWrapper {
   }
 
   private String getTemplateModelPrefix(Language sourceLanguage) {
-    return sourceLanguage.getModuleFqName() + ".generator.template";
+    return sourceLanguage.getModuleName() + ".generator.template";
   }
 
   private void adjustTemplateModel(Language sourceLanguage, Generator newGenerator) {
     boolean alreadyOwnsTemplateModel = false;
-    for (SModel modelDescriptor : newGenerator.getOwnModelDescriptors()) {
+    for (SModel modelDescriptor : newGenerator.getModels()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
         alreadyOwnsTemplateModel = true;
         break;

@@ -15,9 +15,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelOperations;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
@@ -25,12 +22,16 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import org.jetbrains.annotations.NonNls;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public class DiffEditor implements EditorMessageOwner {
   private DiffEditor.MainEditorComponent myMainEditorComponent;
@@ -46,12 +47,6 @@ public class DiffEditor implements EditorMessageOwner {
         ec.setNoVirtualFile(true);
       }
     });
-
-    SModel model = SNodeOperations.getModel(node);
-    if (model != null) {
-      boolean editable = !(SModelOperations.isReadOnly(model));
-      setReadOnly(!(editable));
-    }
 
     myMainEditorComponent.editNode(node, myMainEditorComponent.getOperationContext());
     myInspector.getExternalComponent().setPreferredSize(new Dimension());
@@ -74,7 +69,7 @@ public class DiffEditor implements EditorMessageOwner {
     return getMainEditor().getEditedNode();
   }
 
-  public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull jetbrains.mps.smodel.SModel model) {
+  public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull SModel model) {
     SNode root = (rootId == null ?
       null :
       model.getNode(rootId)
@@ -85,7 +80,7 @@ public class DiffEditor implements EditorMessageOwner {
   }
 
   public void inspect(SNode node) {
-    myInspector.inspectNode(node, myMainEditorComponent.getOperationContext());
+    myInspector.editNode(node, myMainEditorComponent.getOperationContext());
     myInspector.getHighlightManager().repaintAndRebuildEditorMessages();
   }
 
@@ -116,7 +111,7 @@ public class DiffEditor implements EditorMessageOwner {
     );
   }
 
-  public void highlightChange(jetbrains.mps.smodel.SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
+  public void highlightChange(SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
     final List<ChangeEditorMessage> messages = ChangeEditorMessageFactory.createMessages(model, change, this, conflictChecker);
     if (ListSequence.fromList(messages).isEmpty()) {
       return;
@@ -166,8 +161,11 @@ public class DiffEditor implements EditorMessageOwner {
   }
 
   public class MainEditorComponent extends EditorComponent {
+    private DiffFileEditor myDiffFileEditor;
+
     public MainEditorComponent(IOperationContext operationContext, boolean rightToLeft) {
       super(operationContext, false, rightToLeft);
+      myDiffFileEditor = new DiffFileEditor(this);
     }
 
     @Override
@@ -177,6 +175,14 @@ public class DiffEditor implements EditorMessageOwner {
         return new EditorCell_Constant(editorContext, getEditedNode(), "");
       }
       return getEditorContext().createRootCell(getEditedNode(), events);
+    }
+
+    @Override
+    public Object getData(@NonNls String dataId) {
+      if (dataId.equals(PlatformDataKeys.FILE_EDITOR.getName())) {
+        return myDiffFileEditor;
+      }
+      return super.getData(dataId);
     }
   }
 }

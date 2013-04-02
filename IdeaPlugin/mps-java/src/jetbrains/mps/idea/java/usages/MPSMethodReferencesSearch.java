@@ -19,6 +19,7 @@ import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
+import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -51,44 +52,26 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
     }
     final GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getScope();
 
-    final GeneratedFinder finder = FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
+    final PsiMethod method = queryParameters.getMethod();
+    final GeneratedFinder finder = method.isConstructor() ?
+      FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder")) :
+      FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
+
     if (finder == null) {
-      LOG.warning("MPS finder for base method usages not found; MethodReferenceSearch will not work");
+      LOG.warning("MPS finder not found; MethodReferenceSearch will not work");
       return;
     }
 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        PsiMethod method = queryParameters.getMethod();
+
         final SNode methodNode = MPSReferenceSearch.getNodeForElement(method);
         if (methodNode == null) {
           return;
         }
 
-        SearchQuery query = new SearchQuery(methodNode, new BaseScope() {
-          @Override
-          public Iterable<SModule> getModules() {
-
-            List<SModule> result = new ArrayList<SModule>();
-
-            for (SModule mod : MPSModuleRepository.getInstance().getModules()) {
-
-              if (mod instanceof SolutionIdea) {
-                Module ideaModule = ((SolutionIdea) mod).getIdeaModule();
-                if (scope.isSearchInModuleContent(ideaModule)) {
-                  result.add(mod);
-                }
-              } else {
-                // any other module is considered to be "libraries" in idea terminology
-                if (scope.isSearchInLibraries()) {
-                  result.add(mod);
-                }
-              }
-            }
-            return result;
-          }
-        });
+        SearchQuery query = new SearchQuery(methodNode, new IdeaSearchScope(scope));
 
         SearchResults<SNode> results;
         try {

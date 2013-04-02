@@ -28,7 +28,7 @@
     <nodeInfo nodeId="4063181131897049398" fileName="VariantsUtil.java" startLine="98" startPosition="38" endLine="99" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4063181131897049435" fileName="VariantsUtil.java" startLine="101" startPosition="23" endLine="102" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8590671622326856559" fileName="VariantsUtil.java" startLine="105" startPosition="59" endLine="106" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8590671622326856568" fileName="VariantsUtil.java" startLine="106" startPosition="39" endLine="107" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8590671622326856568" fileName="VariantsUtil.java" startLine="106" startPosition="39" endLine="107" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8590671622326856397" fileName="VariantsUtil.java" startLine="110" startPosition="68" endLine="111" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8590671622326856397" fileName="VariantsUtil.java" startLine="111" startPosition="63" endLine="112" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8590671622326856397" fileName="VariantsUtil.java" startLine="112" startPosition="30" endLine="113" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -131,7 +131,7 @@
     <scopeInfo nodeId="4063181131897049375" fileName="VariantsUtil.java" startLine="93" startPosition="39" endLine="94" endPosition="161" />
     <scopeInfo nodeId="4063181131897049397" fileName="VariantsUtil.java" startLine="98" startPosition="38" endLine="99" endPosition="113" />
     <scopeInfo nodeId="8590671622326856376" fileName="VariantsUtil.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="8590671622326856558" fileName="VariantsUtil.java" startLine="105" startPosition="59" endLine="107" endPosition="68">
+    <scopeInfo nodeId="8590671622326856558" fileName="VariantsUtil.java" startLine="105" startPosition="59" endLine="107" endPosition="66">
       <varInfo nodeId="8590671622326856560" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="8590671622326856397" fileName="VariantsUtil.java" startLine="112" startPosition="30" endLine="114" endPosition="237" />

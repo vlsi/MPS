@@ -86,7 +86,7 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
   public String calculateNodeIdenifier() {
     Generator generator = getGenerator();
     if (generator == null) return "null";
-    return generator.getModuleFqName();
+    return generator.getModuleName();
   }
 
   @Override

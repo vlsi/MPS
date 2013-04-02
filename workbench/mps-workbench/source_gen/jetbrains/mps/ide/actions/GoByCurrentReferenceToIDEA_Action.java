@@ -18,6 +18,7 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -98,10 +99,10 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       assert module != null;
       if (module instanceof Generator) {
         module = ((Generator) module).getSourceLanguage();
-      } else if (module.getDescriptorFile() == null) {
+      } else if (!(module instanceof AbstractModule) || ((AbstractModule) module).getModuleSourceDir() == null) {
         assert false;
       }
-      final String modulePath = module.getDescriptorFile().getPath();
+      final String modulePath = ((AbstractModule) module).getModuleSourceDir().getPath();
 
       new Thread() {
         @Override

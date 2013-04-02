@@ -31,8 +31,11 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+
+import java.io.IOException;
 
 /**
  * evgeny, 11/21/12
@@ -69,7 +72,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   }
 
   @Override
-  public void reloadFromDisk() {
+  public void reloadFromSource() {
     ModelAccess.assertLegalWrite();
 
     if (getSource().getTimestamp() == -1) {
@@ -77,7 +80,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
       return;
     }
 
-    reload();
+    reloadContents();
     LOG.assertLog(!needsReloading());
   }
 
@@ -87,11 +90,11 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     if (isChanged()) {
       resolveDiskConflict();
     } else {
-      reloadFromDisk();
+      reloadFromSource();
     }
   }
 
-  protected abstract void reload();
+  protected abstract void reloadContents();
 
   public void resolveDiskConflict() {
     LOG.warning("Model=" + getReference().getModelName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
@@ -125,12 +128,12 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     jetbrains.mps.smodel.SModel model = getSModelInternal();
     fireBeforeModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
     source.setFile(newModelFile);
-    updateDiskTimestamp();
+    updateTimestamp();
     fireModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
   }
 
   @Override
-  public void save() {
+  public final void save() {
     ModelAccess.assertLegalWrite();
 
     if (!isLoaded()) return;
@@ -143,19 +146,27 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     if (!checkAndResolveConflictOnSave()) return;
 
     setChanged(false);
-    boolean reload = saveModel();
+    boolean reload = false;
+    try {
+      reload = saveModel();
+    } catch (IOException e) {
+      LOG.error("Can't save " + getModelName() + ": " + e.getMessage(), e);
+    } catch (ModelSaveException e) {
+      // TODO notify
+    }
     if (reload) {
-      reload();
+      reloadContents();
     }
 
-    updateDiskTimestamp();
+    updateTimestamp();
     fireModelSaved();
+    fireModelProblemsUpdated();
   }
 
   /**
-   *  returns true if the content should be reloaded from storage after save
+   * returns true if the content should be reloaded from storage after save
    */
-  protected abstract boolean saveModel();
+  protected abstract boolean saveModel() throws IOException, ModelSaveException;
 
   @Override
   public void rename(String newModelName, boolean changeFile) {

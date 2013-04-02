@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.StringUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -71,11 +72,7 @@ public class SNodePointer implements SNodeReference {
   }
 
   public String toString() {
-    SNode node = resolve(MPSModuleRepository.getInstance());
-    if (node == null) {
-      return "[bad pointer] model=" + myModelReference + " node id=" + myNodeId;
-    }
-    return org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node);
+    return serialize(this);
   }
 
   public boolean equals(Object o) {
@@ -104,13 +101,15 @@ public class SNodePointer implements SNodeReference {
 
     assert ref != null && id != null;
 
-    return ref.toString() + "/" + id.toString();
+    return ref.toString() + "/" + StringUtil.escapeRefChars(id.toString());
   }
 
   public static SNodeReference deserialize(String from) {
-    String[] split = from.split("/");
-    assert split.length == 2 : from;
-    return new jetbrains.mps.smodel.SNodePointer(split[0], split[1]);
+    int delimiterIndex = from.lastIndexOf("/");
+    String nodeId = StringUtil.unescapeRefChars(from.substring(delimiterIndex + 1));
+    String modelReference = from.substring(0, delimiterIndex);
+
+    return new jetbrains.mps.smodel.SNodePointer(modelReference, nodeId);
   }
 
   //-----------------deprecated----------------------

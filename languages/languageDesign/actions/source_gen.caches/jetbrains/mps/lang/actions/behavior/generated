@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2jid3n12m6ibeoe0jjg7my3v4au2o6t">
+<dependencies version="2" modelHash="-8qih393hmnkqwuwq3rn9zl11tdfsl2t">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -16,7 +16,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="-9ycm6u6sfopw2db5cjnetu8hedy3t4f" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8iq1c63z020s2os52d6vke4fdjpb056" />
-  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-80k4lgxox2ptiamhgmp6e1qe98ygdry" />
+  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-81huy0fmdhno9qzkzxs51jufv86r4d6" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-2qxctjww3633jjrk3ninkqwr3fw1ajg" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="bkam8wpbo39xvy5e0s0a40i4uimgdfm" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
@@ -28,11 +28,11 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-z22oiu2i3virhyguef3oewaixjm9hi" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="6rwmqnv2mj4sz5bavkpdwwbb0sulgot" />
-  <dep model="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" hash="-3exex0s916thqtyspopncg9mxtecaj4" />
+  <dep model="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" hash="exxexligh9ana9hj8sac3hyr8k9j1zr" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-8dbjwoxk5619e6oy8o9grsg6861qi0j" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="a80empyygigw3mp5xv3t8zpu5otpbdo" dependsOnNodes="true">
+  <common hash="ekq8fhbf66c1obr6lurtig00xo1giqj" dependsOnNodes="true">
     <dep root="1213877228937" />
     <dep root="1213877247276" />
     <dep root="1213877273936" />
@@ -77,6 +77,7 @@
     <dep root="1262430001741718908" />
     <dep root="1262430001741718926" />
     <dep root="1262430001741719785" />
+    <dep root="1709772128917319278" />
     <dep root="3044950653914718496" />
     <dep root="3044950653914719003" />
     <dep root="3044950653914721336" />
@@ -85,7 +86,7 @@
     <dep root="3044950653914724634" />
     <dep root="3044950653914724801" />
     <dep root="3146964333471402253" />
-    <dep root="5179659504400988576" />
+    <dep root="441141899447717382" />
     <dep root="5270353093116089375" />
     <dep root="5270353093116089661" />
     <dep root="5270353093116089914" />
@@ -117,6 +118,7 @@
     <file name="ConceptFunctionParameter_childConcept_BehaviorDescriptor.java" />
     <file name="ConceptFunctionParameter_childSetter_BehaviorDescriptor.java" />
     <file name="ConceptFunctionParameter_concept_BehaviorDescriptor.java" />
+    <file name="ConceptFunctionParameter_createdNode_BehaviorDescriptor.java" />
     <file name="ConceptFunctionParameter_currentTargetNode_BehaviorDescriptor.java" />
     <file name="ConceptFunctionParameter_link_BehaviorDescriptor.java" />
     <file name="ConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor.java" />
@@ -175,6 +177,7 @@
     <file name="QueryFunction_ActionType_BehaviorDescriptor.java" />
     <file name="QueryFunction_CanSubstitute_BehaviorDescriptor.java" />
     <file name="QueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor.java" />
+    <file name="QueryFunction_IconNode_BehaviorDescriptor.java" />
     <file name="QueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor.java" />
     <file name="QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor.java" />
     <file name="QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor.java" />
@@ -189,17 +192,16 @@
     <file name="QueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor.java" />
     <file name="QueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor.java" />
     <file name="QueryFunction_SideTransform_Handler_BehaviorDescriptor.java" />
-    <file name="QueryFunction_SideTransform_IconNode_BehaviorDescriptor.java" />
     <file name="QueryFunction_SideTransform_Icon_BehaviorDescriptor.java" />
     <file name="QueryFunction_SideTransform_NodeQuery_BehaviorDescriptor.java" />
     <file name="QueryFunction_SideTransform_String_BehaviorDescriptor.java" />
-    <file name="QueryFunction_SubstituteIconNode_BehaviorDescriptor.java" />
     <file name="QueryFunction_SubstituteIcon_BehaviorDescriptor.java" />
     <file name="QueryFunction_SubstituteString_BehaviorDescriptor.java" />
     <file name="QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor.java" />
     <file name="QueryFunction_SubstituteWrapper_BehaviorDescriptor.java" />
     <file name="QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor.java" />
     <file name="QueryFunction_Substitute_Handler_BehaviorDescriptor.java" />
+    <file name="QueryFunction_Substitute_SelectionHandler_BehaviorDescriptor.java" />
     <file name="RemoveByConditionPart_BehaviorDescriptor.java" />
     <file name="RemoveDefaultsPart_BehaviorDescriptor.java" />
     <file name="RemovePart_BehaviorDescriptor.java" />
@@ -225,7 +227,7 @@
     <file name="SurroundWithAction_BehaviorDescriptor.java" />
     <file name="WrapperSubstituteMenuPart_BehaviorDescriptor.java" />
   </common>
-  <source id="1213877228937" name="QueryFunction_Substitute_Handler_Behavior" hash="1ef9n4gqz3z3bu89tliulvsha7r3tcn">
+  <source id="1213877228937" name="QueryFunction_Substitute_Handler_Behavior" hash="-99il4yastyal8fwojwdek13fagfwtfu">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -274,7 +276,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="QueryFunction_SideTransform_String_Behavior.java" />
   </source>
-  <source id="1213877372965" name="QueryFunction_SubstituteWrapper_Behavior" hash="cget3q6wp6xzm8237yi06q1ledndrz">
+  <source id="1213877372965" name="QueryFunction_SubstituteWrapper_Behavior" hash="-5izuznbdpwk3w1kp9scod3duvhxt0k1">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -304,7 +306,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueryFunction_SideTransform_Icon_Behavior.java" />
   </source>
-  <source id="1213877395198" name="QueryFunction_RemoveBy_Condition_Behavior" hash="-e794d2h9w1ka8efj102dsxmy2ydw351">
+  <source id="1213877395198" name="QueryFunction_RemoveBy_Condition_Behavior" hash="-eeisn4lxzzrjf4hkrp8f43hvqkp3f35">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -317,7 +319,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueryFunction_RemoveBy_Condition_Behavior.java" />
   </source>
-  <source id="1213877415648" name="QueryFunction_ParameterizedSubstitute_Query_Behavior" hash="-b9w50s1owavha6sxbgb8glevb6542rs">
+  <source id="1213877415648" name="QueryFunction_ParameterizedSubstitute_Query_Behavior" hash="438p9d7nxrzfq5ui7mdrml7i3gqwzyd">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -331,7 +333,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" />
   </source>
-  <source id="1213877437021" name="QueryFunction_ParameterizedSubstitute_Handler_Behavior" hash="-9tbg6hlcwad2mnvajt67cz4p9e5z03u">
+  <source id="1213877437021" name="QueryFunction_ParameterizedSubstitute_Handler_Behavior" hash="cyoltymo5x4bq8rvt4qu16an7mtl6ui">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -345,7 +347,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueryFunction_ParameterizedSubstitute_Handler_Behavior.java" />
   </source>
-  <source id="1213877437423" name="QueryFunction_SubstituteVariableInitializer_Behavior" hash="-clyqg6u1l8u62u85qqhnkexw436maon">
+  <source id="1213877437423" name="QueryFunction_SubstituteVariableInitializer_Behavior" hash="-64r87mdc9vhqfhicnv1drmah8f9m21x">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -564,7 +566,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Behavior.java" />
   </source>
-  <source id="5948027493682791347" name="CopyPasteHandlers_Behavior" hash="-dwqic66ojo92gemkhfek2ntf59rr7iu">
+  <source id="5948027493682791347" name="CopyPasteHandlers_Behavior" hash="-6vwhijs3opcqrjicmb4578varud2vy4">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -602,13 +604,13 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="NF_Node_ReplaceWithNewOperation_Behavior.java" />
   </source>
-  <source id="1262430001741641695" name="ConceptFunctionParameter_strictly_Behavior" hash="84r35ki4k0nm48gf0sdy4htz89lj53c">
+  <source id="1262430001741641695" name="ConceptFunctionParameter_strictly_Behavior" hash="-dc6xq4xyho1k46gtzi0sfyw3rtitsf8">
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="ConceptFunctionParameter_strictly_Behavior.java" />
   </source>
-  <source id="1262430001741642119" name="NodeSubstitutePreconditionFunction_Behavior" hash="9iw2iwqatydf2jvfpxuu3wv29bzybvr">
+  <source id="1262430001741642119" name="NodeSubstitutePreconditionFunction_Behavior" hash="3eull0ma7k5ad5vf3f71j6b5eds8si6">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -637,7 +639,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="QueryFunction_ST_CommonInitializer_Behavior.java" />
   </source>
-  <source id="1262430001741642996" name="QueryFunction_SubstituteString_Behavior" hash="3867fnfd0zs9ss32mdoauq3j9gqg2pz">
+  <source id="1262430001741642996" name="QueryFunction_SubstituteString_Behavior" hash="1kth2x0l49xmbc5eaui988u3b9b49qz">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -666,7 +668,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="NF_LinkList_AddNewChildOperation_Behavior.java" />
   </source>
-  <source id="1262430001741647168" name="QueryFunction_Substitute_CommonInitializer_Behavior" hash="5uk1349pe08klozlga1wlcuyl20b4qp">
+  <source id="1262430001741647168" name="QueryFunction_Substitute_CommonInitializer_Behavior" hash="-3mxr0qfoaawkyf255hjisft3lmou2ll">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -689,7 +691,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="NodeSetupFunction_Behavior.java" />
   </source>
-  <source id="1262430001741702950" name="ConceptFunctionParameter_pattern_Behavior" hash="athmjx6pxh9o6w2jqeiif43r7yzu0be">
+  <source id="1262430001741702950" name="ConceptFunctionParameter_pattern_Behavior" hash="-d3engfh2elb9x384ph1b05xkjxjhdyl">
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
@@ -701,7 +703,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="NF_Node_InsertNewPrevSiblingOperation_Behavior.java" />
   </source>
-  <source id="1262430001741703396" name="ConceptFunctionParameter_parameterObject_Behavior" hash="2p81topmp8d2mmzqjzmqminitwelo5d">
+  <source id="1262430001741703396" name="ConceptFunctionParameter_parameterObject_Behavior" hash="db2ohjmyt4krepdfk4lbxeadofp5rmc">
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
@@ -713,7 +715,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="NF_Link_SetNewChildOperation_Behavior.java" />
   </source>
-  <source id="1262430001741703527" name="QueryFunction_CanSubstitute_Behavior" hash="-cul86ph7jdj94smuc9x2zpzftq51mxx">
+  <source id="1262430001741703527" name="QueryFunction_CanSubstitute_Behavior" hash="-dz5px8kzp88sy2ptw1hzulpn48zyf8o">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -769,7 +771,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueryFunction_ParameterizedSubstitute_Icon_Behavior.java" />
   </source>
-  <source id="1262430001741718738" name="QueryFunction_ParameterizedSubstitute_String_Behavior" hash="-aom7ybptqy4rs893fslby80qs8bedry">
+  <source id="1262430001741718738" name="QueryFunction_ParameterizedSubstitute_String_Behavior" hash="-4jhxibaiw4l1rbbph1034v2irz80ohu">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -792,7 +794,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="QueryFunction_SideTransform_NodeQuery_Behavior.java" />
   </source>
-  <source id="1262430001741718926" name="QueryFunction_GenericSubstituteMenuPart_Behavior" hash="8y36bbv9nhwlbq6oh6lv0ju0dimwdzu">
+  <source id="1262430001741718926" name="QueryFunction_GenericSubstituteMenuPart_Behavior" hash="-amv33vmji09rudco0ggfrfeg693avgy">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -813,7 +815,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="NF_Model_CreateNewNodeOperation_Behavior.java" />
   </source>
-  <source id="3044950653914718496" name="QueryFunction_ReturnSmallPart_Behavior" hash="-5s9d66ysakihgjkug3knxf0fb4i294y">
+  <source id="3044950653914718496" name="QueryFunction_ReturnSmallPart_Behavior" hash="egr3za89gkpfxwe6a9i5ypu9ln0ba5n">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -872,7 +874,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="CopyPreProcessFunction_Behavior.java" />
   </source>
-  <source id="3044950653914724634" name="QueryFunction_ActionType_Behavior" hash="dza190pil8df5611ijefqo9xivt0zhh">
+  <source id="3044950653914724634" name="QueryFunction_ActionType_Behavior" hash="8jflyk5f9ayu5onw8502vks4ptlm8ge">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -895,7 +897,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="PastePostProcessFunction_Behavior.java" />
   </source>
-  <source id="6400740936061775100" name="QueryFunction_SubstituteIconNode_Behavior" hash="d3plzir8xc7sxm8pbpj5p421higd5kt">
+  <source id="6400740936061775100" name="QueryFunction_IconNode_Behavior" hash="7le8hjkyh1aowoccq0q7n9dc79px9e4">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -906,12 +908,10 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="QueryFunction_SubstituteIconNode_Behavior.java" />
+    <file name="QueryFunction_IconNode_Behavior.java" />
   </source>
-  <source id="5179659504400988576" name="QueryFunction_SideTransform_IconNode_Behavior" hash="epjn3pvqg1g8mdwo63t6iz9iykpwfmq">
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
+  <source id="441141899447717382" name="QueryFunction_Substitute_SelectionHandler_Behavior" hash="-74k68t2djnwq4vjrnoepg0ay1p79xc6">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -921,7 +921,13 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="QueryFunction_SideTransform_IconNode_Behavior.java" />
+    <file name="QueryFunction_Substitute_SelectionHandler_Behavior.java" />
+  </source>
+  <source id="1709772128917319278" name="ConceptFunctionParameter_createdNode_Behavior" hash="-agvpx3ypvsbwl17vmlk1jtmag2c2dy2">
+    <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <file name="ConceptFunctionParameter_createdNode_Behavior.java" />
   </source>
 </dependencies>
 

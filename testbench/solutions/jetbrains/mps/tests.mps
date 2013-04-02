@@ -2075,6 +2075,9 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2747974755163993205">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.5164819300892646889" resolveInfo="AddMenuPart_WrapperSubstitute" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2870536390422103285">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.2870536390420394081" resolveInfo="AddMenuPart_WrapperSubstituteDefaultSelection" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8349639607718107092">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.8349639607716109534" resolveInfo="AddMenuPart_WrapperSubstitute_returnSmallPart" />
     </node>

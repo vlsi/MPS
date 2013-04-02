@@ -20,7 +20,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.kernel.model.TempModelCreator;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
@@ -91,19 +92,20 @@ public class ShowNodeType_Action extends BaseAction {
       }
 
       final Wrappers._T<SModel> tmpModel = new Wrappers._T<SModel>();
+
       try {
-        ModelAccess.instance().runWriteAction(new Runnable() {
+        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
           public void run() {
-            tmpModel.value = TempModelCreator.createTempModel();
+            tmpModel.value = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
             tmpModel.value.addRootNode(type.value);
           }
         });
         new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).show();
       } finally {
-        ModelAccess.instance().runWriteAction(new Runnable() {
+        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
           public void run() {
             tmpModel.value.removeRootNode(type.value);
-            TempModelCreator.disposeTempModel(tmpModel.value);
+            TemporaryModels.getInstance().dispose(tmpModel.value);
           }
         });
       }

@@ -15,14 +15,21 @@
  */
 package jetbrains.mps.extapi.model;
 
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * evgeny, 2/26/13
  */
 public class PersistenceProblem implements SModel.Problem {
 
+  private final Kind myKind;
   private final String text;
   private final String location;
   private final boolean isError;
@@ -30,17 +37,18 @@ public class PersistenceProblem implements SModel.Problem {
   private final int column;
   private final SNode anchor;
 
-  public PersistenceProblem(String text, String location, boolean error, int line, int column, SNode anchor) {
+  public PersistenceProblem(Kind kind, String text, String location, boolean error, int line, int column, SNode anchor) {
+    this.myKind = kind;
     this.text = text;
     this.location = location;
-    isError = error;
+    this.isError = error;
     this.line = line;
     this.column = column;
     this.anchor = anchor;
   }
 
-  public PersistenceProblem(String text, String location, boolean error) {
-    this(text, location, error, -1, -1, null);
+  public PersistenceProblem(Kind kind, String text, String location, boolean error) {
+    this(kind, text, location, error, -1, -1, null);
   }
 
   @Override
@@ -51,6 +59,11 @@ public class PersistenceProblem implements SModel.Problem {
   @Override
   public int getLine() {
     return line;
+  }
+
+  @Override
+  public Kind getKind() {
+    return myKind;
   }
 
   @Override
@@ -72,4 +85,21 @@ public class PersistenceProblem implements SModel.Problem {
   public SNode getNode() {
     return anchor;
   }
+
+  public static Problem fromIMessage(Kind kind, IMessage message) {
+    if (message == null) {
+      return null;
+    }
+    SNode anchor = message.getHintObject() instanceof SNode ? (SNode) message.getHintObject() : null;
+    return new PersistenceProblem(kind, message.getText(), null, message.getKind() == MessageKind.ERROR, -1, -1, anchor);
+  }
+
+  public static Iterable<Problem> fromIMessages(Kind kind, Iterable<IMessage> seq) {
+    List<Problem> result = new ArrayList<Problem>();
+    for (IMessage m : seq) {
+      result.add(fromIMessage(kind, m));
+    }
+    return result;
+  }
+
 }

@@ -294,6 +294,11 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
+  public void runUndoTransparentCommand(Runnable r) {
+    r.run();
+  }
+
+  @Override
   public boolean isInsideCommand() {
     return canWrite();
   }

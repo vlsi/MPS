@@ -17,6 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.CustomPersistenceSModel;
+import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.model.SModelPersistence;
@@ -25,11 +26,17 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.xml.XmlConverter;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
+import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.JDOMException;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
+import org.jetbrains.mps.openapi.model.SModel.Problem.Kind;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -40,9 +47,14 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.xml.sax.InputSource;
 
+import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -65,7 +77,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
   }
 
   @Override
-  public SModel load(StreamDataSource dataSource, Map<String, String> options) {
+  public SModel load(@NotNull StreamDataSource dataSource, @NotNull Map<String, String> options) {
     String moduleRef = options.get(OPTION_MODULEREF);
     String relPath = options.get(OPTION_RELPATH);
     String modelName = options.get(OPTION_MODELNAME);
@@ -140,6 +152,33 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
 
   @Override
   public void writeModel(SModelData model, StreamDataSource source) throws IOException, ModelSaveException {
+    Iterator<SNode> iterator = model.getRootNodes().iterator();
+    SNode root = iterator.hasNext() ? iterator.next() : null;
+    if (root == null) {
+      throw new ModelSaveException("cannot save empty model",
+          Collections.<Problem>singletonList(new PersistenceProblem(Kind.Save, "cannot save empty model", null, true)));
+    }
 
+    // TODO check concepts
+    if (IterableUtil.copyToList(model.getRootNodes()).size() > 1) {
+      throw new ModelSaveException("cannot save more than one root into .xml file",
+          Collections.<Problem>singletonList(new PersistenceProblem(Kind.Save, "cannot save more than one root into .xml file", null, true, -1, -1, root)));
+    }
+
+    TextGenerationResult result = TextGen.generateText(root);
+    if (result.hasErrors()) {
+      throw new ModelSaveException("cannot save xml root", PersistenceProblem.fromIMessages(Kind.Save, result.problems()));
+    }
+
+    String content = (String) result.getResult();
+
+    OutputStream stream = new BufferedOutputStream(source.openOutputStream());
+    try {
+      OutputStreamWriter writer = new OutputStreamWriter(stream, FileUtil.DEFAULT_CHARSET);
+      writer.write(content);
+      writer.flush();
+    } finally {
+      FileUtil.closeFileSafe(stream);
+    }
   }
 }

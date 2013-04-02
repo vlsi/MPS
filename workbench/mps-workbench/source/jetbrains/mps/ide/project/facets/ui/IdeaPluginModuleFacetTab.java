@@ -85,13 +85,12 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
     modulesTable.setShowVerticalLines(false);
     modulesTable.setAutoCreateRowSorter(false);
     modulesTable.setAutoscrolls(true);
+    modulesTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
     myTableModel = new IdeaPluginModulesTableModel(myNewIdeaPluginModuleFacet);
     modulesTable.setModel(myTableModel);
 
     modulesTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender());
-
-    modulesTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
     ToolbarDecorator decorator = ToolbarDecorator.createDecorator(modulesTable);
     decorator.setAddAction(new AnActionButtonRunnable() {
@@ -104,8 +103,12 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
     }).setRemoveAction(new AnActionButtonRunnable() {
       @Override
       public void run(AnActionButton anActionButton) {
+        int first = modulesTable.getSelectionModel().getMinSelectionIndex();
+        int last = modulesTable.getSelectionModel().getMaxSelectionIndex();
         TableUtil.removeSelectedItems(modulesTable);
-        myTableModel.fireTableDataChanged();
+        myTableModel.fireTableRowsDeleted(first, last);
+        first = Math.max(0, first - 1);
+        modulesTable.getSelectionModel().setSelectionInterval(first, first);
       }
     });
     decorator.setPreferredSize(new Dimension(500, 150));

@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import java.util.Set;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -52,7 +53,6 @@ import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -85,6 +85,7 @@ public class MergeModelsDialog extends DialogWrapper {
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
 
   private DefaultActionGroup myActionGroup;
+  private GoToNeighbourRootActions myGoToNeighbourRootActions;
 
   private String[] myContentTitles;
   private boolean myApplyChanges = false;
@@ -161,6 +162,10 @@ public class MergeModelsDialog extends DialogWrapper {
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
     myPanel.setFirstComponent(ScrollPaneFactory.createScrollPane(myMergeTree));
     myPanel.setSecondComponent(myNoRootPanel);
+
+    myGoToNeighbourRootActions = new MergeModelsDialog.MyGoToNeighbourRootActions();
+    myGoToNeighbourRootActions.previous().registerCustomShortcutSet(GoToNeighbourRootActions.PREV_ROOT_SHORTCUT, myComponent);
+    myGoToNeighbourRootActions.next().registerCustomShortcutSet(GoToNeighbourRootActions.NEXT_ROOT_SHORTCUT, myComponent);
 
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
     myToolbar.updateActionsImmediately();
@@ -251,7 +256,7 @@ public class MergeModelsDialog extends DialogWrapper {
 
   public void unregisterResultModel() {
     final SModel resultModel = myMergeSession.getResultModel();
-    assert check_3qqb0l_a0b0jb(check_3qqb0l_a0a1a53(resultModel)) instanceof DiffTemporaryModule;
+    assert check_3qqb0l_a0b0kb(check_3qqb0l_a0a1a63(resultModel)) instanceof DiffTemporaryModule;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         DiffTemporaryModule.unregisterModel(resultModel.getModelDescriptor(), ProjectHelper.toMPSProject(myProject));
@@ -287,6 +292,7 @@ public class MergeModelsDialog extends DialogWrapper {
       return;
     }
 
+    myMergeRootsPane.unregisterShortcuts(myComponent);
     myPanel.setSecondComponent(myNoRootPanel);
     myMergeRootsPane.dispose();
     myMergeRootsPane = null;
@@ -314,7 +320,10 @@ public class MergeModelsDialog extends DialogWrapper {
       public void run() {
         if (myMergeRootsPane == null) {
           myMergeRootsPane = new MergeRootsPane(myProject, session, nodeId, myMergeTree.getNameForRoot(rootId), myContentTitles, myStatusBar);
-          ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myMergeRootsPane.getActions(), true);
+          DefaultActionGroup actionGroup = new DefaultActionGroup();
+          actionGroup.addAll(myMergeRootsPane.getActions());
+          ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
+          myMergeRootsPane.registerShortcuts(myComponent);
           JPanel panel = new JPanel(new BorderLayout());
           panel.add(toolbar.getComponent(), BorderLayout.NORTH);
           panel.add(myMergeRootsPane.getPanel(), BorderLayout.CENTER);
@@ -620,14 +629,14 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  private static IModule check_3qqb0l_a0b0jb(SModelDescriptor checkedDotOperand) {
+  private static IModule check_3qqb0l_a0b0kb(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_3qqb0l_a0a1a53(SModel checkedDotOperand) {
+  private static SModelDescriptor check_3qqb0l_a0a1a63(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

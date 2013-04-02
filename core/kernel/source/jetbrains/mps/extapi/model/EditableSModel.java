@@ -34,11 +34,10 @@ public interface EditableSModel extends SModel {
 
   void rename(String newModelName, boolean changeFile);
 
-  boolean isReadOnly();
-
-  void updateDiskTimestamp();
+  void updateTimestamp();
 
   boolean needsReloading();
 
-  void reloadFromDisk();
+  //note this can unregister the model
+  void reloadFromSource();
 }

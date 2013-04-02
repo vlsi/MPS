@@ -23,11 +23,16 @@ import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.icons.MPSIcons.General;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.IUsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -44,6 +49,11 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Project;
+import org.jdom.Element;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.*;
@@ -58,6 +68,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import javax.swing.*;
 import javax.swing.table.TableCellRenderer;
 import java.awt.*;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
@@ -75,7 +86,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     myModelProperties = new ModelProperties(modelDescriptor, context);
     myInPlugin = inPlugin;
 
-    addTab(new ModelCommonTab());
+    //addTab(new ModelCommonTab());
+    addTab(new ModelDependenciesComponent());
     addTab(new ModelUsedLanguagesTab());
     addTab(new InfoTab());
   }
@@ -140,42 +152,20 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
   protected class ModelDependenciesComponent extends BaseTab {
     private ModelImportedModelsTableModel myImportedModels;
     private JPanel myImportedModelsComponent;
+    private FindAnActionButton myFindAnActionButton;
 
     public JPanel getImportedModelsComponent() {
       return myImportedModelsComponent;
     }
 
     public ModelDependenciesComponent() {
+      super(PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.title"), General.Dependencies, PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.tip"));
       myImportedModels = new ModelImportedModelsTableModel(myModelProperties);
       init();
     }
 
     protected IScope getScope() {
       return myModelDescriptor.getModule().getScope();
-    }
-
-    protected void findUsages(final Object value) {
-      if (myInPlugin) {
-        Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(", Messages.getInformationIcon());
-        return;
-      }
-
-      final SearchQuery[] query = new SearchQuery[1];
-      final IResultProvider[] provider = new IResultProvider[1];
-      final IScope scope = new ModelsOnlyScope(myModelDescriptor);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          if (value instanceof SModelReference) {
-            query[0] = new SearchQuery(
-              SModelRepository.getInstance().getModelDescriptor(((SModelReference) value).getModelId()), scope);
-            provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
-          }
-        }
-      });
-      IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
-      usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
-      forceCancelCloseDialog();
     }
 
     protected boolean confirmRemove(final Object value) {
@@ -187,7 +177,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
             "This model is used in model. Do you really what to delete it?", "Model state will become inconsistent") {
             @Override
             public void doViewAction() {
-              findUsages(value);
+              myFindAnActionButton.actionPerformed(null);
             }
           };
           viewUsagesDeleteDialog.show();
@@ -201,13 +191,14 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     public void init() {
       myImportedModelsComponent = new JPanel();
-      myImportedModelsComponent.setLayout(new GridLayoutManager(2, 1, JBInsets.NONE, -1, -1));
+      myImportedModelsComponent.setLayout(new GridLayoutManager(2, 1, MPSPropertiesConfigurable.INSETS, -1, -1));
 
       final JBTable importedModelsTable = new JBTable();
       importedModelsTable.setShowHorizontalLines(false);
       importedModelsTable.setShowVerticalLines(false);
       importedModelsTable.setAutoCreateRowSorter(false);
       importedModelsTable.setAutoscrolls(true);
+      importedModelsTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       importedModelsTable.setModel(myImportedModels);
 
@@ -230,8 +221,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         }
       );
 
-      importedModelsTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(importedModelsTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
@@ -244,17 +233,65 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         @Override
         public void run(AnActionButton anActionButton) {
           int first = importedModelsTable.getSelectionModel().getMinSelectionIndex();
-          if (!confirmRemove(importedModelsTable.getValueAt(first, 0))) {
-            return;
-          }
           int last = importedModelsTable.getSelectionModel().getMaxSelectionIndex();
+          for(int i : importedModelsTable.getSelectedRows()) {
+            if (!confirmRemove(importedModelsTable.getValueAt(i, 0))) {
+              return;
+            }
+          }
           TableUtil.removeSelectedItems(importedModelsTable);
           myImportedModels.fireTableRowsDeleted(first, last);
+          first = Math.max(0, first - 1);
+          importedModelsTable.getSelectionModel().setSelectionInterval(first, first);
         }
-      }).addExtraAction(new FindAnActionButton(importedModelsTable) {
+      }).addExtraAction(myFindAnActionButton = new FindAnActionButton(importedModelsTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          findUsages(myImportedModels.getValueAt(importedModelsTable.getSelectionModel().getMinSelectionIndex(), 0));
+          if (myInPlugin) {
+            Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(", Messages.getInformationIcon());
+            return;
+          }
+
+          final SearchQuery[] query = new SearchQuery[1];
+          final IResultProvider[] provider = new IResultProvider[1];
+          final IScope scope = new ModelsOnlyScope(myModelDescriptor);
+          ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              List<SModel> models = new LinkedList<SModel>();
+              for (int i : myTable.getSelectedRows()) {
+                Object value = myImportedModels.getValueAt(i, 0);
+                if(value instanceof SModelReference){
+                  models.add(((SModelReference) value).resolve(MPSModuleRepository.getInstance()));
+                }
+              }
+
+              ModelsHolder modelsHolder = new ModelsHolder(models, null) {
+                @Override
+                public void read(Element element, Project project) throws CantLoadSomethingException {}
+                @Override
+                public void write(Element element, Project project) throws CantSaveSomethingException {}
+              };
+              query[0] = new SearchQuery(modelsHolder, scope);
+              provider[0] = FindUtils.makeProvider(new ModelUsagesFinder() {
+                @Override
+                public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
+                  SearchResults searchResults = new SearchResults();
+                  ModelsHolder modelsHolder = (ModelsHolder) query.getObjectHolder();
+                  for (SModel searchedModel : modelsHolder.getObject()) {
+                    searchResults.getSearchedNodes().add(searchedModel);
+                    SearchQuery searchQuery = new SearchQuery(searchedModel, query.getScope());
+                    searchResults.addAll(super.find(searchQuery,monitor));
+                  }
+
+                  return searchResults;
+                }
+              });
+            }
+          });
+          IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
+          usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+          forceCancelCloseDialog();
         }
       });
       decorator.setPreferredSize(new Dimension(500, 150));
@@ -350,8 +387,68 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         }
       });
       IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
-      usagesViewTool.findUsages(provider[0], query[0], true, true, true, "");
+      usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
       forceCancelCloseDialog();
+    }
+
+    @Nullable
+    @Override
+    protected FindAnActionButton getFindAnAction(JBTable table) {
+      return new FindAnActionButton(table) {
+        @Override
+        public void actionPerformed(AnActionEvent e) {
+          if (myInPlugin) {
+            Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(", Messages.getInformationIcon());
+            return;
+          }
+
+          final SearchQuery[] query = new SearchQuery[1];
+          final IResultProvider[] provider = new IResultProvider[1];
+          final IScope scope = new ModelsOnlyScope(myModelDescriptor);
+          ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              List<IModule> modules = new LinkedList<IModule>();
+              for (int i : myTable.getSelectedRows()) {
+                Object value = myUsedLangsTableModel.getValueAt(i, UsedLangsTableModel.ITEM_COLUMN);
+                if(value instanceof SModuleReference){
+                  modules.add(
+                      MPSModuleRepository.getInstance().getModuleByFqName(
+                          ((SModuleReference) value).getModuleName())
+                  );
+                }
+              }
+
+              ModulesHolder modulesHolder = new ModulesHolder(modules, null){
+                @Override
+                public void write(Element element, Project project) throws CantSaveSomethingException {}
+                @Override
+                public void read(Element element, Project project) throws CantLoadSomethingException {}
+              };
+              query[0] = new SearchQuery(modulesHolder, scope);
+              provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder() {
+                @Override
+                public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
+                  if(!(query.getObjectHolder() instanceof ModulesHolder))
+                    return super.find(query, monitor);
+
+                  SearchResults searchResults = new SearchResults();
+                  ModulesHolder modulesHolder = (ModulesHolder) query.getObjectHolder();
+                  for (IModule searchedModule : modulesHolder.getObject()) {
+                    SearchQuery searchQuery = new SearchQuery(searchedModule, query.getScope());
+                    searchResults.addAll(super.find(searchQuery,monitor));
+                  }
+
+                  return searchResults;
+                }
+              });
+            }
+          });
+          IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
+          usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+          forceCancelCloseDialog();
+        }
+      };
     }
 
     @Override
@@ -393,7 +490,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         public void run() {
           int references = 0;
           int properties = 0;
-          messageText.append("<html>");
+          messageText.append("<html><body>");
           SModel model = myModelDescriptor;
           for (SNode node : new NodesIterable(model)) {
             references += IterableUtil.asCollection(node.getReferences()).size();
@@ -403,6 +500,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           messageText.append("Nodes : ").append(jetbrains.mps.util.SNodeOperations.nodesCount(model)).append("<br>");
           messageText.append("References : ").append(references).append("<br>");
           messageText.append("Properties : ").append(properties).append("<br>");
+          messageText.append("</body></html>");
         }
       });
       return messageText.toString();
@@ -410,7 +508,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public void init() {
-      int rowsCount = myIsDefSModelDescr ? 4 : 3;
+      int rowsCount = myIsDefSModelDescr ? 6 : 5;
       int rowIndex = 0;
 
       final JPanel panel = new JPanel();
@@ -424,22 +522,33 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         panel.add(myGenerateIntoModelFolderCheckBox, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
       }
 
-      final JBLabel label = new JBLabel();
-      label.setText(getInfoText());
-      panel.add(label, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      panel.add(new JBLabel(getInfoText()), new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+
+      panel.add(new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.filepathlabel")), new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+
+      String filePath = "(not editable model)";
+      if (myModelDescriptor instanceof EditableSModel) {
+        DataSource source = myModelDescriptor.getSource();
+        if (source instanceof FileDataSource) {
+          filePath = FileUtil.getCanonicalPath(((FileDataSource) source).getFile().getPath());
+        }
+      }
+      JTextField textField = new JTextField();
+      textField.setEditable(false);
+      textField.setText(filePath);
+      panel.add(textField, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
       final JBTable languagesTable = new JBTable();
       languagesTable.setShowHorizontalLines(false);
       languagesTable.setShowVerticalLines(false);
       languagesTable.setAutoCreateRowSorter(false);
       languagesTable.setAutoscrolls(true);
+      languagesTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       myLangEngagedOnGenTM = new ModelsLangEngagedOnGenTM(myModelProperties);
       languagesTable.setModel(myLangEngagedOnGenTM);
 
       languagesTable.setDefaultRenderer(SModuleReference.class, new InModelModuleTableCellRender());
-
-      languagesTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(languagesTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
@@ -452,15 +561,19 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
+          int first = languagesTable.getSelectionModel().getMinSelectionIndex();
+          int last = languagesTable.getSelectionModel().getMaxSelectionIndex();
           TableUtil.removeSelectedItems(languagesTable);
-          myLangEngagedOnGenTM.fireTableDataChanged();
+          myLangEngagedOnGenTM.fireTableRowsDeleted(first, last);
+          first = Math.max(0, first - 1);
+          languagesTable.getSelectionModel().setSelectionInterval(first, first);
         }
       });
       decorator.setPreferredSize(new Dimension(500, 150));
 
       JPanel table = decorator.createPanel();
       table.setBorder(IdeBorderFactory.createBorder());
-      panel.add(table, new GridConstraints(rowIndex, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      panel.add(table, new GridConstraints(rowIndex, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       new SpeedSearchBase<JBTable>(languagesTable) {
         @Override

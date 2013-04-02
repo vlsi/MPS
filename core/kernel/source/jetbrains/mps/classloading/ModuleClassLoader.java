@@ -210,7 +210,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private static ClassLoader getParentPluginClassLoader(SModule module) {
-    IFile moduleHome = ((AbstractModule) module).getDescriptorFile();
+    IFile moduleHome = ((AbstractModule) module).getModuleSourceDir();
 
     if (moduleHome == null) return null;
     String path = moduleHome.getPath();

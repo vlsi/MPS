@@ -1,5 +1,6 @@
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.util.Pair;
 import com.intellij.psi.HierarchicalMethodSignature;
 import com.intellij.psi.JavaPsiFacade;
@@ -48,7 +49,6 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   public MPSPsiClassifier(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
     addChildLast(new MPSPsiMethodModifierList());
-//    addChildLast(null, new MPSPsiTypeParamList());
   }
 
   @Nullable
@@ -272,7 +272,7 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
 
   @Override
   public PsiElement setName(@NonNls @NotNull String name) throws IncorrectOperationException {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    throw new IncorrectOperationException();
   }
 
   @Nullable
@@ -319,6 +319,30 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
     }
 
     return ArrayUtil.toObjectArray(result, PsiClassType.class);
+  }
+
+  @Override
+  public ItemPresentation getPresentation() {
+    return new ItemPresentation() {
+      @Nullable
+      @Override
+      public String getPresentableText() {
+        return getQualifiedName();
+      }
+
+      @Nullable
+      @Override
+      public String getLocationString() {
+        MPSPsiModel model = getContainingModel();
+        return model.toString();
+      }
+
+      @Nullable
+      @Override
+      public Icon getIcon(boolean unused) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+      }
+    };
   }
 
   class ClassTypeParameterList extends MPSPsiNodeBase implements PsiTypeParameterList {

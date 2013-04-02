@@ -58,14 +58,14 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
         if (needSave) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              modelDescriptor.updateDiskTimestamp();
+              modelDescriptor.updateTimestamp();
               modelDescriptor.save();
             }
           });
         } else {
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
-              modelDescriptor.reloadFromDisk();
+              modelDescriptor.reloadFromSource();
             }
           });
         }

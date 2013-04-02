@@ -4,7 +4,6 @@ package jetbrains.mps.build.mps.pluginSolution.plugin;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Solution;
-import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
@@ -24,9 +23,8 @@ public class BuildGeneratorUtil {
   }
 
   public static SModel createModel(final String modelName, final Solution solution) {
-    List<SModel> ownModelDescriptors = solution.getOwnModelDescriptors();
     final Wrappers._T<SModel> model = new Wrappers._T<SModel>(null);
-    for (SModel descriptor : ListSequence.fromList(ownModelDescriptors)) {
+    for (SModel descriptor : ListSequence.fromList(solution.getModels())) {
       if (descriptor.getReference().getModelName().equals(modelName)) {
         model.value = descriptor;
         break;

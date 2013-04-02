@@ -58,6 +58,7 @@ public class ProjectCreationTest {
     PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/languageModels/editor" + MPSExtentions.DOT_MODEL,
     PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/languageModels/behavior" + MPSExtentions.DOT_MODEL,
     PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/languageModels/typesystem" + MPSExtentions.DOT_MODEL,
+    PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/generator/template/main@generator" + MPSExtentions.DOT_MODEL,
 
     PROJECT_NAME + "/solutions/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + MPSExtentions.DOT_SOLUTION,
     PROJECT_NAME + "/solutions/" + SOLUTION_NAMESPACE + "/" + "models/CreatedSandbox/sandbox" + MPSExtentions.DOT_MODEL

@@ -39,6 +39,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +76,9 @@ public class PersistenceTest extends BaseMPSTest {
                     try { // errors about not found attributes are expected for old models
                       filter.start();
                       ModelPersistence.saveModel(((SModelBase) model).getSModelInternal(), new FileDataSource(file), i);
+                    } catch (IOException e) {
+                      e.printStackTrace();
+                      fail();
                     } finally {
                       filter.stop();
                     }
@@ -116,7 +120,7 @@ public class PersistenceTest extends BaseMPSTest {
                   final DefaultSModelDescriptor testModel = ModelAccess.instance().runWriteAction(new Computable<DefaultSModelDescriptor>() {
                     public DefaultSModelDescriptor compute() {
                       DefaultSModelDescriptor modelDescr = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
-                      modelDescr.reloadFromDisk();   // no way to remove model from repository, so reloading
+                      modelDescr.reloadFromSource();   // no way to remove model from repository, so reloading
                       assertTrue(modelDescr.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
                       return modelDescr;
                     }
@@ -212,10 +216,14 @@ public class PersistenceTest extends BaseMPSTest {
       try {
         SModel model = wasInitialized ? modelDescriptor : ModelPersistence.readModel(source, false).getModelDescriptor();
         ModelPersistence.saveModel(((SModelBase) model).getSModelInternal(), source, toVersion);
-        modelDescriptor.reloadFromDisk();
+        modelDescriptor.reloadFromSource();
       } catch (ModelReadException e) {
         // This hardly can happend, unreadable model should be already filtered out
         LOG.error(e);
+        fail();
+      } catch (IOException e) {
+        LOG.error(e);
+        fail();
       }
     }
   }

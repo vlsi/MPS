@@ -24,6 +24,7 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import javax.swing.JComponent;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import javax.swing.SwingUtilities;
@@ -89,8 +90,10 @@ public class RootDifferencePane {
   private void createActionGroup(boolean isEditable, String rootName) {
     myActionGroup = new DefaultActionGroup();
     myActionGroup.addAll(myTraverser.previousAction(), myTraverser.nextAction());
+    myTraverser.previousAction().registerCustomShortcutSet(NextPreviousTraverser.PREV_CHANGE_SHORTCUT, myPanel);
+    myTraverser.nextAction().registerCustomShortcutSet(NextPreviousTraverser.NEXT_CHANGE_SHORTCUT, myPanel);
     myActionGroup.addSeparator();
-    myActionGroup.add(new ToggleAction("Show Inspector", "Show Inspector Windows", IdeIcons.DEFAULT_ICON) {
+    myActionGroup.add(new ToggleAction("Show Inspector", "Show Inspector Windows", IdeIcons.INSPECTOR_ICON) {
       public boolean isSelected(AnActionEvent e) {
         return isInspectorShown;
       }
@@ -119,6 +122,16 @@ public class RootDifferencePane {
 
   public ActionGroup getActions() {
     return myActionGroup;
+  }
+
+  public void registerShortcuts(JComponent component) {
+    myTraverser.previousAction().registerCustomShortcutSet(NextPreviousTraverser.PREV_CHANGE_SHORTCUT, component);
+    myTraverser.nextAction().registerCustomShortcutSet(NextPreviousTraverser.NEXT_CHANGE_SHORTCUT, component);
+  }
+
+  public void unregisterShortcuts(JComponent component) {
+    myTraverser.previousAction().unregisterCustomShortcutSet(component);
+    myTraverser.nextAction().unregisterCustomShortcutSet(component);
   }
 
   public JPanel getPanel() {

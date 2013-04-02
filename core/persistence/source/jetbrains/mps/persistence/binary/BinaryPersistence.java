@@ -17,10 +17,8 @@ package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -30,8 +28,10 @@ import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.util.Consumer;
 
@@ -88,23 +88,17 @@ public class BinaryPersistence {
     }
   }
 
-  public static boolean writeModel(@NotNull SModel model, @NotNull StreamDataSource source) {
+  public static void writeModel(@NotNull SModel model, @NotNull StreamDataSource source) throws IOException {
     if (source.isReadOnly()) {
-      LOG.error("Can't write to " + source.getLocation());
-      return false;
+      throw new IOException("`" + source.getLocation() + "' is read-only");
     }
-
     ModelOutputStream os = null;
     try {
       os = new ModelOutputStream(source.openOutputStream());
       saveModel(model, os);
-      return true;
-    } catch (IOException e) {
-      LOG.error("Can't write to " + source.getLocation(), e);
     } finally {
       FileUtil.closeFileSafe(os);
     }
-    return false;
   }
 
   private static final int HEADER = 0x91ABABA9;

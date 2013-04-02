@@ -9,11 +9,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import java.util.Set;
@@ -30,7 +31,6 @@ import java.util.Collections;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
@@ -45,7 +45,6 @@ public class ReplaceDialog extends BaseDialog {
   private IOperationContext myContext;
   private SNode myNode;
   private JPanel myPanel = new JPanel(new BorderLayout());
-  private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
   private boolean myDisposed = false;
 
   public ReplaceDialog(final IOperationContext context, final Language language) {
@@ -54,12 +53,17 @@ public class ReplaceDialog extends BaseDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ReplaceDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", null);
-        ReplaceDialog.this.myEditor = new EmbeddableEditor(context, myModelOwner, myNode) {
+        ReplaceDialog.this.myEditor = new EmbeddableEditor(context.getProject(), new _FunctionTypes._void_P1_E0<SModel>() {
+          public void invoke(SModel m) {
+            m.addRootNode(myNode);
+          }
+        }, true) {
           @Override
           protected void processClassesData(IClassesData cd) {
             doProcessClassesData(cd);
           }
         };
+        myEditor.editNode(myNode);
         ReplaceDialog.this.myScope = new ScopeEditor(new ScopeOptions());
         ReplaceDialog.this.myPanel.add(ReplaceDialog.this.myScope.getComponent(), BorderLayout.SOUTH);
       }
@@ -166,10 +170,8 @@ public class ReplaceDialog extends BaseDialog {
     }
     myDisposed = true;
     ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
       public void run() {
         myEditor.disposeEditor();
-        myModelOwner.unregisterModelOwner();
       }
     });
   }

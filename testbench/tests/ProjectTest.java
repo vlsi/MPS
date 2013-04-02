@@ -22,7 +22,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
@@ -74,7 +75,7 @@ public class ProjectTest {
         suffix = " [" + module.getClass().getSimpleName() + "]";
       }
 
-      return module.getModuleFqName() + suffix;
+      return module.getModuleName() + suffix;
 //      String modulePath = module.getDescriptorFile().getPath();
 //      String projectBaseDir = project.getBaseDir().getPath();
 //      if (modulePath.startsWith(projectBaseDir)) {
@@ -113,8 +114,8 @@ public class ProjectTest {
     Collections.sort(mlist, new Comparator<IModule>() {
       @Override
       public int compare(IModule m1, IModule m2) {
-        String fqName1 = m1.getModuleFqName();
-        String fqName2 = m2.getModuleFqName();
+        String fqName1 = m1.getModuleName();
+        String fqName2 = m2.getModuleName();
         return fqName1.compareTo(fqName2);
       }
     });
@@ -126,7 +127,7 @@ public class ProjectTest {
   }
 
   private static boolean needsGeneration(IModule module) {
-    for (SModel descriptor : module.getOwnModelDescriptors()) {
+    for (SModel descriptor : module.getModels()) {
       if (jetbrains.mps.util.SNodeOperations.isGeneratable(descriptor)) return true;
     }
     return false;

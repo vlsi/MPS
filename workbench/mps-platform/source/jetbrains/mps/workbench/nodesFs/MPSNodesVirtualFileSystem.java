@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
@@ -35,8 +36,6 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ConditionalIterator;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -58,13 +57,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
-
-  private static final Pattern NODE_PATH = Pattern.compile("(.*)/(.*)");
-  private static final Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 
   public static MPSNodesVirtualFileSystem getInstance() {
     return ApplicationManager.getApplication().getComponent(MPSNodesVirtualFileSystem.class);
@@ -144,31 +139,30 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
-        String modelOrNodePath = path;
-
-        Matcher modelRef = MODEL_UID_PATTERN.matcher(modelOrNodePath);
-        Matcher nodePath = NODE_PATH.matcher(modelOrNodePath);
-        if (!nodePath.matches() && !modelRef.matches()) return null;
-
-        if (nodePath.matches()) {
-          SModelReference reference = PersistenceFacade.getInstance().createModelReference(nodePath.group(1));
-          final String name = nodePath.group(2);
-          SModel sm = SModelRepository.getInstance().getModelDescriptor(reference);
-          if (sm == null) return null;
-
-          Condition<SNode> cond = new Condition<SNode>() {
-            @Override
-            public boolean met(SNode node) {
-              return node.getPresentation().equals(name);
+        try {
+          if (path.startsWith(MPSNodeVirtualFile.NODE_PREFIX)) {
+            SNodeReference resolved = SNodePointer.deserialize(path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
+            if (resolved == null) {
+              return null;
             }
-          };
-          Iterator<SNode> iter = new ConditionalIterator<SNode>(sm.getRootNodes().iterator(), cond);
-          if (!iter.hasNext()) return null;
-          return getFileFor(iter.next());
-        } else {
-          final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelRef.group());
-          return getFileFor(modelReference);
+            SNode node = resolved.resolve(MPSModuleRepository.getInstance());
+            if (node == null) {
+              return null;
+            }
+            return getFileFor(resolved);
+          } else if (path.startsWith(MPSModelVirtualFile.MODEL_PREFIX)) {
+            final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(
+                path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
+            SModel model = modelReference.resolve(MPSModuleRepository.getInstance());
+            if (model == null) {
+              return null;
+            }
+            return getFileFor(modelReference);
+          }
+        } catch (IllegalArgumentException e) {
+          // ignore, parse model ref exception
         }
+        return null;
       }
     });
   }

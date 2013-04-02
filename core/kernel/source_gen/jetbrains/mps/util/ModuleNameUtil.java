@@ -9,7 +9,7 @@ public class ModuleNameUtil {
   }
 
   public static String getModuleShortName(IModule module) {
-    String moduleUID = module.getModuleFqName();
+    String moduleUID = module.getModuleName();
     String shortName = NameUtil.shortNameFromLongName(moduleUID);
     String normalShortName = NameUtil.toValidIdentifier(shortName);
     return NameUtil.capitalize(normalShortName);

@@ -23,7 +23,9 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.SNodeOperations;
 
@@ -36,7 +38,7 @@ public class SModelsSubtree {
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
     IModule module = operationContext.getModule();
     assert module != null;
-    create(rootTreeNode, operationContext, module.getOwnModelDescriptors(), false);
+    create(rootTreeNode, operationContext, IterableUtil.asList(module.getModels()), false);
   }
 
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext, List<SModel> models, boolean dropMiddleNodes) {
@@ -45,7 +47,7 @@ public class SModelsSubtree {
     List<SModel> stubs = new ArrayList<SModel>();
 
     for (SModel modelDescriptor : models) {
-      if (ProjectModels.isProjectModel(modelDescriptor.getReference())) continue;
+      if (TemporaryModels.isTemporary(modelDescriptor)) continue;
 
       String stereotype = SModelStereotype.getStereotype(modelDescriptor);
 
@@ -76,7 +78,7 @@ public class SModelsSubtree {
           currentRootNode = rootTreeNode;
         } else {
           IModule contextModule = operationContext.getModule();
-          String namespace = contextModule.getModuleFqName();
+          String namespace = contextModule.getModuleName();
           currentRootNode = new NamespaceTextNode((namespace == null) ? "" : namespace, operationContext);
         }
         for (SModelTreeNode treeNode : regularModelNodes) {

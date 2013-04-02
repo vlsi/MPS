@@ -385,7 +385,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
       String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
       if (canonicalPath.endsWith(suffix)) {
-        IFile parent = dd == null ? getDescriptorFile().getParent() : ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
+        IFile parent = dd == null ? getDescriptorFile().getParent() : ModulesMiner.getRealDescriptorFile(this);
         if (dd != null && parent != null) {
           parent = parent.getParent();
         }
@@ -524,13 +524,13 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
-  public List<SModel> getOwnModelDescriptors() {
-    return SModelRepository.getInstance().getModelDescriptors(this);
+  public final List<SModel> getOwnModelDescriptors() {
+    return getModels();
   }
 
   @Override
-  public Collection<SModel> getModels() {
-    return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
+  public List<SModel> getModels() {
+    return SModelRepository.getInstance().getModelDescriptors(this);
   }
 
   /**

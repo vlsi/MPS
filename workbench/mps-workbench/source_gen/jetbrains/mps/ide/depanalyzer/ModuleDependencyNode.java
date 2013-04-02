@@ -41,9 +41,9 @@ public class ModuleDependencyNode extends MPSTreeNode {
     if ((int) ListSequence.fromList(modules).count() == 1) {
       setIcon(IconManager.getIconFor(ListSequence.fromList(modules).first()));
     }
-    String text = ListSequence.fromList(modules).first().getModuleFqName();
+    String text = ListSequence.fromList(modules).first().getModuleName();
     if (ListSequence.fromList(modules).count() > 1) {
-      text += ", " + ListSequence.fromList(modules).getElement(1).getModuleFqName();
+      text += ", " + ListSequence.fromList(modules).getElement(1).getModuleName();
       if (ListSequence.fromList(modules).count() > 2) {
         text += ", ... (" + ListSequence.fromList(modules).count() + " modules)";
       }
@@ -109,7 +109,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
     for (IModule m : SetSequence.fromSet(allModules).sort(new ISelector<IModule, String>() {
       public String select(IModule it) {
-        return it.getModuleFqName();
+        return it.getModuleName();
       }
     }, true)) {
       add(new ModuleDependencyNode.DepDependencyNode(m, !(SetSequence.fromSet(reqModules).contains(m)), SetSequence.fromSet(depLoops).contains(m), getOperationContext()));
@@ -120,7 +120,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
       boolean hasBootstrapDep = false;
       for (IModule l : SetSequence.fromSet(usedLanguages).sort(new ISelector<IModule, String>() {
         public String select(IModule it) {
-          return it.getModuleFqName();
+          return it.getModuleName();
         }
       }, true)) {
         Iterable<IModule> langModules = new GlobalModuleDependenciesManager(l).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE);

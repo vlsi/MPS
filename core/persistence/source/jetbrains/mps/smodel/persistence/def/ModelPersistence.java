@@ -103,14 +103,14 @@ public class ModelPersistence {
   public static final int LAST_VERSION = 7;
 
   private static final IModelPersistence[] myModelPersistenceFactory = {
-    null,
-    null,
-    null,
-    null,
-    new ModelPersistence4(),
-    new ModelPersistence5(),
-    new ModelPersistence6(),
-    new ModelPersistence7()
+      null,
+      null,
+      null,
+      null,
+      new ModelPersistence4(),
+      new ModelPersistence5(),
+      new ModelPersistence6(),
+      new ModelPersistence7()
   };
 
   @NotNull
@@ -198,12 +198,12 @@ public class ModelPersistence {
       }
     }
     throw new PersistenceVersionNotFoundException("Can not find appropriate persistence version for model " + header.getUID() + "\n" +
-      " Use newer version of JetBrains MPS to load this model.");
+        " Use newer version of JetBrains MPS to load this model.");
   }
 
   @NotNull
   public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull StreamDataSource dataSource, ModelLoadingState state) throws
-    ModelReadException {
+      ModelReadException {
     InputStream in = null;
     try {
       in = dataSource.openInputStream();
@@ -237,26 +237,24 @@ public class ModelPersistence {
   /*
    *  Saves model and metadata.
    */
-  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source) {
+  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source) throws IOException {
     int persistenceVersion =
-      model instanceof DefaultSModel ? ((DefaultSModel) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
+        model instanceof DefaultSModel ? ((DefaultSModel) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
     return saveModel(model, source, persistenceVersion);
   }
 
   /*
    *  returns upgraded model, or null if the model doesn't require update
    */
-  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source, int persistenceVersion) {
+  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source, int persistenceVersion) throws IOException {
     LOG.debug("Saving model " + model.getReference() + " to " + source.getLocation());
 
     // (since 3.0) we do not support saving in old persistences (before 7)
     persistenceVersion = Math.min(7, persistenceVersion);
 
     if (source.isReadOnly()) {
-      LOG.error("Can't write to " + source.getLocation());
-      return null;
+      throw new IOException("`" + source.getLocation() + "' is read-only");
     }
-
 
     // upgrade?
     int oldVersion = persistenceVersion;
@@ -270,11 +268,7 @@ public class ModelPersistence {
 
     // save model
     Document document = saveModel(model);
-    try {
-      JDOMUtil.writeDocument(document, source);
-    } catch (IOException e) {
-      LOG.error("Error in " + source.getLocation(), e);
-    }
+    JDOMUtil.writeDocument(document, source);
 
     if (oldVersion != persistenceVersion) {
       LOG.info("persistence upgraded: " + oldVersion + "->" + persistenceVersion + " " + model.getReference());

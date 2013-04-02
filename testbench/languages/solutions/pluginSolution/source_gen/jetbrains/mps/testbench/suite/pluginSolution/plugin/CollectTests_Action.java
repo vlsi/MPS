@@ -134,7 +134,7 @@ public class CollectTests_Action extends BaseAction {
       final IModule module = MPSModuleRepository.getInstance().getModule(mref);
       if (module != null) {
         final Wrappers._T<SNode> suite = new Wrappers._T<SNode>(null);
-        for (final SModel smd : module.getOwnModelDescriptors()) {
+        for (final SModel smd : module.getModels()) {
           if (!(CollectTests_Action.this.isUserEditableGeneratableModel(smd, _params))) {
             continue;
           }
@@ -188,7 +188,7 @@ public class CollectTests_Action extends BaseAction {
     if (!(SModelStereotype.isUserModel(md))) {
       return false;
     }
-    return md instanceof EditableSModel && !(((EditableSModel) md).isReadOnly());
+    return md instanceof EditableSModel && !(md.isReadOnly());
   }
 
   private boolean isUserEditableGeneratableModel(SModel md, final Map<String, Object> _params) {

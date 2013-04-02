@@ -44,8 +44,12 @@ import com.intellij.util.ui.ItemRemovable;
 import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.icons.MPSIcons.General;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.IUsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -60,6 +64,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.FacetTabsPersistence;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -71,6 +76,8 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import org.jdom.Element;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
@@ -362,25 +369,58 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       };
     }
 
+    @Nullable
     @Override
-    protected void findUsages(final Object value) {
-      final SearchQuery[] query = new SearchQuery[1];
-      final IResultProvider[] provider = new IResultProvider[1];
-      final IScope scope = (IScope) myModule.getModuleScope();
-      ModelAccess.instance().runReadAction(new Runnable() {
+    protected FindAnActionButton getFindAnAction(JBTable table) {
+      return new FindAnActionButton(table) {
         @Override
-        public void run() {
-          if(value instanceof SModuleReference) {
-            query[0] = new SearchQuery(
-              MPSModuleRepository.getInstance().getModuleByFqName(
-                ((SModuleReference)value).getModuleName()), scope);
-            provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder());
-          }
+        public void actionPerformed(AnActionEvent e) {
+
+          final SearchQuery[] query = new SearchQuery[1];
+          final IResultProvider[] provider = new IResultProvider[1];
+          final IScope scope = (IScope) myModule.getModuleScope();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              List<IModule> modules = new LinkedList<IModule>();
+              for (int i : myTable.getSelectedRows()) {
+                Object value = myDependTableModel.getValueAt(i, myDependTableModel.getItemColumnIndex());
+                if(value instanceof SModuleReference){
+                  modules.add(
+                      MPSModuleRepository.getInstance().getModuleByFqName(
+                          ((SModuleReference) value).getModuleName())
+                  );
+                }
+              }
+
+              ModulesHolder modulesHolder = new ModulesHolder(modules, null){
+                @Override
+                public void read(Element element, Project project) throws CantLoadSomethingException {}
+                @Override
+                public void write(Element element, Project project) throws CantSaveSomethingException {}
+              };
+              query[0] = new SearchQuery(modulesHolder, scope);
+              provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder(){
+                @Override
+                public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
+                  SearchResults searchResults = new SearchResults();
+                  ModulesHolder modulesHolder = (ModulesHolder) query.getObjectHolder();
+                  for (IModule searchedModule : modulesHolder.getObject()) {
+                    searchResults.getSearchedNodes().add(searchedModule);
+                    SearchQuery searchQuery = new SearchQuery(searchedModule, query.getScope());
+                    searchResults.addAll(super.find(searchQuery,monitor));
+                  }
+
+                  return searchResults;
+                }
+              });
+            }
+          });
+          IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
+          usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+          forceCancelCloseDialog();
         }
-      });
-      IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
-      usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
-      forceCancelCloseDialog();
+      };
     }
 
     private class DependenciesTableCellEditor extends DefaultCellEditor {
@@ -447,13 +487,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       runtimeTable.setShowVerticalLines(false);
       runtimeTable.setAutoCreateRowSorter(false);
       runtimeTable.setAutoscrolls(true);
+      runtimeTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       myRuntimeTableModel = new RuntimeTableModel();
       runtimeTable.setModel(myRuntimeTableModel);
 
       runtimeTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender());
-
-      runtimeTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(runtimeTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
@@ -466,15 +505,19 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
+          int first = runtimeTable.getSelectionModel().getMinSelectionIndex();
+          int last = runtimeTable.getSelectionModel().getMaxSelectionIndex();
           TableUtil.removeSelectedItems(runtimeTable);
-          myRuntimeTableModel.fireTableDataChanged();
+          myRuntimeTableModel.fireTableRowsDeleted(first, last);
+          first = Math.max(0, first - 1);
+          runtimeTable.getSelectionModel().setSelectionInterval(first, first);
         }
-      }).addExtraAction(new FindAnActionButton(runtimeTable) {
+      })/*.addExtraAction(new FindAnActionButton(runtimeTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
           findUsages(myRuntimeTableModel.getValueAt(runtimeTable.getSelectionModel().getMinSelectionIndex(), 0));
         }
-      });
+      })*/;
       decorator.setPreferredSize(new Dimension(500, 150));
 
       JPanel table = decorator.createPanel();
@@ -530,6 +573,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       accessoriesTable.setShowVerticalLines(false);
       accessoriesTable.setAutoCreateRowSorter(false);
       accessoriesTable.setAutoscrolls(true);
+      accessoriesTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       myAccessoriesModelsTableModel = new AccessoriesModelsTableModel();
       accessoriesTable.setModel(myAccessoriesModelsTableModel);
@@ -537,8 +581,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       accessoriesTable.setDefaultRenderer(SModelReference.class, new ModelTableCellRender(
         MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId()).getScope()
       ));
-
-      accessoriesTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
       ToolbarDecorator decoratorForAccessories = ToolbarDecorator.createDecorator(accessoriesTable);
       decoratorForAccessories.setAddAction(new AnActionButtonRunnable() {
@@ -551,15 +593,19 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
+          int first = accessoriesTable.getSelectionModel().getMinSelectionIndex();
+          int last = accessoriesTable.getSelectionModel().getMaxSelectionIndex();
           TableUtil.removeSelectedItems(accessoriesTable);
-          myAccessoriesModelsTableModel.fireTableDataChanged();
+          myAccessoriesModelsTableModel.fireTableRowsDeleted(first, last);
+          first = Math.max(0, first - 1);
+          accessoriesTable.getSelectionModel().setSelectionInterval(first, first);
         }
-      }).addExtraAction(new FindAnActionButton(accessoriesTable) {
+      })/*.addExtraAction(new FindAnActionButton(accessoriesTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
           findUsages(myAccessoriesModelsTableModel.getValueAt(accessoriesTable.getSelectionModel().getMinSelectionIndex(), 0));
         }
-      });
+      })*/;
       decoratorForAccessories.setPreferredSize(new Dimension(500, 150));
 
       table = decoratorForAccessories.createPanel();

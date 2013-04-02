@@ -291,7 +291,7 @@ public class DiskMemoryConflictsTest {
       ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
-          myModel.reloadFromDisk();
+          myModel.reloadFromSource();
         }
       });
     } else {

@@ -68,7 +68,7 @@ public class FixModelLanguages_Action extends BaseAction {
           if (!(md instanceof EditableSModel)) {
             continue;
           }
-          if (((EditableSModel) md).isReadOnly()) {
+          if (md.isReadOnly()) {
             continue;
           }
 

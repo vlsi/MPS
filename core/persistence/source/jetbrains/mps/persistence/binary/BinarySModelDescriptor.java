@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
+import java.io.IOException;
 import java.util.Map;
 
 import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
@@ -61,8 +62,10 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
     if (myModel == null) {
       myModel = loadSModel();
       myModel.setModelDescriptor(this);
-      updateDiskTimestamp();
+      updateTimestamp();
+      // TODO FIXME listeners are invoked while holding the lock
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
+      fireModelProblemsUpdated();
     }
     return myModel;
   }
@@ -82,8 +85,8 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
   }
 
   @Override
-  protected void reload() {
-    updateDiskTimestamp();
+  protected void reloadContents() {
+    updateTimestamp();
 
     if (!isLoaded()) return;
 
@@ -99,7 +102,7 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
   }
 
   @Override
-  protected boolean saveModel() {
+  protected boolean saveModel() throws IOException {
     BinarySModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model

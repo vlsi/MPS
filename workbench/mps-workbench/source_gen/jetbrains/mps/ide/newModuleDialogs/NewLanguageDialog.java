@@ -6,12 +6,14 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
-import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.project.Solution;
 import java.io.IOException;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.logging.Logger;
@@ -22,15 +24,17 @@ public class NewLanguageDialog extends DialogWrapper {
   private Language myResult;
   private String myError = null;
   private NewLanguageSettings myLanguageSettings;
+  private final String myVirtualFolder;
 
 
-  public NewLanguageDialog(Project project) {
+  public NewLanguageDialog(Project project, @Nullable String virtualFolder) {
     super(ProjectHelper.toIdeaProject(project));
     setTitle("New Language");
     setOKButtonText("&OK");
     setCancelButtonText("Ca&ncel");
 
     myProject = project;
+    myVirtualFolder = virtualFolder;
 
     init();
   }
@@ -65,13 +69,16 @@ public class NewLanguageDialog extends DialogWrapper {
     NewModuleUtil.runModuleCreation(ProjectHelper.toIdeaProject(myProject), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         Language language = NewModuleUtil.createLanguage(myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
+        ((StandaloneMPSProject) myProject).setFolderFor(language, myVirtualFolder);
 
         try {
           if (myLanguageSettings.isRuntimeSolutionNeeded()) {
-            NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
+            Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
+            ((StandaloneMPSProject) myProject).setFolderFor(runtimeSolution, myVirtualFolder);
           }
           if (myLanguageSettings.isSandboxSolutionNeeded()) {
-            NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
+            Solution sandboxSolution = NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
+            ((StandaloneMPSProject) myProject).setFolderFor(sandboxSolution, myVirtualFolder);
           }
         } catch (IOException e) {
           // todo: ! 

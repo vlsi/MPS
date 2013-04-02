@@ -124,7 +124,7 @@
   <root nodeRef="r:74a06cc2-db96-4e19-8301-ff85828f9c7b(jetbrains.mps.smodel.adapter)/2601097456319851251">
     <nodeInfo nodeId="2601097456319851264" fileName="SLanguageLanguageAdapter.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguage" />
     <nodeInfo nodeId="2601097456319851267" fileName="SLanguageLanguageAdapter.java" startLine="27" startPosition="63" endLine="28" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2601097456319885242" fileName="SLanguageLanguageAdapter.java" startLine="32" startPosition="35" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2601097456319885242" fileName="SLanguageLanguageAdapter.java" startLine="32" startPosition="35" endLine="33" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2601097456319885990" fileName="SLanguageLanguageAdapter.java" startLine="37" startPosition="51" endLine="38" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2601097456319899336" fileName="SLanguageLanguageAdapter.java" startLine="38" startPosition="102" endLine="39" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2601097456319899346" fileName="SLanguageLanguageAdapter.java" startLine="41" startPosition="39" endLine="42" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -146,7 +146,7 @@
     <nodeInfo nodeId="1704447547934756125" fileName="SLanguageLanguageAdapter.java" startLine="48" startPosition="8" endLine="57" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2601097456319885218" fileName="SLanguageLanguageAdapter.java" startLine="36" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcepts#()Ljava/lang/Iterable;" />
     <scopeInfo nodeId="2601097456319851260" fileName="SLanguageLanguageAdapter.java" startLine="27" startPosition="63" endLine="28" endPosition="31" />
-    <scopeInfo nodeId="2601097456319885215" fileName="SLanguageLanguageAdapter.java" startLine="32" startPosition="35" endLine="33" endPosition="40" />
+    <scopeInfo nodeId="2601097456319885215" fileName="SLanguageLanguageAdapter.java" startLine="32" startPosition="35" endLine="33" endPosition="38" />
     <scopeInfo nodeId="2601097456319899345" fileName="SLanguageLanguageAdapter.java" startLine="41" startPosition="39" endLine="42" endPosition="109" />
     <scopeInfo nodeId="2601097456319899355" fileName="SLanguageLanguageAdapter.java" startLine="45" startPosition="40" endLine="46" endPosition="84" />
     <scopeInfo nodeId="2601097456319899417" fileName="SLanguageLanguageAdapter.java" startLine="50" startPosition="39" endLine="51" endPosition="118" />

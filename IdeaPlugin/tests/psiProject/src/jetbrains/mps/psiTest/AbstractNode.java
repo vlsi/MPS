@@ -10,7 +10,7 @@ public abstract class AbstractNode {
 
     public void abstractNodeMethod() {}
 
-    public class NodeDescriptor {
+    public static class NodeDescriptor {
         private String myDescription;
         public String getDescription() {
             return myDescription;

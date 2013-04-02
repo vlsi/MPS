@@ -16,14 +16,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ProjectModels;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
@@ -66,9 +67,8 @@ public class EvaluationContainer implements IEvaluationContainer {
     myUiState = myDebugSession.getUiState();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        SModel descriptor = ProjectModels.createDescriptorFor(true);
         SModule containerModule = myContainerModule.resolve(myDebuggerRepository);
-        SModelRepository.getInstance().registerModelDescriptor(descriptor, containerModule);
+        SModel descriptor = TemporaryModels.getInstance().create(false, TempModuleOptions.forExistingModule(containerModule));
         myContainerModel = descriptor.getReference();
         myContext = new ModuleContext(containerModule, ProjectHelper.toMPSProject(myProject));
       }

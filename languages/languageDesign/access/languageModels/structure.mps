@@ -75,6 +75,15 @@
       <property name="name" nameId="tpck.1169194664001" value="IExecuteCommandStatementSync" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5332677359380589431">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="ExecuteTransparentCommandStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="undo-transparent command" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="8974276187400348172" resolveInfo="BaseExecuteCommandStatementSync" />
+    </node>
   </roots>
   <root id="8974276187400348170">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8974276187400348171">
@@ -98,5 +107,6 @@
   <root id="8974276187400348181" />
   <root id="8974276187400348183" />
   <root id="8974276187400348185" />
+  <root id="5332677359380589431" />
 </model>
 

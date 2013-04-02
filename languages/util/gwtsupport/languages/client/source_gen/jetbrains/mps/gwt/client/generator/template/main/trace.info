@@ -5,7 +5,7 @@
     <nodeInfo nodeId="1220369573364066226" fileName="QueriesGenerated.java" startLine="93" startPosition="151" endLine="94" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1220369573364040172" fileName="QueriesGenerated.java" startLine="113" startPosition="155" endLine="114" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6148642440041937707" fileName="QueriesGenerated.java" startLine="114" startPosition="48" endLine="115" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1220369573364066180" fileName="QueriesGenerated.java" startLine="118" startPosition="101" endLine="119" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1220369573364066180" fileName="QueriesGenerated.java" startLine="118" startPosition="88" endLine="119" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1220369573364066207" fileName="QueriesGenerated.java" startLine="120" startPosition="165" endLine="121" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220369573364066221" fileName="QueriesGenerated.java" startLine="125" startPosition="5" endLine="126" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1220369573364066197" fileName="QueriesGenerated.java" startLine="119" startPosition="31" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -17,7 +17,7 @@
     <scopeInfo nodeId="1220369573364066197" fileName="QueriesGenerated.java" startLine="119" startPosition="31" endLine="122" endPosition="11">
       <varInfo nodeId="1220369573364066199" varName="gwtmod" />
     </scopeInfo>
-    <scopeInfo nodeId="1220369573364065780" fileName="QueriesGenerated.java" startLine="118" startPosition="101" endLine="122" endPosition="11">
+    <scopeInfo nodeId="1220369573364065780" fileName="QueriesGenerated.java" startLine="118" startPosition="88" endLine="122" endPosition="11">
       <varInfo nodeId="1220369573364066181" varName="rtModel" />
     </scopeInfo>
     <scopeInfo nodeId="1220369573364065763" fileName="QueriesGenerated.java" startLine="117" startPosition="70" endLine="123" endPosition="9" />

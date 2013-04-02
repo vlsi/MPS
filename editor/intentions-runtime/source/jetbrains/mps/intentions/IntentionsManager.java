@@ -432,7 +432,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         desc.init();
       }
     } catch (Throwable throwable) {
-      LOG.error("Error while initializing intentions descriptor for language " + language.getModuleFqName(), throwable);
+      LOG.error("Error while initializing intentions descriptor for language " + language.getModuleName(), throwable);
     }
   }
 

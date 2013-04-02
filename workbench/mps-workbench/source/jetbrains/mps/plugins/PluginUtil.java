@@ -54,8 +54,8 @@ public class PluginUtil {
     modules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
 
     for (Solution s : (List<Solution>) ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
-      if (s.getModuleDescriptor().getKind() == SolutionKind.NONE) continue;
-      if (s.getModuleDescriptor().getKind() == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode()
+      if (s.getKind() == SolutionKind.NONE) continue;
+      if (s.getKind() == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode()
           && IdeMain.getTestMode() != TestMode.UI_TEST) continue;
       modules.add(s);
     }
@@ -135,8 +135,8 @@ public class PluginUtil {
 
     @Override
     public String getPlugin(Solution s) {
-      if (s.getModuleFqName().equals(IDE_MODULE_ID)) return IDE_MODULE_PROJECTPLUGIN;
-      return s.getModuleFqName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ProjectPlugin";
+      if (s.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_PROJECTPLUGIN;
+      return s.getModuleName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleName())) + "_ProjectPlugin";
     }
   }
 
@@ -148,8 +148,8 @@ public class PluginUtil {
 
     @Override
     public String getPlugin(Solution s) {
-      if (s.getModuleFqName().equals(IDE_MODULE_ID)) return IDE_MODULE_APPPLUGIN;
-      return s.getModuleFqName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ApplicationPlugin";
+      if (s.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_APPPLUGIN;
+      return s.getModuleName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleName())) + "_ApplicationPlugin";
     }
   }
 }

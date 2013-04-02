@@ -53,7 +53,7 @@
     <nodeInfo nodeId="4132059805486521327" fileName="ModuleUsagesFinder.java" startLine="99" startPosition="5" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486521357" fileName="ModuleUsagesFinder.java" startLine="105" startPosition="115" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486521376" fileName="ModuleUsagesFinder.java" startLine="108" startPosition="5" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521440" fileName="ModuleUsagesFinder.java" startLine="120" startPosition="67" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521440" fileName="ModuleUsagesFinder.java" startLine="120" startPosition="54" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486521169" fileName="ModuleUsagesFinder.java" startLine="72" startPosition="5" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486521226" fileName="ModuleUsagesFinder.java" startLine="82" startPosition="5" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486521272" fileName="ModuleUsagesFinder.java" startLine="89" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -93,7 +93,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4132059805486521307" fileName="ModuleUsagesFinder.java" startLine="96" startPosition="106" endLine="102" endPosition="5" />
     <scopeInfo nodeId="4132059805486521148" fileName="ModuleUsagesFinder.java" startLine="69" startPosition="112" endLine="76" endPosition="5" />
-    <scopeInfo nodeId="4132059805486521439" fileName="ModuleUsagesFinder.java" startLine="120" startPosition="67" endLine="127" endPosition="7" />
+    <scopeInfo nodeId="4132059805486521439" fileName="ModuleUsagesFinder.java" startLine="120" startPosition="54" endLine="127" endPosition="7" />
     <scopeInfo nodeId="4132059805486521298" fileName="ModuleUsagesFinder.java" startLine="96" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="4132059805486521303" varName="devKit" />
       <varInfo nodeId="4132059805486521305" varName="searchResults" />
@@ -323,7 +323,7 @@
     <nodeInfo nodeId="4132059805486522090" fileName="LanguageUsagesFinder.java" startLine="101" startPosition="5" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486522120" fileName="LanguageUsagesFinder.java" startLine="107" startPosition="109" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486522139" fileName="LanguageUsagesFinder.java" startLine="110" startPosition="5" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486522176" fileName="LanguageUsagesFinder.java" startLine="117" startPosition="67" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486522176" fileName="LanguageUsagesFinder.java" startLine="117" startPosition="54" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486522218" fileName="LanguageUsagesFinder.java" startLine="128" startPosition="117" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486522233" fileName="LanguageUsagesFinder.java" startLine="132" startPosition="59" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486521839" fileName="LanguageUsagesFinder.java" startLine="49" startPosition="43" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -394,7 +394,7 @@
       <varInfo nodeId="4132059805486521962" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="4132059805486521986" fileName="LanguageUsagesFinder.java" startLine="84" startPosition="115" endLine="91" endPosition="5" />
-    <scopeInfo nodeId="4132059805486522175" fileName="LanguageUsagesFinder.java" startLine="117" startPosition="67" endLine="124" endPosition="7" />
+    <scopeInfo nodeId="4132059805486522175" fileName="LanguageUsagesFinder.java" startLine="117" startPosition="54" endLine="124" endPosition="7" />
     <scopeInfo nodeId="4132059805486522110" fileName="LanguageUsagesFinder.java" startLine="107" startPosition="0" endLine="115" endPosition="0">
       <varInfo nodeId="4132059805486522115" varName="devKit" />
       <varInfo nodeId="4132059805486522117" varName="searchResults" />

@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
+import com.intellij.openapi.actionSystem.ShortcutSet;
+import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -15,8 +17,12 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 public abstract class GoToNeighbourRootActions {
   private static final Icon PREVIOUS_ROOT_ICON = IconLoader.getIcon("/actions/prevfile.png");
   private static final Icon NEXT_ROOT_ICON = IconLoader.getIcon("/actions/nextfile.png");
+  public static final ShortcutSet PREV_ROOT_SHORTCUT = CustomShortcutSet.fromString("control LEFT");
+  public static final ShortcutSet NEXT_ROOT_SHORTCUT = CustomShortcutSet.fromString("control RIGHT");
+  private BaseAction[] myActions;
 
   public GoToNeighbourRootActions() {
+    myActions = new BaseAction[]{new GoToNeighbourRootActions.TheAction(false), new GoToNeighbourRootActions.TheAction(true)};
   }
 
   protected abstract boolean hasNeighbour(boolean next);
@@ -24,15 +30,15 @@ public abstract class GoToNeighbourRootActions {
   protected abstract void goToNeighbour(boolean next);
 
   public final BaseAction previous() {
-    return new GoToNeighbourRootActions.TheAction(false);
+    return myActions[0];
   }
 
   public final BaseAction next() {
-    return new GoToNeighbourRootActions.TheAction(true);
+    return myActions[1];
   }
 
   public BaseAction[] getActions() {
-    return new BaseAction[]{previous(), next()};
+    return myActions;
   }
 
   private class TheAction extends BaseAction implements DumbAware {

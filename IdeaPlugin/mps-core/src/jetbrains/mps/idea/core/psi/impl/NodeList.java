@@ -136,7 +136,6 @@ import org.jetbrains.annotations.NotNull;
       assert head == toRemove;
       head = null;
     }
-
     toRemove.clear();
     size--;
   }

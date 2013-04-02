@@ -53,7 +53,7 @@ public class GoToEditorDeclarationHelper {
     if (languageEditor != null) {
       return languageEditor;
     }
-    String message = "Language \"" + language.getModuleFqName() + "\" has no editor model.\n" + "Create new editor model?";
+    String message = "Language \"" + language.getModuleName() + "\" has no editor model.\n" + "Create new editor model?";
     int option = JOptionPane.showConfirmDialog(null, message, "Editor not found", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
     if (option != JOptionPane.YES_OPTION) {
       return null;

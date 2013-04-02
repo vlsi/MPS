@@ -87,6 +87,8 @@ public interface ModelCommandExecutor extends org.jetbrains.mps.openapi.module.M
   @Deprecated
   void runWriteActionInCommandAsync(Runnable r, Project project);
 
+  void runUndoTransparentCommand(Runnable r);
+
   void runUndoTransparentCommand(Runnable r, Project project);
 
   boolean isInsideCommand();

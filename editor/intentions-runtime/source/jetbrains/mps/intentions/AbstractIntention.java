@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class AbstractIntention implements Intention {
   @Override
@@ -136,7 +135,7 @@ public abstract class AbstractIntention implements Intention {
   @Override
   public String getLanguageFqName() {
     Language language = IntentionsManager.getInstance().getIntentionLanguage(this);
-    return language != null ? language.getModuleFqName() : null;
+    return language != null ? language.getModuleName() : null;
   }
 
   /**

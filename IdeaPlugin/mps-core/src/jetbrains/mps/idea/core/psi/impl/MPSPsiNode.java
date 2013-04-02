@@ -16,18 +16,22 @@
 
 package jetbrains.mps.idea.core.psi.impl;
 
-import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -47,6 +51,8 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   private final String myContainingRole;
   private String myName;
   private Map<String, String> myProperties;
+
+  private boolean isCopy = false;
 
   public MPSPsiNode(SNodeId id, String concept, String containingRole) {
     myId = id;
@@ -89,6 +95,13 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return getContainingRoot();
   }
 
+  @Override
+  public MPSPsiNode copy() {
+    MPSPsiNode clone = (MPSPsiNode) clone();
+    clone.isCopy = true;
+    return clone;
+  }
+
   void setProperty(String key, String value) {
     // TODO
     if (key.equals("name")) {
@@ -96,6 +109,23 @@ public class MPSPsiNode extends MPSPsiNodeBase {
       return;
     }
     myProperties.put(key, value);
+  }
+
+  // Used for changing name from idea through PSI (in refactorings)
+  protected void setNameProperty(final String name) {
+    setProperty("name", name);
+
+    if (!isCopy) {
+      // really modifying the model
+      ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+        @Override
+        public void run() {
+          SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
+          if (node == null) return;
+          node.setProperty("name", name);
+        }
+      }, new MPSProject(getProject()));
+    }
   }
 
   protected <T extends PsiElement> T getReferenceTarget(String role, @NotNull Class<T> aClass) {
@@ -178,22 +208,6 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   @Override
   public String getText() {
     return myConcept + ":" + myName + " as " + myContainingRole;
-  }
-
-  @Override
-  public TextRange getTextRange() {
-    int p = getTreePosition();
-    return new TextRange(p,p);
-  }
-
-  @Override
-  public int getTextOffset() {
-    return getTreePosition();
-  }
-
-  private int getTreePosition() {
-    MPSPsiModel model = getContainingModel();
-    return model.getNodePosition(myId);
   }
 
   @Override

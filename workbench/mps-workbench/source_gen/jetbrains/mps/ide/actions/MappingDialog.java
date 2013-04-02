@@ -106,7 +106,7 @@ public class MappingDialog extends DialogWrapper {
     TextTreeNode root = new TextTreeNode("Generators");
     for (final Generator generator : myLanguage.getGenerators()) {
       ModuleContext moduleContext = new ModuleContext(generator, ProjectHelper.toMPSProject(myProject));
-      MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(moduleContext, MPSIcons.Nodes.Generator, generator.getModuleFqName(), "generator/" + generator.getName());
+      MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(moduleContext, MPSIcons.Nodes.Generator, generator.getModuleName(), "generator/" + generator.getName());
       root.add(generatorTreeNode);
       for (SModel md : generator.getOwnTemplateModels()) {
         MPSTreeNode modelTreeNode = new MappingDialog.MyTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + "@" + SModelStereotype.getStereotype(md));

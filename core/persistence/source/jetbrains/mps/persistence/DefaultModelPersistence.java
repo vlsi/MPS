@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.project.MPSExtentions;
@@ -59,7 +60,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   }
 
   @Override
-  public SModel load(StreamDataSource dataSource, Map<String, String> options) {
+  public SModel load(@NotNull StreamDataSource dataSource, @NotNull Map<String, String> options) {
     SModelHeader header;
     try {
       header = ModelPersistence.loadDescriptor(dataSource);
@@ -115,9 +116,8 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   }
 
   @Override
-  public void save(SModel model, StreamDataSource dataSource) throws ModelSaveException {
-    // TODO implement
-    //BinaryPersistence.writeModel(model, dataSource);
+  public void save(SModel model, StreamDataSource dataSource) throws IOException {
+    ModelPersistence.saveModel(((SModelBase)model).getSModelInternal(), dataSource);
   }
 
   @Override
