@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.logging.log4j;
 
-import jetbrains.mps.logging.LogUtil;
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 
@@ -32,27 +31,27 @@ class Log4jLogger extends Logger {
 
   @Override
   public void info(String message, Throwable t, Object hintObject) {
-    LogUtil.info(myLogger, message, t, hintObject);
+    Log4jUtil.info(myLogger, message, t, hintObject);
   }
 
   @Override
   public void warning(String message, Throwable t, Object hintObject) {
-    LogUtil.warning(myLogger, message, t, hintObject);
+    Log4jUtil.warning(myLogger, message, t, hintObject);
   }
 
   @Override
   public void debug(String message, Throwable t, Object hintObject) {
-    LogUtil.debug(myLogger, message, t, hintObject);
+    Log4jUtil.debug(myLogger, message, t, hintObject);
   }
 
   @Override
   public void error(String message, Throwable t, Object hintObject) {
-    LogUtil.error(myLogger, message, t, hintObject);
+    Log4jUtil.error(myLogger, message, t, hintObject);
   }
 
   @Override
   public void fatal(String message, Throwable t, Object hintObject) {
-    LogUtil.fatal(myLogger, message, t, hintObject);
+    Log4jUtil.fatal(myLogger, message, t, hintObject);
   }
 
 }

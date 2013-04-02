@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.logging;
+package jetbrains.mps.logging.log4j;
 
 import jetbrains.mps.logging.log4j.MessageObject;
 import jetbrains.mps.smodel.ModelAccess;
@@ -26,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
 /*
 If one has log4j logger he can still use extended functionality of our Logger using this class.
  */
-public class LogUtil {
+public class Log4jUtil {
 
   public static void errorWithTrace(org.apache.log4j.Logger logger, String message) {
     logger.error(message, new Throwable(message));
