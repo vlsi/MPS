@@ -6,7 +6,7 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
@@ -21,6 +21,9 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -37,7 +40,7 @@ public class TextPreviewUtil {
   public TextPreviewUtil() {
   }
 
-  public static void previewModelText(final MakeSession session, final IOperationContext context, final SModel md, @Nullable final SNodeReference rootNode) {
+  public static void previewModelText(final MakeSession session, final IOperationContext context, final SModel md, @Nullable final SNode contextNode) {
     IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
 
     IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
@@ -49,6 +52,12 @@ public class TextPreviewUtil {
 
     final Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(context, Sequence.<SModel>singleton(md)).resources(false), scr, ctl);
 
+    final SNodeReference contextRootNode = ModelAccess.instance().runWriteAction(new Computable<SNodeReference>() {
+      public SNodeReference compute() {
+        return check_yiwzzi_a0a0a0a6a1(check_yiwzzi_a0a0a0a0g0b(contextNode));
+      }
+    });
+
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       @Override
       public void run() {
@@ -57,8 +66,8 @@ public class TextPreviewUtil {
           if (result.isSucessful()) {
             FResource fres = (FResource) Sequence.fromIterable(result.output()).first();
 
-            String fileToOpen = (rootNode != null ?
-              MapSequence.fromMap(fres.rootNodeNames()).get(rootNode) :
+            String fileToOpen = (contextNode != null ?
+              MapSequence.fromMap(fres.rootNodeNames()).get(contextRootNode) :
               null
             );
             final TextPreviewFile tfile = new TextPreviewFile(NameUtil.compactNamespace(md.getModelName()) + "/text", "Generated text for " + md.getModelName(), fres.contents(), fileToOpen);
@@ -76,5 +85,19 @@ public class TextPreviewUtil {
         }
       }
     });
+  }
+
+  private static SNodeReference check_yiwzzi_a0a0a0a6a1(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
+
+  private static SNode check_yiwzzi_a0a0a0a0g0b(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getContainingRoot();
+    }
+    return null;
   }
 }
