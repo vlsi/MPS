@@ -33,14 +33,9 @@
     <component>
       <implementation-class>jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder</implementation-class>
     </component>
-    <!--
-    Currently it won't work since contributor is assigned to model root type
-    and we don't have any. We create modelRoots right away without modelRoot descriptors
-    -->
     <component>
       <implementation-class>jetbrains.mps.idea.java.fastFind.JavaPsiStubsNavigationContributor</implementation-class>
     </component>
-
   </application-components>
 
   <project-components>
@@ -90,6 +85,11 @@
     <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.usages.MPSJavaDirectInheritorsSearcher"/>
     <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
     <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.java.refactoring.RefactoringListenerProvider"/>
+    <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex"/>
+    <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaPackageIndex"/>
+    <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSShortNameJavaClassIndex"/>
+    <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaMethodIndex"/>
+    <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaFieldIndex"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">

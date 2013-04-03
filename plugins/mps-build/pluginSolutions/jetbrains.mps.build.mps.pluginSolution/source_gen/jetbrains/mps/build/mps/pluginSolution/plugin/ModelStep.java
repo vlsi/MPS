@@ -82,7 +82,7 @@ public class ModelStep extends TwoOptionsStep<SModel> {
           }
           return Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
-              return it instanceof EditableSModel && !(((EditableSModel) it).isReadOnly());
+              return it instanceof EditableSModel && !(it.isReadOnly());
             }
           }).toListSequence();
         }

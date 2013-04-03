@@ -16,7 +16,13 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.navigation.ColoredItemPresentation;
+import com.intellij.navigation.ItemPresentation;
+import com.intellij.openapi.editor.colors.CodeInsightColors;
+import com.intellij.openapi.editor.colors.TextAttributesKey;
+import com.intellij.openapi.util.Iconable;
 import com.intellij.psi.PsiAnnotation;
+import com.intellij.psi.PsiBundle;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiExpression;
@@ -103,7 +109,7 @@ public class MPSPsiField extends MPSPsiNode implements PsiField {
 
   @Override
   public PsiElement setName(@NonNls @NotNull String name) throws IncorrectOperationException {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    throw new IncorrectOperationException();
   }
 
   @Override
@@ -152,5 +158,40 @@ public class MPSPsiField extends MPSPsiNode implements PsiField {
   public Icon getElementIcon(final int flags) {
     final RowIcon baseIcon = ElementPresentationUtil.createLayeredIcon(PlatformIcons.FIELD_ICON, this, false);
     return ElementPresentationUtil.addVisibilityIcon(this, flags, baseIcon);
+  }
+
+  @Override
+  public ItemPresentation getPresentation() {
+    return new ColoredItemPresentation() {
+      @Override
+      public String getPresentableText() {
+        return getName();
+      }
+
+      @Override
+      public TextAttributesKey getTextAttributesKey() {
+        if (isDeprecated()) {
+          return CodeInsightColors.DEPRECATED_ATTRIBUTES;
+        }
+        return null;
+      }
+
+      @Override
+      public String getLocationString() {
+        PsiClass psiClass = getContainingClass();
+        if (psiClass != null) {
+          String container = psiClass.getQualifiedName();
+          if (container != null) {
+            return PsiBundle.message("aux.context.display", container);
+          }
+        }
+        return null;
+      }
+
+      @Override
+      public Icon getIcon(boolean open) {
+        return MPSPsiField.this.getIcon(Iconable.ICON_FLAG_VISIBILITY);
+      }
+    };
   }
 }

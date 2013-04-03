@@ -41,7 +41,7 @@ public class UIEditorComponent extends EditorComponent {
     getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
       @Override
       protected void selectionChangedTo(EditorComponent editorComponent, SingularSelection newSelection) {
-        myInspector.inspectNode(newSelection.getEditorCell().getSNode(), editorComponent.getOperationContext());
+        myInspector.editNode(newSelection.getEditorCell().getSNode(), editorComponent.getOperationContext());
       }
     });
   }

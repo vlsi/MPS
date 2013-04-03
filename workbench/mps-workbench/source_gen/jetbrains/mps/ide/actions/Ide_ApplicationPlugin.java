@@ -48,7 +48,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new DeleteNode_Action());
     addAction(new DeletePropertyAction_Action());
     addAction(new DeleteReferenceAction_Action());
-    addAction(new EditNode_Action());
     addAction(new ExpandNode_Action());
     addAction(new FastFindNodeUsages_Action());
     addAction(new FindConceptInstances_Action());
@@ -161,7 +160,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new NamespaceInternalActions_ActionGroup());
     addGroup(new NamespaceMakeActions_ActionGroup());
     addGroup(new NamespaceNewActions_ActionGroup());
-    addGroup(new NodeActionsInternal_ActionGroup());
     addGroup(new NodeActions_ActionGroup());
     addGroup(new PackageActions_ActionGroup());
     addGroup(new PackageNewActions_ActionGroup());
@@ -210,7 +208,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Edit_ActionGroup.ID, "IDE_Edit_ActionGrouptoplevel", null);
     insertGroupIntoAnother(Goto_ActionGroup.ID, "GoToMenu", null);
     insertGroupIntoAnother(GoByReference_ActionGroup.ID, "GoToEditorPopupAddition_ActionGrouprefs", null);
-    insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertGroupIntoAnother(ToolsInternal_ActionGroup.ID, "Internal", null);
     insertGroupIntoAnother(DebugActions_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_debug);

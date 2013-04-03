@@ -17,62 +17,69 @@ package jetbrains.mps.workbench.components;
 
 
 import com.intellij.icons.AllIcons.Actions;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.popup.JBPopup;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._void_P1_E0;
+import com.intellij.ui.CollectionComboBoxModel;
+import com.intellij.ui.ColoredListCellRenderer;
+import com.intellij.ui.IdeBorderFactory;
+import com.intellij.ui.SideBorder;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShowImplementationComponent extends JPanel {
-  private JComboBox myNodeChooser;
-  private JLabel myLocationLabel = new JLabel("<location>");
-  private JLabel myCountLabel = new JLabel("<count>");
+  private ComboBox myNodeChooser;
+  private JLabel myLocationLabel = new JLabel("");
+  private JLabel myCountLabel = new JLabel("0 of 0");
   private EmbeddableEditor myEditor;
   private JComponent myEditorPanel;
   private int mySelectedIndex = -1;
   private JBPopup myPopup;
   private Project myProject;
 
-  private List<SNode> myNodes = new ArrayList<SNode>();
-  private List<Icon> myNodeIcons = new ArrayList<Icon>();
-  private List<String> myNodeLabels = new ArrayList<String>();
-  private List<Icon> myModuleIcons = new ArrayList<Icon>();
-  private List<String> myModuleLabels = new ArrayList<String>();
-  private List<SNodeReference> myOriginalNodePointers = new ArrayList<SNodeReference>();
-
-  private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
+  private List<ImplementationNode> myImplNodes;
 
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
     ModelAccess.assertLegalRead();
 
+    myImplNodes = new ArrayList<ImplementationNode>(nodes.size());
+
     for (SNode node : nodes) {
-      myNodes.add(SNodeOperations.copyNode(node));
-      myNodeIcons.add(IconManager.getIconFor(node, true));
-      myNodeLabels.add(node.getPresentation());
-      myModuleIcons.add(IconManager.getIconFor(node.getModel().getModule()));
-      myModuleLabels.add(node.getModel().getModule().getModuleName());
-      myOriginalNodePointers.add(node.getReference());
+      myImplNodes.add(new ImplementationNode(node));
     }
 
-    myEditor = new EmbeddableEditor(context, myModelOwner, myNodes.get(0), false);
+    myEditor = new EmbeddableEditor(context.getProject(), new _void_P1_E0<SModel>() {
+      @Override
+      public void invoke(SModel sModel) {
+        sModel.addRootNode(myImplNodes.get(0).myNode);
+      }
+    }, false);
+    myEditor.editNode(myImplNodes.get(0).myNode);
     myProject = context.getProject();
 
     init();
-    updateControls();
+    if(myImplNodes.size() > 0)
+      myNodeChooser.setSelectedIndex(0);
   }
 
   public void setPopup(JBPopup popup) {
@@ -83,18 +90,14 @@ public class ShowImplementationComponent extends JPanel {
     return myNodeChooser;
   }
 
+  private boolean isDisposed = false;
   public void dispose() {
-    for (SNode node : myNodes) {
-      node.delete();
+    if(isDisposed == true) return;
+    isDisposed = true;
+    for (ImplementationNode node : myImplNodes) {
+      node.dispose();
     }
     myEditor.disposeEditor();
-    myModelOwner.unregisterModelOwner();
-    myNodes = null;
-    myNodeIcons = null;
-    myNodeLabels = null;
-    myModuleIcons = null;
-    myModuleLabels = null;
-    myOriginalNodePointers = null;
   }
 
   private ActionToolbar createToolbar() {
@@ -108,12 +111,12 @@ public class ShowImplementationComponent extends JPanel {
     forward.registerCustomShortcutSet(new CustomShortcutSet(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0)), this);
     group.add(forward);
 
-    ShowSourceAction showSource = new ShowSourceAction("Show Source", Actions.ShowSource, false);
-    showSource.registerCustomShortcutSet(new CompositeShortcutSet(CommonShortcuts.getViewSource(), CommonShortcuts.CTRL_ENTER), this);
+    ShowSourceAction showSource = new ShowSourceAction("Edit Source", Actions.EditSource, true);
+    showSource.registerCustomShortcutSet(new CustomShortcutSet(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0)), this);
     group.add(showSource);
 
-    showSource = new ShowSourceAction("Edit Source", Actions.EditSource, true);
-    showSource.registerCustomShortcutSet(new CustomShortcutSet(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0)), this);
+    showSource = new ShowSourceAction("Show Source", Actions.ShowSource, false);
+    showSource.registerCustomShortcutSet(new CompositeShortcutSet(CommonShortcuts.getViewSource(), CommonShortcuts.CTRL_ENTER), this);
     group.add(showSource);
 
     return ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true);
@@ -128,44 +131,89 @@ public class ShowImplementationComponent extends JPanel {
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       @Override
       public void run() {
-        myLocationLabel.setText(myModuleLabels.get(index));
-        myLocationLabel.setIcon(myModuleIcons.get(index));
-        myCountLabel.setText((index + 1) + " of " + myNodes.size());
-        myEditor.setNode(myNodes.get(index));
-        myEditor.setBackground(new Color(255, 255, 215));
+        myLocationLabel.setText(myImplNodes.get(index).myModuleName);
+        myLocationLabel.setIcon(myImplNodes.get(index).myModuleIcon);
+        myCountLabel.setText((index + 1) + " of " + myImplNodes.size());
+        myEditor.editNode(myImplNodes.get(index).myNode);
+        myEditor.setBackground(StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() : new Color(255, 255, 215));
         mySelectedIndex = index;
         myEditorPanel.repaint();
+        myNodeChooser.updateUI();
       }
     }, myProject);
   }
 
   private void init() {
     setLayout(new BorderLayout());
+
     myEditorPanel = myEditor.getComponenet();
     add(myEditorPanel, BorderLayout.CENTER);
-    JPanel northPanel = new JPanel(new BorderLayout());
-    add(northPanel, BorderLayout.NORTH);
-    JPanel toolbarPanel = new JPanel(new FlowLayout());
-    toolbarPanel.add(createToolbar().getComponent());
 
-    this.myNodeChooser = new JComboBox(myNodeLabels.toArray());
-    myNodeChooser.setRenderer(new DefaultListCellRenderer() {
+    JPanel northPanel = new JPanel(new BorderLayout(2, 0));
+    northPanel.setBorder(BorderFactory.createCompoundBorder(IdeBorderFactory.createBorder(SideBorder.BOTTOM),
+        IdeBorderFactory.createEmptyBorder(0, 0, 0, 5)));
+
+    JPanel toolbarPanel = new JPanel(new GridBagLayout());
+    final GridBagConstraints gc = new GridBagConstraints(GridBagConstraints.RELATIVE, 0, 1, 1, 0, 0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0,2,0,0), 0,0);
+    toolbarPanel.add(createToolbar().getComponent(), gc);
+
+    this.myNodeChooser = new ComboBox(new CollectionComboBoxModel(myImplNodes, null));
+    myNodeChooser.setRenderer(new ColoredListCellRenderer() {
       @Override
-      public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
-        super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-        if (index != -1) {
-          setIcon(myNodeIcons.get(index));
-          setText(myNodeLabels.get(index));
-        }
-        return this;
+      protected void customizeCellRenderer(JList list, Object value, int index, boolean selected, boolean hasFocus) {
+        if(!(value instanceof ImplementationNode))
+           return;
+
+        ImplementationNode node = (ImplementationNode) value;
+        setIcon(node.myNodeIcon);
+        append(node.myNodePresentation);
       }
     });
-    toolbarPanel.add(myNodeChooser);
-    toolbarPanel.add(myCountLabel);
-    northPanel.add(toolbarPanel, BorderLayout.LINE_START);
-    northPanel.add(myLocationLabel, BorderLayout.LINE_END);
+    myNodeChooser.addItemListener(new ItemListener() {
+      @Override
+      public void itemStateChanged(ItemEvent e) {
+        ShowImplementationComponent.this.updateControls();
+      }
+    });
+    gc.fill = GridBagConstraints.HORIZONTAL;
+    gc.weightx = 1;
+    toolbarPanel.add(myNodeChooser, gc);
+
+    gc.fill = GridBagConstraints.NONE;
+    gc.weightx = 0;
+    toolbarPanel.add(myCountLabel, gc);
+
+    northPanel.add(toolbarPanel, BorderLayout.CENTER);
+    northPanel.add(myLocationLabel, BorderLayout.EAST);
+
+    add(northPanel, BorderLayout.NORTH);
 
     setPreferredSize(new Dimension(600, 400));
+  }
+
+  private class ImplementationNode implements Disposable {
+    public final SNode myNode;
+    public final String myNodePresentation;
+    public final Icon myNodeIcon;
+    public final String myModuleName;
+    public final Icon myModuleIcon;
+    public final SNodeReference myOriginalNodePointer;
+
+    public ImplementationNode(SNode node) {
+      myNode = SNodeOperations.copyNode(node);
+      myNodePresentation = SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && node.getParent() != null
+          ? node.getParent() + "." + node.getPresentation()
+          : node.getPresentation();
+      myNodeIcon = IconManager.getIconFor(node, true);
+      myModuleName = node.getModel().getModule().getModuleName();
+      myModuleIcon = IconManager.getIconFor(node.getModel().getModule());
+      myOriginalNodePointer = node.getReference();
+    }
+
+    @Override
+    public void dispose() {
+      myNode.delete();
+    }
   }
 
   private class BackAction extends AnAction {
@@ -183,7 +231,7 @@ public class ShowImplementationComponent extends JPanel {
     @Override
     public void update(AnActionEvent e) {
       e.getPresentation().setEnabled(myNodeChooser != null
-        && myNodeChooser.getSelectedIndex() > 0);
+          && myNodeChooser.getSelectedIndex() > 0);
     }
   }
 
@@ -202,7 +250,7 @@ public class ShowImplementationComponent extends JPanel {
     @Override
     public void update(AnActionEvent e) {
       e.getPresentation().setEnabled(myNodeChooser != null
-        && myNodeChooser.getSelectedIndex() < myNodeChooser.getItemCount() - 1);
+          && myNodeChooser.getSelectedIndex() < myNodeChooser.getItemCount() - 1);
     }
   }
 
@@ -224,7 +272,7 @@ public class ShowImplementationComponent extends JPanel {
             return;
           }
           IOperationContext operationContext = myEditor.getEditor().getOperationContext();
-          SNode selectedNode = myOriginalNodePointers.get(selectedIndex).resolve(MPSModuleRepository.getInstance());
+          SNode selectedNode = myImplNodes.get(selectedIndex).myOriginalNodePointer.resolve(MPSModuleRepository.getInstance());
           if (selectedNode == null) {
             return;
           }

@@ -50,7 +50,7 @@ public class TemporaryModels {
 
     TempModel model = new TempModel(readOnly);
     myCreatedModels.put(model,mp);
-    SModelRepository.getInstance().registerModelDescriptor(model.getSModel(), module);
+    SModelRepository.getInstance().registerModelDescriptor(model, module);
 
     return model;
   }

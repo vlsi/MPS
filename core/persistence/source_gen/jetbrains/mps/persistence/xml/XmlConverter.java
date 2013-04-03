@@ -7,6 +7,7 @@ import org.jdom.Document;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodeId;
 import org.jdom.Element;
 import org.jdom.Attribute;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,6 +36,7 @@ public class XmlConverter {
     SPropertyOperations.set(file, "name", name);
     SLinkOperations.setNewChild(file, "document", "jetbrains.mps.core.xml.structure.XmlDocument");
     SLinkOperations.setTarget(SLinkOperations.getTarget(file, "document", true), "rootElement", convertElement(document.getRootElement()), true);
+    ((jetbrains.mps.smodel.SNode) file).setId(SNodeId.fromString("~" + name));
     return file;
   }
 

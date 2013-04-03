@@ -46,6 +46,7 @@ import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.IdeMain;
@@ -105,14 +106,12 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.EventUtil;
@@ -141,6 +140,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -247,8 +247,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
   private CellTracker myCellTracker = new CellTracker();
-
-  private boolean myIsEditable = true;
 
   private boolean myDisposed = false;
   // additional debugging field
@@ -983,27 +981,24 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     String text = getMessagesTextFor(cell);
     Point point = new Point(cell.getX(), cell.getY() + cell.getHeight());
-    if (MPSToolTipManager.getInstance() != null ) {
+    if (MPSToolTipManager.getInstance() != null) {
       MPSToolTipManager.getInstance().showToolTip(text, this, point);
     }
   }
 
   public void hideMessageToolTip() {
-    if (MPSToolTipManager.getInstance() != null ) {
+    if (MPSToolTipManager.getInstance() != null) {
       MPSToolTipManager.getInstance().hideToolTip();
     }
   }
 
   public void editNode(SNode node, IOperationContext operationContext) {
-    if (isDisposed()) {
-      return;
-    }
+    if (isDisposed()) return;
     if (operationContext == null) {
       LOG.errorWithTrace("Opening editor with null context");
     }
     setOperationContext(operationContext);
     editNode(node);
-    setReadOnly(node == null || node.getModel() == null || SModelOperations.isReadOnly(node.getModel()));
   }
 
   protected void editNode(final SNode node) {
@@ -1025,6 +1020,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();
         getTypeCheckingContext();
+        setReadOnly(node == null || node.getModel() == null || SModelOperations.isReadOnly(node.getModel()));
       }
     });
   }
@@ -1421,7 +1417,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         //!getEditedNode().isInRepository();
         // this is a very dirty hack, remove ASAP. This is because we have the only one module, which is not in repository, and it was
         // treated normally before - DiffTemporaryModule
-        (!getEditedNode().isInRepository() && !(getEditedNode().getModel().getModule().getClass().getName().equals("jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule")));
+        (!getEditedNode().isInRepository() && !(getEditedNode().getModel().getModule().getClass().getName().equals(
+            "jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule")));
   }
 
   /*
@@ -2562,7 +2559,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern, false);
   }
 
-  public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, SubstituteInfo substituteInfo, boolean resetPattern, boolean isSmart) {
+  public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, SubstituteInfo substituteInfo, boolean resetPattern,
+      boolean isSmart) {
     if (substituteInfo == null) {
       return false;
     }
@@ -2597,7 +2595,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return true;
   }
 
-  private List<SubstituteAction> getMatchingActions(final jetbrains.mps.openapi.editor.cells.EditorCell editorCell, final SubstituteInfo substituteInfo, final boolean isSmart, final String pattern) {
+  private List<SubstituteAction> getMatchingActions(final jetbrains.mps.openapi.editor.cells.EditorCell editorCell, final SubstituteInfo substituteInfo,
+      final boolean isSmart, final String pattern) {
     return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
       @Override
       public List<SubstituteAction> compute() {
@@ -2866,7 +2865,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (dataId.equals(SelectInContext.DATA_KEY.getName())) {
-      ProjectViewSelectInProvider selectInHelper = ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(ProjectViewSelectInProvider.class);
+      ProjectViewSelectInProvider selectInHelper =
+          ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(ProjectViewSelectInProvider.class);
       if (selectInHelper == null) return null;
       return selectInHelper.getContext(getCurrentProject(), myNodePointer);
     }
@@ -3201,17 +3201,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return getEditedNode() != null && jetbrains.mps.util.SNodeOperations.isDisposed(getEditedNode());
   }
 
-  public boolean isEditable() {
-    return myIsEditable;
-  }
-
-  public void setEditable(boolean isEditable) {
-    myIsEditable = isEditable;
-    if (!isEditable) {
-      setFocusable(false);
-    }
-  }
-
   public CellTracker getCellTracker() {
     return myCellTracker;
   }
@@ -3273,12 +3262,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
 
     @Override
-    public void modelRemoved(SModel modelDescriptor) {
-      if (myModelDescriptorsWithListener.contains(modelDescriptor)) {
-        if (myNode != null && myNode.getModel().getReference().equals(modelDescriptor.getReference())) {
-          myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
-        }
-      }
+    public void beforeModelRemoved(SModel modelDescriptor) {
+      if (!myModelDescriptorsWithListener.contains(modelDescriptor)) return;
+      if (myNode == null) return;
+
+      SModel model = myNode.getModel();
+      if (model != null && !model.getReference().equals(modelDescriptor.getReference())) return;
+
+      myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
     }
   }
 

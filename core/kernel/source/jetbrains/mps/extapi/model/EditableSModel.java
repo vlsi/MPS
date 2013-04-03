@@ -34,8 +34,6 @@ public interface EditableSModel extends SModel {
 
   void rename(String newModelName, boolean changeFile);
 
-  boolean isReadOnly();
-
   void updateTimestamp();
 
   boolean needsReloading();

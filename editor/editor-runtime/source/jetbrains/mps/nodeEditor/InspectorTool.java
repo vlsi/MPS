@@ -126,7 +126,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
 
   public void inspect(final SNode node, IOperationContext context, FileEditor fileEditor) {
     myFileEditor = fileEditor;
-    myInspectorComponent.inspectNode(node, context);
+    myInspectorComponent.editNode(node, context);
     myMessagePanel.setNode(node);
   }
 

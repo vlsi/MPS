@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SModel.Problem.Kind;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
@@ -125,7 +128,7 @@ public class DefaultSModel extends SModel {
     @Override
     public Iterable<Problem> getProblems() {
       return Collections.<Problem>singleton(
-        new PersistenceProblem(myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
+        new PersistenceProblem(Kind.Load, myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
     }
   }
 }

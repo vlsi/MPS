@@ -119,7 +119,7 @@ public class IconManager {
         if (model == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
           return mainIcon;
         }
-        if (!(SModelStereotype.isUserModel(model)) || model instanceof EditableSModel && ((EditableSModel) model).isReadOnly()) {
+        if (!(SModelStereotype.isUserModel(model)) || model instanceof EditableSModel && model.isReadOnly()) {
           mainIcon = new LayeredIcon(mainIcon, PlatformIcons.LOCKED_ICON);
         }
         RowIcon result = new RowIcon(2);

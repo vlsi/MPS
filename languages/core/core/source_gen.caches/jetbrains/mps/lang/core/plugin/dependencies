@@ -107,9 +107,9 @@
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.ProjectModels" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.GResource" />
+    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.generator.generationTypes.GenerationHandlerBase" />
@@ -200,6 +200,7 @@
     <classNode dependClassName="jetbrains.mps.generator.cache.CacheGenerator" />
     <classNode dependClassName="jetbrains.mps.generator.fileGenerator.FileGenerationUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
+    <classNode dependClassName="jetbrains.mps.generator.template.TracingUtil" />
     <classNode dependClassName="jetbrains.mps.generator.textGen.TextGenerator" />
     <classNode dependClassName="jetbrains.mps.generator.textGen.TextGeneratorEngine" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
@@ -235,15 +236,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.FResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.GResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.TResource" />
-    <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
+    <classNode dependClassName="jetbrains.mps.textGen.TextGen" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenerationResult" />
-    <classNode dependClassName="jetbrains.mps.textGen.TextGenerationUtil" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx2" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />

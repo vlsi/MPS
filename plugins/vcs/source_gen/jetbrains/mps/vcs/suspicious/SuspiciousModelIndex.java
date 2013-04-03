@@ -48,7 +48,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
 
   public void addModel(SModel model, boolean isInConflict) {
-    if (model instanceof EditableSModel && !(((EditableSModel) model).isReadOnly())) {
+    if (model instanceof EditableSModel && !(model.isReadOnly())) {
       myTaskQueue.addTask(new ConflictableModelAdapter((EditableSModel) model, isInConflict));
     }
   }

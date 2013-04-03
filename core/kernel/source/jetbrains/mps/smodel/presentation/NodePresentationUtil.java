@@ -33,9 +33,10 @@ public class NodePresentationUtil {
   public static boolean isLocalTo(SNode referenceNode, SNode referentNode) {
     SModel toModel = referenceNode.getModel();
     if (toModel == null) return false;
+    SModel fromModel = referentNode.getModel();
+    if (fromModel == null) return false;
 
     IModule referenceModule = toLanguage(toModel.getModule());
-    SModel fromModel = referentNode.getModel();
     if (referenceModule instanceof Language) {
       IModule referentModule = toLanguage(fromModel.getModule());
       return referentModule == referenceModule;
@@ -52,12 +53,10 @@ public class NodePresentationUtil {
   }
 
   public static int getSortPriority(SNode referenceNode, SNode referentNode) {
-    if (isLocalTo(referenceNode, referentNode)) {
-      return -2;
-    }
-    if (referentNode.getModel() != null && SModelStereotype.isUserModel(referentNode.getModel())) {
-      return -1;
-    }
+    if (isLocalTo(referenceNode, referentNode)) return -2;
+    SModel model = referentNode.getModel();
+    if (model == null) return 0;
+    if (SModelStereotype.isUserModel(model)) return -1;
     return 0;
   }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6x6ob4oyk11hrcibjrdj57cp6j25who">
+<dependencies version="2" modelHash="dcyyrhjaa1wjskzq9dh27d1l8ypp440">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -149,7 +149,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ChangeColors.java" />
   </source>
-  <source id="4652592318748335691" name="ChangeEditorMessage" hash="-cq0h0ep1j7n3ai11xjlhnthpj0fu4si">
+  <source id="4652592318748335691" name="ChangeEditorMessage" hash="3yp6f1a6buii94qzptqacuj0y3nkyf4">
     <dep root="4652592318748334972" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
@@ -283,7 +283,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DiffEditorSeparator.java" />
   </source>
-  <source id="4652592318748338308" name="DiffEditor" hash="-2i9qtm4ws0cn1bgd1milnnbgxjljvtz">
+  <source id="4652592318748338308" name="DiffEditor" hash="55f2vlitvfoywrkv1033y0ojx8vf2n3">
     <dep root="4652592318748335691" />
     <dep root="9170101780449072521" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
@@ -419,28 +419,11 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GoToNeighbourRootActions.java" />
   </source>
-  <source id="4652592318748340561" name="NextPreviousTraverser" hash="-7fss87wbfqzdmoevvahs5li1glwjro4" dependsOnNodes="true">
-    <dep root="4393777506305219687" />
+  <source id="4652592318748340561" name="NextPreviousTraverser" hash="-7fss87wbfqzdmoevvahs5li1glwjro4">
     <dep root="4652592318748334972" />
-    <dep root="4652592318748335014" />
-    <dep root="4652592318748335093" />
-    <dep root="4652592318748335554" />
-    <dep root="4652592318748335691" />
     <dep root="4652592318748337083" />
     <dep root="4652592318748337213" />
     <dep root="4652592318748337772" />
-    <dep root="4652592318748337778" />
-    <dep root="4652592318748338308" />
-    <dep root="4652592318748338723" />
-    <dep root="4652592318748339080" />
-    <dep root="4652592318748339723" />
-    <dep root="4652592318748340259" />
-    <dep root="4652592318748340352" />
-    <dep root="4652592318748341187" />
-    <dep root="6402272430682108518" />
-    <dep root="739457190729175664" />
-    <dep root="8733553229778921962" />
-    <dep root="9170101780449072521" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.selection(MPS.Editor/jetbrains.mps.nodeEditor.selection@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />

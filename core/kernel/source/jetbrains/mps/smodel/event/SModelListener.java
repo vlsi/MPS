@@ -16,9 +16,8 @@
 package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 
 /**
  * Author: Sergey Dmitriev
@@ -66,6 +65,8 @@ public interface SModelListener {
   void referenceAdded(SModelReferenceEvent event);
 
   void referenceRemoved(SModelReferenceEvent event);
+
+  void problemsUpdated(SModel sm);
 
   void modelSaved(SModel sm);
 

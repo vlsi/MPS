@@ -1,4 +1,4 @@
--client
+-server
 -Xss1024k
 -ea
 -Xmx1200m
@@ -6,3 +6,4 @@
 -XX:NewSize=256m
 -XX:+HeapDumpOnOutOfMemoryError
 -Dfile.encoding=UTF-8
+-Dapple.awt.graphics.UseQuartz=true

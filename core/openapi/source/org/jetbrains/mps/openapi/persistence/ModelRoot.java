@@ -44,6 +44,7 @@ public interface ModelRoot {
 
   Iterable<SModel> getModels();
 
+  // TODO replace with isReadOnly()
   boolean canCreateModels();
 
   boolean canCreateModel(String modelName);

@@ -33,7 +33,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -45,10 +44,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
   </dependency>
   <dependency className="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubDataSource" file="EclipseJavaStubDataSource.java">
     <classNode dependClassName="com.intellij.openapi.editor.Document" />
@@ -94,6 +94,11 @@
     <classNode extendsClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" />
   </dependency>
   <dependency className="jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder" file="JavaForeignIdBuilder.java">
+    <classNode dependClassName="com.intellij.facet.FacetManager" />
+    <classNode dependClassName="com.intellij.openapi.module.Module" />
+    <classNode dependClassName="com.intellij.openapi.module.ModuleManager" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.psi.PsiClass" />
     <classNode dependClassName="com.intellij.psi.PsiElement" />
     <classNode dependClassName="com.intellij.psi.PsiField" />
@@ -104,8 +109,11 @@
     <classNode dependClassName="com.intellij.psi.PsiParameter" />
     <classNode dependClassName="com.intellij.psi.PsiType" />
     <classNode dependClassName="com.intellij.psi.PsiTypeElement" />
+    <classNode dependClassName="com.intellij.util.xml.ModuleContentRootSearchScope" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="jetbrains.mps.idea.core.facet.MPSFacet" />
+    <classNode dependClassName="jetbrains.mps.idea.core.facet.MPSFacetType" />
     <classNode dependClassName="jetbrains.mps.idea.core.refactoring.NodePtr" />
     <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.ASTConverter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
@@ -115,12 +123,16 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.idea.java.psiStubs.Mapper" file="Mapper.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.psi.PsiElement" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.idea.core.psi.MPS2PsiMapper" />
   </dependency>
@@ -176,15 +188,16 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode extendsClassName="jetbrains.mps.idea.core.psi.PsiListener" />
-    <classNode extendsClassName="jetbrains.mps.idea.core.psi.stubs.PsiStubModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.BaseSpecialModelDescriptor" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.DataSourceListener" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.util.Consumer" />
   </dependency>
   <dependency className="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelRoot" file="PsiJavaStubModelRoot.java">
     <classNode dependClassName="com.intellij.openapi.module.Module" />

@@ -623,6 +623,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.BuildAllActions_Action" />
@@ -925,6 +926,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.ToolbarMake_ActionGroup" file="ToolbarMake_ActionGroup.java">

@@ -29,12 +29,14 @@ import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
+import org.jetbrains.mps.openapi.model.SModel.Problem.Kind;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -154,14 +156,18 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
     SNode root = iterator.hasNext() ? iterator.next() : null;
     if (root == null) {
       throw new ModelSaveException("cannot save empty model",
-          Collections.<Problem>singletonList(new PersistenceProblem("cannot save empty model", null, true)));
+          Collections.<Problem>singletonList(new PersistenceProblem(Kind.Save, "cannot save empty model", null, true)));
     }
 
     // TODO check concepts
+    if (IterableUtil.copyToList(model.getRootNodes()).size() > 1) {
+      throw new ModelSaveException("cannot save more than one root into .xml file",
+          Collections.<Problem>singletonList(new PersistenceProblem(Kind.Save, "cannot save more than one root into .xml file", null, true, -1, -1, root)));
+    }
 
     TextGenerationResult result = TextGen.generateText(root);
     if (result.hasErrors()) {
-      throw new ModelSaveException("cannot save xml root", PersistenceProblem.fromIMessages(result.problems()));
+      throw new ModelSaveException("cannot save xml root", PersistenceProblem.fromIMessages(Kind.Save, result.problems()));
     }
 
     String content = (String) result.getResult();
