@@ -50,7 +50,7 @@ import java.util.Set;
  * Date: Mar 27, 2007
  */
 public class GenerationPartitioner {
-  private static final Logger LOG = Logger.getLogger(GenerationPartitioner.class);
+  private static final Logger LOG = LogManager.getLogger(GenerationPartitioner.class);
 
   // generators
   private final Collection<TemplateModule> myGenerators;

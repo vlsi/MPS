@@ -45,7 +45,7 @@ public interface GenerationCacheContainer {
 
   public static class FileBasedGenerationCacheContainer implements GenerationCacheContainer {
 
-    private static final Logger LOG = Logger.getLogger(FileBasedGenerationCacheContainer.class);
+    private static final Logger LOG = LogManager.getLogger(FileBasedGenerationCacheContainer.class);
 
     @NotNull
     private File myGeneratorCaches;
@@ -95,7 +95,7 @@ public interface GenerationCacheContainer {
 
   public static class FileBasedModelCacheContainer implements ModelCacheContainer {
 
-    private static final Logger LOG = Logger.getLogger(FileBasedModelCacheContainer.class);
+    private static final Logger LOG = LogManager.getLogger(FileBasedModelCacheContainer.class);
 
     private final File myFolder;
     private final File myHashDir;

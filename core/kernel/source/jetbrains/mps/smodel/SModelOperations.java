@@ -43,7 +43,7 @@ import java.util.List;
 import java.util.Set;
 
 public class SModelOperations {
-  private static final Logger LOG = Logger.getLogger(SModelOperations.class);
+  private static final Logger LOG = LogManager.getLogger(SModelOperations.class);
 
   @Nullable
   public static SNode getRootByName(SModel model, @NotNull String name) {

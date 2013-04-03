@@ -40,7 +40,7 @@ import java.util.List;
     )}
 )
 public class EditorSettings implements PersistentStateComponent<MyState> {
-  private static final Logger LOG = Logger.getLogger(EditorSettings.class);
+  private static final Logger LOG = LogManager.getLogger(EditorSettings.class);
 
   public static EditorSettings getInstance() {
     return ApplicationManager.getApplication() == null ? new EditorSettings() : ApplicationManager.getApplication().getComponent(EditorSettings.class);

@@ -29,7 +29,7 @@ import java.util.List;
 
 
 public class PathManager {
-  private static final Logger LOG = Logger.getLogger(PathManager.class);
+  private static final Logger LOG = LogManager.getLogger(PathManager.class);
 
   private static final String FILE = "file";
   private static final String JAR = "jar";

@@ -21,14 +21,12 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.List;
 
 public class PersistenceComponent implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(PersistenceComponent.class);
+  private static final Logger LOG = LogManager.getLogger(PersistenceComponent.class);
 
   private final static KeyedExtensionCollector<ModelRootSettingsEditorProvider, String> oursCollector =
     new KeyedExtensionCollector<ModelRootSettingsEditorProvider, String>("com.intellij.mps.modelRootSettings") {

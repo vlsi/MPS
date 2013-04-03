@@ -159,7 +159,7 @@ public class JavaCompiler {
     return sb.toString();
   }
 
-  private static Logger LOG = Logger.getLogger(JavaCompiler.class);
+  private static Logger LOG = LogManager.getLogger(JavaCompiler.class);
 
   private class MyCompilerRequestor implements ICompilerRequestor {
     @Override

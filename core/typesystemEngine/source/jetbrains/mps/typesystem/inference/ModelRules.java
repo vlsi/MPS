@@ -48,7 +48,7 @@ public class ModelRules {
   private Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<IVariableConverter_Runtime>();
   private Set<SModelReference> myModelsWithLoadedRules = new THashSet<SModelReference>();
   private OverloadedOperationsManager myOverloadedOperationsManager;
-  private static final Logger LOG = Logger.getLogger(RulesManager.class);
+  private static final Logger LOG = LogManager.getLogger(RulesManager.class);
 
   public ModelRules(SModel model) {
     List<Language> languages = SModelOperations.getLanguages(model, GlobalScope.getInstance());

@@ -65,7 +65,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
 
   private static final String XML_EXTENSION = "xml";
 
-  private static final Logger LOG = Logger.getLogger(XmlModelPersistence.class);
+  private static final Logger LOG = LogManager.getLogger(XmlModelPersistence.class);
 
   @Override
   public void init() {

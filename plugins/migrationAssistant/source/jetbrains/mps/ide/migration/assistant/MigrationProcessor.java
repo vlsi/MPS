@@ -17,17 +17,12 @@ package jetbrains.mps.ide.migration.assistant;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.util.ui.*;
-import com.intellij.util.ui.Timer;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.actions.LabelledAnchor;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProjectVersion;
-import jetbrains.mps.project.Version;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.action.BaseAction;
 
@@ -35,7 +30,6 @@ import javax.swing.JComponent;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -47,8 +41,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class MigrationProcessor extends AbstractProjectComponent{
   
-  private static Logger LOG = Logger.getLogger(MigrationProcessor.class);
-  
+  private static Logger LOG = LogManager.getLogger(MigrationProcessor.class);
+
   private List<Callback> myCallbacks = new CopyOnWriteArrayList<Callback>();
   private AtomicBoolean myStarted = new AtomicBoolean();
   private AtomicBoolean myFinished = new AtomicBoolean();

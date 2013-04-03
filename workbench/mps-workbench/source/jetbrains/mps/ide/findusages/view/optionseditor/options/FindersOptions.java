@@ -38,7 +38,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FindersOptions extends BaseOptions {
-  private static final Logger LOG = Logger.getLogger(FindersOptions.class);
+  private static final Logger LOG = LogManager.getLogger(FindersOptions.class);
 
   private static final String FINDERS = "finders";
   private static final String FINDER = "finder";

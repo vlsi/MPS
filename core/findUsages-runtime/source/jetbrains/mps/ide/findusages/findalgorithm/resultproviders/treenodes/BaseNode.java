@@ -39,7 +39,7 @@ import java.util.List;
  * NOTE: all nodes except UnionNode MUST have <2 children
  */
 public abstract class BaseNode implements IResultProvider {
-  private static final Logger LOG = Logger.getLogger(BaseNode.class);
+  private static final Logger LOG = LogManager.getLogger(BaseNode.class);
 
   private static final String CHILDREN = "children";
 

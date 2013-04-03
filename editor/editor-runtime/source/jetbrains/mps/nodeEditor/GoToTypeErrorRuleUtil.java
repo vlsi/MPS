@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class GoToTypeErrorRuleUtil {
-  private static Logger LOG = Logger.getLogger(GoToTypeErrorRuleUtil.class);
+  private static Logger LOG = LogManager.getLogger(GoToTypeErrorRuleUtil.class);
 
   public GoToTypeErrorRuleUtil() {
   }

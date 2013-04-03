@@ -40,7 +40,7 @@ import java.io.OutputStream;
  * Date: 3/6/13
  */
 public class MPSModelVirtualFile extends VirtualFile {
-  private static final Logger LOG = Logger.getLogger(MPSModelVirtualFile.class);
+  private static final Logger LOG = LogManager.getLogger(MPSModelVirtualFile.class);
   private static final byte[] ZERO_BYTES = new byte[0];
   public static final String MODEL_PREFIX = "model/";
 

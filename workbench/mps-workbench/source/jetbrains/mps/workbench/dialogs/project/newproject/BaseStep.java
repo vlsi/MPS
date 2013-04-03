@@ -35,7 +35,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public abstract class BaseStep extends StepAdapter {
-  private static final Logger LOG = Logger.getLogger(BaseStep.class);
+  private static final Logger LOG = LogManager.getLogger(BaseStep.class);
 
   private JPanel myComponent;
 

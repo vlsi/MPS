@@ -27,7 +27,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class ClassPathFactory {
-  private static Logger LOG = Logger.getLogger(ClassPathFactory.class);
+  private static Logger LOG = LogManager.getLogger(ClassPathFactory.class);
   private static final ClassPathFactory ourInstance = new ClassPathFactory();
 
   public static ClassPathFactory getInstance() {

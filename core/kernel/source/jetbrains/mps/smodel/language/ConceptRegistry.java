@@ -40,7 +40,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ConceptRegistry implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(ConceptRegistry.class);
+  private static final Logger LOG = LogManager.getLogger(ConceptRegistry.class);
 
   private final Map<String, ConceptDescriptor> conceptDescriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
   private final Map<String, BehaviorDescriptor> behaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();

@@ -40,7 +40,7 @@ public class FileDeleteActionFixed extends DeleteAction {
   }
 
   private static class MyDeleteProvider implements DeleteProvider {
-    private final static Logger LOG = Logger.getLogger(MyDeleteProvider.class);
+    private final static Logger LOG = LogManager.getLogger(MyDeleteProvider.class);
 
     @Override
     public boolean canDeleteElement(DataContext dataContext) {

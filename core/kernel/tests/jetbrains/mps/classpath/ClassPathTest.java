@@ -52,7 +52,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 public class ClassPathTest extends BaseMPSTest {
-  private static final Logger LOG = Logger.getLogger(ClassPathTest.class);
+  private static final Logger LOG = LogManager.getLogger(ClassPathTest.class);
 
   // TODO fixme!
   private static final String MPS_CORE_PROJECT = PathManager.getHomePath() + File.separator + "MPS.mpr";

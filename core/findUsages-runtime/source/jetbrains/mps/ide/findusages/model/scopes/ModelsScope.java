@@ -32,7 +32,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ModelsScope extends FindUsagesScope {
-  private static final Logger LOG = Logger.getLogger(ModelsScope.class);
+  private static final Logger LOG = LogManager.getLogger(ModelsScope.class);
   private static final String MODEL_ID = "model_id";
   private static final String MODEL_TAG = "model";
 

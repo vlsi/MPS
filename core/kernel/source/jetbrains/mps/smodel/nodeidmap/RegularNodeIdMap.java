@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.SNodeId.Regular;
 import java.util.Arrays;
 
 public class RegularNodeIdMap implements INodeIdToNodeMap {
-  private static Logger LOG = Logger.getLogger(RegularNodeIdMap.class);
+  private static Logger LOG = LogManager.getLogger(RegularNodeIdMap.class);
   private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
 
   @Override

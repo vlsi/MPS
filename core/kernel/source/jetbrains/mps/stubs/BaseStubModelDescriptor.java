@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class BaseStubModelDescriptor extends ReloadableSModelBase implements Cloneable {
-  private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
+  private static final Logger LOG = LogManager.getLogger(BaseStubModelDescriptor.class);
   private SModule myModule;
   private jetbrains.mps.smodel.SModel mySModel;
 

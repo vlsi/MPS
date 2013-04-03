@@ -20,7 +20,8 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -35,7 +36,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ModelDependenciesManager {
 
-  private static final Logger LOG = Logger.getLogger(ModelDependenciesManager.class);
+  private static final Logger LOG = LogManager.getLogger(ModelDependenciesManager.class);
 
   private SModel myModel;
   private MySModelWatcher mySModelWatcher;

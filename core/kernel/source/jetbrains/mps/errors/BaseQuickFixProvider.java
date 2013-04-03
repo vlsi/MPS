@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BaseQuickFixProvider implements QuickFixProvider {
-  private static final Logger LOG = Logger.getLogger(BaseQuickFixProvider.class);
+  private static final Logger LOG = LogManager.getLogger(BaseQuickFixProvider.class);
 
 
   private QuickFix_Runtime myQuickFix;

@@ -28,7 +28,7 @@ import java.io.File;
  * @author Evgeny Gerashchenko
  */
 public class IoFileSystemProvider implements FileSystemProvider {
-  static final Logger LOG = Logger.getLogger(IoFileSystemProvider.class);
+  static final Logger LOG = LogManager.getLogger(IoFileSystemProvider.class);
 
   @Override
   public IFile getFile(@NotNull String path) {

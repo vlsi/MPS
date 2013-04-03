@@ -29,7 +29,7 @@ import java.util.List;
  * Date: Nov 29, 2006
  */
 public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
-  private static final Logger LOG = Logger.getLogger(CompositeSubstituteInfo.class);
+  private static final Logger LOG = LogManager.getLogger(CompositeSubstituteInfo.class);
 
   private CellContext myCellContext;
   /**

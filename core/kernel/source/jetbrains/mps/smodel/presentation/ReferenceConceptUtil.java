@@ -19,7 +19,9 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Computable;
 
@@ -31,7 +33,7 @@ import java.util.regex.Pattern;
  * Jan 31, 2008
  */
 public class ReferenceConceptUtil {
-  private static final Logger LOG = Logger.getLogger(ReferenceConceptUtil.class);
+  private static final Logger LOG = LogManager.getLogger(ReferenceConceptUtil.class);
 
   private static final Pattern SMART_ALIAS = Pattern.compile(".*<\\{.+\\}>.*");
   private static final Pattern SMART_ALIAS_SEPARATOR = Pattern.compile("<\\{|\\}>");

@@ -40,7 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseBindedDialog extends DialogWrapper implements IBindedDialog {
-  private static final Logger LOG = Logger.getLogger(BaseBindedDialog.class);
+  private static final Logger LOG = LogManager.getLogger(BaseBindedDialog.class);
 
   protected IOperationContext myOperationContext;
   private List<AutoBinding> myBindings = new ArrayList<AutoBinding>();

@@ -46,7 +46,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public abstract class SModelDescriptorStub implements SModelDescriptor {
 
-  private static final Logger LOG = Logger.getLogger(SModelDescriptorStub.class);
+  private static final Logger LOG = LogManager.getLogger(SModelDescriptorStub.class);
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
 

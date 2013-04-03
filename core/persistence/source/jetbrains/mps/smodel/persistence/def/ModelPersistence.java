@@ -62,7 +62,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ModelPersistence {
-  private static final Logger LOG = Logger.getLogger(ModelPersistence.class);
+  private static final Logger LOG = LogManager.getLogger(ModelPersistence.class);
 
   public static final String TARGET_NODE_ID = "targetNodeId";
   public static final String LINK = "link";

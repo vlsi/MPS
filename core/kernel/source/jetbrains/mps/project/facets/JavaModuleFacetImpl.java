@@ -37,7 +37,7 @@ import java.util.Set;
  * todo: divide into two parts: JavaModuleFacetSrcImpl && JavaModuleFacetPackagedImpl
  */
 public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFacet {
-  private static final Logger LOG = Logger.getLogger(JavaModuleFacetImpl.class);
+  private static final Logger LOG = LogManager.getLogger(JavaModuleFacetImpl.class);
 
   public JavaModuleFacetImpl() {
   }

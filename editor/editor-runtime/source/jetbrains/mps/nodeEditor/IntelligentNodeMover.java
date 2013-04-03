@@ -31,7 +31,7 @@ import java.util.Collections;
 import java.util.List;
 
 class IntelligentNodeMover {
-  private static final Logger LOG = Logger.getLogger(IntelligentNodeMover.class);
+  private static final Logger LOG = LogManager.getLogger(IntelligentNodeMover.class);
 
   private List<SNode> myNodes = new ArrayList<SNode>();
   private EditorContext myEditorContext;

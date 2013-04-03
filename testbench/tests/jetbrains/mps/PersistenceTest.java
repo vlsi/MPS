@@ -51,7 +51,7 @@ public class PersistenceTest extends BaseMPSTest {
   private final static File tempDir = new File(PathManager.getHomePath(), "TEST_PERSISTENCE");
   private final static int START_PERSISTENCE_TEST_VERSION = 7;
 
-  private static Logger LOG = Logger.getLogger(PersistenceTest.class);
+  private static Logger LOG = LogManager.getLogger(PersistenceTest.class);
 
   private TestOutputFilter filter = new TestOutputFilter() {
     @Override

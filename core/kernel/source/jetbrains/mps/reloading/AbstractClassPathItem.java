@@ -65,7 +65,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   //-----------------------
 
-  private static final Logger LOG = Logger.getLogger(RealClassPathItem.class);
+  private static final Logger LOG = LogManager.getLogger(RealClassPathItem.class);
   private boolean myValid = true;
   private boolean myErrorShown = false;
 

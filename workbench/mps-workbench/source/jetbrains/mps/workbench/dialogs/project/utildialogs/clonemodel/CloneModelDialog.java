@@ -37,7 +37,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CloneModelDialog extends BaseStretchingBindedDialog {
-  private static final Logger LOG = Logger.getLogger(CloneModelDialog.class);
+  private static final Logger LOG = LogManager.getLogger(CloneModelDialog.class);
 
   private CloneModelProperties myModelProperties;
   private SModel myCloningModel;

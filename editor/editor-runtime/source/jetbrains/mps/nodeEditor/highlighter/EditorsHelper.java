@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EditorsHelper {
-  public static Logger LOG = Logger.getLogger(EditorsHelper.class);
+  public static Logger LOG = LogManager.getLogger(EditorsHelper.class);
 
   public static List<MPSFileNodeEditor> getAllEditors(FileEditorManager manager) {
     return filterMPSEditors(manager.getAllEditors());

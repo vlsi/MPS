@@ -47,7 +47,7 @@ import jetbrains.mps.util.WeakSet;
 import java.util.*;
 
 public class TypesEditorChecker extends EditorCheckerAdapter {
-  private static final Logger LOG = Logger.getLogger(TypesEditorChecker.class);
+  private static final Logger LOG = LogManager.getLogger(TypesEditorChecker.class);
 
   public static boolean IMMEDIATE_QFIX_DISABLED = false;
 

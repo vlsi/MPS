@@ -38,7 +38,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
-  private static final Logger LOG = Logger.getLogger(XmlBasedModelCache.class);
+  private static final Logger LOG = LogManager.getLogger(XmlBasedModelCache.class);
 
   protected XmlBasedModelCache(SModelRepository modelRepository) {
     super(modelRepository);

@@ -45,7 +45,7 @@ import java.util.Map;
 import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 
 public class DefaultSModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
-  private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
+  private static final Logger LOG = LogManager.getLogger(DefaultSModelDescriptor.class);
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override

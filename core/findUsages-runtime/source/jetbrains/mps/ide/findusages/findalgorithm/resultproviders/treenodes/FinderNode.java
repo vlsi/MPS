@@ -41,7 +41,7 @@ public class FinderNode extends BaseLeaf {
   private static final String GENERATED_FINDER = "generated_finder";
   private static final String CLASS_NAME = "class_name";
 
-  private static final Logger LOG = Logger.getLogger(FinderNode.class);
+  private static final Logger LOG = LogManager.getLogger(FinderNode.class);
 
   private IFinder myFinder;
 

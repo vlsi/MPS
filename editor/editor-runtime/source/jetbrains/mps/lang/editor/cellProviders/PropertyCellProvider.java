@@ -40,7 +40,7 @@ import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class PropertyCellProvider extends CellProviderWithRole {
-  private static final Logger LOG = Logger.getLogger(PropertyCellProvider.class);
+  private static final Logger LOG = LogManager.getLogger(PropertyCellProvider.class);
 
   private String myPropertyName;
   private SNode myPropertyDeclaration;

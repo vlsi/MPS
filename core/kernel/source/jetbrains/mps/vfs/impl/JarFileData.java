@@ -31,7 +31,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 class JarFileData extends AbstractJarFileData {
-  private static Logger LOG = Logger.getLogger(JarFileData.class);
+  private static Logger LOG = LogManager.getLogger(JarFileData.class);
 
   private final Object myLock = new Object();
   private boolean isInitialized = false;

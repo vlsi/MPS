@@ -54,7 +54,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Language extends AbstractModule implements MPSModuleOwner {
-  private static final Logger LOG = Logger.getLogger(Language.class);
+  private static final Logger LOG = LogManager.getLogger(Language.class);
 
   public static final String LANGUAGE_MODELS = "languageModels";
 

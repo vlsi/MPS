@@ -4,6 +4,7 @@ package jetbrains.mps.tool.common;
 
 import java.nio.charset.Charset;
 import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jdom.Document;
 import java.io.File;
 import org.jdom.JDOMException;
@@ -27,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class JDOMUtil {
   public static final Charset DEFAULT_CHARSET = Charset.forName("UTF-8");
-  private static final Logger LOG = Logger.getLogger(JDOMUtil.class);
+  private static final Logger LOG = LogManager.getLogger(JDOMUtil.class);
 
   public JDOMUtil() {
   }

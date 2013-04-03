@@ -47,7 +47,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class FindUtils {
-  private static final Logger LOG = Logger.getLogger(FindUtils.class);
+  private static final Logger LOG = LogManager.getLogger(FindUtils.class);
 
   @Deprecated
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final IScope scope, final String... finderClassNames) {

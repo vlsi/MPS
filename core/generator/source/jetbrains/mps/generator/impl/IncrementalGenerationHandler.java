@@ -58,7 +58,7 @@ import java.util.Set;
  */
 public class IncrementalGenerationHandler {
 
-  private static final Logger LOG = Logger.getLogger(IncrementalGenerationHandler.class);
+  private static final Logger LOG = LogManager.getLogger(IncrementalGenerationHandler.class);
 
   private static final String CONDITIONALS_ID = "";
 

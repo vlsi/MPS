@@ -46,7 +46,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BlameDialog extends DialogWrapper {
-  private static final Logger LOG = Logger.getLogger(BlameDialog.class);
+  private static final Logger LOG = LogManager.getLogger(BlameDialog.class);
   private static final String CAPTION = "Submit System Exception to Developers";
 
   private JPanel myPanel;

@@ -22,7 +22,6 @@ import jetbrains.mps.util.ReadUtil;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -30,7 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class IFileUtils {
-  private static final Logger LOG = Logger.getLogger(IFileUtils.class);
+  private static final Logger LOG = LogManager.getLogger(IFileUtils.class);
 
   public static boolean copyFileContent(IFile oldFile, IFile newFile) {
     BufferedInputStream in = null;

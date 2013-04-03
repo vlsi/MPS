@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 
 public class NavigationManager {
-  private static final Logger LOG = Logger.getLogger(NavigationManager.class);
+  private static final Logger LOG = LogManager.getLogger(NavigationManager.class);
 
   public static NavigationManager getInstance() {
     return ApplicationManager.getApplication().getComponent(NavigationManager.class);

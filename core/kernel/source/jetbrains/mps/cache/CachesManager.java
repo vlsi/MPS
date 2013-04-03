@@ -31,7 +31,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public class CachesManager implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(CachesManager.class);
+  private static final Logger LOG = LogManager.getLogger(CachesManager.class);
 
   private final ClassLoaderManager myClassLoaderManager;
   private final SModelRepository mySModelRepository;

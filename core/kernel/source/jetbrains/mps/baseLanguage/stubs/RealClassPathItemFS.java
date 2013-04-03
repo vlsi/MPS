@@ -19,7 +19,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.reloading.AbstractClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.IClassPathItemVisitor;
 import jetbrains.mps.reloading.RealClassPathItem;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
@@ -32,7 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class RealClassPathItemFS extends AbstractClassPathItem {
-  private static final Logger LOG = Logger.getLogger(RealClassPathItemFS.class);
+  private static final Logger LOG = LogManager.getLogger(RealClassPathItemFS.class);
   private boolean myValid = true;
   private boolean myErrorShown = false;
 

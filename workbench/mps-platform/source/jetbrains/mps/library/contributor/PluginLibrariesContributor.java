@@ -30,7 +30,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class PluginLibrariesContributor implements LibraryContributor, ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(PluginLibrariesContributor.class);
+  private static final Logger LOG = LogManager.getLogger(PluginLibrariesContributor.class);
 
   @Override
   public Set<LibDescriptor> getLibraries() {

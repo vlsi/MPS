@@ -58,7 +58,7 @@ import java.util.List;
  * This class should be called in UI (EventDispatch) thread only
  */
 public class LeftEditorHighlighter extends JComponent implements TooltipComponent {
-  private static final Logger LOG = Logger.getLogger(LeftEditorHighlighter.class);
+  private static final Logger LOG = LogManager.getLogger(LeftEditorHighlighter.class);
   public static final String ICON_AREA = "LeftEditorHighlighterIconArea";
   private static final Color BACKGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.GUTTER_BACKGROUND);
 

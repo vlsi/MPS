@@ -21,7 +21,7 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.HashMap;
@@ -33,7 +33,7 @@ public class PasteWrappersManager implements CoreComponent {
   public static final String PASTE_WRAPPER_CLASS_NAME = "PasteWrappers";
   public static final String PASTE_WRAPPERS_FACTORY_METHOD = "createPasteWrappers";
 
-  private static final Logger LOG = Logger.getLogger(PasteWrappersManager.class);
+  private static final Logger LOG = LogManager.getLogger(PasteWrappersManager.class);
 
   private ClassLoaderManager myClassLoaderManager;
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {

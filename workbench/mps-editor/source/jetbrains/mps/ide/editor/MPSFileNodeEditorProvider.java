@@ -32,7 +32,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware {
-  private static final Logger LOG = Logger.getLogger(MPSFileNodeEditorProvider.class);
+  private static final Logger LOG = LogManager.getLogger(MPSFileNodeEditorProvider.class);
 
   private static final String CLASS = "class";
 

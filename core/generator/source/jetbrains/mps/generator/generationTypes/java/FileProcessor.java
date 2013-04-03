@@ -32,7 +32,7 @@ import java.util.Collection;
 import java.util.List;
 
 class FileProcessor {
-  private static final Logger LOG = Logger.getLogger(FileProcessor.class);
+  private static final Logger LOG = LogManager.getLogger(FileProcessor.class);
 
   private final List<SModel> myModels = new ArrayList<SModel>();
   private final List<FileAndContent> myFilesAndContents = new ArrayList<FileAndContent>();

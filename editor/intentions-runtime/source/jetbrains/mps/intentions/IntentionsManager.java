@@ -76,7 +76,7 @@ import java.util.Set;
         )}
 )
 public class IntentionsManager implements ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
-  private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
+  private static final Logger LOG = LogManager.getLogger(IntentionsManager.class);
 
   public static String getDescriptorClassName(SModuleReference langRef) {
     return "IntentionsDescriptor";

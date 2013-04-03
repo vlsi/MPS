@@ -32,7 +32,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class BaseApplicationPluginManager implements ApplicationComponent, IRegistryManager {
-  private static final Logger LOG = Logger.getLogger(BaseApplicationPluginManager.class);
+  private static final Logger LOG = LogManager.getLogger(BaseApplicationPluginManager.class);
 
   protected List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
 

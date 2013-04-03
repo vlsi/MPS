@@ -33,7 +33,7 @@ import java.util.Collections;
 import java.util.List;
 
 public abstract class BaseProjectPlugin implements PersistentStateComponent<PluginState> {
-  private static final Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
+  private static final Logger LOG = LogManager.getLogger(BaseProjectPlugin.class);
 
   private Project myProject;
 

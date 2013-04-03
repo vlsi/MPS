@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 
 public class BuiltInLibrariesIO {
-  private static final Logger LOG = Logger.getLogger(BuiltInLibrariesIO.class);
+  private static final Logger LOG = LogManager.getLogger(BuiltInLibrariesIO.class);
   public static final String CONFIG_FILE_NAME = "CustomBuiltInLibraries";
   private static final String CONFIG_FILE_WHOLE_NAME = CONFIG_FILE_NAME + ".xml";
   public static final String ROOT_TAG = "libraries";

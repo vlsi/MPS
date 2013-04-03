@@ -40,7 +40,7 @@ import java.io.InputStreamReader;
  */
 public class RefactoringsPersistence {
 
-  private static final Logger LOG = Logger.getLogger(RefactoringsPersistence.class);
+  private static final Logger LOG = LogManager.getLogger(RefactoringsPersistence.class);
 
   private static IFile getRefactoringsFile(IFile modelFile) {
     String modelPath = modelFile.getPath();

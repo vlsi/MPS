@@ -33,7 +33,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class JarFileClassPathItemFS extends RealClassPathItemFS {
-  private static final Logger LOG = Logger.getLogger(JarFileClassPathItemFS.class);
+  private static final Logger LOG = LogManager.getLogger(JarFileClassPathItemFS.class);
 
   private String myPrefix;
   private IFile myFile;

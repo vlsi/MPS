@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class UnregisteredNodes {
-  private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
+  private static final Logger LOG = LogManager.getLogger(UnregisteredNodes.class);
   private static UnregisteredNodes ourInstance;
 
   private final PairMap<SModelReference, SNodeId, SNode> myMap = new PairMap<SModelReference, SNodeId, SNode>();

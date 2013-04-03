@@ -31,7 +31,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class SNodeAccessUtil {
-  private static Logger LOG = Logger.getLogger(SNodeAccessUtil.class);
+  private static Logger LOG = LogManager.getLogger(SNodeAccessUtil.class);
 
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertySettersInProgress = new InProgressThreadLocal();
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();

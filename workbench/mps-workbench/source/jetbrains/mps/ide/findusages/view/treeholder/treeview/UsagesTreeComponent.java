@@ -46,7 +46,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -60,7 +60,7 @@ import java.awt.BorderLayout;
 import java.util.*;
 
 public abstract class UsagesTreeComponent extends JPanel implements IChangeListener {
-  private static final Logger LOG = Logger.getLogger(UsagesTreeComponent.class);
+  private static final Logger LOG = LogManager.getLogger(UsagesTreeComponent.class);
 
   private static final String CONTENTS = "contents";
   private static final String VIEW_OPTIONS = "view_options";

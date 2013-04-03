@@ -27,7 +27,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -52,7 +52,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ProjectPaneDnDListener implements DropTargetListener {
-  private static Logger LOG = Logger.getLogger(ProjectPaneDnDListener.class);
+  private static Logger LOG = LogManager.getLogger(ProjectPaneDnDListener.class);
 
   private JTree myTree;
   private DataFlavor myDataFlavor;

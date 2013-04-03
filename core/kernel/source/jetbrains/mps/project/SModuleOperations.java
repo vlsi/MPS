@@ -36,8 +36,6 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.MacroHelper;
-import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -53,7 +51,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class SModuleOperations {
-  private static final Logger LOG = Logger.getLogger(SModuleOperations.class);
+  private static final Logger LOG = LogManager.getLogger(SModuleOperations.class);
 
   public static Collection<String> getIndexablePaths(SModule module) {
     // todo: maybe move getIndexablePaths method to FileBasedModelRoot, or even in ModelRoot classes?

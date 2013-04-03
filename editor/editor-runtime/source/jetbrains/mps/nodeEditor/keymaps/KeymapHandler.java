@@ -49,7 +49,7 @@ import java.util.Set;
  * Date: 2/5/13
  */
 public abstract class KeymapHandler<E> {
-  private static final Logger LOG = Logger.getLogger(KeymapHandler.class);
+  private static final Logger LOG = LogManager.getLogger(KeymapHandler.class);
 
   public Collection<KeyMapAction> getAllRegisteredActions(EditorCell selectedCell, EditorContext context) {
     Set<KeyMapAction> result = new HashSet<KeyMapAction>();

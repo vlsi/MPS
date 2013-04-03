@@ -30,7 +30,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ModulesScope extends FindUsagesScope {
-  private static final Logger LOG = Logger.getLogger(ModulesScope.class);
+  private static final Logger LOG = LogManager.getLogger(ModulesScope.class);
   private static final String MODULE_ID = "module_id";
   private static final String MODULE_TAG = "module";
 

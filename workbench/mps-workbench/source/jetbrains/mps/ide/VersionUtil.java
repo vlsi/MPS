@@ -27,7 +27,7 @@ import java.util.Properties;
  * @author Kostik
  */
 public class VersionUtil {
-  private static final Logger LOG = Logger.getLogger(VersionUtil.class);
+  private static final Logger LOG = LogManager.getLogger(VersionUtil.class);
 
   public static String getVersionString() {
     Properties props = new Properties();

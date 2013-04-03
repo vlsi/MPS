@@ -46,7 +46,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -63,7 +62,7 @@ import java.util.*;
   }
 )
 public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
-  private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
+  private static final Logger LOG = LogManager.getLogger(ProjectPluginManager.class);
 
   private EditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
 

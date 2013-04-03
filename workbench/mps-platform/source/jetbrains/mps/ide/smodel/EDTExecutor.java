@@ -27,7 +27,7 @@ class EDTExecutor {
 
   private static final int MAX_EXECUTION_TIME = 100;
 
-  private static final Logger LOG = Logger.getLogger(EDTExecutor.class);
+  private static final Logger LOG = LogManager.getLogger(EDTExecutor.class);
 
   /* Notified when:
    *    myTasks queue becomes non-empty

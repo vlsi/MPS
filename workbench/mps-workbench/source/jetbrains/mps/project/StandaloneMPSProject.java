@@ -44,7 +44,6 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
 
@@ -62,7 +61,7 @@ import java.util.*;
   reloadable = false
 )
 public class StandaloneMPSProject extends MPSProject implements FileSystemListener, PersistentStateComponent<Element> {
-  private static final Logger LOG = Logger.getLogger(StandaloneMPSProject.class);
+  private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
 
   // project data
   private String myErrors = null;

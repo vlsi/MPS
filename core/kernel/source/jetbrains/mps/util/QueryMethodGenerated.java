@@ -35,7 +35,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public class QueryMethodGenerated implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
+  private static final Logger LOG = LogManager.getLogger(QueryMethodGenerated.class);
 
   private static ConcurrentMap<SModelReference, Map<String, Method>> ourMethods = new ConcurrentHashMap<SModelReference, Map<String, Method>>();
   private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();

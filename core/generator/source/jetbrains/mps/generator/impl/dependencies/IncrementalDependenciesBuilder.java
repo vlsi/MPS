@@ -28,7 +28,8 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.PrintWriter;
@@ -42,7 +43,7 @@ import java.util.*;
  */
 public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
-  private static final Logger LOG = Logger.getLogger(IncrementalDependenciesBuilder.class);
+  private static final Logger LOG = LogManager.getLogger(IncrementalDependenciesBuilder.class);
 
   /* generation data */
   private Map<String, String> myDependenciesTraces;

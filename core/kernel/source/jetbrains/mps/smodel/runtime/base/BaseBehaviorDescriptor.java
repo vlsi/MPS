@@ -42,7 +42,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
-  private static final Logger LOG = Logger.getLogger(BaseBehaviorDescriptor.class);
+  private static final Logger LOG = LogManager.getLogger(BaseBehaviorDescriptor.class);
 
   private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.([^\\.]+)$");
 

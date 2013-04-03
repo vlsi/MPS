@@ -21,7 +21,6 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
@@ -35,7 +34,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class SelectionInfo {
-  private static final Logger LOG = Logger.getLogger(SelectionInfo.class);
+  private static final Logger LOG = LogManager.getLogger(SelectionInfo.class);
 
   private static final String CLASS_NAME_ATTRIBUTE = "className";
   private static final String MODULE_ID_ATTRIBUTE = "moduleID";

@@ -36,7 +36,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.JOptionPane;
 
 public class DeleteModuleHelper {
-  private static final Logger LOG = Logger.getLogger(DeleteModuleHelper.class);
+  private static final Logger LOG = LogManager.getLogger(DeleteModuleHelper.class);
 
   public static void deleteModule(Project project, IModule module, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {

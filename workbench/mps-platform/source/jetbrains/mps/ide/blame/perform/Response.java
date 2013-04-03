@@ -26,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.StringReader;
 
 public class Response {
-  private static final Logger LOG = Logger.getLogger(Response.class);
+  private static final Logger LOG = LogManager.getLogger(Response.class);
 
   private boolean mySuccess = true;
   private String myMessage = "";

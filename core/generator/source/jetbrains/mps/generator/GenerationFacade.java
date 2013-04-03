@@ -63,7 +63,7 @@ import java.util.Set;
  */
 public class GenerationFacade {
 
-  private static final Logger LOG = Logger.getLogger(GenerationFacade.class);
+  private static final Logger LOG = LogManager.getLogger(GenerationFacade.class);
 
   public static List<SNode/*MappingConfiguration*/> getOwnMappings(Generator generator) {
     List<SModel> list = generator.getOwnTemplateModels();

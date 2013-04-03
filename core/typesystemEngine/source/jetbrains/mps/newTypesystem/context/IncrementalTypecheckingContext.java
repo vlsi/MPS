@@ -34,7 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<State, IncrementalTypechecking> {
-  private static Logger LOG = Logger.getLogger(IncrementalTypecheckingContext.class);
+  private static Logger LOG = LogManager.getLogger(IncrementalTypecheckingContext.class);
 
   private boolean myIsNonTypesystemComputation = false;
 //  private boolean myIsInferenceMode = false;

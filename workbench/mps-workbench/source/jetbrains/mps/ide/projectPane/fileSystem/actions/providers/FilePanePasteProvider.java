@@ -31,7 +31,7 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 
 public class FilePanePasteProvider implements PasteProvider {
-  private final static Logger LOG = Logger.getLogger(FilePanePasteProvider.class);
+  private final static Logger LOG = LogManager.getLogger(FilePanePasteProvider.class);
 
   @Override
   public void performPaste(DataContext dataContext) {

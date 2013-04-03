@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class JavaModelUtil_new {
-  private static final Logger LOG = Logger.getLogger(JavaModelUtil_new.class);
+  private static final Logger LOG = LogManager.getLogger(JavaModelUtil_new.class);
 
   @Nullable
   public static SNode findClassifier(Class cls) {

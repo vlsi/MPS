@@ -13,10 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
@@ -26,7 +24,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 //module context without project
 public class ModuleOperationContext extends StandaloneMPSContext {
-  private static final Logger LOG = Logger.getLogger(ModuleOperationContext.class);
 
   //we need to store module reference this way because generator are recreated on every reload
   //and if we store generator reference here it will be stale

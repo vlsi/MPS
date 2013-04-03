@@ -97,7 +97,7 @@ import java.util.regex.Pattern;
  */
 public class MigrationAssistantWizard extends AbstractWizardEx {
 
-  private static Logger LOG = Logger.getLogger(MigrationAssistantWizard.class);
+  private static Logger LOG = LogManager.getLogger(MigrationAssistantWizard.class);
 
   private static final List<String> STEP_IDS = new ArrayList<String>();
 

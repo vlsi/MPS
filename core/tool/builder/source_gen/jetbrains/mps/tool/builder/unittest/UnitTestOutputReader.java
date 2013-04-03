@@ -8,7 +8,6 @@ import java.io.OutputStreamWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
-import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class UnitTestOutputReader {
@@ -111,7 +110,7 @@ public class UnitTestOutputReader {
           this.addMessage(s.nextLine());
         }
       } catch (Exception e) {
-        Logger.getLogger(UnitTestOutputReader.class).error(e);
+        LogManager.getLogger(UnitTestOutputReader.class).error("Error in BaseOutputReader", e);
       }
     }
 

@@ -62,7 +62,7 @@ import java.util.Set;
  * Date: Mar 30, 2007
  */
 public class GenerationPartitioningUtil {
-  private static final Logger LOG = Logger.getLogger(GenerationPartitioningUtil.class);
+  private static final Logger LOG = LogManager.getLogger(GenerationPartitioningUtil.class);
 
   public static List<TemplateModule> getTemplateModules(SModel inputModel) {
     return getTemplateModules(inputModel, null);

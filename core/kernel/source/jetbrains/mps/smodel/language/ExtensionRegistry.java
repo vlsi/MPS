@@ -20,7 +20,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
@@ -36,7 +35,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComponent {
-  private static Logger LOG = Logger.getLogger(ExtensionRegistry.class);
+  private static Logger LOG = LogManager.getLogger(ExtensionRegistry.class);
 
   private static ExtensionRegistry INSTANCE;
 

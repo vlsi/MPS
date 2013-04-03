@@ -22,7 +22,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 
 public class FacetTabPersistenceComponent implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(ModelRootEntryPersistenceComponent.class);
+  private static final Logger LOG = LogManager.getLogger(ModelRootEntryPersistenceComponent.class);
 
   @Override
   public void initComponent() {

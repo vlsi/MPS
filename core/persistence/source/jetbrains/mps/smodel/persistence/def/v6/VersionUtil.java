@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class VersionUtil {
-  private static final Logger LOG = Logger.getLogger(VersionUtil.class);
+  private static final Logger LOG = LogManager.getLogger(VersionUtil.class);
 
   private static final char VERSION_SEPARATOR_CHAR = ':';
   private static final char MODEL_SEPARATOR_CHAR = '.';

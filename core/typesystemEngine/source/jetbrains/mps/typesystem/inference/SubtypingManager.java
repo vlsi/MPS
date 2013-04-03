@@ -24,7 +24,7 @@ import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import java.util.Set;
 
 public abstract class SubtypingManager {
-  private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
+  private static final Logger LOG = LogManager.getLogger(SubtypingManager.class);
 
   protected final TypeChecker myTypeChecker;
 

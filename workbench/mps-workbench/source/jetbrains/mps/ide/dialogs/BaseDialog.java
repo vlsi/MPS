@@ -42,7 +42,7 @@ import java.util.List;
  */
 @Deprecated
 public abstract class BaseDialog extends JDialog {
-  private static final Logger LOG = Logger.getLogger(BaseDialog.class);
+  private static final Logger LOG = LogManager.getLogger(BaseDialog.class);
 
   private JLabel myErrorLabel = new ErrorLabel();
   private boolean myPrepared = false;

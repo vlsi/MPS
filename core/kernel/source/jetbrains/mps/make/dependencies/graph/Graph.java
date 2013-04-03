@@ -24,7 +24,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Graph<V extends IVertex> {
-  private static final Logger LOG = Logger.getLogger(Graph.class);
+  private static final Logger LOG = LogManager.getLogger(Graph.class);
   private final Set<V> myData = new LinkedHashSet<V>();
 
   public Graph() {

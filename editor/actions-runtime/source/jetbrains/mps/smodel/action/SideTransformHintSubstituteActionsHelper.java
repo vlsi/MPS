@@ -35,7 +35,7 @@ import java.util.StringTokenizer;
 
 public class SideTransformHintSubstituteActionsHelper {
   public static final String SIDE_TRANSFORM_TAG_SEPARATOR = "|";
-  private static final Logger LOG = Logger.getLogger(SideTransformHintSubstituteActionsHelper.class);
+  private static final Logger LOG = LogManager.getLogger(SideTransformHintSubstituteActionsHelper.class);
 
   private IOperationContext myContext;
   private SNode mySourceNode;

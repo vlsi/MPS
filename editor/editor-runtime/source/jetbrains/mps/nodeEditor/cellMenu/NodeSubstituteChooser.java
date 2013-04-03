@@ -86,7 +86,7 @@ import java.util.Map;
  * Created Sep 16, 2003
  */
 public class NodeSubstituteChooser implements KeyboardHandler {
-  private static final Logger LOG = Logger.getLogger(NodeSubstituteChooser.class);
+  private static final Logger LOG = LogManager.getLogger(NodeSubstituteChooser.class);
 
   public static final int PREFERRED_WIDTH = 300;
   public static final int PREFERRED_HEIGHT = 200;

@@ -31,7 +31,7 @@ import java.lang.reflect.Method;
  * Sep 20, 2006
  */
 /*package*/ class NodeFactoryManager_deprecated {
-  private static final Logger LOG = Logger.getLogger(NodeFactoryManager_deprecated.class);
+  private static final Logger LOG = LogManager.getLogger(NodeFactoryManager_deprecated.class);
 
   protected static void setupNode_deprecated(SNode concept, SNode node, SNode sampleNode) {
     Class factoryClass = getFactoryClass(concept);

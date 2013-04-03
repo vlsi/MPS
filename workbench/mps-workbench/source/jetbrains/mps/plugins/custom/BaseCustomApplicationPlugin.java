@@ -19,7 +19,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public abstract class BaseCustomApplicationPlugin {
-  private static final Logger LOG = Logger.getLogger(BaseCustomApplicationPlugin.class);
+  private static final Logger LOG = LogManager.getLogger(BaseCustomApplicationPlugin.class);
 
   public void init() {
     try {

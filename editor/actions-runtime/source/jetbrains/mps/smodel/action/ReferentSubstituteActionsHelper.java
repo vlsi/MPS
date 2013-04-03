@@ -37,7 +37,7 @@ import java.util.Collections;
 import java.util.List;
 
 /*package*/ class ReferentSubstituteActionsHelper {
-  private static final Logger LOG = Logger.getLogger(ReferentSubstituteActionsHelper.class);
+  private static final Logger LOG = LogManager.getLogger(ReferentSubstituteActionsHelper.class);
 
   public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IOperationContext context) {
     IScope scope = context.getScope();

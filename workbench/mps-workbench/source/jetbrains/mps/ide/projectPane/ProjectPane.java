@@ -79,7 +79,7 @@ import java.util.Set;
   }
 )
 public class ProjectPane extends BaseLogicalViewProjectPane {
-  private static final Logger LOG = Logger.getLogger(ProjectPane.class);
+  private static final Logger LOG = LogManager.getLogger(ProjectPane.class);
   private ProjectView myProjectView;
   private ProjectTreeFindHelper myFindHelper = new ProjectTreeFindHelper() {
     @Override

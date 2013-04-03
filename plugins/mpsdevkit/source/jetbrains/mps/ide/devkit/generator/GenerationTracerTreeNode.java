@@ -38,7 +38,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Map;
 
 public class GenerationTracerTreeNode extends MPSTreeNode {
-  private static final Logger LOG = Logger.getLogger(GenerationTracerTreeNode.class);
+  private static final Logger LOG = LogManager.getLogger(GenerationTracerTreeNode.class);
 
   private TracerNode myTracerNode;
   private Project myProject;

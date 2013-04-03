@@ -35,7 +35,7 @@ public class FilterNode extends BaseNode {
   private static final String FILTER = "filter";
   private static final String CLASS_NAME = "class_name";
 
-  private static final Logger LOG = Logger.getLogger(FilterNode.class);
+  private static final Logger LOG = LogManager.getLogger(FilterNode.class);
 
   private BaseFilter myFilter = null;
 

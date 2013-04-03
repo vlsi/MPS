@@ -38,7 +38,7 @@ public class CommonPaths {
   public static final int jdkVersion;
   public static final boolean isToolsJarNeeded;
 
-  private static final Logger LOG = Logger.getLogger(CommonPaths.class);
+  private static final Logger LOG = LogManager.getLogger(CommonPaths.class);
 
   static {
     if (JAVA_VERSION.matches("\\d\\.\\d+\\..*")) {

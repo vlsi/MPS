@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -26,7 +26,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public abstract class ModelAccess implements ModelCommandExecutor {
-  protected static final Logger LOG = Logger.getLogger(ModelAccess.class);
+  protected static final Logger LOG = LogManager.getLogger(ModelAccess.class);
 
   private static ModelAccess ourInstance = new DefaultModelAccess();
 

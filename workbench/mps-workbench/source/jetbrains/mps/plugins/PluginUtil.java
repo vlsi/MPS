@@ -42,7 +42,7 @@ import java.util.List;
 import java.util.Set;
 
 public class PluginUtil {
-  private static final Logger LOG = Logger.getLogger(PluginUtil.class);
+  private static final Logger LOG = LogManager.getLogger(PluginUtil.class);
 
   public static final String IDE_MODULE_ID = "jetbrains.mps.ide";
   public static final String IDE_MODULE_PROJECTPLUGIN = "jetbrains.mps.ide.actions.Ide_ProjectPlugin"; // FIXME Ide_ProjectPlugin.class.getName();

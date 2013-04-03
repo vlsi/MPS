@@ -76,7 +76,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
-  private static final Logger LOG = Logger.getLogger(FileViewProjectPane.class);
+  private static final Logger LOG = LogManager.getLogger(FileViewProjectPane.class);
   private static final int DELAY = 10;
   @NonNls
   public static final String ID = "FileSystem";

@@ -45,7 +45,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TransientModelsModule extends AbstractModule {
-  private static final Logger LOG = Logger.getLogger(TransientModelsModule.class);
+  private static final Logger LOG = LogManager.getLogger(TransientModelsModule.class);
 
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
 

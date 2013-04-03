@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 
 public class ConstraintsOperationContext extends StandaloneMPSContext {
-  protected static Logger LOG = Logger.getLogger(ConstraintsOperationContext.class);
+  protected static Logger LOG = LogManager.getLogger(ConstraintsOperationContext.class);
 
   // TODO: use module reference instead
   private final IModule module;

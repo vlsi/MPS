@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeleteGeneratorHelper {
-  private static final Logger LOG = Logger.getLogger(DeleteGeneratorHelper.class);
+  private static final Logger LOG = LogManager.getLogger(DeleteGeneratorHelper.class);
 
   public static void deleteGenerator(Project project, Language sourceLanguage, Generator generator, GeneratorDescriptor generatorDescriptor, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {

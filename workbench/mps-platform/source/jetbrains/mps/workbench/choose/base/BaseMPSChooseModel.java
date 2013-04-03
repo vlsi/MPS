@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
-  protected static final Logger LOG = Logger.getLogger(BaseMPSChooseModel.class);
+  protected static final Logger LOG = LogManager.getLogger(BaseMPSChooseModel.class);
   public static final String SEPARATOR = ".";
 
   private Project myProject;

@@ -36,7 +36,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public class JarFileClassPathItem extends RealClassPathItem {
-  private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
+  private static final Logger LOG = LogManager.getLogger(JarFileClassPathItem.class);
 
   //computed during init
   private boolean myIsInitialized = false;

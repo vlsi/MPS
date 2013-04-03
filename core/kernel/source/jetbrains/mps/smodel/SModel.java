@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -68,7 +67,7 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class SModel implements SModelData {
-  private static final Logger LOG = Logger.getLogger(SModel.class);
+  private static final Logger LOG = LogManager.getLogger(SModel.class);
 
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
   private SModelReference myReference;

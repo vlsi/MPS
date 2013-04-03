@@ -31,7 +31,7 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
 
@@ -41,7 +41,7 @@ import java.awt.Color;
 import java.awt.font.TextAttribute;
 
 public class SNodeTreeNode extends MPSTreeNodeEx {
-  private static final Logger LOG = Logger.getLogger(SNodeTreeNode.class);
+  private static final Logger LOG = LogManager.getLogger(SNodeTreeNode.class);
 
   protected boolean myInitialized = false;
   private SNode myNode;

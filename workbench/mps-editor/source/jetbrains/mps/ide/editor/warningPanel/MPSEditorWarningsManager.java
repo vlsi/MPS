@@ -56,7 +56,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class MPSEditorWarningsManager implements ProjectComponent {
-  public static final Logger LOG = Logger.getLogger(MPSEditorWarningsManager.class);
+  public static final Logger LOG = LogManager.getLogger(MPSEditorWarningsManager.class);
 
   private FileEditorManager myFileEditorManager;
   private ClassLoaderManager myClassLoaderManager;

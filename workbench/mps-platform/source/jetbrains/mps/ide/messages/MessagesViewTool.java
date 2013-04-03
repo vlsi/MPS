@@ -32,8 +32,6 @@ import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.messages.MessageList.MessageListState;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -56,7 +54,6 @@ import java.util.Map;
   }
 )
 public class MessagesViewTool implements ProjectComponent, PersistentStateComponent<MessageListState>, Disposable {
-  /*package*/ static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
   private static final String DEFAULT_LIST = "DEFAULT_LIST";
 
   private Project myProject;

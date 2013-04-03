@@ -18,11 +18,9 @@ package jetbrains.mps.ide.navigation;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
  * evgeny, 11/6/11
  */
 public class NodeNavigatable extends BaseNavigatable {
-  private static final Logger LOG = Logger.getLogger(NodeNavigatable.class);
+  private static final Logger LOG = LogManager.getLogger(NodeNavigatable.class);
 
   @NotNull
   private SNodeReference nodePointer;

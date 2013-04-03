@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
 
 public class PresentationManager {
-  private static Logger LOG = Logger.getLogger(PresentationManager.class);
+  private static Logger LOG = LogManager.getLogger(PresentationManager.class);
 
   // param is SNode or IWrapper
   public static String toString(SNode type) {

@@ -27,7 +27,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public abstract class BaseKeymapChanges {
-  private static final Logger LOG = Logger.getLogger(BaseKeymapChanges.class);
+  private static final Logger LOG = LogManager.getLogger(BaseKeymapChanges.class);
 
   private static Map<Keymap, Set<String>> ourClearedActions = new THashMap<Keymap, Set<String>>();
   private Map<String, Set<Shortcut>> myRemovedShortcuts = new THashMap<String, Set<Shortcut>>();

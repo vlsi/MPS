@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
 
 public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAction {
-  private static final Logger LOG = Logger.getLogger(AbstractNodeSubstituteAction.class);
+  private static final Logger LOG = LogManager.getLogger(AbstractNodeSubstituteAction.class);
 
   private SNode mySourceNode;
   private Object myParameterObject;

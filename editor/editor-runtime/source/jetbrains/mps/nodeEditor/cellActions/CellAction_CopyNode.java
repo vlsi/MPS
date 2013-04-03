@@ -46,7 +46,7 @@ import java.util.Set;
  * Time: Nov 26, 2003 2:06:41 PM
  */
 public class CellAction_CopyNode extends AbstractCellAction {
-  private static final Logger LOG = Logger.getLogger(CellAction_CopyNode.class);
+  private static final Logger LOG = LogManager.getLogger(CellAction_CopyNode.class);
 
   @Override
   public boolean canExecute(EditorContext context) {

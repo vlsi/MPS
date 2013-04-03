@@ -60,7 +60,7 @@ import java.util.Set;
  * Jan 24, 2006
  */
 public class ChildSubstituteActionsHelper {
-  private static final Logger LOG = Logger.getLogger(ChildSubstituteActionsHelper.class);
+  private static final Logger LOG = LogManager.getLogger(ChildSubstituteActionsHelper.class);
 
   public static final String DONT_SUBSTITUTE_BY_DEFAULT = "dontSubstituteByDefault";
   public static final String ABSTRACT = "abstract";

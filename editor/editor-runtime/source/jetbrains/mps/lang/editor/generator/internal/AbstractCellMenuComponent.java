@@ -32,7 +32,7 @@ import java.util.List;
  * Date: Nov 29, 2006
  */
 public abstract class AbstractCellMenuComponent {
-  private static final Logger LOG = Logger.getLogger(AbstractCellMenuComponent.class);
+  private static final Logger LOG = LogManager.getLogger(AbstractCellMenuComponent.class);
 
   /**
    * @deprecated starting from MPS 3.0 was replaced with <code>myExtParts</code> all usages should

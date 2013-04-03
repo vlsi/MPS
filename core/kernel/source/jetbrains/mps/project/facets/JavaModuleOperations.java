@@ -22,7 +22,6 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -35,7 +34,7 @@ import java.util.Set;
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
 public class JavaModuleOperations {
-  private static final Logger LOG = Logger.getLogger(JavaModuleOperations.class);
+  private static final Logger LOG = LogManager.getLogger(JavaModuleOperations.class);
 
   /**
    * By default use includeSelfModulesClassesGen == false

@@ -22,7 +22,6 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
@@ -59,7 +58,7 @@ import java.util.*;
 public abstract class MPSTree extends DnDAwareTree implements Disposable {
   public static final String PATH = "path";
 
-  protected static final Logger LOG = Logger.getLogger(MPSTree.class);
+  protected static final Logger LOG = LogManager.getLogger(MPSTree.class);
 
   public static final String TREE_PATH_SEPARATOR = "/";
 

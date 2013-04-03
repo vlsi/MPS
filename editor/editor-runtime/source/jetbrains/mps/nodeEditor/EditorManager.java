@@ -64,7 +64,7 @@ import java.util.Set;
 import java.util.Stack;
 
 public class EditorManager {
-  private static final Logger LOG = Logger.getLogger(EditorManager.class);
+  private static final Logger LOG = LogManager.getLogger(EditorManager.class);
 
   public static final String BIG_CELL_CONTEXT = "big-cell-context";
 

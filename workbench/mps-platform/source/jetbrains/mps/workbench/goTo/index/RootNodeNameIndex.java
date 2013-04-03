@@ -54,7 +54,7 @@ import java.util.List;
 public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<SNodeDescriptor>> {
   @NonNls
   public static final ID<Integer, List<SNodeDescriptor>> NAME = ID.create("RootNodeNameIndex2");
-  private static final Logger LOG = Logger.getLogger(RootNodeNameIndex.class);
+  private static final Logger LOG = LogManager.getLogger(RootNodeNameIndex.class);
   private static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
 
   public static SModel doModelParsing(FileContent inputData) {

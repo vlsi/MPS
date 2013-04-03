@@ -197,7 +197,7 @@
     <nodeInfo nodeId="2546981710036147604" fileName="UnitTestOutputReader.java" startLine="101" startPosition="45" endLine="102" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2546981710036147614" fileName="UnitTestOutputReader.java" startLine="106" startPosition="23" endLine="107" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2546981710036147645" fileName="UnitTestOutputReader.java" startLine="109" startPosition="62" endLine="110" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2546981710036147625" fileName="UnitTestOutputReader.java" startLine="112" startPosition="29" endLine="113" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2546981710036147625" fileName="UnitTestOutputReader.java" startLine="112" startPosition="29" endLine="113" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2546981710036147652" fileName="UnitTestOutputReader.java" startLine="117" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMessage#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="2546981710036147446" fileName="UnitTestOutputReader.java" startLine="66" startPosition="12" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2546981710036147436" fileName="UnitTestOutputReader.java" startLine="69" startPosition="10" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -237,10 +237,10 @@
     <scopeInfo nodeId="2546981710036147547" fileName="UnitTestOutputReader.java" startLine="81" startPosition="56" endLine="82" endPosition="43" />
     <scopeInfo nodeId="2546981710036147603" fileName="UnitTestOutputReader.java" startLine="101" startPosition="45" endLine="102" endPosition="21" />
     <scopeInfo nodeId="2546981710036147644" fileName="UnitTestOutputReader.java" startLine="109" startPosition="62" endLine="110" endPosition="40" />
-    <scopeInfo nodeId="2546981710036147623" fileName="UnitTestOutputReader.java" startLine="112" startPosition="0" endLine="113" endPosition="62">
+    <scopeInfo nodeId="2546981710036147623" fileName="UnitTestOutputReader.java" startLine="112" startPosition="0" endLine="113" endPosition="95">
       <varInfo nodeId="2546981710036147631" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2546981710036147624" fileName="UnitTestOutputReader.java" startLine="112" startPosition="29" endLine="113" endPosition="62" />
+    <scopeInfo nodeId="2546981710036147624" fileName="UnitTestOutputReader.java" startLine="112" startPosition="29" endLine="113" endPosition="95" />
     <scopeInfo nodeId="2546981710036147652" fileName="UnitTestOutputReader.java" startLine="117" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="2546981710036147655" varName="message" />
     </scopeInfo>

@@ -55,7 +55,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TypecheckerStateViewComponent extends JPanel {
-  private static final Logger LOG = Logger.getLogger(TypecheckerStateViewComponent.class);
+  private static final Logger LOG = LogManager.getLogger(TypecheckerStateViewComponent.class);
 
   private IOperationContext myOperationContext;
 

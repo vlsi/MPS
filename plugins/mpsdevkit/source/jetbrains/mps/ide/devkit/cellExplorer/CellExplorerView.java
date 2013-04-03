@@ -64,7 +64,7 @@ import java.util.Map;
  * @author Kostik
  */
 public class CellExplorerView extends BaseProjectTool {
-  public static final Logger LOG = Logger.getLogger(CellExplorerView.class);
+  public static final Logger LOG = LogManager.getLogger(CellExplorerView.class);
 
   private JPanel myComponent = new JPanel(new BorderLayout());
   private MyTree myTree = new MyTree();

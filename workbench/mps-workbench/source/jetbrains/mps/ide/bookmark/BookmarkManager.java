@@ -55,7 +55,7 @@ import java.util.List;
   }
 )
 public class BookmarkManager implements ProjectComponent, PersistentStateComponent<MyState> {
-  private static final Logger LOG = Logger.getLogger(BookmarkManager.class);
+  private static final Logger LOG = LogManager.getLogger(BookmarkManager.class);
 
   private static Icon myUnnumberedBookmarkIcon = AllIcons.Actions.Checked;
 

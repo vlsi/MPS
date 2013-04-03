@@ -36,7 +36,7 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 
 public class JDOMUtil {
-  private static final Logger LOG = Logger.getLogger(JDOMUtil.class);
+  private static final Logger LOG = LogManager.getLogger(JDOMUtil.class);
 
   private static SAXParserFactory factory = null;
 

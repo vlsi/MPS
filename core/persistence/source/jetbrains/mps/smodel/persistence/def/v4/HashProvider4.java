@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HashProvider4 extends IHashProvider {
-  private static final Logger LOG = Logger.getLogger(HashProvider4.class);
+  private static final Logger LOG = LogManager.getLogger(HashProvider4.class);
 
   @Override
   public String getHash(String content) {

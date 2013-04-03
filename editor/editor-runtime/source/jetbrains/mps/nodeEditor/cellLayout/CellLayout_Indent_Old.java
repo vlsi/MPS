@@ -29,7 +29,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 public class CellLayout_Indent_Old extends AbstractCellLayout {
 
   private static final int INDENT = 20;
-  private static Logger LOG = Logger.getLogger(CellLayout_Indent_Old.class);
+  private static Logger LOG = LogManager.getLogger(CellLayout_Indent_Old.class);
 
   public static final boolean DO_INDENT_EVERYWHERE = false;
   public static final String INDENTED = "indented";

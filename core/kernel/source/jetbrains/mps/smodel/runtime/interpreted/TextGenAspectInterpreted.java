@@ -31,7 +31,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
-  private static final Logger LOG = Logger.getLogger(TextGenAspectInterpreted.class);
+  private static final Logger LOG = LogManager.getLogger(TextGenAspectInterpreted.class);
 
   private static final TextGenAspectInterpreted INSTANCE = new TextGenAspectInterpreted();
 

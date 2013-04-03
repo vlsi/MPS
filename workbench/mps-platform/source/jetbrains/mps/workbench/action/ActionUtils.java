@@ -24,7 +24,7 @@ import org.apache.log4j.LogManager;
 import java.awt.event.InputEvent;
 
 public class ActionUtils {
-  private static final Logger LOG = Logger.getLogger(ActionUtils.class);
+  private static final Logger LOG = LogManager.getLogger(ActionUtils.class);
 
   public static void updateGroup(ActionGroup group, AnActionEvent e) {
     try {

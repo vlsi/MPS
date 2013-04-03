@@ -17,14 +17,13 @@ package jetbrains.mps.typesystem.inference;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.typesystem.runtime.*;
-import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime.DependentComputationWrapper;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
@@ -45,7 +44,7 @@ public class RulesManager {
   private OverloadedOperationsManager myOverloadedOperationsManager;
 
   private RulesManagerNew myRulesManagerNew;
-  private static final Logger LOG = Logger.getLogger(RulesManager.class);
+  private static final Logger LOG = LogManager.getLogger(RulesManager.class);
 
   public RulesManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;

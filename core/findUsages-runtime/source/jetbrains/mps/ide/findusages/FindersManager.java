@@ -22,7 +22,9 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -33,7 +35,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.*;
 
 public class FindersManager implements CoreComponent, LanguageRegistryListener {
-  private static final Logger LOG = Logger.getLogger(FindersManager.class);
+  private static final Logger LOG = LogManager.getLogger(FindersManager.class.getName());
 
   private static FindersManager INSTANCE;
 

@@ -43,7 +43,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public abstract class FileSwapOwner implements TransientSwapOwner {
 
-  private static Logger LOG = Logger.getLogger(FileSwapOwner.class);
+  private static Logger LOG = LogManager.getLogger(FileSwapOwner.class);
 
   private Map<String, File> mySwapSpaces = new ConcurrentHashMap<String, File>();
 

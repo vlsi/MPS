@@ -31,7 +31,7 @@ import javax.swing.Icon;
 import javax.swing.SwingUtilities;
 
 public abstract class TabbedUsagesTool extends BaseProjectTool {
-  private static final Logger LOG = Logger.getLogger(UsagesViewTool.class);
+  private static final Logger LOG = LogManager.getLogger(UsagesViewTool.class);
   private ContentManagerAdapter myContentListener;
   private ReloadAdapter myReloadHandler;
   private ContentManager myContentManager;

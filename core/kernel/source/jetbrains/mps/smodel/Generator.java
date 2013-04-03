@@ -30,7 +30,7 @@ import jetbrains.mps.vfs.IFile;
 import java.util.*;
 
 public class Generator extends AbstractModule {
-  public static final Logger LOG = Logger.getLogger(Generator.class);
+  public static final Logger LOG = LogManager.getLogger(Generator.class);
 
   static {
     ModelsAutoImportsManager.registerContributor(new GeneratorModelsAutoImports());

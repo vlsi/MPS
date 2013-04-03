@@ -28,7 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class ApplicationPluginManager extends BaseApplicationPluginManager implements ApplicationComponent, IRegistryManager {
-  private static final Logger LOG = Logger.getLogger(ApplicationPluginManager.class);
+  private static final Logger LOG = LogManager.getLogger(ApplicationPluginManager.class);
 
   @Override
   public void loadPlugins() {

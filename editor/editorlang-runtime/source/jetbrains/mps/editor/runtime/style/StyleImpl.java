@@ -40,7 +40,7 @@ import java.util.Set;
  * Date: 1/11/13
  */
 public class StyleImpl implements Style {
-  private static final Logger LOG = Logger.getLogger(StyleImpl.class);
+  private static final Logger LOG = LogManager.getLogger(StyleImpl.class);
 
   private final EditorCell myEditorCell;
   private Style myParent;

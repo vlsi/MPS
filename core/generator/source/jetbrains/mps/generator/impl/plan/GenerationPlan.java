@@ -36,7 +36,7 @@ import java.util.*;
  */
 public class GenerationPlan {
 
-  private static final Logger LOG = Logger.getLogger(GenerationPlan.class);
+  private static final Logger LOG = LogManager.getLogger(GenerationPlan.class);
 
   private final Collection<TemplateModule> myGenerators;
   private Collection<TemplateModel> myTemplateModels;

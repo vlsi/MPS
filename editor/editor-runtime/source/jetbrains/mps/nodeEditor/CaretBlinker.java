@@ -38,7 +38,7 @@ import org.jetbrains.annotations.NotNull;
     )}
 )
 public class CaretBlinker implements PersistentStateComponent<MyState>, ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(CaretBlinker.class);
+  private static final Logger LOG = LogManager.getLogger(CaretBlinker.class);
 
   public static CaretBlinker getInstance() {
     return ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(CaretBlinker.class);

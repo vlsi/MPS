@@ -57,7 +57,7 @@ import java.util.Collections;
 import java.util.Set;
 
 public class DeleteModelHelper {
-  private static final Logger LOG = Logger.getLogger(DeleteModelHelper.class);
+  private static final Logger LOG = LogManager.getLogger(DeleteModelHelper.class);
 
   public static void deleteModel(Project project, SModule contextModule, SModel modelDescriptor, boolean safeDelete, boolean deleteFiles) {
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);

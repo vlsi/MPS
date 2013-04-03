@@ -44,7 +44,7 @@ import java.util.Set;
  * @author Evgeny Gerashchenko
  */
 public class IdeaFileSystemProvider implements FileSystemProvider {
-  static final Logger LOG = Logger.getLogger(IdeaFileSystemProvider.class);
+  static final Logger LOG = LogManager.getLogger(IdeaFileSystemProvider.class);
 
   private FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
 

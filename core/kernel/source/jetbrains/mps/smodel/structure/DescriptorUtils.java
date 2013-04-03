@@ -19,9 +19,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
@@ -31,7 +29,7 @@ import java.util.List;
 
 public class DescriptorUtils {
 
-  private static Logger LOG = Logger.getLogger(DescriptorUtils.class);
+  private static Logger LOG = LogManager.getLogger(DescriptorUtils.class);
 
   @Nullable
   public static Object getObjectByClassNameForLanguage(String className, @Nullable Language language, boolean avoidLogErrors) {
