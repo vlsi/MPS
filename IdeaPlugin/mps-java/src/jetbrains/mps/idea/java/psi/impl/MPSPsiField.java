@@ -103,7 +103,7 @@ public class MPSPsiField extends MPSPsiNode implements PsiField {
 
   @Override
   public PsiElement setName(@NonNls @NotNull String name) throws IncorrectOperationException {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    throw new IncorrectOperationException();
   }
 
   @Override

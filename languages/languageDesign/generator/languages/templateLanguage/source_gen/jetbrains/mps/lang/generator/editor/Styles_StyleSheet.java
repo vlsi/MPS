@@ -9,7 +9,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
 
 public class Styles_StyleSheet {
   @Deprecated
@@ -65,14 +64,15 @@ public class Styles_StyleSheet {
   public static Style getMappingLabelReference(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
     return style;
   }
 
   @Deprecated
   public static Style getMacroDescriptionText(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(13497546)));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(new Color(13497546))));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE)));
     return style;
   }
 
@@ -109,10 +109,11 @@ public class Styles_StyleSheet {
 
   public static void applyMappingLabelReference(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
   }
 
   public static void applyMacroDescriptionText(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(13497546)));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(new Color(13497546))));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE)));
   }
 }

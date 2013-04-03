@@ -14,7 +14,6 @@ import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.execution.impl.RunManagerImpl;
-import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 
 public class Java_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration_Factory";
@@ -95,7 +94,7 @@ public class Java_Producer {
 
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
-      if (!((BehaviorReflection.invokeVirtual(Boolean.TYPE, source, "virtual_isNodeRunnable_4666195181811081448", new Object[]{}) && Java_Command.isUnitNode(source)))) {
+      if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, source, "virtual_isNodeRunnable_4666195181811081448", new Object[]{}))) {
         return null;
       }
       String name = (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.core.structure.INamedConcept") ?

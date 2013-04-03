@@ -15,6 +15,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.make.TextPreviewUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
@@ -65,7 +66,11 @@ public class TextPreviewModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("cnode", event.getData(MPSCommonDataKeys.NODE));
     MapSequence.fromMap(_params).put("cmodel", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("cmodel") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
     return true;
   }
@@ -74,7 +79,7 @@ public class TextPreviewModel_Action extends BaseAction {
     try {
       MakeSession session = new MakeSession(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, true);
       if (IMakeService.INSTANCE.get().openNewSession(session)) {
-        TextPreviewUtil.previewModelText(session, ((IOperationContext) MapSequence.fromMap(_params).get("context")), TextPreviewModel_Action.this.modelToGenerate(_params));
+        TextPreviewUtil.previewModelText(session, ((IOperationContext) MapSequence.fromMap(_params).get("context")), TextPreviewModel_Action.this.modelToGenerate(_params), ((SNode) MapSequence.fromMap(_params).get("cnode")));
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
