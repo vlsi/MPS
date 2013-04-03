@@ -39,6 +39,7 @@
   <import index="eynw" modelUID="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.lang.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5464054275389853151">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="3xdn.5464054275389846505" resolveInfo="BaseLanguageCommand" />
     </node>
   </roots>

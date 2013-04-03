@@ -26,13 +26,16 @@
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="5336086527852811410">
       <property name="name" nameId="tpck.1169194664001" value="main" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5336086527852812352">
       <property name="name" nameId="tpck.1169194664001" value="reduce_BaseLanguageCommand" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.5464054275389846505" resolveInfo="BaseLanguageCommand" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="8899274441241647854">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ModelStatisticsCommand" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.8899274441241545834" resolveInfo="ModelStatisticsCommand" />
     </node>
   </roots>

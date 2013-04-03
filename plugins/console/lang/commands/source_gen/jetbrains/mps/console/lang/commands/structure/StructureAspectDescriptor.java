@@ -19,10 +19,18 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.FindUsagesCommand", "jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", false, new String[]{"jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand"}, new String[]{}, new String[]{});
       case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.ModelStatisticsCommand", "jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", false, new String[]{"jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand"}, new String[]{}, new String[]{});
+      case 3:
+        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.NodeResult", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.structure.Result"}, new String[]{}, new String[]{"target"});
+      case 4:
+        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.PrintNode", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+      case 5:
+        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.PrintText", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+      case 6:
+        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.TextResult", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.lang.structure.Result"}, new String[]{"text"}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", "jetbrains.mps.console.lang.commands.structure.FindUsagesCommand", "jetbrains.mps.console.lang.commands.structure.ModelStatisticsCommand"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", "jetbrains.mps.console.lang.commands.structure.FindUsagesCommand", "jetbrains.mps.console.lang.commands.structure.ModelStatisticsCommand", "jetbrains.mps.console.lang.commands.structure.NodeResult", "jetbrains.mps.console.lang.commands.structure.PrintNode", "jetbrains.mps.console.lang.commands.structure.PrintText", "jetbrains.mps.console.lang.commands.structure.TextResult"};
 }
