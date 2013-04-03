@@ -8,7 +8,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.lang.behavior.ConsoleCommand_Behavior" file="ConsoleCommand_Behavior.java">
+  <dependency className="jetbrains.mps.console.lang.behavior.Command_Behavior" file="Command_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
@@ -20,10 +20,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.console.lang.behavior.ConsoleCommand_BehaviorDescriptor" file="ConsoleCommand_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.lang.behavior.Command_BehaviorDescriptor" file="Command_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.console.lang.behavior.ConsoleItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
+  <dependency className="jetbrains.mps.console.lang.behavior.ConsoleItem_BehaviorDescriptor" file="ConsoleItem_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.console.lang.behavior.Console_Behavior" file="Console_Behavior.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -34,6 +37,10 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.lang.behavior.Result_BehaviorDescriptor" file="Result_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.console.lang.behavior.ConsoleItem_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
 </dependenciesRoot>
 

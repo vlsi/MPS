@@ -13,17 +13,33 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="757553790980855626">
-      <property name="name" nameId="tpck.1169194664001" value="ConsoleCommand" />
+      <property name="name" nameId="tpck.1169194664001" value="Command" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="6852607286009167277">
+      <property name="name" nameId="tpck.1169194664001" value="Result" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="6852607286009167343">
+      <property name="name" nameId="tpck.1169194664001" value="ConsoleItem" />
     </node>
   </roots>
   <root id="757553790980850366">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7195119950189425818">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="command" />
+      <property name="role" nameId="tpce.1071599776563" value="item" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="757553790980855626" resolveInfo="ConsoleCommand" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6852607286009167343" resolveInfo="ConsoleItem" />
     </node>
   </root>
-  <root id="757553790980855626" />
+  <root id="757553790980855626">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6852607286009180636">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6852607286009167343" resolveInfo="ConsoleItem" />
+    </node>
+  </root>
+  <root id="6852607286009167277">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6852607286009180634">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6852607286009167343" resolveInfo="ConsoleItem" />
+    </node>
+  </root>
+  <root id="6852607286009167343" />
 </model>
 

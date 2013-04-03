@@ -81,7 +81,7 @@ public class ConsoleTool extends BaseProjectTool {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             TemporaryModels.getInstance().fixImports(myModel);
-            myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "command", true)).last();
+            myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "item", true)).last();
             if ((myLastCommand != null)) {
               BehaviorReflection.invokeVirtual(Void.class, myLastCommand, "virtual_execute_757553790980855637", new Object[]{project});
             }
@@ -98,7 +98,7 @@ public class ConsoleTool extends BaseProjectTool {
 
               return;
             }
-            myLastCommand = SNodeOperations.cast(SNodeOperations.getPrevSibling(myLastCommand), "jetbrains.mps.console.lang.structure.ConsoleCommand");
+            myLastCommand = SNodeOperations.cast(SNodeOperations.getPrevSibling(myLastCommand), "jetbrains.mps.console.lang.structure.Command");
             // <node> 
           }
         });
@@ -111,7 +111,7 @@ public class ConsoleTool extends BaseProjectTool {
             if ((SNodeOperations.getNextSibling(myLastCommand) == null)) {
               return;
             }
-            myLastCommand = SNodeOperations.cast(SNodeOperations.getNextSibling(myLastCommand), "jetbrains.mps.console.lang.structure.ConsoleCommand");
+            myLastCommand = SNodeOperations.cast(SNodeOperations.getNextSibling(myLastCommand), "jetbrains.mps.console.lang.structure.Command");
             // <node> 
           }
         });

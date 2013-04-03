@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", "jetbrains.mps.baseLanguage.structure.StatementList", false, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.console.lang.structure.ConsoleCommand"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", "jetbrains.mps.baseLanguage.structure.StatementList", false, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.console.lang.structure.Command"}, new String[]{}, new String[]{});
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.console.lang.commands.structure.FindUsagesCommand", "jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", false, new String[]{"jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand"}, new String[]{}, new String[]{});
       case 2:

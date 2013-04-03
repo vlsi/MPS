@@ -29,15 +29,15 @@ public class Console_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_abdadm_a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Console_Editor.commandListHandler_abdadm_a0(node, "command", editorContext);
+    AbstractCellListHandler handler = new Console_Editor.itemListHandler_abdadm_a0(node, "item", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_command");
+    editorCell.setCellId("refNodeList_item");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class commandListHandler_abdadm_a0 extends RefNodeListHandler {
-    public commandListHandler_abdadm_a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class itemListHandler_abdadm_a0 extends RefNodeListHandler {
+    public itemListHandler_abdadm_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class ConsoleCommand_Behavior {
+public class Command_Behavior {
   public static void init(SNode thisNode) {
   }
 
@@ -22,6 +22,6 @@ public class ConsoleCommand_Behavior {
 
   @Deprecated
   public static void callSuper_execute_757553790980855637(SNode thisNode, String callerConceptFqName, Project p) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.console.lang.structure.ConsoleCommand"), callerConceptFqName, "virtual_execute_757553790980855637", new Class[]{SNode.class, Project.class}, new Object[]{p});
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.console.lang.structure.Command"), callerConceptFqName, "virtual_execute_757553790980855637", new Class[]{SNode.class, Project.class}, new Object[]{p});
   }
 }
