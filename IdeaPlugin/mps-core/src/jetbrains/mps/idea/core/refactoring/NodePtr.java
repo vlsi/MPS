@@ -40,6 +40,8 @@ public class NodePtr {
     return myModelRef.hashCode() + 31 * myModelRef.hashCode();
   }
 
+  // SNodeReference may supersede NodePtr completely in the future
+  // If it has getNodeId
   public SNodeReference toSNodeReference() {
     return new SNodePointer(myModelRef, myNodeId);
   }

@@ -129,15 +129,6 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
     });
   }
 
-  @Nullable
-  private SNodeId getNodeId(PsiElement element) {
-    SNode node = getNodeForElement(element);
-    if (node != null) {
-      return node.getNodeId();
-    }
-    return null;
-  }
-
   // Maybe will go to MPS2PsiMapper
   @Nullable
   public static SNode getNodeForElement(PsiElement element) {
@@ -155,8 +146,7 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
       if (nodePtr == null) {
         return null;
       }
-      SNodeReference nodeRef = new SNodePointer(nodePtr.getSModelReference(), nodePtr.getNodeId());
-      SNode node = nodeRef.resolve(MPSModuleRepository.getInstance());
+      SNode node = nodePtr.toSNodeReference().resolve(MPSModuleRepository.getInstance());
 
       return node;
     }
