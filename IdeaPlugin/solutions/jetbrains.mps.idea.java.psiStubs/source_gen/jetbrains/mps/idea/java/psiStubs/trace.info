@@ -1128,7 +1128,7 @@
     <nodeInfo nodeId="2648886391728103411" fileName="PsiJavaStubModelRoot.java" startLine="194" startPosition="14" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8036260399915982361" fileName="PsiJavaStubModelRoot.java" startLine="195" startPosition="0" endLine="196" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8036260399916035401" fileName="PsiJavaStubModelRoot.java" startLine="196" startPosition="14" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8036260399916227030" fileName="PsiJavaStubModelRoot.java" startLine="197" startPosition="0" endLine="198" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8036260399916227030" fileName="PsiJavaStubModelRoot.java" startLine="197" startPosition="0" endLine="198" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2648886391731620688" fileName="PsiJavaStubModelRoot.java" startLine="201" startPosition="35" endLine="202" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2648886391731649897" fileName="PsiJavaStubModelRoot.java" startLine="203" startPosition="106" endLine="204" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3118313698926457126" fileName="PsiJavaStubModelRoot.java" startLine="208" startPosition="31" endLine="209" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1509,7 +1509,7 @@
     <scopeInfo nodeId="5735787482189014486" fileName="PsiJavaStubModelRoot.java" startLine="244" startPosition="43" endLine="258" endPosition="17">
       <varInfo nodeId="5735787482189014499" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2648886391727915736" fileName="PsiJavaStubModelRoot.java" startLine="183" startPosition="89" endLine="198" endPosition="67">
+    <scopeInfo nodeId="2648886391727915736" fileName="PsiJavaStubModelRoot.java" startLine="183" startPosition="89" endLine="198" endPosition="105">
       <varInfo nodeId="1626170360264272148" varName="packageName" />
       <varInfo nodeId="6954894869198071662" varName="relativeDirName" />
       <varInfo nodeId="1221012164056886948" varName="skipPrefix" />
@@ -1600,162 +1600,186 @@
     <unitInfo nodeId="5108147576653959261" fileName="Mapper.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.Mapper" />
   </root>
   <root nodeRef="r:e32ada56-1876-4524-85c0-29075cbd8d32(jetbrains.mps.idea.java.psiStubs)/6481525656078378666">
-    <nodeInfo nodeId="5108147576655710883" fileName="JavaForeignIdBuilder.java" startLine="25" startPosition="60" endLine="26" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5108147576655712283" fileName="JavaForeignIdBuilder.java" startLine="26" startPosition="44" endLine="27" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5108147576655715478" fileName="JavaForeignIdBuilder.java" startLine="28" startPosition="45" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5108147576655716718" fileName="JavaForeignIdBuilder.java" startLine="30" startPosition="5" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6481525656079202232" fileName="JavaForeignIdBuilder.java" startLine="37" startPosition="67" endLine="38" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656079321576" fileName="JavaForeignIdBuilder.java" startLine="38" startPosition="44" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656079326790" fileName="JavaForeignIdBuilder.java" startLine="40" startPosition="36" endLine="41" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6481525656079327309" fileName="JavaForeignIdBuilder.java" startLine="41" startPosition="25" endLine="42" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6481525656079340825" fileName="JavaForeignIdBuilder.java" startLine="43" startPosition="12" endLine="44" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656124191137" fileName="JavaForeignIdBuilder.java" startLine="45" startPosition="29" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6481525656079491918" fileName="JavaForeignIdBuilder.java" startLine="47" startPosition="7" endLine="48" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6481525656079373971" fileName="JavaForeignIdBuilder.java" startLine="49" startPosition="5" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6481525656079524811" fileName="JavaForeignIdBuilder.java" startLine="50" startPosition="0" endLine="51" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6481525656079357354" fileName="JavaForeignIdBuilder.java" startLine="52" startPosition="25" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6481525656079376300" fileName="JavaForeignIdBuilder.java" startLine="54" startPosition="5" endLine="55" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8036260399911387993" fileName="JavaForeignIdBuilder.java" startLine="61" startPosition="75" endLine="62" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8036260399911396220" fileName="JavaForeignIdBuilder.java" startLine="63" startPosition="41" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8036260399911419382" fileName="JavaForeignIdBuilder.java" startLine="65" startPosition="5" endLine="66" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8036260399911757842" fileName="JavaForeignIdBuilder.java" startLine="66" startPosition="63" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8036260399911876564" fileName="JavaForeignIdBuilder.java" startLine="67" startPosition="0" endLine="68" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8036260399915702427" fileName="JavaForeignIdBuilder.java" startLine="73" startPosition="101" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8036260399911800692" fileName="JavaForeignIdBuilder.java" startLine="75" startPosition="36" endLine="76" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8036260399918319836" fileName="JavaForeignIdBuilder.java" startLine="77" startPosition="5" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8036260399918318895" fileName="JavaForeignIdBuilder.java" startLine="78" startPosition="0" endLine="79" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8036260399918356538" fileName="JavaForeignIdBuilder.java" startLine="79" startPosition="68" endLine="80" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8036260399918322127" fileName="JavaForeignIdBuilder.java" startLine="80" startPosition="86" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8036260399911800721" fileName="JavaForeignIdBuilder.java" startLine="81" startPosition="0" endLine="82" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6481525656123878703" fileName="JavaForeignIdBuilder.java" startLine="87" startPosition="83" endLine="88" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656123899062" fileName="JavaForeignIdBuilder.java" startLine="89" startPosition="25" endLine="90" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6481525656123880781" fileName="JavaForeignIdBuilder.java" startLine="91" startPosition="5" endLine="92" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6481525656123880357" fileName="JavaForeignIdBuilder.java" startLine="92" startPosition="23" endLine="93" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656123950975" fileName="JavaForeignIdBuilder.java" startLine="93" startPosition="41" endLine="94" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6481525656123962038" fileName="JavaForeignIdBuilder.java" startLine="94" startPosition="82" endLine="95" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6481525656078429217" fileName="JavaForeignIdBuilder.java" startLine="95" startPosition="44" endLine="96" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6481525656079770551" fileName="JavaForeignIdBuilder.java" startLine="101" startPosition="87" endLine="102" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656079824453" fileName="JavaForeignIdBuilder.java" startLine="102" startPosition="49" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6481525656079214207" fileName="JavaForeignIdBuilder.java" startLine="104" startPosition="69" endLine="105" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6481525656080009837" fileName="JavaForeignIdBuilder.java" startLine="105" startPosition="30" endLine="106" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656080019698" fileName="JavaForeignIdBuilder.java" startLine="107" startPosition="25" endLine="108" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6481525656079917956" fileName="JavaForeignIdBuilder.java" startLine="109" startPosition="7" endLine="110" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6481525656123868228" fileName="JavaForeignIdBuilder.java" startLine="110" startPosition="22" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6481525656080272788" fileName="JavaForeignIdBuilder.java" startLine="112" startPosition="46" endLine="113" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656080378733" fileName="JavaForeignIdBuilder.java" startLine="113" startPosition="45" endLine="114" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656080426293" fileName="JavaForeignIdBuilder.java" startLine="115" startPosition="25" endLine="116" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6481525656080316253" fileName="JavaForeignIdBuilder.java" startLine="117" startPosition="7" endLine="118" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6481525656080799034" fileName="JavaForeignIdBuilder.java" startLine="118" startPosition="22" endLine="119" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1639340979911161135" fileName="JavaForeignIdBuilder.java" startLine="119" startPosition="21" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6481525656082598013" fileName="JavaForeignIdBuilder.java" startLine="121" startPosition="76" endLine="122" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6481525656082598015" fileName="JavaForeignIdBuilder.java" startLine="122" startPosition="88" endLine="123" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6481525656082598017" fileName="JavaForeignIdBuilder.java" startLine="123" startPosition="71" endLine="124" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6481525656082598019" fileName="JavaForeignIdBuilder.java" startLine="124" startPosition="61" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6481525656082598020" fileName="JavaForeignIdBuilder.java" startLine="125" startPosition="0" endLine="126" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656082598026" fileName="JavaForeignIdBuilder.java" startLine="126" startPosition="60" endLine="127" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656082598032" fileName="JavaForeignIdBuilder.java" startLine="127" startPosition="42" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6481525656082598038" fileName="JavaForeignIdBuilder.java" startLine="129" startPosition="53" endLine="130" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6481525656082598044" fileName="JavaForeignIdBuilder.java" startLine="130" startPosition="63" endLine="131" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6481525656083210580" fileName="JavaForeignIdBuilder.java" startLine="133" startPosition="7" endLine="134" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6481525656083210596" fileName="JavaForeignIdBuilder.java" startLine="135" startPosition="35" endLine="136" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6481525656083349134" fileName="JavaForeignIdBuilder.java" startLine="137" startPosition="7" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6481525656083318189" fileName="JavaForeignIdBuilder.java" startLine="138" startPosition="0" endLine="139" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6481525656079559651" fileName="JavaForeignIdBuilder.java" startLine="140" startPosition="5" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6481525656080480095" fileName="JavaForeignIdBuilder.java" startLine="141" startPosition="0" endLine="142" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5108147576655713143" fileName="JavaForeignIdBuilder.java" startLine="27" startPosition="62" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6481525656124184420" fileName="JavaForeignIdBuilder.java" startLine="44" startPosition="79" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6481525656079355772" fileName="JavaForeignIdBuilder.java" startLine="51" startPosition="79" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8036260399911388733" fileName="JavaForeignIdBuilder.java" startLine="62" startPosition="47" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8036260399911800685" fileName="JavaForeignIdBuilder.java" startLine="74" startPosition="36" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6481525656123896297" fileName="JavaForeignIdBuilder.java" startLine="88" startPosition="52" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6481525656080016626" fileName="JavaForeignIdBuilder.java" startLine="106" startPosition="58" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6481525656080343044" fileName="JavaForeignIdBuilder.java" startLine="114" startPosition="37" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6481525656083210588" fileName="JavaForeignIdBuilder.java" startLine="134" startPosition="33" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6481525656082598033" fileName="JavaForeignIdBuilder.java" startLine="128" startPosition="0" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6481525656079340239" fileName="JavaForeignIdBuilder.java" startLine="43" startPosition="10" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5108147576656209351" fileName="JavaForeignIdBuilder.java" startLine="25" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeNodePtr#(Lcom/intellij/psi/PsiElement;)Ljetbrains/mps/idea/core/refactoring/NodePtr;" />
-    <nodeInfo nodeId="6481525656079323561" fileName="JavaForeignIdBuilder.java" startLine="39" startPosition="18" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8036260399911725909" fileName="JavaForeignIdBuilder.java" startLine="60" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeModelReference#(Lcom/intellij/psi/PsiElement;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-    <nodeInfo nodeId="8036260399911859716" fileName="JavaForeignIdBuilder.java" startLine="73" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeModelReference#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="6481525656126024517" fileName="JavaForeignIdBuilder.java" startLine="87" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeNodeId#(Lcom/intellij/psi/PsiElement;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId/Foreign;" />
-    <nodeInfo nodeId="6481525656082598005" fileName="JavaForeignIdBuilder.java" startLine="120" startPosition="0" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6481525656125995752" fileName="JavaForeignIdBuilder.java" startLine="36" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeNodeId#(Lcom/intellij/psi/PsiElement;)Ljetbrains/mps/smodel/SNodeId/Foreign;" />
-    <nodeInfo nodeId="6481525656079202120" fileName="JavaForeignIdBuilder.java" startLine="103" startPosition="0" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6481525656126044689" fileName="JavaForeignIdBuilder.java" startLine="101" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeNodeId#(Ljava/lang/String;Lcom/intellij/psi/PsiElement;)Ljetbrains/mps/smodel/SNodeId/Foreign;" />
-    <scopeInfo nodeId="5108147576655713145" fileName="JavaForeignIdBuilder.java" startLine="28" startPosition="45" endLine="29" endPosition="18" />
-    <scopeInfo nodeId="6481525656124184422" fileName="JavaForeignIdBuilder.java" startLine="45" startPosition="29" endLine="46" endPosition="20" />
-    <scopeInfo nodeId="6481525656079355774" fileName="JavaForeignIdBuilder.java" startLine="52" startPosition="25" endLine="53" endPosition="18" />
-    <scopeInfo nodeId="8036260399911388735" fileName="JavaForeignIdBuilder.java" startLine="63" startPosition="41" endLine="64" endPosition="18" />
-    <scopeInfo nodeId="8036260399911800691" fileName="JavaForeignIdBuilder.java" startLine="75" startPosition="36" endLine="76" endPosition="40" />
-    <scopeInfo nodeId="6481525656123896299" fileName="JavaForeignIdBuilder.java" startLine="89" startPosition="25" endLine="90" endPosition="18" />
-    <scopeInfo nodeId="6481525656080016628" fileName="JavaForeignIdBuilder.java" startLine="107" startPosition="25" endLine="108" endPosition="20" />
-    <scopeInfo nodeId="6481525656080343046" fileName="JavaForeignIdBuilder.java" startLine="115" startPosition="25" endLine="116" endPosition="20" />
-    <scopeInfo nodeId="6481525656083210595" fileName="JavaForeignIdBuilder.java" startLine="135" startPosition="35" endLine="136" endPosition="30" />
-    <scopeInfo nodeId="6481525656079323563" fileName="JavaForeignIdBuilder.java" startLine="40" startPosition="36" endLine="42" endPosition="41" />
-    <scopeInfo nodeId="6481525656082598037" fileName="JavaForeignIdBuilder.java" startLine="129" startPosition="53" endLine="131" endPosition="25" />
-    <scopeInfo nodeId="6481525656079340240" fileName="JavaForeignIdBuilder.java" startLine="43" startPosition="12" endLine="48" endPosition="41">
+    <nodeInfo nodeId="5108147576655710883" fileName="JavaForeignIdBuilder.java" startLine="34" startPosition="60" endLine="35" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5108147576655712283" fileName="JavaForeignIdBuilder.java" startLine="35" startPosition="44" endLine="36" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5108147576655715478" fileName="JavaForeignIdBuilder.java" startLine="37" startPosition="45" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5108147576655716718" fileName="JavaForeignIdBuilder.java" startLine="39" startPosition="5" endLine="40" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6481525656079202232" fileName="JavaForeignIdBuilder.java" startLine="46" startPosition="67" endLine="47" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656079321576" fileName="JavaForeignIdBuilder.java" startLine="47" startPosition="44" endLine="48" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656079326790" fileName="JavaForeignIdBuilder.java" startLine="49" startPosition="36" endLine="50" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6481525656079327309" fileName="JavaForeignIdBuilder.java" startLine="50" startPosition="25" endLine="51" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6481525656079340825" fileName="JavaForeignIdBuilder.java" startLine="52" startPosition="12" endLine="53" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656124191137" fileName="JavaForeignIdBuilder.java" startLine="54" startPosition="29" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6481525656079491918" fileName="JavaForeignIdBuilder.java" startLine="56" startPosition="7" endLine="57" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6481525656079373971" fileName="JavaForeignIdBuilder.java" startLine="58" startPosition="5" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6481525656079524811" fileName="JavaForeignIdBuilder.java" startLine="59" startPosition="0" endLine="60" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6481525656079357354" fileName="JavaForeignIdBuilder.java" startLine="61" startPosition="25" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6481525656079376300" fileName="JavaForeignIdBuilder.java" startLine="63" startPosition="5" endLine="64" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8036260399911387993" fileName="JavaForeignIdBuilder.java" startLine="70" startPosition="75" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8036260399911396220" fileName="JavaForeignIdBuilder.java" startLine="72" startPosition="41" endLine="73" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8036260399911419382" fileName="JavaForeignIdBuilder.java" startLine="74" startPosition="5" endLine="75" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7414633741306751260" fileName="JavaForeignIdBuilder.java" startLine="75" startPosition="63" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7414633741306740200" fileName="JavaForeignIdBuilder.java" startLine="76" startPosition="0" endLine="77" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7414633741307331086" fileName="JavaForeignIdBuilder.java" startLine="77" startPosition="37" endLine="78" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7414633741306884000" fileName="JavaForeignIdBuilder.java" startLine="78" startPosition="29" endLine="79" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7414633741306852762" fileName="JavaForeignIdBuilder.java" startLine="79" startPosition="43" endLine="80" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7414633741307349731" fileName="JavaForeignIdBuilder.java" startLine="81" startPosition="75" endLine="82" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7414633741307322061" fileName="JavaForeignIdBuilder.java" startLine="83" startPosition="26" endLine="84" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7414633741307337567" fileName="JavaForeignIdBuilder.java" startLine="86" startPosition="69" endLine="87" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7414633741307376622" fileName="JavaForeignIdBuilder.java" startLine="87" startPosition="40" endLine="88" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8036260399911757842" fileName="JavaForeignIdBuilder.java" startLine="90" startPosition="5" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8036260399911876564" fileName="JavaForeignIdBuilder.java" startLine="91" startPosition="0" endLine="92" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8036260399915702427" fileName="JavaForeignIdBuilder.java" startLine="97" startPosition="121" endLine="98" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8036260399911800692" fileName="JavaForeignIdBuilder.java" startLine="99" startPosition="36" endLine="100" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8036260399918319836" fileName="JavaForeignIdBuilder.java" startLine="101" startPosition="5" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8036260399918318895" fileName="JavaForeignIdBuilder.java" startLine="102" startPosition="0" endLine="103" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8036260399918356538" fileName="JavaForeignIdBuilder.java" startLine="103" startPosition="68" endLine="104" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8036260399918322127" fileName="JavaForeignIdBuilder.java" startLine="104" startPosition="99" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8036260399911800721" fileName="JavaForeignIdBuilder.java" startLine="105" startPosition="0" endLine="106" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6481525656123878703" fileName="JavaForeignIdBuilder.java" startLine="111" startPosition="83" endLine="112" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656123899062" fileName="JavaForeignIdBuilder.java" startLine="113" startPosition="25" endLine="114" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6481525656123880781" fileName="JavaForeignIdBuilder.java" startLine="115" startPosition="5" endLine="116" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6481525656123880357" fileName="JavaForeignIdBuilder.java" startLine="116" startPosition="23" endLine="117" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656123950975" fileName="JavaForeignIdBuilder.java" startLine="117" startPosition="41" endLine="118" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6481525656123962038" fileName="JavaForeignIdBuilder.java" startLine="118" startPosition="82" endLine="119" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6481525656078429217" fileName="JavaForeignIdBuilder.java" startLine="119" startPosition="44" endLine="120" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6481525656079770551" fileName="JavaForeignIdBuilder.java" startLine="125" startPosition="87" endLine="126" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656079824453" fileName="JavaForeignIdBuilder.java" startLine="126" startPosition="49" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6481525656079214207" fileName="JavaForeignIdBuilder.java" startLine="128" startPosition="69" endLine="129" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6481525656080009837" fileName="JavaForeignIdBuilder.java" startLine="129" startPosition="30" endLine="130" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656080019698" fileName="JavaForeignIdBuilder.java" startLine="131" startPosition="25" endLine="132" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6481525656079917956" fileName="JavaForeignIdBuilder.java" startLine="133" startPosition="7" endLine="134" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6481525656123868228" fileName="JavaForeignIdBuilder.java" startLine="134" startPosition="22" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6481525656080272788" fileName="JavaForeignIdBuilder.java" startLine="136" startPosition="46" endLine="137" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656080378733" fileName="JavaForeignIdBuilder.java" startLine="137" startPosition="45" endLine="138" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656080426293" fileName="JavaForeignIdBuilder.java" startLine="139" startPosition="25" endLine="140" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6481525656080316253" fileName="JavaForeignIdBuilder.java" startLine="141" startPosition="7" endLine="142" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6481525656080799034" fileName="JavaForeignIdBuilder.java" startLine="142" startPosition="22" endLine="143" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1639340979911161135" fileName="JavaForeignIdBuilder.java" startLine="143" startPosition="21" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6481525656082598013" fileName="JavaForeignIdBuilder.java" startLine="145" startPosition="76" endLine="146" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6481525656082598015" fileName="JavaForeignIdBuilder.java" startLine="146" startPosition="88" endLine="147" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6481525656082598017" fileName="JavaForeignIdBuilder.java" startLine="147" startPosition="71" endLine="148" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6481525656082598019" fileName="JavaForeignIdBuilder.java" startLine="148" startPosition="61" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6481525656082598020" fileName="JavaForeignIdBuilder.java" startLine="149" startPosition="0" endLine="150" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656082598026" fileName="JavaForeignIdBuilder.java" startLine="150" startPosition="60" endLine="151" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656082598032" fileName="JavaForeignIdBuilder.java" startLine="151" startPosition="42" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6481525656082598038" fileName="JavaForeignIdBuilder.java" startLine="153" startPosition="53" endLine="154" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6481525656082598044" fileName="JavaForeignIdBuilder.java" startLine="154" startPosition="63" endLine="155" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6481525656083210580" fileName="JavaForeignIdBuilder.java" startLine="157" startPosition="7" endLine="158" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481525656083210596" fileName="JavaForeignIdBuilder.java" startLine="159" startPosition="35" endLine="160" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6481525656083349134" fileName="JavaForeignIdBuilder.java" startLine="161" startPosition="7" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6481525656083318189" fileName="JavaForeignIdBuilder.java" startLine="162" startPosition="0" endLine="163" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6481525656079559651" fileName="JavaForeignIdBuilder.java" startLine="164" startPosition="5" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6481525656080480095" fileName="JavaForeignIdBuilder.java" startLine="165" startPosition="0" endLine="166" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5108147576655713143" fileName="JavaForeignIdBuilder.java" startLine="36" startPosition="62" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6481525656124184420" fileName="JavaForeignIdBuilder.java" startLine="53" startPosition="79" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6481525656079355772" fileName="JavaForeignIdBuilder.java" startLine="60" startPosition="79" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8036260399911388733" fileName="JavaForeignIdBuilder.java" startLine="71" startPosition="47" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7414633741306952987" fileName="JavaForeignIdBuilder.java" startLine="82" startPosition="88" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8036260399911800685" fileName="JavaForeignIdBuilder.java" startLine="98" startPosition="36" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6481525656123896297" fileName="JavaForeignIdBuilder.java" startLine="112" startPosition="52" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6481525656080016626" fileName="JavaForeignIdBuilder.java" startLine="130" startPosition="58" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6481525656080343044" fileName="JavaForeignIdBuilder.java" startLine="138" startPosition="37" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6481525656083210588" fileName="JavaForeignIdBuilder.java" startLine="158" startPosition="33" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7414633741306921637" fileName="JavaForeignIdBuilder.java" startLine="85" startPosition="7" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6481525656082598033" fileName="JavaForeignIdBuilder.java" startLine="152" startPosition="0" endLine="156" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6481525656079340239" fileName="JavaForeignIdBuilder.java" startLine="52" startPosition="10" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5108147576656209351" fileName="JavaForeignIdBuilder.java" startLine="34" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeNodePtr#(Lcom/intellij/psi/PsiElement;)Ljetbrains/mps/idea/core/refactoring/NodePtr;" />
+    <nodeInfo nodeId="6481525656079323561" fileName="JavaForeignIdBuilder.java" startLine="48" startPosition="18" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7414633741306911111" fileName="JavaForeignIdBuilder.java" startLine="80" startPosition="46" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8036260399911859716" fileName="JavaForeignIdBuilder.java" startLine="97" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeModelReference#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="6481525656126024517" fileName="JavaForeignIdBuilder.java" startLine="111" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeNodeId#(Lcom/intellij/psi/PsiElement;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId/Foreign;" />
+    <nodeInfo nodeId="6481525656082598005" fileName="JavaForeignIdBuilder.java" startLine="144" startPosition="0" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6481525656125995752" fileName="JavaForeignIdBuilder.java" startLine="45" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeNodeId#(Lcom/intellij/psi/PsiElement;)Ljetbrains/mps/smodel/SNodeId/Foreign;" />
+    <nodeInfo nodeId="8036260399911725909" fileName="JavaForeignIdBuilder.java" startLine="69" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeModelReference#(Lcom/intellij/psi/PsiElement;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
+    <nodeInfo nodeId="6481525656079202120" fileName="JavaForeignIdBuilder.java" startLine="127" startPosition="0" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6481525656126044689" fileName="JavaForeignIdBuilder.java" startLine="125" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="computeNodeId#(Ljava/lang/String;Lcom/intellij/psi/PsiElement;)Ljetbrains/mps/smodel/SNodeId/Foreign;" />
+    <scopeInfo nodeId="5108147576655713145" fileName="JavaForeignIdBuilder.java" startLine="37" startPosition="45" endLine="38" endPosition="18" />
+    <scopeInfo nodeId="6481525656124184422" fileName="JavaForeignIdBuilder.java" startLine="54" startPosition="29" endLine="55" endPosition="20" />
+    <scopeInfo nodeId="6481525656079355774" fileName="JavaForeignIdBuilder.java" startLine="61" startPosition="25" endLine="62" endPosition="18" />
+    <scopeInfo nodeId="8036260399911388735" fileName="JavaForeignIdBuilder.java" startLine="72" startPosition="41" endLine="73" endPosition="18" />
+    <scopeInfo nodeId="7414633741306952989" fileName="JavaForeignIdBuilder.java" startLine="83" startPosition="26" endLine="84" endPosition="17" />
+    <scopeInfo nodeId="8036260399911800691" fileName="JavaForeignIdBuilder.java" startLine="99" startPosition="36" endLine="100" endPosition="40" />
+    <scopeInfo nodeId="6481525656123896299" fileName="JavaForeignIdBuilder.java" startLine="113" startPosition="25" endLine="114" endPosition="18" />
+    <scopeInfo nodeId="6481525656080016628" fileName="JavaForeignIdBuilder.java" startLine="131" startPosition="25" endLine="132" endPosition="20" />
+    <scopeInfo nodeId="6481525656080343046" fileName="JavaForeignIdBuilder.java" startLine="139" startPosition="25" endLine="140" endPosition="20" />
+    <scopeInfo nodeId="6481525656083210595" fileName="JavaForeignIdBuilder.java" startLine="159" startPosition="35" endLine="160" endPosition="30" />
+    <scopeInfo nodeId="6481525656079323563" fileName="JavaForeignIdBuilder.java" startLine="49" startPosition="36" endLine="51" endPosition="41" />
+    <scopeInfo nodeId="7414633741306921639" fileName="JavaForeignIdBuilder.java" startLine="86" startPosition="69" endLine="88" endPosition="14" />
+    <scopeInfo nodeId="6481525656082598037" fileName="JavaForeignIdBuilder.java" startLine="153" startPosition="53" endLine="155" endPosition="25" />
+    <scopeInfo nodeId="6481525656079340240" fileName="JavaForeignIdBuilder.java" startLine="52" startPosition="12" endLine="57" endPosition="41">
       <varInfo nodeId="6481525656079340826" varName="parentId" />
     </scopeInfo>
-    <scopeInfo nodeId="5108147576655172762" fileName="JavaForeignIdBuilder.java" startLine="25" startPosition="60" endLine="31" endPosition="41">
+    <scopeInfo nodeId="5108147576655172762" fileName="JavaForeignIdBuilder.java" startLine="34" startPosition="60" endLine="40" endPosition="41">
       <varInfo nodeId="5108147576655712284" varName="modelRef" />
       <varInfo nodeId="5108147576655710884" varName="nodeId" />
     </scopeInfo>
-    <scopeInfo nodeId="8036260399911324007" fileName="JavaForeignIdBuilder.java" startLine="61" startPosition="75" endLine="68" endPosition="46">
-      <varInfo nodeId="8036260399911387994" varName="file" />
-      <varInfo nodeId="8036260399911419385" varName="packageName" />
-    </scopeInfo>
-    <scopeInfo nodeId="6481525656079202122" fileName="JavaForeignIdBuilder.java" startLine="104" startPosition="69" endLine="111" endPosition="0">
+    <scopeInfo nodeId="6481525656079202122" fileName="JavaForeignIdBuilder.java" startLine="128" startPosition="69" endLine="135" endPosition="0">
       <varInfo nodeId="6481525656080009840" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="5108147576656209351" fileName="JavaForeignIdBuilder.java" startLine="25" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="5108147576656209351" fileName="JavaForeignIdBuilder.java" startLine="34" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="5108147576655711562" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="8036260399911859719" fileName="JavaForeignIdBuilder.java" startLine="73" startPosition="101" endLine="82" endPosition="69">
+    <scopeInfo nodeId="7414633741306911117" fileName="JavaForeignIdBuilder.java" startLine="81" startPosition="75" endLine="89" endPosition="7">
+      <varInfo nodeId="7414633741307349732" varName="facet" />
+    </scopeInfo>
+    <scopeInfo nodeId="8036260399911859719" fileName="JavaForeignIdBuilder.java" startLine="97" startPosition="121" endLine="106" endPosition="69">
       <varInfo nodeId="8036260399918318898" varName="fqName" />
       <varInfo nodeId="8036260399918356541" varName="modelId" />
       <varInfo nodeId="8036260399915702430" varName="stereotype" />
     </scopeInfo>
-    <scopeInfo nodeId="6481525656078429216" fileName="JavaForeignIdBuilder.java" startLine="87" startPosition="83" endLine="96" endPosition="18">
+    <scopeInfo nodeId="6481525656078429216" fileName="JavaForeignIdBuilder.java" startLine="111" startPosition="83" endLine="120" endPosition="18">
       <varInfo nodeId="6481525656123878704" varName="nodeId" />
       <varInfo nodeId="6481525656123880360" varName="nodeIdStr" />
     </scopeInfo>
-    <scopeInfo nodeId="8036260399911725909" fileName="JavaForeignIdBuilder.java" startLine="60" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="8036260399911324600" varName="element" />
+    <scopeInfo nodeId="7414633741306911111" fileName="JavaForeignIdBuilder.java" startLine="80" startPosition="46" endLine="90" endPosition="5">
+      <varInfo nodeId="7414633741306911113" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="8036260399911859716" fileName="JavaForeignIdBuilder.java" startLine="73" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="8036260399911859716" fileName="JavaForeignIdBuilder.java" startLine="97" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="7414633741307436136" varName="mpsModuleId" />
       <varInfo nodeId="8036260399911864705" varName="packageName" />
     </scopeInfo>
-    <scopeInfo nodeId="6481525656126024517" fileName="JavaForeignIdBuilder.java" startLine="87" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="6481525656126024517" fileName="JavaForeignIdBuilder.java" startLine="111" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="6481525656078429221" varName="element" />
       <varInfo nodeId="6481525656078429301" varName="newName" />
     </scopeInfo>
-    <scopeInfo nodeId="6481525656082598012" fileName="JavaForeignIdBuilder.java" startLine="121" startPosition="76" endLine="132" endPosition="9">
+    <scopeInfo nodeId="6481525656082598012" fileName="JavaForeignIdBuilder.java" startLine="145" startPosition="76" endLine="156" endPosition="9">
       <varInfo nodeId="6481525656082598027" varName="psiType" />
       <varInfo nodeId="6481525656082598021" varName="psiTypeElem" />
     </scopeInfo>
-    <scopeInfo nodeId="6481525656082598005" fileName="JavaForeignIdBuilder.java" startLine="120" startPosition="0" endLine="133" endPosition="7">
+    <scopeInfo nodeId="6481525656082598005" fileName="JavaForeignIdBuilder.java" startLine="144" startPosition="0" endLine="157" endPosition="7">
       <varInfo nodeId="6481525656082598011" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="6481525656078394667" fileName="JavaForeignIdBuilder.java" startLine="37" startPosition="67" endLine="55" endPosition="42">
+    <scopeInfo nodeId="6481525656078394667" fileName="JavaForeignIdBuilder.java" startLine="46" startPosition="67" endLine="64" endPosition="42">
       <varInfo nodeId="6481525656079202233" varName="parent" />
       <varInfo nodeId="6481525656079321579" varName="prefix" />
     </scopeInfo>
-    <scopeInfo nodeId="6481525656125995752" fileName="JavaForeignIdBuilder.java" startLine="36" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="6481525656125995752" fileName="JavaForeignIdBuilder.java" startLine="45" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="6481525656078394720" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="6481525656080197193" fileName="JavaForeignIdBuilder.java" startLine="112" startPosition="46" endLine="139" endPosition="21">
+    <scopeInfo nodeId="8036260399911324007" fileName="JavaForeignIdBuilder.java" startLine="70" startPosition="75" endLine="92" endPosition="82">
+      <varInfo nodeId="8036260399911387994" varName="file" />
+      <varInfo nodeId="7414633741307331087" varName="mpsModule" />
+      <varInfo nodeId="8036260399911419385" varName="packageName" />
+      <varInfo nodeId="7414633741306884001" varName="project" />
+      <varInfo nodeId="7414633741306852763" varName="vfile" />
+    </scopeInfo>
+    <scopeInfo nodeId="8036260399911725909" fileName="JavaForeignIdBuilder.java" startLine="69" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="8036260399911324600" varName="element" />
+    </scopeInfo>
+    <scopeInfo nodeId="6481525656080197193" fileName="JavaForeignIdBuilder.java" startLine="136" startPosition="46" endLine="163" endPosition="21">
       <varInfo nodeId="6481525656083210581" varName="last" />
       <varInfo nodeId="6481525656080272789" varName="method" />
       <varInfo nodeId="6481525656080378736" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="6481525656079186004" fileName="JavaForeignIdBuilder.java" startLine="101" startPosition="87" endLine="142" endPosition="46">
+    <scopeInfo nodeId="6481525656079186004" fileName="JavaForeignIdBuilder.java" startLine="125" startPosition="87" endLine="166" endPosition="46">
       <varInfo nodeId="6481525656079770554" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="6481525656126044689" fileName="JavaForeignIdBuilder.java" startLine="101" startPosition="0" endLine="144" endPosition="0">
+    <scopeInfo nodeId="6481525656126044689" fileName="JavaForeignIdBuilder.java" startLine="125" startPosition="0" endLine="168" endPosition="0">
       <varInfo nodeId="6481525656079186158" varName="element" />
       <varInfo nodeId="6481525656079186105" varName="prefix" />
     </scopeInfo>
-    <unitInfo nodeId="6481525656078378666" fileName="JavaForeignIdBuilder.java" startLine="22" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder" />
+    <unitInfo nodeId="6481525656078378666" fileName="JavaForeignIdBuilder.java" startLine="31" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder" />
   </root>
   <root nodeRef="r:e32ada56-1876-4524-85c0-29075cbd8d32(jetbrains.mps.idea.java.psiStubs)/9079491090144936020">
     <nodeInfo nodeId="9079491090382209046" fileName="EclipseJavaStubModelRoot.java" startLine="16" startPosition="60" endLine="17" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
