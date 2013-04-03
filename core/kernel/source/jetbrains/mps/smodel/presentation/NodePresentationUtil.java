@@ -54,7 +54,9 @@ public class NodePresentationUtil {
 
   public static int getSortPriority(SNode referenceNode, SNode referentNode) {
     if (isLocalTo(referenceNode, referentNode)) return -2;
-    if (SModelStereotype.isUserModel(referentNode.getModel())) return -1;
+    SModel model = referentNode.getModel();
+    if (model == null) return 0;
+    if (SModelStereotype.isUserModel(model)) return -1;
     return 0;
   }
 
