@@ -13,23 +13,29 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
-        return new BaseLanguageCommand_BehaviorDescriptor();
-      case 2:
-        return new ModelStatisticsCommand_BehaviorDescriptor();
-      case 1:
-        return new FindUsagesCommand_BehaviorDescriptor();
-      case 6:
-        return new TextResult_BehaviorDescriptor();
-      case 3:
-        return new NodeResult_BehaviorDescriptor();
-      case 5:
-        return new PrintText_BehaviorDescriptor();
+        return new BLCommand_BehaviorDescriptor();
       case 4:
+        return new ModelStatCommand_BehaviorDescriptor();
+      case 3:
+        return new FindUsagesCommand_BehaviorDescriptor();
+      case 9:
+        return new TextResultPart_BehaviorDescriptor();
+      case 5:
+        return new NodeResultPart_BehaviorDescriptor();
+      case 8:
+        return new PrintText_BehaviorDescriptor();
+      case 7:
         return new PrintNode_BehaviorDescriptor();
+      case 1:
+        return new BLCommandResult_BehaviorDescriptor();
+      case 2:
+        return new BLCommandResultLine_BehaviorDescriptor();
+      case 6:
+        return new PrintNewLine_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", "jetbrains.mps.console.lang.commands.structure.FindUsagesCommand", "jetbrains.mps.console.lang.commands.structure.ModelStatisticsCommand", "jetbrains.mps.console.lang.commands.structure.NodeResult", "jetbrains.mps.console.lang.commands.structure.PrintNode", "jetbrains.mps.console.lang.commands.structure.PrintText", "jetbrains.mps.console.lang.commands.structure.TextResult"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.lang.commands.structure.BLCommand", "jetbrains.mps.console.lang.commands.structure.BLCommandResult", "jetbrains.mps.console.lang.commands.structure.BLCommandResultLine", "jetbrains.mps.console.lang.commands.structure.FindUsagesCommand", "jetbrains.mps.console.lang.commands.structure.ModelStatCommand", "jetbrains.mps.console.lang.commands.structure.NodeResultPart", "jetbrains.mps.console.lang.commands.structure.PrintNewLine", "jetbrains.mps.console.lang.commands.structure.PrintNode", "jetbrains.mps.console.lang.commands.structure.PrintText", "jetbrains.mps.console.lang.commands.structure.TextResultPart"};
 }

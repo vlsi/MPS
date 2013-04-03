@@ -16,28 +16,28 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class BaseLanguageCommand_Editor extends DefaultNodeEditor {
+public class BLCommandResultLine_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_sir1b9_a(editorContext, node);
+    return this.createCollection_584ftp_a(editorContext, node);
   }
 
-  private EditorCell createCollection_sir1b9_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_584ftp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_sir1b9_a");
-    editorCell.addEditorCell(this.createRefNodeList_sir1b9_a0(editorContext, node));
+    editorCell.setCellId("Collection_584ftp_a");
+    editorCell.addEditorCell(this.createRefNodeList_584ftp_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_sir1b9_a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BaseLanguageCommand_Editor.statementListHandler_sir1b9_a0(node, "statement", editorContext);
+  private EditorCell createRefNodeList_584ftp_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BLCommandResultLine_Editor.partListHandler_584ftp_a0(node, "part", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
-    editorCell.setCellId("refNodeList_statement");
+    editorCell.setCellId("refNodeList_part");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class statementListHandler_sir1b9_a0 extends RefNodeListHandler {
-    public statementListHandler_sir1b9_a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class partListHandler_584ftp_a0 extends RefNodeListHandler {
+    public partListHandler_584ftp_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

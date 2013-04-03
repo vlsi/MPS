@@ -13,6 +13,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "model", true);
   }
 
+  public static SNode sourceNodeQuery_4417779018064997383(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "node", true);
+  }
+
+  public static SNode sourceNodeQuery_4417779018064998078(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "text", true);
+  }
+
   public static Iterable sourceNodesQuery_5336086527852932024(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "statement", true);
   }

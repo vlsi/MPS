@@ -4,6 +4,7 @@ package jetbrains.mps.console.lang.commands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
@@ -41,11 +42,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.logging.Logger;
 
-public class BaseLanguageCommand_Behavior {
+public class BLCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(final SNode thisNode, final Project p) {
+  public static void virtual_execute_757553790980855637(final SNode thisNode, final Project p, final ConsoleStream console) {
     final IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory")).toScript();
 
     final Wrappers._T<IClassPathItem> classPath = new Wrappers._T<IClassPathItem>();
@@ -105,8 +106,8 @@ public class BaseLanguageCommand_Behavior {
                   try {
                     Method[] methods = Class.forName(className.value, true, loader.value).getMethods();
                     for (Method method : methods) {
-                      if (method.getName().equals("main")) {
-                        method.invoke(null, new Object[]{new String[0]});
+                      if (method.getName().equals("execute")) {
+                        method.invoke(null, new Object[]{console});
                       }
                     }
                   } catch (ClassNotFoundException ignore) {
@@ -127,5 +128,5 @@ public class BaseLanguageCommand_Behavior {
     });
   }
 
-  private static Logger LOG = Logger.getLogger(BaseLanguageCommand_Behavior.class);
+  private static Logger LOG = Logger.getLogger(BLCommand_Behavior.class);
 }

@@ -4,7 +4,8 @@ package jetbrains.mps.console.lang.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.console.tool.ConsoleStream;
 
 public interface Command_BehaviorDescriptor extends ConsoleItem_BehaviorDescriptor {
-  public void virtual_execute_757553790980855637(SNode thisNode, Project p);
+  public void virtual_execute_757553790980855637(SNode thisNode, Project p, ConsoleStream console);
 }

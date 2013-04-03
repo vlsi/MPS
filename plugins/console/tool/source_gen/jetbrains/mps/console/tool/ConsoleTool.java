@@ -28,8 +28,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public class ConsoleTool extends BaseProjectTool {
+public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
   private JPanel myMainComponent;
   private SModel myModel;
   private SNode myRoot;
@@ -165,5 +169,62 @@ public class ConsoleTool extends BaseProjectTool {
 
   @Override
   protected void createTool(boolean b) {
+  }
+
+
+
+  private SNode getLastResult() {
+    SNode last = SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(myRoot, "item", true)).last(), "jetbrains.mps.console.lang.commands.structure.BLCommandResult");
+    if (last != null) {
+      return last;
+    }
+    return SLinkOperations.addNewChild(myRoot, "item", "jetbrains.mps.console.lang.commands.structure.BLCommandResult");
+  }
+
+
+
+  private SNode getLastResultLine() {
+    SNode last = SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(myRoot, "item", true)).last(), "jetbrains.mps.console.lang.commands.structure.BLCommandResult");
+    if (last == null) {
+      last = SLinkOperations.addNewChild(myRoot, "item", "jetbrains.mps.console.lang.commands.structure.BLCommandResult");
+    }
+    SNode lastLine = ListSequence.fromList(SLinkOperations.getTargets(last, "line", true)).last();
+    if (lastLine == null) {
+      lastLine = SLinkOperations.addNewChild(last, "line", "jetbrains.mps.console.lang.commands.structure.BLCommandResultLine");
+    }
+
+    return lastLine;
+  }
+
+
+
+  public void addText(String text) {
+    ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a72(text));
+  }
+
+  public void addNode(SNode node) {
+    SNode n = _quotation_createNode_xg3v07_a0a0cb();
+    SLinkOperations.setTarget(n, "target", node, false);
+    ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(n);
+  }
+
+  public void addNewLine() {
+    SNode last = getLastResult();
+    SLinkOperations.addNewChild(last, "line", "jetbrains.mps.console.lang.commands.structure.BLCommandResultLine");
+  }
+
+  private static SNode _quotation_createNode_xg3v07_a0a0a72(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.lang.commands.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_xg3v07_a0a0cb() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.lang.commands.structure.NodeResultPart", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

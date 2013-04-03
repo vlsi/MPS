@@ -5,12 +5,12 @@ package jetbrains.mps.console.lang.commands.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.console.lang.behavior.Result_BehaviorDescriptor;
 
-public class NodeResult_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements Result_BehaviorDescriptor {
-  public NodeResult_BehaviorDescriptor() {
+public class BLCommandResult_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements Result_BehaviorDescriptor {
+  public BLCommandResult_BehaviorDescriptor() {
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.console.lang.commands.structure.NodeResult";
+    return "jetbrains.mps.console.lang.commands.structure.BLCommandResult";
   }
 }

@@ -4,6 +4,7 @@ package jetbrains.mps.console.lang.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -12,16 +13,16 @@ public class Command_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(SNode thisNode, Project p) {
+  public static void virtual_execute_757553790980855637(SNode thisNode, Project p, ConsoleStream console) {
   }
 
   @Deprecated
-  public static void call_execute_757553790980855637(SNode thisNode, Project p) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_execute_757553790980855637", new Object[]{p});
+  public static void call_execute_757553790980855637(SNode thisNode, Project p, ConsoleStream console) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_execute_757553790980855637", new Object[]{p, console});
   }
 
   @Deprecated
-  public static void callSuper_execute_757553790980855637(SNode thisNode, String callerConceptFqName, Project p) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.console.lang.structure.Command"), callerConceptFqName, "virtual_execute_757553790980855637", new Class[]{SNode.class, Project.class}, new Object[]{p});
+  public static void callSuper_execute_757553790980855637(SNode thisNode, String callerConceptFqName, Project p, ConsoleStream console) {
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.console.lang.structure.Command"), callerConceptFqName, "virtual_execute_757553790980855637", new Class[]{SNode.class, Project.class, ConsoleStream.class}, new Object[]{p, console});
   }
 }
