@@ -20,9 +20,9 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import com.intellij.util.xml.ModuleContentRootSearchScope;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
-import com.intellij.psi.PsiNamedElement;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiField;
+import com.intellij.psi.PsiNamedElement;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiTypeElement;
@@ -104,20 +104,6 @@ public class JavaForeignIdBuilder {
     SModelId modelId = SModelId.foreign(fqName.getStereotype(), mpsModuleId, fqName.getLongName());
 
     return new jetbrains.mps.smodel.SModelReference(fqName, modelId);
-  }
-
-
-
-  public static SNodeId.Foreign computeNodeId(PsiElement element, String newName) {
-    SNodeId.Foreign nodeId = computeNodeId(element);
-    if (nodeId == null) {
-      return null;
-    }
-    // FIXME it's dumb 
-    String nodeIdStr = nodeId.toString();
-    nodeIdStr = nodeIdStr.replace(((PsiNamedElement) element).getName(), newName);
-    nodeId = new SNodeId.Foreign(nodeIdStr);
-    return nodeId;
   }
 
 

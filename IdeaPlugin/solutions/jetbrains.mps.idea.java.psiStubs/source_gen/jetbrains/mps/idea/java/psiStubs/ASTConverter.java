@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.psi.PsiElement;
-import jetbrains.mps.smodel.SNodeId;
+import java.util.Set;
 import com.intellij.psi.PsiClass;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -24,19 +24,24 @@ import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifier;
 import com.intellij.psi.PsiAnnotationMethod;
 import com.intellij.psi.PsiParameter;
+import jetbrains.mps.smodel.SNodeId;
 import com.intellij.psi.PsiType;
 import com.intellij.psi.PsiPrimitiveType;
-import jetbrains.mps.smodel.DynamicReference;
 import com.intellij.psi.PsiArrayType;
 import com.intellij.psi.PsiWildcardType;
 import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiLiteralExpression;
+import jetbrains.mps.smodel.DynamicReference;
 import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiModifierListOwner;
 import com.intellij.psi.PsiTypeParameterListOwner;
 import com.intellij.psi.PsiNameValuePair;
 import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.SReference;
 import com.intellij.psi.PsiTypeElement;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -45,22 +50,44 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ASTConverter {
+  private final ASTConverter.State myState;
   protected final Consumer<Pair<SNode, PsiElement>> myMps2PsiMapper;
 
+
+
   public ASTConverter() {
+    myState = new ASTConverter.State();
     myMps2PsiMapper = null;
   }
 
+
+
   public ASTConverter(Consumer<Pair<SNode, PsiElement>> mps2psiMapper) {
-    this.myMps2PsiMapper = mps2psiMapper;
+    myState = new ASTConverter.State();
+    myMps2PsiMapper = mps2psiMapper;
   }
 
-  /**
-   * State. See ASTConverter.WithState
-   */
-  protected String getIdPrefix() {
-    return SNodeId.Foreign.ID_PREFIX;
+
+
+  public ASTConverter(Consumer<Pair<SNode, PsiElement>> mps2psiMapper, ASTConverter.State state) {
+    myState = state;
+    myMps2PsiMapper = mps2psiMapper;
   }
+
+
+
+  private ASTConverter withTypeVarNames(Set<String> typeVarNames) {
+    return new ASTConverter(myMps2PsiMapper, new ASTConverter.State(myState, typeVarNames));
+  }
+
+
+
+  private ASTConverter withTypeVarDecls(Iterable<SNode> typeVars) {
+    return new ASTConverter(myMps2PsiMapper, new ASTConverter.State(myState, typeVars));
+  }
+
+
+
 
   protected boolean needToSetId() {
     return true;
@@ -84,15 +111,11 @@ public class ASTConverter {
 
     SPropertyOperations.set(classifier.value, "name", x.getName());
     SLinkOperations.setTarget(classifier.value, "visibility", getVisibility(x), true);
-    addTypeParams(x, classifier.value);
     addAnnotations(x, classifier.value);
 
-    final Wrappers._T<ASTConverter> childConverter = new Wrappers._T<ASTConverter>(this);
 
-    if (needToSetId() && isNotEmpty_rbndtb_a0a41a5(SPropertyOperations.getString(classifier.value, "name"))) {
-      String id = getIdPrefix() + SPropertyOperations.getString(classifier.value, "name");
-      ((jetbrains.mps.smodel.SNode) classifier.value).setId(new SNodeId.Foreign(id));
-      childConverter.value = new ASTConverter.WithState(this, id + ".");
+    if (needToSetId() && isNotEmpty_rbndtb_a0a21a61(SPropertyOperations.getString(classifier.value, "name"))) {
+      ((jetbrains.mps.smodel.SNode) classifier.value).setId(JavaForeignIdBuilder.computeNodeId(x));
     }
 
     // class's super types and implemented ifaces 
@@ -125,6 +148,8 @@ public class ASTConverter {
       }
     }
 
+    final ASTConverter currConverter = addTypeParams(x, classifier.value);
+
     Sequence.fromIterable(Sequence.fromArray(x.getFields())).visitAll(new IVisitor<PsiField>() {
       public void visit(PsiField it) {
         if (it instanceof PsiEnumConstant) {
@@ -135,16 +160,15 @@ public class ASTConverter {
           SNode cnst = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
           SPropertyOperations.set(cnst, "name", it.getName());
           if (needToSetId() && SPropertyOperations.getString(cnst, "name") != null) {
-            ((jetbrains.mps.smodel.SNode) cnst).setId(new SNodeId.Foreign(childConverter.value.getIdPrefix() + "." + SPropertyOperations.getString(cnst, "name")));
+            ((jetbrains.mps.smodel.SNode) cnst).setId(JavaForeignIdBuilder.computeNodeId(it));
           }
           // TODO maybe we must not touch expressions here (they may be not in the psi index) 
           // <node> 
           ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier.value, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).addElement(cnst);
-          return;
         }
 
         // normal field 
-        SNode node = childConverter.value.convertField(it, ourConcept);
+        SNode node = currConverter.convertField(it, ourConcept);
 
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
           ListSequence.fromList(SLinkOperations.getTargets(classifier.value, "staticField", true)).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
@@ -156,7 +180,7 @@ public class ASTConverter {
 
     Sequence.fromIterable(Sequence.fromArray(x.getMethods())).visitAll(new IVisitor<PsiMethod>() {
       public void visit(PsiMethod it) {
-        SNode node = childConverter.value.convertMethod(it, ourConcept);
+        SNode node = currConverter.convertMethod(it, ourConcept);
 
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
           ListSequence.fromList(SLinkOperations.getTargets(classifier.value, "method", true)).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
@@ -171,7 +195,7 @@ public class ASTConverter {
 
     ListSequence.fromList(SLinkOperations.getTargets(classifier.value, "staticInnerClassifiers", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getInnerClasses())).select(new ISelector<PsiClass, SNode>() {
       public SNode select(PsiClass it) {
-        return childConverter.value.convertClass(it);
+        return currConverter.convertClass(it);
       }
     }));
 
@@ -199,8 +223,7 @@ public class ASTConverter {
     addAnnotations(x, field);
 
     if (needToSetId() && SPropertyOperations.getString(field, "name") != null) {
-      String id = getIdPrefix() + SPropertyOperations.getString(field, "name");
-      ((jetbrains.mps.smodel.SNode) field).setId(new SNodeId.Foreign(id));
+      ((jetbrains.mps.smodel.SNode) field).setId(JavaForeignIdBuilder.computeNodeId(x));
     }
 
     if (myMps2PsiMapper != null) {
@@ -237,20 +260,6 @@ public class ASTConverter {
     SPropertyOperations.set(method, "isFinal", "" + (isFinal(x)));
     SPropertyOperations.set(method, "isSynchronized", "" + (x.hasModifierProperty(PsiModifier.SYNCHRONIZED)));
 
-    SLinkOperations.setTarget(method, "returnType", convertType(x.getReturnTypeNoResolve()), true);
-    ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getParameterList().getParameters())).select(new ISelector<PsiParameter, SNode>() {
-      public SNode select(PsiParameter it) {
-        SNode param = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
-        SPropertyOperations.set(param, "name", it.getName());
-        SLinkOperations.setTarget(param, "type", convertType(it.getType()), true);
-        SPropertyOperations.set(param, "isFinal", "" + (isFinal(it)));
-
-        addAnnotations(it, param);
-
-        return param;
-      }
-    }));
-
     ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getThrowsList().getReferencedTypes())).select(new ISelector<PsiClassType, SNode>() {
       public SNode select(PsiClassType it) {
         SNode typ = resolveClass(it);
@@ -258,7 +267,21 @@ public class ASTConverter {
       }
     }));
 
-    addTypeParams(x, method);
+    final ASTConverter currConverter = addTypeParams(x, method);
+
+    SLinkOperations.setTarget(method, "returnType", currConverter.convertType(x.getReturnTypeNoResolve()), true);
+    ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getParameterList().getParameters())).select(new ISelector<PsiParameter, SNode>() {
+      public SNode select(PsiParameter it) {
+        SNode param = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
+        SPropertyOperations.set(param, "name", it.getName());
+        SLinkOperations.setTarget(param, "type", currConverter.convertType(it.getType()), true);
+        SPropertyOperations.set(param, "isFinal", "" + (isFinal(it)));
+
+        currConverter.addAnnotations(it, param);
+
+        return param;
+      }
+    }));
 
     // not strictly necessary 
     if (1 > 0) {
@@ -268,7 +291,7 @@ public class ASTConverter {
     }
 
     if (needToSetId()) {
-      SNodeId.Foreign nodeId = JavaForeignIdBuilder.computeNodeId(getIdPrefix(), x);
+      SNodeId.Foreign nodeId = JavaForeignIdBuilder.computeNodeId(x);
       if (nodeId != null) {
         ((jetbrains.mps.smodel.SNode) method).setId(nodeId);
       }
@@ -327,12 +350,9 @@ public class ASTConverter {
 
       PsiClassType t = (PsiClassType) x;
 
-      // FIXME refactor 
-
-      // TODO ask state if it's a type variable 
-      if (1 < 0) {
-        SNode typVarRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
-        typVarRef.setReference("typeVariableDeclaration", new DynamicReference("typeVariableDeclaration", typVarRef, null, "TODO"));
+      // ask state if it's a type variable 
+      SNode typVarRef = myState.resolveTypeVar(t.getClassName());
+      if (typVarRef != null) {
         return typVarRef;
       }
 
@@ -355,9 +375,9 @@ public class ASTConverter {
       SNode bound = convertType(t.getBound());
 
       if (t.isExtends()) {
-        return _quotation_createNode_rbndtb_a0a6a2c0i(bound);
+        return _quotation_createNode_rbndtb_a0a6a2c0t(bound);
       } else {
-        return _quotation_createNode_rbndtb_a0a0g0c2a8(bound);
+        return _quotation_createNode_rbndtb_a0a0g0c2a91(bound);
       }
 
     } else {
@@ -386,7 +406,7 @@ public class ASTConverter {
     if (exp instanceof PsiLiteralExpression) {
       Object value = ((PsiLiteralExpression) exp).getValue();
       if (value instanceof String) {
-        return _quotation_createNode_rbndtb_a0a1a0a01(value.toString());
+        return _quotation_createNode_rbndtb_a0a1a0a12(value.toString());
       } else if (value instanceof Integer) {
         SNode c = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
         SPropertyOperations.set(c, "value", "" + (((Integer) value).intValue()));
@@ -443,13 +463,19 @@ public class ASTConverter {
     return x.hasModifierProperty(PsiModifier.STATIC);
   }
 
-  private void addTypeParams(PsiTypeParameterListOwner from, SNode to) {
-    ListSequence.fromList(SLinkOperations.getTargets(to, "typeVariableDeclaration", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(from.getTypeParameters())).select(new ISelector<PsiTypeParameter, SNode>() {
+
+
+  private ASTConverter addTypeParams(PsiTypeParameterListOwner from, SNode to) {
+    Iterable<SNode> typeVarDecls = Sequence.fromIterable(Sequence.fromArray(from.getTypeParameters())).select(new ISelector<PsiTypeParameter, SNode>() {
       public SNode select(PsiTypeParameter it) {
         return convertTypeParameter(it);
       }
-    }));
+    });
+    ListSequence.fromList(SLinkOperations.getTargets(to, "typeVariableDeclaration", true)).addSequence(Sequence.fromIterable(typeVarDecls));
+    return withTypeVarDecls(typeVarDecls);
   }
+
+
 
   private void addAnnotations(PsiModifierListOwner from, SNode to) {
 
@@ -478,20 +504,74 @@ public class ASTConverter {
     }));
   }
 
-  public static class WithState extends ASTConverter {
-    private String myIdPrefix;
-    private Map<String, SNode> myTypeVars;
 
 
-    public WithState(ASTConverter base, String prefix) {
-      super(base.myMps2PsiMapper);
-      myIdPrefix = prefix;
+  public static class State {
+    private ASTConverter.State parentState;
+    private Map<String, SNode> myTypeVars = MapSequence.fromMap(new HashMap<String, SNode>());
+
+
+    public State() {
     }
 
-    @Override
-    public String getIdPrefix() {
-      return myIdPrefix;
+
+
+    public State(ASTConverter.State base, Set<String> typeVarNames) {
+      parentState = base;
+      SetSequence.fromSet(typeVarNames).visitAll(new IVisitor<String>() {
+        public void visit(String it) {
+          MapSequence.fromMap(myTypeVars).put(it, null);
+        }
+      });
     }
+
+
+
+    public State(ASTConverter.State base, Iterable<SNode> typeVars) {
+      parentState = base;
+      for (SNode tv : Sequence.fromIterable(typeVars)) {
+        MapSequence.fromMap(myTypeVars).put(SPropertyOperations.getString(tv, "name"), tv);
+      }
+    }
+
+
+
+    protected SNode resolveTypeVar(String name) {
+      if (myTypeVars == null) {
+        return (parentState == null ?
+          null :
+          parentState.resolveTypeVar(name)
+        );
+      }
+
+      if (myTypeVars == null || !(MapSequence.fromMap(myTypeVars).containsKey(name))) {
+        // Either type var map is not initialized, this means that this State object was created with something else: 
+        // e.g. with id prefix. 
+        // Or type var is not part of this state 
+        return (parentState == null ?
+          null :
+          parentState.resolveTypeVar(name)
+        );
+
+      } else {
+        // we have this var name 
+        SNode typeVar = MapSequence.fromMap(myTypeVars).get(name);
+        SNode typeVarRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+        SReference ref;
+        // let's see if var has been parsed already 
+        if (typeVar != null) {
+          // FIXME static reference doesn't work here for some reason 
+          // <node> 
+          ref = new DynamicReference("typeVariableDeclaration", typeVarRef, null, name);
+        } else {
+          ref = new DynamicReference("typeVariableDeclaration", typeVarRef, null, name);
+        }
+
+        typeVarRef.setReference(ref.getRole(), ref);
+        return typeVarRef;
+      }
+    }
+
 
 
   }
@@ -516,7 +596,7 @@ public class ASTConverter {
     return str;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a6a2c0i(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a0a6a2c0t(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -528,7 +608,7 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a0g0c2a8(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a0a0g0c2a91(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -540,7 +620,7 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a1a0a01(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a0a1a0a12(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
@@ -548,7 +628,7 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  public static boolean isNotEmpty_rbndtb_a0a41a5(String str) {
+  public static boolean isNotEmpty_rbndtb_a0a21a61(String str) {
     return str != null && str.length() > 0;
   }
 }
