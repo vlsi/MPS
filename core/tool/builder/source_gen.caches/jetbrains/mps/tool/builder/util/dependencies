@@ -24,11 +24,12 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.StringTokenizer" />
     <classNode dependClassName="java.util.regex.Pattern" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.ContainerUtil" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.StringUtil" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.util.ContainerUtil" file="ContainerUtil.java">

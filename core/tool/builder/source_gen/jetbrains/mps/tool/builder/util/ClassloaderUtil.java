@@ -54,7 +54,7 @@ public class ClassloaderUtil {
   }
 
   public static Logger getLogger() {
-    return Logger.getLogger("ClassloaderUtil");
+    return LogManager.getLogger("ClassloaderUtil");
   }
 
   public static UrlClassLoader initClassloader(final List<URL> classpathElements) {
