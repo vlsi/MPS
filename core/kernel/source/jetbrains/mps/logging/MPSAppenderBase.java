@@ -26,14 +26,14 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Implement this to have your own appender.
  */
-public abstract class MpsAppenderSkeleton extends AppenderSkeleton {
+public abstract class MPSAppenderBase extends AppenderSkeleton {
   private static volatile int myCount = 0;
 
-  public MpsAppenderSkeleton() {
+  public MPSAppenderBase() {
     this("MPS_APPENDER_" + myCount++);
   }
 
-  protected MpsAppenderSkeleton(String name) {
+  protected MPSAppenderBase(String name) {
     setName(name);
   }
 
@@ -41,7 +41,7 @@ public abstract class MpsAppenderSkeleton extends AppenderSkeleton {
     org.apache.log4j.Logger.getRootLogger().addAppender(this);
   }
 
-  public void unRegister() {
+  public void unregister() {
     org.apache.log4j.Logger.getRootLogger().removeAppender(this);
   }
 

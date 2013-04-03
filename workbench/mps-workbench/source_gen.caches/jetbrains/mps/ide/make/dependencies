@@ -107,7 +107,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.progress.Backgroundable" />
     <classNode extendsClassName="java.util.concurrent.Future" />
-    <classNode extendsClassName="jetbrains.mps.logging.MpsAppenderSkeleton" />
+    <classNode extendsClassName="jetbrains.mps.logging.MPSAppenderBase" />
     <classNode extendsClassName="jetbrains.mps.make.service.CoreMakeTask" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.TextPreviewFile" file="TextPreviewFile.java">

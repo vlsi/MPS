@@ -32,7 +32,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.logging.MpsAppenderSkeleton;
+import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.apache.log4j.Priority;
@@ -184,7 +184,7 @@ public class CoreMakeTask {
     return myResult;
   }
 
-  public static class RelayingLoggingHandler extends MpsAppenderSkeleton {
+  public static class RelayingLoggingHandler extends MPSAppenderBase {
     private static Tuples._2<ThreadGroup, IMessageHandler> GROUP_HANDLER;
     private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
       @Override
@@ -206,7 +206,7 @@ public class CoreMakeTask {
     }
 
     public void stopRelaying() {
-      this.unRegister();
+      this.unregister();
     }
 
     @Override

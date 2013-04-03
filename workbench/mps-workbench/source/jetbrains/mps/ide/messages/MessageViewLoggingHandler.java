@@ -16,15 +16,14 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.openapi.components.ProjectComponent;
-import jetbrains.mps.logging.MpsAppenderSkeleton;
+import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import org.apache.log4j.Level;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class MessageViewLoggingHandler extends MpsAppenderSkeleton implements ProjectComponent {
+public class MessageViewLoggingHandler extends MPSAppenderBase implements ProjectComponent {
   private MessagesViewTool myMessagesView;
 
   public MessageViewLoggingHandler(MessagesViewTool messagesView) {
@@ -50,7 +49,7 @@ public class MessageViewLoggingHandler extends MpsAppenderSkeleton implements Pr
 
   @Override
   public void projectClosed() {
-    this.unRegister();
+    this.unregister();
   }
 
   @Override

@@ -226,7 +226,7 @@ public class GenerationController implements ITaskPoolProvider {
         // never happens
       }
     } finally {
-      generationSession.getLoggingHandler().unRegister();
+      generationSession.getLoggingHandler().unregister();
       generationSession.discardTransients();
 
       monitor.done();

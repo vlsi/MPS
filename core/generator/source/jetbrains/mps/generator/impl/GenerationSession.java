@@ -39,7 +39,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.logging.MpsAppenderSkeleton;
+import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -84,7 +84,7 @@ class GenerationSession {
   private final boolean myDiscardTransients;
   private final boolean myKeepFinalOutput;
   private final ProgressMonitor myProgressMonitor;
-  private MpsAppenderSkeleton myLoggingHandler;
+  private MPSAppenderBase myLoggingHandler;
   private final GenerationSessionLogger myLogger;
   private DependenciesBuilder myDependenciesBuilder;
   private Map<String, Object> myParameters;
@@ -673,9 +673,9 @@ class GenerationSession {
     }
   }
 
-  public MpsAppenderSkeleton getLoggingHandler() {
+  public MPSAppenderBase getLoggingHandler() {
     if (myLoggingHandler == null) {
-      myLoggingHandler = new MpsAppenderSkeleton() {
+      myLoggingHandler = new MPSAppenderBase() {
         @Override
         protected void append(@NotNull Priority level, @NotNull String categoryName, @NotNull String message, @Nullable Throwable t,
             @Nullable Object hintObject) {

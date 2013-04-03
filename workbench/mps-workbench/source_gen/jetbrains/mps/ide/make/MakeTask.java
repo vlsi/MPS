@@ -24,7 +24,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import jetbrains.mps.logging.MpsAppenderSkeleton;
+import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.apache.log4j.Priority;
@@ -169,7 +169,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     TaskState() {
     }
 
-    public static class RelayingLoggingHandler extends MpsAppenderSkeleton {
+    public static class RelayingLoggingHandler extends MPSAppenderBase {
       private static Tuples._2<ThreadGroup, IMessageHandler> GROUP_HANDLER;
       private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
         @Override
@@ -191,7 +191,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       }
 
       public void stopRelaying() {
-        this.unRegister();
+        this.unregister();
       }
 
       @Override

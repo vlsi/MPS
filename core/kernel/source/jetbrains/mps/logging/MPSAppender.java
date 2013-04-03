@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.logging.log4j;
+package jetbrains.mps.logging;
 
-import jetbrains.mps.logging.ILoggingHandler;
-import jetbrains.mps.logging.LogEntry;
-import jetbrains.mps.logging.MpsAppenderSkeleton;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -33,11 +30,11 @@ import java.util.List;
  */
 @Deprecated
 @ToRemove(version = 3.0)
-public class MpsAppender extends MpsAppenderSkeleton {
+public class MPSAppender extends MPSAppenderBase {
   public static final String NAME = "MPS";
   private final List<ILoggingHandler> myHandlers = new ArrayList<ILoggingHandler>();
 
-  public MpsAppender() {
+  public MPSAppender() {
     super(NAME);
   }
 
@@ -72,10 +69,10 @@ public class MpsAppender extends MpsAppenderSkeleton {
     myHandlers.clear();
   }
 
-  public static synchronized MpsAppender getInstance() {
-    MpsAppender mpsAppender = (MpsAppender) Logger.getRootLogger().getAppender(NAME);
+  public static synchronized MPSAppender getInstance() {
+    MPSAppender mpsAppender = (MPSAppender) Logger.getRootLogger().getAppender(NAME);
     if (mpsAppender == null) {
-      mpsAppender = new MpsAppender();
+      mpsAppender = new MPSAppender();
       mpsAppender.register();
     }
     return mpsAppender;

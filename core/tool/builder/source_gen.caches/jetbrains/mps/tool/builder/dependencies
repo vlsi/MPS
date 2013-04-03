@@ -32,7 +32,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
     <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
-    <classNode dependClassName="jetbrains.mps.logging.MpsAppenderSkeleton" />
+    <classNode dependClassName="jetbrains.mps.logging.MPSAppenderBase" />
     <classNode dependClassName="jetbrains.mps.project.PathMacros" />
     <classNode dependClassName="jetbrains.mps.project.PathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -152,7 +152,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.logging.MpsAppenderSkeleton" />
+    <classNode extendsClassName="jetbrains.mps.logging.MPSAppenderBase" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.AntLogger" />
   </dependency>
 </dependenciesRoot>

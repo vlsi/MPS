@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.logging;
 
-import jetbrains.mps.logging.log4j.MpsAppender;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
@@ -50,7 +49,7 @@ public abstract class Logger {
    */
   @Deprecated
   public static void addLoggingHandler(ILoggingHandler lh) {
-    MpsAppender.getInstance().addAppender(lh);
+    MPSAppender.getInstance().addAppender(lh);
   }
 
   /**
@@ -58,7 +57,7 @@ public abstract class Logger {
    */
   @Deprecated
   public static void removeLoggingHandler(ILoggingHandler lh) {
-    MpsAppender.getInstance().removeAppender(lh);
+    MPSAppender.getInstance().removeAppender(lh);
   }
 
   /**

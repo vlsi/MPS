@@ -19,9 +19,8 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.logging.MpsAppenderSkeleton;
+import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
@@ -69,7 +68,7 @@ public class ReferencesTest extends BaseMPSTest {
     final List<String> errors = new ArrayList<String>();
     final List<String> fatals = new ArrayList<String>();
 
-    MpsAppenderSkeleton handler = new MpsAppenderSkeleton() {
+    MPSAppenderBase handler = new MPSAppenderBase() {
       @Override
       protected void append(@NotNull Priority level, @NotNull String categoryName, @NotNull String message, @Nullable Throwable t,
           @Nullable Object hintObject) {
@@ -98,7 +97,7 @@ public class ReferencesTest extends BaseMPSTest {
       }
     });
 
-    handler.unRegister();
+    handler.unregister();
 
     assertTrue(errors.isEmpty());
     assertTrue(fatals.isEmpty());

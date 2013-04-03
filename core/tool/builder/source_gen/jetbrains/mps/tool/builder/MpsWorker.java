@@ -47,7 +47,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.tool.builder.util.PathManager;
 import java.io.StringWriter;
 import java.io.PrintWriter;
-import jetbrains.mps.logging.MpsAppenderSkeleton;
+import jetbrains.mps.logging.MPSAppenderBase;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.Nullable;
@@ -372,7 +372,7 @@ public abstract class MpsWorker {
     return writer.getBuffer();
   }
 
-  public class MyMessageHandlerAppender extends MpsAppenderSkeleton {
+  public class MyMessageHandlerAppender extends MPSAppenderBase {
     public MyMessageHandlerAppender() {
     }
 

@@ -7,7 +7,7 @@ import java.io.File;
 import org.apache.log4j.Level;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import jetbrains.mps.project.PathMacrosProvider;
-import jetbrains.mps.logging.MpsAppenderSkeleton;
+import jetbrains.mps.logging.MPSAppenderBase;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.SimpleLayout;
@@ -37,12 +37,12 @@ public class Environment {
   protected Level myLogLevel;
   protected SetLibraryContributor myLibraryContibutor;
   private PathMacrosProvider myMacroProvider;
-  protected MpsAppenderSkeleton myMessageHandler;
+  protected MPSAppenderBase myMessageHandler;
 
   public Environment() {
   }
 
-  public void init(Map<String, String> macro, boolean isLoadBootstarpLibraries, Map<String, File> libraries, Level logLevel, MpsAppenderSkeleton lh) {
+  public void init(Map<String, String> macro, boolean isLoadBootstarpLibraries, Map<String, File> libraries, Level logLevel, MPSAppenderBase lh) {
     myMacro = macro;
     myLoadBootstrapLibraries = isLoadBootstarpLibraries;
     myLibraries = libraries;
@@ -79,7 +79,7 @@ public class Environment {
     }
     MpsPlatform.dispose();
     if (myMessageHandler != null) {
-      myMessageHandler.unRegister();
+      myMessageHandler.unregister();
     }
   }
 
