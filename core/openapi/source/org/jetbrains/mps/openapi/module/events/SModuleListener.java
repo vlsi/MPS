@@ -13,10 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model.events;
+package org.jetbrains.mps.openapi.module.events;
 
-public interface SModelEvents {
-  void addListener(SModelListener l);
+public interface SModuleListener {
 
-  void removeChangeListener(SModelListener l);
 }

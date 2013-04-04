@@ -17,7 +17,7 @@ package org.jetbrains.mps.openapi.model;
 
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.events.SModelEvents;
+import jetbrains.mps.extapi.model.SModelEvents;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;

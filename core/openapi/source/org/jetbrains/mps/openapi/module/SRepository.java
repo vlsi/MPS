@@ -15,7 +15,8 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.mps.openapi.module.events.ModelEventsBus;
+import org.jetbrains.mps.openapi.module.events.RepositoryEventsBus;
+import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
 
 /**
  * A storage for modules
@@ -56,7 +57,7 @@ public interface SRepository {
 
   RepositoryAccess getRepositoryAccess();
 
-  ModelEventsBus getEventsBus();
+  RepositoryEventsBus getEventsBus();
 
   void saveAll();
 }

@@ -18,9 +18,16 @@ package org.jetbrains.mps.openapi.module.events;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.events.SModelListener;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.events.SModuleListener;
 import org.jetbrains.mps.util.Condition;
 
-public interface ModelEventsBus {
+public interface RepositoryEventsBus {
   void subscribe(Condition<SModule> moduleCondition, Condition<SModel> modelCondition, SModelListener listener);
   void unsubscribe(SModelListener listener);
+
+  void subscribe(Condition<SModule> moduleCondition, SModuleListener listener);
+  void unsubscribe(SModuleListener listener);
+
+  void subscribe(SRepositoryListener listener);
+  void unsubscribe(SRepositoryListener listener);
 }
