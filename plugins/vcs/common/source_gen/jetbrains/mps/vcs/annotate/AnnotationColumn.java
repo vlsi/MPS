@@ -80,7 +80,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.annotate.AnnotationListener;
+//import com.intellij.openapi.vcs.annotate.AnnotationListener;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressManager;
@@ -123,7 +123,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private VcsRevisionRange myRevisionRange;
   private ViewActionGroup myViewActionGroup;
   private AnnotationColumn.MyDifferenceListener myDifferenceListener = new AnnotationColumn.MyDifferenceListener();
-  private AnnotationColumn.MyAnnotationListener myAnnotationListener = new AnnotationColumn.MyAnnotationListener();
+//  private AnnotationColumn.MyAnnotationListener myAnnotationListener = new AnnotationColumn.MyAnnotationListener();
   private boolean myShowAdditionalInfo = false;
   private MessageBusConnection myMessageBusConnection;
 
@@ -158,7 +158,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       });
       return;
     }
-    myFileAnnotation.addListener(myAnnotationListener);
+//    myFileAnnotation.addListener(myAnnotationListener);
     myAuthorAnnotationAspect = Sequence.fromIterable(Sequence.fromArray(myFileAnnotation.getAspects())).findFirst(new IWhereFilter<LineAnnotationAspect>() {
       public boolean accept(LineAnnotationAspect a) {
         return LineAnnotationAspect.AUTHOR.equals(a.getId());
@@ -492,7 +492,7 @@ __switch__:
   @Override
   public void dispose() {
     myMessageBusConnection.disconnect();
-    myFileAnnotation.removeListener(myAnnotationListener);
+//    myFileAnnotation.removeListener(myAnnotationListener);
     myFileAnnotation.dispose();
     final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
     registry.getCommandQueue().runTask(new Runnable() {
@@ -610,7 +610,7 @@ __switch__:
     return myVcs.getProject();
   }
 
-  private class MyAnnotationListener implements AnnotationListener {
+  /*private class MyAnnotationListener implements AnnotationListener {
     public MyAnnotationListener() {
     }
 
@@ -624,7 +624,7 @@ __switch__:
         }
       });
     }
-  }
+  }*/
 
   private class MyDifferenceListener extends CurrentDifferenceAdapter {
     public MyDifferenceListener() {

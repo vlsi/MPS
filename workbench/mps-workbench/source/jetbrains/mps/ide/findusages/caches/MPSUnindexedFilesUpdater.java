@@ -19,16 +19,17 @@ import com.intellij.ide.caches.CacheUpdater;
 import com.intellij.ide.caches.FileContent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.CollectingContentIterator;
 import com.intellij.openapi.roots.ContentIterator;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.util.containers.HashSet;
-import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndexImpl;
 import com.intellij.util.indexing.IndexingStamp;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Set;
@@ -36,10 +37,12 @@ import java.util.Set;
 public class MPSUnindexedFilesUpdater implements CacheUpdater {
   private final FileBasedIndexImpl myIndex;
   private ProjectRootManagerEx myManager;
+  private final Project myProject;
 
-  public MPSUnindexedFilesUpdater(FileBasedIndexImpl index, ProjectRootManagerEx manager) {
+  public MPSUnindexedFilesUpdater(FileBasedIndexImpl index, ProjectRootManagerEx manager, @NotNull Project project) {
     myIndex = index;
     myManager = manager;
+    myProject = project;
   }
 
   @Override
@@ -49,7 +52,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
 
   @Override
   public VirtualFile[] queryNeededFiles(ProgressIndicator indicator) {
-    final CollectingContentIterator finder = myIndex.createContentIterator(indicator);
+    final CollectingContentIterator finder = myIndex.createContentIterator(indicator, myProject);
 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override

@@ -55,15 +55,13 @@ public class MPSSourceRevision extends SourceRevision {
 
   private static String getCurrentRevision(Project project, VirtualFile root) throws VcsException {
     GitSimpleHandler h = new GitSimpleHandler(project, root, GitCommand.LOG);
-    h.setNoSSH(true);
     h.setSilent(true);
     h.addParameters("--max-count=1", "--pretty=%h");
-    return check_9qzcwz_a4a2(h.run());
+    return check_9qzcwz_a3a2(h.run());
   }
 
   public static String getMergeBase(Project project, VirtualFile root) throws VcsException {
     GitSimpleHandler h = new GitSimpleHandler(project, root, GitCommand.MERGE_BASE);
-    h.setNoSSH(true);
     h.setSilent(true);
     h.addParameters("origin/master", "HEAD");
     String longRev = h.run();
@@ -76,7 +74,6 @@ public class MPSSourceRevision extends SourceRevision {
 
   public static int getDistance(Project project, VirtualFile root) throws VcsException {
     GitSimpleHandler h = new GitSimpleHandler(project, root, GitCommand.REV_LIST);
-    h.setNoSSH(true);
     h.setSilent(true);
     h.addParameters("origin/master..HEAD", "--count");
     String count = h.run();
@@ -90,7 +87,7 @@ public class MPSSourceRevision extends SourceRevision {
     return null;
   }
 
-  private static String check_9qzcwz_a4a2(String checkedDotOperand) {
+  private static String check_9qzcwz_a3a2(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.trim();
     }
