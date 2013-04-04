@@ -170,6 +170,7 @@
     <mkdir dir="${build.layout}/mps-java/lib/jps" />
     <jar destfile="${build.layout}/mps-java/lib/jps/mps-java-jps-plugin.jar">
       <fileset dir="${build.tmp}/java/out/mps-java-jps-plugin" />
+      <zipfileset dir="${mps_home}/IdeaPlugin/mps-java/jps-plugin/META-INF" prefix="META-INF" />
     </jar>
     <mkdir dir="${build.tmp}/default/mps-java.jar" />
     <mkdir dir="${build.tmp}/default/mps-java.jar/META-INF" />
