@@ -25,6 +25,9 @@ public class SPropertyNodeAdapter implements SProperty {
   @Override
   public SDataType getType() {
     SNode dataType = SLinkOperations.getTarget(myPNode, "dataType", false);
+    if (dataType == null) {
+      return null;
+    }
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
       return new SPrimitiveDataTypeAdapter(dataType);
     }
