@@ -21,6 +21,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.containers.EmptyIterable;
+import org.jetbrains.mps.util.Condition;
 
 import java.io.File;
 import java.io.FileInputStream;

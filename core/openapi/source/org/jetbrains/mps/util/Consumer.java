@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,26 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.util;
+package org.jetbrains.mps.util;
 
-/**
- * Author: Sergey Dmitriev.
- * Time: Nov 24, 2003 1:27:18 PM
- */
-public interface Condition<T> {
-  public boolean met(T object);
-
-  public static final Condition TRUE_CONDITION = new Condition() {
+public interface Consumer<T> {
+  Consumer EMPTY_CONSUMER = new Consumer() {
     @Override
-    public boolean met(Object object) {
-      return true;
+    public void consume(final Object t) {
     }
   };
 
-  public static final Condition FALSE_CONDITION = new Condition() {
-    @Override
-    public boolean met(Object object) {
-      return false;
-    }
-  };
+  /**
+   * @param t consequently takes value of each element of the set this processor is passed to for processing.
+   *          t is supposed to be a not-null value.
+   */
+  void consume(T t);
+
 }

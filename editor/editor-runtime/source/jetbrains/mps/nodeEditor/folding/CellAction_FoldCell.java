@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 
 public class CellAction_FoldCell extends AbstractCellAction {
 

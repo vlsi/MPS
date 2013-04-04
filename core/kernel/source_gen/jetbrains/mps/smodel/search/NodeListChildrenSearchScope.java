@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.SNodeOperations;
 
 public class NodeListChildrenSearchScope extends AbstractSearchScope {

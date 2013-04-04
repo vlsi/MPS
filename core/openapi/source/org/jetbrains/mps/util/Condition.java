@@ -13,23 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.util;
+package org.jetbrains.mps.util;
 
-import org.jetbrains.mps.util.Condition;
+public interface Condition<T> {
+  public boolean met(T object);
 
-import java.util.Iterator;
+  public static final Condition TRUE_CONDITION = new Condition() {
+    @Override
+    public boolean met(Object object) {
+      return true;
+    }
+  };
 
-public class ConditionalIterable<T> implements Iterable<T> {
-  private Condition<T> myCondition;
-  private Iterable<T> myIter;
-
-  public ConditionalIterable(Iterable<T> iter, Condition<T> condition) {
-    myCondition = condition;
-    myIter = iter;
-  }
-
-  @Override
-  public Iterator<T> iterator() {
-    return new ConditionalIterator<T>(myIter.iterator(), myCondition);
-  }
+  public static final Condition FALSE_CONDITION = new Condition() {
+    @Override
+    public boolean met(Object object) {
+      return false;
+    }
+  };
 }

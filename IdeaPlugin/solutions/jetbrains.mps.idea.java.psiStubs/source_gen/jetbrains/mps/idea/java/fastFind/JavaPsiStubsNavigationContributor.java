@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 import com.intellij.openapi.components.ApplicationComponent;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor;
 import com.intellij.psi.PsiJavaFile;

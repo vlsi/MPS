@@ -34,7 +34,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NonNls;

@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.FastNodeFinder;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import org.jetbrains.mps.util.Condition;
 
 public class SNodeOperations {
   public SNodeOperations() {

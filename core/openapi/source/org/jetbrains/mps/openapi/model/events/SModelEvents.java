@@ -13,19 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.util;
+package org.jetbrains.mps.openapi.model.events;
 
-public interface Consumer<T> {
-  Consumer EMPTY_CONSUMER = new Consumer() {
-    @Override
-    public void consume(final Object t) {
-    }
-  };
+public interface SModelEvents {
+  void addChangeListener(SModelChangeListener l);
 
-  /**
-   * @param t consequently takes value of each element of the set this processor is passed to for processing.
-   *          t is supposed to be a not-null value.
-   */
-  void consume(T t);
+  void addReadListener(SModelAccessListener l);
 
+  void addStateListener(SModelStateListener l);
+
+  void removeChangeListener(SModelChangeListener l);
+
+  void removeReadListener(SModelAccessListener l);
+
+  void removeStateListener(SModelStateListener l);
 }

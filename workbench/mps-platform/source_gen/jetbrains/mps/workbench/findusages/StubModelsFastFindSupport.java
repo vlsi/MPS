@@ -10,7 +10,7 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;

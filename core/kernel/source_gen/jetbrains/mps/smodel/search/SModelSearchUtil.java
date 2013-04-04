@@ -13,7 +13,7 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.FlattenIterable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
 

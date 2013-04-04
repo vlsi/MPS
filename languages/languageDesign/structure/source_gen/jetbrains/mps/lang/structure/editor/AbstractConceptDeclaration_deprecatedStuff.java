@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;

@@ -13,26 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.cells;
+package org.jetbrains.mps.openapi.module.events;
 
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.util.Condition;
 
-/**
- * Semen Alperovich
- * 03 13, 2013
- */
-public class CellConditions {
-  public static final Condition<EditorCell> SELECTABLE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
-    @Override
-    public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-      return cell.isSelectable();
-    }
-  };
+public interface ModelEventsBus {
+  void subscribe(Condition<SModule> moduleCondition, Condition<SModel> modelCondition, );
+  void unsubscribe();
 
-  public static final Condition<EditorCell> SELECTABLE_lEAF = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
-    @Override
-    public boolean met(EditorCell cell) {
-      return !(cell instanceof EditorCell_Collection) && cell.isSelectable();
-    }
-  };
 }

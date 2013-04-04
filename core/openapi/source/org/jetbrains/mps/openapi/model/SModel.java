@@ -17,6 +17,7 @@ package org.jetbrains.mps.openapi.model;
 
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.events.SModelEvents;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -24,7 +25,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 /**
  * Represents a model. Models are loaded lazily when needed.
  */
-public interface SModel {
+public interface SModel extends SModelEvents {
   // TODO remove
   SModel resolveModel(SModelReference reference);
 
@@ -72,14 +73,16 @@ public interface SModel {
    * Add the node as a root to this model.
    * After the operation each node in the underlying subtree will have getModel() set to return "this model".
    *
-   * @throws jetbrains.mps.smodel.IllegalModelChangeError when invoked on a read-only model or outside of a valid command.
+   * @throws jetbrains.mps.smodel.IllegalModelChangeError
+   *          when invoked on a read-only model or outside of a valid command.
    */
   void addRootNode(SNode node);
 
   /**
    * Removes the whole subtree from the model.
    *
-   * @throws jetbrains.mps.smodel.IllegalModelChangeError when invoked on a read-only model or outside of a valid command.
+   * @throws jetbrains.mps.smodel.IllegalModelChangeError
+   *          when invoked on a read-only model or outside of a valid command.
    */
   void removeRootNode(SNode node);
 

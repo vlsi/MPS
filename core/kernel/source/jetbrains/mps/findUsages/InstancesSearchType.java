@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 
 import java.util.Collection;
 import java.util.HashSet;

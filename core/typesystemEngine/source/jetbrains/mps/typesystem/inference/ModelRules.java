@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smod
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 
 import java.util.LinkedList;

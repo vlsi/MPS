@@ -5,7 +5,7 @@ package jetbrains.mps.smodel.search;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.SNodeOperations;

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;

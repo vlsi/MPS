@@ -13,17 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.model;
+package org.jetbrains.mps.openapi.model.events;
 
-import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
-import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.SModel;
 
-public interface SModelEvents {
-  void addChangeListener(SModelChangeListener l);
-
-  void addReadListener(SModelAccessListener l);
-
-  void removeChangeListener(SModelChangeListener l);
-
-  void removeReadListener(SModelAccessListener l);
+public interface SModelStateListener {
+  void modelProblemsChanged(SModel model);
 }

@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.ConditionalIterable;

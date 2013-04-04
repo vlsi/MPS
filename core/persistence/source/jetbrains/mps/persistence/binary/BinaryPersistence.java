@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
-import jetbrains.mps.util.Condition;
 import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
