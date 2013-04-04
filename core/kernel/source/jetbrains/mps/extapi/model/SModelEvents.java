@@ -13,18 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model;
+package jetbrains.mps.extapi.model;
 
-public interface SModelListener {
-  //node is already in model
-  void nodeAdded(SNode node);
+import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
+import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
 
-  //node is not in model
-  void nodeRemoved(SNodeReference node);
+public interface SModelEvents {
+  void addChangeListener(SModelChangeListener l);
 
-  //new value is already set
-  void propertyChanged(SNode node, String oldValue, String newValue);
+  void addReadListener(SModelAccessListener l);
 
-  //old ref is already detached,
-  void referenceChanged(SNode node, SReference oldRef, SReference newRef);
+  void removeChangeListener(SModelChangeListener l);
+
+  void removeReadListener(SModelAccessListener l);
 }
