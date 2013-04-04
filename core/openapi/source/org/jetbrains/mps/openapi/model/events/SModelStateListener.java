@@ -17,6 +17,6 @@ package org.jetbrains.mps.openapi.model.events;
 
 import org.jetbrains.mps.openapi.model.SModel;
 
-public interface SModelStateListener {
+public interface SModelStateListener extends SModelListener {
   void modelProblemsChanged(SModel model);
 }

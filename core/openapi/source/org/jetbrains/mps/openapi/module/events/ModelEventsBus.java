@@ -16,11 +16,11 @@
 package org.jetbrains.mps.openapi.module.events;
 
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.events.SModelListener;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.util.Condition;
 
 public interface ModelEventsBus {
-  void subscribe(Condition<SModule> moduleCondition, Condition<SModel> modelCondition, );
-  void unsubscribe();
-
+  void subscribe(Condition<SModule> moduleCondition, Condition<SModel> modelCondition, SModelListener listener);
+  void unsubscribe(SModelListener listener);
 }

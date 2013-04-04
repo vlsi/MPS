@@ -16,15 +16,7 @@
 package org.jetbrains.mps.openapi.model.events;
 
 public interface SModelEvents {
-  void addChangeListener(SModelChangeListener l);
+  void addListener(SModelListener l);
 
-  void addReadListener(SModelAccessListener l);
-
-  void addStateListener(SModelStateListener l);
-
-  void removeChangeListener(SModelChangeListener l);
-
-  void removeReadListener(SModelAccessListener l);
-
-  void removeStateListener(SModelStateListener l);
+  void removeChangeListener(SModelListener l);
 }

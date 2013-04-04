@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
-public interface SModelChangeListener {
+public interface SModelChangeListener extends SModelListener {
   //node is already in model
   void nodeAdded(SModel model, SNode node);
 
