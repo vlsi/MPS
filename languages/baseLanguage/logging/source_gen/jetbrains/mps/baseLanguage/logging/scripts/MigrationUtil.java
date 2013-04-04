@@ -34,6 +34,8 @@ public class MigrationUtil {
       return (method != SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_ajmt7s_a0a0a0a0a3d0a_0(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false)) && (method != SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_ajmt7s_a0a0a0a0a3d0a(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false));
     } else if (method == SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_ajmt7s_a0a0a4d0a(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false)) {
       return false;
+    } else if (SPropertyOperations.getString(method, "name").startsWith("assert")) {
+      return false;
     }
     return true;
   }
