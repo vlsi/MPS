@@ -48,6 +48,7 @@ public abstract class Logger {
    * Use log4j appenders
    */
   @Deprecated
+  @ToRemove(version = 3.0)
   public static void addLoggingHandler(ILoggingHandler lh) {
     MPSAppender.getInstance().addAppender(lh);
   }
@@ -56,6 +57,7 @@ public abstract class Logger {
    * Use log4j appenders
    */
   @Deprecated
+  @ToRemove(version = 3.0)
   public static void removeLoggingHandler(ILoggingHandler lh) {
     MPSAppender.getInstance().removeAppender(lh);
   }
