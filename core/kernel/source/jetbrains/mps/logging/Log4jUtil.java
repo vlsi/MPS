@@ -28,7 +28,7 @@ If one has log4j logger he can still use extended functionality of our Logger us
 public class Log4jUtil {
 
   public static void errorWithTrace(org.apache.log4j.Logger logger, String message) {
-    logger.error(message, new Throwable(message));
+    error(logger, message, new Throwable(message));
   }
 
   public static void error(org.apache.log4j.Logger logger, String message, Object hintObject) {
@@ -60,15 +60,21 @@ public class Log4jUtil {
   }
 
   public static void assertCanRead(org.apache.log4j.Logger logger) {
-    logger.assertLog(ModelAccess.instance().canRead(), "Should be able to read models");
+    assertLog(logger, ModelAccess.instance().canRead(), "Should be able to read models");
   }
 
   public static void assertCanWrite(org.apache.log4j.Logger logger) {
-    logger.assertLog(ModelAccess.instance().canWrite(), "Should be able to write models");
+    assertLog(logger, ModelAccess.instance().canWrite(), "Should be able to write models");
   }
 
   public static void assertInCommand(org.apache.log4j.Logger logger) {
-    logger.assertLog(ModelAccess.instance().isInsideCommand(), "This action must be performed in command");
+    assertLog(logger, ModelAccess.instance().isInsideCommand(), "This action must be performed in command");
+  }
+
+  public static void assertLog(org.apache.log4j.Logger logger, boolean condition, String message) {
+    if (!condition) {
+      errorWithTrace(logger, message);
+    }
   }
 
   /**
@@ -98,7 +104,7 @@ public class Log4jUtil {
     }
   }
 
-  public static void warning(@NotNull org.apache.log4j.Logger logger,@NonNls String message, @Nullable Throwable t, @Nullable Object hintObject) {
+  public static void warning(@NotNull org.apache.log4j.Logger logger, @NonNls String message, @Nullable Throwable t, @Nullable Object hintObject) {
     if (t == null) {
       logger.warn(createMessageObject(message, hintObject));
     } else {
@@ -106,7 +112,7 @@ public class Log4jUtil {
     }
   }
 
-  public static void debug(@NotNull org.apache.log4j.Logger logger,@NonNls String message, @Nullable Throwable t, @Nullable Object hintObject) {
+  public static void debug(@NotNull org.apache.log4j.Logger logger, @NonNls String message, @Nullable Throwable t, @Nullable Object hintObject) {
     if (t == null) {
       logger.debug(createMessageObject(message, hintObject));
     } else {

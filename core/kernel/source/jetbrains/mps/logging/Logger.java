@@ -161,11 +161,7 @@ public abstract class Logger {
     assertLog(condition, "Assertion failed");
   }
 
-  public void assertLog(boolean condition, String message) {
-    if (!condition) {
-      error(message, new Throwable(message));
-    }
-  }
+  public abstract void assertLog(boolean condition, String message);
 
   public void assertCanRead() {
     assertLog(ModelAccess.instance().canRead(), "Should be able to read models");

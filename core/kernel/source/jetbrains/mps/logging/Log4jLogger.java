@@ -47,4 +47,9 @@ public class Log4jLogger extends Logger {
     Log4jUtil.fatal(myLogger, message, t, hintObject);
   }
 
+  @Override
+  public void assertLog(boolean condition, String message) {
+    Log4jUtil.assertLog(myLogger, condition, message);
+  }
+
 }
