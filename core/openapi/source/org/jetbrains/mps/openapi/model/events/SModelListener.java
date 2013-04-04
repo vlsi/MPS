@@ -15,5 +15,10 @@
  */
 package org.jetbrains.mps.openapi.model.events;
 
+import org.jetbrains.mps.openapi.model.SModel;
+
 public interface SModelListener {
+  void attached(SModel model);
+
+  void detached(SModel model);
 }

@@ -22,12 +22,20 @@ import org.jetbrains.mps.openapi.module.SDependency;
 
 public interface SModuleListener {
   void modelAdded(SModel model);
+
   void beforeModelRemoved(SModel model);
+
   void modelRemoved(SModelReference ref);
 
   void dependencyAdded(SDependency dep);
+
   void dependencyRemoved(SDependency dep);
 
   void languageAdded(SLanguage lang);
+
   void languageRemoved(SLanguage lang);
+
+  void attached(SModel model);
+
+  void detached(SModel model);
 }

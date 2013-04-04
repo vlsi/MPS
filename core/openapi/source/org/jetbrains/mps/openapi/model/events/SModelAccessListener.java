@@ -21,10 +21,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface SModelAccessListener extends SModelListener {
   //before write access occured
   void nodeWritten(SModel model, SNode node);
+
   //before read access occured
   void nodeRead(SModel model, SNode node);
+
   //before read access occured
   void propertyRead(SModel model, SNode node, String name);
+
   //before read access occured
   void referenceRead(SModel model, SNode node, String role);
 }
