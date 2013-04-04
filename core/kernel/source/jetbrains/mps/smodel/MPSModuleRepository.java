@@ -246,16 +246,6 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     return new MyEventsBus();
   }
 
-  @Override
-  public void addRepositoryListener(SRepositoryListener listener) {
-    //todo implement
-  }
-
-  @Override
-  public void removeRepositoryListener(SRepositoryListener listener) {
-    //todo implement
-  }
-
   @Deprecated //in 3.0
   //use getModule()
   public IModule getModuleById(SModuleId moduleId) {

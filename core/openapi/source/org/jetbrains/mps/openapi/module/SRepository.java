@@ -49,10 +49,6 @@ public interface SRepository {
    */
   Iterable<SModule> getModules();
 
-  void addRepositoryListener(SRepositoryListener listener);
-
-  void removeRepositoryListener(SRepositoryListener listener);
-
   ModelAccess getModelAccess();
 
   RepositoryAccess getRepositoryAccess();
