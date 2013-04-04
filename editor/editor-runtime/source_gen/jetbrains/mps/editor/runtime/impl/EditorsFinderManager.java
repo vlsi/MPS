@@ -4,6 +4,7 @@ package jetbrains.mps.editor.runtime.impl;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.DefaultEditor;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -167,7 +168,8 @@ public class EditorsFinderManager implements ApplicationComponent {
             });
           }
         }
-        return findEditorByConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
+       // return findEditorByConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
+        return new DefaultEditor();
       }
     });
   }

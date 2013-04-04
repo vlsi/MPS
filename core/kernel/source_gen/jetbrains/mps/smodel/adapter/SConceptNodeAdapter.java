@@ -4,11 +4,11 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -21,14 +21,18 @@ public class SConceptNodeAdapter extends SConceptNodeAdapterBase implements SCon
 
   @Override
   public SConcept getSuperConcept() {
-    return SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SLinkOperations.getTarget(((SNode) (getConcept().resolve(MPSModuleRepository.getInstance()))), "extends", false)));
+    SNode xtends = SLinkOperations.getTarget(((SNode) (getConcept().resolve(MPSModuleRepository.getInstance()))), "extends", false);
+    return (xtends == null ?
+      null :
+      SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(xtends))
+    );
   }
 
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     return ListSequence.fromList(SLinkOperations.getTargets(((SNode) (getConcept().resolve(MPSModuleRepository.getInstance()))), "implements", true)).select(new ISelector<SNode, SInterfaceConcept>() {
       public SInterfaceConcept select(SNode it) {
-        return ((SInterfaceConcept) new SInterfaceConceptNodeAdapter(NameUtil.nodeFQName(it)));
+        return ((SInterfaceConcept) new SInterfaceConceptNodeAdapter(NameUtil.nodeFQName(SLinkOperations.getTarget(it, "intfc", false))));
       }
     });
   }

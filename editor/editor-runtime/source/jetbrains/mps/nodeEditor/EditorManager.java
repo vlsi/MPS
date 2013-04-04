@@ -616,7 +616,7 @@ public class EditorManager {
   private INodeEditor getEditor(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
     INodeEditor editor = jetbrains.mps.editor.runtime.impl.EditorsFinderManager.getInstance().loadEditor(context, node);
     if (editor == null) {
-      editor = new DefaultNodeEditor();
+      editor = new DefaultEditor();
     }
     return editor;
   }
