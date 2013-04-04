@@ -43,6 +43,10 @@ public class MpsPositionManager implements PositionManager {
 
   @Override
   public SourcePosition getSourcePosition(@Nullable final Location location) throws NoDataException {
+    if (location == null) {
+      // why am I given null location, huh?
+      throw new NoDataException();
+    }
     try {
       MpsSourcePosition position = MpsSourcePosition.createPosition(myProject, location.declaringType().name(), location.sourceName(), location.lineNumber());
       if (position != null) {
