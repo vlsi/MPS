@@ -284,9 +284,9 @@ public class MPSJavaShortNamesCache extends PsiShortNamesCache {
   }
 
   @SuppressWarnings("SuspiciousToArrayCall")
-  private PsiField[] toPsiFields(Iterable<SNode> methods) {
+  private PsiField[] toPsiFields(Iterable<SNode> fields) {
     List<PsiElement> result = new ArrayList<PsiElement>();
-    collectPsiElements(methods, PsiField.class, result);
+    collectPsiElements(fields, PsiField.class, result);
     return result.isEmpty() ? PsiField.EMPTY_ARRAY : result.toArray(new PsiField[result.size()]);
   }
 

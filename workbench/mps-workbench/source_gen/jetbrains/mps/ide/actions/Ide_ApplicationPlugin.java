@@ -48,7 +48,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new DeleteNode_Action());
     addAction(new DeletePropertyAction_Action());
     addAction(new DeleteReferenceAction_Action());
-    addAction(new EditNode_Action());
     addAction(new ExpandNode_Action());
     addAction(new FastFindNodeUsages_Action());
     addAction(new FindConceptInstances_Action());

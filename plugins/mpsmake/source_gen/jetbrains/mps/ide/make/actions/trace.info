@@ -874,8 +874,8 @@
     <nodeInfo nodeId="1819416201368234315" fileName="TransientModelsWidget.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="321200956998476204" fileName="TransientModelsWidget.java" startLine="27" startPosition="47" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1819416201368234318" fileName="TransientModelsWidget.java" startLine="28" startPosition="22" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="321200956998476226" fileName="TransientModelsWidget.java" startLine="39" startPosition="34" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="321200956998476229" fileName="TransientModelsWidget.java" startLine="41" startPosition="5" endLine="42" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="321200956998476226" fileName="TransientModelsWidget.java" startLine="39" startPosition="34" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="321200956998476229" fileName="TransientModelsWidget.java" startLine="41" startPosition="5" endLine="42" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="321200956998476248" fileName="TransientModelsWidget.java" startLine="51" startPosition="75" endLine="52" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="321200956998476254" fileName="TransientModelsWidget.java" startLine="52" startPosition="97" endLine="53" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6005576522675274492" fileName="TransientModelsWidget.java" startLine="53" startPosition="90" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -913,7 +913,7 @@
     <nodeInfo nodeId="321200956998476231" fileName="TransientModelsWidget.java" startLine="45" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickConsumer#()Lcom/intellij/util/Consumer;" />
     <scopeInfo nodeId="321200956998476218" fileName="TransientModelsWidget.java" startLine="33" startPosition="47" endLine="33" endPosition="47" />
     <scopeInfo nodeId="321200956998476285" fileName="TransientModelsWidget.java" startLine="78" startPosition="25" endLine="78" endPosition="25" />
-    <scopeInfo nodeId="321200956998476225" fileName="TransientModelsWidget.java" startLine="39" startPosition="34" endLine="40" endPosition="45" />
+    <scopeInfo nodeId="321200956998476225" fileName="TransientModelsWidget.java" startLine="39" startPosition="34" endLine="40" endPosition="44" />
     <scopeInfo nodeId="321200956998476279" fileName="TransientModelsWidget.java" startLine="73" startPosition="105" endLine="74" endPosition="16" />
     <scopeInfo nodeId="321200956998476292" fileName="TransientModelsWidget.java" startLine="84" startPosition="34" endLine="85" endPosition="20" />
     <scopeInfo nodeId="321200956998476308" fileName="TransientModelsWidget.java" startLine="94" startPosition="22" endLine="95" endPosition="21" />
@@ -932,7 +932,7 @@
     <scopeInfo nodeId="321200956998476194" fileName="TransientModelsWidget.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="321200956998476208" varName="bar" />
     </scopeInfo>
-    <scopeInfo nodeId="321200956998476223" fileName="TransientModelsWidget.java" startLine="38" startPosition="34" endLine="42" endPosition="36" />
+    <scopeInfo nodeId="321200956998476223" fileName="TransientModelsWidget.java" startLine="38" startPosition="34" endLine="42" endPosition="35" />
     <scopeInfo nodeId="2624121685586288010" fileName="TransientModelsWidget.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="1819416201368223017" fileName="TransientModelsWidget.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="821918482060593350" fileName="TransientModelsWidget.java" startLine="55" startPosition="79" endLine="60" endPosition="74">

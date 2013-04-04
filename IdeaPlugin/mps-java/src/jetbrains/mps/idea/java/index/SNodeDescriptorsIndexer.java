@@ -105,16 +105,24 @@ import java.util.Map;
     }
   }
 
-  private void collectJavaMethods(SNode cand, Collection<SNode> yield) {
-    if (isMethod(cand)) {
-      yield.add(cand);
-      // TODO: walk the body and collect methods from the anonymous classes?
+  private void collectJavaMethods(SNode node, Collection<SNode> yield) {
+    for (SNode cand : node.getChildren()) {
+      if (isMethod(cand)) {
+        yield.add(cand);
+        continue;
+        // TODO: walk the body and collect methods from the anonymous classes?
+      }
+      collectJavaMethods(cand, yield);
     }
   }
 
-  private void collectJavaFields(SNode cand, Collection<SNode> yield) {
-    if (isField(cand)) {
-      yield.add(cand);
+  private void collectJavaFields(SNode node, Collection<SNode> yield) {
+    for (SNode cand : node.getChildren()) {
+      if (isField(cand)) {
+        yield.add(cand);
+        continue;
+      }
+      collectJavaFields(cand, yield);
     }
   }
 

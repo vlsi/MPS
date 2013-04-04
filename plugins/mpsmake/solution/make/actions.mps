@@ -5999,7 +5999,7 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="321200956998476225">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="321200956998476226">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="321200956998476227">
-                <property name="value" nameId="tpee.1070475926801" value="Stop saving transient models." />
+                <property name="value" nameId="tpee.1070475926801" value="Stop saving transient models" />
               </node>
             </node>
           </node>
@@ -6009,7 +6009,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="321200956998476229">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="321200956998476230">
-            <property name="value" nameId="tpee.1070475926801" value="Save transient models." />
+            <property name="value" nameId="tpee.1070475926801" value="Save transient models" />
           </node>
         </node>
       </node>

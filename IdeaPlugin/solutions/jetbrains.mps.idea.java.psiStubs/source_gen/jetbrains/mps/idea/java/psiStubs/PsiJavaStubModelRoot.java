@@ -196,7 +196,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
     // <node> 
 
-    return JavaForeignIdBuilder.computeModelReference(packageName);
+    return JavaForeignIdBuilder.computeModelReference(packageName, getModule().getModuleId().toString());
   }
 
   private void syncDirectoryMap() {

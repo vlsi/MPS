@@ -19,6 +19,7 @@ package jetbrains.mps.idea.core.psi;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -27,10 +28,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class MPS2PsiMapperUtil {
 
+  public static boolean hasCorrespondingPsi(SModel model) {
+    for (MPS2PsiMapper finder : MPS2PsiMapper.EP_NAME.getExtensions()) {
+      if (finder.hasCorrespondingPsi(model)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   @Nullable
   public static PsiElement getPsiElement(SNode node, Project project) {
     for (MPS2PsiMapper finder : MPS2PsiMapper.EP_NAME.getExtensions()) {
-      if (!finder.canBeMine(node)) continue;
       PsiElement psiElement = finder.getPsiElement(node, project);
       if (psiElement != null) {
         return psiElement;
@@ -38,51 +47,4 @@ public class MPS2PsiMapperUtil {
     }
     return null;
   }
-
-//  @Nullable
-//  public static SNode findNodeByPsi(PsiElement element, Project project) {
-//    for (MPS2PsiMapper finder : MPS2PsiMapper.EP_NAME.getExtensions()) {
-//      SNode node = finder.getMPSNodeForPsi(element, project);
-//      if (node != null) {
-//        return node;
-//      }
-//    }
-//    return null;
-//  }
-//
-//  @Nullable
-//  public static NodePtr getNodePtr(PsiElement element) {
-//    SModelReference modelRef = getModelReference(element);
-//    SNodeId nodeId = getNodeId(element);
-//    if (modelRef == null || nodeId == null) {
-//      return null;
-//    }
-//    return new NodePtr(modelRef, nodeId);
-//  }
-//
-//  @Nullable
-//  public static SModelReference getModelReference(PsiElement element) {
-//    for (MPS2PsiMapper mapper : MPS2PsiMapper.EP_NAME.getExtensions()) {
-//      if (!mapper.canComputeNodeId(element)) continue;
-//      SModelReference modelRef = mapper.computeModelReference(element);
-//      if (modelRef != null) {
-//        return modelRef;
-//      }
-//    }
-//    return null;
-//  }
-//
-//  @Nullable
-//  public static SNodeId getNodeId(PsiElement element) {
-//    for (MPS2PsiMapper mapper : MPS2PsiMapper.EP_NAME.getExtensions()) {
-//      if (!mapper.canComputeNodeId(element)) continue;
-//      SNodeId nodeId = mapper.computeNodeId(element);
-//      if (nodeId != null) {
-//        return nodeId;
-//      }
-//    }
-//    return null;
-//  }
-
-
 }

@@ -1,8 +1,10 @@
 package jetbrains.mps.idea.core.refactoring;
 
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Just a convenient pair of SModelReference and SNodeId
@@ -36,5 +38,11 @@ public class NodePtr {
 
   public int hashCode() {
     return myModelRef.hashCode() + 31 * myModelRef.hashCode();
+  }
+
+  // SNodeReference may supersede NodePtr completely in the future
+  // If it has getNodeId
+  public SNodeReference toSNodeReference() {
+    return new SNodePointer(myModelRef, myNodeId);
   }
 }

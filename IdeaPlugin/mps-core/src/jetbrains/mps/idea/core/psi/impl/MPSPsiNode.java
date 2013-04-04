@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -207,7 +208,13 @@ public class MPSPsiNode extends MPSPsiNodeBase {
 
   @Override
   public String getText() {
-    return myConcept + ":" + myName + " as " + myContainingRole;
+    NodePointerPresentation presentation = new NodePointerPresentation(getSNodeReference());
+    String text = presentation.getPresentableText();
+    if (text != null) {
+      return text;
+    } else {
+      return myConcept + ":" + " as " + myContainingRole;
+    }
   }
 
   @Override
