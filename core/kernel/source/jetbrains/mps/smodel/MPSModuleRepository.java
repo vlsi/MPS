@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.AbstractModule;
-
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
@@ -33,9 +32,13 @@ import org.jetbrains.mps.openapi.model.events.SModelListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
+import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.events.RepositoryEventsBus;
 import org.jetbrains.mps.openapi.module.events.SModuleListener;
@@ -386,32 +389,52 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
 
   private class MyEventsBus implements RepositoryEventsBus {
     @Override
-    public void subscribe(Condition<SModule> moduleCondition, Condition<SModel> modelCondition, SModelListener listener) {
+    public void addModelAccessListener(Condition<SModel> modelCondition, SModelAccessListener listener) {
 
     }
 
     @Override
-    public void unsubscribe(SModelListener listener) {
+    public void removeModelAccessListener(SModelAccessListener listener) {
 
     }
 
     @Override
-    public void subscribe(Condition<SModule> moduleCondition, SModuleListener listener) {
+    public void addModelChangeListener(Condition<SModel> modelCondition, SModelChangeListener listener) {
 
     }
 
     @Override
-    public void unsubscribe(SModuleListener listener) {
+    public void removeModelChangeListener(SModelChangeListener listener) {
 
     }
 
     @Override
-    public void subscribe(SRepositoryListener listener) {
+    public void addModelStateListener(Condition<SModel> modelCondition, SModelChangeListener listener) {
 
     }
 
     @Override
-    public void unsubscribe(SRepositoryListener listener) {
+    public void removeModelStateListener(SModelChangeListener listener) {
+
+    }
+
+    @Override
+    public void addModuleListener(Condition<SModule> moduleCondition, SModuleListener listener) {
+
+    }
+
+    @Override
+    public void removeModuleListener(SModuleListener listener) {
+
+    }
+
+    @Override
+    public void addRepositoryListener(SRepositoryListener listener) {
+
+    }
+
+    @Override
+    public void removeRepositoryListener(SRepositoryListener listener) {
 
     }
   }

@@ -16,18 +16,29 @@
 package org.jetbrains.mps.openapi.module.events;
 
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.events.SModelListener;
+import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
+import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.events.SModuleListener;
 import org.jetbrains.mps.util.Condition;
 
 public interface RepositoryEventsBus {
-  void subscribe(Condition<SModule> moduleCondition, Condition<SModel> modelCondition, SModelListener listener);
-  void unsubscribe(SModelListener listener);
+  void addModelAccessListener(Condition<SModel> modelCondition, SModelAccessListener listener);
 
-  void subscribe(Condition<SModule> moduleCondition, SModuleListener listener);
-  void unsubscribe(SModuleListener listener);
+  void removeModelAccessListener(SModelAccessListener listener);
 
-  void subscribe(SRepositoryListener listener);
-  void unsubscribe(SRepositoryListener listener);
+  void addModelChangeListener(Condition<SModel> modelCondition, SModelChangeListener listener);
+
+  void removeModelChangeListener(SModelChangeListener listener);
+
+  void addModelStateListener(Condition<SModel> modelCondition, SModelChangeListener listener);
+
+  void removeModelStateListener(SModelChangeListener listener);
+
+  void addModuleListener(Condition<SModule> moduleCondition, SModuleListener listener);
+
+  void removeModuleListener(SModuleListener listener);
+
+  void addRepositoryListener(SRepositoryListener listener);
+
+  void removeRepositoryListener(SRepositoryListener listener);
 }
