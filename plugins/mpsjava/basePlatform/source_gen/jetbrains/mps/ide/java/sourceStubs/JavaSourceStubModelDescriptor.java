@@ -4,7 +4,7 @@ package jetbrains.mps.ide.java.sourceStubs;
 
 import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener;
-import org.apache.log4j.Logger;
+import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModel;
@@ -36,7 +36,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implements MultiStreamDataSourceListener {
 
-  private static Logger LOG = LogManager.getLogger(JavaSourceStubModelDescriptor.class);
+  private static Logger LOG = Logger.getLogger(LogManager.getLogger(JavaSourceStubModelDescriptor.class));
 
   private SModelReference myModelRef;
   private SModel myModel;

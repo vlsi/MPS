@@ -18,7 +18,7 @@ package jetbrains.mps.ide.persistence;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.KeyedExtensionCollector;
 import jetbrains.mps.ide.MPSCoreComponents;
-import org.apache.log4j.Logger;
+import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class PersistenceComponent implements ApplicationComponent {
-  private static final Logger LOG = LogManager.getLogger(PersistenceComponent.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(PersistenceComponent.class));
 
   private final static KeyedExtensionCollector<ModelRootSettingsEditorProvider, String> oursCollector =
     new KeyedExtensionCollector<ModelRootSettingsEditorProvider, String>("com.intellij.mps.modelRootSettings") {

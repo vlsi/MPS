@@ -23,7 +23,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
-import org.apache.log4j.Logger;
+import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -39,7 +39,7 @@ import javax.swing.Icon;
 import java.util.List;
 
 public class NodeNodeData extends BaseNodeData {
-  private static final Logger LOG = LogManager.getLogger(NodeNodeData.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(NodeNodeData.class));
 
   private static final String NODE = "node";
 

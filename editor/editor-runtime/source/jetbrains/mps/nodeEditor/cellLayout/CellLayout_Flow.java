@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import org.apache.log4j.Logger;
+import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
@@ -39,7 +39,7 @@ import java.util.Set;
  */
 public class CellLayout_Flow extends AbstractCellLayout {
 
-  private static Logger LOG = LogManager.getLogger(CellLayout_Flow.class);
+  private static Logger LOG = Logger.getLogger(LogManager.getLogger(CellLayout_Flow.class));
 
   /*
          wStart

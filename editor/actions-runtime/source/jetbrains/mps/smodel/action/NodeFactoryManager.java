@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.actions.runtime.impl.NodeFactoryUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
-import org.apache.log4j.Logger;
+import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.GlobalScope;
@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NodeFactoryManager extends NodeFactoryManager_deprecated {
-  private static final Logger LOG = LogManager.getLogger(NodeFactoryManager.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(NodeFactoryManager.class));
 
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
     SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());

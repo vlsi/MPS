@@ -22,7 +22,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.apache.log4j.Logger;
+import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +40,7 @@ public class FileDeleteActionFixed extends DeleteAction {
   }
 
   private static class MyDeleteProvider implements DeleteProvider {
-    private final static Logger LOG = LogManager.getLogger(MyDeleteProvider.class);
+    private final static Logger LOG = Logger.getLogger(LogManager.getLogger(MyDeleteProvider.class));
 
     @Override
     public boolean canDeleteElement(DataContext dataContext) {

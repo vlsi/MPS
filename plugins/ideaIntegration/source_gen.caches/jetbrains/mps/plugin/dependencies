@@ -40,12 +40,12 @@
     <classNode dependClassName="java.rmi.Naming" />
     <classNode dependClassName="java.rmi.RemoteException" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.plugin.IIDEAHandler" />
     <classNode dependClassName="jetbrains.mps.plugin.IMPSPlugin" />
     <classNode dependClassName="jetbrains.mps.plugin.IProjectHandler" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
   </dependency>
   <dependency className="jetbrains.mps.plugin.MPSProjectIDEHandler" file="MPSProjectIDEHandler.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -125,10 +125,10 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.plugin.MPSPlugin" />
     <classNode dependClassName="jetbrains.mps.plugin.icons.Icons" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.wm.IconPresentation" />

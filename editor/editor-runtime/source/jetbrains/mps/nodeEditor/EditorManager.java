@@ -21,7 +21,7 @@ import jetbrains.mps.editor.runtime.cells.KeyMapActionImpl;
 import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import org.apache.log4j.Logger;
+import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
@@ -64,7 +64,7 @@ import java.util.Set;
 import java.util.Stack;
 
 public class EditorManager {
-  private static final Logger LOG = LogManager.getLogger(EditorManager.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorManager.class));
 
   public static final String BIG_CELL_CONTEXT = "big-cell-context";
 

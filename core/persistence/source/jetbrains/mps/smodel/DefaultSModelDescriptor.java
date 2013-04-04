@@ -20,7 +20,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
-import org.apache.log4j.Logger;
+import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.persistence.ModelDigestHelper;
@@ -45,7 +45,7 @@ import java.util.Map;
 import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 
 public class DefaultSModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
-  private static final Logger LOG = LogManager.getLogger(DefaultSModelDescriptor.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(DefaultSModelDescriptor.class));
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override
