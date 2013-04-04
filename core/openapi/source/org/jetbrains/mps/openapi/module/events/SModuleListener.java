@@ -15,6 +15,19 @@
  */
 package org.jetbrains.mps.openapi.module.events;
 
-public interface SModuleListener {
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SDependency;
 
+public interface SModuleListener {
+  void modelAdded(SModel model);
+  void beforeModelRemoved(SModel model);
+  void modelRemoved(SModelReference ref);
+
+  void dependencyAdded(SDependency dep);
+  void dependencyRemoved(SDependency dep);
+
+  void languageAdded(SLanguage lang);
+  void languageRemoved(SLanguage lang);
 }

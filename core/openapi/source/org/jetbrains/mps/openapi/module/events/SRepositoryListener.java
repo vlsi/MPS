@@ -26,10 +26,13 @@ public interface SRepositoryListener {
 
   void beforeModuleRemoved(SModule module);
 
+  //todo module ref
   void moduleRemoved(SModule module);
 
+  //todo remove or move to module listener
   void moduleInitialized(SModule module);
 
+  //todo remove or move to module listener
   void moduleChanged(SModule module);
 
   /**

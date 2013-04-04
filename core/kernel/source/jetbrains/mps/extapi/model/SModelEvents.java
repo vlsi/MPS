@@ -15,10 +15,20 @@
  */
 package jetbrains.mps.extapi.model;
 
-import org.jetbrains.mps.openapi.model.events.SModelListener;
+import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
+import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.events.SModelStateListener;
 
 public interface SModelEvents {
-  void addListener(SModelListener l);
+  void addStateListener(SModelStateListener l);
 
-  void removeChangeListener(SModelListener l);
+  void removeStateListener(SModelStateListener l);
+
+  void addChangeListener(SModelChangeListener l);
+
+  void removeChangeListener(SModelChangeListener l);
+
+  void addAccessListener(SModelAccessListener l);
+
+  void removeAccessListener(SModelAccessListener l);
 }
