@@ -35,10 +35,10 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.DirParser" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.FeatureKind" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.DirParser" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.FeatureKind" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaParseException" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaParser" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" />
     <classNode dependClassName="jetbrains.mps.ide.java.tests.utility.NodePatcher" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

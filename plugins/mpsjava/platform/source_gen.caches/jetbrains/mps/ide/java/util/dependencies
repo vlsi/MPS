@@ -8,7 +8,7 @@
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.SNodeTransferable" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.TextPasteUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.FeatureKind" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.ide.java.util.JavaPaster" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
@@ -30,9 +30,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.SModelDataFlavor" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.FeatureKind" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.FeatureKind" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaParseException" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaParser" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />

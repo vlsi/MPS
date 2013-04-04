@@ -98,8 +98,8 @@
     <classNode dependClassName="jetbrains.mps.ide.StereotypeProvider" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.DirParser" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.DirParser" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaParseException" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable" />

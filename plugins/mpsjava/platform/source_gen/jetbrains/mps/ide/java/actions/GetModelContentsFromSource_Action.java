@@ -20,8 +20,8 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import java.awt.Frame;
-import jetbrains.mps.ide.java.newparser.DirParser;
-import jetbrains.mps.ide.java.newparser.JavaParseException;
+import jetbrains.mps.ide.java.parser.DirParser;
+import jetbrains.mps.ide.java.parser.JavaParseException;
 import jetbrains.mps.logging.Logger;
 
 public class GetModelContentsFromSource_Action extends BaseAction {
