@@ -27,6 +27,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.events.SModelListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +37,10 @@ import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.events.RepositoryEventsBus;
+import org.jetbrains.mps.openapi.module.events.SModuleListener;
 import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -236,6 +242,11 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   }
 
   @Override
+  public RepositoryEventsBus getEventsBus() {
+    return new MyEventsBus();
+  }
+
+  @Override
   public void addRepositoryListener(SRepositoryListener listener) {
     //todo implement
   }
@@ -381,5 +392,37 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   @Deprecated //use ModuleRepositoryFacade instead
   public IModule getModule(@NotNull SModuleReference ref) {
     return ModuleRepositoryFacade.getInstance().getModule(ref);
+  }
+
+  private class MyEventsBus implements RepositoryEventsBus {
+    @Override
+    public void subscribe(Condition<SModule> moduleCondition, Condition<SModel> modelCondition, SModelListener listener) {
+
+    }
+
+    @Override
+    public void unsubscribe(SModelListener listener) {
+
+    }
+
+    @Override
+    public void subscribe(Condition<SModule> moduleCondition, SModuleListener listener) {
+
+    }
+
+    @Override
+    public void unsubscribe(SModuleListener listener) {
+
+    }
+
+    @Override
+    public void subscribe(SRepositoryListener listener) {
+
+    }
+
+    @Override
+    public void unsubscribe(SRepositoryListener listener) {
+
+    }
   }
 }
