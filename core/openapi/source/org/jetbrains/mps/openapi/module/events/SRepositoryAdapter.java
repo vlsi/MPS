@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 /**
  * A convenience empty implementation of the SRepositoryListener interface.
  */
-public class SRepositoryListenerAdapter implements SRepositoryListener {
+public class SRepositoryAdapter implements SRepositoryListener {
 
   @Override
   public void moduleAdded(SModule module) {

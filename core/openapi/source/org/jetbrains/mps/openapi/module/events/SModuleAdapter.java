@@ -20,8 +20,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependency;
 
-public class SModuleListenerAdapter implements SModuleListener {
-
+public class SModuleAdapter implements SModuleListener {
   @Override
   public void modelAdded(SModel model) {
 
@@ -54,6 +53,16 @@ public class SModuleListenerAdapter implements SModuleListener {
 
   @Override
   public void languageRemoved(SLanguage lang) {
+
+  }
+
+  @Override
+  public void attached(SModel model) {
+
+  }
+
+  @Override
+  public void detached(SModel model) {
 
   }
 }

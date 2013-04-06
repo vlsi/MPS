@@ -36,8 +36,8 @@ import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.events.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
-import org.jetbrains.mps.openapi.module.events.SRepositoryListenerAdapter;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -72,7 +72,7 @@ public class ClassLoaderManager implements CoreComponent {
   // reload handlers
   private List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
 
-  private SRepositoryListener myRepositoryListener = new SRepositoryListenerAdapter() {
+  private SRepositoryListener myRepositoryListener = new SRepositoryAdapter() {
     @Override
     public void beforeModuleRemoved(SModule module) {
       unloadClasses(Collections.singleton(module), new EmptyProgressMonitor());
