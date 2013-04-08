@@ -34,8 +34,4 @@ public interface SModuleListener {
   void languageAdded(SLanguage lang);
 
   void languageRemoved(SLanguage lang);
-
-  void attached(SModel model);
-
-  void detached(SModel model);
 }

@@ -13,16 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module.events;
+package org.jetbrains.mps.openapi.events;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.events.SModuleListener;
 import org.jetbrains.mps.util.Condition;
 
-public interface RepositoryEventsBus {
-  void addModelAccessListener(Condition<SModel> modelCondition, SModelAccessListener listener);
+public class RepositoryEvents {
+  SRepository myRepository;
+
+  public RepositoryEvents(SRepository repository) {
+    myRepository = repository;
+  }
+
+  public void addModelAccessListener(Condition<SModel> modelCondition, SModelAccessListener listener);
 
   void removeModelAccessListener(SModelAccessListener listener);
 
@@ -38,7 +46,5 @@ public interface RepositoryEventsBus {
 
   void removeModuleListener(SModuleListener listener);
 
-  void addRepositoryListener(SRepositoryListener listener);
 
-  void removeRepositoryListener(SRepositoryListener listener);
 }

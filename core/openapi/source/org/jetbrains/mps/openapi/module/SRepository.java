@@ -53,7 +53,9 @@ public interface SRepository {
 
   RepositoryAccess getRepositoryAccess();
 
-  RepositoryEventsBus getEventsBus();
-
   void saveAll();
+
+  void addRepositoryListener(SRepositoryListener listener);
+
+  void removeRepositoryListener(SRepositoryListener listener);
 }

@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.module.SModule;
  * Receives notifications whenever a repository gets updated
  */
 public interface SRepositoryListener {
-
   void moduleAdded(SModule module);
 
   void beforeModuleRemoved(SModule module);

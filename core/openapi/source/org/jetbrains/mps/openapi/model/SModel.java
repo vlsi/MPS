@@ -17,7 +17,9 @@ package org.jetbrains.mps.openapi.model;
 
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.extapi.model.SModelEvents;
+import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
+import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.events.SModelStateListener;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -25,7 +27,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 /**
  * Represents a model. Models are loaded lazily when needed.
  */
-public interface SModel extends SModelEvents {
+public interface SModel {
   // TODO remove
   SModel resolveModel(SModelReference reference);
 
@@ -127,6 +129,19 @@ public interface SModel extends SModelEvents {
    * A modified model is first saved into the storage so that the changes are preserved.
    */
   void unload();
+
+
+  void addStateListener(SModelStateListener l);
+
+  void removeStateListener(SModelStateListener l);
+
+  void addChangeListener(SModelChangeListener l);
+
+  void removeChangeListener(SModelChangeListener l);
+
+  void addAccessListener(SModelAccessListener l);
+
+  void removeAccessListener(SModelAccessListener l);
 
   /**
    * Represents a problem with the persitence.

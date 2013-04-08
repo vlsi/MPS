@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model.events;
+package org.jetbrains.mps.openapi.events;
 
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
 
-public interface SModelStateListener {
-  void modelProblemsChanged(SModel model);
+public interface GlobalSModelChangeListener extends SModelChangeListener,GlobalRepositoryListener<SModel> {
+
 }

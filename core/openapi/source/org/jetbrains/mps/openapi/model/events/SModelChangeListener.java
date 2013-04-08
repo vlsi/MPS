@@ -15,21 +15,20 @@
  */
 package org.jetbrains.mps.openapi.model.events;
 
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
-public interface SModelChangeListener extends SModelListener {
+public interface SModelChangeListener{
   //node is already in model
-  void nodeAdded(SModel model, SNode node);
+  void nodeAdded(SNode node);
 
   //node is not in model
-  void nodeRemoved(SModel model, SNodeReference node);
+  void nodeRemoved(SNodeReference node);
 
   //new value is already set
-  void propertyChanged(SModel model, SNode node, String oldValue, String newValue);
+  void propertyChanged(SNode node, String oldValue, String newValue);
 
   //old ref is already detached,
-  void referenceChanged(SModel model, SNode node, SReference oldRef, SReference newRef);
+  void referenceChanged(SNode node, SReference oldRef, SReference newRef);
 }

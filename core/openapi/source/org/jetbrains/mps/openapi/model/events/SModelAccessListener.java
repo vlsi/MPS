@@ -15,19 +15,18 @@
  */
 package org.jetbrains.mps.openapi.model.events;
 
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public interface SModelAccessListener extends SModelListener {
+public interface SModelAccessListener {
   //before write access occured
-  void nodeWritten(SModel model, SNode node);
+  void nodeWritten(SNode node);
 
   //before read access occured
-  void nodeRead(SModel model, SNode node);
+  void nodeRead(SNode node);
 
   //before read access occured
-  void propertyRead(SModel model, SNode node, String name);
+  void propertyRead(SNode node, String name);
 
   //before read access occured
-  void referenceRead(SModel model, SNode node, String role);
+  void referenceRead(SNode node, String role);
 }

@@ -55,14 +55,4 @@ public class SModuleAdapter implements SModuleListener {
   public void languageRemoved(SLanguage lang) {
 
   }
-
-  @Override
-  public void attached(SModel model) {
-
-  }
-
-  @Override
-  public void detached(SModel model) {
-
-  }
 }
