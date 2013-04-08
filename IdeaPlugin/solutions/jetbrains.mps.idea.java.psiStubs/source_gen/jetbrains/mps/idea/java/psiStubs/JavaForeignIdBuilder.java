@@ -89,6 +89,9 @@ public class JavaForeignIdBuilder {
       }
     }
 
+    if (mpsModule == null) {
+      return null;
+    }
     return computeModelReference(packageName, mpsModule.getModuleId().toString());
   }
 

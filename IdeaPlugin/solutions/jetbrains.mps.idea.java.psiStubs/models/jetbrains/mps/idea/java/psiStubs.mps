@@ -37,7 +37,6 @@
   <import index="6z8j" modelUID="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.navigation(MPS.IdeaSdk/com.intellij.navigation@java_stub)" version="-1" />
   <import index="as9o" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="neyv" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#com.google.common.collect(MPS.Core/com.google.common.collect@java_stub)" version="-1" />
-  <import index="y2ax" modelUID="f:java_stub#06dc0794-59ef-49f2-81a9-204231aab3a9#jetbrains.mps.idea.core.psi.stubs(jetbrains.mps.idea.core.psi.stubs@java_stub)" version="-1" />
   <import index="ykh8" modelUID="f:java_stub#06dc0794-59ef-49f2-81a9-204231aab3a9#jetbrains.mps.idea.core.refactoring(jetbrains.mps.idea.core.refactoring@java_stub)" version="-1" />
   <import index="z8de" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" version="-1" />
   <import index="l8l6" modelUID="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.util.xml(MPS.IdeaSdk/com.intellij.util.xml@java_stub)" version="-1" />
@@ -11412,6 +11411,19 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="8036260399911757842" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5056426112718582436">
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5056426112718585120">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5056426112718585139" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5056426112718584106">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414633741307331087" resolveInfo="mpsModule" />
+            </node>
+          </node>
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5056426112718582438">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5056426112718585856">
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5056426112718586551" />
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8036260399911876564">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="8036260399911876563">
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8036260399911859716" resolveInfo="computeModelReference" />

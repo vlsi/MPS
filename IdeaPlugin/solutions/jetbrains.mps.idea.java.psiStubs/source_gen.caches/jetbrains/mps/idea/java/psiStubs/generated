@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5ud9l7n3305z115j9oibfudcy6aqe9l">
+<dependencies version="2" modelHash="-4v0bru5y53en51tchauram8ko9mtb14">
   <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.navigation(MPS.IdeaSdk/com.intellij.navigation@java_stub)" />
   <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi(MPS.IdeaSdk/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi.components(MPS.IdeaSdk/com.intellij.openapi.components@java_stub)" />
@@ -38,13 +38,13 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="5dkchx6vs8ggugooqdxkrkmeks99uon" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="e4aodjamafijmcm1ggq1itbjxjw4yyr" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
-  <dep model="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)" hash="-n1enqfdc8mdiawcujzuf37bexpfsbc" />
+  <dep model="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)" hash="-dr0p9g4mu5b9kn9jo0cw6r9yexdn5w1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="eaarideck6uggp8nn6bpyho4my5sjxz" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-8dbjwoxk5619e6oy8o9grsg6861qi0j" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="6pme6f8cr98yhjna02lpbqkg2n36ah5" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="alzhmro6vmar8l5f152nxbtdyixull5" />
+  <common hash="eth63buts9s5agvlclnozdx0tpx9k1j" />
   <source id="3118313698925873538" name="PsiJavaStubModelDescriptor" hash="5773aih31jmy7aio83o803h6710exme">
     <dep root="3118313698926251332" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.navigation(MPS.IdeaSdk/com.intellij.navigation@java_stub)" />
@@ -168,7 +168,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="EclipseJavaStubDataSource.java" />
   </source>
-  <source id="6481525656078378666" name="JavaForeignIdBuilder" hash="-48w5b718yop9r8toj7enm3fmpf1xng">
+  <source id="6481525656078378666" name="JavaForeignIdBuilder" hash="-cfi2xjrdxo7kbq1x53562rtduc1be45">
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.navigation(MPS.IdeaSdk/com.intellij.navigation@java_stub)" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi(MPS.IdeaSdk/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi.components(MPS.IdeaSdk/com.intellij.openapi.components@java_stub)" />
