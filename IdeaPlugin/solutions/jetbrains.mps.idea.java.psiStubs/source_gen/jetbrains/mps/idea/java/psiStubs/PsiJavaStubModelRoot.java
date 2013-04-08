@@ -23,6 +23,7 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiJavaFile;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.ide.java.sourceStubs.Util;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import com.intellij.psi.PsiElement;
@@ -188,14 +189,8 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     if (packageName.length() > 0 && packageName.charAt(0) == '.') {
       packageName = packageName.substring(1);
     }
-    // <node> 
 
-    // <node> 
-    // <node> 
-
-    // <node> 
-
-    return JavaForeignIdBuilder.computeModelReference(packageName, getModule().getModuleId().toString());
+    return (SModelReference) Util.makeModelReference(packageName, getModule());
   }
 
   private void syncDirectoryMap() {

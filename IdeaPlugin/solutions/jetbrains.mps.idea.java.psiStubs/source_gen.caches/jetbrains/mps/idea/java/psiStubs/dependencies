@@ -116,6 +116,7 @@
     <classNode dependClassName="com.intellij.util.xml.ModuleContentRootSearchScope" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.Util" />
     <classNode dependClassName="jetbrains.mps.idea.core.facet.MPSFacet" />
     <classNode dependClassName="jetbrains.mps.idea.core.facet.MPSFacetType" />
     <classNode dependClassName="jetbrains.mps.idea.core.refactoring.NodePtr" />
@@ -235,8 +236,8 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.Util" />
     <classNode dependClassName="jetbrains.mps.idea.core.psi.PsiChangesWatcher" />
-    <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder" />
     <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubDataSource" />
     <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
