@@ -88,7 +88,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       component.addDependency(child);
       final SNode childConcept = SNodeOperations.getConceptDeclaration(child);
       final SNode childLink = SNodeOperations.getContainingLinkDeclaration(child);
-      if (childLink == null) {
+      if (childConcept == null || childLink == null) {
         continue;
       }
       boolean canBeParent = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
