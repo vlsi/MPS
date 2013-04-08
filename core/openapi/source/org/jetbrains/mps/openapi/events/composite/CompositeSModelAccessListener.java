@@ -13,11 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.events;
+package org.jetbrains.mps.openapi.events.composite;
 
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.events.SModelStateListener;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
 
-public interface GlobalSModelStateListener extends SModelStateListener, GlobalRepositoryListener<SModel> {
+public class CompositeSModelAccessListener implements SModelAccessListener {
+  @Override
+  public void nodeWritten(SNode node) {
 
+  }
+
+  @Override
+  public void nodeRead(SNode node) {
+
+  }
+
+  @Override
+  public void propertyRead(SNode node, String name) {
+
+  }
+
+  @Override
+  public void referenceRead(SNode node, String role) {
+
+  }
 }

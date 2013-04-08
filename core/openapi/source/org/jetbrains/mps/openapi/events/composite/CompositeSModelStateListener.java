@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.events;
+package org.jetbrains.mps.openapi.events.composite;
 
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.events.SModuleListener;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.events.SModelStateListener;
 
-public interface GlobalSModuleListener extends SModuleListener, GlobalRepositoryListener<SModule> {
+public class CompositeSModelStateListener implements SModelStateListener {
+  @Override
+  public void modelProblemsChanged(SModel model) {
 
+  }
 }

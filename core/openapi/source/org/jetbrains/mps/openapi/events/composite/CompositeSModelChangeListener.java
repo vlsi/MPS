@@ -13,11 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.events;
+package org.jetbrains.mps.openapi.events.composite;
 
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
 
-public interface GlobalSModelChangeListener extends SModelChangeListener,GlobalRepositoryListener<SModel> {
+public class CompositeSModelChangeListener implements SModelChangeListener {
+  @Override
+  public void nodeAdded(SNode node) {
 
+  }
+
+  @Override
+  public void nodeRemoved(SNodeReference node) {
+
+  }
+
+  @Override
+  public void propertyChanged(SNode node, String oldValue, String newValue) {
+
+  }
+
+  @Override
+  public void referenceChanged(SNode node, SReference oldRef, SReference newRef) {
+
+  }
 }
