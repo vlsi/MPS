@@ -29,7 +29,7 @@ import java.util.Collection;
 
 /**
  * For each MPS model file creates an index of FQ names of Java classes or equivalent constructs in this model.
- * <code>String -> Collection<SNodeDescriptor></code>
+ * {@code String -> Collection<SNodeDescriptor>}
  * User: fyodor
  * Date: 3/26/13
  */
@@ -59,15 +59,16 @@ public class MPSFQNameJavaClassIndex extends AbstractMPSModelFileIndex {
     return 1;
   }
 
-  private static class MyIndexer extends SNodeDescriptorsIndexer {
+  private static class MyIndexer extends SNodeDescriptorIndexer {
+
     @Override
-    protected Iterable<SNode> getNodesToIndex(SModel sModel) {
+    protected Iterable<SNode> getObjectsToIndex(SModel sModel) {
       return getJavaClasses(sModel);
     }
 
     @Override
-    protected String getKey(SModel model, String nodeName) {
-      return JavaNameUtil.fqClassName(model, nodeName);
+    protected String[] getKeys(SModel model, SNode node) {
+      return new String[] {JavaNameUtil.fqClassName(model, getSNodeName(node))};
     }
   }
 

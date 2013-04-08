@@ -29,7 +29,7 @@ import java.util.Collection;
 
 /**
  * Index mps files by package.
- * <code>String -> Collection<SNodeDescriptor></code>
+ * {@code String -> Collection<SNodeDescriptor>}
  * User: fyodor
  * Date: 3/28/13
  */
@@ -56,16 +56,16 @@ public class MPSJavaPackageIndex extends AbstractMPSModelFileIndex {
     return 1;
   }
 
-  private static class MyIndexer extends SNodeDescriptorsIndexer {
+  private static class MyIndexer extends SNodeDescriptorIndexer {
 
     @Override
-    protected Iterable<SNode> getNodesToIndex(SModel sModel) {
+    protected Iterable<SNode> getObjectsToIndex(SModel sModel) {
       return getJavaClasses(sModel);
     }
 
     @Override
-    protected String getKey(SModel model, String nodeName) {
-      return  JavaNameUtil.packageName(model);
+    protected String[] getKeys(SModel model, SNode object) {
+      return new String[] {JavaNameUtil.packageName(model)};
     }
   }
 }
