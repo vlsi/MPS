@@ -17,8 +17,23 @@ package org.jetbrains.mps.openapi.events.composite;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
 
 public class CompositeSModelAccessListener implements SModelAccessListener {
+  private final Iterable<SRepositoryListener> myListeners;
+
+  public CompositeSRepositoryListener(Iterable<SRepositoryListener> listeners) {
+    myListeners = listeners;
+  }
+
+  @Override
+  public void moduleAdded(SModule module) {
+    for (SRepositoryListener l: getListeners()){
+      l.moduleAdded(module);
+    }
+  }
+
   @Override
   public void nodeWritten(SNode node) {
 

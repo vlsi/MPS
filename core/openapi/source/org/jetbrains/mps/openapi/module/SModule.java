@@ -111,6 +111,9 @@ public interface SModule {
 
   Iterable<ModelRoot> getModelRoots();
 
+  /**
+   * Listener can be added only once, the second time it's just not added
+   */
   void addModuleListener(SModuleListener listener);
 
   void removeModuleListener(SModuleListener listener);

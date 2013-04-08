@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.events.global;
 
 public interface GlobalRepositoryListener<T> {
-  void attached(T model);
+  void attached(T m);
 
-  void detached(T model);
+  void detached(T m);
 }
