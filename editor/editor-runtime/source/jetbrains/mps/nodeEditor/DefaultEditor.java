@@ -153,7 +153,7 @@ public class DefaultEditor extends DefaultNodeEditor {
 
     for (SProperty property : myProperties) {
       String name = property.getName();
-      if (name == null || property.getType() == null || !(myPropertyNames.contains(name))) {
+      if (name == null || property.getType() == null) {
         continue;
       }
       EditorCell_Collection collection = EditorCell_Collection.createHorizontal(editorContext, node);
