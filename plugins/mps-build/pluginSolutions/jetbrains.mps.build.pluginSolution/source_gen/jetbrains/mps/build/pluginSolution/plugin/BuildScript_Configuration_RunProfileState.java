@@ -15,6 +15,7 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
+import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -25,6 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.ant.execution.Ant_Command;
 import com.intellij.execution.ui.ConsoleView;
@@ -59,6 +61,7 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
     Project project = myEnvironment.getProject();
     final Wrappers._T<IFile> file = new Wrappers._T<IFile>();
     final Wrappers._T<String> mainTaskName = new Wrappers._T<String>();
+    final Wrappers._T<List<String>> undefinedMacro = new Wrappers._T<List<String>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = SNodeOperations.cast(myRunConfiguration.getNode().getNode(), "jetbrains.mps.build.structure.BuildProject");
@@ -71,13 +74,22 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfTask");
           }
         }), "jetbrains.mps.build.workflow.structure.BwfTask"), "name");
+        undefinedMacro.value = ListSequence.fromList(SLinkOperations.getTargets(node, "macros", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFolderMacro") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro"), "defaultPath", true) == null);
+          }
+        }).select(new ISelector<SNode, String>() {
+          public String select(SNode it) {
+            return SPropertyOperations.getString(it, "name");
+          }
+        }).toListSequence();
       }
     });
     {
       ProcessHandler _processHandler = new Ant_Command().setTargetName_String(mainTaskName.value).setAntLocation_String((myRunConfiguration.getSettings().getUseOtherAntLocation() ?
         myRunConfiguration.getSettings().getOtherAntLocation() :
         null
-      )).setOptions_String(myRunConfiguration.getSettings().getAntOptions()).createProcess(file.value.getPath());
+      )).setOptions_String(myRunConfiguration.getSettings().getAntOptions()).setMacroToDefine_ListString(undefinedMacro.value).createProcess(file.value.getPath());
       final ConsoleView _consoleView = ConsoleCreator.createConsoleView(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
