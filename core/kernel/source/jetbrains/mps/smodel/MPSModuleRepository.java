@@ -32,18 +32,12 @@ import org.jetbrains.mps.openapi.model.events.SModelListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
-import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.events.RepositoryEventsBus;
-import org.jetbrains.mps.openapi.module.events.SModuleListener;
 import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
-import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -244,11 +238,6 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     };
   }
 
-  @Override
-  public RepositoryEventsBus getEventsBus() {
-    return new MyEventsBus();
-  }
-
   @Deprecated //in 3.0
   //use getModule()
   public IModule getModuleById(SModuleId moduleId) {
@@ -370,6 +359,16 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     SModelRepository.getInstance().saveAll();
   }
 
+  @Override
+  public void addRepositoryListener(SRepositoryListener listener) {
+
+  }
+
+  @Override
+  public void removeRepositoryListener(SRepositoryListener listener) {
+
+  }
+
   public void moduleFqNameChanged(IModule module, String oldName) {
     ModelAccess.assertLegalWrite();
 
@@ -385,57 +384,5 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   @Deprecated //use ModuleRepositoryFacade instead
   public IModule getModule(@NotNull SModuleReference ref) {
     return ModuleRepositoryFacade.getInstance().getModule(ref);
-  }
-
-  private class MyEventsBus implements RepositoryEventsBus {
-    @Override
-    public void addModelAccessListener(Condition<SModel> modelCondition, SModelAccessListener listener) {
-
-    }
-
-    @Override
-    public void removeModelAccessListener(SModelAccessListener listener) {
-
-    }
-
-    @Override
-    public void addModelChangeListener(Condition<SModel> modelCondition, SModelChangeListener listener) {
-
-    }
-
-    @Override
-    public void removeModelChangeListener(SModelChangeListener listener) {
-
-    }
-
-    @Override
-    public void addModelStateListener(Condition<SModel> modelCondition, SModelChangeListener listener) {
-
-    }
-
-    @Override
-    public void removeModelStateListener(SModelChangeListener listener) {
-
-    }
-
-    @Override
-    public void addModuleListener(Condition<SModule> moduleCondition, SModuleListener listener) {
-
-    }
-
-    @Override
-    public void removeModuleListener(SModuleListener listener) {
-
-    }
-
-    @Override
-    public void addRepositoryListener(SRepositoryListener listener) {
-
-    }
-
-    @Override
-    public void removeRepositoryListener(SRepositoryListener listener) {
-
-    }
   }
 }

@@ -90,7 +90,7 @@ public class ClassLoaderManager implements CoreComponent {
     }
     INSTANCE = this;
     addClassesHandler(SModelRootClassesListener.INSTANCE);
-    MPSModuleRepository.getInstance().getEventsBus().addRepositoryListener(myRepositoryListener);
+    MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
     // todo: add listener on module add? or not?
   }
 
@@ -102,7 +102,7 @@ public class ClassLoaderManager implements CoreComponent {
         unloadClasses(MPSModuleRepository.getInstance().getModules(), new EmptyProgressMonitor());
       }
     });
-    MPSModuleRepository.getInstance().getEventsBus().removeRepositoryListener(myRepositoryListener);
+    MPSModuleRepository.getInstance().removeRepositoryListener(myRepositoryListener);
     INSTANCE = null;
   }
 

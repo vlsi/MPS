@@ -15,7 +15,6 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.mps.openapi.module.events.RepositoryEventsBus;
 import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
 
 /**
