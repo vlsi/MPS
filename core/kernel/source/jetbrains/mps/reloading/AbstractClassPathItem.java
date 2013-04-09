@@ -73,9 +73,9 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   }
 
   protected void checkValidity() {
-    if (myValid) return;
-    if (myErrorShown) return;
-    myErrorShown = true;
-    LOG.error("Using outdated classpath: " + this, new Throwable());
+//    if (myValid) return;
+//    if (myErrorShown) return;
+//    myErrorShown = true;
+//    LOG.error("Using outdated classpath: " + this, new Throwable());
   }
 }

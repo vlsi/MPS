@@ -53,9 +53,6 @@ public class SModelOperations {
   }
 
   public static boolean isReadOnly(SModel model) {
-    if (model instanceof jetbrains.mps.smodel.SModel) {
-      model = model;
-    }
     return !(model instanceof EditableSModel) || ((EditableSModel) model).isReadOnly();
   }
 

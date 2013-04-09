@@ -52,9 +52,10 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TextGenerationUtil;
-import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -445,38 +446,52 @@ public class TextGen_Facet extends IFacet.Stub {
             case 0:
               for (final GResource resource : Sequence.fromIterable(input)) {
                 final Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
-                final Wrappers._T<SModel> sModel = new Wrappers._T<SModel>();
+                final Map<SNodeReference, String> rootNodeToFileName = MapSequence.fromMap(new HashMap<SNodeReference, String>());
+                final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
                 final Wrappers._boolean errors = new Wrappers._boolean(false);
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
-                    sModel.value = resource.status().getOutputModel();
-                    for (SNode root : sModel.value.getRootNodes()) {
-                      TextGenerationResult tgr = TextGenerationUtil.generateText(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), root);
-                      errors.value |= tgr.hasErrors();
-                      if (errors.value) {
-                        for (IMessage err : tgr.problems()) {
-                          monitor.reportFeedback(new IFeedback.MESSAGE(err));
+                    model.value = resource.status().getOutputModel();
+                    if (model.value == null) {
+                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generated model in null")));
+                      errors.value = true;
+                    } else {
+                      for (SNode root : model.value.getRootNodes()) {
+                        TextGenerationResult tgr = TextGen.generateText(root);
+                        errors.value |= tgr.hasErrors();
+                        if (errors.value) {
+                          for (IMessage err : tgr.problems()) {
+                            monitor.reportFeedback(new IFeedback.MESSAGE(err));
+                          }
+                          monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
+                          break;
                         }
-                        monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
-                        break;
+                        String ext = TextGen.getExtension(root);
+                        String fname = ((ext != null ?
+                          root.getName() + "." + ext :
+                          root.getName()
+                        ));
+                        if (fname == null) {
+                          fname = "<null> [" + root.getNodeId() + "]";
+                          monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("No file name for the root node [" + root.getNodeId() + "]")));
+                        }
+                        MapSequence.fromMap(texts).put(fname, tgr.getResult());
+
+                        SNodeReference sourceNode = TracingUtil.getInput(root);
+                        if (sourceNode != null) {
+                          if ((MapSequence.fromMap(rootNodeToFileName).get(sourceNode) == null) || (fname.compareTo(MapSequence.fromMap(rootNodeToFileName).get(sourceNode)) < 0)) {
+                            MapSequence.fromMap(rootNodeToFileName).put(sourceNode, fname);
+                          }
+                        }
                       }
-                      String ext = TextGenManager.instance().getExtension(root);
-                      String fname = ((ext != null ?
-                        root.getName() + "." + ext :
-                        root.getName()
-                      ));
-                      if (fname == null) {
-                        fname = "<null> [" + root.getNodeId() + "]";
-                        monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("No file name for the root node [" + root.getNodeId() + "]")));
-                      }
-                      MapSequence.fromMap(texts).put(fname, tgr.getResult());
                     }
                   }
                 });
+
                 if (errors.value) {
                   return new IResult.FAILURE(_output_21gswx_a0b);
                 }
-                _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(JavaNameUtil.packageName(sModel.value), texts, resource.module(), resource.model()))));
+                _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(JavaNameUtil.packageName(model.value), texts, rootNodeToFileName, resource.module(), resource.model()))));
               }
             default:
               return new IResult.SUCCESS(_output_21gswx_a0b);

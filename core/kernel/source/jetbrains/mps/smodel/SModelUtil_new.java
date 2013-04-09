@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
@@ -143,7 +146,7 @@ public class SModelUtil_new implements CoreComponent {
   }
 
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId, IScope scope, boolean fullNodeStructure) {
-    boolean isNotProjectModel = model==null || !ProjectModels.isProjectModel(model.getReference());
+    boolean isNotProjectModel = model==null || !TemporaryModels.isTemporary(model);
     if (isNotProjectModel) {
       String fqName = ModelConstraints.getDefaultConcreteConceptFqName(conceptFqName);
       if (fqName != null) {

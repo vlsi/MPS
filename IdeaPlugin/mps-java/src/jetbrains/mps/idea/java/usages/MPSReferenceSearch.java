@@ -110,6 +110,8 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
             for (SReference sReference : references) {
               SNode source = sReference.getSourceNode();
               MPSPsiNode psiNode = (MPSPsiNode) psiProvider.getPsi(source);
+              // the source could have come from the psi stub itself
+              if (psiNode == null) return;
               String refRole = sReference.getRole();
               MPSPsiRef[] refs = psiNode.getReferences(refRole);
 
@@ -125,15 +127,6 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
         }
       }
     });
-  }
-
-  @Nullable
-  private SNodeId getNodeId(PsiElement element) {
-    SNode node = getNodeForElement(element);
-    if (node != null) {
-      return node.getNodeId();
-    }
-    return null;
   }
 
   // Maybe will go to MPS2PsiMapper
@@ -153,8 +146,7 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
       if (nodePtr == null) {
         return null;
       }
-      SNodeReference nodeRef = new SNodePointer(nodePtr.getSModelReference(), nodePtr.getNodeId());
-      SNode node = nodeRef.resolve(MPSModuleRepository.getInstance());
+      SNode node = nodePtr.toSNodeReference().resolve(MPSModuleRepository.getInstance());
 
       return node;
     }

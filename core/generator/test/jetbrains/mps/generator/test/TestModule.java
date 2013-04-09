@@ -39,6 +39,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
+import org.jetbrains.mps.openapi.model.SModel.Problem.Kind;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -208,7 +209,7 @@ public class TestModule extends AbstractModule {
     @Override
     public Iterable<Problem> getProblems() {
       return Collections.<Problem>singleton(
-          new PersistenceProblem(myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
+          new PersistenceProblem(Kind.Load, myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
     }
   }
 }

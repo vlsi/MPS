@@ -96,7 +96,9 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
       if (res == null) return null; // this is when we are in recursion
       if (oldState != myModel.getState()) {
         res.setModelDescriptor(this);
+        // TODO FIXME listeners are invoked while holding the lock
         fireModelStateChanged(oldState, myModel.getState());
+        fireModelProblemsUpdated();
       }
       return res;
     }

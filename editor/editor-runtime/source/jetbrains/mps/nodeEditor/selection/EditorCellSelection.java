@@ -96,9 +96,6 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
 
   @Override
   public void activate() {
-    if (!isEditable()) {
-      return;
-    }
     myEditorCell.setSelected(true);
     if (myActivateUsingRelativeCaretX) {
       setRelativeCaretX(myEditorCell, getCaretXRelative());
@@ -129,10 +126,6 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
     selectionInfo.getPropertiesMap().put(CARET_X_RELATIVE_PROPERTY_NAME, Integer.toString(getCaretXRelative()));
     selectionInfo.getPropertiesMap().put(SIDE_SELECT_DIRECTION_PROPERTY_NAME, mySideSelectDirection.name());
     return selectionInfo;
-  }
-
-  protected boolean isEditable() {
-    return myEditorCell.getEditor().isEditable();
   }
 
   @Override

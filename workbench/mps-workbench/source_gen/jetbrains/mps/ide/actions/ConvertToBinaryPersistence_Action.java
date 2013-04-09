@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -47,7 +46,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
     List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
     return ListSequence.fromList(m).any(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return it instanceof EditableSModel && !(((EditableSModel) it).isReadOnly()) && it.getSource() instanceof FileDataSource;
+        return !(it.isReadOnly()) && it.getSource() instanceof FileDataSource;
       }
     });
   }
@@ -88,7 +87,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
       List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
       final Iterable<SModel> seq = ListSequence.fromList(m).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel it) {
-          return it instanceof EditableSModel && !(((EditableSModel) it).isReadOnly()) && it.getSource() instanceof FileDataSource;
+          return !(it.isReadOnly()) && it.getSource() instanceof FileDataSource;
         }
       });
 

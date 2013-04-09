@@ -188,7 +188,7 @@ public class CollectTests_Action extends BaseAction {
     if (!(SModelStereotype.isUserModel(md))) {
       return false;
     }
-    return md instanceof EditableSModel && !(((EditableSModel) md).isReadOnly());
+    return md instanceof EditableSModel && !(md.isReadOnly());
   }
 
   private boolean isUserEditableGeneratableModel(SModel md, final Map<String, Object> _params) {

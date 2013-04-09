@@ -41,7 +41,7 @@ public class OptimizeModelImports_Action extends BaseAction {
     List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
     return ListSequence.fromList(m).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return it instanceof EditableSModel && !(((EditableSModel) it).isReadOnly());
+        return it instanceof EditableSModel && !(it.isReadOnly());
       }
     }).isNotEmpty();
   }

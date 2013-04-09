@@ -25,11 +25,12 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
  * Represents a model. Models are loaded lazily when needed.
  */
 public interface SModel {
-  //todo is it needed?
+  // TODO remove
   SModel resolveModel(SModelReference reference);
 
   SRepository getRepository();
 
+  // TODO remove (bad name)
   boolean isInRepository();
 
   /**
@@ -68,10 +69,18 @@ public interface SModel {
   boolean isRoot(SNode node);
 
   /**
-   * Adds a node and its descendants (the whole tree) to a model. After the operation each node in the underlying subtree will have getModel() set to return "this model".
+   * Add the node as a root to this model.
+   * After the operation each node in the underlying subtree will have getModel() set to return "this model".
+   *
+   * @throws jetbrains.mps.smodel.IllegalModelChangeError when invoked on a read-only model or outside of a valid command.
    */
   void addRootNode(SNode node);
 
+  /**
+   * Removes the whole subtree from the model.
+   *
+   * @throws jetbrains.mps.smodel.IllegalModelChangeError when invoked on a read-only model or outside of a valid command.
+   */
   void removeRootNode(SNode node);
 
   SNode getNode(SNodeId id);
@@ -79,10 +88,16 @@ public interface SModel {
   SModelScope getModelScope();
 
   /**
-   * The data source which this model was loaded from
+   * The data source which this model was loaded from.
    */
   @NotNull
   DataSource getSource();
+
+  /**
+   * No changes are permitted.
+   * For read-only models all modification operations always throw {@link jetbrains.mps.smodel.IllegalModelChangeError}.
+   */
+  boolean isReadOnly();
 
   /**
    * The model is fully loaded into memory.
@@ -115,11 +130,26 @@ public interface SModel {
    */
   interface Problem {
 
+    enum Kind {
+      Load,
+      Save
+    }
+
+    /**
+     * Returns whether it was a save or load problem. Save problems can arise when AST content
+     * doesn't fit into the persistence format.
+     */
+    Kind getKind();
+
+    /**
+     * When line and column are available, returns the location of the stream, where the problem occurred,
+     * or just plain text description of the location otherwise.
+     */
+    String getLocation();
+
     int getColumn();
 
     int getLine();
-
-    String getLocation();
 
     String getText();
 
@@ -128,6 +158,9 @@ public interface SModel {
      */
     boolean isError();
 
+    /**
+     * The incomplete node (when available) for load problems, or a node which caused troubles during save operation.
+     */
     SNode getNode();
   }
 }

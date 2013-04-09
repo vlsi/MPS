@@ -22,10 +22,12 @@ import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import org.eclipse.jdt.internal.compiler.*;
+import org.eclipse.jdt.internal.compiler.ClassFile;
+import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.internal.compiler.Compiler;
+import org.eclipse.jdt.internal.compiler.ICompilerRequestor;
+import org.eclipse.jdt.internal.compiler.IErrorHandlingPolicy;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
-import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
@@ -59,7 +61,8 @@ public class JavaCompiler {
   }
 
   public void addSource(String classFqName, String text) {
-    CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), NameUtil.pathFromNamespace(classFqName) + MPSExtentions.DOT_JAVAFILE, FileUtil.DEFAULT_CHARSET_NAME);
+    CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), NameUtil.pathFromNamespace(classFqName) + MPSExtentions.DOT_JAVAFILE,
+        FileUtil.DEFAULT_CHARSET_NAME);
     myCompilationUnits.put(classFqName, compilationUnit);
   }
 
@@ -74,7 +77,8 @@ public class JavaCompiler {
     compilerOptions.put(CompilerOptions.OPTION_SourceFileAttribute, CompilerOptions.GENERATE);
 
     CompilerOptions options = new CompilerOptions(compilerOptions);
-    org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(classPath), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory(), null);
+    org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(classPath), new MyErrorHandlingPolicy(), options,
+        new MyCompilerRequestor(), new DefaultProblemFactory(), null);
     //c.options.verbose = true;
 
     try {
@@ -162,7 +166,11 @@ public class JavaCompiler {
       if (result.getErrors() != null) {
         for (CategorizedProblem e : result.getErrors()) {
           char[] fname = e.getOriginatingFileName();
-          LOG.error("Compilation error: "+(fname == null ? "" : new String(fname)) + ":::" + e.getMessage());
+          LOG.error("Compilation error: " +
+              (fname == null ? "" : new String(fname)) +
+              "; line:" + e.getSourceLineNumber() +
+              "; column:" + e.getSourceStart() +
+              ":::" + e.getMessage());
         }
       }
       for (ClassFile file : result.getClassFiles()) {

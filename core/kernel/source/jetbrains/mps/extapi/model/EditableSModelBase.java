@@ -160,6 +160,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
     updateTimestamp();
     fireModelSaved();
+    fireModelProblemsUpdated();
   }
 
   /**

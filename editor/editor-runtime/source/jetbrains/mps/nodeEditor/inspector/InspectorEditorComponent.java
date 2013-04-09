@@ -40,28 +40,12 @@ public class InspectorEditorComponent extends EditorComponent {
     super(null, false, rightToLeft);
     myNode = null;
     myNodePointer = null;
-    reinitEditor();
-  }
-
-  private void reinitEditor() {
-    if (getEditedNode() == null) {
-      setEditorContext(new EditorContext(this, null, null));
-    } else {
-      setEditorContext(new EditorContext(this, getEditedNode().getModel(), getOperationContext()));
-    }
+    setEditorContext(new EditorContext(this, null, null));
     rebuildEditorContent();
-    if (getOperationContext() != null) {
-      notifyCreation();
-    }
   }
 
   @Override
-  public void editNode(SNode semanticNode, IOperationContext operationContext) {
-    //never used
-    inspectNode(semanticNode, operationContext);
-  }
-
-  public void inspectNode(final SNode node, final IOperationContext context) {
+  public void editNode(final SNode node, final IOperationContext context) {
     if (getOperationContext() != null) {
       notifyDisposal();
     }
@@ -73,14 +57,23 @@ public class InspectorEditorComponent extends EditorComponent {
         myNodePointer = myNode != null ? new jetbrains.mps.smodel.SNodePointer(myNode) : null;
         myRoot = myNode == null ? null : myNode.getContainingRoot();
         setReadOnly(node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(
-          node.getModel()) || SModelOperations.isReadOnly(node.getModel()));
+            node.getModel()) || SModelOperations.isReadOnly(node.getModel()));
         if (node == null) {
           setOperationContext(null);
         } else {
           setOperationContext(context);
         }
 
-        reinitEditor();
+        if (getEditedNode() == null) {
+          setEditorContext(new EditorContext(InspectorEditorComponent.this, null, null));
+        } else {
+          setEditorContext(new EditorContext(InspectorEditorComponent.this, getEditedNode().getModel(), getOperationContext()));
+        }
+        rebuildEditorContent();
+        if (getOperationContext() != null) {
+          notifyCreation();
+        }
+
         repaint();
       }
     });

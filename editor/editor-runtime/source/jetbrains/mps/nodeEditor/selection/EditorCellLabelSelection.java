@@ -85,9 +85,6 @@ public class EditorCellLabelSelection extends EditorCellSelection {
 
   @Override
   public void activate() {
-    if (!isEditable()) {
-      return;
-    }
     super.activate();
     if (myNonTrivialSelection) {
       getEditorCellLabel().setSelectionStart(mySelectionStart);
@@ -97,9 +94,6 @@ public class EditorCellLabelSelection extends EditorCellSelection {
 
   @Override
   public void deactivate() {
-    if (!isEditable()) {
-      return;
-    }
     super.deactivate();
     mySelectionStart = getEditorCellLabel().getSelectionStart();
     mySelectionEnd = getEditorCellLabel().getSelectionEnd();

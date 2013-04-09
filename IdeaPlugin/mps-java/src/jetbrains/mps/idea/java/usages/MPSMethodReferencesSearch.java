@@ -2,6 +2,7 @@ package jetbrains.mps.idea.java.usages;
 
 import com.intellij.openapi.application.QueryExecutorBase;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReference;
@@ -51,16 +52,20 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
     }
     final GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getScope();
 
-    final GeneratedFinder finder = FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
+    final PsiMethod method = queryParameters.getMethod();
+    final GeneratedFinder finder = method.isConstructor() ?
+      FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder")) :
+      FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
+
     if (finder == null) {
-      LOG.warning("MPS finder for base method usages not found; MethodReferenceSearch will not work");
+      LOG.warning("MPS finder not found; MethodReferenceSearch will not work");
       return;
     }
 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        PsiMethod method = queryParameters.getMethod();
+
         final SNode methodNode = MPSReferenceSearch.getNodeForElement(method);
         if (methodNode == null) {
           return;
@@ -68,7 +73,13 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
 
         SearchQuery query = new SearchQuery(methodNode, new IdeaSearchScope(scope));
 
-        SearchResults<SNode> results = FindUtils.makeProvider(finder).getResults(query, null);
+        SearchResults<SNode> results;
+        try {
+          results = FindUtils.makeProvider(finder).getResults(query, null);
+        }
+        catch (ProcessCanceledException e) {
+          return;
+        }
         for (SearchResult<SNode> result : results.getSearchResults()) {
           SNode usageNode = result.getObject();
           // it's a shame we get nodes and not SReferences

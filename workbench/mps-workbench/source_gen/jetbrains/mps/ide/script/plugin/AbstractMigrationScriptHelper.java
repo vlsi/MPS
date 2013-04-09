@@ -82,7 +82,7 @@ public abstract class AbstractMigrationScriptHelper {
     if (!(((model instanceof EditableSModel)))) {
       return false;
     }
-    if (((EditableSModel) model).isReadOnly()) {
+    if (model.isReadOnly()) {
       return false;
     }
     String modelStereotype = SModelStereotype.getStereotype(model);

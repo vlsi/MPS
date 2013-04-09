@@ -86,5 +86,6 @@
     <fileIconProvider implementation="jetbrains.mps.ide.editor.icons.NodeFileIconProvider"/>
     <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.TransientModelWarningsProvider"/>
     <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.PackagedModelWarningsProvider"/>
+    <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.ModelProblemsProvider"/>
   </extensions>
 </components>

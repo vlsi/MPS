@@ -42,7 +42,6 @@ public abstract class MPSPsiNodeBase extends LightElement {
   private NodeList children;
   private NodeList.Entry listEntry;
 
-  private MPSPsiModel cachedModel;
   private int cachedTreePosition;
 
   public MPSPsiNodeBase() {
@@ -51,7 +50,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
 
   public MPSPsiNodeBase(PsiManager manager) {
     super(manager, MPSLanguage.INSTANCE);
-    this.children = new NodeList (this);
+    this.children = new NodeList(this);
   }
 
   @Override
@@ -72,10 +71,6 @@ public abstract class MPSPsiNodeBase extends LightElement {
     }
 
     if (parent == null) {
-      // at this point the tree is detached, let's try to return the model where it used to be
-      if (grandPa instanceof MPSPsiNodeBase && ((MPSPsiNodeBase) grandPa).cachedModel != null) {
-        return ((MPSPsiNodeBase) grandPa).cachedModel;
-      }
       throw new PsiInvalidElementAccessException(this);
     }
 
@@ -90,7 +85,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
   @Override
   public TextRange getTextRange() {
     int p = getTreePosition();
-    return new TextRange(p,p);
+    return new TextRange(p, p);
   }
 
   @Override
@@ -168,14 +163,14 @@ public abstract class MPSPsiNodeBase extends LightElement {
 
   @Override
   public MPSPsiNodeBase getPrevSibling() {
-    return listEntry != null && !listEntry.isFirst()? listEntry.list().prev(this) : null;
+    return listEntry != null && !listEntry.isFirst() ? listEntry.list().prev(this) : null;
   }
 
   @Override
   public PsiElement getParent() {
     return listEntry != null ? listEntry.list().owner() : null;
   }
-  
+
   @Override
   public PsiReference getReference() {
     return null;
@@ -186,7 +181,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
     return PsiReference.EMPTY_ARRAY;
   }
 
-  public MPSPsiRootNode getContainingRoot () {
+  public MPSPsiRootNode getContainingRoot() {
     PsiElement parent = this;
     while (parent != null && !(parent instanceof MPSPsiRootNode)) {
       parent = parent.getParent();
@@ -204,16 +199,17 @@ public abstract class MPSPsiNodeBase extends LightElement {
     return true;
   }
 
-  protected final Iterable<MPSPsiNodeBase> children () {
+  protected final Iterable<MPSPsiNodeBase> children() {
     return new Iterable<MPSPsiNodeBase>() {
       @Override
       public Iterator<MPSPsiNodeBase> iterator() {
         return new Iterator<MPSPsiNodeBase>() {
           MPSPsiNodeBase node = null;
+
           @Override
           public boolean hasNext() {
             return (node == null && children.first() != null) ||
-                   (node != null && node != children.last());
+              (node != null && node != children.last());
           }
 
           @Override
@@ -235,11 +231,11 @@ public abstract class MPSPsiNodeBase extends LightElement {
     };
   }
 
-  protected final void addChildFirst (@NotNull MPSPsiNodeBase node) {
+  protected final void addChildFirst(@NotNull MPSPsiNodeBase node) {
     children.addFirst(node);
   }
 
-  protected final void addChildLast (@NotNull MPSPsiNodeBase node) {
+  protected final void addChildLast(@NotNull MPSPsiNodeBase node) {
     children.addLast(node);
   }
 
@@ -255,8 +251,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
   protected final void addChild(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
     if (anchor == null) {
       children.addFirst(node);
-    }
-    else {
+    } else {
       children.insertAfter(anchor, node);
     }
   }
@@ -269,25 +264,27 @@ public abstract class MPSPsiNodeBase extends LightElement {
     children.replace(oldNode, replacementNode);
   }
 
-  protected final void clearChildren () {
+  protected final void clearChildren() {
     children.clear();
   }
 
 
-  /*package*/ void setEntry (Entry newEntry) {
+  /*package*/ void setEntry(Entry newEntry) {
     assert (listEntry == null && newEntry != null) || (listEntry != null && newEntry == null);
-    listEntry =  newEntry;
+    listEntry = newEntry;
+
+    if (newEntry == null) {
+      // means invalidating, propagating it down
+      MPSPsiNodeBase curr = children.first();
+      while (curr != null) {
+        MPSPsiNodeBase next = curr.getNextSibling();
+        curr.setEntry(null);
+        curr = next;
+      }
+    }
   }
 
-  /*package*/ Entry getEntry () {
+  /*package*/ Entry getEntry() {
     return listEntry;
   }
-
-  /*package*/ void setCachedModel(MPSPsiModel model) {
-    cachedModel = model;
-  }
-
-
-
-
 }

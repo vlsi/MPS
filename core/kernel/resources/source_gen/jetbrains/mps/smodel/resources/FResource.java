@@ -4,17 +4,18 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class FResource extends MultiTuple._4<String, Map<String, Object>, IModule, SModel> implements IFResource {
+public class FResource extends MultiTuple._5<String, Map<String, Object>, Map<SNodeReference, String>, IModule, SModel> implements IFResource {
   public FResource() {
     super();
   }
 
-  public FResource(String packageName, Map<String, Object> contents, IModule module, SModel model) {
-    super(packageName, contents, module, model);
+  public FResource(String packageName, Map<String, Object> contents, Map<SNodeReference, String> rootNodeNames, IModule module, SModel model) {
+    super(packageName, contents, rootNodeNames, module, model);
   }
 
   public String packageName(String value) {
@@ -25,12 +26,16 @@ public class FResource extends MultiTuple._4<String, Map<String, Object>, IModul
     return super._1(value);
   }
 
-  public IModule module(IModule value) {
+  public Map<SNodeReference, String> rootNodeNames(Map<SNodeReference, String> value) {
     return super._2(value);
   }
 
-  public SModel model(SModel value) {
+  public IModule module(IModule value) {
     return super._3(value);
+  }
+
+  public SModel model(SModel value) {
+    return super._4(value);
   }
 
   public String packageName() {
@@ -41,16 +46,20 @@ public class FResource extends MultiTuple._4<String, Map<String, Object>, IModul
     return super._1();
   }
 
-  public IModule module() {
+  public Map<SNodeReference, String> rootNodeNames() {
     return super._2();
   }
 
-  public SModel model() {
+  public IModule module() {
     return super._3();
   }
 
+  public SModel model() {
+    return super._4();
+  }
+
   @SuppressWarnings(value = "unchecked")
-  public FResource assignFrom(Tuples._4<String, Map<String, Object>, IModule, SModel> from) {
+  public FResource assignFrom(Tuples._5<String, Map<String, Object>, Map<SNodeReference, String>, IModule, SModel> from) {
     return (FResource) super.assign(from);
   }
 

@@ -269,6 +269,11 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
+  public boolean isPackaged() {
+    return false;
+  }
+
+  @Override
   public void save() {
     // TODO: implement saving functionality here.
     // should this methods really do something?

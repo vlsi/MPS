@@ -23,6 +23,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
@@ -45,8 +46,9 @@ public class SModelsSubtree {
     List<SModel> tests = new ArrayList<SModel>();
     List<SModel> stubs = new ArrayList<SModel>();
 
+    //todo this subdivision should be eliminated later
     for (SModel modelDescriptor : models) {
-      if (ProjectModels.isProjectModel(modelDescriptor.getReference())) continue;
+      if (TemporaryModels.isTemporary(modelDescriptor)) continue;
 
       String stereotype = SModelStereotype.getStereotype(modelDescriptor);
 
@@ -65,27 +67,20 @@ public class SModelsSubtree {
 
     List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, operationContext, isNeedBuildChildModels(rootTreeNode));
     if (!regularModelNodes.isEmpty()) {
-      if (rootTreeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectSolutionTreeNode) {
+      IModule contextModule = operationContext.getModule();
+      if (contextModule instanceof Language) {
+        for (SModelTreeNode treeNode : regularModelNodes) {
+          rootTreeNode.add(treeNode);
+        }
+        if (!rootTreeNode.equals(rootTreeNode)) {
+          rootTreeNode.add(rootTreeNode);
+        }
+      } else {
         SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
         for (SModelTreeNode treeNode : regularModelNodes) {
           builder.addNode(treeNode);
         }
         builder.fillNode(rootTreeNode);
-      } else {
-        MPSTreeNode currentRootNode;
-        if (!isNeedBuildChildModels(rootTreeNode)) {
-          currentRootNode = rootTreeNode;
-        } else {
-          IModule contextModule = operationContext.getModule();
-          String namespace = contextModule.getModuleName();
-          currentRootNode = new NamespaceTextNode((namespace == null) ? "" : namespace, operationContext);
-        }
-        for (SModelTreeNode treeNode : regularModelNodes) {
-          currentRootNode.add(treeNode);
-        }
-        if (!currentRootNode.equals(rootTreeNode)) {
-          rootTreeNode.add(currentRootNode);
-        }
       }
     }
 
@@ -136,6 +131,10 @@ public class SModelsSubtree {
     }
   }
 
+  private static boolean isNeedBuildChildModels(MPSTreeNode rootTreeNode) {
+    return !(rootTreeNode instanceof ProjectLanguageTreeNode || rootTreeNode instanceof TransientModelsTreeNode);
+  }
+
   private static List<SModelTreeNode> getRootModelTreeNodes(List<SModel> models, IOperationContext context, boolean isNeedBuildChildModels) {
     List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
     List<SModel> sortedModels = SortUtil.sortModels(models);
@@ -151,10 +150,6 @@ public class SModelsSubtree {
       }
     }
     return result;
-  }
-
-  private static boolean isNeedBuildChildModels(MPSTreeNode rootTreeNode) {
-    return !(rootTreeNode instanceof ProjectLanguageTreeNode || rootTreeNode instanceof TransientModelsTreeNode);
   }
 
   private static int buildChildModels(SModelTreeNode treeNode, List<SModel> candidates, int rootIndex) {

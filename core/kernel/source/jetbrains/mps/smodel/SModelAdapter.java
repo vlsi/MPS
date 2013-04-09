@@ -147,6 +147,10 @@ public class SModelAdapter implements SModelListener {
   }
 
   @Override
+  public void problemsUpdated(SModel event) {
+  }
+
+  @Override
   public void modelSaved(SModel sm) {
   }
 

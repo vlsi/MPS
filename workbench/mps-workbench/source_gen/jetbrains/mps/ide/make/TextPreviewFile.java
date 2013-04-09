@@ -4,13 +4,13 @@ package jetbrains.mps.ide.make;
 
 import com.intellij.openapi.vfs.newvfs.impl.StubVirtualFile;
 import java.util.Map;
+import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem;
@@ -24,14 +24,16 @@ public class TextPreviewFile extends StubVirtualFile {
   public static final String COMPLEX_CONTENT = "<complex content>";
   private String[] forkNames;
   private Map<String, Object> forks;
+  private String defaultFileName;
   private String name;
   private String path;
 
-  public TextPreviewFile(String name, String path, Map<String, Object> forks) {
+  public TextPreviewFile(String name, String path, Map<String, Object> forks, @Nullable String defaultFileName) {
     this.name = name;
     this.path = path;
     this.forks = forks;
     this.forkNames = forks.keySet().toArray(new String[forks.size()]);
+    this.defaultFileName = defaultFileName;
     Arrays.sort(forkNames);
   }
 
@@ -45,6 +47,10 @@ public class TextPreviewFile extends StubVirtualFile {
       (String) contents :
       "<binary content>"
     );
+  }
+
+  public String getDefaultFileName() {
+    return defaultFileName;
   }
 
   @NotNull

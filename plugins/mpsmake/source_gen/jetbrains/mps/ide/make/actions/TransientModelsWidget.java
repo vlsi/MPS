@@ -37,9 +37,9 @@ import javax.swing.JComponent;
   @Override
   public String getTooltipText() {
     if (isSaveTransientModels()) {
-      return "Stop saving transient models.";
+      return "Stop saving transient models";
     }
-    return "Save transient models.";
+    return "Save transient models";
   }
 
   @Nullable

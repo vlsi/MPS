@@ -153,129 +153,138 @@
     <unitInfo nodeId="6812098398776640299" fileName="ChangeMethodSignature_Action.java" startLine="33" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignature_Action" />
   </root>
   <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/6812098398776640439">
-    <nodeInfo nodeId="6812098398776640577" fileName="ChangeMethodSignatureDialog.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclaration" />
-    <nodeInfo nodeId="6812098398776640580" fileName="ChangeMethodSignatureDialog.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
-    <nodeInfo nodeId="6812098398776640583" fileName="ChangeMethodSignatureDialog.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
-    <nodeInfo nodeId="6812098398776640586" fileName="ChangeMethodSignatureDialog.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
-    <nodeInfo nodeId="6812098398776640589" fileName="ChangeMethodSignatureDialog.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactorings" />
-    <nodeInfo nodeId="6812098398776640599" fileName="ChangeMethodSignatureDialog.java" startLine="48" startPosition="112" endLine="49" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6812098398776640602" fileName="ChangeMethodSignatureDialog.java" startLine="49" startPosition="25" endLine="50" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640605" fileName="ChangeMethodSignatureDialog.java" startLine="50" startPosition="40" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6812098398776640606" fileName="ChangeMethodSignatureDialog.java" startLine="51" startPosition="0" endLine="52" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640612" fileName="ChangeMethodSignatureDialog.java" startLine="52" startPosition="47" endLine="53" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640618" fileName="ChangeMethodSignatureDialog.java" startLine="53" startPosition="30" endLine="54" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6812098398776640623" fileName="ChangeMethodSignatureDialog.java" startLine="56" startPosition="25" endLine="57" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640631" fileName="ChangeMethodSignatureDialog.java" startLine="59" startPosition="7" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6812098398776640632" fileName="ChangeMethodSignatureDialog.java" startLine="60" startPosition="0" endLine="61" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640444" fileName="ChangeMethodSignatureDialog.java" startLine="64" startPosition="46" endLine="65" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6812098398776640454" fileName="ChangeMethodSignatureDialog.java" startLine="67" startPosition="25" endLine="68" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6812098398776640462" fileName="ChangeMethodSignatureDialog.java" startLine="68" startPosition="101" endLine="69" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640470" fileName="ChangeMethodSignatureDialog.java" startLine="69" startPosition="165" endLine="70" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640486" fileName="ChangeMethodSignatureDialog.java" startLine="70" startPosition="214" endLine="71" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6812098398776640496" fileName="ChangeMethodSignatureDialog.java" startLine="72" startPosition="41" endLine="73" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640508" fileName="ChangeMethodSignatureDialog.java" startLine="74" startPosition="9" endLine="75" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6812098398776640519" fileName="ChangeMethodSignatureDialog.java" startLine="76" startPosition="128" endLine="77" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640531" fileName="ChangeMethodSignatureDialog.java" startLine="78" startPosition="9" endLine="79" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6812098398776640545" fileName="ChangeMethodSignatureDialog.java" startLine="80" startPosition="110" endLine="81" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640552" fileName="ChangeMethodSignatureDialog.java" startLine="84" startPosition="7" endLine="85" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640559" fileName="ChangeMethodSignatureDialog.java" startLine="85" startPosition="58" endLine="86" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640568" fileName="ChangeMethodSignatureDialog.java" startLine="86" startPosition="45" endLine="87" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6812098398776640575" fileName="ChangeMethodSignatureDialog.java" startLine="90" startPosition="70" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6812098398776640647" fileName="ChangeMethodSignatureDialog.java" startLine="96" startPosition="44" endLine="97" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6812098398776640654" fileName="ChangeMethodSignatureDialog.java" startLine="97" startPosition="51" endLine="98" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6812098398776640659" fileName="ChangeMethodSignatureDialog.java" startLine="98" startPosition="52" endLine="99" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640665" fileName="ChangeMethodSignatureDialog.java" startLine="99" startPosition="37" endLine="100" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640676" fileName="ChangeMethodSignatureDialog.java" startLine="100" startPosition="38" endLine="101" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640682" fileName="ChangeMethodSignatureDialog.java" startLine="101" startPosition="16" endLine="102" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640688" fileName="ChangeMethodSignatureDialog.java" startLine="102" startPosition="16" endLine="103" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640694" fileName="ChangeMethodSignatureDialog.java" startLine="103" startPosition="18" endLine="104" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640700" fileName="ChangeMethodSignatureDialog.java" startLine="104" startPosition="18" endLine="105" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640708" fileName="ChangeMethodSignatureDialog.java" startLine="105" startPosition="47" endLine="106" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6812098398776640714" fileName="ChangeMethodSignatureDialog.java" startLine="110" startPosition="40" endLine="111" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6812098398776640738" fileName="ChangeMethodSignatureDialog.java" startLine="116" startPosition="29" endLine="117" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640754" fileName="ChangeMethodSignatureDialog.java" startLine="121" startPosition="7" endLine="122" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640759" fileName="ChangeMethodSignatureDialog.java" startLine="122" startPosition="77" endLine="123" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640769" fileName="ChangeMethodSignatureDialog.java" startLine="124" startPosition="73" endLine="125" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5918389564640884313" fileName="ChangeMethodSignatureDialog.java" startLine="126" startPosition="5" endLine="127" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640787" fileName="ChangeMethodSignatureDialog.java" startLine="132" startPosition="27" endLine="133" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640792" fileName="ChangeMethodSignatureDialog.java" startLine="133" startPosition="36" endLine="134" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640799" fileName="ChangeMethodSignatureDialog.java" startLine="135" startPosition="5" endLine="136" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640621" fileName="ChangeMethodSignatureDialog.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6812098398776640494" fileName="ChangeMethodSignatureDialog.java" startLine="71" startPosition="89" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6812098398776640516" fileName="ChangeMethodSignatureDialog.java" startLine="75" startPosition="84" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6812098398776640540" fileName="ChangeMethodSignatureDialog.java" startLine="79" startPosition="81" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6812098398776640570" fileName="ChangeMethodSignatureDialog.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllRefactorings#()Ljava/util/List;" />
-    <nodeInfo nodeId="6812098398776640736" fileName="ChangeMethodSignatureDialog.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6812098398776640765" fileName="ChangeMethodSignatureDialog.java" startLine="123" startPosition="94" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6812098398776640785" fileName="ChangeMethodSignatureDialog.java" startLine="131" startPosition="28" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6812098398776640620" fileName="ChangeMethodSignatureDialog.java" startLine="54" startPosition="55" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640735" fileName="ChangeMethodSignatureDialog.java" startLine="114" startPosition="67" endLine="119" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640728" fileName="ChangeMethodSignatureDialog.java" startLine="113" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="6812098398776640781" fileName="ChangeMethodSignatureDialog.java" startLine="130" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="6812098398776640720" fileName="ChangeMethodSignatureDialog.java" startLine="111" startPosition="108" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640642" fileName="ChangeMethodSignatureDialog.java" startLine="94" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="6812098398776640595" fileName="ChangeMethodSignatureDialog.java" startLine="48" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeMethodSignatureDialog#(Lcom/intellij/openapi/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="6812098398776640452" fileName="ChangeMethodSignatureDialog.java" startLine="67" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6812098398776640451" fileName="ChangeMethodSignatureDialog.java" startLine="65" startPosition="50" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6812098398776640710" fileName="ChangeMethodSignatureDialog.java" startLine="109" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
-    <nodeInfo nodeId="6812098398776640440" fileName="ChangeMethodSignatureDialog.java" startLine="64" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSingnaturePanel#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="6812098398776640622" fileName="ChangeMethodSignatureDialog.java" startLine="56" startPosition="25" endLine="57" endPosition="107" />
-    <scopeInfo nodeId="6812098398776640495" fileName="ChangeMethodSignatureDialog.java" startLine="72" startPosition="41" endLine="73" endPosition="97" />
-    <scopeInfo nodeId="6812098398776640518" fileName="ChangeMethodSignatureDialog.java" startLine="76" startPosition="128" endLine="77" endPosition="74" />
-    <scopeInfo nodeId="6812098398776640544" fileName="ChangeMethodSignatureDialog.java" startLine="80" startPosition="110" endLine="81" endPosition="71" />
-    <scopeInfo nodeId="6812098398776640574" fileName="ChangeMethodSignatureDialog.java" startLine="90" startPosition="70" endLine="91" endPosition="26" />
-    <scopeInfo nodeId="6812098398776640737" fileName="ChangeMethodSignatureDialog.java" startLine="116" startPosition="29" endLine="117" endPosition="223" />
-    <scopeInfo nodeId="6812098398776640768" fileName="ChangeMethodSignatureDialog.java" startLine="124" startPosition="73" endLine="125" endPosition="120" />
-    <scopeInfo nodeId="6812098398776640786" fileName="ChangeMethodSignatureDialog.java" startLine="132" startPosition="27" endLine="134" endPosition="22" />
-    <scopeInfo nodeId="6812098398776640621" fileName="ChangeMethodSignatureDialog.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="6812098398776640516" fileName="ChangeMethodSignatureDialog.java" startLine="75" startPosition="84" endLine="78" endPosition="9">
+    <nodeInfo nodeId="6812098398776640577" fileName="ChangeMethodSignatureDialog.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeclaration" />
+    <nodeInfo nodeId="6812098398776640580" fileName="ChangeMethodSignatureDialog.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
+    <nodeInfo nodeId="6812098398776640583" fileName="ChangeMethodSignatureDialog.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
+    <nodeInfo nodeId="6812098398776640586" fileName="ChangeMethodSignatureDialog.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
+    <nodeInfo nodeId="6812098398776640589" fileName="ChangeMethodSignatureDialog.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactorings" />
+    <nodeInfo nodeId="6812098398776640599" fileName="ChangeMethodSignatureDialog.java" startLine="49" startPosition="112" endLine="50" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6812098398776640602" fileName="ChangeMethodSignatureDialog.java" startLine="50" startPosition="25" endLine="51" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640605" fileName="ChangeMethodSignatureDialog.java" startLine="51" startPosition="40" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6812098398776640606" fileName="ChangeMethodSignatureDialog.java" startLine="52" startPosition="0" endLine="53" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640612" fileName="ChangeMethodSignatureDialog.java" startLine="53" startPosition="47" endLine="54" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640618" fileName="ChangeMethodSignatureDialog.java" startLine="54" startPosition="30" endLine="55" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6812098398776640623" fileName="ChangeMethodSignatureDialog.java" startLine="57" startPosition="25" endLine="58" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640631" fileName="ChangeMethodSignatureDialog.java" startLine="60" startPosition="7" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6812098398776640632" fileName="ChangeMethodSignatureDialog.java" startLine="61" startPosition="0" endLine="62" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640444" fileName="ChangeMethodSignatureDialog.java" startLine="65" startPosition="46" endLine="66" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6812098398776640454" fileName="ChangeMethodSignatureDialog.java" startLine="68" startPosition="25" endLine="69" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6812098398776640462" fileName="ChangeMethodSignatureDialog.java" startLine="69" startPosition="107" endLine="70" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8782044674126262377" fileName="ChangeMethodSignatureDialog.java" startLine="72" startPosition="40" endLine="73" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8782044674126492542" fileName="ChangeMethodSignatureDialog.java" startLine="75" startPosition="17" endLine="76" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8782044674126294735" fileName="ChangeMethodSignatureDialog.java" startLine="76" startPosition="49" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6812098398776640486" fileName="ChangeMethodSignatureDialog.java" startLine="77" startPosition="0" endLine="78" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6812098398776640496" fileName="ChangeMethodSignatureDialog.java" startLine="79" startPosition="41" endLine="80" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640508" fileName="ChangeMethodSignatureDialog.java" startLine="81" startPosition="9" endLine="82" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6812098398776640519" fileName="ChangeMethodSignatureDialog.java" startLine="83" startPosition="128" endLine="84" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640531" fileName="ChangeMethodSignatureDialog.java" startLine="85" startPosition="9" endLine="86" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6812098398776640545" fileName="ChangeMethodSignatureDialog.java" startLine="87" startPosition="110" endLine="88" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640552" fileName="ChangeMethodSignatureDialog.java" startLine="91" startPosition="7" endLine="92" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640559" fileName="ChangeMethodSignatureDialog.java" startLine="92" startPosition="58" endLine="93" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640568" fileName="ChangeMethodSignatureDialog.java" startLine="93" startPosition="45" endLine="94" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6812098398776640575" fileName="ChangeMethodSignatureDialog.java" startLine="97" startPosition="70" endLine="98" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6812098398776640647" fileName="ChangeMethodSignatureDialog.java" startLine="103" startPosition="44" endLine="104" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6812098398776640654" fileName="ChangeMethodSignatureDialog.java" startLine="104" startPosition="51" endLine="105" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6812098398776640659" fileName="ChangeMethodSignatureDialog.java" startLine="105" startPosition="52" endLine="106" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640665" fileName="ChangeMethodSignatureDialog.java" startLine="106" startPosition="37" endLine="107" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640676" fileName="ChangeMethodSignatureDialog.java" startLine="107" startPosition="38" endLine="108" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640682" fileName="ChangeMethodSignatureDialog.java" startLine="108" startPosition="16" endLine="109" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640688" fileName="ChangeMethodSignatureDialog.java" startLine="109" startPosition="16" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640694" fileName="ChangeMethodSignatureDialog.java" startLine="110" startPosition="18" endLine="111" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640700" fileName="ChangeMethodSignatureDialog.java" startLine="111" startPosition="18" endLine="112" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640708" fileName="ChangeMethodSignatureDialog.java" startLine="112" startPosition="47" endLine="113" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6812098398776640714" fileName="ChangeMethodSignatureDialog.java" startLine="117" startPosition="40" endLine="118" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6812098398776640738" fileName="ChangeMethodSignatureDialog.java" startLine="123" startPosition="29" endLine="124" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640754" fileName="ChangeMethodSignatureDialog.java" startLine="128" startPosition="7" endLine="129" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640759" fileName="ChangeMethodSignatureDialog.java" startLine="129" startPosition="77" endLine="130" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640769" fileName="ChangeMethodSignatureDialog.java" startLine="131" startPosition="73" endLine="132" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640884313" fileName="ChangeMethodSignatureDialog.java" startLine="133" startPosition="5" endLine="134" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640787" fileName="ChangeMethodSignatureDialog.java" startLine="139" startPosition="27" endLine="140" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640792" fileName="ChangeMethodSignatureDialog.java" startLine="140" startPosition="31" endLine="141" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640799" fileName="ChangeMethodSignatureDialog.java" startLine="142" startPosition="5" endLine="143" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640621" fileName="ChangeMethodSignatureDialog.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8782044674126231550" fileName="ChangeMethodSignatureDialog.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="6812098398776640494" fileName="ChangeMethodSignatureDialog.java" startLine="78" startPosition="89" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6812098398776640516" fileName="ChangeMethodSignatureDialog.java" startLine="82" startPosition="84" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6812098398776640540" fileName="ChangeMethodSignatureDialog.java" startLine="86" startPosition="81" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6812098398776640570" fileName="ChangeMethodSignatureDialog.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllRefactorings#()Ljava/util/List;" />
+    <nodeInfo nodeId="6812098398776640736" fileName="ChangeMethodSignatureDialog.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6812098398776640765" fileName="ChangeMethodSignatureDialog.java" startLine="130" startPosition="94" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6812098398776640785" fileName="ChangeMethodSignatureDialog.java" startLine="138" startPosition="28" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6812098398776640620" fileName="ChangeMethodSignatureDialog.java" startLine="55" startPosition="55" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640470" fileName="ChangeMethodSignatureDialog.java" startLine="70" startPosition="165" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640735" fileName="ChangeMethodSignatureDialog.java" startLine="121" startPosition="67" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640728" fileName="ChangeMethodSignatureDialog.java" startLine="120" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="6812098398776640781" fileName="ChangeMethodSignatureDialog.java" startLine="137" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="6812098398776640720" fileName="ChangeMethodSignatureDialog.java" startLine="118" startPosition="108" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640642" fileName="ChangeMethodSignatureDialog.java" startLine="101" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="6812098398776640595" fileName="ChangeMethodSignatureDialog.java" startLine="49" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeMethodSignatureDialog#(Lcom/intellij/openapi/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="6812098398776640710" fileName="ChangeMethodSignatureDialog.java" startLine="116" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <nodeInfo nodeId="6812098398776640452" fileName="ChangeMethodSignatureDialog.java" startLine="68" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6812098398776640451" fileName="ChangeMethodSignatureDialog.java" startLine="66" startPosition="50" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6812098398776640440" fileName="ChangeMethodSignatureDialog.java" startLine="65" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSingnaturePanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="6812098398776640622" fileName="ChangeMethodSignatureDialog.java" startLine="57" startPosition="25" endLine="58" endPosition="107" />
+    <scopeInfo nodeId="8782044674126231552" fileName="ChangeMethodSignatureDialog.java" startLine="72" startPosition="40" endLine="73" endPosition="49" />
+    <scopeInfo nodeId="6812098398776640495" fileName="ChangeMethodSignatureDialog.java" startLine="79" startPosition="41" endLine="80" endPosition="97" />
+    <scopeInfo nodeId="6812098398776640518" fileName="ChangeMethodSignatureDialog.java" startLine="83" startPosition="128" endLine="84" endPosition="74" />
+    <scopeInfo nodeId="6812098398776640544" fileName="ChangeMethodSignatureDialog.java" startLine="87" startPosition="110" endLine="88" endPosition="71" />
+    <scopeInfo nodeId="6812098398776640574" fileName="ChangeMethodSignatureDialog.java" startLine="97" startPosition="70" endLine="98" endPosition="26" />
+    <scopeInfo nodeId="6812098398776640737" fileName="ChangeMethodSignatureDialog.java" startLine="123" startPosition="29" endLine="124" endPosition="223" />
+    <scopeInfo nodeId="6812098398776640768" fileName="ChangeMethodSignatureDialog.java" startLine="131" startPosition="73" endLine="132" endPosition="120" />
+    <scopeInfo nodeId="6812098398776640786" fileName="ChangeMethodSignatureDialog.java" startLine="139" startPosition="27" endLine="141" endPosition="22" />
+    <scopeInfo nodeId="6812098398776640621" fileName="ChangeMethodSignatureDialog.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="8782044674126231550" fileName="ChangeMethodSignatureDialog.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="8782044674126231550" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="6812098398776640516" fileName="ChangeMethodSignatureDialog.java" startLine="82" startPosition="84" endLine="85" endPosition="9">
       <varInfo nodeId="6812098398776640517" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="6812098398776640540" fileName="ChangeMethodSignatureDialog.java" startLine="79" startPosition="81" endLine="82" endPosition="9">
+    <scopeInfo nodeId="6812098398776640540" fileName="ChangeMethodSignatureDialog.java" startLine="86" startPosition="81" endLine="89" endPosition="9">
       <varInfo nodeId="6812098398776640541" varName="imported" />
     </scopeInfo>
-    <scopeInfo nodeId="6812098398776640570" fileName="ChangeMethodSignatureDialog.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="6812098398776640736" fileName="ChangeMethodSignatureDialog.java" startLine="116" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="6812098398776640765" fileName="ChangeMethodSignatureDialog.java" startLine="123" startPosition="94" endLine="126" endPosition="5">
+    <scopeInfo nodeId="6812098398776640570" fileName="ChangeMethodSignatureDialog.java" startLine="97" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="6812098398776640736" fileName="ChangeMethodSignatureDialog.java" startLine="123" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="6812098398776640765" fileName="ChangeMethodSignatureDialog.java" startLine="130" startPosition="94" endLine="133" endPosition="5">
       <varInfo nodeId="6812098398776640766" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="6812098398776640734" fileName="ChangeMethodSignatureDialog.java" startLine="114" startPosition="67" endLine="119" endPosition="11" />
-    <scopeInfo nodeId="6812098398776640784" fileName="ChangeMethodSignatureDialog.java" startLine="131" startPosition="28" endLine="136" endPosition="20" />
-    <scopeInfo nodeId="6812098398776640728" fileName="ChangeMethodSignatureDialog.java" startLine="113" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="6812098398776640734" fileName="ChangeMethodSignatureDialog.java" startLine="121" startPosition="67" endLine="126" endPosition="11" />
+    <scopeInfo nodeId="6812098398776640784" fileName="ChangeMethodSignatureDialog.java" startLine="138" startPosition="28" endLine="143" endPosition="20" />
+    <scopeInfo nodeId="6812098398776640728" fileName="ChangeMethodSignatureDialog.java" startLine="120" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="6812098398776640731" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="6812098398776640781" fileName="ChangeMethodSignatureDialog.java" startLine="130" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="6812098398776640646" fileName="ChangeMethodSignatureDialog.java" startLine="96" startPosition="44" endLine="106" endPosition="17">
+    <scopeInfo nodeId="6812098398776640781" fileName="ChangeMethodSignatureDialog.java" startLine="137" startPosition="0" endLine="145" endPosition="0" />
+    <scopeInfo nodeId="6812098398776640646" fileName="ChangeMethodSignatureDialog.java" startLine="103" startPosition="44" endLine="113" endPosition="17">
       <varInfo nodeId="6812098398776640655" varName="c" />
       <varInfo nodeId="6812098398776640648" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="6812098398776640598" fileName="ChangeMethodSignatureDialog.java" startLine="48" startPosition="112" endLine="61" endPosition="11" />
-    <scopeInfo nodeId="6812098398776640642" fileName="ChangeMethodSignatureDialog.java" startLine="94" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="6812098398776640595" fileName="ChangeMethodSignatureDialog.java" startLine="48" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="6812098398776640598" fileName="ChangeMethodSignatureDialog.java" startLine="49" startPosition="112" endLine="62" endPosition="11" />
+    <scopeInfo nodeId="6812098398776640642" fileName="ChangeMethodSignatureDialog.java" startLine="101" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="6812098398776640595" fileName="ChangeMethodSignatureDialog.java" startLine="49" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="6812098398776640637" varName="node" />
       <varInfo nodeId="6812098398776640639" varName="operationContext" />
       <varInfo nodeId="6812098398776640634" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6812098398776640453" fileName="ChangeMethodSignatureDialog.java" startLine="67" startPosition="25" endLine="82" endPosition="9">
+    <scopeInfo nodeId="6812098398776640713" fileName="ChangeMethodSignatureDialog.java" startLine="117" startPosition="40" endLine="134" endPosition="32">
+      <varInfo nodeId="6812098398776640715" varName="methodsToRefactor" />
+    </scopeInfo>
+    <scopeInfo nodeId="6812098398776640710" fileName="ChangeMethodSignatureDialog.java" startLine="116" startPosition="0" endLine="136" endPosition="0" />
+    <scopeInfo nodeId="6812098398776640453" fileName="ChangeMethodSignatureDialog.java" startLine="68" startPosition="25" endLine="89" endPosition="9">
       <varInfo nodeId="6812098398776640455" varName="baseMethodDecalration" />
       <varInfo nodeId="6812098398776640509" varName="m" />
       <varInfo nodeId="6812098398776640532" varName="model" />
       <varInfo nodeId="6812098398776640487" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="6812098398776640452" fileName="ChangeMethodSignatureDialog.java" startLine="67" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="6812098398776640713" fileName="ChangeMethodSignatureDialog.java" startLine="110" startPosition="40" endLine="127" endPosition="32">
-      <varInfo nodeId="6812098398776640715" varName="methodsToRefactor" />
-    </scopeInfo>
-    <scopeInfo nodeId="6812098398776640710" fileName="ChangeMethodSignatureDialog.java" startLine="109" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="6812098398776640443" fileName="ChangeMethodSignatureDialog.java" startLine="64" startPosition="46" endLine="87" endPosition="17">
+    <scopeInfo nodeId="6812098398776640452" fileName="ChangeMethodSignatureDialog.java" startLine="68" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="6812098398776640443" fileName="ChangeMethodSignatureDialog.java" startLine="65" startPosition="46" endLine="94" endPosition="17">
       <varInfo nodeId="6812098398776640445" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="6812098398776640440" fileName="ChangeMethodSignatureDialog.java" startLine="64" startPosition="0" endLine="89" endPosition="0" />
-    <unitInfo nodeId="6812098398776640621" fileName="ChangeMethodSignatureDialog.java" startLine="55" startPosition="45" endLine="59" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$1" />
-    <unitInfo nodeId="6812098398776640736" fileName="ChangeMethodSignatureDialog.java" startLine="115" startPosition="49" endLine="119" endPosition="9" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$4" />
-    <unitInfo nodeId="6812098398776640726" fileName="ChangeMethodSignatureDialog.java" startLine="112" startPosition="42" endLine="121" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$3" />
-    <unitInfo nodeId="6812098398776640452" fileName="ChangeMethodSignatureDialog.java" startLine="66" startPosition="55" endLine="84" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$2" />
-    <unitInfo nodeId="6812098398776640439" fileName="ChangeMethodSignatureDialog.java" startLine="41" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog" />
+    <scopeInfo nodeId="6812098398776640440" fileName="ChangeMethodSignatureDialog.java" startLine="65" startPosition="0" endLine="96" endPosition="0" />
+    <unitInfo nodeId="6812098398776640621" fileName="ChangeMethodSignatureDialog.java" startLine="56" startPosition="45" endLine="60" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$1" />
+    <unitInfo nodeId="8782044674126231550" fileName="ChangeMethodSignatureDialog.java" startLine="71" startPosition="143" endLine="75" endPosition="9" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$3" />
+    <unitInfo nodeId="6812098398776640736" fileName="ChangeMethodSignatureDialog.java" startLine="122" startPosition="49" endLine="126" endPosition="9" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$4" />
+    <unitInfo nodeId="6812098398776640726" fileName="ChangeMethodSignatureDialog.java" startLine="119" startPosition="42" endLine="128" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$3" />
+    <unitInfo nodeId="6812098398776640452" fileName="ChangeMethodSignatureDialog.java" startLine="67" startPosition="55" endLine="91" endPosition="5" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$2" />
+    <unitInfo nodeId="6812098398776640439" fileName="ChangeMethodSignatureDialog.java" startLine="42" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog" />
   </root>
   <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/6812098398776640803">
     <unitInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="1" startPosition="0" endLine="15" endPosition="13" unitName="jetbrains.mps.ide.java.workbench.actions.JavaWorkbenchActions" />

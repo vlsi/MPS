@@ -9,6 +9,14 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor;
+import com.intellij.psi.PsiJavaFile;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import com.intellij.psi.PsiClass;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -22,6 +30,40 @@ public class JavaPsiStubsNavigationContributor implements NavigationParticipant,
       if (!(model instanceof PsiJavaStubModelDescriptor)) {
         continue;
       }
+
+      for (PsiJavaFile javaFile : Sequence.fromIterable(((PsiJavaStubModelDescriptor) model).getSource().getJavaFiles())) {
+        for (PsiClass psiClass : javaFile.getClasses()) {
+
+          final PsiClass psiClaz = psiClass;
+          final String name = psiClaz.getName();
+          if (name == null || name.trim().equals("")) {
+            continue;
+          }
+
+          consumer.consume(new NavigationParticipant.NavigationTarget() {
+            public String getPresentation() {
+              return name;
+            }
+
+            public SConcept getConcept() {
+              if (psiClaz.isAnnotationType()) {
+                return SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_Annotation);
+              } else if (psiClaz.isInterface()) {
+                return SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_Interface);
+              } else if (psiClaz.isEnum()) {
+                return SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_EnumClass);
+              } else {
+                return SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_ClassConcept);
+              }
+            }
+
+            public SNodeReference getNodeReference() {
+              return JavaForeignIdBuilder.computeNodePtr(psiClaz).toSNodeReference();
+            }
+          });
+        }
+      }
+
       processedConsumer.consume(model);
     }
   }
@@ -37,6 +79,6 @@ public class JavaPsiStubsNavigationContributor implements NavigationParticipant,
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "Java PSI stubs navigation contributor";
+    return "Java PSI stubs navigation participant";
   }
 }

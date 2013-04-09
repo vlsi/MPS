@@ -11,6 +11,7 @@ import com.intellij.openapi.extensions.PluginId;
 public class NodeActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NodeActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.NodeActions_ActionGroup";
+  public static final String LABEL_ID_showGeneratedText = ID + "showGeneratedText";
   public static final String LABEL_ID_gotoConceptAspects = ID + "gotoConceptAspects";
   public static final String LABEL_ID_showIn = ID + "showIn";
   public static final String LABEL_ID_debug = ID + "debug";
@@ -25,7 +26,12 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EditNode_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_showGeneratedText);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        NodeActions_ActionGroup.this.addAction(action);
+      }
       NodeActions_ActionGroup.this.addSeparator();
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetNodePackage_Action");
       NodeActions_ActionGroup.this.addSeparator();

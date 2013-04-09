@@ -17,11 +17,12 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
@@ -65,9 +66,15 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     JPanel panel = new JPanel(new BorderLayout());
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SNode baseMethodDecalration = ChangeMethodSignatureDialog.this.myParameters.getDeclaration();
+        final SNode baseMethodDecalration = ChangeMethodSignatureDialog.this.myParameters.getDeclaration();
         SLinkOperations.setTarget(baseMethodDecalration, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-        ChangeMethodSignatureDialog.this.myEditor = new EmbeddableEditor(ChangeMethodSignatureDialog.this.myOperationContext, ChangeMethodSignatureDialog.this.myOperationContext.getModule(), baseMethodDecalration);
+        ChangeMethodSignatureDialog.this.myEditor = new EmbeddableEditor(ChangeMethodSignatureDialog.this.myOperationContext.getProject(), new _FunctionTypes._void_P1_E0<SModel>() {
+          public void invoke(SModel m) {
+            m.addRootNode(baseMethodDecalration);
+          }
+        }, true);
+        myEditor.editNode(baseMethodDecalration);
+
         IModule module = ChangeMethodSignatureDialog.this.myOperationContext.getModule();
         if (module instanceof Language) {
           ChangeMethodSignatureDialog.this.myEditor.addLanguageStructureModel((Language) module);
@@ -130,7 +137,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
   @Override
   protected void dispose() {
     if (myEditor != null) {
-      myEditor.disposeEditor(false);
+      myEditor.disposeEditor();
       myEditor = null;
     }
     super.dispose();

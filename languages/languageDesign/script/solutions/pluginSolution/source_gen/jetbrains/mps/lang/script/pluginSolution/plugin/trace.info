@@ -10,7 +10,7 @@
     <nodeInfo nodeId="5487985028841902259" fileName="ScriptsForSelection_ActionGroup.java" startLine="37" startPosition="27" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841902265" fileName="ScriptsForSelection_ActionGroup.java" startLine="43" startPosition="9" endLine="44" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1910216689115792000" fileName="ScriptsForSelection_ActionGroup.java" startLine="44" startPosition="55" endLine="45" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1910216689115793940" fileName="ScriptsForSelection_ActionGroup.java" startLine="46" startPosition="207" endLine="47" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1910216689115793940" fileName="ScriptsForSelection_ActionGroup.java" startLine="46" startPosition="188" endLine="47" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1910216689115793948" fileName="ScriptsForSelection_ActionGroup.java" startLine="47" startPosition="50" endLine="48" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841902269" fileName="ScriptsForSelection_ActionGroup.java" startLine="49" startPosition="7" endLine="50" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841902276" fileName="ScriptsForSelection_ActionGroup.java" startLine="50" startPosition="47" endLine="51" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -49,7 +49,7 @@
     <scopeInfo nodeId="5487985028841902259" fileName="ScriptsForSelection_ActionGroup.java" startLine="67" startPosition="70" endLine="68" endPosition="39" />
     <scopeInfo nodeId="5487985028841902259" fileName="ScriptsForSelection_ActionGroup.java" startLine="72" startPosition="81" endLine="73" endPosition="109" />
     <scopeInfo nodeId="5487985028841902259" fileName="ScriptsForSelection_ActionGroup.java" startLine="76" startPosition="29" endLine="77" endPosition="17" />
-    <scopeInfo nodeId="1910216689115792014" fileName="ScriptsForSelection_ActionGroup.java" startLine="46" startPosition="207" endLine="48" endPosition="15" />
+    <scopeInfo nodeId="1910216689115792014" fileName="ScriptsForSelection_ActionGroup.java" startLine="46" startPosition="188" endLine="48" endPosition="15" />
     <scopeInfo nodeId="5487985028841902293" fileName="ScriptsForSelection_ActionGroup.java" startLine="52" startPosition="60" endLine="54" endPosition="15" />
     <scopeInfo nodeId="5487985028841902322" fileName="ScriptsForSelection_ActionGroup.java" startLine="59" startPosition="64" endLine="62" endPosition="7">
       <varInfo nodeId="5487985028841902326" varName="a" />
