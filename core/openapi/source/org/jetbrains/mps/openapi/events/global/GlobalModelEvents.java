@@ -77,15 +77,14 @@ public class GlobalModelEvents {
     myListenerDescriptors.remove(listener);
     for (Entry<SModel, Collection<GlobalSModelAccessListener>> rl : myRegisteredListeners.entrySet()) {
       if (!rl.getValue().contains(listener)) continue;
-      removeListener(listener, rl);
+      removeListener(listener, rl.getKey());
     }
   }
 
-  private void removeListener(GlobalSModelAccessListener listener, Entry<SModel, Collection<GlobalSModelAccessListener>> rl) {
-    listener.detached(rl.getKey());
-    rl.getKey().removeAccessListener(listener);
-    myRegisteredListeners.removeValue(rl.getKey(), listener);
-    myListenerDescriptors.remove(listener);
+  private void removeListener(GlobalSModelAccessListener listener, SModel rl) {
+    myRegisteredListeners.removeValue(rl, listener);
+    listener.detached(rl);
+    rl.removeAccessListener(listener);
   }
 
   private void addListener(GlobalSModelAccessListener listener, SModel m) {
@@ -120,10 +119,8 @@ public class GlobalModelEvents {
       myRepository.getModelAccess().checkWriteAccess();
 
       for (GlobalSModelAccessListener l : myRegisteredListeners.get(model)) {
-        l.detached(model);
-        model.removeAccessListener(l);
+        removeListener(l, model);
       }
-      myRegisteredListeners.remove(model);
     }
   }
 }

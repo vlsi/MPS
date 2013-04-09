@@ -75,15 +75,14 @@ public class GlobalModuleEvents {
     myModuleListenerDescriptors.remove(listener);
     for (Entry<SModule, Collection<GlobalSModuleListener>> rl : myRegisteredModuleListeners.entrySet()) {
       if (!rl.getValue().contains(listener)) continue;
-      removeListener(listener, rl);
+      removeListener(listener, rl.getKey());
     }
   }
 
-  private void removeListener(GlobalSModuleListener listener, Entry<SModule, Collection<GlobalSModuleListener>> rl) {
-    listener.detached(rl.getKey());
-    rl.getKey().removeModuleListener(listener);
-    myRegisteredModuleListeners.removeValue(rl.getKey(), listener);
-    myModuleListenerDescriptors.remove(listener);
+  private void removeListener(GlobalSModuleListener listener, SModule rl) {
+    myRegisteredModuleListeners.removeValue(rl, listener);
+    listener.detached(rl);
+    rl.removeModuleListener(listener);
   }
 
   private void addListener(GlobalSModuleListener listener, SModule m) {
@@ -104,10 +103,8 @@ public class GlobalModuleEvents {
     @Override
     public void beforeModuleRemoved(SModule module) {
       for (GlobalSModuleListener l : myRegisteredModuleListeners.get(module)) {
-        l.detached(module);
-        module.removeModuleListener(l);
+        removeListener(l, module);
       }
-      myRegisteredModuleListeners.remove(module);
     }
   }
 }
