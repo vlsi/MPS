@@ -35,6 +35,7 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_snw1l8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_snw1l8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_snw1l8_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_snw1l8_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_snw1l8_c0(editorContext, node));

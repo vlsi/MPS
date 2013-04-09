@@ -35,6 +35,7 @@ public class Container_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xjnu6t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xjnu6t_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_xjnu6t_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xjnu6t_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xjnu6t_c0(editorContext, node));

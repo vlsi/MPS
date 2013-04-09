@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -28,7 +28,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.CellConditions;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -91,16 +90,16 @@ public class DeleteLine_Action extends BaseAction {
           if (nextCollection.getCellLayout() instanceof CellLayout_Vertical) {
             return;
           }
-          for (jetbrains.mps.openapi.editor.cells.EditorCell childCell : Sequence.fromIterable(nextCollection)) {
+          for (EditorCell childCell : Sequence.fromIterable(nextCollection)) {
             if (childCell instanceof EditorCell_Collection) {
               QueueSequence.fromQueue(collections).addLastElement((EditorCell_Collection) childCell);
             }
           }
         }
       }
-      jetbrains.mps.openapi.editor.cells.EditorCell current = ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
+      EditorCell current = ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
       List<SNode> nodesToDelete = new ArrayList<SNode>();
-      jetbrains.mps.openapi.editor.cells.EditorCell cellToSelect = null;
+      EditorCell cellToSelect = null;
       while (true) {
         if (current.getParent() == null) {
           break;
@@ -109,7 +108,7 @@ public class DeleteLine_Action extends BaseAction {
         if (layout instanceof CellLayout_Indent) {
           SNode currentNode = current.getSNode();
           if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Statement") || (SNodeOperations.getAncestor(currentNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false) == null)) {
-            jetbrains.mps.openapi.editor.cells.EditorCell root = current.getRootParent();
+            EditorCell root = current.getRootParent();
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
             if (CellLayout_Indent.isNewLineAfter(root, current)) {
               cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
@@ -119,7 +118,7 @@ public class DeleteLine_Action extends BaseAction {
             break;
           }
         } else if (layout instanceof CellLayout_Vertical) {
-          if (APICellAdapter.isBigCell(current)) {
+          if (current.isBig()) {
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
             cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
             break;

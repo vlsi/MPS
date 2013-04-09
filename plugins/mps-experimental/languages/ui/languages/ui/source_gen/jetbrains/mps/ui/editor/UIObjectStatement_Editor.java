@@ -27,6 +27,7 @@ public class UIObjectStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_zdgerc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_zdgerc_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     UI_StyleSheet.applyUIObjectBox(style, editorCell);
     editorCell.getStyle().putAll(style);

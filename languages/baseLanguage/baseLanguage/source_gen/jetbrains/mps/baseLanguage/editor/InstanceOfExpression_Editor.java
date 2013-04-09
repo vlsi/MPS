@@ -24,6 +24,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pg66x0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pg66x0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_pg66x0_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pg66x0_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pg66x0_c0(editorContext, node));

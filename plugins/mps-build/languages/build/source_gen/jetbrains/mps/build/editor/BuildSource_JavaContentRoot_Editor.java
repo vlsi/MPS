@@ -36,6 +36,7 @@ public class BuildSource_JavaContentRoot_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_p3v1g4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_p3v1g4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_p3v1g4_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_p3v1g4_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_p3v1g4_c0(editorContext, node));

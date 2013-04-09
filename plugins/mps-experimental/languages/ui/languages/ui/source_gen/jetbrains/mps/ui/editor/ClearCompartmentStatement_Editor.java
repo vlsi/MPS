@@ -19,6 +19,7 @@ public class ClearCompartmentStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o1mgj5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o1mgj5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_o1mgj5_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o1mgj5_b0(editorContext, node));
     return editorCell;

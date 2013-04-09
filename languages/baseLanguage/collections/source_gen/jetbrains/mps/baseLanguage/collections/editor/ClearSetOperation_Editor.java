@@ -24,6 +24,7 @@ public class ClearSetOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vs9kjh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vs9kjh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_vs9kjh_a0(editorContext, node));
     return editorCell;
   }

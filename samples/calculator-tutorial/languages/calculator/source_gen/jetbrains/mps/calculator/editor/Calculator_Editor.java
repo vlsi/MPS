@@ -32,6 +32,7 @@ public class Calculator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_uh00px_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_uh00px_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_uh00px_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_uh00px_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uh00px_c0(editorContext, node));

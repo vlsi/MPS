@@ -22,6 +22,7 @@ public class BwfTaskDependency_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3mrn5h_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3mrn5h_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_3mrn5h_a0(editorContext, node));
     return editorCell;
   }

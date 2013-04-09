@@ -41,6 +41,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9mcqjq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9mcqjq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9mcqjq_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9mcqjq_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9mcqjq_c0(editorContext, node));

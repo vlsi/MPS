@@ -21,6 +21,7 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_3hb8bt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3hb8bt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_3hb8bt_a0(editorContext, node));
     return editorCell;
   }

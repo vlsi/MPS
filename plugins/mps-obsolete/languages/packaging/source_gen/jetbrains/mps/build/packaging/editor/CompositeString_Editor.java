@@ -25,6 +25,7 @@ public class CompositeString_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_oikoa_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_oikoa_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0.3, Measure.SPACES));
     editorCell.getStyle().putAll(style);

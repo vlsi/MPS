@@ -22,6 +22,7 @@ public class GenerationContextOp_Base_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_a81d8a_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyGenContext_operation(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

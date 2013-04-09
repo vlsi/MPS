@@ -24,6 +24,7 @@ public class AddStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pqcdbz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pqcdbz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_pqcdbz_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pqcdbz_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pqcdbz_c0(editorContext, node));

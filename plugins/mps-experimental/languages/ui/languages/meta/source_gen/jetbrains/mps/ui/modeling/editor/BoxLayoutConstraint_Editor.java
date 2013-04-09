@@ -23,6 +23,7 @@ public class BoxLayoutConstraint_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_d53v25_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_d53v25_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_d53v25_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_d53v25_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_d53v25_c0(editorContext, node));

@@ -23,6 +23,7 @@ public class PropertiesComment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kzexu8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kzexu8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_kzexu8_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_kzexu8_b0(editorContext, node));
     return editorCell;

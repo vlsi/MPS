@@ -16,6 +16,7 @@ public class AbstractCommand_Editor extends DefaultNodeEditor {
   private EditorCell createError_fgy581_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no command>");
     editorCell.setCellId("Error_fgy581_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

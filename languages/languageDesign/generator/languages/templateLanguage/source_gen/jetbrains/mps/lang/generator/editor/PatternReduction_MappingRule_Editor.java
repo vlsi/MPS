@@ -35,6 +35,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o2w2pr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o2w2pr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_o2w2pr_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_o2w2pr_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o2w2pr_c0(editorContext, node));
@@ -264,6 +265,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o2w2pr_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_o2w2pr_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

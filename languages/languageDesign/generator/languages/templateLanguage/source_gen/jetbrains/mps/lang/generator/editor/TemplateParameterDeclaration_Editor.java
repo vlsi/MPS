@@ -27,6 +27,7 @@ public class TemplateParameterDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pth000_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pth000_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_pth000_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pth000_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pth000_c0(editorContext, node));

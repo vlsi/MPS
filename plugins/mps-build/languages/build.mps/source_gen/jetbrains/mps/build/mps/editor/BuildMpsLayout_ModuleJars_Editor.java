@@ -45,6 +45,7 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_aqxvre_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aqxvre_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_aqxvre_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_aqxvre_b0(editorContext, node));
     return editorCell;
@@ -124,6 +125,7 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_aqxvre_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aqxvre_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_aqxvre_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_aqxvre_b0(editorContext, node));
     return editorCell;

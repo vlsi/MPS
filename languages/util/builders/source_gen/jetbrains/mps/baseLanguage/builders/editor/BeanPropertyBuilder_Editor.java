@@ -25,6 +25,7 @@ public class BeanPropertyBuilder_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pd8zqj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pd8zqj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_pd8zqj_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pd8zqj_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pd8zqj_c0(editorContext, node));

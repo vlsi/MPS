@@ -26,6 +26,7 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_99x6e7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_99x6e7_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_99x6e7_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_99x6e7_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_99x6e7_c0(editorContext, node));

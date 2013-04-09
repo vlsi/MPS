@@ -25,6 +25,7 @@ public class IntervalType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o8o2di_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_o8o2di_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_o8o2di_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o8o2di_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_o8o2di_c0(editorContext, node));

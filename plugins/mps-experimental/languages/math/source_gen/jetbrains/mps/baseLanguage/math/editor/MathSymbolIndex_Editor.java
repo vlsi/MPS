@@ -22,6 +22,7 @@ public class MathSymbolIndex_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hqsv2l_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hqsv2l_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_hqsv2l_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hqsv2l_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hqsv2l_c0(editorContext, node));

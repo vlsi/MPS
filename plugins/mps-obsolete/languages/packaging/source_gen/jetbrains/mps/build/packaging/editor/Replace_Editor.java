@@ -39,6 +39,7 @@ public class Replace_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_m6tzv0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_m6tzv0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_m6tzv0_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_m6tzv0_b0(editorContext, node));
     return editorCell;
@@ -126,8 +127,8 @@ public class Replace_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_m6tzv0_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_m6tzv0_b1a(EditorContext editorContext, SNode node) {
@@ -194,6 +195,7 @@ public class Replace_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_m6tzv0_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_m6tzv0_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_m6tzv0_a0(editorContext, node));
     return editorCell;
   }

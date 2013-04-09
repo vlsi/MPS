@@ -20,6 +20,7 @@ public class DisposeDialogStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_f2dope_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_f2dope_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_f2dope_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_f2dope_b0(editorContext, node));
     return editorCell;

@@ -31,6 +31,7 @@ public class LogicalOperator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iyfdbj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_iyfdbj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_iyfdbj_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_iyfdbj_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_iyfdbj_c0(editorContext, node));

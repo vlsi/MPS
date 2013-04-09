@@ -24,6 +24,7 @@ public class ChangeFeatureNameExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_e4dl4h_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_e4dl4h_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_e4dl4h_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_e4dl4h_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_e4dl4h_c0(editorContext, node));

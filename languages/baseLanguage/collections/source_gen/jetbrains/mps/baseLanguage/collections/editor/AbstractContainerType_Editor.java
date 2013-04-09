@@ -36,6 +36,7 @@ public class AbstractContainerType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_v6pnhl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_v6pnhl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_v6pnhl_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_v6pnhl_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_v6pnhl_c0(editorContext, node));

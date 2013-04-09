@@ -36,6 +36,7 @@ public class CellKeyMapItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4y23v1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_4y23v1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_4y23v1_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4y23v1_b0(editorContext, node));
     return editorCell;

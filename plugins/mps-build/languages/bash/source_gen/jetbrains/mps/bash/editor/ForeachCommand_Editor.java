@@ -32,6 +32,7 @@ public class ForeachCommand_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_h3ozxh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h3ozxh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_h3ozxh_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_h3ozxh_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h3ozxh_c0(editorContext, node));

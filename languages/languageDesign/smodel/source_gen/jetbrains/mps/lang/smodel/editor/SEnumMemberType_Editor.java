@@ -31,6 +31,7 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qf1ea_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qf1ea_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_qf1ea_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qf1ea_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_qf1ea_c0(editorContext, node));

@@ -33,6 +33,7 @@ public class FunctionDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_en7q4l_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_en7q4l_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_en7q4l_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_en7q4l_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_en7q4l_c0(editorContext, node));

@@ -29,6 +29,7 @@ public class BuildMps_ModuleDependencyOnModule_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_2jl94m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2jl94m_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_2jl94m_a0(editorContext, node));
     if (renderingCondition_2jl94m_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_2jl94m_b0(editorContext, node));

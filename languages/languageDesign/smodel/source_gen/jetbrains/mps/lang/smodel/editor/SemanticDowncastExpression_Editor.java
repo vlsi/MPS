@@ -27,6 +27,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lb0igm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lb0igm_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_lb0igm_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lb0igm_b0(editorContext, node));
     return editorCell;

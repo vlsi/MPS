@@ -23,6 +23,7 @@ public class SimpleCommand_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7qu9ix_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7qu9ix_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_7qu9ix_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7qu9ix_b0(editorContext, node));
     return editorCell;

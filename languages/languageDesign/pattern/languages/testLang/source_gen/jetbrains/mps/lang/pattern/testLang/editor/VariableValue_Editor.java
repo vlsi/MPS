@@ -26,6 +26,7 @@ public class VariableValue_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_j27l2j_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_j27l2j_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_j27l2j_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_j27l2j_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_j27l2j_c0(editorContext, node));

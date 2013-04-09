@@ -29,6 +29,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
   private EditorCell createCollection_8agmue_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8agmue_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_8agmue_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8agmue_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_8agmue_c0(editorContext, node));

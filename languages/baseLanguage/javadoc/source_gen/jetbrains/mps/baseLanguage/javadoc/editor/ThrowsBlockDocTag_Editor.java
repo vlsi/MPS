@@ -24,6 +24,7 @@ public class ThrowsBlockDocTag_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fp467p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fp467p_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_fp467p_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fp467p_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_fp467p_c0(editorContext, node));

@@ -31,6 +31,7 @@ import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.cells.CellFinder;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
@@ -107,13 +108,13 @@ public abstract class EditorCell_Basic implements EditorCell {
   private String myCellId;
   private String myRole;
   private SNodeReference myLinkDeclarationPointer;
-  private SNodeReference myRefNodePointer;
   private boolean myInTree;
   private boolean myIsReferenceCell = false;
   protected int myGapLeft;
   protected int myGapRight;
 
   private boolean myIsNeedRelayout = true;
+  private boolean myBig;
 
   protected EditorCell_Basic(EditorContext editorContext, SNode node) {
     myEditorContext = editorContext;
@@ -436,16 +437,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public SNode getRefNode() {
-    return myRefNodePointer != null ? myRefNodePointer.resolve(MPSModuleRepository.getInstance()) : null;
-  }
-
-  @Override
-  public void setRefNode(SNode refNode) {
-    myRefNodePointer = (refNode != null) ? new jetbrains.mps.smodel.SNodePointer(refNode) : null;
-  }
-
-  @Override
   public void setSelected(boolean selected) {
     mySelected = selected;
   }
@@ -511,7 +502,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   protected boolean doProcessKeyTyped(final KeyEvent e, final boolean allowErrors) {
-    if (getSNode() == null || !isBigCell()) return false;
+    if (getSNode() == null || !isBig()) return false;
 
     if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
@@ -703,6 +694,16 @@ public abstract class EditorCell_Basic implements EditorCell {
   @Override
   public SubstituteInfo getSubstituteInfo() {
     return mySubstituteInfo;
+  }
+
+  @Override
+  public void setBig(boolean big) {
+    myBig = big;
+  }
+
+  @Override
+  public boolean isBig() {
+    return myBig;
   }
 
   @Override
@@ -1109,7 +1110,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public EditorCell getContainingBigCell() {
-    if (isBigCell()) {
+    if (isBig()) {
       return this;
     }
     if (getParent() == null) {
@@ -1382,7 +1383,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public EditorCell getFirstDescendant(Condition<EditorCell> condition) {
-    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverser(this, true, true)) {
+    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverserIterable(this, true, true)) {
       if (condition.met((EditorCell) current)) {
         return (EditorCell) current;
       }
@@ -1392,7 +1393,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public EditorCell getLastDescendant(Condition<EditorCell> condition) {
-    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverser(this, false, true)) {
+    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverserIterable(this, false, true)) {
       if (condition.met((EditorCell) current)) {
         return (EditorCell) current;
       }

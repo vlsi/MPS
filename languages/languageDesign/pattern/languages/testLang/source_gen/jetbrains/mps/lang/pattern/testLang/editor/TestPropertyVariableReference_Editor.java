@@ -22,6 +22,7 @@ public class TestPropertyVariableReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qm76pe_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qm76pe_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_qm76pe_a0(editorContext, node));
     return editorCell;
   }

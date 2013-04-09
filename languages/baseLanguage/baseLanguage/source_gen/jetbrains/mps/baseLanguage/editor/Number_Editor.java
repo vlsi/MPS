@@ -21,6 +21,7 @@ public class Number_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ydd9ch_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "number");
     editorCell.setCellId("Constant_ydd9ch_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);

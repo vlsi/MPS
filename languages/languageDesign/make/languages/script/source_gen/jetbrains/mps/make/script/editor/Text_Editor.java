@@ -26,6 +26,7 @@ public class Text_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wlph7j_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_wlph7j_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_wlph7j_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_wlph7j_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wlph7j_c0(editorContext, node));

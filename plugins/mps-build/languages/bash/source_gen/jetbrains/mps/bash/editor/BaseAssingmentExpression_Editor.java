@@ -32,6 +32,7 @@ public class BaseAssingmentExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kpt6iq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kpt6iq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_kpt6iq_a0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_kpt6iq_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_kpt6iq_c0(editorContext, node));

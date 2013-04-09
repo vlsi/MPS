@@ -26,6 +26,7 @@ public class SimpleBuilderProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_f7iv5z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_f7iv5z_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_f7iv5z_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_f7iv5z_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_f7iv5z_c0(editorContext, node));

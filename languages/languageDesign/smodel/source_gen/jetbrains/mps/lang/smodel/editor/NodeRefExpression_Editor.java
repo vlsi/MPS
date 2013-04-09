@@ -30,6 +30,7 @@ public class NodeRefExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_65e6td_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_65e6td_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_65e6td_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_65e6td_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_65e6td_c0(editorContext, node));

@@ -20,6 +20,7 @@ public class UpdateModelByDefaultOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rtpxhj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rtpxhj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_rtpxhj_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rtpxhj_b0(editorContext, node));
     return editorCell;

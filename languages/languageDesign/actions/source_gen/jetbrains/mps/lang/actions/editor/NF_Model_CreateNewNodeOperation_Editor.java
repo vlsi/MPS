@@ -34,6 +34,7 @@ public class NF_Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6g21z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6g21z_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_6g21z_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6g21z_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_6g21z_c0(editorContext, node));

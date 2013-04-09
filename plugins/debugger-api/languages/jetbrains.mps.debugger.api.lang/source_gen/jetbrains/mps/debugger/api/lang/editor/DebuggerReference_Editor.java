@@ -27,6 +27,7 @@ public class DebuggerReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8xigmp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8xigmp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_8xigmp_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8xigmp_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8xigmp_c0(editorContext, node));

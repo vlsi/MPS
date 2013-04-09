@@ -38,6 +38,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nmve34_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_nmve34_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_nmve34_a0(editorContext, node));
     if (renderingCondition_nmve34_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_nmve34_b0(editorContext, node));

@@ -24,6 +24,7 @@ public class NList_CopyWithTraceOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mxb426_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mxb426_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_mxb426_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mxb426_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_mxb426_c0(editorContext, node));

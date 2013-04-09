@@ -85,7 +85,7 @@
   <unitInfo fileName="CellModel_Empty_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Empty_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_Error_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Error_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_Image_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Image_BehaviorDescriptor" />
-  <unitInfo fileName="CellModel_Indent_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Indent_BehaviorDescriptor" />
+  <unitInfo fileName="CellModel_Indent_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Indent_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_JComponent_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_JComponent_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_ListWithRole_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_ModelAccess_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ModelAccess_BehaviorDescriptor" />
@@ -2679,6 +2679,20 @@
       <varInfo nodeId="1262585326111608161" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1262585326111608161" fileName="IndentLayoutOnNewLineStyleClassItem_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.IndentLayoutOnNewLineStyleClassItem_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/2214947816754235464">
+    <nodeInfo nodeId="2214947816754242630" fileName="CellModel_Indent_Behavior.java" startLine="11" startPosition="83" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2214947816754235464" fileName="CellModel_Indent_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2214947816754235464" fileName="CellModel_Indent_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isCellIdInitialized_1229948571177#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="2214947816754235685" fileName="CellModel_Indent_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="2214947816754241534" fileName="CellModel_Indent_Behavior.java" startLine="11" startPosition="83" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="2214947816754235464" fileName="CellModel_Indent_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="2214947816754235464" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2214947816754235464" fileName="CellModel_Indent_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="2214947816754235464" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="2214947816754235464" fileName="CellModel_Indent_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Indent_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/2893726635879751258">
     <nodeInfo nodeId="2893726635879753348" fileName="CellKeyMap_IsApplicableFunction_Behavior.java" startLine="14" startPosition="83" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

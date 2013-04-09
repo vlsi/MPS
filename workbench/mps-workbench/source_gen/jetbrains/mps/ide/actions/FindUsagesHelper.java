@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -50,7 +51,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
       public void run() {
         operationNode.value = (cell == null ?
           node :
-          ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getSNodeWRTReference()
+          APICellAdapter.getSNodeWRTReference(cell)
         );
         concept.value = operationNode.value.getConcept().getConceptId();
       }

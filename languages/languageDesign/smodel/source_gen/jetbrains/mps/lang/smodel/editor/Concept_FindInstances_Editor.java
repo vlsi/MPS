@@ -25,6 +25,7 @@ public class Concept_FindInstances_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2v58n3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2v58n3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_2v58n3_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2v58n3_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2v58n3_c0(editorContext, node));

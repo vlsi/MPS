@@ -21,6 +21,7 @@ public class ConvertTo_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_taq11b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_taq11b_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_taq11b_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_taq11b_b0(editorContext, node));
     return editorCell;

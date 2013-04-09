@@ -17,6 +17,7 @@ public class RootRoot_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_p164r8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_p164r8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_p164r8_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_p164r8_b0(editorContext, node));
     return editorCell;

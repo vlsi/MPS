@@ -32,6 +32,7 @@ public class ConceptPropertyNameRefExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_h02ftw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h02ftw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_h02ftw_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h02ftw_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_h02ftw_c0(editorContext, node));

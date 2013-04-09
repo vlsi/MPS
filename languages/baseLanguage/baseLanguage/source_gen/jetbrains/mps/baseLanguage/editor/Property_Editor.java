@@ -35,6 +35,7 @@ public class Property_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createCollection_d21pjf_a0_0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 

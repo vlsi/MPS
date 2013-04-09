@@ -41,6 +41,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ecw4ny_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_ecw4ny_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ecw4ny_b0(editorContext, node));
     return editorCell;
@@ -187,8 +188,8 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_ecw4ny_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_ecw4ny_b1b0(EditorContext editorContext, SNode node) {

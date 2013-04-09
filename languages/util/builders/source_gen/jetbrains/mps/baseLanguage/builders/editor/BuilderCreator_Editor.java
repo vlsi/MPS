@@ -28,6 +28,7 @@ public class BuilderCreator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1hbqnh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1hbqnh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_1hbqnh_a0(editorContext, node));
     if (renderingCondition_1hbqnh_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_1hbqnh_b0(editorContext, node));

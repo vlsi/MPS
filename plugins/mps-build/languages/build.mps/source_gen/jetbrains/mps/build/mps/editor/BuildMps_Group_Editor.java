@@ -37,6 +37,7 @@ public class BuildMps_Group_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pilq2t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pilq2t_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_pilq2t_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_pilq2t_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_pilq2t_c0(editorContext, node));

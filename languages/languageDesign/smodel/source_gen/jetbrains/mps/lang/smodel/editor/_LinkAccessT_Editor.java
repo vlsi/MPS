@@ -23,6 +23,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_36vx3e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_36vx3e_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_36vx3e_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_36vx3e_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_36vx3e_c0(editorContext, node));

@@ -21,6 +21,7 @@ public class Button_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_78mff1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_78mff1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_78mff1_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_78mff1_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_78mff1_c0(editorContext, node));

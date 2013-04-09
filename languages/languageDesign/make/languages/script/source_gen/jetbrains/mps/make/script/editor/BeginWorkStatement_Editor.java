@@ -27,6 +27,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_al4u6z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_al4u6z_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_al4u6z_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_al4u6z_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_al4u6z_c0(editorContext, node));

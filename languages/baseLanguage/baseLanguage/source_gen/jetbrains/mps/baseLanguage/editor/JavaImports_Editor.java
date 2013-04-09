@@ -32,6 +32,7 @@ public class JavaImports_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1bs0fk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1bs0fk_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_BOTTOM, new Padding(2, Measure.SPACES));
     editorCell.getStyle().putAll(style);

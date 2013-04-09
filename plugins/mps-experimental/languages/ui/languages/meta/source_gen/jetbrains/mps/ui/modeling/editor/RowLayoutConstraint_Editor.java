@@ -26,6 +26,7 @@ public class RowLayoutConstraint_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hssupx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hssupx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_hssupx_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hssupx_b0(editorContext, node));
     if (renderingCondition_hssupx_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

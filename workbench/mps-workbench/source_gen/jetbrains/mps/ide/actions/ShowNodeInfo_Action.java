@@ -11,7 +11,7 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import java.awt.Point;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Frame;

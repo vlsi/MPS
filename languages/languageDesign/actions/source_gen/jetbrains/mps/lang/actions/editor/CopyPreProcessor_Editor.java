@@ -28,6 +28,7 @@ public class CopyPreProcessor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cybmg4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cybmg4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_cybmg4_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cybmg4_b0(editorContext, node));
     return editorCell;
@@ -114,8 +115,8 @@ public class CopyPreProcessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_cybmg4_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_cybmg4_b1a(EditorContext editorContext, SNode node) {

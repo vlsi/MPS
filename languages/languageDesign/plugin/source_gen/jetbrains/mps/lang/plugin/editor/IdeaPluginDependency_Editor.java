@@ -21,6 +21,7 @@ public class IdeaPluginDependency_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cvrsr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cvrsr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cvrsr_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_cvrsr_b0(editorContext, node));
     return editorCell;

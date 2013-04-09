@@ -27,6 +27,7 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
   private EditorCell createCollection_1gifeu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1gifeu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_1gifeu_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1gifeu_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1gifeu_c0(editorContext, node));

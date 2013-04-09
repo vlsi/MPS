@@ -23,6 +23,7 @@ public class Includes_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_w5b3jk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_w5b3jk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_w5b3jk_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_w5b3jk_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_w5b3jk_c0(editorContext, node));

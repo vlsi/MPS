@@ -57,10 +57,6 @@ public class APICellAdapter {
     return false;
   }
 
-  public static String getCellRole(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getCellRole();
-  }
-
   public static <T extends EditorMessage> List<T> getMessages(EditorCell cell, Class<T> clazz) {
     List<T> result = new ArrayList<T>();
     for (SimpleEditorMessage message : cell.getMessages()) {
@@ -75,13 +71,14 @@ public class APICellAdapter {
     ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).synchronizeViewWithModel();
   }
 
-  public static boolean isBigCell(EditorCell cell) {
-    //??? EditorCell_Empty ???
-    return cell.getParent() == null || cell.getParent().getSNode() != cell.getSNode();
-  }
-
   public static SNode getSNodeWRTReference(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getSNodeWRTReference();
+    SNode target = cell.getStyle().get(StyleAttributes.NAVIGATABLE_NODE);
+    if (target != null) {
+      return target;
+    }
+    SNode node = cell.getSNode();
+    SNode referentNode = node.getReferenceTarget(cell.getRole());
+    return referentNode != null ? referentNode : node;
   }
 
   public static boolean validate(EditorCell cell, boolean strict, boolean canActivatePopup) {

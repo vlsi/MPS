@@ -14,7 +14,8 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
@@ -96,7 +97,7 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
   }
 
   private SNode getConceptNode(final Map<String, Object> _params) {
-    SNode refNode = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNodeWRTReference();
+    SNode refNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
     if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       return SNodeOperations.cast(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
     }

@@ -24,6 +24,7 @@ public class UntilLoopCommand_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_itgc41_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_itgc41_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_itgc41_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_itgc41_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_itgc41_c0(editorContext, node));

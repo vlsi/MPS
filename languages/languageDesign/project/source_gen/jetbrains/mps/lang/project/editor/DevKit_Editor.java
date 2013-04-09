@@ -32,6 +32,7 @@ public class DevKit_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ks60l1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ks60l1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ks60l1_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ks60l1_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ks60l1_c0(editorContext, node));

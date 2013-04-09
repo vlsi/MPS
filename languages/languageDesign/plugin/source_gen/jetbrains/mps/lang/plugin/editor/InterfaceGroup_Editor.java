@@ -32,6 +32,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ttb7ur_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ttb7ur_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ttb7ur_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ttb7ur_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ttb7ur_c0(editorContext, node));
@@ -148,6 +149,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ttb7ur_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ttb7ur_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ttb7ur_a0_0(editorContext, node));
     return editorCell;
   }

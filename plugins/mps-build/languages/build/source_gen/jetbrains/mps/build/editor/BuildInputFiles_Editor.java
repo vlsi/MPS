@@ -40,6 +40,7 @@ public class BuildInputFiles_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1i9du0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1i9du0_a");
+    editorCell.setBig(true);
     if (renderingCondition_1i9du0_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_1i9du0_a0(editorContext, node));
     }

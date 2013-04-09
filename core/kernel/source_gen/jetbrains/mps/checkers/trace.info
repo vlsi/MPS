@@ -777,7 +777,7 @@
     <nodeInfo nodeId="7390982340086720289" fileName="ConstraintsChecker.java" startLine="89" startPosition="65" endLine="90" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7390982340086720294" fileName="ConstraintsChecker.java" startLine="90" startPosition="37" endLine="91" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7390982340086720300" fileName="ConstraintsChecker.java" startLine="91" startPosition="78" endLine="92" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086720308" fileName="ConstraintsChecker.java" startLine="93" startPosition="30" endLine="94" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7390982340086720308" fileName="ConstraintsChecker.java" startLine="93" startPosition="54" endLine="94" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="7390982340086720320" fileName="ConstraintsChecker.java" startLine="97" startPosition="33" endLine="98" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7390982340086720330" fileName="ConstraintsChecker.java" startLine="101" startPosition="27" endLine="102" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7390982340086720336" fileName="ConstraintsChecker.java" startLine="102" startPosition="73" endLine="103" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -843,7 +843,7 @@
     <scopeInfo nodeId="7390982340086720191" fileName="ConstraintsChecker.java" startLine="64" startPosition="33" endLine="65" endPosition="185" />
     <scopeInfo nodeId="7390982340086720252" fileName="ConstraintsChecker.java" startLine="76" startPosition="33" endLine="77" endPosition="171" />
     <scopeInfo nodeId="4969811647316774324" fileName="ConstraintsChecker.java" startLine="85" startPosition="62" endLine="86" endPosition="72" />
-    <scopeInfo nodeId="7390982340086720307" fileName="ConstraintsChecker.java" startLine="93" startPosition="30" endLine="94" endPosition="17" />
+    <scopeInfo nodeId="7390982340086720307" fileName="ConstraintsChecker.java" startLine="93" startPosition="54" endLine="94" endPosition="17" />
     <scopeInfo nodeId="7390982340086720319" fileName="ConstraintsChecker.java" startLine="97" startPosition="33" endLine="98" endPosition="145" />
     <scopeInfo nodeId="7390982340086720413" fileName="ConstraintsChecker.java" startLine="117" startPosition="51" endLine="118" endPosition="45" />
     <scopeInfo nodeId="7390982340086720434" fileName="ConstraintsChecker.java" startLine="121" startPosition="35" endLine="122" endPosition="109" />

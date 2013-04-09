@@ -28,6 +28,7 @@ public class MultOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6fsyy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6fsyy_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_6fsyy_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6fsyy_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6fsyy_c0(editorContext, node));

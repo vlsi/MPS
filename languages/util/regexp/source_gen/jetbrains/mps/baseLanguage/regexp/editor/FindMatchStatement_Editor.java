@@ -25,6 +25,7 @@ public class FindMatchStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o6612s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o6612s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_o6612s_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o6612s_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_o6612s_c0(editorContext, node));

@@ -38,6 +38,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kasahx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kasahx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_kasahx_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_kasahx_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_kasahx_c0(editorContext, node));

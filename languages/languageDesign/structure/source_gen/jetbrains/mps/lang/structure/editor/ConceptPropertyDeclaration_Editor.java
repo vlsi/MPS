@@ -16,6 +16,7 @@ public class ConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createError_gmwtxj_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose property type>");
     editorCell.setCellId("Error_gmwtxj_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

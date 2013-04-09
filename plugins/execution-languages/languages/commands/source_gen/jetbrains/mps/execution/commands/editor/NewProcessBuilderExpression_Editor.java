@@ -39,6 +39,7 @@ public class NewProcessBuilderExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u94itw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_u94itw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNodeList_u94itw_a0(editorContext, node));
     if (renderingCondition_u94itw_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_u94itw_b0(editorContext, node));
@@ -135,6 +136,7 @@ public class NewProcessBuilderExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u94itw_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_u94itw_a_0");
+    editorCell.setBig(true);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_u94itw_a0(editorContext, node));
     return editorCell;

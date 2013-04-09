@@ -26,6 +26,7 @@ public class TreePathType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yyjgyf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yyjgyf_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_yyjgyf_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yyjgyf_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_yyjgyf_c0(editorContext, node));

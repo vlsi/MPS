@@ -27,6 +27,7 @@ public class BaseVariableDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7xun5b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7xun5b_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_7xun5b_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7xun5b_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7xun5b_c0(editorContext, node));

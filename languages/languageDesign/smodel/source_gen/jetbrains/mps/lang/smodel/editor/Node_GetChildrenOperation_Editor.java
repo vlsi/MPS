@@ -28,12 +28,14 @@ public class Node_GetChildrenOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_q8cg0u_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAliasAndParms_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_q8cg0u_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_q8cg0u_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_q8cg0u_a0(editorContext, node));
     return editorCell;
   }

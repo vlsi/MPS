@@ -27,6 +27,7 @@ public class ParametersInformationStyleClassItem_Editor extends DefaultNodeEdito
   private EditorCell createCollection_foagvc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_foagvc_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_foagvc_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_foagvc_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_foagvc_c0(editorContext, node));

@@ -27,6 +27,7 @@ public class LambdaMethod_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dhnshu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dhnshu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_dhnshu_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dhnshu_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_dhnshu_c0(editorContext, node));

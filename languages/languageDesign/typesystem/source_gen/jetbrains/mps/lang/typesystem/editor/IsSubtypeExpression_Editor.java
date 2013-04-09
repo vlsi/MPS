@@ -28,6 +28,7 @@ public class IsSubtypeExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ryfqc2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ryfqc2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ryfqc2_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ryfqc2_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ryfqc2_c0(editorContext, node));

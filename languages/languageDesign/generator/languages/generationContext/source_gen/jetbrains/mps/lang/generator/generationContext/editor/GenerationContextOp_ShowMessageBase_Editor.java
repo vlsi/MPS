@@ -30,6 +30,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
   private EditorCell createCollection_53ih5o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_53ih5o_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_53ih5o_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_53ih5o_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_53ih5o_c0(editorContext, node));

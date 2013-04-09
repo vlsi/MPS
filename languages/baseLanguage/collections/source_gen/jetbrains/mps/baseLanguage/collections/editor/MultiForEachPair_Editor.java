@@ -24,6 +24,7 @@ public class MultiForEachPair_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1d0bj4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1d0bj4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_1d0bj4_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1d0bj4_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1d0bj4_c0(editorContext, node));

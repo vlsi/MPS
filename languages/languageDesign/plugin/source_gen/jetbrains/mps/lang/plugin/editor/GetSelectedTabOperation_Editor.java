@@ -22,6 +22,7 @@ public class GetSelectedTabOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wg9wvo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wg9wvo_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_wg9wvo_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wg9wvo_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wg9wvo_c0(editorContext, node));

@@ -13,7 +13,8 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -88,7 +89,7 @@ public class ShowClassInHierarchy_Action extends BaseAction {
   }
 
   private SNode getContextClassifier(final Map<String, Object> _params) {
-    SNode refNode = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNodeWRTReference();
+    SNode refNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
     if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
       return SNodeOperations.cast(refNode, "jetbrains.mps.baseLanguage.structure.Classifier");
     }

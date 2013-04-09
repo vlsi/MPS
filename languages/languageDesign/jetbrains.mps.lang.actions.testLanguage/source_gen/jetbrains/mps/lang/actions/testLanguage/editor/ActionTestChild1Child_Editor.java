@@ -24,6 +24,7 @@ public class ActionTestChild1Child_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bubcfq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bubcfq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_bubcfq_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_bubcfq_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bubcfq_c0(editorContext, node));

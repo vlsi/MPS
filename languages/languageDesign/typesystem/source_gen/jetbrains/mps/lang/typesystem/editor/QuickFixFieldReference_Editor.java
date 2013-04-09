@@ -25,6 +25,7 @@ public class QuickFixFieldReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_e7wq9l_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_e7wq9l_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_e7wq9l_a0(editorContext, node));
     return editorCell;
   }

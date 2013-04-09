@@ -34,6 +34,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ym22pt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ym22pt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_ym22pt_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ym22pt_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ym22pt_c0(editorContext, node));

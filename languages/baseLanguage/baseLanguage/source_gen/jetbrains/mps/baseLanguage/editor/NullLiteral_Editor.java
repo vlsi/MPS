@@ -19,6 +19,7 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ttt6c2_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null");
     editorCell.setCellId("Constant_ttt6c2_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);

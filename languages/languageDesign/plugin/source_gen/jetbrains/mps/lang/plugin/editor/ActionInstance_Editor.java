@@ -39,6 +39,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lu5mzk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lu5mzk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_lu5mzk_a0(editorContext, node));
     if (renderingCondition_lu5mzk_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_lu5mzk_b0(editorContext, node));

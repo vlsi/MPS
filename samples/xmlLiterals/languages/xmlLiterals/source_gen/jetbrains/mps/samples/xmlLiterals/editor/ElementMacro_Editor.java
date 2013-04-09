@@ -21,6 +21,7 @@ public class ElementMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6p9cmm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6p9cmm_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6p9cmm_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6p9cmm_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6p9cmm_c0(editorContext, node));

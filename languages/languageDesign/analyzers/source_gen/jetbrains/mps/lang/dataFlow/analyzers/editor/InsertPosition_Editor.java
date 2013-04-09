@@ -16,6 +16,7 @@ public class InsertPosition_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7f7qud_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7f7qud_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

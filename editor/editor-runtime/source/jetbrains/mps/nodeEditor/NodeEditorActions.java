@@ -577,7 +577,7 @@ public class NodeEditorActions {
           }
         } else {
           Selection newSelection = selectionManager.createRangeSelection(selectedNode, selectedNode);
-          if (newSelection instanceof NodeRangeSelection && selectedCell.isBigCell()) {
+          if (newSelection instanceof NodeRangeSelection && selectedCell.isBig()) {
             newSelection = ((NodeRangeSelection) newSelection).enlargeSelection(myUp);
           }
           if (newSelection != null) {

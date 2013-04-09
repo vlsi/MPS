@@ -21,6 +21,7 @@ public class YetAnotherGoodConcept_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_h02pym_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_h02pym_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_h02pym_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_h02pym_b0(editorContext, node));
     return editorCell;

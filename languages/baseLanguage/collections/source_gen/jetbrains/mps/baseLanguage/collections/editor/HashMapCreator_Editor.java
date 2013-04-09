@@ -16,6 +16,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_pwna47_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new HashMapCreator_editorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

@@ -38,6 +38,7 @@ public class Refactoring_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kt8f5i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_kt8f5i_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_kt8f5i_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_kt8f5i_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kt8f5i_c0(editorContext, node));

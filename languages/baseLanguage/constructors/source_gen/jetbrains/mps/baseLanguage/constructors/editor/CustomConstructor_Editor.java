@@ -28,6 +28,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pn47sh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pn47sh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_pn47sh_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pn47sh_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_pn47sh_c0(editorContext, node));

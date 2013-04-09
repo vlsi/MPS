@@ -31,6 +31,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dsthrr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_dsthrr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createAlternation_dsthrr_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_dsthrr_b0(editorContext, node));
     return editorCell;

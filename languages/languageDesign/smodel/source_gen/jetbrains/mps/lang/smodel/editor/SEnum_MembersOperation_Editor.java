@@ -19,6 +19,7 @@ public class SEnum_MembersOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_rgzic9_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "members");
     editorCell.setCellId("Constant_rgzic9_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyStaticMethod(style, editorCell);
     editorCell.getStyle().putAll(style);

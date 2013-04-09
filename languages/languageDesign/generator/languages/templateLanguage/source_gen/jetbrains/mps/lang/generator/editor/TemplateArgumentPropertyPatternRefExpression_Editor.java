@@ -28,6 +28,7 @@ public class TemplateArgumentPropertyPatternRefExpression_Editor extends Default
   private EditorCell createCollection_z0z5f6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z0z5f6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_z0z5f6_a0(editorContext, node));
     return editorCell;
   }

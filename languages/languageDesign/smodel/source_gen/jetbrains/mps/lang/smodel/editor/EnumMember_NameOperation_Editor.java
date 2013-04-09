@@ -16,6 +16,7 @@ public class EnumMember_NameOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_sf2kiy_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
     editorCell.setCellId("Constant_sf2kiy_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

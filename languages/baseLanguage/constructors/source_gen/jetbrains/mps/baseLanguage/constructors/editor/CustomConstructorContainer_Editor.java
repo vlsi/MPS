@@ -33,6 +33,7 @@ public class CustomConstructorContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9w29gq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9w29gq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9w29gq_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9w29gq_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9w29gq_c0(editorContext, node));

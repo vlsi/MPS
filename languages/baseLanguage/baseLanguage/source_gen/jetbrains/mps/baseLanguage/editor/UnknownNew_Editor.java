@@ -26,6 +26,7 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lvgr57_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lvgr57_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_lvgr57_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lvgr57_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_lvgr57_c0(editorContext, node));

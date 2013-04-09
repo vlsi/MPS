@@ -33,6 +33,7 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nyg1sl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nyg1sl_a");
+    editorCell.setBig(true);
     if (renderingCondition_nyg1sl_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefCell_nyg1sl_a0(editorContext, node));
     }

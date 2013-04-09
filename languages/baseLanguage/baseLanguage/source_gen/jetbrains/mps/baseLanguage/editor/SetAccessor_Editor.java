@@ -25,6 +25,7 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_h8axo1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h8axo1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_h8axo1_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h8axo1_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h8axo1_c0(editorContext, node));

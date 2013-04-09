@@ -24,6 +24,7 @@ public class SimpleBuilderParameterReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_egu5s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egu5s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_egu5s_a0(editorContext, node));
     return editorCell;
   }

@@ -29,6 +29,7 @@ public class DefaultCaretPositionStyleClassItem_Editor extends DefaultNodeEditor
   private EditorCell createCollection_djhfgj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_djhfgj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_djhfgj_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_djhfgj_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_djhfgj_c0(editorContext, node));

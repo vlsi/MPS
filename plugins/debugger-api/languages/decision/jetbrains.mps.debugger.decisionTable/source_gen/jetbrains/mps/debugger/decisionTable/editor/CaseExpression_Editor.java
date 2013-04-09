@@ -20,6 +20,7 @@ public class CaseExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1t22tu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1t22tu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_1t22tu_a0(editorContext, node));
     return editorCell;
   }

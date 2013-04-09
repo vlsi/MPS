@@ -24,6 +24,7 @@ public class Path_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kwgg2r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_kwgg2r_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_kwgg2r_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kwgg2r_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_kwgg2r_c0(editorContext, node));

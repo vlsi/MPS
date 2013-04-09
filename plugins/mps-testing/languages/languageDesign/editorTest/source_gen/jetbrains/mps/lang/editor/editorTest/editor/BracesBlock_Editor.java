@@ -25,6 +25,7 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nhnpdb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nhnpdb_a");
+    editorCell.setBig(true);
     editorCell.setUsesBraces(true);
     editorCell.addEditorCell(this.createRefNodeList_nhnpdb_a0(editorContext, node));
     return editorCell;

@@ -28,6 +28,7 @@ public class CommentMigrationScriptPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_m9vxxb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_m9vxxb_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);

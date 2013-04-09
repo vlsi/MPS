@@ -38,6 +38,7 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rpujt6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_rpujt6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_rpujt6_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rpujt6_b0(editorContext, node));
     return editorCell;

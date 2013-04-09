@@ -24,6 +24,7 @@ public class SEnum_MemberForValueOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rkyx3t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rkyx3t_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_rkyx3t_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rkyx3t_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_rkyx3t_c0(editorContext, node));

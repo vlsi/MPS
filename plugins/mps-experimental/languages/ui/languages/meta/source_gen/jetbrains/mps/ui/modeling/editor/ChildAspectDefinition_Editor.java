@@ -24,6 +24,7 @@ public class ChildAspectDefinition_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8y02r6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8y02r6_a");
+    editorCell.setBig(true);
     if (renderingCondition_8y02r6_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_8y02r6_a0(editorContext, node));
     }

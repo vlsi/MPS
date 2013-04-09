@@ -26,6 +26,7 @@ public class BuildMps_ModuleSolutionRuntime_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_z6427v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z6427v_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_z6427v_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_z6427v_b0(editorContext, node));
     return editorCell;

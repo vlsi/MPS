@@ -16,6 +16,7 @@ public class Node_GetAllSiblingsOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_oxb33j_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAliasAndParms_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

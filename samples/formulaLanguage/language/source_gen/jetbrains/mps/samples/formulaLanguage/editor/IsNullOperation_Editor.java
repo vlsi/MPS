@@ -30,6 +30,7 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ehpdiz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ehpdiz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_ehpdiz_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ehpdiz_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ehpdiz_c0(editorContext, node));

@@ -25,6 +25,7 @@ public class GeneratorInternal_BuildSource_JavaModule_Editor extends DefaultNode
   private EditorCell createCollection_zc1akc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zc1akc_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_zc1akc_a0(editorContext, node));
     if (renderingCondition_zc1akc_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_zc1akc_b0(editorContext, node));

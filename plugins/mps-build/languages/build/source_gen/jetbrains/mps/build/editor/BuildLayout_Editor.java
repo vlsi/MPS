@@ -16,6 +16,7 @@ public class BuildLayout_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_5wtg0a_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new BuildLayout_containerElements(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

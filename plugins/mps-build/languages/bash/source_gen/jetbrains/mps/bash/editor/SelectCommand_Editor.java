@@ -26,6 +26,7 @@ public class SelectCommand_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3qzlpa_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3qzlpa_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_3qzlpa_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3qzlpa_b0(editorContext, node));
     if (renderingCondition_3qzlpa_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

@@ -29,6 +29,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1qmre8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1qmre8_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
