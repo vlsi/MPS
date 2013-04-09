@@ -25,9 +25,12 @@ import java.util.List;
  * 04 04, 2013
  */
 public class SConceptUtil {
-  public static List<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept) {
+  public static List<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept, boolean includeBaseConcept) {
     List<SAbstractConcept> result = new LinkedList<SAbstractConcept>();
-    if (concept ==null) {
+    if (concept == null) {
+      return result;
+    }
+    if(!includeBaseConcept && concept.getQualifiedName().equals("jetbrains.mps.lang.core.structure.BaseConcept")) {
       return result;
     }
     result.add(concept);
@@ -43,5 +46,9 @@ public class SConceptUtil {
     }
 
     return result;
+  }
+
+  public static List<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept) {
+    return getAllSuperConcepts(concept, false);
   }
 }

@@ -57,15 +57,9 @@ public class DefaultEditor extends DefaultNodeEditor {
 
   @Override
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    myAllSuperConcepts = SConceptUtil.getAllSuperConcepts(node.getConcept());
+    myAllSuperConcepts = SConceptUtil.getAllSuperConcepts(node.getConcept(), false);
     myPropertyNames = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getPropertyNames();
-    for (Iterator<SAbstractConcept> iterator = myAllSuperConcepts.iterator(); iterator.hasNext(); ) {
-      SAbstractConcept next = iterator.next();
-      if (next.getQualifiedName().equals("jetbrains.mps.lang.core.structure.BaseConcept")) {
-        iterator.remove();
-        break;
-      }
-    }
+
     EditorCell_Collection editorCellCollection = EditorCell_Collection.createVertical(editorContext, node);
     editorCellCollection.setBig(true);
     EditorCell rootCell = new EditorCell_Constant(editorContext, node, node.getConcept().getName(), false);
