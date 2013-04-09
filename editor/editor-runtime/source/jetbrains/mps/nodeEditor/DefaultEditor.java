@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
@@ -30,17 +28,20 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.*;
-import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptUtil;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.awt.Color;
 import java.util.Iterator;
 import java.util.List;
 
@@ -70,11 +71,11 @@ public class DefaultEditor extends DefaultNodeEditor {
     EditorCell rootCell = new EditorCell_Constant(editorContext, node, node.getConcept().getName(), false);
     editorCellCollection.addEditorCell(rootCell);
     addProperties(editorContext, node, editorCellCollection);
-    addChild(editorContext, node, editorCellCollection);
+    addChildrenAndRefs(editorContext, node, editorCellCollection);
     return editorCellCollection;
   }
 
-  private void addChild(EditorContext editorContext, SNode node, EditorCell_Collection cellCollection) {
+  private void addChildrenAndRefs(EditorContext editorContext, final SNode node, EditorCell_Collection cellCollection) {
     for (SAbstractConcept concept : myAllSuperConcepts) {
       for (SLink link : concept.getLinks()) {
         EditorCell_Collection collection = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -97,18 +98,23 @@ public class DefaultEditor extends DefaultNodeEditor {
         EditorCell editorCell;
 
         if (link.isMultiple()) {
-          AbstractCellListHandler handler = new annotationListHandler(node, role, editorContext);
+          AbstractCellListHandler handler = new ListHandler(node, role, editorContext);
           editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
           editorCell.setRole(handler.getElementRole());
         } else {
-          CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+          CellProviderWithRole provider;
+          if (link.isReference()) {
+            provider = new RefCellCellProvider(node, editorContext);
+            provider.setAuxiliaryCellProvider(new MyAbstractCellProvider());
+          } else {
+            provider = new RefNodeCellProvider(node, editorContext);
+          }
           provider.setRole(role);
           provider.setNoTargetText("<no " + role + ">");
           editorCell = provider.createEditorCell(editorContext);
           editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-
-
         }
+
         collection.addEditorCell(editorCell);
         cellCollection.addEditorCell(collection);
       }
@@ -123,7 +129,8 @@ public class DefaultEditor extends DefaultNodeEditor {
           continue;
         }
         EditorCell_Collection collection = EditorCell_Collection.createHorizontal(editorContext, node);
-        EditorCell_Indent indent = new EditorCell_Indent(editorContext, node);
+        EditorCell_Constant propertiesLabel = new EditorCell_Constant(editorContext, node, "properties", false);
+        propertiesLabel.setTextColor(Color.BLUE);
         EditorCell constant = new EditorCell_Constant(editorContext, node, name + ":", false);
         CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
         provider.setRole(name);
@@ -131,7 +138,7 @@ public class DefaultEditor extends DefaultNodeEditor {
         EditorCell editorCell;
         editorCell = provider.createEditorCell(editorContext);
         editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-        collection.addEditorCell(indent);
+        collection.addEditorCell(propertiesLabel);
         collection.addEditorCell(constant);
         collection.addEditorCell(editorCell);
         cellCollection.addEditorCell(collection);
@@ -139,8 +146,8 @@ public class DefaultEditor extends DefaultNodeEditor {
     }
   }
 
-  private static class annotationListHandler extends RefNodeListHandler {
-    public annotationListHandler(SNode ownerNode, String childRole, EditorContext context) {
+  private static class ListHandler extends RefNodeListHandler {
+    public ListHandler(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -156,8 +163,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell(EditorContext editorContext) {
-      EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      EditorCell emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
@@ -172,6 +178,28 @@ public class DefaultEditor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
+    }
+  }
+
+  private static class MyAbstractCellProvider extends AbstractCellProvider {
+    @Override
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+        public String getText() {
+          if (getSNode().getName() != null) {
+            return getSNode().getName();
+          }
+          return getSNode().getPresentation();
+        }
+
+        public void setText(String s) {
+        }
+
+        public boolean isValidText(String s) {
+          return EqualUtil.equals(s, getText());
+        }
+      }, getSNode());
+      return editorCell;
     }
   }
 }
