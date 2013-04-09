@@ -13,11 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.runtime;
+package jetbrains.mps.openapi.editor.node;
+
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.smodel.runtime.ConceptAspect;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * User: shatalin
  * Date: 10/2/12
  */
-public interface EditorDescriptor {
+public interface EditorAspect extends ConceptAspect {
+  EditorCell createEditorCell(EditorContext editorContext, SNode node);
+
+  EditorCell createInspectedCell(EditorContext editorContext, SNode node);
 }

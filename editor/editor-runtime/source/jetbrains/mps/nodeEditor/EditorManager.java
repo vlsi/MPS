@@ -34,19 +34,25 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.node.EditorAspect;
+import jetbrains.mps.openapi.editor.node.EditorAspectDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -371,7 +377,7 @@ public class EditorManager {
       //reset creating inspected cell : we don't create not-root inspected cells
       myCreatingInspectedCell = false;
 
-      INodeEditor editor = getEditor(context, node);
+      EditorAspect editor = getEditor(context, node);
       EditorComponent editorComponent = getEditorComponent(context);
       EditorCell nodeCell = null;
       NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
@@ -613,12 +619,22 @@ public class EditorManager {
     return createRootCell(context, node, events, true);
   }
 
-  private INodeEditor getEditor(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
-    INodeEditor editor = jetbrains.mps.editor.runtime.impl.EditorsFinderManager.getInstance().loadEditor(context, node);
-    if (editor == null) {
-      editor = new DefaultNodeEditor();
+  private EditorAspect getEditor(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
+    SConcept concept = node.getConcept();
+    if (concept != null) {
+      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(concept.getQualifiedName()));
+      if (languageRuntime != null) {
+        EditorAspectDescriptor aspectDescriptor = languageRuntime.getAspectDescriptor(EditorAspectDescriptor.class);
+        if (aspectDescriptor != null) {
+          EditorAspect nodeEditor = aspectDescriptor.getAspect(concept);
+          if (nodeEditor != null) {
+            return nodeEditor;
+          }
+        }
+      }
     }
-    return editor;
+
+    return new DefaultNodeEditor();
   }
 
   private EditorComponent getEditorComponent(jetbrains.mps.openapi.editor.EditorContext context) {

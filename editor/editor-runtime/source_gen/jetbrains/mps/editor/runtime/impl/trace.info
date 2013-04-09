@@ -284,252 +284,174 @@
     </scopeInfo>
     <unitInfo nodeId="444720911773080383" fileName="NodeSubstituteActionsComparator.java" startLine="11" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator" />
   </root>
-  <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/6001307866941531763">
-    <nodeInfo nodeId="6001307866941538929" fileName="EditorsFinderManager.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="7260964793516376774" fileName="EditorsFinderManager.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourInstance" />
-    <nodeInfo nodeId="6001307866941557306" fileName="EditorsFinderManager.java" startLine="53" startPosition="26" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941538919" fileName="EditorsFinderManager.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoaderManager" />
-    <nodeInfo nodeId="6001307866941563665" fileName="EditorsFinderManager.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedEditors" />
-    <nodeInfo nodeId="6001307866941538923" fileName="EditorsFinderManager.java" startLine="60" startPosition="65" endLine="61" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7260964793516469197" fileName="EditorsFinderManager.java" startLine="64" startPosition="34" endLine="65" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941562927" fileName="EditorsFinderManager.java" startLine="68" startPosition="31" endLine="69" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941563656" fileName="EditorsFinderManager.java" startLine="73" startPosition="34" endLine="74" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941538905" fileName="EditorsFinderManager.java" startLine="80" startPosition="36" endLine="81" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941575556" fileName="EditorsFinderManager.java" startLine="84" startPosition="81" endLine="85" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="6001307866941575634" fileName="EditorsFinderManager.java" startLine="85" startPosition="267" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6001307866941646991" fileName="EditorsFinderManager.java" startLine="87" startPosition="74" endLine="88" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941647643" fileName="EditorsFinderManager.java" startLine="89" startPosition="5" endLine="90" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941647002" fileName="EditorsFinderManager.java" startLine="91" startPosition="64" endLine="92" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941647045" fileName="EditorsFinderManager.java" startLine="94" startPosition="13" endLine="95" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941647019" fileName="EditorsFinderManager.java" startLine="96" startPosition="44" endLine="97" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941647028" fileName="EditorsFinderManager.java" startLine="98" startPosition="44" endLine="99" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941647037" fileName="EditorsFinderManager.java" startLine="100" startPosition="47" endLine="101" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941647051" fileName="EditorsFinderManager.java" startLine="103" startPosition="7" endLine="104" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941647054" fileName="EditorsFinderManager.java" startLine="105" startPosition="5" endLine="106" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941647113" fileName="EditorsFinderManager.java" startLine="107" startPosition="25" endLine="108" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941647091" fileName="EditorsFinderManager.java" startLine="110" startPosition="11" endLine="111" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941647099" fileName="EditorsFinderManager.java" startLine="111" startPosition="59" endLine="112" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941647104" fileName="EditorsFinderManager.java" startLine="112" startPosition="30" endLine="113" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941647068" fileName="EditorsFinderManager.java" startLine="114" startPosition="41" endLine="115" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941647073" fileName="EditorsFinderManager.java" startLine="115" startPosition="21" endLine="116" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941647080" fileName="EditorsFinderManager.java" startLine="117" startPosition="40" endLine="118" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941647085" fileName="EditorsFinderManager.java" startLine="118" startPosition="21" endLine="119" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941647121" fileName="EditorsFinderManager.java" startLine="121" startPosition="5" endLine="122" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2116786884968856745" fileName="EditorsFinderManager.java" startLine="128" startPosition="36" endLine="129" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2116786884968856756" fileName="EditorsFinderManager.java" startLine="130" startPosition="34" endLine="131" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2116786884968856770" fileName="EditorsFinderManager.java" startLine="131" startPosition="175" endLine="132" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2116786884968856774" fileName="EditorsFinderManager.java" startLine="134" startPosition="126" endLine="135" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2116786884968856776" fileName="EditorsFinderManager.java" startLine="135" startPosition="49" endLine="136" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2116786884968856783" fileName="EditorsFinderManager.java" startLine="137" startPosition="9" endLine="138" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2116786884968856790" fileName="EditorsFinderManager.java" startLine="138" startPosition="91" endLine="139" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2116786884968856797" fileName="EditorsFinderManager.java" startLine="139" startPosition="81" endLine="140" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2116786884968856808" fileName="EditorsFinderManager.java" startLine="141" startPosition="68" endLine="142" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2116786884968856816" fileName="EditorsFinderManager.java" startLine="143" startPosition="92" endLine="144" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="2116786884968856823" fileName="EditorsFinderManager.java" startLine="145" startPosition="18" endLine="146" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2116786884968856828" fileName="EditorsFinderManager.java" startLine="147" startPosition="11" endLine="148" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2116786884968856838" fileName="EditorsFinderManager.java" startLine="149" startPosition="35" endLine="150" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2116786884968856842" fileName="EditorsFinderManager.java" startLine="152" startPosition="134" endLine="153" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2116786884968856849" fileName="EditorsFinderManager.java" startLine="154" startPosition="251" endLine="155" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2116786884968856875" fileName="EditorsFinderManager.java" startLine="158" startPosition="43" endLine="159" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2116786884968856903" fileName="EditorsFinderManager.java" startLine="164" startPosition="43" endLine="165" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2116786884968856912" fileName="EditorsFinderManager.java" startLine="169" startPosition="9" endLine="170" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941575720" fileName="EditorsFinderManager.java" startLine="175" startPosition="69" endLine="176" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941575733" fileName="EditorsFinderManager.java" startLine="177" startPosition="27" endLine="178" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941575735" fileName="EditorsFinderManager.java" startLine="179" startPosition="5" endLine="180" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941575741" fileName="EditorsFinderManager.java" startLine="180" startPosition="71" endLine="181" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941575750" fileName="EditorsFinderManager.java" startLine="182" startPosition="40" endLine="183" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941575789" fileName="EditorsFinderManager.java" startLine="185" startPosition="9" endLine="186" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941575801" fileName="EditorsFinderManager.java" startLine="186" startPosition="119" endLine="187" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941575813" fileName="EditorsFinderManager.java" startLine="188" startPosition="32" endLine="189" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941575815" fileName="EditorsFinderManager.java" startLine="190" startPosition="7" endLine="191" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941575821" fileName="EditorsFinderManager.java" startLine="191" startPosition="54" endLine="192" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941575826" fileName="EditorsFinderManager.java" startLine="192" startPosition="31" endLine="193" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941575763" fileName="EditorsFinderManager.java" startLine="194" startPosition="40" endLine="195" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941575772" fileName="EditorsFinderManager.java" startLine="196" startPosition="40" endLine="197" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941575781" fileName="EditorsFinderManager.java" startLine="198" startPosition="27" endLine="199" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941575832" fileName="EditorsFinderManager.java" startLine="200" startPosition="5" endLine="201" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941575538" fileName="EditorsFinderManager.java" startLine="204" startPosition="42" endLine="205" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7260964793516376819" fileName="EditorsFinderManager.java" startLine="214" startPosition="5" endLine="215" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941575666" fileName="EditorsFinderManager.java" startLine="223" startPosition="75" endLine="224" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941575679" fileName="EditorsFinderManager.java" startLine="228" startPosition="78" endLine="229" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2116786884968856821" fileName="EditorsFinderManager.java" startLine="145" startPosition="16" endLine="147" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6001307866941575639" fileName="EditorsFinderManager.java" startLine="219" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultInterfaceEditor#()V" />
-    <nodeInfo nodeId="6001307866941531765" fileName="EditorsFinderManager.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorsFinderManager#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-    <nodeInfo nodeId="7260964793516469181" fileName="EditorsFinderManager.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorsFinderManager#()V" />
-    <nodeInfo nodeId="6001307866941538891" fileName="EditorsFinderManager.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="6001307866941646981" fileName="EditorsFinderManager.java" startLine="86" startPosition="0" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2116786884968856833" fileName="EditorsFinderManager.java" startLine="148" startPosition="83" endLine="151" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2116786884968856847" fileName="EditorsFinderManager.java" startLine="153" startPosition="149" endLine="156" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2116786884968856873" fileName="EditorsFinderManager.java" startLine="158" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2116786884968856901" fileName="EditorsFinderManager.java" startLine="164" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6001307866941575728" fileName="EditorsFinderManager.java" startLine="176" startPosition="76" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6001307866941575745" fileName="EditorsFinderManager.java" startLine="181" startPosition="28" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6001307866941575808" fileName="EditorsFinderManager.java" startLine="187" startPosition="83" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6001307866941557302" fileName="EditorsFinderManager.java" startLine="204" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearCaches#()V" />
-    <nodeInfo nodeId="6001307866941557295" fileName="EditorsFinderManager.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unload#()V" />
-    <nodeInfo nodeId="6001307866941538895" fileName="EditorsFinderManager.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="2116786884968856751" fileName="EditorsFinderManager.java" startLine="129" startPosition="78" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2116786884968856772" fileName="EditorsFinderManager.java" startLine="133" startPosition="9" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7260964793516376825" fileName="EditorsFinderManager.java" startLine="209" startPosition="30" endLine="213" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941575644" fileName="EditorsFinderManager.java" startLine="222" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="6001307866941575654" fileName="EditorsFinderManager.java" startLine="227" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2116786884968856814" fileName="EditorsFinderManager.java" startLine="142" startPosition="104" endLine="147" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2116786884968856867" fileName="EditorsFinderManager.java" startLine="156" startPosition="13" endLine="161" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2116786884968856894" fileName="EditorsFinderManager.java" startLine="162" startPosition="150" endLine="167" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6001307866941540641" fileName="EditorsFinderManager.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadListener" />
-    <nodeInfo nodeId="6001307866941538899" fileName="EditorsFinderManager.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7260964793516376791" fileName="EditorsFinderManager.java" startLine="208" startPosition="52" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6001307866941647016" fileName="EditorsFinderManager.java" startLine="93" startPosition="32" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6001307866941557308" fileName="EditorsFinderManager.java" startLine="208" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/editor/runtime/impl/EditorsFinderManager;" />
-    <nodeInfo nodeId="6001307866941647011" fileName="EditorsFinderManager.java" startLine="92" startPosition="78" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6001307866941647065" fileName="EditorsFinderManager.java" startLine="109" startPosition="12" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6001307866941647063" fileName="EditorsFinderManager.java" startLine="109" startPosition="10" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6001307866941646994" fileName="EditorsFinderManager.java" startLine="90" startPosition="160" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6001307866941647059" fileName="EditorsFinderManager.java" startLine="106" startPosition="42" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6001307866941575760" fileName="EditorsFinderManager.java" startLine="184" startPosition="5" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2116786884968856840" fileName="EditorsFinderManager.java" startLine="151" startPosition="11" endLine="168" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6001307866941575706" fileName="EditorsFinderManager.java" startLine="175" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findEditorByConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/INodeEditor;" />
-    <nodeInfo nodeId="2116786884968856802" fileName="EditorsFinderManager.java" startLine="140" startPosition="74" endLine="169" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="6001307866941575545" fileName="EditorsFinderManager.java" startLine="84" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadEditor#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/INodeEditor;" />
-    <nodeInfo nodeId="2116786884968856741" fileName="EditorsFinderManager.java" startLine="127" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/nodeEditor/INodeEditor;" />
-    <nodeInfo nodeId="6001307866941575866" fileName="EditorsFinderManager.java" startLine="125" startPosition="58" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6001307866941575858" fileName="EditorsFinderManager.java" startLine="125" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findEditor#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/INodeEditor;" />
-    <scopeInfo nodeId="6001307866941575642" fileName="EditorsFinderManager.java" startLine="219" startPosition="37" endLine="219" endPosition="37" />
-    <scopeInfo nodeId="6001307866941557298" fileName="EditorsFinderManager.java" startLine="53" startPosition="26" endLine="54" endPosition="20" />
-    <scopeInfo nodeId="6001307866941531768" fileName="EditorsFinderManager.java" startLine="60" startPosition="65" endLine="61" endPosition="66" />
-    <scopeInfo nodeId="7260964793516469184" fileName="EditorsFinderManager.java" startLine="64" startPosition="34" endLine="65" endPosition="60" />
-    <scopeInfo nodeId="6001307866941538894" fileName="EditorsFinderManager.java" startLine="68" startPosition="31" endLine="69" endPosition="60" />
-    <scopeInfo nodeId="6001307866941538898" fileName="EditorsFinderManager.java" startLine="73" startPosition="34" endLine="74" endPosition="63" />
-    <scopeInfo nodeId="6001307866941538904" fileName="EditorsFinderManager.java" startLine="80" startPosition="36" endLine="81" endPosition="36" />
-    <scopeInfo nodeId="6001307866941646990" fileName="EditorsFinderManager.java" startLine="87" startPosition="74" endLine="88" endPosition="35" />
-    <scopeInfo nodeId="6001307866941647044" fileName="EditorsFinderManager.java" startLine="94" startPosition="13" endLine="95" endPosition="57" />
-    <scopeInfo nodeId="6001307866941647017" fileName="EditorsFinderManager.java" startLine="96" startPosition="0" endLine="97" endPosition="23">
-      <varInfo nodeId="6001307866941647024" varName="e" />
+  <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/6001307866941531763" />
+  <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/6814795205152004296">
+    <nodeInfo nodeId="5937294133449372415" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6814795205152161783" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="36" startPosition="31" endLine="37" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7652467906331944851" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="40" startPosition="34" endLine="41" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6814795205152134830" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="46" startPosition="36" endLine="47" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6814795205152056934" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="50" startPosition="81" endLine="51" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5937294133331099814" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="55" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguageRuntime" />
+    <nodeInfo nodeId="5937294133331167998" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="56" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorAspects" />
+    <nodeInfo nodeId="5937294133331101751" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="58" startPosition="72" endLine="59" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5937294133331143922" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="62" startPosition="69" endLine="63" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5937294133449174750" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="63" startPosition="81" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5937294133331185060" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="64" startPosition="16" endLine="65" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5937294133331208660" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="65" startPosition="64" endLine="66" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5937294133331217059" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="67" startPosition="33" endLine="68" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1576999195464857747" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="69" startPosition="7" endLine="70" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1576999195464936522" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="71" startPosition="33" endLine="72" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1576999195464936528" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="72" startPosition="78" endLine="73" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1576999195465281282" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="76" startPosition="132" endLine="77" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1576999195465324009" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="78" startPosition="44" endLine="79" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1576999195464187809" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="82" startPosition="14" endLine="83" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1576999195465443589" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="83" startPosition="54" endLine="84" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1576999195465508896" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="85" startPosition="41" endLine="86" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1576999195465532956" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="88" startPosition="102" endLine="89" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1576999195465532966" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="90" startPosition="44" endLine="91" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5937294133331218570" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="94" startPosition="7" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1576999195465105155" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="98" startPosition="80" endLine="99" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1576999195465139743" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="100" startPosition="36" endLine="101" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1576999195465105170" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="102" startPosition="7" endLine="103" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1576999195465182460" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="104" startPosition="43" endLine="105" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1576999195465244833" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="106" startPosition="7" endLine="107" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5937294133446904189" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="110" startPosition="63" endLine="111" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5937294133446927285" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="112" startPosition="29" endLine="113" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5937294133447138194" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="114" startPosition="7" endLine="115" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5937294133447625747" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="115" startPosition="134" endLine="116" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5937294133447732168" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="117" startPosition="32" endLine="118" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5937294133447815370" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="120" startPosition="11" endLine="121" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5937294133447815381" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="121" startPosition="80" endLine="122" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5937294133449465200" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="123" startPosition="41" endLine="124" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5937294133449539379" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="125" startPosition="37" endLine="126" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5937294133449561487" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="127" startPosition="42" endLine="128" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5937294133449574256" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="129" startPosition="42" endLine="130" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5937294133449586730" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="131" startPosition="45" endLine="132" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5937294133449598898" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="133" startPosition="44" endLine="134" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5937294133449610982" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="135" startPosition="38" endLine="136" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5937294133448122616" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="137" startPosition="7" endLine="138" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6814795205152137067" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InterpretedEditorAspectDescriptorFactory#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
+    <nodeInfo nodeId="6814795205152130472" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="6814795205152130478" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="6814795205152054331" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAspectDescriptor#(Ljetbrains/mps/smodel/language/LanguageRuntime;)Ljetbrains/mps/openapi/editor/node/EditorAspectDescriptor;" />
+    <nodeInfo nodeId="5937294133329578369" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InterpretedEditorAspectDescriptor#(Ljetbrains/mps/smodel/language/LanguageRuntime;)V" />
+    <nodeInfo nodeId="5937294133331214504" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="66" startPosition="90" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1576999195465309206" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="77" startPosition="84" endLine="80" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1576999195465495515" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="84" startPosition="92" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1576999195465532961" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="89" startPosition="84" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1576999195465128090" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="99" startPosition="153" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1576999195465166402" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="103" startPosition="120" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5937294133446921363" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="111" startPosition="123" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5937294133447719756" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="116" startPosition="119" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1576999195464920768" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="70" startPosition="49" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6814795205152130484" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1576999195464253481" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="75" startPosition="57" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1576999195465405678" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="87" startPosition="9" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1576999195465025273" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="98" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadSuperConceptEditor#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/openapi/editor/node/EditorAspect;" />
+    <nodeInfo nodeId="1576999195463972725" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="82" startPosition="12" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5937294133448014692" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="119" startPosition="7" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1576999195463955312" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="74" startPosition="7" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5937294133446840656" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="110" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadEditor#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/openapi/editor/node/EditorAspect;" />
+    <nodeInfo nodeId="5937294133329400928" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="62" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAspect#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/openapi/editor/node/EditorAspect;" />
+    <scopeInfo nodeId="6814795205152137070" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="33" startPosition="88" endLine="33" endPosition="88" />
+    <scopeInfo nodeId="6814795205152130477" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="36" startPosition="31" endLine="37" endPosition="121" />
+    <scopeInfo nodeId="6814795205152130483" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="40" startPosition="34" endLine="41" endPosition="117" />
+    <scopeInfo nodeId="6814795205152130492" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="46" startPosition="36" endLine="47" endPosition="68" />
+    <scopeInfo nodeId="6814795205152054338" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="50" startPosition="81" endLine="51" endPosition="99" />
+    <scopeInfo nodeId="5937294133329578372" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="58" startPosition="72" endLine="59" endPosition="34" />
+    <scopeInfo nodeId="5937294133331214506" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="67" startPosition="33" endLine="68" endPosition="28" />
+    <scopeInfo nodeId="1576999195465309208" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="78" startPosition="44" endLine="79" endPosition="39" />
+    <scopeInfo nodeId="1576999195465495517" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="85" startPosition="41" endLine="86" endPosition="36" />
+    <scopeInfo nodeId="1576999195465532965" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="90" startPosition="44" endLine="91" endPosition="39" />
+    <scopeInfo nodeId="1576999195465128092" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="100" startPosition="36" endLine="101" endPosition="20" />
+    <scopeInfo nodeId="1576999195465166404" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="104" startPosition="43" endLine="105" endPosition="20" />
+    <scopeInfo nodeId="5937294133446921365" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="112" startPosition="29" endLine="113" endPosition="20" />
+    <scopeInfo nodeId="5937294133447719758" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="117" startPosition="32" endLine="118" endPosition="20" />
+    <scopeInfo nodeId="5937294133448014695" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="123" startPosition="0" endLine="124" endPosition="21">
+      <varInfo nodeId="5937294133448014697" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941647018" fileName="EditorsFinderManager.java" startLine="96" startPosition="44" endLine="97" endPosition="23" />
-    <scopeInfo nodeId="6001307866941647026" fileName="EditorsFinderManager.java" startLine="98" startPosition="0" endLine="99" endPosition="23">
-      <varInfo nodeId="6001307866941647033" varName="e" />
+    <scopeInfo nodeId="5937294133448014701" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="123" startPosition="41" endLine="124" endPosition="21" />
+    <scopeInfo nodeId="5937294133448105816" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="125" startPosition="0" endLine="126" endPosition="21">
+      <varInfo nodeId="5937294133448105817" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941647027" fileName="EditorsFinderManager.java" startLine="98" startPosition="44" endLine="99" endPosition="23" />
-    <scopeInfo nodeId="6001307866941647035" fileName="EditorsFinderManager.java" startLine="100" startPosition="0" endLine="101" endPosition="23">
-      <varInfo nodeId="6001307866941647042" varName="e" />
+    <scopeInfo nodeId="5937294133448105819" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="125" startPosition="37" endLine="126" endPosition="21" />
+    <scopeInfo nodeId="5937294133448722047" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="127" startPosition="0" endLine="128" endPosition="21">
+      <varInfo nodeId="5937294133448722048" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941647036" fileName="EditorsFinderManager.java" startLine="100" startPosition="47" endLine="101" endPosition="23" />
-    <scopeInfo nodeId="6001307866941647112" fileName="EditorsFinderManager.java" startLine="107" startPosition="25" endLine="108" endPosition="58" />
-    <scopeInfo nodeId="2116786884968856815" fileName="EditorsFinderManager.java" startLine="143" startPosition="92" endLine="144" endPosition="21" />
-    <scopeInfo nodeId="2116786884968856822" fileName="EditorsFinderManager.java" startLine="145" startPosition="18" endLine="146" endPosition="90" />
-    <scopeInfo nodeId="2116786884968856837" fileName="EditorsFinderManager.java" startLine="149" startPosition="35" endLine="150" endPosition="30" />
-    <scopeInfo nodeId="2116786884968856848" fileName="EditorsFinderManager.java" startLine="154" startPosition="251" endLine="155" endPosition="132" />
-    <scopeInfo nodeId="2116786884968856874" fileName="EditorsFinderManager.java" startLine="158" startPosition="43" endLine="159" endPosition="116" />
-    <scopeInfo nodeId="2116786884968856902" fileName="EditorsFinderManager.java" startLine="164" startPosition="43" endLine="165" endPosition="116" />
-    <scopeInfo nodeId="6001307866941575732" fileName="EditorsFinderManager.java" startLine="177" startPosition="27" endLine="178" endPosition="18" />
-    <scopeInfo nodeId="6001307866941575749" fileName="EditorsFinderManager.java" startLine="182" startPosition="40" endLine="183" endPosition="70" />
-    <scopeInfo nodeId="6001307866941575812" fileName="EditorsFinderManager.java" startLine="188" startPosition="32" endLine="189" endPosition="20" />
-    <scopeInfo nodeId="6001307866941575761" fileName="EditorsFinderManager.java" startLine="194" startPosition="0" endLine="195" endPosition="19">
-      <varInfo nodeId="6001307866941575768" varName="e" />
+    <scopeInfo nodeId="5937294133448722050" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="127" startPosition="42" endLine="128" endPosition="21" />
+    <scopeInfo nodeId="5937294133448751312" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="129" startPosition="0" endLine="130" endPosition="21">
+      <varInfo nodeId="5937294133448751313" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941575762" fileName="EditorsFinderManager.java" startLine="194" startPosition="40" endLine="195" endPosition="19" />
-    <scopeInfo nodeId="6001307866941575770" fileName="EditorsFinderManager.java" startLine="196" startPosition="0" endLine="197" endPosition="19">
-      <varInfo nodeId="6001307866941575777" varName="e" />
+    <scopeInfo nodeId="5937294133448751315" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="129" startPosition="42" endLine="130" endPosition="21" />
+    <scopeInfo nodeId="5937294133448790325" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="131" startPosition="0" endLine="132" endPosition="21">
+      <varInfo nodeId="5937294133448790326" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941575771" fileName="EditorsFinderManager.java" startLine="196" startPosition="40" endLine="197" endPosition="19" />
-    <scopeInfo nodeId="6001307866941575779" fileName="EditorsFinderManager.java" startLine="198" startPosition="0" endLine="199" endPosition="19">
-      <varInfo nodeId="6001307866941575786" varName="t" />
+    <scopeInfo nodeId="5937294133448790328" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="131" startPosition="45" endLine="132" endPosition="21" />
+    <scopeInfo nodeId="5937294133448833865" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="133" startPosition="0" endLine="134" endPosition="21">
+      <varInfo nodeId="5937294133448833866" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941575780" fileName="EditorsFinderManager.java" startLine="198" startPosition="27" endLine="199" endPosition="19" />
-    <scopeInfo nodeId="6001307866941557305" fileName="EditorsFinderManager.java" startLine="204" startPosition="42" endLine="205" endPosition="49" />
-    <scopeInfo nodeId="6001307866941575651" fileName="EditorsFinderManager.java" startLine="223" startPosition="75" endLine="224" endPosition="57" />
-    <scopeInfo nodeId="6001307866941575661" fileName="EditorsFinderManager.java" startLine="228" startPosition="78" endLine="229" endPosition="107" />
-    <scopeInfo nodeId="6001307866941647066" fileName="EditorsFinderManager.java" startLine="114" startPosition="0" endLine="116" endPosition="39">
-      <varInfo nodeId="6001307866941647076" varName="e" />
+    <scopeInfo nodeId="5937294133448833868" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="133" startPosition="44" endLine="134" endPosition="21" />
+    <scopeInfo nodeId="5937294133449269220" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="135" startPosition="0" endLine="136" endPosition="21">
+      <varInfo nodeId="5937294133449269221" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941647067" fileName="EditorsFinderManager.java" startLine="114" startPosition="41" endLine="116" endPosition="39" />
-    <scopeInfo nodeId="6001307866941647078" fileName="EditorsFinderManager.java" startLine="117" startPosition="0" endLine="119" endPosition="39">
-      <varInfo nodeId="6001307866941647088" varName="e" />
+    <scopeInfo nodeId="5937294133449269223" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="135" startPosition="38" endLine="136" endPosition="21" />
+    <scopeInfo nodeId="6814795205152137067" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="33" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="6814795205152137344" varName="mpsCoreComponents" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941647079" fileName="EditorsFinderManager.java" startLine="117" startPosition="40" endLine="119" endPosition="39" />
-    <scopeInfo nodeId="2116786884968856755" fileName="EditorsFinderManager.java" startLine="130" startPosition="34" endLine="132" endPosition="22" />
-    <scopeInfo nodeId="2116786884968856773" fileName="EditorsFinderManager.java" startLine="134" startPosition="126" endLine="136" endPosition="67" />
-    <scopeInfo nodeId="6001307866941575639" fileName="EditorsFinderManager.java" startLine="219" startPosition="0" endLine="221" endPosition="0" />
-    <scopeInfo nodeId="6001307866941531765" fileName="EditorsFinderManager.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="2481791643076283964" varName="coreComponents" />
+    <scopeInfo nodeId="1576999195464920770" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="71" startPosition="33" endLine="73" endPosition="28" />
+    <scopeInfo nodeId="5937294133448014694" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="120" startPosition="11" endLine="122" endPosition="34">
+      <varInfo nodeId="5937294133447815371" varName="cons" />
     </scopeInfo>
-    <scopeInfo nodeId="7260964793516469181" fileName="EditorsFinderManager.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="6001307866941538891" fileName="EditorsFinderManager.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="6001307866941647090" fileName="EditorsFinderManager.java" startLine="110" startPosition="11" endLine="113" endPosition="57">
-      <varInfo nodeId="6001307866941647092" varName="c" />
+    <scopeInfo nodeId="6814795205152130472" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="6814795205152130478" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="6814795205152054331" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="6814795205152054335" varName="runtime" />
     </scopeInfo>
-    <scopeInfo nodeId="2116786884968856873" fileName="EditorsFinderManager.java" startLine="158" startPosition="0" endLine="161" endPosition="0">
-      <varInfo nodeId="2116786884968856873" varName="it" />
+    <scopeInfo nodeId="5937294133329578369" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="5937294133329578654" varName="runtime" />
     </scopeInfo>
-    <scopeInfo nodeId="2116786884968856901" fileName="EditorsFinderManager.java" startLine="164" startPosition="0" endLine="167" endPosition="0">
-      <varInfo nodeId="2116786884968856901" varName="it" />
+    <scopeInfo nodeId="1576999195464253487" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="76" startPosition="132" endLine="80" endPosition="11">
+      <varInfo nodeId="1576999195465281283" varName="superInerfaceEditor" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941557302" fileName="EditorsFinderManager.java" startLine="204" startPosition="0" endLine="207" endPosition="0" />
-    <scopeInfo nodeId="6001307866941557295" fileName="EditorsFinderManager.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="6001307866941538895" fileName="EditorsFinderManager.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="7260964793516376792" fileName="EditorsFinderManager.java" startLine="209" startPosition="30" endLine="213" endPosition="8" />
-    <scopeInfo nodeId="6001307866941575644" fileName="EditorsFinderManager.java" startLine="222" startPosition="0" endLine="226" endPosition="0">
-      <varInfo nodeId="6001307866941575647" varName="context" />
-      <varInfo nodeId="6001307866941575649" varName="node" />
+    <scopeInfo nodeId="1576999195465405684" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="88" startPosition="102" endLine="92" endPosition="11">
+      <varInfo nodeId="1576999195465532957" varName="superInerfaceEditor" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941575654" fileName="EditorsFinderManager.java" startLine="227" startPosition="0" endLine="231" endPosition="0">
-      <varInfo nodeId="6001307866941575657" varName="context" />
-      <varInfo nodeId="6001307866941575659" varName="node" />
+    <scopeInfo nodeId="6814795205152130484" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1576999195463955314" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="75" startPosition="57" endLine="81" endPosition="9" />
+    <scopeInfo nodeId="1576999195464253481" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="75" startPosition="57" endLine="81" endPosition="9">
+      <varInfo nodeId="1576999195464253483" varName="superInterface" />
     </scopeInfo>
-    <scopeInfo nodeId="2116786884968856893" fileName="EditorsFinderManager.java" startLine="162" startPosition="150" endLine="167" endPosition="15" />
-    <scopeInfo nodeId="6001307866941538899" fileName="EditorsFinderManager.java" startLine="77" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="6001307866941557311" fileName="EditorsFinderManager.java" startLine="208" startPosition="52" endLine="215" endPosition="23" />
-    <scopeInfo nodeId="6001307866941575788" fileName="EditorsFinderManager.java" startLine="185" startPosition="9" endLine="193" endPosition="46">
-      <varInfo nodeId="6001307866941575816" varName="cons" />
-      <varInfo nodeId="6001307866941575802" varName="editorClass" />
-      <varInfo nodeId="6001307866941575790" varName="editorClassName" />
+    <scopeInfo nodeId="1576999195465405678" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="87" startPosition="9" endLine="93" endPosition="9">
+      <varInfo nodeId="1576999195465405680" varName="superInterface" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941647015" fileName="EditorsFinderManager.java" startLine="93" startPosition="32" endLine="102" endPosition="9" />
-    <scopeInfo nodeId="2116786884968856841" fileName="EditorsFinderManager.java" startLine="152" startPosition="134" endLine="161" endPosition="15">
-      <varInfo nodeId="2116786884968856843" varName="conceptDeclaration" />
+    <scopeInfo nodeId="1576999195465048702" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="98" startPosition="80" endLine="107" endPosition="60">
+      <varInfo nodeId="1576999195465105171" varName="editorAspectDescriptor" />
+      <varInfo nodeId="1576999195465105156" varName="languageRuntime" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941557308" fileName="EditorsFinderManager.java" startLine="208" startPosition="0" endLine="217" endPosition="0" />
-    <scopeInfo nodeId="6001307866941647064" fileName="EditorsFinderManager.java" startLine="109" startPosition="12" endLine="120" endPosition="7" />
-    <scopeInfo nodeId="6001307866941647001" fileName="EditorsFinderManager.java" startLine="91" startPosition="64" endLine="104" endPosition="37">
-      <varInfo nodeId="6001307866941647003" varName="constructor" />
+    <scopeInfo nodeId="1576999195463972726" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="82" startPosition="14" endLine="93" endPosition="9">
+      <varInfo nodeId="1576999195464187810" varName="concept" />
+      <varInfo nodeId="1576999195465443590" varName="superConceptEditor" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941575709" fileName="EditorsFinderManager.java" startLine="175" startPosition="69" endLine="201" endPosition="16">
-      <varInfo nodeId="6001307866941575736" varName="editorModelDescriptor" />
-      <varInfo nodeId="6001307866941575742" varName="editorUID" />
-      <varInfo nodeId="6001307866941575721" varName="language" />
+    <scopeInfo nodeId="1576999195465025273" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="98" startPosition="0" endLine="109" endPosition="0">
+      <varInfo nodeId="1576999195465086312" varName="superConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="2116786884968856807" fileName="EditorsFinderManager.java" startLine="141" startPosition="68" endLine="168" endPosition="11">
-      <varInfo nodeId="2116786884968856809" varName="abstractConceptDeclaration" />
-      <varInfo nodeId="2116786884968856829" varName="nodeEditor" />
+    <scopeInfo nodeId="5937294133446840659" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="110" startPosition="63" endLine="138" endPosition="18">
+      <varInfo nodeId="5937294133447625748" varName="editorClass" />
+      <varInfo nodeId="5937294133447138195" varName="editorClassName" />
+      <varInfo nodeId="5937294133446904190" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941575706" fileName="EditorsFinderManager.java" startLine="175" startPosition="0" endLine="203" endPosition="0">
-      <varInfo nodeId="6001307866941575712" varName="conceptDeclaration" />
+    <scopeInfo nodeId="5937294133446840656" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="110" startPosition="0" endLine="140" endPosition="0">
+      <varInfo nodeId="5937294133446843217" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941575548" fileName="EditorsFinderManager.java" startLine="84" startPosition="81" endLine="122" endPosition="18">
-      <varInfo nodeId="6001307866941647644" varName="key" />
-      <varInfo nodeId="6001307866941647055" varName="result" />
+    <scopeInfo nodeId="5937294133329400934" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="62" startPosition="69" endLine="95" endPosition="18">
+      <varInfo nodeId="5937294133331185061" varName="conceptFQName" />
+      <varInfo nodeId="5937294133331208661" varName="editorAspect" />
     </scopeInfo>
-    <scopeInfo nodeId="6001307866941575545" fileName="EditorsFinderManager.java" startLine="84" startPosition="0" endLine="124" endPosition="0">
-      <varInfo nodeId="6001307866941575550" varName="context" />
-      <varInfo nodeId="6001307866941575553" varName="node" />
+    <scopeInfo nodeId="5937294133329400928" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="62" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="5937294133329400932" varName="abstractConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="2116786884968856744" fileName="EditorsFinderManager.java" startLine="128" startPosition="36" endLine="170" endPosition="127">
-      <varInfo nodeId="2116786884968856784" varName="conceptQueue" />
-      <varInfo nodeId="2116786884968856746" varName="nodeConcept" />
-      <varInfo nodeId="2116786884968856791" varName="processedConcepts" />
-    </scopeInfo>
-    <scopeInfo nodeId="2116786884968856741" fileName="EditorsFinderManager.java" startLine="127" startPosition="0" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="6001307866941575861" fileName="EditorsFinderManager.java" startLine="125" startPosition="58" endLine="172" endPosition="7" />
-    <scopeInfo nodeId="6001307866941575858" fileName="EditorsFinderManager.java" startLine="125" startPosition="0" endLine="174" endPosition="0">
-      <varInfo nodeId="6001307866941575863" varName="nodeToEdit" />
-    </scopeInfo>
-    <unitInfo nodeId="2116786884968856873" fileName="EditorsFinderManager.java" startLine="157" startPosition="115" endLine="161" endPosition="13" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$3" />
-    <unitInfo nodeId="2116786884968856901" fileName="EditorsFinderManager.java" startLine="163" startPosition="212" endLine="167" endPosition="13" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$3" />
-    <unitInfo nodeId="6001307866941557293" fileName="EditorsFinderManager.java" startLine="51" startPosition="48" endLine="56" endPosition="3" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$1" />
-    <unitInfo nodeId="6001307866941575637" fileName="EditorsFinderManager.java" startLine="218" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$DefaultInterfaceEditor" />
-    <unitInfo nodeId="2116786884968856738" fileName="EditorsFinderManager.java" startLine="126" startPosition="69" endLine="172" endPosition="5" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager$2" />
-    <unitInfo nodeId="6001307866941531763" fileName="EditorsFinderManager.java" startLine="48" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.EditorsFinderManager" />
+    <unitInfo nodeId="5937294133329396540" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="54" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.InterpretedEditorAspectDescriptorFactory$InterpretedEditorAspectDescriptor" />
+    <unitInfo nodeId="6814795205152004296" fileName="InterpretedEditorAspectDescriptorFactory.java" startLine="30" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.InterpretedEditorAspectDescriptorFactory" />
   </root>
 </debugInfo>
 

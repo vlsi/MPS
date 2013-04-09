@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.openapi.editor.node;
 
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-public interface INodeEditor {
-  EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node);
-
-  EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node);
+/**
+ * User: shatalin
+ * Date: 4/8/13
+ */
+public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
+  @Override
+  EditorAspect getAspect(SAbstractConcept concept);
 }
