@@ -42,7 +42,8 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
-import java.util.Iterator;
+import java.lang.String;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -54,11 +55,28 @@ public class DefaultEditor extends DefaultNodeEditor {
 
   private List<SAbstractConcept> myAllSuperConcepts;
   private List<String> myPropertyNames;
+  private List<SLink> myChildren = new ArrayList<SLink>();
+  private List<SLink> myReferences = new ArrayList<SLink>();
+  private List<SProperty> myProperties = new ArrayList<SProperty>();
 
   @Override
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     myAllSuperConcepts = SConceptUtil.getAllSuperConcepts(node.getConcept(), false);
     myPropertyNames = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getPropertyNames();
+
+    for (SAbstractConcept concept : myAllSuperConcepts) {
+      for (SLink link : concept.getLinks()) {
+        if (link.isReference()) {
+          myReferences.add(link);
+        } else {
+          myChildren.add(link);
+        }
+      }
+
+      for (SProperty property : concept.getProperties()) {
+        myProperties.add(property);
+      }
+    }
 
     EditorCell_Collection editorCellCollection = EditorCell_Collection.createVertical(editorContext, node);
     editorCellCollection.setBig(true);
@@ -70,73 +88,99 @@ public class DefaultEditor extends DefaultNodeEditor {
   }
 
   private void addChildrenAndRefs(EditorContext editorContext, final SNode node, EditorCell_Collection cellCollection) {
-    for (SAbstractConcept concept : myAllSuperConcepts) {
-      for (SLink link : concept.getLinks()) {
-        EditorCell_Collection collection = EditorCell_Collection.createHorizontal(editorContext, node);
-        collection.addEditorCell(new EditorCell_Indent(editorContext, node));
-        collection.addEditorCell(new EditorCell_Indent(editorContext, node));
-        String role = link.getRole();
-        if (role == null) {
-          role = "<no role>";
-        }
-        StringBuffer name = new StringBuffer(role);
-        if (link.isMultiple()) {
-          name.append('s');
-        }
-        name.append(':');
-        EditorCell constant = new EditorCell_Constant(editorContext, node, name.toString(), false);
-
-        collection.addEditorCell(constant);
-
-
-        EditorCell editorCell;
-
-        if (link.isMultiple()) {
-          AbstractCellListHandler handler = new ListHandler(node, role, editorContext);
-          editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-          editorCell.setRole(handler.getElementRole());
-        } else {
-          CellProviderWithRole provider;
-          if (link.isReference()) {
-            provider = new RefCellCellProvider(node, editorContext);
-            provider.setAuxiliaryCellProvider(new MyAbstractCellProvider());
-          } else {
-            provider = new RefNodeCellProvider(node, editorContext);
-          }
-          provider.setRole(role);
-          provider.setNoTargetText("<no " + role + ">");
-          editorCell = provider.createEditorCell(editorContext);
-          editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-        }
-
-        collection.addEditorCell(editorCell);
-        cellCollection.addEditorCell(collection);
+    if (!myChildren.isEmpty()) {
+      addLabel(editorContext, node, cellCollection, "children:");
+      for (SLink link : myChildren) {
+        addLink(editorContext, node, cellCollection, link);
       }
     }
+
+
+    if (!myReferences.isEmpty()) {
+      addLabel(editorContext, node, cellCollection, "references:");
+      for (SLink link : myReferences) {
+        addLink(editorContext, node, cellCollection, link);
+      }
+    }
+
+
+  }
+
+  private void addLink(EditorContext editorContext, SNode node, EditorCell_Collection cellCollection, SLink link) {
+    EditorCell_Collection collection = EditorCell_Collection.createHorizontal(editorContext, node);
+    addIdent(editorContext, node, collection, 1);
+    String role = link.getRole();
+    if (role == null) {
+      role = "<no role>";
+    }
+    StringBuilder name = new StringBuilder(role);
+    if (link.isMultiple()) {
+      name.append('s');
+    }
+    name.append(':');
+
+    EditorCell_Constant label = new EditorCell_Constant(editorContext, node, name.toString(), false);
+    collection.addEditorCell(label);
+
+    EditorCell editorCell;
+
+    if (link.isMultiple()) {
+      AbstractCellListHandler handler = new ListHandler(node, role, editorContext);
+      editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
+      editorCell.setRole(handler.getElementRole());
+    } else {
+      CellProviderWithRole provider;
+      if (link.isReference()) {
+        provider = new RefCellCellProvider(node, editorContext);
+        provider.setAuxiliaryCellProvider(new MyAbstractCellProvider());
+      } else {
+        provider = new RefNodeCellProvider(node, editorContext);
+      }
+      provider.setRole(role);
+      provider.setNoTargetText("<no " + role + ">");
+      editorCell = provider.createEditorCell(editorContext);
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    }
+
+    collection.addEditorCell(editorCell);
+    cellCollection.addEditorCell(collection);
   }
 
   private void addProperties(EditorContext editorContext, SNode node, EditorCell_Collection cellCollection) {
-    for (SAbstractConcept concept : myAllSuperConcepts) {
-      for (SProperty property : concept.getProperties()) {
-        String name = property.getName();
-        if (name == null || property.getType() == null || !(myPropertyNames.contains(name))) {
-          continue;
-        }
-        EditorCell_Collection collection = EditorCell_Collection.createHorizontal(editorContext, node);
-        EditorCell_Constant propertiesLabel = new EditorCell_Constant(editorContext, node, "properties", false);
-        propertiesLabel.setTextColor(Color.BLUE);
-        EditorCell constant = new EditorCell_Constant(editorContext, node, name + ":", false);
-        CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-        provider.setRole(name);
-        provider.setNoTargetText("<no " + name + ">");
-        EditorCell editorCell;
-        editorCell = provider.createEditorCell(editorContext);
-        editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-        collection.addEditorCell(propertiesLabel);
-        collection.addEditorCell(constant);
-        collection.addEditorCell(editorCell);
-        cellCollection.addEditorCell(collection);
+    if (!myProperties.isEmpty()) {
+      addLabel(editorContext, node, cellCollection, "properties:");
+    }
+
+    for (SProperty property : myProperties) {
+      String name = property.getName();
+      if (name == null || property.getType() == null || !(myPropertyNames.contains(name))) {
+        continue;
       }
+      EditorCell_Collection collection = EditorCell_Collection.createHorizontal(editorContext, node);
+      EditorCell constant = new EditorCell_Constant(editorContext, node, name + ":", false);
+      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+      provider.setRole(name);
+      provider.setNoTargetText("<no " + name + ">");
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(editorContext);
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      addIdent(editorContext, node, collection, 1);
+      collection.addEditorCell(constant);
+      collection.addEditorCell(editorCell);
+      cellCollection.addEditorCell(collection);
+    }
+
+  }
+
+  private void addLabel(EditorContext editorContext, SNode node, EditorCell_Collection cellCollection, String label) {
+    EditorCell_Constant childLabel = new EditorCell_Constant(editorContext, node, label, false);
+    childLabel.setTextColor(Color.BLUE);
+    cellCollection.addEditorCell(childLabel);
+  }
+
+  private void addIdent(EditorContext editorContext, SNode node, EditorCell_Collection collection, int identNumber) {
+    for (int i = 0; i < identNumber; ++i) {
+      collection.addEditorCell(new EditorCell_Indent(editorContext, node));
     }
   }
 
