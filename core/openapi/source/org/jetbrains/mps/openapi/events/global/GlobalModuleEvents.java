@@ -31,6 +31,7 @@ import java.util.Map.Entry;
  * Conditions are checked only once for each model/module.
  * If returns true, a listener is attached and stays attached during model/module deletion.
  * Adding a listeners for the second time will end up with failed assertion.
+ * The listeners are added to models/modules directly, without any mediators.
  */
 public class GlobalModuleEvents {
   private final SRepository myRepository;
@@ -49,7 +50,6 @@ public class GlobalModuleEvents {
   public void dispose() {
     myRepository.getModelAccess().checkWriteAccess();
 
-    assert myRepositoryListener != null : "Listening not started yet";
     assert myRegisteredModuleListeners.isEmpty() : "Should be optimized";
 
     myRepository.removeRepositoryListener(myRepositoryListener);
