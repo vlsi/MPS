@@ -44,6 +44,9 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
 
   @Override
   public SConcept getConcept(String id) {
+    if (id == null) {
+      return null;
+    }
     SConcept sConcept = myConcepts.get(id);
     if (sConcept == null) {
       createConceptAdapter(id);
