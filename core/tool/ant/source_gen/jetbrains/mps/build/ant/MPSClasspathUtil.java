@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import org.apache.tools.ant.BuildException;
 import org.jetbrains.annotations.NotNull;
 import java.net.URL;
+import java.util.Set;
 
 public class MPSClasspathUtil {
   private static final String FILE = "file";
@@ -170,5 +171,61 @@ public class MPSClasspathUtil {
       result.append(text.charAt(i));
     }
     return result.toString();
+  }
+
+  public static List<File> getClassPathRoots(Project project) {
+    List<File> roots = new ArrayList<File>();
+
+    String mpsHome = project.getProperty("artifacts.mps");
+    String pluginHome = project.getProperty("artifacts.mpsPlugin");
+    String ideaHome = project.getProperty("artifacts.IDEA");
+    String mpsCoreHome = project.getProperty("artifacts.mpsBootstrapCore");
+    String mpsWorkbenchHome = project.getProperty("artifacts.mpsWorkbench");
+
+    if ((mpsHome != null && mpsHome.length() > 0)) {
+      // buildMPS 
+      roots.add(new File(project.resolveFile(mpsHome).getPath(), "lib"));
+    } else if ((pluginHome != null && pluginHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
+      // buildPlugin + IDEA 
+      roots.add(new File(project.resolveFile(ideaHome).getPath(), "lib"));
+      roots.add(new File(project.resolveFile(pluginHome).getPath(), "mps-core/lib"));
+    } else if ((mpsCoreHome != null && mpsCoreHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
+      // buildCore + IDEA 
+      roots.add(new File(project.resolveFile(mpsCoreHome).getPath(), "lib"));
+      roots.add(new File(project.resolveFile(ideaHome).getPath(), "lib"));
+      if ((mpsWorkbenchHome != null && mpsWorkbenchHome.length() > 0)) {
+        roots.add(new File(project.resolveFile(mpsWorkbenchHome).getPath(), "lib"));
+      }
+    }
+
+    return roots;
+  }
+
+  public static void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
+    if (dir.getName().equals("classes") || dir.getName().equals("classes_gen") || dir.getName().equals("apiclasses")) {
+      result.add(dir);
+      return;
+    }
+    File[] children = dir.listFiles();
+    //  we do not want trove different from ours in $mps.home$/lib 
+    String troveJar = "trove" + File.separator + "lib" + File.separator + "trove";
+    //  to provide right order of class loading, 
+    //  files go first 
+    for (File f : children) {
+      if (!(f.isDirectory())) {
+        if (f.getName().endsWith(".jar") && !(f.getName().contains("ant.jar")) && !(f.getPath().contains(troveJar))) {
+          result.add(f);
+        }
+      }
+    }
+    for (File f : children) {
+      if (f.isDirectory()) {
+        if (f.getName().equals("classes") || f.getName().equals("classes_gen")) {
+          result.add(f);
+        } else {
+          gatherAllClassesAndJarsUnder(f, result);
+        }
+      }
+    }
   }
 }
