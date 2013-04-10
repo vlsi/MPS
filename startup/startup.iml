@@ -58,7 +58,7 @@
     <orderEntry type="module" module-name="kernel" scope="PROVIDED" />
     <orderEntry type="module" module-name="make-runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="migration" scope="PROVIDED" />
-    <orderEntry type="module" module-name="migration25" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mpsmigration" scope="PROVIDED" />
     <orderEntry type="module" module-name="migrationAssistant" scope="PROVIDED" />
     <orderEntry type="module" module-name="miscTests" scope="PROVIDED" />
     <orderEntry type="module" module-name="modelchecker" scope="PROVIDED" />

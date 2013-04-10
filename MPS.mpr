@@ -269,7 +269,6 @@
       <modulePath path="${project}/plugins/execution-languages/languages/tests.data/jetbrains.mps.execution.impl.tests.sandbox.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/languages/tests/jetbrains.mps.execution.impl.tests.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="plugins" />
-      <modulePath path="${project}/plugins/migration25/solution/jetbrains.mps.ide.migration25.msd" folder="plugins" />
       <modulePath path="${project}/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mps-build-deprecated/languages/buildlanguage/jetbrains.mps.buildlanguage.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-build-deprecated/languages/generictasks/jetbrains.mps.build.generictasks.mpl" folder="languages.build" />
@@ -368,6 +367,7 @@
       <modulePath path="${project}/plugins/mpsjava/testsolution/jetbrains.mps.ide.java.testMaterial.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="plugins" />
+      <modulePath path="${project}/plugins/mpsmigration/solution/jetbrains.mps.ide.mpsmigration.msd" folder="plugins" />
       <modulePath path="${project}/plugins/samples/jetbrains.mps.samples.msd" folder="samples" />
       <modulePath path="${project}/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" folder="plugins.vcs" />
       <modulePath path="${project}/plugins/vcs/common/jetbrains.mps.ide.vcs.platform.msd" folder="plugins.vcs" />
