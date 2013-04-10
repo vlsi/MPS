@@ -250,19 +250,19 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
       addIdeaMappingsExt("NOT_USED_ELEMENT","NOT_USED_ELEMENT_ATTRIBUTES");
       addIdeaMappingsExt("TODO","TODO_DEFAULT_ATTRIBUTES");
 
-      addIdeaMappingsExt("DOC_COMMENT","JAVA_DOC_COMMENT");
+      addIdeaMappingsExt("DOC_COMMENT","DEFAULT_DOC_COMMENT");
       addIdeaMappingsExt("DOC_TAG","JAVA_DOC_TAG");
-      addIdeaMappingsExt("KEYWORD","JAVA_KEYWORD");
-      addIdeaMappingsExt("LINE_COMMENT","JAVA_LINE_COMMENT");
-      addIdeaMappingsExt("BLOCK_COMMENT","JAVA_BLOCK_COMMENT");
-      addIdeaMappingsExt("NUMBER","JAVA_NUMBER");
-      addIdeaMappingsExt("STRING","JAVA_STRING");
-      addIdeaMappingsExt("OPERATION_SIGN","JAVA_OPERATION_SIGN");
-      addIdeaMappingsExt("PARENTH","JAVA_PARENTH");
-      addIdeaMappingsExt("BRACKETS","JAVA_BRACKETS");
-      addIdeaMappingsExt("BRACES","JAVA_BRACES");
-      addIdeaMappingsExt("SEMICOLON","JAVA_SEMICOLON");
-      addIdeaMappingsExt("DOT","JAVA_DOT");
+      addIdeaMappingsExt("KEYWORD","DEFAULT_KEYWORD");
+      addIdeaMappingsExt("LINE_COMMENT","DEFAULT_LINE_COMMENT");
+      addIdeaMappingsExt("BLOCK_COMMENT","DEFAULT_BLOCK_COMMENT");
+      addIdeaMappingsExt("NUMBER","DEFAULT_NUMBER");
+      addIdeaMappingsExt("STRING","DEFAULT_STRING");
+      addIdeaMappingsExt("OPERATION_SIGN","DEFAULT_OPERATION_SIGN");
+      addIdeaMappingsExt("PARENTH","DEFAULT_PARENTHS");
+      addIdeaMappingsExt("BRACKETS","DEFAULT_BRACKETS");
+      addIdeaMappingsExt("BRACES","DEFAULT_BRACES");
+      addIdeaMappingsExt("SEMICOLON","DEFAULT_SEMICOLON");
+      addIdeaMappingsExt("DOT","DEFAULT_DOT");
 
       addIdeaMappingsExt("BREAKPOINT","BREAKPOINT_ATTRIBUTES");
       addIdeaMappingsExt("EXECUTIONPOINT","EXECUTIONPOINT_ATTRIBUTES");
