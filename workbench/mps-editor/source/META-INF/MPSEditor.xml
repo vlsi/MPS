@@ -24,7 +24,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.editor.runtime.impl.InterpretedEditorAspectDescriptorFactory</implementation-class>
+      <implementation-class>jetbrains.mps.nodeEditor.InterpretedEditorAspectDescriptorFactory</implementation-class>
     </component>
 
     <component>
