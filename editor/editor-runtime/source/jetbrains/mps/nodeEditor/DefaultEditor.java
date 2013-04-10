@@ -47,6 +47,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.String;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -71,6 +72,8 @@ public class DefaultEditor extends DefaultNodeEditor {
   private SProperty myNameProperty;
   private EditorContext myEditorContext;
   private Stack<EditorCell_Collection> collectionStack = new Stack<EditorCell_Collection>();
+  private BigInteger currentCollectionIdNumber = BigInteger.ZERO;
+  private BigInteger currentConstantIdNumber = BigInteger.ZERO;
 
   @Override
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -94,6 +97,7 @@ public class DefaultEditor extends DefaultNodeEditor {
       addLabel("}");
       addStyle(StyleAttributes.MATCHING_LABEL, "body-brace");
     }
+    popCollection();
     return mainCellCollection;
   }
 
@@ -243,12 +247,15 @@ public class DefaultEditor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(myEditorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setCellId("property_" + name);
     addCell(editorCell);
   }
 
   private void addLabel(String label) {
     EditorCell_Collection cellCollection = collectionStack.peek();
     EditorCell_Constant childLabel = new EditorCell_Constant(myEditorContext, mySNode, label, false);
+    childLabel.setCellId("constant_" + currentConstantIdNumber.toString());
+    currentConstantIdNumber = currentConstantIdNumber.add(BigInteger.ONE);
     cellCollection.addEditorCell(childLabel);
   }
 
@@ -290,6 +297,7 @@ public class DefaultEditor extends DefaultNodeEditor {
   private EditorCell_Collection pushCollection() {
     EditorCell_Collection newCollection = EditorCell_Collection.createIndent2(myEditorContext, mySNode);
     collectionStack.push(newCollection);
+    currentCollectionIdNumber = currentCollectionIdNumber.add(BigInteger.ONE);
     return newCollection;
   }
 
@@ -298,12 +306,13 @@ public class DefaultEditor extends DefaultNodeEditor {
       return null;
     }
     EditorCell_Collection result = collectionStack.pop();
+    result.setCellId("collection_" + currentCollectionIdNumber.toString());
+    currentCollectionIdNumber = currentCollectionIdNumber.subtract(BigInteger.ONE);
     if (!collectionStack.empty()) {
       collectionStack.peek().addEditorCell(result);
     }
     return result;
   }
-
 
   private static class ListHandler extends RefNodeListHandler {
     public ListHandler(SNode ownerNode, String childRole, EditorContext context) {
