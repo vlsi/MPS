@@ -15,36 +15,45 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.*;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptUtil;
+import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.awt.Color;
 import java.lang.String;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Stack;
 
 /**
  * Semen Alperovich
@@ -53,14 +62,44 @@ import java.util.List;
 public class DefaultEditor extends DefaultNodeEditor {
 
 
+  private SNode mySNode;
   private List<SAbstractConcept> myAllSuperConcepts;
   private List<String> myPropertyNames;
   private List<SLink> myChildren = new ArrayList<SLink>();
   private List<SLink> myReferences = new ArrayList<SLink>();
   private List<SProperty> myProperties = new ArrayList<SProperty>();
+  private SProperty myNameProperty;
+  private EditorContext myEditorContext;
+  private Stack<EditorCell_Collection> collectionStack = new Stack<EditorCell_Collection>();
 
   @Override
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    cacheParameters(node, editorContext);
+    EditorCell_Collection mainCellCollection = pushCollection();
+    mainCellCollection.setBig(true);
+    addLabel(node.getConcept().getName());
+    if (myNameProperty != null) {
+      addPropertyCell(myNameProperty.getName());
+    }
+    addReferences();
+    if (!myProperties.isEmpty() || !myChildren.isEmpty()) {
+      addLabel("{");
+      addStyle(StyleAttributes.MATCHING_LABEL, "body-brace");
+      addNewLine();
+      pushCollection();
+      setIndent(collectionStack.peek());
+      addProperties();
+      addChildren();
+      popCollection();
+      addLabel("}");
+      addStyle(StyleAttributes.MATCHING_LABEL, "body-brace");
+    }
+    return mainCellCollection;
+  }
+
+  private void cacheParameters(SNode node, EditorContext editorContext) {
+    myEditorContext = editorContext;
+    mySNode = node;
     myAllSuperConcepts = SConceptUtil.getAllSuperConcepts(node.getConcept(), false);
     myPropertyNames = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getPropertyNames();
 
@@ -77,112 +116,194 @@ public class DefaultEditor extends DefaultNodeEditor {
         myProperties.add(property);
       }
     }
-
-    EditorCell_Collection editorCellCollection = EditorCell_Collection.createVertical(editorContext, node);
-    editorCellCollection.setBig(true);
-    EditorCell rootCell = new EditorCell_Constant(editorContext, node, node.getConcept().getName(), false);
-    editorCellCollection.addEditorCell(rootCell);
-    addProperties(editorContext, node, editorCellCollection);
-    addChildrenAndRefs(editorContext, node, editorCellCollection);
-    return editorCellCollection;
+    cacheNameProperty();
   }
 
-  private void addChildrenAndRefs(EditorContext editorContext, final SNode node, EditorCell_Collection cellCollection) {
-    if (!myChildren.isEmpty()) {
-      addLabel(editorContext, node, cellCollection, "children:");
-      for (SLink link : myChildren) {
-        addLink(editorContext, node, cellCollection, link);
+  private void cacheNameProperty() {
+    final Map<SProperty, Integer> priorityMap = new HashMap<SProperty, Integer>();
+    for (SProperty property : myProperties) {
+      SDataType type = property.getType();
+      if (!(type instanceof SPrimitiveDataType) || ((SPrimitiveDataType) type).getType() != SPrimitiveDataType.STRING) {
+        continue;
       }
+      String name = property.getName();
+      int prio = name.equals("name") ? 10000 : 0;
+      prio += name.toLowerCase().contains("identifier") ? 1700 : 0;
+      prio += name.toLowerCase().contains("name") ? 1000 : 0;
+      prio += name.toLowerCase().contains("qualified") ? 200 : 0;
+      priorityMap.put(property, prio);
     }
-
-
-    if (!myReferences.isEmpty()) {
-      addLabel(editorContext, node, cellCollection, "references:");
-      for (SLink link : myReferences) {
-        addLink(editorContext, node, cellCollection, link);
+    if (priorityMap.isEmpty()) {
+      return;
+    }
+    ArrayList<SProperty> arrayList = new ArrayList<SProperty>(priorityMap.keySet());
+    Collections.sort(arrayList, new Comparator<SProperty>() {
+      @Override
+      public int compare(SProperty p1, SProperty p2) {
+        assert priorityMap.containsKey(p1) && priorityMap.containsKey(p2);
+        return priorityMap.get(p2) - priorityMap.get(p1);
       }
+    });
+
+    SProperty result = arrayList.get(0);
+    if (priorityMap.get(result) > 0) {
+      myNameProperty = result;
     }
-
-
   }
 
-  private void addLink(EditorContext editorContext, SNode node, EditorCell_Collection cellCollection, SLink link) {
-    EditorCell_Collection collection = EditorCell_Collection.createHorizontal(editorContext, node);
-    addIdent(editorContext, node, collection, 1);
+  private void addReferences() {
+    for (SLink link : myReferences) {
+      String role = link.getRole();
+      if (role == null) {
+        role = "<no role>";
+      }
+      StringBuilder name = new StringBuilder(role);
+      assert !link.isMultiple();
+      name.append(':');
+
+      addLabel(name.toString());
+
+      EditorCell editorCell;
+
+
+      CellProviderWithRole provider;
+      provider = new RefCellCellProvider(mySNode, myEditorContext);
+      provider.setAuxiliaryCellProvider(new MyAbstractCellProvider());
+      provider.setRole(role);
+      provider.setNoTargetText("<no " + role + ">");
+      editorCell = provider.createEditorCell(myEditorContext);
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      addCell(editorCell);
+    }
+  }
+
+
+  private void addChildren() {
+    addLabel("");
+    addNewLine();
+    for (SLink link : myChildren) {
+      addLink(link);
+    }
+  }
+
+  private void addLink(SLink link) {
+
     String role = link.getRole();
     if (role == null) {
       role = "<no role>";
     }
-    StringBuilder name = new StringBuilder(role);
-    if (link.isMultiple()) {
-      name.append('s');
-    }
-    name.append(':');
 
-    EditorCell_Constant label = new EditorCell_Constant(editorContext, node, name.toString(), false);
-    collection.addEditorCell(label);
+    addLabel(role);
+    addLabel(":");
+    addNewLine();
 
     EditorCell editorCell;
 
     if (link.isMultiple()) {
-      AbstractCellListHandler handler = new ListHandler(node, role, editorContext);
-      editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
+      AbstractCellListHandler handler = new ListHandler(mySNode, role, myEditorContext);
+      editorCell = handler.createCells(myEditorContext, new CellLayout_Indent(), false);
       editorCell.setRole(handler.getElementRole());
+      addStyle(editorCell, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
     } else {
       CellProviderWithRole provider;
-      if (link.isReference()) {
-        provider = new RefCellCellProvider(node, editorContext);
-        provider.setAuxiliaryCellProvider(new MyAbstractCellProvider());
-      } else {
-        provider = new RefNodeCellProvider(node, editorContext);
-      }
+      provider = new RefNodeCellProvider(mySNode, myEditorContext);
       provider.setRole(role);
       provider.setNoTargetText("<no " + role + ">");
-      editorCell = provider.createEditorCell(editorContext);
+      editorCell = provider.createEditorCell(myEditorContext);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     }
-
-    collection.addEditorCell(editorCell);
-    cellCollection.addEditorCell(collection);
+    setIndent(editorCell);
+    addCell(editorCell);
+    addNewLine();
   }
 
-  private void addProperties(EditorContext editorContext, SNode node, EditorCell_Collection cellCollection) {
-    if (!myProperties.isEmpty()) {
-      addLabel(editorContext, node, cellCollection, "properties:");
-    }
+  private void addProperties() {
 
     for (SProperty property : myProperties) {
+      if (property == myNameProperty) {
+        continue;
+      }
       String name = property.getName();
       if (name == null || property.getType() == null) {
         continue;
       }
-      EditorCell_Collection collection = EditorCell_Collection.createHorizontal(editorContext, node);
-      EditorCell constant = new EditorCell_Constant(editorContext, node, name + ":", false);
-      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole(name);
-      provider.setNoTargetText("<no " + name + ">");
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      addIdent(editorContext, node, collection, 1);
-      collection.addEditorCell(constant);
-      collection.addEditorCell(editorCell);
-      cellCollection.addEditorCell(collection);
+      addLabel(name);
+      addLabel(":");
+      addPropertyCell(name);
+      addNewLine();
     }
 
   }
 
-  private void addLabel(EditorContext editorContext, SNode node, EditorCell_Collection cellCollection, String label) {
-    EditorCell_Constant childLabel = new EditorCell_Constant(editorContext, node, label, false);
-    childLabel.setTextColor(Color.BLUE);
+
+  private void addPropertyCell(String name) {
+    CellProviderWithRole provider = new PropertyCellProvider(mySNode, myEditorContext);
+    provider.setRole(name);
+    provider.setNoTargetText("<no " + name + ">");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(myEditorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    addCell(editorCell);
+  }
+
+  private void addLabel(String label) {
+    EditorCell_Collection cellCollection = collectionStack.peek();
+    EditorCell_Constant childLabel = new EditorCell_Constant(myEditorContext, mySNode, label, false);
     cellCollection.addEditorCell(childLabel);
   }
 
-  private void addIdent(EditorContext editorContext, SNode node, EditorCell_Collection collection, int identNumber) {
-    for (int i = 0; i < identNumber; ++i) {
-      collection.addEditorCell(new EditorCell_Indent(editorContext, node));
-    }
+  private void setIndent(EditorCell cell) {
+    addStyle(cell, StyleAttributes.INDENT_LAYOUT_INDENT);
   }
+
+  private void addNewLine() {
+    addStyle(getLastCell(), StyleAttributes.INDENT_LAYOUT_NEW_LINE);
+  }
+
+  private EditorCell getLastCell() {
+    EditorCell_Collection collection = collectionStack.peek();
+    EditorCell lastCell = collection;
+    if (collection.getChildCount() > 0) {
+      lastCell = collection.lastCell();
+    }
+    return lastCell;
+  }
+
+  private <T> void addStyle(EditorCell cell, StyleAttribute<T> attribute, T value) {
+    Style style = new StyleImpl();
+    style.set(attribute, value);
+    cell.getStyle().putAll(style);
+  }
+
+  private <T> void addStyle(StyleAttribute<T> attribute, T value) {
+    addStyle(getLastCell(), attribute, value);
+  }
+
+  private void addStyle(EditorCell cell, StyleAttribute<Boolean> attribute) {
+    addStyle(cell, attribute, true);
+  }
+
+  private void addCell(EditorCell cell) {
+    collectionStack.peek().addEditorCell(cell);
+  }
+
+  private EditorCell_Collection pushCollection() {
+    EditorCell_Collection newCollection = EditorCell_Collection.createIndent2(myEditorContext, mySNode);
+    collectionStack.push(newCollection);
+    return newCollection;
+  }
+
+  private EditorCell_Collection popCollection() {
+    if (collectionStack.empty()) {
+      return null;
+    }
+    EditorCell_Collection result = collectionStack.pop();
+    if (!collectionStack.empty()) {
+      collectionStack.peek().addEditorCell(result);
+    }
+    return result;
+  }
+
 
   private static class ListHandler extends RefNodeListHandler {
     public ListHandler(SNode ownerNode, String childRole, EditorContext context) {
