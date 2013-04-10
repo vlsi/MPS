@@ -26,19 +26,22 @@ public class MPSClasspathUtil {
   public static Collection<File> buildClasspath(Project antProject, File mpsHomeArg, boolean fork) {
     List<File> homeFolders = new ArrayList<File>();
 
+    boolean foundMpsHome = false;
     // if there is mps_home either in property or passed to the task as attribute 
     if (mpsHomeArg == null || !(mpsHomeArg.isDirectory())) {
+      homeFolders.add(getAntJARRelativeHome());
       mpsHomeArg = resolveMPSHome(antProject, false);
     }
     if (mpsHomeArg != null) {
       File lib = new File(mpsHomeArg, "lib");
       if (lib.isDirectory()) {
+        foundMpsHome = true;
         homeFolders.add(lib);
       }
     }
 
     // if there is no mps_home 
-    if (homeFolders.isEmpty()) {
+    if (!(foundMpsHome)) {
       homeFolders.add(getAntJARRelativeHome());
       homeFolders.addAll(getClassPathRootsFromDependencies(antProject));
     }
