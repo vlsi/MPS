@@ -17,6 +17,7 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
@@ -27,7 +28,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class BaseStubModelDescriptor extends ReloadableSModelBase implements Cloneable {
-  private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(BaseStubModelDescriptor.class));
   private SModule myModule;
   private jetbrains.mps.smodel.SModel mySModel;
 
@@ -84,7 +85,7 @@ public class BaseStubModelDescriptor extends ReloadableSModelBase implements Clo
     }
 
     reload();
-    LOG.assertLog(!needsReloading());
+    LOG.assertLog(!needsReloading(), "Model needs reloading just after reload.");
   }
 
   private void reload() {

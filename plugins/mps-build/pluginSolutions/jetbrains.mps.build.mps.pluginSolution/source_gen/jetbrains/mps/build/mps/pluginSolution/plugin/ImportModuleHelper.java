@@ -12,11 +12,13 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.apache.log4j.Priority;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ImportModuleHelper {
   private SNode project;
@@ -50,7 +52,9 @@ public class ImportModuleHelper {
       ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).addElement(created);
     } catch (PathConverter.PathConvertException ex) {
       // ignore 
-      LOG.error(ex.getMessage());
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error(ex.getMessage());
+      }
     }
   }
 
@@ -69,9 +73,11 @@ public class ImportModuleHelper {
     try {
       new ModuleLoader(created, visible, converter, null).importRequired();
     } catch (ModuleLoader.ModuleLoaderException ex) {
-      LOG.error(ex.getMessage());
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error(ex.getMessage());
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ImportModuleHelper.class);
+  protected static Logger LOG = LogManager.getLogger(ImportModuleHelper.class);
 }

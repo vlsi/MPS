@@ -52,20 +52,7 @@
         </layout>
     </appender>
 
-    <appender name="FILE-DEBUG" class="org.apache.log4j.RollingFileAppender">
-        <param name="MaxFileSize" value="1Mb"/>
-        <param name="MaxBackupIndex" value="3"/>
-        <param name="file" value="$SYSTEM_DIR$/log/mpsdebug.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d [%7r] %6p - %30.60c - %m \n"/>
-        </layout>
-    </appender>
-
-    <category name="jetbrains.mps.watching" additivity="false">
-        <priority value="DEBUG"/>
-        <appender-ref ref="FILE-VCS"/>
-        <appender-ref ref="CONSOLE-WARN"/>
-    </category>
+    <appender name="MPS" class="jetbrains.mps.logging.MPSAppender"/>
 
     <category name="jetbrains.mps.vcs" additivity="false">
         <priority value="DEBUG"/>
@@ -79,16 +66,11 @@
         <appender-ref ref="CONSOLE-WARN"/>
     </category>
 
-    <category name="jetbrains.mps.debug" additivity="false">
-        <priority value="DEBUG"/>
-        <appender-ref ref="FILE-DEBUG"/>
-        <appender-ref ref="CONSOLE-WARN"/>
-    </category>
-
     <root>
         <priority value="INFO"/>
         <appender-ref ref="DIALOG"/>
         <appender-ref ref="CONSOLE-WARN"/>
         <appender-ref ref="FILE"/>
+        <appender-ref ref="MPS"/>
     </root>
 </log4j:configuration>

@@ -20,8 +20,10 @@ import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
   private static String[] EMPTY_ARRAY = new String[0];
@@ -442,7 +444,9 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("link".equals(tagName)) {
         String[] child = (String[]) value;
         if (child[2] == null) {
-          LOG.error("couldn't create reference '" + child[0] + "' : traget node id is null");
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("couldn't create reference '" + child[0] + "' : traget node id is null");
+          }
           return;
         }
         SReference ref = fieldhelper.readLink(result, child[0], child[2], child[1]);
@@ -521,5 +525,5 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ModelReader6Handler.class);
+  protected static Logger LOG = LogManager.getLogger(ModelReader6Handler.class);
 }

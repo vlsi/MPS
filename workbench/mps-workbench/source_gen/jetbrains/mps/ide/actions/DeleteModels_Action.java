@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
@@ -18,7 +19,8 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DeleteModels_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,7 +40,9 @@ public class DeleteModels_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "DeleteModels", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "DeleteModels", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -86,9 +90,11 @@ public class DeleteModels_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "DeleteModels", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "DeleteModels", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(DeleteModels_Action.class);
+  protected static Logger LOG = LogManager.getLogger(DeleteModels_Action.class);
 }

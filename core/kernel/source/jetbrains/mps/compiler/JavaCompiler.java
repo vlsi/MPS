@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.compiler;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.AbstractClassLoader;
@@ -158,7 +159,7 @@ public class JavaCompiler {
     return sb.toString();
   }
 
-  private static Logger LOG = Logger.getLogger(JavaCompiler.class);
+  private static Logger LOG = LogManager.getLogger(JavaCompiler.class);
 
   private class MyCompilerRequestor implements ICompilerRequestor {
     @Override

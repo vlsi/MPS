@@ -28,7 +28,7 @@
     <nodeInfo nodeId="1236700987314" fileName="ElementCreator.java" startLine="25" startPosition="65" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1237463992006" fileName="ElementCreator.java" startLine="26" startPosition="58" endLine="27" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992006" fileName="ElementCreator.java" startLine="26" startPosition="58" endLine="27" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236701106380" fileName="ElementCreator.java" startLine="28" startPosition="27" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236701106380" fileName="ElementCreator.java" startLine="28" startPosition="27" endLine="29" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236700642827" fileName="ElementCreator.java" startLine="33" startPosition="85" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1236700642839" fileName="ElementCreator.java" startLine="36" startPosition="70" endLine="37" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236700642859" fileName="ElementCreator.java" startLine="39" startPosition="5" endLine="40" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -47,10 +47,10 @@
     <nodeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="17" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="byElement#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
     <nodeInfo nodeId="1236700479964" fileName="ElementCreator.java" startLine="33" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createElement#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)Lorg/jdom/Element;" />
     <scopeInfo nodeId="1237463992006" fileName="ElementCreator.java" startLine="26" startPosition="58" endLine="27" endPosition="29" />
-    <scopeInfo nodeId="1236700827379" fileName="ElementCreator.java" startLine="28" startPosition="0" endLine="29" endPosition="48">
+    <scopeInfo nodeId="1236700827379" fileName="ElementCreator.java" startLine="28" startPosition="0" endLine="29" endPosition="52">
       <varInfo nodeId="1236700827380" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1236700827382" fileName="ElementCreator.java" startLine="28" startPosition="27" endLine="29" endPosition="48" />
+    <scopeInfo nodeId="1236700827382" fileName="ElementCreator.java" startLine="28" startPosition="27" endLine="29" endPosition="52" />
     <scopeInfo nodeId="1236700642838" fileName="ElementCreator.java" startLine="36" startPosition="70" endLine="37" endPosition="129" />
     <scopeInfo nodeId="1236700642868" fileName="ElementCreator.java" startLine="43" startPosition="23" endLine="44" endPosition="34" />
     <scopeInfo nodeId="1236700642889" fileName="ElementCreator.java" startLine="48" startPosition="92" endLine="49" endPosition="138" />

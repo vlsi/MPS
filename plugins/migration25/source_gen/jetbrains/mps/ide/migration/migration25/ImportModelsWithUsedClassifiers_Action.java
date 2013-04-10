@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.project.MPSProject;
@@ -29,7 +30,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -49,7 +51,9 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ImportModelsWithUsedClassifiers", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ImportModelsWithUsedClassifiers", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -102,7 +106,9 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ImportModelsWithUsedClassifiers", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ImportModelsWithUsedClassifiers", t);
+      }
     }
   }
 
@@ -129,7 +135,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
     return null;
   }
 
-  private static Logger LOG = Logger.getLogger(ImportModelsWithUsedClassifiers_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ImportModelsWithUsedClassifiers_Action.class);
 
   private static SModelReference check_rft9c_a0b0f0d0e0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {

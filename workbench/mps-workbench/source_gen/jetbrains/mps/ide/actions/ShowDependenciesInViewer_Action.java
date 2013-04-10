@@ -10,11 +10,13 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowDependenciesInViewer_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -44,7 +46,9 @@ public class ShowDependenciesInViewer_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowDependenciesInViewer", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowDependenciesInViewer", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -73,9 +77,11 @@ public class ShowDependenciesInViewer_Action extends BaseAction {
       ModuleDependencyNode treeNode = (ModuleDependencyNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
       DependenciesUtil.analyzeDependencies(treeNode.getFromNode().getModules(), treeNode.getModules(), ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.isUsedLanguage());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowDependenciesInViewer", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowDependenciesInViewer", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowDependenciesInViewer_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowDependenciesInViewer_Action.class);
 }

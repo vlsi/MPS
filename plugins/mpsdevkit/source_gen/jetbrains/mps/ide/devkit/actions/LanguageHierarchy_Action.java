@@ -10,6 +10,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
@@ -18,7 +19,8 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.workbench.editors.MPSLanguageEditor;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class LanguageHierarchy_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,7 +47,9 @@ public class LanguageHierarchy_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "LanguageHierarchy", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "LanguageHierarchy", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -74,9 +78,11 @@ public class LanguageHierarchy_Action extends BaseAction {
       MPSLanguageEditor languageEditor = (MPSLanguageEditor) res[0];
       languageEditor.getComponent().requestFocus();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "LanguageHierarchy", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "LanguageHierarchy", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(LanguageHierarchy_Action.class);
+  protected static Logger LOG = LogManager.getLogger(LanguageHierarchy_Action.class);
 }

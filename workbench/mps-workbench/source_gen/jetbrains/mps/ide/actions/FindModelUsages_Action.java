@@ -8,6 +8,7 @@ import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -18,7 +19,8 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FindModelUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -38,7 +40,9 @@ public class FindModelUsages_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindModelUsages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "FindModelUsages", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -76,9 +80,11 @@ public class FindModelUsages_Action extends BaseAction {
       });
       ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Model has no usages");
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FindModelUsages_Action.class);
 }

@@ -28,6 +28,7 @@ import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.resolve.ResolverComponent;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -36,7 +37,7 @@ import java.util.Set;
 
 
 public class CellAction_PasteNodeRelative extends AbstractCellAction {
-  private static final Logger LOG = Logger.getLogger(CellAction_PasteNodeRelative.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(CellAction_PasteNodeRelative.class));
 
   PastePlaceHint myPastePlaceHint;
 

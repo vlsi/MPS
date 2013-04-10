@@ -20,7 +20,8 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
@@ -33,7 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<State, IncrementalTypechecking> {
-  private static Logger LOG = Logger.getLogger(IncrementalTypecheckingContext.class);
+  private static Logger LOG = LogManager.getLogger(IncrementalTypecheckingContext.class);
 
   private boolean myIsNonTypesystemComputation = false;
 //  private boolean myIsInferenceMode = false;

@@ -7,11 +7,13 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.platform.util.PluginUtil;
 import git4idea.config.GitConfigUtil;
 import com.intellij.openapi.vcs.VcsException;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.ui.Messages;
 import git4idea.commands.GitSimpleHandler;
 import git4idea.commands.GitCommand;
 import com.intellij.openapi.util.SystemInfo;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 /*package*/ class GitGlobalConfigFixesInstaller extends AbstractInstaller {
   private static final String CORE_AUTOCRLF = "core.autocrlf";
@@ -33,7 +35,9 @@ import jetbrains.mps.logging.Logger;
       }
     } catch (VcsException e) {
       if (!(dryRun)) {
-        LOG.warning("Can't get value", e);
+        if (LOG.isEnabledFor(Priority.WARN)) {
+          LOG.warn("Can't get value", e);
+        }
       }
       return AbstractInstaller.State.NOT_INSTALLED;
     }
@@ -46,7 +50,9 @@ import jetbrains.mps.logging.Logger;
       setGlobalProperty(myProject, CORE_AUTOCRLF, getCoreAutocrlfValue());
       return AbstractInstaller.State.INSTALLED;
     } catch (VcsException e) {
-      LOG.warning("Can't set value", e);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("Can't set value", e);
+      }
       Messages.showErrorDialog(myProject, "Can't set Git global property: " + e.getMessage(), "Git Global property");
       return AbstractInstaller.State.NOT_INSTALLED;
     }
@@ -83,5 +89,5 @@ import jetbrains.mps.logging.Logger;
     );
   }
 
-  private static Logger LOG = Logger.getLogger(GitGlobalConfigFixesInstaller.class);
+  protected static Logger LOG = LogManager.getLogger(GitGlobalConfigFixesInstaller.class);
 }

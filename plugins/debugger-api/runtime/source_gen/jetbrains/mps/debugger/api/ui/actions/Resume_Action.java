@@ -10,9 +10,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Resume_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Debugger.ThreadStates.Running;
@@ -35,7 +37,9 @@ public class Resume_Action extends BaseAction {
         event.getPresentation().setEnabled(debugSession != null && debugSession.isPaused());
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "Resume", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "Resume", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -55,9 +59,11 @@ public class Resume_Action extends BaseAction {
     try {
       DebugActionsUtil.getDebugSession(event).resume();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "Resume", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "Resume", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(Resume_Action.class);
+  protected static Logger LOG = LogManager.getLogger(Resume_Action.class);
 }

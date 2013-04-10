@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
@@ -26,7 +27,8 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import java.io.IOException;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class TestMergeAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -46,7 +48,9 @@ public class TestMergeAction_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "TestMergeAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "TestMergeAction", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -104,7 +108,9 @@ public class TestMergeAction_Action extends BaseAction {
                 try {
                   ModelPersistence.saveModel(result, new FileDataSource(iFile));
                 } catch (IOException e) {
-                  LOG.error("Cannot save model.", e);
+                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                    LOG.error("Cannot save model.", e);
+                  }
                 }
               }
             });
@@ -113,9 +119,11 @@ public class TestMergeAction_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "TestMergeAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "TestMergeAction", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(TestMergeAction_Action.class);
+  protected static Logger LOG = LogManager.getLogger(TestMergeAction_Action.class);
 }

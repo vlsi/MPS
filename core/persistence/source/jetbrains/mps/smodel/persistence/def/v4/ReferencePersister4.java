@@ -19,6 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import jetbrains.mps.smodel.StaticReference;
@@ -33,7 +34,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class ReferencePersister4 implements IReferencePersister {
 
-  private static final Logger LOG = Logger.getLogger(ReferencePersister4.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ReferencePersister4.class));
 
   protected SNode mySourceNode;
   protected String myRole;

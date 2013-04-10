@@ -21,7 +21,8 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.LanguageLibrary;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 
@@ -29,7 +30,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class PluginLibrariesContributor implements LibraryContributor, ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(PluginLibrariesContributor.class);
+  private static final Logger LOG = LogManager.getLogger(PluginLibrariesContributor.class);
 
   @Override
   public Set<LibDescriptor> getLibraries() {

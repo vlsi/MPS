@@ -21,7 +21,8 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IScope;
@@ -34,7 +35,7 @@ public class FilterNode extends BaseNode {
   private static final String FILTER = "filter";
   private static final String CLASS_NAME = "class_name";
 
-  private static final Logger LOG = Logger.getLogger(FilterNode.class);
+  private static final Logger LOG = LogManager.getLogger(FilterNode.class);
 
   private BaseFilter myFilter = null;
 

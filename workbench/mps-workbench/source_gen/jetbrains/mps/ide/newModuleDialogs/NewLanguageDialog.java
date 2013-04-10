@@ -15,8 +15,10 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.Solution;
 import java.io.IOException;
+import org.apache.log4j.Priority;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NewLanguageDialog extends DialogWrapper {
 
@@ -82,7 +84,9 @@ public class NewLanguageDialog extends DialogWrapper {
           }
         } catch (IOException e) {
           // todo: ! 
-          LOG.error("Cannot create runtime / sandbox module", e);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("Cannot create runtime / sandbox module", e);
+          }
         }
 
         myResult = language;
@@ -108,5 +112,5 @@ public class NewLanguageDialog extends DialogWrapper {
     return myError == null;
   }
 
-  private static Logger LOG = Logger.getLogger(NewLanguageDialog.class);
+  protected static Logger LOG = LogManager.getLogger(NewLanguageDialog.class);
 }

@@ -19,15 +19,14 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.KeyedExtensionCollector;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.List;
 
 public class PersistenceComponent implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(PersistenceComponent.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(PersistenceComponent.class));
 
   private final static KeyedExtensionCollector<ModelRootSettingsEditorProvider, String> oursCollector =
     new KeyedExtensionCollector<ModelRootSettingsEditorProvider, String>("com.intellij.mps.modelRootSettings") {
@@ -44,7 +43,7 @@ public class PersistenceComponent implements ApplicationComponent {
   public static ModelRootSettingsEditor getModelRootSettingsEditor(String type) {
     List<ModelRootSettingsEditorProvider> providers = oursCollector.forKey(type);
     if (providers.isEmpty()) return null;
-    LOG.assertLog(providers.size() == 1);
+    LOG.assertLog(providers.size() == 1, "Assertion failed.");
     return providers.get(0).createEditor();
   }
 

@@ -18,7 +18,8 @@ package jetbrains.mps.workbench.actions.module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -35,7 +36,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.JOptionPane;
 
 public class DeleteModuleHelper {
-  private static final Logger LOG = Logger.getLogger(DeleteModuleHelper.class);
+  private static final Logger LOG = LogManager.getLogger(DeleteModuleHelper.class);
 
   public static void deleteModule(Project project, IModule module, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {

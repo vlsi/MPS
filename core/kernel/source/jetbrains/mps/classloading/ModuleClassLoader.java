@@ -16,7 +16,8 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.NameUtil;
@@ -24,7 +25,6 @@ import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.iterable.IterableEnumeration;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
@@ -37,7 +37,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ModuleClassLoader extends ClassLoader {
-  private static final Logger LOG = Logger.getLogger(ModuleClassLoader.class);
+  private static final Logger LOG = LogManager.getLogger(ModuleClassLoader.class);
 
   private final ClassLoaderManager myManager;
 
@@ -202,7 +202,7 @@ public class ModuleClassLoader extends ClassLoader {
       if (classLoader != null) {
         classLoaders.add(classLoader);
       } else {
-        LOG.warning("Null classloader for module from compile dependencies; module name: " + dep.getModuleName() + "; module class " + dep.getClass());
+        LOG.warn("Null classloader for module from compile dependencies; module name: " + dep.getModuleName() + "; module class " + dep.getClass());
       }
     }
     myDependenciesClassLoaders = classLoaders;

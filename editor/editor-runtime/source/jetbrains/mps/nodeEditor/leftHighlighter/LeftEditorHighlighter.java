@@ -28,7 +28,8 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -57,7 +58,7 @@ import java.util.List;
  * This class should be called in UI (EventDispatch) thread only
  */
 public class LeftEditorHighlighter extends JComponent implements TooltipComponent {
-  private static final Logger LOG = Logger.getLogger(LeftEditorHighlighter.class);
+  private static final Logger LOG = LogManager.getLogger(LeftEditorHighlighter.class);
   public static final String ICON_AREA = "LeftEditorHighlighterIconArea";
   private static final Color BACKGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.GUTTER_BACKGROUND);
 

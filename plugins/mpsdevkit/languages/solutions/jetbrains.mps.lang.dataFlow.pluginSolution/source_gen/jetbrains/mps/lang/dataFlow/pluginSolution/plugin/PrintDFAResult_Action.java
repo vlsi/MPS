@@ -7,12 +7,14 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class PrintDFAResult_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,7 +34,9 @@ public class PrintDFAResult_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "PrintDFAResult", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "PrintDFAResult", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -58,9 +62,11 @@ public class PrintDFAResult_Action extends BaseAction {
       Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
       System.out.println(program.toString(true));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "PrintDFAResult", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "PrintDFAResult", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(PrintDFAResult_Action.class);
+  protected static Logger LOG = LogManager.getLogger(PrintDFAResult_Action.class);
 }

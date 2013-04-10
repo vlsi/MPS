@@ -8,6 +8,7 @@ import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,7 +29,8 @@ import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.PathConverter;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ImportAllModulesFromFolder_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Actions.ImportModulesFromFolder;
@@ -48,7 +50,9 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ImportAllModulesFromFolder", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ImportAllModulesFromFolder", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -100,7 +104,9 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
         }
       });
       if (basePath.value == null) {
-        LOG.error("working directory is not available");
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("working directory is not available");
+        }
         return;
       }
       if (projectFolder.value != null) {
@@ -140,11 +146,13 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
         }
       }, ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ImportAllModulesFromFolder", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ImportAllModulesFromFolder", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ImportAllModulesFromFolder_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ImportAllModulesFromFolder_Action.class);
 
   public static boolean isNotEmpty_mmt9i1_a0a1a0a0a0a5a0a5(String str) {
     return str != null && str.length() > 0;

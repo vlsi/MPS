@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 
@@ -64,7 +65,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   //-----------------------
 
-  private static final Logger LOG = Logger.getLogger(RealClassPathItem.class);
+  private static final Logger LOG = LogManager.getLogger(RealClassPathItem.class);
   private boolean myValid = true;
   private boolean myErrorShown = false;
 

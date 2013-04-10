@@ -16,14 +16,15 @@
 package jetbrains.mps.typesystem.inference;
 
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 
 import java.util.Set;
 
 public abstract class SubtypingManager {
-  private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
+  private static final Logger LOG = LogManager.getLogger(SubtypingManager.class);
 
   protected final TypeChecker myTypeChecker;
 

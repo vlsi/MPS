@@ -8,6 +8,7 @@ import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
@@ -24,7 +25,8 @@ import jetbrains.mps.ide.properties.StandardDialogs;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ModuleProperties_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Settings;
@@ -44,7 +46,9 @@ public class ModuleProperties_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ModuleProperties", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ModuleProperties", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -97,9 +101,11 @@ public class ModuleProperties_Action extends BaseAction {
         dialog.value.show();
       */
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ModuleProperties", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ModuleProperties", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ModuleProperties_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ModuleProperties_Action.class);
 }

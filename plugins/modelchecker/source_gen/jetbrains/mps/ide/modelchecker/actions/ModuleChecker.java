@@ -9,7 +9,9 @@ import java.util.List;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ModuleChecker {
   private SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
@@ -33,7 +35,9 @@ public class ModuleChecker {
         myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, module.getModuleName() + ": " + NameUtil.formatNumericalString(ListSequence.fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see module properties)", null, ModelChecker.SEVERITY_ERROR, "Module properties"));
       }
     } catch (Throwable t) {
-      LOG.error("Error while " + module.getModuleName() + " module checking", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Error while " + module.getModuleName() + " module checking", t);
+      }
     } finally {
       monitor.done();
     }
@@ -43,5 +47,5 @@ public class ModuleChecker {
     return myResults;
   }
 
-  private static Logger LOG = Logger.getLogger(ModuleChecker.class);
+  protected static Logger LOG = LogManager.getLogger(ModuleChecker.class);
 }

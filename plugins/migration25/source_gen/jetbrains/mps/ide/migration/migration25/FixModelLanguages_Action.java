@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.IModule;
@@ -21,7 +22,8 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FixModelLanguages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -41,7 +43,9 @@ public class FixModelLanguages_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FixModelLanguages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "FixModelLanguages", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -84,9 +88,11 @@ public class FixModelLanguages_Action extends BaseAction {
       }
       SModelRepository.getInstance().saveAll();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FixModelLanguages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "FixModelLanguages", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(FixModelLanguages_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FixModelLanguages_Action.class);
 }

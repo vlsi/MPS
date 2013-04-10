@@ -7,6 +7,7 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
@@ -43,7 +44,7 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 
 public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint, ILocationBreakpoint> implements ProjectComponent {
-  private static final Logger LOG = Logger.getLogger(BreakpointsUiComponent.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(BreakpointsUiComponent.class));
   private static final String BREAKPOINT_ELEMENT = "breakpoint";
   private static final String KIND_TAG = "kind";
   private final Project myProject;

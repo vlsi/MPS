@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -42,7 +43,7 @@ import java.util.Map;
 
 
 public class GenerationTracer implements IGenerationTracer {
-  private static final Logger LOG = Logger.getLogger(GenerationTracer.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(GenerationTracer.class));
 
   private Project myProject;
   private boolean myActive = false;

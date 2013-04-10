@@ -21,7 +21,8 @@ import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.make.java.RootDependencies;
@@ -29,7 +30,6 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
@@ -42,7 +42,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class TextGenerator {
-  private static final Logger LOG = Logger.getLogger(TextGenerator.class);
+  private static final Logger LOG = LogManager.getLogger(TextGenerator.class);
 
   public static List<IMessage> handleTextGenResults(GenerationStatus sourceStatus, List<TextGenerationResult> results,
                                                     boolean generateDebugInfo,

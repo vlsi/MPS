@@ -21,6 +21,7 @@ import java.util.Arrays;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.apache.log4j.Priority;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -31,7 +32,8 @@ import jetbrains.mps.util.Computable;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -115,7 +117,9 @@ public class NextPreviousTraverser {
         return b.getLeftComponent() == myLastEditor || b.getRightComponent() == myLastEditor;
       }
     }))) {
-      LOG.error("last editor is uknown: " + myLastEditor, new AssertionError());
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("last editor is uknown: " + myLastEditor, new AssertionError());
+      }
     }
   }
 
@@ -227,11 +231,13 @@ public class NextPreviousTraverser {
     if (editorCell != null) {
       myLastEditor.changeSelection(editorCell);
     } else {
-      LOG.warning(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
-        public String compute() {
-          return check_mf966z_a0a0a2a0a0b0v(check_mf966z_a0a0a0c0a0a1a12(myLastEditor.getEditedNode()));
-        }
-      })));
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
+          public String compute() {
+            return check_mf966z_a0a0a2a0a0b0v(check_mf966z_a0a0a0c0a0a1a12(myLastEditor.getEditedNode()));
+          }
+        })));
+      }
     }
   }
 
@@ -263,7 +269,7 @@ public class NextPreviousTraverser {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(NextPreviousTraverser.class);
+  protected static Logger LOG = LogManager.getLogger(NextPreviousTraverser.class);
 
   private static Bounds check_mf966z_a5a51(ChangeGroup checkedDotOperand, boolean left) {
     if (null != checkedDotOperand) {

@@ -16,9 +16,11 @@ import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.apache.log4j.Priority;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class NodeByConcept_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
@@ -103,7 +105,9 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
       clone.myState = (NodeByConcept_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -148,7 +152,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     return myEditorEx;
   }
 
-  private static Logger LOG = Logger.getLogger(NodeByConcept_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(NodeByConcept_Configuration.class);
 
   private static SNode check_h3hwcn_a0a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {

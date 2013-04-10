@@ -10,9 +10,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Pause_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Pause;
@@ -35,7 +37,9 @@ public class Pause_Action extends BaseAction {
         event.getPresentation().setEnabled(debugSession != null && debugSession.isRunning());
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "Pause", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "Pause", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -55,9 +59,11 @@ public class Pause_Action extends BaseAction {
     try {
       DebugActionsUtil.getDebugSession(event).pause();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "Pause", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "Pause", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(Pause_Action.class);
+  protected static Logger LOG = LogManager.getLogger(Pause_Action.class);
 }

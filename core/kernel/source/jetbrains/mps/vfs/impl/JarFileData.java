@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.vfs.impl;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +31,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 class JarFileData extends AbstractJarFileData {
-  private static Logger LOG = Logger.getLogger(JarFileData.class);
+  private static Logger LOG = LogManager.getLogger(JarFileData.class);
 
   private final Object myLock = new Object();
   private boolean isInitialized = false;

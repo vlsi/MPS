@@ -30,7 +30,8 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerListener;
 
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -40,7 +41,7 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 
 public abstract class BaseTool {
-  private static final Logger LOG = Logger.getLogger(BaseTool.class);
+  private static final Logger LOG = LogManager.getLogger(BaseTool.class);
 
   private Project myProject;
   private String myId;

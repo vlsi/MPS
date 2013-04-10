@@ -4,7 +4,8 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.binary.BinaryModelHeader;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.persistence.binary.BinarySModel;
@@ -12,7 +13,6 @@ import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.ByteArrayInputStream;
@@ -35,7 +34,7 @@ import static jetbrains.mps.generator.ModelDigestUtil.DigestBuilderOutputStream;
  * evgeny, 11/20/12
  */
 public class BinaryModelPersistence implements CoreComponent, ModelFactory {
-  private static final Logger LOG = Logger.getLogger(BinaryModelPersistence.class);
+  private static final Logger LOG = LogManager.getLogger(BinaryModelPersistence.class);
 
   @Override
   public void init() {

@@ -8,7 +8,9 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToNamedNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -30,7 +32,9 @@ public class GoToNamedNode_Action extends BaseAction {
     try {
       GoToNamedNode_Action.this.action.update(event);
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToNamedNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToNamedNode", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -46,7 +50,9 @@ public class GoToNamedNode_Action extends BaseAction {
     try {
       GoToNamedNode_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToNamedNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToNamedNode", t);
+      }
     }
   }
 
@@ -64,5 +70,5 @@ public class GoToNamedNode_Action extends BaseAction {
     return "";
   }
 
-  private static Logger LOG = Logger.getLogger(GoToNamedNode_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToNamedNode_Action.class);
 }

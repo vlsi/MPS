@@ -28,7 +28,8 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
@@ -46,7 +47,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class FindUtils {
-  private static final Logger LOG = Logger.getLogger(FindUtils.class);
+  private static final Logger LOG = LogManager.getLogger(FindUtils.class);
 
   @Deprecated
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final IScope scope, final String... finderClassNames) {

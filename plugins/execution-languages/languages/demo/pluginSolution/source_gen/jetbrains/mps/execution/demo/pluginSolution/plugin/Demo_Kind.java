@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
+import org.apache.log4j.Priority;
 import com.intellij.icons.AllIcons;
 import java.util.List;
 import com.intellij.execution.configurations.ConfigurationFactory;
@@ -17,14 +18,17 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Demo_Kind implements ConfigurationType {
   private static final Icon ICON = new _FunctionTypes._return_P0_E0<Icon>() {
     public Icon invoke() {
       IModule module = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("22e72e4c-0f69-46ce-8403-6750153aa615"));
       if (module == null) {
-        LOG.error("Can't find language jetbrains.mps.execution.configurations, turn on \"Execution Languages\" plugin.");
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Can't find language jetbrains.mps.execution.configurations, turn on \"Execution Languages\" plugin.");
+        }
         return null;
       }
       return AllIcons.RunConfigurations.Application;
@@ -68,5 +72,5 @@ public class Demo_Kind implements ConfigurationType {
     return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), Demo_Kind.class);
   }
 
-  private static Logger LOG = Logger.getLogger(Demo_Kind.class);
+  protected static Logger LOG = LogManager.getLogger(Demo_Kind.class);
 }

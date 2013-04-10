@@ -10,7 +10,9 @@ import java.util.Map;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import com.intellij.icons.AllIcons;
 import com.intellij.util.ui.EmptyIcon;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CheckModelsBeforeGeneration_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,7 +39,9 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CheckModelsBeforeGeneration", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CheckModelsBeforeGeneration", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -54,9 +58,11 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
       GenerationSettings settings = GenerationSettings.getInstance();
       settings.setCheckModelsBeforeGeneration(!(settings.isCheckModelsBeforeGeneration()));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CheckModelsBeforeGeneration", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CheckModelsBeforeGeneration", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CheckModelsBeforeGeneration_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CheckModelsBeforeGeneration_Action.class);
 }

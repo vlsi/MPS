@@ -33,7 +33,8 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -55,7 +56,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class MPSEditorWarningsManager implements ProjectComponent {
-  public static final Logger LOG = Logger.getLogger(MPSEditorWarningsManager.class);
+  public static final Logger LOG = LogManager.getLogger(MPSEditorWarningsManager.class);
 
   private FileEditorManager myFileEditorManager;
   private ClassLoaderManager myClassLoaderManager;

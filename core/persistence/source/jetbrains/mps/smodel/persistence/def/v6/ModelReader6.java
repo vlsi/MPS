@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
@@ -40,7 +41,7 @@ import java.util.List;
  * Michael.Vlassiev, Oct 12, 2010
  */
 public class ModelReader6 implements IModelReader {
-  private static final Logger LOG = Logger.getLogger(ModelReader6.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ModelReader6.class));
 
   private VersionUtil myHelper;
 

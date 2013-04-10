@@ -22,6 +22,7 @@ import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import junit.framework.Assert;
 import junit.framework.TestCase;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class ParallelPoolTest extends TestCase {
 
-  private static Logger LOG = Logger.getLogger(ParallelPoolTest.class);
+  private static Logger LOG = LogManager.getLogger(ParallelPoolTest.class);
 
   private static class CustomTask implements GenerationTask {
     private AtomicBoolean isFinished = new AtomicBoolean(false);

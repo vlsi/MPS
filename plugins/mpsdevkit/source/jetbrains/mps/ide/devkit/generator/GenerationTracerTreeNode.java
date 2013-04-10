@@ -25,7 +25,8 @@ import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -37,7 +38,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Map;
 
 public class GenerationTracerTreeNode extends MPSTreeNode {
-  private static final Logger LOG = Logger.getLogger(GenerationTracerTreeNode.class);
+  private static final Logger LOG = LogManager.getLogger(GenerationTracerTreeNode.class);
 
   private TracerNode myTracerNode;
   private Project myProject;

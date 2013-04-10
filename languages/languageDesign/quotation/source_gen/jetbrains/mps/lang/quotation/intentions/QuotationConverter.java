@@ -26,9 +26,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import org.apache.log4j.Priority;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -139,7 +141,9 @@ public class QuotationConverter {
 
       SNode link = SNodeOperations.as(SModelSearchUtil.findMostSpecificLinkDeclaration(SLinkOperations.getTarget(result, "concept", false), SNodeOperations.getContainingLinkRole(child)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
       if ((link == null)) {
-        LOG.error("cannot find link `" + SNodeOperations.getContainingLinkRole(child) + "' in " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(result, "concept", false), "virtual_getFqName_1213877404258", new Object[]{}));
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("cannot find link `" + SNodeOperations.getContainingLinkRole(child) + "' in " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(result, "concept", false), "virtual_getFqName_1213877404258", new Object[]{}));
+        }
       }
       boolean multipleLink = link != null && !(LinkDeclaration_Behavior.call_isSingular_1213877254557(link));
       SNode c = convert(child);
@@ -165,7 +169,7 @@ public class QuotationConverter {
     return result;
   }
 
-  private static Logger LOG = Logger.getLogger(QuotationConverter.class);
+  protected static Logger LOG = LogManager.getLogger(QuotationConverter.class);
 
   private static SNode _quotation_createNode_aytayy_a0a1a0d0l0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

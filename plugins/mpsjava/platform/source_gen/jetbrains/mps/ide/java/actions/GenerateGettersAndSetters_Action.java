@@ -9,6 +9,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -25,7 +26,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -58,7 +60,9 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GenerateGettersAndSetters", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GenerateGettersAndSetters", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -115,7 +119,9 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
         ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(lastAdded);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GenerateGettersAndSetters", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GenerateGettersAndSetters", t);
+      }
     }
   }
 
@@ -142,7 +148,7 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
     });
   }
 
-  private static Logger LOG = Logger.getLogger(GenerateGettersAndSetters_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GenerateGettersAndSetters_Action.class);
 
   private static SNode _quotation_createNode_5trf1k_a0a4a41a0(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

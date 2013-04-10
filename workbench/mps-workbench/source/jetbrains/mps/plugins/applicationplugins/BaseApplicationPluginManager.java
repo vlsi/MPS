@@ -17,7 +17,8 @@ package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.AbstractPluginFactory;
 import jetbrains.mps.plugins.PluginFactoriesRegistry;
 import jetbrains.mps.workbench.action.IActionsRegistry;
@@ -31,7 +32,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class BaseApplicationPluginManager implements ApplicationComponent, IRegistryManager {
-  private static final Logger LOG = Logger.getLogger(BaseApplicationPluginManager.class);
+  private static final Logger LOG = LogManager.getLogger(BaseApplicationPluginManager.class);
 
   protected List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
 

@@ -36,12 +36,14 @@ import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import gnu.trove.THashSet;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFileVisitor;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class StubModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
   public StubModelsFastFindSupport() {
@@ -160,7 +162,9 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       for (IFile path : files) {
         final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
         if (vf == null) {
-          LOG.warning("File " + path + ", which belows to model source of model " + sm.getReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
+          if (LOG.isEnabledFor(Priority.WARN)) {
+            LOG.warn("File " + path + ", which belows to model source of model " + sm.getReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
+          }
           continue;
         }
         VfsUtilCore.visitChildrenRecursively(vf, new VirtualFileVisitor<Object>() {
@@ -194,5 +198,5 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     return result;
   }
 
-  private static Logger LOG = Logger.getLogger(StubModelsFastFindSupport.class);
+  protected static Logger LOG = LogManager.getLogger(StubModelsFastFindSupport.class);
 }

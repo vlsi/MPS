@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.IModule;
@@ -26,7 +27,8 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class AddSourcesToModelRoots_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -46,7 +48,9 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "AddSourcesToModelRoots", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "AddSourcesToModelRoots", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -112,9 +116,11 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
 
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "AddSourcesToModelRoots", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "AddSourcesToModelRoots", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(AddSourcesToModelRoots_Action.class);
+  protected static Logger LOG = LogManager.getLogger(AddSourcesToModelRoots_Action.class);
 }

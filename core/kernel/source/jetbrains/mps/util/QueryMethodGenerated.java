@@ -16,7 +16,8 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -34,7 +35,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public class QueryMethodGenerated implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
+  private static final Logger LOG = LogManager.getLogger(QueryMethodGenerated.class);
 
   private static ConcurrentMap<SModelReference, Map<String, Method>> ourMethods = new ConcurrentHashMap<SModelReference, Map<String, Method>>();
   private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();

@@ -16,7 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -30,7 +31,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class GoToTypeErrorRuleUtil {
-  private static Logger LOG = Logger.getLogger(GoToTypeErrorRuleUtil.class);
+  private static Logger LOG = LogManager.getLogger(GoToTypeErrorRuleUtil.class);
 
   public GoToTypeErrorRuleUtil() {
   }

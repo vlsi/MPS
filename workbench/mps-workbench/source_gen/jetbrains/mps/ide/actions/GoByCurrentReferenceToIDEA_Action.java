@@ -14,6 +14,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -26,7 +27,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -62,7 +64,9 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoByCurrentReferenceToIDEA", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoByCurrentReferenceToIDEA", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -119,7 +123,9 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
         }
       }.start();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoByCurrentReferenceToIDEA", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoByCurrentReferenceToIDEA", t);
+      }
     }
   }
 
@@ -174,7 +180,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     return SModelStereotype.withoutStereotype(ref.getModelName()) + "." + SPropertyOperations.getString(classifier, "name");
   }
 
-  private static Logger LOG = Logger.getLogger(GoByCurrentReferenceToIDEA_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoByCurrentReferenceToIDEA_Action.class);
 
   private static boolean eq_xgilk9_a0f0d(Object a, Object b) {
     return (a != null ?

@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -21,7 +22,8 @@ import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FindlAllBrokenReferences_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -41,7 +43,9 @@ public class FindlAllBrokenReferences_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindlAllBrokenReferences", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "FindlAllBrokenReferences", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -70,9 +74,11 @@ public class FindlAllBrokenReferences_Action extends BaseAction {
       }));
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(models, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new BrokenReferencesFinder());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindlAllBrokenReferences", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "FindlAllBrokenReferences", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(FindlAllBrokenReferences_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FindlAllBrokenReferences_Action.class);
 }
