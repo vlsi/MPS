@@ -48,6 +48,7 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
@@ -621,9 +622,12 @@ public class EditorManager {
 
   private EditorAspect getEditor(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
     SConcept concept = node.getConcept();
+    boolean isInterface = false;
     if (concept != null) {
       LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(concept.getQualifiedName()));
       if (languageRuntime != null) {
+        ConceptDescriptor conceptDescriptor = languageRuntime.getStructureAspectDescriptor().getDescriptor(concept.getQualifiedName());
+        isInterface = conceptDescriptor != null && conceptDescriptor.isInterfaceConcept();
         EditorAspectDescriptor aspectDescriptor = languageRuntime.getAspectDescriptor(EditorAspectDescriptor.class);
         if (aspectDescriptor != null) {
           EditorAspect nodeEditor = aspectDescriptor.getAspect(concept);
@@ -634,7 +638,7 @@ public class EditorManager {
       }
     }
 
-    return new DefaultNodeEditor();
+    return !isInterface ? new DefaultNodeEditor() : new DefaultInterfaceEditor();
   }
 
   private EditorComponent getEditorComponent(jetbrains.mps.openapi.editor.EditorContext context) {
@@ -679,6 +683,21 @@ public class EditorManager {
         return (jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell;
       }
       return rtHint;
+    }
+  }
+
+  public static class DefaultInterfaceEditor implements EditorAspect {
+    public DefaultInterfaceEditor() {
+    }
+
+    @Override
+    public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
+      return new EditorCell_Error(context, node, "    ");
+    }
+
+    @Override
+    public EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
+      return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
   }
 }
