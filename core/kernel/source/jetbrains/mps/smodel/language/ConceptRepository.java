@@ -65,6 +65,10 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
         // optimization - loading all concepts from this model into myConcepts cache
         for (SNode root : sm.getRootNodes()) {
           String conceptFQName = modelFqName + "." + root.getProperty(SNodeUtil.property_INamedConcept_name);
+          if (conceptFQName.equals(SNodeUtil.concept_ConceptDeclaration)){
+            myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
+          }
+
           String conceptId = root.getConcept().getId();
           if (conceptId.equals(SNodeUtil.concept_ConceptDeclaration)){
             myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
