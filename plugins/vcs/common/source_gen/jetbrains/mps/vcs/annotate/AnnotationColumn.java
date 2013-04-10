@@ -80,7 +80,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.project.Project;
-//import com.intellij.openapi.vcs.annotate.AnnotationListener;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressManager;
@@ -123,7 +122,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private VcsRevisionRange myRevisionRange;
   private ViewActionGroup myViewActionGroup;
   private AnnotationColumn.MyDifferenceListener myDifferenceListener = new AnnotationColumn.MyDifferenceListener();
-//  private AnnotationColumn.MyAnnotationListener myAnnotationListener = new AnnotationColumn.MyAnnotationListener();
   private boolean myShowAdditionalInfo = false;
   private MessageBusConnection myMessageBusConnection;
 
@@ -158,7 +156,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
       });
       return;
     }
-//    myFileAnnotation.addListener(myAnnotationListener);
     myAuthorAnnotationAspect = Sequence.fromIterable(Sequence.fromArray(myFileAnnotation.getAspects())).findFirst(new IWhereFilter<LineAnnotationAspect>() {
       public boolean accept(LineAnnotationAspect a) {
         return LineAnnotationAspect.AUTHOR.equals(a.getId());
@@ -167,7 +164,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     Map<SNodeId, Integer> nodeIdToFileLine = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
     for (int line = 0; line < ListSequence.fromList(myFileLineToContent).count(); line++) {
       SNode node = null;
-      SNodeId id = check_5mnya_a0b0l0w(ListSequence.fromList(myFileLineToContent).getElement(line));
+      SNodeId id = check_5mnya_a0b0k0v(ListSequence.fromList(myFileLineToContent).getElement(line));
       if (id != null && SetSequence.fromSet(descendantIds).contains(id)) {
         node = model.getNode(id);
       }
@@ -204,7 +201,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
         final CurrentDifference currentDifference = registry.getCurrentDifference(myModel);
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            ListSequence.fromList(check_5mnya_a0a0a1a0a0w0w(currentDifference.getChangeSet())).visitAll(new IVisitor<ModelChange>() {
+            ListSequence.fromList(check_5mnya_a0a0a1a0a0v0v(currentDifference.getChangeSet())).visitAll(new IVisitor<ModelChange>() {
               public void visit(ModelChange ch) {
                 saveChange(ch);
               }
@@ -492,7 +489,6 @@ __switch__:
   @Override
   public void dispose() {
     myMessageBusConnection.disconnect();
-//    myFileAnnotation.removeListener(myAnnotationListener);
     myFileAnnotation.dispose();
     final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
     registry.getCommandQueue().runTask(new Runnable() {
@@ -610,22 +606,6 @@ __switch__:
     return myVcs.getProject();
   }
 
-  /*private class MyAnnotationListener implements AnnotationListener {
-    public MyAnnotationListener() {
-    }
-
-    @Override
-    public void onAnnotationChanged() {
-      final EditorComponent editor = getEditorComponent();
-      close();
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          AnnotationHelper.annotate(editor);
-        }
-      });
-    }
-  }*/
-
   private class MyDifferenceListener extends CurrentDifferenceAdapter {
     public MyDifferenceListener() {
     }
@@ -669,11 +649,11 @@ __switch__:
               if (provider != null) {
                 pair = provider.getOneList(myModelVirtualFile, revisionNumber);
               }
-              FilePath targetPath = (check_5mnya_a0a0c0c0a0a0a0b0b0c74(pair) == null ?
+              FilePath targetPath = (check_5mnya_a0a0c0c0a0a0a0b0b0c54(pair) == null ?
                 new FilePathImpl(myModelVirtualFile) :
-                check_5mnya_a0a2a2a0a0a0a1a1a2vb(pair)
+                check_5mnya_a0a2a2a0a0a0a1a1a2tb(pair)
               );
-              CommittedChangeList cl = check_5mnya_a0d0c0a0a0a0b0b0c74(pair);
+              CommittedChangeList cl = check_5mnya_a0d0c0a0a0a0b0b0c54(pair);
               if (cl == null) {
                 VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot load data for showing diff", MessageType.ERROR);
                 return;
@@ -723,12 +703,12 @@ __switch__:
                 final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodeId>() {
                   public SNodeId invoke() {
-                    SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a2vb(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
+                    SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a2tb(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
                     SNode node = afterModel.getNode(nodeId);
                     if ((node == null)) {
                       node = beforeModel.value.getNode(nodeId);
                     }
-                    return rootId.value = check_5mnya_a0d0a91a8a2a0a0a0a1a1a2vb(SNodeOperations.getContainingRoot(node));
+                    return rootId.value = check_5mnya_a0d0a91a8a2a0a0a0a1a1a2tb(SNodeOperations.getContainingRoot(node));
                   }
                 }));
 
@@ -782,49 +762,49 @@ __switch__:
     }
   }
 
-  private static SNodeId check_5mnya_a0b0l0w(LineContent checkedDotOperand) {
+  private static SNodeId check_5mnya_a0b0k0v(LineContent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
     return null;
   }
 
-  private static List<ModelChange> check_5mnya_a0a0a1a0a0w0w(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_5mnya_a0a0a1a0a0v0v(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a2vb(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
+  private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a2tb(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSecond();
     }
     return null;
   }
 
-  private static FilePath check_5mnya_a0a0c0c0a0a0a0b0b0c74(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
+  private static FilePath check_5mnya_a0a0c0c0a0a0a0b0b0c54(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSecond();
     }
     return null;
   }
 
-  private static CommittedChangeList check_5mnya_a0d0c0a0a0a0b0b0c74(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
+  private static CommittedChangeList check_5mnya_a0d0c0a0a0a0b0b0c54(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getFirst();
     }
     return null;
   }
 
-  private static SNodeId check_5mnya_a0a0a91a8a2a0a0a0a1a1a2vb(LineContent checkedDotOperand) {
+  private static SNodeId check_5mnya_a0a0a91a8a2a0a0a0a1a1a2tb(LineContent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
     return null;
   }
 
-  private static SNodeId check_5mnya_a0d0a91a8a2a0a0a0a1a1a2vb(SNode checkedDotOperand) {
+  private static SNodeId check_5mnya_a0d0a91a8a2a0a0a0a1a1a2tb(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }

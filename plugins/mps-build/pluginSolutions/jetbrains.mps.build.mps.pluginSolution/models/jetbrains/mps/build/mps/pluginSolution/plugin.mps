@@ -10669,7 +10669,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1622688651539229448" resolveInfo="instanceEx" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1622688651539229493">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6nxv.~ApplicationInfoEx%dgetAboutLogoUrl()%cjava%dlang%dString" resolveInfo="getAboutLogoUrl" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6nxv.~ApplicationInfoEx%dgetAboutImageUrl()%cjava%dlang%dString" resolveInfo="getAboutImageUrl" />
                               </node>
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1622688651539229494">
@@ -10726,7 +10726,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1622688651539229448" resolveInfo="instanceEx" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1622688651539229514">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6nxv.~ApplicationInfoEx%dgetLogoUrl()%cjava%dlang%dString" resolveInfo="getLogoUrl" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6nxv.~ApplicationInfoEx%dgetSplashImageUrl()%cjava%dlang%dString" resolveInfo="getSplashImageUrl" />
                               </node>
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1622688651539229515">
