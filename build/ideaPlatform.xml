@@ -1,9 +1,11 @@
 <project name="Get Idea Platform" default="resolve" xmlns:ivy="antlib:org.apache.ivy.ant">
 
-  <property name="idea.platform.version" value="123.123" />
+  <property name="idea.platform.version" value="129.999" />
+  <property name="idea.platform.snapshot" value="129.999" />
   <property name="ivy.jar.dir" value="${basedir}/ivy" />
 
   <target name="install-ivy">
+    <property name="mps.ivy.home" value="${user.home}"/>
     <path id="ivy.lib.path">
       <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
     </path>
@@ -36,8 +38,17 @@
     </loadfile>
   </target>
 
-  <target name="force-resolve" depends="install-ivy">
-    <property name="mps.ivy.home" value="${user.home}"/>
+  <target name="checkSnapshot" depends="readFile">
+    <condition property="isSnapshot" value="true" else="false">
+      <equals arg1="${idea.platform.snapshot}" arg2="${idea.platform.version}" />
+    </condition>
+  </target>
+
+  <target name="cleanCache" depends="checkSnapshot" if="${isSnapshot}">
+    <ivy:cleancache/>
+  </target>
+
+  <target name="force-resolve" depends="install-ivy, cleanCache">
     <ivy:retrieve pattern="../[orgPath]/[artifact]" overwritemode="different" log="quiet" />
   </target>
 

@@ -213,11 +213,11 @@
     <dependency org="lib.src" name="commons-net-3.1-sources.jar" rev="${idea.platform.version}">
       <artifact name="commons-net-3.1-sources.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="ecjsrc-4.2.jar" rev="${idea.platform.version}">
-      <artifact name="ecjsrc-4.2.jar" ext="jar"/>
+    <dependency org="lib.src" name="ecjsrc-4.2.1.jar" rev="${idea.platform.version}">
+      <artifact name="ecjsrc-4.2.1.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="groovy-src-1.8.5.zip" rev="${idea.platform.version}">
-      <artifact name="groovy-src-1.8.5.zip" ext="zip"/>
+    <dependency org="lib.src" name="groovy-src-2.0.6.zip" rev="${idea.platform.version}">
+      <artifact name="groovy-src-2.0.6.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="gson-2.2.1-sources.jar" rev="${idea.platform.version}">
       <artifact name="gson-2.2.1-sources.jar" ext="jar"/>
@@ -255,13 +255,10 @@
     <dependency org="lib.src" name="nanoxml.zip" rev="${idea.platform.version}">
       <artifact name="nanoxml.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="netty-3.5.10.Final-sources.jar" rev="${idea.platform.version}">
-      <artifact name="netty-3.5.10.Final-sources.jar" ext="jar"/>
-    </dependency>
     <dependency org="lib.src" name="picocontainer-src.zip" rev="${idea.platform.version}">
       <artifact name="picocontainer-src.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="platform.src.zip" rev="123.123.2">
+    <dependency org="lib.src" name="platform.src.zip" rev="${idea.platform.version}">
       <artifact name="platform.src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="sanselan-0.98-snapshot-src.jar" rev="${idea.platform.version}">
@@ -270,8 +267,8 @@
     <dependency org="lib.src" name="serviceMessages_279xxx_src.jar" rev="${idea.platform.version}">
       <artifact name="serviceMessages_279xxx_src.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="snappy-java-1.0.4.1-src.zip" rev="${idea.platform.version}">
-      <artifact name="snappy-java-1.0.4.1-src.zip" ext="zip"/>
+    <dependency org="lib.src" name="snappy-java-1.0.5-M2-src.zip" rev="${idea.platform.version}">
+      <artifact name="snappy-java-1.0.5-M2-src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="trove4j_src.jar" rev="${idea.platform.version}">
       <artifact name="trove4j_src.jar" ext="jar"/>
@@ -279,8 +276,8 @@
     <dependency org="lib.src" name="velocity-1.7-src.zip" rev="${idea.platform.version}">
       <artifact name="velocity-1.7-src.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="winp-1.16-patched-src.zip" rev="${idea.platform.version}">
-      <artifact name="winp-1.16-patched-src.zip" ext="zip"/>
+    <dependency org="lib.src" name="winp-1.17-patched-src.zip" rev="${idea.platform.version}">
+      <artifact name="winp-1.17-patched-src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="xmlrpc2.src.zip" rev="${idea.platform.version}">
       <artifact name="xmlrpc2.src.zip" ext="zip"/>
@@ -336,8 +333,8 @@
     <dependency org="lib" name="dtdparser113.jar" rev="${idea.platform.version}">
       <artifact name="dtdparser113.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="ecj-4.2.jar" rev="${idea.platform.version}">
-      <artifact name="ecj-4.2.jar" ext="jar"/>
+    <dependency org="lib" name="ecj-4.2.1.jar" rev="${idea.platform.version}">
+      <artifact name="ecj-4.2.1.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="extensions.jar" rev="${idea.platform.version}">
       <artifact name="extensions.jar" ext="jar"/>
@@ -345,8 +342,8 @@
     <dependency org="lib" name="forms_rt.jar" rev="${idea.platform.version}">
       <artifact name="forms_rt.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="groovy-all-1.8.5.jar" rev="${idea.platform.version}">
-      <artifact name="groovy-all-1.8.5.jar" ext="jar"/>
+    <dependency org="lib" name="groovy-all-2.0.6.jar" rev="${idea.platform.version}">
+      <artifact name="groovy-all-2.0.6.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="gson-2.2.1.jar" rev="${idea.platform.version}">
       <artifact name="gson-2.2.1.jar" ext="jar"/>
@@ -402,8 +399,8 @@
     <dependency org="lib" name="nanoxml-2.2.3.jar" rev="${idea.platform.version}">
       <artifact name="nanoxml-2.2.3.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="netty-3.5.10.Final.jar" rev="${idea.platform.version}">
-      <artifact name="netty-3.5.10.Final.jar" ext="jar"/>
+    <dependency org="lib" name="netty-3.6.2.Final.jar" rev="${idea.platform.version}">
+      <artifact name="netty-3.6.2.Final.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="oromatcher.jar" rev="${idea.platform.version}">
       <artifact name="oromatcher.jar" ext="jar"/>
@@ -411,7 +408,7 @@
     <dependency org="lib" name="picocontainer.jar" rev="${idea.platform.version}">
       <artifact name="picocontainer.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="platform-api.jar" rev="123.123.2">
+    <dependency org="lib" name="platform-api.jar" rev="${idea.platform.version}">
       <artifact name="platform-api.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="platform.jar" rev="${idea.platform.version}">
@@ -423,7 +420,7 @@
     <dependency org="lib" name="resolver.jar" rev="${idea.platform.version}">
       <artifact name="resolver.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="resources.jar" rev="123.123.1">
+    <dependency org="lib" name="resources.jar" rev="${idea.platform.version}">
       <artifact name="resources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="resources_en.jar" rev="${idea.platform.version}">
@@ -435,8 +432,8 @@
     <dependency org="lib" name="serviceMessages.jar" rev="${idea.platform.version}">
       <artifact name="serviceMessages.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="snappy-java-1.0.4.1.jar" rev="${idea.platform.version}">
-      <artifact name="snappy-java-1.0.4.1.jar" ext="jar"/>
+    <dependency org="lib" name="snappy-java-1.0.5-M2.jar" rev="${idea.platform.version}">
+      <artifact name="snappy-java-1.0.5-M2.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="swingx-core-1.6.2.jar" rev="${idea.platform.version}">
       <artifact name="swingx-core-1.6.2.jar" ext="jar"/>
@@ -450,8 +447,8 @@
     <dependency org="lib" name="velocity.jar" rev="${idea.platform.version}">
       <artifact name="velocity.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="winp-1.16-patched.jar" rev="${idea.platform.version}">
-      <artifact name="winp-1.16-patched.jar" ext="jar"/>
+    <dependency org="lib" name="winp-1.17-patched.jar" rev="${idea.platform.version}">
+      <artifact name="winp-1.17-patched.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="xbean.jar" rev="${idea.platform.version}">
       <artifact name="xbean.jar" ext="jar"/>
@@ -616,9 +613,6 @@
     </dependency>
     <dependency org="plugins.git4idea.lib" name="ini4j-0.5.2-patched.jar" rev="${idea.platform.version}">
       <artifact name="ini4j-0.5.2-patched.jar" ext="jar"/>
-    </dependency>
-    <dependency org="plugins.git4idea.lib" name="jsch-0.1.44.jar" rev="${idea.platform.version}">
-      <artifact name="jsch-0.1.44.jar" ext="jar"/>
     </dependency>
     <dependency org="plugins.git4idea.lib" name="org.eclipse.jgit-2.1.0.201209190230-r.jar" rev="${idea.platform.version}">
       <artifact name="org.eclipse.jgit-2.1.0.201209190230-r.jar" ext="jar"/>
