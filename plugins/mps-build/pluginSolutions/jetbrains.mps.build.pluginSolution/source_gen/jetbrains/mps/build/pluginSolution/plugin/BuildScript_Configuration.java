@@ -10,6 +10,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ant.execution.AntSettings_Configuration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -43,6 +46,18 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
   private AntSettings_Configuration mySettings = new AntSettings_Configuration();
 
   public void checkConfiguration() throws RuntimeConfigurationException {
+    {
+      final Wrappers._boolean isPackaged = new Wrappers._boolean();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          SNode node = BuildScript_Configuration.this.getNode().getNode();
+          isPackaged.value = node != null && SNodeOperations.getModel(node).getModule().isPackaged();
+        }
+      });
+      if (isPackaged.value) {
+        throw new RuntimeConfigurationException("Can not execute packaged build script.");
+      }
+    }
   }
 
   @Override

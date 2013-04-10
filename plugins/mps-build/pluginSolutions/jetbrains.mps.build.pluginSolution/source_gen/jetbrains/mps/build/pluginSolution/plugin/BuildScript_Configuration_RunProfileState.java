@@ -19,9 +19,9 @@ import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -59,32 +59,38 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    final Wrappers._T<IFile> file = new Wrappers._T<IFile>();
+    final Wrappers._T<IFile> file = new Wrappers._T<IFile>(null);
     final Wrappers._T<String> mainTaskName = new Wrappers._T<String>();
     final Wrappers._T<List<String>> undefinedMacro = new Wrappers._T<List<String>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = SNodeOperations.cast(myRunConfiguration.getNode().getNode(), "jetbrains.mps.build.structure.BuildProject");
-        file.value = FileSystem.getInstance().getFileByPath(BuildProject_Behavior.call_getScriptsPath_4796668409958419284(node, Context.defaultContext()));
-        // todo 
-        file.value = file.value.getDescendant(BuildProject_Behavior.call_getOutputFileName_4915877860351551360(node));
-        // todo select task 
-        mainTaskName.value = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)", "7306485738221408315"), "parts", true)).findFirst(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfTask");
-          }
-        }), "jetbrains.mps.build.workflow.structure.BwfTask"), "name");
-        undefinedMacro.value = ListSequence.fromList(SLinkOperations.getTargets(node, "macros", true)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFolderMacro") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro"), "defaultPath", true) == null);
-          }
-        }).select(new ISelector<SNode, String>() {
-          public String select(SNode it) {
-            return SPropertyOperations.getString(it, "name");
-          }
-        }).toListSequence();
+        String scriptsPath = BuildProject_Behavior.call_getScriptsPath_4796668409958419284(node, Context.defaultContext());
+        if (scriptsPath != null) {
+          file.value = FileSystem.getInstance().getFileByPath(scriptsPath);
+          // todo 
+          file.value = file.value.getDescendant(BuildProject_Behavior.call_getOutputFileName_4915877860351551360(node));
+          // todo select task 
+          mainTaskName.value = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)", "7306485738221408315"), "parts", true)).findFirst(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfTask");
+            }
+          }), "jetbrains.mps.build.workflow.structure.BwfTask"), "name");
+          undefinedMacro.value = ListSequence.fromList(SLinkOperations.getTargets(node, "macros", true)).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFolderMacro") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro"), "defaultPath", true) == null);
+            }
+          }).select(new ISelector<SNode, String>() {
+            public String select(SNode it) {
+              return SPropertyOperations.getString(it, "name");
+            }
+          }).toListSequence();
+        }
       }
     });
+    if (file.value == null) {
+      throw new ExecutionException("Can not find xml-file for script " + myRunConfiguration.getNode());
+    }
     {
       ProcessHandler _processHandler = new Ant_Command().setTargetName_String(mainTaskName.value).setAntLocation_String((myRunConfiguration.getSettings().getUseOtherAntLocation() ?
         myRunConfiguration.getSettings().getOtherAntLocation() :

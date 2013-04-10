@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration" file="BuildScript_Configuration.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
@@ -12,6 +13,7 @@
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="jetbrains.mps.ant.execution.AntSettings_Configuration" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Editor" />
@@ -24,6 +26,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_RunProfileState" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
