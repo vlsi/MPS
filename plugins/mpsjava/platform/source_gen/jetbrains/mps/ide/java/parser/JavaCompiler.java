@@ -199,6 +199,9 @@ public class JavaCompiler {
   }
 
   private void registerModelForPackage(String fqName) {
+    if (myPackageFQNamesToModels.containsKey(fqName) || myModelsToCreate.contains(fqName)) {
+      return;
+    }
     SModelFqName sModelFqName = SModelFqName.fromString(fqName);
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelFqName);
     if (modelDescriptor != null) {
@@ -259,6 +262,7 @@ public class JavaCompiler {
         LOG.error("model fq name " + SModelOperations.getModelName(myBaseModelToAddSource) + " does not match source directory " + ListSequence.fromList(mySourceDirs).first().getAbsolutePath());
         return;
       }
+      myPackageFQNamesToModels.put(SModelOperations.getModelName(myBaseModelToAddSource), myBaseModelToAddSource);
     }
     initClassPathItem(myModule);
     for (File sourceDir : ListSequence.fromList(mySourceDirs)) {
