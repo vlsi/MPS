@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.extapi.model;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -45,7 +46,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public abstract class SModelDescriptorStub implements SModelDescriptor {
 
-  private static final Logger LOG = Logger.getLogger(SModelDescriptorStub.class);
+  private static final Logger LOG = LogManager.getLogger(SModelDescriptorStub.class);
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
 

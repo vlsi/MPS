@@ -17,7 +17,8 @@ package jetbrains.mps.nodeEditor.keymaps;
 
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TObjectProcedure;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -47,7 +48,7 @@ import java.util.List;
  * Date: 2/5/13
  */
 public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
-  private static final Logger LOG = Logger.getLogger(AWTKeymapHandler.class);
+  private static final Logger LOG = LogManager.getLogger(AWTKeymapHandler.class);
   private static TIntObjectHashMap<String> ourJavaKeyCodesMap = new TIntObjectHashMap<String>();
 
   static {

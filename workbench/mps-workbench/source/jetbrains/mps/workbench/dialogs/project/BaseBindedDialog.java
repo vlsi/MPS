@@ -23,7 +23,8 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
@@ -39,7 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseBindedDialog extends DialogWrapper implements IBindedDialog {
-  private static final Logger LOG = Logger.getLogger(BaseBindedDialog.class);
+  private static final Logger LOG = LogManager.getLogger(BaseBindedDialog.class);
 
   protected IOperationContext myOperationContext;
   private List<AutoBinding> myBindings = new ArrayList<AutoBinding>();

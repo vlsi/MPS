@@ -111,7 +111,6 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.EventUtil;
@@ -137,6 +136,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -210,7 +210,7 @@ import java.util.WeakHashMap;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
     jetbrains.mps.openapi.editor.EditorComponent {
-  private static final Logger LOG = Logger.getLogger(EditorComponent.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorComponent.class));
   private static final boolean TRACE_ENABLED = false;
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
   public static final Color CARET_ROW_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.CARET_ROW_COLOR);
@@ -992,37 +992,47 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  public void editNode(SNode node, IOperationContext operationContext) {
-    if (isDisposed()) return;
-    if (operationContext == null) {
-      LOG.errorWithTrace("Opening editor with null context");
-    }
-    setOperationContext(operationContext);
-    editNode(node);
+  protected boolean notifiesCreation() {
+    return false;
   }
 
-  protected void editNode(final SNode node) {
+  public void editNode(final SNode node, final IOperationContext operationContext) {
+    if (isDisposed()) return;
+    clearModelDisposedTrace();
+
+    if (myNode != null && notifiesCreation()) {
+      notifyDisposal();
+    }
+
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        IOperationContext operationContext = getOperationContext();
         disposeTypeCheckingContext();
-        clearModelDisposedTrace();
         myNode = node;
         if (myNode != null) {
           myNodePointer = new jetbrains.mps.smodel.SNodePointer(myNode);
           myVirtualFile = !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
+          setOperationContext(operationContext);
+          SModel model = node.getModel();
+          assert model != null : "Can't edit a node that is not registered in a model";
+          setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
+          myReadOnly = model.isReadOnly();
         } else {
           myNodePointer = null;
           myVirtualFile = null;
+          setOperationContext(null);
+          setEditorContext(new EditorContext(EditorComponent.this, null, null));
+          myReadOnly = true;
         }
-        SModel model = node == null ? null : node.getModel();
-        setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
-        rebuildEditorContent();
         getTypeCheckingContext();
-        setReadOnly(node == null || node.getModel() == null || SModelOperations.isReadOnly(node.getModel()));
+
+        rebuildEditorContent();
       }
     });
+
+    if (myNode != null && notifiesCreation()) {
+      notifyCreation();
+    }
   }
 
   public void addAdditionalPainter(AdditionalPainter additionalPainter) {
@@ -2813,10 +2823,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public boolean isReadOnly() {
     return myReadOnly;
-  }
-
-  public void setReadOnly(boolean readOnly) {
-    myReadOnly = readOnly;
   }
 
   public void setPopupMenuEnabled(boolean popupMenuEnabled) {

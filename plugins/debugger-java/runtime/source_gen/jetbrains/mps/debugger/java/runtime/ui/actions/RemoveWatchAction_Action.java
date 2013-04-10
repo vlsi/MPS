@@ -9,11 +9,13 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi;
+import org.apache.log4j.Priority;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RemoveWatchAction_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Remove;
@@ -33,7 +35,9 @@ public class RemoveWatchAction_Action extends BaseAction {
     try {
       event.getPresentation().setEnabled(EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext()) != null);
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RemoveWatchAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "RemoveWatchAction", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -53,9 +57,11 @@ public class RemoveWatchAction_Action extends BaseAction {
         ((EvaluationProvider) evaluationProvider).removeWatch(model);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RemoveWatchAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "RemoveWatchAction", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(RemoveWatchAction_Action.class);
+  protected static Logger LOG = LogManager.getLogger(RemoveWatchAction_Action.class);
 }

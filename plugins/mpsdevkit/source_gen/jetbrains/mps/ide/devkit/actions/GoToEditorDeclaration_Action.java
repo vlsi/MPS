@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -26,7 +27,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToEditorDeclaration_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Editor;
@@ -53,7 +55,9 @@ public class GoToEditorDeclaration_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToEditorDeclaration", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToEditorDeclaration", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -134,9 +138,11 @@ public class GoToEditorDeclaration_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToEditorDeclaration", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToEditorDeclaration", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(GoToEditorDeclaration_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToEditorDeclaration_Action.class);
 }

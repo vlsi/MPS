@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="36q9ii1mp2yv6xktw9hs7j8xplzecfl">
+<dependencies version="2" modelHash="-20irnrlkrio64s5vxpnu35x49m4zo1x">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -9,9 +9,9 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
   <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="d6h69lz4jlm2hkaom14gc3k10dkmp2w" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-auqka64l2h08y8tiog25r7sj7tf1rmr" />
-  <dep model="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" hash="17o7db60eud6xl8ugt6dtar5s38jr13" />
+  <dep model="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" hash="d42l79dymoktlzmc17llh6q6qfv4z1k" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="-78skv3ffymhdxoo7cucizt3il5czxfl" />
+  <common hash="-cfnreon70o1dkis5pt23llbpx0j45ym" />
   <source id="6168415856807657096" name="IFacet" hash="9dho2hweq59gmida6ejm57nodso7k0f">
     <dep root="6168415856807657134" />
     <file name="IFacet.java" />
@@ -22,7 +22,7 @@
     <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <file name="ITarget.java" />
   </source>
-  <source id="6168415856807659069" name="FacetRegistry" hash="-41jdwlyhj37tbg2z6b7uus9xlf1dedq">
+  <source id="6168415856807659069" name="FacetRegistry" hash="-3dsgt3i6eehq6zaxlqdj055wcdhki5x">
     <dep root="6168415856807657096" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />

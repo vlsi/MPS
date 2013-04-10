@@ -9,6 +9,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.make.IMakeService;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
@@ -18,7 +19,8 @@ import java.util.ArrayList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MakeProject_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Compile;
@@ -45,7 +47,9 @@ public class MakeProject_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MakeProject", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "MakeProject", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -70,9 +74,11 @@ public class MakeProject_Action extends BaseAction {
       List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules());
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, modules, null), false).executeAction();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MakeProject", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "MakeProject", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(MakeProject_Action.class);
+  protected static Logger LOG = LogManager.getLogger(MakeProject_Action.class);
 }

@@ -19,7 +19,8 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeletePropertyOrNode;
 import jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanPropertySubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -39,7 +40,7 @@ import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class PropertyCellProvider extends CellProviderWithRole {
-  private static final Logger LOG = Logger.getLogger(PropertyCellProvider.class);
+  private static final Logger LOG = LogManager.getLogger(PropertyCellProvider.class);
 
   private String myPropertyName;
   private SNode myPropertyDeclaration;

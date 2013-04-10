@@ -16,7 +16,8 @@
 package jetbrains.mps.errors;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -27,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BaseQuickFixProvider implements QuickFixProvider {
-  private static final Logger LOG = Logger.getLogger(BaseQuickFixProvider.class);
+  private static final Logger LOG = LogManager.getLogger(BaseQuickFixProvider.class);
 
 
   private QuickFix_Runtime myQuickFix;

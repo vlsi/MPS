@@ -23,8 +23,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.apache.log4j.Priority;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class JUnitSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -158,7 +160,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       clone.myState = (JUnitSettings_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -209,7 +213,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     return myEditorEx;
   }
 
-  private static Logger LOG = Logger.getLogger(JUnitSettings_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
 
   private static boolean neq_jtq3ac_a0a2a1a0a1(Object a, Object b) {
     return !((a != null ?

@@ -8,6 +8,7 @@ import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -22,7 +23,8 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class AnalyzeDependencies_Action extends BaseAction {
@@ -43,7 +45,9 @@ public class AnalyzeDependencies_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "AnalyzeDependencies", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "AnalyzeDependencies", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -96,11 +100,13 @@ public class AnalyzeDependencies_Action extends BaseAction {
       tool.setContent(scope, ((MPSProject) MapSequence.fromMap(_params).get("myMPSProject")));
       tool.openToolLater(true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "AnalyzeDependencies", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "AnalyzeDependencies", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(AnalyzeDependencies_Action.class);
+  protected static Logger LOG = LogManager.getLogger(AnalyzeDependencies_Action.class);
 
   private static SNode check_rkpdtm_a0a0c0a2a0(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {

@@ -21,7 +21,8 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 import jetbrains.mps.nodeEditor.cells.TextLine;
 
@@ -39,7 +40,7 @@ import java.util.List;
     )}
 )
 public class EditorSettings implements PersistentStateComponent<MyState> {
-  private static final Logger LOG = Logger.getLogger(EditorSettings.class);
+  private static final Logger LOG = LogManager.getLogger(EditorSettings.class);
 
   public static EditorSettings getInstance() {
     return ApplicationManager.getApplication() == null ? new EditorSettings() : ApplicationManager.getApplication().getComponent(EditorSettings.class);

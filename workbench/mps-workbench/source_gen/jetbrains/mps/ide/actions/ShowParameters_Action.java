@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
@@ -29,7 +30,8 @@ import javax.swing.JTextPane;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowParameters_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -59,7 +61,9 @@ public class ShowParameters_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowParameters", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowParameters", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -98,7 +102,9 @@ public class ShowParameters_Action extends BaseAction {
         currentCell = currentCell.getParent();
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowParameters", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowParameters", t);
+      }
     }
   }
 
@@ -138,5 +144,5 @@ public class ShowParameters_Action extends BaseAction {
     return panel;
   }
 
-  private static Logger LOG = Logger.getLogger(ShowParameters_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowParameters_Action.class);
 }

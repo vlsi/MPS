@@ -15,6 +15,11 @@
  */
 package jetbrains.mps.logging;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
+// Use appenders from Log4j
+@Deprecated
+@ToRemove(version = 3.0)
 public interface ILoggingHandler {
   void info(LogEntry e);
 

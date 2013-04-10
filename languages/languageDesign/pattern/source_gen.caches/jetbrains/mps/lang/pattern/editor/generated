@@ -22,7 +22,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="5dkchx6vs8ggugooqdxkrkmeks99uon" />
   <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="9a4oig6rbwxk2f2fa8fpvbl3dbjtuyj" />
   <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" hash="2mh5e6snsmst5k3pn9w5rywzjc17bxl" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-8dbjwoxk5619e6oy8o9grsg6861qi0j" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-17sdjr2i746psmzww7vs0ajbedkaxfi" />
   <common hash="avwf3w9np3qco4kyqtjn9jhtj1ghl6l">
     <dep root="1136720096744" />
     <dep root="1136720096748" />

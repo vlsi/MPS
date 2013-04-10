@@ -22,7 +22,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
@@ -38,7 +39,7 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
-  protected static final Logger LOG = Logger.getLogger(BaseMPSChooseModel.class);
+  protected static final Logger LOG = LogManager.getLogger(BaseMPSChooseModel.class);
   public static final String SEPARATOR = ".";
 
   private Project myProject;

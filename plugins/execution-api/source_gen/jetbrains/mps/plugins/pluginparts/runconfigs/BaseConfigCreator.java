@@ -21,7 +21,9 @@ import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer {
   private PsiElement mySourceElement;
@@ -113,9 +115,11 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
         return factory;
       }
     }
-    LOG.warning("Cound not find configuration factory for " + configurationFactoryClassName + " in type " + configurationType.getDisplayName() + ".");
+    if (LOG.isEnabledFor(Priority.WARN)) {
+      LOG.warn("Cound not find configuration factory for " + configurationFactoryClassName + " in type " + configurationType.getDisplayName() + ".");
+    }
     return configurationType.getConfigurationFactories()[0];
   }
 
-  private static Logger LOG = Logger.getLogger(BaseConfigCreator.class);
+  protected static Logger LOG = LogManager.getLogger(BaseConfigCreator.class);
 }

@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -22,7 +23,8 @@ import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class HighlightInstances_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,7 +44,9 @@ public class HighlightInstances_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "HighlightInstances", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "HighlightInstances", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -89,9 +93,11 @@ public class HighlightInstances_Action extends BaseAction {
       }
       highlightManager.repaintAndRebuildEditorMessages();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "HighlightInstances", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "HighlightInstances", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(HighlightInstances_Action.class);
+  protected static Logger LOG = LogManager.getLogger(HighlightInstances_Action.class);
 }

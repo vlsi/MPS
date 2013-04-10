@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -17,7 +18,8 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowExpectedType_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,7 +39,9 @@ public class ShowExpectedType_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowExpectedType", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowExpectedType", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -77,9 +81,11 @@ public class ShowExpectedType_Action extends BaseAction {
       dialog = new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, null);
       dialog.show();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowExpectedType", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowExpectedType", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowExpectedType_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowExpectedType_Action.class);
 }

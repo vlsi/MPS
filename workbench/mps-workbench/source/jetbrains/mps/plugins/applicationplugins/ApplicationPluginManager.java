@@ -16,7 +16,8 @@
 package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ApplicationPluginCreator;
 import jetbrains.mps.project.IModule;
@@ -27,7 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class ApplicationPluginManager extends BaseApplicationPluginManager implements ApplicationComponent, IRegistryManager {
-  private static final Logger LOG = Logger.getLogger(ApplicationPluginManager.class);
+  private static final Logger LOG = LogManager.getLogger(ApplicationPluginManager.class);
 
   @Override
   public void loadPlugins() {

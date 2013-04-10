@@ -32,6 +32,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -56,7 +58,7 @@ import java.util.Set;
 
 public class TypeContextManager implements CoreComponent {
 
-  private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.getLogger(TypeContextManager.class);
+  private static final Logger LOG = LogManager.getLogger(TypeContextManager.class);
 
   private static TypeContextManager INSTANCE;
   private static boolean myReported = false;
@@ -332,7 +334,7 @@ public class TypeContextManager implements CoreComponent {
         if (contextWithOwners.size() > 100) {
           if (!myReported) {
             myReported = true;
-            LOG.warning("Type checking context for node " + node.getPresentation() + " has too much owners");
+            LOG.warn("Type checking context for node " + node.getPresentation() + " has too much owners");
           }
         }
 
@@ -570,12 +572,12 @@ public class TypeContextManager implements CoreComponent {
     @Override
     public TypeCheckingContext acquire(SNode node) {
       if (myContexts.size() >= 10) {
-        LOG.warning("too many non-reusable typechecking contexts");
+        LOG.warn("too many non-reusable typechecking contexts");
         return null;
       }
       for (TypeCheckingContext ctx : myContexts) {
         if (ctx.getNode() == node) {
-          LOG.warning("double typechecking context acquiring");
+          LOG.warn("double typechecking context acquiring");
           return null;
         }
       }

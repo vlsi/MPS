@@ -4,7 +4,8 @@ package jetbrains.mps.tool.builder.make;
 
 import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.MakeSession;
@@ -39,7 +40,7 @@ import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IProgress;
 
 public class BuildMakeService extends AbstractMakeService implements IMakeService {
-  private static Logger LOG = Logger.getLogger(BuildMakeService.class);
+  private static Logger LOG = LogManager.getLogger(BuildMakeService.class);
 
   public BuildMakeService() {
   }

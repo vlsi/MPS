@@ -48,7 +48,9 @@
     <classNode dependClassName="jetbrains.mps.build.deprecated.execution.plugin.GenerateBuildUtil" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -87,7 +89,8 @@
   <dependency className="jetbrains.mps.build.deprecated.execution.plugin.ProjectPaneModelAddition_ActionGroup" file="ProjectPaneModelAddition_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.build.deprecated.execution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" file="RunConfigurationsInitializer_CustomApplicationPlugin.java">

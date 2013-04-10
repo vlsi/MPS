@@ -52,10 +52,12 @@
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.CppDebugSession" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.GdbDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.events.GDBEventsAdapter" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode extendsClassName="jetbrains.mps.debug.api.AbstractDebugSessionCreator" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.CppUiState" file="CppUiState.java">
@@ -114,7 +116,9 @@
     <classNode dependClassName="java.io.OutputStreamWriter" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.ProgramsLocationUtil" file="ProgramsLocationUtil.java">
     <classNode dependClassName="java.lang.String" />

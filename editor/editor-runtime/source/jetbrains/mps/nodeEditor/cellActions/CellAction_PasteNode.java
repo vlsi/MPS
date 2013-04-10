@@ -35,6 +35,7 @@ import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -52,7 +53,7 @@ import java.util.Set;
  * Time: Nov 26, 2003 2:06:41 PM
  */
 public class CellAction_PasteNode extends AbstractCellAction {
-  private static final Logger LOG = Logger.getLogger(CellAction_PasteNode.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(CellAction_PasteNode.class));
 
   @Override
   public boolean canExecute(EditorContext context) {

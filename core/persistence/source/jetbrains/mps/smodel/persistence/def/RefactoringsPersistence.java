@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler;
 import jetbrains.mps.smodel.persistence.def.refactoring.HistoryWriter;
@@ -39,7 +40,7 @@ import java.io.InputStreamReader;
  */
 public class RefactoringsPersistence {
 
-  private static final Logger LOG = Logger.getLogger(RefactoringsPersistence.class);
+  private static final Logger LOG = LogManager.getLogger(RefactoringsPersistence.class);
 
   private static IFile getRefactoringsFile(IFile modelFile) {
     String modelPath = modelFile.getPath();
@@ -76,7 +77,7 @@ public class RefactoringsPersistence {
       JDOMUtil.createSAXParser().parse(source, handler);
       return handler.getResult();
     } catch (SAXParseException e) {
-      LOG.warning(refactoringsFile.getPath() + " line " + e.getLineNumber());
+      LOG.warn(refactoringsFile.getPath() + " line " + e.getLineNumber());
     } catch (IOException e) {
       LOG.error(e);
     } catch (SAXException e) {

@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -42,7 +43,7 @@ import java.io.IOException;
  */
 public abstract class EditableSModelBase extends ReloadableSModelBase implements EditableSModel, EditableSModelDescriptor {
 
-  private static final Logger LOG = Logger.getLogger(EditableSModelBase.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditableSModelBase.class));
 
   private boolean myChanged = false;
 

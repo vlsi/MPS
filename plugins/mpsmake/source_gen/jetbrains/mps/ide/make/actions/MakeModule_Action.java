@@ -10,6 +10,7 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.Set;
@@ -17,7 +18,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collections;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MakeModule_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -44,7 +46,9 @@ public class MakeModule_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MakeModule", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "MakeModule", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -69,9 +73,11 @@ public class MakeModule_Action extends BaseAction {
       Set<SModule> modules = Collections.<SModule>singleton(((IModule) MapSequence.fromMap(_params).get("module")));
       ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Compiling", modules, false));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MakeModule", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "MakeModule", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(MakeModule_Action.class);
+  protected static Logger LOG = LogManager.getLogger(MakeModule_Action.class);
 }

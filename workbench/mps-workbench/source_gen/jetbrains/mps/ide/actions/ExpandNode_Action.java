@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -14,7 +15,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.MPSTree;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ExpandNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,7 +36,9 @@ public class ExpandNode_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ExpandNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ExpandNode", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -64,9 +68,11 @@ public class ExpandNode_Action extends BaseAction {
       }
       tree.expandAll((MPSTreeNode) path.getLastPathComponent());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ExpandNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ExpandNode", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ExpandNode_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ExpandNode_Action.class);
 }

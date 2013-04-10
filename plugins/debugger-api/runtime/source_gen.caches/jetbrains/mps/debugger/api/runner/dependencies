@@ -22,8 +22,9 @@
     <classNode dependClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.execution.runners.GenericProgramRunner" />

@@ -70,16 +70,8 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   @Override
-  protected void editNode(SNode node) {
-    if (myNode != null) {
-      notifyDisposal();
-    }
-
-    super.editNode(node);
-
-    if (myNode != null) {
-      notifyCreation();
-    }
+  protected boolean notifiesCreation() {
+    return true;
   }
 
   private void adjustInspector() {

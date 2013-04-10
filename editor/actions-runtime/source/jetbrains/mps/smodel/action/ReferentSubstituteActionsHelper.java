@@ -16,7 +16,8 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
@@ -36,7 +37,7 @@ import java.util.Collections;
 import java.util.List;
 
 /*package*/ class ReferentSubstituteActionsHelper {
-  private static final Logger LOG = Logger.getLogger(ReferentSubstituteActionsHelper.class);
+  private static final Logger LOG = LogManager.getLogger(ReferentSubstituteActionsHelper.class);
 
   public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IOperationContext context) {
     IScope scope = context.getScope();

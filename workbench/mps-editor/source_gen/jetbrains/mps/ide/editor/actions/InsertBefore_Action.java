@@ -9,8 +9,10 @@ import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class InsertBefore_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,7 +39,9 @@ public class InsertBefore_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "InsertBefore", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "InsertBefore", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -61,9 +65,11 @@ public class InsertBefore_Action extends BaseAction {
     try {
       EditorActionUtils.callInsertBeforeAction(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "InsertBefore", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "InsertBefore", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(InsertBefore_Action.class);
+  protected static Logger LOG = LogManager.getLogger(InsertBefore_Action.class);
 }

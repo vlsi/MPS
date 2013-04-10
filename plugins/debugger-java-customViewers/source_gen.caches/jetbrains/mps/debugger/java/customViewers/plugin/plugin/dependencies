@@ -18,7 +18,9 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory" />
     <classNode dependClassName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SetViewer_WrapperFactory" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.DebugInfoProvider_CustomApplicationPlugin" file="DebugInfoProvider_CustomApplicationPlugin.java">
@@ -35,8 +37,10 @@
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.util.Mapper2" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
   </dependency>

@@ -24,7 +24,8 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
@@ -43,7 +44,6 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
 
@@ -61,7 +61,7 @@ import java.util.*;
   reloadable = false
 )
 public class StandaloneMPSProject extends MPSProject implements FileSystemListener, PersistentStateComponent<Element> {
-  private static final Logger LOG = Logger.getLogger(StandaloneMPSProject.class);
+  private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
 
   // project data
   private String myErrors = null;

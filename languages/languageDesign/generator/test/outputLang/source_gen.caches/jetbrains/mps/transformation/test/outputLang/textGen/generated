@@ -8,7 +8,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="5dkchx6vs8ggugooqdxkrkmeks99uon" />
   <dep model="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" hash="-a36kzwpvq6lrya9alwanrjxghrta7r4" />
   <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" hash="1oieg0nih8h7eiy1sqqjnea5i6m0ge1" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="4z03ye55rujb6cg2rhwteqr0ypapsc" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-2ekzi0vjwcq8rfjo2tkm6ycl04wlvzk" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
   <common hash="3an3v5tw9gkzf6ba7g4k7e7yodweggl" />
   <source id="1236704181256" name="OutputNode_TextGen" hash="-3rjehhhghge9bz0xlwwfboyk8qlhy3x">

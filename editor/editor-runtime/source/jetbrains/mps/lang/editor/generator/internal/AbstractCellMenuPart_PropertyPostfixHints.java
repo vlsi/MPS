@@ -16,7 +16,8 @@
 package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -44,7 +45,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class AbstractCellMenuPart_PropertyPostfixHints implements SubstituteInfoPart, SubstituteInfoPartExt {
-  private static final Logger LOG = Logger.getLogger(AbstractCellMenuPart_PropertyPostfixHints.class);
+  private static final Logger LOG = LogManager.getLogger(AbstractCellMenuPart_PropertyPostfixHints.class);
 
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {

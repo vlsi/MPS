@@ -11,13 +11,15 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoByCurrentReference_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -51,7 +53,9 @@ public class GoByCurrentReference_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoByCurrentReference", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoByCurrentReference", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -85,9 +89,11 @@ public class GoByCurrentReference_Action extends BaseAction {
       final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
       NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), targetNode, true, !(SNodeOperations.isRoot(targetNode)));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoByCurrentReference", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoByCurrentReference", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(GoByCurrentReference_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoByCurrentReference_Action.class);
 }

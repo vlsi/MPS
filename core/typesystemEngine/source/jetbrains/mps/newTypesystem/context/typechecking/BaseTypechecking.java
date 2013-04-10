@@ -120,9 +120,9 @@ public class BaseTypechecking<STATE extends State, COMP extends SimpleTypechecki
       List<IErrorReporter> reporters = getErrors(key);
       if (!reporters.isEmpty()) {
         if (key.getContainingRoot() == null) {
-          /*  LOG.warning("Type system reports error for node without containing root. Node: " + key);
+          /*  LOG.warn("Type system reports error for node without containing root. Node: " + key);
                     for (IErrorReporter reporter : reporters) {
-                      LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
+                      LOG.warn("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
                     }     */
           continue;
         }

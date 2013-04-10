@@ -102,54 +102,54 @@
     <unitInfo nodeId="3990508698139424671" fileName="DefaultThread.java" startLine="18" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
   </root>
   <root nodeRef="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)/3990508698139427312">
-    <nodeInfo nodeId="3990508698139427315" fileName="GDBLocation.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3990508698139427320" fileName="GDBLocation.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineNumber" />
-    <nodeInfo nodeId="3990508698139427323" fileName="GDBLocation.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRoutine" />
-    <nodeInfo nodeId="3990508698139427326" fileName="GDBLocation.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileAbsolutePath" />
-    <nodeInfo nodeId="3990508698139427329" fileName="GDBLocation.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileName" />
-    <nodeInfo nodeId="3990508698139427332" fileName="GDBLocation.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUnit" />
-    <nodeInfo nodeId="3990508698139427347" fileName="GDBLocation.java" startLine="18" startPosition="79" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427351" fileName="GDBLocation.java" startLine="19" startPosition="30" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427355" fileName="GDBLocation.java" startLine="20" startPosition="24" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427359" fileName="GDBLocation.java" startLine="21" startPosition="24" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427374" fileName="GDBLocation.java" startLine="23" startPosition="48" endLine="24" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427380" fileName="GDBLocation.java" startLine="25" startPosition="5" endLine="26" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427401" fileName="GDBLocation.java" startLine="27" startPosition="51" endLine="28" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3990508698139427414" fileName="GDBLocation.java" startLine="28" startPosition="133" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427395" fileName="GDBLocation.java" startLine="30" startPosition="12" endLine="31" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139427426" fileName="GDBLocation.java" startLine="36" startPosition="31" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139427433" fileName="GDBLocation.java" startLine="41" startPosition="31" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139427440" fileName="GDBLocation.java" startLine="46" startPosition="34" endLine="47" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139427447" fileName="GDBLocation.java" startLine="51" startPosition="30" endLine="52" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139427393" fileName="GDBLocation.java" startLine="30" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3990508698139427367" fileName="GDBLocation.java" startLine="22" startPosition="56" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139427422" fileName="GDBLocation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFileName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3990508698139427429" fileName="GDBLocation.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnitName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3990508698139427436" fileName="GDBLocation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoutineName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3990508698139427443" fileName="GDBLocation.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLineNumber#()I" />
-    <nodeInfo nodeId="3990508698139427388" fileName="GDBLocation.java" startLine="26" startPosition="59" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139427335" fileName="GDBLocation.java" startLine="18" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBLocation#(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V" />
-    <scopeInfo nodeId="3990508698139427373" fileName="GDBLocation.java" startLine="23" startPosition="48" endLine="24" endPosition="45" />
-    <scopeInfo nodeId="3990508698139427394" fileName="GDBLocation.java" startLine="30" startPosition="12" endLine="31" endPosition="76" />
-    <scopeInfo nodeId="3990508698139427425" fileName="GDBLocation.java" startLine="36" startPosition="31" endLine="37" endPosition="22" />
-    <scopeInfo nodeId="3990508698139427432" fileName="GDBLocation.java" startLine="41" startPosition="31" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="3990508698139427439" fileName="GDBLocation.java" startLine="46" startPosition="34" endLine="47" endPosition="21" />
-    <scopeInfo nodeId="3990508698139427446" fileName="GDBLocation.java" startLine="51" startPosition="30" endLine="52" endPosition="28" />
-    <scopeInfo nodeId="3990508698139427400" fileName="GDBLocation.java" startLine="27" startPosition="51" endLine="29" endPosition="41">
+    <nodeInfo nodeId="3990508698139427315" fileName="GDBLocation.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3990508698139427320" fileName="GDBLocation.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineNumber" />
+    <nodeInfo nodeId="3990508698139427323" fileName="GDBLocation.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRoutine" />
+    <nodeInfo nodeId="3990508698139427326" fileName="GDBLocation.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileAbsolutePath" />
+    <nodeInfo nodeId="3990508698139427329" fileName="GDBLocation.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileName" />
+    <nodeInfo nodeId="3990508698139427332" fileName="GDBLocation.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUnit" />
+    <nodeInfo nodeId="3990508698139427347" fileName="GDBLocation.java" startLine="19" startPosition="79" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427351" fileName="GDBLocation.java" startLine="20" startPosition="30" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427355" fileName="GDBLocation.java" startLine="21" startPosition="24" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427359" fileName="GDBLocation.java" startLine="22" startPosition="24" endLine="23" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427374" fileName="GDBLocation.java" startLine="24" startPosition="48" endLine="25" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427380" fileName="GDBLocation.java" startLine="26" startPosition="5" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427401" fileName="GDBLocation.java" startLine="28" startPosition="51" endLine="29" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3990508698139427414" fileName="GDBLocation.java" startLine="29" startPosition="133" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427395" fileName="GDBLocation.java" startLine="31" startPosition="12" endLine="32" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139427426" fileName="GDBLocation.java" startLine="37" startPosition="31" endLine="38" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139427433" fileName="GDBLocation.java" startLine="42" startPosition="31" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139427440" fileName="GDBLocation.java" startLine="47" startPosition="34" endLine="48" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139427447" fileName="GDBLocation.java" startLine="52" startPosition="30" endLine="53" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139427393" fileName="GDBLocation.java" startLine="31" startPosition="10" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3990508698139427367" fileName="GDBLocation.java" startLine="23" startPosition="56" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3990508698139427422" fileName="GDBLocation.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFileName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3990508698139427429" fileName="GDBLocation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnitName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3990508698139427436" fileName="GDBLocation.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoutineName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3990508698139427443" fileName="GDBLocation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLineNumber#()I" />
+    <nodeInfo nodeId="3990508698139427388" fileName="GDBLocation.java" startLine="27" startPosition="59" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3990508698139427335" fileName="GDBLocation.java" startLine="19" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBLocation#(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V" />
+    <scopeInfo nodeId="3990508698139427373" fileName="GDBLocation.java" startLine="24" startPosition="48" endLine="25" endPosition="45" />
+    <scopeInfo nodeId="3990508698139427394" fileName="GDBLocation.java" startLine="31" startPosition="12" endLine="32" endPosition="76" />
+    <scopeInfo nodeId="3990508698139427425" fileName="GDBLocation.java" startLine="37" startPosition="31" endLine="38" endPosition="22" />
+    <scopeInfo nodeId="3990508698139427432" fileName="GDBLocation.java" startLine="42" startPosition="31" endLine="43" endPosition="18" />
+    <scopeInfo nodeId="3990508698139427439" fileName="GDBLocation.java" startLine="47" startPosition="34" endLine="48" endPosition="21" />
+    <scopeInfo nodeId="3990508698139427446" fileName="GDBLocation.java" startLine="52" startPosition="30" endLine="53" endPosition="28" />
+    <scopeInfo nodeId="3990508698139427400" fileName="GDBLocation.java" startLine="28" startPosition="51" endLine="30" endPosition="41">
       <varInfo nodeId="3990508698139427402" varName="postfix" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139427422" fileName="GDBLocation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="3990508698139427429" fileName="GDBLocation.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="3990508698139427436" fileName="GDBLocation.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="3990508698139427443" fileName="GDBLocation.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="3990508698139427346" fileName="GDBLocation.java" startLine="18" startPosition="79" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="3990508698139427335" fileName="GDBLocation.java" startLine="18" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="3990508698139427422" fileName="GDBLocation.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="3990508698139427429" fileName="GDBLocation.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="3990508698139427436" fileName="GDBLocation.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="3990508698139427443" fileName="GDBLocation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="3990508698139427346" fileName="GDBLocation.java" startLine="19" startPosition="79" endLine="33" endPosition="5" />
+    <scopeInfo nodeId="3990508698139427335" fileName="GDBLocation.java" startLine="19" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="3990508698139427338" varName="file" />
       <varInfo nodeId="3990508698139427342" varName="line" />
       <varInfo nodeId="3990508698139427340" varName="routine" />
       <varInfo nodeId="3990508698139427344" varName="sourceGen" />
     </scopeInfo>
-    <unitInfo nodeId="3990508698139427312" fileName="GDBLocation.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.GDBLocation" />
+    <unitInfo nodeId="3990508698139427312" fileName="GDBLocation.java" startLine="11" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.GDBLocation" />
   </root>
   <root nodeRef="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)/3990508698139428770">
     <nodeInfo nodeId="3990508698139428773" fileName="SimpleVarWatchable.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLES_CATEGORY" />

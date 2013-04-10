@@ -17,7 +17,8 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -33,7 +34,7 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
  * evgeny, 3/11/11
  */
 public class LanguageRegistry implements CoreComponent, MPSClassesListener {
-  private static final Logger LOG = Logger.getLogger(LanguageRegistry.class);
+  private static final Logger LOG = LogManager.getLogger(LanguageRegistry.class);
 
   private static LanguageRegistry INSTANCE;
 

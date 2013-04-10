@@ -22,7 +22,8 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.model.SModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.xml.XmlConverter;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
@@ -64,7 +65,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
 
   private static final String XML_EXTENSION = "xml";
 
-  private static final Logger LOG = Logger.getLogger(XmlModelPersistence.class);
+  private static final Logger LOG = LogManager.getLogger(XmlModelPersistence.class);
 
   @Override
   public void init() {

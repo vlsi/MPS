@@ -10,6 +10,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -27,7 +28,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CheckLangForJavaStubModels_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -54,7 +56,9 @@ public class CheckLangForJavaStubModels_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CheckLangForJavaStubModels", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CheckLangForJavaStubModels", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -109,9 +113,11 @@ public class CheckLangForJavaStubModels_Action extends BaseAction {
       ));
       JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), message);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CheckLangForJavaStubModels", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CheckLangForJavaStubModels", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CheckLangForJavaStubModels_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CheckLangForJavaStubModels_Action.class);
 }

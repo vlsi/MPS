@@ -20,7 +20,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._3;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -45,7 +46,7 @@ import java.util.Set;
  * Time: Nov 26, 2003 2:06:41 PM
  */
 public class CellAction_CopyNode extends AbstractCellAction {
-  private static final Logger LOG = Logger.getLogger(CellAction_CopyNode.class);
+  private static final Logger LOG = LogManager.getLogger(CellAction_CopyNode.class);
 
   @Override
   public boolean canExecute(EditorContext context) {

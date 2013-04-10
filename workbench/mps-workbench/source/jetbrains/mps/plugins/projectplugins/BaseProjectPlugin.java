@@ -22,7 +22,8 @@ import com.intellij.util.xmlb.annotations.Tag;
 import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import org.jdom.Element;
@@ -32,7 +33,7 @@ import java.util.Collections;
 import java.util.List;
 
 public abstract class BaseProjectPlugin implements PersistentStateComponent<PluginState> {
-  private static final Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
+  private static final Logger LOG = LogManager.getLogger(BaseProjectPlugin.class);
 
   private Project myProject;
 

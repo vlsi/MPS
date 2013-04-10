@@ -10,6 +10,7 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -21,7 +22,8 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class WriteHelper {
   public static final char MODEL_SEPARATOR_CHAR = '.';
@@ -61,7 +63,9 @@ public class WriteHelper {
     }
     String index = MapSequence.fromMap(myModelIndex).get(ref);
     if (index == null) {
-      LOG.error("model " + ref + " not found in index");
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("model " + ref + " not found in index");
+      }
       return encode(text);
     }
     return index + MODEL_SEPARATOR_CHAR + encode(text);
@@ -193,5 +197,5 @@ public class WriteHelper {
     return s.replace("%d", ".").replace("%c", ":").replace("%p", "%");
   }
 
-  private static Logger LOG = Logger.getLogger(WriteHelper.class);
+  protected static Logger LOG = LogManager.getLogger(WriteHelper.class);
 }

@@ -17,11 +17,12 @@ package jetbrains.mps.ide.ui.dialogs.properties.persistence;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryPersistence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 
 public class ModelRootEntryPersistenceComponent implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(ModelRootEntryPersistenceComponent.class);
+  private static final Logger LOG = LogManager.getLogger(ModelRootEntryPersistenceComponent.class);
 
   @Override
   public void initComponent() {

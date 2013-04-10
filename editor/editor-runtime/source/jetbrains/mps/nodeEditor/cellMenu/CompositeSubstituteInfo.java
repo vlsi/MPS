@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 
@@ -28,7 +29,7 @@ import java.util.List;
  * Date: Nov 29, 2006
  */
 public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
-  private static final Logger LOG = Logger.getLogger(CompositeSubstituteInfo.class);
+  private static final Logger LOG = LogManager.getLogger(CompositeSubstituteInfo.class);
 
   private CellContext myCellContext;
   /**

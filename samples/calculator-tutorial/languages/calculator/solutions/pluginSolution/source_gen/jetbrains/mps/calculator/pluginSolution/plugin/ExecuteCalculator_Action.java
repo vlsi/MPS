@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -14,7 +15,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ExecuteCalculator_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -41,7 +43,9 @@ public class ExecuteCalculator_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ExecuteCalculator", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ExecuteCalculator", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -85,7 +89,9 @@ public class ExecuteCalculator_Action extends BaseAction {
         e.printStackTrace();
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ExecuteCalculator", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ExecuteCalculator", t);
+      }
     }
   }
 
@@ -107,5 +113,5 @@ public class ExecuteCalculator_Action extends BaseAction {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ExecuteCalculator_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ExecuteCalculator_Action.class);
 }

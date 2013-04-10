@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.AttributeCalculator;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -39,7 +40,7 @@ import java.util.Set;
  * Date: 1/11/13
  */
 public class StyleImpl implements Style {
-  private static final Logger LOG = Logger.getLogger(StyleImpl.class);
+  private static final Logger LOG = LogManager.getLogger(StyleImpl.class);
 
   private final EditorCell myEditorCell;
   private Style myParent;

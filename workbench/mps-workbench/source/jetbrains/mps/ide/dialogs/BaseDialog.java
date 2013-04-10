@@ -18,7 +18,8 @@ package jetbrains.mps.ide.dialogs;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;
@@ -41,7 +42,7 @@ import java.util.List;
  */
 @Deprecated
 public abstract class BaseDialog extends JDialog {
-  private static final Logger LOG = Logger.getLogger(BaseDialog.class);
+  private static final Logger LOG = LogManager.getLogger(BaseDialog.class);
 
   private JLabel myErrorLabel = new ErrorLabel();
   private boolean myPrepared = false;

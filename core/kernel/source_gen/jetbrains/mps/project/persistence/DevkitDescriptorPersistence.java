@@ -14,7 +14,9 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.io.OutputStream;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DevkitDescriptorPersistence {
   private DevkitDescriptorPersistence() {
@@ -124,11 +126,13 @@ public class DevkitDescriptorPersistence {
       OutputStream os = file.openOutputStream();
       JDOMUtil.writeDocument(new Document(root), os);
     } catch (Exception e) {
-      LOG.error("", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", e);
+      }
     }
 
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
 
-  private static Logger LOG = Logger.getLogger(DevkitDescriptorPersistence.class);
+  protected static Logger LOG = LogManager.getLogger(DevkitDescriptorPersistence.class);
 }

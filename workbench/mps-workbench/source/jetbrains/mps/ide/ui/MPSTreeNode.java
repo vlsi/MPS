@@ -22,7 +22,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessage;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -44,7 +45,7 @@ import java.util.*;
  * @author Kostik
  */
 public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
-  private static final Logger LOG = Logger.getLogger(MPSTreeNode.class);
+  private static final Logger LOG = LogManager.getLogger(MPSTreeNode.class);
 
   private IOperationContext myOperationContext;
   private MPSTree myTree;

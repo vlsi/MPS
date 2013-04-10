@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -15,7 +16,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowClassInHierarchy_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,7 +44,9 @@ public class ShowClassInHierarchy_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowClassInHierarchy", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowClassInHierarchy", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -78,7 +82,9 @@ public class ShowClassInHierarchy_Action extends BaseAction {
       tool.showItemInHierarchy(classNode, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       tool.openToolLater(true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowClassInHierarchy", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowClassInHierarchy", t);
+      }
     }
   }
 
@@ -97,5 +103,5 @@ public class ShowClassInHierarchy_Action extends BaseAction {
     return outerClass;
   }
 
-  private static Logger LOG = Logger.getLogger(ShowClassInHierarchy_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowClassInHierarchy_Action.class);
 }

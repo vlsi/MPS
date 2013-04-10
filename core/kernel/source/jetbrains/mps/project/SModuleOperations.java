@@ -21,7 +21,8 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -35,8 +36,6 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.MacroHelper;
-import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -52,7 +51,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class SModuleOperations {
-  private static final Logger LOG = Logger.getLogger(SModuleOperations.class);
+  private static final Logger LOG = LogManager.getLogger(SModuleOperations.class);
 
   public static Collection<String> getIndexablePaths(SModule module) {
     // todo: maybe move getIndexablePaths method to FileBasedModelRoot, or even in ModelRoot classes?
