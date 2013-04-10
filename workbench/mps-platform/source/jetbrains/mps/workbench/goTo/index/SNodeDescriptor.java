@@ -66,7 +66,7 @@ public final class SNodeDescriptor implements NavigationTarget {
 
   @Override
   public SConcept getConcept() {
-    return SConceptRepository.getInstance().getConcept(myConceptFqName);
+    return (SConcept) SConceptRepository.getInstance().getConcept(myConceptFqName);
   }
 
   @Override

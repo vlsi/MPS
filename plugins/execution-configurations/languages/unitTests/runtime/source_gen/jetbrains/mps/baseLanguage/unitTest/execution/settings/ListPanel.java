@@ -15,6 +15,7 @@ import com.intellij.ui.components.JBList;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -172,7 +173,7 @@ public class ListPanel extends JPanel {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               for (SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
-                SConcept c = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept));
+                SAbstractConcept c = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept));
                 Set<SNode> usages = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(c), SearchType.INSTANCES, GlobalScope.getInstance(), new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator())));
                 ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(usages));
               }

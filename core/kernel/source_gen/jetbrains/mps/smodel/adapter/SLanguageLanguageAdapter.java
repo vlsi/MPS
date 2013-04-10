@@ -41,8 +41,8 @@ public class SLanguageLanguageAdapter implements SLanguage {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
       }
-    }).select(new ISelector<SNode, SConcept>() {
-      public SConcept select(SNode it) {
+    }).select(new ISelector<SNode, SAbstractConcept>() {
+      public SAbstractConcept select(SNode it) {
         return SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it));
       }
     }));

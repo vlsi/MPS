@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -65,7 +66,7 @@ public class BehaviorReflection {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(conceptFqName).invoke(node, methodName, parameters);
   }
 
-  public static Object invokeVirtualStatic(@NotNull SConcept concept, String methodName, Object[] parameters) {
+  public static Object invokeVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getId()).invokeStatic(concept, methodName, parameters);
   }
 
@@ -91,7 +92,7 @@ public class BehaviorReflection {
   }
 
   // this methods for <T> generic parameter and null safety
-  public static <T> T invokeVirtualStatic(Class<T> returnType, SConcept concept, String methodName, Object[] parameters) {
+  public static <T> T invokeVirtualStatic(Class<T> returnType, SAbstractConcept concept, String methodName, Object[] parameters) {
     return concept == null ? defaultValue(returnType) : (T) invokeVirtualStatic(concept, methodName, parameters);
   }
 

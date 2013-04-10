@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 
 import jetbrains.mps.execution.lib.ui.BaseChooserComponent;
 import java.util.List;
+
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -45,7 +47,7 @@ public class ModuleChooser extends BaseChooserComponent {
     ListSequence.fromList(this.myCheckedModules).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
+        SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
         Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, GlobalScope.getInstance(), null);
         Set<SNode> us = ((Set) usages);
         for (SNode node : us) {

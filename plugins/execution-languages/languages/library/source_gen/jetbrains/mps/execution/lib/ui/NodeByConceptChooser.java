@@ -5,6 +5,7 @@ package jetbrains.mps.execution.lib.ui;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.Language;
@@ -82,7 +83,7 @@ public class NodeByConceptChooser extends AbstractMainNodeChooser {
 
   @Override
   protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor) {
-    SConcept concept = SConceptRepository.getInstance().getConcept(myTargetConcept);
+    SAbstractConcept concept = SConceptRepository.getInstance().getConcept(myTargetConcept);
     Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
     if (this.myAcceptor == null) {
       return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);

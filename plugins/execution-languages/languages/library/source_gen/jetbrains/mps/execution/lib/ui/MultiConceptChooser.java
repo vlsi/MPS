@@ -6,6 +6,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -78,7 +79,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
       public Iterable<SNode> translate(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         SNode targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-        SConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(targetConcept));
+        SAbstractConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(targetConcept));
         Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
         if (function == null) {
           return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);

@@ -4,6 +4,8 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import java.util.List;
+
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
@@ -57,7 +59,7 @@ public class MigrationScriptFinder implements IFinder {
           }
           monitor.step(scriptInstance.getName() + " [" + migrationRefactoring.getAdditionalInfo() + "]");
           String cname = migrationRefactoring.getFqNameOfConceptToSearchInstances();
-          SConcept concept = SConceptRepository.getInstance().getConcept(cname);
+          SAbstractConcept concept = SConceptRepository.getInstance().getConcept(cname);
           Set<SNode> instances = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, queryScope, null));
           for (SNode instance : instances) {
             if (MigrationScriptUtil.isApplicableRefactoring(instance, migrationRefactoring)) {

@@ -551,7 +551,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       return new SConceptNodeAdapter(myConceptFqName);
     }
 
-    return SConceptRepository.getInstance().getConcept(myConceptFqName);
+    return (SConcept) SConceptRepository.getInstance().getConcept(myConceptFqName);
   }
 
   @Override

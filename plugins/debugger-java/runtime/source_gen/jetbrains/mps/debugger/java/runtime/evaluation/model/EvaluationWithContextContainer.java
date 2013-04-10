@@ -5,6 +5,7 @@ package jetbrains.mps.debugger.java.runtime.evaluation.model;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -230,7 +231,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     }
 
     FindUsagesManager manager = FindUsagesManager.getInstance();
-    SConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.traceable.structure.UnitConcept");
+    SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.traceable.structure.UnitConcept");
 
     Set<SNode> instances = manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, new ModelsScope(getCandidateNonStubModels(unitName)), new EmptyProgressMonitor());
     return SNodeOperations.cast(SetSequence.fromSet(instances).findFirst(new IWhereFilter<SNode>() {
