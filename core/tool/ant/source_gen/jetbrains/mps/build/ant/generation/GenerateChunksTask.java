@@ -69,7 +69,7 @@ public class GenerateChunksTask extends MpsLoadTask {
 
   @Override
   protected Set<File> calculateClassPath(boolean fork) {
-    List<File> classPathRoots = MPSClasspathUtil.getClassPathRoots(getProject());
+    List<File> classPathRoots = MPSClasspathUtil.getClassPathRootsFromDependencies(getProject());
     if (classPathRoots.isEmpty()) {
       throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
 

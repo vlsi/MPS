@@ -25,6 +25,35 @@ public class MPSClasspathUtil {
 
   public static Collection<File> buildClasspath(Project antProject, File mpsHomeArg, boolean fork) {
     List<File> homeFolders = new ArrayList<File>();
+
+    // if there is mps_home either in property or passed to the task as attribute 
+    if (mpsHomeArg == null || !(mpsHomeArg.isDirectory())) {
+      mpsHomeArg = resolveMPSHome(antProject, false);
+    }
+    if (mpsHomeArg != null) {
+      File lib = new File(mpsHomeArg, "lib");
+      if (lib.isDirectory()) {
+        homeFolders.add(lib);
+      }
+    }
+
+    // if there is no mps_home 
+    if (homeFolders.isEmpty()) {
+      homeFolders.add(getAntJARRelativeHome());
+      homeFolders.addAll(getClassPathRootsFromDependencies(antProject));
+    }
+
+    List<File> result = new ArrayList<File>();
+    if (fork) {
+      MPSClasspathUtil.collectClasspath(FORK_CLASSPATH, homeFolders, result);
+    }
+    MPSClasspathUtil.collectClasspath(CLASSPATH, homeFolders, result);
+    return result;
+  }
+
+  public static List<File> getHomeFolders(Project antProject, File mpsHomeArg) {
+    List<File> homeFolders = new ArrayList<File>();
+
     if (mpsHomeArg == null || !(mpsHomeArg.isDirectory())) {
       homeFolders.add(getAntJARRelativeHome());
       mpsHomeArg = resolveMPSHome(antProject, false);
@@ -38,12 +67,8 @@ public class MPSClasspathUtil {
     if (homeFolders.isEmpty()) {
       homeFolders.add(getAntJARRelativeHome());
     }
-    List<File> result = new ArrayList<File>();
-    if (fork) {
-      MPSClasspathUtil.collectClasspath(FORK_CLASSPATH, homeFolders, result);
-    }
-    MPSClasspathUtil.collectClasspath(CLASSPATH, homeFolders, result);
-    return result;
+
+    return homeFolders;
   }
 
   private static void collectClasspath(String[] fileNames, List<File> homeFolders, List<File> result) {
@@ -173,7 +198,7 @@ public class MPSClasspathUtil {
     return result.toString();
   }
 
-  public static List<File> getClassPathRoots(Project project) {
+  public static List<File> getClassPathRootsFromDependencies(Project project) {
     List<File> roots = new ArrayList<File>();
 
     String mpsHome = project.getProperty("artifacts.mps");
