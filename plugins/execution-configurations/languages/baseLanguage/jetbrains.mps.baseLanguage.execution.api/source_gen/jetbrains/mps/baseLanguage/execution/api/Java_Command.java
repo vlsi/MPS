@@ -192,6 +192,9 @@ public class Java_Command {
 
   private static String getClassName(SNode node) {
     SModel model = SNodeOperations.getModel(node);
+    if (model == null) {
+      return null;
+    }
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
@@ -210,7 +213,7 @@ public class Java_Command {
       } else {
         return TraceDown.unitNameWithPosition(node, new _FunctionTypes._return_P1_E0<Boolean, TraceablePositionInfo>() {
           public Boolean invoke(TraceablePositionInfo position) {
-            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(position.getPropertyString(), BehaviorReflection.invokeVirtual(String.class, _quotation_createNode_yvpt_a0a0a0a1a0a0b0a2a1(), "virtual_getTraceableProperty_5067982036267369901", new Object[]{})));
+            return (eq_kk96hj_a0a0a0a0a1a0a0b0a3a22(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0b0a3a22_0(position.getPropertyString(), BehaviorReflection.invokeVirtual(String.class, _quotation_createNode_yvpt_a0a0a0a1a0a0b0a3a1(), "virtual_getTraceableProperty_5067982036267369901", new Object[]{})));
           }
         });
       }
@@ -218,10 +221,13 @@ public class Java_Command {
   }
 
   private static String getClassName(final SNodeReference node) {
-    final Wrappers._T<String> className = new Wrappers._T<String>();
+    final Wrappers._T<String> className = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        className.value = Java_Command.getClassName(((SNodePointer) node).resolve(MPSModuleRepository.getInstance()));
+        SNode resolve = ((SNodePointer) node).resolve(MPSModuleRepository.getInstance());
+        if (resolve != null) {
+          className.value = Java_Command.getClassName(resolve);
+        }
       }
     });
     return className.value;
@@ -403,7 +409,7 @@ public class Java_Command {
     return null;
   }
 
-  private static SNode _quotation_createNode_yvpt_a0a0a0a1a0a0b0a2a1() {
+  private static SNode _quotation_createNode_yvpt_a0a0a0a1a0a0b0a3a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -435,14 +441,14 @@ public class Java_Command {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a3a22(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a3a22_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
