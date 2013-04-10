@@ -29,6 +29,7 @@ public class ComeFromExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1c8esj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1c8esj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_1c8esj_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1c8esj_b0(editorContext, node));
     return editorCell;

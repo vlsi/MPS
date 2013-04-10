@@ -1,297 +1,313 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/5337823064584388635">
-    <nodeInfo nodeId="5337823064584388661" fileName="OptimizeImportsCheckinHandler.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="5337823064584388666" fileName="OptimizeImportsCheckinHandler.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="5337823064584388669" fileName="OptimizeImportsCheckinHandler.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="5337823064584388680" fileName="OptimizeImportsCheckinHandler.java" startLine="39" startPosition="84" endLine="40" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388686" fileName="OptimizeImportsCheckinHandler.java" startLine="40" startPosition="29" endLine="41" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388696" fileName="OptimizeImportsCheckinHandler.java" startLine="44" startPosition="44" endLine="45" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5337823064584388703" fileName="OptimizeImportsCheckinHandler.java" startLine="49" startPosition="70" endLine="50" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5337823064584388717" fileName="OptimizeImportsCheckinHandler.java" startLine="53" startPosition="40" endLine="54" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5337823064584388726" fileName="OptimizeImportsCheckinHandler.java" startLine="54" startPosition="56" endLine="55" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388731" fileName="OptimizeImportsCheckinHandler.java" startLine="55" startPosition="43" endLine="56" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5337823064584388737" fileName="OptimizeImportsCheckinHandler.java" startLine="60" startPosition="34" endLine="61" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388748" fileName="OptimizeImportsCheckinHandler.java" startLine="65" startPosition="31" endLine="66" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388770" fileName="OptimizeImportsCheckinHandler.java" startLine="77" startPosition="63" endLine="78" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5337823064584388777" fileName="OptimizeImportsCheckinHandler.java" startLine="78" startPosition="58" endLine="79" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5337823064584388784" fileName="OptimizeImportsCheckinHandler.java" startLine="79" startPosition="66" endLine="80" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5337823064584388793" fileName="OptimizeImportsCheckinHandler.java" startLine="81" startPosition="39" endLine="82" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5337823064584388810" fileName="OptimizeImportsCheckinHandler.java" startLine="83" startPosition="28" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5337823064584388811" fileName="OptimizeImportsCheckinHandler.java" startLine="85" startPosition="9" endLine="86" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388816" fileName="OptimizeImportsCheckinHandler.java" startLine="87" startPosition="7" endLine="88" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5337823064584388823" fileName="OptimizeImportsCheckinHandler.java" startLine="88" startPosition="116" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388837" fileName="OptimizeImportsCheckinHandler.java" startLine="90" startPosition="11" endLine="91" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5337823064584388859" fileName="OptimizeImportsCheckinHandler.java" startLine="95" startPosition="31" endLine="96" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388871" fileName="OptimizeImportsCheckinHandler.java" startLine="97" startPosition="59" endLine="98" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388828" fileName="OptimizeImportsCheckinHandler.java" startLine="103" startPosition="29" endLine="104" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388879" fileName="OptimizeImportsCheckinHandler.java" startLine="106" startPosition="5" endLine="107" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5337823064584388654" fileName="OptimizeImportsCheckinHandler.java" startLine="116" startPosition="91" endLine="117" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5337823064584388641" fileName="OptimizeImportsCheckinHandler.java" startLine="111" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptimizeImportsCheckinHandlerFactory#()V" />
-    <nodeInfo nodeId="5337823064584388692" fileName="OptimizeImportsCheckinHandler.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSettings#()Lcom/intellij/openapi/vcs/VcsConfiguration;" />
-    <nodeInfo nodeId="5337823064584388756" fileName="OptimizeImportsCheckinHandler.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refresh#()V" />
-    <nodeInfo nodeId="5337823064584388805" fileName="OptimizeImportsCheckinHandler.java" startLine="82" startPosition="129" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5337823064584388866" fileName="OptimizeImportsCheckinHandler.java" startLine="96" startPosition="96" endLine="99" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5337823064584388672" fileName="OptimizeImportsCheckinHandler.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptimizeImportsCheckinHandler#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/CheckinProjectPanel;)V" />
-    <nodeInfo nodeId="5337823064584388733" fileName="OptimizeImportsCheckinHandler.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="restoreState#()V" />
-    <nodeInfo nodeId="5337823064584388744" fileName="OptimizeImportsCheckinHandler.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveState#()V" />
-    <nodeInfo nodeId="5337823064584388645" fileName="OptimizeImportsCheckinHandler.java" startLine="114" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createHandler#(Lcom/intellij/openapi/vcs/CheckinProjectPanel;Lcom/intellij/openapi/vcs/changes/CommitContext;)Lcom/intellij/openapi/vcs/checkin/CheckinHandler;" />
-    <nodeInfo nodeId="5337823064584388713" fileName="OptimizeImportsCheckinHandler.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="5337823064584388788" fileName="OptimizeImportsCheckinHandler.java" startLine="80" startPosition="72" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5337823064584388855" fileName="OptimizeImportsCheckinHandler.java" startLine="94" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5337823064584388848" fileName="OptimizeImportsCheckinHandler.java" startLine="92" startPosition="30" endLine="101" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388843" fileName="OptimizeImportsCheckinHandler.java" startLine="91" startPosition="78" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5337823064584388825" fileName="OptimizeImportsCheckinHandler.java" startLine="89" startPosition="30" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5337823064584388709" fileName="OptimizeImportsCheckinHandler.java" startLine="50" startPosition="86" endLine="72" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5337823064584388699" fileName="OptimizeImportsCheckinHandler.java" startLine="48" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBeforeCheckinConfigurationPanel#()Lcom/intellij/openapi/vcs/ui/RefreshableOnComponent;" />
-    <nodeInfo nodeId="5337823064584388765" fileName="OptimizeImportsCheckinHandler.java" startLine="76" startPosition="54" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5337823064584388761" fileName="OptimizeImportsCheckinHandler.java" startLine="75" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeCheckin#()Lcom/intellij/openapi/vcs/checkin/CheckinHandler/ReturnResult;" />
-    <scopeInfo nodeId="5337823064584388759" fileName="OptimizeImportsCheckinHandler.java" startLine="70" startPosition="29" endLine="70" endPosition="29" />
-    <scopeInfo nodeId="5337823064584388644" fileName="OptimizeImportsCheckinHandler.java" startLine="111" startPosition="51" endLine="111" endPosition="51" />
-    <scopeInfo nodeId="5337823064584388695" fileName="OptimizeImportsCheckinHandler.java" startLine="44" startPosition="44" endLine="45" endPosition="51" />
-    <scopeInfo nodeId="5337823064584388736" fileName="OptimizeImportsCheckinHandler.java" startLine="60" startPosition="34" endLine="61" endPosition="98" />
-    <scopeInfo nodeId="5337823064584388747" fileName="OptimizeImportsCheckinHandler.java" startLine="65" startPosition="31" endLine="66" endPosition="100" />
-    <scopeInfo nodeId="5337823064584388809" fileName="OptimizeImportsCheckinHandler.java" startLine="83" startPosition="28" endLine="84" endPosition="19" />
-    <scopeInfo nodeId="5337823064584388870" fileName="OptimizeImportsCheckinHandler.java" startLine="97" startPosition="59" endLine="98" endPosition="56" />
-    <scopeInfo nodeId="5337823064584388826" fileName="OptimizeImportsCheckinHandler.java" startLine="103" startPosition="0" endLine="104" endPosition="64">
+    <nodeInfo nodeId="5337823064584388661" fileName="OptimizeImportsCheckinHandler.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5337823064584388666" fileName="OptimizeImportsCheckinHandler.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="5337823064584388669" fileName="OptimizeImportsCheckinHandler.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="5337823064584388680" fileName="OptimizeImportsCheckinHandler.java" startLine="40" startPosition="84" endLine="41" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388686" fileName="OptimizeImportsCheckinHandler.java" startLine="41" startPosition="29" endLine="42" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388696" fileName="OptimizeImportsCheckinHandler.java" startLine="45" startPosition="44" endLine="46" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5337823064584388703" fileName="OptimizeImportsCheckinHandler.java" startLine="50" startPosition="70" endLine="51" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5337823064584388717" fileName="OptimizeImportsCheckinHandler.java" startLine="54" startPosition="40" endLine="55" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5337823064584388726" fileName="OptimizeImportsCheckinHandler.java" startLine="55" startPosition="56" endLine="56" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388731" fileName="OptimizeImportsCheckinHandler.java" startLine="56" startPosition="43" endLine="57" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5337823064584388737" fileName="OptimizeImportsCheckinHandler.java" startLine="61" startPosition="34" endLine="62" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388748" fileName="OptimizeImportsCheckinHandler.java" startLine="66" startPosition="31" endLine="67" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388770" fileName="OptimizeImportsCheckinHandler.java" startLine="78" startPosition="63" endLine="79" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5337823064584388777" fileName="OptimizeImportsCheckinHandler.java" startLine="79" startPosition="58" endLine="80" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5337823064584388784" fileName="OptimizeImportsCheckinHandler.java" startLine="80" startPosition="66" endLine="81" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5337823064584388793" fileName="OptimizeImportsCheckinHandler.java" startLine="82" startPosition="39" endLine="83" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5337823064584388810" fileName="OptimizeImportsCheckinHandler.java" startLine="84" startPosition="28" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5337823064584388811" fileName="OptimizeImportsCheckinHandler.java" startLine="86" startPosition="9" endLine="87" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388816" fileName="OptimizeImportsCheckinHandler.java" startLine="88" startPosition="7" endLine="89" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5337823064584388823" fileName="OptimizeImportsCheckinHandler.java" startLine="89" startPosition="116" endLine="90" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388837" fileName="OptimizeImportsCheckinHandler.java" startLine="91" startPosition="11" endLine="92" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5337823064584388859" fileName="OptimizeImportsCheckinHandler.java" startLine="96" startPosition="31" endLine="97" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388871" fileName="OptimizeImportsCheckinHandler.java" startLine="98" startPosition="59" endLine="99" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388828" fileName="OptimizeImportsCheckinHandler.java" startLine="104" startPosition="29" endLine="105" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388879" fileName="OptimizeImportsCheckinHandler.java" startLine="107" startPosition="5" endLine="108" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5337823064584388654" fileName="OptimizeImportsCheckinHandler.java" startLine="117" startPosition="91" endLine="118" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5337823064584388641" fileName="OptimizeImportsCheckinHandler.java" startLine="112" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptimizeImportsCheckinHandlerFactory#()V" />
+    <nodeInfo nodeId="5337823064584388692" fileName="OptimizeImportsCheckinHandler.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSettings#()Lcom/intellij/openapi/vcs/VcsConfiguration;" />
+    <nodeInfo nodeId="5337823064584388756" fileName="OptimizeImportsCheckinHandler.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refresh#()V" />
+    <nodeInfo nodeId="5337823064584388805" fileName="OptimizeImportsCheckinHandler.java" startLine="83" startPosition="129" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5337823064584388866" fileName="OptimizeImportsCheckinHandler.java" startLine="97" startPosition="96" endLine="100" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5337823064584388672" fileName="OptimizeImportsCheckinHandler.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptimizeImportsCheckinHandler#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/CheckinProjectPanel;)V" />
+    <nodeInfo nodeId="5337823064584388733" fileName="OptimizeImportsCheckinHandler.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="restoreState#()V" />
+    <nodeInfo nodeId="5337823064584388744" fileName="OptimizeImportsCheckinHandler.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveState#()V" />
+    <nodeInfo nodeId="5337823064584388645" fileName="OptimizeImportsCheckinHandler.java" startLine="115" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createHandler#(Lcom/intellij/openapi/vcs/CheckinProjectPanel;Lcom/intellij/openapi/vcs/changes/CommitContext;)Lcom/intellij/openapi/vcs/checkin/CheckinHandler;" />
+    <nodeInfo nodeId="5337823064584388713" fileName="OptimizeImportsCheckinHandler.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="5337823064584388788" fileName="OptimizeImportsCheckinHandler.java" startLine="81" startPosition="72" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5337823064584388855" fileName="OptimizeImportsCheckinHandler.java" startLine="95" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5337823064584388848" fileName="OptimizeImportsCheckinHandler.java" startLine="93" startPosition="30" endLine="102" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388843" fileName="OptimizeImportsCheckinHandler.java" startLine="92" startPosition="78" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5337823064584388825" fileName="OptimizeImportsCheckinHandler.java" startLine="90" startPosition="30" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5337823064584388709" fileName="OptimizeImportsCheckinHandler.java" startLine="51" startPosition="86" endLine="73" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5337823064584388699" fileName="OptimizeImportsCheckinHandler.java" startLine="49" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBeforeCheckinConfigurationPanel#()Lcom/intellij/openapi/vcs/ui/RefreshableOnComponent;" />
+    <nodeInfo nodeId="5337823064584388765" fileName="OptimizeImportsCheckinHandler.java" startLine="77" startPosition="54" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5337823064584388761" fileName="OptimizeImportsCheckinHandler.java" startLine="76" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeCheckin#()Lcom/intellij/openapi/vcs/checkin/CheckinHandler/ReturnResult;" />
+    <scopeInfo nodeId="5337823064584388759" fileName="OptimizeImportsCheckinHandler.java" startLine="71" startPosition="29" endLine="71" endPosition="29" />
+    <scopeInfo nodeId="5337823064584388644" fileName="OptimizeImportsCheckinHandler.java" startLine="112" startPosition="51" endLine="112" endPosition="51" />
+    <scopeInfo nodeId="5337823064584388695" fileName="OptimizeImportsCheckinHandler.java" startLine="45" startPosition="44" endLine="46" endPosition="51" />
+    <scopeInfo nodeId="5337823064584388736" fileName="OptimizeImportsCheckinHandler.java" startLine="61" startPosition="34" endLine="62" endPosition="98" />
+    <scopeInfo nodeId="5337823064584388747" fileName="OptimizeImportsCheckinHandler.java" startLine="66" startPosition="31" endLine="67" endPosition="100" />
+    <scopeInfo nodeId="5337823064584388809" fileName="OptimizeImportsCheckinHandler.java" startLine="84" startPosition="28" endLine="85" endPosition="19" />
+    <scopeInfo nodeId="5337823064584388870" fileName="OptimizeImportsCheckinHandler.java" startLine="98" startPosition="59" endLine="99" endPosition="56" />
+    <scopeInfo nodeId="5337823064584388826" fileName="OptimizeImportsCheckinHandler.java" startLine="104" startPosition="0" endLine="105" endPosition="64">
       <varInfo nodeId="5337823064584388834" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5337823064584388827" fileName="OptimizeImportsCheckinHandler.java" startLine="103" startPosition="29" endLine="104" endPosition="64" />
-    <scopeInfo nodeId="5337823064584388653" fileName="OptimizeImportsCheckinHandler.java" startLine="116" startPosition="91" endLine="117" endPosition="74" />
-    <scopeInfo nodeId="5337823064584388679" fileName="OptimizeImportsCheckinHandler.java" startLine="39" startPosition="84" endLine="41" endPosition="25" />
-    <scopeInfo nodeId="5337823064584388641" fileName="OptimizeImportsCheckinHandler.java" startLine="111" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="5337823064584388692" fileName="OptimizeImportsCheckinHandler.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="5337823064584388716" fileName="OptimizeImportsCheckinHandler.java" startLine="53" startPosition="40" endLine="56" endPosition="21">
+    <scopeInfo nodeId="5337823064584388827" fileName="OptimizeImportsCheckinHandler.java" startLine="104" startPosition="29" endLine="105" endPosition="64" />
+    <scopeInfo nodeId="5337823064584388653" fileName="OptimizeImportsCheckinHandler.java" startLine="117" startPosition="91" endLine="118" endPosition="74" />
+    <scopeInfo nodeId="5337823064584388679" fileName="OptimizeImportsCheckinHandler.java" startLine="40" startPosition="84" endLine="42" endPosition="25" />
+    <scopeInfo nodeId="5337823064584388641" fileName="OptimizeImportsCheckinHandler.java" startLine="112" startPosition="0" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="5337823064584388692" fileName="OptimizeImportsCheckinHandler.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="5337823064584388716" fileName="OptimizeImportsCheckinHandler.java" startLine="54" startPosition="40" endLine="57" endPosition="21">
       <varInfo nodeId="5337823064584388718" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="5337823064584388756" fileName="OptimizeImportsCheckinHandler.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="5337823064584388866" fileName="OptimizeImportsCheckinHandler.java" startLine="96" startPosition="96" endLine="99" endPosition="15">
+    <scopeInfo nodeId="5337823064584388756" fileName="OptimizeImportsCheckinHandler.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="5337823064584388866" fileName="OptimizeImportsCheckinHandler.java" startLine="97" startPosition="96" endLine="100" endPosition="15">
       <varInfo nodeId="5337823064584388868" varName="affectedModel" />
     </scopeInfo>
-    <scopeInfo nodeId="5337823064584388672" fileName="OptimizeImportsCheckinHandler.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="5337823064584388672" fileName="OptimizeImportsCheckinHandler.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="5337823064584388677" varName="panel" />
       <varInfo nodeId="5337823064584388675" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5337823064584388733" fileName="OptimizeImportsCheckinHandler.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="5337823064584388744" fileName="OptimizeImportsCheckinHandler.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="5337823064584388858" fileName="OptimizeImportsCheckinHandler.java" startLine="95" startPosition="31" endLine="99" endPosition="15" />
-    <scopeInfo nodeId="5337823064584388792" fileName="OptimizeImportsCheckinHandler.java" startLine="81" startPosition="39" endLine="86" endPosition="34">
+    <scopeInfo nodeId="5337823064584388733" fileName="OptimizeImportsCheckinHandler.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="5337823064584388744" fileName="OptimizeImportsCheckinHandler.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="5337823064584388858" fileName="OptimizeImportsCheckinHandler.java" startLine="96" startPosition="31" endLine="100" endPosition="15" />
+    <scopeInfo nodeId="5337823064584388792" fileName="OptimizeImportsCheckinHandler.java" startLine="82" startPosition="39" endLine="87" endPosition="34">
       <varInfo nodeId="5337823064584388794" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="5337823064584388645" fileName="OptimizeImportsCheckinHandler.java" startLine="114" startPosition="0" endLine="119" endPosition="0">
+    <scopeInfo nodeId="5337823064584388645" fileName="OptimizeImportsCheckinHandler.java" startLine="115" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="5337823064584388650" varName="context" />
       <varInfo nodeId="5337823064584388648" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="5337823064584388713" fileName="OptimizeImportsCheckinHandler.java" startLine="52" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="5337823064584388788" fileName="OptimizeImportsCheckinHandler.java" startLine="80" startPosition="72" endLine="87" endPosition="7">
+    <scopeInfo nodeId="5337823064584388713" fileName="OptimizeImportsCheckinHandler.java" startLine="53" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="5337823064584388788" fileName="OptimizeImportsCheckinHandler.java" startLine="81" startPosition="72" endLine="88" endPosition="7">
       <varInfo nodeId="5337823064584388790" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5337823064584388855" fileName="OptimizeImportsCheckinHandler.java" startLine="94" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="5337823064584388847" fileName="OptimizeImportsCheckinHandler.java" startLine="92" startPosition="30" endLine="101" endPosition="22" />
-    <scopeInfo nodeId="5337823064584388836" fileName="OptimizeImportsCheckinHandler.java" startLine="90" startPosition="11" endLine="102" endPosition="9">
+    <scopeInfo nodeId="5337823064584388855" fileName="OptimizeImportsCheckinHandler.java" startLine="95" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="5337823064584388847" fileName="OptimizeImportsCheckinHandler.java" startLine="93" startPosition="30" endLine="102" endPosition="22" />
+    <scopeInfo nodeId="5337823064584388836" fileName="OptimizeImportsCheckinHandler.java" startLine="91" startPosition="11" endLine="103" endPosition="9">
       <varInfo nodeId="5337823064584388838" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5337823064584388702" fileName="OptimizeImportsCheckinHandler.java" startLine="49" startPosition="70" endLine="72" endPosition="6">
+    <scopeInfo nodeId="5337823064584388702" fileName="OptimizeImportsCheckinHandler.java" startLine="50" startPosition="70" endLine="73" endPosition="6">
       <varInfo nodeId="5337823064584388704" varName="optimizeImportsCheckBox" />
     </scopeInfo>
-    <scopeInfo nodeId="5337823064584388699" fileName="OptimizeImportsCheckinHandler.java" startLine="48" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="5337823064584388769" fileName="OptimizeImportsCheckinHandler.java" startLine="77" startPosition="63" endLine="105" endPosition="7">
+    <scopeInfo nodeId="5337823064584388699" fileName="OptimizeImportsCheckinHandler.java" startLine="49" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="5337823064584388769" fileName="OptimizeImportsCheckinHandler.java" startLine="78" startPosition="63" endLine="106" endPosition="7">
       <varInfo nodeId="5337823064584388771" varName="affectedFiles" />
       <varInfo nodeId="5337823064584388778" varName="affectedModels" />
       <varInfo nodeId="5337823064584388785" varName="modelRepository" />
       <varInfo nodeId="5337823064584388817" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5337823064584388764" fileName="OptimizeImportsCheckinHandler.java" startLine="76" startPosition="54" endLine="107" endPosition="46" />
-    <scopeInfo nodeId="5337823064584388761" fileName="OptimizeImportsCheckinHandler.java" startLine="75" startPosition="0" endLine="109" endPosition="0" />
-    <unitInfo nodeId="5337823064584388854" fileName="OptimizeImportsCheckinHandler.java" startLine="93" startPosition="53" endLine="101" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$2" />
-    <unitInfo nodeId="5337823064584388638" fileName="OptimizeImportsCheckinHandler.java" startLine="110" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory" />
-    <unitInfo nodeId="5337823064584388712" fileName="OptimizeImportsCheckinHandler.java" startLine="51" startPosition="15" endLine="72" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$1" />
-    <unitInfo nodeId="5337823064584388635" fileName="OptimizeImportsCheckinHandler.java" startLine="34" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler" />
+    <scopeInfo nodeId="5337823064584388764" fileName="OptimizeImportsCheckinHandler.java" startLine="77" startPosition="54" endLine="108" endPosition="46" />
+    <scopeInfo nodeId="5337823064584388761" fileName="OptimizeImportsCheckinHandler.java" startLine="76" startPosition="0" endLine="110" endPosition="0" />
+    <unitInfo nodeId="5337823064584388854" fileName="OptimizeImportsCheckinHandler.java" startLine="94" startPosition="53" endLine="102" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$2" />
+    <unitInfo nodeId="5337823064584388638" fileName="OptimizeImportsCheckinHandler.java" startLine="111" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory" />
+    <unitInfo nodeId="5337823064584388712" fileName="OptimizeImportsCheckinHandler.java" startLine="52" startPosition="15" endLine="73" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$1" />
+    <unitInfo nodeId="5337823064584388635" fileName="OptimizeImportsCheckinHandler.java" startLine="35" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199020">
-    <nodeInfo nodeId="6030177200825199033" fileName="ModelDiffTool.java" startLine="36" startPosition="47" endLine="37" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199040" fileName="ModelDiffTool.java" startLine="37" startPosition="51" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199043" fileName="ModelDiffTool.java" startLine="38" startPosition="26" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199048" fileName="ModelDiffTool.java" startLine="40" startPosition="9" endLine="41" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199055" fileName="ModelDiffTool.java" startLine="41" startPosition="40" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199066" fileName="ModelDiffTool.java" startLine="43" startPosition="36" endLine="44" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199069" fileName="ModelDiffTool.java" startLine="44" startPosition="40" endLine="45" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199076" fileName="ModelDiffTool.java" startLine="45" startPosition="64" endLine="46" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199077" fileName="ModelDiffTool.java" startLine="47" startPosition="5" endLine="48" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199166" fileName="ModelDiffTool.java" startLine="52" startPosition="47" endLine="53" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199173" fileName="ModelDiffTool.java" startLine="53" startPosition="51" endLine="54" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199196" fileName="ModelDiffTool.java" startLine="57" startPosition="62" endLine="58" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199207" fileName="ModelDiffTool.java" startLine="59" startPosition="23" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199209" fileName="ModelDiffTool.java" startLine="61" startPosition="5" endLine="62" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6976105926957848554" fileName="ModelDiffTool.java" startLine="67" startPosition="111" endLine="68" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199105" fileName="ModelDiffTool.java" startLine="72" startPosition="110" endLine="73" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2834132315319621384" fileName="ModelDiffTool.java" startLine="73" startPosition="156" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8626355517233076619" fileName="ModelDiffTool.java" startLine="75" startPosition="36" endLine="76" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4387441155898856124" fileName="ModelDiffTool.java" startLine="79" startPosition="9" endLine="80" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4387441155898795192" fileName="ModelDiffTool.java" startLine="80" startPosition="40" endLine="81" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4387441155898902219" fileName="ModelDiffTool.java" startLine="82" startPosition="30" endLine="83" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4387441155898977853" fileName="ModelDiffTool.java" startLine="84" startPosition="7" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6030177200825199138" fileName="ModelDiffTool.java" startLine="85" startPosition="0" endLine="86" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199151" fileName="ModelDiffTool.java" startLine="87" startPosition="31" endLine="88" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="92" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6030177200825199023" fileName="ModelDiffTool.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDiffTool#()V" />
-    <nodeInfo nodeId="6030177200825199202" fileName="ModelDiffTool.java" startLine="58" startPosition="46" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199115" fileName="ModelDiffTool.java" startLine="74" startPosition="0" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4387441155898888474" fileName="ModelDiffTool.java" startLine="81" startPosition="69" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
-    <nodeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="65" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent#(Ljava/lang/String;Lcom/intellij/openapi/diff/DiffRequest;Ljava/awt/Window;Lcom/intellij/openapi/Disposable;)Lcom/intellij/openapi/diff/DiffViewer;" />
-    <nodeInfo nodeId="6030177200825199189" fileName="ModelDiffTool.java" startLine="57" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isModelFile#(Lcom/intellij/openapi/diff/DiffContent;)Z" />
-    <nodeInfo nodeId="6030177200825199092" fileName="ModelDiffTool.java" startLine="71" startPosition="82" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199046" fileName="ModelDiffTool.java" startLine="39" startPosition="26" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6030177200825199136" fileName="ModelDiffTool.java" startLine="78" startPosition="5" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="35" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
-    <nodeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="71" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readModel#(Lcom/intellij/openapi/diff/DiffContent;)Ljetbrains/mps/smodel/SModel;" />
-    <scopeInfo nodeId="6030177200825199026" fileName="ModelDiffTool.java" startLine="32" startPosition="26" endLine="32" endPosition="26" />
-    <scopeInfo nodeId="6030177200825199206" fileName="ModelDiffTool.java" startLine="59" startPosition="23" endLine="60" endPosition="18" />
-    <scopeInfo nodeId="6976105926957848553" fileName="ModelDiffTool.java" startLine="67" startPosition="111" endLine="68" endPosition="16" />
-    <scopeInfo nodeId="6030177200825199119" fileName="ModelDiffTool.java" startLine="75" startPosition="36" endLine="76" endPosition="66" />
-    <scopeInfo nodeId="4387441155898888476" fileName="ModelDiffTool.java" startLine="82" startPosition="30" endLine="83" endPosition="62" />
-    <scopeInfo nodeId="6030177200825199147" fileName="ModelDiffTool.java" startLine="87" startPosition="0" endLine="88" endPosition="86">
+    <nodeInfo nodeId="6030177200825199033" fileName="ModelDiffTool.java" startLine="38" startPosition="47" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199040" fileName="ModelDiffTool.java" startLine="39" startPosition="51" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199043" fileName="ModelDiffTool.java" startLine="40" startPosition="26" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199048" fileName="ModelDiffTool.java" startLine="42" startPosition="9" endLine="43" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199055" fileName="ModelDiffTool.java" startLine="43" startPosition="40" endLine="44" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199066" fileName="ModelDiffTool.java" startLine="46" startPosition="45" endLine="47" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199069" fileName="ModelDiffTool.java" startLine="48" startPosition="7" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199076" fileName="ModelDiffTool.java" startLine="49" startPosition="64" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199077" fileName="ModelDiffTool.java" startLine="51" startPosition="5" endLine="52" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199166" fileName="ModelDiffTool.java" startLine="56" startPosition="47" endLine="57" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199173" fileName="ModelDiffTool.java" startLine="57" startPosition="51" endLine="58" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199196" fileName="ModelDiffTool.java" startLine="61" startPosition="62" endLine="62" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199207" fileName="ModelDiffTool.java" startLine="63" startPosition="23" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199209" fileName="ModelDiffTool.java" startLine="65" startPosition="5" endLine="66" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6976105926957848554" fileName="ModelDiffTool.java" startLine="71" startPosition="111" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199105" fileName="ModelDiffTool.java" startLine="76" startPosition="110" endLine="77" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2834132315319621384" fileName="ModelDiffTool.java" startLine="77" startPosition="156" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8626355517233076619" fileName="ModelDiffTool.java" startLine="79" startPosition="36" endLine="80" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4387441155898856124" fileName="ModelDiffTool.java" startLine="83" startPosition="9" endLine="84" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4387441155898795192" fileName="ModelDiffTool.java" startLine="84" startPosition="40" endLine="85" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4387441155898902219" fileName="ModelDiffTool.java" startLine="86" startPosition="30" endLine="87" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4387441155898977853" fileName="ModelDiffTool.java" startLine="88" startPosition="7" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6030177200825199138" fileName="ModelDiffTool.java" startLine="89" startPosition="0" endLine="90" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199151" fileName="ModelDiffTool.java" startLine="91" startPosition="31" endLine="92" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="96" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6030177200825199023" fileName="ModelDiffTool.java" startLine="34" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDiffTool#()V" />
+    <nodeInfo nodeId="6030177200825199066" fileName="ModelDiffTool.java" startLine="45" startPosition="36" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6030177200825199066" fileName="ModelDiffTool.java" startLine="45" startPosition="36" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199202" fileName="ModelDiffTool.java" startLine="62" startPosition="46" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199115" fileName="ModelDiffTool.java" startLine="78" startPosition="0" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4387441155898888474" fileName="ModelDiffTool.java" startLine="85" startPosition="69" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
+    <nodeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="69" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent#(Ljava/lang/String;Lcom/intellij/openapi/diff/DiffRequest;Ljava/awt/Window;Lcom/intellij/openapi/Disposable;)Lcom/intellij/openapi/diff/DiffViewer;" />
+    <nodeInfo nodeId="6030177200825199189" fileName="ModelDiffTool.java" startLine="61" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isModelFile#(Lcom/intellij/openapi/diff/DiffContent;)Z" />
+    <nodeInfo nodeId="6030177200825199092" fileName="ModelDiffTool.java" startLine="75" startPosition="82" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199046" fileName="ModelDiffTool.java" startLine="41" startPosition="26" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6030177200825199136" fileName="ModelDiffTool.java" startLine="82" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="37" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
+    <nodeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="75" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readModel#(Lcom/intellij/openapi/diff/DiffContent;)Ljetbrains/mps/smodel/SModel;" />
+    <scopeInfo nodeId="6030177200825199026" fileName="ModelDiffTool.java" startLine="34" startPosition="26" endLine="34" endPosition="26" />
+    <scopeInfo nodeId="6030177200825199066" fileName="ModelDiffTool.java" startLine="46" startPosition="45" endLine="47" endPosition="42" />
+    <scopeInfo nodeId="6030177200825199206" fileName="ModelDiffTool.java" startLine="63" startPosition="23" endLine="64" endPosition="18" />
+    <scopeInfo nodeId="6976105926957848553" fileName="ModelDiffTool.java" startLine="71" startPosition="111" endLine="72" endPosition="16" />
+    <scopeInfo nodeId="6030177200825199119" fileName="ModelDiffTool.java" startLine="79" startPosition="36" endLine="80" endPosition="66" />
+    <scopeInfo nodeId="4387441155898888476" fileName="ModelDiffTool.java" startLine="86" startPosition="30" endLine="87" endPosition="62" />
+    <scopeInfo nodeId="6030177200825199147" fileName="ModelDiffTool.java" startLine="91" startPosition="0" endLine="92" endPosition="86">
       <varInfo nodeId="6030177200825199148" varName="ioe" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199150" fileName="ModelDiffTool.java" startLine="87" startPosition="31" endLine="88" endPosition="86" />
-    <scopeInfo nodeId="6030177200825199023" fileName="ModelDiffTool.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="6030177200825199047" fileName="ModelDiffTool.java" startLine="40" startPosition="9" endLine="42" endPosition="40" />
-    <scopeInfo nodeId="6030177200825199165" fileName="ModelDiffTool.java" startLine="52" startPosition="47" endLine="54" endPosition="88">
+    <scopeInfo nodeId="6030177200825199150" fileName="ModelDiffTool.java" startLine="91" startPosition="31" endLine="92" endPosition="86" />
+    <scopeInfo nodeId="6030177200825199023" fileName="ModelDiffTool.java" startLine="34" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="6030177200825199047" fileName="ModelDiffTool.java" startLine="42" startPosition="9" endLine="44" endPosition="40" />
+    <scopeInfo nodeId="6030177200825199165" fileName="ModelDiffTool.java" startLine="56" startPosition="47" endLine="58" endPosition="88">
       <varInfo nodeId="6030177200825199167" varName="contents" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199062" fileName="ModelDiffTool.java" startLine="43" startPosition="0" endLine="46" endPosition="13">
+    <scopeInfo nodeId="6030177200825199066" fileName="ModelDiffTool.java" startLine="45" startPosition="36" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="6030177200825199062" fileName="ModelDiffTool.java" startLine="45" startPosition="0" endLine="50" endPosition="13">
       <varInfo nodeId="6030177200825199063" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199065" fileName="ModelDiffTool.java" startLine="43" startPosition="36" endLine="46" endPosition="13" />
-    <scopeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="51" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="6030177200825199065" fileName="ModelDiffTool.java" startLine="45" startPosition="36" endLine="50" endPosition="13" />
+    <scopeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="55" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="6030177200825199163" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199195" fileName="ModelDiffTool.java" startLine="57" startPosition="62" endLine="62" endPosition="57">
+    <scopeInfo nodeId="6030177200825199195" fileName="ModelDiffTool.java" startLine="61" startPosition="62" endLine="66" endPosition="57">
       <varInfo nodeId="6030177200825199197" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="65" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="69" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="6976105926957848550" varName="disposable" />
       <varInfo nodeId="6976105926957848546" varName="request" />
       <varInfo nodeId="6976105926957848544" varName="string" />
       <varInfo nodeId="6976105926957848548" varName="window" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199100" fileName="ModelDiffTool.java" startLine="72" startPosition="110" endLine="77" endPosition="7">
+    <scopeInfo nodeId="6030177200825199100" fileName="ModelDiffTool.java" startLine="76" startPosition="110" endLine="81" endPosition="7">
       <varInfo nodeId="6030177200825199106" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199189" fileName="ModelDiffTool.java" startLine="57" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="6030177200825199189" fileName="ModelDiffTool.java" startLine="61" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="6030177200825199192" varName="contents" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199137" fileName="ModelDiffTool.java" startLine="79" startPosition="9" endLine="86" endPosition="92">
+    <scopeInfo nodeId="6030177200825199137" fileName="ModelDiffTool.java" startLine="83" startPosition="9" endLine="90" endPosition="92">
       <varInfo nodeId="4387441155898856127" varName="bytes" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199032" fileName="ModelDiffTool.java" startLine="36" startPosition="47" endLine="48" endPosition="66">
+    <scopeInfo nodeId="6030177200825199032" fileName="ModelDiffTool.java" startLine="38" startPosition="47" endLine="52" endPosition="66">
       <varInfo nodeId="6030177200825199034" varName="contents" />
       <varInfo nodeId="6030177200825199044" varName="newModel" />
       <varInfo nodeId="6030177200825199041" varName="oldModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="35" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="37" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="6030177200825199030" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199091" fileName="ModelDiffTool.java" startLine="71" startPosition="82" endLine="89" endPosition="5" />
-    <scopeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="71" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="6030177200825199091" fileName="ModelDiffTool.java" startLine="75" startPosition="82" endLine="93" endPosition="5" />
+    <scopeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="75" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="6030177200825199089" varName="content" />
     </scopeInfo>
-    <unitInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="31" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelDiffTool" />
+    <unitInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="33" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelDiffTool" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199214">
-    <nodeInfo nodeId="6030177200825199333" fileName="ModelMergeTool.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6030177200825199348" fileName="ModelMergeTool.java" startLine="34" startPosition="47" endLine="35" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199365" fileName="ModelMergeTool.java" startLine="36" startPosition="9" endLine="37" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="38" startPosition="25" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199374" fileName="ModelMergeTool.java" startLine="39" startPosition="39" endLine="40" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199384" fileName="ModelMergeTool.java" startLine="41" startPosition="7" endLine="42" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199392" fileName="ModelMergeTool.java" startLine="42" startPosition="78" endLine="43" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199399" fileName="ModelMergeTool.java" startLine="43" startPosition="54" endLine="44" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199402" fileName="ModelMergeTool.java" startLine="44" startPosition="29" endLine="45" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199405" fileName="ModelMergeTool.java" startLine="45" startPosition="29" endLine="46" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199410" fileName="ModelMergeTool.java" startLine="47" startPosition="11" endLine="48" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199422" fileName="ModelMergeTool.java" startLine="48" startPosition="113" endLine="49" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199435" fileName="ModelMergeTool.java" startLine="49" startPosition="137" endLine="50" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="51" startPosition="38" endLine="52" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199455" fileName="ModelMergeTool.java" startLine="52" startPosition="77" endLine="53" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199458" fileName="ModelMergeTool.java" startLine="53" startPosition="28" endLine="54" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199459" fileName="ModelMergeTool.java" startLine="55" startPosition="7" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6030177200825199460" fileName="ModelMergeTool.java" startLine="56" startPosition="0" endLine="57" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199473" fileName="ModelMergeTool.java" startLine="59" startPosition="27" endLine="60" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199477" fileName="ModelMergeTool.java" startLine="62" startPosition="9" endLine="63" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199483" fileName="ModelMergeTool.java" startLine="64" startPosition="44" endLine="65" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199490" fileName="ModelMergeTool.java" startLine="65" startPosition="93" endLine="66" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199494" fileName="ModelMergeTool.java" startLine="66" startPosition="37" endLine="67" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1493963027547820669" fileName="ModelMergeTool.java" startLine="68" startPosition="7" endLine="69" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199357" fileName="ModelMergeTool.java" startLine="70" startPosition="29" endLine="71" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199512" fileName="ModelMergeTool.java" startLine="76" startPosition="47" endLine="77" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199220" fileName="ModelMergeTool.java" startLine="80" startPosition="75" endLine="81" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199225" fileName="ModelMergeTool.java" startLine="81" startPosition="46" endLine="82" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199238" fileName="ModelMergeTool.java" startLine="85" startPosition="13" endLine="86" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="87" startPosition="33" endLine="88" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199267" fileName="ModelMergeTool.java" startLine="95" startPosition="85" endLine="96" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199310" fileName="ModelMergeTool.java" startLine="97" startPosition="65" endLine="98" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199326" fileName="ModelMergeTool.java" startLine="99" startPosition="5" endLine="100" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="103" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG_705910402" />
-    <nodeInfo nodeId="6030177200825199338" fileName="ModelMergeTool.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelMergeTool#()V" />
-    <nodeInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6030177200825199281" fileName="ModelMergeTool.java" startLine="96" startPosition="64" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199370" fileName="ModelMergeTool.java" startLine="37" startPosition="59" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199506" fileName="ModelMergeTool.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
-    <nodeInfo nodeId="6030177200825199469" fileName="ModelMergeTool.java" startLine="57" startPosition="103" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199481" fileName="ModelMergeTool.java" startLine="63" startPosition="20" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199236" fileName="ModelMergeTool.java" startLine="84" startPosition="25" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="84" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6030177200825199257" fileName="ModelMergeTool.java" startLine="94" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFileFromMergeRequest#(Lcom/intellij/openapi/diff/impl/mergeTool/MergeRequestImpl;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="6030177200825199408" fileName="ModelMergeTool.java" startLine="46" startPosition="28" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6030177200825199230" fileName="ModelMergeTool.java" startLine="82" startPosition="63" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199216" fileName="ModelMergeTool.java" startLine="80" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolved#(Lcom/intellij/openapi/diff/impl/mergeTool/MergeRequestImpl;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6030177200825199354" fileName="ModelMergeTool.java" startLine="35" startPosition="59" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6030177200825199342" fileName="ModelMergeTool.java" startLine="33" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
-    <scopeInfo nodeId="6030177200825199341" fileName="ModelMergeTool.java" startLine="30" startPosition="27" endLine="30" endPosition="27" />
-    <scopeInfo nodeId="6030177200825199472" fileName="ModelMergeTool.java" startLine="59" startPosition="27" endLine="60" endPosition="27" />
-    <scopeInfo nodeId="6030177200825199355" fileName="ModelMergeTool.java" startLine="70" startPosition="0" endLine="71" endPosition="19">
+    <nodeInfo nodeId="6030177200825199333" fileName="ModelMergeTool.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6030177200825199348" fileName="ModelMergeTool.java" startLine="36" startPosition="47" endLine="37" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199365" fileName="ModelMergeTool.java" startLine="38" startPosition="9" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="41" startPosition="57" endLine="42" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199374" fileName="ModelMergeTool.java" startLine="43" startPosition="9" endLine="44" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199384" fileName="ModelMergeTool.java" startLine="45" startPosition="7" endLine="46" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199392" fileName="ModelMergeTool.java" startLine="46" startPosition="78" endLine="47" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199399" fileName="ModelMergeTool.java" startLine="47" startPosition="54" endLine="48" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199402" fileName="ModelMergeTool.java" startLine="48" startPosition="29" endLine="49" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199405" fileName="ModelMergeTool.java" startLine="49" startPosition="29" endLine="50" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199410" fileName="ModelMergeTool.java" startLine="51" startPosition="11" endLine="52" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199422" fileName="ModelMergeTool.java" startLine="52" startPosition="113" endLine="53" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199435" fileName="ModelMergeTool.java" startLine="53" startPosition="137" endLine="54" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="56" startPosition="56" endLine="57" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199455" fileName="ModelMergeTool.java" startLine="58" startPosition="9" endLine="59" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199458" fileName="ModelMergeTool.java" startLine="59" startPosition="28" endLine="60" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199459" fileName="ModelMergeTool.java" startLine="61" startPosition="7" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6030177200825199460" fileName="ModelMergeTool.java" startLine="62" startPosition="0" endLine="63" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199473" fileName="ModelMergeTool.java" startLine="65" startPosition="27" endLine="66" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199477" fileName="ModelMergeTool.java" startLine="68" startPosition="9" endLine="69" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199483" fileName="ModelMergeTool.java" startLine="70" startPosition="44" endLine="71" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199490" fileName="ModelMergeTool.java" startLine="71" startPosition="93" endLine="72" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199494" fileName="ModelMergeTool.java" startLine="72" startPosition="37" endLine="73" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1493963027547820669" fileName="ModelMergeTool.java" startLine="74" startPosition="7" endLine="75" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199357" fileName="ModelMergeTool.java" startLine="76" startPosition="29" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199512" fileName="ModelMergeTool.java" startLine="82" startPosition="47" endLine="83" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199220" fileName="ModelMergeTool.java" startLine="86" startPosition="75" endLine="87" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199225" fileName="ModelMergeTool.java" startLine="87" startPosition="46" endLine="88" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199238" fileName="ModelMergeTool.java" startLine="91" startPosition="13" endLine="92" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="94" startPosition="59" endLine="95" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199267" fileName="ModelMergeTool.java" startLine="103" startPosition="85" endLine="104" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199310" fileName="ModelMergeTool.java" startLine="105" startPosition="65" endLine="106" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199326" fileName="ModelMergeTool.java" startLine="107" startPosition="5" endLine="108" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="111" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG_705910402" />
+    <nodeInfo nodeId="6030177200825199338" fileName="ModelMergeTool.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelMergeTool#()V" />
+    <nodeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="40" startPosition="25" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="40" startPosition="25" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="55" startPosition="38" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="55" startPosition="38" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="93" startPosition="33" endLine="96" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="93" startPosition="33" endLine="96" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199281" fileName="ModelMergeTool.java" startLine="104" startPosition="64" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199506" fileName="ModelMergeTool.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
+    <nodeInfo nodeId="6030177200825199469" fileName="ModelMergeTool.java" startLine="63" startPosition="103" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199481" fileName="ModelMergeTool.java" startLine="69" startPosition="20" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199370" fileName="ModelMergeTool.java" startLine="39" startPosition="59" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199236" fileName="ModelMergeTool.java" startLine="90" startPosition="25" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6030177200825199257" fileName="ModelMergeTool.java" startLine="102" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFileFromMergeRequest#(Lcom/intellij/openapi/diff/impl/mergeTool/MergeRequestImpl;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="90" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6030177200825199408" fileName="ModelMergeTool.java" startLine="50" startPosition="28" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6030177200825199230" fileName="ModelMergeTool.java" startLine="88" startPosition="63" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199216" fileName="ModelMergeTool.java" startLine="86" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolved#(Lcom/intellij/openapi/diff/impl/mergeTool/MergeRequestImpl;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6030177200825199354" fileName="ModelMergeTool.java" startLine="37" startPosition="59" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6030177200825199342" fileName="ModelMergeTool.java" startLine="35" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
+    <scopeInfo nodeId="6030177200825199341" fileName="ModelMergeTool.java" startLine="32" startPosition="27" endLine="32" endPosition="27" />
+    <scopeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="41" startPosition="57" endLine="42" endPosition="41" />
+    <scopeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="56" startPosition="56" endLine="57" endPosition="76" />
+    <scopeInfo nodeId="6030177200825199472" fileName="ModelMergeTool.java" startLine="65" startPosition="27" endLine="66" endPosition="27" />
+    <scopeInfo nodeId="6030177200825199355" fileName="ModelMergeTool.java" startLine="76" startPosition="0" endLine="77" endPosition="19">
       <varInfo nodeId="6030177200825199362" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199356" fileName="ModelMergeTool.java" startLine="70" startPosition="29" endLine="71" endPosition="19" />
-    <scopeInfo nodeId="6030177200825199511" fileName="ModelMergeTool.java" startLine="76" startPosition="47" endLine="77" endPosition="137" />
-    <scopeInfo nodeId="6030177200825199237" fileName="ModelMergeTool.java" startLine="85" startPosition="13" endLine="86" endPosition="80" />
-    <scopeInfo nodeId="6030177200825199246" fileName="ModelMergeTool.java" startLine="87" startPosition="0" endLine="88" endPosition="37">
-      <varInfo nodeId="6030177200825199247" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="6030177200825199249" fileName="ModelMergeTool.java" startLine="87" startPosition="33" endLine="88" endPosition="37" />
-    <scopeInfo nodeId="6030177200825199282" fileName="ModelMergeTool.java" startLine="97" startPosition="65" endLine="98" endPosition="71" />
-    <scopeInfo nodeId="6030177200825199338" fileName="ModelMergeTool.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="6030177200825199371" fileName="ModelMergeTool.java" startLine="38" startPosition="25" endLine="40" endPosition="65" />
-    <scopeInfo nodeId="6030177200825199409" fileName="ModelMergeTool.java" startLine="47" startPosition="11" endLine="50" endPosition="142" />
-    <scopeInfo nodeId="6030177200825199448" fileName="ModelMergeTool.java" startLine="51" startPosition="0" endLine="54" endPosition="15">
-      <varInfo nodeId="6030177200825199449" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="6030177200825199451" fileName="ModelMergeTool.java" startLine="51" startPosition="38" endLine="54" endPosition="15" />
-    <scopeInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="6030177200825199482" fileName="ModelMergeTool.java" startLine="64" startPosition="44" endLine="67" endPosition="78">
+    <scopeInfo nodeId="6030177200825199356" fileName="ModelMergeTool.java" startLine="76" startPosition="29" endLine="77" endPosition="19" />
+    <scopeInfo nodeId="6030177200825199511" fileName="ModelMergeTool.java" startLine="82" startPosition="47" endLine="83" endPosition="137" />
+    <scopeInfo nodeId="6030177200825199237" fileName="ModelMergeTool.java" startLine="91" startPosition="13" endLine="92" endPosition="80" />
+    <scopeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="94" startPosition="59" endLine="95" endPosition="39" />
+    <scopeInfo nodeId="6030177200825199282" fileName="ModelMergeTool.java" startLine="105" startPosition="65" endLine="106" endPosition="71" />
+    <scopeInfo nodeId="6030177200825199338" fileName="ModelMergeTool.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="40" startPosition="25" endLine="43" endPosition="9" />
+    <scopeInfo nodeId="6030177200825199409" fileName="ModelMergeTool.java" startLine="51" startPosition="11" endLine="54" endPosition="142" />
+    <scopeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="55" startPosition="38" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="6030177200825199482" fileName="ModelMergeTool.java" startLine="70" startPosition="44" endLine="73" endPosition="78">
       <varInfo nodeId="6030177200825199484" varName="asString" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199506" fileName="ModelMergeTool.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="6030177200825199246" fileName="ModelMergeTool.java" startLine="93" startPosition="0" endLine="96" endPosition="11">
+      <varInfo nodeId="6030177200825199247" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="6030177200825199249" fileName="ModelMergeTool.java" startLine="93" startPosition="33" endLine="96" endPosition="11" />
+    <scopeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="93" startPosition="33" endLine="96" endPosition="11" />
+    <scopeInfo nodeId="6030177200825199371" fileName="ModelMergeTool.java" startLine="40" startPosition="25" endLine="44" endPosition="65" />
+    <scopeInfo nodeId="6030177200825199506" fileName="ModelMergeTool.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="6030177200825199509" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199235" fileName="ModelMergeTool.java" startLine="84" startPosition="25" endLine="89" endPosition="9" />
-    <scopeInfo nodeId="6030177200825199260" fileName="ModelMergeTool.java" startLine="95" startPosition="85" endLine="100" endPosition="16">
+    <scopeInfo nodeId="6030177200825199448" fileName="ModelMergeTool.java" startLine="55" startPosition="0" endLine="60" endPosition="15">
+      <varInfo nodeId="6030177200825199449" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="6030177200825199451" fileName="ModelMergeTool.java" startLine="55" startPosition="38" endLine="60" endPosition="15" />
+    <scopeInfo nodeId="6030177200825199260" fileName="ModelMergeTool.java" startLine="103" startPosition="85" endLine="108" endPosition="16">
       <varInfo nodeId="6030177200825199268" varName="resultContent" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="84" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="6030177200825199257" fileName="ModelMergeTool.java" startLine="94" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="6030177200825199235" fileName="ModelMergeTool.java" startLine="90" startPosition="25" endLine="97" endPosition="9" />
+    <scopeInfo nodeId="6030177200825199257" fileName="ModelMergeTool.java" startLine="102" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="6030177200825199328" varName="mergeRequest" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199219" fileName="ModelMergeTool.java" startLine="80" startPosition="75" endLine="91" endPosition="7">
+    <scopeInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="90" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="6030177200825199219" fileName="ModelMergeTool.java" startLine="86" startPosition="75" endLine="99" endPosition="7">
       <varInfo nodeId="6030177200825199226" varName="modelFile" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199216" fileName="ModelMergeTool.java" startLine="80" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="6030177200825199216" fileName="ModelMergeTool.java" startLine="86" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="6030177200825199253" varName="req" />
       <varInfo nodeId="6030177200825199255" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199364" fileName="ModelMergeTool.java" startLine="36" startPosition="9" endLine="69" endPosition="37">
+    <scopeInfo nodeId="6030177200825199364" fileName="ModelMergeTool.java" startLine="38" startPosition="9" endLine="75" endPosition="37">
       <varInfo nodeId="6030177200825199385" varName="backupFile" />
       <varInfo nodeId="6030177200825199400" varName="baseModel" />
       <varInfo nodeId="6030177200825199393" varName="contents" />
@@ -300,15 +316,15 @@
       <varInfo nodeId="6030177200825199403" varName="mineModel" />
       <varInfo nodeId="6030177200825199406" varName="newModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199347" fileName="ModelMergeTool.java" startLine="34" startPosition="47" endLine="72" endPosition="5">
+    <scopeInfo nodeId="6030177200825199347" fileName="ModelMergeTool.java" startLine="36" startPosition="47" endLine="78" endPosition="5">
       <varInfo nodeId="6030177200825199349" varName="mrequest" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199342" fileName="ModelMergeTool.java" startLine="33" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="6030177200825199342" fileName="ModelMergeTool.java" startLine="35" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="6030177200825199345" varName="request" />
     </scopeInfo>
-    <unitInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="58" startPosition="37" endLine="62" endPosition="7" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$1" />
-    <unitInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="83" startPosition="45" endLine="91" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$2" />
-    <unitInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="27" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool" />
+    <unitInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="64" startPosition="37" endLine="68" endPosition="7" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$1" />
+    <unitInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="89" startPosition="45" endLine="99" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$2" />
+    <unitInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="29" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199525">
     <nodeInfo nodeId="6030177200825199528" fileName="ToolsApplicationComponent.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDiffTool" />
@@ -354,172 +370,180 @@
     <unitInfo nodeId="6477249786997134461" fileName="PluginVCSManager.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.PluginVCSManager" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/7788464498752623152">
-    <nodeInfo nodeId="758819840111701914" fileName="DiskMemoryConflictResolverImpl.java" startLine="37" startPosition="118" endLine="38" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623190" fileName="DiskMemoryConflictResolverImpl.java" startLine="38" startPosition="59" endLine="39" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7101751311172703895" fileName="DiskMemoryConflictResolverImpl.java" startLine="41" startPosition="25" endLine="42" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7101751311172704200" fileName="DiskMemoryConflictResolverImpl.java" startLine="43" startPosition="45" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7101751311172703892" fileName="DiskMemoryConflictResolverImpl.java" startLine="44" startPosition="30" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7101751311172703900" fileName="DiskMemoryConflictResolverImpl.java" startLine="46" startPosition="9" endLine="47" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7101751311172703893" fileName="DiskMemoryConflictResolverImpl.java" startLine="47" startPosition="63" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7788464498752623207" fileName="DiskMemoryConflictResolverImpl.java" startLine="51" startPosition="32" endLine="52" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752623202" fileName="DiskMemoryConflictResolverImpl.java" startLine="53" startPosition="20" endLine="54" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7101751311172703942" fileName="DiskMemoryConflictResolverImpl.java" startLine="60" startPosition="31" endLine="61" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7101751311172703946" fileName="DiskMemoryConflictResolverImpl.java" startLine="61" startPosition="48" endLine="62" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623234" fileName="DiskMemoryConflictResolverImpl.java" startLine="67" startPosition="31" endLine="68" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623278" fileName="DiskMemoryConflictResolverImpl.java" startLine="76" startPosition="88" endLine="77" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623297" fileName="DiskMemoryConflictResolverImpl.java" startLine="77" startPosition="274" endLine="78" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752623311" fileName="DiskMemoryConflictResolverImpl.java" startLine="81" startPosition="100" endLine="82" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623329" fileName="DiskMemoryConflictResolverImpl.java" startLine="82" startPosition="207" endLine="83" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623345" fileName="DiskMemoryConflictResolverImpl.java" startLine="83" startPosition="45" endLine="84" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623353" fileName="DiskMemoryConflictResolverImpl.java" startLine="85" startPosition="18" endLine="86" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4222852855542982181" fileName="DiskMemoryConflictResolverImpl.java" startLine="88" startPosition="15" endLine="89" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4222852855542982184" fileName="DiskMemoryConflictResolverImpl.java" startLine="89" startPosition="26" endLine="90" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4222852855542982187" fileName="DiskMemoryConflictResolverImpl.java" startLine="91" startPosition="15" endLine="92" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4222852855542982196" fileName="DiskMemoryConflictResolverImpl.java" startLine="92" startPosition="28" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4222852855542982200" fileName="DiskMemoryConflictResolverImpl.java" startLine="95" startPosition="16" endLine="96" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4222852855542982169" fileName="DiskMemoryConflictResolverImpl.java" startLine="96" startPosition="35" endLine="97" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623408" fileName="DiskMemoryConflictResolverImpl.java" startLine="103" startPosition="9" endLine="104" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623412" fileName="DiskMemoryConflictResolverImpl.java" startLine="104" startPosition="41" endLine="105" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623428" fileName="DiskMemoryConflictResolverImpl.java" startLine="106" startPosition="31" endLine="107" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623449" fileName="DiskMemoryConflictResolverImpl.java" startLine="108" startPosition="7" endLine="109" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623454" fileName="DiskMemoryConflictResolverImpl.java" startLine="109" startPosition="74" endLine="110" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623460" fileName="DiskMemoryConflictResolverImpl.java" startLine="110" startPosition="39" endLine="111" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623464" fileName="DiskMemoryConflictResolverImpl.java" startLine="111" startPosition="33" endLine="112" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623467" fileName="DiskMemoryConflictResolverImpl.java" startLine="112" startPosition="27" endLine="113" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="108123521074039899" fileName="DiskMemoryConflictResolverImpl.java" startLine="114" startPosition="29" endLine="115" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="108123521074039906" fileName="DiskMemoryConflictResolverImpl.java" startLine="115" startPosition="131" endLine="116" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7788464498752623478" fileName="DiskMemoryConflictResolverImpl.java" startLine="120" startPosition="72" endLine="121" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623488" fileName="DiskMemoryConflictResolverImpl.java" startLine="122" startPosition="9" endLine="123" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623498" fileName="DiskMemoryConflictResolverImpl.java" startLine="124" startPosition="36" endLine="125" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623501" fileName="DiskMemoryConflictResolverImpl.java" startLine="126" startPosition="5" endLine="127" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623509" fileName="DiskMemoryConflictResolverImpl.java" startLine="127" startPosition="72" endLine="128" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623527" fileName="DiskMemoryConflictResolverImpl.java" startLine="130" startPosition="25" endLine="131" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623519" fileName="DiskMemoryConflictResolverImpl.java" startLine="133" startPosition="7" endLine="134" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623247" fileName="DiskMemoryConflictResolverImpl.java" startLine="141" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuffix" />
-    <nodeInfo nodeId="7788464498752623256" fileName="DiskMemoryConflictResolverImpl.java" startLine="143" startPosition="46" endLine="144" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623264" fileName="DiskMemoryConflictResolverImpl.java" startLine="148" startPosition="31" endLine="149" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752623152" fileName="DiskMemoryConflictResolverImpl.java" startLine="153" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="7788464498752623266" fileName="DiskMemoryConflictResolverImpl.java" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiskMemoryConflictResolverImpl#()V" />
-    <nodeInfo nodeId="7788464498752623200" fileName="DiskMemoryConflictResolverImpl.java" startLine="53" startPosition="18" endLine="55" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7788464498752623232" fileName="DiskMemoryConflictResolverImpl.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752623423" fileName="DiskMemoryConflictResolverImpl.java" startLine="105" startPosition="263" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7788464498752623525" fileName="DiskMemoryConflictResolverImpl.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752623250" fileName="DiskMemoryConflictResolverImpl.java" startLine="143" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiskMemoryConflictVersion#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7101751311172703847" fileName="DiskMemoryConflictResolverImpl.java" startLine="42" startPosition="87" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7101751311172703940" fileName="DiskMemoryConflictResolverImpl.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752623270" fileName="DiskMemoryConflictResolverImpl.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDeletedFromDiskQuestion#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/io/File;)Z" />
-    <nodeInfo nodeId="7788464498752623260" fileName="DiskMemoryConflictResolverImpl.java" startLine="147" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7788464498752623196" fileName="DiskMemoryConflictResolverImpl.java" startLine="50" startPosition="36" endLine="55" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7788464498752623231" fileName="DiskMemoryConflictResolverImpl.java" startLine="65" startPosition="16" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623486" fileName="DiskMemoryConflictResolverImpl.java" startLine="121" startPosition="98" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7788464498752623523" fileName="DiskMemoryConflictResolverImpl.java" startLine="128" startPosition="181" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7101751311172703939" fileName="DiskMemoryConflictResolverImpl.java" startLine="58" startPosition="23" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623229" fileName="DiskMemoryConflictResolverImpl.java" startLine="65" startPosition="14" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7788464498752623175" fileName="DiskMemoryConflictResolverImpl.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="7788464498752623169" fileName="DiskMemoryConflictResolverImpl.java" startLine="48" startPosition="0" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4222852855542982165" fileName="DiskMemoryConflictResolverImpl.java" startLine="86" startPosition="95" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="7788464498752623212" fileName="DiskMemoryConflictResolverImpl.java" startLine="57" startPosition="11" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4222852855542982160" fileName="DiskMemoryConflictResolverImpl.java" startLine="84" startPosition="97" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="108123521074039873" fileName="DiskMemoryConflictResolverImpl.java" startLine="102" startPosition="66" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7788464498752623470" fileName="DiskMemoryConflictResolverImpl.java" startLine="120" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openDiffDialog#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="7788464498752623400" fileName="DiskMemoryConflictResolverImpl.java" startLine="102" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doBackup#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/io/File;" />
-    <nodeInfo nodeId="7788464498752623301" fileName="DiskMemoryConflictResolverImpl.java" startLine="81" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDiskMemoryQuestion#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/io/File;)Z" />
-    <nodeInfo nodeId="7788464498752623167" fileName="DiskMemoryConflictResolverImpl.java" startLine="41" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752623163" fileName="DiskMemoryConflictResolverImpl.java" startLine="39" startPosition="50" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623153" fileName="DiskMemoryConflictResolverImpl.java" startLine="36" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveDiskMemoryConflict#(Lorg/jetbrains/mps/openapi/persistence/DataSource;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/extapi/model/EditableSModel;)V" />
-    <scopeInfo nodeId="7788464498752623269" fileName="DiskMemoryConflictResolverImpl.java" startLine="33" startPosition="43" endLine="33" endPosition="43" />
-    <scopeInfo nodeId="4222852855542982204" fileName="DiskMemoryConflictResolverImpl.java" startLine="94" startPosition="15" endLine="94" endPosition="15" />
-    <scopeInfo nodeId="7788464498752623206" fileName="DiskMemoryConflictResolverImpl.java" startLine="51" startPosition="32" endLine="52" endPosition="69" />
-    <scopeInfo nodeId="7788464498752623201" fileName="DiskMemoryConflictResolverImpl.java" startLine="53" startPosition="20" endLine="54" endPosition="68" />
-    <scopeInfo nodeId="7788464498752623233" fileName="DiskMemoryConflictResolverImpl.java" startLine="67" startPosition="31" endLine="68" endPosition="49" />
-    <scopeInfo nodeId="7788464498752623427" fileName="DiskMemoryConflictResolverImpl.java" startLine="106" startPosition="31" endLine="107" endPosition="225" />
-    <scopeInfo nodeId="7788464498752623487" fileName="DiskMemoryConflictResolverImpl.java" startLine="122" startPosition="9" endLine="123" endPosition="80" />
-    <scopeInfo nodeId="7788464498752623494" fileName="DiskMemoryConflictResolverImpl.java" startLine="124" startPosition="0" endLine="125" endPosition="43">
-      <varInfo nodeId="7788464498752623495" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="7788464498752623497" fileName="DiskMemoryConflictResolverImpl.java" startLine="124" startPosition="36" endLine="125" endPosition="43" />
-    <scopeInfo nodeId="7788464498752623526" fileName="DiskMemoryConflictResolverImpl.java" startLine="130" startPosition="25" endLine="131" endPosition="25" />
-    <scopeInfo nodeId="7788464498752623255" fileName="DiskMemoryConflictResolverImpl.java" startLine="143" startPosition="46" endLine="144" endPosition="24" />
-    <scopeInfo nodeId="7788464498752623263" fileName="DiskMemoryConflictResolverImpl.java" startLine="148" startPosition="31" endLine="149" endPosition="22" />
-    <scopeInfo nodeId="7788464498752623266" fileName="DiskMemoryConflictResolverImpl.java" startLine="33" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="7101751311172703848" fileName="DiskMemoryConflictResolverImpl.java" startLine="43" startPosition="45" endLine="45" endPosition="17" />
-    <scopeInfo nodeId="7101751311172703941" fileName="DiskMemoryConflictResolverImpl.java" startLine="60" startPosition="31" endLine="62" endPosition="37" />
-    <scopeInfo nodeId="7788464498752623277" fileName="DiskMemoryConflictResolverImpl.java" startLine="76" startPosition="88" endLine="78" endPosition="23">
+    <nodeInfo nodeId="758819840111701914" fileName="DiskMemoryConflictResolverImpl.java" startLine="39" startPosition="118" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623190" fileName="DiskMemoryConflictResolverImpl.java" startLine="40" startPosition="59" endLine="41" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7101751311172703895" fileName="DiskMemoryConflictResolverImpl.java" startLine="43" startPosition="25" endLine="44" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7101751311172704200" fileName="DiskMemoryConflictResolverImpl.java" startLine="45" startPosition="45" endLine="46" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7101751311172703892" fileName="DiskMemoryConflictResolverImpl.java" startLine="46" startPosition="30" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7101751311172703900" fileName="DiskMemoryConflictResolverImpl.java" startLine="48" startPosition="9" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7101751311172703893" fileName="DiskMemoryConflictResolverImpl.java" startLine="49" startPosition="63" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7788464498752623207" fileName="DiskMemoryConflictResolverImpl.java" startLine="53" startPosition="32" endLine="54" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752623202" fileName="DiskMemoryConflictResolverImpl.java" startLine="55" startPosition="20" endLine="56" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7101751311172703942" fileName="DiskMemoryConflictResolverImpl.java" startLine="62" startPosition="31" endLine="63" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7101751311172703946" fileName="DiskMemoryConflictResolverImpl.java" startLine="63" startPosition="48" endLine="64" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623234" fileName="DiskMemoryConflictResolverImpl.java" startLine="69" startPosition="31" endLine="70" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623278" fileName="DiskMemoryConflictResolverImpl.java" startLine="78" startPosition="88" endLine="79" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623297" fileName="DiskMemoryConflictResolverImpl.java" startLine="79" startPosition="274" endLine="80" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752623311" fileName="DiskMemoryConflictResolverImpl.java" startLine="83" startPosition="100" endLine="84" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623329" fileName="DiskMemoryConflictResolverImpl.java" startLine="84" startPosition="207" endLine="85" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623345" fileName="DiskMemoryConflictResolverImpl.java" startLine="85" startPosition="45" endLine="86" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623353" fileName="DiskMemoryConflictResolverImpl.java" startLine="87" startPosition="18" endLine="88" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4222852855542982181" fileName="DiskMemoryConflictResolverImpl.java" startLine="90" startPosition="15" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4222852855542982184" fileName="DiskMemoryConflictResolverImpl.java" startLine="91" startPosition="26" endLine="92" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4222852855542982187" fileName="DiskMemoryConflictResolverImpl.java" startLine="93" startPosition="15" endLine="94" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4222852855542982196" fileName="DiskMemoryConflictResolverImpl.java" startLine="94" startPosition="28" endLine="95" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4222852855542982200" fileName="DiskMemoryConflictResolverImpl.java" startLine="97" startPosition="16" endLine="98" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4222852855542982169" fileName="DiskMemoryConflictResolverImpl.java" startLine="98" startPosition="35" endLine="99" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623408" fileName="DiskMemoryConflictResolverImpl.java" startLine="105" startPosition="9" endLine="106" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623412" fileName="DiskMemoryConflictResolverImpl.java" startLine="106" startPosition="41" endLine="107" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623428" fileName="DiskMemoryConflictResolverImpl.java" startLine="108" startPosition="31" endLine="109" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623449" fileName="DiskMemoryConflictResolverImpl.java" startLine="110" startPosition="7" endLine="111" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623454" fileName="DiskMemoryConflictResolverImpl.java" startLine="111" startPosition="74" endLine="112" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623460" fileName="DiskMemoryConflictResolverImpl.java" startLine="112" startPosition="39" endLine="113" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623464" fileName="DiskMemoryConflictResolverImpl.java" startLine="113" startPosition="33" endLine="114" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623467" fileName="DiskMemoryConflictResolverImpl.java" startLine="114" startPosition="27" endLine="115" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="108123521074039899" fileName="DiskMemoryConflictResolverImpl.java" startLine="117" startPosition="45" endLine="118" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="108123521074039906" fileName="DiskMemoryConflictResolverImpl.java" startLine="119" startPosition="7" endLine="120" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7788464498752623478" fileName="DiskMemoryConflictResolverImpl.java" startLine="124" startPosition="72" endLine="125" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623488" fileName="DiskMemoryConflictResolverImpl.java" startLine="126" startPosition="9" endLine="127" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623498" fileName="DiskMemoryConflictResolverImpl.java" startLine="129" startPosition="45" endLine="130" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623501" fileName="DiskMemoryConflictResolverImpl.java" startLine="132" startPosition="5" endLine="133" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623509" fileName="DiskMemoryConflictResolverImpl.java" startLine="133" startPosition="72" endLine="134" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623527" fileName="DiskMemoryConflictResolverImpl.java" startLine="136" startPosition="25" endLine="137" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623519" fileName="DiskMemoryConflictResolverImpl.java" startLine="139" startPosition="7" endLine="140" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623247" fileName="DiskMemoryConflictResolverImpl.java" startLine="147" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuffix" />
+    <nodeInfo nodeId="7788464498752623256" fileName="DiskMemoryConflictResolverImpl.java" startLine="149" startPosition="46" endLine="150" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623264" fileName="DiskMemoryConflictResolverImpl.java" startLine="154" startPosition="31" endLine="155" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752623152" fileName="DiskMemoryConflictResolverImpl.java" startLine="159" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7788464498752623266" fileName="DiskMemoryConflictResolverImpl.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiskMemoryConflictResolverImpl#()V" />
+    <nodeInfo nodeId="7788464498752623200" fileName="DiskMemoryConflictResolverImpl.java" startLine="55" startPosition="18" endLine="57" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7788464498752623232" fileName="DiskMemoryConflictResolverImpl.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7788464498752623423" fileName="DiskMemoryConflictResolverImpl.java" startLine="107" startPosition="263" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="108123521074039899" fileName="DiskMemoryConflictResolverImpl.java" startLine="116" startPosition="29" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="108123521074039899" fileName="DiskMemoryConflictResolverImpl.java" startLine="116" startPosition="29" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752623498" fileName="DiskMemoryConflictResolverImpl.java" startLine="128" startPosition="36" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7788464498752623498" fileName="DiskMemoryConflictResolverImpl.java" startLine="128" startPosition="36" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752623525" fileName="DiskMemoryConflictResolverImpl.java" startLine="136" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7788464498752623250" fileName="DiskMemoryConflictResolverImpl.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiskMemoryConflictVersion#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7101751311172703847" fileName="DiskMemoryConflictResolverImpl.java" startLine="44" startPosition="87" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7101751311172703940" fileName="DiskMemoryConflictResolverImpl.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7788464498752623270" fileName="DiskMemoryConflictResolverImpl.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDeletedFromDiskQuestion#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/io/File;)Z" />
+    <nodeInfo nodeId="7788464498752623260" fileName="DiskMemoryConflictResolverImpl.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7788464498752623196" fileName="DiskMemoryConflictResolverImpl.java" startLine="52" startPosition="36" endLine="57" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752623231" fileName="DiskMemoryConflictResolverImpl.java" startLine="67" startPosition="16" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623523" fileName="DiskMemoryConflictResolverImpl.java" startLine="134" startPosition="181" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7101751311172703939" fileName="DiskMemoryConflictResolverImpl.java" startLine="60" startPosition="23" endLine="66" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623229" fileName="DiskMemoryConflictResolverImpl.java" startLine="67" startPosition="14" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7788464498752623175" fileName="DiskMemoryConflictResolverImpl.java" startLine="52" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="7788464498752623486" fileName="DiskMemoryConflictResolverImpl.java" startLine="125" startPosition="98" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7788464498752623169" fileName="DiskMemoryConflictResolverImpl.java" startLine="50" startPosition="0" endLine="59" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4222852855542982165" fileName="DiskMemoryConflictResolverImpl.java" startLine="88" startPosition="95" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="7788464498752623212" fileName="DiskMemoryConflictResolverImpl.java" startLine="59" startPosition="11" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4222852855542982160" fileName="DiskMemoryConflictResolverImpl.java" startLine="86" startPosition="97" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="108123521074039873" fileName="DiskMemoryConflictResolverImpl.java" startLine="104" startPosition="66" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7788464498752623470" fileName="DiskMemoryConflictResolverImpl.java" startLine="124" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openDiffDialog#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="7788464498752623400" fileName="DiskMemoryConflictResolverImpl.java" startLine="104" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doBackup#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/io/File;" />
+    <nodeInfo nodeId="7788464498752623301" fileName="DiskMemoryConflictResolverImpl.java" startLine="83" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDiskMemoryQuestion#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/io/File;)Z" />
+    <nodeInfo nodeId="7788464498752623167" fileName="DiskMemoryConflictResolverImpl.java" startLine="43" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7788464498752623163" fileName="DiskMemoryConflictResolverImpl.java" startLine="41" startPosition="50" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623153" fileName="DiskMemoryConflictResolverImpl.java" startLine="38" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveDiskMemoryConflict#(Lorg/jetbrains/mps/openapi/persistence/DataSource;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/extapi/model/EditableSModel;)V" />
+    <scopeInfo nodeId="7788464498752623269" fileName="DiskMemoryConflictResolverImpl.java" startLine="35" startPosition="43" endLine="35" endPosition="43" />
+    <scopeInfo nodeId="4222852855542982204" fileName="DiskMemoryConflictResolverImpl.java" startLine="96" startPosition="15" endLine="96" endPosition="15" />
+    <scopeInfo nodeId="7788464498752623206" fileName="DiskMemoryConflictResolverImpl.java" startLine="53" startPosition="32" endLine="54" endPosition="69" />
+    <scopeInfo nodeId="7788464498752623201" fileName="DiskMemoryConflictResolverImpl.java" startLine="55" startPosition="20" endLine="56" endPosition="68" />
+    <scopeInfo nodeId="7788464498752623233" fileName="DiskMemoryConflictResolverImpl.java" startLine="69" startPosition="31" endLine="70" endPosition="49" />
+    <scopeInfo nodeId="7788464498752623427" fileName="DiskMemoryConflictResolverImpl.java" startLine="108" startPosition="31" endLine="109" endPosition="225" />
+    <scopeInfo nodeId="108123521074039899" fileName="DiskMemoryConflictResolverImpl.java" startLine="117" startPosition="45" endLine="118" endPosition="133" />
+    <scopeInfo nodeId="7788464498752623487" fileName="DiskMemoryConflictResolverImpl.java" startLine="126" startPosition="9" endLine="127" endPosition="80" />
+    <scopeInfo nodeId="7788464498752623498" fileName="DiskMemoryConflictResolverImpl.java" startLine="129" startPosition="45" endLine="130" endPosition="45" />
+    <scopeInfo nodeId="7788464498752623526" fileName="DiskMemoryConflictResolverImpl.java" startLine="136" startPosition="25" endLine="137" endPosition="25" />
+    <scopeInfo nodeId="7788464498752623255" fileName="DiskMemoryConflictResolverImpl.java" startLine="149" startPosition="46" endLine="150" endPosition="24" />
+    <scopeInfo nodeId="7788464498752623263" fileName="DiskMemoryConflictResolverImpl.java" startLine="154" startPosition="31" endLine="155" endPosition="22" />
+    <scopeInfo nodeId="7788464498752623266" fileName="DiskMemoryConflictResolverImpl.java" startLine="35" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="7101751311172703848" fileName="DiskMemoryConflictResolverImpl.java" startLine="45" startPosition="45" endLine="47" endPosition="17" />
+    <scopeInfo nodeId="7101751311172703941" fileName="DiskMemoryConflictResolverImpl.java" startLine="62" startPosition="31" endLine="64" endPosition="37" />
+    <scopeInfo nodeId="7788464498752623277" fileName="DiskMemoryConflictResolverImpl.java" startLine="78" startPosition="88" endLine="80" endPosition="23">
       <varInfo nodeId="7788464498752623279" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4222852855542982175" fileName="DiskMemoryConflictResolverImpl.java" startLine="88" startPosition="15" endLine="90" endPosition="23" />
-    <scopeInfo nodeId="4222852855542982179" fileName="DiskMemoryConflictResolverImpl.java" startLine="91" startPosition="15" endLine="93" endPosition="22" />
-    <scopeInfo nodeId="4222852855542982167" fileName="DiskMemoryConflictResolverImpl.java" startLine="95" startPosition="16" endLine="97" endPosition="46" />
-    <scopeInfo nodeId="108123521074039876" fileName="DiskMemoryConflictResolverImpl.java" startLine="114" startPosition="0" endLine="116" endPosition="36">
-      <varInfo nodeId="108123521074039877" varName="e" />
+    <scopeInfo nodeId="4222852855542982175" fileName="DiskMemoryConflictResolverImpl.java" startLine="90" startPosition="15" endLine="92" endPosition="23" />
+    <scopeInfo nodeId="4222852855542982179" fileName="DiskMemoryConflictResolverImpl.java" startLine="93" startPosition="15" endLine="95" endPosition="22" />
+    <scopeInfo nodeId="4222852855542982167" fileName="DiskMemoryConflictResolverImpl.java" startLine="97" startPosition="16" endLine="99" endPosition="46" />
+    <scopeInfo nodeId="7788464498752623232" fileName="DiskMemoryConflictResolverImpl.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="108123521074039899" fileName="DiskMemoryConflictResolverImpl.java" startLine="116" startPosition="29" endLine="119" endPosition="7" />
+    <scopeInfo nodeId="7788464498752623494" fileName="DiskMemoryConflictResolverImpl.java" startLine="128" startPosition="0" endLine="131" endPosition="7">
+      <varInfo nodeId="7788464498752623495" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="108123521074039879" fileName="DiskMemoryConflictResolverImpl.java" startLine="114" startPosition="29" endLine="116" endPosition="36" />
-    <scopeInfo nodeId="7788464498752623232" fileName="DiskMemoryConflictResolverImpl.java" startLine="67" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="7788464498752623525" fileName="DiskMemoryConflictResolverImpl.java" startLine="130" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="7788464498752623250" fileName="DiskMemoryConflictResolverImpl.java" startLine="143" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="7788464498752623497" fileName="DiskMemoryConflictResolverImpl.java" startLine="128" startPosition="36" endLine="131" endPosition="7" />
+    <scopeInfo nodeId="7788464498752623498" fileName="DiskMemoryConflictResolverImpl.java" startLine="128" startPosition="36" endLine="131" endPosition="7" />
+    <scopeInfo nodeId="7788464498752623525" fileName="DiskMemoryConflictResolverImpl.java" startLine="136" startPosition="0" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="7788464498752623250" fileName="DiskMemoryConflictResolverImpl.java" startLine="149" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="7788464498752623253" varName="suffix" />
     </scopeInfo>
-    <scopeInfo nodeId="7101751311172703940" fileName="DiskMemoryConflictResolverImpl.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="7788464498752623270" fileName="DiskMemoryConflictResolverImpl.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="7101751311172703940" fileName="DiskMemoryConflictResolverImpl.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="7788464498752623270" fileName="DiskMemoryConflictResolverImpl.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="7788464498752623275" varName="backupFile" />
       <varInfo nodeId="7788464498752623273" varName="inMemory" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623260" fileName="DiskMemoryConflictResolverImpl.java" startLine="147" startPosition="0" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="7788464498752623176" fileName="DiskMemoryConflictResolverImpl.java" startLine="50" startPosition="36" endLine="55" endPosition="13" />
-    <scopeInfo nodeId="7788464498752623230" fileName="DiskMemoryConflictResolverImpl.java" startLine="65" startPosition="16" endLine="70" endPosition="13" />
-    <scopeInfo nodeId="7788464498752623213" fileName="DiskMemoryConflictResolverImpl.java" startLine="58" startPosition="23" endLine="64" endPosition="13" />
-    <scopeInfo nodeId="7788464498752623175" fileName="DiskMemoryConflictResolverImpl.java" startLine="50" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="108123521074039874" fileName="DiskMemoryConflictResolverImpl.java" startLine="103" startPosition="9" endLine="113" endPosition="21">
+    <scopeInfo nodeId="108123521074039876" fileName="DiskMemoryConflictResolverImpl.java" startLine="116" startPosition="0" endLine="120" endPosition="36">
+      <varInfo nodeId="108123521074039877" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="108123521074039879" fileName="DiskMemoryConflictResolverImpl.java" startLine="116" startPosition="29" endLine="120" endPosition="36" />
+    <scopeInfo nodeId="7788464498752623260" fileName="DiskMemoryConflictResolverImpl.java" startLine="153" startPosition="0" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="7788464498752623176" fileName="DiskMemoryConflictResolverImpl.java" startLine="52" startPosition="36" endLine="57" endPosition="13" />
+    <scopeInfo nodeId="7788464498752623230" fileName="DiskMemoryConflictResolverImpl.java" startLine="67" startPosition="16" endLine="72" endPosition="13" />
+    <scopeInfo nodeId="7788464498752623213" fileName="DiskMemoryConflictResolverImpl.java" startLine="60" startPosition="23" endLine="66" endPosition="13" />
+    <scopeInfo nodeId="7788464498752623175" fileName="DiskMemoryConflictResolverImpl.java" startLine="52" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="108123521074039874" fileName="DiskMemoryConflictResolverImpl.java" startLine="105" startPosition="9" endLine="115" endPosition="21">
       <varInfo nodeId="7788464498752623409" varName="tmp" />
       <varInfo nodeId="7788464498752623450" varName="zipfile" />
     </scopeInfo>
-    <scopeInfo nodeId="4222852855542982162" fileName="DiskMemoryConflictResolverImpl.java" startLine="85" startPosition="18" endLine="98" endPosition="7">
+    <scopeInfo nodeId="4222852855542982162" fileName="DiskMemoryConflictResolverImpl.java" startLine="87" startPosition="18" endLine="100" endPosition="7">
       <varInfo nodeId="7788464498752623354" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623477" fileName="DiskMemoryConflictResolverImpl.java" startLine="120" startPosition="72" endLine="134" endPosition="18">
+    <scopeInfo nodeId="7788464498752623477" fileName="DiskMemoryConflictResolverImpl.java" startLine="124" startPosition="72" endLine="140" endPosition="18">
       <varInfo nodeId="7788464498752623510" varName="dialog" />
       <varInfo nodeId="7788464498752623479" varName="onDisk" />
       <varInfo nodeId="7788464498752623502" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623407" fileName="DiskMemoryConflictResolverImpl.java" startLine="102" startPosition="66" endLine="117" endPosition="5" />
-    <scopeInfo nodeId="7788464498752623470" fileName="DiskMemoryConflictResolverImpl.java" startLine="120" startPosition="0" endLine="136" endPosition="0">
-      <varInfo nodeId="7788464498752623475" varName="inMemory" />
-      <varInfo nodeId="7788464498752623473" varName="modelFile" />
-    </scopeInfo>
-    <scopeInfo nodeId="7788464498752623400" fileName="DiskMemoryConflictResolverImpl.java" startLine="102" startPosition="0" endLine="119" endPosition="0">
-      <varInfo nodeId="7788464498752623405" varName="inMemory" />
-      <varInfo nodeId="7788464498752623403" varName="modelFile" />
-    </scopeInfo>
-    <scopeInfo nodeId="7788464498752623310" fileName="DiskMemoryConflictResolverImpl.java" startLine="81" startPosition="100" endLine="99" endPosition="5">
+    <scopeInfo nodeId="7788464498752623407" fileName="DiskMemoryConflictResolverImpl.java" startLine="104" startPosition="66" endLine="121" endPosition="5" />
+    <scopeInfo nodeId="7788464498752623310" fileName="DiskMemoryConflictResolverImpl.java" startLine="83" startPosition="100" endLine="101" endPosition="5">
       <varInfo nodeId="7788464498752623312" varName="message" />
       <varInfo nodeId="7788464498752623346" varName="options" />
       <varInfo nodeId="7788464498752623330" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623301" fileName="DiskMemoryConflictResolverImpl.java" startLine="81" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="7788464498752623470" fileName="DiskMemoryConflictResolverImpl.java" startLine="124" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="7788464498752623475" varName="inMemory" />
+      <varInfo nodeId="7788464498752623473" varName="modelFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="7788464498752623400" fileName="DiskMemoryConflictResolverImpl.java" startLine="104" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="7788464498752623405" varName="inMemory" />
+      <varInfo nodeId="7788464498752623403" varName="modelFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="7788464498752623301" fileName="DiskMemoryConflictResolverImpl.java" startLine="83" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="7788464498752623308" varName="backupFile" />
       <varInfo nodeId="7788464498752623306" varName="inMemory" />
       <varInfo nodeId="7788464498752623304" varName="modelFile" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623168" fileName="DiskMemoryConflictResolverImpl.java" startLine="41" startPosition="25" endLine="71" endPosition="9">
+    <scopeInfo nodeId="7788464498752623168" fileName="DiskMemoryConflictResolverImpl.java" startLine="43" startPosition="25" endLine="73" endPosition="9">
       <varInfo nodeId="7788464498752623170" varName="needSave" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623167" fileName="DiskMemoryConflictResolverImpl.java" startLine="41" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="7788464498752623162" fileName="DiskMemoryConflictResolverImpl.java" startLine="37" startPosition="118" endLine="73" endPosition="7">
+    <scopeInfo nodeId="7788464498752623167" fileName="DiskMemoryConflictResolverImpl.java" startLine="43" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="7788464498752623162" fileName="DiskMemoryConflictResolverImpl.java" startLine="39" startPosition="118" endLine="75" endPosition="7">
       <varInfo nodeId="7788464498752623191" varName="backupFile" />
       <varInfo nodeId="758819840111701915" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623153" fileName="DiskMemoryConflictResolverImpl.java" startLine="36" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="7788464498752623153" fileName="DiskMemoryConflictResolverImpl.java" startLine="38" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="7788464498752623158" varName="model" />
       <varInfo nodeId="7788464498752623160" varName="modelDescriptor" />
       <varInfo nodeId="7788464498752623156" varName="source" />
     </scopeInfo>
-    <unitInfo nodeId="7788464498752623232" fileName="DiskMemoryConflictResolverImpl.java" startLine="66" startPosition="52" endLine="70" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$2" />
-    <unitInfo nodeId="7788464498752623525" fileName="DiskMemoryConflictResolverImpl.java" startLine="129" startPosition="35" endLine="133" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$2" />
-    <unitInfo nodeId="7101751311172703940" fileName="DiskMemoryConflictResolverImpl.java" startLine="59" startPosition="61" endLine="64" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$2" />
-    <unitInfo nodeId="7788464498752623175" fileName="DiskMemoryConflictResolverImpl.java" startLine="49" startPosition="85" endLine="57" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$2" />
-    <unitInfo nodeId="7788464498752623240" fileName="DiskMemoryConflictResolverImpl.java" startLine="137" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$DiskMemoryConflictVersion" />
-    <unitInfo nodeId="7788464498752623167" fileName="DiskMemoryConflictResolverImpl.java" startLine="40" startPosition="56" endLine="73" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$1" />
-    <unitInfo nodeId="7788464498752623152" fileName="DiskMemoryConflictResolverImpl.java" startLine="32" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl" />
+    <unitInfo nodeId="7788464498752623232" fileName="DiskMemoryConflictResolverImpl.java" startLine="68" startPosition="52" endLine="72" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$2" />
+    <unitInfo nodeId="7788464498752623525" fileName="DiskMemoryConflictResolverImpl.java" startLine="135" startPosition="35" endLine="139" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$2" />
+    <unitInfo nodeId="7101751311172703940" fileName="DiskMemoryConflictResolverImpl.java" startLine="61" startPosition="61" endLine="66" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$2" />
+    <unitInfo nodeId="7788464498752623175" fileName="DiskMemoryConflictResolverImpl.java" startLine="51" startPosition="85" endLine="59" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$2" />
+    <unitInfo nodeId="7788464498752623240" fileName="DiskMemoryConflictResolverImpl.java" startLine="143" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$DiskMemoryConflictVersion" />
+    <unitInfo nodeId="7788464498752623167" fileName="DiskMemoryConflictResolverImpl.java" startLine="42" startPosition="56" endLine="75" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$1" />
+    <unitInfo nodeId="7788464498752623152" fileName="DiskMemoryConflictResolverImpl.java" startLine="34" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/7788464498752650651">
     <nodeInfo nodeId="7788464498752650700" fileName="ConflictingModelsWarnings.java" startLine="28" startPosition="92" endLine="29" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

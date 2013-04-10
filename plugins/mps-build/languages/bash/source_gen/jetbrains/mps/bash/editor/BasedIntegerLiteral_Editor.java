@@ -30,6 +30,7 @@ public class BasedIntegerLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x1itjo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x1itjo_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_x1itjo_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_x1itjo_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_x1itjo_c0(editorContext, node));

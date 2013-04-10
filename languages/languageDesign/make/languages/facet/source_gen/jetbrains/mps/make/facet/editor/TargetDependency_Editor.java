@@ -28,6 +28,7 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x08tk8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x08tk8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_x08tk8_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_x08tk8_b0(editorContext, node));
     return editorCell;

@@ -26,6 +26,7 @@ public class GetGroupOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wwk5yv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wwk5yv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_wwk5yv_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wwk5yv_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_wwk5yv_c0(editorContext, node));

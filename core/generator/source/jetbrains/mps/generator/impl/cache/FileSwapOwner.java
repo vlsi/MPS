@@ -18,7 +18,8 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapOwner;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.generator.TransientSModel;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.persistence.binary.NodesReader;
@@ -42,7 +43,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public abstract class FileSwapOwner implements TransientSwapOwner {
 
-  private static Logger LOG = Logger.getLogger(FileSwapOwner.class);
+  private static Logger LOG = LogManager.getLogger(FileSwapOwner.class);
 
   private Map<String, File> mySwapSpaces = new ConcurrentHashMap<String, File>();
 

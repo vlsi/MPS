@@ -27,6 +27,7 @@ public class OptionWithParamReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wuachl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_wuachl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_wuachl_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_wuachl_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_wuachl_c0(editorContext, node));

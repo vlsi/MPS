@@ -51,6 +51,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_a19ihi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_a19ihi_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

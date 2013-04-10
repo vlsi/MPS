@@ -29,6 +29,7 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qcpp4v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qcpp4v_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_qcpp4v_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_qcpp4v_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qcpp4v_c0(editorContext, node));

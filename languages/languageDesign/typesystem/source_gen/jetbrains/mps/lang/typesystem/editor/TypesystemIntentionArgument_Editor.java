@@ -27,6 +27,7 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_t15it2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_t15it2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_t15it2_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_t15it2_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_t15it2_c0(editorContext, node));

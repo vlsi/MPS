@@ -35,6 +35,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6uq7kh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6uq7kh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_6uq7kh_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_6uq7kh_b0(editorContext, node));
     return editorCell;
@@ -158,6 +159,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6uq7kh_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6uq7kh_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_6uq7kh_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_6uq7kh_b0_0(editorContext, node));
     return editorCell;

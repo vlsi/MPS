@@ -19,13 +19,14 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class EditorsHelper {
-  public static Logger LOG = Logger.getLogger(EditorsHelper.class);
+  public static Logger LOG = LogManager.getLogger(EditorsHelper.class);
 
   public static List<MPSFileNodeEditor> getAllEditors(FileEditorManager manager) {
     return filterMPSEditors(manager.getAllEditors());

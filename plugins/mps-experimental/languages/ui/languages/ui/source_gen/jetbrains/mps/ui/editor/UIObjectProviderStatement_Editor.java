@@ -26,6 +26,7 @@ public class UIObjectProviderStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3fvv40_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_3fvv40_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     UI_StyleSheet.applyContainerBox(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -90,8 +91,8 @@ public class UIObjectProviderStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_3fvv40_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_3fvv40_b1a0(EditorContext editorContext, SNode node) {

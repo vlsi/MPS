@@ -19,6 +19,7 @@ public class ToEvaluateAnnotation_Editor extends DefaultNodeEditor {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

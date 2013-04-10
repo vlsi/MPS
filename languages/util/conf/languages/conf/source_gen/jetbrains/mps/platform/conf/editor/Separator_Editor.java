@@ -16,6 +16,7 @@ public class Separator_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ygm7mr_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "----");
     editorCell.setCellId("Constant_ygm7mr_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

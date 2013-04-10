@@ -27,12 +27,14 @@ public class MatrixInverseOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_j4oyiy_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ExponentOperation_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_j4oyiy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_j4oyiy_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_j4oyiy_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_j4oyiy_b0(editorContext, node));
     return editorCell;

@@ -29,6 +29,7 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_60liib_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_60liib_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_60liib_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_60liib_b0(editorContext, node));
     return editorCell;
@@ -56,8 +57,8 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_60liib_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_60liib_b1a(EditorContext editorContext, SNode node) {
@@ -155,8 +156,8 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_60liib_a2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_60liib_b2b1a(EditorContext editorContext, SNode node) {
@@ -198,8 +199,8 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_60liib_a4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_60liib_b4b1a(EditorContext editorContext, SNode node) {
@@ -241,8 +242,8 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_60liib_a6b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_60liib_b6b1a(EditorContext editorContext, SNode node) {
@@ -320,8 +321,8 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_60liib_a1h1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_60liib_b1h1b0(EditorContext editorContext, SNode node) {
@@ -363,8 +364,8 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_60liib_a9b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_60liib_b9b1a(EditorContext editorContext, SNode node) {
@@ -406,8 +407,8 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_60liib_a11b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_60liib_b11b1a(EditorContext editorContext, SNode node) {
@@ -449,8 +450,8 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_60liib_a31b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_60liib_b31b1a(EditorContext editorContext, SNode node) {
@@ -492,8 +493,8 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_60liib_a51b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_60liib_b51b1a(EditorContext editorContext, SNode node) {

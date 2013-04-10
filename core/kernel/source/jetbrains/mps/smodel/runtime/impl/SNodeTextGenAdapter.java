@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.textGen.SNodeTextGen;
@@ -24,7 +25,7 @@ import jetbrains.mps.textGen.TextGenBuffer;
 
 public class SNodeTextGenAdapter implements TextGenDescriptor {
   // main difference between SNodeTextGen and TextGenDescriptor is: descriptor should be thread-safe and without any state
-  private static final Logger LOG = Logger.getLogger(SNodeTextGenAdapter.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SNodeTextGenAdapter.class));
 
   private final Class<SNodeTextGen> textGenClass;
 

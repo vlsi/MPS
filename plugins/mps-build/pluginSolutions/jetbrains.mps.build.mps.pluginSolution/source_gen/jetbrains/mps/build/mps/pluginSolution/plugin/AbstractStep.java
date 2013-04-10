@@ -22,12 +22,14 @@ import javax.swing.ImageIcon;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.IOException;
+import org.apache.log4j.Priority;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public abstract class AbstractStep extends StepAdapter {
   protected JPanel myMainPanel;
@@ -129,7 +131,9 @@ public abstract class AbstractStep extends StepAdapter {
     try {
       bim = ImageIO.read(imageUrl);
     } catch (IOException e) {
-      LOG.error("Can't read image", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Can't read image", e);
+      }
     }
     assert bim != null : "Icon was not read. The possible reason is that PNG format was not recognized";
     Graphics graphics = bim.getGraphics();
@@ -146,5 +150,5 @@ public abstract class AbstractStep extends StepAdapter {
     return new JLabel(new ImageIcon(bim));
   }
 
-  private static Logger LOG = Logger.getLogger(AbstractStep.class);
+  protected static Logger LOG = LogManager.getLogger(AbstractStep.class);
 }

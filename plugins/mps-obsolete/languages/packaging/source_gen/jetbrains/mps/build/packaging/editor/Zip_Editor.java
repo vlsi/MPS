@@ -33,6 +33,7 @@ public class Zip_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_921cn9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_921cn9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_921cn9_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_921cn9_b0(editorContext, node));
     return editorCell;
@@ -101,6 +102,7 @@ public class Zip_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_921cn9_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_921cn9_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_921cn9_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_921cn9_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_921cn9_c0(editorContext, node));

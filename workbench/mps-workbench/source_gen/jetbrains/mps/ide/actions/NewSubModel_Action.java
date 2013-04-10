@@ -13,6 +13,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
@@ -21,7 +22,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NewSubModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Model;
@@ -60,7 +62,9 @@ public class NewSubModel_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "NewSubModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "NewSubModel", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -105,9 +109,11 @@ public class NewSubModel_Action extends BaseAction {
         ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "NewSubModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "NewSubModel", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(NewSubModel_Action.class);
+  protected static Logger LOG = LogManager.getLogger(NewSubModel_Action.class);
 }

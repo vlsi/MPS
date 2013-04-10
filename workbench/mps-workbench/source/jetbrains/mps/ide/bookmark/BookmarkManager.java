@@ -25,7 +25,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.ui.LightColors;
 import jetbrains.mps.ide.bookmark.BookmarkManager.MyState;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -54,7 +55,7 @@ import java.util.List;
   }
 )
 public class BookmarkManager implements ProjectComponent, PersistentStateComponent<MyState> {
-  private static final Logger LOG = Logger.getLogger(BookmarkManager.class);
+  private static final Logger LOG = LogManager.getLogger(BookmarkManager.class);
 
   private static Icon myUnnumberedBookmarkIcon = AllIcons.Actions.Checked;
 

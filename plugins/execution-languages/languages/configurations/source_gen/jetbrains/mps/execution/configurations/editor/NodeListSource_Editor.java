@@ -29,6 +29,7 @@ public class NodeListSource_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9q81zs_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_9q81zs_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_9q81zs_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9q81zs_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_9q81zs_c0(editorContext, node));

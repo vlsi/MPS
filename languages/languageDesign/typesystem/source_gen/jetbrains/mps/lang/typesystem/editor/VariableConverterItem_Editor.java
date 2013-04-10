@@ -24,6 +24,7 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_knkyai_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_knkyai_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_knkyai_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_knkyai_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_knkyai_c0(editorContext, node));

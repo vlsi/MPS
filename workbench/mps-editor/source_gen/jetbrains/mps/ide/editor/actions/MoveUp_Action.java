@@ -9,10 +9,12 @@ import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MoveUp_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,7 +41,9 @@ public class MoveUp_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MoveUp", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "MoveUp", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -64,9 +68,11 @@ public class MoveUp_Action extends BaseAction {
         EditorActionUtils.runEditorComponentAction(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), CellActionType.UP);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MoveUp", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "MoveUp", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(MoveUp_Action.class);
+  protected static Logger LOG = LogManager.getLogger(MoveUp_Action.class);
 }

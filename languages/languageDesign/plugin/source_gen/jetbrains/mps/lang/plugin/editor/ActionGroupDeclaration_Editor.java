@@ -34,6 +34,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bepn0t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_bepn0t_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_bepn0t_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bepn0t_b0(editorContext, node));
     return editorCell;
@@ -358,6 +359,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bepn0t_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_bepn0t_a_0");
+    editorCell.setBig(true);
     if (renderingCondition_bepn0t_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_bepn0t_a0_0(editorContext, node));
     }

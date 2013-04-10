@@ -25,6 +25,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6iwt9a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6iwt9a_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6iwt9a_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6iwt9a_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6iwt9a_c0(editorContext, node));

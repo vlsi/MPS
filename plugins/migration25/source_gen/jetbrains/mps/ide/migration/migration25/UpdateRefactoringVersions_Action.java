@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -19,7 +20,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class UpdateRefactoringVersions_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,7 +41,9 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "UpdateRefactoringVersions", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "UpdateRefactoringVersions", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -77,7 +81,9 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
       }
       SModelRepository.getInstance().saveAll();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "UpdateRefactoringVersions", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "UpdateRefactoringVersions", t);
+      }
     }
   }
 
@@ -85,11 +91,15 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     int modelVersion = model.getVersion();
     int historyVersion = model.getStructureModificationLog().getLatestVersion(model.getReference());
     if (modelVersion < historyVersion) {
-      LOG.info("updating version of " + model + " from " + modelVersion + " to .history version " + historyVersion);
+      if (LOG.isInfoEnabled()) {
+        LOG.info("updating version of " + model + " from " + modelVersion + " to .history version " + historyVersion);
+      }
       model.setVersion(historyVersion);
       model.setChanged(true);
     } else if (modelVersion > historyVersion && historyVersion != -1) {
-      LOG.info("history version of " + model + " is smaller than model version: " + historyVersion + "<" + modelVersion);
+      if (LOG.isInfoEnabled()) {
+        LOG.info("history version of " + model + " is smaller than model version: " + historyVersion + "<" + modelVersion);
+      }
     }
   }
 
@@ -101,18 +111,22 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
         continue;
       }
       if (importElement.getUsedVersion() < usedModel.getVersion()) {
-        LOG.info(model + ": updating used version of " + importElement.getModelReference() + " from " + importElement.getUsedVersion() + " to " + usedModel.getVersion());
+        if (LOG.isInfoEnabled()) {
+          LOG.info(model + ": updating used version of " + importElement.getModelReference() + " from " + importElement.getUsedVersion() + " to " + usedModel.getVersion());
+        }
         ((SModelInternal) m).updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
         model.setChanged(true);
       } else if (importElement.getUsedVersion() > usedModel.getVersion()) {
-        LOG.error(model + ": used version of " + importElement.getModelReference() + " is greater than model version: " + importElement.getUsedVersion() + ">" + usedModel.getVersion());
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error(model + ": used version of " + importElement.getModelReference() + " is greater than model version: " + importElement.getUsedVersion() + ">" + usedModel.getVersion());
+        }
         ((SModelInternal) m).updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
         model.setChanged(true);
       }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(UpdateRefactoringVersions_Action.class);
+  protected static Logger LOG = LogManager.getLogger(UpdateRefactoringVersions_Action.class);
 
   private static <T> T as_hexye9_a0a0a1a7(Object o, Class<T> type) {
     return (type.isInstance(o) ?

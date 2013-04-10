@@ -16,6 +16,7 @@ public class IBaseTestBlock_Editor extends DefaultNodeEditor {
   private EditorCell createError_y1y7t1_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "    ");
     editorCell.setCellId("Error_y1y7t1_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

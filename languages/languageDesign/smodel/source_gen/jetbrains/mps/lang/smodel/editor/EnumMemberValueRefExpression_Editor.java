@@ -33,6 +33,7 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ldpt2z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ldpt2z_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ldpt2z_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ldpt2z_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_ldpt2z_c0(editorContext, node));

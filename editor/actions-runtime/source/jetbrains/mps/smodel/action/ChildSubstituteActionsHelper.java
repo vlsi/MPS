@@ -18,7 +18,8 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.scope.Scope;
@@ -59,7 +60,7 @@ import java.util.Set;
  * Jan 24, 2006
  */
 public class ChildSubstituteActionsHelper {
-  private static final Logger LOG = Logger.getLogger(ChildSubstituteActionsHelper.class);
+  private static final Logger LOG = LogManager.getLogger(ChildSubstituteActionsHelper.class);
 
   public static final String DONT_SUBSTITUTE_BY_DEFAULT = "dontSubstituteByDefault";
   public static final String ABSTRACT = "abstract";

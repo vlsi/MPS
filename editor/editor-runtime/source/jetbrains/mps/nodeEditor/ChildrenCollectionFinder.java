@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.openapi.editor.cells.DfsTraverser;
+import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -73,7 +74,7 @@ public class ChildrenCollectionFinder {
           }
         }
 
-        for (EditorCell current : new DfsTraverser(myCurrent, myForward, false)) {
+        for (EditorCell current : new DfsTraverserIterable(myCurrent, myForward, false)) {
           SNode currentNode = current.getSNode();
 
           if (!jetbrains.mps.util.SNodeOperations.isAncestor(anchorNode, currentNode)) {

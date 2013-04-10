@@ -26,6 +26,7 @@ public class NF_Concept_NewInstance_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1fuglm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1fuglm_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_1fuglm_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1fuglm_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1fuglm_c0(editorContext, node));

@@ -19,6 +19,7 @@ public class NamePropertyNamePart_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_g834sn_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     MPSLite_Style_StyleSheet.applyMPSLiteProperty(style, editorCell);
     editorCell.getStyle().putAll(style);

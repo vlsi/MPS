@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
@@ -33,7 +34,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class AttachMappingLabel_Action extends BaseAction {
@@ -97,7 +99,9 @@ public class AttachMappingLabel_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "AttachMappingLabel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "AttachMappingLabel", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -184,11 +188,13 @@ __switch__:
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "AttachMappingLabel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "AttachMappingLabel", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(AttachMappingLabel_Action.class);
+  protected static Logger LOG = LogManager.getLogger(AttachMappingLabel_Action.class);
 
   private static IModule check_gwd6n9_a0a3a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {

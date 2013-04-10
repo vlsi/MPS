@@ -33,11 +33,12 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.ide.vcs.SourceRevision" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.DiskMemoryConflictResolver" />
     <classNode dependClassName="jetbrains.mps.vcs.concrete.MPSSourceRevision" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

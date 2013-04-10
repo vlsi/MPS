@@ -31,6 +31,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cly5ih_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cly5ih_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cly5ih_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_cly5ih_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cly5ih_c0(editorContext, node));

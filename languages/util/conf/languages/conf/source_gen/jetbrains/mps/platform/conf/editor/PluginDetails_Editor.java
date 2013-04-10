@@ -21,6 +21,7 @@ public class PluginDetails_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3doa3y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3doa3y_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_3doa3y_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3doa3y_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3doa3y_c0(editorContext, node));

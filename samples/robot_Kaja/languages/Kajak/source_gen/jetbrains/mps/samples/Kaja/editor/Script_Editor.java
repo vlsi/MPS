@@ -29,6 +29,7 @@ public class Script_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_udqu28_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_udqu28_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_udqu28_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_udqu28_b0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_udqu28_c0(editorContext, node));

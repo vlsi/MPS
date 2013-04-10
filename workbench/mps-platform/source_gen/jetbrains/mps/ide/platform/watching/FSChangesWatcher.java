@@ -35,12 +35,14 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileDeleteEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileCopyEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FSChangesWatcher implements ApplicationComponent {
   private final MessageBus myBus;
@@ -254,7 +256,9 @@ public class FSChangesWatcher implements ApplicationComponent {
           }
         }).visitAll(new IVisitor<VFileEvent>() {
           public void visit(VFileEvent it) {
-            LOG.debug("Got event " + it);
+            if (LOG.isDebugEnabled()) {
+              LOG.debug("Got event " + it);
+            }
             processAfterEvent(it, myReloadSession);
           }
         });
@@ -263,12 +267,16 @@ public class FSChangesWatcher implements ApplicationComponent {
     }
 
     private void processAfterEvent(final VFileEvent event, final ReloadSession reloadSession) {
-      LOG.debug("Process after event for " + event.getPath());
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("Process after event for " + event.getPath());
+      }
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           for (FileProcessor p : reloadSession.getProcessors()) {
             if (event.getFile() == null) {
-              LOG.warning("event.getFile() is null. Event: " + event.getClass().getName() + "; path=" + event.getPath());
+              if (LOG.isEnabledFor(Priority.WARN)) {
+                LOG.warn("event.getFile() is null. Event: " + event.getClass().getName() + "; path=" + event.getPath());
+              }
               continue;
             }
             FileProcessor processor;
@@ -277,7 +285,9 @@ public class FSChangesWatcher implements ApplicationComponent {
             if (p instanceof FileProcessor) {
               processor = ((FileProcessor) p);
             } else {
-              LOG.warning("file processors of different types: " + p.getClass().getName() + " and " + FileProcessor.class.getName());
+              if (LOG.isEnabledFor(Priority.WARN)) {
+                LOG.warn("file processors of different types: " + p.getClass().getName() + " and " + FileProcessor.class.getName());
+              }
               continue;
             }
 
@@ -313,5 +323,5 @@ public class FSChangesWatcher implements ApplicationComponent {
   }
 
 
-  private static Logger LOG = Logger.getLogger(FSChangesWatcher.class);
+  protected static Logger LOG = LogManager.getLogger(FSChangesWatcher.class);
 }

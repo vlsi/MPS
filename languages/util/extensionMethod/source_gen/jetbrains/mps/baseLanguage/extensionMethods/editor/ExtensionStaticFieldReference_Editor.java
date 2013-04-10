@@ -25,6 +25,7 @@ public class ExtensionStaticFieldReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gid07_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gid07_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_gid07_a0(editorContext, node));
     return editorCell;
   }

@@ -26,6 +26,7 @@ public class AddTabOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9ces18_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9ces18_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_9ces18_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9ces18_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9ces18_c0(editorContext, node));

@@ -27,6 +27,7 @@ public class SideTransformVariableDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lv5ymp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lv5ymp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_lv5ymp_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lv5ymp_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lv5ymp_c0(editorContext, node));

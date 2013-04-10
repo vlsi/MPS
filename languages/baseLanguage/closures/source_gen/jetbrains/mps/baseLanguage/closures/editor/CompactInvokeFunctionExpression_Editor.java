@@ -38,6 +38,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1dey68_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1dey68_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new CompactInvokeFunctionExpression_parameters());
     editorCell.getStyle().putAll(style);

@@ -31,6 +31,7 @@ public class LinkAttributeQualifier_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mg3hvm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mg3hvm_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_mg3hvm_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mg3hvm_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_mg3hvm_c0(editorContext, node));

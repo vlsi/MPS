@@ -27,6 +27,7 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_w3h4nr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_w3h4nr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_w3h4nr_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_w3h4nr_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_w3h4nr_c0(editorContext, node));

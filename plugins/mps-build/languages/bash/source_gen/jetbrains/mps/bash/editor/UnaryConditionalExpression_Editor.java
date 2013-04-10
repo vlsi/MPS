@@ -33,6 +33,7 @@ public class UnaryConditionalExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ejkdta_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ejkdta_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ejkdta_a0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_ejkdta_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ejkdta_c0(editorContext, node));

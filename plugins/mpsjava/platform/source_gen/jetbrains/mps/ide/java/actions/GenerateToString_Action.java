@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -26,7 +27,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -64,7 +66,9 @@ public class GenerateToString_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GenerateToString", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GenerateToString", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -139,7 +143,9 @@ public class GenerateToString_Action extends BaseAction {
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(method);
 
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GenerateToString", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GenerateToString", t);
+      }
     }
   }
 
@@ -147,7 +153,7 @@ public class GenerateToString_Action extends BaseAction {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
 
-  private static Logger LOG = Logger.getLogger(GenerateToString_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GenerateToString_Action.class);
 
   private static SNode _quotation_createNode_satqj4_a0d0p0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

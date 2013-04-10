@@ -32,6 +32,7 @@ public class BaseCommandSubstitution_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jm0ki2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jm0ki2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_jm0ki2_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_jm0ki2_b0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_jm0ki2_c0(editorContext, node));

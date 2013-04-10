@@ -23,7 +23,8 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorComponent;
@@ -54,7 +55,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TypecheckerStateViewComponent extends JPanel {
-  private static final Logger LOG = Logger.getLogger(TypecheckerStateViewComponent.class);
+  private static final Logger LOG = LogManager.getLogger(TypecheckerStateViewComponent.class);
 
   private IOperationContext myOperationContext;
 

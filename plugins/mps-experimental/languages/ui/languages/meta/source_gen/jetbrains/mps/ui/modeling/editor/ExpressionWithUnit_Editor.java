@@ -21,6 +21,7 @@ public class ExpressionWithUnit_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tq9zpx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tq9zpx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_tq9zpx_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_tq9zpx_b0(editorContext, node));
     return editorCell;

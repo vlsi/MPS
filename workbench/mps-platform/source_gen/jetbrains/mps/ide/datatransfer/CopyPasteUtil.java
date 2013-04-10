@@ -36,6 +36,7 @@ import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.awt.datatransfer.DataFlavor;
+import org.apache.log4j.Priority;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -43,7 +44,8 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CopyPasteUtil {
   private static CopyPasteUtil.IDataConverter myDataConverter = null;
@@ -303,9 +305,13 @@ public class CopyPasteUtil {
         nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
         return nodeTransferable.createNodeData();
       } catch (UnsupportedFlavorException e) {
-        LOG.error("Exception", e);
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Exception", e);
+        }
       } catch (IOException e) {
-        LOG.error("Exception", e);
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Exception", e);
+        }
       }
     }
     return PasteNodeData.emptyPasteNodeData(module);
@@ -445,5 +451,5 @@ public class CopyPasteUtil {
     public PasteNodeData getPasteNodeData(SModel model, Project project);
   }
 
-  private static Logger LOG = Logger.getLogger(CopyPasteUtil.class);
+  protected static Logger LOG = LogManager.getLogger(CopyPasteUtil.class);
 }

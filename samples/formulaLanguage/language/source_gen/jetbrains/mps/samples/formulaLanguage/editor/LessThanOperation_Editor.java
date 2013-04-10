@@ -28,6 +28,7 @@ public class LessThanOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_q134n3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_q134n3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_q134n3_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_q134n3_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_q134n3_c0(editorContext, node));

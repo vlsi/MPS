@@ -16,13 +16,14 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.node.EditorAspect;
 import jetbrains.mps.openapi.editor.node.EditorAspectDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 import java.lang.reflect.Constructor;
@@ -33,12 +34,12 @@ import java.util.Map;
 /**
  * Fallback solution for previously generated MPS editor code.
  * Should be removed after MPS 3.0
- *
+ * <p/>
  * User: shatalin
  * Date: 4/10/13
  */
 class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
-  private static Logger LOG = Logger.getLogger(InterpretedEditorAspectDescriptor.class);
+  private static Logger LOG = LogManager.getLogger(InterpretedEditorAspectDescriptor.class);
 
   private LanguageRuntime myLanguageRuntime;
   private Map<String, EditorAspect> myEditorAspects = new HashMap<String, EditorAspect>();

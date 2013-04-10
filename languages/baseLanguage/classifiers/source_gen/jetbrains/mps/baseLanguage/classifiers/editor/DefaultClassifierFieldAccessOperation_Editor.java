@@ -28,6 +28,7 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
   private EditorCell createCollection_c4gh6o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c4gh6o_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_c4gh6o_a0(editorContext, node));
     return editorCell;
   }

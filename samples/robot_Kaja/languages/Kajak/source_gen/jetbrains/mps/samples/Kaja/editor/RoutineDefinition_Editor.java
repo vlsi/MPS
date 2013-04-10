@@ -28,6 +28,7 @@ public class RoutineDefinition_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7lzh7e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7lzh7e_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_7lzh7e_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7lzh7e_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7lzh7e_c0(editorContext, node));

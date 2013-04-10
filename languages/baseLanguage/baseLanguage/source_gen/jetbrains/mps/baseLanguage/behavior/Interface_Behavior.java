@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.apache.log4j.Priority;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -17,7 +18,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Interface_Behavior {
   public static void init(SNode thisNode) {
@@ -25,7 +27,9 @@ public class Interface_Behavior {
 
   public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(thisNode)) {
-      LOG.error("circular hierarchy in interface " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("circular hierarchy in interface " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+      }
       return false;
     }
     if (Classifier_Behavior.call_isSame_4855996797771684010(thisNode, nodeToCompare)) {
@@ -43,7 +47,9 @@ public class Interface_Behavior {
 
   public static boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(thisNode)) {
-      LOG.error("circular hierarchy in interface " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("circular hierarchy in interface " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+      }
       return false;
     }
     SetSequence.fromSet(visited).addElement(thisNode);
@@ -120,5 +126,5 @@ public class Interface_Behavior {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}, new Object[]{});
   }
 
-  private static Logger LOG = Logger.getLogger(Interface_Behavior.class);
+  protected static Logger LOG = LogManager.getLogger(Interface_Behavior.class);
 }

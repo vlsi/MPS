@@ -97,7 +97,7 @@ public class CellFinderUtil {
       return cell;
     }
 
-    for (EditorCell current : new DfsTraverser(cell, forward, true)) {
+    for (EditorCell current : new DfsTraverserIterable(cell, forward, true)) {
       if (condition.met(current)) {
         return current;
       }

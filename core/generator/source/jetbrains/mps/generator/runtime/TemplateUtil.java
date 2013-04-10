@@ -16,8 +16,8 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.impl.interpreted.TemplateModuleInterpreted;
-import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -32,7 +32,7 @@ import java.util.*;
  */
 public class TemplateUtil {
 
-  private static final Logger LOG = Logger.getLogger(TemplateUtil.class);
+  private static final Logger LOG = LogManager.getLogger(TemplateUtil.class);
 
   public static Collection<SNode> singletonList(SNode node) {
     return node != null ? Collections.singletonList(node) : Collections.<SNode>emptyList();

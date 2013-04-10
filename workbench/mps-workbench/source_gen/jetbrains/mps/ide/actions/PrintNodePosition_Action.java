@@ -7,13 +7,15 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.traceInfo.PositionInfo;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class PrintNodePosition_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,7 +35,9 @@ public class PrintNodePosition_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "PrintNodePosition", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "PrintNodePosition", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -70,9 +74,11 @@ public class PrintNodePosition_Action extends BaseAction {
         System.out.println(positionInfo);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "PrintNodePosition", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "PrintNodePosition", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(PrintNodePosition_Action.class);
+  protected static Logger LOG = LogManager.getLogger(PrintNodePosition_Action.class);
 }

@@ -36,6 +36,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_y1wtxd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y1wtxd_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_y1wtxd_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y1wtxd_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_y1wtxd_c0(editorContext, node));

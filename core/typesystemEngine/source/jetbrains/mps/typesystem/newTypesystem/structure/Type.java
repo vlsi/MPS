@@ -17,7 +17,8 @@ package jetbrains.mps.typesystem.newTypesystem.structure;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class Type<Meta, Target> {
-  private static Logger LOG = Logger.getLogger(Type.class);
+  private static Logger LOG = LogManager.getLogger(Type.class);
 
   protected String myRole;
   protected IReference<Meta> myMeta;

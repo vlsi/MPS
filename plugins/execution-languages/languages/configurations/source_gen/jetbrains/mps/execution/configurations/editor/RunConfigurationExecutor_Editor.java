@@ -37,6 +37,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g7zihj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g7zihj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_g7zihj_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g7zihj_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g7zihj_c0(editorContext, node));
@@ -78,8 +79,8 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g7zihj_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_g7zihj_b1a(EditorContext editorContext, SNode node) {
@@ -188,8 +189,8 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g7zihj_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createComponent_g7zihj_b2a(EditorContext editorContext, SNode node) {
@@ -250,8 +251,8 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g7zihj_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_g7zihj_b6a(EditorContext editorContext, SNode node) {
@@ -274,6 +275,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g7zihj_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g7zihj_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -284,8 +286,8 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g7zihj_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_g7zihj_b0(EditorContext editorContext, SNode node) {

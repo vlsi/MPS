@@ -32,6 +32,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qhskw8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qhskw8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_qhskw8_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qhskw8_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_qhskw8_c0(editorContext, node));
@@ -169,6 +170,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qhskw8_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qhskw8_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_qhskw8_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qhskw8_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_qhskw8_c0(editorContext, node));

@@ -24,6 +24,7 @@ public class ActionTestChildToWrap1_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vhqp2i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vhqp2i_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vhqp2i_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vhqp2i_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vhqp2i_c0(editorContext, node));

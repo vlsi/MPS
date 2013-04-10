@@ -23,6 +23,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qwezdt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qwezdt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_qwezdt_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_qwezdt_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qwezdt_c0(editorContext, node));

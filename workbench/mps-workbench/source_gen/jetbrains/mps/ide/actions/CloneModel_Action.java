@@ -11,12 +11,14 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel.CloneModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CloneModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -52,7 +54,9 @@ public class CloneModel_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CloneModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CloneModel", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -86,9 +90,11 @@ public class CloneModel_Action extends BaseAction {
       });
       dialog.value.show();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CloneModel", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CloneModel", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CloneModel_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CloneModel_Action.class);
 }

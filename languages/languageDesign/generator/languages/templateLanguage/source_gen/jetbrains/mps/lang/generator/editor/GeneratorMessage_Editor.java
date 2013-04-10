@@ -27,6 +27,7 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kk3dik_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_kk3dik_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_kk3dik_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kk3dik_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_kk3dik_c0(editorContext, node));

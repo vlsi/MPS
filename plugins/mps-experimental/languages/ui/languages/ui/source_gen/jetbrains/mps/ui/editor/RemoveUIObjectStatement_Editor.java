@@ -23,6 +23,7 @@ public class RemoveUIObjectStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_w2mnt6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_w2mnt6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_w2mnt6_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_w2mnt6_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_w2mnt6_c0(editorContext, node));

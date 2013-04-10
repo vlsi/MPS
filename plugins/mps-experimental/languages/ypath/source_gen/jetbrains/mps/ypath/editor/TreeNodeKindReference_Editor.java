@@ -28,6 +28,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g2eo62_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_g2eo62_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_g2eo62_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g2eo62_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_g2eo62_c0(editorContext, node));

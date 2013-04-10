@@ -10,6 +10,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.extapi.model.EditableSModel;
@@ -17,7 +18,8 @@ import jetbrains.mps.workbench.actions.model.PartitioningHelper;
 import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowMappingsPartitioning_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -44,7 +46,9 @@ public class ShowMappingsPartitioning_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowMappingsPartitioning", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowMappingsPartitioning", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -83,9 +87,11 @@ public class ShowMappingsPartitioning_Action extends BaseAction {
     try {
       PartitioningHelper.showMappingPartitioning(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IScope) MapSequence.fromMap(_params).get("scope")), ((List<SModel>) MapSequence.fromMap(_params).get("models")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowMappingsPartitioning", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowMappingsPartitioning", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowMappingsPartitioning_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowMappingsPartitioning_Action.class);
 }

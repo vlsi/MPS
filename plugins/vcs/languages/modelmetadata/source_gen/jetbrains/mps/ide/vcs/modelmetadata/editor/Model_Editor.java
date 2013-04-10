@@ -33,6 +33,7 @@ public class Model_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pyq9q9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pyq9q9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_pyq9q9_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_pyq9q9_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pyq9q9_c0(editorContext, node));

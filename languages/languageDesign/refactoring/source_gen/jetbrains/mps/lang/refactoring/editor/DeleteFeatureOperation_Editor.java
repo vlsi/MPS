@@ -21,6 +21,7 @@ public class DeleteFeatureOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ikcopk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ikcopk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ikcopk_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ikcopk_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ikcopk_c0(editorContext, node));

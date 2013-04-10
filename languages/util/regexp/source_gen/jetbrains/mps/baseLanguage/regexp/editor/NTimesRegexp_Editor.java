@@ -31,6 +31,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yzyesl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yzyesl_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     if (renderingCondition_yzyesl_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_yzyesl_a0(editorContext, node));

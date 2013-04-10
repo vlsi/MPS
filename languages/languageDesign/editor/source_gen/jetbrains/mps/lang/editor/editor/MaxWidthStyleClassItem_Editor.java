@@ -38,6 +38,7 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7mrjrs_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7mrjrs_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_7mrjrs_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7mrjrs_b0(editorContext, node));
     if (renderingCondition_7mrjrs_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

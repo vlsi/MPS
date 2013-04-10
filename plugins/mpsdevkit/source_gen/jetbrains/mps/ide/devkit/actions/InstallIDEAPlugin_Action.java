@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.io.File;
@@ -26,7 +27,8 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class InstallIDEAPlugin_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -46,7 +48,9 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "InstallIDEAPlugin", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "InstallIDEAPlugin", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -79,7 +83,9 @@ public class InstallIDEAPlugin_Action extends BaseAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "InstallIDEAPlugin", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "InstallIDEAPlugin", t);
+      }
     }
   }
 
@@ -145,7 +151,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     );
   }
 
-  private static Logger LOG = Logger.getLogger(InstallIDEAPlugin_Action.class);
+  protected static Logger LOG = LogManager.getLogger(InstallIDEAPlugin_Action.class);
   private static Pattern REGEXP_gyxeh4_a0a4a7 = Pattern.compile("(?:\\.IntelliJIdea.*)|(?:\\.IdeaIC.*)", 0);
   private static Pattern REGEXP_gyxeh4_a0a4a7_0 = Pattern.compile("(?:IntelliJIdea.*)|(?:IdeaIC.*)", 0);
 }

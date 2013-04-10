@@ -21,6 +21,7 @@ public class Node_GetPrevSiblingOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_1l0asd_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "prev-sibling");
     editorCell.setCellId("Constant_1l0asd_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

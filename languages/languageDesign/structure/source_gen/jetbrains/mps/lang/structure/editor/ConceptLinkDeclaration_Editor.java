@@ -16,6 +16,7 @@ public class ConceptLinkDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createError_rnh2be_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose link type>");
     editorCell.setCellId("Error_rnh2be_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

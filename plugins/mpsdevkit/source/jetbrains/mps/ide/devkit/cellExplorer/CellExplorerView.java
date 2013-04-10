@@ -26,7 +26,8 @@ import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -63,7 +64,7 @@ import java.util.Map;
  * @author Kostik
  */
 public class CellExplorerView extends BaseProjectTool {
-  public static final Logger LOG = Logger.getLogger(CellExplorerView.class);
+  public static final Logger LOG = LogManager.getLogger(CellExplorerView.class);
 
   private JPanel myComponent = new JPanel(new BorderLayout());
   private MyTree myTree = new MyTree();
@@ -144,7 +145,7 @@ public class CellExplorerView extends BaseProjectTool {
 
     MPSTreeNode current = findCellTreeNode(cell);
     if (current == null) {
-      LOG.warning("Can't find cell in tree");
+      LOG.warn("Can't find cell in tree");
       return;
     }
     myTree.selectNode(current);

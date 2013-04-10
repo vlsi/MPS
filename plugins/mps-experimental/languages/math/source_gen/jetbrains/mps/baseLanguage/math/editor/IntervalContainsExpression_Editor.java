@@ -27,6 +27,7 @@ public class IntervalContainsExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8gz0ko_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8gz0ko_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_8gz0ko_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8gz0ko_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8gz0ko_c0(editorContext, node));

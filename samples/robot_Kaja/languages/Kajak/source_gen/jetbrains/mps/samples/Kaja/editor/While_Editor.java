@@ -29,6 +29,7 @@ public class While_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xklbgd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xklbgd_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_xklbgd_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_xklbgd_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xklbgd_c0(editorContext, node));

@@ -27,6 +27,7 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_q24t2b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q24t2b_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_q24t2b_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_q24t2b_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_q24t2b_c0(editorContext, node));

@@ -31,6 +31,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6of1q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6of1q_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6of1q_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6of1q_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_6of1q_c0(editorContext, node));

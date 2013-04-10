@@ -20,6 +20,7 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fanyxu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fanyxu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_fanyxu_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fanyxu_b0(editorContext, node));
     return editorCell;

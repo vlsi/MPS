@@ -41,6 +41,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_aj8zjo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_aj8zjo_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_aj8zjo_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_aj8zjo_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_aj8zjo_c0(editorContext, node));
@@ -188,8 +189,8 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_aj8zjo_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_aj8zjo_b1a(EditorContext editorContext, SNode node) {
@@ -479,8 +480,8 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_aj8zjo_a0f1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_aj8zjo_b5b1a(EditorContext editorContext, SNode node) {

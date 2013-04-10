@@ -39,6 +39,7 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_asco8r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_asco8r_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -124,8 +125,8 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_asco8r_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_asco8r_b1a(EditorContext editorContext, SNode node) {

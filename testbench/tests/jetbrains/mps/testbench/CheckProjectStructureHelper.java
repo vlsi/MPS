@@ -180,7 +180,6 @@ public class CheckProjectStructureHelper {
   public void init(String[][] macros) {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
-    Testbench.initLogging();
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS(new String[0]);

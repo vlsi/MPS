@@ -32,6 +32,7 @@ public class UnaryArithmeticExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_83ikxp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_83ikxp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_83ikxp_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_83ikxp_b0(editorContext, node));
     return editorCell;

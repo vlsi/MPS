@@ -53,7 +53,8 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
@@ -75,7 +76,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
-  private static final Logger LOG = Logger.getLogger(FileViewProjectPane.class);
+  private static final Logger LOG = LogManager.getLogger(FileViewProjectPane.class);
   private static final int DELAY = 10;
   @NonNls
   public static final String ID = "FileSystem";

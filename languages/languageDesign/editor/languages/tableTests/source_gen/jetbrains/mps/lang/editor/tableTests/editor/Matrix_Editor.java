@@ -32,6 +32,7 @@ public class Matrix_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_io08np_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_io08np_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_io08np_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_io08np_b0(editorContext, node));
     editorCell.addEditorCell(this.createTable_io08np_c0(editorContext, node));

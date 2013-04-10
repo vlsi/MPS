@@ -84,14 +84,6 @@ public class DiffEditor implements EditorMessageOwner {
     myInspector.getHighlightManager().repaintAndRebuildEditorMessages();
   }
 
-  public void setReadOnly(final boolean readOnly) {
-    Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
-      public void visit(EditorComponent ec) {
-        ec.setReadOnly(readOnly);
-      }
-    });
-  }
-
   public JComponent getTopComponent() {
     return myTopComponent;
   }

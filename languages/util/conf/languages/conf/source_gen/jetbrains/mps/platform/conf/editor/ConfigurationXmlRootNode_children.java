@@ -51,8 +51,8 @@ public class ConfigurationXmlRootNode_children extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_k6w75o_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_k6w75o_b0(EditorContext editorContext, SNode node) {

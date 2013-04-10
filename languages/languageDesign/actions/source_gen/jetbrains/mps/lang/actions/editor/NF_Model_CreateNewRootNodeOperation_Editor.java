@@ -34,6 +34,7 @@ public class NF_Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEdito
   private EditorCell createCollection_w725d4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_w725d4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_w725d4_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_w725d4_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_w725d4_c0(editorContext, node));

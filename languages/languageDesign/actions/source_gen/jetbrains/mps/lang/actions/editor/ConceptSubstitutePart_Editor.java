@@ -30,6 +30,7 @@ public class ConceptSubstitutePart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1d9zej_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1d9zej_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_1d9zej_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1d9zej_b0(editorContext, node));
     return editorCell;

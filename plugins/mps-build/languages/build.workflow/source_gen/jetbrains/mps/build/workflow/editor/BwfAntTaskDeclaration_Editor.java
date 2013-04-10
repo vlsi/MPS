@@ -25,6 +25,7 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fxg4hy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fxg4hy_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_fxg4hy_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_fxg4hy_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fxg4hy_c0(editorContext, node));

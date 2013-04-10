@@ -25,6 +25,7 @@ public class CustomOperatorUsage_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fe04xc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fe04xc_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_fe04xc_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_fe04xc_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fe04xc_c0(editorContext, node));

@@ -28,7 +28,8 @@ import jetbrains.mps.intentions.IntentionsVisitor.GetHighestAvailableIntentionTy
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -75,7 +76,7 @@ import java.util.Set;
         )}
 )
 public class IntentionsManager implements ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
-  private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
+  private static final Logger LOG = LogManager.getLogger(IntentionsManager.class);
 
   public static String getDescriptorClassName(SModuleReference langRef) {
     return "IntentionsDescriptor";

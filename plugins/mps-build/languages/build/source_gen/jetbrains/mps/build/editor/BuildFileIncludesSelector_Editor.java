@@ -23,6 +23,7 @@ public class BuildFileIncludesSelector_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dmuu98_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_dmuu98_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_dmuu98_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_dmuu98_b0(editorContext, node));
     return editorCell;

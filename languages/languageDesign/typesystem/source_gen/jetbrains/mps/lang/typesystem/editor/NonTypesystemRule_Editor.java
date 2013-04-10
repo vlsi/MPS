@@ -40,6 +40,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tg6zfx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_tg6zfx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_tg6zfx_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_tg6zfx_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tg6zfx_c0(editorContext, node));
@@ -136,8 +137,8 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_tg6zfx_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_tg6zfx_b1a(EditorContext editorContext, SNode node) {
@@ -296,8 +297,8 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_tg6zfx_a4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_tg6zfx_b4b1a(EditorContext editorContext, SNode node) {

@@ -24,6 +24,7 @@ public class StaticInitializer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3tqrto_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3tqrto_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_3tqrto_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3tqrto_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3tqrto_c0(editorContext, node));

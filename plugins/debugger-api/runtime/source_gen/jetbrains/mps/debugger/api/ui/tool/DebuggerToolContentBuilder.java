@@ -21,6 +21,7 @@ import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import org.apache.log4j.Priority;
 import com.intellij.ui.content.Content;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.execution.ui.layout.PlaceInGrid;
@@ -33,7 +34,8 @@ import com.intellij.execution.ui.actions.CloseAction;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.util.Disposer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DebuggerToolContentBuilder implements Disposable {
   @NonNls
@@ -87,7 +89,9 @@ public class DebuggerToolContentBuilder implements Disposable {
     ui.getOptions().setMoveToGridActionEnabled(true).setMinimizeActionEnabled(true);
     AbstractDebugSession debugSession = DebugSessionManagerComponent.getInstance(myProject).getDebugSession(myExecutionResult.getProcessHandler());
     if (debugSession == null) {
-      LOG.error("No debug session found for process handler " + myExecutionResult.getProcessHandler());
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("No debug session found for process handler " + myExecutionResult.getProcessHandler());
+      }
     } else {
       new DebuggerToolPanel(myProject, debugSession, ui);
     }
@@ -146,5 +150,5 @@ public class DebuggerToolContentBuilder implements Disposable {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(DebuggerToolContentBuilder.class);
+  protected static Logger LOG = LogManager.getLogger(DebuggerToolContentBuilder.class);
 }

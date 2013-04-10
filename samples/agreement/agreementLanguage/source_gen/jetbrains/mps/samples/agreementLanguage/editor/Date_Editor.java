@@ -26,6 +26,7 @@ public class Date_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dwy1sf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dwy1sf_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_dwy1sf_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dwy1sf_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_dwy1sf_c0(editorContext, node));

@@ -42,6 +42,7 @@ public class Module_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iuuvkg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iuuvkg_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new Module_KeyMap());
     editorCell.addEditorCell(this.createComponent_iuuvkg_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_iuuvkg_b0(editorContext, node));
@@ -169,6 +170,7 @@ public class Module_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iuuvkg_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_iuuvkg_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_iuuvkg_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_iuuvkg_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_iuuvkg_c0_0(editorContext, node));
@@ -294,8 +296,8 @@ public class Module_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_iuuvkg_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_iuuvkg_b4a(EditorContext editorContext, SNode node) {
@@ -340,8 +342,8 @@ public class Module_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_iuuvkg_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_iuuvkg_b5a(EditorContext editorContext, SNode node) {
@@ -405,8 +407,8 @@ public class Module_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_iuuvkg_a7a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_iuuvkg_b7a(EditorContext editorContext, SNode node) {

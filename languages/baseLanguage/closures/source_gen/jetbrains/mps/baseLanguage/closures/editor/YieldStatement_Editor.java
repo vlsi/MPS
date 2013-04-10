@@ -26,6 +26,7 @@ public class YieldStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_66ieid_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_66ieid_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_66ieid_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_66ieid_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_66ieid_c0(editorContext, node));

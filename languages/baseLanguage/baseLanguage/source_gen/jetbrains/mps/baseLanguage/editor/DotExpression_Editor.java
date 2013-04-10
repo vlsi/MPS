@@ -25,6 +25,7 @@ public class DotExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_t2jtrp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t2jtrp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_t2jtrp_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_t2jtrp_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_t2jtrp_c0(editorContext, node));

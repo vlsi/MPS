@@ -26,6 +26,7 @@ public class BuildSource_JavaModuleOptions_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bvukwp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bvukwp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_bvukwp_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_bvukwp_b0(editorContext, node));
     return editorCell;

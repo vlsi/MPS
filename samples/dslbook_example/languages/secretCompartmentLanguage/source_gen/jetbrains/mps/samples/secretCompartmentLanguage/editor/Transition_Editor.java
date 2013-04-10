@@ -23,6 +23,7 @@ public class Transition_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jj4qz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jj4qz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_jj4qz_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jj4qz_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_jj4qz_c0(editorContext, node));

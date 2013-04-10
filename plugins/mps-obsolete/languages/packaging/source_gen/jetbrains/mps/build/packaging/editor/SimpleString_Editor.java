@@ -28,6 +28,7 @@ public class SimpleString_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     PackagingStyles_StyleSheet.applyString(style, editorCell);
     style.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));

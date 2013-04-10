@@ -9,10 +9,12 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GenerateBuildAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,7 +41,9 @@ public class GenerateBuildAction_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GenerateBuildAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GenerateBuildAction", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -63,12 +67,16 @@ public class GenerateBuildAction_Action extends BaseAction {
     try {
       boolean result = GenerateBuildUtil.generate(GenerateBuildUtil.getLayout(((SModel) MapSequence.fromMap(_params).get("modelDescriptor"))), ((Project) MapSequence.fromMap(_params).get("project")), true);
       if (!(result)) {
-        LOG.error("Build files were not generated.");
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Build files were not generated.");
+        }
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GenerateBuildAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GenerateBuildAction", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(GenerateBuildAction_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GenerateBuildAction_Action.class);
 }

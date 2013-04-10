@@ -29,6 +29,7 @@ public class ToolType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cy4bsd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cy4bsd_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cy4bsd_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cy4bsd_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_cy4bsd_c0(editorContext, node));

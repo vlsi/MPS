@@ -20,6 +20,7 @@ public class LayoutConstraintExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_q5z4p2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q5z4p2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_q5z4p2_a0(editorContext, node));
     return editorCell;
   }

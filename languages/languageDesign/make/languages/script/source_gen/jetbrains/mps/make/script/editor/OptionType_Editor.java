@@ -29,6 +29,7 @@ public class OptionType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xgjw32_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xgjw32_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_xgjw32_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xgjw32_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_xgjw32_c0(editorContext, node));

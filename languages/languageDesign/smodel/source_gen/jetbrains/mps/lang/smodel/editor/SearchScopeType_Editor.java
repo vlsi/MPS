@@ -22,6 +22,7 @@ public class SearchScopeType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7ez7v7_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "search scope");
     editorCell.setCellId("Constant_7ez7v7_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

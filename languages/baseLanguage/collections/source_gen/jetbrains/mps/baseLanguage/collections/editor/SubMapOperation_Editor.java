@@ -26,6 +26,7 @@ public class SubMapOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_j1ndjk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_j1ndjk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_j1ndjk_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_j1ndjk_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_j1ndjk_c0(editorContext, node));

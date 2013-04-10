@@ -38,6 +38,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xqkmqp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xqkmqp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_xqkmqp_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xqkmqp_b0(editorContext, node));
     if (renderingCondition_xqkmqp_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

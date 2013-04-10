@@ -38,6 +38,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 
 public class ExponentOperation_Component extends AbstractCellProvider {
   public ExponentOperation_Component(SNode node) {
@@ -152,6 +153,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
 
   private EditorCell createEmpty_spngij_c0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_spngij_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);

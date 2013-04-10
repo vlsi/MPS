@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.List;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -21,7 +22,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.io.OutputStream;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class LanguageDescriptorPersistence {
   private LanguageDescriptorPersistence() {
@@ -111,7 +113,9 @@ public class LanguageDescriptorPersistence {
 
   public static void saveLanguageDescriptor(IFile file, LanguageDescriptor descriptor, MacroHelper macroHelper) {
     if (file.isReadOnly()) {
-      LOG.error("Cant't save " + file.getPath());
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Cant't save " + file.getPath());
+      }
       return;
     }
 
@@ -172,10 +176,12 @@ public class LanguageDescriptorPersistence {
       OutputStream os = file.openOutputStream();
       JDOMUtil.writeDocument(new Document(languageElement), os);
     } catch (Exception e) {
-      LOG.error("", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", e);
+      }
     }
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
 
-  private static Logger LOG = Logger.getLogger(LanguageDescriptorPersistence.class);
+  protected static Logger LOG = LogManager.getLogger(LanguageDescriptorPersistence.class);
 }

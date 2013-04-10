@@ -32,6 +32,7 @@ public class HierarchycalTable_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_sl01pn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_sl01pn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_sl01pn_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_sl01pn_b0(editorContext, node));
     editorCell.addEditorCell(this.createTable_sl01pn_c0(editorContext, node));

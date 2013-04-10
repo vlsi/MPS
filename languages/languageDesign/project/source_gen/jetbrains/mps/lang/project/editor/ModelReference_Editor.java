@@ -30,6 +30,7 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_i85no5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i85no5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_i85no5_a0(editorContext, node));
     if (renderingCondition_i85no5_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_i85no5_b0(editorContext, node));
@@ -102,6 +103,7 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_i85no5_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_i85no5_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_i85no5_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_i85no5_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_i85no5_c0(editorContext, node));

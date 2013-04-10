@@ -42,6 +42,7 @@ public class Order_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createCollection_yh3zz3_a0_0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 

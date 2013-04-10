@@ -29,6 +29,7 @@ public class MappingType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6trdjm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6trdjm_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_6trdjm_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6trdjm_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6trdjm_c0(editorContext, node));

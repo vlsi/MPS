@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
@@ -41,7 +42,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModelReader4 implements IModelReader {
-  private static final Logger LOG = Logger.getLogger(ModelReader4.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ModelReader4.class));
 
   protected String getLegacyImportedModelUIDString(Element element) {
     return null;

@@ -39,6 +39,7 @@ public class BwfTaskPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rjgbfl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rjgbfl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_rjgbfl_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_rjgbfl_b0(editorContext, node));
     if (renderingCondition_rjgbfl_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

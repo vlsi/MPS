@@ -16,6 +16,7 @@ public class MenuPart_Editor extends DefaultNodeEditor {
   private EditorCell createError_fmpnal_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "menuPart");
     editorCell.setCellId("Error_fmpnal_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

@@ -36,6 +36,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6puhak_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6puhak_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6puhak_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6puhak_b0(editorContext, node));
     if (renderingCondition_6puhak_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

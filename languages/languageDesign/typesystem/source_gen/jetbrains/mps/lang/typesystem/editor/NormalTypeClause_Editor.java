@@ -25,6 +25,7 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yb6oam_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yb6oam_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_yb6oam_a0(editorContext, node));
     return editorCell;
   }
@@ -49,6 +50,7 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yb6oam_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "NORMAL TYPE CLAUSE");
     editorCell.setCellId("Constant_yb6oam_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

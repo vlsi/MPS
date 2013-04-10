@@ -23,6 +23,7 @@ public class BuildSource_JavaClassFolder_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wef3hb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wef3hb_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_wef3hb_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_wef3hb_b0(editorContext, node));
     return editorCell;

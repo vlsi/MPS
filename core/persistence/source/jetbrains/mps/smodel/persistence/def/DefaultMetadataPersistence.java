@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
@@ -27,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 class DefaultMetadataPersistence {
-  private static final Logger LOG = Logger.getLogger(DefaultMetadataPersistence.class);
+  private static final Logger LOG = LogManager.getLogger(DefaultMetadataPersistence.class);
 
   private static final String ENTRY = "entry";
   private static final String KEY = "key";

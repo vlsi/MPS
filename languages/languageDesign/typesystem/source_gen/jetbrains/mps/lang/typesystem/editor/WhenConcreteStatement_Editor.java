@@ -32,6 +32,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u56bem_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_u56bem_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_u56bem_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u56bem_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_u56bem_c0(editorContext, node));
@@ -165,6 +166,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u56bem_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_u56bem_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_u56bem_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_u56bem_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u56bem_c0(editorContext, node));

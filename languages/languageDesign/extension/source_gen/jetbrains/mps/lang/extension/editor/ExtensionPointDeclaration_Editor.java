@@ -26,6 +26,7 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_obn5mp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_obn5mp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_obn5mp_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_obn5mp_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_obn5mp_c0(editorContext, node));

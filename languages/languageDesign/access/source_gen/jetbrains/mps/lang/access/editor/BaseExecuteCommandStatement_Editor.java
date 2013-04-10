@@ -27,6 +27,7 @@ public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lfwa2a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lfwa2a_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_lfwa2a_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lfwa2a_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_lfwa2a_c0(editorContext, node));

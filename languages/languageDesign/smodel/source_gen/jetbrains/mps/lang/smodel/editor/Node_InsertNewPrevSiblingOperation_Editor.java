@@ -30,6 +30,7 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
   private EditorCell createCollection_s8z18l_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_s8z18l_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_s8z18l_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_s8z18l_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_s8z18l_c0(editorContext, node));

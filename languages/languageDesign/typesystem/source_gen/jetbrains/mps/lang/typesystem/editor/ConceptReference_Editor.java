@@ -41,6 +41,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_s9fwl0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_s9fwl0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_s9fwl0_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_s9fwl0_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_s9fwl0_c0(editorContext, node));

@@ -28,6 +28,7 @@ public class RedirectedCommand_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_t9ej7i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_t9ej7i_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_t9ej7i_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_t9ej7i_b0(editorContext, node));
     return editorCell;

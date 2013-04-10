@@ -24,6 +24,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -38,7 +39,7 @@ import javax.swing.Icon;
 import java.util.List;
 
 public class NodeNodeData extends BaseNodeData {
-  private static final Logger LOG = Logger.getLogger(NodeNodeData.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(NodeNodeData.class));
 
   private static final String NODE = "node";
 
@@ -122,7 +123,7 @@ public class NodeNodeData extends BaseNodeData {
         try {
           String presentation = SNodeUtil.getPresentation(node);
           String result = (presentation != null) ? presentation : node.toString();
-          LOG.assertLog(result != null);
+          LOG.assertLog(result != null, "Node presentation is null.");
           result = StringUtil.escapeXml(result);
           return result;
         } catch (Throwable t) {

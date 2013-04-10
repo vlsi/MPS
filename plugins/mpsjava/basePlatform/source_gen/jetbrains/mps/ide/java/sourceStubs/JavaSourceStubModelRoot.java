@@ -4,7 +4,8 @@ package jetbrains.mps.ide.java.sourceStubs;
 
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
@@ -24,7 +25,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 
 public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystemListener {
 
-  private static Logger LOG = Logger.getLogger(JavaSourceStubModelRoot.class);
+  private static Logger LOG = LogManager.getLogger(JavaSourceStubModelRoot.class);
 
   @NotNull
   private String myPath = "";

@@ -20,6 +20,7 @@ public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ar658z_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "instance");
     editorCell.setCellId("Constant_ar658z_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);

@@ -19,6 +19,7 @@ public class TypePart_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_wv8zbj_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     MPSLite_Style_StyleSheet.applyMPSLiteChild(style, editorCell);
     editorCell.getStyle().putAll(style);

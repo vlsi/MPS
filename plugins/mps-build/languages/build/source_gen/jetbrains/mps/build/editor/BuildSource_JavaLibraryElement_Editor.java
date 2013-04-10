@@ -33,6 +33,7 @@ public class BuildSource_JavaLibraryElement_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_8mhou1_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

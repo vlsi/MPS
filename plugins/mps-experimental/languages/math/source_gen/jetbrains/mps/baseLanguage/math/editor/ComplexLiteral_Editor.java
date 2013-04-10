@@ -21,6 +21,7 @@ public class ComplexLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g5m0o6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_g5m0o6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_g5m0o6_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g5m0o6_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_g5m0o6_c0(editorContext, node));

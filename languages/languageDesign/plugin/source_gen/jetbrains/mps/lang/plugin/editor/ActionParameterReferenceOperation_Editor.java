@@ -27,6 +27,7 @@ public class ActionParameterReferenceOperation_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_keprta_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_keprta_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_keprta_a0(editorContext, node));
     return editorCell;
   }

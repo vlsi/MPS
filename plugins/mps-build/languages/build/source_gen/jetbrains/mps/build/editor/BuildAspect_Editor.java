@@ -33,6 +33,7 @@ public class BuildAspect_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_94dy37_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

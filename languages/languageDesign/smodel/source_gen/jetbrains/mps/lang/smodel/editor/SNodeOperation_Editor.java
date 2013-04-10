@@ -16,6 +16,7 @@ public class SNodeOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_atlni5_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAlias_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

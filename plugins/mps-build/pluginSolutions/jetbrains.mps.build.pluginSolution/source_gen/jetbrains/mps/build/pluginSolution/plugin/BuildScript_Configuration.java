@@ -14,6 +14,7 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
@@ -28,7 +29,8 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class BuildScript_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -69,7 +71,9 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
     {
@@ -77,7 +81,9 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       if (fieldElement != null) {
         mySettings.readExternal(fieldElement);
       } else {
-        LOG.debug("Element " + "mySettings" + " in " + this.getClass().getName() + " was null.");
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("Element " + "mySettings" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
   }
@@ -100,7 +106,9 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       clone.mySettings = (AntSettings_Configuration) mySettings.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -155,5 +163,5 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
   }
 
-  private static Logger LOG = Logger.getLogger(BuildScript_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(BuildScript_Configuration.class);
 }

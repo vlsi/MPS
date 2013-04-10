@@ -28,6 +28,7 @@ public class GenerationContextOp_VarRef_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4x6n30_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4x6n30_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_4x6n30_a0(editorContext, node));
     return editorCell;
   }

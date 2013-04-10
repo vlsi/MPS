@@ -24,6 +24,7 @@ public class ActionTestChild1SubConcept_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9p9e7n_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9p9e7n_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9p9e7n_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9p9e7n_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9p9e7n_c0(editorContext, node));

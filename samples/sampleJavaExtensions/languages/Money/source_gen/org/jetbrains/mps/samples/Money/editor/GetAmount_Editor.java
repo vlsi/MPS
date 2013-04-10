@@ -16,6 +16,7 @@ public class GetAmount_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_abxd5r_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "amount");
     editorCell.setCellId("Constant_abxd5r_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

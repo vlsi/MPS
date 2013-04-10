@@ -45,6 +45,7 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_d8l4wt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_d8l4wt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_d8l4wt_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_d8l4wt_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_d8l4wt_c0(editorContext, node));
@@ -194,6 +195,7 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_d8l4wt_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ActionParameter_Hint(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

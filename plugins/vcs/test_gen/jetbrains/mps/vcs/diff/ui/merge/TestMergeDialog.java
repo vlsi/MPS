@@ -32,7 +32,9 @@ import java.lang.reflect.Field;
 import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class TestMergeDialog {
   private static EditorManager ourEditorManager = new EditorManager();
@@ -131,7 +133,9 @@ public class TestMergeDialog {
             try {
               ModelPersistence.saveModel(result, new FileDataSource(iFile));
             } catch (IOException ex) {
-              LOG.error("Cannot save model.", ex);
+              if (LOG.isEnabledFor(Priority.ERROR)) {
+                LOG.error("Cannot save model.", ex);
+              }
             }
           }
         });
@@ -143,5 +147,5 @@ public class TestMergeDialog {
     });
   }
 
-  private static Logger LOG = Logger.getLogger(TestMergeDialog.class);
+  protected static Logger LOG = LogManager.getLogger(TestMergeDialog.class);
 }

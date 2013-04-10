@@ -25,6 +25,7 @@ public class SimpleWord_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_word");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applySimpleWordStyle(style, editorCell);
     editorCell.getStyle().putAll(style);

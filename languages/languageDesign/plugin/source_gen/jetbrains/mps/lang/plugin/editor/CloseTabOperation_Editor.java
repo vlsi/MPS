@@ -26,6 +26,7 @@ public class CloseTabOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bu39ch_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bu39ch_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_bu39ch_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bu39ch_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bu39ch_c0(editorContext, node));

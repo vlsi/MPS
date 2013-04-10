@@ -21,6 +21,7 @@ public class CellModel_Indent_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_l8ulis_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "--->");
     editorCell.setCellId("Constant_l8ulis_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));

@@ -34,6 +34,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_58c6e4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_58c6e4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_58c6e4_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_58c6e4_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_58c6e4_c0(editorContext, node));
@@ -114,8 +115,8 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_58c6e4_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_58c6e4_b2a(EditorContext editorContext, SNode node) {
@@ -163,8 +164,8 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_58c6e4_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_58c6e4_e0(EditorContext editorContext, SNode node) {
@@ -194,8 +195,8 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_58c6e4_a5a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_58c6e4_b5a(EditorContext editorContext, SNode node) {
@@ -243,8 +244,8 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_58c6e4_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_58c6e4_h0(EditorContext editorContext, SNode node) {
@@ -274,8 +275,8 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_58c6e4_a8a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_58c6e4_b8a(EditorContext editorContext, SNode node) {

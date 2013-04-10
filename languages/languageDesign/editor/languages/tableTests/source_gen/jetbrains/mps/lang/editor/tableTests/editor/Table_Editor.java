@@ -34,6 +34,7 @@ public class Table_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3p37vj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3p37vj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_3p37vj_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3p37vj_b0(editorContext, node));
     editorCell.addEditorCell(this.createTable_3p37vj_c0(editorContext, node));

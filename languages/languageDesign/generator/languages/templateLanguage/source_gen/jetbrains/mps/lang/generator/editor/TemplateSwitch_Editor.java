@@ -36,6 +36,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_q42gqn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_q42gqn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_q42gqn_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_q42gqn_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_q42gqn_c0(editorContext, node));
@@ -166,8 +167,8 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_q42gqn_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_q42gqn_b2a(EditorContext editorContext, SNode node) {

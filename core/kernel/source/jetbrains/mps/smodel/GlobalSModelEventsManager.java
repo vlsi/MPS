@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -31,7 +34,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class GlobalSModelEventsManager implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(GlobalSModelEventsManager.class);
+  private static final Logger LOG = LogManager.getLogger(GlobalSModelEventsManager.class);
 
   public static GlobalSModelEventsManager getInstance() {
     return MPSCore.getInstance().getGlobalSModelEventsManager();

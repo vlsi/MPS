@@ -37,6 +37,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_th2ud5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_th2ud5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_th2ud5_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_th2ud5_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_th2ud5_c0(editorContext, node));
@@ -215,8 +216,8 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_th2ud5_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_th2ud5_b4a(EditorContext editorContext, SNode node) {

@@ -13,11 +13,13 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.java.util.JavaPaster;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class PasteAsJavaClass_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,7 +47,9 @@ public class PasteAsJavaClass_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "PasteAsJavaClass", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "PasteAsJavaClass", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -76,9 +80,11 @@ public class PasteAsJavaClass_Action extends BaseAction {
     try {
       new JavaPaster().pasteJavaAsClass(((SModel) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "PasteAsJavaClass", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "PasteAsJavaClass", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(PasteAsJavaClass_Action.class);
+  protected static Logger LOG = LogManager.getLogger(PasteAsJavaClass_Action.class);
 }

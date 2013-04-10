@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes2;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.project.ProjectHelper;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
@@ -28,7 +29,8 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -66,7 +68,9 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       if (fieldElement != null) {
         myJUnitSettings.readExternal(fieldElement);
       } else {
-        LOG.debug("Element " + "myJUnitSettings" + " in " + this.getClass().getName() + " was null.");
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("Element " + "myJUnitSettings" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
     {
@@ -74,7 +78,9 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       if (fieldElement != null) {
         myJavaRunParameters.readExternal(fieldElement);
       } else {
-        LOG.debug("Element " + "myJavaRunParameters" + " in " + this.getClass().getName() + " was null.");
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("Element " + "myJavaRunParameters" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
   }
@@ -164,7 +170,9 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       clone.myJavaRunParameters = (JavaRunParameters_Configuration) myJavaRunParameters.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -234,7 +242,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     return new Object[]{this.getTestsToMake()};
   }
 
-  private static Logger LOG = Logger.getLogger(JUnitTests_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(JUnitTests_Configuration.class);
 
   public static boolean isNotEmpty_p90f5h_a0a0t(String str) {
     return str != null && str.length() > 0;

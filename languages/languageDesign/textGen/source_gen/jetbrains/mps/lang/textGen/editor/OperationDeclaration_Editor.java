@@ -41,6 +41,7 @@ public class OperationDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hqj93g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hqj93g_a");
+    editorCell.setBig(true);
     if (renderingCondition_hqj93g_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_hqj93g_a0(editorContext, node));
     }

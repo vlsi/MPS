@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
@@ -24,7 +25,7 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 
 public class ConstraintsOperationContext extends StandaloneMPSContext {
-  protected static Logger LOG = Logger.getLogger(ConstraintsOperationContext.class);
+  protected static Logger LOG = LogManager.getLogger(ConstraintsOperationContext.class);
 
   // TODO: use module reference instead
   private final IModule module;
@@ -36,7 +37,7 @@ public class ConstraintsOperationContext extends StandaloneMPSContext {
 
   @Override
   public Project getProject() {
-    LOG.warning("Using getProject() from IOperationContext in constraints not working now");
+    LOG.warn("Using getProject() from IOperationContext in constraints not working now");
     return null;
   }
 

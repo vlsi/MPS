@@ -29,6 +29,7 @@ public class PositionChildrenStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1duzn9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1duzn9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_1duzn9_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1duzn9_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1duzn9_c0(editorContext, node));

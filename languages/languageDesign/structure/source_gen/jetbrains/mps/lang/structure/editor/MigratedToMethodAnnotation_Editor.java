@@ -34,6 +34,7 @@ public class MigratedToMethodAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ykmn9g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ykmn9g_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ykmn9g_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ykmn9g_b0(editorContext, node));
     return editorCell;

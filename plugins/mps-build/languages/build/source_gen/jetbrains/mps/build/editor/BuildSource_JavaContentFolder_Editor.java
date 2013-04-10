@@ -22,6 +22,7 @@ public class BuildSource_JavaContentFolder_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mj8zou_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mj8zou_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_mj8zou_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_mj8zou_b0(editorContext, node));
     return editorCell;

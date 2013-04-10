@@ -32,6 +32,7 @@ public class GroupingCommand_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ny89z6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ny89z6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_ny89z6_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ny89z6_b0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_ny89z6_c0(editorContext, node));

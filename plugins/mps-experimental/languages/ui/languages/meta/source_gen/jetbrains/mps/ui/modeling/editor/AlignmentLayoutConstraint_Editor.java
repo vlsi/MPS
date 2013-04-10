@@ -21,6 +21,7 @@ public class AlignmentLayoutConstraint_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cceuep_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cceuep_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cceuep_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cceuep_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cceuep_c0(editorContext, node));

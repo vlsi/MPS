@@ -26,6 +26,7 @@ public class CompositeWithParentScopeExpression_Editor extends DefaultNodeEditor
   private EditorCell createCollection_ayfre3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ayfre3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ayfre3_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ayfre3_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ayfre3_c0(editorContext, node));

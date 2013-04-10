@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.project.Project;
@@ -22,7 +23,8 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
 import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RemoveModuleFromProject_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -53,7 +55,9 @@ public class RemoveModuleFromProject_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RemoveModuleFromProject", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "RemoveModuleFromProject", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -105,9 +109,11 @@ public class RemoveModuleFromProject_Action extends BaseAction {
       ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeModule(module.getModuleReference());
       ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("mpsproject"))).update();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RemoveModuleFromProject", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "RemoveModuleFromProject", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(RemoveModuleFromProject_Action.class);
+  protected static Logger LOG = LogManager.getLogger(RemoveModuleFromProject_Action.class);
 }

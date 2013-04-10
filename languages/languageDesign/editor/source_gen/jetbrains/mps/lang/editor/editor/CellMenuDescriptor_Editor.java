@@ -31,6 +31,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g1wmr2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g1wmr2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_g1wmr2_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_g1wmr2_b0(editorContext, node));
     return editorCell;

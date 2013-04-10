@@ -18,7 +18,8 @@ package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Project;
@@ -36,7 +37,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CloneModelDialog extends BaseStretchingBindedDialog {
-  private static final Logger LOG = Logger.getLogger(CloneModelDialog.class);
+  private static final Logger LOG = LogManager.getLogger(CloneModelDialog.class);
 
   private CloneModelProperties myModelProperties;
   private SModel myCloningModel;

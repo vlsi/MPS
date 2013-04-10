@@ -24,6 +24,7 @@ public class BwfMacroListImport_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5bz59z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5bz59z_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5bz59z_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5bz59z_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5bz59z_c0(editorContext, node));

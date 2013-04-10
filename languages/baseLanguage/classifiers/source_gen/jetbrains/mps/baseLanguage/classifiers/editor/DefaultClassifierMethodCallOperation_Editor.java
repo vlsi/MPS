@@ -42,6 +42,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
   private EditorCell createCollection_c9gv4j_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c9gv4j_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new DefaultClassifierMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);

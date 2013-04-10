@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -31,7 +32,7 @@ import java.util.List;
  * Date: Nov 29, 2006
  */
 public abstract class AbstractCellMenuComponent {
-  private static final Logger LOG = Logger.getLogger(AbstractCellMenuComponent.class);
+  private static final Logger LOG = LogManager.getLogger(AbstractCellMenuComponent.class);
 
   /**
    * @deprecated starting from MPS 3.0 was replaced with <code>myExtParts</code> all usages should

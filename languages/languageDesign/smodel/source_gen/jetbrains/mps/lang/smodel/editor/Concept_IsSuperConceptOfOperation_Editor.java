@@ -25,6 +25,7 @@ public class Concept_IsSuperConceptOfOperation_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_o2pdqt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o2pdqt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_o2pdqt_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o2pdqt_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_o2pdqt_c0(editorContext, node));

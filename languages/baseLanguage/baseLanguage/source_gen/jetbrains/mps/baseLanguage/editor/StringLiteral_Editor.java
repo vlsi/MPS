@@ -25,6 +25,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fgt3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fgt3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_fgt3_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_fgt3_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fgt3_c0(editorContext, node));

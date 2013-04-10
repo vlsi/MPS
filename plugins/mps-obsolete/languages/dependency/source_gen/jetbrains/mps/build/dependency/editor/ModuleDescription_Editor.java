@@ -34,6 +34,7 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pt6dm6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_pt6dm6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_pt6dm6_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_pt6dm6_b0(editorContext, node));
     return editorCell;
@@ -85,8 +86,8 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_pt6dm6_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_pt6dm6_b1a(EditorContext editorContext, SNode node) {
@@ -129,8 +130,8 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_pt6dm6_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_pt6dm6_b1b1a(EditorContext editorContext, SNode node) {
@@ -200,8 +201,8 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_pt6dm6_a3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_pt6dm6_b3b1a(EditorContext editorContext, SNode node) {
@@ -241,8 +242,8 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_pt6dm6_a5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_pt6dm6_b5b1a(EditorContext editorContext, SNode node) {
@@ -311,8 +312,8 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_pt6dm6_a7b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createProperty_pt6dm6_b7b1a(EditorContext editorContext, SNode node) {
@@ -350,8 +351,8 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_pt6dm6_a9b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createProperty_pt6dm6_b9b1a(EditorContext editorContext, SNode node) {

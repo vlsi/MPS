@@ -50,6 +50,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_uj0cpq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uj0cpq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_uj0cpq_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_uj0cpq_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_uj0cpq_c0(editorContext, node));
@@ -1119,6 +1120,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_uj0cpq_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uj0cpq_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

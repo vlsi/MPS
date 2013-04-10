@@ -20,6 +20,7 @@ public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2fh3co_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2fh3co_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_2fh3co_a0(editorContext, node));
     return editorCell;
   }

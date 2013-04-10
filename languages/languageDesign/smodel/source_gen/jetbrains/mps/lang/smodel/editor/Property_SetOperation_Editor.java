@@ -25,6 +25,7 @@ public class Property_SetOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dskx8e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_dskx8e_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_dskx8e_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dskx8e_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_dskx8e_c0(editorContext, node));

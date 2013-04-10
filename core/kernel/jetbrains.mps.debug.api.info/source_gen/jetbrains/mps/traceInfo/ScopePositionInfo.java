@@ -13,9 +13,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
 import org.jetbrains.annotations.Nls;
+import org.apache.log4j.Priority;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ScopePositionInfo extends PositionInfo {
   private static String VAR_INFO = "varInfo";
@@ -57,7 +59,9 @@ public class ScopePositionInfo extends PositionInfo {
       MapSequence.fromMap(myTempNodeToVarMap).put(node, varInfo);
       SortedMapSequence.fromMap(myNamesToVars).put(varInfo.getVarName(), varInfo);
     } else {
-      LOG.warning("variable name is null for node " + node.getNodeId().toString());
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("variable name is null for node " + node.getNodeId().toString());
+      }
     }
   }
 
@@ -124,7 +128,7 @@ public class ScopePositionInfo extends PositionInfo {
     return id1.compareTo(id2);
   }
 
-  private static Logger LOG = Logger.getLogger(ScopePositionInfo.class);
+  protected static Logger LOG = LogManager.getLogger(ScopePositionInfo.class);
 
   private static String check_azb46d_a0a6(VarInfo checkedDotOperand) {
     if (null != checkedDotOperand) {

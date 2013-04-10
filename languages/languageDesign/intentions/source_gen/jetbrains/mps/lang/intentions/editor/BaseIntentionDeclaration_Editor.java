@@ -36,6 +36,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2ji0fa_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2ji0fa_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -193,8 +194,8 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_2ji0fa_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_2ji0fa_b1a(EditorContext editorContext, SNode node) {

@@ -24,6 +24,7 @@ public class InfoAppendPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o5le8o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o5le8o_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_o5le8o_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_o5le8o_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o5le8o_c0(editorContext, node));

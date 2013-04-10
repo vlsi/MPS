@@ -25,6 +25,7 @@ public class NonExistingPath_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hlyy47_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hlyy47_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_hlyy47_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hlyy47_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_hlyy47_c0(editorContext, node));

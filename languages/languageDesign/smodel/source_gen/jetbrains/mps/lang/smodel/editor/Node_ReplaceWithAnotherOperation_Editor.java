@@ -25,6 +25,7 @@ public class Node_ReplaceWithAnotherOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_h2b33p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h2b33p_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_h2b33p_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h2b33p_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_h2b33p_c0(editorContext, node));

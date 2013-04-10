@@ -32,6 +32,7 @@ public class State_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_sjqidp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_sjqidp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_sjqidp_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_sjqidp_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_sjqidp_c0(editorContext, node));

@@ -43,6 +43,7 @@ public class VarMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cubyf7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cubyf7_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cubyf7_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_cubyf7_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_cubyf7_c0(editorContext, node));
@@ -108,6 +109,7 @@ public class VarMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cubyf7_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cubyf7_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

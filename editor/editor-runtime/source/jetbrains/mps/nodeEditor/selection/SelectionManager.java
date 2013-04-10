@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -28,7 +29,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class SelectionManager {
-  private static final Logger LOG = Logger.getLogger(SelectionManager.class);
+  private static final Logger LOG = LogManager.getLogger(SelectionManager.class);
 
   private EditorComponent myEditorComponent;
   private Stack<Selection> mySelectionStack = new Stack<Selection>();

@@ -17,6 +17,7 @@ public class GeneratorInternal_BuildSource_SingleFile_Editor extends DefaultNode
   private EditorCell createCollection_1p6igx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1p6igx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_1p6igx_a0(editorContext, node));
     return editorCell;
   }

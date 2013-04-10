@@ -29,6 +29,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_416fys_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_416fys_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_416fys_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_416fys_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_416fys_c0(editorContext, node));

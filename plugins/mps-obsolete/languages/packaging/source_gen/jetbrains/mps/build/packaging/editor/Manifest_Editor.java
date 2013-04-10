@@ -29,6 +29,7 @@ public class Manifest_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qcnn3y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_qcnn3y_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_qcnn3y_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_qcnn3y_b0(editorContext, node));
     return editorCell;
@@ -57,8 +58,8 @@ public class Manifest_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qcnn3y_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_qcnn3y_b1a(EditorContext editorContext, SNode node) {

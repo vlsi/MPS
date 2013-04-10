@@ -24,6 +24,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
@@ -45,7 +46,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SModelRepository implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(SModelRepository.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SModelRepository.class));
 
   public static SModelRepository getInstance() {
     return MPSCore.getInstance().getModelRepository();

@@ -37,6 +37,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
   private EditorCell createCollection_38fsuu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_38fsuu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_38fsuu_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_38fsuu_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_38fsuu_c0(editorContext, node));

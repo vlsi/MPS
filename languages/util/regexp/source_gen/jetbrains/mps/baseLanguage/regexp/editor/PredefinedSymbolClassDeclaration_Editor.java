@@ -27,6 +27,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tdp2qu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tdp2qu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_tdp2qu_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_tdp2qu_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tdp2qu_c0(editorContext, node));

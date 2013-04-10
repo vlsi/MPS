@@ -28,6 +28,7 @@ public class PageOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_328ize_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_328ize_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_328ize_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_328ize_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_328ize_c0(editorContext, node));

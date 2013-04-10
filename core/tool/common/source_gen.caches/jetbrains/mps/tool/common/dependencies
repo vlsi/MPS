@@ -25,6 +25,7 @@
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.nio.charset.Charset" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.JDOMException" />

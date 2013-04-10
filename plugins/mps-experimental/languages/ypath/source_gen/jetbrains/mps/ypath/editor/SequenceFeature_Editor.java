@@ -51,6 +51,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_q0s13v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_q0s13v_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
