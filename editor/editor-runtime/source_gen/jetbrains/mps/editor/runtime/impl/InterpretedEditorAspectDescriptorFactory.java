@@ -96,6 +96,9 @@ public class InterpretedEditorAspectDescriptorFactory implements InterpretedLang
     }
 
     private EditorAspect loadSuperConceptEditor(SAbstractConcept superConcept) {
+      if (superConcept == null) {
+        return null;
+      }
       LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(superConcept.getQualifiedName()));
       if (languageRuntime == null) {
         return null;
