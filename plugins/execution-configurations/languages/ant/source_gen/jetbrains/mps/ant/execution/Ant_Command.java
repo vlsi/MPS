@@ -107,7 +107,7 @@ public class Ant_Command {
     List<File> classPath = ListSequence.fromList(new ArrayList<File>());
     for (File jarFile : antLibFile.listFiles()) {
       String jarFilePath = jarFile.getAbsolutePath();
-      if (jarFilePath.endsWith(".jar")) {
+      if (jarFilePath.endsWith(".jar") && !(jarFilePath.endsWith("mps.jar"))) {
         ListSequence.fromList(classPath).addElement(jarFile);
       }
     }
