@@ -19,6 +19,7 @@ package jetbrains.mps.idea.core.psi;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiFileSystemItem;
+import jetbrains.mps.util.Triplet;
 
 import java.util.List;
 import java.util.Map;
@@ -35,6 +36,19 @@ public interface PsiListener {
   public static interface PsiEvent {
     Iterable<PsiFileSystemItem> getCreated();
     Iterable<PsiFileSystemItem> getRemoved();
+    Iterable<FSMove> getMoved();
     Map<PsiFile,Set<PsiElement>> getChanged();
+  }
+
+  public static class FSMove {
+    public final PsiFileSystemItem moved;
+    public final PsiFileSystemItem from;
+    public final PsiFileSystemItem to;
+
+    public FSMove(PsiFileSystemItem moved, PsiFileSystemItem from, PsiFileSystemItem to) {
+      this.moved = moved;
+      this.from = from;
+      this.to = to;
+    }
   }
 }

@@ -22,6 +22,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.idea.core.psi.PsiListener.FSMove;
 import jetbrains.mps.idea.core.psi.PsiListener.PsiEvent;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.project.MPSProject;
@@ -159,37 +160,21 @@ public class PsiChangesWatcher implements ProjectComponent {
     }
 
     @Override
-    public void beforeChildMovement(PsiTreeChangeEvent event) {
+    public void childMoved(@NotNull PsiTreeChangeEvent event) {
       if (isFromMPSPsiProvider(event)) return;
 
-      queueElement(event.getOldParent(), event);
-      queueElement(event.getNewParent(), event);
+      PsiElement elem = event.getChild();
+      if (elem instanceof PsiFile) {
+        // file moved;
+        myCollectedData.moved.add(new FSMove((PsiFile) elem, (PsiFileSystemItem) event.getOldParent(), (PsiFileSystemItem) event.getNewParent()));
+      } else {
+        queueElement(event.getOldParent(), event);
+        queueElement(event.getNewParent(), event);
+      }
       reschedule();
     }
 
-    @Override
-    public void beforeChildrenChange(PsiTreeChangeEvent event) {
-      if (isFromMPSPsiProvider(event)) return;
-
-      // this event sent always before every PSI change, even not significant one (like after quick typing/backspacing char)
-      // mark file dirty just in case
-//      PsiFile psiFile = event.getFile();
-//      if (psiFile != null) {
-//        myFileStatusMap.markFileScopeDirtyDefensively(psiFile);
-//      }
-    }
-
-    @Override
-    public void propertyChanged(PsiTreeChangeEvent event) {
-      if (isFromMPSPsiProvider(event)) return;
-
-//      String propertyName = event.getPropertyName();
-//      if (!propertyName.equals(PsiTreeChangeEvent.PROP_WRITABLE)) {
-//        myFileStatusMap.markAllFilesDirty();
-//      }
-    }
-
-    private boolean isFromMPSPsiProvider (PsiTreeChangeEvent event) {
+    private boolean isFromMPSPsiProvider(PsiTreeChangeEvent event) {
       PsiElement parent = event.getParent();
       return (parent instanceof MPSPsiNodeBase);
     }
@@ -213,6 +198,7 @@ public class PsiChangesWatcher implements ProjectComponent {
   private static class PsiChangeData implements PsiEvent {
     Set<PsiFileSystemItem> created = new HashSet<PsiFileSystemItem>();
     Set<PsiFileSystemItem> removed = new HashSet<PsiFileSystemItem>();
+    Set<FSMove> moved = new HashSet<FSMove>();
     Map<PsiFile, Set<PsiElement>> changed = new HashMap<PsiFile, Set<PsiElement>>();
 
     @Override
@@ -223,6 +209,11 @@ public class PsiChangesWatcher implements ProjectComponent {
     @Override
     public Iterable<PsiFileSystemItem> getRemoved() {
       return removed;
+    }
+
+    @Override
+    public Iterable<FSMove> getMoved() {
+      return moved;
     }
 
     @Override

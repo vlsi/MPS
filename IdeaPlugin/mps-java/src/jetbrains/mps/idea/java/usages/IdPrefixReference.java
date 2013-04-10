@@ -34,6 +34,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Map;
@@ -123,9 +124,17 @@ public class IdPrefixReference implements PsiReference {
       String oldId = source.getReference(myRole).getTargetNodeId().toString();
       String newId = oldId.replaceFirst(oldNode.getNodeId().toString(), newNode.getNodeId().toString());
 
-      // let's see if this target is not already handled by normal SReference
-      if (myParent.getProject().getComponent(MoveRenameBatch.class).isHandledAsSReference(oldNode)) {
-        return;
+      SNode realTarget = source.getReference(myRole).getTargetNode();
+
+      // if realTarget is null for some reason we proceed: we have to patch this SReference anyway
+      if (realTarget != null) {
+        SModelReference modelRef = realTarget.getReference().getModelReference();
+        SNodeId nodeId = realTarget.getNodeId();
+        NodePtr nodePtr = new NodePtr(modelRef, nodeId);
+        // let's see if this target is not already handled by normal SReference
+        if (myParent.getProject().getComponent(MoveRenameBatch.class).isHandledAsSReference(nodePtr)) {
+          return;
+        }
       }
 
       source.setReference(myRole, StaticReference.create(myRole, source, newNode.getSModelReference(), new Foreign(newId)));
