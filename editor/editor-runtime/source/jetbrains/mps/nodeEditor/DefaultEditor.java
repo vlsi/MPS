@@ -37,6 +37,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptUtil;
@@ -69,7 +70,7 @@ public class DefaultEditor extends DefaultNodeEditor {
   private List<SLink> myChildren = new ArrayList<SLink>();
   private List<SLink> myReferences = new ArrayList<SLink>();
   private List<SProperty> myProperties = new ArrayList<SProperty>();
-  private SProperty myNameProperty;
+  private String myNameProperty;
   private EditorContext myEditorContext;
   private Stack<EditorCell_Collection> collectionStack = new Stack<EditorCell_Collection>();
   private BigInteger currentCollectionIdNumber = BigInteger.ZERO;
@@ -82,7 +83,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     mainCellCollection.setBig(true);
     addLabel(node.getConcept().getName());
     if (myNameProperty != null) {
-      addPropertyCell(myNameProperty.getName());
+      addPropertyCell(myNameProperty);
     }
     addReferences();
     if (!myProperties.isEmpty() || !myChildren.isEmpty()) {
@@ -105,7 +106,13 @@ public class DefaultEditor extends DefaultNodeEditor {
     myEditorContext = editorContext;
     mySNode = node;
     myAllSuperConcepts = SConceptUtil.getAllSuperConcepts(node.getConcept(), false);
-    myPropertyNames = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getPropertyNames();
+    String qualifiedName = node.getConcept().getQualifiedName();
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(qualifiedName);
+    ConceptDescriptor baseConceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor("jetbrains.mps.lang.core.structure.BaseConcept");
+    myPropertyNames = conceptDescriptor.getPropertyNames();
+    List<String> basePropertyNames = baseConceptDescriptor.getPropertyNames();
+    myPropertyNames.removeAll(basePropertyNames);
+
 
     for (SAbstractConcept concept : myAllSuperConcepts) {
       for (SLink link : concept.getLinks()) {
@@ -124,13 +131,13 @@ public class DefaultEditor extends DefaultNodeEditor {
   }
 
   private void cacheNameProperty() {
-    final Map<SProperty, Integer> priorityMap = new HashMap<SProperty, Integer>();
-    for (SProperty property : myProperties) {
-      SDataType type = property.getType();
-      if (!(type instanceof SPrimitiveDataType) || ((SPrimitiveDataType) type).getType() != SPrimitiveDataType.STRING) {
-        continue;
-      }
-      String name = property.getName();
+    final Map<String, Integer> priorityMap = new HashMap<String, Integer>();
+    for (String property : myPropertyNames) {
+      //SDataType type = property.getType();
+      //if (!(type instanceof SPrimitiveDataType) || ((SPrimitiveDataType) type).getType() != SPrimitiveDataType.STRING) {
+      //  continue;
+      //}
+      String name = property;
       int prio = name.equals("name") ? 10000 : 0;
       prio += name.toLowerCase().contains("identifier") ? 1700 : 0;
       prio += name.toLowerCase().contains("name") ? 1000 : 0;
@@ -140,16 +147,16 @@ public class DefaultEditor extends DefaultNodeEditor {
     if (priorityMap.isEmpty()) {
       return;
     }
-    ArrayList<SProperty> arrayList = new ArrayList<SProperty>(priorityMap.keySet());
-    Collections.sort(arrayList, new Comparator<SProperty>() {
+    ArrayList<String> arrayList = new ArrayList<String>(priorityMap.keySet());
+    Collections.sort(arrayList, new Comparator<String>() {
       @Override
-      public int compare(SProperty p1, SProperty p2) {
+      public int compare(String p1, String p2) {
         assert priorityMap.containsKey(p1) && priorityMap.containsKey(p2);
         return priorityMap.get(p2) - priorityMap.get(p1);
       }
     });
 
-    SProperty result = arrayList.get(0);
+    String result = arrayList.get(0);
     if (priorityMap.get(result) > 0) {
       myNameProperty = result;
     }
@@ -223,14 +230,14 @@ public class DefaultEditor extends DefaultNodeEditor {
 
   private void addProperties() {
 
-    for (SProperty property : myProperties) {
+    for (String property : myPropertyNames) {
       if (property == myNameProperty) {
         continue;
       }
-      String name = property.getName();
-      if (name == null || property.getType() == null) {
+      String name = property;
+      /*if (name == null || property.getType() == null) {
         continue;
-      }
+      } */
       addLabel(name);
       addLabel(":");
       addPropertyCell(name);
