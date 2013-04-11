@@ -64,6 +64,16 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
+  public List<String> getChildrenNames() {
+    return Collections.emptyList();
+  }
+
+  @Override
+  public boolean hasChildren(String name) {
+    return false;
+  }
+
+  @Override
   public List<String> getParentsNames() {
     return Collections.emptyList();
   }

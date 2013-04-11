@@ -36,6 +36,10 @@ public interface ConceptDescriptor {
 
   boolean hasReference(String name);
 
+  List<String> getChildrenNames();
+
+  boolean hasChildren(String name);
+
   // LanguageHierarchyCache replace
   List<String> getParentsNames();
 

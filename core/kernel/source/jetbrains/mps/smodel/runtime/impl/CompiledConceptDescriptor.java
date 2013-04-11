@@ -30,13 +30,15 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final Set<String> ancestors;
   private final List<String> propertyNames;
   private final List<String> referenceNames;
+  private final List<String> childNames;
 
   public CompiledConceptDescriptor(String conceptFqName,
-                                   @Nullable String superConcept,
-                                   boolean isInterfaceConcept,
-                                   String[] parents,
-                                   String[] ownPropertyNames,
-                                   String[] ownReferenceNames) {
+      @Nullable String superConcept,
+      boolean isInterfaceConcept,
+      String[] parents,
+      String[] ownPropertyNames,
+      String[] ownReferenceNames,
+      String[] ownChildNames) {
     this.conceptFqName = conceptFqName;
     this.superConcept = superConcept;
     this.isInterfaceConcept = isInterfaceConcept;
@@ -79,6 +81,16 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     }
 
     referenceNames = new ArrayList<String>(references);
+
+    //children
+    LinkedHashSet<String> children = new LinkedHashSet<String>();
+    references.addAll(Arrays.asList(ownChildNames));
+
+    for (ConceptDescriptor parentDescriptor : parentDescriptors) {
+      references.addAll(parentDescriptor.getChildrenNames());
+    }
+
+    childNames = new ArrayList<String>(children);
   }
 
   @Override
@@ -104,6 +116,11 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public List<String> getReferenceNames() {
     return referenceNames;
+  }
+
+  @Override
+  public List<String> getChildrenNames() {
+    return childNames;
   }
 
   @Override

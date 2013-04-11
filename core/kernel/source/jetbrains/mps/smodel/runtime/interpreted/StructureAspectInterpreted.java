@@ -18,7 +18,15 @@ package jetbrains.mps.smodel.runtime.interpreted;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -116,12 +124,14 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     private Set<String> ancestors;
     private List<String> propertyNames;
     private List<String> referenceNames;
+    private List<String> childrenNames;
 
     InterpretedConceptDescriptor(final String fqName) {
       this.fqName = fqName;
 
       final List<String> directProperties = new ArrayList<String>();
       final List<String> directReferences = new ArrayList<String>();
+      final List<String> directChildren = new ArrayList<String>();
 
       NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
         @Override
@@ -179,12 +189,14 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
             }
           }
 
-          // direct references
+          // direct references and children
           for (SNode link : SNodeUtil.getConcept_LinkDeclarations(declaration)) {
-            if (SNodeUtil.getLinkDeclaration_IsReference(link)) {
-              String role = SModelUtil.getLinkDeclarationRole(link);
-              if (role != null) {
+            String role = SModelUtil.getLinkDeclarationRole(link);
+            if (role != null) {
+              if (SNodeUtil.getLinkDeclaration_IsReference(link)) {
                 directReferences.add(role);
+              } else {
+                directChildren.add(role);
               }
             }
           }
@@ -227,6 +239,16 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
         }
 
         referenceNames = new ArrayList<String>(references);
+
+        // children
+        LinkedHashSet<String> children = new LinkedHashSet<String>();
+        children.addAll(directChildren);
+
+        for (ConceptDescriptor parentDescriptor : parentDescriptors) {
+          children.addAll(parentDescriptor.getChildrenNames());
+        }
+
+        childrenNames = new ArrayList<String>(children);
       }
     }
 
@@ -253,6 +275,11 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     @Override
     public List<String> getReferenceNames() {
       return referenceNames;
+    }
+
+    @Override
+    public List<String> getChildrenNames() {
+      return childrenNames;
     }
 
     @Override

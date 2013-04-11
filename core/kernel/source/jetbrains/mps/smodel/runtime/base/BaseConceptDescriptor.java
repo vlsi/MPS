@@ -23,6 +23,7 @@ import java.util.Set;
 public abstract class BaseConceptDescriptor implements ConceptDescriptor {
   private Set<String> propertyNamesSet;
   private Set<String> referenceNamesSet;
+  private Set<String> childrenNamesSet;
 
   @Override
   public boolean isAssignableTo(String toConceptFqName) {
@@ -43,5 +44,13 @@ public abstract class BaseConceptDescriptor implements ConceptDescriptor {
       referenceNamesSet = new HashSet<String>(getReferenceNames());
     }
     return referenceNamesSet.contains(name);
+  }
+
+  @Override
+  public boolean hasChildren(String name) {
+    if (childrenNamesSet == null) {
+      childrenNamesSet = new HashSet<String>(getReferenceNames());
+    }
+    return childrenNamesSet.contains(name);
   }
 }
