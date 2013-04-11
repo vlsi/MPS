@@ -4,6 +4,8 @@ package jetbrains.mps.debugger.core.breakpoints;
 
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.nodeEditor.LeftMarginMouseListener;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
@@ -46,6 +48,9 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   public void init() {
     myMessageBusConnection = myProject.getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, myEditorComponentCreationHandler);
+
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+
     for (EditorComponent editor : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
       editorComponentCreated(editor);
     }

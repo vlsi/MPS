@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collection;
 
 /**
- * <code>String -> Collection<SNodeDescriptor></code>
+ * {@code String -> Collection<SNodeDescriptor>}
  * User: fyodor
  * Date: 3/29/13
  */
@@ -54,15 +54,15 @@ public class MPSJavaMethodIndex extends AbstractMPSModelFileIndex {
     return 1;
   }
 
-  private static class MyIndexer extends  SNodeDescriptorsIndexer {
+  private static class MyIndexer extends SNodeDescriptorIndexer {
     @Override
-    protected Iterable<SNode> getNodesToIndex(SModel sModel) {
+    protected Iterable<SNode> getObjectsToIndex(SModel sModel) {
       return getJavaMethods(sModel);
     }
 
     @Override
-    protected String getKey(SModel model, String nodeName) {
-      return nodeName;
+    protected String[] getKeys(SModel model, SNode node) {
+      return new String[] {getSNodeName(node)};
     }
   }
 }

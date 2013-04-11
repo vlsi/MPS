@@ -90,6 +90,9 @@
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSShortNameJavaClassIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaMethodIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaFieldIndex"/>
+    <fileBasedIndex implementation="jetbrains.mps.idea.java.index.ForeignIdReferenceIndex"/>
+    <projectService serviceInterface="jetbrains.mps.idea.java.psi.ForeignIdReferenceCache"
+                    serviceImplementation="jetbrains.mps.idea.java.psi.impl.ForeignIdReferenceCacheImpl"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">

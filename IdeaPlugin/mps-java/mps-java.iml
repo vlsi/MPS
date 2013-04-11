@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/sourceStubs/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/testSrc" isTestSource="true" />
     </content>
     <content url="file://$MODULE_DIR$/../solutions/jetbrains.mps.idea.java.psiStubs">
       <sourceFolder url="file://$MODULE_DIR$/../solutions/jetbrains.mps.idea.java.psiStubs/source_gen" isTestSource="false" />

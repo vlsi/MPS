@@ -32,7 +32,6 @@
       <modulePath path="${project}/build/solution/jetbrains.mps.ide.build.msd" folder="build" />
       <modulePath path="${project}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" folder="core.analyzers" />
       <modulePath path="${project}/core/analyzers/solutions/sandbox/jetbrains.mps.lang.dataFlow.analyzers.sandbox.msd" folder="core.analyzers" />
-      <modulePath path="${project}/core/dependencies/jetbrains.mps.dependencies.msd" folder="core" />
       <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" folder="devkits" />
       <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" folder="devkits" />
       <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.language-design.devkit" folder="devkits" />
