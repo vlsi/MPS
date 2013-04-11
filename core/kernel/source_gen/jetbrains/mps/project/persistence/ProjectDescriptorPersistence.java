@@ -42,7 +42,7 @@ public class ProjectDescriptorPersistence {
         return macroHelper.shrinkPath(p.getPath());
       }
     }, true)) {
-      //TODO: move from MacrosFactory to PathMacroUtil
+      // TODO: move from MacrosFactory to PathMacroUtil 
       XmlUtil.tagWithAttributes(projectModules, "modulePath", "path", macroHelper.shrinkPath(path.getPath()).replace("${project}", "$PROJECT_DIR$"), "folder", (path.getMPSFolder() != null ?
         path.getMPSFolder() :
         ""

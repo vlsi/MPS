@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.editor;
 
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsListener;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
@@ -208,6 +209,8 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
        style = new StyleImpl();
 
       TextAttributes textAttributes = ourColorsScheme.getAttributes(TextAttributesKey.find(key));
+      if(textAttributes == null)
+        textAttributes = new TextAttributes();
       style.set(StyleAttributes.TEXT_COLOR, textAttributes.getForegroundColor());
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, textAttributes.getBackgroundColor());
       style.set(StyleAttributes.FONT_STYLE, textAttributes.getFontType());
@@ -250,19 +253,37 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
       addIdeaMappingsExt("NOT_USED_ELEMENT","NOT_USED_ELEMENT_ATTRIBUTES");
       addIdeaMappingsExt("TODO","TODO_DEFAULT_ATTRIBUTES");
 
-      addIdeaMappingsExt("DOC_COMMENT","DEFAULT_DOC_COMMENT");
-      addIdeaMappingsExt("DOC_TAG","JAVA_DOC_TAG");
-      addIdeaMappingsExt("KEYWORD","DEFAULT_KEYWORD");
-      addIdeaMappingsExt("LINE_COMMENT","DEFAULT_LINE_COMMENT");
-      addIdeaMappingsExt("BLOCK_COMMENT","DEFAULT_BLOCK_COMMENT");
-      addIdeaMappingsExt("NUMBER","DEFAULT_NUMBER");
-      addIdeaMappingsExt("STRING","DEFAULT_STRING");
-      addIdeaMappingsExt("OPERATION_SIGN","DEFAULT_OPERATION_SIGN");
-      addIdeaMappingsExt("PARENTH","DEFAULT_PARENTHS");
-      addIdeaMappingsExt("BRACKETS","DEFAULT_BRACKETS");
-      addIdeaMappingsExt("BRACES","DEFAULT_BRACES");
-      addIdeaMappingsExt("SEMICOLON","DEFAULT_SEMICOLON");
-      addIdeaMappingsExt("DOT","DEFAULT_DOT");
+      if(ApplicationInfo.getInstance().getFullVersion().equals("3.0")
+          || ApplicationInfo.getInstance().getFullVersion().contains("12.1"))
+      {
+        addIdeaMappingsExt("DOC_COMMENT","DEFAULT_DOC_COMMENT");
+        addIdeaMappingsExt("DOC_TAG","JAVA_DOC_TAG");
+        addIdeaMappingsExt("KEYWORD","DEFAULT_KEYWORD");
+        addIdeaMappingsExt("LINE_COMMENT","DEFAULT_LINE_COMMENT");
+        addIdeaMappingsExt("BLOCK_COMMENT","DEFAULT_BLOCK_COMMENT");
+        addIdeaMappingsExt("NUMBER","DEFAULT_NUMBER");
+        addIdeaMappingsExt("STRING","DEFAULT_STRING");
+        addIdeaMappingsExt("OPERATION_SIGN","DEFAULT_OPERATION_SIGN");
+        addIdeaMappingsExt("PARENTH","DEFAULT_PARENTHS");
+        addIdeaMappingsExt("BRACKETS","DEFAULT_BRACKETS");
+        addIdeaMappingsExt("BRACES","DEFAULT_BRACES");
+        addIdeaMappingsExt("SEMICOLON","DEFAULT_SEMICOLON");
+        addIdeaMappingsExt("DOT","DEFAULT_DOT");
+      } else if(ApplicationInfo.getInstance().getFullVersion().contains("12.0")) {
+      /*For compatibility with IDEA 12.0x */
+        addIdeaMappingsExt("DOC_COMMENT","JAVA_DOC_COMMENT");
+        addIdeaMappingsExt("KEYWORD","JAVA_KEYWORD");
+        addIdeaMappingsExt("LINE_COMMENT","JAVA_LINE_COMMENT");
+        addIdeaMappingsExt("BLOCK_COMMENT","JAVA_BLOCK_COMMENT");
+        addIdeaMappingsExt("NUMBER","JAVA_NUMBER");
+        addIdeaMappingsExt("STRING","JAVA_STRING");
+        addIdeaMappingsExt("OPERATION_SIGN","JAVA_OPERATION_SIGN");
+        addIdeaMappingsExt("PARENTH","JAVA_PARENTH");
+        addIdeaMappingsExt("BRACKETS","JAVA_BRACKETS");
+        addIdeaMappingsExt("BRACES","JAVA_BRACES");
+        addIdeaMappingsExt("SEMICOLON","JAVA_SEMICOLON");
+        addIdeaMappingsExt("DOT","JAVA_DOT");
+      }
 
       addIdeaMappingsExt("BREAKPOINT","BREAKPOINT_ATTRIBUTES");
       addIdeaMappingsExt("EXECUTIONPOINT","EXECUTIONPOINT_ATTRIBUTES");
