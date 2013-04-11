@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-
 /**
  * User: shatalin
  * Date: 4/8/13
  */
 public interface LanguageAspectDescriptor {
-  ConceptAspect getAspect(SAbstractConcept concept);
+  ConceptAspect getAspect(ConceptDescriptor concept);
 }

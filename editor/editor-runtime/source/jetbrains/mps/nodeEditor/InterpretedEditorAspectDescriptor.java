@@ -22,9 +22,10 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -49,21 +50,21 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
   }
 
   @Override
-  public EditorAspect getAspect(SAbstractConcept abstractConcept) {
+  public EditorAspect getAspect(ConceptDescriptor abstractConcept) {
     // TODO: check (assert) if passed concept is a part of associated language
-    String conceptFQName = abstractConcept.getQualifiedName();
+    String conceptFQName = abstractConcept.getConceptFqName();
     if (!myEditorAspects.containsKey(conceptFQName)) {
       myEditorAspects.put(conceptFQName, loadEditor(abstractConcept));
     }
     return myEditorAspects.get(conceptFQName);
   }
 
-  private EditorAspect loadEditor(SAbstractConcept concept) {
+  private EditorAspect loadEditor(ConceptDescriptor concept) {
     Language language = ModuleRepositoryFacade.getInstance().getModule(myLanguageRuntime.getNamespace(), Language.class);
     if (language == null) {
       return null;
     }
-    String editorClassName = language.getModuleName() + "." + LanguageAspect.EDITOR.getName() + "." + concept.getName() + "_Editor";
+    String editorClassName = NameUtil.getAspectNodeFqName(concept.getConceptFqName(), LanguageAspect.EDITOR) + "_Editor";
     Class<? extends EditorAspect> editorClass = ClassLoaderManager.getInstance().getClass(language, editorClassName);
     if (editorClass == null) {
       return null;

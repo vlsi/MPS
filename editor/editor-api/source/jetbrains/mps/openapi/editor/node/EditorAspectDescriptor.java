@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.openapi.editor.node;
 
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
  * User: shatalin
@@ -24,5 +24,5 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  */
 public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
   @Override
-  EditorAspect getAspect(SAbstractConcept concept);
+  EditorAspect getAspect(ConceptDescriptor concept);
 }

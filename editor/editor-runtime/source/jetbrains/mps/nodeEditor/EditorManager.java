@@ -22,6 +22,8 @@ import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
@@ -626,68 +628,50 @@ public class EditorManager {
 
   private EditorAspect getEditor(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
     SConcept concept = node.getConcept();
+    boolean isInterface = false;
     if (concept != null) {
-      EditorAspect editorAspect = getActiveEditorAspect(concept);
+      ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(concept.getQualifiedName());
+      EditorAspect editorAspect = getActiveEditorAspect(conceptDescriptor);
       if (editorAspect != null) {
         return editorAspect;
       }
+      isInterface = conceptDescriptor.isInterfaceConcept();
     }
 
-    return isInterface(concept) ? new DefaultInterfaceEditor() : new DefaultNodeEditor();
+    return isInterface ? new DefaultInterfaceEditor() : new DefaultNodeEditor();
   }
 
-  private boolean isInterface(SAbstractConcept abstractConcept) {
-    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(abstractConcept.getQualifiedName()));
-    if (languageRuntime == null) {
-      return false;
-    }
-    ConceptDescriptor conceptDescriptor = languageRuntime.getStructureAspectDescriptor().getDescriptor(abstractConcept.getQualifiedName());
-    return conceptDescriptor != null && conceptDescriptor.isInterfaceConcept();
-  }
-
-  private EditorAspect getActiveEditorAspect(SAbstractConcept abstractConcept) {
-    Queue<SAbstractConcept> queue = new LinkedList<SAbstractConcept>();
-    Set<SAbstractConcept> processedConcepts = new HashSet<SAbstractConcept>();
-    queue.add(abstractConcept);
-    processedConcepts.add(abstractConcept);
+  private EditorAspect getActiveEditorAspect(ConceptDescriptor conceptDescriptor) {
+    Queue<ConceptDescriptor> queue = new LinkedList<ConceptDescriptor>();
+    Set<String> processedConcepts = new HashSet<String>();
+    queue.add(conceptDescriptor);
+    processedConcepts.add(conceptDescriptor.getConceptFqName());
     while (!queue.isEmpty()) {
-      SAbstractConcept nextConcept = queue.remove();
+      ConceptDescriptor nextConcept = queue.remove();
       EditorAspect editorAspect = getEditorAspect(nextConcept);
       if (editorAspect != null) {
         return editorAspect;
       }
-      if (nextConcept instanceof SInterfaceConcept) {
-        for (SInterfaceConcept superInterface : ((SInterfaceConcept) nextConcept).getSuperInterfaces()) {
-          if (processedConcepts.contains(superInterface)) {
-            continue;
-          }
-          queue.add(superInterface);
-          processedConcepts.add(superInterface);
+      String superConceptName = nextConcept.getSuperConcept();
+      if (superConceptName != null) {
+        if (!processedConcepts.contains(superConceptName)) {
+          processedConcepts.add(superConceptName);
+          queue.add(ConceptRegistry.getInstance().getConceptDescriptor(superConceptName));
         }
-      } else {
-        SConcept concept = (SConcept) nextConcept;
-        SConcept superConcept = concept.getSuperConcept();
-        if (superConcept != null && !processedConcepts.contains(superConcept)) {
-          queue.add(superConcept);
-          processedConcepts.add(superConcept);
+      }
+      for (String ancestorName : nextConcept.getAncestorsNames()) {
+        if (processedConcepts.contains(ancestorName)) {
+          continue;
         }
-        for (SInterfaceConcept superInterface : concept.getSuperInterfaces()) {
-          if (processedConcepts.contains(superInterface)) {
-            continue;
-          }
-          queue.add(superInterface);
-          processedConcepts.add(superInterface);
-        }
+        processedConcepts.add(ancestorName);
+        queue.add(ConceptRegistry.getInstance().getConceptDescriptor(ancestorName));
       }
     }
     return null;
   }
 
-  private EditorAspect getEditorAspect(SAbstractConcept abstractConcept) {
-    if (abstractConcept == null) {
-      return null;
-    }
-    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(abstractConcept.getQualifiedName()));
+  private EditorAspect getEditorAspect(ConceptDescriptor conceptDescriptor) {
+    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(conceptDescriptor.getConceptFqName()));
     if (languageRuntime == null) {
       return null;
     }
@@ -695,7 +679,7 @@ public class EditorManager {
     if (aspectDescriptor == null) {
       return null;
     }
-    return aspectDescriptor.getAspect(abstractConcept);
+    return aspectDescriptor.getAspect(conceptDescriptor);
   }
 
   private EditorComponent getEditorComponent(jetbrains.mps.openapi.editor.EditorContext context) {
