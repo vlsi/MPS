@@ -32,6 +32,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_p0t1np_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_p0t1np_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_p0t1np_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_p0t1np_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_p0t1np_c0(editorContext, node));
@@ -230,6 +231,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_p0t1np_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_p0t1np_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, false);
     editorCell.getStyle().putAll(style);

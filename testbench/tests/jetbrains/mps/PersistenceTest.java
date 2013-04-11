@@ -19,7 +19,8 @@ import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -50,7 +51,7 @@ public class PersistenceTest extends BaseMPSTest {
   private final static File tempDir = new File(PathManager.getHomePath(), "TEST_PERSISTENCE");
   private final static int START_PERSISTENCE_TEST_VERSION = 7;
 
-  private static Logger LOG = Logger.getLogger(PersistenceTest.class);
+  private static Logger LOG = LogManager.getLogger(PersistenceTest.class);
 
   private TestOutputFilter filter = new TestOutputFilter() {
     @Override

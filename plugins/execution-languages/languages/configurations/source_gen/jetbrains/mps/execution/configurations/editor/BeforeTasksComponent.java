@@ -53,8 +53,8 @@ public class BeforeTasksComponent extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_3w3ux3_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_3w3ux3_b0(EditorContext editorContext, SNode node) {
@@ -87,8 +87,8 @@ public class BeforeTasksComponent extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_3w3ux3_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_3w3ux3_b1b0(EditorContext editorContext, SNode node) {

@@ -22,6 +22,7 @@ public class ActionConstructorParameterReferenceOperation_Editor extends Default
   private EditorCell createCollection_mohbt1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mohbt1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_mohbt1_a0(editorContext, node));
     return editorCell;
   }

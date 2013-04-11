@@ -8,8 +8,10 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToFile_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,7 +33,9 @@ public class GoToFile_Action extends BaseAction {
     try {
       GoToFile_Action.this.action.update(event);
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToFile", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToFile", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -48,7 +52,9 @@ public class GoToFile_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.file");
       GoToFile_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToFile", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToFile", t);
+      }
     }
   }
 
@@ -66,5 +72,5 @@ public class GoToFile_Action extends BaseAction {
     return "";
   }
 
-  private static Logger LOG = Logger.getLogger(GoToFile_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToFile_Action.class);
 }

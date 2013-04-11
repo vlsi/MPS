@@ -22,10 +22,12 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ConstraintsChecker extends AbstractConstraintsChecker {
   public ConstraintsChecker() {
@@ -88,7 +90,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       component.addDependency(child);
       final SNode childConcept = SNodeOperations.getConceptDeclaration(child);
       final SNode childLink = SNodeOperations.getContainingLinkDeclaration(child);
-      if (childLink == null) {
+      if (childConcept == null || childLink == null) {
         continue;
       }
       boolean canBeParent = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
@@ -124,7 +126,9 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       final PropertySupport ps = PropertySupport.getPropertySupport(p);
       final String propertyName = SPropertyOperations.getString(p, "name");
       if (propertyName == null) {
-        LOG.error("Property declaration has a null name, declaration id: " + p.getNodeId() + ", model: " + SNodeOperations.getModel(p).getReference().getModelName());
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Property declaration has a null name, declaration id: " + p.getNodeId() + ", model: " + SNodeOperations.getModel(p).getReference().getModelName());
+        }
         continue;
       }
       final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, propertyName));
@@ -145,5 +149,5 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ConstraintsChecker.class);
+  protected static Logger LOG = LogManager.getLogger(ConstraintsChecker.class);
 }

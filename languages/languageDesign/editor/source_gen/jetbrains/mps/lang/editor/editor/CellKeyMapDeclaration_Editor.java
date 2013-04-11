@@ -45,6 +45,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_zabbeg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_zabbeg_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_zabbeg_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zabbeg_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_zabbeg_c0(editorContext, node));

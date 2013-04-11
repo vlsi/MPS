@@ -37,6 +37,7 @@ public class PropertyChangeHandlerSetup_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mum76i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_mum76i_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_mum76i_a0(editorContext, node));
     return editorCell;
   }
@@ -140,8 +141,8 @@ public class PropertyChangeHandlerSetup_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_mum76i_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_mum76i_b1a0(EditorContext editorContext, SNode node) {

@@ -61,8 +61,8 @@ public class PersistentPropertiesComponent extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_42zii1_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_42zii1_b0a(EditorContext editorContext, SNode node) {
@@ -100,8 +100,8 @@ public class PersistentPropertiesComponent extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_42zii1_a1b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_42zii1_b1b0a(EditorContext editorContext, SNode node) {
@@ -170,8 +170,8 @@ public class PersistentPropertiesComponent extends AbstractCellProvider {
   }
 
   private EditorCell createIndentCell_42zii1_a3b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_42zii1_b3b0a(EditorContext editorContext, SNode node) {

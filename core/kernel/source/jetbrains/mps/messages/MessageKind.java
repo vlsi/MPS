@@ -15,9 +15,29 @@
  */
 package jetbrains.mps.messages;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Priority;
+import org.jetbrains.annotations.Nullable;
+
 /**
  * @author Kostik
  */
 public enum MessageKind {
-  INFORMATION, WARNING, ERROR
+  INFORMATION, WARNING, ERROR;
+
+  @Nullable
+  public static MessageKind fromPriority(Priority level) {
+    if (level.equals(Level.FATAL)) {
+      return MessageKind.ERROR;
+    } else if (level.equals(Level.ERROR)) {
+      return MessageKind.ERROR;
+    } else if (level.equals(Level.WARN)) {
+      return MessageKind.WARNING;
+    } else if (level.equals(Level.INFO)) {
+      return MessageKind.INFORMATION;
+    } else if (level.equals(Level.DEBUG)) {
+      return MessageKind.INFORMATION;
+    }
+    return null;
+  }
 }

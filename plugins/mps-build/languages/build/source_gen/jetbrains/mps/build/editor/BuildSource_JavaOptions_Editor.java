@@ -39,6 +39,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nphvgz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_nphvgz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_nphvgz_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_nphvgz_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_nphvgz_c0(editorContext, node));

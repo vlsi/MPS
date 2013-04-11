@@ -49,6 +49,7 @@ import jetbrains.mps.newTypesystem.state.blocks.TargetBlock;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -67,7 +68,7 @@ import java.util.Set;
 import java.util.Stack;
 
 public class State {
-  private static final Logger LOG = Logger.getLogger(State.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(State.class));
 
   private final TypeCheckingContext myTypeCheckingContext;
 
@@ -293,7 +294,7 @@ public class State {
       if (!myOperationStack.empty()) {
         myOperationStack.pop();
       } else {
-        LOG.warning("Operation stack in type system state was empty");
+       LOG.warning("Operation stack in type system state was empty");
       }
     } else {
       operation.execute(this);   //do not store unneeded operations

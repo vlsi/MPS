@@ -25,6 +25,7 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_egantk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egantk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_egantk_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_egantk_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_egantk_c0(editorContext, node));

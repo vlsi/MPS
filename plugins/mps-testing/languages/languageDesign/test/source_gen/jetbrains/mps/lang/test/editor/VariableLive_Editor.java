@@ -24,6 +24,7 @@ public class VariableLive_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nbf2a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nbf2a_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_nbf2a_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_nbf2a_b0(editorContext, node));
     return editorCell;

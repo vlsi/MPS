@@ -21,6 +21,7 @@ public class RedirectOutputExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yjbghn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yjbghn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_yjbghn_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yjbghn_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_yjbghn_c0(editorContext, node));

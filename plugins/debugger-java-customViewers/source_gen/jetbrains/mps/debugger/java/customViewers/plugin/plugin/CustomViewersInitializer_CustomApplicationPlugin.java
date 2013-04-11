@@ -8,7 +8,9 @@ import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private List<ValueWrapperFactory> myFactories = ListSequence.fromList(new ArrayList<ValueWrapperFactory>());
@@ -59,10 +61,12 @@ public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustom
         manager.removeFactory(factory);
       }
     } else if (ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).isNotEmpty()) {
-      LOG.error("Cant find custom viewers manager while myFactories nonempty: " + CustomViewersInitializer_CustomApplicationPlugin.this.myFactories);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Cant find custom viewers manager while myFactories nonempty: " + CustomViewersInitializer_CustomApplicationPlugin.this.myFactories);
+      }
     }
     ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).clear();
   }
 
-  private static Logger LOG = Logger.getLogger(CustomViewersInitializer_CustomApplicationPlugin.class);
+  protected static Logger LOG = LogManager.getLogger(CustomViewersInitializer_CustomApplicationPlugin.class);
 }

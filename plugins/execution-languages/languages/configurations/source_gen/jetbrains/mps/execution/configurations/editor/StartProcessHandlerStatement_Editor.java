@@ -31,6 +31,7 @@ public class StartProcessHandlerStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iy02al_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_iy02al_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_iy02al_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_iy02al_b0(editorContext, node));
     if (renderingCondition_iy02al_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -90,6 +91,7 @@ public class StartProcessHandlerStatement_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_iy02al_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new StartProcessWithTool_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

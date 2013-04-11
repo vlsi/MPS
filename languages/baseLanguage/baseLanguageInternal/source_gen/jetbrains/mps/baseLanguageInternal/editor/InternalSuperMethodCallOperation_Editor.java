@@ -35,6 +35,7 @@ public class InternalSuperMethodCallOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g9u4sx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_g9u4sx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_g9u4sx_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_g9u4sx_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g9u4sx_c0(editorContext, node));

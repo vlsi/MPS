@@ -21,12 +21,14 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.log4j.Priority;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class BreakpointCreatorsManager implements ApplicationComponent {
   private Set<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myCreators = SetSequence.fromSet(new LinkedHashSet<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>());
@@ -84,7 +86,9 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
       if (creator._0().invoke(concept)) {
         _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project> function = creator._1();
         if (function == null) {
-          LOG.warning("Could not create breakpoint for node " + node);
+          if (LOG.isEnabledFor(Priority.WARN)) {
+            LOG.warn("Could not create breakpoint for node " + node);
+          }
           return null;
         }
         return function.invoke(node, project);
@@ -129,5 +133,5 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(BreakpointCreatorsManager.class);
   }
 
-  private static Logger LOG = Logger.getLogger(BreakpointCreatorsManager.class);
+  protected static Logger LOG = LogManager.getLogger(BreakpointCreatorsManager.class);
 }

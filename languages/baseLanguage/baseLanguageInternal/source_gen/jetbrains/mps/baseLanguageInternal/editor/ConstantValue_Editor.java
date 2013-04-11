@@ -29,6 +29,7 @@ public class ConstantValue_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_si17nj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_si17nj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_si17nj_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_si17nj_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_si17nj_c0(editorContext, node));

@@ -35,6 +35,7 @@ public class InputNode_B_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9tg0f2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_9tg0f2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_9tg0f2_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9tg0f2_b0(editorContext, node));
     return editorCell;

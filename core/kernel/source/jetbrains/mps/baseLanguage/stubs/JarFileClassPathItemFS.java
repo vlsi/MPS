@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.baseLanguage.stubs;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -32,7 +33,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class JarFileClassPathItemFS extends RealClassPathItemFS {
-  private static final Logger LOG = Logger.getLogger(JarFileClassPathItemFS.class);
+  private static final Logger LOG = LogManager.getLogger(JarFileClassPathItemFS.class);
 
   private String myPrefix;
   private IFile myFile;

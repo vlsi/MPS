@@ -182,7 +182,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
     <classNode dependClassName="jetbrains.mps.ypath.behavior.IFeature_Behavior" />
     <classNode dependClassName="jetbrains.mps.ypath.design.IFeatureDesign" />
@@ -190,6 +189,8 @@
     <classNode dependClassName="jetbrains.mps.ypath.design.IGenericParameterizedFeatureDesign" />
     <classNode dependClassName="jetbrains.mps.ypath.design.IParameterizedFeatureDesign" />
     <classNode dependClassName="jetbrains.mps.ypath.pluginSolution.plugin.DesignPartLoader" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.behavior.FromOperation_BehaviorDescriptor" file="FromOperation_BehaviorDescriptor.java">

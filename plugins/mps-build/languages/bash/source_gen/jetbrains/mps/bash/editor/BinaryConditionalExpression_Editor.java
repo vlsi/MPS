@@ -29,6 +29,7 @@ public class BinaryConditionalExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_zhxmnr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zhxmnr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_zhxmnr_a0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_zhxmnr_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_zhxmnr_c0(editorContext, node));

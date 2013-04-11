@@ -18,7 +18,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ClassifierScopes {
   private ClassifierScopes() {
@@ -156,5 +157,5 @@ public class ClassifierScopes {
     };
   }
 
-  private static Logger LOG = Logger.getLogger(ClassifierScopes.class);
+  protected static Logger LOG = LogManager.getLogger(ClassifierScopes.class);
 }

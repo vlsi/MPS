@@ -16,7 +16,8 @@
 package jetbrains.mps.smodel.nodeidmap;
 
 import gnu.trove.TLongObjectHashMap;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Regular;
@@ -24,7 +25,7 @@ import jetbrains.mps.smodel.SNodeId.Regular;
 import java.util.Arrays;
 
 public class RegularNodeIdMap implements INodeIdToNodeMap {
-  private static Logger LOG = Logger.getLogger(RegularNodeIdMap.class);
+  private static Logger LOG = LogManager.getLogger(RegularNodeIdMap.class);
   private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
 
   @Override

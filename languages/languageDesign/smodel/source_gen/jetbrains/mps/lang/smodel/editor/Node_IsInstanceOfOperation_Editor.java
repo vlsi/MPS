@@ -25,6 +25,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hebcrg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hebcrg_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_hebcrg_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hebcrg_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hebcrg_c0(editorContext, node));

@@ -26,6 +26,7 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kx3b3w_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_kx3b3w_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_kx3b3w_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_kx3b3w_b0(editorContext, node));
     return editorCell;
@@ -63,8 +64,8 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_kx3b3w_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_kx3b3w_b1a(EditorContext editorContext, SNode node) {

@@ -33,6 +33,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kqvvq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kqvvq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createAlternation_kqvvq_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_kqvvq_b0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_kqvvq_c0(editorContext, node));

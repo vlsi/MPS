@@ -24,6 +24,7 @@ public class MergeNodeWithAnotherNodeExpression_Editor extends DefaultNodeEditor
   private EditorCell createCollection_ss2pef_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ss2pef_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ss2pef_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ss2pef_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ss2pef_c0(editorContext, node));

@@ -23,6 +23,7 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
   private EditorCell createCollection_cqnk8f_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cqnk8f_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_cqnk8f_a0(editorContext, node));
     return editorCell;
   }

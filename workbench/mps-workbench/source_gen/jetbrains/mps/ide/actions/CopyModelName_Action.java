@@ -7,11 +7,13 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CopyModelName_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,7 +33,9 @@ public class CopyModelName_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CopyModelName", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CopyModelName", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -51,9 +55,11 @@ public class CopyModelName_Action extends BaseAction {
     try {
       CopyPasteUtil.copyTextToClipboard(SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CopyModelName", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CopyModelName", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CopyModelName_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CopyModelName_Action.class);
 }

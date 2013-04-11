@@ -21,6 +21,7 @@ public class ValidatingView_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_esy5mi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_esy5mi_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_esy5mi_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_esy5mi_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_esy5mi_c0(editorContext, node));

@@ -24,7 +24,8 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -85,7 +86,7 @@ import java.util.Map;
  * Created Sep 16, 2003
  */
 public class NodeSubstituteChooser implements KeyboardHandler {
-  private static final Logger LOG = Logger.getLogger(NodeSubstituteChooser.class);
+  private static final Logger LOG = LogManager.getLogger(NodeSubstituteChooser.class);
 
   public static final int PREFERRED_WIDTH = 300;
   public static final int PREFERRED_HEIGHT = 200;

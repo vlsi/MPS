@@ -25,6 +25,7 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fwuxcr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fwuxcr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_fwuxcr_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fwuxcr_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fwuxcr_c0(editorContext, node));

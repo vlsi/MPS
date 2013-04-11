@@ -25,6 +25,7 @@ public class SmartDisposeClosureParameterDeclaration_Editor extends DefaultNodeE
   private EditorCell createCollection_oe6cnf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_oe6cnf_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_oe6cnf_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_oe6cnf_b0(editorContext, node));
     return editorCell;

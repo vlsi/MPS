@@ -31,6 +31,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ql48ef_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ql48ef_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ql48ef_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ql48ef_b0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_ql48ef_c0(editorContext, node));
@@ -79,6 +80,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ql48ef_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ql48ef_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ql48ef_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ql48ef_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ql48ef_c0(editorContext, node));

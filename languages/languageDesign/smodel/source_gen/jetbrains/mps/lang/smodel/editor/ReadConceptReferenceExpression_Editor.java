@@ -29,6 +29,7 @@ public class ReadConceptReferenceExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tbzx31_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tbzx31_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_tbzx31_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tbzx31_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_tbzx31_c0(editorContext, node));

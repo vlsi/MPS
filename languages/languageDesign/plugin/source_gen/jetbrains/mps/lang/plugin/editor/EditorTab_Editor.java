@@ -38,6 +38,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gp0hv6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gp0hv6_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -126,8 +127,8 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_gp0hv6_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_gp0hv6_b1a(EditorContext editorContext, SNode node) {

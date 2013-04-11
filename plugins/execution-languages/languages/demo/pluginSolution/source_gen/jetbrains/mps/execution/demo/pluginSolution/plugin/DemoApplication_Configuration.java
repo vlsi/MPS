@@ -15,6 +15,7 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
@@ -29,7 +30,8 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -65,7 +67,9 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        LOG.debug("Element " + "node" + " in " + this.getClass().getName() + " was null.");
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("Element " + "node" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
   }
@@ -83,7 +87,9 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       clone.myNode = (NodeByConcept_Configuration) myNode.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -138,5 +144,5 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
   }
 
-  private static Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(DemoApplication_Configuration.class);
 }

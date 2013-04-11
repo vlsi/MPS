@@ -38,6 +38,7 @@ public class Flow_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gc1fin_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gc1fin_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_gc1fin_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_gc1fin_b0(editorContext, node));
     return editorCell;

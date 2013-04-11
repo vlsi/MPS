@@ -26,6 +26,7 @@ public class CallUIActionOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7mdi46_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7mdi46_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_7mdi46_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7mdi46_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7mdi46_c0(editorContext, node));

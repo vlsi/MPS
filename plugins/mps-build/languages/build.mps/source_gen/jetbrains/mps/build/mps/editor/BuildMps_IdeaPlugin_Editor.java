@@ -38,6 +38,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dvtb4y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_dvtb4y_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_dvtb4y_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_dvtb4y_b0(editorContext, node));
     if (renderingCondition_dvtb4y_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

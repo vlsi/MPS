@@ -62,6 +62,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createCollection_cvgoyj_a0_0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 
@@ -476,6 +477,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cvgoyj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cvgoyj_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

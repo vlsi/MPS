@@ -45,6 +45,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1i2int_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1i2int_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_1i2int_a0(editorContext, node));
     if (renderingCondition_1i2int_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createComponent_1i2int_b0(editorContext, node));

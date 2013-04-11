@@ -21,7 +21,8 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
@@ -38,7 +39,7 @@ import java.util.List;
  * NOTE: all nodes except UnionNode MUST have <2 children
  */
 public abstract class BaseNode implements IResultProvider {
-  private static final Logger LOG = Logger.getLogger(BaseNode.class);
+  private static final Logger LOG = LogManager.getLogger(BaseNode.class);
 
   private static final String CHILDREN = "children";
 

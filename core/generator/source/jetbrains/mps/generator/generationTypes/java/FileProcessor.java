@@ -16,7 +16,8 @@
 package jetbrains.mps.generator.generationTypes.java;
 
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
@@ -31,7 +32,7 @@ import java.util.Collection;
 import java.util.List;
 
 class FileProcessor {
-  private static final Logger LOG = Logger.getLogger(FileProcessor.class);
+  private static final Logger LOG = LogManager.getLogger(FileProcessor.class);
 
   private final List<SModel> myModels = new ArrayList<SModel>();
   private final List<FileAndContent> myFilesAndContents = new ArrayList<FileAndContent>();

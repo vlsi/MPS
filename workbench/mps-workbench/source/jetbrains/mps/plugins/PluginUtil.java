@@ -19,7 +19,8 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import jetbrains.mps.project.IModule;
@@ -41,7 +42,7 @@ import java.util.List;
 import java.util.Set;
 
 public class PluginUtil {
-  private static final Logger LOG = Logger.getLogger(PluginUtil.class);
+  private static final Logger LOG = LogManager.getLogger(PluginUtil.class);
 
   public static final String IDE_MODULE_ID = "jetbrains.mps.ide";
   public static final String IDE_MODULE_PROJECTPLUGIN = "jetbrains.mps.ide.actions.Ide_ProjectPlugin"; // FIXME Ide_ProjectPlugin.class.getName();

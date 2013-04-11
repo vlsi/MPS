@@ -11,8 +11,10 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowHelpForAspect_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,7 +41,9 @@ public class ShowHelpForAspect_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowHelpForAspect", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowHelpForAspect", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -69,9 +73,11 @@ public class ShowHelpForAspect_Action extends BaseAction {
     try {
       HelpHelper.showHelpForAspect(((IModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowHelpForAspect", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowHelpForAspect", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowHelpForAspect_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowHelpForAspect_Action.class);
 }

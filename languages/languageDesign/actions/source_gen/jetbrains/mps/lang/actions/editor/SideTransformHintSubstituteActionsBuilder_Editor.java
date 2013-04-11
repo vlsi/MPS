@@ -39,6 +39,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
   private EditorCell createCollection_185r4c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_185r4c_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
@@ -220,8 +221,8 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
   }
 
   private EditorCell createIndentCell_185r4c_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_185r4c_b1a(EditorContext editorContext, SNode node) {
@@ -272,8 +273,8 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
   }
 
   private EditorCell createIndentCell_185r4c_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_185r4c_b1b1a(EditorContext editorContext, SNode node) {
@@ -332,8 +333,8 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
   }
 
   private EditorCell createIndentCell_185r4c_a4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_185r4c_b4b1a(EditorContext editorContext, SNode node) {
@@ -406,8 +407,8 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
   }
 
   private EditorCell createIndentCell_185r4c_a5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_185r4c_b5b1a(EditorContext editorContext, SNode node) {
@@ -433,8 +434,8 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
   }
 
   private EditorCell createIndentCell_185r4c_a6b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_185r4c_b6b1a(EditorContext editorContext, SNode node) {
@@ -493,8 +494,8 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
   }
 
   private EditorCell createIndentCell_185r4c_a9b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_185r4c_b9b1a(EditorContext editorContext, SNode node) {

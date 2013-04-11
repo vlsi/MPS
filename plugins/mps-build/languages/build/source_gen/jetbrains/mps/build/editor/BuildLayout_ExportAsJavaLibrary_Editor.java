@@ -31,6 +31,7 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ge4r0w_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ge4r0w_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ge4r0w_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_ge4r0w_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ge4r0w_c0(editorContext, node));

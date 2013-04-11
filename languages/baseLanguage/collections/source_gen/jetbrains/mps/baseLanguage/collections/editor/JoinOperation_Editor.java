@@ -37,6 +37,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9t56qv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9t56qv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_9t56qv_a0(editorContext, node));
     if (renderingCondition_9t56qv_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_9t56qv_b0(editorContext, node));
@@ -121,6 +122,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9t56qv_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_9t56qv_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9t56qv_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9t56qv_b0(editorContext, node));
     return editorCell;

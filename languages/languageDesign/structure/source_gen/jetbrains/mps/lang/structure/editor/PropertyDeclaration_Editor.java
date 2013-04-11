@@ -44,6 +44,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lnae77_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lnae77_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createTransactionalProperty_lnae77_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lnae77_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_lnae77_c0(editorContext, node));
@@ -172,6 +173,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lnae77_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lnae77_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_lnae77_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lnae77_b0(editorContext, node));
     return editorCell;

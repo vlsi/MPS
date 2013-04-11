@@ -40,6 +40,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jug38p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jug38p_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_jug38p_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jug38p_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_jug38p_c0(editorContext, node));

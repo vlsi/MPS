@@ -38,6 +38,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gl82dd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gl82dd_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new keymap_TreeNodeKindProperty());
     editorCell.addEditorCell(this.createAlternation_gl82dd_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_gl82dd_b0(editorContext, node));

@@ -21,6 +21,7 @@ public class SelectPositionParameter_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4r9k8k_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4r9k8k_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_4r9k8k_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4r9k8k_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4r9k8k_c0(editorContext, node));

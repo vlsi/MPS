@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.ide;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.PathManager;
 
 import java.io.File;
@@ -26,7 +27,7 @@ import java.util.Properties;
  * @author Kostik
  */
 public class VersionUtil {
-  private static final Logger LOG = Logger.getLogger(VersionUtil.class);
+  private static final Logger LOG = LogManager.getLogger(VersionUtil.class);
 
   public static String getVersionString() {
     Properties props = new Properties();

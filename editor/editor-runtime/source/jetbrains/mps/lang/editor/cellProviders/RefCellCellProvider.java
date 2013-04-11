@@ -42,7 +42,6 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   @Override
   public EditorCell createEditorCell(EditorContext context) {
     EditorCell result = super.createEditorCell(context);
-    result.setRefNode(getSNode());
     return result;
   }
 

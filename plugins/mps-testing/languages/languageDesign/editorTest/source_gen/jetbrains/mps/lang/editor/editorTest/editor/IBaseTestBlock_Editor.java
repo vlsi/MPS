@@ -16,6 +16,7 @@ public class IBaseTestBlock_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_y1y7t1_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_y1y7t1_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

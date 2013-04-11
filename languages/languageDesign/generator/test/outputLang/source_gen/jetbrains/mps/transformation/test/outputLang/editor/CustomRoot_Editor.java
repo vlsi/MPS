@@ -21,6 +21,7 @@ public class CustomRoot_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_olleho_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_olleho_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_olleho_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_olleho_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_olleho_c0(editorContext, node));

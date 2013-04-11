@@ -19,6 +19,7 @@ public class BwfStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_qjeruv_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_qjeruv_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);

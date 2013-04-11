@@ -14,13 +14,15 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DeleteModules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -58,7 +60,9 @@ public class DeleteModules_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "DeleteModules", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "DeleteModules", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -99,9 +103,11 @@ public class DeleteModules_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "DeleteModules", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "DeleteModules", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(DeleteModules_Action.class);
+  protected static Logger LOG = LogManager.getLogger(DeleteModules_Action.class);
 }

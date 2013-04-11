@@ -35,6 +35,7 @@ public class GroupReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b7gqtc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_b7gqtc_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_b7gqtc_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_b7gqtc_b0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_b7gqtc_c0(editorContext, node));
@@ -241,6 +242,7 @@ public class GroupReference_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_b7gqtc_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

@@ -7,9 +7,11 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -41,7 +43,9 @@ public class UpgradePersistence_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "UpgradePersistence", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "UpgradePersistence", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -56,7 +60,7 @@ public class UpgradePersistence_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Logger LOG = Logger.getLogger("jetbrains.mps.ide.migration.UpgradePersistence_Action");
+      Logger LOG = LogManager.getLogger("jetbrains.mps.ide.migration.UpgradePersistence_Action");
 
       final MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
       for (SModule module : mpsProject.getModulesWithGenerators()) {
@@ -94,9 +98,11 @@ public class UpgradePersistence_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "UpgradePersistence", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "UpgradePersistence", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(UpgradePersistence_Action.class);
+  protected static Logger LOG = LogManager.getLogger(UpgradePersistence_Action.class);
 }

@@ -21,6 +21,7 @@ public class BeanExtensionAttribute_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_y84zun_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_y84zun_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_y84zun_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y84zun_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_y84zun_c0(editorContext, node));

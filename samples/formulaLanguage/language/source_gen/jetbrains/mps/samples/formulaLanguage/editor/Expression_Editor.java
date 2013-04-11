@@ -16,6 +16,7 @@ public class Expression_Editor extends DefaultNodeEditor {
   private EditorCell createError_1ltshm_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "?expression?");
     editorCell.setCellId("Error_1ltshm_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

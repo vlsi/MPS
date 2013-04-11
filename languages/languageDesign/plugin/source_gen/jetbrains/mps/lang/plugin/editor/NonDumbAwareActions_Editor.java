@@ -29,6 +29,7 @@ public class NonDumbAwareActions_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_zc6mlp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_zc6mlp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_zc6mlp_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_zc6mlp_b0(editorContext, node));
     return editorCell;

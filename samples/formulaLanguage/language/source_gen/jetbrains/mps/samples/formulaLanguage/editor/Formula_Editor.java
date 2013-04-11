@@ -16,6 +16,7 @@ public class Formula_Editor extends DefaultNodeEditor {
   private EditorCell createError_nswpxv_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "?formula?");
     editorCell.setCellId("Error_nswpxv_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

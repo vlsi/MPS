@@ -20,6 +20,7 @@ public class East_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_h2wzxz_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyStringLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);

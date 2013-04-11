@@ -45,6 +45,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b42orx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b42orx_a");
+    editorCell.setBig(true);
     if (renderingCondition_b42orx_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_b42orx_a0(editorContext, node));
     }
@@ -497,6 +498,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b42orx_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_b42orx_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_b42orx_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_b42orx_b0(editorContext, node));
     return editorCell;

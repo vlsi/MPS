@@ -26,6 +26,7 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ft4eji_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ft4eji_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ft4eji_a0(editorContext, node));
     return editorCell;
   }

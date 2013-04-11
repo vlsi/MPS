@@ -33,6 +33,7 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3ev9w4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_3ev9w4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_3ev9w4_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3ev9w4_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3ev9w4_c0(editorContext, node));

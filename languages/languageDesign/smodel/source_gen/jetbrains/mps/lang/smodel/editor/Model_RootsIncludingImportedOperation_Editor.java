@@ -29,6 +29,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
   private EditorCell createCollection_5c49m1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5c49m1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_5c49m1_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5c49m1_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5c49m1_c0(editorContext, node));

@@ -27,6 +27,7 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_165sw5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_165sw5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_165sw5_a0(editorContext, node));
     if (renderingCondition_165sw5_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_165sw5_b0(editorContext, node));

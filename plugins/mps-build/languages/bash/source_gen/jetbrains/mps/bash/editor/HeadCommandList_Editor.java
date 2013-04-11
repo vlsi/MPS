@@ -27,6 +27,7 @@ public class HeadCommandList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vppg5t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vppg5t_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_vppg5t_a0(editorContext, node));
     if (renderingCondition_vppg5t_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_vppg5t_b0(editorContext, node));

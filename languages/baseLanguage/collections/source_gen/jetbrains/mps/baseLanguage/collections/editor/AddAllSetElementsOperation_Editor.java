@@ -30,6 +30,7 @@ public class AddAllSetElementsOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_az6if3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_az6if3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_az6if3_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_az6if3_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_az6if3_c0(editorContext, node));

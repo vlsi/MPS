@@ -25,6 +25,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mlq0a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mlq0a_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_mlq0a_a0(editorContext, node));
     if (renderingCondition_mlq0a_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_mlq0a_b0(editorContext, node));

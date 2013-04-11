@@ -30,6 +30,7 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createComponent_q0ga01_a0_0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 

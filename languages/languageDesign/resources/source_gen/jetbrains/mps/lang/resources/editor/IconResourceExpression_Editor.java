@@ -21,6 +21,7 @@ public class IconResourceExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mgsg6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mgsg6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_mgsg6_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mgsg6_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_mgsg6_c0(editorContext, node));

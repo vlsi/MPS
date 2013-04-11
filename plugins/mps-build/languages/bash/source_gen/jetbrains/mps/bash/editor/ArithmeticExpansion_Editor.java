@@ -24,6 +24,7 @@ public class ArithmeticExpansion_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_96iq63_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_96iq63_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_96iq63_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_96iq63_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_96iq63_c0(editorContext, node));

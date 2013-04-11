@@ -21,7 +21,8 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.ide.tools.BaseProjectTool;
@@ -30,7 +31,7 @@ import javax.swing.Icon;
 import javax.swing.SwingUtilities;
 
 public abstract class TabbedUsagesTool extends BaseProjectTool {
-  private static final Logger LOG = Logger.getLogger(UsagesViewTool.class);
+  private static final Logger LOG = LogManager.getLogger(UsagesViewTool.class);
   private ContentManagerAdapter myContentListener;
   private ReloadAdapter myReloadHandler;
   private ContentManager myContentManager;

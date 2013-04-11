@@ -15,14 +15,15 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.PairMap;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class UnregisteredNodes {
-  private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
+  private static final Logger LOG = LogManager.getLogger(UnregisteredNodes.class);
   private static UnregisteredNodes ourInstance;
 
   private final PairMap<SModelReference, SNodeId, SNode> myMap = new PairMap<SModelReference, SNodeId, SNode>();

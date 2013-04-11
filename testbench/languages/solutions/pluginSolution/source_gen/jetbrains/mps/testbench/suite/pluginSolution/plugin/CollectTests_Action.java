@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -19,7 +20,8 @@ import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
@@ -69,7 +71,9 @@ public class CollectTests_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CollectTests", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CollectTests", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -108,12 +112,14 @@ public class CollectTests_Action extends BaseAction {
         CollectTests_Action.this.displayInfo("Collect Tests action cancelled", _params);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CollectTests", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CollectTests", t);
+      }
     }
   }
 
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
-    final Logger LOG = Logger.getLogger("jetbrains.mps.testbench.suite");
+    final Logger LOG = LogManager.getLogger("jetbrains.mps.testbench.suite");
     final SModel model = ((SModel) MapSequence.fromMap(_params).get("modelDesc"));
     final Wrappers._T<List<SModuleReference>> solutions = new Wrappers._T<List<SModuleReference>>();
     final Wrappers._T<List<SModuleReference>> existing = new Wrappers._T<List<SModuleReference>>();
@@ -219,5 +225,5 @@ public class CollectTests_Action extends BaseAction {
     }).toListSequence();
   }
 
-  private static Logger LOG = Logger.getLogger(CollectTests_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CollectTests_Action.class);
 }

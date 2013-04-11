@@ -18,7 +18,8 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.ide.wizard.StepAdapter;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -34,7 +35,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public abstract class BaseStep extends StepAdapter {
-  private static final Logger LOG = Logger.getLogger(BaseStep.class);
+  private static final Logger LOG = LogManager.getLogger(BaseStep.class);
 
   private JPanel myComponent;
 

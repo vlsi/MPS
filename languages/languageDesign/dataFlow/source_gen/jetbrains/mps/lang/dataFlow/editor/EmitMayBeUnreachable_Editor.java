@@ -24,6 +24,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3gfc5i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3gfc5i_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_3gfc5i_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3gfc5i_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3gfc5i_c0(editorContext, node));

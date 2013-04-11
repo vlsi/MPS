@@ -42,6 +42,7 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ivh5g9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ivh5g9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ivh5g9_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ivh5g9_b0(editorContext, node));
     if (renderingCondition_ivh5g9_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

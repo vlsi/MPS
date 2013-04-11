@@ -29,6 +29,7 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
   private EditorCell createCollection_1clvom_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1clvom_a");
+    editorCell.setBig(true);
     if (renderingCondition_1clvom_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefCell_1clvom_a0(editorContext, node));
     }

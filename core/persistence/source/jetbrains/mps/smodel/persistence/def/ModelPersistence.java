@@ -18,7 +18,8 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
@@ -61,7 +62,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ModelPersistence {
-  private static final Logger LOG = Logger.getLogger(ModelPersistence.class);
+  private static final Logger LOG = LogManager.getLogger(ModelPersistence.class);
 
   public static final String TARGET_NODE_ID = "targetNodeId";
   public static final String LINK = "link";

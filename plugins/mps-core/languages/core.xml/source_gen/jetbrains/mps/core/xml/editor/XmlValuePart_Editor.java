@@ -16,6 +16,7 @@ public class XmlValuePart_Editor extends DefaultNodeEditor {
   private EditorCell createError_v691gf_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no value>");
     editorCell.setCellId("Error_v691gf_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

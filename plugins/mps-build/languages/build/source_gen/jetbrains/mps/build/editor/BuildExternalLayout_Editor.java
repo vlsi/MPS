@@ -25,6 +25,7 @@ public class BuildExternalLayout_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ya6pfo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ya6pfo_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ya6pfo_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ya6pfo_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ya6pfo_c0(editorContext, node));

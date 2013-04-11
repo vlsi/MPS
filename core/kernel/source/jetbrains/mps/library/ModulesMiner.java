@@ -23,6 +23,7 @@ import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.LanguageID;
@@ -40,7 +41,7 @@ import java.util.*;
  * Detects modules in a folder. Loads them into MPSModuleRepository
  */
 public class ModulesMiner {
-  private static final Logger LOG = Logger.getLogger(ModulesMiner.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ModulesMiner.class));
   private static final ModulesMiner INSTANCE = new ModulesMiner();
   public static final String META_INF = "META-INF";
   public static final String MODULE_XML = "module.xml";

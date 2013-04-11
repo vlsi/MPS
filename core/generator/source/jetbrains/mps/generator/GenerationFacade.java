@@ -28,7 +28,8 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -62,7 +63,7 @@ import java.util.Set;
  */
 public class GenerationFacade {
 
-  private static final Logger LOG = Logger.getLogger(GenerationFacade.class);
+  private static final Logger LOG = LogManager.getLogger(GenerationFacade.class);
 
   public static List<SNode/*MappingConfiguration*/> getOwnMappings(Generator generator) {
     List<SModel> list = generator.getOwnTemplateModels();

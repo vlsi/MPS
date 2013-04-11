@@ -24,6 +24,7 @@ public class ChildAspect_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wz4x5o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_wz4x5o_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_wz4x5o_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wz4x5o_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_wz4x5o_c0(editorContext, node));

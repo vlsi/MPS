@@ -14,11 +14,13 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 import com.intellij.openapi.project.Project;
+import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.ui.IgnoreUnversionedDialog;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class IgnoreModuleInVcs_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +49,9 @@ public class IgnoreModuleInVcs_Action extends BaseAction {
         presentation.setVisible(enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "IgnoreModuleInVcs", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "IgnoreModuleInVcs", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -72,9 +76,11 @@ public class IgnoreModuleInVcs_Action extends BaseAction {
       List<VirtualFile> unversionedFiles = VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
       IgnoreUnversionedDialog.ignoreSelectedFiles(((Project) MapSequence.fromMap(_params).get("project")), unversionedFiles);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "IgnoreModuleInVcs", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "IgnoreModuleInVcs", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(IgnoreModuleInVcs_Action.class);
+  protected static Logger LOG = LogManager.getLogger(IgnoreModuleInVcs_Action.class);
 }

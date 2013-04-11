@@ -85,7 +85,7 @@ public class EditorResolver implements IResolver {
     public FakeEditorComponent(SNode node, IOperationContext operationContext) {
       super(operationContext);
       setEditorContext(new EditorContext(this, SNodeOperations.getModel(node), operationContext));
-      editNode(node);
+      editNode(node, operationContext);
     }
 
     @Override

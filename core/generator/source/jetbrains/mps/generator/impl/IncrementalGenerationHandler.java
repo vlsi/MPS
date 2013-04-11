@@ -31,7 +31,8 @@ import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.NonIncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.DifflibFacade;
@@ -57,7 +58,7 @@ import java.util.Set;
  */
 public class IncrementalGenerationHandler {
 
-  private static final Logger LOG = Logger.getLogger(IncrementalGenerationHandler.class);
+  private static final Logger LOG = LogManager.getLogger(IncrementalGenerationHandler.class);
 
   private static final String CONDITIONALS_ID = "";
 

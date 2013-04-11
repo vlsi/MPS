@@ -32,6 +32,7 @@ public class OverloadedOpRulesContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6g4l6s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6g4l6s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_6g4l6s_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6g4l6s_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_6g4l6s_c0(editorContext, node));

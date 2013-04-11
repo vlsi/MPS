@@ -30,6 +30,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nl0fz6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_nl0fz6_a");
+    editorCell.setBig(true);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_nl0fz6_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_nl0fz6_b0(editorContext, node));

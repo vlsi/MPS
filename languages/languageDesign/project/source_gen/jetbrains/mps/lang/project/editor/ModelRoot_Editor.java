@@ -26,6 +26,7 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gn5t9c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gn5t9c_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_gn5t9c_a0(editorContext, node));
     if (renderingCondition_gn5t9c_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_gn5t9c_b0(editorContext, node));

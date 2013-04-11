@@ -32,6 +32,7 @@ public class BuildLayout_CustomCopy_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6lrdv3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6lrdv3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6lrdv3_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6lrdv3_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_6lrdv3_c0(editorContext, node));

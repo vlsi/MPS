@@ -17,7 +17,8 @@ package jetbrains.mps.reloading;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.Condition;
@@ -35,7 +36,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public class JarFileClassPathItem extends RealClassPathItem {
-  private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
+  private static final Logger LOG = LogManager.getLogger(JarFileClassPathItem.class);
 
   //computed during init
   private boolean myIsInitialized = false;

@@ -24,6 +24,7 @@ public class DeleteFeatureExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kob8pg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kob8pg_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_kob8pg_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_kob8pg_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kob8pg_c0(editorContext, node));

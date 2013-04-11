@@ -26,6 +26,7 @@ public class HeadMapOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_oerk9s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_oerk9s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_oerk9s_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_oerk9s_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_oerk9s_c0(editorContext, node));

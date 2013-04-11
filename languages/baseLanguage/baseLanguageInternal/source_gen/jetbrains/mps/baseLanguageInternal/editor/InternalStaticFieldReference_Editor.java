@@ -23,6 +23,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qdlcig_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qdlcig_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_qdlcig_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qdlcig_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_qdlcig_c0(editorContext, node));

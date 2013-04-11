@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
@@ -27,7 +28,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
 
 public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAction {
-  private static final Logger LOG = Logger.getLogger(AbstractNodeSubstituteAction.class);
+  private static final Logger LOG = LogManager.getLogger(AbstractNodeSubstituteAction.class);
 
   private SNode mySourceNode;
   private Object myParameterObject;

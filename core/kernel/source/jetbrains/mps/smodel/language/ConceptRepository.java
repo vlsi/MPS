@@ -16,13 +16,12 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
@@ -38,7 +37,7 @@ import java.util.concurrent.ConcurrentMap;
  * evgeny, 10/12/12
  */
 public class ConceptRepository extends SConceptRepository implements CoreComponent {
-  private static Logger LOG = Logger.getLogger(ConceptRepository.class);
+  private static Logger LOG = LogManager.getLogger(ConceptRepository.class);
 
   private final ConcurrentMap<String, SConcept> myConcepts = new ConcurrentHashMap<String, SConcept>();
 

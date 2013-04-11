@@ -24,6 +24,7 @@ public class ExtensionFieldDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rgn2ra_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rgn2ra_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_rgn2ra_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_rgn2ra_b0(editorContext, node));
     return editorCell;

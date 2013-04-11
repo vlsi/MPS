@@ -35,6 +35,7 @@ public class BuildLayout_JarManifest_Section_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9mv0z5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9mv0z5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_9mv0z5_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9mv0z5_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_9mv0z5_c0(editorContext, node));

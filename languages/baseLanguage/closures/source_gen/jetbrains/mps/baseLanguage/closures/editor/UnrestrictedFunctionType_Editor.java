@@ -43,6 +43,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vablur_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vablur_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vablur_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_vablur_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vablur_c0(editorContext, node));
@@ -257,6 +258,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vablur_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vablur_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vablur_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vablur_b0(editorContext, node));
     return editorCell;

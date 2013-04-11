@@ -32,6 +32,7 @@ public class QuotesCommandSubstitution_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ce05el_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ce05el_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_ce05el_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ce05el_b0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_ce05el_c0(editorContext, node));

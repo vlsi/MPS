@@ -36,6 +36,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gkr2rl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gkr2rl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_gkr2rl_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gkr2rl_b0(editorContext, node));
     if (renderingCondition_gkr2rl_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -243,6 +244,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gkr2rl_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gkr2rl_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

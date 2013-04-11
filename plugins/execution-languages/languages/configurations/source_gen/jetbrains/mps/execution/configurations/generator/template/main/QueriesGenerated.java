@@ -37,7 +37,9 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -660,12 +662,14 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_2535050848643235299(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode runConfiguration : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.execution.configurations.structure.RunConfiguration"))) {
       if ((RunConfiguration_Behavior.call_getExecutor_3754890006475713427(runConfiguration) == null)) {
-        LOG.error("Configuration " + SPropertyOperations.getString(runConfiguration, "name") + " does not have any executors.");
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Configuration " + SPropertyOperations.getString(runConfiguration, "name") + " does not have any executors.");
+        }
       }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(QueriesGenerated.class);
+  protected static Logger LOG = LogManager.getLogger(QueriesGenerated.class);
 
   private static SNode _quotation_createNode_x583g4_a0a0a57() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

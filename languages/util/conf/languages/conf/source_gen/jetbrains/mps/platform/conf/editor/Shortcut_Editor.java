@@ -27,6 +27,7 @@ public class Shortcut_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lyztfn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_lyztfn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_lyztfn_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_lyztfn_b0(editorContext, node));
     return editorCell;
@@ -87,8 +88,8 @@ public class Shortcut_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_lyztfn_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_lyztfn_b1a(EditorContext editorContext, SNode node) {

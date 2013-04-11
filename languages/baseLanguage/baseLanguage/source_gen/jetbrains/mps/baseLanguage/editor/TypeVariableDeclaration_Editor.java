@@ -37,6 +37,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bfm5ok_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bfm5ok_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_bfm5ok_a0(editorContext, node));
     if (renderingCondition_bfm5ok_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_bfm5ok_b0(editorContext, node));

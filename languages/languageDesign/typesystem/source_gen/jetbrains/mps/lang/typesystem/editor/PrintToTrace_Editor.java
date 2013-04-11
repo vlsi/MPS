@@ -24,6 +24,7 @@ public class PrintToTrace_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vg9ckn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vg9ckn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vg9ckn_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vg9ckn_b0(editorContext, node));
     return editorCell;

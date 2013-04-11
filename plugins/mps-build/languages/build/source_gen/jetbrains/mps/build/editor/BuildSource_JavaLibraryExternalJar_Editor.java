@@ -23,6 +23,7 @@ public class BuildSource_JavaLibraryExternalJar_Editor extends DefaultNodeEditor
   private EditorCell createCollection_fpruxb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fpruxb_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_fpruxb_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fpruxb_b0(editorContext, node));
     return editorCell;

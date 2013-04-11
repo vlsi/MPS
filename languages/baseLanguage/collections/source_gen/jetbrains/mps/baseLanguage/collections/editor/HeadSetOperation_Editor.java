@@ -30,6 +30,7 @@ public class HeadSetOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tt6i8z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tt6i8z_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_tt6i8z_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tt6i8z_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tt6i8z_c0(editorContext, node));

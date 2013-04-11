@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
@@ -41,7 +42,7 @@ import java.util.List;
 import java.util.Set;
 
 public class SModelUtil_new implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(SModelUtil_new.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SModelUtil_new.class));
   private ClassLoaderManager myClManager;
   private GlobalSModelEventsManager myMeManager;
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {

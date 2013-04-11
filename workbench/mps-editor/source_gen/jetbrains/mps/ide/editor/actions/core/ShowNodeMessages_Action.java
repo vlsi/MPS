@@ -13,12 +13,14 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowNodeMessages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,7 +47,9 @@ public class ShowNodeMessages_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeMessages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowNodeMessages", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -85,9 +89,11 @@ public class ShowNodeMessages_Action extends BaseAction {
       }
       Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), sb.toString(), "Node Messages", Messages.getInformationIcon());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowNodeMessages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowNodeMessages", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowNodeMessages_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowNodeMessages_Action.class);
 }

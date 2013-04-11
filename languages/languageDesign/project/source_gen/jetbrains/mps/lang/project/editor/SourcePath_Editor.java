@@ -20,6 +20,7 @@ public class SourcePath_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gm8pna_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gm8pna_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_gm8pna_a0(editorContext, node));
     return editorCell;
   }

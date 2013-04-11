@@ -41,6 +41,7 @@ public class Group_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o84zp2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_o84zp2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_o84zp2_a0(editorContext, node));
     return editorCell;
   }
@@ -94,8 +95,8 @@ public class Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_o84zp2_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_o84zp2_b1a0(EditorContext editorContext, SNode node) {
@@ -169,8 +170,8 @@ public class Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_o84zp2_a2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_o84zp2_b2a0(EditorContext editorContext, SNode node) {
@@ -261,8 +262,8 @@ public class Group_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_o84zp2_a3a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_o84zp2_b3a0(EditorContext editorContext, SNode node) {
@@ -323,6 +324,7 @@ public class Group_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_o84zp2_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

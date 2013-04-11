@@ -16,6 +16,7 @@ public class Node_GetPrevSiblingsOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_sroyo1_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAliasAndParms_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

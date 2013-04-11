@@ -36,6 +36,7 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bmlzqh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_bmlzqh_a");
+    editorCell.setBig(true);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_bmlzqh_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bmlzqh_b0(editorContext, node));
@@ -382,8 +383,8 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bmlzqh_a1j0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_bmlzqh_b1j0(EditorContext editorContext, SNode node) {

@@ -16,6 +16,7 @@ public class BuildPlugin_Editor extends DefaultNodeEditor {
   private EditorCell createError_v7f86t_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no plugin>");
     editorCell.setCellId("Error_v7f86t_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

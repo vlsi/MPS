@@ -17,7 +17,8 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
@@ -31,7 +32,7 @@ import java.util.List;
  * Evgeny Gryaznov, Jan 20, 2010
  */
 public abstract class GenerationHandlerBase implements IGenerationHandler {
-  protected static final Logger LOG = Logger.getLogger(IGenerationHandler.class);
+  protected static final Logger LOG = LogManager.getLogger(IGenerationHandler.class);
 
   protected IGeneratorLogger myLogger;
 

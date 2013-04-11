@@ -15,14 +15,15 @@
  */
 package jetbrains.mps.nodeEditor.text;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 
 public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
-  private static final Logger LOG = Logger.getLogger(TextBuilder.class);
+  private static final Logger LOG = LogManager.getLogger(TextBuilder.class);
 
   private int myWidth = 0;
 

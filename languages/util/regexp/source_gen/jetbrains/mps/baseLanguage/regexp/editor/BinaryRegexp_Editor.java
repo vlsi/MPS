@@ -25,6 +25,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bnwprl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bnwprl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_bnwprl_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_bnwprl_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bnwprl_c0(editorContext, node));

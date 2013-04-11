@@ -27,6 +27,7 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
   private EditorCell createCollection_8msx3u_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8msx3u_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_8msx3u_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8msx3u_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_8msx3u_c0(editorContext, node));

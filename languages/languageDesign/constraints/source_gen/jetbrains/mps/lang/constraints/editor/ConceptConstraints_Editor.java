@@ -42,6 +42,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g00aa7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_g00aa7_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_g00aa7_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_g00aa7_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g00aa7_c0(editorContext, node));

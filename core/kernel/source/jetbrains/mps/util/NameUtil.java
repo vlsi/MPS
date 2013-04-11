@@ -404,7 +404,11 @@ public class NameUtil {
       return "null";
     }
     String name = node.getName();
-    return compactNamespace(SNodeOperations.getModelLongName(node.getModel())) + "." + name;
+    SModel model = node.getModel();
+    if (model == null) {
+      return name;
+    }
+    return compactNamespace(SNodeOperations.getModelLongName(model)) + "." + name;
   }
 
   public static String compactModelName(SModelReference ref) {

@@ -34,6 +34,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yfwtie_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yfwtie_a");
+    editorCell.setBig(true);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_yfwtie_a0a()}));
     if (renderingCondition_yfwtie_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createProperty_yfwtie_a0(editorContext, node));

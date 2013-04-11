@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -22,7 +23,8 @@ import jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RunMigrationScripts_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -46,7 +48,9 @@ public class RunMigrationScripts_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RunMigrationScripts", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "RunMigrationScripts", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -91,7 +95,9 @@ public class RunMigrationScripts_Action extends BaseAction {
         NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), selectedScript, true, true);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RunMigrationScripts", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "RunMigrationScripts", t);
+      }
     }
   }
 
@@ -111,5 +117,5 @@ public class RunMigrationScripts_Action extends BaseAction {
     return "";
   }
 
-  private static Logger LOG = Logger.getLogger(RunMigrationScripts_Action.class);
+  protected static Logger LOG = LogManager.getLogger(RunMigrationScripts_Action.class);
 }

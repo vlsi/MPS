@@ -37,6 +37,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createConstant_kpqhey_a0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 

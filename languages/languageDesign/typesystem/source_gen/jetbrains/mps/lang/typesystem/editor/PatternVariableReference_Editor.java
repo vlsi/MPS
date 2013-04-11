@@ -28,6 +28,7 @@ public class PatternVariableReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bm8m1i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bm8m1i_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_bm8m1i_a0(editorContext, node));
     return editorCell;
   }

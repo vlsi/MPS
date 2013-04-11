@@ -24,6 +24,7 @@ public class Not_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_w1i24s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_w1i24s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_w1i24s_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_w1i24s_b0(editorContext, node));
     return editorCell;

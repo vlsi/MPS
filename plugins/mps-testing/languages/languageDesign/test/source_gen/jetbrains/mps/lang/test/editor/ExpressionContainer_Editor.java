@@ -21,6 +21,7 @@ public class ExpressionContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pye9rl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pye9rl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_pye9rl_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pye9rl_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pye9rl_c0(editorContext, node));

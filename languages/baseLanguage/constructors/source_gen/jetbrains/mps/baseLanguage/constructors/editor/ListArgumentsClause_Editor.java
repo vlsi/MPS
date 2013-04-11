@@ -21,6 +21,7 @@ public class ListArgumentsClause_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ljswaq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ljswaq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ljswaq_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ljswaq_b0(editorContext, node));
     return editorCell;

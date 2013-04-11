@@ -33,6 +33,7 @@ public class BuildSourcePath_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_gfe26n_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

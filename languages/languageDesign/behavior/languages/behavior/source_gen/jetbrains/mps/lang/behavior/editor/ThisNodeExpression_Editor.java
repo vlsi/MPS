@@ -21,6 +21,7 @@ public class ThisNodeExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_t6mv7u_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t6mv7u_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_t6mv7u_a0(editorContext, node));
     return editorCell;
   }

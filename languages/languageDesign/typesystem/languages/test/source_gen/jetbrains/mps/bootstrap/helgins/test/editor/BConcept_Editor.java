@@ -16,6 +16,7 @@ public class BConcept_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_f44cz_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "BCONCEPT");
     editorCell.setCellId("Constant_f44cz_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -25,6 +25,7 @@ public class ResourceSpecificPropertiesExpression_Editor extends DefaultNodeEdit
   private EditorCell createCollection_yckn5s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yckn5s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_yckn5s_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yckn5s_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_yckn5s_c0(editorContext, node));

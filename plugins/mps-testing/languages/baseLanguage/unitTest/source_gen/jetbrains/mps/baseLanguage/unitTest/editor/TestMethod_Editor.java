@@ -35,6 +35,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ml6tu4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ml6tu4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_ml6tu4_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ml6tu4_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ml6tu4_c0(editorContext, node));

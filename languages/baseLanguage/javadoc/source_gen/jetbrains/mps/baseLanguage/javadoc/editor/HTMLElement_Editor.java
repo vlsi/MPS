@@ -47,6 +47,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createCollection_h096ql_a0_0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 

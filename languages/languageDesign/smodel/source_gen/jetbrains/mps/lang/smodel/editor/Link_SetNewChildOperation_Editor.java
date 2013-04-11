@@ -32,6 +32,7 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rl6lhr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rl6lhr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_rl6lhr_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rl6lhr_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_rl6lhr_c0(editorContext, node));

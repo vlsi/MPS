@@ -11,10 +11,12 @@ import jetbrains.mps.execution.api.commands.OutputRedirector;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.execution.process.ProcessOutputTypes;
+import org.apache.log4j.Priority;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import java.io.File;
 import com.intellij.execution.ExecutionException;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<CompileWithGcc_BeforeTask.CompileWithGcc_BeforeTask_RunTask> {
   private static final Key<CompileWithGcc_BeforeTask.CompileWithGcc_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.nanoc.pluginSolution.plugin.CompileWithGcc_BeforeTask");
@@ -49,9 +51,13 @@ public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<Compile
           @Override
           public void onTextAvailable(ProcessEvent event, Key key) {
             if (ProcessOutputTypes.STDERR.equals(key)) {
-              LOG.error(event.getText());
+              if (LOG.isEnabledFor(Priority.ERROR)) {
+                LOG.error(event.getText());
+              }
             } else {
-              LOG.info(event.getText());
+              if (LOG.isInfoEnabled()) {
+                LOG.info(event.getText());
+              }
             }
           }
         });
@@ -61,11 +67,13 @@ public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<Compile
         }
         return new File(Gcc_Command.getExecutableFile(myFile).getAbsolutePath()).exists();
       } catch (ExecutionException e) {
-        LOG.error("", e);
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("", e);
+        }
         return false;
       }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CompileWithGcc_BeforeTask.class);
+  protected static Logger LOG = LogManager.getLogger(CompileWithGcc_BeforeTask.class);
 }

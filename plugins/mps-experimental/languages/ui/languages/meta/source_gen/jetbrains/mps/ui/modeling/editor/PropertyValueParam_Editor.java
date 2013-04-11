@@ -18,6 +18,7 @@ public class PropertyValueParam_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_p3f7d9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_p3f7d9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_p3f7d9_a0(editorContext, node));
     return editorCell;
   }

@@ -21,6 +21,7 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_63pn5a_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_63pn5a_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -28,6 +29,7 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_63pn5a_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _NotInRules_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

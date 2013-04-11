@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -18,7 +19,8 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class BuildAllGenerators_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,7 +40,9 @@ public class BuildAllGenerators_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "BuildAllGenerators", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "BuildAllGenerators", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -69,9 +73,11 @@ public class BuildAllGenerators_Action extends BaseAction {
 
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, m.value, null), true).executeAction();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "BuildAllGenerators", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "BuildAllGenerators", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(BuildAllGenerators_Action.class);
+  protected static Logger LOG = LogManager.getLogger(BuildAllGenerators_Action.class);
 }

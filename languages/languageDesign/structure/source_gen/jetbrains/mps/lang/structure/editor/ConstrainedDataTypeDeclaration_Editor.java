@@ -26,6 +26,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_993c3a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_993c3a_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_993c3a_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_993c3a_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_993c3a_c0(editorContext, node));

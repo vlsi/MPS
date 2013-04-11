@@ -16,7 +16,8 @@
 package org.jetbrains.mps.openapi.model;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -30,7 +31,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class SNodeAccessUtil {
-  private static Logger LOG = Logger.getLogger(SNodeAccessUtil.class);
+  private static Logger LOG = LogManager.getLogger(SNodeAccessUtil.class);
 
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertySettersInProgress = new InProgressThreadLocal();
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();

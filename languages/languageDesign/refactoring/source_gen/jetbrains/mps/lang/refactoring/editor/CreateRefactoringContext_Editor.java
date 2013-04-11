@@ -40,6 +40,7 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_drsbu8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_drsbu8_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new CreateRefcontextHint());
     editorCell.getStyle().putAll(style);

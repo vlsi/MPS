@@ -29,6 +29,7 @@ public class CommandProcessType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9m9s9z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9m9s9z_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_9m9s9z_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9m9s9z_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_9m9s9z_c0(editorContext, node));

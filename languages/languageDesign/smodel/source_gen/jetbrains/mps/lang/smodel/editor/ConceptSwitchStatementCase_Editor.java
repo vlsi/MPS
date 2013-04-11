@@ -25,6 +25,7 @@ public class ConceptSwitchStatementCase_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wm63hg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wm63hg_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_wm63hg_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_wm63hg_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wm63hg_c0(editorContext, node));

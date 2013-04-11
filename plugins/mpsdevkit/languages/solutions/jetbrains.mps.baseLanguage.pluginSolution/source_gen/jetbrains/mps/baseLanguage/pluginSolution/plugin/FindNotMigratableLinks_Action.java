@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.List;
@@ -22,7 +23,8 @@ import jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.actions.InternalActionsUtils;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FindNotMigratableLinks_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,7 +44,9 @@ public class FindNotMigratableLinks_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindNotMigratableLinks", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "FindNotMigratableLinks", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -74,9 +78,11 @@ public class FindNotMigratableLinks_Action extends BaseAction {
 
       InternalActionsUtils.showUsagesViewForNodes(((Project) MapSequence.fromMap(_params).get("project")), usages);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindNotMigratableLinks", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "FindNotMigratableLinks", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(FindNotMigratableLinks_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FindNotMigratableLinks_Action.class);
 }

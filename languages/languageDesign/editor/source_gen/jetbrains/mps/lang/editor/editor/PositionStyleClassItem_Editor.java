@@ -25,6 +25,7 @@ public class PositionStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6khmms_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6khmms_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_6khmms_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6khmms_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6khmms_c0(editorContext, node));

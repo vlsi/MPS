@@ -21,7 +21,8 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -35,7 +36,7 @@ import java.util.*;
  */
 public class GenerationPlan {
 
-  private static final Logger LOG = Logger.getLogger(GenerationPlan.class);
+  private static final Logger LOG = LogManager.getLogger(GenerationPlan.class);
 
   private final Collection<TemplateModule> myGenerators;
   private Collection<TemplateModel> myTemplateModels;

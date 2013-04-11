@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jdom.Document;
 
 import java.io.File;
@@ -28,7 +29,7 @@ import java.util.List;
 
 
 public class PathManager {
-  private static final Logger LOG = Logger.getLogger(PathManager.class);
+  private static final Logger LOG = LogManager.getLogger(PathManager.class);
 
   private static final String FILE = "file";
   private static final String JAR = "jar";

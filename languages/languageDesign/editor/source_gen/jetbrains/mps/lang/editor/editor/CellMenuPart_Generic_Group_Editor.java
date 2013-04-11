@@ -29,6 +29,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ngl4rk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ngl4rk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ngl4rk_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ngl4rk_b0(editorContext, node));
     return editorCell;

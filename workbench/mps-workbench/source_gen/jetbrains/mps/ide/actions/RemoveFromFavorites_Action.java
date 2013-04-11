@@ -12,12 +12,14 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import com.intellij.ide.projectView.ProjectView;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RemoveFromFavorites_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +49,9 @@ public class RemoveFromFavorites_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RemoveFromFavorites", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "RemoveFromFavorites", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -79,9 +83,11 @@ public class RemoveFromFavorites_Action extends BaseAction {
       String name = pane.getSubId();
       favoritesManager.removeRoots(name, objects);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RemoveFromFavorites", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "RemoveFromFavorites", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(RemoveFromFavorites_Action.class);
+  protected static Logger LOG = LogManager.getLogger(RemoveFromFavorites_Action.class);
 }

@@ -43,6 +43,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ka3b3c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ka3b3c_a");
+    editorCell.setBig(true);
     if (renderingCondition_ka3b3c_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_ka3b3c_a0(editorContext, node));
     }
@@ -315,6 +316,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ka3b3c_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ka3b3c_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ka3b3c_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ka3b3c_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ka3b3c_c0(editorContext, node));

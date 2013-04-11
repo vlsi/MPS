@@ -35,6 +35,7 @@ public class BuildInputResourceSet_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_vpc9oa_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

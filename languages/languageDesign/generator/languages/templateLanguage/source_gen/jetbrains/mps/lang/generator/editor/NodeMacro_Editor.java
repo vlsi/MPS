@@ -41,6 +41,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_e7cx8x_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_e7cx8x_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_e7cx8x_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_e7cx8x_b0(editorContext, node));
     return editorCell;
@@ -80,6 +81,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_e7cx8x_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_e7cx8x_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

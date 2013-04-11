@@ -34,6 +34,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wznzt8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wznzt8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_wznzt8_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wznzt8_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_wznzt8_c0(editorContext, node));

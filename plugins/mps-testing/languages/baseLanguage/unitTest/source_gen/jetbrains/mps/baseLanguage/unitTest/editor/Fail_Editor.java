@@ -26,6 +26,7 @@ public class Fail_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vhqdz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vhqdz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vhqdz_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vhqdz_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vhqdz_c0(editorContext, node));

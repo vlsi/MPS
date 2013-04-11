@@ -26,6 +26,7 @@ public class LightWeightDecisionTable_Editor extends DefaultNodeEditor {
     };
     EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_qbxdb8_a");
     editorCell.setCellId("Table_qbxdb8_a_0");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

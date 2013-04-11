@@ -16,6 +16,7 @@ public class AnsotherGoodConcept_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_x6a4n9_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "another");
     editorCell.setCellId("Constant_x6a4n9_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

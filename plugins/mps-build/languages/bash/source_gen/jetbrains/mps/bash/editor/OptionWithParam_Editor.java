@@ -25,6 +25,7 @@ public class OptionWithParam_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3ybyml_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3ybyml_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_3ybyml_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_3ybyml_b0(editorContext, node));
     return editorCell;

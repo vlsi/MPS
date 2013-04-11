@@ -28,6 +28,7 @@ public class CommandList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yxeg41_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yxeg41_a");
+    editorCell.setBig(true);
     if (renderingCondition_yxeg41_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_yxeg41_a0(editorContext, node));
     }

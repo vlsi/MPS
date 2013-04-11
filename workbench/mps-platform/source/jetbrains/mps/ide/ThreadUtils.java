@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.ide;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import javax.swing.SwingUtilities;
 
 public class ThreadUtils {
-  private static final Logger LOG = Logger.getLogger(ThreadUtils.class);
+  private static final Logger LOG = LogManager.getLogger(ThreadUtils.class);
 
   public static boolean runInUIThreadAndWait(Runnable r) {
     if (SwingUtilities.isEventDispatchThread()) {

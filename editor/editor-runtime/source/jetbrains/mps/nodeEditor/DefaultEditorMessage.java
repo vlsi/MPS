@@ -163,7 +163,7 @@ public class DefaultEditorMessage implements EditorMessage {
   @Override
   public boolean acceptCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorComponent editor) {
     if (cell == null) return false;
-    return APICellAdapter.isBigCell(cell) && editor.isValid(cell) && cell.getSNode() == getNode();
+    return cell.isBig() && editor.isValid(cell) && cell.getSNode() == getNode();
   }
 
   @Override

@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.vfs.impl;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
@@ -27,7 +28,7 @@ import java.io.File;
  * @author Evgeny Gerashchenko
  */
 public class IoFileSystemProvider implements FileSystemProvider {
-  static final Logger LOG = Logger.getLogger(IoFileSystemProvider.class);
+  static final Logger LOG = LogManager.getLogger(IoFileSystemProvider.class);
 
   @Override
   public IFile getFile(@NotNull String path) {

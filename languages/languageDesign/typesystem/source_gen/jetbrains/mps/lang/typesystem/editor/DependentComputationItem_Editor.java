@@ -27,6 +27,7 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_i53w7s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i53w7s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_i53w7s_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_i53w7s_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_i53w7s_c0(editorContext, node));

@@ -28,6 +28,7 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
   private EditorCell createCollection_m29bq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_m29bq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_m29bq_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_m29bq_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_m29bq_c0(editorContext, node));
