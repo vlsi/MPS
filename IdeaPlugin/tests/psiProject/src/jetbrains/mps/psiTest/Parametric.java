@@ -1,4 +1,4 @@
-package jetbrains.mps.psiTest2;
+package jetbrains.mps.psiTest;
 
 /**
  * Created with IntelliJ IDEA.
