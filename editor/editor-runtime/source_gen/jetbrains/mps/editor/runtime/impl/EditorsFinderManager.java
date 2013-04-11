@@ -5,7 +5,6 @@ package jetbrains.mps.editor.runtime.impl;
 import com.intellij.openapi.components.ApplicationComponent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.nodeEditor.DefaultEditor;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -25,6 +24,7 @@ import jetbrains.mps.nodeEditor.ErrorNodeEditor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
+import jetbrains.mps.nodeEditor.DefaultEditor;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Computable;
 import java.util.Queue;
@@ -115,10 +115,10 @@ public class EditorsFinderManager implements ApplicationComponent {
         MapSequence.fromMap(myCachedEditors).put(key, c);
       } catch (NoSuchMethodException e) {
         LOG.error(e);
-        return new DefaultNodeEditor();
+        return new DefaultEditor();
       } catch (NoClassDefFoundError e) {
         LOG.error(e);
-        return new DefaultNodeEditor();
+        return new DefaultEditor();
       }
     }
     return result;
@@ -169,7 +169,6 @@ public class EditorsFinderManager implements ApplicationComponent {
             });
           }
         }
-       // return findEditorByConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
         return new DefaultEditor();
       }
     });
