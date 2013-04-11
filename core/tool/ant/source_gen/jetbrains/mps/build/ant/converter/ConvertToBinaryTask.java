@@ -70,7 +70,11 @@ public class ConvertToBinaryTask extends Copy {
         if (t instanceof RuntimeException && t.getCause() instanceof IOException) {
           t = t.getCause();
         }
-        throw new BuildException("Cannot convert .mps into .mpb: " + t.getMessage() + "\n" + "Used class path: " + classPathUrls.toString(), t);
+        String message = t.getMessage();
+        if ((message == null || message.length() == 0)) {
+          message = t.getClass().toString();
+        }
+        throw new BuildException("Cannot convert .mps into .mpb: " + message + "\n" + "Used class path: " + classPathUrls.toString(), t);
       }
     }
   }
