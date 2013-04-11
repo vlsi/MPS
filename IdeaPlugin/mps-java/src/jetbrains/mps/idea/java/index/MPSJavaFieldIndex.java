@@ -18,7 +18,6 @@ package jetbrains.mps.idea.java.index;
 
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
-import com.intellij.util.indexing.ID;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -27,7 +26,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collection;
 
 /**
- * <code>String -> Collection<SNodeDescriptor></code>
+ * {@code String -> Collection<SNodeDescriptor>}
  * User: fyodor
  * Date: 3/29/13
  */
@@ -54,15 +53,15 @@ public class MPSJavaFieldIndex extends AbstractMPSModelFileIndex {
     return 1;
   }
 
-  private static class MyIndexer extends  SNodeDescriptorsIndexer {
+  private static class MyIndexer extends SNodeDescriptorIndexer {
     @Override
-    protected Iterable<SNode> getNodesToIndex(SModel sModel) {
+    protected Iterable<SNode> getObjectsToIndex(SModel sModel) {
       return getJavaFields(sModel);
     }
 
     @Override
-    protected String getKey(SModel model, String nodeName) {
-      return nodeName;
+    protected String[] getKeys(SModel model, SNode node) {
+      return new String[] {getSNodeName(node)};
     }
   }
 }

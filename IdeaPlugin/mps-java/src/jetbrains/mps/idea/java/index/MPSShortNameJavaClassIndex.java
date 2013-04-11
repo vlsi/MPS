@@ -28,7 +28,7 @@ import java.util.Collection;
 
 /**
  * For each MPS model file creates an index of short names of Java classes or equivalent constructs in this model.
- * <code>String -> Collection<SNodeDescriptor></code>
+ * {@code String -> Collection<SNodeDescriptor>}
  * User: fyodor
  * Date: 3/28/13
  */
@@ -55,15 +55,15 @@ public class MPSShortNameJavaClassIndex extends AbstractMPSModelFileIndex {
     return 1;
   }
 
-  private static class MyIndexer extends  SNodeDescriptorsIndexer {
+  private static class MyIndexer extends SNodeDescriptorIndexer {
     @Override
-    protected Iterable<SNode> getNodesToIndex(SModel sModel) {
+    protected Iterable<SNode> getObjectsToIndex(SModel sModel) {
       return getJavaClasses(sModel);
     }
 
     @Override
-    protected String getKey(SModel model, String nodeName) {
-      return nodeName;
+    protected String[] getKeys(SModel model, SNode node) {
+      return new String[] {getSNodeName(node)};
     }
   }
 }

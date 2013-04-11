@@ -22,7 +22,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
-import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -38,9 +37,9 @@ import java.util.Map;
 * User: fyodor
 * Date: 3/28/13
 */
-/*package*/ abstract class SNodeDescriptorsIndexer implements DataIndexer<String, Collection<SNodeDescriptor>, FileContent> {
+/*package*/ abstract class AbstractSModelIndexer<S,E> implements DataIndexer<String, Collection<E>, FileContent> {
 
-  private static final Logger LOG = Logger.getLogger(SNodeDescriptorsIndexer.class);
+  private static final Logger LOG = Logger.getLogger(AbstractSModelIndexer.class);
 
   public static final String[] JAVA_CLASS_CONCEPTS = {
     "jetbrains.mps.baseLanguage.structure.Annotation",
@@ -146,27 +145,26 @@ import java.util.Map;
 
   @NotNull
   @Override
-  public Map<String, Collection<SNodeDescriptor>> map(final FileContent inputData) {
-    final HashMap<String, Collection<SNodeDescriptor>> map = new HashMap<String, Collection<SNodeDescriptor>>();
+  public Map<String, Collection<E>> map(final FileContent inputData) {
+    final HashMap<String, Collection<E>> map = new HashMap<String, Collection<E>>();
     ModelAccess.instance().runIndexing(new Runnable() {
       @Override
       public void run() {
         try {
           SModel model = RootNodeNameIndex.doModelParsing(inputData);
           SModelReference modelRef = model.getReference();
-          for (SNode node : getNodesToIndex(model)) {
+          for (S object : getObjectsToIndex(model)) {
+            String[] keys = getKeys(model, object);
 
-            String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
-            String nodeName = (persistentName == null) ? "null" : persistentName;
-            String key = getKey(model, nodeName);
+            for (String key : keys) {
+              Collection<E> collection = map.get(key);
+              if (collection == null) {
+                collection = new ArrayList<E>();
+                map.put(key, collection);
+              }
 
-            Collection<SNodeDescriptor> descriptors = map.get(key);
-            if (descriptors == null) {
-              descriptors = new ArrayList<SNodeDescriptor>();
-              map.put(key, descriptors);
+              updateCollection(modelRef, object, collection);
             }
-
-            descriptors.add(SNodeDescriptor.fromModelReference(nodeName, node.getConcept().getId(), modelRef, node.getNodeId()));
           }
         } catch (Exception e) {
           LOG.error("Error indexing model file " + inputData.getFileName() + "; " + e.getMessage());
@@ -176,7 +174,14 @@ import java.util.Map;
     return map;
   }
 
-  protected abstract Iterable<SNode> getNodesToIndex(SModel sModel);
+  protected abstract Iterable<S> getObjectsToIndex(SModel sModel);
 
-  protected abstract String getKey(SModel model, String nodeName);
+  protected abstract String[] getKeys(SModel model, S object);
+
+  protected abstract void updateCollection(SModelReference modelRef, S object, Collection<E> collection);
+
+  protected String getSNodeName(SNode node) {
+    String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
+    return (persistentName == null) ? "null" : persistentName;
+  }
 }
