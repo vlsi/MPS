@@ -17,7 +17,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -97,11 +97,11 @@ public class NamedTupleDeclaration_Behavior {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", "virtual_populateMembers_7405920559687241403", new Object[]{context, classifierType});
   }
 
-  public static String virtual_getLeftBracket_1262430001741497804(SConcept thisConcept) {
+  public static String virtual_getLeftBracket_1262430001741497804(SAbstractConcept thisConcept) {
     return "(";
   }
 
-  public static String virtual_getRightBracket_1262430001741498115(SConcept thisConcept) {
+  public static String virtual_getRightBracket_1262430001741498115(SAbstractConcept thisConcept) {
     return ")";
   }
 

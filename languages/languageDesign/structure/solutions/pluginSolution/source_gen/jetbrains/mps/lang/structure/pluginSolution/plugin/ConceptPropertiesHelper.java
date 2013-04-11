@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.IScope;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -25,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.project.IModule;
@@ -146,7 +145,7 @@ public class ConceptPropertiesHelper {
     SetSequence.fromSet(result).addElement("jetbrains.mps.lang.smodel.structure.SConceptLinkAccess");
     return SetSequence.fromSetWithValues(new HashSet<SAbstractConcept>(), SetSequence.fromSet(result).select(new ISelector<String, SAbstractConcept>() {
       public SAbstractConcept select(String it) {
-        return  SConceptRepository.getInstance().getConcept(it);
+        return SConceptRepository.getInstance().getConcept(it);
       }
     }));
   }

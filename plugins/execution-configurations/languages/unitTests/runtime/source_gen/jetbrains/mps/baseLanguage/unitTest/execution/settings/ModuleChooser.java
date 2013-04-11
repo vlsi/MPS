@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 
 import jetbrains.mps.execution.lib.ui.BaseChooserComponent;
 import java.util.List;
-
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -14,7 +12,7 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import java.util.Collections;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;

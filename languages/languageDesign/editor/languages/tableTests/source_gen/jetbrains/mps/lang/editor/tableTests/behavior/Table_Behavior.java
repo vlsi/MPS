@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class Table_Behavior {
   public static void init(SNode thisNode) {
@@ -26,11 +26,11 @@ public class Table_Behavior {
     }
   }
 
-  public static int virtual_getInitialColumnCount_1262430001741498026(SConcept thisConcept) {
+  public static int virtual_getInitialColumnCount_1262430001741498026(SAbstractConcept thisConcept) {
     return 3;
   }
 
-  public static int virtual_getInitialRowCount_1262430001741498094(SConcept thisConcept) {
+  public static int virtual_getInitialRowCount_1262430001741498094(SAbstractConcept thisConcept) {
     return 5;
   }
 }

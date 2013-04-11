@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -15,7 +15,7 @@ public class IApplicableToCollection_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> virtual_getApplicableTypes_5994574781955586127(SConcept thisConcept) {
+  public static List<SNode> virtual_getApplicableTypes_5994574781955586127(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToList", "virtual_getApplicableTypes_5994574781955586127", new Object[]{});
     ListSequence.fromList(result).addElement(_quotation_createNode_w2ix4_a0a1a0());
     return result;

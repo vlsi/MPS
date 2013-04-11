@@ -52,7 +52,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
     } else if (kind == ClassifierKind.ENUM) {
       name = "jetbrains.mps.baseLanguage.structure.EnumClass";
     }
-    return (SConcept) SConceptRepository.getInstance().getConcept(name);
+    return ((SConcept) SConceptRepository.getInstance().getConcept(name));
   }
 
   @Override

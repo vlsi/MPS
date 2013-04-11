@@ -21,7 +21,7 @@ public class SConceptNodeAdapter extends SConceptNodeAdapterBase implements SCon
 
   @Override
   public SConcept getSuperConcept() {
-    return (SConcept) SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SLinkOperations.getTarget(((SNode) (getConcept().resolve(MPSModuleRepository.getInstance()))), "extends", false)));
+    return ((SConcept) SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SLinkOperations.getTarget(((SNode) (getConcept().resolve(MPSModuleRepository.getInstance()))), "extends", false))));
   }
 
   @Override

@@ -16,7 +16,7 @@
     <nodeInfo nodeId="13265610250550874" fileName="JavaStubNodeDescriptor.java" startLine="48" startPosition="50" endLine="49" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="13265610250550883" fileName="JavaStubNodeDescriptor.java" startLine="50" startPosition="52" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="13265610250550892" fileName="JavaStubNodeDescriptor.java" startLine="52" startPosition="45" endLine="53" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="13265610250550899" fileName="JavaStubNodeDescriptor.java" startLine="54" startPosition="5" endLine="55" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="13265610250550899" fileName="JavaStubNodeDescriptor.java" startLine="54" startPosition="5" endLine="55" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="13265610250562414" fileName="JavaStubNodeDescriptor.java" startLine="60" startPosition="20" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="13265610250562420" fileName="JavaStubNodeDescriptor.java" startLine="63" startPosition="55" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="13265610250562433" fileName="JavaStubNodeDescriptor.java" startLine="65" startPosition="5" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -67,7 +67,7 @@
     <scopeInfo nodeId="13265610250562537" fileName="JavaStubNodeDescriptor.java" startLine="91" startPosition="25" endLine="105" endPosition="18">
       <varInfo nodeId="13265610250562540" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="13265610250550831" fileName="JavaStubNodeDescriptor.java" startLine="40" startPosition="32" endLine="55" endPosition="61">
+    <scopeInfo nodeId="13265610250550831" fileName="JavaStubNodeDescriptor.java" startLine="40" startPosition="32" endLine="55" endPosition="74">
       <varInfo nodeId="13265610250550837" varName="kind" />
       <varInfo nodeId="13265610250550833" varName="name" />
     </scopeInfo>

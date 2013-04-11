@@ -4,8 +4,6 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import java.util.List;
-
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
@@ -21,7 +19,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;

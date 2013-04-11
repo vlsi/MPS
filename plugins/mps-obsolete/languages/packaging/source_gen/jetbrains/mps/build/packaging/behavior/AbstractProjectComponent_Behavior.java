@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractProjectComponent_Behavior {
@@ -78,7 +78,7 @@ public class AbstractProjectComponent_Behavior {
     return EqualUtil.equalsIgnoreCase(SPropertyOperations.getString(thisNode, "name"), SPropertyOperations.getString(snode, "name"));
   }
 
-  public static boolean virtual_acceptFiles_1262430001741497846(SConcept thisConcept) {
+  public static boolean virtual_acceptFiles_1262430001741497846(SAbstractConcept thisConcept) {
     return false;
   }
 

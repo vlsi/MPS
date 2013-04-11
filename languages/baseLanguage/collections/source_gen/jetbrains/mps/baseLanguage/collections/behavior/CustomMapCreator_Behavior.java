@@ -9,7 +9,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class CustomMapCreator_Behavior {
   public static void init(SNode thisNode) {
@@ -41,7 +41,7 @@ public class CustomMapCreator_Behavior {
     return res;
   }
 
-  public static boolean virtual_hasInitSize_1262430001741497996(SConcept thisConcept) {
+  public static boolean virtual_hasInitSize_1262430001741497996(SAbstractConcept thisConcept) {
     return false;
   }
 }

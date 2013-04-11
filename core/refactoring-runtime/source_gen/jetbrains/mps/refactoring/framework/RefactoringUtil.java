@@ -5,12 +5,10 @@ package jetbrains.mps.refactoring.framework;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.List;
-
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
