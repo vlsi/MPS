@@ -667,7 +667,7 @@ public class EditorManager {
       } else {
         SConcept concept = (SConcept) nextConcept;
         SConcept superConcept = concept.getSuperConcept();
-        if (!processedConcepts.contains(superConcept)) {
+        if (superConcept != null && !processedConcepts.contains(superConcept)) {
           queue.add(superConcept);
           processedConcepts.add(superConcept);
         }
