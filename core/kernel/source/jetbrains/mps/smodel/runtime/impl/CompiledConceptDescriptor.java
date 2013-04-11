@@ -37,6 +37,15 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       boolean isInterfaceConcept,
       String[] parents,
       String[] ownPropertyNames,
+      String[] ownReferenceNames) {
+      this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, new String[]{});
+  }
+
+  public CompiledConceptDescriptor(String conceptFqName,
+      @Nullable String superConcept,
+      boolean isInterfaceConcept,
+      String[] parents,
+      String[] ownPropertyNames,
       String[] ownReferenceNames,
       String[] ownChildNames) {
     this.conceptFqName = conceptFqName;
