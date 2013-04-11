@@ -9849,11 +9849,26 @@
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="j0bb.Company" typeId="j0bb.938834323431421731" id="938834323431485879">
       <property name="name" nameId="tpck.1169194664001" value="JetBrains" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2798981647750227294">
+        <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="9" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="9" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
+      </node>
     </node>
   </root>
   <root id="6007318803029905321">
     <node role="result" roleId="tp5g.1229187707859" type="j0bb.Team" typeId="j0bb.938834323431421842" id="6007318803029974229">
-      <node role="developer" roleId="j0bb.938834323431434551" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="6007318803029974232" />
+      <node role="developer" roleId="j0bb.938834323431434551" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="6007318803029974232">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2798981647750161729">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
+        </node>
+      </node>
     </node>
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="j0bb.Team" typeId="j0bb.938834323431421842" id="6007318803029905348">
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6007318803029974234">
@@ -9894,6 +9909,13 @@
     <node role="result" roleId="tp5g.1229187707859" type="j0bb.Team" typeId="j0bb.938834323431421842" id="6007318803030048848">
       <property name="name" nameId="tpck.1169194664001" value="MPS" />
       <property name="isOpenSource" nameId="j0bb.938834323431434566" value="true" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2798981647750227274">
+        <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="empty_developer" />
+      </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6007318803030048852">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="6007318803030048850">
@@ -9909,6 +9931,13 @@
       <property name="age" nameId="j0bb.938834323431434568" value="22" />
       <property name="sex" nameId="j0bb.938834323431434570" value="true" />
       <property name="lastName" nameId="j0bb.938834323431434575" value="Alperovich" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2798981647750227290">
+        <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_age" />
+      </node>
     </node>
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="6007318803030052674">
       <property name="name" nameId="tpck.1169194664001" value="Simon" />
@@ -9946,6 +9975,13 @@
       <property name="age" nameId="j0bb.938834323431434568" value="22" />
       <property name="sex" nameId="j0bb.938834323431434570" value="true" />
       <property name="lastName" nameId="j0bb.938834323431434575" value="Alperovich" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2798981647750227292">
+        <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="10" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="10" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_lastName" />
+      </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6007318803030056764">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="6007318803030056766">
@@ -9971,6 +10007,13 @@
       <property name="age" nameId="j0bb.938834323431434568" value="22" />
       <property name="sex" nameId="j0bb.938834323431434570" value="true" />
       <property name="lastName" nameId="j0bb.938834323431434575" value="Alperovich" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2798981647750227285">
+        <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="4" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="4" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_sex" />
+      </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6007318803030060615">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="6007318803030060614">
@@ -10011,6 +10054,12 @@
       <node role="developer" roleId="j0bb.938834323431434551" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="6007318803030932492">
         <property name="name" nameId="tpck.1169194664001" value="Timur" />
         <link role="bestFriend" roleId="j0bb.938834323431434579" targetNodeId="3215314425155389398" resolveInfo="Simon" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2798981647750161725">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="5" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="5" />
+        </node>
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6007318803030184414">
@@ -10049,6 +10098,13 @@
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6007318803034323480">
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln()%cvoid" resolveInfo="println" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2798981647750226968">
+              <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+              <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
+              <property name="cellId" nameId="tp5g.1229194968595" value="Constant_arlg9k_c0" />
+            </node>
           </node>
         </node>
       </node>
