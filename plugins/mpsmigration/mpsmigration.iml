@@ -26,6 +26,7 @@
     <orderEntry type="module" module-name="mpsjava" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
   </component>
 </module>
 
