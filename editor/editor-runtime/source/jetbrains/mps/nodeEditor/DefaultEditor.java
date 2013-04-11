@@ -252,8 +252,12 @@ public class DefaultEditor extends DefaultNodeEditor {
   }
 
   private void addLabel(String label) {
+    addLabel(label, false);
+  }
+
+  private void addLabel(String label, boolean editable) {
     EditorCell_Collection cellCollection = collectionStack.peek();
-    EditorCell_Constant childLabel = new EditorCell_Constant(myEditorContext, mySNode, label, false);
+    EditorCell_Constant childLabel = new EditorCell_Constant(myEditorContext, mySNode, label, editable);
     childLabel.setCellId("constant_" + currentConstantIdNumber.toString());
     currentConstantIdNumber = currentConstantIdNumber.add(BigInteger.ONE);
     cellCollection.addEditorCell(childLabel);
