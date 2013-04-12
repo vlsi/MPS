@@ -14,13 +14,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.DevKit", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"plugin", "devkitPath"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.DevKit", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"plugin", "devkitPath"}, new String[]{}, new String[]{"exportedLanguages", "exportedSolutions", "extendedDevkits"});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Generator", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"generatorUID", "generateTemplates"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Generator", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"generatorUID", "generateTemplates"}, new String[]{}, new String[]{"priorityRules", "depGenerators"});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Language", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"genPath", "languagePath"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Language", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"genPath", "languagePath"}, new String[]{}, new String[]{"generator", "accessoryModels", "extendedLanguages", "runtimeModules", "runtimeStubModels", "stubSolutions"});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigExternalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", false, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigExternalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", false, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{}, new String[]{}, new String[]{"generator", "innerRef"});
       case 4:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigNormalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", false, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"modelUID", "nodeID"}, new String[]{}, new String[]{});
       case 5:
@@ -30,17 +30,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefBase", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{});
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefSet", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", false, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefSet", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", false, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{}, new String[]{}, new String[]{"refs"});
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingPriorityRule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"type"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingPriorityRule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"type"}, new String[]{}, new String[]{"left", "right"});
       case 10:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.ModelReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"uuid", "qualifiedName", "stereotype"}, new String[]{}, new String[]{});
       case 11:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.ModelRoot", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"type", "path"}, new String[]{}, new String[]{});
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Module", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"uuid", "namespace", "compileInMPS", "enableJavaStubs"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Module", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"uuid", "namespace", "compileInMPS", "enableJavaStubs"}, new String[]{}, new String[]{"model", "modelRoots", "dependencies", "usedLanguages", "usedDevkits", "stubModels", "sourcePaths"});
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.ModuleDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"reexport"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.ModuleDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"reexport"}, new String[]{}, new String[]{"moduleRef"});
       case 14:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.ModuleReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"uuid", "qualifiedName"}, new String[]{}, new String[]{});
       case 15:

@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.BaseConcept", null, false, new String[]{}, new String[]{"shortDescription", "alias", "virtualPackage"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.BaseConcept", null, false, new String[]{}, new String[]{"shortDescription", "alias", "virtualPackage"}, new String[]{}, new String[]{"smodelAttribute"});
       case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScope", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{});
       case 3:

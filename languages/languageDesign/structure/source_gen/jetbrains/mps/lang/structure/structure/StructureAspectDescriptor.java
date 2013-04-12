@@ -14,9 +14,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"}, new String[]{"helpURL", "conceptAlias", "conceptShortDescription", "abstract", "final"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"}, new String[]{"helpURL", "conceptAlias", "conceptShortDescription", "abstract", "final"}, new String[]{}, new String[]{"linkDeclaration", "propertyDeclaration", "conceptProperty", "conceptLink", "conceptPropertyDeclaration", "conceptLinkDeclaration"});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.AggregationConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLink", false, new String[]{"jetbrains.mps.lang.structure.structure.ConceptLink"}, new String[]{}, new String[]{"aggregationConceptLinkDeclaration"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.AggregationConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLink", false, new String[]{"jetbrains.mps.lang.structure.structure.ConceptLink"}, new String[]{}, new String[]{"aggregationConceptLinkDeclaration"}, new String[]{"target"});
       case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", false, new String[]{"jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"}, new String[]{}, new String[]{}, new String[]{});
       case 3:
@@ -26,7 +26,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 5:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration", false, new String[]{"jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"}, new String[]{}, new String[]{}, new String[]{});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"}, new String[]{"rootable", "iconPath", "staticScope"}, new String[]{"extends"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"}, new String[]{"rootable", "iconPath", "staticScope"}, new String[]{"extends"}, new String[]{"implements"});
       case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.ConceptLink", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"conceptLinkDeclaration"}, new String[]{});
       case 8:
@@ -42,7 +42,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 13:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"build", "comment"}, new String[]{}, new String[]{});
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", false, new String[]{"jetbrains.mps.lang.structure.structure.DataTypeDeclaration"}, new String[]{"memberIdentifierPolicy", "hasNoDefaultMember", "noValueText"}, new String[]{"memberDataType", "defaultMember"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", false, new String[]{"jetbrains.mps.lang.structure.structure.DataTypeDeclaration"}, new String[]{"memberIdentifierPolicy", "hasNoDefaultMember", "noValueText"}, new String[]{"memberDataType", "defaultMember"}, new String[]{"member"});
       case 15:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"internalValue", "externalValue", "javaIdentifier"}, new String[]{}, new String[]{});
       case 16:
@@ -54,7 +54,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 19:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration", false, new String[]{"jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"}, new String[]{}, new String[]{}, new String[]{});
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"}, new String[]{}, new String[]{}, new String[]{"extends"});
       case 21:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"intfc"}, new String[]{});
       case 22:
