@@ -88,7 +88,7 @@ public final class NodePath {
     if (that.isEmpty()) return that;
 
     ListIterator<SNodeId> thisIt = this.myPath.listIterator();
-    ListIterator<SNodeId> thatIt = this.myPath.listIterator();
+    ListIterator<SNodeId> thatIt = that.myPath.listIterator();
 
     LinkedList<SNodeId> result = null;
     while (thisIt.hasNext() && thatIt.hasNext()) {
