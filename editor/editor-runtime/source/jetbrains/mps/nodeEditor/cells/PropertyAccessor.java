@@ -42,7 +42,7 @@ public class PropertyAccessor implements ModelAccessor {
     myReadOnly = readOnly || SModelOperations.isReadOnly(node.getModel()) || editorContext.getEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
     SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName);
-    myPropertyDeclaration = propertyDeclaration.getReference();
+    myPropertyDeclaration = propertyDeclaration != null ? propertyDeclaration.getReference() : null;
     myScope = editorContext.getScope();
   }
 
@@ -52,7 +52,7 @@ public class PropertyAccessor implements ModelAccessor {
     myReadOnly = readOnly || SModelOperations.isReadOnly(node.getModel());
     myAllowEmptyText = allowEmptyText;
     SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName);
-    myPropertyDeclaration = propertyDeclaration.getReference();
+    myPropertyDeclaration = propertyDeclaration != null ? propertyDeclaration.getReference() : null;
     myScope = context.getScope();
   }
 
@@ -114,7 +114,7 @@ public class PropertyAccessor implements ModelAccessor {
       return (text == null && (propertyValue == null || propertyValue.isEmpty())) || (text != null && text.equals(propertyValue));
     }
 
-    SNode node = myPropertyDeclaration.resolve(MPSModuleRepository.getInstance());
+    SNode node = getPropertyDeclaration();
     if (node != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.canSetValue(myNode, myPropertyName, text, myScope);
@@ -128,7 +128,7 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   private String fromInternal(String value) {
-    SNode node = myPropertyDeclaration.resolve(MPSModuleRepository.getInstance());
+    SNode node = getPropertyDeclaration();
     if (node != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.fromInternalValue(value);
@@ -137,11 +137,15 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   private String toInternal(String value) {
-    SNode node = myPropertyDeclaration.resolve(MPSModuleRepository.getInstance());
+    SNode node = getPropertyDeclaration();
     if (node != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.toInternalValue(value);
     }
     return value;
+  }
+
+  private SNode getPropertyDeclaration() {
+    return myPropertyDeclaration != null ? myPropertyDeclaration.resolve(MPSModuleRepository.getInstance()) : null;
   }
 }
