@@ -98,7 +98,9 @@
     </node>
   </root>
   <root id="3702466984434806354">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3702466984434806356" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Error" typeId="tpc2.1075375595203" id="4828650071862732569">
+      <property name="text" nameId="tpc2.1075375595204" value="    " />
+    </node>
   </root>
   <root id="3702466984434806358">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8497577741384827846">

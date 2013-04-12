@@ -29,12 +29,12 @@ public class MakeFieldStatic extends BaseRefactoring {
     this.addTransientParameter("usages");
   }
 
-  public String getUserFriendlyName() {
-    return "Make field static";
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MakeFieldStatic_Target();
+  }
+
+  public String getUserFriendlyName() {
+    return "Make field static";
   }
 
   public boolean init(final RefactoringContext refactoringContext) {

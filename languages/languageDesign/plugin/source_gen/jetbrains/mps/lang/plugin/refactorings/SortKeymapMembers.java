@@ -18,12 +18,12 @@ public class SortKeymapMembers extends BaseRefactoring {
   public SortKeymapMembers() {
   }
 
-  public String getUserFriendlyName() {
-    return "Sort Members";
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new SortKeymapMembers_Target();
+  }
+
+  public String getUserFriendlyName() {
+    return "Sort Members";
   }
 
   public void refactor(final RefactoringContext refactoringContext) {

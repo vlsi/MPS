@@ -20,14 +20,23 @@ import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.runtime.*;
-import jetbrains.mps.smodel.runtime.interpreted.*;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
+import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
+import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
+import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
+import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
+import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import jetbrains.mps.smodel.structure.FacetDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguageNamespace;
 
@@ -41,8 +50,9 @@ public abstract class LanguageRuntime {
   private BehaviorAspectDescriptor behaviorDescriptor;
   private ConstraintsAspectDescriptor constraintsDescriptor;
   private ExtensionDescriptor myExtensionDescriptor;
-  protected EditorAspectDescriptor myEditorDescriptor;
   protected TextGenAspectDescriptor myTextGenDescriptor;
+  private Map<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor> myAspectDescriptors =
+      new HashMap<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor>();
 
   public abstract String getNamespace();
 
@@ -60,7 +70,8 @@ public abstract class LanguageRuntime {
   @Deprecated
   private <T> DescriptorProvider<T> getDescriptorProvider(String aspectName, DescriptorProvider<T> defaultProvider) {
     String className = getNamespace() + "." + aspectName;
-    DescriptorProvider<T> compiled = (DescriptorProvider<T>) getObjectByClassNameForLanguageNamespace(className, DescriptorProvider.class, getNamespace(), true);
+    DescriptorProvider<T> compiled =
+        (DescriptorProvider<T>) getObjectByClassNameForLanguageNamespace(className, DescriptorProvider.class, getNamespace(), true);
     return compiled != null ? compiled : defaultProvider;
   }
 
@@ -127,15 +138,13 @@ public abstract class LanguageRuntime {
     return myTextGenDescriptor;
   }
 
-  public final EditorAspectDescriptor getEditorAspectDescriptor() {
-    if (myEditorDescriptor == null) {
-      myEditorDescriptor = createEditorAspectDescriptor();
+  public <T extends LanguageAspectDescriptor> T getAspectDescriptor(Class<T> descriptorInterface) {
+    @SuppressWarnings("unchecked")
+    T aspectDescriptor = (T) myAspectDescriptors.get(descriptorInterface);
+    if (aspectDescriptor == null) {
+      aspectDescriptor = InterpretedLanguageAspectsRegistry.getInstance().createAspectDescriptor(descriptorInterface, this);
+      myAspectDescriptors.put(descriptorInterface, aspectDescriptor);
     }
-    return myEditorDescriptor;
+    return aspectDescriptor;
   }
-
-  protected EditorAspectDescriptor createEditorAspectDescriptor() {
-    return new EditorAspectDescriptorInterpreted();
-  }
-
 }
