@@ -21,16 +21,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.ide.refactoring.RefactoringView;
-import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
-import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
@@ -38,9 +29,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.ide.refactoring.RefactoringViewItemImpl;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -128,9 +118,9 @@ public class ApiMigrationHelper {
 
     Set<SReference> usages = FindUsagesManager.getInstance().findUsages(nodes, SearchType.USAGES, scope, new EmptyProgressMonitor());
 
-    final Set<SNode> changedClassUsages = SetSequence.fromSet(new HashSet<SNode>());
-    final Set<Tuples._2<SNode, SReference>> changedClassUsagesInTemplates = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
-    final Set<Tuples._2<SNode, SReference>> changedClassUsagesInTypes = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
+    Set<SNode> changedClassUsages = SetSequence.fromSet(new HashSet<SNode>());
+    Set<Tuples._2<SNode, SReference>> changedClassUsagesInTemplates = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
+    Set<Tuples._2<SNode, SReference>> changedClassUsagesInTypes = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
     for (SReference ref : SetSequence.fromSet(usages)) {
       SNode rNode = ((SNode) ref.getSourceNode());
       if (SModelOperations.isReadOnly(rNode.getModel())) {
@@ -162,8 +152,8 @@ public class ApiMigrationHelper {
 
     Set<SReference> musages = ((Set) FindUsagesManager.getInstance().findUsages(((Set) methods), SearchType.USAGES, scope, new EmptyProgressMonitor()));
 
-    final Set<Tuples._2<SNode, SReference>> changedMethodCalls = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
-    final Set<SNode> castedMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
+    Set<Tuples._2<SNode, SReference>> changedMethodCalls = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
+    Set<SNode> castedMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
 
     for (SReference ref : SetSequence.fromSet(musages)) {
       SNode rNode = ref.getSourceNode();
@@ -204,66 +194,25 @@ public class ApiMigrationHelper {
       }
     }
 
-    Iterable<SearchResult<SNode>> results = SetSequence.fromSet(changedClassUsages).select(new ISelector<SNode, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(SNode it) {
-        return new SearchResult<SNode>(it, "replaced Clazz occurences");
+    for (SNode cls : SetSequence.fromSet(changedClassUsages)) {
+      SLinkOperations.setTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", newNode, false);
+    }
+    for (Tuples._2<SNode, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTypes)) {
+      tmplCls._0().setReference(tmplCls._1().getRole(), tmplCls._1());
+    }
+    for (Tuples._2<SNode, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTemplates)) {
+      tmplCls._0().setReference(tmplCls._1().getRole(), tmplCls._1());
+    }
+    for (Tuples._2<SNode, SReference> change : SetSequence.fromSet(changedMethodCalls)) {
+      change._0().setReference(change._1().getRole(), change._1());
+    }
+    for (SNode occ : SetSequence.fromSet(castedMethodCalls)) {
+      SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(occ), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), newNode)) {
+        continue;
       }
-    }).union(SetSequence.fromSet(changedClassUsagesInTemplates).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
-        return new SearchResult<SNode>(it._0(), "replaced Clazz in new XYZ<Clazz,...>");
-      }
-    })).union(SetSequence.fromSet(changedClassUsagesInTypes).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
-        return new SearchResult<SNode>(it._0(), "replaced Clazz in Type<Clazz,...>");
-      }
-    })).union(SetSequence.fromSet(changedMethodCalls).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
-        return new SearchResult<SNode>(it._0(), "replaced method call");
-      }
-    })).union(SetSequence.fromSet(castedMethodCalls).select(new ISelector<SNode, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(SNode it) {
-        return new SearchResult<SNode>(it, "casted method call " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false), "name"));
-      }
-    })).union(SetSequence.fromSet(unknownUsages).select(new ISelector<SNode, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(SNode it) {
-        return new SearchResult<SNode>(it, "not migrated usages");
-      }
-    }));
-
-    ip.getComponent(RefactoringView.class).showRefactoringView(ip, new RefactoringViewAction() {
-      @Override
-      public void performAction(RefactoringViewItem refactoringViewItem) {
-        refactoringViewItem.close();
-
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            for (SNode cls : SetSequence.fromSet(changedClassUsages)) {
-              SLinkOperations.setTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", newNode, false);
-            }
-            for (Tuples._2<SNode, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTypes)) {
-              tmplCls._0().setReference(tmplCls._1().getRole(), tmplCls._1());
-            }
-            for (Tuples._2<SNode, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTemplates)) {
-              tmplCls._0().setReference(tmplCls._1().getRole(), tmplCls._1());
-            }
-            for (Tuples._2<SNode, SReference> change : SetSequence.fromSet(changedMethodCalls)) {
-              change._0().setReference(change._1().getRole(), change._1());
-            }
-            for (SNode occ : SetSequence.fromSet(castedMethodCalls)) {
-              SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(occ), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-              if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), newNode)) {
-                continue;
-              }
-              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0db0o(oldNode, operand));
-            }
-          }
-        });
-      }
-    }, new SearchResults(nodes, Sequence.fromIterable(results).where(new IWhereFilter<SearchResult<SNode>>() {
-      public boolean accept(SearchResult<SNode> it) {
-        return it.getObject().getModel() != null;
-      }
-    }).toListSequence()), false, "usages");
+      SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a13a41(oldNode, operand));
+    }
   }
 
   private boolean needMigration(SNode n) {
@@ -284,7 +233,7 @@ public class ApiMigrationHelper {
   }
 
   public void migrateMethods(final List<Tuples._3<String, SNode, _FunctionTypes._void_P1_E0<? super SNode>>> transformations) {
-    final List<Tuples._2<Set<SNode>, Set<SNode>>> usages = ListSequence.fromList(new ArrayList<Tuples._2<Set<SNode>, Set<SNode>>>());
+    List<Tuples._2<Set<SNode>, Set<SNode>>> usages = ListSequence.fromList(new ArrayList<Tuples._2<Set<SNode>, Set<SNode>>>());
 
     for (Tuples._3<String, SNode, _FunctionTypes._void_P1_E0<? super SNode>> transformation : ListSequence.fromList(transformations)) {
       Set<SNode> method = SetSequence.fromSetAndArray(new HashSet<SNode>(), transformation._1());
@@ -325,37 +274,15 @@ public class ApiMigrationHelper {
       }));
     }
 
-    ip.getComponent(RefactoringView.class).showRefactoringView(ip, new RefactoringViewAction() {
-      @Override
-      public void performAction(RefactoringViewItem refactoringViewItem) {
-        final List<SNodeReference> included = ((RefactoringViewItemImpl) refactoringViewItem).getUsagesView().getIncludedResultNodes();
-        refactoringViewItem.close();
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            for (int i = 0; i < ListSequence.fromList(usages).count(); i++) {
-              _FunctionTypes._void_P1_E0<? super SNode> transformer = ListSequence.fromList(transformations).getElement(i)._2();
-              for (SNode known : SetSequence.fromSet(ListSequence.fromList(usages).getElement(i)._0())) {
-                if (known.getModel() == null) {
-                  continue;
-                }
-                SNodeReference np = new SNodePointer(known);
-                if (ListSequence.fromList(included).contains(np)) {
-                  transformer.invoke(known);
-                }
-              }
-            }
-          }
-        });
+    for (int i = 0; i < ListSequence.fromList(usages).count(); i++) {
+      _FunctionTypes._void_P1_E0<? super SNode> transformer = ListSequence.fromList(transformations).getElement(i)._2();
+      for (SNode known : SetSequence.fromSet(ListSequence.fromList(usages).getElement(i)._0())) {
+        if (known.getModel() == null) {
+          continue;
+        }
+        transformer.invoke(known);
       }
-    }, new SearchResults(SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(transformations).select(new ISelector<Tuples._3<String, SNode, _FunctionTypes._void_P1_E0<? super SNode>>, SNode>() {
-      public SNode select(Tuples._3<String, SNode, _FunctionTypes._void_P1_E0<? super SNode>> it) {
-        return it._1();
-      }
-    })), ListSequence.fromList(results).where(new IWhereFilter<SearchResult<SNode>>() {
-      public boolean accept(SearchResult<SNode> it) {
-        return it.getObject().getModel() != null;
-      }
-    }).toListSequence()), false, "usages");
+    }
   }
 
   private SNode getNewMethod(SNode old, SNode newClass) {
@@ -527,7 +454,7 @@ public class ApiMigrationHelper {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0db0o(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_yke5lt_a0a2a13a41(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
