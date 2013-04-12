@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.constraints.structure.ConceptConstraints", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"concept", "defaultConcreteConcept"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.constraints.structure.ConceptConstraints", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"concept", "defaultConcreteConcept"}, new String[]{"property", "referent", "defaultScope", "canBeChild", "canBeRoot", "canBeParent", "canBeAncestor", "alternativeIcon"});
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
       case 2:
@@ -90,11 +90,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 37:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.constraints.structure.NodeScopeFactory"}, new String[]{}, new String[]{"kind"}, new String[]{});
       case 38:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"description"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"description"}, new String[]{}, new String[]{"searchScopeFactory", "validator", "presentation"});
       case 39:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"applicableProperty"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"applicableProperty"}, new String[]{"propertyGetter", "propertySetter", "propertyValidator"});
       case 40:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"applicableLink"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"applicableLink"}, new String[]{"searchScopeFactory", "validator", "presentation", "referentSetHandler", "keepsReference"});
       case 41:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.constraints.structure.NodeScopeFactory", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
       default:

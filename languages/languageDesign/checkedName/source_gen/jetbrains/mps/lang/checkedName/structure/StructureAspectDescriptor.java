@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.PropertyRefExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"propertyDeclaration"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.PropertyRefExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"propertyDeclaration"}, new String[]{"nodeExpr"});
       case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.PropertyRefType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{}, new String[]{});
       default:

@@ -20,13 +20,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.AppendOperation", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.AppendOperation", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"part"});
       case 4:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.BufferParameter", "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{}, new String[]{}, new String[]{});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.CollectionAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"separator", "withSeparator"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.CollectionAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"separator", "withSeparator"}, new String[]{}, new String[]{"list"});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"conceptDeclaration"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{}, new String[]{"conceptDeclaration"}, new String[]{"extension", "encoding", "textGenBlock"});
       case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"value", "withIndent"}, new String[]{}, new String[]{});
       case 8:
@@ -42,7 +42,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 13:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.ExtensionDeclaration", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{});
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.FoundErrorOperation", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.FoundErrorOperation", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"text"});
       case 15:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{});
       case 16:
@@ -50,29 +50,29 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 17:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.IndentBufferOperation", "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", false, new String[]{"jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.InfoAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.InfoAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{}, new String[]{}, new String[]{"value"});
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{}, new String[]{"baseTextGen"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"}, new String[]{}, new String[]{"baseTextGen"}, new String[]{"operation", "function"});
       case 20:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.NewLineAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{}, new String[]{}, new String[]{});
       case 21:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.NodeAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"withIndent"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.NodeAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"withIndent"}, new String[]{}, new String[]{"value"});
       case 22:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.NodeParameter", "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"}, new String[]{}, new String[]{}, new String[]{});
       case 23:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.OperationCall", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{}, new String[]{"function"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.OperationCall", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{}, new String[]{"function"}, new String[]{"parameter"});
       case 24:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.OperationDeclaration", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, new String[]{"operationName"}, new String[]{}, new String[]{});
       case 25:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"uniqNameInFile"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractAppendPart", false, new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart"}, new String[]{"uniqNameInFile"}, new String[]{}, new String[]{"reference"});
       case 26:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{});
       case 27:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.UtilityMethodCall", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"function"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.UtilityMethodCall", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"function"}, new String[]{"parameter"});
       case 28:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, new String[]{}, new String[]{}, new String[]{});
       case 29:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.WithIndentOperation", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.textGen.structure.WithIndentOperation", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"list"});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

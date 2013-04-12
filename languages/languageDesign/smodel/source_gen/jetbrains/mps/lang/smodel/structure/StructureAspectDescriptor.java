@@ -22,31 +22,31 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.AsNodeOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.AttributeAccess", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.smodel.structure.ILinkAccess"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.AttributeAccess", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.smodel.structure.ILinkAccess"}, new String[]{}, new String[]{}, new String[]{"qualifier"});
       case 5:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.AttributeQualifier", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{});
       case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.CheckedModuleReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"moduleId"}, new String[]{}, new String[]{});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression", "jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression"}, new String[]{}, new String[]{"targetNode"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression", "jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression"}, new String[]{}, new String[]{"targetNode"}, new String[]{"parent"});
       case 8:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"conceptDeclaration"}, new String[]{});
       case 9:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ConceptPropertyNameRefExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"conceptDeclaration", "conceptPropertyDeclaration"}, new String[]{});
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"value"});
       case 11:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ConceptRefExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"conceptDeclaration"}, new String[]{});
       case 12:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ConceptReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"concept"}, new String[]{});
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"expression", "case"});
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"concept", "body"});
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_FindInstances", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_FindInstances", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"scope"});
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"smodel", "scope"});
       case 17:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 18:
@@ -54,13 +54,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 19:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"conceptArgument"});
       case 21:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"conceptArgument"});
       case 22:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"conceptArgument"});
       case 23:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_NewInstance", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Concept_NewInstance", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"prototypeNode"});
       case 24:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.EnumMemberReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"enumMember"}, new String[]{});
       case 25:
@@ -88,7 +88,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 36:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.IReferenceOperation", null, true, new String[]{"jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 37:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"nodeConcept"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"nodeConcept"}, new String[]{"nodeExpression", "body", "variable"});
       case 38:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference", "jetbrains.mps.baseLanguage.structure.BaseVariableReference", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseVariableReference"}, new String[]{}, new String[]{"instanceOfVariable"}, new String[]{});
       case 39:
@@ -96,15 +96,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 40:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression", false, new String[]{"jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"}, new String[]{}, new String[]{}, new String[]{});
       case 41:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.AttributeQualifier", false, new String[]{"jetbrains.mps.lang.smodel.structure.AttributeQualifier"}, new String[]{}, new String[]{"attributeConcept"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.AttributeQualifier", false, new String[]{"jetbrains.mps.lang.smodel.structure.AttributeQualifier"}, new String[]{}, new String[]{"attributeConcept"}, new String[]{"linkQualifier"});
       case 42:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"childNodes"});
       case 43:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"childNode"});
       case 44:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{});
       case 45:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"childNode"});
       case 46:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
       case 47:
@@ -120,13 +120,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 52:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{});
       case 53:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"linkTarget"});
       case 54:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ModelReferenceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"name", "stereotype", "fqName"}, new String[]{}, new String[]{});
       case 55:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"nodeArgument"});
       case 56:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{"nodeId", "prototypeNode"});
       case 57:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 58:
@@ -134,11 +134,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 59:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_GetModule", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 60:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{"scope"});
       case 61:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_NodesOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{});
       case 62:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{"scope"});
       case 63:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Model_RootsOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{});
       case 64:
@@ -190,23 +190,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 87:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 88:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"linkQualifier"});
       case 89:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 90:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"referenceLink"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"referenceLink"}, new String[]{"operationContext"});
       case 91:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{});
       case 92:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{});
       case 93:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"insertedNode"});
       case 94:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"insertedNode"});
       case 95:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 96:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"conceptArgument"});
       case 97:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 98:
@@ -214,39 +214,39 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 99:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"conceptOfParent", "linkInParent"}, new String[]{});
       case 100:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"replacementNode"});
       case 101:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"concept"}, new String[]{});
       case 102:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.OperationParm_Concept", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.OperationParm_Concept", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"conceptArgument"});
       case 103:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"concept"});
       case 104:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
       case 105:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"}, new String[]{}, new String[]{}, new String[]{"linkQualifier"});
       case 106:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.OperationParm_Root", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
       case 107:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.OperationParm_SameMetaLevel", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
       case 108:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", false, new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"concept"});
       case 109:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.PoundExpression", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.IPropertyAccessQualifier", "jetbrains.mps.lang.smodel.structure.IPropertyQualifier", "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifier", "jetbrains.mps.lang.smodel.structure.ILinkQualifier", "jetbrains.mps.lang.smodel.structure.IRefConceptArg"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.PoundExpression", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.IPropertyAccessQualifier", "jetbrains.mps.lang.smodel.structure.IPropertyQualifier", "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifier", "jetbrains.mps.lang.smodel.structure.ILinkQualifier", "jetbrains.mps.lang.smodel.structure.IRefConceptArg"}, new String[]{}, new String[]{}, new String[]{"expression"});
       case 110:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.AttributeQualifier", false, new String[]{"jetbrains.mps.lang.smodel.structure.AttributeQualifier"}, new String[]{}, new String[]{"attributeConcept"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.AttributeQualifier", false, new String[]{"jetbrains.mps.lang.smodel.structure.AttributeQualifier"}, new String[]{}, new String[]{"attributeConcept"}, new String[]{"propertyQualifier"});
       case 111:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"conceptDeclaration", "propertyDeclaration"}, new String[]{});
       case 112:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.PropertyQualifier", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.IPropertyQualifier"}, new String[]{}, new String[]{"property"}, new String[]{});
       case 113:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"value"});
       case 114:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"value"});
       case 115:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Property_RemoveOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
       case 116:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Property_SetOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.Property_SetOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{"value"});
       case 117:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.ReadConceptReferenceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"conceptDeclaration"}, new String[]{});
       case 118:
@@ -272,11 +272,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 128:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SEnumOperation", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
       case 129:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"enumDeclaration"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"enumDeclaration"}, new String[]{"operation"});
       case 130:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.SEnumOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.SEnumOperation"}, new String[]{}, new String[]{}, new String[]{"nameExpression"});
       case 131:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.SEnumOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.SEnumOperation"}, new String[]{}, new String[]{}, new String[]{"valueExpression"});
       case 132:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.SEnumOperation"}, new String[]{}, new String[]{"member"}, new String[]{});
       case 133:
@@ -290,17 +290,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 137:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SModelType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{}, new String[]{});
       case 138:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SNodeCreator", "jetbrains.mps.baseLanguage.structure.AbstractCreator", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SNodeCreator", "jetbrains.mps.baseLanguage.structure.AbstractCreator", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"}, new String[]{}, new String[]{}, new String[]{"createdType", "prototypeNode"});
       case 139:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SNodeListCreator", "jetbrains.mps.baseLanguage.structure.AbstractCreator", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SNodeListCreator", "jetbrains.mps.baseLanguage.structure.AbstractCreator", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"}, new String[]{}, new String[]{}, new String[]{"createdType"});
       case 140:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SNodeListType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.IGenericType"}, new String[]{}, new String[]{"elementConcept"}, new String[]{});
       case 141:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{}, new String[]{"parameter"});
       case 142:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SNodeType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"concept"}, new String[]{});
       case 143:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"asCast"}, new String[]{"concept"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"asCast"}, new String[]{"concept"}, new String[]{"leftExpression"});
       case 144:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SPropertyAccess", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{"property"}, new String[]{});
       case 145:
@@ -308,9 +308,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 146:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SearchScopeType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{}, new String[]{});
       case 147:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{}, new String[]{"nodeToCheck"});
       case 148:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"leftExpression"});
       case 149:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", "jetbrains.mps.baseLanguage.structure.BaseMethodCall", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"concept", "methodDeclaration"}, new String[]{});
       case 150:

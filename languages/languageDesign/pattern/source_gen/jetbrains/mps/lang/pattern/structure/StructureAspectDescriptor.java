@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.ActionAsPattern", "jetbrains.mps.lang.pattern.structure.AsPattern", false, new String[]{"jetbrains.mps.lang.pattern.structure.AsPattern"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.ActionAsPattern", "jetbrains.mps.lang.pattern.structure.AsPattern", false, new String[]{"jetbrains.mps.lang.pattern.structure.AsPattern"}, new String[]{}, new String[]{}, new String[]{"position", "action"});
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.ActionStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{});
       case 2:
@@ -36,15 +36,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 10:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.ListPattern", "jetbrains.mps.lang.pattern.structure.AsPattern", false, new String[]{"jetbrains.mps.lang.pattern.structure.AsPattern"}, new String[]{}, new String[]{}, new String[]{});
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.OrPattern", "jetbrains.mps.lang.pattern.structure.Pattern", false, new String[]{"jetbrains.mps.lang.pattern.structure.Pattern"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.OrPattern", "jetbrains.mps.lang.pattern.structure.Pattern", false, new String[]{"jetbrains.mps.lang.pattern.structure.Pattern"}, new String[]{}, new String[]{}, new String[]{"clause", "variable"});
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.OrPatternClause", "jetbrains.mps.lang.pattern.structure.PatternExpression", false, new String[]{"jetbrains.mps.lang.pattern.structure.PatternExpression"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.OrPatternClause", "jetbrains.mps.lang.pattern.structure.PatternExpression", false, new String[]{"jetbrains.mps.lang.pattern.structure.PatternExpression"}, new String[]{}, new String[]{}, new String[]{"expression"});
       case 13:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.OrPatternVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"declaration"}, new String[]{});
       case 14:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{});
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.PatternExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.ISuppressErrors"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.PatternExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.ISuppressErrors"}, new String[]{}, new String[]{}, new String[]{"patternNode"});
       case 16:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.Pattern", false, new String[]{"jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"varName"}, new String[]{}, new String[]{});
       case 17:

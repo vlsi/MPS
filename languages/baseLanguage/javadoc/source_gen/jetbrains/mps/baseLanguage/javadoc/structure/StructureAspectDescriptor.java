@@ -18,7 +18,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{"body", "author", "since", "version", "deprecated", "see"});
       case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{});
       case 4:
@@ -28,15 +28,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{}, new String[]{"declaration"}, new String[]{});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{}, new String[]{}, new String[]{"param"});
       case 8:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{}, new String[]{"classifier"}, new String[]{});
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{}, new String[]{}, new String[]{"line"});
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"}, new String[]{}, new String[]{}, new String[]{"statement"});
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"part"});
       case 12:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{});
       case 13:
@@ -50,23 +50,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 17:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"}, new String[]{}, new String[]{"fieldDeclaration"}, new String[]{});
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"name"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"name"}, new String[]{}, new String[]{"line"});
       case 19:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{}, new String[]{}, new String[]{});
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{}, new String[]{}, new String[]{"tag"});
       case 21:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{}, new String[]{}, new String[]{"line", "reference"});
       case 22:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"}, new String[]{}, new String[]{}, new String[]{"param", "throwsTag", "return"});
       case 23:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference"}, new String[]{}, new String[]{"methodDeclaration"}, new String[]{});
       case 24:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"text"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"text"}, new String[]{}, new String[]{"parameter"});
       case 25:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"text"}, new String[]{}, new String[]{});
       case 26:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"text"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"text"}, new String[]{}, new String[]{"reference"});
       case 27:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"text"}, new String[]{}, new String[]{});
       case 28:
@@ -74,9 +74,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 29:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"}, new String[]{"text"}, new String[]{}, new String[]{});
       case 30:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"text"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"text"}, new String[]{}, new String[]{"exceptionType"});
       case 31:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag"}, new String[]{}, new String[]{}, new String[]{"variableReference"});
       case 32:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", false, new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag"}, new String[]{"text"}, new String[]{}, new String[]{});
       default:
