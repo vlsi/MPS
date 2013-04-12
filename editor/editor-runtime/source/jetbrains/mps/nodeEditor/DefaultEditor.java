@@ -39,12 +39,6 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.EqualUtil;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptUtil;
-import org.jetbrains.mps.openapi.language.SDataType;
-import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
-import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.String;
@@ -65,11 +59,9 @@ public class DefaultEditor extends DefaultNodeEditor {
 
 
   private SNode mySNode;
-  private List<SAbstractConcept> myAllSuperConcepts;
   private List<String> myPropertyNames;
-  private List<String> myChildren = new ArrayList<String>();
-  private List<String> myReferences = new ArrayList<String>();
-  private List<SProperty> myProperties = new ArrayList<SProperty>();
+  private List<String> myChildrenNames = new ArrayList<String>();
+  private List<String> myReferencesNames = new ArrayList<String>();
   private String myNameProperty;
   private EditorContext myEditorContext;
   private Stack<EditorCell_Collection> collectionStack = new Stack<EditorCell_Collection>();
@@ -87,7 +79,7 @@ public class DefaultEditor extends DefaultNodeEditor {
       addPropertyCell(myNameProperty);
     }
     addReferences();
-    if (!myProperties.isEmpty() || !myChildren.isEmpty()) {
+    if (!myPropertyNames.isEmpty() || !myChildrenNames.isEmpty()) {
       addLabel("{");
       addStyle(StyleAttributes.MATCHING_LABEL, "body-brace");
       addNewLine();
@@ -114,8 +106,8 @@ public class DefaultEditor extends DefaultNodeEditor {
     myPropertyNames.removeAll(basePropertyNames);
 
 
-    myReferences = myConceptDescriptor.getPropertyNames();
-    myChildren = myConceptDescriptor.getChildrenNames();
+    myReferencesNames = myConceptDescriptor.getPropertyNames();
+    myChildrenNames = myConceptDescriptor.getChildrenNames();
 
     cacheNameProperty();
   }
@@ -153,7 +145,7 @@ public class DefaultEditor extends DefaultNodeEditor {
   }
 
   private void addReferences() {
-    for (String reference : myReferences) {
+    for (String reference : myReferencesNames) {
       if (reference == null) {
         reference = "<no reference>";
       }
@@ -180,7 +172,7 @@ public class DefaultEditor extends DefaultNodeEditor {
   private void addChildren() {
     addLabel("");
     addNewLine();
-    for (String child : myChildren) {
+    for (String child : myChildrenNames) {
       addLink(child);
     }
   }
