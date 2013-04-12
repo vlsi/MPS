@@ -67,14 +67,15 @@ public class DefaultEditor extends DefaultNodeEditor {
   private SNode mySNode;
   private List<SAbstractConcept> myAllSuperConcepts;
   private List<String> myPropertyNames;
-  private List<SLink> myChildren = new ArrayList<SLink>();
-  private List<SLink> myReferences = new ArrayList<SLink>();
+  private List<String> myChildren = new ArrayList<String>();
+  private List<String> myReferences = new ArrayList<String>();
   private List<SProperty> myProperties = new ArrayList<SProperty>();
   private String myNameProperty;
   private EditorContext myEditorContext;
   private Stack<EditorCell_Collection> collectionStack = new Stack<EditorCell_Collection>();
   private BigInteger currentCollectionIdNumber = BigInteger.ZERO;
   private BigInteger currentConstantIdNumber = BigInteger.ZERO;
+  private ConceptDescriptor myConceptDescriptor;
 
   @Override
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -105,28 +106,17 @@ public class DefaultEditor extends DefaultNodeEditor {
   private void cacheParameters(SNode node, EditorContext editorContext) {
     myEditorContext = editorContext;
     mySNode = node;
-    myAllSuperConcepts = SConceptUtil.getAllSuperConcepts(node.getConcept(), false);
     String qualifiedName = node.getConcept().getQualifiedName();
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(qualifiedName);
+    myConceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(qualifiedName);
     ConceptDescriptor baseConceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor("jetbrains.mps.lang.core.structure.BaseConcept");
-    myPropertyNames = conceptDescriptor.getPropertyNames();
+    myPropertyNames = myConceptDescriptor.getPropertyNames();
     List<String> basePropertyNames = baseConceptDescriptor.getPropertyNames();
     myPropertyNames.removeAll(basePropertyNames);
 
 
-    for (SAbstractConcept concept : myAllSuperConcepts) {
-      for (SLink link : concept.getLinks()) {
-        if (link.isReference()) {
-          myReferences.add(link);
-        } else {
-          myChildren.add(link);
-        }
-      }
+    myReferences = myConceptDescriptor.getPropertyNames();
+    myChildren = myConceptDescriptor.getChildrenNames();
 
-      for (SProperty property : concept.getProperties()) {
-        myProperties.add(property);
-      }
-    }
     cacheNameProperty();
   }
 
@@ -163,13 +153,11 @@ public class DefaultEditor extends DefaultNodeEditor {
   }
 
   private void addReferences() {
-    for (SLink link : myReferences) {
-      String role = link.getRole();
-      if (role == null) {
-        role = "<no role>";
+    for (String reference : myReferences) {
+      if (reference == null) {
+        reference = "<no reference>";
       }
-      StringBuilder name = new StringBuilder(role);
-      assert !link.isMultiple();
+      StringBuilder name = new StringBuilder(reference);
       name.append(':');
 
       addLabel(name.toString());
@@ -180,8 +168,8 @@ public class DefaultEditor extends DefaultNodeEditor {
       CellProviderWithRole provider;
       provider = new RefCellCellProvider(mySNode, myEditorContext);
       provider.setAuxiliaryCellProvider(new MyAbstractCellProvider());
-      provider.setRole(role);
-      provider.setNoTargetText("<no " + role + ">");
+      provider.setRole(reference);
+      provider.setNoTargetText("<no " + reference + ">");
       editorCell = provider.createEditorCell(myEditorContext);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       addCell(editorCell);
@@ -192,14 +180,13 @@ public class DefaultEditor extends DefaultNodeEditor {
   private void addChildren() {
     addLabel("");
     addNewLine();
-    for (SLink link : myChildren) {
-      addLink(link);
+    for (String child : myChildren) {
+      addLink(child);
     }
   }
 
-  private void addLink(SLink link) {
+  private void addLink(String role) {
 
-    String role = link.getRole();
     if (role == null) {
       role = "<no role>";
     }
@@ -210,7 +197,7 @@ public class DefaultEditor extends DefaultNodeEditor {
 
     EditorCell editorCell;
 
-    if (link.isMultiple()) {
+    if (myConceptDescriptor.isMultipleChild(role)) {
       AbstractCellListHandler handler = new ListHandler(mySNode, role, myEditorContext);
       editorCell = handler.createCells(myEditorContext, new CellLayout_Indent(), false);
       editorCell.setRole(handler.getElementRole());

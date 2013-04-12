@@ -40,6 +40,9 @@ public interface ConceptDescriptor {
 
   boolean hasChildren(String name);
 
+  //true if true, false if false or !hasChildren(name);
+  boolean isMultipleChild(String name);
+
   // LanguageHierarchyCache replace
   List<String> getParentsNames();
 

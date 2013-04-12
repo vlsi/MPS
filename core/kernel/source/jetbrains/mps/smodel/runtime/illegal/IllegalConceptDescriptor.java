@@ -74,6 +74,11 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
+  public boolean isMultipleChild(String name) {
+    return false;
+  }
+
+  @Override
   public List<String> getParentsNames() {
     return Collections.emptyList();
   }

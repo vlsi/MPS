@@ -22,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class CompiledConceptDescriptor extends BaseConceptDescriptor {
+  public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String conceptFqName;
   private final String superConcept;
   private final boolean isInterfaceConcept;
@@ -30,7 +30,18 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final Set<String> ancestors;
   private final List<String> propertyNames;
   private final List<String> referenceNames;
+  private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
   private final List<String> childNames;
+    public CompiledConceptDescriptor(String conceptFqName,
+        @Nullable String superConcept,
+        boolean isInterfaceConcept,
+        String[] parents,
+        String[] ownPropertyNames,
+        String[] ownReferenceNames,
+        String[] ownChildNames) {
+
+        this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, ownChildNames, new Boolean[]{});
+    }
 
   public CompiledConceptDescriptor(String conceptFqName,
       @Nullable String superConcept,
@@ -38,7 +49,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       String[] parents,
       String[] ownPropertyNames,
       String[] ownReferenceNames,
-      String[] ownChildNames) {
+      String[] ownChildNames,
+      Boolean[] isMultiple) {
     this.conceptFqName = conceptFqName;
     this.superConcept = superConcept;
     this.isInterfaceConcept = isInterfaceConcept;
@@ -83,14 +95,19 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     referenceNames = new ArrayList<String>(references);
 
     //children
-    LinkedHashSet<String> children = new LinkedHashSet<String>();
-    references.addAll(Arrays.asList(ownChildNames));
-
-    for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-      references.addAll(parentDescriptor.getChildrenNames());
+    assert ownChildNames.length == isMultiple.length;
+    for (int i = 0; i != ownChildNames.length; ++i) {
+      childMap.put(ownChildNames[i], isMultiple[i]);
     }
 
-    childNames = new ArrayList<String>(children);
+    for (ConceptDescriptor parentDescriptor : parentDescriptors) {
+      for (String child : parentDescriptor.getChildrenNames()) {
+        childMap.put(child, parentDescriptor.isMultipleChild(child));
+      }
+    }
+
+    childNames = new ArrayList<String>(childMap.keySet());
+
   }
 
   @Override
@@ -132,4 +149,10 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   public Set<String> getAncestorsNames() {
     return ancestors;
   }
-}
+
+    @Override
+    public boolean isMultipleChild(String name) {
+      Boolean result = childMap.get(name);
+      return result == null ? false : result;
+    }
+  }

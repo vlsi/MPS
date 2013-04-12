@@ -125,13 +125,13 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     private List<String> propertyNames;
     private List<String> referenceNames;
     private List<String> childrenNames;
+    private HashMap<String, Boolean> childrenMap= new HashMap<String, Boolean>();
 
     InterpretedConceptDescriptor(final String fqName) {
       this.fqName = fqName;
 
       final List<String> directProperties = new ArrayList<String>();
       final List<String> directReferences = new ArrayList<String>();
-      final List<String> directChildren = new ArrayList<String>();
 
       NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
         @Override
@@ -196,7 +196,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
               if (SNodeUtil.getLinkDeclaration_IsReference(link)) {
                 directReferences.add(role);
               } else {
-                directChildren.add(role);
+                childrenMap.put(role, !SNodeUtil.getLinkDeclaration_IsSingular(link));
               }
             }
           }
@@ -241,14 +241,15 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
         referenceNames = new ArrayList<String>(references);
 
         // children
-        LinkedHashSet<String> children = new LinkedHashSet<String>();
-        children.addAll(directChildren);
+
 
         for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-          children.addAll(parentDescriptor.getChildrenNames());
+          for (String child : parentDescriptor.getChildrenNames()){
+            childrenMap.put(child, parentDescriptor.isMultipleChild(child));
+          }
         }
 
-        childrenNames = new ArrayList<String>(children);
+        childrenNames = new ArrayList<String>(childrenMap.keySet());
       }
     }
 
@@ -290,6 +291,11 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     @Override
     public Set<String> getAncestorsNames() {
       return ancestors;
+    }
+
+    @Override
+    public boolean isMultipleChild(String name) {
+      return childrenMap.get(name);
     }
   }
 }
