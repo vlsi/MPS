@@ -38,8 +38,10 @@ import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ModelProvide
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ReloadableModel;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -230,10 +232,18 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
       if (snodeVFile instanceof MPSNodeVirtualFile) {
         final MPSNodeVirtualFile mpsFile = (MPSNodeVirtualFile) snodeVFile;
 
-        SNodeReference sNodePointer = mpsFile.getSNodePointer();
+        final SNodeReference sNodePointer = mpsFile.getSNodePointer();
 
         MPSPsiModel psiModel = models.get(sNodePointer.getModelReference());
         if (psiModel == null) return null;
+
+        PsiElement psiElement = ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
+          @Override
+          public PsiElement compute() {
+            return getPsi(sNodePointer);
+          }
+        });
+        if (psiElement != null) return psiElement;
 
         for (MPSPsiRootNode rootNode : psiModel.getChildren(MPSPsiRootNode.class)) {
           if (rootNode.getSNodeReference().equals(mpsFile.getSNodePointer())) {
