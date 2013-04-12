@@ -18,12 +18,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsDescriptor {
@@ -70,11 +65,8 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
             return new FilteringScope(Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Group"))) {
               @Override
               public boolean isExcluded(SNode node) {
-                return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_Group"), "modules", true)).findFirst(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_TestModuleAnnotation"))) != null);
-                  }
-                }) == null;
+                // <node> 
+                return false;
               }
             };
           }
