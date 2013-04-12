@@ -153,10 +153,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "qualifiedName") + ".EditorAspectDescriptorImpl";
   }
 
-  public static Object propertyMacro_GetPropertyValue_4565427742314774041(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("myEditorAspectDescriptor", jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.descriptor.structure.LanguageDescriptor", false, false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_4565427742314939782(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "qualifiedName") + ".EditorAspectDescriptorImpl";
   }
@@ -334,7 +330,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6655394244919455802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0ic(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0hc(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -394,7 +390,7 @@ public class QueriesGenerated {
     return str == null || str.length() == 0;
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0ic(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0hc(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

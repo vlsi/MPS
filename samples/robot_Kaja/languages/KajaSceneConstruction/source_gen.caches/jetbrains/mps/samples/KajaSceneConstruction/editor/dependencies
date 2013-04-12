@@ -39,6 +39,17 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.BuildWall_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.DestroyWall_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.DropMark_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.PickMark_Editor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.KajaSceneConstruction.editor.PickMark_Editor" file="PickMark_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.AliasEditorComponent" />

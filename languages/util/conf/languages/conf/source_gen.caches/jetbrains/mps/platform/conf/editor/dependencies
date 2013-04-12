@@ -301,6 +301,43 @@
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
   </dependency>
+  <dependency className="jetbrains.mps.platform.conf.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.ActionReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.Action_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.Actions_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.BeanExtensionAttribute_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.BeanExtensionPoint_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.BeanExtension_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.ComponentRoot_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.Component_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.ComponentsRoot_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.Components_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.ConfigurationXmlDocument_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.ExtensionPoints_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.Extension_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.Extensions_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.GroupReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.Group_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.IdeaVersion_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.IntefaceExtensionPoint_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.InterfaceExtension_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.MouseShortcut_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.PluginDependency_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.PluginDetails_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.PluginHelpset_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.PluginVendor_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.Plugin_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.RootRoot_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.Separator_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.Service_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.Shortcut_Editor" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.editor.XInclude_Editor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.platform.conf.editor.ExtensionPoints_Editor" file="ExtensionPoints_Editor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />

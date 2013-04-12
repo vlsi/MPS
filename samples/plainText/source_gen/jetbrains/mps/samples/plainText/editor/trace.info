@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.plainText.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:73a7c19c-4a82-44a4-b49d-966f2e7c2fc3(jetbrains.mps.samples.plainText.editor)/6528405377109488089">
     <nodeInfo nodeId="6528405377109488089" fileName="TextFile_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6528405377109488091" fileName="TextFile_Editor.java" startLine="19" startPosition="87" endLine="20" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

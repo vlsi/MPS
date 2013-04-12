@@ -231,6 +231,47 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
+  <dependency className="jetbrains.mps.ui.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.AccessUIPropertyOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.AppendUIObjectStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.BeanPropertyView_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.CallUIActionOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.ChildAspect_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.ClearCompartmentStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.CompartmentProviderStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.CompartmentReferenceExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.ContainerCompartment_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.ContainerType_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.ControllerBinding_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.Controller_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.CreateUIObjectStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.EnclosingContextCompartmentExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.EventPropertyAccessOp_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.EventType_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.ExpressionView_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.ForceLayoutStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.FunctionParameterDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.InlineController_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.InsertUIObjectStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.IterateContentsStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.IterateContentsVariableReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.IterateContentsVariable_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.RemoveUIObjectStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.UIObjectProviderStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.UIObjectReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.UIObjectStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.UIObjectType_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.ValidateBlock_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.ValidatingView_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.Validator_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.ViewBinding_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.editor.View_Editor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.ui.editor.EnclosingContextCompartmentExpression_Editor" file="EnclosingContextCompartmentExpression_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

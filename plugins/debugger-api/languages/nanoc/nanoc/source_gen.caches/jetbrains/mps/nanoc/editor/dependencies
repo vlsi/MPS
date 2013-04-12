@@ -112,6 +112,26 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.nanoc.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.CAssignmentExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.CBinaryOp_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.CBody_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.CExpressionStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.CFor_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.CParenthesis_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.CType_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.CWhile_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.File_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.IntConst_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.VarDeclStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.VarDecl_Editor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.editor.VarRef_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.nanoc.editor.File_Editor" file="File_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />

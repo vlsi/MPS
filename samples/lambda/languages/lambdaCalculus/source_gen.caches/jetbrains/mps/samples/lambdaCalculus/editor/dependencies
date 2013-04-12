@@ -43,6 +43,27 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.FunctionType_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaAbstraction_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaApplication_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.LetExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.MultipleExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.NumberType_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.NumericConstant_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.ParenthesisExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.Program_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.StringConstant_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.StringType_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.VariableReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.Variable_Editor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.lambdaCalculus.editor.FunctionType_Editor" file="FunctionType_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />

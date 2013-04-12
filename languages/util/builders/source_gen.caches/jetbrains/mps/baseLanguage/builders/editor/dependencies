@@ -128,6 +128,32 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.builders.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.AsBuilderStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.AsTypeBuilder_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.BeanBuilder_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.BeanPropertyBuilder_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.BuilderCreator_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.BuilderStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.Builder_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.ResultExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderChild_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderExtensionDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderParameterReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderParameter_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderPropertyBuilder_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderPropertyExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderProperty_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilder_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilders_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.editor.ResultExpression_Editor" file="ResultExpression_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

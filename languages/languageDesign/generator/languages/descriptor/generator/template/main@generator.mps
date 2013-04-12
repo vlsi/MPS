@@ -2754,38 +2754,11 @@
       </node>
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="4565427742314558294">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="4565427742314559519">
-          <property name="name" nameId="tpck.1169194664001" value="myLanguageAspectDescriptor" />
+          <property name="name" nameId="tpck.1169194664001" value="myEditorAspectDescriptor" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4565427742314580776">
             <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="4565427742314604229" resolveInfo="aspect.descriptor.field" />
           </node>
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="4565427742314559520" />
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="4565427742314774040">
-            <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
-            <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="4565427742314774041">
-              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4565427742314774042">
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4565427742314784722">
-                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4565427742314787546">
-                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_CreateUniqueName" typeId="tpf3.1218047638031" id="4565427742314789767">
-                      <node role="baseName" roleId="tpf3.1218047638032" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9144540766998251841">
-                        <property name="value" nameId="tpee.1070475926801" value="myEditorAspectDescriptor" />
-                      </node>
-                      <node role="contextNode" roleId="tpf3.1218049772449" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4565427742314895105">
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="4565427742314900748">
-                          <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="4565427742314900750">
-                            <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="4565427742314901868">
-                              <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="yv2q.9020561928507175845" resolveInfo="LanguageDescriptor" />
-                            </node>
-                          </node>
-                        </node>
-                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4565427742314800173" />
-                      </node>
-                    </node>
-                    <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="4565427742314784720" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="type" roleId="tpee.5680397130376446158" type="tp68.InternalClassifierType" typeId="tp68.1174914042989" id="4565427742314907605">
             <property name="fqClassName" nameId="tp68.1174914081067" value="EditorAspectDescriptor" />
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fwv3.~LanguageAspectDescriptor" resolveInfo="LanguageAspectDescriptor" />

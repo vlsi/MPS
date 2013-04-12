@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.extension.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.editor.ExtensionDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.editor.ExtensionFieldDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.editor.ExtensionFieldReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.editor.ExtensionPointDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.editor.ExtensionPointExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.editor.ExtensionPointType_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.editor.GetExtensionObjectsOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.extension.editor.ExtensionDeclaration_Editor" file="ExtensionDeclaration_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />

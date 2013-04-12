@@ -16,7 +16,7 @@ import jetbrains.mps.openapi.editor.node.EditorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("f4ad079d-bc71-4ffb-9600-9328705cf998(jetbrains.mps.lang.descriptor)");
-  private EditorAspectDescriptorImpl myEditorAspectDescriptor_tbrz5j_a0;
+  private EditorAspectDescriptorImpl myEditorAspectDescriptor;
 
   public Language() {
 
@@ -43,10 +43,10 @@ public class Language extends LanguageRuntime {
   @Override
   public <T extends LanguageAspectDescriptor> T getAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == EditorAspectDescriptor.class) {
-      if (myEditorAspectDescriptor_tbrz5j_a0 == null) {
-        myEditorAspectDescriptor_tbrz5j_a0 = new EditorAspectDescriptorImpl();
+      if (myEditorAspectDescriptor == null) {
+        myEditorAspectDescriptor = new EditorAspectDescriptorImpl();
       }
-      return (T) myEditorAspectDescriptor_tbrz5j_a0;
+      return (T) myEditorAspectDescriptor;
     }
     return null;
   }

@@ -17,5 +17,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.descriptor.editor.LanguageDescriptor_Editor"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.descriptor.structure.LanguageDescriptor"};
 }

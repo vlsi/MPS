@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="1thoe3nucd9gu3nlgx6gdk67yedk2jb">
+  <dep model="r:c21c4369-df96-4f11-9851-698e3c6ed43c(jetbrains.mps.ui.gwt.editor)" hash="87729osbf000rokf5fyzzbghzhmurq0" />
   <common>
+    <dep model="r:c21c4369-df96-4f11-9851-698e3c6ed43c(jetbrains.mps.ui.gwt.editor)" />
     <file name="Language.java" />
   </common>
 </dependencies>

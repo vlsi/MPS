@@ -99,6 +99,30 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.textGen.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.AppendOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.CollectionAppendPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.ConceptTextGenDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.ConstantStringAppendPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.EncodingLiteral_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.FoundErrorOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.InfoAppendPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.LanguageTextGenDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.NewLineAppendPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.NodeAppendPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.OperationCall_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.OperationDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.ReferenceAppendPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.SimpleTextGenOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.UtilityMethodCall_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.UtilityMethodDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.editor.WithIndentOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.textGen.editor.EncodingLiteral_Editor" file="EncodingLiteral_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />

@@ -41,6 +41,20 @@
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.dependency.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.build.dependency.editor.CycleReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.dependency.editor.Cycle_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.dependency.editor.Macros_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.dependency.editor.ModuleDescription_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.dependency.editor.PathHolder_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.dependency.editor.ProjectDescriptionReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.dependency.editor.ProjectDescription_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.build.dependency.editor.Macros_Editor" file="Macros_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />

@@ -179,5 +179,22 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestChild1Child_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestChild1SubConcept_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestChild1_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestChild2_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestChildToWrap1_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestChildToWrap2_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestChildWrapper_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestContainer_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultChild1_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.editor.ActionTestDefaultChild2_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
 </dependenciesRoot>
 

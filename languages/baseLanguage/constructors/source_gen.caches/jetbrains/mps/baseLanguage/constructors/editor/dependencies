@@ -124,6 +124,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.constructors.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.editor.CustomArgumentClause_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.editor.CustomConstructorContainer_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.editor.CustomConstructorParameterReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.editor.CustomConstructorParameter_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.editor.CustomConstructorUsage_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.editor.CustomConstructor_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.editor.ListArgumentsClause_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constructors.editor.ListCustomParameter_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.constructors.editor.ListArgumentsClause_Editor" file="ListArgumentsClause_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />

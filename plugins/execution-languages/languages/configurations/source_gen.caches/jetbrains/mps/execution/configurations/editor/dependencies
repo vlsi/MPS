@@ -202,6 +202,32 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.BeforeTaskCall_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.BeforeTaskParameterReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.BeforeTaskParameter_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.BeforeTask_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.ConfigurationFromExecutorReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.ConsoleCreator_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.ConsoleType_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.ExecuteConfiguration_Function_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.GetProjectOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.NodeListSource_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.NodeSource_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.RunConfigurationCreator_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.RunConfigurationExecutor_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.RunConfigurationKind_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.RunConfigurationProducerPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.RunConfigurationProducer_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.RunConfigurationSource_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.RunConfiguration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.StartProcessHandlerStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.configurations.editor.ExecuteConfiguration_Function_Editor" file="ExecuteConfiguration_Function_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />

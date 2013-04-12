@@ -539,6 +539,41 @@
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.workflow.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfAntStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfAntTaskBundleDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfAntTaskDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfCustomMacro_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfDependency_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfFileSet_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaClassPath_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaDependency_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaDescriptor_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaLibraryReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaLibrary_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaModuleReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfJavaModule_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfMacroListImport_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfMacro_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfPathDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfPathReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfProjectPartStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfProjectPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfProject_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfSubTaskDependency_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfSubTask_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTaskDependency_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTaskLibraryDependency_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTaskLibrary_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTaskPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfTask_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.build.workflow.editor.rt_SubTask_AfterOrBefore" file="rt_SubTask_AfterOrBefore.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
