@@ -236,14 +236,17 @@ public class PsiChangesWatcher implements ProjectComponent {
 
       ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
         public void run() {
-          for (PsiListener l : myListeners) {
-            l.psiChanged(data);
+          try {
+            for (PsiListener l : myListeners) {
+              l.psiChanged(myCollectedData);
+            }
+          } finally {
+            myCollectedData = new PsiChangeData();
+            myTimerTask = null;
           }
         }
       }, myMPSProject);
 
-      myCollectedData = new PsiChangeData();
-      myTimerTask = null;
     }
   }
 

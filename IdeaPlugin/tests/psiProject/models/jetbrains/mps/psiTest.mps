@@ -10,6 +10,11 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(1.6/java.lang@java_stub)" version="-1" />
   <import index="ahtn" modelUID="f:java_stub#18417553-ecb7-4898-a1a8-23435e7d8460#jetbrains.mps.psiTest2.subpkg(jetbrains.mps.psiTest2.subpkg@java_stub)" version="-1" />
   <import index="kkx3" modelUID="f:java_stub#18417553-ecb7-4898-a1a8-23435e7d8460#jetbrains.mps.psiTest.subpkg(jetbrains.mps.psiTest.subpkg@java_stub)" version="-1" />
+  <import index="kabh" modelUID="f:java_stub#18417553-ecb7-4898-a1a8-23435e7d8460#jetbrains.mps.psiTest.subbbb(jetbrains.mps.psiTest.subbbb@java_stub)" version="-1" />
+  <import index="9l0p" modelUID="f:java_stub#18417553-ecb7-4898-a1a8-23435e7d8460#jetbrains.mps.psiTest.ddddd(jetbrains.mps.psiTest.ddddd@java_stub)" version="-1" />
+  <import index="se7s" modelUID="f:java_stub#18417553-ecb7-4898-a1a8-23435e7d8460#jetbrains.mps.psiTest.sssss(jetbrains.mps.psiTest.sssss@java_stub)" version="-1" />
+  <import index="7xvb" modelUID="f:java_stub#18417553-ecb7-4898-a1a8-23435e7d8460#jetbrains.mps.psiTest.rrrrr(jetbrains.mps.psiTest.rrrrr@java_stub)" version="-1" />
+  <import index="u1d6" modelUID="f:java_stub#18417553-ecb7-4898-a1a8-23435e7d8460#jetbrains.mps.psiTest.eeeee(jetbrains.mps.psiTest.eeeee@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
@@ -346,14 +351,14 @@
             <property name="name" nameId="tpck.1169194664001" value="val" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2633349427882655841">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2633349427882662861">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sik3.~Parametric%dParametric(T)" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sik3.~Parametric%dParametric(T)" resolveInfo="Parametric" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2633349427882663413">
                   <property name="value" nameId="tpee.1068580320021" value="4" />
                 </node>
               </node>
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2633349427882655435">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sik3.~Parametric" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sik3.~Parametric" resolveInfo="Parametric" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2454934407654038604">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
               </node>
@@ -369,7 +374,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2633349427882830763">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3535645601807233066">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sik3.~Parametric%dgetValue()" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sik3.~Parametric%dgetValue()" resolveInfo="getValue" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2633349427882829221">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2633349427882655434" resolveInfo="val" />
@@ -627,6 +632,25 @@
               <property name="value" nameId="tpee.1068580320021" value="1" />
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6611645236902623357" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2809184221992768027" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2809184221992789295">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2809184221992789296">
+            <property name="name" nameId="tpck.1169194664001" value="z0" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2809184221992789794" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2809184221992789297">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vnhb.~ClassInPsiTest2" resolveInfo="ClassInPsiTest2" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2809184221992790463">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2809184221992790464">
+            <property name="name" nameId="tpck.1169194664001" value="z1" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6862653905966745962">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sik3.~Parametric" resolveInfo="Parametric" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2809184221992791033" />
           </node>
         </node>
       </node>

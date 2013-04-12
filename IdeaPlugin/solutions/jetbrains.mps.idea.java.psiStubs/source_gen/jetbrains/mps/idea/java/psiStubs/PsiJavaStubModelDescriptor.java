@@ -167,6 +167,19 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       assert file instanceof PsiJavaFile;
       PsiJavaFile javaFile = (PsiJavaFile) file;
 
+      if (!(javaFile.isValid())) {
+        String name = javaFile.getName();
+        for (PsiFile f : javaFile.getParent().getFiles()) {
+          if (name.equals(f.getName()) && f instanceof PsiJavaFile) {
+            javaFile = (PsiJavaFile) f;
+            break;
+          }
+        }
+      }
+      if (!(javaFile.isValid())) {
+        continue;
+      }
+
       SNode javaImports = getImports(javaFile.getImportList().getAllImportStatements());
       ASTConverter converter = new ASTConverter(myMps2PsiMapper);
 
