@@ -102,12 +102,16 @@ public class DefaultEditor extends DefaultNodeEditor {
     myConceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(qualifiedName);
     ConceptDescriptor baseConceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor("jetbrains.mps.lang.core.structure.BaseConcept");
     myPropertyNames = myConceptDescriptor.getPropertyNames();
-    List<String> basePropertyNames = baseConceptDescriptor.getPropertyNames();
-    myPropertyNames.removeAll(basePropertyNames);
-
-
-    myReferencesNames = myConceptDescriptor.getPropertyNames();
+    myReferencesNames = myConceptDescriptor.getReferenceNames();
     myChildrenNames = myConceptDescriptor.getChildrenNames();
+
+
+    List<String> basePropertyNames = baseConceptDescriptor.getPropertyNames();
+    List<String> baseRefNames = baseConceptDescriptor.getReferenceNames();
+    List<String> baseChildNames = baseConceptDescriptor.getChildrenNames();
+    myPropertyNames.removeAll(basePropertyNames);
+    myReferencesNames.removeAll(baseRefNames);
+    myChildrenNames.removeAll(baseChildNames);
 
     cacheNameProperty();
   }
@@ -115,10 +119,6 @@ public class DefaultEditor extends DefaultNodeEditor {
   private void cacheNameProperty() {
     final Map<String, Integer> priorityMap = new HashMap<String, Integer>();
     for (String property : myPropertyNames) {
-      //SDataType type = property.getType();
-      //if (!(type instanceof SPrimitiveDataType) || ((SPrimitiveDataType) type).getType() != SPrimitiveDataType.STRING) {
-      //  continue;
-      //}
       String name = property;
       int prio = name.equals("name") ? 10000 : 0;
       prio += name.toLowerCase().contains("identifier") ? 1700 : 0;
