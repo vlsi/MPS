@@ -62,7 +62,7 @@ public class BuildMpsLayout_TestModules_Behavior {
         return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), it, "virtual_getModules_4560297596904469651", new Object[]{});
       }
     });
-    Iterable<SNode> modules = Sequence.fromIterable(new MPSModulesClosure(genContext, originalModules).trackDevkits().runtimeClosure().getAllModules()).union(Sequence.fromIterable(originalModules));
+    Iterable<SNode> modules = Sequence.fromIterable(new MPSModulesClosure(genContext, originalModules).trackDevkits().designtimeClosure().getAllModules()).union(Sequence.fromIterable(originalModules));
     for (SNode m : Sequence.fromIterable(modules)) {
       SNode artifact;
       SNode originalModule = DependenciesHelper.getOriginalNode(m, genContext);

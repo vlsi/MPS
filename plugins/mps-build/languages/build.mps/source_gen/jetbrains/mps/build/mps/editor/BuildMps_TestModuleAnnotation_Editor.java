@@ -23,6 +23,7 @@ public class BuildMps_TestModuleAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bxswyp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bxswyp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_bxswyp_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_bxswyp_b0(editorContext, node));
     return editorCell;

@@ -426,7 +426,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2887318893670203457">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.5980151377255999917" resolveInfo="runtimeClosure" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.8958973293689137056" resolveInfo="designtimeClosure" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2887318893670203455">
