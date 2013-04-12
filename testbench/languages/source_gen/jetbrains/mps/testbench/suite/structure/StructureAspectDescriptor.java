@@ -14,19 +14,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.IModuleRef", null, true, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.IModuleRef", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.ITestRef", null, true, new String[]{}, new String[]{"muted"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.ITestRef", null, true, new String[]{}, new String[]{"muted"}, new String[]{}, new String[]{});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{}, new String[]{"klass"});
+        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{}, new String[]{"klass"}, new String[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{}, new String[]{"klass"});
+        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{}, new String[]{"klass"}, new String[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.ModuleSuite", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.ModuleSuite", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"moduleRef", "testRef"});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.SolutionRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.IModuleRef"}, new String[]{"moduleFQName", "moduleID"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.SolutionRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.IModuleRef"}, new String[]{"moduleFQName", "moduleID"}, new String[]{}, new String[]{});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.TestCaseRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{}, new String[]{"testCase"});
+        return new CompiledConceptDescriptor("jetbrains.mps.testbench.suite.structure.TestCaseRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.testbench.suite.structure.ITestRef"}, new String[]{}, new String[]{"testCase"}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

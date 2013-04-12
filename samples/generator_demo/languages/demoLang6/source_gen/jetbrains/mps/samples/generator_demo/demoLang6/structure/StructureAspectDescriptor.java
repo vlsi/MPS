@@ -14,9 +14,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", "jetbrains.mps.sampleXML.structure.ElementPart", false, new String[]{"jetbrains.mps.sampleXML.structure.ElementPart"}, new String[]{"text"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", "jetbrains.mps.sampleXML.structure.ElementPart", false, new String[]{"jetbrains.mps.sampleXML.structure.ElementPart"}, new String[]{"text"}, new String[]{}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.generator_demo.demoLang6.structure.Label", "jetbrains.mps.sampleXML.structure.ElementPart", false, new String[]{"jetbrains.mps.sampleXML.structure.ElementPart"}, new String[]{"text"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.generator_demo.demoLang6.structure.Label", "jetbrains.mps.sampleXML.structure.ElementPart", false, new String[]{"jetbrains.mps.sampleXML.structure.ElementPart"}, new String[]{"text"}, new String[]{}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

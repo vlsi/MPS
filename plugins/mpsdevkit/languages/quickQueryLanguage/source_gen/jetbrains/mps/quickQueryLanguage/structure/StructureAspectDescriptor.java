@@ -14,19 +14,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.BaseQuery", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"conceptDeclaration"});
+        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.BaseQuery", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"conceptDeclaration"}, new String[]{"condition"});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", "jetbrains.mps.quickQueryLanguage.structure.BaseQuery", false, new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", "jetbrains.mps.quickQueryLanguage.structure.BaseQuery", false, new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{}, new String[]{}, new String[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.QueryCondition", "jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", false, new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.QueryCondition", "jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", false, new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{}, new String[]{}, new String[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.QueryReplace", "jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", false, new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.QueryReplace", "jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", false, new String[]{"jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction"}, new String[]{}, new String[]{}, new String[]{});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", "jetbrains.mps.quickQueryLanguage.structure.BaseQuery", false, new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", "jetbrains.mps.quickQueryLanguage.structure.BaseQuery", false, new String[]{"jetbrains.mps.quickQueryLanguage.structure.BaseQuery"}, new String[]{}, new String[]{}, new String[]{"replace"});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

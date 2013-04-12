@@ -14,45 +14,45 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ExtendsFacetReference", "jetbrains.mps.make.facet.structure.FacetReference", false, new String[]{"jetbrains.mps.make.facet.structure.FacetReference"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ExtendsFacetReference", "jetbrains.mps.make.facet.structure.FacetReference", false, new String[]{"jetbrains.mps.make.facet.structure.FacetReference"}, new String[]{}, new String[]{}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"}, new String[]{}, new String[]{}, new String[]{"extended", "required", "optional", "targetDeclaration"});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetJavaClassExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"facet"});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetJavaClassExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"facet"}, new String[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"facet"});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"facet"}, new String[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetReferenceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetReferenceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"reference"});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression"}, new String[]{}, new String[]{}, new String[]{"expression"});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"target"});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"target"}, new String[]{});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.IFacet", null, true, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.IFacet", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.IPropertyExpression", null, true, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.IPropertyExpression", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{"resource"});
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression"}, new String[]{}, new String[]{}, new String[]{"expression"});
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.LocalParametersExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.LocalParametersExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{});
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.NamedFacetReference", "jetbrains.mps.make.facet.structure.FacetReference", false, new String[]{"jetbrains.mps.make.facet.structure.FacetReference"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.NamedFacetReference", "jetbrains.mps.make.facet.structure.FacetReference", false, new String[]{"jetbrains.mps.make.facet.structure.FacetReference"}, new String[]{}, new String[]{}, new String[]{});
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ParametersDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ParametersDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"}, new String[]{}, new String[]{}, new String[]{});
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.RelatedFacetReference", "jetbrains.mps.make.facet.structure.FacetReference", false, new String[]{"jetbrains.mps.make.facet.structure.FacetReference"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.RelatedFacetReference", "jetbrains.mps.make.facet.structure.FacetReference", false, new String[]{"jetbrains.mps.make.facet.structure.FacetReference"}, new String[]{}, new String[]{}, new String[]{});
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ResourceClassifierType", "jetbrains.mps.baseLanguage.structure.ClassifierType", false, new String[]{"jetbrains.mps.baseLanguage.structure.ClassifierType"}, new String[]{}, new String[]{"resource"});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ResourceClassifierType", "jetbrains.mps.baseLanguage.structure.ClassifierType", false, new String[]{"jetbrains.mps.baseLanguage.structure.ClassifierType"}, new String[]{}, new String[]{"resource"}, new String[]{});
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"properties", "resource"});
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"resourceType"});
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"}, new String[]{"resourcesPolicy", "optional", "weight"}, new String[]{"overrides"});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"}, new String[]{"resourcesPolicy", "optional", "weight"}, new String[]{"overrides"}, new String[]{"parameters", "dependency", "job", "input", "output"});
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.TargetDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"qualifier"}, new String[]{"dependsOn"});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.TargetDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"qualifier"}, new String[]{"dependsOn"}, new String[]{});
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.TargetReferenceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"target"});
+        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.TargetReferenceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"target"}, new String[]{"facetRef"});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

@@ -14,39 +14,39 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"eventType", "accountType"});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"year", "month", "day"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"year", "month", "day"}, new String[]{}, new String[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{}, new String[]{}, new String[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Date", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Date", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{}, new String[]{}, new String[]{});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"taxable"}, new String[]{"type"});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"taxable"}, new String[]{"type"}, new String[]{"postingRule"});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"variable"});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"type"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"type"}, new String[]{}, new String[]{});
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{"eventVariable"});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{"eventVariable"}, new String[]{});
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"value", "event"});
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.formulaLanguage.structure.Formula", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Formula"}, new String[]{}, new String[]{"account"});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.formulaLanguage.structure.Formula", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Formula"}, new String[]{}, new String[]{"account"}, new String[]{});
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{}, new String[]{}, new String[]{"postingRule"});
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"unit"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"unit"}, new String[]{}, new String[]{"amount"});
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{}, new String[]{}, new String[]{"quantity"});
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"date", "value"});
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"type"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"type"}, new String[]{}, new String[]{"quantity"});
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.ValueReference", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{"value"});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.ValueReference", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{"value"}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

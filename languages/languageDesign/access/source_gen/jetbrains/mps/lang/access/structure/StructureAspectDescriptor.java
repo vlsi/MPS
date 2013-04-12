@@ -14,25 +14,25 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"commandClosureLiteral"});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement"}, new String[]{}, new String[]{}, new String[]{});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.CommandClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.CommandClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"}, new String[]{}, new String[]{}, new String[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement"}, new String[]{}, new String[]{}, new String[]{"project"});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{}, new String[]{});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement"}, new String[]{}, new String[]{}, new String[]{});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{}, new String[]{});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{}, new String[]{});
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{}, new String[]{});
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync", null, true, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
