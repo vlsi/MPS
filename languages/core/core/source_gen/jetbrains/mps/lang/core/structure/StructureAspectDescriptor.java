@@ -14,57 +14,57 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.BaseConcept", null, false, new String[]{}, new String[]{"shortDescription", "alias", "virtualPackage"}, new String[]{}, new String[]{"smodelAttribute"});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.BaseConcept", null, false, new String[]{}, new String[]{"shortDescription", "alias", "virtualPackage"}, new String[]{}, new String[]{"smodelAttribute"}, new boolean[]{true});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScope", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScope", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScope", false, new String[]{"jetbrains.mps.lang.core.structure.ExportScope"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScope", false, new String[]{"jetbrains.mps.lang.core.structure.ExportScope"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScope", false, new String[]{"jetbrains.mps.lang.core.structure.ExportScope"}, new String[]{"namespace"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScope", false, new String[]{"jetbrains.mps.lang.core.structure.ExportScope"}, new String[]{"namespace"}, new String[]{}, new String[]{}, new boolean[]{});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.ExportScope", false, new String[]{"jetbrains.mps.lang.core.structure.ExportScope"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.ExportScope", false, new String[]{"jetbrains.mps.lang.core.structure.ExportScope"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IAntisuppressErrors", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IAntisuppressErrors", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ICanSuppressErrors", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ICanSuppressErrors", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IContainer", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IContainer", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IDeprecatable", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IDeprecatable", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IMetaLevelChanger", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IMetaLevelChanger", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.INamedConcept", null, true, new String[]{}, new String[]{"name"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.INamedConcept", null, true, new String[]{}, new String[]{"name"}, new String[]{}, new String[]{}, new boolean[]{});
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IResolveInfo", null, true, new String[]{}, new String[]{"resolveInfo"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IResolveInfo", null, true, new String[]{}, new String[]{"resolveInfo"}, new String[]{}, new String[]{}, new boolean[]{});
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ISuppressErrors", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ISuppressErrors", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IType", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IType", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IWrapper", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IWrapper", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ImplementationContainer", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ImplementationContainer", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ImplementationPart", null, true, new String[]{"jetbrains.mps.lang.core.structure.ScopeFacade"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ImplementationPart", null, true, new String[]{"jetbrains.mps.lang.core.structure.ScopeFacade"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.InterfacePart", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.InterfacePart", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.Attribute", false, new String[]{"jetbrains.mps.lang.core.structure.Attribute"}, new String[]{"linkRole"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.Attribute", false, new String[]{"jetbrains.mps.lang.core.structure.Attribute"}, new String[]{"linkRole"}, new String[]{}, new String[]{}, new boolean[]{});
       case 21:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.Attribute", false, new String[]{"jetbrains.mps.lang.core.structure.Attribute"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.Attribute", false, new String[]{"jetbrains.mps.lang.core.structure.Attribute"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 22:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.Attribute", false, new String[]{"jetbrains.mps.lang.core.structure.Attribute"}, new String[]{"propertyName"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.Attribute", false, new String[]{"jetbrains.mps.lang.core.structure.Attribute"}, new String[]{"propertyName"}, new String[]{}, new String[]{}, new boolean[]{});
       case 23:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ScopeFacade", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ScopeFacade", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 24:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ScopeProvider", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ScopeProvider", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 25:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.ISuppressErrors"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.ISuppressErrors"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

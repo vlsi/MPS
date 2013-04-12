@@ -14,11 +14,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", "jetbrains.mps.xml.structure.Content", false, new String[]{"jetbrains.mps.xml.structure.Content"}, new String[]{}, new String[]{}, new String[]{"expression"});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", "jetbrains.mps.xml.structure.Content", false, new String[]{"jetbrains.mps.xml.structure.Content"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.xmlLiterals.structure.TextMacro", "jetbrains.mps.xml.structure.BaseText", false, new String[]{"jetbrains.mps.xml.structure.BaseText"}, new String[]{}, new String[]{}, new String[]{"expression"});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.xmlLiterals.structure.TextMacro", "jetbrains.mps.xml.structure.BaseText", false, new String[]{"jetbrains.mps.xml.structure.BaseText"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"element"});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"element"}, new boolean[]{false});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

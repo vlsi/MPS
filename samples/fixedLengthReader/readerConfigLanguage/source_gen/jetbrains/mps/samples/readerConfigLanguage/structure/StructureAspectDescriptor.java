@@ -14,11 +14,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.readerConfigLanguage.structure.Field", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"start", "end"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.readerConfigLanguage.structure.Field", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"start", "end"}, new String[]{}, new String[]{}, new boolean[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"code", "targetClass"}, new String[]{}, new String[]{"field"});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"code", "targetClass"}, new String[]{}, new String[]{"field"}, new boolean[]{true});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"mapping"});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"mapping"}, new boolean[]{true});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

@@ -14,19 +14,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.Cycle", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"moduleDescription", "dependency", "classpath"});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.Cycle", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"moduleDescription", "dependency", "classpath"}, new boolean[]{true, true, true});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.CycleReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"cycle"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.CycleReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"cycle"}, new String[]{}, new boolean[]{});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.Macros", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.Macros", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.ModuleDescription", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"includeResources", "excludeResources"}, new String[]{}, new String[]{"sources", "classes", "classpath"});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.ModuleDescription", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"includeResources", "excludeResources"}, new String[]{}, new String[]{"sources", "classes", "classpath"}, new boolean[]{true, false, true});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.PathHolder", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"path"}, new String[]{"macro"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.PathHolder", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"path"}, new String[]{"macro"}, new String[]{}, new boolean[]{});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.ProjectDescription", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"basedir", "propertiesFile"}, new String[]{}, new String[]{"cycle", "commonClasspath", "macro"});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.ProjectDescription", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"basedir", "propertiesFile"}, new String[]{}, new String[]{"cycle", "commonClasspath", "macro"}, new boolean[]{true, true, true});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.ProjectDescriptionReference", "jetbrains.mps.buildlanguage.structure.ImportProject", false, new String[]{"jetbrains.mps.buildlanguage.structure.ImportProject"}, new String[]{}, new String[]{"description"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.ProjectDescriptionReference", "jetbrains.mps.buildlanguage.structure.ImportProject", false, new String[]{"jetbrains.mps.buildlanguage.structure.ImportProject"}, new String[]{}, new String[]{"description"}, new String[]{}, new boolean[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

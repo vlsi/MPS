@@ -14,11 +14,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", "jetbrains.mps.lang.editor.structure.EditorCellModel", false, new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel"}, new String[]{"myProp"}, new String[]{"headerRowLinkDeclaration", "rowsLinkDeclaration", "cellsInRowLinkDeclaration"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", "jetbrains.mps.lang.editor.structure.EditorCellModel", false, new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel"}, new String[]{"myProp"}, new String[]{"headerRowLinkDeclaration", "rowsLinkDeclaration", "cellsInRowLinkDeclaration"}, new String[]{}, new boolean[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.editor.table.structure.CellModel_Table", "jetbrains.mps.lang.editor.structure.EditorCellModel", false, new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel"}, new String[]{}, new String[]{}, new String[]{"tableModel"});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.editor.table.structure.CellModel_Table", "jetbrains.mps.lang.editor.structure.EditorCellModel", false, new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel"}, new String[]{}, new String[]{}, new String[]{"tableModel"}, new boolean[]{false});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

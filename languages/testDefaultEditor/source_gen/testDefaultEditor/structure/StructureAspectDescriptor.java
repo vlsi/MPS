@@ -14,15 +14,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("testDefaultEditor.structure.Company", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"team"});
+        return new CompiledConceptDescriptor("testDefaultEditor.structure.Company", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"team"}, new boolean[]{true});
       case 1:
-        return new CompiledConceptDescriptor("testDefaultEditor.structure.Developer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"age", "sex", "lastName"}, new String[]{"bestFriend", "teamHeWants"}, new String[]{"friend"});
+        return new CompiledConceptDescriptor("testDefaultEditor.structure.Developer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"age", "sex", "lastName"}, new String[]{"bestFriend", "teamHeWants"}, new String[]{"friend"}, new boolean[]{true});
       case 2:
-        return new CompiledConceptDescriptor("testDefaultEditor.structure.DummyMethod", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"statements"});
+        return new CompiledConceptDescriptor("testDefaultEditor.structure.DummyMethod", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"statements"}, new boolean[]{true});
       case 3:
-        return new CompiledConceptDescriptor("testDefaultEditor.structure.Friend", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"friend"}, new String[]{});
+        return new CompiledConceptDescriptor("testDefaultEditor.structure.Friend", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"friend"}, new String[]{}, new boolean[]{});
       case 4:
-        return new CompiledConceptDescriptor("testDefaultEditor.structure.Team", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"isOpenSource"}, new String[]{}, new String[]{"developer"});
+        return new CompiledConceptDescriptor("testDefaultEditor.structure.Team", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"isOpenSource"}, new String[]{}, new String[]{"developer"}, new boolean[]{true});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
