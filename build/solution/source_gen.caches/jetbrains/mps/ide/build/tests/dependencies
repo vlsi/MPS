@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.build.tests.mpsEditor" file="mpsEditor.xml" />
   <dependency className="jetbrains.mps.ide.build.tests.mpsExecution" file="mpsExecution.xml" />
 </dependenciesRoot>
 
