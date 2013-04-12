@@ -7,6 +7,9 @@ import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -24,7 +27,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -38,7 +40,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -66,6 +67,14 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_6655394244919371015(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "generateTemplates");
+  }
+
+  public static boolean baseMappingRule_Condition_1570228009929814973(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(_context.getNode(), LanguageAspect.EDITOR, _context, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+  }
+
+  public static boolean baseMappingRule_Condition_4565427742314546853(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(_context.getNode(), LanguageAspect.EDITOR, _context, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
   }
 
   public static Object propertyMacro_GetPropertyValue_9020561928507315549(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -134,14 +143,38 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5102832340571646536(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
-    return SPropertyOperations.getString(l, "namespace") + "/" + ((isEmpty_x583g4_a0a0a1a91(SPropertyOperations.getString(_context.getNode(), "name")) ?
+    return SPropertyOperations.getString(l, "namespace") + "/" + ((isEmpty_x583g4_a0a0a1a12(SPropertyOperations.getString(_context.getNode(), "name")) ?
       "<no name>" :
       SPropertyOperations.getString(_context.getNode(), "name")
     ));
   }
 
+  public static Object propertyMacro_GetPropertyValue_4565427742315554124(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "qualifiedName") + ".EditorAspectDescriptorImpl";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4565427742314774041(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("myEditorAspectDescriptor", jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.descriptor.structure.LanguageDescriptor", false, false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4565427742314939782(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "qualifiedName") + ".EditorAspectDescriptorImpl";
+  }
+
   public static Object referenceMacro_GetReferent_5554116809065233210(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generator.descriptor"))).first();
+  }
+
+  public static Object referenceMacro_GetReferent_4565427742316037865(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "aspect.descriptor.field");
+  }
+
+  public static Object referenceMacro_GetReferent_4565427742316079240(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "aspect.descriptor.field");
+  }
+
+  public static Object referenceMacro_GetReferent_4565427742316090271(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "aspect.descriptor.field");
   }
 
   public static boolean ifMacro_Condition_5828571963818937566(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -278,8 +311,16 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
+  public static Iterable sourceNodesQuery_1570228009930646079(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "language", true), "model", true);
+  }
+
   public static Iterable sourceNodesQuery_5554116809065233223(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "language", true), "generator", true);
+  }
+
+  public static Iterable sourceNodesQuery_8131497994928406547(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "language", true), "model", true);
   }
 
   public static Iterable sourceNodesQuery_1820665478710840047(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -293,7 +334,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6655394244919455802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0yb(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0ic(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -349,11 +390,11 @@ public class QueriesGenerated {
     return new TemplateModelImpl(module);
   }
 
-  public static boolean isEmpty_x583g4_a0a0a1a91(String str) {
+  public static boolean isEmpty_x583g4_a0a0a1a12(String str) {
     return str == null || str.length() == 0;
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0yb(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0ic(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
