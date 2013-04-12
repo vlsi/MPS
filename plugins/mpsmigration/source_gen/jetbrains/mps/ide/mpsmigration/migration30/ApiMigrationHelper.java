@@ -29,8 +29,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -257,21 +255,6 @@ public class ApiMigrationHelper {
       }
 
       ListSequence.fromList(usages).addElement(MultiTuple.<Set<SNode>,Set<SNode>>from(known, unknown));
-    }
-
-    List<SearchResult<SNode>> results = ListSequence.fromList(new ArrayList<SearchResult<SNode>>());
-    for (int i = 0; i < ListSequence.fromList(usages).count(); i++) {
-      final String cat = ListSequence.fromList(transformations).getElement(i)._0();
-      ListSequence.fromList(results).addSequence(SetSequence.fromSet(ListSequence.fromList(usages).getElement(i)._0()).select(new ISelector<SNode, SearchResult<SNode>>() {
-        public SearchResult<SNode> select(SNode it) {
-          return new SearchResult<SNode>(it, cat);
-        }
-      }));
-      ListSequence.fromList(results).addSequence(SetSequence.fromSet(ListSequence.fromList(usages).getElement(i)._1()).select(new ISelector<SNode, SearchResult<SNode>>() {
-        public SearchResult<SNode> select(SNode it) {
-          return new SearchResult<SNode>(it, "unknown");
-        }
-      }));
     }
 
     for (int i = 0; i < ListSequence.fromList(usages).count(); i++) {
