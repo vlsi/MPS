@@ -638,7 +638,8 @@ public class EditorManager {
       isInterface = conceptDescriptor.isInterfaceConcept();
     }
 
-    return isInterface ? new DefaultInterfaceEditor() : new DefaultNodeEditor();
+    // TODO: use always DefaultEditor ?
+    return isInterface ? new DefaultInterfaceEditor() : new DefaultEditor();
   }
 
   private EditorAspect getActiveEditorAspect(ConceptDescriptor conceptDescriptor) {

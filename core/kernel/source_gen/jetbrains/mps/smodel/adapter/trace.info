@@ -2,31 +2,34 @@
 <debugInfo>
   <root nodeRef="r:74a06cc2-db96-4e19-8301-ff85828f9c7b(jetbrains.mps.smodel.adapter)/2075824672078462207">
     <nodeInfo nodeId="5691494193750519525" fileName="SConceptNodeAdapter.java" startLine="18" startPosition="55" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3075940494976266637" fileName="SConceptNodeAdapter.java" startLine="23" startPosition="37" endLine="24" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2601097456319836693" fileName="SConceptNodeAdapter.java" startLine="30" startPosition="49" endLine="31" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5691494193750519556" fileName="SConceptNodeAdapter.java" startLine="37" startPosition="36" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3625483589093366967" fileName="SConceptNodeAdapter.java" startLine="23" startPosition="37" endLine="24" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2601097456319836693" fileName="SConceptNodeAdapter.java" startLine="34" startPosition="49" endLine="35" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5691494193750519556" fileName="SConceptNodeAdapter.java" startLine="41" startPosition="36" endLine="42" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2075824672078462213" fileName="SConceptNodeAdapter.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SConceptNodeAdapter#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2601097456319836660" fileName="SConceptNodeAdapter.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SInterfaceConcept;" />
-    <nodeInfo nodeId="2075824672078462223" fileName="SConceptNodeAdapter.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuperConcept#()Lorg/jetbrains/mps/openapi/language/SConcept;" />
-    <nodeInfo nodeId="5691494193750519539" fileName="SConceptNodeAdapter.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="2601097456319860924" fileName="SConceptNodeAdapter.java" startLine="28" startPosition="59" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2075824672078462229" fileName="SConceptNodeAdapter.java" startLine="27" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuperInterfaces#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2601097456319836660" fileName="SConceptNodeAdapter.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SInterfaceConcept;" />
+    <nodeInfo nodeId="3625483589093390119" fileName="SConceptNodeAdapter.java" startLine="24" startPosition="132" endLine="28" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5691494193750519539" fileName="SConceptNodeAdapter.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="2601097456319860924" fileName="SConceptNodeAdapter.java" startLine="32" startPosition="59" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2075824672078462223" fileName="SConceptNodeAdapter.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuperConcept#()Lorg/jetbrains/mps/openapi/language/SConcept;" />
+    <nodeInfo nodeId="2075824672078462229" fileName="SConceptNodeAdapter.java" startLine="31" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuperInterfaces#()Ljava/lang/Iterable;" />
     <scopeInfo nodeId="2075824672078462218" fileName="SConceptNodeAdapter.java" startLine="18" startPosition="55" endLine="19" endPosition="19" />
-    <scopeInfo nodeId="2075824672078462226" fileName="SConceptNodeAdapter.java" startLine="23" startPosition="37" endLine="24" endPosition="190" />
-    <scopeInfo nodeId="2601097456319836661" fileName="SConceptNodeAdapter.java" startLine="30" startPosition="49" endLine="31" endPosition="95" />
-    <scopeInfo nodeId="5691494193750519542" fileName="SConceptNodeAdapter.java" startLine="37" startPosition="36" endLine="38" endPosition="30" />
+    <scopeInfo nodeId="2601097456319836661" fileName="SConceptNodeAdapter.java" startLine="34" startPosition="49" endLine="35" endPosition="138" />
+    <scopeInfo nodeId="5691494193750519542" fileName="SConceptNodeAdapter.java" startLine="41" startPosition="36" endLine="42" endPosition="30" />
     <scopeInfo nodeId="2075824672078462213" fileName="SConceptNodeAdapter.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="2075824672078462216" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="2601097456319836660" fileName="SConceptNodeAdapter.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="2601097456319836660" fileName="SConceptNodeAdapter.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="2601097456319836660" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2075824672078462223" fileName="SConceptNodeAdapter.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="5691494193750519539" fileName="SConceptNodeAdapter.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="2075824672078462233" fileName="SConceptNodeAdapter.java" startLine="28" startPosition="59" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="2075824672078462229" fileName="SConceptNodeAdapter.java" startLine="27" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="2601097456319836660" fileName="SConceptNodeAdapter.java" startLine="29" startPosition="161" endLine="33" endPosition="5" unitName="jetbrains.mps.smodel.adapter.SConceptNodeAdapter$1" />
-    <unitInfo nodeId="2075824672078462207" fileName="SConceptNodeAdapter.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.smodel.adapter.SConceptNodeAdapter" />
+    <scopeInfo nodeId="5691494193750519539" fileName="SConceptNodeAdapter.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="2075824672078462226" fileName="SConceptNodeAdapter.java" startLine="23" startPosition="37" endLine="28" endPosition="6">
+      <varInfo nodeId="3625483589093366968" varName="xtends" />
+    </scopeInfo>
+    <scopeInfo nodeId="2075824672078462233" fileName="SConceptNodeAdapter.java" startLine="32" startPosition="59" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="2075824672078462223" fileName="SConceptNodeAdapter.java" startLine="22" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="2075824672078462229" fileName="SConceptNodeAdapter.java" startLine="31" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="2601097456319836660" fileName="SConceptNodeAdapter.java" startLine="33" startPosition="161" endLine="37" endPosition="5" unitName="jetbrains.mps.smodel.adapter.SConceptNodeAdapter$1" />
+    <unitInfo nodeId="2075824672078462207" fileName="SConceptNodeAdapter.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.smodel.adapter.SConceptNodeAdapter" />
   </root>
   <root nodeRef="r:74a06cc2-db96-4e19-8301-ff85828f9c7b(jetbrains.mps.smodel.adapter)/2075824672078462511">
     <nodeInfo nodeId="2075824672078462514" fileName="SLinkNodeAdapter.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
@@ -96,30 +99,33 @@
     <nodeInfo nodeId="2601097456319846687" fileName="SPropertyNodeAdapter.java" startLine="16" startPosition="55" endLine="17" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2601097456319899697" fileName="SPropertyNodeAdapter.java" startLine="21" startPosition="27" endLine="22" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3594504603472666483" fileName="SPropertyNodeAdapter.java" startLine="26" startPosition="30" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3594504603472752009" fileName="SPropertyNodeAdapter.java" startLine="28" startPosition="120" endLine="29" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2601097456319899819" fileName="SPropertyNodeAdapter.java" startLine="30" startPosition="5" endLine="31" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3594504603472666481" fileName="SPropertyNodeAdapter.java" startLine="35" startPosition="41" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7024573138606926500" fileName="SPropertyNodeAdapter.java" startLine="28" startPosition="27" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3594504603472752009" fileName="SPropertyNodeAdapter.java" startLine="31" startPosition="120" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2601097456319899819" fileName="SPropertyNodeAdapter.java" startLine="33" startPosition="5" endLine="34" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3594504603472666481" fileName="SPropertyNodeAdapter.java" startLine="38" startPosition="41" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2601097456319846205" fileName="SPropertyNodeAdapter.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SPropertyNodeAdapter#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3594504603472666491" fileName="SPropertyNodeAdapter.java" startLine="27" startPosition="75" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7024573138606923609" fileName="SPropertyNodeAdapter.java" startLine="27" startPosition="75" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3594504603472666491" fileName="SPropertyNodeAdapter.java" startLine="30" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2601097456319846698" fileName="SPropertyNodeAdapter.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3594504603472665498" fileName="SPropertyNodeAdapter.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="2601097456319846704" fileName="SPropertyNodeAdapter.java" startLine="25" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Lorg/jetbrains/mps/openapi/language/SDataType;" />
+    <nodeInfo nodeId="3594504603472665498" fileName="SPropertyNodeAdapter.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2601097456319846704" fileName="SPropertyNodeAdapter.java" startLine="25" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Lorg/jetbrains/mps/openapi/language/SDataType;" />
     <scopeInfo nodeId="2601097456319846208" fileName="SPropertyNodeAdapter.java" startLine="16" startPosition="55" endLine="17" endPosition="27" />
     <scopeInfo nodeId="2601097456319846701" fileName="SPropertyNodeAdapter.java" startLine="21" startPosition="27" endLine="22" endPosition="58" />
-    <scopeInfo nodeId="3594504603472666492" fileName="SPropertyNodeAdapter.java" startLine="28" startPosition="120" endLine="29" endPosition="53" />
-    <scopeInfo nodeId="3594504603472665503" fileName="SPropertyNodeAdapter.java" startLine="35" startPosition="41" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="7024573138606923611" fileName="SPropertyNodeAdapter.java" startLine="28" startPosition="27" endLine="29" endPosition="18" />
+    <scopeInfo nodeId="3594504603472666492" fileName="SPropertyNodeAdapter.java" startLine="31" startPosition="120" endLine="32" endPosition="53" />
+    <scopeInfo nodeId="3594504603472665503" fileName="SPropertyNodeAdapter.java" startLine="38" startPosition="41" endLine="39" endPosition="16" />
     <scopeInfo nodeId="2601097456319846205" fileName="SPropertyNodeAdapter.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="2601097456319846682" varName="myPNode" />
     </scopeInfo>
     <scopeInfo nodeId="2601097456319846698" fileName="SPropertyNodeAdapter.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="3594504603472665498" fileName="SPropertyNodeAdapter.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="3594504603472665498" fileName="SPropertyNodeAdapter.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="3594504603472665501" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="2601097456319846707" fileName="SPropertyNodeAdapter.java" startLine="26" startPosition="30" endLine="31" endPosition="42">
+    <scopeInfo nodeId="2601097456319846707" fileName="SPropertyNodeAdapter.java" startLine="26" startPosition="30" endLine="34" endPosition="42">
       <varInfo nodeId="3594504603472666484" varName="dataType" />
     </scopeInfo>
-    <scopeInfo nodeId="2601097456319846704" fileName="SPropertyNodeAdapter.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
-    <unitInfo nodeId="2601097456319846203" fileName="SPropertyNodeAdapter.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.smodel.adapter.SPropertyNodeAdapter" />
+    <scopeInfo nodeId="2601097456319846704" fileName="SPropertyNodeAdapter.java" startLine="25" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="2601097456319846203" fileName="SPropertyNodeAdapter.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.smodel.adapter.SPropertyNodeAdapter" />
   </root>
   <root nodeRef="r:74a06cc2-db96-4e19-8301-ff85828f9c7b(jetbrains.mps.smodel.adapter)/2601097456319851251">
     <nodeInfo nodeId="2601097456319851264" fileName="SLanguageLanguageAdapter.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguage" />
