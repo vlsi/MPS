@@ -32,6 +32,7 @@ import java.util.*;
   private final List<String> referenceNames;
   private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
   private final List<String> childNames;
+
     public CompiledConceptDescriptor(String conceptFqName,
         @Nullable String superConcept,
         boolean isInterfaceConcept,
@@ -40,7 +41,8 @@ import java.util.*;
         String[] ownReferenceNames,
         String[] ownChildNames) {
 
-        this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, ownChildNames, new Boolean[]{});
+
+        this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, ownChildNames, new boolean[]{});
     }
 
   public CompiledConceptDescriptor(String conceptFqName,
@@ -50,7 +52,7 @@ import java.util.*;
       String[] ownPropertyNames,
       String[] ownReferenceNames,
       String[] ownChildNames,
-      Boolean[] isMultiple) {
+      boolean [] isMultiple) {
     this.conceptFqName = conceptFqName;
     this.superConcept = superConcept;
     this.isInterfaceConcept = isInterfaceConcept;
