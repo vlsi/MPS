@@ -79,6 +79,11 @@ public class JavaForeignIdBuilder {
     SModule mpsModule = null;
     Project project = element.getProject();
     VirtualFile vfile = file.getVirtualFile();
+    // MPS-17704: there was situation when an element with null virtual file came from MPSReferenceSearch
+    // element was the target of search
+    if (vfile == null) {
+      return null;
+    }
     for (Module module : ModuleManager.getInstance(project).getModules()) {
       MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
       if (facet == null) {
