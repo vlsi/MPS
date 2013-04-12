@@ -110,6 +110,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "role");
   }
 
+  public static Object propertyMacro_GetPropertyValue_7350902863803548216(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString_def(_context.getNode(), "sourceCardinality", "0..1").equals("0..n") || SPropertyOperations.getString_def(_context.getNode(), "sourceCardinality", "0..1").equals("1..n");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1281791650135608729(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
@@ -138,7 +142,7 @@ public class QueriesGenerated {
       SPropertyOperations.set(string, "value", superConcept);
       return string;
     } else {
-      return _quotation_createNode_x583g4_a0a0a0v();
+      return _quotation_createNode_x583g4_a0a0a0w();
     }
   }
 
@@ -179,6 +183,14 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_765548823299637645(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString_def(it, "metaClass", "reference").toString().equals("aggregation");
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_7350902863803479330(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString_def(it, "metaClass", "reference").toString().equals("aggregation");
@@ -276,7 +288,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "javaClass");
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0a0v() {
+  private static SNode _quotation_createNode_x583g4_a0a0a0w() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
