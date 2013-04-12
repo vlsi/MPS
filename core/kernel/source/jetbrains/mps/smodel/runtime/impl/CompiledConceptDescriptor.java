@@ -33,18 +33,6 @@ import java.util.*;
   private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
   private final List<String> childNames;
 
-    public CompiledConceptDescriptor(String conceptFqName,
-        @Nullable String superConcept,
-        boolean isInterfaceConcept,
-        String[] parents,
-        String[] ownPropertyNames,
-        String[] ownReferenceNames,
-        String[] ownChildNames) {
-
-
-        this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, ownChildNames, new boolean[]{});
-    }
-
   public CompiledConceptDescriptor(String conceptFqName,
       @Nullable String superConcept,
       boolean isInterfaceConcept,
