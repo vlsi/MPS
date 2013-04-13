@@ -28,7 +28,6 @@ import jetbrains.mps.project.ProjectManager;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.events.SModelListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;

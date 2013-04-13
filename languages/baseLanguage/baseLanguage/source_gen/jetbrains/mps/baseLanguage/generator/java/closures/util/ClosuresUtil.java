@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.HashMap;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.util.Condition;
 
 public class ClosuresUtil {
   private static Object CLOSURE_CONTEXT_DATA = new Object();
