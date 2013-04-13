@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class XmlContent_Behavior {
@@ -58,11 +58,11 @@ public class XmlContent_Behavior {
     return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_textLike_1262430001741498277", new Object[]{});
   }
 
-  public static boolean virtual_oneLineBlock_1262430001741497816(SConcept thisConcept) {
+  public static boolean virtual_oneLineBlock_1262430001741497816(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static boolean virtual_textLike_1262430001741498277(SConcept thisConcept) {
+  public static boolean virtual_textLike_1262430001741498277(SAbstractConcept thisConcept) {
     return true;
   }
 

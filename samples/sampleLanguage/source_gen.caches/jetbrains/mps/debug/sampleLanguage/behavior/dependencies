@@ -31,7 +31,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.debug.sampleLanguage.behavior.WannabeMethodCall_Behavior" file="WannabeMethodCall_Behavior.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.debug.sampleLanguage.behavior.WannabeMethodCall_BehaviorDescriptor" file="WannabeMethodCall_BehaviorDescriptor.java">

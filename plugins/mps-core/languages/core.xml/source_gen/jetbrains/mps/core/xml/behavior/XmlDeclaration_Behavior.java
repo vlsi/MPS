@@ -4,18 +4,18 @@ package jetbrains.mps.core.xml.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class XmlDeclaration_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "version", "1.0");
   }
 
-  public static boolean virtual_isSingle_1262430001741497810(SConcept thisConcept) {
+  public static boolean virtual_isSingle_1262430001741497810(SAbstractConcept thisConcept) {
     return true;
   }
 
-  public static boolean virtual_isFirst_1262430001741498376(SConcept thisConcept) {
+  public static boolean virtual_isFirst_1262430001741498376(SAbstractConcept thisConcept) {
     return true;
   }
 }

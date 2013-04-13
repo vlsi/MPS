@@ -4,7 +4,7 @@ package jetbrains.mps.ui.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,7 +17,7 @@ public class UIObjectReference_Behavior {
     return SLinkOperations.getTarget(thisNode, "declaration", false);
   }
 
-  public static boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
+  public static boolean virtual_legalAsStatement_1262430001741498032(SAbstractConcept thisConcept) {
     return true;
   }
 

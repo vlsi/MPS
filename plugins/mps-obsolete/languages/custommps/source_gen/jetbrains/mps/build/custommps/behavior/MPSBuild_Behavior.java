@@ -9,7 +9,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
@@ -40,7 +40,7 @@ public class MPSBuild_Behavior {
     return path;
   }
 
-  public static boolean virtual_acceptFiles_1262430001741497846(SConcept thisConcept) {
+  public static boolean virtual_acceptFiles_1262430001741497846(SAbstractConcept thisConcept) {
     return true;
   }
 

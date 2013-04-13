@@ -16,7 +16,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptFunction_Behavior {
@@ -132,15 +132,15 @@ public class ConceptFunction_Behavior {
     return ScopeUtils.lazyParentScope(thisNode, kind);
   }
 
-  public static boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+  public static boolean virtual_usesParameterObject_1262430001741497984(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+  public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
+  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     return ListSequence.fromList(new ArrayList<SNode>());
   }
 

@@ -81,13 +81,13 @@
   </root>
   <root nodeRef="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)/430844094082161345">
     <nodeInfo nodeId="430844094082161350" fileName="AnalyzerFunFunction_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914718863" fileName="AnalyzerFunFunction_Behavior.java" startLine="21" startPosition="117" endLine="22" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914718863" fileName="AnalyzerFunFunction_Behavior.java" startLine="21" startPosition="125" endLine="22" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914718878" fileName="AnalyzerFunFunction_Behavior.java" startLine="22" startPosition="261" endLine="23" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914718883" fileName="AnalyzerFunFunction_Behavior.java" startLine="23" startPosition="184" endLine="24" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914718887" fileName="AnalyzerFunFunction_Behavior.java" startLine="24" startPosition="184" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
     <scopeInfo nodeId="430844094082161347" fileName="AnalyzerFunFunction_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="430844094082161349" fileName="AnalyzerFunFunction_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="178" />
     <scopeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
@@ -96,7 +96,7 @@
     <scopeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="430844094082161345" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914718862" fileName="AnalyzerFunFunction_Behavior.java" startLine="21" startPosition="117" endLine="25" endPosition="18">
+    <scopeInfo nodeId="3044950653914718862" fileName="AnalyzerFunFunction_Behavior.java" startLine="21" startPosition="125" endLine="25" endPosition="18">
       <varInfo nodeId="3044950653914718864" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="430844094082161345" fileName="AnalyzerFunFunction_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
@@ -106,13 +106,13 @@
   </root>
   <root nodeRef="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)/430844094082161366">
     <nodeInfo nodeId="430844094082161371" fileName="AnalyzerMergeFunction_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914718767" fileName="AnalyzerMergeFunction_Behavior.java" startLine="21" startPosition="117" endLine="22" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914718767" fileName="AnalyzerMergeFunction_Behavior.java" startLine="21" startPosition="125" endLine="22" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914718782" fileName="AnalyzerMergeFunction_Behavior.java" startLine="22" startPosition="261" endLine="23" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914718787" fileName="AnalyzerMergeFunction_Behavior.java" startLine="23" startPosition="184" endLine="24" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914718791" fileName="AnalyzerMergeFunction_Behavior.java" startLine="24" startPosition="184" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
     <scopeInfo nodeId="430844094082161368" fileName="AnalyzerMergeFunction_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="430844094082161370" fileName="AnalyzerMergeFunction_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="178" />
     <scopeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
@@ -121,7 +121,7 @@
     <scopeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="430844094082161366" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914718766" fileName="AnalyzerMergeFunction_Behavior.java" startLine="21" startPosition="117" endLine="25" endPosition="18">
+    <scopeInfo nodeId="3044950653914718766" fileName="AnalyzerMergeFunction_Behavior.java" startLine="21" startPosition="125" endLine="25" endPosition="18">
       <varInfo nodeId="3044950653914718768" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="430844094082161366" fileName="AnalyzerMergeFunction_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
@@ -131,12 +131,12 @@
   </root>
   <root nodeRef="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)/430844094082161381">
     <nodeInfo nodeId="430844094082161386" fileName="AnalyzerInitialFunction_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914721390" fileName="AnalyzerInitialFunction_Behavior.java" startLine="21" startPosition="117" endLine="22" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914721390" fileName="AnalyzerInitialFunction_Behavior.java" startLine="21" startPosition="125" endLine="22" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914721405" fileName="AnalyzerInitialFunction_Behavior.java" startLine="22" startPosition="261" endLine="23" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914721409" fileName="AnalyzerInitialFunction_Behavior.java" startLine="23" startPosition="184" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
     <scopeInfo nodeId="430844094082161383" fileName="AnalyzerInitialFunction_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="430844094082161385" fileName="AnalyzerInitialFunction_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="178" />
     <scopeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
@@ -145,7 +145,7 @@
     <scopeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="430844094082161381" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914721389" fileName="AnalyzerInitialFunction_Behavior.java" startLine="21" startPosition="117" endLine="24" endPosition="18">
+    <scopeInfo nodeId="3044950653914721389" fileName="AnalyzerInitialFunction_Behavior.java" startLine="21" startPosition="125" endLine="24" endPosition="18">
       <varInfo nodeId="3044950653914721391" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="430844094082161381" fileName="AnalyzerInitialFunction_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0">

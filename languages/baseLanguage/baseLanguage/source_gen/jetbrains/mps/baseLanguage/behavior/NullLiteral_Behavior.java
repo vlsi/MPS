@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class NullLiteral_Behavior {
   public static void init(SNode thisNode) {
@@ -18,7 +18,7 @@ public class NullLiteral_Behavior {
     return null;
   }
 
-  public static boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
+  public static boolean virtual_constant_1262430001741498050(SAbstractConcept thisConcept) {
     return true;
   }
 }

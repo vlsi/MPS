@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,7 +24,7 @@ public class IApplicableToNothing_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Set<SNode> call_getAllApplicableTypes_5994574781955687463(final SConcept thisConcept) {
+  public static Set<SNode> call_getAllApplicableTypes_5994574781955687463(final SAbstractConcept thisConcept) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     Iterable<SNode> implementList;
     if (SNodeOperations.isInstanceOf(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
@@ -55,7 +55,7 @@ public class IApplicableToNothing_Behavior {
     return result;
   }
 
-  public static boolean call_hasApplicableTypes_2142237368811537351(SConcept thisConcept, SNode concept) {
+  public static boolean call_hasApplicableTypes_2142237368811537351(SAbstractConcept thisConcept, SNode concept) {
     return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing") && !(SConceptOperations.isExactly(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"));
   }
 

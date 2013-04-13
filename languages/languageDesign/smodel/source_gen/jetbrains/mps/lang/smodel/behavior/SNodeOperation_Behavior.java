@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -58,39 +58,39 @@ public class SNodeOperation_Behavior {
     return variableExpectedName;
   }
 
-  public static boolean virtual_applicableToModel_1262430001741492322(SConcept thisConcept) {
+  public static boolean virtual_applicableToModel_1262430001741492322(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static boolean virtual_applicableToConceptProperty_1262430001741497945(SConcept thisConcept) {
+  public static boolean virtual_applicableToConceptProperty_1262430001741497945(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
+  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static boolean virtual_applicableToSimpleProperty_1262430001741498100(SConcept thisConcept) {
+  public static boolean virtual_applicableToSimpleProperty_1262430001741498100(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static boolean virtual_applicableToEnumProperty_1262430001741498259(SConcept thisConcept) {
+  public static boolean virtual_applicableToEnumProperty_1262430001741498259(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
+  public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static boolean virtual_applicableToLinkList_1262430001741498382(SConcept thisConcept) {
+  public static boolean virtual_applicableToLinkList_1262430001741498382(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SConcept thisConcept) {
+  public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SAbstractConcept thisConcept) {
     return ListSequence.fromList(new ArrayList<SNode>());
   }
 

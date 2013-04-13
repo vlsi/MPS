@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -34,7 +35,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-class InstancesSearchType extends SearchType<SNode, SConcept> {
+class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
   private final boolean myExact;
 
   InstancesSearchType(boolean exact) {
@@ -42,15 +43,15 @@ class InstancesSearchType extends SearchType<SNode, SConcept> {
   }
 
   @Override
-  public Set<SNode> search(Set<SConcept> elements, SearchScope scope, @NotNull ProgressMonitor monitor) {
+  public Set<SNode> search(Set<SAbstractConcept> elements, SearchScope scope, @NotNull ProgressMonitor monitor) {
     CollectConsumer<SNode> consumer = new CollectConsumer(new HashSet<SNode>());
     Collection<FindUsagesParticipant> participants = PersistenceFacade.getInstance().getFindUsagesParticipants();
 
     monitor.start("Finding usages...", participants.size() + 5);
     try {
-      Set<SConcept> queryConcepts = new HashSet<SConcept>(elements);
+      Set<SAbstractConcept> queryConcepts = new HashSet<SAbstractConcept>(elements);
       if (!myExact) {
-        for (SConcept concept : elements) {
+        for (SAbstractConcept concept : elements) {
           Set<String> desc = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(concept.getQualifiedName());
           for (String cName : desc) {
             queryConcepts.add(SConceptRepository.getInstance().getConcept(cName));

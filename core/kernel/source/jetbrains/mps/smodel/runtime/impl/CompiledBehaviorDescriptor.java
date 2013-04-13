@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel.runtime.impl;
 
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -65,7 +65,7 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
   }
 
   @Override
-  public Object invokeStatic(@NotNull SConcept concept, String methodName, Object[] parameters) {
+  public Object invokeStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
     return genericInvoke(concept, methodName, parameters);
   }
 

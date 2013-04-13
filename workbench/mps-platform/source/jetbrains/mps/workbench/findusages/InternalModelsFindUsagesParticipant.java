@@ -8,6 +8,7 @@ import jetbrains.mps.project.structure.ProjectStructureModule.ProjectStructureSM
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -50,9 +51,9 @@ public class InternalModelsFindUsagesParticipant implements ApplicationComponent
   }
 
   @Override
-  public void findInstances(Collection<SModel> scope, Set<SConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
+  public void findInstances(Collection<SModel> scope, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
     boolean hasProjectLanguageConcepts = false;
-    for (SConcept n : concepts) {
+    for (SAbstractConcept n : concepts) {
       String namespace = NameUtil.namespaceFromConceptFQName(n.getQualifiedName());
       if (BootstrapLanguages.PROJECT.getModuleName().equals(namespace)) {
         hasProjectLanguageConcepts = true;

@@ -22,6 +22,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelOperations;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.StaticReference;
@@ -68,8 +69,8 @@ public class FindUsagesManager {
   /**
    * Finds exact instances of the provided concepts in the model.
    */
-  public static void collectInstances(SModel model, Collection<SConcept> concepts, Consumer<SNode> consumer) {
-    for (SConcept concept : concepts) {
+  public static void collectInstances(SModel model, Collection<SAbstractConcept> concepts, Consumer<SNode> consumer) {
+    for (SAbstractConcept concept : concepts) {
       for (SNode instance : ((jetbrains.mps.smodel.SModelInternal) model).getFastNodeFinder().getNodes(concept.getId(), false)) {
         consumer.consume(instance);
       }

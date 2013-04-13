@@ -5,7 +5,7 @@ package jetbrains.mps.lang.smodel.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class SLinkListAccess_Behavior {
   public static void init(SNode thisNode) {
@@ -27,15 +27,15 @@ public class SLinkListAccess_Behavior {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "link", false), "target", false);
   }
 
-  public static boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
+  public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
     return true;
   }
 
-  public static boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
+  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return true;
   }
 
-  public static boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return true;
   }
 }
