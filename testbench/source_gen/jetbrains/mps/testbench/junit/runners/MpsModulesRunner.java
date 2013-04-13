@@ -10,8 +10,12 @@ import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.tool.builder.Environment;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.util.FileUtil;
+import java.io.InputStream;
+import java.io.FileOutputStream;
+import jetbrains.mps.util.ReadUtil;
+import java.io.IOException;
 
 public class MpsModulesRunner extends MPSOpenProjectRunner {
   private static final String PROPERTY_LIBRARY = "mps.libraries";
@@ -76,23 +80,42 @@ public class MpsModulesRunner extends MPSOpenProjectRunner {
     }
 
     private Project getDummyProject() {
-      Project project = Environment.createTmpDummyProject();
+      File dummy = createDummyProjectFile();
+      Project p = TestMain.loadProject(dummy);
       if (this.lastProject != null) {
         try {
           SwingUtilities.invokeAndWait(new Runnable() {
             public void run() {
-              DummyProjectContainer.this.lastProject.dispose();
+              Project lastProject = DummyProjectContainer.this.lastProject;
+              File projectFile = lastProject.getProjectFile();
+              lastProject.dispose();
+              if (projectFile != null) {
+                projectFile.delete();
+              }
             }
           });
         } catch (Exception e) {
           e.printStackTrace();
         }
       }
-      this.lastProject = project;
-      this.projectName = project.getProjectFile().getPath();
-      return project;
+      this.lastProject = p;
+      this.projectName = dummy.getName();
+      return p;
     }
 
-
+    private File createDummyProjectFile() {
+      File projectFile = FileUtil.createTmpFile();
+      try {
+        InputStream input = MpsModulesRunner.this.getClass().getResourceAsStream("Dummy.mpr.xml");
+        FileOutputStream stream = new FileOutputStream(projectFile);
+        stream.write(ReadUtil.read(input));
+        stream.close();
+        input.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+        return null;
+      }
+      return projectFile;
+    }
   }
 }
