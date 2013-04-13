@@ -2019,6 +2019,30 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8425917838863060644">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="709f.5936308221645772775" resolveInfo="TestBlPriorities" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5420484811755495913">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.938834323431398136" resolveInfo="TypeName" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5420484811755497092">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803029905321" resolveInfo="AddChild" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5420484811755498274">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803030045032" resolveInfo="DeleteChild" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5420484811755481625">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803030048859" resolveInfo="EditIntegerProperty" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5420484811755500863">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803030056747" resolveInfo="EditStringProperty" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5420484811755502051">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803030056772" resolveInfo="EditBooleanProperty" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5420484811755503242">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803030060657" resolveInfo="AddReference" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5420484811755504436">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803034322732" resolveInfo="AddStatements" />
+    </node>
   </root>
   <root id="7917427600705105663">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7917427600705106075">
