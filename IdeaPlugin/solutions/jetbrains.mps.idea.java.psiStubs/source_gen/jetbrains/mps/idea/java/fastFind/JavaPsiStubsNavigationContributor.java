@@ -47,13 +47,13 @@ public class JavaPsiStubsNavigationContributor implements NavigationParticipant,
 
             public SConcept getConcept() {
               if (psiClaz.isAnnotationType()) {
-                return SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_Annotation);
+                return (SConcept) SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_Annotation);
               } else if (psiClaz.isInterface()) {
-                return SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_Interface);
+                return (SConcept) SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_Interface);
               } else if (psiClaz.isEnum()) {
-                return SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_EnumClass);
+                return (SConcept) SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_EnumClass);
               } else {
-                return SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_ClassConcept);
+                return (SConcept) SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_ClassConcept);
               }
             }
 
