@@ -53,6 +53,8 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
   <import index="ajxo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" version="-1" />
+  <import index="vkwc" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.locks(JDK/java.util.concurrent.locks@java_stub)" version="-1" />
+  <import index="53gy" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -3611,15 +3613,15 @@
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8611316981187585830">
       <property name="name" nameId="tpck.1169194664001" value="LOCK" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8611316981187585831">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8611316981187585832" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8611316981187585833">
-        <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8611316981187585834">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8159985527861569108">
+        <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8159985527861682646">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vkwc.~ReentrantLock%d&lt;init&gt;()" resolveInfo="ReentrantLock" />
         </node>
       </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8159985527861520932">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vkwc.~ReentrantLock" resolveInfo="ReentrantLock" />
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8611316981187585832" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8611316981187585851">
       <property name="name" nameId="tpck.1169194664001" value="myProject" />
@@ -4045,195 +4047,186 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SynchronizedStatement" typeId="tpee.1170075670744" id="8611316981187585436">
-          <node role="block" roleId="tpee.1170075736412" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585437">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585438">
-              <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="8611316981187585439">
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585440">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585359" resolveInfo="myState" />
-                </node>
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585845">
-                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585678" resolveInfo="CONNECTED" />
-                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.TryCatchStatement" typeId="tpee.1164879751025" id="8159985527862683219">
+          <node role="body" roleId="tpee.1164879758292" type="tpee.StatementList" typeId="tpee.1068580123136" id="8159985527862683221">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8159985527863204395">
+              <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8159985527863220326">
+                <property name="text" nameId="tpee.6329021646629104958" value="this way we finish before the next tick" />
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8159985527862270380">
+              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8159985527862270382">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.TryStatement" typeId="tpee.1153952380246" id="8159985527862050365">
+                  <node role="body" roleId="tpee.1153952416686" type="tpee.StatementList" typeId="tpee.1068580123136" id="8159985527862050367">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8159985527862633452">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="8159985527862633451">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8159985527862575757" resolveInfo="tickImpl" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="finallyBody" roleId="tpee.1153952429843" type="tpee.StatementList" typeId="tpee.1068580123136" id="8159985527862050368">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8159985527862157935">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8159985527862169299">
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8159985527862185637">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vkwc.~ReentrantLock%dunlock()%cvoid" resolveInfo="unlock" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8159985527862157948">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585830" resolveInfo="LOCK" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
-              <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585442">
-                <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="8611316981187585443">
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585444">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585359" resolveInfo="myState" />
+              <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8159985527861733134">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8159985527862280683">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585830" resolveInfo="LOCK" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8159985527861748689">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vkwc.~ReentrantLock%dtryLock(long,java%dutil%dconcurrent%dTimeUnit)%cboolean" resolveInfo="tryLock" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DivExpression" typeId="tpee.1095950406618" id="8159985527862854357">
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8159985527862854359">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585818" resolveInfo="INITIAL_DELAY" />
+                    </node>
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8159985527862886205">
+                      <property name="value" nameId="tpee.1068580320021" value="2" />
+                    </node>
                   </node>
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585862">
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585674" resolveInfo="CONNECTED_BAD_PROJECT" />
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8159985527862022439">
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="53gy.~TimeUnit" resolveInfo="TimeUnit" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="53gy.~TimeUnit%dMILLISECONDS" resolveInfo="MILLISECONDS" />
                   </node>
                 </node>
-                <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585446">
-                  <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="8611316981187585447">
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585448">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585359" resolveInfo="myState" />
-                    </node>
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585865">
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585666" resolveInfo="DISCONNECTED" />
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
-                    </node>
+              </node>
+            </node>
+          </node>
+          <node role="catchClause" roleId="tpee.1164903496223" type="tpee.CatchClause" typeId="tpee.1164903280175" id="8159985527862683222">
+            <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8159985527862683224">
+              <property name="name" nameId="tpck.1169194664001" value="e" />
+              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8159985527862700102">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~InterruptedException" resolveInfo="InterruptedException" />
+              </node>
+            </node>
+            <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="8159985527862683228">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8159985527862823018">
+                <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8159985527863002524">
+                  <property name="text" nameId="tpee.6329021646629104958" value="o well, we were interrupted" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8159985527862575757">
+      <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="tickImpl" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8159985527862575760">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585438">
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="8611316981187585439">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585440">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585359" resolveInfo="myState" />
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585845">
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585678" resolveInfo="CONNECTED" />
+            </node>
+          </node>
+          <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585442">
+            <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="8611316981187585443">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585444">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585359" resolveInfo="myState" />
+              </node>
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585862">
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585674" resolveInfo="CONNECTED_BAD_PROJECT" />
+              </node>
+            </node>
+            <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585446">
+              <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="8611316981187585447">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585448">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585359" resolveInfo="myState" />
+                </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585865">
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585666" resolveInfo="DISCONNECTED" />
+                </node>
+              </node>
+              <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585450">
+                <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="8611316981187585451">
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585452">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585359" resolveInfo="myState" />
                   </node>
-                  <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585450">
-                    <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="8611316981187585451">
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585452">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585359" resolveInfo="myState" />
-                      </node>
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585868">
-                        <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585670" resolveInfo="TRYING_TO_CONNECT" />
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
-                      </node>
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585868">
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585670" resolveInfo="TRYING_TO_CONNECT" />
+                  </node>
+                </node>
+                <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585454">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585455">
+                    <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585456">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585606" resolveInfo="isConnected" />
                     </node>
-                    <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585454">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585455">
-                        <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585456">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585606" resolveInfo="isConnected" />
-                        </node>
-                        <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585457">
-                          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585458">
-                            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8611316981187585459">
-                              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8611316981187585460">
-                                <property name="name" nameId="tpck.1169194664001" value="newDelay" />
-                                <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8611316981187585461" />
-                                <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8611316981187585462">
-                                  <node role="expression" roleId="tpee.1070534934092" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="8611316981187585463">
-                                    <node role="expression" roleId="tpee.1079359253376" type="tpee.MulExpression" typeId="tpee.1092119917967" id="8611316981187585871">
-                                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="8611316981187585874">
-                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585826" resolveInfo="DELAY_MUL" />
-                                      </node>
-                                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8611316981187585465">
-                                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585466">
-                                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585366" resolveInfo="myTimer" />
-                                        </node>
-                                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8611316981187585467">
-                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~Timer%dgetDelay()%cint" resolveInfo="getDelay" />
-                                        </node>
-                                      </node>
-                                    </node>
+                    <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585457">
+                      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585458">
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8611316981187585459">
+                          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8611316981187585460">
+                            <property name="name" nameId="tpck.1169194664001" value="newDelay" />
+                            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8611316981187585461" />
+                            <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8611316981187585462">
+                              <node role="expression" roleId="tpee.1070534934092" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="8611316981187585463">
+                                <node role="expression" roleId="tpee.1079359253376" type="tpee.MulExpression" typeId="tpee.1092119917967" id="8611316981187585871">
+                                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8159985527862616376">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585826" resolveInfo="DELAY_MUL" />
                                   </node>
-                                  <node role="type" roleId="tpee.1070534934091" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8611316981187585468" />
-                                </node>
-                              </node>
-                            </node>
-                            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585469">
-                              <node role="condition" roleId="tpee.1068580123160" type="tpee.LessThanOrEqualsExpression" typeId="tpee.1153422305557" id="8611316981187585875">
-                                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="8611316981187585878">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585822" resolveInfo="CRITICAL_DELAY" />
-                                </node>
-                                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8611316981187585471">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585460" resolveInfo="newDelay" />
-                                </node>
-                              </node>
-                              <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585472">
-                                <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585473">
-                                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585474">
-                                    <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585475">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
-                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585879">
-                                        <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585666" resolveInfo="DISCONNECTED" />
-                                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585477">
-                                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585478">
-                                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8611316981187585479">
-                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585480">
+                                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8611316981187585465">
+                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585466">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585366" resolveInfo="myTimer" />
                                     </node>
-                                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8611316981187585481">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585799" resolveInfo="setNewDelay" />
-                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8611316981187585482">
-                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585460" resolveInfo="newDelay" />
-                                      </node>
+                                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8611316981187585467">
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~Timer%dgetDelay()%cint" resolveInfo="getDelay" />
                                     </node>
                                   </node>
                                 </node>
                               </node>
+                              <node role="type" roleId="tpee.1070534934091" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8611316981187585468" />
                             </node>
                           </node>
                         </node>
-                        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585483">
-                          <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585484">
-                            <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585485">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585614" resolveInfo="canOperate" />
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585469">
+                          <node role="condition" roleId="tpee.1068580123160" type="tpee.LessThanOrEqualsExpression" typeId="tpee.1153422305557" id="8611316981187585875">
+                            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8159985527862616379">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585822" resolveInfo="CRITICAL_DELAY" />
                             </node>
-                            <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585486">
-                              <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585487">
-                                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585488">
-                                  <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585489">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585870">
-                                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585674" resolveInfo="CONNECTED_BAD_PROJECT" />
-                                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
+                            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8611316981187585471">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585460" resolveInfo="newDelay" />
                             </node>
-                            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585491">
-                              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585492">
-                                <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585493">
+                          </node>
+                          <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585472">
+                            <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585473">
+                              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585474">
+                                <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585475">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585869">
-                                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585678" resolveInfo="CONNECTED" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585879">
+                                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585666" resolveInfo="DISCONNECTED" />
                                     <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
                                   </node>
                                 </node>
                               </node>
                             </node>
                           </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585495">
-                    <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585496">
-                      <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8611316981187585497">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8611316981187585498">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8632185942131070856" resolveInfo="MPSPlugin" />
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8632185942131070874" resolveInfo="getInstance" />
-                        </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8611316981187585499">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8632185942131071001" resolveInfo="openConnectionPresent" />
-                        </node>
-                      </node>
-                      <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585500">
-                        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585501">
-                          <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585502">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585606" resolveInfo="isConnected" />
-                          </node>
-                          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585503">
-                            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585504">
-                              <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585505">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585614" resolveInfo="canOperate" />
-                              </node>
-                              <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585506">
-                                <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585507">
-                                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585508">
-                                    <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585509">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
-                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585867">
-                                        <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585674" resolveInfo="CONNECTED_BAD_PROJECT" />
-                                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
-                                      </node>
-                                    </node>
-                                  </node>
+                          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585477">
+                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585478">
+                              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8611316981187585479">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8611316981187585480">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585366" resolveInfo="myTimer" />
                                 </node>
-                              </node>
-                              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585511">
-                                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585512">
-                                  <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585513">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585866">
-                                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585678" resolveInfo="CONNECTED" />
-                                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
-                                    </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8611316981187585481">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585799" resolveInfo="setNewDelay" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8611316981187585482">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585460" resolveInfo="newDelay" />
                                   </node>
                                 </node>
                               </node>
@@ -4242,41 +4235,29 @@
                         </node>
                       </node>
                     </node>
-                  </node>
-                </node>
-                <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585515">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585516">
-                    <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585517">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585606" resolveInfo="isConnected" />
-                    </node>
-                    <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585518">
-                      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585519">
-                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585520">
-                          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585521">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585864">
-                              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585670" resolveInfo="TRYING_TO_CONNECT" />
-                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585523">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585524">
-                        <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585525">
+                    <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585483">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585484">
+                        <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585485">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585614" resolveInfo="canOperate" />
                         </node>
-                        <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585526">
-                          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585527">
-                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8611316981187585528" />
+                        <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585486">
+                          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585487">
+                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585488">
+                              <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585489">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585870">
+                                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585674" resolveInfo="CONNECTED_BAD_PROJECT" />
+                                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                                </node>
+                              </node>
+                            </node>
                           </node>
                         </node>
-                        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585529">
-                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585530">
-                            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585531">
+                        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585491">
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585492">
+                            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585493">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585863">
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585869">
                                 <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585678" resolveInfo="CONNECTED" />
                                 <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
                               </node>
@@ -4288,44 +4269,93 @@
                   </node>
                 </node>
               </node>
-              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585533">
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585534">
-                  <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585535">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585606" resolveInfo="isConnected" />
-                  </node>
-                  <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585536">
-                    <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585537">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585538">
-                        <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585539">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585861">
-                            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585670" resolveInfo="TRYING_TO_CONNECT" />
-                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
-                          </node>
-                        </node>
-                      </node>
+              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585495">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585496">
+                  <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8611316981187585497">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8611316981187585498">
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8632185942131070856" resolveInfo="MPSPlugin" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8632185942131070874" resolveInfo="getInstance" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8611316981187585499">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8632185942131071001" resolveInfo="openConnectionPresent" />
                     </node>
                   </node>
-                  <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585541">
-                    <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585542">
-                      <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585543">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585614" resolveInfo="canOperate" />
+                  <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585500">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585501">
+                      <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585502">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585606" resolveInfo="isConnected" />
                       </node>
-                      <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585544">
-                        <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585545">
-                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585546">
-                            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585547">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585846">
-                                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585674" resolveInfo="CONNECTED_BAD_PROJECT" />
-                                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                      <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585503">
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585504">
+                          <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585505">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585614" resolveInfo="canOperate" />
+                          </node>
+                          <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585506">
+                            <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585507">
+                              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585508">
+                                <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585509">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585867">
+                                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585674" resolveInfo="CONNECTED_BAD_PROJECT" />
+                                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585511">
+                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585512">
+                              <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585513">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585866">
+                                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585678" resolveInfo="CONNECTED" />
+                                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                                </node>
                               </node>
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585549">
-                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8611316981187585550" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585515">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585516">
+                <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585517">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585606" resolveInfo="isConnected" />
+                </node>
+                <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585518">
+                  <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585519">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585520">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585521">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585864">
+                          <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585670" resolveInfo="TRYING_TO_CONNECT" />
+                          <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585523">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585524">
+                    <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585525">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585614" resolveInfo="canOperate" />
+                    </node>
+                    <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585526">
+                      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585527" />
+                    </node>
+                    <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585529">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585530">
+                        <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585531">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585863">
+                            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585678" resolveInfo="CONNECTED" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -4333,11 +4363,53 @@
               </node>
             </node>
           </node>
-          <node role="expression" roleId="tpee.1170075728144" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="8611316981187585844">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8611316981187585830" resolveInfo="LOCK" />
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585533">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585534">
+              <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585535">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585606" resolveInfo="isConnected" />
+              </node>
+              <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585536">
+                <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585537">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585538">
+                    <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585539">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585861">
+                        <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585670" resolveInfo="TRYING_TO_CONNECT" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585541">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8611316981187585542">
+                  <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585543">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585614" resolveInfo="canOperate" />
+                  </node>
+                  <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8611316981187585544">
+                    <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585545">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8611316981187585546">
+                        <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8611316981187585547">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8611316981187585551" resolveInfo="setNewState" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8611316981187585846">
+                            <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8611316981187585674" resolveInfo="CONNECTED_BAD_PROJECT" />
+                            <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8611316981187585664" resolveInfo="PluginStateWidget.State" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8611316981187585549">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8611316981187585550" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8159985527862545243" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8159985527862563383" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8611316981187585551">
       <property name="name" nameId="tpck.1169194664001" value="setNewState" />
