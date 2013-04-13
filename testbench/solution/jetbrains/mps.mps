@@ -1646,7 +1646,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5294483648489408290">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="5294483648489408291">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5294483648489407701" resolveInfo="testOnProjectCopy" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5294483648489407724" resolveInfo="testOnProjectCopy" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5294483648489408292">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5294483648489408278" resolveInfo="sourceProjectDir" />
             </node>

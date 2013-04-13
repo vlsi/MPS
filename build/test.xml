@@ -16,11 +16,14 @@
 <project name="test" default="default">
   <property name="mps.zip.path" value="artifacts"/>
   <property name="mps.zip" value="${build.number}.zip"/>
-  <target name="default">
-    <property name="dest" value="${mps_home}/build/temp.dst" />
-    <fail unless="mps_home" message="Property mps_home unspecified."/>
-    <unzip src="${mps_home}/${mps.zip.path}/${mps.zip}" dest="${dest}" />
+  <property name="dest" value="${mps_home}/build/temp.dst"/>
 
+  <target name="unpack">
+    <fail unless="mps_home" message="Property mps_home unspecified."/>
+    <unzip src="${mps_home}/${mps.zip.path}/${mps.zip}" dest="${dest}"/>
+  </target>
+
+  <target name="check-project-structure" depends="unpack">
     <mkdir dir="${dest}/buildtests.tmp"/>
     <path id="tests.classpath">
       <fileset dir="${dest}/MPS ${version}/lib">
@@ -47,8 +50,6 @@
       <jvmarg value="-Xmx1200m"/>
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
-      <!--<jvmarg value="-Xdebug"/>-->
-      <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>-->
       <test name="CheckProjectStructure"/>
       <formatter type="brief" usefile="false"/>
       <classpath>
@@ -57,9 +58,16 @@
         </fileset>
       </classpath>
     </junit>
-<!--
-    <ant antfile="${mps_home}/languages/util/gwtsupport/solutions/gwtsupport.buildtest/build.xml">
-      <property name="mps.home" value="${dest}/MPS ${version}"/>
-    </ant> -->
   </target>
+
+  <target name="module-tests" depends="unpack">
+    <ant antfile="tests/mpsExecution.xml" inheritAll="true" useNativeBasedir="true">
+      <property name="mps_home" value="${dest}/MPS ${version}"/>
+    </ant>
+    <ant antfile="tests/mpsEditor.xml" inheritAll="true" useNativeBasedir="true">
+      <property name="mps_home" value="${dest}/MPS ${version}"/>
+    </ant>
+  </target>
+
+  <target name="default" depends="check-project-structure, module-tests"/>
 </project>
