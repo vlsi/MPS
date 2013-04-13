@@ -10303,8 +10303,8 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049414879" resolveInfo="result" />
                 </node>
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5797068448049414905">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~CollectionUtil%dfilter(java%dutil%dSet,jetbrains%dmps%dutil%dCondition)%cjava%dutil%dSet" resolveInfo="filter" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~CollectionUtil" resolveInfo="CollectionUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~CollectionUtil%dfilter(java%dutil%dSet,org%djetbrains%dmps%dutil%dCondition)%cjava%dutil%dSet" resolveInfo="filter" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5797068448049414906">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049414879" resolveInfo="result" />
                   </node>
@@ -10379,8 +10379,8 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049414879" resolveInfo="result" />
                 </node>
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5797068448049414923">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~CollectionUtil%dfilter(java%dutil%dSet,jetbrains%dmps%dutil%dCondition)%cjava%dutil%dSet" resolveInfo="filter" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~CollectionUtil" resolveInfo="CollectionUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~CollectionUtil%dfilter(java%dutil%dSet,org%djetbrains%dmps%dutil%dCondition)%cjava%dutil%dSet" resolveInfo="filter" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5797068448049414924">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049414879" resolveInfo="result" />
                   </node>
