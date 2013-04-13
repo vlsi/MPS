@@ -69,6 +69,7 @@
       <src>
         <pathelement path="${mps_home}/core/source" />
         <pathelement path="${mps_home}/core/source_gen" />
+        <pathelement path="${mps_home}/core/tests" />
       </src>
       <classpath refid="path.java.library.apache-collections" />
     </javac>
