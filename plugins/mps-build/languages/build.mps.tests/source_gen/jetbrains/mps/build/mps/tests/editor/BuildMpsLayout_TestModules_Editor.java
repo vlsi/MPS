@@ -33,6 +33,7 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_aky039_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aky039_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_aky039_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_aky039_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_aky039_c0(editorContext, node));

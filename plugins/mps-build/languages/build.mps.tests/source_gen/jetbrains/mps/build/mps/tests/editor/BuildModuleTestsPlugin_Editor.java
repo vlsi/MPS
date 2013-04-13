@@ -20,6 +20,7 @@ public class BuildModuleTestsPlugin_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_a2ysah_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a2ysah_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_a2ysah_a0(editorContext, node));
     return editorCell;
   }
