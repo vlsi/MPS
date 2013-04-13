@@ -11,12 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
+import org.jetbrains.mps.util.Condition;
 import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.util.Condition;
 
 public class _QueriesUtil {
   public _QueriesUtil() {

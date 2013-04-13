@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import org.jetbrains.mps.util.Condition;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -35,7 +36,6 @@ import jetbrains.mps.smodel.FastNodeFinder;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import org.jetbrains.mps.util.Condition;
 
 public class SNodeOperations {
   public SNodeOperations() {

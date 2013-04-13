@@ -1053,7 +1053,7 @@
     <nodeInfo nodeId="1998873705041899703" fileName="TypeVarScope.java" startLine="63" startPosition="112" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1998873705041899623" fileName="TypeVarScope.java" startLine="39" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1998873705041899691" fileName="TypeVarScope.java" startLine="63" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="populateLocalVariables#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1998873705041899600" fileName="TypeVarScope.java" startLine="28" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
+    <nodeInfo nodeId="1998873705041899600" fileName="TypeVarScope.java" startLine="28" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Lorg/jetbrains/mps/util/Condition;)Ljava/util/List;" />
     <scopeInfo nodeId="1998873705041899583" fileName="TypeVarScope.java" startLine="19" startPosition="44" endLine="20" endPosition="25" />
     <scopeInfo nodeId="2799691424948175207" fileName="TypeVarScope.java" startLine="35" startPosition="108" endLine="36" endPosition="112" />
     <scopeInfo nodeId="2799691424948175218" fileName="TypeVarScope.java" startLine="37" startPosition="12" endLine="38" endPosition="170" />
@@ -1125,7 +1125,7 @@
     <nodeInfo nodeId="2799691424948156143" fileName="ListVarScope.java" startLine="25" startPosition="20" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1998873705041900434" fileName="ListVarScope.java" startLine="35" startPosition="7" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1998873705041900415" fileName="ListVarScope.java" startLine="30" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1998873705041900392" fileName="ListVarScope.java" startLine="20" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
+    <nodeInfo nodeId="1998873705041900392" fileName="ListVarScope.java" startLine="20" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Lorg/jetbrains/mps/util/Condition;)Ljava/util/List;" />
     <scopeInfo nodeId="1998873705041900389" fileName="ListVarScope.java" startLine="16" startPosition="44" endLine="17" endPosition="25" />
     <scopeInfo nodeId="2799691424948156144" fileName="ListVarScope.java" startLine="26" startPosition="104" endLine="27" endPosition="104" />
     <scopeInfo nodeId="2799691424948156165" fileName="ListVarScope.java" startLine="28" startPosition="12" endLine="29" endPosition="162" />
