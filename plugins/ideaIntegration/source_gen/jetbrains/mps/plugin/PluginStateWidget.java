@@ -5,6 +5,7 @@ package jetbrains.mps.plugin;
 import com.intellij.openapi.wm.StatusBarWidget;
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
+import java.util.concurrent.locks.ReentrantLock;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.StatusBar;
 import java.awt.event.ActionListener;
@@ -16,6 +17,7 @@ import com.intellij.util.Consumer;
 import java.awt.event.MouseEvent;
 import javax.swing.Icon;
 import jetbrains.mps.ide.ThreadUtils;
+import java.util.concurrent.TimeUnit;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.plugin.icons.Icons;
 import javax.swing.Timer;
@@ -25,7 +27,7 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
   private static final int INITIAL_DELAY = 4000;
   private static final int CRITICAL_DELAY = 16000;
   private static final double DELAY_MUL = 2.0;
-  private static final Object LOCK = new Object();
+  private static final ReentrantLock LOCK = new ReentrantLock();
   private final Project myProject;
   private PluginStateWidget.MyTimer myTimer;
   private PluginStateWidget.State myState = PluginStateWidget.State.TRYING_TO_CONNECT;
@@ -99,54 +101,66 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
 
   private void tick() {
     LOG.assertLog(!(ThreadUtils.isEventDispatchThread()), "You should not do this in EDT");
-    synchronized (LOCK) {
-      if (myState == PluginStateWidget.State.CONNECTED) {
-        if (isConnected()) {
-          if (canOperate()) {
-            return;
-          } else {
-            setNewState(PluginStateWidget.State.CONNECTED_BAD_PROJECT);
-          }
-        } else {
-          setNewState(PluginStateWidget.State.TRYING_TO_CONNECT);
+    try {
+      // this way we finish before the next tick 
+      if (LOCK.tryLock(INITIAL_DELAY / 2, TimeUnit.MILLISECONDS)) {
+        try {
+          tickImpl();
+        } finally {
+          LOCK.unlock();
         }
-      } else
-      if (myState == PluginStateWidget.State.CONNECTED_BAD_PROJECT) {
+      }
+    } catch (InterruptedException e) {
+      // o well, we were interrupted 
+    }
+  }
+
+  private void tickImpl() {
+    if (myState == PluginStateWidget.State.CONNECTED) {
+      if (isConnected()) {
+        if (canOperate()) {
+          return;
+        } else {
+          setNewState(PluginStateWidget.State.CONNECTED_BAD_PROJECT);
+        }
+      } else {
+        setNewState(PluginStateWidget.State.TRYING_TO_CONNECT);
+      }
+    } else
+    if (myState == PluginStateWidget.State.CONNECTED_BAD_PROJECT) {
+      if (isConnected()) {
+        if (canOperate()) {
+          setNewState(PluginStateWidget.State.CONNECTED);
+        } else {
+        }
+      } else {
+        setNewState(PluginStateWidget.State.TRYING_TO_CONNECT);
+      }
+    } else
+    if (myState == PluginStateWidget.State.DISCONNECTED) {
+      if (MPSPlugin.getInstance().openConnectionPresent()) {
         if (isConnected()) {
           if (canOperate()) {
             setNewState(PluginStateWidget.State.CONNECTED);
           } else {
-            return;
-          }
-        } else {
-          setNewState(PluginStateWidget.State.TRYING_TO_CONNECT);
-        }
-      } else
-      if (myState == PluginStateWidget.State.DISCONNECTED) {
-        if (MPSPlugin.getInstance().openConnectionPresent()) {
-          if (isConnected()) {
-            if (canOperate()) {
-              setNewState(PluginStateWidget.State.CONNECTED);
-            } else {
-              setNewState(PluginStateWidget.State.CONNECTED_BAD_PROJECT);
-            }
-          }
-        }
-      } else
-      if (myState == PluginStateWidget.State.TRYING_TO_CONNECT) {
-        if (isConnected()) {
-          if (canOperate()) {
-            setNewState(PluginStateWidget.State.CONNECTED);
-          } else {
             setNewState(PluginStateWidget.State.CONNECTED_BAD_PROJECT);
           }
+        }
+      }
+    } else
+    if (myState == PluginStateWidget.State.TRYING_TO_CONNECT) {
+      if (isConnected()) {
+        if (canOperate()) {
+          setNewState(PluginStateWidget.State.CONNECTED);
         } else {
-          int newDelay = (int) (myTimer.getDelay() * DELAY_MUL);
-          if (newDelay <= CRITICAL_DELAY) {
-            myTimer.setNewDelay(newDelay);
-          } else {
-            setNewState(PluginStateWidget.State.DISCONNECTED);
-          }
+          setNewState(PluginStateWidget.State.CONNECTED_BAD_PROJECT);
+        }
+      } else {
+        int newDelay = (int) (myTimer.getDelay() * DELAY_MUL);
+        if (newDelay <= CRITICAL_DELAY) {
+          myTimer.setNewDelay(newDelay);
+        } else {
+          setNewState(PluginStateWidget.State.DISCONNECTED);
         }
       }
     }
