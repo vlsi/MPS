@@ -15,6 +15,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import java.util.Set;
@@ -62,6 +65,8 @@ public class ReplaceDialog extends BaseDialog {
         ReplaceDialog.this.myEditor = new EmbeddableEditor(context.getProject(), new _FunctionTypes._void_P1_E0<SModel>() {
           public void invoke(SModel m) {
             m.addRootNode(myNode);
+            ((SModelInternal) m).addLanguage(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c")).getModuleReference());
+            ((SModelInternal) m).addLanguage(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleReference());
           }
         }, true) {
           @Override
