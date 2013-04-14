@@ -74,7 +74,7 @@ public class FindInstancesDialog extends BaseDialog {
           public void invoke(SModel m) {
             m.addRootNode(myNode);
             ((SModelInternal) m).addLanguage(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c")).getModuleReference());
-            ((SModelInternal) m).addLanguage(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleReference());
+            ((SModelInternal) m).addDevKit(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference());
           }
         }, true) {
           @Override
