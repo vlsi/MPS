@@ -21,7 +21,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.GoToTypeErrorRule_InGroup_Action" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="jetbrains.mps.workbench.ActionPlace" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -29,6 +28,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.GoToTypeErrorRule_Action" file="GoToTypeErrorRule_Action.java">

@@ -56,7 +56,6 @@
     <classNode dependClassName="jetbrains.mps.lang.script.pluginSolution.plugin.RunMigrationScripts_Action" />
     <classNode dependClassName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsMenuBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.workbench.ActionPlace" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -65,6 +64,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsGlobally_ActionGroup" file="ScriptsGlobally_ActionGroup.java">
@@ -80,7 +80,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.script.pluginSolution.plugin.RunMigrationScripts_Action" />
     <classNode dependClassName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsMenuBuilder" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.workbench.ActionPlace" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -88,6 +87,7 @@
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsMenuBuilder" file="ScriptsMenuBuilder.java">
