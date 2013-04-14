@@ -15,10 +15,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.Dimension;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.compiler.IClassesData;
@@ -29,7 +26,6 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import javax.swing.JComponent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.Collections;
@@ -42,9 +38,14 @@ import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class FindInstancesDialog extends BaseDialog {
   private static Logger LOG = LogManager.getLogger(QueryFinder.class);
@@ -55,21 +56,17 @@ public class FindInstancesDialog extends BaseDialog {
   private SNode myNode;
   private boolean myDisposed = false;
 
-  public FindInstancesDialog(final IOperationContext context, final IModule module) {
+  public FindInstancesDialog(final SNode concept, final IOperationContext context, final IModule module) {
     super(ProjectHelper.toMainFrame(context.getProject()), "Find Instances by condition");
     this.myContext = context;
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        FindInstancesDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", null);
-        SNode statementList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
-        SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-        SNode defaultCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
-        SPropertyOperations.set(defaultCondition, "value", "" + (true));
-        SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
-        ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
-        SLinkOperations.setTarget(SLinkOperations.getTarget(FindInstancesDialog.this.myNode, "condition", true), "body", statementList, true);
+        FindInstancesDialog.this.myNode = _quotation_createNode_vfh0rq_a0a0a4a7((concept == null ?
+          SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626") :
+          concept
+        ));
         FindInstancesDialog.this.myEditor = new EmbeddableEditor(context.getProject(), new _FunctionTypes._void_P1_E0<SModel>() {
           public void invoke(SModel m) {
             m.addRootNode(myNode);
@@ -110,14 +107,6 @@ public class FindInstancesDialog extends BaseDialog {
   @Override
   protected JComponent getMainComponent() {
     return this.myPanel;
-  }
-
-  public void setConceptDeclaration(final SNode declaration) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SLinkOperations.setTarget(FindInstancesDialog.this.myNode, "conceptDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
-      }
-    });
   }
 
   @BaseDialog.Button(position = 0, name = "Find", mnemonic = 'F', defaultButton = true)
@@ -200,5 +189,19 @@ public class FindInstancesDialog extends BaseDialog {
       }
     });
     super.dispose();
+  }
+
+  private static SNode _quotation_createNode_vfh0rq_a0a0a4a7(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "conceptDeclaration", (SNode) parameter_1);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.QueryCondition", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.addChild("body", quotedNode_4);
+    quotedNode_2.addChild("condition", quotedNode_3);
+    return quotedNode_2;
   }
 }
