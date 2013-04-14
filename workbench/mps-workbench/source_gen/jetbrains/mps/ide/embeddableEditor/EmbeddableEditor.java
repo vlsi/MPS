@@ -212,6 +212,7 @@ public class EmbeddableEditor {
   }
 
   public void disposeEditor() {
+    myNodeEditor.dispose();
     if (myModelCreated) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
@@ -219,6 +220,5 @@ public class EmbeddableEditor {
         }
       });
     }
-    myNodeEditor.dispose();
   }
 }
