@@ -140,6 +140,7 @@
     <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.InstantiationException" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -159,10 +160,10 @@
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleFacet" />
     <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleOperations" />
@@ -176,9 +177,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementQueryAction_Action" file="ReplacementQueryAction_Action.java">
