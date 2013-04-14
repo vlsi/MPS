@@ -21,6 +21,7 @@ import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
@@ -50,7 +51,6 @@ import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
 
@@ -66,6 +66,7 @@ public class EmbeddableEditor {
   public EmbeddableEditor(Project p, _FunctionTypes._void_P1_E0<? super SModel> modelInitializer, boolean editable) {
     myModel = TemporaryModels.getInstance().create(!(editable), TempModuleOptions.forDefaultModule());
     modelInitializer.invoke(myModel);
+    TemporaryModels.getInstance().addMissingModuleImports(myModel);
     myContext = new ModuleContext(myModel.getModule(), p);
     myModelCreated = true;
   }
@@ -116,6 +117,12 @@ public class EmbeddableEditor {
   }
 
   public void make(final Set<IClassPathItem> classPath) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        TemporaryModels.getInstance().addMissingModuleImports(myModel);
+      }
+    });
+
     final IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory")).toScript();
 
 
@@ -167,6 +174,7 @@ public class EmbeddableEditor {
     if (myNode == null) {
       return null;
     }
+
     InMemoryJavaGenerationHandler handler = new InMemoryJavaGenerationHandler(false, false) {
       @Override
       public boolean canHandle(SModel inputModel) {
