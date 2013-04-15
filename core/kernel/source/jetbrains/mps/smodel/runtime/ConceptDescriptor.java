@@ -43,6 +43,16 @@ public interface ConceptDescriptor {
   //true if true, false if false or !hasChild(name);
   boolean isMultipleChild(String name);
 
+  boolean isAbstract();
+
+  boolean isFinal();
+
+  String getConceptAlias();
+
+  String getConceptShortDescription();
+
+  String getHelpUrl();
+
   // LanguageHierarchyCache replace
   List<String> getParentsNames();
 

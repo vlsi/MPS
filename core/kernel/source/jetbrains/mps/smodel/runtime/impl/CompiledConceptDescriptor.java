@@ -22,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-  public class CompiledConceptDescriptor extends BaseConceptDescriptor {
+public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String conceptFqName;
   private final String superConcept;
   private final boolean isInterfaceConcept;
@@ -32,6 +32,11 @@ import java.util.*;
   private final List<String> referenceNames;
   private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
   private final List<String> childNames;
+  private final boolean isAbstract;
+  private final boolean isFinal;
+  private final String conceptAlias;
+  private final String conceptShortDescription;
+  private final String helpUrl;
 
   public CompiledConceptDescriptor(String conceptFqName,
       @Nullable String superConcept,
@@ -40,11 +45,33 @@ import java.util.*;
       String[] ownPropertyNames,
       String[] ownReferenceNames,
       String[] ownChildNames,
-      boolean [] isMultiple) {
+      boolean[] isMultiple
+      ) {
+    this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, ownChildNames, isMultiple, false, false, "", "","");
+  }
+
+  public CompiledConceptDescriptor(String conceptFqName,
+      @Nullable String superConcept,
+      boolean isInterfaceConcept,
+      String[] parents,
+      String[] ownPropertyNames,
+      String[] ownReferenceNames,
+      String[] ownChildNames,
+      boolean[] isMultiple,
+      boolean isAbstract,
+      boolean isFinal,
+      String conceptAlias,
+      String shortDescription,
+      String helpUrl) {
     this.conceptFqName = conceptFqName;
     this.superConcept = superConcept;
     this.isInterfaceConcept = isInterfaceConcept;
     this.parents = Arrays.asList(parents);
+    this.isAbstract = isAbstract;
+    this.isFinal = isFinal;
+    this.conceptAlias = conceptAlias;
+    this.conceptShortDescription = shortDescription;
+    this.helpUrl = helpUrl;
 
     // hierarchy
     // todo: common with StructureAspectInterpreted to new class!
@@ -140,9 +167,35 @@ import java.util.*;
     return ancestors;
   }
 
-    @Override
-    public boolean isMultipleChild(String name) {
-      Boolean result = childMap.get(name);
-      return result == null ? false : result;
-    }
+  @Override
+  public boolean isMultipleChild(String name) {
+    Boolean result = childMap.get(name);
+    return result == null ? false : result;
   }
+
+  @Override
+  public boolean isAbstract() {
+    return isAbstract;
+  }
+
+  @Override
+  public boolean isFinal() {
+    return isFinal;
+  }
+
+
+  @Override
+  public String getConceptAlias() {
+    return conceptAlias;
+  }
+
+  @Override
+  public String getConceptShortDescription() {
+    return conceptShortDescription;
+  }
+
+  @Override
+  public String getHelpUrl() {
+    return helpUrl;
+  }
+}

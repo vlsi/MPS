@@ -17,16 +17,14 @@ package jetbrains.mps.smodel.runtime.interpreted;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryAdapter;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -34,8 +32,15 @@ import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class StructureAspectInterpreted implements StructureAspectDescriptor, CoreComponent {
@@ -126,6 +131,11 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     private List<String> referenceNames;
     private List<String> childrenNames;
     private HashMap<String, Boolean> childrenMap= new HashMap<String, Boolean>();
+    private boolean isAbstract;
+    private boolean isFinal;
+    private String conceptAlias;
+    private String shortDescription;
+    private String helpURL;
 
     InterpretedConceptDescriptor(final String fqName) {
       this.fqName = fqName;
@@ -147,6 +157,14 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
 
           // isInterface
           isInterface = SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration);
+
+          isFinal = SPropertyOperations.getBoolean(declaration, "isFinal");
+          isAbstract = SPropertyOperations.getBoolean(declaration, "isAbstract");
+          helpURL = SPropertyOperations.getString(declaration, "helpUrl");
+
+          conceptAlias = SNodeUtil.getConceptAlias(declaration);
+          shortDescription = SNodeUtil.getConceptShortDescription(declaration);
+
 
           // superconcept
           if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
@@ -296,6 +314,31 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     @Override
     public boolean isMultipleChild(String name) {
       return childrenMap.get(name);
+    }
+
+    @Override
+    public boolean isAbstract() {
+      return isAbstract;
+    }
+
+    @Override
+    public boolean isFinal() {
+      return isFinal;
+    }
+
+    @Override
+    public String getConceptAlias() {
+      return conceptAlias;
+    }
+
+    @Override
+    public String getConceptShortDescription() {
+      return shortDescription;
+    }
+
+    @Override
+    public String getHelpUrl() {
+      return helpURL;
     }
   }
 }
