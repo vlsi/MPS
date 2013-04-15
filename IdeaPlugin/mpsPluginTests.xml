@@ -68,6 +68,8 @@
       </fileset>
       <flattenmapper />
     </copy>
+    <mkdir dir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/java" />
+    <mkdir dir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/java/tests" />
     <copy todir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/java/tests">
       <fileset dir="${mps_home}/IdeaPlugin/tests/psiProject">
         <include name="psiProject.iml" />
@@ -163,7 +165,6 @@
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
-  
   
   <target name="java.compile.mps-jps-plugin-tests" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-jps-plugin-tests" />
