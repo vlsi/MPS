@@ -21,7 +21,8 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -30,7 +31,7 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 
 public class FilePanePasteProvider implements PasteProvider {
-  private final static Logger LOG = Logger.getLogger(FilePanePasteProvider.class);
+  private final static Logger LOG = LogManager.getLogger(FilePanePasteProvider.class);
 
   @Override
   public void performPaste(DataContext dataContext) {

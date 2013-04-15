@@ -11,6 +11,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -21,7 +22,8 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class FindLanguageUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -48,7 +50,9 @@ public class FindLanguageUsages_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "FindLanguageUsages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "FindLanguageUsages", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -86,9 +90,11 @@ public class FindLanguageUsages_Action extends BaseAction {
       });
       ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Language has no usages");
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(FindLanguageUsages_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FindLanguageUsages_Action.class);
 }

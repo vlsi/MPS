@@ -28,6 +28,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pl7j0v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pl7j0v_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_pl7j0v_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pl7j0v_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pl7j0v_c0(editorContext, node));

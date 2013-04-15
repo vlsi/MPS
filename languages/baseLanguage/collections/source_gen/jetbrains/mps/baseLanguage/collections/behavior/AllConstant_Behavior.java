@@ -4,14 +4,14 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class AllConstant_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "value", "" + (Integer.MAX_VALUE));
   }
 
-  public static boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
+  public static boolean virtual_constant_1262430001741498050(SAbstractConcept thisConcept) {
     return false;
   }
 }

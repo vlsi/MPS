@@ -41,6 +41,7 @@ public class TraceMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_s4priq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_s4priq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_s4priq_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_s4priq_b0(editorContext, node));
     return editorCell;
@@ -82,6 +83,7 @@ public class TraceMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_s4priq_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_s4priq_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

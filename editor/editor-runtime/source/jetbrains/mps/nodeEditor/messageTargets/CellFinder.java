@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -89,7 +89,7 @@ public class CellFinder {
       @Override
       public boolean met(EditorCell cell) {
         return role.equals(cell.getRole()) &&
-            (node == cell.getSNode() || node == cell.getSNode().getParent() && APICellAdapter.isBigCell(cell));
+            (node == cell.getSNode() || node == cell.getSNode().getParent() && cell.isBig());
       }
     }, true, true);
     if (child != null) {

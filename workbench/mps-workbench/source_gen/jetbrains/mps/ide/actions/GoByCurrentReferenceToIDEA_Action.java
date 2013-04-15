@@ -7,12 +7,14 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -25,7 +27,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,7 +45,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SNode targetNode = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
+    SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
     if (targetNode == null) {
       return false;
     }
@@ -61,7 +64,9 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoByCurrentReferenceToIDEA", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoByCurrentReferenceToIDEA", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -92,8 +97,8 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.definition");
-      final SNode targetNode = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
-      SNode node = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
+      final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
+      SNode node = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
       SModel model = node.getModel();
       IModule module = model.getModule();
       assert module != null;
@@ -118,7 +123,9 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
         }
       }.start();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoByCurrentReferenceToIDEA", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoByCurrentReferenceToIDEA", t);
+      }
     }
   }
 
@@ -173,7 +180,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     return SModelStereotype.withoutStereotype(ref.getModelName()) + "." + SPropertyOperations.getString(classifier, "name");
   }
 
-  private static Logger LOG = Logger.getLogger(GoByCurrentReferenceToIDEA_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoByCurrentReferenceToIDEA_Action.class);
 
   private static boolean eq_xgilk9_a0f0d(Object a, Object b) {
     return (a != null ?

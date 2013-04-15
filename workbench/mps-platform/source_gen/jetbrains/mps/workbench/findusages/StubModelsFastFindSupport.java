@@ -10,7 +10,7 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -21,7 +21,7 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.NameUtil;
@@ -36,12 +36,14 @@ import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import gnu.trove.THashSet;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFileVisitor;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class StubModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
   public StubModelsFastFindSupport() {
@@ -92,16 +94,16 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
   }
 
   @Override
-  public void findInstances(Collection<SModel> models, Set<SConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
+  public void findInstances(Collection<SModel> models, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
     final String blName = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleName();
-    concepts = SetSequence.fromSetWithValues(new HashSet<SConcept>(), SetSequence.fromSet(concepts).where(new IWhereFilter<SConcept>() {
-      public boolean accept(SConcept it) {
+    concepts = SetSequence.fromSetWithValues(new HashSet<SAbstractConcept>(), SetSequence.fromSet(concepts).where(new IWhereFilter<SAbstractConcept>() {
+      public boolean accept(SAbstractConcept it) {
         return NameUtil.namespaceFromConceptFQName(it.getConceptId()).equals(blName);
       }
     }));
 
-    MultiMap<SModel, SConcept> candidates = findCandidates(models, concepts, processedConsumer, null);
-    for (Map.Entry<SModel, Collection<SConcept>> e : candidates.entrySet()) {
+    MultiMap<SModel, SAbstractConcept> candidates = findCandidates(models, concepts, processedConsumer, null);
+    for (Map.Entry<SModel, Collection<SAbstractConcept>> e : candidates.entrySet()) {
       FindUsagesManager.collectInstances(e.getKey(), e.getValue(), consumer);
     }
   }
@@ -160,7 +162,9 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       for (IFile path : files) {
         final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
         if (vf == null) {
-          LOG.warning("File " + path + ", which belows to model source of model " + sm.getReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
+          if (LOG.isEnabledFor(Priority.WARN)) {
+            LOG.warn("File " + path + ", which belows to model source of model " + sm.getReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
+          }
           continue;
         }
         VfsUtilCore.visitChildrenRecursively(vf, new VirtualFileVisitor<Object>() {
@@ -194,5 +198,5 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     return result;
   }
 
-  private static Logger LOG = Logger.getLogger(StubModelsFastFindSupport.class);
+  protected static Logger LOG = LogManager.getLogger(StubModelsFastFindSupport.class);
 }

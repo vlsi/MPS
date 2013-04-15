@@ -24,6 +24,7 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x1gmbt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x1gmbt_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);

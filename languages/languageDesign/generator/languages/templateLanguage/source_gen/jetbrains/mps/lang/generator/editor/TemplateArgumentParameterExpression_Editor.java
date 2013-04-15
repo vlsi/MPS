@@ -22,6 +22,7 @@ public class TemplateArgumentParameterExpression_Editor extends DefaultNodeEdito
   private EditorCell createCollection_k33vz5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_k33vz5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_k33vz5_a0(editorContext, node));
     return editorCell;
   }

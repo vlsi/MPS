@@ -29,6 +29,7 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qqk04t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_qqk04t_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_qqk04t_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_qqk04t_b0(editorContext, node));
     return editorCell;
@@ -63,8 +64,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qqk04t_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_qqk04t_b1a(EditorContext editorContext, SNode node) {
@@ -88,6 +89,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_qqk04t_k1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qqk04t_l1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_qqk04t_m1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qqk04t_n1b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_qqk04t_o1b0(editorContext, node));
     return editorCell;
   }
 
@@ -113,8 +116,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qqk04t_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_qqk04t_b1b1a(EditorContext editorContext, SNode node) {
@@ -156,8 +159,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qqk04t_a3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_qqk04t_b3b1a(EditorContext editorContext, SNode node) {
@@ -199,8 +202,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qqk04t_a5b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_qqk04t_b5b1a(EditorContext editorContext, SNode node) {
@@ -278,8 +281,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qqk04t_a1g1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_qqk04t_b1g1b0(EditorContext editorContext, SNode node) {
@@ -321,8 +324,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qqk04t_a8b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_qqk04t_b8b1a(EditorContext editorContext, SNode node) {
@@ -364,8 +367,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qqk04t_a01b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_qqk04t_b01b1a(EditorContext editorContext, SNode node) {
@@ -407,14 +410,57 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_qqk04t_a21b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_qqk04t_b21b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("handler");
     provider.setNoTargetText("<none>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_qqk04t_n1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selection handler");
+    editorCell.setCellId("Constant_qqk04t_n1b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_qqk04t_o1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_qqk04t_o1b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createIndentCell_qqk04t_a41b1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_qqk04t_b41b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createIndentCell_qqk04t_a41b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_qqk04t_b41b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("selectionHandler");
+    provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

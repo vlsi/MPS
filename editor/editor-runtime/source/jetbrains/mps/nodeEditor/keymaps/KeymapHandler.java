@@ -16,7 +16,8 @@
 package jetbrains.mps.nodeEditor.keymaps;
 
 import jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
@@ -49,7 +50,7 @@ import java.util.Set;
  * Date: 2/5/13
  */
 public abstract class KeymapHandler<E> {
-  private static final Logger LOG = Logger.getLogger(KeymapHandler.class);
+  private static final Logger LOG = LogManager.getLogger(KeymapHandler.class);
 
   public Collection<KeyMapAction> getAllRegisteredActions(EditorCell selectedCell, EditorContext context) {
     Set<KeyMapAction> result = new HashSet<KeyMapAction>();

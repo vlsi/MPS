@@ -59,6 +59,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gmtuod_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gmtuod_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_gmtuod_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_gmtuod_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_gmtuod_c0(editorContext, node));
@@ -325,8 +326,8 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_gmtuod_a9c0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_gmtuod_b9c0(EditorContext editorContext, SNode node) {
@@ -463,6 +464,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gmtuod_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gmtuod_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_gmtuod_a0(editorContext, node));
     if (renderingCondition_gmtuod_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_gmtuod_b0(editorContext, node));

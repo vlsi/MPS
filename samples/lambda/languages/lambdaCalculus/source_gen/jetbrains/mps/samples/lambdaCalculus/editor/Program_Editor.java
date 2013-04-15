@@ -25,6 +25,7 @@ public class Program_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c7xntw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c7xntw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_c7xntw_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_c7xntw_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_c7xntw_c0(editorContext, node));

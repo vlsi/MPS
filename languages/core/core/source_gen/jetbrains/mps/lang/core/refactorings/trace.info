@@ -2,15 +2,15 @@
 <debugInfo>
   <root nodeRef="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)/1347577327951770664">
     <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="17" startPosition="19" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="21" startPosition="39" endLine="22" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="25" startPosition="52" endLine="26" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="21" startPosition="52" endLine="22" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="25" startPosition="39" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4215631863113707988" fileName="Rename.java" startLine="29" startPosition="68" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951780494" fileName="Rename.java" startLine="33" startPosition="69" endLine="34" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6253304210158147116" fileName="Rename.java" startLine="37" startPosition="88" endLine="38" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951780505" fileName="Rename.java" startLine="41" startPosition="86" endLine="42" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Rename#()V" />
-    <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
     <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
     <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
     <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljava/util/List;" />
@@ -27,8 +27,8 @@
     <nodeInfo nodeId="1347577327951770668" fileName="Rename_Target.java" startLine="25" startPosition="52" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1347577327951770668" fileName="Rename_Target.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="17" startPosition="19" endLine="18" endPosition="42" />
-    <scopeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="21" startPosition="39" endLine="22" endPosition="20" />
-    <scopeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="25" startPosition="52" endLine="26" endPosition="31" />
+    <scopeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="21" startPosition="52" endLine="22" endPosition="31" />
+    <scopeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="25" startPosition="39" endLine="26" endPosition="20" />
     <scopeInfo nodeId="1347577327951780470" fileName="Rename.java" startLine="29" startPosition="68" endLine="30" endPosition="16" />
     <scopeInfo nodeId="1347577327951770667" fileName="Rename.java" startLine="33" startPosition="69" endLine="34" endPosition="129" />
     <scopeInfo nodeId="6253304210158143010" fileName="Rename.java" startLine="37" startPosition="88" endLine="38" endPosition="104" />
@@ -70,8 +70,8 @@
     <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="30" startPosition="22" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="31" startPosition="41" endLine="32" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="32" startPosition="39" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="36" startPosition="39" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="40" startPosition="52" endLine="41" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="36" startPosition="52" endLine="37" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="40" startPosition="39" endLine="41" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="883491221943683284" fileName="MoveNodes.java" startLine="44" startPosition="68" endLine="45" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4284078376668136046" fileName="MoveNodes.java" startLine="45" startPosition="61" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3548249452606313660" fileName="MoveNodes.java" startLine="46" startPosition="0" endLine="47" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -102,8 +102,8 @@
     <nodeInfo nodeId="7012097027058650955" fileName="MoveNodes.java" startLine="116" startPosition="88" endLine="117" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7012097027058650963" fileName="MoveNodes.java" startLine="118" startPosition="5" endLine="119" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7012097027058651108" fileName="MoveNodes.java" startLine="122" startPosition="92" endLine="123" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
     <nodeInfo nodeId="3548249452606313529" fileName="MoveNodes.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="3548249452606313560" fileName="MoveNodes.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="3548249452606313576" fileName="MoveNodes.java" startLine="66" startPosition="54" endLine="69" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -139,8 +139,8 @@
     <nodeInfo nodeId="7012097027058633806" fileName="MoveNodes_Target.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="7012097027058633806" fileName="MoveNodes_Target.java" startLine="23" startPosition="52" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7012097027058633806" fileName="MoveNodes_Target.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="36" startPosition="39" endLine="37" endPosition="24" />
-    <scopeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="40" startPosition="52" endLine="41" endPosition="34" />
+    <scopeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="36" startPosition="52" endLine="37" endPosition="34" />
+    <scopeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="40" startPosition="39" endLine="41" endPosition="24" />
     <scopeInfo nodeId="3548249452606313532" fileName="MoveNodes.java" startLine="56" startPosition="45" endLine="57" endPosition="95" />
     <scopeInfo nodeId="3548249452606313563" fileName="MoveNodes.java" startLine="61" startPosition="44" endLine="62" endPosition="55" />
     <scopeInfo nodeId="3548249452606313582" fileName="MoveNodes.java" startLine="67" startPosition="80" endLine="68" endPosition="21" />

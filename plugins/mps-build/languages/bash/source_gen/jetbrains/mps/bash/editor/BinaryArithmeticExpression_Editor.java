@@ -31,6 +31,7 @@ public class BinaryArithmeticExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b2c66s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_b2c66s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_b2c66s_a0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_b2c66s_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b2c66s_c0(editorContext, node));

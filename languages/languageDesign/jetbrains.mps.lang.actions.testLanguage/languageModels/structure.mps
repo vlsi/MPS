@@ -82,6 +82,11 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="child2" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8349639607730654093" resolveInfo="ActionTestDefaultAbstractChild" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9187447745748949838">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute" />
+      <property name="name" nameId="tpck.1169194664001" value="ActionTestChild1Child" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
   </roots>
   <root id="2550657305103395183">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2550657305103473225">
@@ -126,6 +131,12 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="5164819300892360561" resolveInfo="ActionTestAbstractChildWrapper" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2870536390414919847">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="addMenu_wrapperSubstituteDefaultSelection" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5164819300892360561" resolveInfo="ActionTestAbstractChildWrapper" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8349639607730759178">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="removeByConditionPart" />
@@ -144,6 +155,9 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="8349639607730654093" resolveInfo="ActionTestDefaultAbstractChild" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="441141899446063220">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
   </root>
   <root id="2550657305103411658">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2550657305103504026">
@@ -153,7 +167,14 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </root>
-  <root id="2550657305103442169" />
+  <root id="2550657305103442169">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="9187447745748951875">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="child1" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="9187447745748949838" resolveInfo="ActionTestChild1Child" />
+    </node>
+  </root>
   <root id="2550657305103442509" />
   <root id="3213804652571075891" />
   <root id="5164819300892360561">
@@ -173,6 +194,9 @@
     </node>
   </root>
   <root id="5164819300894579629">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8749184937172363493">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5164819300894588383">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -185,5 +209,10 @@
   </root>
   <root id="8349639607730661171" />
   <root id="8349639607730662869" />
+  <root id="9187447745748949838">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9187447745748949928">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </root>
 </model>
 

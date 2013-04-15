@@ -34,6 +34,7 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
   private EditorCell createCollection_lbq9sy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_lbq9sy_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_lbq9sy_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lbq9sy_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_lbq9sy_c0(editorContext, node));

@@ -31,6 +31,7 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6usca9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6usca9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_6usca9_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6usca9_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6usca9_c0(editorContext, node));

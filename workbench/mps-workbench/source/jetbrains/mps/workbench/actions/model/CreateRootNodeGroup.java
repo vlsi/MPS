@@ -33,11 +33,15 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -49,9 +53,13 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import javax.swing.*;
+import javax.swing.Icon;
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -131,9 +139,6 @@ public class CreateRootNodeGroup extends BaseGroup {
     setEnabledState(event.getPresentation(), true);
 
     List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor, scope);
-    if (modelLanguages.size() == 0) {
-      add(ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.AddLanguageImport_Action"/* FIXME AddLanguageImport_Action.class.getName()*/));
-    }
 
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
     if (aspect != null) {
@@ -188,6 +193,11 @@ public class CreateRootNodeGroup extends BaseGroup {
       } else {
         this.addSeparator();
       }
+    }
+
+    if (getChildrenCount() == 0) {
+      add(ActionManager.getInstance().getAction(
+          "jetbrains.mps.ide.editor.actions.AddLanguageImport_Action"/* FIXME AddLanguageImport_Action.class.getName()*/));
     }
   }
 

@@ -25,7 +25,7 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;

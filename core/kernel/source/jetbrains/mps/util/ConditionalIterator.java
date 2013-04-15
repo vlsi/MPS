@@ -16,6 +16,7 @@
 package jetbrains.mps.util;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

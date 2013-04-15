@@ -32,6 +32,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wfu8o0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wfu8o0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_wfu8o0_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_wfu8o0_b0(editorContext, node));
     if (renderingCondition_wfu8o0_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -131,6 +132,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wfu8o0_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_wfu8o0_a_0");
+    editorCell.setBig(true);
     if (renderingCondition_wfu8o0_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_wfu8o0_a0(editorContext, node));
     }

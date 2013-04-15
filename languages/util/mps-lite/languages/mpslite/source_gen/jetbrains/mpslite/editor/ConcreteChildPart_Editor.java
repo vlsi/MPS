@@ -26,6 +26,7 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_39prjl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_39prjl_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new LinePart_Actions());
     editorCell.addEditorCell(this.createConstant_39prjl_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_39prjl_b0(editorContext, node));

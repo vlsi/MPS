@@ -36,6 +36,7 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tl5ft1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_tl5ft1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_tl5ft1_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_tl5ft1_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tl5ft1_c0(editorContext, node));
@@ -126,8 +127,8 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_tl5ft1_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNodeList_tl5ft1_b1a(EditorContext editorContext, SNode node) {

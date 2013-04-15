@@ -16,7 +16,6 @@
 package jetbrains.mps.classloading;
 
 import gnu.trove.THashMap;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -24,6 +23,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.SModelRootClassesListener;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ReloadListener;
@@ -36,9 +36,8 @@ import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
-import org.jetbrains.mps.openapi.module.SRepositoryListenerAdapter;
+import org.jetbrains.mps.openapi.module.events.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -56,7 +55,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 // Main paint: modules && modules repository knows nothing about classloading
 // Maybe add invalidation listener or module dependencies change AND show warning if we change module dependencies while module loaded here?
 public class ClassLoaderManager implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(ClassLoaderManager.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ClassLoaderManager.class));
 
   private static ClassLoaderManager INSTANCE;
 
@@ -73,7 +72,7 @@ public class ClassLoaderManager implements CoreComponent {
   // reload handlers
   private List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
 
-  private SRepositoryListener myRepositoryListener = new SRepositoryListenerAdapter() {
+  private SRepositoryListener myRepositoryListener = new SRepositoryAdapter() {
     @Override
     public void beforeModuleRemoved(SModule module) {
       unloadClasses(Collections.singleton(module), new EmptyProgressMonitor());

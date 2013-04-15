@@ -26,6 +26,7 @@ public class OfTypeOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_f8yh7v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_f8yh7v_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_f8yh7v_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_f8yh7v_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_f8yh7v_c0(editorContext, node));

@@ -16,28 +16,23 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
-import com.intellij.lang.ASTNode;
-import com.intellij.lang.Language;
+import com.intellij.navigation.ColoredItemPresentation;
 import com.intellij.navigation.ItemPresentation;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Key;
-import com.intellij.openapi.util.TextRange;
+import com.intellij.openapi.editor.colors.CodeInsightColors;
+import com.intellij.openapi.editor.colors.TextAttributesKey;
+import com.intellij.openapi.util.Iconable;
 import com.intellij.psi.EmptySubstitutor;
 import com.intellij.psi.HierarchicalMethodSignature;
+import com.intellij.psi.PsiBundle;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiCodeBlock;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiElementVisitor;
-import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiIdentifier;
-import com.intellij.psi.PsiInvalidElementAccessException;
-import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifier;
 import com.intellij.psi.PsiModifier.ModifierConstant;
 import com.intellij.psi.PsiModifierList;
 import com.intellij.psi.PsiParameterList;
-import com.intellij.psi.PsiReference;
 import com.intellij.psi.PsiReferenceList;
 import com.intellij.psi.PsiReferenceList.Role;
 import com.intellij.psi.PsiSubstitutor;
@@ -45,21 +40,17 @@ import com.intellij.psi.PsiType;
 import com.intellij.psi.PsiTypeElement;
 import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.PsiTypeParameterList;
-import com.intellij.psi.ResolveState;
 import com.intellij.psi.impl.ElementPresentationUtil;
 import com.intellij.psi.impl.PsiSuperMethodImplUtil;
 import com.intellij.psi.impl.light.JavaIdentifier;
 import com.intellij.psi.javadoc.PsiDocComment;
-import com.intellij.psi.scope.PsiScopeProcessor;
-import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.psi.search.SearchScope;
 import com.intellij.psi.util.MethodSignature;
 import com.intellij.psi.util.MethodSignatureBackedByPsiMethod;
+import com.intellij.psi.util.PsiFormatUtil;
 import com.intellij.ui.RowIcon;
 import com.intellij.util.IncorrectOperationException;
 import com.intellij.util.PlatformIcons;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -185,8 +176,9 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
   }
 
   @Override
-  public PsiElement setName(@NonNls @NotNull String name) throws IncorrectOperationException {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  public PsiElement setName(@NonNls @NotNull final String name) throws IncorrectOperationException {
+    setNameProperty(name);
+    return this;
   }
 
   @NotNull
@@ -249,5 +241,44 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
     Icon methodIcon = hasModifierProperty(PsiModifier.ABSTRACT) ? PlatformIcons.ABSTRACT_METHOD_ICON : PlatformIcons.METHOD_ICON;
     RowIcon baseIcon = ElementPresentationUtil.createLayeredIcon(methodIcon, this, false);
     return ElementPresentationUtil.addVisibilityIcon(this, flags, baseIcon);
+  }
+
+  @Override
+  public ItemPresentation getPresentation() {
+    return new ColoredItemPresentation() {
+      @Override
+      public String getPresentableText() {
+        return PsiFormatUtil.formatMethod(
+          MPSPsiMethod.this,
+          PsiSubstitutor.EMPTY, PsiFormatUtil.SHOW_NAME | PsiFormatUtil.SHOW_PARAMETERS,
+          PsiFormatUtil.SHOW_TYPE
+        );
+      }
+
+      @Override
+      public TextAttributesKey getTextAttributesKey() {
+        if (isDeprecated()) {
+          return CodeInsightColors.DEPRECATED_ATTRIBUTES;
+        }
+        return null;
+      }
+
+      @Override
+      public String getLocationString() {
+        PsiClass psiClass = getContainingClass();
+        if (psiClass != null) {
+          String container = psiClass.getQualifiedName();
+          if (container != null) {
+            return PsiBundle.message("aux.context.display", container);
+          }
+        }
+        return null;
+      }
+
+      @Override
+      public Icon getIcon(boolean open) {
+        return MPSPsiMethod.this.getIcon(Iconable.ICON_FLAG_VISIBILITY);
+      }
+    };
   }
 }

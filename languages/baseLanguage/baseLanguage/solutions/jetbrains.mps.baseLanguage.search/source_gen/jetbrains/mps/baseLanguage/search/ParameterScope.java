@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 
 @Deprecated
 public class ParameterScope extends AbstractSearchScope {

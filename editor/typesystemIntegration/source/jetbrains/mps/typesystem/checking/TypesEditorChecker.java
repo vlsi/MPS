@@ -21,7 +21,8 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -46,7 +47,7 @@ import jetbrains.mps.util.WeakSet;
 import java.util.*;
 
 public class TypesEditorChecker extends EditorCheckerAdapter {
-  private static final Logger LOG = Logger.getLogger(TypesEditorChecker.class);
+  private static final Logger LOG = LogManager.getLogger(TypesEditorChecker.class);
 
   public static boolean IMMEDIATE_QFIX_DISABLED = false;
 

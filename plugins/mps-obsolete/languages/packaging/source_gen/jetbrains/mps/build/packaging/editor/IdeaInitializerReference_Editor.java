@@ -22,6 +22,7 @@ public class IdeaInitializerReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vt9o3a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vt9o3a_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_vt9o3a_a0(editorContext, node));
     return editorCell;
   }

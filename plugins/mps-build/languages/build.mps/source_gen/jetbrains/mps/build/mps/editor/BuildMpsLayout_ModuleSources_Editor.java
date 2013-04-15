@@ -41,6 +41,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gp4zyx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gp4zyx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_gp4zyx_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_gp4zyx_b0(editorContext, node));
     if (renderingCondition_gp4zyx_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -138,6 +139,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gp4zyx_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gp4zyx_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

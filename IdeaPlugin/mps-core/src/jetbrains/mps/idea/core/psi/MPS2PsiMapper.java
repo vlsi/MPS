@@ -20,6 +20,7 @@ import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -32,18 +33,11 @@ public interface MPS2PsiMapper {
 
   public static final ExtensionPointName<MPS2PsiMapper> EP_NAME = ExtensionPointName.create("com.intellij.mps.psiSourceFinder");
 
-  boolean canBeMine(SNode node);
+  boolean hasCorrespondingPsi(SModel model);
 
   @Nullable
   PsiElement getPsiElement(SNode node, Project project);
 
-
-//  SNode getMPSNodeForPsi(PsiElement element, Project project);
-//
-//  boolean canComputeNodeId(PsiElement element);
-//  @Nullable
-//  SNodeId computeNodeId(PsiElement element);
-//  @Nullable
-//  SModelReference computeModelReference(PsiElement element);
-
+  // later we may want to add
+  // SNode[Pointer] getNode(PsiElement element)
 }

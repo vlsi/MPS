@@ -76,12 +76,10 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.generator.impl.CloneUtil" />
-    <classNode dependClassName="jetbrains.mps.kernel.model.TemporaryModelOwner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.ProjectModels" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
+    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
@@ -148,7 +146,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TransformationTest" file="TransformationTest.java">
-    <classNode dependClassName="jetbrains.mps.kernel.model.TemporaryModelOwner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -185,7 +182,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.PathMacros" />
     <classNode dependClassName="jetbrains.mps.project.PathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -194,6 +190,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />

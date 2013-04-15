@@ -40,6 +40,7 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ulfewq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ulfewq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_ulfewq_a0(editorContext, node));
     if (renderingCondition_ulfewq_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_ulfewq_b0(editorContext, node));

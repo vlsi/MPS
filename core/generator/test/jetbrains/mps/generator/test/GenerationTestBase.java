@@ -83,7 +83,6 @@ public class GenerationTestBase {
   public static void init() throws Exception {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
-    Testbench.initLogging();
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();

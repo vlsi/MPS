@@ -13,6 +13,7 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
@@ -28,7 +29,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -64,7 +66,9 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
   }
@@ -82,7 +86,9 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
       clone.myNode = (NodeByConcept_Configuration) myNode.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -141,5 +147,5 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
     return new Object[]{SNodeOperations.cast(this.getNode().getNode(), "jetbrains.mps.nanoc.structure.File")};
   }
 
-  private static Logger LOG = Logger.getLogger(NanoCFile_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(NanoCFile_Configuration.class);
 }

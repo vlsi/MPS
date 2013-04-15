@@ -8,8 +8,10 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,7 +33,9 @@ public class GoToAction_Action extends BaseAction {
     try {
       GoToAction_Action.this.action.update(event);
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToAction", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -48,7 +52,9 @@ public class GoToAction_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.action");
       GoToAction_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToAction", t);
+      }
     }
   }
 
@@ -66,5 +72,5 @@ public class GoToAction_Action extends BaseAction {
     return "";
   }
 
-  private static Logger LOG = Logger.getLogger(GoToAction_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToAction_Action.class);
 }

@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -18,7 +19,8 @@ import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ShowTypeSystemTrace_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,7 +40,9 @@ public class ShowTypeSystemTrace_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowTypeSystemTrace", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ShowTypeSystemTrace", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -82,9 +86,11 @@ public class ShowTypeSystemTrace_Action extends BaseAction {
         tool.openToolLater(true);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ShowTypeSystemTrace_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ShowTypeSystemTrace_Action.class);
 }

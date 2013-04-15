@@ -23,7 +23,8 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
@@ -51,7 +52,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 public class ClassPathTest extends BaseMPSTest {
-  private static final Logger LOG = Logger.getLogger(ClassPathTest.class);
+  private static final Logger LOG = LogManager.getLogger(ClassPathTest.class);
 
   // TODO fixme!
   private static final String MPS_CORE_PROJECT = PathManager.getHomePath() + File.separator + "MPS.mpr";

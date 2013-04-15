@@ -66,18 +66,18 @@
     <nodeInfo nodeId="1236440647503" fileName="MathSymbol_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1236440685960" fileName="MathSymbol_Behavior.java" startLine="23" startPosition="21" endLine="24" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237828408196" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="82" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741497893" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="84" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741497893" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="92" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1236440595176" fileName="MathSymbol_Behavior.java" startLine="18" startPosition="123" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1236440677385" fileName="MathSymbol_Behavior.java" startLine="22" startPosition="123" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getEmptyIndexList_1237828382992#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="17" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVisibleIndices_1236440390782#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
     <scopeInfo nodeId="1236440389437" fileName="MathSymbol_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1236440595177" fileName="MathSymbol_Behavior.java" startLine="19" startPosition="208" endLine="20" endPosition="181" />
     <scopeInfo nodeId="1236440677386" fileName="MathSymbol_Behavior.java" startLine="23" startPosition="21" endLine="24" endPosition="86" />
     <scopeInfo nodeId="1237828382994" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="82" endLine="29" endPosition="34" />
-    <scopeInfo nodeId="1262430001741497896" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="84" endLine="33" endPosition="16" />
+    <scopeInfo nodeId="1262430001741497896" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="92" endLine="33" endPosition="16" />
     <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1236440389435" varName="thisNode" />
     </scopeInfo>
@@ -1305,22 +1305,22 @@
     <unitInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="19" startPosition="0" endLine="732" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathUtil" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741497834">
-    <nodeInfo nodeId="1262430001741497830" fileName="ExponentialOperation_Behavior.java" startLine="16" startPosition="93" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914716995" fileName="ExponentialOperation_Behavior.java" startLine="20" startPosition="102" endLine="21" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1262430001741497830" fileName="ExponentialOperation_Behavior.java" startLine="16" startPosition="101" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914716995" fileName="ExponentialOperation_Behavior.java" startLine="20" startPosition="110" endLine="21" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914717004" fileName="ExponentialOperation_Behavior.java" startLine="21" startPosition="71" endLine="22" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914717007" fileName="ExponentialOperation_Behavior.java" startLine="22" startPosition="178" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAllowedSubstituends_3044950653914716992#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAllowedSubstituends_3044950653914716992#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
     <scopeInfo nodeId="1262430001741497836" fileName="ExponentialOperation_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741497833" fileName="ExponentialOperation_Behavior.java" startLine="16" startPosition="93" endLine="17" endPosition="15" />
+    <scopeInfo nodeId="1262430001741497833" fileName="ExponentialOperation_Behavior.java" startLine="16" startPosition="101" endLine="17" endPosition="15" />
     <scopeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1262430001741497834" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1262430001741497834" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914716994" fileName="ExponentialOperation_Behavior.java" startLine="20" startPosition="102" endLine="23" endPosition="18">
+    <scopeInfo nodeId="3044950653914716994" fileName="ExponentialOperation_Behavior.java" startLine="20" startPosition="110" endLine="23" endPosition="18">
       <varInfo nodeId="3044950653914716996" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
@@ -1329,11 +1329,11 @@
     <unitInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741519697">
-    <nodeInfo nodeId="1262430001741519696" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741519696" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <nodeInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
     <scopeInfo nodeId="1262430001741519699" fileName="DecimalPlusExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741519694" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
+    <scopeInfo nodeId="1262430001741519694" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741519697" varName="thisNode" />
     </scopeInfo>
@@ -1343,11 +1343,11 @@
     <unitInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalPlusExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741642110">
-    <nodeInfo nodeId="1262430001741642109" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642109" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <nodeInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
     <scopeInfo nodeId="1262430001741642112" fileName="DecimalDivExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741642107" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
+    <scopeInfo nodeId="1262430001741642107" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741642110" varName="thisNode" />
     </scopeInfo>
@@ -1357,11 +1357,11 @@
     <unitInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalDivExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741642767">
-    <nodeInfo nodeId="1262430001741642766" fileName="BigProdExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642766" fileName="BigProdExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642767" fileName="BigProdExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741642767" fileName="BigProdExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741642767" fileName="BigProdExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741642769" fileName="BigProdExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741642764" fileName="BigProdExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="20" />
+    <scopeInfo nodeId="1262430001741642764" fileName="BigProdExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="20" />
     <scopeInfo nodeId="1262430001741642767" fileName="BigProdExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741642767" varName="thisNode" />
     </scopeInfo>
@@ -1371,11 +1371,11 @@
     <unitInfo nodeId="1262430001741642767" fileName="BigProdExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigProdExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741643113">
-    <nodeInfo nodeId="1262430001741643112" fileName="MatrixInverseOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741643112" fileName="MatrixInverseOperation_Behavior.java" startLine="12" startPosition="101" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741643113" fileName="MatrixInverseOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741643113" fileName="MatrixInverseOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741643113" fileName="MatrixInverseOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741643115" fileName="MatrixInverseOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741643110" fileName="MatrixInverseOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741643110" fileName="MatrixInverseOperation_Behavior.java" startLine="12" startPosition="101" endLine="13" endPosition="16" />
     <scopeInfo nodeId="1262430001741643113" fileName="MatrixInverseOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741643113" varName="thisNode" />
     </scopeInfo>
@@ -1385,11 +1385,11 @@
     <unitInfo nodeId="1262430001741643113" fileName="MatrixInverseOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixInverseOperation_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741647625">
-    <nodeInfo nodeId="1262430001741647624" fileName="BigSumExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647624" fileName="BigSumExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647625" fileName="BigSumExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741647625" fileName="BigSumExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741647625" fileName="BigSumExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741647627" fileName="BigSumExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741647622" fileName="BigSumExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="20" />
+    <scopeInfo nodeId="1262430001741647622" fileName="BigSumExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="20" />
     <scopeInfo nodeId="1262430001741647625" fileName="BigSumExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741647625" varName="thisNode" />
     </scopeInfo>
@@ -1399,11 +1399,11 @@
     <unitInfo nodeId="1262430001741647625" fileName="BigSumExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigSumExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741702977">
-    <nodeInfo nodeId="1262430001741702975" fileName="MatrixElementAccessExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741702975" fileName="MatrixElementAccessExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741702977" fileName="MatrixElementAccessExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741702977" fileName="MatrixElementAccessExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="1262430001741702977" fileName="MatrixElementAccessExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
     <scopeInfo nodeId="1262430001741702979" fileName="MatrixElementAccessExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741702974" fileName="MatrixElementAccessExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
+    <scopeInfo nodeId="1262430001741702974" fileName="MatrixElementAccessExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" />
     <scopeInfo nodeId="1262430001741702977" fileName="MatrixElementAccessExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741702977" varName="thisNode" />
     </scopeInfo>
@@ -1413,11 +1413,11 @@
     <unitInfo nodeId="1262430001741702977" fileName="MatrixElementAccessExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixElementAccessExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741703003">
-    <nodeInfo nodeId="1262430001741703002" fileName="InIntervalExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703002" fileName="InIntervalExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703003" fileName="InIntervalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741703003" fileName="InIntervalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <nodeInfo nodeId="1262430001741703003" fileName="InIntervalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
     <scopeInfo nodeId="1262430001741703005" fileName="InIntervalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741703000" fileName="InIntervalExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741703000" fileName="InIntervalExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" />
     <scopeInfo nodeId="1262430001741703003" fileName="InIntervalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741703003" varName="thisNode" />
     </scopeInfo>
@@ -1427,11 +1427,11 @@
     <unitInfo nodeId="1262430001741703003" fileName="InIntervalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.InIntervalExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741703812">
-    <nodeInfo nodeId="1262430001741703811" fileName="IntervalContainsExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703811" fileName="IntervalContainsExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703812" fileName="IntervalContainsExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741703812" fileName="IntervalContainsExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <nodeInfo nodeId="1262430001741703812" fileName="IntervalContainsExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
     <scopeInfo nodeId="1262430001741703814" fileName="IntervalContainsExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741703809" fileName="IntervalContainsExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741703809" fileName="IntervalContainsExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" />
     <scopeInfo nodeId="1262430001741703812" fileName="IntervalContainsExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741703812" varName="thisNode" />
     </scopeInfo>
@@ -1441,11 +1441,11 @@
     <unitInfo nodeId="1262430001741703812" fileName="IntervalContainsExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.IntervalContainsExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741703917">
-    <nodeInfo nodeId="1262430001741703916" fileName="TransposeOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703916" fileName="TransposeOperation_Behavior.java" startLine="12" startPosition="101" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703917" fileName="TransposeOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741703917" fileName="TransposeOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741703917" fileName="TransposeOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741703919" fileName="TransposeOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741703914" fileName="TransposeOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="15" />
+    <scopeInfo nodeId="1262430001741703914" fileName="TransposeOperation_Behavior.java" startLine="12" startPosition="101" endLine="13" endPosition="15" />
     <scopeInfo nodeId="1262430001741703917" fileName="TransposeOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741703917" varName="thisNode" />
     </scopeInfo>
@@ -1455,11 +1455,11 @@
     <unitInfo nodeId="1262430001741703917" fileName="TransposeOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.TransposeOperation_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741704748">
-    <nodeInfo nodeId="1262430001741704747" fileName="ConjugateOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741704747" fileName="ConjugateOperation_Behavior.java" startLine="12" startPosition="101" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704748" fileName="ConjugateOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741704748" fileName="ConjugateOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741704748" fileName="ConjugateOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationSymbol_1262430001741497831#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741704750" fileName="ConjugateOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741704745" fileName="ConjugateOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="15" />
+    <scopeInfo nodeId="1262430001741704745" fileName="ConjugateOperation_Behavior.java" startLine="12" startPosition="101" endLine="13" endPosition="15" />
     <scopeInfo nodeId="1262430001741704748" fileName="ConjugateOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741704748" varName="thisNode" />
     </scopeInfo>
@@ -1469,11 +1469,11 @@
     <unitInfo nodeId="1262430001741704748" fileName="ConjugateOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ConjugateOperation_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741704846">
-    <nodeInfo nodeId="1262430001741704845" fileName="BigMaxExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741704845" fileName="BigMaxExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704846" fileName="BigMaxExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741704846" fileName="BigMaxExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741704846" fileName="BigMaxExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741704848" fileName="BigMaxExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741704843" fileName="BigMaxExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="17" />
+    <scopeInfo nodeId="1262430001741704843" fileName="BigMaxExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="17" />
     <scopeInfo nodeId="1262430001741704846" fileName="BigMaxExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741704846" varName="thisNode" />
     </scopeInfo>
@@ -1483,11 +1483,11 @@
     <unitInfo nodeId="1262430001741704846" fileName="BigMaxExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigMaxExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741718335">
-    <nodeInfo nodeId="1262430001741718334" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718334" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <nodeInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
     <scopeInfo nodeId="1262430001741718337" fileName="DecimalMinusExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741718332" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
+    <scopeInfo nodeId="1262430001741718332" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741718335" varName="thisNode" />
     </scopeInfo>
@@ -1497,11 +1497,11 @@
     <unitInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalMinusExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741718383">
-    <nodeInfo nodeId="1262430001741718382" fileName="BigMinExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718382" fileName="BigMinExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718383" fileName="BigMinExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741718383" fileName="BigMinExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741718383" fileName="BigMinExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741718385" fileName="BigMinExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741718380" fileName="BigMinExpression_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="17" />
+    <scopeInfo nodeId="1262430001741718380" fileName="BigMinExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="17" />
     <scopeInfo nodeId="1262430001741718383" fileName="BigMinExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741718383" varName="thisNode" />
     </scopeInfo>
@@ -1511,11 +1511,11 @@
     <unitInfo nodeId="1262430001741718383" fileName="BigMinExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigMinExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741718542">
-    <nodeInfo nodeId="1262430001741718541" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718541" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
+    <nodeInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
     <scopeInfo nodeId="1262430001741718544" fileName="DecimalMulExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741718539" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
+    <scopeInfo nodeId="1262430001741718539" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741718542" varName="thisNode" />
     </scopeInfo>
@@ -1534,16 +1534,16 @@
     <unitInfo nodeId="1904947163751563871" fileName="MathContext_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathContext_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/3044950653914719985">
-    <nodeInfo nodeId="3044950653914719964" fileName="MatrixExponentialOperation_Behavior.java" startLine="16" startPosition="102" endLine="17" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914719964" fileName="MatrixExponentialOperation_Behavior.java" startLine="16" startPosition="110" endLine="17" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914719979" fileName="MatrixExponentialOperation_Behavior.java" startLine="17" startPosition="256" endLine="18" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914719983" fileName="MatrixExponentialOperation_Behavior.java" startLine="18" startPosition="178" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914719985" fileName="MatrixExponentialOperation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3044950653914719985" fileName="MatrixExponentialOperation_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAllowedSubstituends_3044950653914716992#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="3044950653914719985" fileName="MatrixExponentialOperation_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAllowedSubstituends_3044950653914716992#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
     <scopeInfo nodeId="3044950653914719987" fileName="MatrixExponentialOperation_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="3044950653914719985" fileName="MatrixExponentialOperation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3044950653914719985" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914719963" fileName="MatrixExponentialOperation_Behavior.java" startLine="16" startPosition="102" endLine="19" endPosition="18">
+    <scopeInfo nodeId="3044950653914719963" fileName="MatrixExponentialOperation_Behavior.java" startLine="16" startPosition="110" endLine="19" endPosition="18">
       <varInfo nodeId="3044950653914719965" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3044950653914719985" fileName="MatrixExponentialOperation_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">

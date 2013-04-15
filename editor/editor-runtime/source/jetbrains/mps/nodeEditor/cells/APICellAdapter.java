@@ -18,22 +18,17 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -57,10 +52,6 @@ public class APICellAdapter {
     return false;
   }
 
-  public static String getCellRole(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getCellRole();
-  }
-
   public static <T extends EditorMessage> List<T> getMessages(EditorCell cell, Class<T> clazz) {
     List<T> result = new ArrayList<T>();
     for (SimpleEditorMessage message : cell.getMessages()) {
@@ -75,13 +66,14 @@ public class APICellAdapter {
     ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).synchronizeViewWithModel();
   }
 
-  public static boolean isBigCell(EditorCell cell) {
-    //??? EditorCell_Empty ???
-    return cell.getParent() == null || cell.getParent().getSNode() != cell.getSNode();
-  }
-
   public static SNode getSNodeWRTReference(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getSNodeWRTReference();
+    SNode target = cell.getStyle().get(StyleAttributes.NAVIGATABLE_NODE);
+    if (target != null) {
+      return target;
+    }
+    SNode node = cell.getSNode();
+    SNode referentNode = node.getReferenceTarget(cell.getRole());
+    return referentNode != null ? referentNode : node;
   }
 
   public static boolean validate(EditorCell cell, boolean strict, boolean canActivatePopup) {

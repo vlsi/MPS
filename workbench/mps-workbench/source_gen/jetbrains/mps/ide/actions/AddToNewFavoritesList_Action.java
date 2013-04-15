@@ -11,6 +11,7 @@ import java.util.Map;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
@@ -19,7 +20,8 @@ import com.intellij.openapi.ui.InputValidator;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import java.util.List;
 import javax.swing.tree.TreeNode;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class AddToNewFavoritesList_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.AddFavoritesList;
@@ -41,7 +43,9 @@ public class AddToNewFavoritesList_Action extends BaseAction {
         event.getPresentation().setText("Send to New Favorites List");
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "AddToNewFavoritesList", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "AddToNewFavoritesList", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -83,9 +87,11 @@ public class AddToNewFavoritesList_Action extends BaseAction {
       }
       favoritesManager.addRoots(name, toMove);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "AddToNewFavoritesList", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "AddToNewFavoritesList", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(AddToNewFavoritesList_Action.class);
+  protected static Logger LOG = LogManager.getLogger(AddToNewFavoritesList_Action.class);
 }

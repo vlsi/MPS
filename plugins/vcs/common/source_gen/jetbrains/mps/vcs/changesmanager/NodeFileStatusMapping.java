@@ -88,7 +88,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     FileStatus status = ModelAccess.instance().runReadAction(new Computable<FileStatus>() {
       public FileStatus compute() {
         SModel m = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
-        if (m instanceof EditableSModel && m.getSource() instanceof FileDataSource && !(((EditableSModel) m).isReadOnly())) {
+        if (m instanceof EditableSModel && m.getSource() instanceof FileDataSource && !(m.isReadOnly())) {
           EditableSModel model = (EditableSModel) m;
           if (ConflictsUtil.isModelOrModuleConflicting(model, myProject)) {
             return FileStatus.MERGED_WITH_CONFLICTS;
@@ -141,7 +141,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
                 if (!(SNodeOperations.isDisposed(root) || SNodeOperations.isModelDisposed(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root)))) {
                   md = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root);
                 }
-                if (md instanceof EditableSModel && !(((EditableSModel) md).isReadOnly())) {
+                if (md instanceof EditableSModel && !(md.isReadOnly())) {
                   myRegistry.getCurrentDifference((EditableSModel) md).setEnabled(true);
                 }
               }

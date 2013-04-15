@@ -16,6 +16,7 @@ public class KeyStrokeType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_8b4s31_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keystroke");
     editorCell.setCellId("Constant_8b4s31_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

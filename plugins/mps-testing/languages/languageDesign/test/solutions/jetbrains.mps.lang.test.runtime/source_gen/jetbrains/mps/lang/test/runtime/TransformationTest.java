@@ -4,7 +4,6 @@ package jetbrains.mps.lang.test.runtime;
 
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.kernel.model.TemporaryModelOwner;
 
 public interface TransformationTest {
   public void setProject(Project project);
@@ -14,6 +13,6 @@ public interface TransformationTest {
   public void setTestRunner(TransformationTestRunner runner);
   public TransformationTestRunner getTestRunner();
   public SModel getTransientModelDescriptor();
-  public TemporaryModelOwner getModelOwner();
   public void init();
+  public void dispose();
 }

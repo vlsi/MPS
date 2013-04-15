@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
@@ -45,7 +46,8 @@ import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class VcsActionsUtil {
   private VcsActionsUtil() {
@@ -69,7 +71,9 @@ public class VcsActionsUtil {
       });
       ModelDifferenceDialog.showRootDifference(oldModel, newModel.value, id.value, project, contentTitles[0], contentTitles[1], bounds);
     } catch (VcsException e) {
-      LOG.warning("", e);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("", e);
+      }
       Messages.showErrorDialog(project, "Can't show difference due to the following error: " + e.getMessage(), "Error");
     } catch (ModelReadException e) {
       Messages.showErrorDialog(project, "Can't load previous version: " + e.getMessage(), "Error");
@@ -200,5 +204,5 @@ __switch__:
     return p instanceof IdeaPluginDescriptorImpl && ((IdeaPluginDescriptorImpl) p).isEnabled();
   }
 
-  private static Logger LOG = Logger.getLogger(VcsActionsUtil.class);
+  protected static Logger LOG = LogManager.getLogger(VcsActionsUtil.class);
 }

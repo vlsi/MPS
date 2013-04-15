@@ -28,6 +28,7 @@ public class AndOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1vjwda_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1vjwda_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_1vjwda_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1vjwda_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1vjwda_c0(editorContext, node));

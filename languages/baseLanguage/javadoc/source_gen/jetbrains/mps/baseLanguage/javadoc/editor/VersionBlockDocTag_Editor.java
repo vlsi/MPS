@@ -23,6 +23,7 @@ public class VersionBlockDocTag_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g86uka_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_g86uka_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_g86uka_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_g86uka_b0(editorContext, node));
     return editorCell;

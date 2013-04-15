@@ -11,6 +11,7 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
@@ -22,7 +23,8 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Remote_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -60,7 +62,9 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
       clone.myState = (Remote_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -116,5 +120,5 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
     return Remote_Configuration_RunProfileState.canExecute(executorId);
   }
 
-  private static Logger LOG = Logger.getLogger(Remote_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(Remote_Configuration.class);
 }

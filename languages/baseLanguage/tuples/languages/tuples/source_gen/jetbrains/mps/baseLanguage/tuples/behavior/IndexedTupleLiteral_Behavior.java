@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class IndexedTupleLiteral_Behavior {
   public static void init(SNode thisNode) {
@@ -20,11 +20,11 @@ public class IndexedTupleLiteral_Behavior {
     return true;
   }
 
-  public static String virtual_getLeftBracket_1262430001741497798(SConcept thisConcept) {
+  public static String virtual_getLeftBracket_1262430001741497798(SAbstractConcept thisConcept) {
     return "[";
   }
 
-  public static String virtual_getRightBracket_1262430001741498223(SConcept thisConcept) {
+  public static String virtual_getRightBracket_1262430001741498223(SAbstractConcept thisConcept) {
     return "]";
   }
 }

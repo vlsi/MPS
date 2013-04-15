@@ -20,6 +20,7 @@ public class BuildSource_JavaFiles_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_sbmfti_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_sbmfti_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_sbmfti_a0(editorContext, node));
     return editorCell;
   }

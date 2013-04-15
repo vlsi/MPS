@@ -17,8 +17,10 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.apache.log4j.Priority;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class Node_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
@@ -112,7 +114,9 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
       clone.myState = (Node_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      LOG.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
+      }
     }
     return clone;
   }
@@ -157,7 +161,7 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
     return myEditorEx;
   }
 
-  private static Logger LOG = Logger.getLogger(Node_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(Node_Configuration.class);
 
   private static SNode check_q2vl_a0a0a1a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {

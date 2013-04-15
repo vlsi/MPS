@@ -22,6 +22,7 @@ public class LineEndRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tbphla_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tbphla_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConstant_tbphla_a0(editorContext, node));
     return editorCell;

@@ -5,7 +5,9 @@ package jetbrains.mps.vcs.changesmanager;
 import java.util.Queue;
 import java.util.LinkedList;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class SimpleCommandQueue {
   private Thread myThread;
@@ -44,7 +46,9 @@ public class SimpleCommandQueue {
 
   public void assertSoftlyIsCommandThread() {
     if (Thread.currentThread() != myThread) {
-      LOG.error("", new AssertionError("Current thread is " + Thread.currentThread() + ", but should be " + myThread));
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", new AssertionError("Current thread is " + Thread.currentThread() + ", but should be " + myThread));
+      }
     }
   }
 
@@ -84,12 +88,14 @@ public class SimpleCommandQueue {
           if (e instanceof InterruptedException || e.getCause() instanceof InterruptedException) {
             continue;
           }
-          LOG.error(e.getClass().getName() + " exception in " + getName(), e);
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error(e.getClass().getName() + " exception in " + getName(), e);
+          }
           myHadExceptions = true;
         }
       }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(SimpleCommandQueue.class);
+  protected static Logger LOG = LogManager.getLogger(SimpleCommandQueue.class);
 }

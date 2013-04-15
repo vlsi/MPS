@@ -30,6 +30,7 @@ public class TailSetOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u3j6wb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_u3j6wb_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_u3j6wb_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u3j6wb_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_u3j6wb_c0(editorContext, node));

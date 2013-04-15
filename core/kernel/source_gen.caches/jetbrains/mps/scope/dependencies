@@ -126,10 +126,10 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.ISearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.scope.SimpleRoleScope" file="SimpleRoleScope.java">

@@ -18,7 +18,8 @@ package jetbrains.mps.ide.editor;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.editor.Document;
 import com.intellij.util.ui.JBInsets;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.MementoPersistence;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
@@ -38,15 +39,12 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.util.List;
 
 public abstract class BaseNodeEditor implements Editor {
-  private static Logger LOG = Logger.getLogger(BaseNodeEditor.class);
+  private static Logger LOG = LogManager.getLogger(BaseNodeEditor.class);
 
   private EditorComponent myEditorComponent;
   private JComponent myComponent = new EditorPanel();

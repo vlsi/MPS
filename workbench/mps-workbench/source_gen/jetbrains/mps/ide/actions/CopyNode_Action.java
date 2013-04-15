@@ -13,9 +13,11 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CopyNode_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Copy;
@@ -48,7 +50,9 @@ public class CopyNode_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CopyNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CopyNode", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -78,9 +82,11 @@ public class CopyNode_Action extends BaseAction {
     try {
       CopyPasteUtil.copyNodesToClipboard(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CopyNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CopyNode", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CopyNode_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CopyNode_Action.class);
 }

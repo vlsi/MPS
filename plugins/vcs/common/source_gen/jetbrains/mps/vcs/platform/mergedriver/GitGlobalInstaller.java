@@ -16,8 +16,10 @@ import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
+import org.apache.log4j.Priority;
 import java.io.FileNotFoundException;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
   private File myConfigFile;
@@ -124,7 +126,9 @@ import jetbrains.mps.logging.Logger;
       Messages.showInfoMessage(myProject, String.format("Successfully updated %s", myConfigFile.getAbsolutePath()), "Global Git Merge Driver Installed");
       return AbstractInstaller.State.INSTALLED;
     } catch (IOException e) {
-      LOG.error("Writing gitconfig file failed", e);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Writing gitconfig file failed", e);
+      }
       String msg = e.getMessage() + ".";
       if (SystemInfo.isWindows && e instanceof FileNotFoundException) {
         msg += " Try unsetting hidden attribute for that file in Windows Explorer.";
@@ -144,7 +148,7 @@ import jetbrains.mps.logging.Logger;
     return "Git";
   }
 
-  private static Logger LOG = Logger.getLogger(GitGlobalInstaller.class);
+  protected static Logger LOG = LogManager.getLogger(GitGlobalInstaller.class);
 
   private static boolean neq_btx4zt_a0a0a0g0t0d(Object a, Object b) {
     return !((a != null ?

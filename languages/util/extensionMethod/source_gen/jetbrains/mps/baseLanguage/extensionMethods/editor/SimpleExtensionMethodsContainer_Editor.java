@@ -35,6 +35,7 @@ public class SimpleExtensionMethodsContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kgfzrc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kgfzrc_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_kgfzrc_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kgfzrc_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_kgfzrc_c0(editorContext, node));

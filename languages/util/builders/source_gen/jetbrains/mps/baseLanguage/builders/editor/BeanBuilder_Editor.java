@@ -33,6 +33,7 @@ public class BeanBuilder_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2z05lc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2z05lc_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_2z05lc_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2z05lc_b0(editorContext, node));
     if (renderingCondition_2z05lc_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

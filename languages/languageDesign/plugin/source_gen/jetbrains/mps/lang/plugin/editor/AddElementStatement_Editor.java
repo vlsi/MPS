@@ -24,6 +24,7 @@ public class AddElementStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_92vjrw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_92vjrw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_92vjrw_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_92vjrw_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_92vjrw_c0(editorContext, node));

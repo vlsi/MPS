@@ -12,7 +12,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Map;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class IndexedTupleType_Behavior {
   public static void init(SNode thisNode) {
@@ -62,11 +62,11 @@ public class IndexedTupleType_Behavior {
     }
   }
 
-  public static String virtual_getLeftBracket_1262430001741497978(SConcept thisConcept) {
+  public static String virtual_getLeftBracket_1262430001741497978(SAbstractConcept thisConcept) {
     return "[";
   }
 
-  public static String virtual_getRightBracket_1262430001741498044(SConcept thisConcept) {
+  public static String virtual_getRightBracket_1262430001741498044(SAbstractConcept thisConcept) {
     return "]";
   }
 }

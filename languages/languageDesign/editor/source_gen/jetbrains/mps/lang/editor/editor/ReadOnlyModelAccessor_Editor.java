@@ -20,6 +20,7 @@ public class ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rjl5nj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rjl5nj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_rjl5nj_a0(editorContext, node));
     return editorCell;
   }

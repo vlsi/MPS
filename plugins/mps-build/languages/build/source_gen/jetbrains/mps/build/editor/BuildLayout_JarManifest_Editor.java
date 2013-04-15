@@ -40,6 +40,7 @@ public class BuildLayout_JarManifest_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gnweac_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gnweac_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_gnweac_a0(editorContext, node));
     if (renderingCondition_gnweac_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_gnweac_b0(editorContext, node));

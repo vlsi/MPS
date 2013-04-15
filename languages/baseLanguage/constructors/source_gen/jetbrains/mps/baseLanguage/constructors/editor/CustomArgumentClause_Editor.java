@@ -29,6 +29,7 @@ public class CustomArgumentClause_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iqoiiv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_iqoiiv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNodeList_iqoiiv_a0(editorContext, node));
     return editorCell;
   }

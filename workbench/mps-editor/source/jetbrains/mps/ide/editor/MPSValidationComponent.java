@@ -17,9 +17,11 @@
 package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.components.ProjectComponent;
+import jetbrains.mps.ide.editor.checkers.ModelProblemsChecker;
 import jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import org.jetbrains.annotations.NotNull;
 import typesystemIntegration.languageChecker.AutoResolver;
@@ -46,6 +48,7 @@ public class MPSValidationComponent implements ProjectComponent {
     addChecker(new AutoResolver());
     addChecker(new LanguageEditorChecker());
     addChecker(new SuppressErrorsChecker());
+    addChecker(new ModelProblemsChecker(GlobalSModelEventsManager.getInstance()));
   }
 
   private void addChecker(BaseEditorChecker checker) {

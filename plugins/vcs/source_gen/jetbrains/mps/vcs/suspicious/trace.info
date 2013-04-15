@@ -8,7 +8,7 @@
     <nodeInfo nodeId="4093906047203395667" fileName="SuspiciousModelIndex.java" startLine="44" startPosition="111" endLine="45" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4093906047203395671" fileName="SuspiciousModelIndex.java" startLine="45" startPosition="31" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4093906047203395675" fileName="SuspiciousModelIndex.java" startLine="46" startPosition="24" endLine="47" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395687" fileName="SuspiciousModelIndex.java" startLine="51" startPosition="86" endLine="52" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395687" fileName="SuspiciousModelIndex.java" startLine="51" startPosition="67" endLine="52" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4093906047203395703" fileName="SuspiciousModelIndex.java" startLine="56" startPosition="76" endLine="57" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4093906047203395715" fileName="SuspiciousModelIndex.java" startLine="63" startPosition="36" endLine="64" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4093906047203395728" fileName="SuspiciousModelIndex.java" startLine="69" startPosition="45" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -92,7 +92,7 @@
     <nodeInfo nodeId="4213817562888239050" fileName="SuspiciousModelIndex.java" startLine="126" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4093906047203395978" fileName="SuspiciousModelIndex.java" startLine="124" startPosition="0" endLine="150" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4093906047203395781" fileName="SuspiciousModelIndex.java" startLine="94" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeModelsLater#(Ljava/util/List;)V" />
-    <scopeInfo nodeId="4933738972388317545" fileName="SuspiciousModelIndex.java" startLine="51" startPosition="86" endLine="52" endPosition="94" />
+    <scopeInfo nodeId="4933738972388317545" fileName="SuspiciousModelIndex.java" startLine="51" startPosition="67" endLine="52" endPosition="94" />
     <scopeInfo nodeId="4093906047203395702" fileName="SuspiciousModelIndex.java" startLine="56" startPosition="76" endLine="57" endPosition="83" />
     <scopeInfo nodeId="4093906047203395714" fileName="SuspiciousModelIndex.java" startLine="63" startPosition="36" endLine="64" endPosition="36" />
     <scopeInfo nodeId="4093906047203395727" fileName="SuspiciousModelIndex.java" startLine="69" startPosition="45" endLine="70" endPosition="13" />

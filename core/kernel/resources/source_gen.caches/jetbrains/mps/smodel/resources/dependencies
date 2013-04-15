@@ -28,7 +28,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._5" />
     <classNode extendsClassName="jetbrains.mps.smodel.resources.IFResource" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.resources.FlatFilePropertiesIO" file="FlatFilePropertiesIO.java">
@@ -77,6 +78,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.resources.IGResource" file="IGResource.java">

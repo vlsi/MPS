@@ -18,6 +18,7 @@ public class Model_GetModule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ajm574_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module");
     editorCell.setCellId("Constant_ajm574_a");
+    editorCell.setBig(true);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }

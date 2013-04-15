@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
+import org.apache.log4j.Priority;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -21,7 +22,8 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GeneratorDescriptorPersistence {
   private GeneratorDescriptorPersistence() {
@@ -76,7 +78,9 @@ public class GeneratorDescriptorPersistence {
             final RuleType result_wk2vdq_a0a1a0a12a0a0a0b = RuleType.parse(ruleElement.getAttributeValue("kind"));
             result_wk2vdq_a0a12a0a0a0b.setType(result_wk2vdq_a0a1a0a12a0a0a0b);
           } catch (IllegalArgumentException e) {
-            LOG.error(e.getMessage() + " Rule type for generator " + genUID + " is set to EQUALS. You can change this in Generator Properties dialog.", e);
+            if (LOG.isEnabledFor(Priority.ERROR)) {
+              LOG.error(e.getMessage() + " Rule type for generator " + genUID + " is set to EQUALS. You can change this in Generator Properties dialog.", e);
+            }
             final RuleType result_wk2vdq_a1a0b0a0v0a0a0a1 = RuleType.STRICTLY_TOGETHER;
             result_wk2vdq_a0a12a0a0a0b.setType(result_wk2vdq_a1a0b0a0v0a0a0a1);
           }
@@ -262,5 +266,5 @@ public class GeneratorDescriptorPersistence {
     return new MappingConfig_AbstractRef();
   }
 
-  private static Logger LOG = Logger.getLogger(GeneratorDescriptorPersistence.class);
+  protected static Logger LOG = LogManager.getLogger(GeneratorDescriptorPersistence.class);
 }

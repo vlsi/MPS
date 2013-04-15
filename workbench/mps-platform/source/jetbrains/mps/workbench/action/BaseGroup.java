@@ -19,12 +19,11 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.DumbAware;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.ActionPlace;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
-import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import java.util.List;
 

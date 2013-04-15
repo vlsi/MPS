@@ -468,6 +468,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpc2.3525058663444303551" resolveInfo="QueryFunction_Style" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2214947816754235464">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpc2.1198256887712" resolveInfo="CellModel_Indent" />
+    </node>
   </roots>
   <root id="1213877183870">
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877183871">
@@ -13882,6 +13886,26 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3525058663444350175">
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3525058663444350173">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StringType" typeId="tpee.1225271177708" id="3525058663444350331" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="2214947816754235464">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2214947816754235684">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2214947816754235685" />
+    </node>
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="2214947816754241528">
+      <property name="name" nameId="tpck.1169194664001" value="isCellIdInitialized" />
+      <property name="isVirtual" nameId="1i04.1225194472832" value="false" />
+      <property name="isAbstract" nameId="1i04.1225194472834" value="false" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="1229948571177" resolveInfo="isCellIdInitialized" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2214947816754241532" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2214947816754241533" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2214947816754241534">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2214947816754242630">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2214947816754242629">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
           </node>
         </node>
       </node>

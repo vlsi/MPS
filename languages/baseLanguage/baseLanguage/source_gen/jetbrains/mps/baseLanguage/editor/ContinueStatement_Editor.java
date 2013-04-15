@@ -40,6 +40,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vgxjtu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vgxjtu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vgxjtu_a0(editorContext, node));
     if (renderingCondition_vgxjtu_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_vgxjtu_b0(editorContext, node));

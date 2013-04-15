@@ -21,6 +21,7 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.refactoring.StructureModificationLog;
@@ -44,7 +45,7 @@ import java.util.Map;
 import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 
 public class DefaultSModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
-  private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(DefaultSModelDescriptor.class));
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override
@@ -96,7 +97,9 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
       if (res == null) return null; // this is when we are in recursion
       if (oldState != myModel.getState()) {
         res.setModelDescriptor(this);
+        // TODO FIXME listeners are invoked while holding the lock
         fireModelStateChanged(oldState, myModel.getState());
+        fireModelProblemsUpdated();
       }
       return res;
     }

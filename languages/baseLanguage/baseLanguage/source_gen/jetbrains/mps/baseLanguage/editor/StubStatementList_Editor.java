@@ -21,6 +21,7 @@ public class StubStatementList_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_guw1pi_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/*compiled code*/");
     editorCell.setCellId("Constant_guw1pi_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);

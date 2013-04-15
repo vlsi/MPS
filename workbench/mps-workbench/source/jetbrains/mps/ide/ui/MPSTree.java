@@ -22,7 +22,6 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
@@ -32,7 +31,8 @@ import com.intellij.util.ui.update.Update;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
@@ -58,7 +58,7 @@ import java.util.*;
 public abstract class MPSTree extends DnDAwareTree implements Disposable {
   public static final String PATH = "path";
 
-  protected static final Logger LOG = Logger.getLogger(MPSTree.class);
+  protected static final Logger LOG = LogManager.getLogger(MPSTree.class);
 
   public static final String TREE_PATH_SEPARATOR = "/";
 
@@ -562,7 +562,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       TreePath path = expanded.nextElement();
       String pathString = pathToString(path);
       if (result.contains(pathString))
-        LOG.warning("two expanded paths have the same string representation");
+        LOG.warn("two expanded paths have the same string representation");
       result.add(pathString);
     }
     return result;
@@ -574,7 +574,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     for (TreePath selectionPart : getSelectionPaths()) {
       String pathString = pathToString(selectionPart);
       if (result.contains(pathString))
-        LOG.warning("two selected paths have the same string representation");
+        LOG.warn("two selected paths have the same string representation");
       result.add(pathString);
     }
     return result;

@@ -27,6 +27,7 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ye1swh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ye1swh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_ye1swh_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ye1swh_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ye1swh_c0(editorContext, node));

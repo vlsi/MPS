@@ -18,7 +18,8 @@ package jetbrains.mps.typesystem.inference;
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime.DependentComputationWrapper;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -26,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smod
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 
 import java.util.LinkedList;
@@ -47,7 +48,7 @@ public class ModelRules {
   private Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<IVariableConverter_Runtime>();
   private Set<SModelReference> myModelsWithLoadedRules = new THashSet<SModelReference>();
   private OverloadedOperationsManager myOverloadedOperationsManager;
-  private static final Logger LOG = Logger.getLogger(RulesManager.class);
+  private static final Logger LOG = LogManager.getLogger(RulesManager.class);
 
   public ModelRules(SModel model) {
     List<Language> languages = SModelOperations.getLanguages(model, GlobalScope.getInstance());

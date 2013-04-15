@@ -22,6 +22,7 @@ public class NullConstant_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_b8zjk_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null");
     editorCell.setCellId("Constant_b8zjk_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);

@@ -19,6 +19,7 @@ public class ToListOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_fiobsf_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "toList");
     editorCell.setCellId("Constant_fiobsf_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.applyOperation(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);

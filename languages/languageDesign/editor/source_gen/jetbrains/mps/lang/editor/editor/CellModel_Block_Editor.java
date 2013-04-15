@@ -32,6 +32,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_paqmtn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_paqmtn_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBorderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -107,8 +108,8 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_paqmtn_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_paqmtn_b1a(EditorContext editorContext, SNode node) {
@@ -155,6 +156,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_paqmtn_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_paqmtn_a_0");
+    editorCell.setBig(true);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createComponent_paqmtn_a0(editorContext, node));
     return editorCell;

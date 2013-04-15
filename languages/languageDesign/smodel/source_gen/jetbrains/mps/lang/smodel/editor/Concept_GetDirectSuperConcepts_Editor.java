@@ -17,6 +17,7 @@ public class Concept_GetDirectSuperConcepts_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_k3ew3b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_k3ew3b_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_k3ew3b_a0(editorContext, node));
     return editorCell;
   }

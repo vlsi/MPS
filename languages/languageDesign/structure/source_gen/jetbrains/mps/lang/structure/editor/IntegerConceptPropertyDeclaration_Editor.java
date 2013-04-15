@@ -28,6 +28,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_3jx520_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3jx520_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_3jx520_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3jx520_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3jx520_c0(editorContext, node));

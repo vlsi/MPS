@@ -19,7 +19,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.extapi.model.ReloadableSModelBase;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
@@ -38,7 +39,8 @@ import java.io.OutputStream;
 
 public class MPSNodeVirtualFile extends VirtualFile {
   private static final byte[] CONTENTS = new byte[0];
-  private static final Logger LOG = Logger.getLogger(MPSNodeVirtualFile.class);
+  private static final Logger LOG = LogManager.getLogger(MPSNodeVirtualFile.class);
+  public static final String NODE_PREFIX = "node/";
 
   private SNodeReference myNode;
   private String myPath;
@@ -57,7 +59,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
   }
 
   void updateFields() {
-    myPath = SNodePointer.serialize(myNode);
+    myPath = NODE_PREFIX + SNodePointer.serialize(myNode);
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {

@@ -18,7 +18,8 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.testFramework.DummyFileIdGenerator;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -39,8 +40,9 @@ import java.io.OutputStream;
  * Date: 3/6/13
  */
 public class MPSModelVirtualFile extends VirtualFile {
-  private static final Logger LOG = Logger.getLogger(MPSModelVirtualFile.class);
+  private static final Logger LOG = LogManager.getLogger(MPSModelVirtualFile.class);
   private static final byte[] ZERO_BYTES = new byte[0];
+  public static final String MODEL_PREFIX = "model/";
 
   private final SModelReference myModelReference;
 
@@ -63,7 +65,7 @@ public class MPSModelVirtualFile extends VirtualFile {
           LOG.error(new Throwable("Model resolve failed for SModelReference: " + myModelReference.toString()));
         }
         myName = JavaNameUtil.shortName(String.valueOf(model.getModelName()));
-        myPath = myModelReference.toString();
+        myPath = MODEL_PREFIX + myModelReference.toString();
       }
     });
   }

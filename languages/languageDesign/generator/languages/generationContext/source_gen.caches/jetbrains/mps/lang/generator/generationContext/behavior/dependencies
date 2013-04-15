@@ -229,7 +229,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess_Behavior" file="GenerationContextOp_SessionObjectAccess_Behavior.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess_BehaviorDescriptor" file="GenerationContextOp_SessionObjectAccess_BehaviorDescriptor.java">
@@ -265,7 +265,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess_Behavior" file="GenerationContextOp_StepObjectAccess_Behavior.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess_BehaviorDescriptor" file="GenerationContextOp_StepObjectAccess_BehaviorDescriptor.java">
@@ -277,7 +277,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess_Behavior" file="GenerationContextOp_TransientObjectAccess_Behavior.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess_BehaviorDescriptor" file="GenerationContextOp_TransientObjectAccess_BehaviorDescriptor.java">

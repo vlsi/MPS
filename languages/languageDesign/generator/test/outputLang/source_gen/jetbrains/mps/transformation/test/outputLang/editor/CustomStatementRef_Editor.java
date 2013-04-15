@@ -23,6 +23,7 @@ public class CustomStatementRef_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_eklijf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_eklijf_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_eklijf_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_eklijf_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_eklijf_c0(editorContext, node));

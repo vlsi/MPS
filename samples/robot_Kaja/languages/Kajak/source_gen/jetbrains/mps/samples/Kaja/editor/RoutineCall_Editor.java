@@ -30,6 +30,7 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wwx4md_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wwx4md_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_wwx4md_a0(editorContext, node));
     if (renderingCondition_wwx4md_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_wwx4md_b0(editorContext, node));

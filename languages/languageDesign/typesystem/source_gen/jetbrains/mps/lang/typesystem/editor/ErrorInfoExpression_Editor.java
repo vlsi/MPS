@@ -19,6 +19,7 @@ public class ErrorInfoExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3jw5b_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "equationInfo");
     editorCell.setCellId("Constant_3jw5b_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);

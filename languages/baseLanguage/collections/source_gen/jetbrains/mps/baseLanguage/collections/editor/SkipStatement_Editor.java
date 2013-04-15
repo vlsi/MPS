@@ -23,6 +23,7 @@ public class SkipStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6mas5q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6mas5q_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6mas5q_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6mas5q_b0(editorContext, node));
     return editorCell;

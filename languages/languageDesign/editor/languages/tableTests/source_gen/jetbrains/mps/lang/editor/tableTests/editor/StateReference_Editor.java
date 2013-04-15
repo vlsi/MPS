@@ -22,6 +22,7 @@ public class StateReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8btjnt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8btjnt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_8btjnt_a0(editorContext, node));
     return editorCell;
   }

@@ -24,6 +24,7 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xnhqer_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xnhqer_a");
+    editorCell.setBig(true);
     IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_xnhqer_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xnhqer_b0(editorContext, node));

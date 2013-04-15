@@ -26,6 +26,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
   private EditorCell createError_nb4xc9_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose cell model>");
     editorCell.setCellId("Error_nb4xc9_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBorderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -35,6 +36,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nb4xc9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_nb4xc9_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

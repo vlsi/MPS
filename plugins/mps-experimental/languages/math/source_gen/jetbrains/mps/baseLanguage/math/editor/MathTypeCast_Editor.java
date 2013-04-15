@@ -26,6 +26,7 @@ public class MathTypeCast_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gtxowl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gtxowl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_gtxowl_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_gtxowl_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gtxowl_c0(editorContext, node));

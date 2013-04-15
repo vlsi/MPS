@@ -18,7 +18,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import org.jetbrains.mps.openapi.module.SDependency;
@@ -31,7 +32,7 @@ import jetbrains.mps.vfs.IFile;
 import java.util.*;
 
 public class Generator extends AbstractModule {
-  public static final Logger LOG = Logger.getLogger(Generator.class);
+  public static final Logger LOG = LogManager.getLogger(Generator.class);
 
   static {
     ModelsAutoImportsManager.registerContributor(new GeneratorModelsAutoImports());

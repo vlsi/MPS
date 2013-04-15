@@ -98,7 +98,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="jetbrains.mps.util.Condition" />
+    <classNode extendsClassName="org.jetbrains.mps.util.Condition" />
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" file="StateUtil.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />

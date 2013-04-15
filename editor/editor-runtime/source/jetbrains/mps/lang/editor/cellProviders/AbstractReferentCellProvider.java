@@ -36,6 +36,7 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -43,7 +44,7 @@ import java.util.List;
 
 public abstract class AbstractReferentCellProvider extends CellProviderWithRole {
 
-  public static final Logger LOG = Logger.getLogger(AbstractReferentCellProvider.class);
+  public static final Logger LOG = Logger.getLogger(LogManager.getLogger(AbstractReferentCellProvider.class));
 
   protected SNode myLinkDeclaration;
   protected String myGenuineRole;
@@ -124,7 +125,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       SReference reference = node.getReference(myGenuineRole);
       if (reference != null) {
         referentNode = reference.getTargetNode();
-        if (referentNode == null || context.getScope().getModelDescriptor(referentNode.getModel().getReference()) == null) {
+        if (referentNode == null || referentNode.getModel() == null || context.getScope().getModelDescriptor(referentNode.getModel().getReference()) == null) {
           String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
           myErrorText = rinfo != null ? rinfo : "?" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "?";
           return createErrorCell(myErrorText, node, context);

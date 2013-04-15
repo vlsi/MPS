@@ -24,6 +24,7 @@ public class BuildLayout_EchoXml_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b1me0g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b1me0g_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_b1me0g_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b1me0g_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b1me0g_c0(editorContext, node));

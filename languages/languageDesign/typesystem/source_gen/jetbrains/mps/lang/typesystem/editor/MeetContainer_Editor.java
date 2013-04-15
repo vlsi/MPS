@@ -22,6 +22,7 @@ public class MeetContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ujwr7t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ujwr7t_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ujwr7t_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_ujwr7t_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ujwr7t_c0(editorContext, node));

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,11 +22,11 @@ public class PriorityQueueCreator_Behavior {
     return _quotation_createNode_ag90u1_a0a0(SLinkOperations.getTarget(thisNode, "elementType", true));
   }
 
-  public static boolean virtual_hasInitSize_1262430001741498238(SConcept thisConcept) {
+  public static boolean virtual_hasInitSize_1262430001741498238(SAbstractConcept thisConcept) {
     return true;
   }
 
-  public static List<SNode> virtual_getAvailableFor_3044950653914717035(SConcept thisConcept) {
+  public static List<SNode> virtual_getAvailableFor_3044950653914717035(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", "virtual_getAvailableFor_3044950653914717035", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "5686963296372475025"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1151689724996"));

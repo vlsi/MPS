@@ -31,6 +31,7 @@ public class TargetReferenceExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gv9ozx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gv9ozx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_gv9ozx_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gv9ozx_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_gv9ozx_c0(editorContext, node));

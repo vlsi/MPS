@@ -26,6 +26,7 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_k2fdvc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_k2fdvc_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_k2fdvc_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_k2fdvc_b0(editorContext, node));
     return editorCell;

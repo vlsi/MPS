@@ -25,6 +25,7 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
   private EditorCell createCollection_swjj57_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_swjj57_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_swjj57_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_swjj57_b0(editorContext, node));
     return editorCell;

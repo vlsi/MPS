@@ -35,6 +35,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_j8ahcr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_j8ahcr_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBorderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -127,6 +128,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_j8ahcr_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_j8ahcr_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

@@ -28,6 +28,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_ns0lc3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ns0lc3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ns0lc3_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ns0lc3_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ns0lc3_c0(editorContext, node));

@@ -51,8 +51,8 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
-import org.jetbrains.mps.openapi.module.SRepositoryListenerAdapter;
+import org.jetbrains.mps.openapi.module.events.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -77,7 +77,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private static ProjectStructureModule INSTANCE;
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {
   };
-  private final SRepositoryListener myListener = new SRepositoryListenerAdapter() {
+  private final SRepositoryListener myListener = new SRepositoryAdapter() {
     @Override
     public void moduleAdded(SModule module) {
       refreshModule(module, false);

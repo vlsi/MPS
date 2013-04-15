@@ -91,10 +91,6 @@ public interface EditorCell {
 
   String getRole();
 
-  SNode getRefNode();
-
-  void setRefNode(SNode refNode);
-
   boolean isErrorState();
 
   void setErrorState(boolean isError);
@@ -146,4 +142,8 @@ public interface EditorCell {
   SubstituteInfo getSubstituteInfo();
 
   TextBuilder renderText();
+
+  void setBig(boolean big);
+
+  boolean isBig();
 }

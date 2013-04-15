@@ -21,6 +21,7 @@ public class IdeaVersion_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4gdxid_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4gdxid_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_4gdxid_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4gdxid_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4gdxid_c0(editorContext, node));

@@ -1,5 +1,7 @@
 package jetbrains.mps.psiTest;
 
+import jetbrains.mps.psiTest2.ClassInPsiTest2;
+
 import java.io.IOException;
 
 
@@ -47,6 +49,9 @@ public class PsiTestMain {
         String var = container.head;
         var = container.getHead();
         container.add("item");
+
+
+        ClassInPsiTest2 c = new ClassInPsiTest2(1);
     }
 
 }

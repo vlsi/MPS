@@ -34,6 +34,7 @@ public class ExpectedOption_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_97k2fj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_97k2fj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_97k2fj_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_97k2fj_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_97k2fj_c0(editorContext, node));

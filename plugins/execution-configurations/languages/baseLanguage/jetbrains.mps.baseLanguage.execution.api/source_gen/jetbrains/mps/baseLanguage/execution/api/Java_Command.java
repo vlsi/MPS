@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import org.apache.log4j.Priority;
 import jetbrains.mps.generator.traceInfo.TraceDown;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -47,7 +48,8 @@ import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -190,21 +192,28 @@ public class Java_Command {
 
   private static String getClassName(SNode node) {
     SModel model = SNodeOperations.getModel(node);
+    if (model == null) {
+      return null;
+    }
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
-      LOG.error("No trace.info found for model " + model + ". Check that model is generated.");
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("No trace.info found for model " + model + ". Check that model is generated.");
+      }
       return null;
     } else {
       Iterable<String> unitNames = (Iterable<String>) TraceDown.unitNames(node);
       if (Sequence.fromIterable(unitNames).isEmpty()) {
-        LOG.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
+        }
         return null;
       } else if ((int) Sequence.fromIterable(unitNames).count() == 1) {
         return Sequence.fromIterable(unitNames).first();
       } else {
         return TraceDown.unitNameWithPosition(node, new _FunctionTypes._return_P1_E0<Boolean, TraceablePositionInfo>() {
           public Boolean invoke(TraceablePositionInfo position) {
-            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(position.getPropertyString(), BehaviorReflection.invokeVirtual(String.class, _quotation_createNode_yvpt_a0a0a0a1a0a0b0a2a1(), "virtual_getTraceableProperty_5067982036267369901", new Object[]{})));
+            return (eq_kk96hj_a0a0a0a0a1a0a0b0a3a22(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0b0a3a22_0(position.getPropertyString(), BehaviorReflection.invokeVirtual(String.class, _quotation_createNode_yvpt_a0a0a0a1a0a0b0a3a1(), "virtual_getTraceableProperty_5067982036267369901", new Object[]{})));
           }
         });
       }
@@ -212,10 +221,13 @@ public class Java_Command {
   }
 
   private static String getClassName(final SNodeReference node) {
-    final Wrappers._T<String> className = new Wrappers._T<String>();
+    final Wrappers._T<String> className = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        className.value = Java_Command.getClassName(((SNodePointer) node).resolve(MPSModuleRepository.getInstance()));
+        SNode resolve = ((SNodePointer) node).resolve(MPSModuleRepository.getInstance());
+        if (resolve != null) {
+          className.value = Java_Command.getClassName(resolve);
+        }
       }
     });
     return className.value;
@@ -339,7 +351,7 @@ public class Java_Command {
     };
   }
 
-  private static Logger LOG = Logger.getLogger(Java_Command.class);
+  protected static Logger LOG = LogManager.getLogger(Java_Command.class);
 
   private static int check_yvpt_a0c0a2(CommandPart checkedDotOperand) {
     if (null != checkedDotOperand) {
@@ -397,7 +409,7 @@ public class Java_Command {
     return null;
   }
 
-  private static SNode _quotation_createNode_yvpt_a0a0a0a1a0a0b0a2a1() {
+  private static SNode _quotation_createNode_yvpt_a0a0a0a1a0a0b0a3a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -429,14 +441,14 @@ public class Java_Command {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a3a22(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a3a22_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

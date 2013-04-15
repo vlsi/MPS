@@ -5,7 +5,7 @@ package jetbrains.mps.smodel.search;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModelReference;
 

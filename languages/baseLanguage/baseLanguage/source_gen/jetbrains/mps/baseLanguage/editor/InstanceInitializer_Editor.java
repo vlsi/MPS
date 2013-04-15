@@ -24,6 +24,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_t233bj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t233bj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_t233bj_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_t233bj_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_t233bj_c0(editorContext, node));

@@ -24,6 +24,7 @@ public class PostingRuleTemporalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ju370r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ju370r_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_ju370r_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ju370r_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ju370r_c0(editorContext, node));

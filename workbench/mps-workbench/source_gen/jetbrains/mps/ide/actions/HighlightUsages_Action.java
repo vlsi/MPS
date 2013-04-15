@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
@@ -15,7 +16,8 @@ import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -27,7 +29,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class HighlightUsages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +50,9 @@ public class HighlightUsages_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "HighlightUsages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "HighlightUsages", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -78,7 +83,7 @@ public class HighlightUsages_Action extends BaseAction {
         public void run() {
           NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
           EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
-          SNode node = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNodeWRTReference();
+          SNode node = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
           Set<SReference> usages = FindUsagesManager.getInstance().findUsages(Collections.<SNode>singleton(node), SearchType.USAGES, new ModelsScope(((SModel) MapSequence.fromMap(_params).get("model"))), null);
           boolean highlight = highlightManager.getMessagesFor(node, messageOwner).isEmpty();
           if (SNodeOperations.getContainingRoot(node) == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
@@ -105,9 +110,11 @@ public class HighlightUsages_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "HighlightUsages", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "HighlightUsages", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(HighlightUsages_Action.class);
+  protected static Logger LOG = LogManager.getLogger(HighlightUsages_Action.class);
 }

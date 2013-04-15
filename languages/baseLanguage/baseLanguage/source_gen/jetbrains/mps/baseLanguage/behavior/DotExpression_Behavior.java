@@ -13,7 +13,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.reloading.ReflectionUtil;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class DotExpression_Behavior {
@@ -60,7 +60,7 @@ public class DotExpression_Behavior {
     return false;
   }
 
-  public static boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+  public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return true;
   }
 

@@ -23,6 +23,7 @@ public class StatementCommentPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1mgzv8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1mgzv8_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

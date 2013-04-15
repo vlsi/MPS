@@ -20,7 +20,8 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -45,7 +46,7 @@ import java.util.List;
 import java.util.Set;
 
 public class SModelOperations {
-  private static final Logger LOG = Logger.getLogger(SModelOperations.class);
+  private static final Logger LOG = LogManager.getLogger(SModelOperations.class);
 
   @Nullable
   public static SNode getRootByName(SModel model, @NotNull String name) {
@@ -56,10 +57,7 @@ public class SModelOperations {
   }
 
   public static boolean isReadOnly(SModel model) {
-    if (model instanceof jetbrains.mps.smodel.SModel) {
-      model = model;
-    }
-    return !(model instanceof EditableSModel) || ((EditableSModel) model).isReadOnly();
+    return model.isReadOnly();
   }
 
   public static void validateLanguagesAndImports(SModel model, boolean respectModulesScopes, boolean firstVersion) {

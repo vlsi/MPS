@@ -26,6 +26,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -33,7 +34,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -49,7 +50,7 @@ import static jetbrains.mps.smodel.SModel.ImportElement;
  */
 public class BinaryPersistence {
 
-  private static final Logger LOG = Logger.getLogger(BinaryPersistence.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(BinaryPersistence.class));
 
   public static BinaryModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;

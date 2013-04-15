@@ -10,7 +10,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RevertMemoryChanges_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,7 +39,9 @@ public class RevertMemoryChanges_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "RevertMemoryChanges", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "RevertMemoryChanges", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -60,9 +64,11 @@ public class RevertMemoryChanges_Action extends BaseAction {
     try {
       ((EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).reloadFromSource();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(RevertMemoryChanges_Action.class);
+  protected static Logger LOG = LogManager.getLogger(RevertMemoryChanges_Action.class);
 }

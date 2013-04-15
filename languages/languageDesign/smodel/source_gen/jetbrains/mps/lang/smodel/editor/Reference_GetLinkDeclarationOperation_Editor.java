@@ -28,12 +28,14 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
   private EditorCell createComponent_archsh_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_archsh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_archsh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_archsh_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_archsh_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_archsh_c0(editorContext, node));

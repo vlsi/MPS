@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -17,7 +18,8 @@ import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class GoToRootNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,7 +39,9 @@ public class GoToRootNode_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToRootNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "GoToRootNode", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -70,9 +74,11 @@ public class GoToRootNode_Action extends BaseAction {
         }
       }, ModalityState.current(), true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToRootNode", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "GoToRootNode", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(GoToRootNode_Action.class);
+  protected static Logger LOG = LogManager.getLogger(GoToRootNode_Action.class);
 }

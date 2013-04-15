@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;

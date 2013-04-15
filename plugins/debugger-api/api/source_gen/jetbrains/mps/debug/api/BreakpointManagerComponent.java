@@ -8,6 +8,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import org.jdom.Element;
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Set;
@@ -31,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 @State(name = "BreakpointManager", storages = {@Storage(id = "other", file = "$WORKSPACE_FILE$")
 })
 public class BreakpointManagerComponent implements ProjectComponent, PersistentStateComponent<Element> {
-  private static final Logger LOG = Logger.getLogger(BreakpointManagerComponent.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(BreakpointManagerComponent.class));
   private static final String BREAKPOINTS_LIST_ELEMENT = "breakpointsList";
   private static final BreakpointManagerComponent.DummyIO DUMMY_IO = new BreakpointManagerComponent.DummyIO();
   private final Map<SNodeReference, Set<ILocationBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodeReference, Set<ILocationBreakpoint>>();

@@ -16,6 +16,7 @@ public class ConceptLink_Editor extends DefaultNodeEditor {
   private EditorCell createError_o5j1fp_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose link>");
     editorCell.setCellId("Error_o5j1fp_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

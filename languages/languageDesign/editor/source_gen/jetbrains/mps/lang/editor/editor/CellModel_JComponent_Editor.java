@@ -27,6 +27,7 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_vo2134_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$swing component$");
     editorCell.setCellId("Constant_vo2134_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -37,6 +38,7 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vo2134_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_vo2134_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_vo2134_a0(editorContext, node));
     return editorCell;
   }

@@ -23,6 +23,7 @@ public class DecideOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3ooqdi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3ooqdi_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_3ooqdi_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3ooqdi_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3ooqdi_c0(editorContext, node));

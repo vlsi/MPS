@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.apache.log4j.Priority;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -32,7 +33,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Junit_Command {
   private String myDebuggerSettings_String;
@@ -155,7 +157,9 @@ public class Junit_Command {
       }
     });
     if (isNotEmpty_yo2c7x_a0h0n(skipped.value)) {
-      LOG.warning("All tests could not be executed together. Skipped " + skipped.value);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("All tests could not be executed together. Skipped " + skipped.value);
+      }
     }
     return MultiTuple.<List<ITestNodeWrapper>,Tuples._3<String, List<String>, List<String>>>from(testsToRun.value, runParams.value);
   }
@@ -190,7 +194,7 @@ public class Junit_Command {
     };
   }
 
-  private static Logger LOG = Logger.getLogger(Junit_Command.class);
+  protected static Logger LOG = LogManager.getLogger(Junit_Command.class);
 
   private static String check_u7m9j_a1a0a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {

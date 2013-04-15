@@ -15,25 +15,28 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.AbstractModule;
-
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -46,7 +49,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MPSModuleRepository implements CoreComponent, SRepository {
-  private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(MPSModuleRepository.class));
   private List<SRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<SRepositoryListener>();
 
   private Set<IModule> myModules = new LinkedHashSet<IModule>();
@@ -234,16 +237,6 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     };
   }
 
-  @Override
-  public void addRepositoryListener(SRepositoryListener listener) {
-    //todo implement
-  }
-
-  @Override
-  public void removeRepositoryListener(SRepositoryListener listener) {
-    //todo implement
-  }
-
   @Deprecated //in 3.0
   //use getModule()
   public IModule getModuleById(SModuleId moduleId) {
@@ -363,6 +356,16 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     }
 
     SModelRepository.getInstance().saveAll();
+  }
+
+  @Override
+  public void addRepositoryListener(SRepositoryListener listener) {
+
+  }
+
+  @Override
+  public void removeRepositoryListener(SRepositoryListener listener) {
+
   }
 
   public void moduleFqNameChanged(IModule module, String oldName) {

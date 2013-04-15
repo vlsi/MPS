@@ -47,6 +47,7 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_955wzk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_955wzk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_955wzk_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_955wzk_b0(editorContext, node));
     if (renderingCondition_955wzk_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -531,6 +532,7 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_955wzk_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_955wzk_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

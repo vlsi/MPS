@@ -7,8 +7,10 @@ import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.build.ant.LibraryDataType;
 import java.io.File;
 import java.util.Set;
-import java.util.LinkedHashSet;
+import java.util.List;
+import jetbrains.mps.build.ant.MPSClasspathUtil;
 import org.apache.tools.ant.BuildException;
+import java.util.LinkedHashSet;
 
 public class GenerateChunksTask extends MpsLoadTask {
   {
@@ -67,60 +69,17 @@ public class GenerateChunksTask extends MpsLoadTask {
 
   @Override
   protected Set<File> calculateClassPath(boolean fork) {
-    Set<File> classPath = new LinkedHashSet<File>();
-    String mpsHome = getProject().getProperty("artifacts.mps");
-    String pluginHome = getProject().getProperty("artifacts.mpsPlugin");
-    String ideaHome = getProject().getProperty("artifacts.IDEA");
-    String mpsCoreHome = getProject().getProperty("artifacts.mpsBootstrapCore");
-    String mpsWorkbenchHome = getProject().getProperty("artifacts.mpsWorkbench");
-
-    if ((mpsHome != null && mpsHome.length() > 0)) {
-      // buildMPS 
-      gatherAllClassesAndJarsUnder(new File(mpsHome, "lib"), classPath);
-    } else if ((pluginHome != null && pluginHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
-      // buildPlugin + IDEA 
-      gatherAllClassesAndJarsUnder(new File(ideaHome, "lib"), classPath);
-      gatherAllClassesAndJarsUnder(new File(pluginHome, "mps-core/lib"), classPath);
-    } else if ((mpsCoreHome != null && mpsCoreHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
-      // buildCore + IDEA 
-      gatherAllClassesAndJarsUnder(new File(mpsCoreHome, "lib"), classPath);
-      gatherAllClassesAndJarsUnder(new File(ideaHome, "lib"), classPath);
-      if ((mpsWorkbenchHome != null && mpsWorkbenchHome.length() > 0)) {
-        gatherAllClassesAndJarsUnder(new File(mpsWorkbenchHome, "lib"), classPath);
-      }
-    } else {
+    List<File> classPathRoots = MPSClasspathUtil.getClassPathRootsFromDependencies(getProject());
+    if (classPathRoots.isEmpty()) {
       throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
+
+    }
+    Set<File> classPath = new LinkedHashSet<File>();
+    for (File file : classPathRoots) {
+      MPSClasspathUtil.gatherAllClassesAndJarsUnder(file, classPath);
     }
 
     return classPath;
-  }
-
-  protected void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
-    if (dir.getName().equals("classes") || dir.getName().equals("classes_gen") || dir.getName().equals("apiclasses")) {
-      result.add(dir);
-      return;
-    }
-    File[] children = dir.listFiles();
-    //  we do not want trove different from ours in $mps.home$/lib 
-    String troveJar = "trove" + File.separator + "lib" + File.separator + "trove";
-    //  to provide right order of class loading, 
-    //  files go first 
-    for (File f : children) {
-      if (!(f.isDirectory())) {
-        if (f.getName().endsWith(".jar") && !(f.getName().contains("ant.jar")) && !(f.getPath().contains(troveJar))) {
-          result.add(f);
-        }
-      }
-    }
-    for (File f : children) {
-      if (f.isDirectory()) {
-        if (f.getName().equals("classes") || f.getName().equals("classes_gen")) {
-          result.add(f);
-        } else {
-          gatherAllClassesAndJarsUnder(f, result);
-        }
-      }
-    }
   }
 
 

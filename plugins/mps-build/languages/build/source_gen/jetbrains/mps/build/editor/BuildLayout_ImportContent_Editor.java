@@ -43,6 +43,7 @@ public class BuildLayout_ImportContent_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_roxgcf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_roxgcf_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_roxgcf_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_roxgcf_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_roxgcf_c0(editorContext, node));

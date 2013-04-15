@@ -34,6 +34,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xoe8gq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xoe8gq_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     if (renderingCondition_xoe8gq_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_xoe8gq_a0(editorContext, node));

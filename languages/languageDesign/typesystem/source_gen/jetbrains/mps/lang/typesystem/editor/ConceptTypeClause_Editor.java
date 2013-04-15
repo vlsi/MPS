@@ -36,6 +36,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_69byel_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_69byel_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_69byel_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_69byel_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_69byel_c0(editorContext, node));

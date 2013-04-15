@@ -39,10 +39,11 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
+import org.apache.log4j.Priority;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
@@ -61,7 +62,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class EvaluationWithContextContainer extends EvaluationContainer {
   private final boolean myIsInWatch;
@@ -179,7 +181,9 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
       // todo highlight when this type or static context type are invalid 
     } catch (InvalidStackFrameException e) {
-      LOG.warning("InvalidStackFrameException", e);
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("InvalidStackFrameException", e);
+      }
     }
     myVariablesInitialized = true;
   }
@@ -226,7 +230,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     }
 
     FindUsagesManager manager = FindUsagesManager.getInstance();
-    SConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.traceable.structure.UnitConcept");
+    SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.traceable.structure.UnitConcept");
 
     Set<SNode> instances = manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, new ModelsScope(getCandidateNonStubModels(unitName)), new EmptyProgressMonitor());
     return SNodeOperations.cast(SetSequence.fromSet(instances).findFirst(new IWhereFilter<SNode>() {
@@ -326,7 +330,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(EvaluationWithContextContainer.class);
+  protected static Logger LOG = LogManager.getLogger(EvaluationWithContextContainer.class);
 
   private static boolean eq_v5yv3u_a0a0a0a0a0a0b0d0o(Object a, Object b) {
     return (a != null ?

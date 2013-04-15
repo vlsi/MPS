@@ -34,6 +34,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cmnz0s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cmnz0s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cmnz0s_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cmnz0s_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cmnz0s_c0(editorContext, node));

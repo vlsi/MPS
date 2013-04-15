@@ -37,6 +37,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_z2b22p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z2b22p_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_z2b22p_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_z2b22p_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_z2b22p_c0(editorContext, node));

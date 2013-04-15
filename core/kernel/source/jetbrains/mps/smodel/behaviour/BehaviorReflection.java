@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -65,11 +65,11 @@ public class BehaviorReflection {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(conceptFqName).invoke(node, methodName, parameters);
   }
 
-  public static Object invokeVirtualStatic(@NotNull SConcept concept, String methodName, Object[] parameters) {
+  public static Object invokeVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getId()).invokeStatic(concept, methodName, parameters);
   }
 
-  public static Object invokeNonVirtualStatic(@NotNull SConcept concept, String methodName, Object[] parameters) {
+  public static Object invokeNonVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getId()).invokeStatic(concept, methodName, parameters);
   }
 
@@ -77,7 +77,7 @@ public class BehaviorReflection {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invoke(node, methodName, parameters);
   }
 
-  public static Object invokeSuperStatic(@NotNull SConcept concept, String targetSuperFqName, String methodName, Object[] parameters) {
+  public static Object invokeSuperStatic(@NotNull SAbstractConcept concept, String targetSuperFqName, String methodName, Object[] parameters) {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invokeStatic(concept, methodName, parameters);
   }
 
@@ -91,16 +91,16 @@ public class BehaviorReflection {
   }
 
   // this methods for <T> generic parameter and null safety
-  public static <T> T invokeVirtualStatic(Class<T> returnType, SConcept concept, String methodName, Object[] parameters) {
+  public static <T> T invokeVirtualStatic(Class<T> returnType, SAbstractConcept concept, String methodName, Object[] parameters) {
     return concept == null ? defaultValue(returnType) : (T) invokeVirtualStatic(concept, methodName, parameters);
   }
 
-  public static <T> T invokeSuperStatic(Class<T> returnType, SConcept concept, String targetSuperFqName, String methodName, Object[] parameters) {
-    return concept == null ? defaultValue(returnType) : (T) invokeSuperStatic(concept, targetSuperFqName,methodName, parameters);
+  public static <T> T invokeSuperStatic(Class<T> returnType, SAbstractConcept concept, String targetSuperFqName, String methodName, Object[] parameters) {
+    return concept == null ? defaultValue(returnType) : (T) invokeSuperStatic(concept, targetSuperFqName, methodName, parameters);
   }
 
 
-  public static <T> T invokeNonVirtualStatic(Class<T> returnType, SConcept concept, String methodName, Object[] parameters) {
+  public static <T> T invokeNonVirtualStatic(Class<T> returnType, SAbstractConcept concept, String methodName, Object[] parameters) {
     return (T) invokeNonVirtualStatic(concept, methodName, parameters);
   }
 

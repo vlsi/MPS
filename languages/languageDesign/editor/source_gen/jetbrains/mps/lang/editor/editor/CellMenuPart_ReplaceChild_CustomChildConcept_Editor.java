@@ -26,6 +26,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
   private EditorCell createCollection_h8lpox_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_h8lpox_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_h8lpox_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_h8lpox_b0(editorContext, node));
     return editorCell;

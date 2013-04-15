@@ -24,6 +24,7 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_shllfo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_shllfo_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_shllfo_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_shllfo_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_shllfo_c0(editorContext, node));

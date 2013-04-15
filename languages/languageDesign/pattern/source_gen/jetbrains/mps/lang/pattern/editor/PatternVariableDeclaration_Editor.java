@@ -27,6 +27,7 @@ public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gzep3j_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gzep3j_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_gzep3j_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_gzep3j_b0(editorContext, node));
     return editorCell;

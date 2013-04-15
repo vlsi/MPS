@@ -9,6 +9,7 @@ import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
 import jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup;
 import jetbrains.mps.ide.actions.Build_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
+import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.plugins.actions.BaseKeymapChanges;
@@ -34,6 +35,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new BuildAllGenerators_Action());
     addAction(new BuildAllIntentions_Action());
     addAction(new BuildAllLanguageDescriptors_Action());
+    addAction(new BuildAllRefactorings_Action());
     addAction(new BuildAllStructures_Action());
     addAction(new CheckModelsBeforeGeneration_Action());
     addAction(new CleanModule_Action());
@@ -76,6 +78,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Make_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(ProjectMake_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(GlobalMake_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_make);
+    insertGroupIntoAnother(TextPreviewGroup_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_showGeneratedText);
     insertGroupIntoAnother(TextPreviewGroup_ActionGroup.ID, "EditorPopup_ActionGrouppreview", null);
     insertGroupIntoAnother(TextPreviewGroup_ActionGroup.ID, Make_ActionGroup.ID, Make_ActionGroup.LABEL_ID_preview);
     insertGroupIntoAnother(NamespaceMake_ActionGroup.ID, NamespaceMakeActions_ActionGroup.ID, NamespaceMakeActions_ActionGroup.LABEL_ID_make);

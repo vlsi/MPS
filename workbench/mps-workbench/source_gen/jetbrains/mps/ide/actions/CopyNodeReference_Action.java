@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -14,7 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CopyNodeReference_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,7 +36,9 @@ public class CopyNodeReference_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "CopyNodeReference", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "CopyNodeReference", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -69,9 +73,11 @@ public class CopyNodeReference_Action extends BaseAction {
       builder.deleteCharAt(builder.length() - 1);
       CopyPasteUtil.copyTextToClipboard(builder.toString());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "CopyNodeReference", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "CopyNodeReference", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(CopyNodeReference_Action.class);
+  protected static Logger LOG = LogManager.getLogger(CopyNodeReference_Action.class);
 }

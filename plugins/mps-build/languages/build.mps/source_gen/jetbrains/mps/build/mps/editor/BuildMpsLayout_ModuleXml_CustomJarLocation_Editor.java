@@ -22,6 +22,7 @@ public class BuildMpsLayout_ModuleXml_CustomJarLocation_Editor extends DefaultNo
   private EditorCell createCollection_r8678q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_r8678q_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_r8678q_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r8678q_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_r8678q_c0(editorContext, node));

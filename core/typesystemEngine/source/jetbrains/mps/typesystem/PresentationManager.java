@@ -16,14 +16,15 @@
 package jetbrains.mps.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
 
 public class PresentationManager {
-  private static Logger LOG = Logger.getLogger(PresentationManager.class);
+  private static Logger LOG = LogManager.getLogger(PresentationManager.class);
 
   // param is SNode or IWrapper
   public static String toString(SNode type) {

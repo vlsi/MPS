@@ -26,6 +26,7 @@ public class ReportConfigurationErrorStatement_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_zde575_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zde575_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_zde575_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_zde575_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zde575_c0(editorContext, node));

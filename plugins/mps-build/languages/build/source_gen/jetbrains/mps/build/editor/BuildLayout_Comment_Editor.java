@@ -23,6 +23,7 @@ public class BuildLayout_Comment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xjc2q2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xjc2q2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_xjc2q2_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xjc2q2_b0(editorContext, node));
     return editorCell;

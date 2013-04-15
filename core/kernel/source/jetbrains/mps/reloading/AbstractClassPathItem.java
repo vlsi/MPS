@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.Condition;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.ConditionalIterable;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.regex.Pattern;
 
@@ -64,7 +65,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   //-----------------------
 
-  private static final Logger LOG = Logger.getLogger(RealClassPathItem.class);
+  private static final Logger LOG = LogManager.getLogger(RealClassPathItem.class);
   private boolean myValid = true;
   private boolean myErrorShown = false;
 
@@ -73,9 +74,9 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   }
 
   protected void checkValidity() {
-    if (myValid) return;
-    if (myErrorShown) return;
-    myErrorShown = true;
-    LOG.error("Using outdated classpath: " + this, new Throwable());
+//    if (myValid) return;
+//    if (myErrorShown) return;
+//    myErrorShown = true;
+//    LOG.error("Using outdated classpath: " + this, new Throwable());
   }
 }

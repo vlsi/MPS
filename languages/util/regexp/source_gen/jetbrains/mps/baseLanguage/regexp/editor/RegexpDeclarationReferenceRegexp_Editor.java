@@ -28,6 +28,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_99sp2s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_99sp2s_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createRefCell_99sp2s_a0(editorContext, node));
     return editorCell;

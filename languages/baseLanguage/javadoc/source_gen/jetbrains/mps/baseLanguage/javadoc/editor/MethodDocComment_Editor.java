@@ -38,6 +38,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ls0i5e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ls0i5e_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ls0i5e_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_ls0i5e_b0(editorContext, node));
     return editorCell;

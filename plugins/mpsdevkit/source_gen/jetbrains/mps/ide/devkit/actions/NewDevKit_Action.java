@@ -8,6 +8,7 @@ import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -20,7 +21,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class NewDevKit_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.DevKit;
@@ -40,7 +42,9 @@ public class NewDevKit_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "NewDevKit", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "NewDevKit", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -86,9 +90,11 @@ public class NewDevKit_Action extends BaseAction {
       projectPane.rebuildTree();
       projectPane.selectModule(devkit, false);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "NewDevKit", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "NewDevKit", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(NewDevKit_Action.class);
+  protected static Logger LOG = LogManager.getLogger(NewDevKit_Action.class);
 }

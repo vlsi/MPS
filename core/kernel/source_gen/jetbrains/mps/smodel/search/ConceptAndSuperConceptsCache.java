@@ -4,7 +4,8 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.KeyProducer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.cache.CachesManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +24,7 @@ import java.util.List;
  */
 /*package*/ class ConceptAndSuperConceptsCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
-  private static final Logger LOG = Logger.getLogger(ConceptAndSuperConceptsCache.class);
+  private static final Logger LOG = LogManager.getLogger(ConceptAndSuperConceptsCache.class);
   private static final CachesManager.CacheCreator<SNode> CREATOR = new CachesManager.CacheCreator<SNode>() {
     @Override
     public AbstractCache create(Object key, SNode element) {

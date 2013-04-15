@@ -24,7 +24,8 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
@@ -40,7 +41,7 @@ public class FinderNode extends BaseLeaf {
   private static final String GENERATED_FINDER = "generated_finder";
   private static final String CLASS_NAME = "class_name";
 
-  private static final Logger LOG = Logger.getLogger(FinderNode.class);
+  private static final Logger LOG = LogManager.getLogger(FinderNode.class);
 
   private IFinder myFinder;
 

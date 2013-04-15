@@ -33,6 +33,7 @@ public class ContainerItemInserter_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pd4z9l_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_pd4z9l_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_pd4z9l_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_pd4z9l_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_pd4z9l_c0(editorContext, node));
@@ -162,8 +163,8 @@ public class ContainerItemInserter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_pd4z9l_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_pd4z9l_b1a(EditorContext editorContext, SNode node) {

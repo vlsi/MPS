@@ -19,6 +19,7 @@ public class Concept_GetHierarchy_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_qkpwwr_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "hierarchy");
     editorCell.setCellId("Constant_qkpwwr_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);

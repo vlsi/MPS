@@ -33,27 +33,25 @@ public abstract class TempModuleOptions {
     return new ExistingModuleOptions(m);
   }
 
-  public static TempModuleOptions forNewModule(IScope scope, Set<ModelRootDescriptor> modelRoots) {
-    return new NewModuleOptions(scope, modelRoots);
+  public static TempModuleOptions forNewModule(Set<ModelRootDescriptor> modelRoots) {
+    return new NewModuleOptions(modelRoots);
   }
 
   public static TempModuleOptions forDefaultModule() {
-    return new NewModuleOptions(GlobalScope.getInstance(), Collections.<ModelRootDescriptor>emptySet());
+    return new NewModuleOptions(Collections.<ModelRootDescriptor>emptySet());
   }
 
   private static class NewModuleOptions extends TempModuleOptions {
-    private IScope myScope;
     private Set<ModelRootDescriptor> myModelRoots;
     private TempModule myCreatedModule;
 
-    public NewModuleOptions(IScope scope, Set<ModelRootDescriptor> modelRoots) {
-      myScope = scope;
+    public NewModuleOptions(Set<ModelRootDescriptor> modelRoots) {
       myModelRoots = modelRoots;
     }
 
     @Override
     public SModule createModule() {
-      myCreatedModule = new TempModule(myScope, myModelRoots);
+      myCreatedModule = new TempModule(myModelRoots);
       TempModule regModule = MPSModuleRepository.getInstance().registerModule(myCreatedModule, myCreatedModule);
       assert myCreatedModule == regModule : "Temporary module with same id already registered";
       return myCreatedModule;

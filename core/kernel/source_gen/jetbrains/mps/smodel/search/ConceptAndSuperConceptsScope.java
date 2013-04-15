@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Collections;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.util.SNodeOperations;
 

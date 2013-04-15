@@ -47,6 +47,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ucemm3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ucemm3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_ucemm3_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ucemm3_b0(editorContext, node));
     if (renderingCondition_ucemm3_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -455,6 +456,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ucemm3_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ucemm3_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

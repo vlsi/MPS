@@ -33,6 +33,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
   private EditorCell createCollection_u0vlk9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_u0vlk9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_u0vlk9_a0(editorContext, node));
     return editorCell;
   }
@@ -95,6 +96,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
   private EditorCell createCollection_u0vlk9_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_u0vlk9_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_u0vlk9_a0(editorContext, node));
     return editorCell;
   }

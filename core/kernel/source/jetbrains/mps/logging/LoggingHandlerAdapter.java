@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.logging;
 
-/**
- * Igor Alshannikov
- * Oct 17, 2007
- */
+import jetbrains.mps.util.annotation.ToRemove;
+
+// Usa appenders from log4j
+@Deprecated
+@ToRemove(version = 3.0)
 public abstract class LoggingHandlerAdapter implements ILoggingHandler {
   public abstract void addLogEntry(LogEntry e);
 

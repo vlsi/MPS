@@ -28,6 +28,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   private EditorCell createCollection_ourakl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ourakl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ourakl_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ourakl_b0(editorContext, node));
     return editorCell;

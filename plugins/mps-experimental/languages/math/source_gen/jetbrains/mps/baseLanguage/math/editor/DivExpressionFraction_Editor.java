@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -28,6 +30,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ksgn1c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ksgn1c_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createEmpty_ksgn1c_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ksgn1c_b0(editorContext, node));
     editorCell.addEditorCell(this.createEmpty_ksgn1c_c0(editorContext, node));
@@ -36,6 +39,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
 
   private EditorCell createEmpty_ksgn1c_a0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_ksgn1c_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -108,6 +112,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
 
   private EditorCell createEmpty_ksgn1c_c0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_ksgn1c_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);

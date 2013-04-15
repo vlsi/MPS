@@ -25,6 +25,7 @@ import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -38,46 +39,35 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ClassStubPsiMapper implements MPS2PsiMapper {
 
   @Override
-  public boolean canBeMine(final SNode node) {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+  public boolean hasCorrespondingPsi(SModel model) {
+    return model instanceof JavaClassStubModelDescriptor;
+  }
+
+  @Nullable
+  @Override
+  public PsiElement getPsiElement(final SNode node, final Project project) {
+
+    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
       @Override
-      public Boolean compute() {
-        return node.getModel() instanceof JavaClassStubModelDescriptor;
+      public PsiElement compute() {
+        if (!hasCorrespondingPsi(node.getModel())) {
+          return null;
+        }
+
+        // for now only classifiers
+        // maybe should be done specifically for a few concepts which correspond to java entities
+
+        boolean isClassifier = node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.structure.Classifier"));
+        if (!isClassifier) {
+          return null;
+        }
+
+        SModel model = node.getModel();
+        String classFQName = SNodeOperations.getModelLongName(model) + "." + node.getName();
+        return JavaPsiFacade.getInstance(project).findClass(classFQName, GlobalSearchScope.allScope(project));
       }
     });
   }
-
-  /**
-   * Expects to be called for node such that canBeMine(node) == true
-   */
-  @Nullable
-  @Override
-  public PsiElement getPsiElement(SNode node, Project project) {
-    // for now only classifiers
-    // maybe should be done specifically for a few concepts which correspond to java entities
-
-    // FIXME there must a better way to ask if node isSubConceptOf
-    String superConcept = node.getConcept().getQualifiedName();
-    while (superConcept != null) {
-      if ("jetbrains.mps.baseLanguage.structure.Classifier".equals(superConcept)) {
-        break;
-      }
-      // TODO Could use SConcept.getSuperConcept instead?
-      ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(superConcept);
-      assert desc != null;
-      superConcept = desc.getSuperConcept();
-    }
-
-    if (superConcept == null) {
-      // not a classifier
-      return null;
-    }
-
-    SModel model = node.getModel();
-    String classFQName = SNodeOperations.getModelLongName(model) + "." + node.getName();
-    return JavaPsiFacade.getInstance(project).findClass(classFQName, GlobalSearchScope.allScope(project));
-  }
-
 
 
 }

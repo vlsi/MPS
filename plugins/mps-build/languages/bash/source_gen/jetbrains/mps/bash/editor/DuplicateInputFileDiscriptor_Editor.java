@@ -25,6 +25,7 @@ public class DuplicateInputFileDiscriptor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pj1m0f_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pj1m0f_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_pj1m0f_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pj1m0f_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pj1m0f_c0(editorContext, node));

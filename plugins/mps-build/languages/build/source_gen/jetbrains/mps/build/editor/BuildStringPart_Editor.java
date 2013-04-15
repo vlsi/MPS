@@ -33,6 +33,7 @@ public class BuildStringPart_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_vrd04t_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

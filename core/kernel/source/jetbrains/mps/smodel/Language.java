@@ -29,7 +29,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
@@ -59,7 +60,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Language extends AbstractModule implements MPSModuleOwner {
-  private static final Logger LOG = Logger.getLogger(Language.class);
+  private static final Logger LOG = LogManager.getLogger(Language.class);
 
   public static final String LANGUAGE_MODELS = "languageModels";
 

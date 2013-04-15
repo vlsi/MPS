@@ -39,6 +39,7 @@ public class EventHandlerTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_79xui9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_79xui9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_79xui9_a0(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell_79xui9_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_79xui9_c0(editorContext, node));
@@ -142,8 +143,8 @@ public class EventHandlerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_79xui9_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_79xui9_c0(EditorContext editorContext, SNode node) {
@@ -199,8 +200,8 @@ public class EventHandlerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_79xui9_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_79xui9_c2a(EditorContext editorContext, SNode node) {
@@ -239,8 +240,8 @@ public class EventHandlerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_79xui9_d2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_79xui9_e2a(EditorContext editorContext, SNode node) {
@@ -302,8 +303,8 @@ public class EventHandlerTemplate_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_79xui9_f2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createConstant_79xui9_g2a(EditorContext editorContext, SNode node) {

@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 
 public class QueriesGenerated {

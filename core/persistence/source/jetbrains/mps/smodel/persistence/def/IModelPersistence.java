@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 
 import java.util.List;
 

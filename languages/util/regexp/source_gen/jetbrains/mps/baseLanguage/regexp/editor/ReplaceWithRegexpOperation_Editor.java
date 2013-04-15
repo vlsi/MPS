@@ -26,6 +26,7 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_q2clzo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q2clzo_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_q2clzo_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_q2clzo_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_q2clzo_c0(editorContext, node));

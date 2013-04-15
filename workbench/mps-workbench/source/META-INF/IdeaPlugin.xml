@@ -24,7 +24,6 @@
 
     <directoryIndexExcludePolicy implementation="jetbrains.mps.ide.vfs.ClassesGenPolicy"/>
 
-    <fileTypeFactory implementation="com.intellij.openapi.fileTypes.impl.InternalFileTypeFactory"/>
     <bundledColorSchemesProvider implementation="com.intellij.codeStyle.IdeaColorSchemesProvider"/>
 
     <projectService serviceInterface="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"

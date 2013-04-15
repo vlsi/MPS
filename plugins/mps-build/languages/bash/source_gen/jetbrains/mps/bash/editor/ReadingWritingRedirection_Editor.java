@@ -25,6 +25,7 @@ public class ReadingWritingRedirection_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hq0hq0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hq0hq0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_hq0hq0_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hq0hq0_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hq0hq0_c0(editorContext, node));

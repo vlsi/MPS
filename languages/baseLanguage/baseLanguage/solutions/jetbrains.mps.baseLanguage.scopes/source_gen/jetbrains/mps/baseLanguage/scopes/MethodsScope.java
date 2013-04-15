@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Collections;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -45,7 +44,7 @@ public class MethodsScope extends Scope {
   }
 
   public MethodsScope(Iterable<SNode> methods) {
-    this(methods, Collections.<SNode,SNode>emptyMap());
+    this(methods, new HashMap<SNode, SNode>());
   }
 
   @Override
@@ -110,7 +109,7 @@ public class MethodsScope extends Scope {
     SNode classifier = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{});
     return ((classifier != null) ?
       MethodResolveUtil.getTypesByTypeVars(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifierType, "virtual_getTypeParameters_7405920559687237518", new Object[]{})) :
-      Collections.<SNode,SNode>emptyMap()
+      new HashMap<SNode, SNode>()
     );
   }
 }

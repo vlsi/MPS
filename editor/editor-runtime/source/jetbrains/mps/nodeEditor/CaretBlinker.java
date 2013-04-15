@@ -17,7 +17,8 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.ex.FileTypeManagerEx;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.nodeEditor.CaretBlinker.MyState;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -37,7 +38,7 @@ import org.jetbrains.annotations.NotNull;
     )}
 )
 public class CaretBlinker implements PersistentStateComponent<MyState>, ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(CaretBlinker.class);
+  private static final Logger LOG = LogManager.getLogger(CaretBlinker.class);
 
   public static CaretBlinker getInstance() {
     return ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(CaretBlinker.class);

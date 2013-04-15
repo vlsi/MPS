@@ -17,7 +17,8 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -41,7 +42,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
-  private static final Logger LOG = Logger.getLogger(BaseBehaviorDescriptor.class);
+  private static final Logger LOG = LogManager.getLogger(BaseBehaviorDescriptor.class);
 
   private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.([^\\.]+)$");
 

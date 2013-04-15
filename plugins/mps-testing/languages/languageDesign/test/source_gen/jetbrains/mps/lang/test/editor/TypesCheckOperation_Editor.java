@@ -30,6 +30,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_649p0a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_649p0a_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_649p0a_a0(editorContext, node));
     if (SNodeAccessUtil.hasProperty(node, "operationName")) {
       editorCell.addEditorCell(this.createNonEmptyProperty_649p0a_b0(editorContext, node));
@@ -69,6 +70,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_649p0a_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_649p0a_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_649p0a_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_649p0a_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_649p0a_c0(editorContext, node));

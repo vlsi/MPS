@@ -46,16 +46,16 @@
     <unitInfo nodeId="2291767839160328141" fileName="AbstractMethodSpecification_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification_Behavior" />
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/3044950653914717773">
-    <nodeInfo nodeId="3044950653914717752" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914717752" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="16" startPosition="125" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914717767" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914717771" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="18" startPosition="166" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914717773" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3044950653914717773" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="3044950653914717773" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
     <scopeInfo nodeId="3044950653914717775" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="3044950653914717773" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3044950653914717773" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914717751" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="16" startPosition="117" endLine="19" endPosition="18">
+    <scopeInfo nodeId="3044950653914717751" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="16" startPosition="125" endLine="19" endPosition="18">
       <varInfo nodeId="3044950653914717753" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3044950653914717773" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
@@ -64,16 +64,16 @@
     <unitInfo nodeId="3044950653914717773" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater_Behavior" />
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/3044950653914725604">
-    <nodeInfo nodeId="3044950653914725583" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914725583" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="16" startPosition="125" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914725598" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914725602" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="18" startPosition="166" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
     <scopeInfo nodeId="3044950653914725606" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3044950653914725604" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914725582" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="16" startPosition="117" endLine="19" endPosition="18">
+    <scopeInfo nodeId="3044950653914725582" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="16" startPosition="125" endLine="19" endPosition="18">
       <varInfo nodeId="3044950653914725584" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">

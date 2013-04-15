@@ -59,7 +59,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;

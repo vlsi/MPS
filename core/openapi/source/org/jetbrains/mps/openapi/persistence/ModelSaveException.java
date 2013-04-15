@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 
 /**
@@ -23,18 +24,20 @@ import org.jetbrains.mps.openapi.model.SModel.Problem;
  */
 public class ModelSaveException extends Exception {
 
+  @NotNull
   private final Iterable<Problem> myProblems;
 
-  public ModelSaveException(String message, Iterable<Problem> problems) {
+  public ModelSaveException(String message, @NotNull Iterable<Problem> problems) {
     super(message);
     myProblems = problems;
   }
 
-  public ModelSaveException(String message, Iterable<Problem> problems, Throwable cause) {
+  public ModelSaveException(String message, @NotNull Iterable<Problem> problems, Throwable cause) {
     super(message, cause);
     myProblems = problems;
   }
 
+  @NotNull
   public Iterable<Problem> getProblems() {
     return myProblems;
   }

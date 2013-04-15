@@ -20,7 +20,8 @@ import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -69,6 +70,7 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.module.events.SModuleListener;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
@@ -89,7 +91,7 @@ import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
 public abstract class AbstractModule implements IModule, EditableSModule, FileSystemListener {
-  private static final Logger LOG = Logger.getLogger(AbstractModule.class);
+  private static final Logger LOG = LogManager.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
   public static final String CLASSES_GEN = "classes_gen";
@@ -508,6 +510,16 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
     // TODO: why java module facet by default?
     types.add(JavaModuleFacet.FACET_TYPE);
+  }
+
+  @Override
+  public void addModuleListener(SModuleListener listener) {
+
+  }
+
+  @Override
+  public void removeModuleListener(SModuleListener listener) {
+
   }
 
   protected ModuleFacetBase setupFacet(ModuleFacetBase facet, Memento memento) {

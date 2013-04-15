@@ -79,6 +79,30 @@
     <unitInfo nodeId="2550657305103524282" fileName="DontSubstiuteByDefault_Test.java" startLine="26" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.DontSubstiuteByDefault_Test$TestBody" />
     <unitInfo nodeId="2550657305103524282" fileName="DontSubstiuteByDefault_Test.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.DontSubstiuteByDefault_Test" />
   </root>
+  <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute)/2870536390420394081">
+    <nodeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="18" startPosition="85" endLine="19" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="19" startPosition="127" endLine="20" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2870536390420394090" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMenuPart_WrapperSubstituteDefaultSelection_Test#()V" />
+    <nodeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddMenuPart_WrapperSubstituteDefaultSelection#()V" />
+    <nodeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="14" startPosition="63" endLine="14" endPosition="63" />
+    <scopeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="18" startPosition="85" endLine="20" endPosition="144" />
+    <scopeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="70">
+      <varInfo nodeId="2870536390420394081" varName="editor" />
+      <varInfo nodeId="2870536390420394081" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstituteDefaultSelection_Test$TestBody" />
+    <unitInfo nodeId="2870536390420394081" fileName="AddMenuPart_WrapperSubstituteDefaultSelection_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstituteDefaultSelection_Test" />
+  </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute)/3213804652589013780">
     <nodeInfo nodeId="3213804652589013780" fileName="AddMenuPart_ConceptSubstitute_Test.java" startLine="20" startPosition="69" endLine="21" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3213804652589013780" fileName="AddMenuPart_ConceptSubstitute_Test.java" startLine="21" startPosition="127" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

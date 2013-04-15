@@ -34,6 +34,7 @@ public class ValidateBlock_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xpt42y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xpt42y_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

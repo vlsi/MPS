@@ -21,12 +21,12 @@ public class ChangeMethodSignature extends BaseRefactoring {
     this.addTransientParameter("myRefactorings");
   }
 
-  public String getUserFriendlyName() {
-    return "Change Method Signature";
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new ChangeMethodSignature_Target();
+  }
+
+  public String getUserFriendlyName() {
+    return "Change Method Signature";
   }
 
   public void refactor(final RefactoringContext refactoringContext) {

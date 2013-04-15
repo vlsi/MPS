@@ -18,20 +18,6 @@
     </projectModules>
     <genConfs />
   </component>
-  <component name="ProjectLibraryManager">
-    <option name="libraries">
-      <map>
-        <entry key="buildMPS">
-          <value>
-            <Library>
-              <option name="name" value="buildMPS" />
-              <option name="path" value="${mps_home}/build" />
-            </Library>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="ProjectModuleManager">
     <modules />
   </component>

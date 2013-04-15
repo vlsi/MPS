@@ -6,17 +6,17 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class IBaseTestBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_y1y7t1_a(editorContext, node);
+    return this.createError_y1y7t1_a(editorContext, node);
   }
 
-  private EditorCell createConstant_y1y7t1_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_y1y7t1_a");
-    editorCell.setDefaultText("");
+  private EditorCell createError_y1y7t1_a(EditorContext editorContext, SNode node) {
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "    ");
+    editorCell.setCellId("Error_y1y7t1_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

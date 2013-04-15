@@ -372,8 +372,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
     </node>
     <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="2843835887910033508">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <property name="name" nameId="tpck.1169194664001" value="AddThrowsToMethods" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     </node>
   </roots>
   <root id="1138168268784">
@@ -6800,7 +6800,7 @@
           <node role="descriptionText" roleId="tpdg.1177336018902" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="1210680322396">
             <property name="text" nameId="tpdg.1196434851095" value="Prints a string to System.out" />
           </node>
-          <node role="iconNode" roleId="tpdg.6400740936063391052" type="tpdg.QueryFunction_SubstituteIconNode" typeId="tpdg.6400740936061763657" id="4824500480023709035">
+          <node role="iconNode" roleId="tpdg.6400740936063391052" type="tpdg.QueryFunction_IconNode" typeId="tpdg.6400740936061763657" id="4824500480023709035">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4824500480023709036">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7927316827900283001">
                 <node role="expression" roleId="tpee.1068580123156" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1219331211447">
@@ -6837,7 +6837,7 @@
           <node role="matchingText" roleId="tpdg.1177336013307" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="1210681211694">
             <property name="text" nameId="tpdg.1196434851095" value="serr" />
           </node>
-          <node role="iconNode" roleId="tpdg.6400740936063391052" type="tpdg.QueryFunction_SubstituteIconNode" typeId="tpdg.6400740936061763657" id="4824500480023774112">
+          <node role="iconNode" roleId="tpdg.6400740936063391052" type="tpdg.QueryFunction_IconNode" typeId="tpdg.6400740936061763657" id="4824500480023774112">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4824500480023774113">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7927316827902199403">
                 <node role="expression" roleId="tpee.1068580123156" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="7927316827902199404">
@@ -20011,8 +20011,8 @@
   </root>
   <root id="2843835887910033508">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="2843835887910033774">
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_4_RTransform" />
       <property name="description" nameId="tpdg.1158952484319" value="Add the throws clause" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_4_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
       <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="2843835887910103865">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2843835887910103866">
@@ -20054,8 +20054,8 @@
       </node>
     </node>
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="2843835887910465715">
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_5_RTransform" />
       <property name="side" nameId="tpdg.1215605257730" value="left" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_5_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="2843835887910608746">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />

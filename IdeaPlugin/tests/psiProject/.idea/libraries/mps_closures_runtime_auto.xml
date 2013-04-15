@@ -3,7 +3,9 @@
     <MPS_MODULE_XML>
       <root url="jar://$mps.plugin.jetbrains.mps.core$/lib/mps-closures.jar!/modules/closures.runtime/closures.runtime.msd" />
     </MPS_MODULE_XML>
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$mps.plugin.jetbrains.mps.core$/lib/mps-closures.jar!/" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>

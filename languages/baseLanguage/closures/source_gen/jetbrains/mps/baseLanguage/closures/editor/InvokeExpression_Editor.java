@@ -30,6 +30,7 @@ public class InvokeExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_r01tim_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_r01tim_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_r01tim_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r01tim_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_r01tim_c0(editorContext, node));

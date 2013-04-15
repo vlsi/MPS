@@ -24,7 +24,8 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
@@ -35,6 +36,7 @@ import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -42,7 +44,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -51,7 +53,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
-  private static Logger LOG = Logger.getLogger(MPSModelsFastFindSupport.class);
+  private static Logger LOG = LogManager.getLogger(MPSModelsFastFindSupport.class);
   private final Set<String> indexedFileExtensions = new HashSet<String>(Arrays.asList(MPSExtentions.MODEL, MPSExtentions.MODEL_BINARY));
 
   @Override
@@ -84,14 +86,14 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
   }
 
   @Override
-  public void findInstances(Collection<SModel> scope, Set<SConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
-    MultiMap<SModel, SConcept> candidates = findCandidates(scope, concepts, processedConsumer, new Mapper<SConcept, String>() {
+  public void findInstances(Collection<SModel> scope, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
+    MultiMap<SModel, SAbstractConcept> candidates = findCandidates(scope, concepts, processedConsumer, new Mapper<SAbstractConcept, String>() {
       @Override
-      public String value(SConcept key) {
+      public String value(SAbstractConcept key) {
         return key.getName();
       }
     });
-    for (Entry<SModel, Collection<SConcept>> candidate : candidates.entrySet()) {
+    for (Entry<SModel, Collection<SAbstractConcept>> candidate : candidates.entrySet()) {
       FindUsagesManager.collectInstances(candidate.getKey(), candidate.getValue(), consumer);
     }
   }
@@ -132,7 +134,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
 
       VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
       if (vf == null) {
-        LOG.warning("Model " + sm.getModelName() + ": virtual file not found for model file. Model file: " + modelFile.getPath());
+        LOG.warn("Model " + sm.getModelName() + ": virtual file not found for model file. Model file: " + modelFile.getPath());
         continue;
       }
       processedModels.consume(sm);

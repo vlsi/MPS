@@ -22,7 +22,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class StructureModificationProcessor {
   private ModelLinkMap myModelMap;
@@ -113,7 +115,9 @@ lfind:
         }
       }
       // we have not found next data: loop detected! 
-      LOG.error("Loop found in applicable refactorings for " + myModel + "");
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Loop found in applicable refactorings for " + myModel + "");
+      }
       break;
     }
     return result;
@@ -155,7 +159,7 @@ lfind:
     return !("false".equals(System.getProperty("mps.playRefactorings")));
   }
 
-  private static Logger LOG = Logger.getLogger(StructureModificationProcessor.class);
+  protected static Logger LOG = LogManager.getLogger(StructureModificationProcessor.class);
 
   private static <T> T as_etzqsh_a0a0a1a5(Object o, Class<T> type) {
     return (type.isInstance(o) ?

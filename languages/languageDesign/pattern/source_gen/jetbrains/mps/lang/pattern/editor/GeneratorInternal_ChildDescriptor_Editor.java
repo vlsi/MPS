@@ -28,6 +28,7 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_s0kiw8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_s0kiw8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_s0kiw8_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_s0kiw8_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_s0kiw8_c0(editorContext, node));

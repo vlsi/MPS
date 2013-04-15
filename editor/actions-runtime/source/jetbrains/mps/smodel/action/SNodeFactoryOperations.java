@@ -24,13 +24,14 @@ import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.m
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.apache.log4j.LogManager;
 
 /**
  * Evgeny Gryaznov, 1/4/11
  */
 public class SNodeFactoryOperations {
 
-  private static final Logger LOG = Logger.getLogger(SNodeFactoryOperations.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SNodeFactoryOperations.class));
 
   public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
     if (conceptFqName == null) return null;

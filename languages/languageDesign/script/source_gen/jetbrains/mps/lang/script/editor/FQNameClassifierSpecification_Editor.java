@@ -28,6 +28,7 @@ public class FQNameClassifierSpecification_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o4x51s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o4x51s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_o4x51s_a0(editorContext, node));
     return editorCell;
   }
@@ -53,6 +54,7 @@ public class FQNameClassifierSpecification_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o4x51s_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o4x51s_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_o4x51s_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_o4x51s_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o4x51s_c0(editorContext, node));

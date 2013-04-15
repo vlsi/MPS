@@ -46,75 +46,79 @@
     <unitInfo nodeId="2692169166603127766" fileName="GdbDebuggerSettings.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.nanoc.debug.GdbDebuggerSettings" />
   </root>
   <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/3990508698139426393">
-    <nodeInfo nodeId="3990508698139426409" fileName="CppGDBCreator.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugSession" />
-    <nodeInfo nodeId="7125917778320084498" fileName="CppGDBCreator.java" startLine="27" startPosition="49" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7125917778320084503" fileName="CppGDBCreator.java" startLine="32" startPosition="146" endLine="33" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7125917778320114285" fileName="CppGDBCreator.java" startLine="34" startPosition="53" endLine="35" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2234513086807208653" fileName="CppGDBCreator.java" startLine="36" startPosition="5" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7125917778320084485" fileName="CppGDBCreator.java" startLine="37" startPosition="0" endLine="38" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7125917778320084495" fileName="CppGDBCreator.java" startLine="38" startPosition="82" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3990508698139426569" fileName="CppGDBCreator.java" startLine="39" startPosition="0" endLine="40" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139426576" fileName="CppGDBCreator.java" startLine="40" startPosition="99" endLine="41" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125917778320157530" fileName="CppGDBCreator.java" startLine="45" startPosition="13" endLine="46" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7125917778320157551" fileName="CppGDBCreator.java" startLine="46" startPosition="103" endLine="47" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125917778320157559" fileName="CppGDBCreator.java" startLine="47" startPosition="50" endLine="48" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125917778320157547" fileName="CppGDBCreator.java" startLine="49" startPosition="31" endLine="50" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125917778320157503" fileName="CppGDBCreator.java" startLine="53" startPosition="7" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7125917778320157502" fileName="CppGDBCreator.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7125917778320084320" fileName="CppGDBCreator.java" startLine="55" startPosition="0" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1567499529234594324" fileName="CppGDBCreator.java" startLine="60" startPosition="51" endLine="61" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1567499529234594348" fileName="CppGDBCreator.java" startLine="62" startPosition="55" endLine="63" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1567499529234585849" fileName="CppGDBCreator.java" startLine="64" startPosition="7" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1567499529234594355" fileName="CppGDBCreator.java" startLine="66" startPosition="12" endLine="67" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3990508698139426393" fileName="CppGDBCreator.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3990508698139426436" fileName="CppGDBCreator.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CppGDBCreator#()V" />
-    <nodeInfo nodeId="1567499529234585842" fileName="CppGDBCreator.java" startLine="66" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7125917778320084510" fileName="CppGDBCreator.java" startLine="33" startPosition="70" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1567499529234594335" fileName="CppGDBCreator.java" startLine="61" startPosition="91" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139426452" fileName="CppGDBCreator.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugSession#()Ljetbrains/mps/debug/api/AbstractDebugSession;" />
-    <nodeInfo nodeId="7125917778320157539" fileName="CppGDBCreator.java" startLine="44" startPosition="64" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1567499529234585838" fileName="CppGDBCreator.java" startLine="59" startPosition="110" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139426590" fileName="CppGDBCreator.java" startLine="43" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processTerminated#(Lcom/intellij/execution/process/ProcessHandler;)V" />
-    <nodeInfo nodeId="1567499529234585832" fileName="CppGDBCreator.java" startLine="59" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createLocalConnectionSettings#(Lcom/intellij/execution/configurations/RunProfileState;)Ljetbrains/mps/debug/api/IDebuggerSettings;" />
-    <nodeInfo nodeId="3990508698139426581" fileName="CppGDBCreator.java" startLine="41" startPosition="65" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125917778320084306" fileName="CppGDBCreator.java" startLine="31" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startSession#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;Lcom/intellij/execution/configurations/RunProfileState;Lcom/intellij/openapi/project/Project;)Lcom/intellij/execution/ExecutionResult;" />
-    <scopeInfo nodeId="3990508698139426443" fileName="CppGDBCreator.java" startLine="23" startPosition="26" endLine="23" endPosition="26" />
-    <scopeInfo nodeId="3990508698139426455" fileName="CppGDBCreator.java" startLine="27" startPosition="49" endLine="28" endPosition="26" />
-    <scopeInfo nodeId="7125917778320084511" fileName="CppGDBCreator.java" startLine="34" startPosition="53" endLine="35" endPosition="77" />
-    <scopeInfo nodeId="7125917778320157542" fileName="CppGDBCreator.java" startLine="49" startPosition="0" endLine="50" endPosition="27">
-      <varInfo nodeId="7125917778320157543" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="7125917778320157545" fileName="CppGDBCreator.java" startLine="49" startPosition="31" endLine="50" endPosition="27" />
-    <scopeInfo nodeId="1567499529234594336" fileName="CppGDBCreator.java" startLine="62" startPosition="55" endLine="63" endPosition="79" />
-    <scopeInfo nodeId="1567499529234585843" fileName="CppGDBCreator.java" startLine="66" startPosition="12" endLine="67" endPosition="64" />
-    <scopeInfo nodeId="3990508698139426436" fileName="CppGDBCreator.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="7125917778320157540" fileName="CppGDBCreator.java" startLine="45" startPosition="13" endLine="48" endPosition="37">
+    <nodeInfo nodeId="3990508698139426409" fileName="CppGDBCreator.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugSession" />
+    <nodeInfo nodeId="7125917778320084498" fileName="CppGDBCreator.java" startLine="29" startPosition="49" endLine="30" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7125917778320084503" fileName="CppGDBCreator.java" startLine="34" startPosition="146" endLine="35" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7125917778320114285" fileName="CppGDBCreator.java" startLine="36" startPosition="53" endLine="37" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2234513086807208653" fileName="CppGDBCreator.java" startLine="38" startPosition="5" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7125917778320084485" fileName="CppGDBCreator.java" startLine="39" startPosition="0" endLine="40" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7125917778320084495" fileName="CppGDBCreator.java" startLine="40" startPosition="82" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3990508698139426569" fileName="CppGDBCreator.java" startLine="41" startPosition="0" endLine="42" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139426576" fileName="CppGDBCreator.java" startLine="42" startPosition="99" endLine="43" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125917778320157530" fileName="CppGDBCreator.java" startLine="47" startPosition="13" endLine="48" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7125917778320157551" fileName="CppGDBCreator.java" startLine="48" startPosition="103" endLine="49" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125917778320157559" fileName="CppGDBCreator.java" startLine="49" startPosition="50" endLine="50" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125917778320157547" fileName="CppGDBCreator.java" startLine="52" startPosition="49" endLine="53" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125917778320157503" fileName="CppGDBCreator.java" startLine="57" startPosition="7" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7125917778320157502" fileName="CppGDBCreator.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7125917778320084320" fileName="CppGDBCreator.java" startLine="59" startPosition="0" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1567499529234594324" fileName="CppGDBCreator.java" startLine="64" startPosition="51" endLine="65" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1567499529234594348" fileName="CppGDBCreator.java" startLine="66" startPosition="55" endLine="67" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1567499529234585849" fileName="CppGDBCreator.java" startLine="68" startPosition="7" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1567499529234594355" fileName="CppGDBCreator.java" startLine="70" startPosition="12" endLine="71" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3990508698139426393" fileName="CppGDBCreator.java" startLine="75" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3990508698139426436" fileName="CppGDBCreator.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CppGDBCreator#()V" />
+    <nodeInfo nodeId="1567499529234585842" fileName="CppGDBCreator.java" startLine="70" startPosition="10" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7125917778320084510" fileName="CppGDBCreator.java" startLine="35" startPosition="70" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7125917778320157547" fileName="CppGDBCreator.java" startLine="51" startPosition="31" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7125917778320157547" fileName="CppGDBCreator.java" startLine="51" startPosition="31" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1567499529234594335" fileName="CppGDBCreator.java" startLine="65" startPosition="91" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3990508698139426452" fileName="CppGDBCreator.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugSession#()Ljetbrains/mps/debug/api/AbstractDebugSession;" />
+    <nodeInfo nodeId="7125917778320157539" fileName="CppGDBCreator.java" startLine="46" startPosition="64" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1567499529234585838" fileName="CppGDBCreator.java" startLine="63" startPosition="110" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1567499529234585832" fileName="CppGDBCreator.java" startLine="63" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createLocalConnectionSettings#(Lcom/intellij/execution/configurations/RunProfileState;)Ljetbrains/mps/debug/api/IDebuggerSettings;" />
+    <nodeInfo nodeId="3990508698139426590" fileName="CppGDBCreator.java" startLine="45" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processTerminated#(Lcom/intellij/execution/process/ProcessHandler;)V" />
+    <nodeInfo nodeId="3990508698139426581" fileName="CppGDBCreator.java" startLine="43" startPosition="65" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125917778320084306" fileName="CppGDBCreator.java" startLine="33" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startSession#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;Lcom/intellij/execution/configurations/RunProfileState;Lcom/intellij/openapi/project/Project;)Lcom/intellij/execution/ExecutionResult;" />
+    <scopeInfo nodeId="3990508698139426443" fileName="CppGDBCreator.java" startLine="25" startPosition="26" endLine="25" endPosition="26" />
+    <scopeInfo nodeId="3990508698139426455" fileName="CppGDBCreator.java" startLine="29" startPosition="49" endLine="30" endPosition="26" />
+    <scopeInfo nodeId="7125917778320084511" fileName="CppGDBCreator.java" startLine="36" startPosition="53" endLine="37" endPosition="77" />
+    <scopeInfo nodeId="7125917778320157547" fileName="CppGDBCreator.java" startLine="52" startPosition="49" endLine="53" endPosition="29" />
+    <scopeInfo nodeId="1567499529234594336" fileName="CppGDBCreator.java" startLine="66" startPosition="55" endLine="67" endPosition="79" />
+    <scopeInfo nodeId="1567499529234585843" fileName="CppGDBCreator.java" startLine="70" startPosition="12" endLine="71" endPosition="64" />
+    <scopeInfo nodeId="3990508698139426436" fileName="CppGDBCreator.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7125917778320157540" fileName="CppGDBCreator.java" startLine="47" startPosition="13" endLine="50" endPosition="37">
       <varInfo nodeId="7125917778320157531" varName="outputStreamWriter" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139426452" fileName="CppGDBCreator.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1567499529234585848" fileName="CppGDBCreator.java" startLine="60" startPosition="51" endLine="65" endPosition="22">
+    <scopeInfo nodeId="7125917778320157542" fileName="CppGDBCreator.java" startLine="51" startPosition="0" endLine="54" endPosition="11">
+      <varInfo nodeId="7125917778320157543" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7125917778320157545" fileName="CppGDBCreator.java" startLine="51" startPosition="31" endLine="54" endPosition="11" />
+    <scopeInfo nodeId="7125917778320157547" fileName="CppGDBCreator.java" startLine="51" startPosition="31" endLine="54" endPosition="11" />
+    <scopeInfo nodeId="3990508698139426452" fileName="CppGDBCreator.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1567499529234585848" fileName="CppGDBCreator.java" startLine="64" startPosition="51" endLine="69" endPosition="22">
       <varInfo nodeId="1567499529234594325" varName="settings" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139426763" fileName="CppGDBCreator.java" startLine="44" startPosition="64" endLine="51" endPosition="9" />
-    <scopeInfo nodeId="1567499529234585837" fileName="CppGDBCreator.java" startLine="59" startPosition="110" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="3990508698139426590" fileName="CppGDBCreator.java" startLine="43" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="3990508698139426593" varName="gdbProcess" />
-    </scopeInfo>
-    <scopeInfo nodeId="1567499529234585832" fileName="CppGDBCreator.java" startLine="59" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="3990508698139426763" fileName="CppGDBCreator.java" startLine="46" startPosition="64" endLine="55" endPosition="9" />
+    <scopeInfo nodeId="1567499529234585837" fileName="CppGDBCreator.java" startLine="63" startPosition="110" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="1567499529234585832" fileName="CppGDBCreator.java" startLine="63" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1567499529234585835" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="7125917778320084318" fileName="CppGDBCreator.java" startLine="32" startPosition="146" endLine="56" endPosition="18">
+    <scopeInfo nodeId="3990508698139426590" fileName="CppGDBCreator.java" startLine="45" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="3990508698139426593" varName="gdbProcess" />
+    </scopeInfo>
+    <scopeInfo nodeId="7125917778320084318" fileName="CppGDBCreator.java" startLine="34" startPosition="146" endLine="60" endPosition="18">
       <varInfo nodeId="7125917778320084486" varName="result" />
       <varInfo nodeId="7125917778320084504" varName="settings" />
     </scopeInfo>
-    <scopeInfo nodeId="7125917778320084306" fileName="CppGDBCreator.java" startLine="31" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="7125917778320084306" fileName="CppGDBCreator.java" startLine="33" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="7125917778320084309" varName="executor" />
       <varInfo nodeId="7125917778320084315" varName="project" />
       <varInfo nodeId="7125917778320084311" varName="runner" />
       <varInfo nodeId="7125917778320084313" varName="state" />
     </scopeInfo>
-    <unitInfo nodeId="3990508698139426589" fileName="CppGDBCreator.java" startLine="42" startPosition="62" endLine="53" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppGDBCreator$1" />
-    <unitInfo nodeId="3990508698139426393" fileName="CppGDBCreator.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppGDBCreator" />
+    <unitInfo nodeId="3990508698139426589" fileName="CppGDBCreator.java" startLine="44" startPosition="62" endLine="57" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppGDBCreator$1" />
+    <unitInfo nodeId="3990508698139426393" fileName="CppGDBCreator.java" startLine="22" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppGDBCreator" />
   </root>
   <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/3990508698139427192">
     <nodeInfo nodeId="3990508698139427194" fileName="ProgramsLocationUtil.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourGdbLocation" />
@@ -502,29 +506,33 @@
     <unitInfo nodeId="4781887771024752102" fileName="GdbProcessListener.java" startLine="22" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.nanoc.debug.GdbProcessListener" />
   </root>
   <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/7125917778320166850">
-    <nodeInfo nodeId="7125917778320166866" fileName="ProcessUtil.java" startLine="14" startPosition="9" endLine="15" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7125917778320166874" fileName="ProcessUtil.java" startLine="15" startPosition="96" endLine="16" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125917778320166879" fileName="ProcessUtil.java" startLine="16" startPosition="38" endLine="17" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125917778320166887" fileName="ProcessUtil.java" startLine="18" startPosition="27" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7125917778320166850" fileName="ProcessUtil.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="7125917778320166852" fileName="ProcessUtil.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProcessUtil#()V" />
-    <nodeInfo nodeId="7125917778320166864" fileName="ProcessUtil.java" startLine="13" startPosition="74" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7125917778320166856" fileName="ProcessUtil.java" startLine="13" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="inputWithFlush#(Lcom/intellij/execution/process/ProcessHandler;Ljava/lang/String;)V" />
-    <scopeInfo nodeId="7125917778320166855" fileName="ProcessUtil.java" startLine="10" startPosition="24" endLine="10" endPosition="24" />
-    <scopeInfo nodeId="7125917778320166883" fileName="ProcessUtil.java" startLine="18" startPosition="0" endLine="19" endPosition="23">
-      <varInfo nodeId="7125917778320166884" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="7125917778320166886" fileName="ProcessUtil.java" startLine="18" startPosition="27" endLine="19" endPosition="23" />
-    <scopeInfo nodeId="7125917778320166852" fileName="ProcessUtil.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="7125917778320166865" fileName="ProcessUtil.java" startLine="14" startPosition="9" endLine="17" endPosition="33">
+    <nodeInfo nodeId="7125917778320166866" fileName="ProcessUtil.java" startLine="16" startPosition="9" endLine="17" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7125917778320166874" fileName="ProcessUtil.java" startLine="17" startPosition="96" endLine="18" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125917778320166879" fileName="ProcessUtil.java" startLine="18" startPosition="38" endLine="19" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125917778320166887" fileName="ProcessUtil.java" startLine="21" startPosition="45" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7125917778320166850" fileName="ProcessUtil.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7125917778320166852" fileName="ProcessUtil.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProcessUtil#()V" />
+    <nodeInfo nodeId="7125917778320166887" fileName="ProcessUtil.java" startLine="20" startPosition="27" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7125917778320166887" fileName="ProcessUtil.java" startLine="20" startPosition="27" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7125917778320166864" fileName="ProcessUtil.java" startLine="15" startPosition="74" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7125917778320166856" fileName="ProcessUtil.java" startLine="15" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="inputWithFlush#(Lcom/intellij/execution/process/ProcessHandler;Ljava/lang/String;)V" />
+    <scopeInfo nodeId="7125917778320166855" fileName="ProcessUtil.java" startLine="12" startPosition="24" endLine="12" endPosition="24" />
+    <scopeInfo nodeId="7125917778320166887" fileName="ProcessUtil.java" startLine="21" startPosition="45" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="7125917778320166852" fileName="ProcessUtil.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="7125917778320166865" fileName="ProcessUtil.java" startLine="16" startPosition="9" endLine="19" endPosition="33">
       <varInfo nodeId="7125917778320166867" varName="outputStreamWriter" />
     </scopeInfo>
-    <scopeInfo nodeId="7125917778320166863" fileName="ProcessUtil.java" startLine="13" startPosition="74" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="7125917778320166856" fileName="ProcessUtil.java" startLine="13" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="7125917778320166883" fileName="ProcessUtil.java" startLine="20" startPosition="0" endLine="23" endPosition="7">
+      <varInfo nodeId="7125917778320166884" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7125917778320166886" fileName="ProcessUtil.java" startLine="20" startPosition="27" endLine="23" endPosition="7" />
+    <scopeInfo nodeId="7125917778320166887" fileName="ProcessUtil.java" startLine="20" startPosition="27" endLine="23" endPosition="7" />
+    <scopeInfo nodeId="7125917778320166863" fileName="ProcessUtil.java" startLine="15" startPosition="74" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="7125917778320166856" fileName="ProcessUtil.java" startLine="15" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="7125917778320166857" varName="process" />
       <varInfo nodeId="7125917778320166859" varName="text" />
     </scopeInfo>
-    <unitInfo nodeId="7125917778320166850" fileName="ProcessUtil.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.debug.ProcessUtil" />
+    <unitInfo nodeId="7125917778320166850" fileName="ProcessUtil.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.nanoc.debug.ProcessUtil" />
   </root>
 </debugInfo>
 

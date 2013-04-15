@@ -31,7 +31,8 @@ import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.ide.make.StartupModuleMaker;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.plugins.PluginContributor;
@@ -45,7 +46,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -62,7 +62,7 @@ import java.util.*;
   }
 )
 public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
-  private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
+  private static final Logger LOG = LogManager.getLogger(ProjectPluginManager.class);
 
   private EditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
 

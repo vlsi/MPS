@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;

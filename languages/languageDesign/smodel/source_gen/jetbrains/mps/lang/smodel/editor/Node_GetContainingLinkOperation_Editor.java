@@ -28,12 +28,14 @@ public class Node_GetContainingLinkOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_5d67ir_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAlias_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_5d67ir_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5d67ir_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5d67ir_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5d67ir_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5d67ir_c0(editorContext, node));

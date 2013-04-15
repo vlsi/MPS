@@ -28,6 +28,7 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
   private EditorCell createCollection_vh2hfk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vh2hfk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vh2hfk_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vh2hfk_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vh2hfk_c0(editorContext, node));

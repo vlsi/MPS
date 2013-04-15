@@ -13,13 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelDevKitEvent;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelFileChangedEvent;
+import jetbrains.mps.smodel.event.SModelImportEvent;
+import jetbrains.mps.smodel.event.SModelLanguageEvent;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class EventsCollector {
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
@@ -129,6 +144,10 @@ public class EventsCollector {
       @Override
       public void referenceRemoved(SModelReferenceEvent event) {
         listenerInvoked(event);
+      }
+
+      @Override
+      public void problemsUpdated(SModel sm) {
       }
 
       @Override

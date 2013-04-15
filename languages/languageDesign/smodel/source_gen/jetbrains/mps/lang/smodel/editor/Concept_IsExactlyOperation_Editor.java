@@ -25,6 +25,7 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xyy14o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xyy14o_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_xyy14o_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xyy14o_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_xyy14o_c0(editorContext, node));

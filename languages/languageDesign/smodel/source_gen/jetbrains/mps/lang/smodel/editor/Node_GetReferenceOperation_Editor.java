@@ -31,6 +31,7 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_utw2vv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_utw2vv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_utw2vv_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_utw2vv_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_utw2vv_c0(editorContext, node));
@@ -93,6 +94,7 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_utw2vv_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_utw2vv_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_utw2vv_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_utw2vv_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_utw2vv_c0(editorContext, node));

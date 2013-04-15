@@ -27,6 +27,7 @@ public class AssertFalse_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_uozwif_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uozwif_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_uozwif_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_uozwif_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_uozwif_c0(editorContext, node));

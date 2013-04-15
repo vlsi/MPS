@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;

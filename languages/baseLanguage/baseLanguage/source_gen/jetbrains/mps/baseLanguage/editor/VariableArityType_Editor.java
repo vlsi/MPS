@@ -21,6 +21,7 @@ public class VariableArityType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kucx4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kucx4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_kucx4_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kucx4_b0(editorContext, node));
     return editorCell;

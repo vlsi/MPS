@@ -30,6 +30,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
   private EditorCell createCollection_r514zz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_r514zz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_r514zz_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_r514zz_b0(editorContext, node));
     return editorCell;
@@ -57,8 +58,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createIndentCell_r514zz_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_r514zz_b1a(EditorContext editorContext, SNode node) {
@@ -154,8 +155,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createIndentCell_r514zz_a2b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_r514zz_b2b1a(EditorContext editorContext, SNode node) {
@@ -197,8 +198,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createIndentCell_r514zz_a4b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_r514zz_b4b1a(EditorContext editorContext, SNode node) {
@@ -240,8 +241,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createIndentCell_r514zz_a6b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_r514zz_b6b1a(EditorContext editorContext, SNode node) {
@@ -319,8 +320,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createIndentCell_r514zz_a1h1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_r514zz_b1h1b0(EditorContext editorContext, SNode node) {
@@ -362,8 +363,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createIndentCell_r514zz_a9b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_r514zz_b9b1a(EditorContext editorContext, SNode node) {
@@ -405,8 +406,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createIndentCell_r514zz_a11b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_r514zz_b11b1a(EditorContext editorContext, SNode node) {
@@ -448,8 +449,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createIndentCell_r514zz_a31b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_r514zz_b31b1a(EditorContext editorContext, SNode node) {

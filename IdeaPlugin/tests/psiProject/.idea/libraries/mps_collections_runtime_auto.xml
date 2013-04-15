@@ -3,7 +3,9 @@
     <MPS_MODULE_XML>
       <root url="jar://$mps.plugin.jetbrains.mps.core$/lib/mps-collections.jar!/modules/collections.runtime/collections.runtime.msd" />
     </MPS_MODULE_XML>
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$mps.plugin.jetbrains.mps.core$/lib/mps-collections.jar!/" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>

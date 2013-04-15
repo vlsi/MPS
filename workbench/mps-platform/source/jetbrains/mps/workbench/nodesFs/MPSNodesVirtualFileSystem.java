@@ -57,13 +57,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
-
-  private static final Pattern NODE_PATH = Pattern.compile("(.*)/(.*)");
-  private static final Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 
   public static MPSNodesVirtualFileSystem getInstance() {
     return ApplicationManager.getApplication().getComponent(MPSNodesVirtualFileSystem.class);
@@ -143,20 +139,30 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
-        // todo: shouldn't parse anything here. just call serialize/deserialize methods
-        // todo: maybe use two different protocols for nodes and models?
-        String modelOrNodePath = path;
-
-        Matcher modelRef = MODEL_UID_PATTERN.matcher(modelOrNodePath);
-        Matcher nodePath = NODE_PATH.matcher(modelOrNodePath);
-        if (!nodePath.matches() && !modelRef.matches()) return null;
-
-        if (nodePath.matches()) {
-          return getFileFor(SNodePointer.deserialize(path).resolve(MPSModuleRepository.getInstance()));
-        } else {
-          final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelRef.group());
-          return getFileFor(modelReference);
+        try {
+          if (path.startsWith(MPSNodeVirtualFile.NODE_PREFIX)) {
+            SNodeReference resolved = SNodePointer.deserialize(path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
+            if (resolved == null) {
+              return null;
+            }
+            SNode node = resolved.resolve(MPSModuleRepository.getInstance());
+            if (node == null) {
+              return null;
+            }
+            return getFileFor(resolved);
+          } else if (path.startsWith(MPSModelVirtualFile.MODEL_PREFIX)) {
+            final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(
+                path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
+            SModel model = modelReference.resolve(MPSModuleRepository.getInstance());
+            if (model == null) {
+              return null;
+            }
+            return getFileFor(modelReference);
+          }
+        } catch (IllegalArgumentException e) {
+          // ignore, parse model ref exception
         }
+        return null;
       }
     });
   }

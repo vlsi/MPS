@@ -34,6 +34,7 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7ntfj2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7ntfj2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_7ntfj2_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7ntfj2_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7ntfj2_c0(editorContext, node));

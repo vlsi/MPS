@@ -61,7 +61,7 @@ public class EditorHighlighter implements EditorMessageOwner {
                 return;
               }
               final SModel model = editedNode.getModel();
-              if (model instanceof EditableSModel && !(((EditableSModel) model).isReadOnly())) {
+              if (model instanceof EditableSModel && !(model.isReadOnly())) {
                 myCurrentDifference = CurrentDifferenceRegistry.getInstance(project).getCurrentDifference((EditableSModel) model);
                 myListener = new EditorHighlighter.MyCurrentDifferenceListener();
               }

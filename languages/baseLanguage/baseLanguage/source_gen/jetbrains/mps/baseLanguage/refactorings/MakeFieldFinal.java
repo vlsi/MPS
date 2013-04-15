@@ -15,12 +15,12 @@ public class MakeFieldFinal extends BaseRefactoring {
   public MakeFieldFinal() {
   }
 
-  public String getUserFriendlyName() {
-    return "Make Field Final";
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MakeFieldFinal_Target();
+  }
+
+  public String getUserFriendlyName() {
+    return "Make Field Final";
   }
 
   public void refactor(final RefactoringContext refactoringContext) {

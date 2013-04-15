@@ -16,6 +16,7 @@ public class ParentScope_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ys0a8x_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parent scope");
     editorCell.setCellId("Constant_ys0a8x_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

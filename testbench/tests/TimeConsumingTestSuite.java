@@ -22,14 +22,7 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
-@SuiteClassSymbols({
-  "jetbrains.mps.BrokenReferencesTestTest",
-  "jetbrains.mps.build.ant.TeamCityMesageFormatTest",
-  "jetbrains.mps.build.ant.WhatToDoSerializationConsistencyTest",
-  "jetbrains.mps.generator.test.IncrementalGenerationTest",
-  "jetbrains.mps.generator.test.ParallelGenerationMeasuringTest",
-  "jetbrains.mps.generator.test.ParallelPoolTest",
-  "jetbrains.mps.PersistenceTest"})
+@SuiteClassSymbols({"jetbrains.mps.PersistenceTest"})
 @RunWith(WatchingSuite.class)
 public class TimeConsumingTestSuite {
   @BeforeClass

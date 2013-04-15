@@ -17,7 +17,8 @@ package jetbrains.mps.ide.devkit.util;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeleteGeneratorHelper {
-  private static final Logger LOG = Logger.getLogger(DeleteGeneratorHelper.class);
+  private static final Logger LOG = LogManager.getLogger(DeleteGeneratorHelper.class);
 
   public static void deleteGenerator(Project project, Language sourceLanguage, Generator generator, GeneratorDescriptor generatorDescriptor, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {

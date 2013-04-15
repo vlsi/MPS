@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;

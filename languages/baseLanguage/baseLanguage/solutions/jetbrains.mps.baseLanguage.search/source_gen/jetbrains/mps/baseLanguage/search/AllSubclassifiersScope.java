@@ -12,7 +12,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
 import java.util.ArrayList;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;

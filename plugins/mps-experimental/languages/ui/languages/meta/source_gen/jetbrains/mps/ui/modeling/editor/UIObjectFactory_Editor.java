@@ -34,6 +34,7 @@ public class UIObjectFactory_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_d4wil6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_d4wil6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_d4wil6_a0(editorContext, node));
     return editorCell;
   }
@@ -165,8 +166,8 @@ public class UIObjectFactory_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_d4wil6_a1c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_d4wil6_b1c0a(EditorContext editorContext, SNode node) {

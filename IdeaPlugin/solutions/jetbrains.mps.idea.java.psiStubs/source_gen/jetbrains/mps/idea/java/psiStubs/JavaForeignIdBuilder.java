@@ -9,11 +9,21 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
+import org.jetbrains.mps.openapi.module.SModule;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleManager;
+import jetbrains.mps.idea.core.facet.MPSFacet;
+import com.intellij.facet.FacetManager;
+import jetbrains.mps.idea.core.facet.MPSFacetType;
+import com.intellij.util.xml.ModuleContentRootSearchScope;
+import jetbrains.mps.ide.java.sourceStubs.Util;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
-import com.intellij.psi.PsiNamedElement;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiField;
+import com.intellij.psi.PsiNamedElement;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiTypeElement;
@@ -65,35 +75,44 @@ public class JavaForeignIdBuilder {
     }
     String packageName = ((PsiJavaFile) file).getPackageName();
 
-    return computeModelReference(packageName);
+    // we want to know mps module id 
+    SModule mpsModule = null;
+    Project project = element.getProject();
+    VirtualFile vfile = file.getVirtualFile();
+    // MPS-17704: there was situation when an element with null virtual file came from MPSReferenceSearch
+    // element was the target of search
+    if (vfile == null) {
+      return null;
+    }
+    for (Module module : ModuleManager.getInstance(project).getModules()) {
+      MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
+      if (facet == null) {
+        continue;
+      }
+      if (new ModuleContentRootSearchScope(module).contains(vfile)) {
+        mpsModule = facet.getSolution();
+        break;
+      }
+    }
+
+    if (mpsModule == null) {
+      return null;
+    }
+    return Util.makeModelReference(packageName, mpsModule);
   }
 
 
 
-  /*package*/ static jetbrains.mps.smodel.SModelReference computeModelReference(String packageName) {
+  /*package*/ static jetbrains.mps.smodel.SModelReference computeModelReference(String packageName, String mpsModuleId) {
     String stereotype = "java_stub";
     if (packageName.length() == 0) {
       packageName = "<default package>";
     }
 
     SModelFqName fqName = new SModelFqName(packageName, stereotype);
-    SModelId modelId = SModelId.foreign(fqName.getStereotype(), fqName.getLongName());
+    SModelId modelId = SModelId.foreign(fqName.getStereotype(), mpsModuleId, fqName.getLongName());
 
     return new jetbrains.mps.smodel.SModelReference(fqName, modelId);
-  }
-
-
-
-  public static SNodeId.Foreign computeNodeId(PsiElement element, String newName) {
-    SNodeId.Foreign nodeId = computeNodeId(element);
-    if (nodeId == null) {
-      return null;
-    }
-    // FIXME it's dumb 
-    String nodeIdStr = nodeId.toString();
-    nodeIdStr = nodeIdStr.replace(((PsiNamedElement) element).getName(), newName);
-    nodeId = new SNodeId.Foreign(nodeIdStr);
-    return nodeId;
   }
 
 

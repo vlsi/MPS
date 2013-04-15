@@ -13,12 +13,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class OverrideMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,7 +49,9 @@ public class OverrideMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "OverrideMethod", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "OverrideMethod", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -81,9 +85,11 @@ public class OverrideMethod_Action extends BaseAction {
       final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
       new OverrideImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true).run();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "OverrideMethod", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "OverrideMethod", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(OverrideMethod_Action.class);
+  protected static Logger LOG = LogManager.getLogger(OverrideMethod_Action.class);
 }

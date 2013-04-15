@@ -32,7 +32,6 @@
       <modulePath path="${project}/build/solution/jetbrains.mps.ide.build.msd" folder="build" />
       <modulePath path="${project}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" folder="core.analyzers" />
       <modulePath path="${project}/core/analyzers/solutions/sandbox/jetbrains.mps.lang.dataFlow.analyzers.sandbox.msd" folder="core.analyzers" />
-      <modulePath path="${project}/core/dependencies/jetbrains.mps.dependencies.msd" folder="core" />
       <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" folder="devkits" />
       <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" folder="devkits" />
       <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.language-design.devkit" folder="devkits" />
@@ -191,6 +190,7 @@
       <modulePath path="${project}/languages/languageDesign/typesystem/jetbrains.mps.lang.typesystem.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/languages/test/jetbrains.mps.bootstrap.helgins.test.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/pluginSolution/jetbrains.mps.lang.typesystem.pluginSolution.msd" folder="core.language-design" />
+      <modulePath path="${project}/languages/testDefaultEditor/testDefaultEditor.mpl" folder="test" />
       <modulePath path="${project}/languages/util/builders/jetbrains.mps.baseLanguage.builders.mpl" folder="baseLanguage.builders" />
       <modulePath path="${project}/languages/util/builders/sandbox/jetbrains.mps.baseLanguage.builders.sandbox.msd" folder="baseLanguage.builders" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/gentest/jetbrains.mps.build.gentest.mpl" folder="languages.build" />

@@ -21,6 +21,8 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelOperations;
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.StaticReference;
@@ -31,13 +33,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 
 import java.util.Collection;
 import java.util.Set;
 
 public class FindUsagesManager {
-  private static final Logger LOG = Logger.getLogger(FindUsagesManager.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(FindUsagesManager.class));
 
   public static FindUsagesManager getInstance() {
     return new FindUsagesManager();
@@ -67,8 +69,8 @@ public class FindUsagesManager {
   /**
    * Finds exact instances of the provided concepts in the model.
    */
-  public static void collectInstances(SModel model, Collection<SConcept> concepts, Consumer<SNode> consumer) {
-    for (SConcept concept : concepts) {
+  public static void collectInstances(SModel model, Collection<SAbstractConcept> concepts, Consumer<SNode> consumer) {
+    for (SAbstractConcept concept : concepts) {
       for (SNode instance : ((jetbrains.mps.smodel.SModelInternal) model).getFastNodeFinder().getNodes(concept.getId(), false)) {
         consumer.consume(instance);
       }

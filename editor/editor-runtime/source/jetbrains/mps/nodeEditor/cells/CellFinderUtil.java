@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.openapi.editor.cells.*;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.AndCondition;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -97,7 +97,7 @@ public class CellFinderUtil {
       return cell;
     }
 
-    for (EditorCell current : new DfsTraverser(cell, forward, true)) {
+    for (EditorCell current : new DfsTraverserIterable(cell, forward, true)) {
       if (condition.met(current)) {
         return current;
       }

@@ -1,95 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590581(jetbrains.mps.baseLanguage.logging.util)/1210176650661">
-    <nodeInfo nodeId="1210176706163" fileName="LoggingGenerationUtil.java" startLine="27" startPosition="59" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1210176706177" fileName="LoggingGenerationUtil.java" startLine="29" startPosition="62" endLine="30" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210176706192" fileName="LoggingGenerationUtil.java" startLine="31" startPosition="83" endLine="32" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210176706209" fileName="LoggingGenerationUtil.java" startLine="34" startPosition="5" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2438171790366448951" fileName="LoggingGenerationUtil.java" startLine="38" startPosition="54" endLine="39" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4075687536653264595" fileName="LoggingGenerationUtil.java" startLine="43" startPosition="183" endLine="44" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2698960852100989887" fileName="LoggingGenerationUtil.java" startLine="44" startPosition="160" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2698960852100988713" fileName="LoggingGenerationUtil.java" startLine="47" startPosition="41" endLine="48" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2698960852100989854" fileName="LoggingGenerationUtil.java" startLine="50" startPosition="24" endLine="51" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2698960852100989881" fileName="LoggingGenerationUtil.java" startLine="53" startPosition="5" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6675136286173592423" fileName="LoggingGenerationUtil.java" startLine="54" startPosition="0" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="58" startPosition="103" endLine="59" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="59" startPosition="63" endLine="60" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="60" startPosition="30" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="61" startPosition="30" endLine="62" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="62" startPosition="30" endLine="63" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="63" startPosition="165" endLine="64" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="65" startPosition="31" endLine="66" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="67" startPosition="5" endLine="68" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="69" startPosition="31" endLine="70" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="71" startPosition="5" endLine="72" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2423165640493149430" fileName="LoggingGenerationUtil.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LoggingGenerationUtil#()V" />
-    <nodeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="30" startPosition="88" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1232620450176" fileName="LoggingGenerationUtil.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isDesignTimeModel#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="2698960852100988709" fileName="LoggingGenerationUtil.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="64" startPosition="39" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="68" startPosition="39" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="63" startPosition="165" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="63" startPosition="165" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="67" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="67" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1210176706175" fileName="LoggingGenerationUtil.java" startLine="28" startPosition="24" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2698960852100988903" fileName="LoggingGenerationUtil.java" startLine="45" startPosition="0" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="62" startPosition="30" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="62" startPosition="30" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1210176660531" fileName="LoggingGenerationUtil.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toPlus#(Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6675136286173592152" fileName="LoggingGenerationUtil.java" startLine="42" startPosition="90" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4075687536653401249" fileName="LoggingGenerationUtil.java" startLine="42" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="generateUniqueFieldName#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="58" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_gd2srw_a0a0b0b0b#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="2423165640493149432" fileName="LoggingGenerationUtil.java" startLine="24" startPosition="34" endLine="24" endPosition="34" />
-    <scopeInfo nodeId="1210176706191" fileName="LoggingGenerationUtil.java" startLine="31" startPosition="83" endLine="32" endPosition="106" />
-    <scopeInfo nodeId="1232620450179" fileName="LoggingGenerationUtil.java" startLine="38" startPosition="54" endLine="39" endPosition="68" />
-    <scopeInfo nodeId="2698960852100988710" fileName="LoggingGenerationUtil.java" startLine="47" startPosition="41" endLine="48" endPosition="257" />
-    <scopeInfo nodeId="2698960852100988904" fileName="LoggingGenerationUtil.java" startLine="50" startPosition="24" endLine="51" endPosition="182" />
-    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="65" startPosition="31" endLine="66" endPosition="84" />
-    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="69" startPosition="31" endLine="70" endPosition="83" />
-    <scopeInfo nodeId="2423165640493149430" fileName="LoggingGenerationUtil.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="30" startPosition="88" endLine="33" endPosition="7">
+    <nodeInfo nodeId="1210176706163" fileName="LoggingGenerationUtil.java" startLine="25" startPosition="59" endLine="26" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1210176706177" fileName="LoggingGenerationUtil.java" startLine="27" startPosition="62" endLine="28" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210176706192" fileName="LoggingGenerationUtil.java" startLine="29" startPosition="83" endLine="30" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210176706209" fileName="LoggingGenerationUtil.java" startLine="32" startPosition="5" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4075687536653264595" fileName="LoggingGenerationUtil.java" startLine="37" startPosition="183" endLine="38" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2698960852100989887" fileName="LoggingGenerationUtil.java" startLine="38" startPosition="160" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2698960852100988713" fileName="LoggingGenerationUtil.java" startLine="41" startPosition="41" endLine="42" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2698960852100989854" fileName="LoggingGenerationUtil.java" startLine="44" startPosition="24" endLine="45" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2698960852100989881" fileName="LoggingGenerationUtil.java" startLine="47" startPosition="5" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6675136286173592423" fileName="LoggingGenerationUtil.java" startLine="48" startPosition="0" endLine="49" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="52" startPosition="103" endLine="53" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="53" startPosition="63" endLine="54" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="54" startPosition="30" endLine="55" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="55" startPosition="30" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="56" startPosition="30" endLine="57" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="57" startPosition="165" endLine="58" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="59" startPosition="31" endLine="60" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="61" startPosition="5" endLine="62" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="63" startPosition="31" endLine="64" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="65" startPosition="5" endLine="66" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2423165640493149430" fileName="LoggingGenerationUtil.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LoggingGenerationUtil#()V" />
+    <nodeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="28" startPosition="88" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2698960852100988709" fileName="LoggingGenerationUtil.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="58" startPosition="39" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="62" startPosition="39" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="57" startPosition="165" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="57" startPosition="165" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="61" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="61" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1210176706175" fileName="LoggingGenerationUtil.java" startLine="26" startPosition="24" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2698960852100988903" fileName="LoggingGenerationUtil.java" startLine="39" startPosition="0" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="56" startPosition="30" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="56" startPosition="30" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1210176660531" fileName="LoggingGenerationUtil.java" startLine="25" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toPlus#(Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6675136286173592152" fileName="LoggingGenerationUtil.java" startLine="36" startPosition="90" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4075687536653401249" fileName="LoggingGenerationUtil.java" startLine="36" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="generateUniqueFieldName#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="52" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_gd2srw_a0a0b0b0b#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="2423165640493149432" fileName="LoggingGenerationUtil.java" startLine="22" startPosition="34" endLine="22" endPosition="34" />
+    <scopeInfo nodeId="1210176706191" fileName="LoggingGenerationUtil.java" startLine="29" startPosition="83" endLine="30" endPosition="106" />
+    <scopeInfo nodeId="2698960852100988710" fileName="LoggingGenerationUtil.java" startLine="41" startPosition="41" endLine="42" endPosition="257" />
+    <scopeInfo nodeId="2698960852100988904" fileName="LoggingGenerationUtil.java" startLine="44" startPosition="24" endLine="45" endPosition="182" />
+    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="59" startPosition="31" endLine="60" endPosition="84" />
+    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="63" startPosition="31" endLine="64" endPosition="83" />
+    <scopeInfo nodeId="2423165640493149430" fileName="LoggingGenerationUtil.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1210176706185" fileName="LoggingGenerationUtil.java" startLine="28" startPosition="88" endLine="31" endPosition="7">
       <varInfo nodeId="1210176706186" varName="textExpression" />
     </scopeInfo>
-    <scopeInfo nodeId="1232620450176" fileName="LoggingGenerationUtil.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="1232620459891" varName="sm" />
-    </scopeInfo>
-    <scopeInfo nodeId="2698960852100988709" fileName="LoggingGenerationUtil.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="2698960852100988709" fileName="LoggingGenerationUtil.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="2698960852100988709" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1210176706176" fileName="LoggingGenerationUtil.java" startLine="29" startPosition="62" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="63" startPosition="165" endLine="67" endPosition="5" />
-    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="67" startPosition="5" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="1210176660534" fileName="LoggingGenerationUtil.java" startLine="27" startPosition="59" endLine="35" endPosition="18">
+    <scopeInfo nodeId="1210176706176" fileName="LoggingGenerationUtil.java" startLine="27" startPosition="62" endLine="31" endPosition="7" />
+    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="57" startPosition="165" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="61" startPosition="5" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="1210176660534" fileName="LoggingGenerationUtil.java" startLine="25" startPosition="59" endLine="33" endPosition="18">
       <varInfo nodeId="1210176706164" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6675136286173592155" fileName="LoggingGenerationUtil.java" startLine="43" startPosition="183" endLine="52" endPosition="7">
+    <scopeInfo nodeId="6675136286173592155" fileName="LoggingGenerationUtil.java" startLine="37" startPosition="183" endLine="46" endPosition="7">
       <varInfo nodeId="4075687536653264596" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="62" startPosition="30" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="1210176660531" fileName="LoggingGenerationUtil.java" startLine="27" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="56" startPosition="30" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="1210176660531" fileName="LoggingGenerationUtil.java" startLine="25" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1210176685775" varName="textExpressions" />
     </scopeInfo>
-    <scopeInfo nodeId="6675136286173592152" fileName="LoggingGenerationUtil.java" startLine="42" startPosition="90" endLine="53" endPosition="5">
+    <scopeInfo nodeId="6675136286173592152" fileName="LoggingGenerationUtil.java" startLine="36" startPosition="90" endLine="47" endPosition="5">
       <varInfo nodeId="6675136286173592153" varName="logStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="4075687536653401252" fileName="LoggingGenerationUtil.java" startLine="42" startPosition="90" endLine="55" endPosition="20" />
-    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="58" startPosition="103" endLine="72" endPosition="24">
+    <scopeInfo nodeId="4075687536653401252" fileName="LoggingGenerationUtil.java" startLine="36" startPosition="90" endLine="49" endPosition="20" />
+    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="52" startPosition="103" endLine="66" endPosition="24">
       <varInfo nodeId="1210176706194" varName="facade" />
       <varInfo nodeId="1210176706194" varName="quotedNode_3" />
       <varInfo nodeId="1210176706194" varName="quotedNode_4" />
       <varInfo nodeId="1210176706194" varName="quotedNode_5" />
     </scopeInfo>
-    <scopeInfo nodeId="4075687536653401249" fileName="LoggingGenerationUtil.java" startLine="42" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="4075687536653401249" fileName="LoggingGenerationUtil.java" startLine="36" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="4075687536653401256" varName="baseName" />
       <varInfo nodeId="4075687536653401254" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="58" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1210176706194" fileName="LoggingGenerationUtil.java" startLine="52" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="1210176706194" varName="parameter_1" />
       <varInfo nodeId="1210176706194" varName="parameter_2" />
     </scopeInfo>
-    <unitInfo nodeId="2698960852100988709" fileName="LoggingGenerationUtil.java" startLine="46" startPosition="80" endLine="50" endPosition="7" unitName="jetbrains.mps.baseLanguage.logging.util.LoggingGenerationUtil$1" />
-    <unitInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="23" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.util.LoggingGenerationUtil" />
+    <unitInfo nodeId="2698960852100988709" fileName="LoggingGenerationUtil.java" startLine="40" startPosition="80" endLine="44" endPosition="7" unitName="jetbrains.mps.baseLanguage.logging.util.LoggingGenerationUtil$1" />
+    <unitInfo nodeId="1210176650661" fileName="LoggingGenerationUtil.java" startLine="21" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.util.LoggingGenerationUtil" />
   </root>
 </debugInfo>
 

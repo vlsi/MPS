@@ -23,6 +23,7 @@ public class AttractsFocusBlock_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_on5i7m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_on5i7m_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_on5i7m_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_on5i7m_b0(editorContext, node));
     return editorCell;

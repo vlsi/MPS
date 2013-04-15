@@ -25,6 +25,7 @@ public class EmitWriteStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7agu8k_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7agu8k_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_7agu8k_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7agu8k_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7agu8k_c0(editorContext, node));

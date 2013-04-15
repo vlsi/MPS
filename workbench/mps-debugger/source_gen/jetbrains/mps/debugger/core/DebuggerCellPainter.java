@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 
 public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E> {
   private static final int LEFT_MARGIN = 4;

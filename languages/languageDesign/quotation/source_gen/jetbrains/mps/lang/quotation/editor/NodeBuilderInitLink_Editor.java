@@ -30,6 +30,7 @@ public class NodeBuilderInitLink_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_h9lh4k_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h9lh4k_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_h9lh4k_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h9lh4k_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_h9lh4k_c0(editorContext, node));

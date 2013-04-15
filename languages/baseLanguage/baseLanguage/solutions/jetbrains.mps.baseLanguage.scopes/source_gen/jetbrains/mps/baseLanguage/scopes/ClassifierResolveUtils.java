@@ -358,10 +358,8 @@ public class ClassifierResolveUtils {
         }
         if (token.equals(SPropertyOperations.getString(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), "name"))) {
           // see if we can find a node for the whole refText, starting from here 
-          SNode node = construct(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), tokenizer);
-          if ((node != null)) {
-            return node;
-          }
+          // if not we should return anyway 
+          return construct(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), tokenizer);
         }
       }
     }

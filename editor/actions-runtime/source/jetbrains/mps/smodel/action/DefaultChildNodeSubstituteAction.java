@@ -19,13 +19,10 @@ import jetbrains.mps.actions.runtime.impl.ActionsUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-
-import java.awt.Font;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Igor Alshannikov
@@ -59,7 +56,8 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     mySetter = setter;
   }
 
-  public DefaultChildNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
+  public DefaultChildNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter,
+      IScope scope) {
     super(outputConcept, parameterObject, parentNode);
     myCurrentChild = currentChild;
     myOldChild = myCurrentChild;
@@ -84,9 +82,18 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     SNode parentNode = getSourceNode();
     SNode newChild = createChildNode(getParameterObject(), parentNode.getModel(), pattern);
     if (newChild != null) {
-      return mySetter.execute(parentNode, myCurrentChild, newChild, getScope(), editorContext);
+      SNode result = mySetter.execute(parentNode, myCurrentChild, newChild, getScope(), editorContext);
+      if (result != newChild) {
+        // node was wrapped by mySetter
+        return result;
+      }
+      return selectChildNode(result, parentNode.getModel(), pattern, editorContext);
     }
     return null;
+  }
+
+  protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+    return createdNode;
   }
 
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {

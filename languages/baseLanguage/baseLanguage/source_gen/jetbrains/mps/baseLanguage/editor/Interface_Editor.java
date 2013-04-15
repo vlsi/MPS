@@ -43,6 +43,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4hcgjd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4hcgjd_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_4hcgjd_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_4hcgjd_b0(editorContext, node));
     if (renderingCondition_4hcgjd_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

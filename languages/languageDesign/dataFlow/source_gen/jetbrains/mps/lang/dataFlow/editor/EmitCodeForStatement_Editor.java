@@ -23,6 +23,7 @@ public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_aipk5v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aipk5v_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_aipk5v_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_aipk5v_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_aipk5v_c0(editorContext, node));

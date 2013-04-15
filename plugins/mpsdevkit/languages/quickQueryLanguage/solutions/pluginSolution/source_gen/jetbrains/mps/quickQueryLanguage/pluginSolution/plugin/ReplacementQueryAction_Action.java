@@ -10,11 +10,13 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ReplacementQueryAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -41,7 +43,9 @@ public class ReplacementQueryAction_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ReplacementQueryAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action doUpdate method failed. Action:" + "ReplacementQueryAction", t);
+      }
       this.disable(event.getPresentation());
     }
   }
@@ -75,15 +79,14 @@ public class ReplacementQueryAction_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((IModule) MapSequence.fromMap(_params).get("langModule")));
-      if ((((SNode) MapSequence.fromMap(_params).get("node")) != null)) {
-        dialog.setConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
-      }
+      ReplaceDialog dialog = new ReplaceDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((IModule) MapSequence.fromMap(_params).get("langModule")));
       dialog.showDialog();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);
+      }
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ReplacementQueryAction_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ReplacementQueryAction_Action.class);
 }

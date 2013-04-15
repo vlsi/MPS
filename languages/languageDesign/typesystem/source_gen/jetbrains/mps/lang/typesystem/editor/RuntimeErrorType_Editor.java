@@ -24,6 +24,7 @@ public class RuntimeErrorType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fz1ip_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_fz1ip_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_fz1ip_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fz1ip_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_fz1ip_c0(editorContext, node));

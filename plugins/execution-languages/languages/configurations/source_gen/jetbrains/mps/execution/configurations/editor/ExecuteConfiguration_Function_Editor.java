@@ -33,6 +33,7 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ydtnyj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ydtnyj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_ydtnyj_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ydtnyj_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ydtnyj_c0(editorContext, node));

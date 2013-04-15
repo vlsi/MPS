@@ -18,12 +18,12 @@ public class Rename extends BaseRefactoring {
     this.addTransientParameter("newName");
   }
 
-  public String getUserFriendlyName() {
-    return "Rename";
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new Rename_Target();
+  }
+
+  public String getUserFriendlyName() {
+    return "Rename";
   }
 
   public boolean init(final RefactoringContext refactoringContext) {

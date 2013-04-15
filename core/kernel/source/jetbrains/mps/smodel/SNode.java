@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
+
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -21,12 +24,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractImmutableList;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
@@ -42,7 +44,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
@@ -58,7 +59,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class SNode implements org.jetbrains.mps.openapi.model.SNode {
-  private static final Logger LOG = Logger.getLogger(SNode.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SNode.class));
   private static final String[] EMPTY_ARRAY = new String[0];
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
@@ -548,7 +549,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       return new SConceptNodeAdapter(myConceptFqName);
     }
 
-    return SConceptRepository.getInstance().getConcept(myConceptFqName);
+    return (SConcept) SConceptRepository.getInstance().getConcept(myConceptFqName);
   }
 
   @Override

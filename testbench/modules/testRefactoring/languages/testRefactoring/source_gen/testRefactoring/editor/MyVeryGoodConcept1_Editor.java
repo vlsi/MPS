@@ -31,6 +31,7 @@ public class MyVeryGoodConcept1_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_15tf1e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_15tf1e_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_15tf1e_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_15tf1e_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_15tf1e_c0(editorContext, node));

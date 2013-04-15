@@ -4,6 +4,7 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.smodel.NodeMemberAccessModifier;
 import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import java.util.Map;
 import jetbrains.mps.util.Pair;
 import java.util.HashMap;
@@ -21,7 +22,7 @@ import java.util.List;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 
 public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessModifier {
-  private static final Logger LOG = Logger.getLogger(RefactoringNodeMembersAccessModifier.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(RefactoringNodeMembersAccessModifier.class));
   private Map<Pair<String, String>, String> myChildrenRolesMap = new HashMap<Pair<String, String>, String>();
   private Map<Pair<String, String>, String> myReferencesRolesMap = new HashMap<Pair<String, String>, String>();
   private Map<Pair<String, String>, String> myPropertiesNamesMap = new HashMap<Pair<String, String>, String>();

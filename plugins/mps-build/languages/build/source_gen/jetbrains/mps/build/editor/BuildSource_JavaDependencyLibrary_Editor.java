@@ -31,6 +31,7 @@ public class BuildSource_JavaDependencyLibrary_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_n4mr7u_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n4mr7u_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_n4mr7u_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_n4mr7u_b0(editorContext, node));
     if (renderingCondition_n4mr7u_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -118,6 +119,7 @@ public class BuildSource_JavaDependencyLibrary_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_n4mr7u_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n4mr7u_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_n4mr7u_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_n4mr7u_b0(editorContext, node));
     return editorCell;

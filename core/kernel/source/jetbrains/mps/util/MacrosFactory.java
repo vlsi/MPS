@@ -16,7 +16,8 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
@@ -27,7 +28,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.util.Set;
@@ -187,7 +187,7 @@ public class MacrosFactory {
   }
 
   private static class Macros {
-    private static final Logger LOG = Logger.getLogger(Macros.class);
+    private static final Logger LOG = LogManager.getLogger(Macros.class);
 
     protected String expand(String path, IFile anchorFile) {
       if (!path.startsWith("${") || !path.contains("}")) return path;
@@ -271,7 +271,7 @@ public class MacrosFactory {
       // This is a support for paths with macros which were saved in Windows before MPS beta.
       // Path with macros should always be stored with slashes.
       if (path.indexOf('\\') != -1) {
-        Macros.LOG.warning("Using backslashes in macros: " + path);
+        Macros.LOG.warn("Using backslashes in macros: " + path);
         path = path.replace('\\', SEPARATOR_CHAR);
       }
 

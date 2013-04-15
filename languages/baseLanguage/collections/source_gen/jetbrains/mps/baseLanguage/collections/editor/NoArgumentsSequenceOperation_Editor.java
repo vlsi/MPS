@@ -24,6 +24,7 @@ public class NoArgumentsSequenceOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_6d3m25_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.applyOperation(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);

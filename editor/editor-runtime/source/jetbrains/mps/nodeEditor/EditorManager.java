@@ -22,6 +22,9 @@ import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
@@ -34,19 +37,28 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.node.EditorAspect;
+import jetbrains.mps.openapi.editor.node.EditorAspectDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -59,11 +71,12 @@ import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 
 public class EditorManager {
-  private static final Logger LOG = Logger.getLogger(EditorManager.class);
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorManager.class));
 
   public static final String BIG_CELL_CONTEXT = "big-cell-context";
 
@@ -256,7 +269,7 @@ public class EditorManager {
     EditorCell result = createEditorCell(context, modifications, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
     myLastAttributedCell = null;
     EditorCell cellWithRolePopped = stack.pop();
-    LOG.assertLog(cellWithRolePopped == cellWithRole);
+    LOG.assertLog(cellWithRolePopped == cellWithRole, "Assertion failed.");
     return result;
   }
 
@@ -293,7 +306,7 @@ public class EditorManager {
             EditorCell nodeCell = createEditorCell(context, modifications, refContext);
 
             SNode poppedAttribute = myAttributesStack.pop();
-            LOG.assertLog(poppedAttribute == attribute);
+            LOG.assertLog(poppedAttribute == attribute, "Assertion failed.");
             return createNodeAttributeCell(context, attribute, nodeCell);
           }
         }
@@ -371,7 +384,7 @@ public class EditorManager {
       //reset creating inspected cell : we don't create not-root inspected cells
       myCreatingInspectedCell = false;
 
-      INodeEditor editor = getEditor(context, node);
+      EditorAspect editor = getEditor(context, node);
       EditorComponent editorComponent = getEditorComponent(context);
       EditorCell nodeCell = null;
       NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
@@ -613,12 +626,61 @@ public class EditorManager {
     return createRootCell(context, node, events, true);
   }
 
-  private INodeEditor getEditor(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
-    INodeEditor editor = jetbrains.mps.editor.runtime.impl.EditorsFinderManager.getInstance().loadEditor(context, node);
-    if (editor == null) {
-      editor = new DefaultNodeEditor();
+  private EditorAspect getEditor(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
+    SConcept concept = node.getConcept();
+    boolean isInterface = false;
+    if (concept != null) {
+      ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(concept.getQualifiedName());
+      EditorAspect editorAspect = getActiveEditorAspect(conceptDescriptor);
+      if (editorAspect != null) {
+        return editorAspect;
+      }
+      isInterface = conceptDescriptor.isInterfaceConcept();
     }
-    return editor;
+
+    // TODO: use always DefaultEditor ?
+    return isInterface ? new DefaultInterfaceEditor() : new DefaultEditor();
+  }
+
+  private EditorAspect getActiveEditorAspect(ConceptDescriptor conceptDescriptor) {
+    Queue<ConceptDescriptor> queue = new LinkedList<ConceptDescriptor>();
+    Set<String> processedConcepts = new HashSet<String>();
+    queue.add(conceptDescriptor);
+    processedConcepts.add(conceptDescriptor.getConceptFqName());
+    while (!queue.isEmpty()) {
+      ConceptDescriptor nextConcept = queue.remove();
+      EditorAspect editorAspect = getEditorAspect(nextConcept);
+      if (editorAspect != null) {
+        return editorAspect;
+      }
+      String superConceptName = nextConcept.getSuperConcept();
+      if (superConceptName != null) {
+        if (!processedConcepts.contains(superConceptName)) {
+          processedConcepts.add(superConceptName);
+          queue.add(ConceptRegistry.getInstance().getConceptDescriptor(superConceptName));
+        }
+      }
+      for (String ancestorName : nextConcept.getAncestorsNames()) {
+        if (processedConcepts.contains(ancestorName)) {
+          continue;
+        }
+        processedConcepts.add(ancestorName);
+        queue.add(ConceptRegistry.getInstance().getConceptDescriptor(ancestorName));
+      }
+    }
+    return null;
+  }
+
+  private EditorAspect getEditorAspect(ConceptDescriptor conceptDescriptor) {
+    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(conceptDescriptor.getConceptFqName()));
+    if (languageRuntime == null) {
+      return null;
+    }
+    EditorAspectDescriptor aspectDescriptor = languageRuntime.getAspectDescriptor(EditorAspectDescriptor.class);
+    if (aspectDescriptor == null) {
+      return null;
+    }
+    return aspectDescriptor.getAspect(conceptDescriptor);
   }
 
   private EditorComponent getEditorComponent(jetbrains.mps.openapi.editor.EditorContext context) {
@@ -663,6 +725,21 @@ public class EditorManager {
         return (jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell;
       }
       return rtHint;
+    }
+  }
+
+  public static class DefaultInterfaceEditor implements EditorAspect {
+    public DefaultInterfaceEditor() {
+    }
+
+    @Override
+    public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
+      return new EditorCell_Error(context, node, "    ");
+    }
+
+    @Override
+    public EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
+      return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
   }
 }

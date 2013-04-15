@@ -21,6 +21,7 @@ public class TwoVarStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4qqx9o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4qqx9o_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_4qqx9o_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4qqx9o_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4qqx9o_c0(editorContext, node));

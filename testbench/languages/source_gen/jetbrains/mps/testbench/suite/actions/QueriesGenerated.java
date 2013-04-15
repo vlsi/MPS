@@ -27,7 +27,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.baseLanguage.search.AllSubclassifiersScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;

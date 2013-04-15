@@ -31,6 +31,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pv0rjz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pv0rjz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_pv0rjz_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pv0rjz_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_pv0rjz_c0(editorContext, node));

@@ -33,12 +33,12 @@ public class MoveNodes extends BaseLoggableRefactoring {
     this.addTransientParameter("nodeToOpen");
   }
 
-  public String getUserFriendlyName() {
-    return "Move Nodes";
-  }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MoveNodes_Target();
+  }
+
+  public String getUserFriendlyName() {
+    return "Move Nodes";
   }
 
   public boolean init(final RefactoringContext refactoringContext) {

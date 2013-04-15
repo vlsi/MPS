@@ -22,6 +22,7 @@ public class CustomStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_zewgzr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_zewgzr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_zewgzr_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_zewgzr_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zewgzr_c0(editorContext, node));

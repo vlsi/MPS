@@ -16,98 +16,62 @@
 package jetbrains.mps.logging;
 
 import jetbrains.mps.smodel.ModelAccess;
-import org.apache.log4j.Level;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+public abstract class Logger {
 
-public class Logger {
-  private static Map<String, Logger> ourLoggers = new HashMap<String, Logger>();
-  private static List<ILoggingHandler> ourLoggingHandlers = new ArrayList<ILoggingHandler>();
+  /**
+   * Use constructor from org.apache.log4j.Logger
+   */
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static synchronized Logger getLogger(Class cls) {
+    return getLogger(cls.getName());
+  }
 
-  static {
-    addLoggingHandler(new Log4jLoggingHandler());
+
+  /**
+   * Use constructor from org.apache.log4j.Logger
+   */
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static synchronized Logger getLogger(String name) {
+    return getLogger(LogManager.getLogger(name));
+  }
+
+  public static synchronized Logger getLogger(org.apache.log4j.Logger logger) {
+    return new Log4jLogger(logger);
+  }
+
+  /**
+   * Use log4j appenders
+   */
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static void addLoggingHandler(ILoggingHandler lh) {
+    MPSAppender.getInstance().addAppender(lh);
+  }
+
+  /**
+   * Use log4j appenders
+   */
+  @Deprecated
+  @ToRemove(version = 3.0)
+  public static void removeLoggingHandler(ILoggingHandler lh) {
+    MPSAppender.getInstance().removeAppender(lh);
   }
 
   /**
    * @param "OFF", "FATAL", "ERROR", "WARN" ...
    */
-  public static String setThreshold(String threshhold) {
-    Level wasThresholdLevel = org.apache.log4j.Logger.getRootLogger().getLoggerRepository().getThreshold();
-    String wasThreshhold = wasThresholdLevel.toString();
-    Level newThreshholdLevel = Level.toLevel(threshhold);
-    org.apache.log4j.Logger.getRootLogger().getLoggerRepository().setThreshold(newThreshholdLevel);
-    return wasThreshhold;
-  }
-
-  public static synchronized Logger getLogger(Class cls) {
-    return getLogger(cls.getName());
-  }
-
-  public static synchronized Logger getLogger(String name) {
-    if (!ourLoggers.containsKey(name)) {
-      ourLoggers.put(name, new Logger(name));
-    }
-    return ourLoggers.get(name);
-  }
-
-  public static synchronized void addLoggingHandler(ILoggingHandler lh) {
-    ourLoggingHandlers.add(lh);
-  }
-
-  public static synchronized void removeLoggingHandler(ILoggingHandler lh) {
-    ourLoggingHandlers.remove(lh);
-  }
-
-
-  private static synchronized void info(LogEntry e) {
-    for (ILoggingHandler lh : ourLoggingHandlers) {
-      lh.info(e);
-    }
-  }
-
-  private static synchronized void warning(LogEntry e) {
-    for (ILoggingHandler lh : ourLoggingHandlers) {
-      lh.warning(e);
-    }
-  }
-
-
-  private static synchronized void debug(LogEntry e) {
-    for (ILoggingHandler lh : ourLoggingHandlers) {
-      lh.debug(e);
-    }
-  }
-
-
-  private static synchronized void error(LogEntry e) {
-    for (ILoggingHandler lh : ourLoggingHandlers) {
-      lh.error(e);
-    }
-  }
-
-  private static synchronized void fatal(LogEntry e) {
-    for (ILoggingHandler lh : ourLoggingHandlers) {
-      lh.fatal(e);
-    }
+  public static String setThreshold(String threshold) {
+    return Log4jUtil.setThreshold(threshold);
   }
 
   //--------------------------
   // Logger instance
   //--------------------------
-
-  private String myFqName;
-
-  private Logger(String fqName) {
-    myFqName = fqName;
-  }
-
-  private org.apache.log4j.Logger getLog4jLogger() {
-    return org.apache.log4j.Logger.getLogger(myFqName);
-  }
-
 
   public void info(String message) {
     info(message, null);
@@ -121,11 +85,7 @@ public class Logger {
     info(message, null, hintObject);
   }
 
-  public void info(String message, Throwable t, Object hintObject) {
-    if (getLog4jLogger().isEnabledFor(org.apache.log4j.Level.INFO)) {
-      info(new LogEntry(myFqName, message, t, hintObject));
-    }
-  }
+  public abstract void info(String message, Throwable t, Object hintObject);
 
   public void warning(String message) {
     warning(message, null);
@@ -139,11 +99,7 @@ public class Logger {
     warning(message, null, hintObject);
   }
 
-  public void warning(String message, Throwable t, Object hintObject) {
-    if (getLog4jLogger().isEnabledFor(org.apache.log4j.Level.WARN)) {
-      warning(new LogEntry(myFqName, message, t, hintObject));
-    }
-  }
+  public abstract void warning(String message, Throwable t, Object hintObject);
 
   public void debug(String message) {
     debug(message, null);
@@ -157,11 +113,7 @@ public class Logger {
     debug(message, null, hintObject);
   }
 
-  public void debug(String message, Throwable t, Object hintObject) {
-    if (getLog4jLogger().isEnabledFor(org.apache.log4j.Level.DEBUG)) {
-      debug(new LogEntry(myFqName, message, t, hintObject));
-    }
-  }
+  public abstract void debug(String message, Throwable t, Object hintObject);
 
   public void error(String message) {
     error(message, null);
@@ -187,11 +139,7 @@ public class Logger {
     error(message, null, hintObject);
   }
 
-  public void error(String message, Throwable t, Object hintObject) {
-    if (getLog4jLogger().isEnabledFor(org.apache.log4j.Level.ERROR)) {
-      error(new LogEntry(myFqName, message, t, hintObject));
-    }
-  }
+  public abstract void error(String message, Throwable t, Object hintObject);
 
   public void errorWithTrace(String message) {
     error(message, new Throwable(message));
@@ -209,25 +157,13 @@ public class Logger {
     fatal(message, null, hintObject);
   }
 
-  public void fatal(String message, Throwable t, Object hintObject) {
-    if (getLog4jLogger().isEnabledFor(org.apache.log4j.Level.FATAL)) {
-      fatal(new LogEntry(myFqName, message, t, hintObject));
-    }
-  }
+  public abstract void fatal(String message, Throwable t, Object hintObject);
 
   public void assertLog(boolean condition) {
     assertLog(condition, "Assertion failed");
   }
 
-  public void assertLog(boolean condition, String message) {
-    if (!condition) {
-      error(message, new Throwable(message));
-    }
-  }
-
-  public void errorAssertionFailed() {
-    error("Assertion failed", new Throwable());
-  }
+  public abstract void assertLog(boolean condition, String message);
 
   public void assertCanRead() {
     assertLog(ModelAccess.instance().canRead(), "Should be able to read models");

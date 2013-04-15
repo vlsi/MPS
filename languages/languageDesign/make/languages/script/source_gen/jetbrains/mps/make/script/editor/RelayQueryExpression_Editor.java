@@ -39,6 +39,7 @@ public class RelayQueryExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ne0cce_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ne0cce_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_ne0cce_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ne0cce_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_ne0cce_c0(editorContext, node));

@@ -32,6 +32,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_avk0kx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_avk0kx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_avk0kx_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_avk0kx_b0(editorContext, node));
     if (renderingCondition_avk0kx_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -117,6 +118,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_avk0kx_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_avk0kx_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_avk0kx_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_avk0kx_b0_0(editorContext, node));
     return editorCell;

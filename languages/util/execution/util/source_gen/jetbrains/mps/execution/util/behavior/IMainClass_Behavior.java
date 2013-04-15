@@ -25,7 +25,7 @@ public class IMainClass_Behavior {
   }
 
   public static boolean virtual_isNodeRunnable_4666195181811081448(SNode thisNode) {
-    return true;
+    return isNotEmpty_4ittql_a0a0c(IMainClass_Behavior.call_getUnitName_4666195181811081431(thisNode));
   }
 
   @Deprecated
@@ -46,5 +46,9 @@ public class IMainClass_Behavior {
   @Deprecated
   public static boolean callSuper_isNodeRunnable_4666195181811081448(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), callerConceptFqName, "virtual_isNodeRunnable_4666195181811081448", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  public static boolean isNotEmpty_4ittql_a0a0c(String str) {
+    return str != null && str.length() > 0;
   }
 }

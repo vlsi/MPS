@@ -40,6 +40,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tm8wum_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_tm8wum_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_tm8wum_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_tm8wum_b0(editorContext, node));
     return editorCell;
@@ -96,8 +97,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_tm8wum_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_tm8wum_b1a(EditorContext editorContext, SNode node) {

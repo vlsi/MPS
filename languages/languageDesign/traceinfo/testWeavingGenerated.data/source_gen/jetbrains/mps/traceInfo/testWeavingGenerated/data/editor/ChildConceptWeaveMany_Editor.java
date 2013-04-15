@@ -21,6 +21,7 @@ public class ChildConceptWeaveMany_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mma1qz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_mma1qz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_mma1qz_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_mma1qz_b0(editorContext, node));
     return editorCell;

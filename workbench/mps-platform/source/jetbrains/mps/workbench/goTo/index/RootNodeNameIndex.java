@@ -27,13 +27,14 @@ import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NonNls;
@@ -53,7 +54,7 @@ import java.util.List;
 public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<SNodeDescriptor>> {
   @NonNls
   public static final ID<Integer, List<SNodeDescriptor>> NAME = ID.create("RootNodeNameIndex2");
-  private static final Logger LOG = Logger.getLogger(RootNodeNameIndex.class);
+  private static final Logger LOG = LogManager.getLogger(RootNodeNameIndex.class);
   private static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
 
   public static SModel doModelParsing(FileContent inputData) {

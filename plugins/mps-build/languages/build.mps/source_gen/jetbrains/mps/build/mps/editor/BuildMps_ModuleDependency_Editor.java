@@ -33,6 +33,7 @@ public class BuildMps_ModuleDependency_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_pz0ua4_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

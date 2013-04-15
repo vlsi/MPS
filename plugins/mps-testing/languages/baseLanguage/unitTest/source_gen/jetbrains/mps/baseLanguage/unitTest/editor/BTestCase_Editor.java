@@ -42,6 +42,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lq4ak4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lq4ak4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_lq4ak4_a0(editorContext, node));
     if (renderingCondition_lq4ak4_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_lq4ak4_b0(editorContext, node));

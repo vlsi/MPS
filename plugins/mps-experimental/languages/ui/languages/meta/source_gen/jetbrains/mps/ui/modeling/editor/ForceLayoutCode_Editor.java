@@ -25,6 +25,7 @@ public class ForceLayoutCode_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_owhuo5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_owhuo5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_owhuo5_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_owhuo5_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_owhuo5_c0(editorContext, node));
@@ -92,8 +93,8 @@ public class ForceLayoutCode_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_owhuo5_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_owhuo5_b1a(EditorContext editorContext, SNode node) {

@@ -25,6 +25,7 @@ public class CommandParameterReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ri978v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ri978v_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_ri978v_a0(editorContext, node));
     return editorCell;
   }

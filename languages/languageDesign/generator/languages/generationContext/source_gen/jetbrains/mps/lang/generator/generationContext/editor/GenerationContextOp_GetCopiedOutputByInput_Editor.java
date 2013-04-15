@@ -24,6 +24,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
   private EditorCell createCollection_h58zhi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h58zhi_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_h58zhi_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h58zhi_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_h58zhi_c0(editorContext, node));

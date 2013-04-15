@@ -26,6 +26,7 @@ public class WannabeMethod_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7k1qaw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_7k1qaw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_7k1qaw_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7k1qaw_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7k1qaw_c0(editorContext, node));
@@ -126,8 +127,8 @@ public class WannabeMethod_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_7k1qaw_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_7k1qaw_b2a(EditorContext editorContext, SNode node) {

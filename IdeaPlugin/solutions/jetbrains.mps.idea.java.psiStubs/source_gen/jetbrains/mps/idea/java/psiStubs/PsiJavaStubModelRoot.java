@@ -23,6 +23,7 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiJavaFile;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.ide.java.sourceStubs.Util;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import com.intellij.psi.PsiElement;
@@ -44,6 +45,7 @@ import java.util.HashSet;
 import com.intellij.psi.PsiFileSystemItem;
 import com.intellij.psi.PsiFile;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.ArrayList;
 
 public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   private static Logger LOG = Logger.getLogger(PsiJavaStubModelRoot.class);
@@ -188,14 +190,8 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     if (packageName.length() > 0 && packageName.charAt(0) == '.') {
       packageName = packageName.substring(1);
     }
-    // <node> 
 
-    // <node> 
-    // <node> 
-
-    // <node> 
-
-    return JavaForeignIdBuilder.computeModelReference(packageName);
+    return (SModelReference) Util.makeModelReference(packageName, getModule());
   }
 
   private void syncDirectoryMap() {
@@ -230,7 +226,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   }
 
   private boolean interesting(PsiElement elem) {
-    if (elem instanceof PsiJavaFile || elem instanceof PsiClass || elem instanceof PsiMethod || elem instanceof PsiField || elem instanceof PsiParameterList || elem instanceof PsiParameter || elem instanceof PsiReferenceList || elem instanceof PsiModifierList || elem instanceof PsiModifier || elem instanceof PsiTypeParameterList || elem instanceof PsiTypeParameter) {
+    if (elem instanceof PsiClass || elem instanceof PsiMethod || elem instanceof PsiField || elem instanceof PsiParameterList || elem instanceof PsiParameter || elem instanceof PsiReferenceList || elem instanceof PsiModifierList || elem instanceof PsiModifier || elem instanceof PsiTypeParameterList || elem instanceof PsiTypeParameter) {
       //  but not PsiReference ! 
       return true;
     }
@@ -244,6 +240,9 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   private boolean filter(PsiElement elem) {
     if (elem == null || elem instanceof PsiWhiteSpace) {
       return false;
+    }
+    if (elem instanceof PsiJavaFile) {
+      return true;
     }
     PsiElement e = elem;
     do {
@@ -260,6 +259,8 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
   @Override
   public void psiChanged(PsiListener.PsiEvent event) {
+
+    event = new PsiJavaStubModelRoot.NormalizedEvent(event);
 
     // For each data source (isomorphic to model,package) make an event that contains 
     // only files under its PsiDirectory 
@@ -286,27 +287,17 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
         continue;
       }
 
-      PsiDirectory parent = ((PsiFile) item).getParent();
-      PsiJavaStubDataSource dataSource = MapSequence.fromMap(myDataSources).get(parent);
-      if (dataSource == null) {
-        // it's a new java file and it's not under one of our tracked packages 
-        // it may be a) a java file from outside => ignore it 
-        //           b) the first java file in its dir under our source roots => create new model for it 
+      handleFileCreate((PsiFile) item, null, newDirs, changes);
+    }
 
-        PsiDirectory ourSourceRoot = findOurSourceRoot(item);
-        if (ourSourceRoot != null) {
-          SetSequence.fromSet(newDirs).addElement(parent);
-        }
-
-        continue;
+    for (PsiListener.FSMove move : Sequence.fromIterable(event.getMoved())) {
+      // recording 2 changes: delete and create 
+      if (move.from instanceof PsiDirectory) {
+        handleFileDelete((PsiFile) move.moved, (PsiDirectory) move.from, deletedDirs, changes);
       }
-
-      PsiJavaStubModelRoot.PsiChange change = MapSequence.fromMap(changes).get(dataSource);
-      if (change == null) {
-        change = new PsiJavaStubModelRoot.PsiChange();
-        MapSequence.fromMap(changes).put(dataSource, change);
+      if (move.to instanceof PsiDirectory) {
+        handleFileCreate((PsiFile) move.moved, (PsiDirectory) move.to, newDirs, changes);
       }
-      SetSequence.fromSet(change.created).addElement(item);
     }
 
     for (PsiFileSystemItem item : Sequence.fromIterable(event.getRemoved())) {
@@ -322,23 +313,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
         continue;
       }
 
-      PsiDirectory parent = ((PsiFile) item).getParent();
-      PsiJavaStubDataSource dataSource = MapSequence.fromMap(myDataSources).get(parent);
-      if (dataSource == null) {
-        continue;
-      }
-
-      // check if it was the last java file in directory 
-      if (Sequence.fromIterable(Sequence.fromArray(parent.getChildren())).ofType(PsiJavaFile.class).isEmpty()) {
-        SetSequence.fromSet(deletedDirs).addElement(parent);
-      }
-
-      PsiJavaStubModelRoot.PsiChange change = MapSequence.fromMap(changes).get(dataSource);
-      if (change == null) {
-        change = new PsiJavaStubModelRoot.PsiChange();
-        MapSequence.fromMap(changes).put(dataSource, change);
-      }
-      SetSequence.fromSet(change.removed).addElement(item);
+      handleFileDelete((PsiFile) item, null, deletedDirs, changes);
     }
 
     for (PsiFile file : SetSequence.fromSet(event.getChanged().keySet())) {
@@ -416,6 +391,100 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     return null;
   }
 
+  private void handleFileCreate(PsiFile file, PsiDirectory forcedParent, Set<PsiDirectory> newDirs, Map<PsiJavaStubDataSource, PsiJavaStubModelRoot.PsiChange> changes) {
+    PsiDirectory parent = (forcedParent == null ?
+      file.getParent() :
+      forcedParent
+    );
+    PsiJavaStubDataSource dataSource = MapSequence.fromMap(myDataSources).get(parent);
+    if (dataSource == null) {
+      // it's a new java file and it's not under one of our tracked packages 
+      // it may be a) a java file from outside => ignore it 
+      //           b) the first java file in its dir under our source roots => create new model for it 
+
+      PsiDirectory ourSourceRoot = findOurSourceRoot(file);
+      if (ourSourceRoot != null) {
+        SetSequence.fromSet(newDirs).addElement(parent);
+      }
+
+      return;
+    }
+
+    PsiJavaStubModelRoot.PsiChange change = MapSequence.fromMap(changes).get(dataSource);
+    if (change == null) {
+      change = new PsiJavaStubModelRoot.PsiChange();
+      MapSequence.fromMap(changes).put(dataSource, change);
+    }
+    SetSequence.fromSet(change.created).addElement(file);
+  }
+
+  private void handleFileDelete(PsiFile file, PsiDirectory forcedParent, Set<PsiDirectory> deletedDirs, Map<PsiJavaStubDataSource, PsiJavaStubModelRoot.PsiChange> changes) {
+    PsiDirectory parent = (forcedParent == null ?
+      file.getParent() :
+      forcedParent
+    );
+    PsiJavaStubDataSource dataSource = MapSequence.fromMap(myDataSources).get(parent);
+    if (dataSource == null) {
+      return;
+    }
+
+    // check if it was the last java file in directory 
+    if (Sequence.fromIterable(Sequence.fromArray(parent.getChildren())).ofType(PsiJavaFile.class).isEmpty()) {
+      SetSequence.fromSet(deletedDirs).addElement(parent);
+    }
+
+    PsiJavaStubModelRoot.PsiChange change = MapSequence.fromMap(changes).get(dataSource);
+    if (change == null) {
+      change = new PsiJavaStubModelRoot.PsiChange();
+      MapSequence.fromMap(changes).put(dataSource, change);
+    }
+    SetSequence.fromSet(change.removed).addElement(file);
+  }
+
+
+
+  private static class NormalizedEvent implements PsiListener.PsiEvent {
+    private PsiListener.PsiEvent event;
+
+    /*package*/ NormalizedEvent(PsiListener.PsiEvent event) {
+      this.event = event;
+    }
+
+    public Iterable<PsiFileSystemItem> getCreated() {
+      return event.getCreated();
+    }
+
+    public Iterable<PsiListener.FSMove> getMoved() {
+      return event.getMoved();
+    }
+
+    public Iterable<PsiFileSystemItem> getRemoved() {
+      return event.getRemoved();
+    }
+
+    public Map<PsiFile, Set<PsiElement>> getChanged() {
+      Map<PsiFile, Set<PsiElement>> origMap = event.getChanged();
+      for (PsiFileSystemItem fsItem : Sequence.fromIterable(getCreated())) {
+        if (fsItem instanceof PsiFile) {
+          MapSequence.fromMap(origMap).removeKey((PsiFile) fsItem);
+        }
+      }
+      for (PsiFileSystemItem fsItem : Sequence.fromIterable(getRemoved())) {
+        if (fsItem instanceof PsiFile) {
+          MapSequence.fromMap(origMap).removeKey((PsiFile) fsItem);
+        }
+      }
+      for (PsiListener.FSMove move : Sequence.fromIterable(getMoved())) {
+        if (move.moved instanceof PsiFile) {
+          MapSequence.fromMap(origMap).removeKey((PsiFile) move.moved);
+        }
+      }
+      return origMap;
+    }
+  }
+
+
+
   /**
    * Contract: getCreated and getRemoved contain only PsiJavaFile (as well as keys in getChanged)
    */
@@ -441,6 +510,11 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
     public Iterable<PsiFileSystemItem> getRemoved() {
       return removed;
+    }
+
+    public Iterable<PsiListener.FSMove> getMoved() {
+      // no moves tracked inside particular directory / datasource 
+      return new ArrayList<PsiListener.FSMove>();
     }
 
     public Map<PsiFile, Set<PsiElement>> getChanged() {

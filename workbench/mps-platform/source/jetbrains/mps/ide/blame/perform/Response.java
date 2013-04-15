@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.ide.blame.perform;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -25,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.StringReader;
 
 public class Response {
-  private static final Logger LOG = Logger.getLogger(Response.class);
+  private static final Logger LOG = LogManager.getLogger(Response.class);
 
   private boolean mySuccess = true;
   private String myMessage = "";

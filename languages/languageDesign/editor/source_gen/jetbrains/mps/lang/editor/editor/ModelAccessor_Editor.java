@@ -29,6 +29,7 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bwxq1q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_bwxq1q_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_bwxq1q_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bwxq1q_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bwxq1q_c0(editorContext, node));
@@ -141,8 +142,8 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bwxq1q_a1a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_bwxq1q_b1a1a(EditorContext editorContext, SNode node) {
@@ -217,8 +218,8 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bwxq1q_a4a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_bwxq1q_b4a1a(EditorContext editorContext, SNode node) {
@@ -293,8 +294,8 @@ public class ModelAccessor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_bwxq1q_a7a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createRefNode_bwxq1q_b7a1a(EditorContext editorContext, SNode node) {

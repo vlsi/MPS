@@ -25,6 +25,7 @@ public class File_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jqfb9k_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_jqfb9k_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_jqfb9k_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jqfb9k_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_jqfb9k_c0(editorContext, node));

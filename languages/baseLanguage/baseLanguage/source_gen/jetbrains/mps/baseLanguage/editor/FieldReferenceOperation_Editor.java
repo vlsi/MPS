@@ -24,6 +24,7 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_i6724r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i6724r_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_i6724r_a0(editorContext, node));
     return editorCell;
   }

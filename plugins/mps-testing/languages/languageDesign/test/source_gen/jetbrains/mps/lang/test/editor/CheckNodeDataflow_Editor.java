@@ -24,6 +24,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_r9gaet_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_r9gaet_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_r9gaet_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r9gaet_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r9gaet_c0(editorContext, node));
