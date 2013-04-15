@@ -724,6 +724,9 @@
     <dependency org="plugins.svn4idea.lib" name="trilead.jar" rev="${idea.platform.version}">
       <artifact name="trilead.jar" ext="jar"/>
     </dependency>
+    <dependency org="plugins.svn4idea.lib" name="bindSvn.jar" rev="${idea.platform.version}">
+      <artifact name="bindSvn.jar" ext="jar"/>
+    </dependency>
 
   </dependencies>
 </ivy-module>
