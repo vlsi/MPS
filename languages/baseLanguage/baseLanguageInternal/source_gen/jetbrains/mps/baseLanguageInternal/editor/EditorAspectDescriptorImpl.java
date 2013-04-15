@@ -8,58 +8,273 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ConstantValue_Editor myConstantValueEditorAspect;
+  private ExtractStatementListExpression_Editor myExtractStatementListExpressionEditorAspect;
+  private ExtractStatementListInnerExpression_Editor myExtractStatementListInnerExpressionEditorAspect;
+  private ExtractStaticInnerClassExpression_Editor myExtractStaticInnerClassExpressionEditorAspect;
+  private ExtractStaticMethodExpression_Editor myExtractStaticMethodExpressionEditorAspect;
+  private ExtractStaticMethod_CallExpression_Editor myExtractStaticMethod_CallExpressionEditorAspect;
+  private ExtractToConstantExpression_Editor myExtractToConstantExpressionEditorAspect;
+  private ExtractToConstantRefExpression_Editor myExtractToConstantRefExpressionEditorAspect;
+  private InternalAnonymousClass_Editor myInternalAnonymousClassEditorAspect;
+  private InternalAnonymousClassCreator_Editor myInternalAnonymousClassCreatorEditorAspect;
+  private InternalClassCreator_Editor myInternalClassCreatorEditorAspect;
+  private InternalClassExpression_Editor myInternalClassExpressionEditorAspect;
+  private InternalClassifierType_Editor myInternalClassifierTypeEditorAspect;
+  private InternalNewExpression_Editor myInternalNewExpressionEditorAspect;
+  private InternalPartialFieldReference_Editor myInternalPartialFieldReferenceEditorAspect;
+  private InternalPartialInstanceMethodCall_Editor myInternalPartialInstanceMethodCallEditorAspect;
+  private InternalStaticFieldReference_Editor myInternalStaticFieldReferenceEditorAspect;
+  private InternalStaticMethodCall_Editor myInternalStaticMethodCallEditorAspect;
+  private InternalSuperMethodCallOperation_Editor myInternalSuperMethodCallOperationEditorAspect;
+  private InternalThisExpression_Editor myInternalThisExpressionEditorAspect;
+  private InternalVariableReference_Editor myInternalVariableReferenceEditorAspect;
+  private TypeHintExpression_Editor myTypeHintExpressionEditorAspect;
+  private WeakClassReference_Editor myWeakClassReferenceEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0x, descriptor.getConceptFqName())) {
       case 0:
-        return new ConstantValue_Editor();
+        return getConstantValueEditorAspect();
       case 1:
-        return new ExtractStatementListExpression_Editor();
+        return getExtractStatementListExpressionEditorAspect();
       case 2:
-        return new ExtractStatementListInnerExpression_Editor();
+        return getExtractStatementListInnerExpressionEditorAspect();
       case 3:
-        return new ExtractStaticInnerClassExpression_Editor();
+        return getExtractStaticInnerClassExpressionEditorAspect();
       case 4:
-        return new ExtractStaticMethodExpression_Editor();
+        return getExtractStaticMethodExpressionEditorAspect();
       case 5:
-        return new ExtractStaticMethod_CallExpression_Editor();
+        return getExtractStaticMethod_CallExpressionEditorAspect();
       case 6:
-        return new ExtractToConstantExpression_Editor();
+        return getExtractToConstantExpressionEditorAspect();
       case 7:
-        return new ExtractToConstantRefExpression_Editor();
+        return getExtractToConstantRefExpressionEditorAspect();
       case 8:
-        return new InternalAnonymousClass_Editor();
+        return getInternalAnonymousClassEditorAspect();
       case 9:
-        return new InternalAnonymousClassCreator_Editor();
+        return getInternalAnonymousClassCreatorEditorAspect();
       case 10:
-        return new InternalClassCreator_Editor();
+        return getInternalClassCreatorEditorAspect();
       case 11:
-        return new InternalClassExpression_Editor();
+        return getInternalClassExpressionEditorAspect();
       case 12:
-        return new InternalClassifierType_Editor();
+        return getInternalClassifierTypeEditorAspect();
       case 13:
-        return new InternalNewExpression_Editor();
+        return getInternalNewExpressionEditorAspect();
       case 14:
-        return new InternalPartialFieldReference_Editor();
+        return getInternalPartialFieldReferenceEditorAspect();
       case 15:
-        return new InternalPartialInstanceMethodCall_Editor();
+        return getInternalPartialInstanceMethodCallEditorAspect();
       case 16:
-        return new InternalStaticFieldReference_Editor();
+        return getInternalStaticFieldReferenceEditorAspect();
       case 17:
-        return new InternalStaticMethodCall_Editor();
+        return getInternalStaticMethodCallEditorAspect();
       case 18:
-        return new InternalSuperMethodCallOperation_Editor();
+        return getInternalSuperMethodCallOperationEditorAspect();
       case 19:
-        return new InternalThisExpression_Editor();
+        return getInternalThisExpressionEditorAspect();
       case 20:
-        return new InternalVariableReference_Editor();
+        return getInternalVariableReferenceEditorAspect();
       case 21:
-        return new TypeHintExpression_Editor();
+        return getTypeHintExpressionEditorAspect();
       case 22:
-        return new WeakClassReference_Editor();
+        return getWeakClassReferenceEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguageInternal.structure.ConstantValue", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myConstantValueEditorAspect = null;
+    myExtractStatementListExpressionEditorAspect = null;
+    myExtractStatementListInnerExpressionEditorAspect = null;
+    myExtractStaticInnerClassExpressionEditorAspect = null;
+    myExtractStaticMethodExpressionEditorAspect = null;
+    myExtractStaticMethod_CallExpressionEditorAspect = null;
+    myExtractToConstantExpressionEditorAspect = null;
+    myExtractToConstantRefExpressionEditorAspect = null;
+    myInternalAnonymousClassEditorAspect = null;
+    myInternalAnonymousClassCreatorEditorAspect = null;
+    myInternalClassCreatorEditorAspect = null;
+    myInternalClassExpressionEditorAspect = null;
+    myInternalClassifierTypeEditorAspect = null;
+    myInternalNewExpressionEditorAspect = null;
+    myInternalPartialFieldReferenceEditorAspect = null;
+    myInternalPartialInstanceMethodCallEditorAspect = null;
+    myInternalStaticFieldReferenceEditorAspect = null;
+    myInternalStaticMethodCallEditorAspect = null;
+    myInternalSuperMethodCallOperationEditorAspect = null;
+    myInternalThisExpressionEditorAspect = null;
+    myInternalVariableReferenceEditorAspect = null;
+    myTypeHintExpressionEditorAspect = null;
+    myWeakClassReferenceEditorAspect = null;
+  }
+
+  private ConstantValue_Editor getConstantValueEditorAspect() {
+    if (myConstantValueEditorAspect == null) {
+      myConstantValueEditorAspect = new ConstantValue_Editor();
+    }
+    return myConstantValueEditorAspect;
+  }
+
+  private ExtractStatementListExpression_Editor getExtractStatementListExpressionEditorAspect() {
+    if (myExtractStatementListExpressionEditorAspect == null) {
+      myExtractStatementListExpressionEditorAspect = new ExtractStatementListExpression_Editor();
+    }
+    return myExtractStatementListExpressionEditorAspect;
+  }
+
+  private ExtractStatementListInnerExpression_Editor getExtractStatementListInnerExpressionEditorAspect() {
+    if (myExtractStatementListInnerExpressionEditorAspect == null) {
+      myExtractStatementListInnerExpressionEditorAspect = new ExtractStatementListInnerExpression_Editor();
+    }
+    return myExtractStatementListInnerExpressionEditorAspect;
+  }
+
+  private ExtractStaticInnerClassExpression_Editor getExtractStaticInnerClassExpressionEditorAspect() {
+    if (myExtractStaticInnerClassExpressionEditorAspect == null) {
+      myExtractStaticInnerClassExpressionEditorAspect = new ExtractStaticInnerClassExpression_Editor();
+    }
+    return myExtractStaticInnerClassExpressionEditorAspect;
+  }
+
+  private ExtractStaticMethodExpression_Editor getExtractStaticMethodExpressionEditorAspect() {
+    if (myExtractStaticMethodExpressionEditorAspect == null) {
+      myExtractStaticMethodExpressionEditorAspect = new ExtractStaticMethodExpression_Editor();
+    }
+    return myExtractStaticMethodExpressionEditorAspect;
+  }
+
+  private ExtractStaticMethod_CallExpression_Editor getExtractStaticMethod_CallExpressionEditorAspect() {
+    if (myExtractStaticMethod_CallExpressionEditorAspect == null) {
+      myExtractStaticMethod_CallExpressionEditorAspect = new ExtractStaticMethod_CallExpression_Editor();
+    }
+    return myExtractStaticMethod_CallExpressionEditorAspect;
+  }
+
+  private ExtractToConstantExpression_Editor getExtractToConstantExpressionEditorAspect() {
+    if (myExtractToConstantExpressionEditorAspect == null) {
+      myExtractToConstantExpressionEditorAspect = new ExtractToConstantExpression_Editor();
+    }
+    return myExtractToConstantExpressionEditorAspect;
+  }
+
+  private ExtractToConstantRefExpression_Editor getExtractToConstantRefExpressionEditorAspect() {
+    if (myExtractToConstantRefExpressionEditorAspect == null) {
+      myExtractToConstantRefExpressionEditorAspect = new ExtractToConstantRefExpression_Editor();
+    }
+    return myExtractToConstantRefExpressionEditorAspect;
+  }
+
+  private InternalAnonymousClass_Editor getInternalAnonymousClassEditorAspect() {
+    if (myInternalAnonymousClassEditorAspect == null) {
+      myInternalAnonymousClassEditorAspect = new InternalAnonymousClass_Editor();
+    }
+    return myInternalAnonymousClassEditorAspect;
+  }
+
+  private InternalAnonymousClassCreator_Editor getInternalAnonymousClassCreatorEditorAspect() {
+    if (myInternalAnonymousClassCreatorEditorAspect == null) {
+      myInternalAnonymousClassCreatorEditorAspect = new InternalAnonymousClassCreator_Editor();
+    }
+    return myInternalAnonymousClassCreatorEditorAspect;
+  }
+
+  private InternalClassCreator_Editor getInternalClassCreatorEditorAspect() {
+    if (myInternalClassCreatorEditorAspect == null) {
+      myInternalClassCreatorEditorAspect = new InternalClassCreator_Editor();
+    }
+    return myInternalClassCreatorEditorAspect;
+  }
+
+  private InternalClassExpression_Editor getInternalClassExpressionEditorAspect() {
+    if (myInternalClassExpressionEditorAspect == null) {
+      myInternalClassExpressionEditorAspect = new InternalClassExpression_Editor();
+    }
+    return myInternalClassExpressionEditorAspect;
+  }
+
+  private InternalClassifierType_Editor getInternalClassifierTypeEditorAspect() {
+    if (myInternalClassifierTypeEditorAspect == null) {
+      myInternalClassifierTypeEditorAspect = new InternalClassifierType_Editor();
+    }
+    return myInternalClassifierTypeEditorAspect;
+  }
+
+  private InternalNewExpression_Editor getInternalNewExpressionEditorAspect() {
+    if (myInternalNewExpressionEditorAspect == null) {
+      myInternalNewExpressionEditorAspect = new InternalNewExpression_Editor();
+    }
+    return myInternalNewExpressionEditorAspect;
+  }
+
+  private InternalPartialFieldReference_Editor getInternalPartialFieldReferenceEditorAspect() {
+    if (myInternalPartialFieldReferenceEditorAspect == null) {
+      myInternalPartialFieldReferenceEditorAspect = new InternalPartialFieldReference_Editor();
+    }
+    return myInternalPartialFieldReferenceEditorAspect;
+  }
+
+  private InternalPartialInstanceMethodCall_Editor getInternalPartialInstanceMethodCallEditorAspect() {
+    if (myInternalPartialInstanceMethodCallEditorAspect == null) {
+      myInternalPartialInstanceMethodCallEditorAspect = new InternalPartialInstanceMethodCall_Editor();
+    }
+    return myInternalPartialInstanceMethodCallEditorAspect;
+  }
+
+  private InternalStaticFieldReference_Editor getInternalStaticFieldReferenceEditorAspect() {
+    if (myInternalStaticFieldReferenceEditorAspect == null) {
+      myInternalStaticFieldReferenceEditorAspect = new InternalStaticFieldReference_Editor();
+    }
+    return myInternalStaticFieldReferenceEditorAspect;
+  }
+
+  private InternalStaticMethodCall_Editor getInternalStaticMethodCallEditorAspect() {
+    if (myInternalStaticMethodCallEditorAspect == null) {
+      myInternalStaticMethodCallEditorAspect = new InternalStaticMethodCall_Editor();
+    }
+    return myInternalStaticMethodCallEditorAspect;
+  }
+
+  private InternalSuperMethodCallOperation_Editor getInternalSuperMethodCallOperationEditorAspect() {
+    if (myInternalSuperMethodCallOperationEditorAspect == null) {
+      myInternalSuperMethodCallOperationEditorAspect = new InternalSuperMethodCallOperation_Editor();
+    }
+    return myInternalSuperMethodCallOperationEditorAspect;
+  }
+
+  private InternalThisExpression_Editor getInternalThisExpressionEditorAspect() {
+    if (myInternalThisExpressionEditorAspect == null) {
+      myInternalThisExpressionEditorAspect = new InternalThisExpression_Editor();
+    }
+    return myInternalThisExpressionEditorAspect;
+  }
+
+  private InternalVariableReference_Editor getInternalVariableReferenceEditorAspect() {
+    if (myInternalVariableReferenceEditorAspect == null) {
+      myInternalVariableReferenceEditorAspect = new InternalVariableReference_Editor();
+    }
+    return myInternalVariableReferenceEditorAspect;
+  }
+
+  private TypeHintExpression_Editor getTypeHintExpressionEditorAspect() {
+    if (myTypeHintExpressionEditorAspect == null) {
+      myTypeHintExpressionEditorAspect = new TypeHintExpression_Editor();
+    }
+    return myTypeHintExpressionEditorAspect;
+  }
+
+  private WeakClassReference_Editor getWeakClassReferenceEditorAspect() {
+    if (myWeakClassReferenceEditorAspect == null) {
+      myWeakClassReferenceEditorAspect = new WeakClassReference_Editor();
+    }
+    return myWeakClassReferenceEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0x = new String[]{"jetbrains.mps.baseLanguageInternal.structure.ConstantValue", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"};
 }

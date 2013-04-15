@@ -8,36 +8,152 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CaseSensitive_Editor myCaseSensitiveEditorAspect;
+  private DefaultExcludes_Editor myDefaultExcludesEditorAspect;
+  private EntryPoint_Editor myEntryPointEditorAspect;
+  private Excludes_Editor myExcludesEditorAspect;
+  private GWTModule_Editor myGWTModuleEditorAspect;
+  private Includes_Editor myIncludesEditorAspect;
+  private Inherits_Editor myInheritsEditorAspect;
+  private Path_Editor myPathEditorAspect;
+  private Pattern_Editor myPatternEditorAspect;
+  private PatternFilter_Editor myPatternFilterEditorAspect;
+  private PatternHolder_Editor myPatternHolderEditorAspect;
+  private RenameTo_Editor myRenameToEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0m, descriptor.getConceptFqName())) {
       case 0:
-        return new CaseSensitive_Editor();
+        return getCaseSensitiveEditorAspect();
       case 1:
-        return new DefaultExcludes_Editor();
+        return getDefaultExcludesEditorAspect();
       case 2:
-        return new EntryPoint_Editor();
+        return getEntryPointEditorAspect();
       case 3:
-        return new Excludes_Editor();
+        return getExcludesEditorAspect();
       case 4:
-        return new GWTModule_Editor();
+        return getGWTModuleEditorAspect();
       case 5:
-        return new Includes_Editor();
+        return getIncludesEditorAspect();
       case 6:
-        return new Inherits_Editor();
+        return getInheritsEditorAspect();
       case 7:
-        return new Path_Editor();
+        return getPathEditorAspect();
       case 8:
-        return new Pattern_Editor();
+        return getPatternEditorAspect();
       case 9:
-        return new PatternFilter_Editor();
+        return getPatternFilterEditorAspect();
       case 10:
-        return new PatternHolder_Editor();
+        return getPatternHolderEditorAspect();
       case 11:
-        return new RenameTo_Editor();
+        return getRenameToEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.gwt.client.structure.CaseSensitive", "jetbrains.mps.gwt.client.structure.DefaultExcludes", "jetbrains.mps.gwt.client.structure.EntryPoint", "jetbrains.mps.gwt.client.structure.Excludes", "jetbrains.mps.gwt.client.structure.GWTModule", "jetbrains.mps.gwt.client.structure.Includes", "jetbrains.mps.gwt.client.structure.Inherits", "jetbrains.mps.gwt.client.structure.Path", "jetbrains.mps.gwt.client.structure.Pattern", "jetbrains.mps.gwt.client.structure.PatternFilter", "jetbrains.mps.gwt.client.structure.PatternHolder", "jetbrains.mps.gwt.client.structure.RenameTo"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCaseSensitiveEditorAspect = null;
+    myDefaultExcludesEditorAspect = null;
+    myEntryPointEditorAspect = null;
+    myExcludesEditorAspect = null;
+    myGWTModuleEditorAspect = null;
+    myIncludesEditorAspect = null;
+    myInheritsEditorAspect = null;
+    myPathEditorAspect = null;
+    myPatternEditorAspect = null;
+    myPatternFilterEditorAspect = null;
+    myPatternHolderEditorAspect = null;
+    myRenameToEditorAspect = null;
+  }
+
+  private CaseSensitive_Editor getCaseSensitiveEditorAspect() {
+    if (myCaseSensitiveEditorAspect == null) {
+      myCaseSensitiveEditorAspect = new CaseSensitive_Editor();
+    }
+    return myCaseSensitiveEditorAspect;
+  }
+
+  private DefaultExcludes_Editor getDefaultExcludesEditorAspect() {
+    if (myDefaultExcludesEditorAspect == null) {
+      myDefaultExcludesEditorAspect = new DefaultExcludes_Editor();
+    }
+    return myDefaultExcludesEditorAspect;
+  }
+
+  private EntryPoint_Editor getEntryPointEditorAspect() {
+    if (myEntryPointEditorAspect == null) {
+      myEntryPointEditorAspect = new EntryPoint_Editor();
+    }
+    return myEntryPointEditorAspect;
+  }
+
+  private Excludes_Editor getExcludesEditorAspect() {
+    if (myExcludesEditorAspect == null) {
+      myExcludesEditorAspect = new Excludes_Editor();
+    }
+    return myExcludesEditorAspect;
+  }
+
+  private GWTModule_Editor getGWTModuleEditorAspect() {
+    if (myGWTModuleEditorAspect == null) {
+      myGWTModuleEditorAspect = new GWTModule_Editor();
+    }
+    return myGWTModuleEditorAspect;
+  }
+
+  private Includes_Editor getIncludesEditorAspect() {
+    if (myIncludesEditorAspect == null) {
+      myIncludesEditorAspect = new Includes_Editor();
+    }
+    return myIncludesEditorAspect;
+  }
+
+  private Inherits_Editor getInheritsEditorAspect() {
+    if (myInheritsEditorAspect == null) {
+      myInheritsEditorAspect = new Inherits_Editor();
+    }
+    return myInheritsEditorAspect;
+  }
+
+  private Path_Editor getPathEditorAspect() {
+    if (myPathEditorAspect == null) {
+      myPathEditorAspect = new Path_Editor();
+    }
+    return myPathEditorAspect;
+  }
+
+  private Pattern_Editor getPatternEditorAspect() {
+    if (myPatternEditorAspect == null) {
+      myPatternEditorAspect = new Pattern_Editor();
+    }
+    return myPatternEditorAspect;
+  }
+
+  private PatternFilter_Editor getPatternFilterEditorAspect() {
+    if (myPatternFilterEditorAspect == null) {
+      myPatternFilterEditorAspect = new PatternFilter_Editor();
+    }
+    return myPatternFilterEditorAspect;
+  }
+
+  private PatternHolder_Editor getPatternHolderEditorAspect() {
+    if (myPatternHolderEditorAspect == null) {
+      myPatternHolderEditorAspect = new PatternHolder_Editor();
+    }
+    return myPatternHolderEditorAspect;
+  }
+
+  private RenameTo_Editor getRenameToEditorAspect() {
+    if (myRenameToEditorAspect == null) {
+      myRenameToEditorAspect = new RenameTo_Editor();
+    }
+    return myRenameToEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0m = new String[]{"jetbrains.mps.gwt.client.structure.CaseSensitive", "jetbrains.mps.gwt.client.structure.DefaultExcludes", "jetbrains.mps.gwt.client.structure.EntryPoint", "jetbrains.mps.gwt.client.structure.Excludes", "jetbrains.mps.gwt.client.structure.GWTModule", "jetbrains.mps.gwt.client.structure.Includes", "jetbrains.mps.gwt.client.structure.Inherits", "jetbrains.mps.gwt.client.structure.Path", "jetbrains.mps.gwt.client.structure.Pattern", "jetbrains.mps.gwt.client.structure.PatternFilter", "jetbrains.mps.gwt.client.structure.PatternHolder", "jetbrains.mps.gwt.client.structure.RenameTo"};
 }

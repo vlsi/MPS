@@ -8,56 +8,262 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AndOperation_Editor myAndOperationEditorAspect;
+  private Constant_Editor myConstantEditorAspect;
+  private EqualsOperation_Editor myEqualsOperationEditorAspect;
+  private Expression_Editor myExpressionEditorAspect;
+  private FloatingPointConstant_Editor myFloatingPointConstantEditorAspect;
+  private Formula_Editor myFormulaEditorAspect;
+  private Function_Editor myFunctionEditorAspect;
+  private GreaterThanOperation_Editor myGreaterThanOperationEditorAspect;
+  private IfFunction_Editor myIfFunctionEditorAspect;
+  private IntegerConstant_Editor myIntegerConstantEditorAspect;
+  private IsNullOperation_Editor myIsNullOperationEditorAspect;
+  private LessThanOperation_Editor myLessThanOperationEditorAspect;
+  private MinusOperation_Editor myMinusOperationEditorAspect;
+  private MultOperation_Editor myMultOperationEditorAspect;
+  private NotOperation_Editor myNotOperationEditorAspect;
+  private NullConstant_Editor myNullConstantEditorAspect;
+  private Operation_Editor myOperationEditorAspect;
+  private OrOperation_Editor myOrOperationEditorAspect;
+  private ParenthisizedExpression_Editor myParenthisizedExpressionEditorAspect;
+  private PlusOperation_Editor myPlusOperationEditorAspect;
+  private Reference_Editor myReferenceEditorAspect;
+  private StringConstant_Editor myStringConstantEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0w, descriptor.getConceptFqName())) {
       case 0:
-        return new AndOperation_Editor();
+        return getAndOperationEditorAspect();
       case 1:
-        return new Constant_Editor();
+        return getConstantEditorAspect();
       case 2:
-        return new EqualsOperation_Editor();
+        return getEqualsOperationEditorAspect();
       case 3:
-        return new Expression_Editor();
+        return getExpressionEditorAspect();
       case 4:
-        return new FloatingPointConstant_Editor();
+        return getFloatingPointConstantEditorAspect();
       case 5:
-        return new Formula_Editor();
+        return getFormulaEditorAspect();
       case 6:
-        return new Function_Editor();
+        return getFunctionEditorAspect();
       case 7:
-        return new GreaterThanOperation_Editor();
+        return getGreaterThanOperationEditorAspect();
       case 8:
-        return new IfFunction_Editor();
+        return getIfFunctionEditorAspect();
       case 9:
-        return new IntegerConstant_Editor();
+        return getIntegerConstantEditorAspect();
       case 10:
-        return new IsNullOperation_Editor();
+        return getIsNullOperationEditorAspect();
       case 11:
-        return new LessThanOperation_Editor();
+        return getLessThanOperationEditorAspect();
       case 12:
-        return new MinusOperation_Editor();
+        return getMinusOperationEditorAspect();
       case 13:
-        return new MultOperation_Editor();
+        return getMultOperationEditorAspect();
       case 14:
-        return new NotOperation_Editor();
+        return getNotOperationEditorAspect();
       case 15:
-        return new NullConstant_Editor();
+        return getNullConstantEditorAspect();
       case 16:
-        return new Operation_Editor();
+        return getOperationEditorAspect();
       case 17:
-        return new OrOperation_Editor();
+        return getOrOperationEditorAspect();
       case 18:
-        return new ParenthisizedExpression_Editor();
+        return getParenthisizedExpressionEditorAspect();
       case 19:
-        return new PlusOperation_Editor();
+        return getPlusOperationEditorAspect();
       case 20:
-        return new Reference_Editor();
+        return getReferenceEditorAspect();
       case 21:
-        return new StringConstant_Editor();
+        return getStringConstantEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.formulaLanguage.structure.AndOperation", "jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation", "jetbrains.mps.samples.formulaLanguage.structure.Expression", "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", "jetbrains.mps.samples.formulaLanguage.structure.Formula", "jetbrains.mps.samples.formulaLanguage.structure.Function", "jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation", "jetbrains.mps.samples.formulaLanguage.structure.IfFunction", "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", "jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation", "jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation", "jetbrains.mps.samples.formulaLanguage.structure.MinusOperation", "jetbrains.mps.samples.formulaLanguage.structure.MultOperation", "jetbrains.mps.samples.formulaLanguage.structure.NotOperation", "jetbrains.mps.samples.formulaLanguage.structure.NullConstant", "jetbrains.mps.samples.formulaLanguage.structure.Operation", "jetbrains.mps.samples.formulaLanguage.structure.OrOperation", "jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression", "jetbrains.mps.samples.formulaLanguage.structure.PlusOperation", "jetbrains.mps.samples.formulaLanguage.structure.Reference", "jetbrains.mps.samples.formulaLanguage.structure.StringConstant"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAndOperationEditorAspect = null;
+    myConstantEditorAspect = null;
+    myEqualsOperationEditorAspect = null;
+    myExpressionEditorAspect = null;
+    myFloatingPointConstantEditorAspect = null;
+    myFormulaEditorAspect = null;
+    myFunctionEditorAspect = null;
+    myGreaterThanOperationEditorAspect = null;
+    myIfFunctionEditorAspect = null;
+    myIntegerConstantEditorAspect = null;
+    myIsNullOperationEditorAspect = null;
+    myLessThanOperationEditorAspect = null;
+    myMinusOperationEditorAspect = null;
+    myMultOperationEditorAspect = null;
+    myNotOperationEditorAspect = null;
+    myNullConstantEditorAspect = null;
+    myOperationEditorAspect = null;
+    myOrOperationEditorAspect = null;
+    myParenthisizedExpressionEditorAspect = null;
+    myPlusOperationEditorAspect = null;
+    myReferenceEditorAspect = null;
+    myStringConstantEditorAspect = null;
+  }
+
+  private AndOperation_Editor getAndOperationEditorAspect() {
+    if (myAndOperationEditorAspect == null) {
+      myAndOperationEditorAspect = new AndOperation_Editor();
+    }
+    return myAndOperationEditorAspect;
+  }
+
+  private Constant_Editor getConstantEditorAspect() {
+    if (myConstantEditorAspect == null) {
+      myConstantEditorAspect = new Constant_Editor();
+    }
+    return myConstantEditorAspect;
+  }
+
+  private EqualsOperation_Editor getEqualsOperationEditorAspect() {
+    if (myEqualsOperationEditorAspect == null) {
+      myEqualsOperationEditorAspect = new EqualsOperation_Editor();
+    }
+    return myEqualsOperationEditorAspect;
+  }
+
+  private Expression_Editor getExpressionEditorAspect() {
+    if (myExpressionEditorAspect == null) {
+      myExpressionEditorAspect = new Expression_Editor();
+    }
+    return myExpressionEditorAspect;
+  }
+
+  private FloatingPointConstant_Editor getFloatingPointConstantEditorAspect() {
+    if (myFloatingPointConstantEditorAspect == null) {
+      myFloatingPointConstantEditorAspect = new FloatingPointConstant_Editor();
+    }
+    return myFloatingPointConstantEditorAspect;
+  }
+
+  private Formula_Editor getFormulaEditorAspect() {
+    if (myFormulaEditorAspect == null) {
+      myFormulaEditorAspect = new Formula_Editor();
+    }
+    return myFormulaEditorAspect;
+  }
+
+  private Function_Editor getFunctionEditorAspect() {
+    if (myFunctionEditorAspect == null) {
+      myFunctionEditorAspect = new Function_Editor();
+    }
+    return myFunctionEditorAspect;
+  }
+
+  private GreaterThanOperation_Editor getGreaterThanOperationEditorAspect() {
+    if (myGreaterThanOperationEditorAspect == null) {
+      myGreaterThanOperationEditorAspect = new GreaterThanOperation_Editor();
+    }
+    return myGreaterThanOperationEditorAspect;
+  }
+
+  private IfFunction_Editor getIfFunctionEditorAspect() {
+    if (myIfFunctionEditorAspect == null) {
+      myIfFunctionEditorAspect = new IfFunction_Editor();
+    }
+    return myIfFunctionEditorAspect;
+  }
+
+  private IntegerConstant_Editor getIntegerConstantEditorAspect() {
+    if (myIntegerConstantEditorAspect == null) {
+      myIntegerConstantEditorAspect = new IntegerConstant_Editor();
+    }
+    return myIntegerConstantEditorAspect;
+  }
+
+  private IsNullOperation_Editor getIsNullOperationEditorAspect() {
+    if (myIsNullOperationEditorAspect == null) {
+      myIsNullOperationEditorAspect = new IsNullOperation_Editor();
+    }
+    return myIsNullOperationEditorAspect;
+  }
+
+  private LessThanOperation_Editor getLessThanOperationEditorAspect() {
+    if (myLessThanOperationEditorAspect == null) {
+      myLessThanOperationEditorAspect = new LessThanOperation_Editor();
+    }
+    return myLessThanOperationEditorAspect;
+  }
+
+  private MinusOperation_Editor getMinusOperationEditorAspect() {
+    if (myMinusOperationEditorAspect == null) {
+      myMinusOperationEditorAspect = new MinusOperation_Editor();
+    }
+    return myMinusOperationEditorAspect;
+  }
+
+  private MultOperation_Editor getMultOperationEditorAspect() {
+    if (myMultOperationEditorAspect == null) {
+      myMultOperationEditorAspect = new MultOperation_Editor();
+    }
+    return myMultOperationEditorAspect;
+  }
+
+  private NotOperation_Editor getNotOperationEditorAspect() {
+    if (myNotOperationEditorAspect == null) {
+      myNotOperationEditorAspect = new NotOperation_Editor();
+    }
+    return myNotOperationEditorAspect;
+  }
+
+  private NullConstant_Editor getNullConstantEditorAspect() {
+    if (myNullConstantEditorAspect == null) {
+      myNullConstantEditorAspect = new NullConstant_Editor();
+    }
+    return myNullConstantEditorAspect;
+  }
+
+  private Operation_Editor getOperationEditorAspect() {
+    if (myOperationEditorAspect == null) {
+      myOperationEditorAspect = new Operation_Editor();
+    }
+    return myOperationEditorAspect;
+  }
+
+  private OrOperation_Editor getOrOperationEditorAspect() {
+    if (myOrOperationEditorAspect == null) {
+      myOrOperationEditorAspect = new OrOperation_Editor();
+    }
+    return myOrOperationEditorAspect;
+  }
+
+  private ParenthisizedExpression_Editor getParenthisizedExpressionEditorAspect() {
+    if (myParenthisizedExpressionEditorAspect == null) {
+      myParenthisizedExpressionEditorAspect = new ParenthisizedExpression_Editor();
+    }
+    return myParenthisizedExpressionEditorAspect;
+  }
+
+  private PlusOperation_Editor getPlusOperationEditorAspect() {
+    if (myPlusOperationEditorAspect == null) {
+      myPlusOperationEditorAspect = new PlusOperation_Editor();
+    }
+    return myPlusOperationEditorAspect;
+  }
+
+  private Reference_Editor getReferenceEditorAspect() {
+    if (myReferenceEditorAspect == null) {
+      myReferenceEditorAspect = new Reference_Editor();
+    }
+    return myReferenceEditorAspect;
+  }
+
+  private StringConstant_Editor getStringConstantEditorAspect() {
+    if (myStringConstantEditorAspect == null) {
+      myStringConstantEditorAspect = new StringConstant_Editor();
+    }
+    return myStringConstantEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0w = new String[]{"jetbrains.mps.samples.formulaLanguage.structure.AndOperation", "jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation", "jetbrains.mps.samples.formulaLanguage.structure.Expression", "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", "jetbrains.mps.samples.formulaLanguage.structure.Formula", "jetbrains.mps.samples.formulaLanguage.structure.Function", "jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation", "jetbrains.mps.samples.formulaLanguage.structure.IfFunction", "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", "jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation", "jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation", "jetbrains.mps.samples.formulaLanguage.structure.MinusOperation", "jetbrains.mps.samples.formulaLanguage.structure.MultOperation", "jetbrains.mps.samples.formulaLanguage.structure.NotOperation", "jetbrains.mps.samples.formulaLanguage.structure.NullConstant", "jetbrains.mps.samples.formulaLanguage.structure.Operation", "jetbrains.mps.samples.formulaLanguage.structure.OrOperation", "jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression", "jetbrains.mps.samples.formulaLanguage.structure.PlusOperation", "jetbrains.mps.samples.formulaLanguage.structure.Reference", "jetbrains.mps.samples.formulaLanguage.structure.StringConstant"};
 }

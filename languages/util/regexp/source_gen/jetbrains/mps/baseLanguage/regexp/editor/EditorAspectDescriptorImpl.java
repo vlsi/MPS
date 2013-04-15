@@ -8,102 +8,515 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AtLeastNTimesRegexp_Editor myAtLeastNTimesRegexpEditorAspect;
+  private BinaryRegexp_Editor myBinaryRegexpEditorAspect;
+  private CharacterSymbolClassPart_Editor myCharacterSymbolClassPartEditorAspect;
+  private DotRegexp_Editor myDotRegexpEditorAspect;
+  private FindMatchExpression_Editor myFindMatchExpressionEditorAspect;
+  private FindMatchStatement_Editor myFindMatchStatementEditorAspect;
+  private ForEachMatchStatement_Editor myForEachMatchStatementEditorAspect;
+  private FromNToMTimesRegexp_Editor myFromNToMTimesRegexpEditorAspect;
+  private InlineRegexpExpression_Editor myInlineRegexpExpressionEditorAspect;
+  private IntersectionSymbolClassPart_Editor myIntersectionSymbolClassPartEditorAspect;
+  private IntervalSymbolClassPart_Editor myIntervalSymbolClassPartEditorAspect;
+  private LineEndRegexp_Editor myLineEndRegexpEditorAspect;
+  private LineStartRegexp_Editor myLineStartRegexpEditorAspect;
+  private LiteralReplacement_Editor myLiteralReplacementEditorAspect;
+  private LookRegexp_Editor myLookRegexpEditorAspect;
+  private MatchParensRegexp_Editor myMatchParensRegexpEditorAspect;
+  private MatchRegexpExpression_Editor myMatchRegexpExpressionEditorAspect;
+  private MatchRegexpOperation_Editor myMatchRegexpOperationEditorAspect;
+  private MatchRegexpStatement_Editor myMatchRegexpStatementEditorAspect;
+  private MatchVariableReference_Editor myMatchVariableReferenceEditorAspect;
+  private MatchVariableReferenceRegexp_Editor myMatchVariableReferenceRegexpEditorAspect;
+  private MatchVariableReferenceReplacement_Editor myMatchVariableReferenceReplacementEditorAspect;
+  private NTimesRegexp_Editor myNTimesRegexpEditorAspect;
+  private NegativeSymbolClassRegexp_Editor myNegativeSymbolClassRegexpEditorAspect;
+  private OrRegexp_Editor myOrRegexpEditorAspect;
+  private ParensRegexp_Editor myParensRegexpEditorAspect;
+  private PositiveSymbolClassRegexp_Editor myPositiveSymbolClassRegexpEditorAspect;
+  private PredefinedSymbolClassDeclaration_Editor myPredefinedSymbolClassDeclarationEditorAspect;
+  private PredefinedSymbolClassRegexp_Editor myPredefinedSymbolClassRegexpEditorAspect;
+  private PredefinedSymbolClassSymbolClassPart_Editor myPredefinedSymbolClassSymbolClassPartEditorAspect;
+  private PredefinedSymbolClasses_Editor myPredefinedSymbolClassesEditorAspect;
+  private Regexp_Editor myRegexpEditorAspect;
+  private RegexpDeclaration_Editor myRegexpDeclarationEditorAspect;
+  private RegexpDeclarationReferenceRegexp_Editor myRegexpDeclarationReferenceRegexpEditorAspect;
+  private Regexps_Editor myRegexpsEditorAspect;
+  private ReplaceBlock_Editor myReplaceBlockEditorAspect;
+  private ReplaceRegexpOperation_Editor myReplaceRegexpOperationEditorAspect;
+  private ReplaceWithRegexpExpression_Editor myReplaceWithRegexpExpressionEditorAspect;
+  private ReplaceWithRegexpOperation_Editor myReplaceWithRegexpOperationEditorAspect;
+  private SeqRegexp_Editor mySeqRegexpEditorAspect;
+  private SplitExpression_Editor mySplitExpressionEditorAspect;
+  private SplitOperation_Editor mySplitOperationEditorAspect;
+  private StringLiteralRegexp_Editor myStringLiteralRegexpEditorAspect;
+  private UnaryRegexp_Editor myUnaryRegexpEditorAspect;
+  private UnicodeCharacterRegexp_Editor myUnicodeCharacterRegexpEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0tb, descriptor.getConceptFqName())) {
       case 0:
-        return new AtLeastNTimesRegexp_Editor();
+        return getAtLeastNTimesRegexpEditorAspect();
       case 1:
-        return new BinaryRegexp_Editor();
+        return getBinaryRegexpEditorAspect();
       case 2:
-        return new CharacterSymbolClassPart_Editor();
+        return getCharacterSymbolClassPartEditorAspect();
       case 3:
-        return new DotRegexp_Editor();
+        return getDotRegexpEditorAspect();
       case 4:
-        return new FindMatchExpression_Editor();
+        return getFindMatchExpressionEditorAspect();
       case 5:
-        return new FindMatchStatement_Editor();
+        return getFindMatchStatementEditorAspect();
       case 6:
-        return new ForEachMatchStatement_Editor();
+        return getForEachMatchStatementEditorAspect();
       case 7:
-        return new FromNToMTimesRegexp_Editor();
+        return getFromNToMTimesRegexpEditorAspect();
       case 8:
-        return new InlineRegexpExpression_Editor();
+        return getInlineRegexpExpressionEditorAspect();
       case 9:
-        return new IntersectionSymbolClassPart_Editor();
+        return getIntersectionSymbolClassPartEditorAspect();
       case 10:
-        return new IntervalSymbolClassPart_Editor();
+        return getIntervalSymbolClassPartEditorAspect();
       case 11:
-        return new LineEndRegexp_Editor();
+        return getLineEndRegexpEditorAspect();
       case 12:
-        return new LineStartRegexp_Editor();
+        return getLineStartRegexpEditorAspect();
       case 13:
-        return new LiteralReplacement_Editor();
+        return getLiteralReplacementEditorAspect();
       case 14:
-        return new LookRegexp_Editor();
+        return getLookRegexpEditorAspect();
       case 15:
-        return new MatchParensRegexp_Editor();
+        return getMatchParensRegexpEditorAspect();
       case 16:
-        return new MatchRegexpExpression_Editor();
+        return getMatchRegexpExpressionEditorAspect();
       case 17:
-        return new MatchRegexpOperation_Editor();
+        return getMatchRegexpOperationEditorAspect();
       case 18:
-        return new MatchRegexpStatement_Editor();
+        return getMatchRegexpStatementEditorAspect();
       case 19:
-        return new MatchVariableReference_Editor();
+        return getMatchVariableReferenceEditorAspect();
       case 20:
-        return new MatchVariableReferenceRegexp_Editor();
+        return getMatchVariableReferenceRegexpEditorAspect();
       case 21:
-        return new MatchVariableReferenceReplacement_Editor();
+        return getMatchVariableReferenceReplacementEditorAspect();
       case 22:
-        return new NTimesRegexp_Editor();
+        return getNTimesRegexpEditorAspect();
       case 23:
-        return new NegativeSymbolClassRegexp_Editor();
+        return getNegativeSymbolClassRegexpEditorAspect();
       case 24:
-        return new OrRegexp_Editor();
+        return getOrRegexpEditorAspect();
       case 25:
-        return new ParensRegexp_Editor();
+        return getParensRegexpEditorAspect();
       case 26:
-        return new PositiveSymbolClassRegexp_Editor();
+        return getPositiveSymbolClassRegexpEditorAspect();
       case 27:
-        return new PredefinedSymbolClassDeclaration_Editor();
+        return getPredefinedSymbolClassDeclarationEditorAspect();
       case 28:
-        return new PredefinedSymbolClassRegexp_Editor();
+        return getPredefinedSymbolClassRegexpEditorAspect();
       case 29:
-        return new PredefinedSymbolClassSymbolClassPart_Editor();
+        return getPredefinedSymbolClassSymbolClassPartEditorAspect();
       case 30:
-        return new PredefinedSymbolClasses_Editor();
+        return getPredefinedSymbolClassesEditorAspect();
       case 31:
-        return new Regexp_Editor();
+        return getRegexpEditorAspect();
       case 32:
-        return new RegexpDeclaration_Editor();
+        return getRegexpDeclarationEditorAspect();
       case 33:
-        return new RegexpDeclarationReferenceRegexp_Editor();
+        return getRegexpDeclarationReferenceRegexpEditorAspect();
       case 34:
-        return new Regexps_Editor();
+        return getRegexpsEditorAspect();
       case 35:
-        return new ReplaceBlock_Editor();
+        return getReplaceBlockEditorAspect();
       case 36:
-        return new ReplaceRegexpOperation_Editor();
+        return getReplaceRegexpOperationEditorAspect();
       case 37:
-        return new ReplaceWithRegexpExpression_Editor();
+        return getReplaceWithRegexpExpressionEditorAspect();
       case 38:
-        return new ReplaceWithRegexpOperation_Editor();
+        return getReplaceWithRegexpOperationEditorAspect();
       case 39:
-        return new SeqRegexp_Editor();
+        return getSeqRegexpEditorAspect();
       case 40:
-        return new SplitExpression_Editor();
+        return getSplitExpressionEditorAspect();
       case 41:
-        return new SplitOperation_Editor();
+        return getSplitOperationEditorAspect();
       case 42:
-        return new StringLiteralRegexp_Editor();
+        return getStringLiteralRegexpEditorAspect();
       case 43:
-        return new UnaryRegexp_Editor();
+        return getUnaryRegexpEditorAspect();
       case 44:
-        return new UnicodeCharacterRegexp_Editor();
+        return getUnicodeCharacterRegexpEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexps", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", "jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAtLeastNTimesRegexpEditorAspect = null;
+    myBinaryRegexpEditorAspect = null;
+    myCharacterSymbolClassPartEditorAspect = null;
+    myDotRegexpEditorAspect = null;
+    myFindMatchExpressionEditorAspect = null;
+    myFindMatchStatementEditorAspect = null;
+    myForEachMatchStatementEditorAspect = null;
+    myFromNToMTimesRegexpEditorAspect = null;
+    myInlineRegexpExpressionEditorAspect = null;
+    myIntersectionSymbolClassPartEditorAspect = null;
+    myIntervalSymbolClassPartEditorAspect = null;
+    myLineEndRegexpEditorAspect = null;
+    myLineStartRegexpEditorAspect = null;
+    myLiteralReplacementEditorAspect = null;
+    myLookRegexpEditorAspect = null;
+    myMatchParensRegexpEditorAspect = null;
+    myMatchRegexpExpressionEditorAspect = null;
+    myMatchRegexpOperationEditorAspect = null;
+    myMatchRegexpStatementEditorAspect = null;
+    myMatchVariableReferenceEditorAspect = null;
+    myMatchVariableReferenceRegexpEditorAspect = null;
+    myMatchVariableReferenceReplacementEditorAspect = null;
+    myNTimesRegexpEditorAspect = null;
+    myNegativeSymbolClassRegexpEditorAspect = null;
+    myOrRegexpEditorAspect = null;
+    myParensRegexpEditorAspect = null;
+    myPositiveSymbolClassRegexpEditorAspect = null;
+    myPredefinedSymbolClassDeclarationEditorAspect = null;
+    myPredefinedSymbolClassRegexpEditorAspect = null;
+    myPredefinedSymbolClassSymbolClassPartEditorAspect = null;
+    myPredefinedSymbolClassesEditorAspect = null;
+    myRegexpEditorAspect = null;
+    myRegexpDeclarationEditorAspect = null;
+    myRegexpDeclarationReferenceRegexpEditorAspect = null;
+    myRegexpsEditorAspect = null;
+    myReplaceBlockEditorAspect = null;
+    myReplaceRegexpOperationEditorAspect = null;
+    myReplaceWithRegexpExpressionEditorAspect = null;
+    myReplaceWithRegexpOperationEditorAspect = null;
+    mySeqRegexpEditorAspect = null;
+    mySplitExpressionEditorAspect = null;
+    mySplitOperationEditorAspect = null;
+    myStringLiteralRegexpEditorAspect = null;
+    myUnaryRegexpEditorAspect = null;
+    myUnicodeCharacterRegexpEditorAspect = null;
+  }
+
+  private AtLeastNTimesRegexp_Editor getAtLeastNTimesRegexpEditorAspect() {
+    if (myAtLeastNTimesRegexpEditorAspect == null) {
+      myAtLeastNTimesRegexpEditorAspect = new AtLeastNTimesRegexp_Editor();
+    }
+    return myAtLeastNTimesRegexpEditorAspect;
+  }
+
+  private BinaryRegexp_Editor getBinaryRegexpEditorAspect() {
+    if (myBinaryRegexpEditorAspect == null) {
+      myBinaryRegexpEditorAspect = new BinaryRegexp_Editor();
+    }
+    return myBinaryRegexpEditorAspect;
+  }
+
+  private CharacterSymbolClassPart_Editor getCharacterSymbolClassPartEditorAspect() {
+    if (myCharacterSymbolClassPartEditorAspect == null) {
+      myCharacterSymbolClassPartEditorAspect = new CharacterSymbolClassPart_Editor();
+    }
+    return myCharacterSymbolClassPartEditorAspect;
+  }
+
+  private DotRegexp_Editor getDotRegexpEditorAspect() {
+    if (myDotRegexpEditorAspect == null) {
+      myDotRegexpEditorAspect = new DotRegexp_Editor();
+    }
+    return myDotRegexpEditorAspect;
+  }
+
+  private FindMatchExpression_Editor getFindMatchExpressionEditorAspect() {
+    if (myFindMatchExpressionEditorAspect == null) {
+      myFindMatchExpressionEditorAspect = new FindMatchExpression_Editor();
+    }
+    return myFindMatchExpressionEditorAspect;
+  }
+
+  private FindMatchStatement_Editor getFindMatchStatementEditorAspect() {
+    if (myFindMatchStatementEditorAspect == null) {
+      myFindMatchStatementEditorAspect = new FindMatchStatement_Editor();
+    }
+    return myFindMatchStatementEditorAspect;
+  }
+
+  private ForEachMatchStatement_Editor getForEachMatchStatementEditorAspect() {
+    if (myForEachMatchStatementEditorAspect == null) {
+      myForEachMatchStatementEditorAspect = new ForEachMatchStatement_Editor();
+    }
+    return myForEachMatchStatementEditorAspect;
+  }
+
+  private FromNToMTimesRegexp_Editor getFromNToMTimesRegexpEditorAspect() {
+    if (myFromNToMTimesRegexpEditorAspect == null) {
+      myFromNToMTimesRegexpEditorAspect = new FromNToMTimesRegexp_Editor();
+    }
+    return myFromNToMTimesRegexpEditorAspect;
+  }
+
+  private InlineRegexpExpression_Editor getInlineRegexpExpressionEditorAspect() {
+    if (myInlineRegexpExpressionEditorAspect == null) {
+      myInlineRegexpExpressionEditorAspect = new InlineRegexpExpression_Editor();
+    }
+    return myInlineRegexpExpressionEditorAspect;
+  }
+
+  private IntersectionSymbolClassPart_Editor getIntersectionSymbolClassPartEditorAspect() {
+    if (myIntersectionSymbolClassPartEditorAspect == null) {
+      myIntersectionSymbolClassPartEditorAspect = new IntersectionSymbolClassPart_Editor();
+    }
+    return myIntersectionSymbolClassPartEditorAspect;
+  }
+
+  private IntervalSymbolClassPart_Editor getIntervalSymbolClassPartEditorAspect() {
+    if (myIntervalSymbolClassPartEditorAspect == null) {
+      myIntervalSymbolClassPartEditorAspect = new IntervalSymbolClassPart_Editor();
+    }
+    return myIntervalSymbolClassPartEditorAspect;
+  }
+
+  private LineEndRegexp_Editor getLineEndRegexpEditorAspect() {
+    if (myLineEndRegexpEditorAspect == null) {
+      myLineEndRegexpEditorAspect = new LineEndRegexp_Editor();
+    }
+    return myLineEndRegexpEditorAspect;
+  }
+
+  private LineStartRegexp_Editor getLineStartRegexpEditorAspect() {
+    if (myLineStartRegexpEditorAspect == null) {
+      myLineStartRegexpEditorAspect = new LineStartRegexp_Editor();
+    }
+    return myLineStartRegexpEditorAspect;
+  }
+
+  private LiteralReplacement_Editor getLiteralReplacementEditorAspect() {
+    if (myLiteralReplacementEditorAspect == null) {
+      myLiteralReplacementEditorAspect = new LiteralReplacement_Editor();
+    }
+    return myLiteralReplacementEditorAspect;
+  }
+
+  private LookRegexp_Editor getLookRegexpEditorAspect() {
+    if (myLookRegexpEditorAspect == null) {
+      myLookRegexpEditorAspect = new LookRegexp_Editor();
+    }
+    return myLookRegexpEditorAspect;
+  }
+
+  private MatchParensRegexp_Editor getMatchParensRegexpEditorAspect() {
+    if (myMatchParensRegexpEditorAspect == null) {
+      myMatchParensRegexpEditorAspect = new MatchParensRegexp_Editor();
+    }
+    return myMatchParensRegexpEditorAspect;
+  }
+
+  private MatchRegexpExpression_Editor getMatchRegexpExpressionEditorAspect() {
+    if (myMatchRegexpExpressionEditorAspect == null) {
+      myMatchRegexpExpressionEditorAspect = new MatchRegexpExpression_Editor();
+    }
+    return myMatchRegexpExpressionEditorAspect;
+  }
+
+  private MatchRegexpOperation_Editor getMatchRegexpOperationEditorAspect() {
+    if (myMatchRegexpOperationEditorAspect == null) {
+      myMatchRegexpOperationEditorAspect = new MatchRegexpOperation_Editor();
+    }
+    return myMatchRegexpOperationEditorAspect;
+  }
+
+  private MatchRegexpStatement_Editor getMatchRegexpStatementEditorAspect() {
+    if (myMatchRegexpStatementEditorAspect == null) {
+      myMatchRegexpStatementEditorAspect = new MatchRegexpStatement_Editor();
+    }
+    return myMatchRegexpStatementEditorAspect;
+  }
+
+  private MatchVariableReference_Editor getMatchVariableReferenceEditorAspect() {
+    if (myMatchVariableReferenceEditorAspect == null) {
+      myMatchVariableReferenceEditorAspect = new MatchVariableReference_Editor();
+    }
+    return myMatchVariableReferenceEditorAspect;
+  }
+
+  private MatchVariableReferenceRegexp_Editor getMatchVariableReferenceRegexpEditorAspect() {
+    if (myMatchVariableReferenceRegexpEditorAspect == null) {
+      myMatchVariableReferenceRegexpEditorAspect = new MatchVariableReferenceRegexp_Editor();
+    }
+    return myMatchVariableReferenceRegexpEditorAspect;
+  }
+
+  private MatchVariableReferenceReplacement_Editor getMatchVariableReferenceReplacementEditorAspect() {
+    if (myMatchVariableReferenceReplacementEditorAspect == null) {
+      myMatchVariableReferenceReplacementEditorAspect = new MatchVariableReferenceReplacement_Editor();
+    }
+    return myMatchVariableReferenceReplacementEditorAspect;
+  }
+
+  private NTimesRegexp_Editor getNTimesRegexpEditorAspect() {
+    if (myNTimesRegexpEditorAspect == null) {
+      myNTimesRegexpEditorAspect = new NTimesRegexp_Editor();
+    }
+    return myNTimesRegexpEditorAspect;
+  }
+
+  private NegativeSymbolClassRegexp_Editor getNegativeSymbolClassRegexpEditorAspect() {
+    if (myNegativeSymbolClassRegexpEditorAspect == null) {
+      myNegativeSymbolClassRegexpEditorAspect = new NegativeSymbolClassRegexp_Editor();
+    }
+    return myNegativeSymbolClassRegexpEditorAspect;
+  }
+
+  private OrRegexp_Editor getOrRegexpEditorAspect() {
+    if (myOrRegexpEditorAspect == null) {
+      myOrRegexpEditorAspect = new OrRegexp_Editor();
+    }
+    return myOrRegexpEditorAspect;
+  }
+
+  private ParensRegexp_Editor getParensRegexpEditorAspect() {
+    if (myParensRegexpEditorAspect == null) {
+      myParensRegexpEditorAspect = new ParensRegexp_Editor();
+    }
+    return myParensRegexpEditorAspect;
+  }
+
+  private PositiveSymbolClassRegexp_Editor getPositiveSymbolClassRegexpEditorAspect() {
+    if (myPositiveSymbolClassRegexpEditorAspect == null) {
+      myPositiveSymbolClassRegexpEditorAspect = new PositiveSymbolClassRegexp_Editor();
+    }
+    return myPositiveSymbolClassRegexpEditorAspect;
+  }
+
+  private PredefinedSymbolClassDeclaration_Editor getPredefinedSymbolClassDeclarationEditorAspect() {
+    if (myPredefinedSymbolClassDeclarationEditorAspect == null) {
+      myPredefinedSymbolClassDeclarationEditorAspect = new PredefinedSymbolClassDeclaration_Editor();
+    }
+    return myPredefinedSymbolClassDeclarationEditorAspect;
+  }
+
+  private PredefinedSymbolClassRegexp_Editor getPredefinedSymbolClassRegexpEditorAspect() {
+    if (myPredefinedSymbolClassRegexpEditorAspect == null) {
+      myPredefinedSymbolClassRegexpEditorAspect = new PredefinedSymbolClassRegexp_Editor();
+    }
+    return myPredefinedSymbolClassRegexpEditorAspect;
+  }
+
+  private PredefinedSymbolClassSymbolClassPart_Editor getPredefinedSymbolClassSymbolClassPartEditorAspect() {
+    if (myPredefinedSymbolClassSymbolClassPartEditorAspect == null) {
+      myPredefinedSymbolClassSymbolClassPartEditorAspect = new PredefinedSymbolClassSymbolClassPart_Editor();
+    }
+    return myPredefinedSymbolClassSymbolClassPartEditorAspect;
+  }
+
+  private PredefinedSymbolClasses_Editor getPredefinedSymbolClassesEditorAspect() {
+    if (myPredefinedSymbolClassesEditorAspect == null) {
+      myPredefinedSymbolClassesEditorAspect = new PredefinedSymbolClasses_Editor();
+    }
+    return myPredefinedSymbolClassesEditorAspect;
+  }
+
+  private Regexp_Editor getRegexpEditorAspect() {
+    if (myRegexpEditorAspect == null) {
+      myRegexpEditorAspect = new Regexp_Editor();
+    }
+    return myRegexpEditorAspect;
+  }
+
+  private RegexpDeclaration_Editor getRegexpDeclarationEditorAspect() {
+    if (myRegexpDeclarationEditorAspect == null) {
+      myRegexpDeclarationEditorAspect = new RegexpDeclaration_Editor();
+    }
+    return myRegexpDeclarationEditorAspect;
+  }
+
+  private RegexpDeclarationReferenceRegexp_Editor getRegexpDeclarationReferenceRegexpEditorAspect() {
+    if (myRegexpDeclarationReferenceRegexpEditorAspect == null) {
+      myRegexpDeclarationReferenceRegexpEditorAspect = new RegexpDeclarationReferenceRegexp_Editor();
+    }
+    return myRegexpDeclarationReferenceRegexpEditorAspect;
+  }
+
+  private Regexps_Editor getRegexpsEditorAspect() {
+    if (myRegexpsEditorAspect == null) {
+      myRegexpsEditorAspect = new Regexps_Editor();
+    }
+    return myRegexpsEditorAspect;
+  }
+
+  private ReplaceBlock_Editor getReplaceBlockEditorAspect() {
+    if (myReplaceBlockEditorAspect == null) {
+      myReplaceBlockEditorAspect = new ReplaceBlock_Editor();
+    }
+    return myReplaceBlockEditorAspect;
+  }
+
+  private ReplaceRegexpOperation_Editor getReplaceRegexpOperationEditorAspect() {
+    if (myReplaceRegexpOperationEditorAspect == null) {
+      myReplaceRegexpOperationEditorAspect = new ReplaceRegexpOperation_Editor();
+    }
+    return myReplaceRegexpOperationEditorAspect;
+  }
+
+  private ReplaceWithRegexpExpression_Editor getReplaceWithRegexpExpressionEditorAspect() {
+    if (myReplaceWithRegexpExpressionEditorAspect == null) {
+      myReplaceWithRegexpExpressionEditorAspect = new ReplaceWithRegexpExpression_Editor();
+    }
+    return myReplaceWithRegexpExpressionEditorAspect;
+  }
+
+  private ReplaceWithRegexpOperation_Editor getReplaceWithRegexpOperationEditorAspect() {
+    if (myReplaceWithRegexpOperationEditorAspect == null) {
+      myReplaceWithRegexpOperationEditorAspect = new ReplaceWithRegexpOperation_Editor();
+    }
+    return myReplaceWithRegexpOperationEditorAspect;
+  }
+
+  private SeqRegexp_Editor getSeqRegexpEditorAspect() {
+    if (mySeqRegexpEditorAspect == null) {
+      mySeqRegexpEditorAspect = new SeqRegexp_Editor();
+    }
+    return mySeqRegexpEditorAspect;
+  }
+
+  private SplitExpression_Editor getSplitExpressionEditorAspect() {
+    if (mySplitExpressionEditorAspect == null) {
+      mySplitExpressionEditorAspect = new SplitExpression_Editor();
+    }
+    return mySplitExpressionEditorAspect;
+  }
+
+  private SplitOperation_Editor getSplitOperationEditorAspect() {
+    if (mySplitOperationEditorAspect == null) {
+      mySplitOperationEditorAspect = new SplitOperation_Editor();
+    }
+    return mySplitOperationEditorAspect;
+  }
+
+  private StringLiteralRegexp_Editor getStringLiteralRegexpEditorAspect() {
+    if (myStringLiteralRegexpEditorAspect == null) {
+      myStringLiteralRegexpEditorAspect = new StringLiteralRegexp_Editor();
+    }
+    return myStringLiteralRegexpEditorAspect;
+  }
+
+  private UnaryRegexp_Editor getUnaryRegexpEditorAspect() {
+    if (myUnaryRegexpEditorAspect == null) {
+      myUnaryRegexpEditorAspect = new UnaryRegexp_Editor();
+    }
+    return myUnaryRegexpEditorAspect;
+  }
+
+  private UnicodeCharacterRegexp_Editor getUnicodeCharacterRegexpEditorAspect() {
+    if (myUnicodeCharacterRegexpEditorAspect == null) {
+      myUnicodeCharacterRegexpEditorAspect = new UnicodeCharacterRegexp_Editor();
+    }
+    return myUnicodeCharacterRegexpEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0tb = new String[]{"jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexps", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", "jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"};
 }

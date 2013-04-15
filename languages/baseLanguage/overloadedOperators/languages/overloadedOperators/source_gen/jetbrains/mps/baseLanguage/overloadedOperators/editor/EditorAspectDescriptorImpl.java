@@ -8,24 +8,86 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private BinaryOperationReference_Editor myBinaryOperationReferenceEditorAspect;
+  private CustomOperator_Editor myCustomOperatorEditorAspect;
+  private CustomOperatorDeclaration_Editor myCustomOperatorDeclarationEditorAspect;
+  private CustomOperatorUsage_Editor myCustomOperatorUsageEditorAspect;
+  private OverloadedBinaryOperator_Editor myOverloadedBinaryOperatorEditorAspect;
+  private OverloadedOperatorContainer_Editor myOverloadedOperatorContainerEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0g, descriptor.getConceptFqName())) {
       case 0:
-        return new BinaryOperationReference_Editor();
+        return getBinaryOperationReferenceEditorAspect();
       case 1:
-        return new CustomOperator_Editor();
+        return getCustomOperatorEditorAspect();
       case 2:
-        return new CustomOperatorDeclaration_Editor();
+        return getCustomOperatorDeclarationEditorAspect();
       case 3:
-        return new CustomOperatorUsage_Editor();
+        return getCustomOperatorUsageEditorAspect();
       case 4:
-        return new OverloadedBinaryOperator_Editor();
+        return getOverloadedBinaryOperatorEditorAspect();
       case 5:
-        return new OverloadedOperatorContainer_Editor();
+        return getOverloadedOperatorContainerEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myBinaryOperationReferenceEditorAspect = null;
+    myCustomOperatorEditorAspect = null;
+    myCustomOperatorDeclarationEditorAspect = null;
+    myCustomOperatorUsageEditorAspect = null;
+    myOverloadedBinaryOperatorEditorAspect = null;
+    myOverloadedOperatorContainerEditorAspect = null;
+  }
+
+  private BinaryOperationReference_Editor getBinaryOperationReferenceEditorAspect() {
+    if (myBinaryOperationReferenceEditorAspect == null) {
+      myBinaryOperationReferenceEditorAspect = new BinaryOperationReference_Editor();
+    }
+    return myBinaryOperationReferenceEditorAspect;
+  }
+
+  private CustomOperator_Editor getCustomOperatorEditorAspect() {
+    if (myCustomOperatorEditorAspect == null) {
+      myCustomOperatorEditorAspect = new CustomOperator_Editor();
+    }
+    return myCustomOperatorEditorAspect;
+  }
+
+  private CustomOperatorDeclaration_Editor getCustomOperatorDeclarationEditorAspect() {
+    if (myCustomOperatorDeclarationEditorAspect == null) {
+      myCustomOperatorDeclarationEditorAspect = new CustomOperatorDeclaration_Editor();
+    }
+    return myCustomOperatorDeclarationEditorAspect;
+  }
+
+  private CustomOperatorUsage_Editor getCustomOperatorUsageEditorAspect() {
+    if (myCustomOperatorUsageEditorAspect == null) {
+      myCustomOperatorUsageEditorAspect = new CustomOperatorUsage_Editor();
+    }
+    return myCustomOperatorUsageEditorAspect;
+  }
+
+  private OverloadedBinaryOperator_Editor getOverloadedBinaryOperatorEditorAspect() {
+    if (myOverloadedBinaryOperatorEditorAspect == null) {
+      myOverloadedBinaryOperatorEditorAspect = new OverloadedBinaryOperator_Editor();
+    }
+    return myOverloadedBinaryOperatorEditorAspect;
+  }
+
+  private OverloadedOperatorContainer_Editor getOverloadedOperatorContainerEditorAspect() {
+    if (myOverloadedOperatorContainerEditorAspect == null) {
+      myOverloadedOperatorContainerEditorAspect = new OverloadedOperatorContainer_Editor();
+    }
+    return myOverloadedOperatorContainerEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0g = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"};
 }

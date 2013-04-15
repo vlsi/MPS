@@ -8,46 +8,207 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AbstractFunctionType_Editor myAbstractFunctionTypeEditorAspect;
+  private ClosureControlStatement_Editor myClosureControlStatementEditorAspect;
+  private ClosureLiteral_Editor myClosureLiteralEditorAspect;
+  private CompactInvokeFunctionExpression_Editor myCompactInvokeFunctionExpressionEditorAspect;
+  private ControlAbstractionContainer_Editor myControlAbstractionContainerEditorAspect;
+  private ControlAbstractionDeclaration_Editor myControlAbstractionDeclarationEditorAspect;
+  private ControlClosureLiteral_Editor myControlClosureLiteralEditorAspect;
+  private FunctionMethodDeclaration_Editor myFunctionMethodDeclarationEditorAspect;
+  private FunctionType_Editor myFunctionTypeEditorAspect;
+  private InvokeExpression_Editor myInvokeExpressionEditorAspect;
+  private InvokeFunctionExpression_Editor myInvokeFunctionExpressionEditorAspect;
+  private InvokeFunctionOperation_Editor myInvokeFunctionOperationEditorAspect;
+  private UnboundClosureParameterDeclaration_Editor myUnboundClosureParameterDeclarationEditorAspect;
+  private UnrestrictedClosureLiteral_Editor myUnrestrictedClosureLiteralEditorAspect;
+  private UnrestrictedFunctionType_Editor myUnrestrictedFunctionTypeEditorAspect;
+  private YieldAllStatement_Editor myYieldAllStatementEditorAspect;
+  private YieldStatement_Editor myYieldStatementEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0r, descriptor.getConceptFqName())) {
       case 0:
-        return new AbstractFunctionType_Editor();
+        return getAbstractFunctionTypeEditorAspect();
       case 1:
-        return new ClosureControlStatement_Editor();
+        return getClosureControlStatementEditorAspect();
       case 2:
-        return new ClosureLiteral_Editor();
+        return getClosureLiteralEditorAspect();
       case 3:
-        return new CompactInvokeFunctionExpression_Editor();
+        return getCompactInvokeFunctionExpressionEditorAspect();
       case 4:
-        return new ControlAbstractionContainer_Editor();
+        return getControlAbstractionContainerEditorAspect();
       case 5:
-        return new ControlAbstractionDeclaration_Editor();
+        return getControlAbstractionDeclarationEditorAspect();
       case 6:
-        return new ControlClosureLiteral_Editor();
+        return getControlClosureLiteralEditorAspect();
       case 7:
-        return new FunctionMethodDeclaration_Editor();
+        return getFunctionMethodDeclarationEditorAspect();
       case 8:
-        return new FunctionType_Editor();
+        return getFunctionTypeEditorAspect();
       case 9:
-        return new InvokeExpression_Editor();
+        return getInvokeExpressionEditorAspect();
       case 10:
-        return new InvokeFunctionExpression_Editor();
+        return getInvokeFunctionExpressionEditorAspect();
       case 11:
-        return new InvokeFunctionOperation_Editor();
+        return getInvokeFunctionOperationEditorAspect();
       case 12:
-        return new UnboundClosureParameterDeclaration_Editor();
+        return getUnboundClosureParameterDeclarationEditorAspect();
       case 13:
-        return new UnrestrictedClosureLiteral_Editor();
+        return getUnrestrictedClosureLiteralEditorAspect();
       case 14:
-        return new UnrestrictedFunctionType_Editor();
+        return getUnrestrictedFunctionTypeEditorAspect();
       case 15:
-        return new YieldAllStatement_Editor();
+        return getYieldAllStatementEditorAspect();
       case 16:
-        return new YieldStatement_Editor();
+        return getYieldStatementEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.FunctionType", "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAbstractFunctionTypeEditorAspect = null;
+    myClosureControlStatementEditorAspect = null;
+    myClosureLiteralEditorAspect = null;
+    myCompactInvokeFunctionExpressionEditorAspect = null;
+    myControlAbstractionContainerEditorAspect = null;
+    myControlAbstractionDeclarationEditorAspect = null;
+    myControlClosureLiteralEditorAspect = null;
+    myFunctionMethodDeclarationEditorAspect = null;
+    myFunctionTypeEditorAspect = null;
+    myInvokeExpressionEditorAspect = null;
+    myInvokeFunctionExpressionEditorAspect = null;
+    myInvokeFunctionOperationEditorAspect = null;
+    myUnboundClosureParameterDeclarationEditorAspect = null;
+    myUnrestrictedClosureLiteralEditorAspect = null;
+    myUnrestrictedFunctionTypeEditorAspect = null;
+    myYieldAllStatementEditorAspect = null;
+    myYieldStatementEditorAspect = null;
+  }
+
+  private AbstractFunctionType_Editor getAbstractFunctionTypeEditorAspect() {
+    if (myAbstractFunctionTypeEditorAspect == null) {
+      myAbstractFunctionTypeEditorAspect = new AbstractFunctionType_Editor();
+    }
+    return myAbstractFunctionTypeEditorAspect;
+  }
+
+  private ClosureControlStatement_Editor getClosureControlStatementEditorAspect() {
+    if (myClosureControlStatementEditorAspect == null) {
+      myClosureControlStatementEditorAspect = new ClosureControlStatement_Editor();
+    }
+    return myClosureControlStatementEditorAspect;
+  }
+
+  private ClosureLiteral_Editor getClosureLiteralEditorAspect() {
+    if (myClosureLiteralEditorAspect == null) {
+      myClosureLiteralEditorAspect = new ClosureLiteral_Editor();
+    }
+    return myClosureLiteralEditorAspect;
+  }
+
+  private CompactInvokeFunctionExpression_Editor getCompactInvokeFunctionExpressionEditorAspect() {
+    if (myCompactInvokeFunctionExpressionEditorAspect == null) {
+      myCompactInvokeFunctionExpressionEditorAspect = new CompactInvokeFunctionExpression_Editor();
+    }
+    return myCompactInvokeFunctionExpressionEditorAspect;
+  }
+
+  private ControlAbstractionContainer_Editor getControlAbstractionContainerEditorAspect() {
+    if (myControlAbstractionContainerEditorAspect == null) {
+      myControlAbstractionContainerEditorAspect = new ControlAbstractionContainer_Editor();
+    }
+    return myControlAbstractionContainerEditorAspect;
+  }
+
+  private ControlAbstractionDeclaration_Editor getControlAbstractionDeclarationEditorAspect() {
+    if (myControlAbstractionDeclarationEditorAspect == null) {
+      myControlAbstractionDeclarationEditorAspect = new ControlAbstractionDeclaration_Editor();
+    }
+    return myControlAbstractionDeclarationEditorAspect;
+  }
+
+  private ControlClosureLiteral_Editor getControlClosureLiteralEditorAspect() {
+    if (myControlClosureLiteralEditorAspect == null) {
+      myControlClosureLiteralEditorAspect = new ControlClosureLiteral_Editor();
+    }
+    return myControlClosureLiteralEditorAspect;
+  }
+
+  private FunctionMethodDeclaration_Editor getFunctionMethodDeclarationEditorAspect() {
+    if (myFunctionMethodDeclarationEditorAspect == null) {
+      myFunctionMethodDeclarationEditorAspect = new FunctionMethodDeclaration_Editor();
+    }
+    return myFunctionMethodDeclarationEditorAspect;
+  }
+
+  private FunctionType_Editor getFunctionTypeEditorAspect() {
+    if (myFunctionTypeEditorAspect == null) {
+      myFunctionTypeEditorAspect = new FunctionType_Editor();
+    }
+    return myFunctionTypeEditorAspect;
+  }
+
+  private InvokeExpression_Editor getInvokeExpressionEditorAspect() {
+    if (myInvokeExpressionEditorAspect == null) {
+      myInvokeExpressionEditorAspect = new InvokeExpression_Editor();
+    }
+    return myInvokeExpressionEditorAspect;
+  }
+
+  private InvokeFunctionExpression_Editor getInvokeFunctionExpressionEditorAspect() {
+    if (myInvokeFunctionExpressionEditorAspect == null) {
+      myInvokeFunctionExpressionEditorAspect = new InvokeFunctionExpression_Editor();
+    }
+    return myInvokeFunctionExpressionEditorAspect;
+  }
+
+  private InvokeFunctionOperation_Editor getInvokeFunctionOperationEditorAspect() {
+    if (myInvokeFunctionOperationEditorAspect == null) {
+      myInvokeFunctionOperationEditorAspect = new InvokeFunctionOperation_Editor();
+    }
+    return myInvokeFunctionOperationEditorAspect;
+  }
+
+  private UnboundClosureParameterDeclaration_Editor getUnboundClosureParameterDeclarationEditorAspect() {
+    if (myUnboundClosureParameterDeclarationEditorAspect == null) {
+      myUnboundClosureParameterDeclarationEditorAspect = new UnboundClosureParameterDeclaration_Editor();
+    }
+    return myUnboundClosureParameterDeclarationEditorAspect;
+  }
+
+  private UnrestrictedClosureLiteral_Editor getUnrestrictedClosureLiteralEditorAspect() {
+    if (myUnrestrictedClosureLiteralEditorAspect == null) {
+      myUnrestrictedClosureLiteralEditorAspect = new UnrestrictedClosureLiteral_Editor();
+    }
+    return myUnrestrictedClosureLiteralEditorAspect;
+  }
+
+  private UnrestrictedFunctionType_Editor getUnrestrictedFunctionTypeEditorAspect() {
+    if (myUnrestrictedFunctionTypeEditorAspect == null) {
+      myUnrestrictedFunctionTypeEditorAspect = new UnrestrictedFunctionType_Editor();
+    }
+    return myUnrestrictedFunctionTypeEditorAspect;
+  }
+
+  private YieldAllStatement_Editor getYieldAllStatementEditorAspect() {
+    if (myYieldAllStatementEditorAspect == null) {
+      myYieldAllStatementEditorAspect = new YieldAllStatement_Editor();
+    }
+    return myYieldAllStatementEditorAspect;
+  }
+
+  private YieldStatement_Editor getYieldStatementEditorAspect() {
+    if (myYieldStatementEditorAspect == null) {
+      myYieldStatementEditorAspect = new YieldStatement_Editor();
+    }
+    return myYieldStatementEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0r = new String[]{"jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.FunctionType", "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"};
 }

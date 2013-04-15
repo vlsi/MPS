@@ -8,18 +8,53 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private DefaultGenerationParameterId_Editor myDefaultGenerationParameterIdEditorAspect;
+  private DefaultGeneratorParameter_Editor myDefaultGeneratorParameterEditorAspect;
+  private DefaultGeneratorParameterContainer_Editor myDefaultGeneratorParameterContainerEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        return new DefaultGenerationParameterId_Editor();
+        return getDefaultGenerationParameterIdEditorAspect();
       case 1:
-        return new DefaultGeneratorParameter_Editor();
+        return getDefaultGeneratorParameterEditorAspect();
       case 2:
-        return new DefaultGeneratorParameterContainer_Editor();
+        return getDefaultGeneratorParameterContainerEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.generator.generationParameters.structure.DefaultGenerationParameterId", "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter", "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myDefaultGenerationParameterIdEditorAspect = null;
+    myDefaultGeneratorParameterEditorAspect = null;
+    myDefaultGeneratorParameterContainerEditorAspect = null;
+  }
+
+  private DefaultGenerationParameterId_Editor getDefaultGenerationParameterIdEditorAspect() {
+    if (myDefaultGenerationParameterIdEditorAspect == null) {
+      myDefaultGenerationParameterIdEditorAspect = new DefaultGenerationParameterId_Editor();
+    }
+    return myDefaultGenerationParameterIdEditorAspect;
+  }
+
+  private DefaultGeneratorParameter_Editor getDefaultGeneratorParameterEditorAspect() {
+    if (myDefaultGeneratorParameterEditorAspect == null) {
+      myDefaultGeneratorParameterEditorAspect = new DefaultGeneratorParameter_Editor();
+    }
+    return myDefaultGeneratorParameterEditorAspect;
+  }
+
+  private DefaultGeneratorParameterContainer_Editor getDefaultGeneratorParameterContainerEditorAspect() {
+    if (myDefaultGeneratorParameterContainerEditorAspect == null) {
+      myDefaultGeneratorParameterContainerEditorAspect = new DefaultGeneratorParameterContainer_Editor();
+    }
+    return myDefaultGeneratorParameterContainerEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.lang.generator.generationParameters.structure.DefaultGenerationParameterId", "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter", "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer"};
 }

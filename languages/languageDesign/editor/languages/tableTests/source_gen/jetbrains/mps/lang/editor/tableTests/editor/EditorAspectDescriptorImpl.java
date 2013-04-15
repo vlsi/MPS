@@ -8,42 +8,185 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ContentElement_Editor myContentElementEditorAspect;
+  private DataCell_Editor myDataCellEditorAspect;
+  private Event_Editor myEventEditorAspect;
+  private EventReference_Editor myEventReferenceEditorAspect;
+  private HierarchycalTable_Editor myHierarchycalTableEditorAspect;
+  private LightWeightDecisionTable_Editor myLightWeightDecisionTableEditorAspect;
+  private Matrix_Editor myMatrixEditorAspect;
+  private State_Editor myStateEditorAspect;
+  private StateMachine_Editor myStateMachineEditorAspect;
+  private StateReference_Editor myStateReferenceEditorAspect;
+  private Table_Editor myTableEditorAspect;
+  private Transition_Editor myTransitionEditorAspect;
+  private UltimateContainer_Editor myUltimateContainerEditorAspect;
+  private XElement_Editor myXElementEditorAspect;
+  private YElement_Editor myYElementEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0p, descriptor.getConceptFqName())) {
       case 0:
-        return new ContentElement_Editor();
+        return getContentElementEditorAspect();
       case 1:
-        return new DataCell_Editor();
+        return getDataCellEditorAspect();
       case 2:
-        return new Event_Editor();
+        return getEventEditorAspect();
       case 3:
-        return new EventReference_Editor();
+        return getEventReferenceEditorAspect();
       case 4:
-        return new HierarchycalTable_Editor();
+        return getHierarchycalTableEditorAspect();
       case 5:
-        return new LightWeightDecisionTable_Editor();
+        return getLightWeightDecisionTableEditorAspect();
       case 6:
-        return new Matrix_Editor();
+        return getMatrixEditorAspect();
       case 7:
-        return new State_Editor();
+        return getStateEditorAspect();
       case 8:
-        return new StateMachine_Editor();
+        return getStateMachineEditorAspect();
       case 9:
-        return new StateReference_Editor();
+        return getStateReferenceEditorAspect();
       case 10:
-        return new Table_Editor();
+        return getTableEditorAspect();
       case 11:
-        return new Transition_Editor();
+        return getTransitionEditorAspect();
       case 12:
-        return new UltimateContainer_Editor();
+        return getUltimateContainerEditorAspect();
       case 13:
-        return new XElement_Editor();
+        return getXElementEditorAspect();
       case 14:
-        return new YElement_Editor();
+        return getYElementEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.tableTests.structure.ContentElement", "jetbrains.mps.lang.editor.tableTests.structure.DataCell", "jetbrains.mps.lang.editor.tableTests.structure.Event", "jetbrains.mps.lang.editor.tableTests.structure.EventReference", "jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable", "jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable", "jetbrains.mps.lang.editor.tableTests.structure.Matrix", "jetbrains.mps.lang.editor.tableTests.structure.State", "jetbrains.mps.lang.editor.tableTests.structure.StateMachine", "jetbrains.mps.lang.editor.tableTests.structure.StateReference", "jetbrains.mps.lang.editor.tableTests.structure.Table", "jetbrains.mps.lang.editor.tableTests.structure.Transition", "jetbrains.mps.lang.editor.tableTests.structure.UltimateContainer", "jetbrains.mps.lang.editor.tableTests.structure.XElement", "jetbrains.mps.lang.editor.tableTests.structure.YElement"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myContentElementEditorAspect = null;
+    myDataCellEditorAspect = null;
+    myEventEditorAspect = null;
+    myEventReferenceEditorAspect = null;
+    myHierarchycalTableEditorAspect = null;
+    myLightWeightDecisionTableEditorAspect = null;
+    myMatrixEditorAspect = null;
+    myStateEditorAspect = null;
+    myStateMachineEditorAspect = null;
+    myStateReferenceEditorAspect = null;
+    myTableEditorAspect = null;
+    myTransitionEditorAspect = null;
+    myUltimateContainerEditorAspect = null;
+    myXElementEditorAspect = null;
+    myYElementEditorAspect = null;
+  }
+
+  private ContentElement_Editor getContentElementEditorAspect() {
+    if (myContentElementEditorAspect == null) {
+      myContentElementEditorAspect = new ContentElement_Editor();
+    }
+    return myContentElementEditorAspect;
+  }
+
+  private DataCell_Editor getDataCellEditorAspect() {
+    if (myDataCellEditorAspect == null) {
+      myDataCellEditorAspect = new DataCell_Editor();
+    }
+    return myDataCellEditorAspect;
+  }
+
+  private Event_Editor getEventEditorAspect() {
+    if (myEventEditorAspect == null) {
+      myEventEditorAspect = new Event_Editor();
+    }
+    return myEventEditorAspect;
+  }
+
+  private EventReference_Editor getEventReferenceEditorAspect() {
+    if (myEventReferenceEditorAspect == null) {
+      myEventReferenceEditorAspect = new EventReference_Editor();
+    }
+    return myEventReferenceEditorAspect;
+  }
+
+  private HierarchycalTable_Editor getHierarchycalTableEditorAspect() {
+    if (myHierarchycalTableEditorAspect == null) {
+      myHierarchycalTableEditorAspect = new HierarchycalTable_Editor();
+    }
+    return myHierarchycalTableEditorAspect;
+  }
+
+  private LightWeightDecisionTable_Editor getLightWeightDecisionTableEditorAspect() {
+    if (myLightWeightDecisionTableEditorAspect == null) {
+      myLightWeightDecisionTableEditorAspect = new LightWeightDecisionTable_Editor();
+    }
+    return myLightWeightDecisionTableEditorAspect;
+  }
+
+  private Matrix_Editor getMatrixEditorAspect() {
+    if (myMatrixEditorAspect == null) {
+      myMatrixEditorAspect = new Matrix_Editor();
+    }
+    return myMatrixEditorAspect;
+  }
+
+  private State_Editor getStateEditorAspect() {
+    if (myStateEditorAspect == null) {
+      myStateEditorAspect = new State_Editor();
+    }
+    return myStateEditorAspect;
+  }
+
+  private StateMachine_Editor getStateMachineEditorAspect() {
+    if (myStateMachineEditorAspect == null) {
+      myStateMachineEditorAspect = new StateMachine_Editor();
+    }
+    return myStateMachineEditorAspect;
+  }
+
+  private StateReference_Editor getStateReferenceEditorAspect() {
+    if (myStateReferenceEditorAspect == null) {
+      myStateReferenceEditorAspect = new StateReference_Editor();
+    }
+    return myStateReferenceEditorAspect;
+  }
+
+  private Table_Editor getTableEditorAspect() {
+    if (myTableEditorAspect == null) {
+      myTableEditorAspect = new Table_Editor();
+    }
+    return myTableEditorAspect;
+  }
+
+  private Transition_Editor getTransitionEditorAspect() {
+    if (myTransitionEditorAspect == null) {
+      myTransitionEditorAspect = new Transition_Editor();
+    }
+    return myTransitionEditorAspect;
+  }
+
+  private UltimateContainer_Editor getUltimateContainerEditorAspect() {
+    if (myUltimateContainerEditorAspect == null) {
+      myUltimateContainerEditorAspect = new UltimateContainer_Editor();
+    }
+    return myUltimateContainerEditorAspect;
+  }
+
+  private XElement_Editor getXElementEditorAspect() {
+    if (myXElementEditorAspect == null) {
+      myXElementEditorAspect = new XElement_Editor();
+    }
+    return myXElementEditorAspect;
+  }
+
+  private YElement_Editor getYElementEditorAspect() {
+    if (myYElementEditorAspect == null) {
+      myYElementEditorAspect = new YElement_Editor();
+    }
+    return myYElementEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0p = new String[]{"jetbrains.mps.lang.editor.tableTests.structure.ContentElement", "jetbrains.mps.lang.editor.tableTests.structure.DataCell", "jetbrains.mps.lang.editor.tableTests.structure.Event", "jetbrains.mps.lang.editor.tableTests.structure.EventReference", "jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable", "jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable", "jetbrains.mps.lang.editor.tableTests.structure.Matrix", "jetbrains.mps.lang.editor.tableTests.structure.State", "jetbrains.mps.lang.editor.tableTests.structure.StateMachine", "jetbrains.mps.lang.editor.tableTests.structure.StateReference", "jetbrains.mps.lang.editor.tableTests.structure.Table", "jetbrains.mps.lang.editor.tableTests.structure.Transition", "jetbrains.mps.lang.editor.tableTests.structure.UltimateContainer", "jetbrains.mps.lang.editor.tableTests.structure.XElement", "jetbrains.mps.lang.editor.tableTests.structure.YElement"};
 }

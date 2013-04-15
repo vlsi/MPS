@@ -8,78 +8,383 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private FromOperation_Editor myFromOperationEditorAspect;
+  private GenericFeature_Editor myGenericFeatureEditorAspect;
+  private GenericParamFeature_Editor myGenericParamFeatureEditorAspect;
+  private IterateOperation_Editor myIterateOperationEditorAspect;
+  private LambdaMethod_Editor myLambdaMethodEditorAspect;
+  private LambdaMethodParameter_Editor myLambdaMethodParameterEditorAspect;
+  private ListFeature_Editor myListFeatureEditorAspect;
+  private MatchDefaultPropertyOperation_Editor myMatchDefaultPropertyOperationEditorAspect;
+  private MatchKindOperation_Editor myMatchKindOperationEditorAspect;
+  private MatchPropertyOperation_Editor myMatchPropertyOperationEditorAspect;
+  private NodeKindCase_Editor myNodeKindCaseEditorAspect;
+  private NodeKindDefaultCase_Editor myNodeKindDefaultCaseEditorAspect;
+  private NodeKindSpecificCase_Editor myNodeKindSpecificCaseEditorAspect;
+  private ParamListFeature_Editor myParamListFeatureEditorAspect;
+  private ParamSequenceFeature_Editor myParamSequenceFeatureEditorAspect;
+  private ParameterWrapper_Editor myParameterWrapperEditorAspect;
+  private SequenceFeature_Editor mySequenceFeatureEditorAspect;
+  private SwitchNodeKindStatement_Editor mySwitchNodeKindStatementEditorAspect;
+  private TreeNodeKind_Editor myTreeNodeKindEditorAspect;
+  private TreeNodeKindOccurrence_Editor myTreeNodeKindOccurrenceEditorAspect;
+  private TreeNodeKindProperty_Editor myTreeNodeKindPropertyEditorAspect;
+  private TreeNodeKindReference_Editor myTreeNodeKindReferenceEditorAspect;
+  private TreePathAdapterExpression_Editor myTreePathAdapterExpressionEditorAspect;
+  private TreePathAspect_Editor myTreePathAspectEditorAspect;
+  private TreePathCreator_Editor myTreePathCreatorEditorAspect;
+  private TreePathOperationExpression_Editor myTreePathOperationExpressionEditorAspect;
+  private TreePathType_Editor myTreePathTypeEditorAspect;
+  private VisitBlock_Editor myVisitBlockEditorAspect;
+  private VisitChildrenExpression_Editor myVisitChildrenExpressionEditorAspect;
+  private VisitNodesStatement_Editor myVisitNodesStatementEditorAspect;
+  private VisitParameterDeclaration_Editor myVisitParameterDeclarationEditorAspect;
+  private VisitParameterDeclarationList_Editor myVisitParameterDeclarationListEditorAspect;
+  private WhereOperation_Editor myWhereOperationEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0hb, descriptor.getConceptFqName())) {
       case 0:
-        return new FromOperation_Editor();
+        return getFromOperationEditorAspect();
       case 1:
-        return new GenericFeature_Editor();
+        return getGenericFeatureEditorAspect();
       case 2:
-        return new GenericParamFeature_Editor();
+        return getGenericParamFeatureEditorAspect();
       case 3:
-        return new IterateOperation_Editor();
+        return getIterateOperationEditorAspect();
       case 4:
-        return new LambdaMethod_Editor();
+        return getLambdaMethodEditorAspect();
       case 5:
-        return new LambdaMethodParameter_Editor();
+        return getLambdaMethodParameterEditorAspect();
       case 6:
-        return new ListFeature_Editor();
+        return getListFeatureEditorAspect();
       case 7:
-        return new MatchDefaultPropertyOperation_Editor();
+        return getMatchDefaultPropertyOperationEditorAspect();
       case 8:
-        return new MatchKindOperation_Editor();
+        return getMatchKindOperationEditorAspect();
       case 9:
-        return new MatchPropertyOperation_Editor();
+        return getMatchPropertyOperationEditorAspect();
       case 10:
-        return new NodeKindCase_Editor();
+        return getNodeKindCaseEditorAspect();
       case 11:
-        return new NodeKindDefaultCase_Editor();
+        return getNodeKindDefaultCaseEditorAspect();
       case 12:
-        return new NodeKindSpecificCase_Editor();
+        return getNodeKindSpecificCaseEditorAspect();
       case 13:
-        return new ParamListFeature_Editor();
+        return getParamListFeatureEditorAspect();
       case 14:
-        return new ParamSequenceFeature_Editor();
+        return getParamSequenceFeatureEditorAspect();
       case 15:
-        return new ParameterWrapper_Editor();
+        return getParameterWrapperEditorAspect();
       case 16:
-        return new SequenceFeature_Editor();
+        return getSequenceFeatureEditorAspect();
       case 17:
-        return new SwitchNodeKindStatement_Editor();
+        return getSwitchNodeKindStatementEditorAspect();
       case 18:
-        return new TreeNodeKind_Editor();
+        return getTreeNodeKindEditorAspect();
       case 19:
-        return new TreeNodeKindOccurrence_Editor();
+        return getTreeNodeKindOccurrenceEditorAspect();
       case 20:
-        return new TreeNodeKindProperty_Editor();
+        return getTreeNodeKindPropertyEditorAspect();
       case 21:
-        return new TreeNodeKindReference_Editor();
+        return getTreeNodeKindReferenceEditorAspect();
       case 22:
-        return new TreePathAdapterExpression_Editor();
+        return getTreePathAdapterExpressionEditorAspect();
       case 23:
-        return new TreePathAspect_Editor();
+        return getTreePathAspectEditorAspect();
       case 24:
-        return new TreePathCreator_Editor();
+        return getTreePathCreatorEditorAspect();
       case 25:
-        return new TreePathOperationExpression_Editor();
+        return getTreePathOperationExpressionEditorAspect();
       case 26:
-        return new TreePathType_Editor();
+        return getTreePathTypeEditorAspect();
       case 27:
-        return new VisitBlock_Editor();
+        return getVisitBlockEditorAspect();
       case 28:
-        return new VisitChildrenExpression_Editor();
+        return getVisitChildrenExpressionEditorAspect();
       case 29:
-        return new VisitNodesStatement_Editor();
+        return getVisitNodesStatementEditorAspect();
       case 30:
-        return new VisitParameterDeclaration_Editor();
+        return getVisitParameterDeclarationEditorAspect();
       case 31:
-        return new VisitParameterDeclarationList_Editor();
+        return getVisitParameterDeclarationListEditorAspect();
       case 32:
-        return new WhereOperation_Editor();
+        return getWhereOperationEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.ypath.structure.FromOperation", "jetbrains.mps.ypath.structure.GenericFeature", "jetbrains.mps.ypath.structure.GenericParamFeature", "jetbrains.mps.ypath.structure.IterateOperation", "jetbrains.mps.ypath.structure.LambdaMethod", "jetbrains.mps.ypath.structure.LambdaMethodParameter", "jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation", "jetbrains.mps.ypath.structure.MatchKindOperation", "jetbrains.mps.ypath.structure.MatchPropertyOperation", "jetbrains.mps.ypath.structure.NodeKindCase", "jetbrains.mps.ypath.structure.NodeKindDefaultCase", "jetbrains.mps.ypath.structure.NodeKindSpecificCase", "jetbrains.mps.ypath.structure.ParamListFeature", "jetbrains.mps.ypath.structure.ParamSequenceFeature", "jetbrains.mps.ypath.structure.ParameterWrapper", "jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.SwitchNodeKindStatement", "jetbrains.mps.ypath.structure.TreeNodeKind", "jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", "jetbrains.mps.ypath.structure.TreeNodeKindProperty", "jetbrains.mps.ypath.structure.TreeNodeKindReference", "jetbrains.mps.ypath.structure.TreePathAdapterExpression", "jetbrains.mps.ypath.structure.TreePathAspect", "jetbrains.mps.ypath.structure.TreePathCreator", "jetbrains.mps.ypath.structure.TreePathOperationExpression", "jetbrains.mps.ypath.structure.TreePathType", "jetbrains.mps.ypath.structure.VisitBlock", "jetbrains.mps.ypath.structure.VisitChildrenExpression", "jetbrains.mps.ypath.structure.VisitNodesStatement", "jetbrains.mps.ypath.structure.VisitParameterDeclaration", "jetbrains.mps.ypath.structure.VisitParameterDeclarationList", "jetbrains.mps.ypath.structure.WhereOperation"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myFromOperationEditorAspect = null;
+    myGenericFeatureEditorAspect = null;
+    myGenericParamFeatureEditorAspect = null;
+    myIterateOperationEditorAspect = null;
+    myLambdaMethodEditorAspect = null;
+    myLambdaMethodParameterEditorAspect = null;
+    myListFeatureEditorAspect = null;
+    myMatchDefaultPropertyOperationEditorAspect = null;
+    myMatchKindOperationEditorAspect = null;
+    myMatchPropertyOperationEditorAspect = null;
+    myNodeKindCaseEditorAspect = null;
+    myNodeKindDefaultCaseEditorAspect = null;
+    myNodeKindSpecificCaseEditorAspect = null;
+    myParamListFeatureEditorAspect = null;
+    myParamSequenceFeatureEditorAspect = null;
+    myParameterWrapperEditorAspect = null;
+    mySequenceFeatureEditorAspect = null;
+    mySwitchNodeKindStatementEditorAspect = null;
+    myTreeNodeKindEditorAspect = null;
+    myTreeNodeKindOccurrenceEditorAspect = null;
+    myTreeNodeKindPropertyEditorAspect = null;
+    myTreeNodeKindReferenceEditorAspect = null;
+    myTreePathAdapterExpressionEditorAspect = null;
+    myTreePathAspectEditorAspect = null;
+    myTreePathCreatorEditorAspect = null;
+    myTreePathOperationExpressionEditorAspect = null;
+    myTreePathTypeEditorAspect = null;
+    myVisitBlockEditorAspect = null;
+    myVisitChildrenExpressionEditorAspect = null;
+    myVisitNodesStatementEditorAspect = null;
+    myVisitParameterDeclarationEditorAspect = null;
+    myVisitParameterDeclarationListEditorAspect = null;
+    myWhereOperationEditorAspect = null;
+  }
+
+  private FromOperation_Editor getFromOperationEditorAspect() {
+    if (myFromOperationEditorAspect == null) {
+      myFromOperationEditorAspect = new FromOperation_Editor();
+    }
+    return myFromOperationEditorAspect;
+  }
+
+  private GenericFeature_Editor getGenericFeatureEditorAspect() {
+    if (myGenericFeatureEditorAspect == null) {
+      myGenericFeatureEditorAspect = new GenericFeature_Editor();
+    }
+    return myGenericFeatureEditorAspect;
+  }
+
+  private GenericParamFeature_Editor getGenericParamFeatureEditorAspect() {
+    if (myGenericParamFeatureEditorAspect == null) {
+      myGenericParamFeatureEditorAspect = new GenericParamFeature_Editor();
+    }
+    return myGenericParamFeatureEditorAspect;
+  }
+
+  private IterateOperation_Editor getIterateOperationEditorAspect() {
+    if (myIterateOperationEditorAspect == null) {
+      myIterateOperationEditorAspect = new IterateOperation_Editor();
+    }
+    return myIterateOperationEditorAspect;
+  }
+
+  private LambdaMethod_Editor getLambdaMethodEditorAspect() {
+    if (myLambdaMethodEditorAspect == null) {
+      myLambdaMethodEditorAspect = new LambdaMethod_Editor();
+    }
+    return myLambdaMethodEditorAspect;
+  }
+
+  private LambdaMethodParameter_Editor getLambdaMethodParameterEditorAspect() {
+    if (myLambdaMethodParameterEditorAspect == null) {
+      myLambdaMethodParameterEditorAspect = new LambdaMethodParameter_Editor();
+    }
+    return myLambdaMethodParameterEditorAspect;
+  }
+
+  private ListFeature_Editor getListFeatureEditorAspect() {
+    if (myListFeatureEditorAspect == null) {
+      myListFeatureEditorAspect = new ListFeature_Editor();
+    }
+    return myListFeatureEditorAspect;
+  }
+
+  private MatchDefaultPropertyOperation_Editor getMatchDefaultPropertyOperationEditorAspect() {
+    if (myMatchDefaultPropertyOperationEditorAspect == null) {
+      myMatchDefaultPropertyOperationEditorAspect = new MatchDefaultPropertyOperation_Editor();
+    }
+    return myMatchDefaultPropertyOperationEditorAspect;
+  }
+
+  private MatchKindOperation_Editor getMatchKindOperationEditorAspect() {
+    if (myMatchKindOperationEditorAspect == null) {
+      myMatchKindOperationEditorAspect = new MatchKindOperation_Editor();
+    }
+    return myMatchKindOperationEditorAspect;
+  }
+
+  private MatchPropertyOperation_Editor getMatchPropertyOperationEditorAspect() {
+    if (myMatchPropertyOperationEditorAspect == null) {
+      myMatchPropertyOperationEditorAspect = new MatchPropertyOperation_Editor();
+    }
+    return myMatchPropertyOperationEditorAspect;
+  }
+
+  private NodeKindCase_Editor getNodeKindCaseEditorAspect() {
+    if (myNodeKindCaseEditorAspect == null) {
+      myNodeKindCaseEditorAspect = new NodeKindCase_Editor();
+    }
+    return myNodeKindCaseEditorAspect;
+  }
+
+  private NodeKindDefaultCase_Editor getNodeKindDefaultCaseEditorAspect() {
+    if (myNodeKindDefaultCaseEditorAspect == null) {
+      myNodeKindDefaultCaseEditorAspect = new NodeKindDefaultCase_Editor();
+    }
+    return myNodeKindDefaultCaseEditorAspect;
+  }
+
+  private NodeKindSpecificCase_Editor getNodeKindSpecificCaseEditorAspect() {
+    if (myNodeKindSpecificCaseEditorAspect == null) {
+      myNodeKindSpecificCaseEditorAspect = new NodeKindSpecificCase_Editor();
+    }
+    return myNodeKindSpecificCaseEditorAspect;
+  }
+
+  private ParamListFeature_Editor getParamListFeatureEditorAspect() {
+    if (myParamListFeatureEditorAspect == null) {
+      myParamListFeatureEditorAspect = new ParamListFeature_Editor();
+    }
+    return myParamListFeatureEditorAspect;
+  }
+
+  private ParamSequenceFeature_Editor getParamSequenceFeatureEditorAspect() {
+    if (myParamSequenceFeatureEditorAspect == null) {
+      myParamSequenceFeatureEditorAspect = new ParamSequenceFeature_Editor();
+    }
+    return myParamSequenceFeatureEditorAspect;
+  }
+
+  private ParameterWrapper_Editor getParameterWrapperEditorAspect() {
+    if (myParameterWrapperEditorAspect == null) {
+      myParameterWrapperEditorAspect = new ParameterWrapper_Editor();
+    }
+    return myParameterWrapperEditorAspect;
+  }
+
+  private SequenceFeature_Editor getSequenceFeatureEditorAspect() {
+    if (mySequenceFeatureEditorAspect == null) {
+      mySequenceFeatureEditorAspect = new SequenceFeature_Editor();
+    }
+    return mySequenceFeatureEditorAspect;
+  }
+
+  private SwitchNodeKindStatement_Editor getSwitchNodeKindStatementEditorAspect() {
+    if (mySwitchNodeKindStatementEditorAspect == null) {
+      mySwitchNodeKindStatementEditorAspect = new SwitchNodeKindStatement_Editor();
+    }
+    return mySwitchNodeKindStatementEditorAspect;
+  }
+
+  private TreeNodeKind_Editor getTreeNodeKindEditorAspect() {
+    if (myTreeNodeKindEditorAspect == null) {
+      myTreeNodeKindEditorAspect = new TreeNodeKind_Editor();
+    }
+    return myTreeNodeKindEditorAspect;
+  }
+
+  private TreeNodeKindOccurrence_Editor getTreeNodeKindOccurrenceEditorAspect() {
+    if (myTreeNodeKindOccurrenceEditorAspect == null) {
+      myTreeNodeKindOccurrenceEditorAspect = new TreeNodeKindOccurrence_Editor();
+    }
+    return myTreeNodeKindOccurrenceEditorAspect;
+  }
+
+  private TreeNodeKindProperty_Editor getTreeNodeKindPropertyEditorAspect() {
+    if (myTreeNodeKindPropertyEditorAspect == null) {
+      myTreeNodeKindPropertyEditorAspect = new TreeNodeKindProperty_Editor();
+    }
+    return myTreeNodeKindPropertyEditorAspect;
+  }
+
+  private TreeNodeKindReference_Editor getTreeNodeKindReferenceEditorAspect() {
+    if (myTreeNodeKindReferenceEditorAspect == null) {
+      myTreeNodeKindReferenceEditorAspect = new TreeNodeKindReference_Editor();
+    }
+    return myTreeNodeKindReferenceEditorAspect;
+  }
+
+  private TreePathAdapterExpression_Editor getTreePathAdapterExpressionEditorAspect() {
+    if (myTreePathAdapterExpressionEditorAspect == null) {
+      myTreePathAdapterExpressionEditorAspect = new TreePathAdapterExpression_Editor();
+    }
+    return myTreePathAdapterExpressionEditorAspect;
+  }
+
+  private TreePathAspect_Editor getTreePathAspectEditorAspect() {
+    if (myTreePathAspectEditorAspect == null) {
+      myTreePathAspectEditorAspect = new TreePathAspect_Editor();
+    }
+    return myTreePathAspectEditorAspect;
+  }
+
+  private TreePathCreator_Editor getTreePathCreatorEditorAspect() {
+    if (myTreePathCreatorEditorAspect == null) {
+      myTreePathCreatorEditorAspect = new TreePathCreator_Editor();
+    }
+    return myTreePathCreatorEditorAspect;
+  }
+
+  private TreePathOperationExpression_Editor getTreePathOperationExpressionEditorAspect() {
+    if (myTreePathOperationExpressionEditorAspect == null) {
+      myTreePathOperationExpressionEditorAspect = new TreePathOperationExpression_Editor();
+    }
+    return myTreePathOperationExpressionEditorAspect;
+  }
+
+  private TreePathType_Editor getTreePathTypeEditorAspect() {
+    if (myTreePathTypeEditorAspect == null) {
+      myTreePathTypeEditorAspect = new TreePathType_Editor();
+    }
+    return myTreePathTypeEditorAspect;
+  }
+
+  private VisitBlock_Editor getVisitBlockEditorAspect() {
+    if (myVisitBlockEditorAspect == null) {
+      myVisitBlockEditorAspect = new VisitBlock_Editor();
+    }
+    return myVisitBlockEditorAspect;
+  }
+
+  private VisitChildrenExpression_Editor getVisitChildrenExpressionEditorAspect() {
+    if (myVisitChildrenExpressionEditorAspect == null) {
+      myVisitChildrenExpressionEditorAspect = new VisitChildrenExpression_Editor();
+    }
+    return myVisitChildrenExpressionEditorAspect;
+  }
+
+  private VisitNodesStatement_Editor getVisitNodesStatementEditorAspect() {
+    if (myVisitNodesStatementEditorAspect == null) {
+      myVisitNodesStatementEditorAspect = new VisitNodesStatement_Editor();
+    }
+    return myVisitNodesStatementEditorAspect;
+  }
+
+  private VisitParameterDeclaration_Editor getVisitParameterDeclarationEditorAspect() {
+    if (myVisitParameterDeclarationEditorAspect == null) {
+      myVisitParameterDeclarationEditorAspect = new VisitParameterDeclaration_Editor();
+    }
+    return myVisitParameterDeclarationEditorAspect;
+  }
+
+  private VisitParameterDeclarationList_Editor getVisitParameterDeclarationListEditorAspect() {
+    if (myVisitParameterDeclarationListEditorAspect == null) {
+      myVisitParameterDeclarationListEditorAspect = new VisitParameterDeclarationList_Editor();
+    }
+    return myVisitParameterDeclarationListEditorAspect;
+  }
+
+  private WhereOperation_Editor getWhereOperationEditorAspect() {
+    if (myWhereOperationEditorAspect == null) {
+      myWhereOperationEditorAspect = new WhereOperation_Editor();
+    }
+    return myWhereOperationEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0hb = new String[]{"jetbrains.mps.ypath.structure.FromOperation", "jetbrains.mps.ypath.structure.GenericFeature", "jetbrains.mps.ypath.structure.GenericParamFeature", "jetbrains.mps.ypath.structure.IterateOperation", "jetbrains.mps.ypath.structure.LambdaMethod", "jetbrains.mps.ypath.structure.LambdaMethodParameter", "jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation", "jetbrains.mps.ypath.structure.MatchKindOperation", "jetbrains.mps.ypath.structure.MatchPropertyOperation", "jetbrains.mps.ypath.structure.NodeKindCase", "jetbrains.mps.ypath.structure.NodeKindDefaultCase", "jetbrains.mps.ypath.structure.NodeKindSpecificCase", "jetbrains.mps.ypath.structure.ParamListFeature", "jetbrains.mps.ypath.structure.ParamSequenceFeature", "jetbrains.mps.ypath.structure.ParameterWrapper", "jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.SwitchNodeKindStatement", "jetbrains.mps.ypath.structure.TreeNodeKind", "jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", "jetbrains.mps.ypath.structure.TreeNodeKindProperty", "jetbrains.mps.ypath.structure.TreeNodeKindReference", "jetbrains.mps.ypath.structure.TreePathAdapterExpression", "jetbrains.mps.ypath.structure.TreePathAspect", "jetbrains.mps.ypath.structure.TreePathCreator", "jetbrains.mps.ypath.structure.TreePathOperationExpression", "jetbrains.mps.ypath.structure.TreePathType", "jetbrains.mps.ypath.structure.VisitBlock", "jetbrains.mps.ypath.structure.VisitChildrenExpression", "jetbrains.mps.ypath.structure.VisitNodesStatement", "jetbrains.mps.ypath.structure.VisitParameterDeclaration", "jetbrains.mps.ypath.structure.VisitParameterDeclarationList", "jetbrains.mps.ypath.structure.WhereOperation"};
 }

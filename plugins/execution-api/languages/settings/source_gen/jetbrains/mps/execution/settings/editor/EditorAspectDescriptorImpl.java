@@ -8,52 +8,240 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CheckProperitesOperation_Editor myCheckProperitesOperationEditorAspect;
+  private DeprecatedAnnotation_Editor myDeprecatedAnnotationEditorAspect;
+  private EditorExpression_Editor myEditorExpressionEditorAspect;
+  private EditorOperationCall_Editor myEditorOperationCallEditorAspect;
+  private EditorPropertyDeclaration_Editor myEditorPropertyDeclarationEditorAspect;
+  private EditorPropertyReference_Editor myEditorPropertyReferenceEditorAspect;
+  private GetEditorOperation_Editor myGetEditorOperationEditorAspect;
+  private GridBagConstraints_Editor myGridBagConstraintsEditorAspect;
+  private PersistentConfiguration_Editor myPersistentConfigurationEditorAspect;
+  private PersistentConfigurationTemplate_Editor myPersistentConfigurationTemplateEditorAspect;
+  private PersistentConfigurationTemplateInitializer_Editor myPersistentConfigurationTemplateInitializerEditorAspect;
+  private PersistentConfigurationType_Editor myPersistentConfigurationTypeEditorAspect;
+  private PersistentPropertyDeclaration_Editor myPersistentPropertyDeclarationEditorAspect;
+  private PersistentPropertyReferenceOperation_Editor myPersistentPropertyReferenceOperationEditorAspect;
+  private ReportConfigurationErrorStatement_Editor myReportConfigurationErrorStatementEditorAspect;
+  private SettingsEditor_Editor mySettingsEditorEditorAspect;
+  private SettingsEditorType_Editor mySettingsEditorTypeEditorAspect;
+  private TemplateParameter_Editor myTemplateParameterEditorAspect;
+  private TemplateParameterReference_Editor myTemplateParameterReferenceEditorAspect;
+  private TemplatePersistentConfigurationType_Editor myTemplatePersistentConfigurationTypeEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0u, descriptor.getConceptFqName())) {
       case 0:
-        return new CheckProperitesOperation_Editor();
+        return getCheckProperitesOperationEditorAspect();
       case 1:
-        return new DeprecatedAnnotation_Editor();
+        return getDeprecatedAnnotationEditorAspect();
       case 2:
-        return new EditorExpression_Editor();
+        return getEditorExpressionEditorAspect();
       case 3:
-        return new EditorOperationCall_Editor();
+        return getEditorOperationCallEditorAspect();
       case 4:
-        return new EditorPropertyDeclaration_Editor();
+        return getEditorPropertyDeclarationEditorAspect();
       case 5:
-        return new EditorPropertyReference_Editor();
+        return getEditorPropertyReferenceEditorAspect();
       case 6:
-        return new GetEditorOperation_Editor();
+        return getGetEditorOperationEditorAspect();
       case 7:
-        return new GridBagConstraints_Editor();
+        return getGridBagConstraintsEditorAspect();
       case 8:
-        return new PersistentConfiguration_Editor();
+        return getPersistentConfigurationEditorAspect();
       case 9:
-        return new PersistentConfigurationTemplate_Editor();
+        return getPersistentConfigurationTemplateEditorAspect();
       case 10:
-        return new PersistentConfigurationTemplateInitializer_Editor();
+        return getPersistentConfigurationTemplateInitializerEditorAspect();
       case 11:
-        return new PersistentConfigurationType_Editor();
+        return getPersistentConfigurationTypeEditorAspect();
       case 12:
-        return new PersistentPropertyDeclaration_Editor();
+        return getPersistentPropertyDeclarationEditorAspect();
       case 13:
-        return new PersistentPropertyReferenceOperation_Editor();
+        return getPersistentPropertyReferenceOperationEditorAspect();
       case 14:
-        return new ReportConfigurationErrorStatement_Editor();
+        return getReportConfigurationErrorStatementEditorAspect();
       case 15:
-        return new SettingsEditor_Editor();
+        return getSettingsEditorEditorAspect();
       case 16:
-        return new SettingsEditorType_Editor();
+        return getSettingsEditorTypeEditorAspect();
       case 17:
-        return new TemplateParameter_Editor();
+        return getTemplateParameterEditorAspect();
       case 18:
-        return new TemplateParameterReference_Editor();
+        return getTemplateParameterReferenceEditorAspect();
       case 19:
-        return new TemplatePersistentConfigurationType_Editor();
+        return getTemplatePersistentConfigurationTypeEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.execution.settings.structure.CheckProperitesOperation", "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation", "jetbrains.mps.execution.settings.structure.EditorExpression", "jetbrains.mps.execution.settings.structure.EditorOperationCall", "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyReference", "jetbrains.mps.execution.settings.structure.GetEditorOperation", "jetbrains.mps.execution.settings.structure.GridBagConstraints", "jetbrains.mps.execution.settings.structure.PersistentConfiguration", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer", "jetbrains.mps.execution.settings.structure.PersistentConfigurationType", "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration", "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", "jetbrains.mps.execution.settings.structure.SettingsEditor", "jetbrains.mps.execution.settings.structure.SettingsEditorType", "jetbrains.mps.execution.settings.structure.TemplateParameter", "jetbrains.mps.execution.settings.structure.TemplateParameterReference", "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCheckProperitesOperationEditorAspect = null;
+    myDeprecatedAnnotationEditorAspect = null;
+    myEditorExpressionEditorAspect = null;
+    myEditorOperationCallEditorAspect = null;
+    myEditorPropertyDeclarationEditorAspect = null;
+    myEditorPropertyReferenceEditorAspect = null;
+    myGetEditorOperationEditorAspect = null;
+    myGridBagConstraintsEditorAspect = null;
+    myPersistentConfigurationEditorAspect = null;
+    myPersistentConfigurationTemplateEditorAspect = null;
+    myPersistentConfigurationTemplateInitializerEditorAspect = null;
+    myPersistentConfigurationTypeEditorAspect = null;
+    myPersistentPropertyDeclarationEditorAspect = null;
+    myPersistentPropertyReferenceOperationEditorAspect = null;
+    myReportConfigurationErrorStatementEditorAspect = null;
+    mySettingsEditorEditorAspect = null;
+    mySettingsEditorTypeEditorAspect = null;
+    myTemplateParameterEditorAspect = null;
+    myTemplateParameterReferenceEditorAspect = null;
+    myTemplatePersistentConfigurationTypeEditorAspect = null;
+  }
+
+  private CheckProperitesOperation_Editor getCheckProperitesOperationEditorAspect() {
+    if (myCheckProperitesOperationEditorAspect == null) {
+      myCheckProperitesOperationEditorAspect = new CheckProperitesOperation_Editor();
+    }
+    return myCheckProperitesOperationEditorAspect;
+  }
+
+  private DeprecatedAnnotation_Editor getDeprecatedAnnotationEditorAspect() {
+    if (myDeprecatedAnnotationEditorAspect == null) {
+      myDeprecatedAnnotationEditorAspect = new DeprecatedAnnotation_Editor();
+    }
+    return myDeprecatedAnnotationEditorAspect;
+  }
+
+  private EditorExpression_Editor getEditorExpressionEditorAspect() {
+    if (myEditorExpressionEditorAspect == null) {
+      myEditorExpressionEditorAspect = new EditorExpression_Editor();
+    }
+    return myEditorExpressionEditorAspect;
+  }
+
+  private EditorOperationCall_Editor getEditorOperationCallEditorAspect() {
+    if (myEditorOperationCallEditorAspect == null) {
+      myEditorOperationCallEditorAspect = new EditorOperationCall_Editor();
+    }
+    return myEditorOperationCallEditorAspect;
+  }
+
+  private EditorPropertyDeclaration_Editor getEditorPropertyDeclarationEditorAspect() {
+    if (myEditorPropertyDeclarationEditorAspect == null) {
+      myEditorPropertyDeclarationEditorAspect = new EditorPropertyDeclaration_Editor();
+    }
+    return myEditorPropertyDeclarationEditorAspect;
+  }
+
+  private EditorPropertyReference_Editor getEditorPropertyReferenceEditorAspect() {
+    if (myEditorPropertyReferenceEditorAspect == null) {
+      myEditorPropertyReferenceEditorAspect = new EditorPropertyReference_Editor();
+    }
+    return myEditorPropertyReferenceEditorAspect;
+  }
+
+  private GetEditorOperation_Editor getGetEditorOperationEditorAspect() {
+    if (myGetEditorOperationEditorAspect == null) {
+      myGetEditorOperationEditorAspect = new GetEditorOperation_Editor();
+    }
+    return myGetEditorOperationEditorAspect;
+  }
+
+  private GridBagConstraints_Editor getGridBagConstraintsEditorAspect() {
+    if (myGridBagConstraintsEditorAspect == null) {
+      myGridBagConstraintsEditorAspect = new GridBagConstraints_Editor();
+    }
+    return myGridBagConstraintsEditorAspect;
+  }
+
+  private PersistentConfiguration_Editor getPersistentConfigurationEditorAspect() {
+    if (myPersistentConfigurationEditorAspect == null) {
+      myPersistentConfigurationEditorAspect = new PersistentConfiguration_Editor();
+    }
+    return myPersistentConfigurationEditorAspect;
+  }
+
+  private PersistentConfigurationTemplate_Editor getPersistentConfigurationTemplateEditorAspect() {
+    if (myPersistentConfigurationTemplateEditorAspect == null) {
+      myPersistentConfigurationTemplateEditorAspect = new PersistentConfigurationTemplate_Editor();
+    }
+    return myPersistentConfigurationTemplateEditorAspect;
+  }
+
+  private PersistentConfigurationTemplateInitializer_Editor getPersistentConfigurationTemplateInitializerEditorAspect() {
+    if (myPersistentConfigurationTemplateInitializerEditorAspect == null) {
+      myPersistentConfigurationTemplateInitializerEditorAspect = new PersistentConfigurationTemplateInitializer_Editor();
+    }
+    return myPersistentConfigurationTemplateInitializerEditorAspect;
+  }
+
+  private PersistentConfigurationType_Editor getPersistentConfigurationTypeEditorAspect() {
+    if (myPersistentConfigurationTypeEditorAspect == null) {
+      myPersistentConfigurationTypeEditorAspect = new PersistentConfigurationType_Editor();
+    }
+    return myPersistentConfigurationTypeEditorAspect;
+  }
+
+  private PersistentPropertyDeclaration_Editor getPersistentPropertyDeclarationEditorAspect() {
+    if (myPersistentPropertyDeclarationEditorAspect == null) {
+      myPersistentPropertyDeclarationEditorAspect = new PersistentPropertyDeclaration_Editor();
+    }
+    return myPersistentPropertyDeclarationEditorAspect;
+  }
+
+  private PersistentPropertyReferenceOperation_Editor getPersistentPropertyReferenceOperationEditorAspect() {
+    if (myPersistentPropertyReferenceOperationEditorAspect == null) {
+      myPersistentPropertyReferenceOperationEditorAspect = new PersistentPropertyReferenceOperation_Editor();
+    }
+    return myPersistentPropertyReferenceOperationEditorAspect;
+  }
+
+  private ReportConfigurationErrorStatement_Editor getReportConfigurationErrorStatementEditorAspect() {
+    if (myReportConfigurationErrorStatementEditorAspect == null) {
+      myReportConfigurationErrorStatementEditorAspect = new ReportConfigurationErrorStatement_Editor();
+    }
+    return myReportConfigurationErrorStatementEditorAspect;
+  }
+
+  private SettingsEditor_Editor getSettingsEditorEditorAspect() {
+    if (mySettingsEditorEditorAspect == null) {
+      mySettingsEditorEditorAspect = new SettingsEditor_Editor();
+    }
+    return mySettingsEditorEditorAspect;
+  }
+
+  private SettingsEditorType_Editor getSettingsEditorTypeEditorAspect() {
+    if (mySettingsEditorTypeEditorAspect == null) {
+      mySettingsEditorTypeEditorAspect = new SettingsEditorType_Editor();
+    }
+    return mySettingsEditorTypeEditorAspect;
+  }
+
+  private TemplateParameter_Editor getTemplateParameterEditorAspect() {
+    if (myTemplateParameterEditorAspect == null) {
+      myTemplateParameterEditorAspect = new TemplateParameter_Editor();
+    }
+    return myTemplateParameterEditorAspect;
+  }
+
+  private TemplateParameterReference_Editor getTemplateParameterReferenceEditorAspect() {
+    if (myTemplateParameterReferenceEditorAspect == null) {
+      myTemplateParameterReferenceEditorAspect = new TemplateParameterReference_Editor();
+    }
+    return myTemplateParameterReferenceEditorAspect;
+  }
+
+  private TemplatePersistentConfigurationType_Editor getTemplatePersistentConfigurationTypeEditorAspect() {
+    if (myTemplatePersistentConfigurationTypeEditorAspect == null) {
+      myTemplatePersistentConfigurationTypeEditorAspect = new TemplatePersistentConfigurationType_Editor();
+    }
+    return myTemplatePersistentConfigurationTypeEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0u = new String[]{"jetbrains.mps.execution.settings.structure.CheckProperitesOperation", "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation", "jetbrains.mps.execution.settings.structure.EditorExpression", "jetbrains.mps.execution.settings.structure.EditorOperationCall", "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyReference", "jetbrains.mps.execution.settings.structure.GetEditorOperation", "jetbrains.mps.execution.settings.structure.GridBagConstraints", "jetbrains.mps.execution.settings.structure.PersistentConfiguration", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer", "jetbrains.mps.execution.settings.structure.PersistentConfigurationType", "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration", "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", "jetbrains.mps.execution.settings.structure.SettingsEditor", "jetbrains.mps.execution.settings.structure.SettingsEditorType", "jetbrains.mps.execution.settings.structure.TemplateParameter", "jetbrains.mps.execution.settings.structure.TemplateParameterReference", "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"};
 }

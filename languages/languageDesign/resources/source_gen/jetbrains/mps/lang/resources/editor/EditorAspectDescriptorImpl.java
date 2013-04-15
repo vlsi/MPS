@@ -8,22 +8,75 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private IconResource_Editor myIconResourceEditorAspect;
+  private IconResourceBundle_Editor myIconResourceBundleEditorAspect;
+  private IconResourceDeclaration_Editor myIconResourceDeclarationEditorAspect;
+  private IconResourceExpression_Editor myIconResourceExpressionEditorAspect;
+  private IconResourceReference_Editor myIconResourceReferenceEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0f, descriptor.getConceptFqName())) {
       case 0:
-        return new IconResource_Editor();
+        return getIconResourceEditorAspect();
       case 1:
-        return new IconResourceBundle_Editor();
+        return getIconResourceBundleEditorAspect();
       case 2:
-        return new IconResourceDeclaration_Editor();
+        return getIconResourceDeclarationEditorAspect();
       case 3:
-        return new IconResourceExpression_Editor();
+        return getIconResourceExpressionEditorAspect();
       case 4:
-        return new IconResourceReference_Editor();
+        return getIconResourceReferenceEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.resources.structure.IconResource", "jetbrains.mps.lang.resources.structure.IconResourceBundle", "jetbrains.mps.lang.resources.structure.IconResourceDeclaration", "jetbrains.mps.lang.resources.structure.IconResourceExpression", "jetbrains.mps.lang.resources.structure.IconResourceReference"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myIconResourceEditorAspect = null;
+    myIconResourceBundleEditorAspect = null;
+    myIconResourceDeclarationEditorAspect = null;
+    myIconResourceExpressionEditorAspect = null;
+    myIconResourceReferenceEditorAspect = null;
+  }
+
+  private IconResource_Editor getIconResourceEditorAspect() {
+    if (myIconResourceEditorAspect == null) {
+      myIconResourceEditorAspect = new IconResource_Editor();
+    }
+    return myIconResourceEditorAspect;
+  }
+
+  private IconResourceBundle_Editor getIconResourceBundleEditorAspect() {
+    if (myIconResourceBundleEditorAspect == null) {
+      myIconResourceBundleEditorAspect = new IconResourceBundle_Editor();
+    }
+    return myIconResourceBundleEditorAspect;
+  }
+
+  private IconResourceDeclaration_Editor getIconResourceDeclarationEditorAspect() {
+    if (myIconResourceDeclarationEditorAspect == null) {
+      myIconResourceDeclarationEditorAspect = new IconResourceDeclaration_Editor();
+    }
+    return myIconResourceDeclarationEditorAspect;
+  }
+
+  private IconResourceExpression_Editor getIconResourceExpressionEditorAspect() {
+    if (myIconResourceExpressionEditorAspect == null) {
+      myIconResourceExpressionEditorAspect = new IconResourceExpression_Editor();
+    }
+    return myIconResourceExpressionEditorAspect;
+  }
+
+  private IconResourceReference_Editor getIconResourceReferenceEditorAspect() {
+    if (myIconResourceReferenceEditorAspect == null) {
+      myIconResourceReferenceEditorAspect = new IconResourceReference_Editor();
+    }
+    return myIconResourceReferenceEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0f = new String[]{"jetbrains.mps.lang.resources.structure.IconResource", "jetbrains.mps.lang.resources.structure.IconResourceBundle", "jetbrains.mps.lang.resources.structure.IconResourceDeclaration", "jetbrains.mps.lang.resources.structure.IconResourceExpression", "jetbrains.mps.lang.resources.structure.IconResourceReference"};
 }

@@ -8,18 +8,53 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Flow_Editor myFlowEditorAspect;
+  private MyIfStatement_Editor myMyIfStatementEditorAspect;
+  private UnlessStatement_Editor myUnlessStatementEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        return new Flow_Editor();
+        return getFlowEditorAspect();
       case 1:
-        return new MyIfStatement_Editor();
+        return getMyIfStatementEditorAspect();
       case 2:
-        return new UnlessStatement_Editor();
+        return getUnlessStatementEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"org.jetbrains.mps.samples.IfAndUnless.structure.Flow", "org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement", "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myFlowEditorAspect = null;
+    myMyIfStatementEditorAspect = null;
+    myUnlessStatementEditorAspect = null;
+  }
+
+  private Flow_Editor getFlowEditorAspect() {
+    if (myFlowEditorAspect == null) {
+      myFlowEditorAspect = new Flow_Editor();
+    }
+    return myFlowEditorAspect;
+  }
+
+  private MyIfStatement_Editor getMyIfStatementEditorAspect() {
+    if (myMyIfStatementEditorAspect == null) {
+      myMyIfStatementEditorAspect = new MyIfStatement_Editor();
+    }
+    return myMyIfStatementEditorAspect;
+  }
+
+  private UnlessStatement_Editor getUnlessStatementEditorAspect() {
+    if (myUnlessStatementEditorAspect == null) {
+      myUnlessStatementEditorAspect = new UnlessStatement_Editor();
+    }
+    return myUnlessStatementEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"org.jetbrains.mps.samples.IfAndUnless.structure.Flow", "org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement", "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement"};
 }

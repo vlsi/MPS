@@ -8,14 +8,31 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private DecisionTable_Editor myDecisionTableEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return new DecisionTable_Editor();
+        return getDecisionTableEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myDecisionTableEditorAspect = null;
+  }
+
+  private DecisionTable_Editor getDecisionTableEditorAspect() {
+    if (myDecisionTableEditorAspect == null) {
+      myDecisionTableEditorAspect = new DecisionTable_Editor();
+    }
+    return myDecisionTableEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable"};
 }

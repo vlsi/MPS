@@ -8,42 +8,185 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AnalysisDirection_Editor myAnalysisDirectionEditorAspect;
+  private Analyzer_Editor myAnalyzerEditorAspect;
+  private AnalyzerRunnerAnalyzeOperation_Editor myAnalyzerRunnerAnalyzeOperationEditorAspect;
+  private AnalyzerRunnerCreator_Editor myAnalyzerRunnerCreatorEditorAspect;
+  private ApplicableNodeReference_Editor myApplicableNodeReferenceEditorAspect;
+  private ConceptCondition_Editor myConceptConditionEditorAspect;
+  private EmitInstruction_Editor myEmitInstructionEditorAspect;
+  private InsertPosition_Editor myInsertPositionEditorAspect;
+  private Instruction_Editor myInstructionEditorAspect;
+  private InstructionParameter_Editor myInstructionParameterEditorAspect;
+  private InstructionReference_Editor myInstructionReferenceEditorAspect;
+  private IsOperation_Editor myIsOperationEditorAspect;
+  private PatternCondition_Editor myPatternConditionEditorAspect;
+  private Rule_Editor myRuleEditorAspect;
+  private RuleReference_Editor myRuleReferenceEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0p, descriptor.getConceptFqName())) {
       case 0:
-        return new AnalysisDirection_Editor();
+        return getAnalysisDirectionEditorAspect();
       case 1:
-        return new Analyzer_Editor();
+        return getAnalyzerEditorAspect();
       case 2:
-        return new AnalyzerRunnerAnalyzeOperation_Editor();
+        return getAnalyzerRunnerAnalyzeOperationEditorAspect();
       case 3:
-        return new AnalyzerRunnerCreator_Editor();
+        return getAnalyzerRunnerCreatorEditorAspect();
       case 4:
-        return new ApplicableNodeReference_Editor();
+        return getApplicableNodeReferenceEditorAspect();
       case 5:
-        return new ConceptCondition_Editor();
+        return getConceptConditionEditorAspect();
       case 6:
-        return new EmitInstruction_Editor();
+        return getEmitInstructionEditorAspect();
       case 7:
-        return new InsertPosition_Editor();
+        return getInsertPositionEditorAspect();
       case 8:
-        return new Instruction_Editor();
+        return getInstructionEditorAspect();
       case 9:
-        return new InstructionParameter_Editor();
+        return getInstructionParameterEditorAspect();
       case 10:
-        return new InstructionReference_Editor();
+        return getInstructionReferenceEditorAspect();
       case 11:
-        return new IsOperation_Editor();
+        return getIsOperationEditorAspect();
       case 12:
-        return new PatternCondition_Editor();
+        return getPatternConditionEditorAspect();
       case 13:
-        return new Rule_Editor();
+        return getRuleEditorAspect();
       case 14:
-        return new RuleReference_Editor();
+        return getRuleReferenceEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAnalysisDirectionEditorAspect = null;
+    myAnalyzerEditorAspect = null;
+    myAnalyzerRunnerAnalyzeOperationEditorAspect = null;
+    myAnalyzerRunnerCreatorEditorAspect = null;
+    myApplicableNodeReferenceEditorAspect = null;
+    myConceptConditionEditorAspect = null;
+    myEmitInstructionEditorAspect = null;
+    myInsertPositionEditorAspect = null;
+    myInstructionEditorAspect = null;
+    myInstructionParameterEditorAspect = null;
+    myInstructionReferenceEditorAspect = null;
+    myIsOperationEditorAspect = null;
+    myPatternConditionEditorAspect = null;
+    myRuleEditorAspect = null;
+    myRuleReferenceEditorAspect = null;
+  }
+
+  private AnalysisDirection_Editor getAnalysisDirectionEditorAspect() {
+    if (myAnalysisDirectionEditorAspect == null) {
+      myAnalysisDirectionEditorAspect = new AnalysisDirection_Editor();
+    }
+    return myAnalysisDirectionEditorAspect;
+  }
+
+  private Analyzer_Editor getAnalyzerEditorAspect() {
+    if (myAnalyzerEditorAspect == null) {
+      myAnalyzerEditorAspect = new Analyzer_Editor();
+    }
+    return myAnalyzerEditorAspect;
+  }
+
+  private AnalyzerRunnerAnalyzeOperation_Editor getAnalyzerRunnerAnalyzeOperationEditorAspect() {
+    if (myAnalyzerRunnerAnalyzeOperationEditorAspect == null) {
+      myAnalyzerRunnerAnalyzeOperationEditorAspect = new AnalyzerRunnerAnalyzeOperation_Editor();
+    }
+    return myAnalyzerRunnerAnalyzeOperationEditorAspect;
+  }
+
+  private AnalyzerRunnerCreator_Editor getAnalyzerRunnerCreatorEditorAspect() {
+    if (myAnalyzerRunnerCreatorEditorAspect == null) {
+      myAnalyzerRunnerCreatorEditorAspect = new AnalyzerRunnerCreator_Editor();
+    }
+    return myAnalyzerRunnerCreatorEditorAspect;
+  }
+
+  private ApplicableNodeReference_Editor getApplicableNodeReferenceEditorAspect() {
+    if (myApplicableNodeReferenceEditorAspect == null) {
+      myApplicableNodeReferenceEditorAspect = new ApplicableNodeReference_Editor();
+    }
+    return myApplicableNodeReferenceEditorAspect;
+  }
+
+  private ConceptCondition_Editor getConceptConditionEditorAspect() {
+    if (myConceptConditionEditorAspect == null) {
+      myConceptConditionEditorAspect = new ConceptCondition_Editor();
+    }
+    return myConceptConditionEditorAspect;
+  }
+
+  private EmitInstruction_Editor getEmitInstructionEditorAspect() {
+    if (myEmitInstructionEditorAspect == null) {
+      myEmitInstructionEditorAspect = new EmitInstruction_Editor();
+    }
+    return myEmitInstructionEditorAspect;
+  }
+
+  private InsertPosition_Editor getInsertPositionEditorAspect() {
+    if (myInsertPositionEditorAspect == null) {
+      myInsertPositionEditorAspect = new InsertPosition_Editor();
+    }
+    return myInsertPositionEditorAspect;
+  }
+
+  private Instruction_Editor getInstructionEditorAspect() {
+    if (myInstructionEditorAspect == null) {
+      myInstructionEditorAspect = new Instruction_Editor();
+    }
+    return myInstructionEditorAspect;
+  }
+
+  private InstructionParameter_Editor getInstructionParameterEditorAspect() {
+    if (myInstructionParameterEditorAspect == null) {
+      myInstructionParameterEditorAspect = new InstructionParameter_Editor();
+    }
+    return myInstructionParameterEditorAspect;
+  }
+
+  private InstructionReference_Editor getInstructionReferenceEditorAspect() {
+    if (myInstructionReferenceEditorAspect == null) {
+      myInstructionReferenceEditorAspect = new InstructionReference_Editor();
+    }
+    return myInstructionReferenceEditorAspect;
+  }
+
+  private IsOperation_Editor getIsOperationEditorAspect() {
+    if (myIsOperationEditorAspect == null) {
+      myIsOperationEditorAspect = new IsOperation_Editor();
+    }
+    return myIsOperationEditorAspect;
+  }
+
+  private PatternCondition_Editor getPatternConditionEditorAspect() {
+    if (myPatternConditionEditorAspect == null) {
+      myPatternConditionEditorAspect = new PatternCondition_Editor();
+    }
+    return myPatternConditionEditorAspect;
+  }
+
+  private Rule_Editor getRuleEditorAspect() {
+    if (myRuleEditorAspect == null) {
+      myRuleEditorAspect = new Rule_Editor();
+    }
+    return myRuleEditorAspect;
+  }
+
+  private RuleReference_Editor getRuleReferenceEditorAspect() {
+    if (myRuleReferenceEditorAspect == null) {
+      myRuleReferenceEditorAspect = new RuleReference_Editor();
+    }
+    return myRuleReferenceEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0p = new String[]{"jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"};
 }

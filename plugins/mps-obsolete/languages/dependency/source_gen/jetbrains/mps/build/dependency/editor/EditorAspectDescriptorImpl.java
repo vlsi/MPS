@@ -8,26 +8,97 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Cycle_Editor myCycleEditorAspect;
+  private CycleReference_Editor myCycleReferenceEditorAspect;
+  private Macros_Editor myMacrosEditorAspect;
+  private ModuleDescription_Editor myModuleDescriptionEditorAspect;
+  private PathHolder_Editor myPathHolderEditorAspect;
+  private ProjectDescription_Editor myProjectDescriptionEditorAspect;
+  private ProjectDescriptionReference_Editor myProjectDescriptionReferenceEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0h, descriptor.getConceptFqName())) {
       case 0:
-        return new Cycle_Editor();
+        return getCycleEditorAspect();
       case 1:
-        return new CycleReference_Editor();
+        return getCycleReferenceEditorAspect();
       case 2:
-        return new Macros_Editor();
+        return getMacrosEditorAspect();
       case 3:
-        return new ModuleDescription_Editor();
+        return getModuleDescriptionEditorAspect();
       case 4:
-        return new PathHolder_Editor();
+        return getPathHolderEditorAspect();
       case 5:
-        return new ProjectDescription_Editor();
+        return getProjectDescriptionEditorAspect();
       case 6:
-        return new ProjectDescriptionReference_Editor();
+        return getProjectDescriptionReferenceEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.dependency.structure.Cycle", "jetbrains.mps.build.dependency.structure.CycleReference", "jetbrains.mps.build.dependency.structure.Macros", "jetbrains.mps.build.dependency.structure.ModuleDescription", "jetbrains.mps.build.dependency.structure.PathHolder", "jetbrains.mps.build.dependency.structure.ProjectDescription", "jetbrains.mps.build.dependency.structure.ProjectDescriptionReference"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCycleEditorAspect = null;
+    myCycleReferenceEditorAspect = null;
+    myMacrosEditorAspect = null;
+    myModuleDescriptionEditorAspect = null;
+    myPathHolderEditorAspect = null;
+    myProjectDescriptionEditorAspect = null;
+    myProjectDescriptionReferenceEditorAspect = null;
+  }
+
+  private Cycle_Editor getCycleEditorAspect() {
+    if (myCycleEditorAspect == null) {
+      myCycleEditorAspect = new Cycle_Editor();
+    }
+    return myCycleEditorAspect;
+  }
+
+  private CycleReference_Editor getCycleReferenceEditorAspect() {
+    if (myCycleReferenceEditorAspect == null) {
+      myCycleReferenceEditorAspect = new CycleReference_Editor();
+    }
+    return myCycleReferenceEditorAspect;
+  }
+
+  private Macros_Editor getMacrosEditorAspect() {
+    if (myMacrosEditorAspect == null) {
+      myMacrosEditorAspect = new Macros_Editor();
+    }
+    return myMacrosEditorAspect;
+  }
+
+  private ModuleDescription_Editor getModuleDescriptionEditorAspect() {
+    if (myModuleDescriptionEditorAspect == null) {
+      myModuleDescriptionEditorAspect = new ModuleDescription_Editor();
+    }
+    return myModuleDescriptionEditorAspect;
+  }
+
+  private PathHolder_Editor getPathHolderEditorAspect() {
+    if (myPathHolderEditorAspect == null) {
+      myPathHolderEditorAspect = new PathHolder_Editor();
+    }
+    return myPathHolderEditorAspect;
+  }
+
+  private ProjectDescription_Editor getProjectDescriptionEditorAspect() {
+    if (myProjectDescriptionEditorAspect == null) {
+      myProjectDescriptionEditorAspect = new ProjectDescription_Editor();
+    }
+    return myProjectDescriptionEditorAspect;
+  }
+
+  private ProjectDescriptionReference_Editor getProjectDescriptionReferenceEditorAspect() {
+    if (myProjectDescriptionReferenceEditorAspect == null) {
+      myProjectDescriptionReferenceEditorAspect = new ProjectDescriptionReference_Editor();
+    }
+    return myProjectDescriptionReferenceEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0h = new String[]{"jetbrains.mps.build.dependency.structure.Cycle", "jetbrains.mps.build.dependency.structure.CycleReference", "jetbrains.mps.build.dependency.structure.Macros", "jetbrains.mps.build.dependency.structure.ModuleDescription", "jetbrains.mps.build.dependency.structure.PathHolder", "jetbrains.mps.build.dependency.structure.ProjectDescription", "jetbrains.mps.build.dependency.structure.ProjectDescriptionReference"};
 }

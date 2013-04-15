@@ -25,4 +25,8 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
   @Override
   EditorAspect getAspect(ConceptDescriptor concept);
+
+  void initialize();
+
+  void deinitialize();
 }

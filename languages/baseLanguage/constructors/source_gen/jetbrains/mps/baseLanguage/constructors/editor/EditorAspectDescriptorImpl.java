@@ -8,28 +8,108 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CustomArgumentClause_Editor myCustomArgumentClauseEditorAspect;
+  private CustomConstructor_Editor myCustomConstructorEditorAspect;
+  private CustomConstructorContainer_Editor myCustomConstructorContainerEditorAspect;
+  private CustomConstructorParameter_Editor myCustomConstructorParameterEditorAspect;
+  private CustomConstructorParameterReference_Editor myCustomConstructorParameterReferenceEditorAspect;
+  private CustomConstructorUsage_Editor myCustomConstructorUsageEditorAspect;
+  private ListArgumentsClause_Editor myListArgumentsClauseEditorAspect;
+  private ListCustomParameter_Editor myListCustomParameterEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0i, descriptor.getConceptFqName())) {
       case 0:
-        return new CustomArgumentClause_Editor();
+        return getCustomArgumentClauseEditorAspect();
       case 1:
-        return new CustomConstructor_Editor();
+        return getCustomConstructorEditorAspect();
       case 2:
-        return new CustomConstructorContainer_Editor();
+        return getCustomConstructorContainerEditorAspect();
       case 3:
-        return new CustomConstructorParameter_Editor();
+        return getCustomConstructorParameterEditorAspect();
       case 4:
-        return new CustomConstructorParameterReference_Editor();
+        return getCustomConstructorParameterReferenceEditorAspect();
       case 5:
-        return new CustomConstructorUsage_Editor();
+        return getCustomConstructorUsageEditorAspect();
       case 6:
-        return new ListArgumentsClause_Editor();
+        return getListArgumentsClauseEditorAspect();
       case 7:
-        return new ListCustomParameter_Editor();
+        return getListCustomParameterEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage", "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause", "jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCustomArgumentClauseEditorAspect = null;
+    myCustomConstructorEditorAspect = null;
+    myCustomConstructorContainerEditorAspect = null;
+    myCustomConstructorParameterEditorAspect = null;
+    myCustomConstructorParameterReferenceEditorAspect = null;
+    myCustomConstructorUsageEditorAspect = null;
+    myListArgumentsClauseEditorAspect = null;
+    myListCustomParameterEditorAspect = null;
+  }
+
+  private CustomArgumentClause_Editor getCustomArgumentClauseEditorAspect() {
+    if (myCustomArgumentClauseEditorAspect == null) {
+      myCustomArgumentClauseEditorAspect = new CustomArgumentClause_Editor();
+    }
+    return myCustomArgumentClauseEditorAspect;
+  }
+
+  private CustomConstructor_Editor getCustomConstructorEditorAspect() {
+    if (myCustomConstructorEditorAspect == null) {
+      myCustomConstructorEditorAspect = new CustomConstructor_Editor();
+    }
+    return myCustomConstructorEditorAspect;
+  }
+
+  private CustomConstructorContainer_Editor getCustomConstructorContainerEditorAspect() {
+    if (myCustomConstructorContainerEditorAspect == null) {
+      myCustomConstructorContainerEditorAspect = new CustomConstructorContainer_Editor();
+    }
+    return myCustomConstructorContainerEditorAspect;
+  }
+
+  private CustomConstructorParameter_Editor getCustomConstructorParameterEditorAspect() {
+    if (myCustomConstructorParameterEditorAspect == null) {
+      myCustomConstructorParameterEditorAspect = new CustomConstructorParameter_Editor();
+    }
+    return myCustomConstructorParameterEditorAspect;
+  }
+
+  private CustomConstructorParameterReference_Editor getCustomConstructorParameterReferenceEditorAspect() {
+    if (myCustomConstructorParameterReferenceEditorAspect == null) {
+      myCustomConstructorParameterReferenceEditorAspect = new CustomConstructorParameterReference_Editor();
+    }
+    return myCustomConstructorParameterReferenceEditorAspect;
+  }
+
+  private CustomConstructorUsage_Editor getCustomConstructorUsageEditorAspect() {
+    if (myCustomConstructorUsageEditorAspect == null) {
+      myCustomConstructorUsageEditorAspect = new CustomConstructorUsage_Editor();
+    }
+    return myCustomConstructorUsageEditorAspect;
+  }
+
+  private ListArgumentsClause_Editor getListArgumentsClauseEditorAspect() {
+    if (myListArgumentsClauseEditorAspect == null) {
+      myListArgumentsClauseEditorAspect = new ListArgumentsClause_Editor();
+    }
+    return myListArgumentsClauseEditorAspect;
+  }
+
+  private ListCustomParameter_Editor getListCustomParameterEditorAspect() {
+    if (myListCustomParameterEditorAspect == null) {
+      myListCustomParameterEditorAspect = new ListCustomParameter_Editor();
+    }
+    return myListCustomParameterEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0i = new String[]{"jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage", "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause", "jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter"};
 }

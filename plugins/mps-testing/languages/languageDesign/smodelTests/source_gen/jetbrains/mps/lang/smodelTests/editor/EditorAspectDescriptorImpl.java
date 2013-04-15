@@ -8,24 +8,86 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Child_Editor myChildEditorAspect;
+  private ChildSubConcept_Editor myChildSubConceptEditorAspect;
+  private GrandChild_Editor myGrandChildEditorAspect;
+  private ReferenceContainer_Editor myReferenceContainerEditorAspect;
+  private ReferenceContainerSubConcept_Editor myReferenceContainerSubConceptEditorAspect;
+  private Root_Editor myRootEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0g, descriptor.getConceptFqName())) {
       case 0:
-        return new Child_Editor();
+        return getChildEditorAspect();
       case 1:
-        return new ChildSubConcept_Editor();
+        return getChildSubConceptEditorAspect();
       case 2:
-        return new GrandChild_Editor();
+        return getGrandChildEditorAspect();
       case 3:
-        return new ReferenceContainer_Editor();
+        return getReferenceContainerEditorAspect();
       case 4:
-        return new ReferenceContainerSubConcept_Editor();
+        return getReferenceContainerSubConceptEditorAspect();
       case 5:
-        return new Root_Editor();
+        return getRootEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.smodelTests.structure.Child", "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept", "jetbrains.mps.lang.smodelTests.structure.GrandChild", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept", "jetbrains.mps.lang.smodelTests.structure.Root"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myChildEditorAspect = null;
+    myChildSubConceptEditorAspect = null;
+    myGrandChildEditorAspect = null;
+    myReferenceContainerEditorAspect = null;
+    myReferenceContainerSubConceptEditorAspect = null;
+    myRootEditorAspect = null;
+  }
+
+  private Child_Editor getChildEditorAspect() {
+    if (myChildEditorAspect == null) {
+      myChildEditorAspect = new Child_Editor();
+    }
+    return myChildEditorAspect;
+  }
+
+  private ChildSubConcept_Editor getChildSubConceptEditorAspect() {
+    if (myChildSubConceptEditorAspect == null) {
+      myChildSubConceptEditorAspect = new ChildSubConcept_Editor();
+    }
+    return myChildSubConceptEditorAspect;
+  }
+
+  private GrandChild_Editor getGrandChildEditorAspect() {
+    if (myGrandChildEditorAspect == null) {
+      myGrandChildEditorAspect = new GrandChild_Editor();
+    }
+    return myGrandChildEditorAspect;
+  }
+
+  private ReferenceContainer_Editor getReferenceContainerEditorAspect() {
+    if (myReferenceContainerEditorAspect == null) {
+      myReferenceContainerEditorAspect = new ReferenceContainer_Editor();
+    }
+    return myReferenceContainerEditorAspect;
+  }
+
+  private ReferenceContainerSubConcept_Editor getReferenceContainerSubConceptEditorAspect() {
+    if (myReferenceContainerSubConceptEditorAspect == null) {
+      myReferenceContainerSubConceptEditorAspect = new ReferenceContainerSubConcept_Editor();
+    }
+    return myReferenceContainerSubConceptEditorAspect;
+  }
+
+  private Root_Editor getRootEditorAspect() {
+    if (myRootEditorAspect == null) {
+      myRootEditorAspect = new Root_Editor();
+    }
+    return myRootEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0g = new String[]{"jetbrains.mps.lang.smodelTests.structure.Child", "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept", "jetbrains.mps.lang.smodelTests.structure.GrandChild", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept", "jetbrains.mps.lang.smodelTests.structure.Root"};
 }

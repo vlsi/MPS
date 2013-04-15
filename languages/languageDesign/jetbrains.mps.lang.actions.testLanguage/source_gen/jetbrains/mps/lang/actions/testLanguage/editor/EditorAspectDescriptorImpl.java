@@ -8,32 +8,130 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ActionTestChild1_Editor myActionTestChild1EditorAspect;
+  private ActionTestChild1Child_Editor myActionTestChild1ChildEditorAspect;
+  private ActionTestChild1SubConcept_Editor myActionTestChild1SubConceptEditorAspect;
+  private ActionTestChild2_Editor myActionTestChild2EditorAspect;
+  private ActionTestChildToWrap1_Editor myActionTestChildToWrap1EditorAspect;
+  private ActionTestChildToWrap2_Editor myActionTestChildToWrap2EditorAspect;
+  private ActionTestChildWrapper_Editor myActionTestChildWrapperEditorAspect;
+  private ActionTestContainer_Editor myActionTestContainerEditorAspect;
+  private ActionTestDefaultChild1_Editor myActionTestDefaultChild1EditorAspect;
+  private ActionTestDefaultChild2_Editor myActionTestDefaultChild2EditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0k, descriptor.getConceptFqName())) {
       case 0:
-        return new ActionTestChild1_Editor();
+        return getActionTestChild1EditorAspect();
       case 1:
-        return new ActionTestChild1Child_Editor();
+        return getActionTestChild1ChildEditorAspect();
       case 2:
-        return new ActionTestChild1SubConcept_Editor();
+        return getActionTestChild1SubConceptEditorAspect();
       case 3:
-        return new ActionTestChild2_Editor();
+        return getActionTestChild2EditorAspect();
       case 4:
-        return new ActionTestChildToWrap1_Editor();
+        return getActionTestChildToWrap1EditorAspect();
       case 5:
-        return new ActionTestChildToWrap2_Editor();
+        return getActionTestChildToWrap2EditorAspect();
       case 6:
-        return new ActionTestChildWrapper_Editor();
+        return getActionTestChildWrapperEditorAspect();
       case 7:
-        return new ActionTestContainer_Editor();
+        return getActionTestContainerEditorAspect();
       case 8:
-        return new ActionTestDefaultChild1_Editor();
+        return getActionTestDefaultChild1EditorAspect();
       case 9:
-        return new ActionTestDefaultChild2_Editor();
+        return getActionTestDefaultChild2EditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild2"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myActionTestChild1EditorAspect = null;
+    myActionTestChild1ChildEditorAspect = null;
+    myActionTestChild1SubConceptEditorAspect = null;
+    myActionTestChild2EditorAspect = null;
+    myActionTestChildToWrap1EditorAspect = null;
+    myActionTestChildToWrap2EditorAspect = null;
+    myActionTestChildWrapperEditorAspect = null;
+    myActionTestContainerEditorAspect = null;
+    myActionTestDefaultChild1EditorAspect = null;
+    myActionTestDefaultChild2EditorAspect = null;
+  }
+
+  private ActionTestChild1_Editor getActionTestChild1EditorAspect() {
+    if (myActionTestChild1EditorAspect == null) {
+      myActionTestChild1EditorAspect = new ActionTestChild1_Editor();
+    }
+    return myActionTestChild1EditorAspect;
+  }
+
+  private ActionTestChild1Child_Editor getActionTestChild1ChildEditorAspect() {
+    if (myActionTestChild1ChildEditorAspect == null) {
+      myActionTestChild1ChildEditorAspect = new ActionTestChild1Child_Editor();
+    }
+    return myActionTestChild1ChildEditorAspect;
+  }
+
+  private ActionTestChild1SubConcept_Editor getActionTestChild1SubConceptEditorAspect() {
+    if (myActionTestChild1SubConceptEditorAspect == null) {
+      myActionTestChild1SubConceptEditorAspect = new ActionTestChild1SubConcept_Editor();
+    }
+    return myActionTestChild1SubConceptEditorAspect;
+  }
+
+  private ActionTestChild2_Editor getActionTestChild2EditorAspect() {
+    if (myActionTestChild2EditorAspect == null) {
+      myActionTestChild2EditorAspect = new ActionTestChild2_Editor();
+    }
+    return myActionTestChild2EditorAspect;
+  }
+
+  private ActionTestChildToWrap1_Editor getActionTestChildToWrap1EditorAspect() {
+    if (myActionTestChildToWrap1EditorAspect == null) {
+      myActionTestChildToWrap1EditorAspect = new ActionTestChildToWrap1_Editor();
+    }
+    return myActionTestChildToWrap1EditorAspect;
+  }
+
+  private ActionTestChildToWrap2_Editor getActionTestChildToWrap2EditorAspect() {
+    if (myActionTestChildToWrap2EditorAspect == null) {
+      myActionTestChildToWrap2EditorAspect = new ActionTestChildToWrap2_Editor();
+    }
+    return myActionTestChildToWrap2EditorAspect;
+  }
+
+  private ActionTestChildWrapper_Editor getActionTestChildWrapperEditorAspect() {
+    if (myActionTestChildWrapperEditorAspect == null) {
+      myActionTestChildWrapperEditorAspect = new ActionTestChildWrapper_Editor();
+    }
+    return myActionTestChildWrapperEditorAspect;
+  }
+
+  private ActionTestContainer_Editor getActionTestContainerEditorAspect() {
+    if (myActionTestContainerEditorAspect == null) {
+      myActionTestContainerEditorAspect = new ActionTestContainer_Editor();
+    }
+    return myActionTestContainerEditorAspect;
+  }
+
+  private ActionTestDefaultChild1_Editor getActionTestDefaultChild1EditorAspect() {
+    if (myActionTestDefaultChild1EditorAspect == null) {
+      myActionTestDefaultChild1EditorAspect = new ActionTestDefaultChild1_Editor();
+    }
+    return myActionTestDefaultChild1EditorAspect;
+  }
+
+  private ActionTestDefaultChild2_Editor getActionTestDefaultChild2EditorAspect() {
+    if (myActionTestDefaultChild2EditorAspect == null) {
+      myActionTestDefaultChild2EditorAspect = new ActionTestDefaultChild2_Editor();
+    }
+    return myActionTestDefaultChild2EditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0k = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild2"};
 }

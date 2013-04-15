@@ -8,24 +8,86 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CustomRoot_Editor myCustomRootEditorAspect;
+  private CustomStatement_Editor myCustomStatementEditorAspect;
+  private CustomStatementRef_Editor myCustomStatementRefEditorAspect;
+  private OutputNode_Editor myOutputNodeEditorAspect;
+  private OutputRoot_Editor myOutputRootEditorAspect;
+  private TwoVarStatement_Editor myTwoVarStatementEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0g, descriptor.getConceptFqName())) {
       case 0:
-        return new CustomRoot_Editor();
+        return getCustomRootEditorAspect();
       case 1:
-        return new CustomStatement_Editor();
+        return getCustomStatementEditorAspect();
       case 2:
-        return new CustomStatementRef_Editor();
+        return getCustomStatementRefEditorAspect();
       case 3:
-        return new OutputNode_Editor();
+        return getOutputNodeEditorAspect();
       case 4:
-        return new OutputRoot_Editor();
+        return getOutputRootEditorAspect();
       case 5:
-        return new TwoVarStatement_Editor();
+        return getTwoVarStatementEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.transformation.test.outputLang.structure.CustomRoot", "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement", "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef", "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", "jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCustomRootEditorAspect = null;
+    myCustomStatementEditorAspect = null;
+    myCustomStatementRefEditorAspect = null;
+    myOutputNodeEditorAspect = null;
+    myOutputRootEditorAspect = null;
+    myTwoVarStatementEditorAspect = null;
+  }
+
+  private CustomRoot_Editor getCustomRootEditorAspect() {
+    if (myCustomRootEditorAspect == null) {
+      myCustomRootEditorAspect = new CustomRoot_Editor();
+    }
+    return myCustomRootEditorAspect;
+  }
+
+  private CustomStatement_Editor getCustomStatementEditorAspect() {
+    if (myCustomStatementEditorAspect == null) {
+      myCustomStatementEditorAspect = new CustomStatement_Editor();
+    }
+    return myCustomStatementEditorAspect;
+  }
+
+  private CustomStatementRef_Editor getCustomStatementRefEditorAspect() {
+    if (myCustomStatementRefEditorAspect == null) {
+      myCustomStatementRefEditorAspect = new CustomStatementRef_Editor();
+    }
+    return myCustomStatementRefEditorAspect;
+  }
+
+  private OutputNode_Editor getOutputNodeEditorAspect() {
+    if (myOutputNodeEditorAspect == null) {
+      myOutputNodeEditorAspect = new OutputNode_Editor();
+    }
+    return myOutputNodeEditorAspect;
+  }
+
+  private OutputRoot_Editor getOutputRootEditorAspect() {
+    if (myOutputRootEditorAspect == null) {
+      myOutputRootEditorAspect = new OutputRoot_Editor();
+    }
+    return myOutputRootEditorAspect;
+  }
+
+  private TwoVarStatement_Editor getTwoVarStatementEditorAspect() {
+    if (myTwoVarStatementEditorAspect == null) {
+      myTwoVarStatementEditorAspect = new TwoVarStatement_Editor();
+    }
+    return myTwoVarStatementEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0g = new String[]{"jetbrains.mps.transformation.test.outputLang.structure.CustomRoot", "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement", "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef", "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", "jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement"};
 }

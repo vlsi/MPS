@@ -8,34 +8,141 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AuxObjectHandler_Editor myAuxObjectHandlerEditorAspect;
+  private ContextBindingWrapper_Editor myContextBindingWrapperEditorAspect;
+  private ContextCompartmentWrapper_Editor myContextCompartmentWrapperEditorAspect;
+  private ContextControllerWrapper_Editor myContextControllerWrapperEditorAspect;
+  private ContextViewWrapper_Editor myContextViewWrapperEditorAspect;
+  private ContextWrapper_Editor myContextWrapperEditorAspect;
+  private ContextWrapperExpression_Editor myContextWrapperExpressionEditorAspect;
+  private ExpressionStub_Editor myExpressionStubEditorAspect;
+  private GeometryHandler_Editor myGeometryHandlerEditorAspect;
+  private StatementStub_Editor myStatementStubEditorAspect;
+  private TypeStub_Editor myTypeStubEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0l, descriptor.getConceptFqName())) {
       case 0:
-        return new AuxObjectHandler_Editor();
+        return getAuxObjectHandlerEditorAspect();
       case 1:
-        return new ContextBindingWrapper_Editor();
+        return getContextBindingWrapperEditorAspect();
       case 2:
-        return new ContextCompartmentWrapper_Editor();
+        return getContextCompartmentWrapperEditorAspect();
       case 3:
-        return new ContextControllerWrapper_Editor();
+        return getContextControllerWrapperEditorAspect();
       case 4:
-        return new ContextViewWrapper_Editor();
+        return getContextViewWrapperEditorAspect();
       case 5:
-        return new ContextWrapper_Editor();
+        return getContextWrapperEditorAspect();
       case 6:
-        return new ContextWrapperExpression_Editor();
+        return getContextWrapperExpressionEditorAspect();
       case 7:
-        return new ExpressionStub_Editor();
+        return getExpressionStubEditorAspect();
       case 8:
-        return new GeometryHandler_Editor();
+        return getGeometryHandlerEditorAspect();
       case 9:
-        return new StatementStub_Editor();
+        return getStatementStubEditorAspect();
       case 10:
-        return new TypeStub_Editor();
+        return getTypeStubEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.ui.internal.structure.AuxObjectHandler", "jetbrains.mps.ui.internal.structure.ContextBindingWrapper", "jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", "jetbrains.mps.ui.internal.structure.ContextControllerWrapper", "jetbrains.mps.ui.internal.structure.ContextViewWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapperExpression", "jetbrains.mps.ui.internal.structure.ExpressionStub", "jetbrains.mps.ui.internal.structure.GeometryHandler", "jetbrains.mps.ui.internal.structure.StatementStub", "jetbrains.mps.ui.internal.structure.TypeStub"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAuxObjectHandlerEditorAspect = null;
+    myContextBindingWrapperEditorAspect = null;
+    myContextCompartmentWrapperEditorAspect = null;
+    myContextControllerWrapperEditorAspect = null;
+    myContextViewWrapperEditorAspect = null;
+    myContextWrapperEditorAspect = null;
+    myContextWrapperExpressionEditorAspect = null;
+    myExpressionStubEditorAspect = null;
+    myGeometryHandlerEditorAspect = null;
+    myStatementStubEditorAspect = null;
+    myTypeStubEditorAspect = null;
+  }
+
+  private AuxObjectHandler_Editor getAuxObjectHandlerEditorAspect() {
+    if (myAuxObjectHandlerEditorAspect == null) {
+      myAuxObjectHandlerEditorAspect = new AuxObjectHandler_Editor();
+    }
+    return myAuxObjectHandlerEditorAspect;
+  }
+
+  private ContextBindingWrapper_Editor getContextBindingWrapperEditorAspect() {
+    if (myContextBindingWrapperEditorAspect == null) {
+      myContextBindingWrapperEditorAspect = new ContextBindingWrapper_Editor();
+    }
+    return myContextBindingWrapperEditorAspect;
+  }
+
+  private ContextCompartmentWrapper_Editor getContextCompartmentWrapperEditorAspect() {
+    if (myContextCompartmentWrapperEditorAspect == null) {
+      myContextCompartmentWrapperEditorAspect = new ContextCompartmentWrapper_Editor();
+    }
+    return myContextCompartmentWrapperEditorAspect;
+  }
+
+  private ContextControllerWrapper_Editor getContextControllerWrapperEditorAspect() {
+    if (myContextControllerWrapperEditorAspect == null) {
+      myContextControllerWrapperEditorAspect = new ContextControllerWrapper_Editor();
+    }
+    return myContextControllerWrapperEditorAspect;
+  }
+
+  private ContextViewWrapper_Editor getContextViewWrapperEditorAspect() {
+    if (myContextViewWrapperEditorAspect == null) {
+      myContextViewWrapperEditorAspect = new ContextViewWrapper_Editor();
+    }
+    return myContextViewWrapperEditorAspect;
+  }
+
+  private ContextWrapper_Editor getContextWrapperEditorAspect() {
+    if (myContextWrapperEditorAspect == null) {
+      myContextWrapperEditorAspect = new ContextWrapper_Editor();
+    }
+    return myContextWrapperEditorAspect;
+  }
+
+  private ContextWrapperExpression_Editor getContextWrapperExpressionEditorAspect() {
+    if (myContextWrapperExpressionEditorAspect == null) {
+      myContextWrapperExpressionEditorAspect = new ContextWrapperExpression_Editor();
+    }
+    return myContextWrapperExpressionEditorAspect;
+  }
+
+  private ExpressionStub_Editor getExpressionStubEditorAspect() {
+    if (myExpressionStubEditorAspect == null) {
+      myExpressionStubEditorAspect = new ExpressionStub_Editor();
+    }
+    return myExpressionStubEditorAspect;
+  }
+
+  private GeometryHandler_Editor getGeometryHandlerEditorAspect() {
+    if (myGeometryHandlerEditorAspect == null) {
+      myGeometryHandlerEditorAspect = new GeometryHandler_Editor();
+    }
+    return myGeometryHandlerEditorAspect;
+  }
+
+  private StatementStub_Editor getStatementStubEditorAspect() {
+    if (myStatementStubEditorAspect == null) {
+      myStatementStubEditorAspect = new StatementStub_Editor();
+    }
+    return myStatementStubEditorAspect;
+  }
+
+  private TypeStub_Editor getTypeStubEditorAspect() {
+    if (myTypeStubEditorAspect == null) {
+      myTypeStubEditorAspect = new TypeStub_Editor();
+    }
+    return myTypeStubEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0l = new String[]{"jetbrains.mps.ui.internal.structure.AuxObjectHandler", "jetbrains.mps.ui.internal.structure.ContextBindingWrapper", "jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", "jetbrains.mps.ui.internal.structure.ContextControllerWrapper", "jetbrains.mps.ui.internal.structure.ContextViewWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapperExpression", "jetbrains.mps.ui.internal.structure.ExpressionStub", "jetbrains.mps.ui.internal.structure.GeometryHandler", "jetbrains.mps.ui.internal.structure.StatementStub", "jetbrains.mps.ui.internal.structure.TypeStub"};
 }

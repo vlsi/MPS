@@ -8,22 +8,75 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ChildConceptWeave_Editor myChildConceptWeaveEditorAspect;
+  private ChildConceptWeaveEach_Editor myChildConceptWeaveEachEditorAspect;
+  private ChildConceptWeaveEachMany_Editor myChildConceptWeaveEachManyEditorAspect;
+  private ChildConceptWeaveMany_Editor myChildConceptWeaveManyEditorAspect;
+  private RootConcept_Editor myRootConceptEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0f, descriptor.getConceptFqName())) {
       case 0:
-        return new ChildConceptWeave_Editor();
+        return getChildConceptWeaveEditorAspect();
       case 1:
-        return new ChildConceptWeaveEach_Editor();
+        return getChildConceptWeaveEachEditorAspect();
       case 2:
-        return new ChildConceptWeaveEachMany_Editor();
+        return getChildConceptWeaveEachManyEditorAspect();
       case 3:
-        return new ChildConceptWeaveMany_Editor();
+        return getChildConceptWeaveManyEditorAspect();
       case 4:
-        return new RootConcept_Editor();
+        return getRootConceptEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeave", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEach", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEachMany", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveMany", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myChildConceptWeaveEditorAspect = null;
+    myChildConceptWeaveEachEditorAspect = null;
+    myChildConceptWeaveEachManyEditorAspect = null;
+    myChildConceptWeaveManyEditorAspect = null;
+    myRootConceptEditorAspect = null;
+  }
+
+  private ChildConceptWeave_Editor getChildConceptWeaveEditorAspect() {
+    if (myChildConceptWeaveEditorAspect == null) {
+      myChildConceptWeaveEditorAspect = new ChildConceptWeave_Editor();
+    }
+    return myChildConceptWeaveEditorAspect;
+  }
+
+  private ChildConceptWeaveEach_Editor getChildConceptWeaveEachEditorAspect() {
+    if (myChildConceptWeaveEachEditorAspect == null) {
+      myChildConceptWeaveEachEditorAspect = new ChildConceptWeaveEach_Editor();
+    }
+    return myChildConceptWeaveEachEditorAspect;
+  }
+
+  private ChildConceptWeaveEachMany_Editor getChildConceptWeaveEachManyEditorAspect() {
+    if (myChildConceptWeaveEachManyEditorAspect == null) {
+      myChildConceptWeaveEachManyEditorAspect = new ChildConceptWeaveEachMany_Editor();
+    }
+    return myChildConceptWeaveEachManyEditorAspect;
+  }
+
+  private ChildConceptWeaveMany_Editor getChildConceptWeaveManyEditorAspect() {
+    if (myChildConceptWeaveManyEditorAspect == null) {
+      myChildConceptWeaveManyEditorAspect = new ChildConceptWeaveMany_Editor();
+    }
+    return myChildConceptWeaveManyEditorAspect;
+  }
+
+  private RootConcept_Editor getRootConceptEditorAspect() {
+    if (myRootConceptEditorAspect == null) {
+      myRootConceptEditorAspect = new RootConcept_Editor();
+    }
+    return myRootConceptEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0f = new String[]{"jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeave", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEach", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEachMany", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveMany", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept"};
 }

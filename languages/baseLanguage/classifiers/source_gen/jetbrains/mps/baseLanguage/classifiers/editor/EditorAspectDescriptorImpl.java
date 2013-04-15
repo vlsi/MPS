@@ -8,24 +8,86 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private DefaultClassifierFieldAccessOperation_Editor myDefaultClassifierFieldAccessOperationEditorAspect;
+  private DefaultClassifierMethodCallOperation_Editor myDefaultClassifierMethodCallOperationEditorAspect;
+  private DefaultClassifierMethodDeclaration_Editor myDefaultClassifierMethodDeclarationEditorAspect;
+  private DefaultClassifierType_Editor myDefaultClassifierTypeEditorAspect;
+  private SuperClassifierExpresson_Editor mySuperClassifierExpressonEditorAspect;
+  private ThisClassifierExpression_Editor myThisClassifierExpressionEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0g, descriptor.getConceptFqName())) {
       case 0:
-        return new DefaultClassifierFieldAccessOperation_Editor();
+        return getDefaultClassifierFieldAccessOperationEditorAspect();
       case 1:
-        return new DefaultClassifierMethodCallOperation_Editor();
+        return getDefaultClassifierMethodCallOperationEditorAspect();
       case 2:
-        return new DefaultClassifierMethodDeclaration_Editor();
+        return getDefaultClassifierMethodDeclarationEditorAspect();
       case 3:
-        return new DefaultClassifierType_Editor();
+        return getDefaultClassifierTypeEditorAspect();
       case 4:
-        return new SuperClassifierExpresson_Editor();
+        return getSuperClassifierExpressonEditorAspect();
       case 5:
-        return new ThisClassifierExpression_Editor();
+        return getThisClassifierExpressionEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType", "jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myDefaultClassifierFieldAccessOperationEditorAspect = null;
+    myDefaultClassifierMethodCallOperationEditorAspect = null;
+    myDefaultClassifierMethodDeclarationEditorAspect = null;
+    myDefaultClassifierTypeEditorAspect = null;
+    mySuperClassifierExpressonEditorAspect = null;
+    myThisClassifierExpressionEditorAspect = null;
+  }
+
+  private DefaultClassifierFieldAccessOperation_Editor getDefaultClassifierFieldAccessOperationEditorAspect() {
+    if (myDefaultClassifierFieldAccessOperationEditorAspect == null) {
+      myDefaultClassifierFieldAccessOperationEditorAspect = new DefaultClassifierFieldAccessOperation_Editor();
+    }
+    return myDefaultClassifierFieldAccessOperationEditorAspect;
+  }
+
+  private DefaultClassifierMethodCallOperation_Editor getDefaultClassifierMethodCallOperationEditorAspect() {
+    if (myDefaultClassifierMethodCallOperationEditorAspect == null) {
+      myDefaultClassifierMethodCallOperationEditorAspect = new DefaultClassifierMethodCallOperation_Editor();
+    }
+    return myDefaultClassifierMethodCallOperationEditorAspect;
+  }
+
+  private DefaultClassifierMethodDeclaration_Editor getDefaultClassifierMethodDeclarationEditorAspect() {
+    if (myDefaultClassifierMethodDeclarationEditorAspect == null) {
+      myDefaultClassifierMethodDeclarationEditorAspect = new DefaultClassifierMethodDeclaration_Editor();
+    }
+    return myDefaultClassifierMethodDeclarationEditorAspect;
+  }
+
+  private DefaultClassifierType_Editor getDefaultClassifierTypeEditorAspect() {
+    if (myDefaultClassifierTypeEditorAspect == null) {
+      myDefaultClassifierTypeEditorAspect = new DefaultClassifierType_Editor();
+    }
+    return myDefaultClassifierTypeEditorAspect;
+  }
+
+  private SuperClassifierExpresson_Editor getSuperClassifierExpressonEditorAspect() {
+    if (mySuperClassifierExpressonEditorAspect == null) {
+      mySuperClassifierExpressonEditorAspect = new SuperClassifierExpresson_Editor();
+    }
+    return mySuperClassifierExpressonEditorAspect;
+  }
+
+  private ThisClassifierExpression_Editor getThisClassifierExpressionEditorAspect() {
+    if (myThisClassifierExpressionEditorAspect == null) {
+      myThisClassifierExpressionEditorAspect = new ThisClassifierExpression_Editor();
+    }
+    return myThisClassifierExpressionEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0g = new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType", "jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"};
 }

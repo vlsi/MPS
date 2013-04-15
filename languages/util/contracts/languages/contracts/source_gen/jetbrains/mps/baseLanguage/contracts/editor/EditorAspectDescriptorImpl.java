@@ -8,22 +8,75 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ContractThisExpression_Editor myContractThisExpressionEditorAspect;
+  private MethodConditions_Editor myMethodConditionsEditorAspect;
+  private Postcondition_Editor myPostconditionEditorAspect;
+  private Precondition_Editor myPreconditionEditorAspect;
+  private ResultExpression_Editor myResultExpressionEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0f, descriptor.getConceptFqName())) {
       case 0:
-        return new ContractThisExpression_Editor();
+        return getContractThisExpressionEditorAspect();
       case 1:
-        return new MethodConditions_Editor();
+        return getMethodConditionsEditorAspect();
       case 2:
-        return new Postcondition_Editor();
+        return getPostconditionEditorAspect();
       case 3:
-        return new Precondition_Editor();
+        return getPreconditionEditorAspect();
       case 4:
-        return new ResultExpression_Editor();
+        return getResultExpressionEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression", "jetbrains.mps.baseLanguage.contracts.structure.MethodConditions", "jetbrains.mps.baseLanguage.contracts.structure.Postcondition", "jetbrains.mps.baseLanguage.contracts.structure.Precondition", "jetbrains.mps.baseLanguage.contracts.structure.ResultExpression"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myContractThisExpressionEditorAspect = null;
+    myMethodConditionsEditorAspect = null;
+    myPostconditionEditorAspect = null;
+    myPreconditionEditorAspect = null;
+    myResultExpressionEditorAspect = null;
+  }
+
+  private ContractThisExpression_Editor getContractThisExpressionEditorAspect() {
+    if (myContractThisExpressionEditorAspect == null) {
+      myContractThisExpressionEditorAspect = new ContractThisExpression_Editor();
+    }
+    return myContractThisExpressionEditorAspect;
+  }
+
+  private MethodConditions_Editor getMethodConditionsEditorAspect() {
+    if (myMethodConditionsEditorAspect == null) {
+      myMethodConditionsEditorAspect = new MethodConditions_Editor();
+    }
+    return myMethodConditionsEditorAspect;
+  }
+
+  private Postcondition_Editor getPostconditionEditorAspect() {
+    if (myPostconditionEditorAspect == null) {
+      myPostconditionEditorAspect = new Postcondition_Editor();
+    }
+    return myPostconditionEditorAspect;
+  }
+
+  private Precondition_Editor getPreconditionEditorAspect() {
+    if (myPreconditionEditorAspect == null) {
+      myPreconditionEditorAspect = new Precondition_Editor();
+    }
+    return myPreconditionEditorAspect;
+  }
+
+  private ResultExpression_Editor getResultExpressionEditorAspect() {
+    if (myResultExpressionEditorAspect == null) {
+      myResultExpressionEditorAspect = new ResultExpression_Editor();
+    }
+    return myResultExpressionEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0f = new String[]{"jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression", "jetbrains.mps.baseLanguage.contracts.structure.MethodConditions", "jetbrains.mps.baseLanguage.contracts.structure.Postcondition", "jetbrains.mps.baseLanguage.contracts.structure.Precondition", "jetbrains.mps.baseLanguage.contracts.structure.ResultExpression"};
 }

@@ -8,18 +8,53 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private DegreeComplexExpression_Editor myDegreeComplexExpressionEditorAspect;
+  private ImaginaryUnit_Editor myImaginaryUnitEditorAspect;
+  private SingleComplexExpression_Editor mySingleComplexExpressionEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        return new DegreeComplexExpression_Editor();
+        return getDegreeComplexExpressionEditorAspect();
       case 1:
-        return new ImaginaryUnit_Editor();
+        return getImaginaryUnitEditorAspect();
       case 2:
-        return new SingleComplexExpression_Editor();
+        return getSingleComplexExpressionEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.complex.structure.DegreeComplexExpression", "jetbrains.mps.samples.complex.structure.ImaginaryUnit", "jetbrains.mps.samples.complex.structure.SingleComplexExpression"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myDegreeComplexExpressionEditorAspect = null;
+    myImaginaryUnitEditorAspect = null;
+    mySingleComplexExpressionEditorAspect = null;
+  }
+
+  private DegreeComplexExpression_Editor getDegreeComplexExpressionEditorAspect() {
+    if (myDegreeComplexExpressionEditorAspect == null) {
+      myDegreeComplexExpressionEditorAspect = new DegreeComplexExpression_Editor();
+    }
+    return myDegreeComplexExpressionEditorAspect;
+  }
+
+  private ImaginaryUnit_Editor getImaginaryUnitEditorAspect() {
+    if (myImaginaryUnitEditorAspect == null) {
+      myImaginaryUnitEditorAspect = new ImaginaryUnit_Editor();
+    }
+    return myImaginaryUnitEditorAspect;
+  }
+
+  private SingleComplexExpression_Editor getSingleComplexExpressionEditorAspect() {
+    if (mySingleComplexExpressionEditorAspect == null) {
+      mySingleComplexExpressionEditorAspect = new SingleComplexExpression_Editor();
+    }
+    return mySingleComplexExpressionEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.samples.complex.structure.DegreeComplexExpression", "jetbrains.mps.samples.complex.structure.ImaginaryUnit", "jetbrains.mps.samples.complex.structure.SingleComplexExpression"};
 }

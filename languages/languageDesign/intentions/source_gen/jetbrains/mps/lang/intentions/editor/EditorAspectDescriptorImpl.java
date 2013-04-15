@@ -8,20 +8,64 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private BaseIntentionDeclaration_Editor myBaseIntentionDeclarationEditorAspect;
+  private IntentionParameter_Editor myIntentionParameterEditorAspect;
+  private ParameterizedIntentionDeclaration_Editor myParameterizedIntentionDeclarationEditorAspect;
+  private QueryBlock_Editor myQueryBlockEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0e, descriptor.getConceptFqName())) {
       case 0:
-        return new BaseIntentionDeclaration_Editor();
+        return getBaseIntentionDeclarationEditorAspect();
       case 1:
-        return new IntentionParameter_Editor();
+        return getIntentionParameterEditorAspect();
       case 2:
-        return new ParameterizedIntentionDeclaration_Editor();
+        return getParameterizedIntentionDeclarationEditorAspect();
       case 3:
-        return new QueryBlock_Editor();
+        return getQueryBlockEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myBaseIntentionDeclarationEditorAspect = null;
+    myIntentionParameterEditorAspect = null;
+    myParameterizedIntentionDeclarationEditorAspect = null;
+    myQueryBlockEditorAspect = null;
+  }
+
+  private BaseIntentionDeclaration_Editor getBaseIntentionDeclarationEditorAspect() {
+    if (myBaseIntentionDeclarationEditorAspect == null) {
+      myBaseIntentionDeclarationEditorAspect = new BaseIntentionDeclaration_Editor();
+    }
+    return myBaseIntentionDeclarationEditorAspect;
+  }
+
+  private IntentionParameter_Editor getIntentionParameterEditorAspect() {
+    if (myIntentionParameterEditorAspect == null) {
+      myIntentionParameterEditorAspect = new IntentionParameter_Editor();
+    }
+    return myIntentionParameterEditorAspect;
+  }
+
+  private ParameterizedIntentionDeclaration_Editor getParameterizedIntentionDeclarationEditorAspect() {
+    if (myParameterizedIntentionDeclarationEditorAspect == null) {
+      myParameterizedIntentionDeclarationEditorAspect = new ParameterizedIntentionDeclaration_Editor();
+    }
+    return myParameterizedIntentionDeclarationEditorAspect;
+  }
+
+  private QueryBlock_Editor getQueryBlockEditorAspect() {
+    if (myQueryBlockEditorAspect == null) {
+      myQueryBlockEditorAspect = new QueryBlock_Editor();
+    }
+    return myQueryBlockEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0e = new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock"};
 }

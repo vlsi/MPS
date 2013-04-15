@@ -8,40 +8,174 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private FacetDeclaration_Editor myFacetDeclarationEditorAspect;
+  private FacetJavaClassExpression_Editor myFacetJavaClassExpressionEditorAspect;
+  private FacetReference_Editor myFacetReferenceEditorAspect;
+  private FacetReferenceExpression_Editor myFacetReferenceExpressionEditorAspect;
+  private ForeignParametersComponentExpression_Editor myForeignParametersComponentExpressionEditorAspect;
+  private ForeignParametersExpression_Editor myForeignParametersExpressionEditorAspect;
+  private LocalParametersComponentExpression_Editor myLocalParametersComponentExpressionEditorAspect;
+  private LocalParametersExpression_Editor myLocalParametersExpressionEditorAspect;
+  private ParametersDeclaration_Editor myParametersDeclarationEditorAspect;
+  private ResourceSpecificPropertiesExpression_Editor myResourceSpecificPropertiesExpressionEditorAspect;
+  private ResourceTypeDeclaration_Editor myResourceTypeDeclarationEditorAspect;
+  private TargetDeclaration_Editor myTargetDeclarationEditorAspect;
+  private TargetDependency_Editor myTargetDependencyEditorAspect;
+  private TargetReferenceExpression_Editor myTargetReferenceExpressionEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0o, descriptor.getConceptFqName())) {
       case 0:
-        return new FacetDeclaration_Editor();
+        return getFacetDeclarationEditorAspect();
       case 1:
-        return new FacetJavaClassExpression_Editor();
+        return getFacetJavaClassExpressionEditorAspect();
       case 2:
-        return new FacetReference_Editor();
+        return getFacetReferenceEditorAspect();
       case 3:
-        return new FacetReferenceExpression_Editor();
+        return getFacetReferenceExpressionEditorAspect();
       case 4:
-        return new ForeignParametersComponentExpression_Editor();
+        return getForeignParametersComponentExpressionEditorAspect();
       case 5:
-        return new ForeignParametersExpression_Editor();
+        return getForeignParametersExpressionEditorAspect();
       case 6:
-        return new LocalParametersComponentExpression_Editor();
+        return getLocalParametersComponentExpressionEditorAspect();
       case 7:
-        return new LocalParametersExpression_Editor();
+        return getLocalParametersExpressionEditorAspect();
       case 8:
-        return new ParametersDeclaration_Editor();
+        return getParametersDeclarationEditorAspect();
       case 9:
-        return new ResourceSpecificPropertiesExpression_Editor();
+        return getResourceSpecificPropertiesExpressionEditorAspect();
       case 10:
-        return new ResourceTypeDeclaration_Editor();
+        return getResourceTypeDeclarationEditorAspect();
       case 11:
-        return new TargetDeclaration_Editor();
+        return getTargetDeclarationEditorAspect();
       case 12:
-        return new TargetDependency_Editor();
+        return getTargetDependencyEditorAspect();
       case 13:
-        return new TargetReferenceExpression_Editor();
+        return getTargetReferenceExpressionEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.make.facet.structure.FacetJavaClassExpression", "jetbrains.mps.make.facet.structure.FacetReference", "jetbrains.mps.make.facet.structure.FacetReferenceExpression", "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", "jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", "jetbrains.mps.make.facet.structure.LocalParametersExpression", "jetbrains.mps.make.facet.structure.ParametersDeclaration", "jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression", "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.make.facet.structure.TargetDependency", "jetbrains.mps.make.facet.structure.TargetReferenceExpression"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myFacetDeclarationEditorAspect = null;
+    myFacetJavaClassExpressionEditorAspect = null;
+    myFacetReferenceEditorAspect = null;
+    myFacetReferenceExpressionEditorAspect = null;
+    myForeignParametersComponentExpressionEditorAspect = null;
+    myForeignParametersExpressionEditorAspect = null;
+    myLocalParametersComponentExpressionEditorAspect = null;
+    myLocalParametersExpressionEditorAspect = null;
+    myParametersDeclarationEditorAspect = null;
+    myResourceSpecificPropertiesExpressionEditorAspect = null;
+    myResourceTypeDeclarationEditorAspect = null;
+    myTargetDeclarationEditorAspect = null;
+    myTargetDependencyEditorAspect = null;
+    myTargetReferenceExpressionEditorAspect = null;
+  }
+
+  private FacetDeclaration_Editor getFacetDeclarationEditorAspect() {
+    if (myFacetDeclarationEditorAspect == null) {
+      myFacetDeclarationEditorAspect = new FacetDeclaration_Editor();
+    }
+    return myFacetDeclarationEditorAspect;
+  }
+
+  private FacetJavaClassExpression_Editor getFacetJavaClassExpressionEditorAspect() {
+    if (myFacetJavaClassExpressionEditorAspect == null) {
+      myFacetJavaClassExpressionEditorAspect = new FacetJavaClassExpression_Editor();
+    }
+    return myFacetJavaClassExpressionEditorAspect;
+  }
+
+  private FacetReference_Editor getFacetReferenceEditorAspect() {
+    if (myFacetReferenceEditorAspect == null) {
+      myFacetReferenceEditorAspect = new FacetReference_Editor();
+    }
+    return myFacetReferenceEditorAspect;
+  }
+
+  private FacetReferenceExpression_Editor getFacetReferenceExpressionEditorAspect() {
+    if (myFacetReferenceExpressionEditorAspect == null) {
+      myFacetReferenceExpressionEditorAspect = new FacetReferenceExpression_Editor();
+    }
+    return myFacetReferenceExpressionEditorAspect;
+  }
+
+  private ForeignParametersComponentExpression_Editor getForeignParametersComponentExpressionEditorAspect() {
+    if (myForeignParametersComponentExpressionEditorAspect == null) {
+      myForeignParametersComponentExpressionEditorAspect = new ForeignParametersComponentExpression_Editor();
+    }
+    return myForeignParametersComponentExpressionEditorAspect;
+  }
+
+  private ForeignParametersExpression_Editor getForeignParametersExpressionEditorAspect() {
+    if (myForeignParametersExpressionEditorAspect == null) {
+      myForeignParametersExpressionEditorAspect = new ForeignParametersExpression_Editor();
+    }
+    return myForeignParametersExpressionEditorAspect;
+  }
+
+  private LocalParametersComponentExpression_Editor getLocalParametersComponentExpressionEditorAspect() {
+    if (myLocalParametersComponentExpressionEditorAspect == null) {
+      myLocalParametersComponentExpressionEditorAspect = new LocalParametersComponentExpression_Editor();
+    }
+    return myLocalParametersComponentExpressionEditorAspect;
+  }
+
+  private LocalParametersExpression_Editor getLocalParametersExpressionEditorAspect() {
+    if (myLocalParametersExpressionEditorAspect == null) {
+      myLocalParametersExpressionEditorAspect = new LocalParametersExpression_Editor();
+    }
+    return myLocalParametersExpressionEditorAspect;
+  }
+
+  private ParametersDeclaration_Editor getParametersDeclarationEditorAspect() {
+    if (myParametersDeclarationEditorAspect == null) {
+      myParametersDeclarationEditorAspect = new ParametersDeclaration_Editor();
+    }
+    return myParametersDeclarationEditorAspect;
+  }
+
+  private ResourceSpecificPropertiesExpression_Editor getResourceSpecificPropertiesExpressionEditorAspect() {
+    if (myResourceSpecificPropertiesExpressionEditorAspect == null) {
+      myResourceSpecificPropertiesExpressionEditorAspect = new ResourceSpecificPropertiesExpression_Editor();
+    }
+    return myResourceSpecificPropertiesExpressionEditorAspect;
+  }
+
+  private ResourceTypeDeclaration_Editor getResourceTypeDeclarationEditorAspect() {
+    if (myResourceTypeDeclarationEditorAspect == null) {
+      myResourceTypeDeclarationEditorAspect = new ResourceTypeDeclaration_Editor();
+    }
+    return myResourceTypeDeclarationEditorAspect;
+  }
+
+  private TargetDeclaration_Editor getTargetDeclarationEditorAspect() {
+    if (myTargetDeclarationEditorAspect == null) {
+      myTargetDeclarationEditorAspect = new TargetDeclaration_Editor();
+    }
+    return myTargetDeclarationEditorAspect;
+  }
+
+  private TargetDependency_Editor getTargetDependencyEditorAspect() {
+    if (myTargetDependencyEditorAspect == null) {
+      myTargetDependencyEditorAspect = new TargetDependency_Editor();
+    }
+    return myTargetDependencyEditorAspect;
+  }
+
+  private TargetReferenceExpression_Editor getTargetReferenceExpressionEditorAspect() {
+    if (myTargetReferenceExpressionEditorAspect == null) {
+      myTargetReferenceExpressionEditorAspect = new TargetReferenceExpression_Editor();
+    }
+    return myTargetReferenceExpressionEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0o = new String[]{"jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.make.facet.structure.FacetJavaClassExpression", "jetbrains.mps.make.facet.structure.FacetReference", "jetbrains.mps.make.facet.structure.FacetReferenceExpression", "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", "jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", "jetbrains.mps.make.facet.structure.LocalParametersExpression", "jetbrains.mps.make.facet.structure.ParametersDeclaration", "jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression", "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.make.facet.structure.TargetDependency", "jetbrains.mps.make.facet.structure.TargetReferenceExpression"};
 }

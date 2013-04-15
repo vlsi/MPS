@@ -8,112 +8,570 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AbandonInput_RuleConsequence_Editor myAbandonInput_RuleConsequenceEditorAspect;
+  private CopySrcListMacro_Editor myCopySrcListMacroEditorAspect;
+  private CopySrcNodeMacro_Editor myCopySrcNodeMacroEditorAspect;
+  private CreateRootRule_Editor myCreateRootRuleEditorAspect;
+  private DismissTopMappingRule_Editor myDismissTopMappingRuleEditorAspect;
+  private DropRootRule_Editor myDropRootRuleEditorAspect;
+  private GeneratorDescriptor_Editor myGeneratorDescriptorEditorAspect;
+  private GeneratorMessage_Editor myGeneratorMessageEditorAspect;
+  private GeneratorParameterReference_Editor myGeneratorParameterReferenceEditorAspect;
+  private IfMacro_Editor myIfMacroEditorAspect;
+  private IncludeMacro_Editor myIncludeMacroEditorAspect;
+  private InlineSwitch_Case_Editor myInlineSwitch_CaseEditorAspect;
+  private InlineSwitch_RuleConsequence_Editor myInlineSwitch_RuleConsequenceEditorAspect;
+  private InlineTemplateWithContext_RuleConsequence_Editor myInlineTemplateWithContext_RuleConsequenceEditorAspect;
+  private InlineTemplate_RuleConsequence_Editor myInlineTemplate_RuleConsequenceEditorAspect;
+  private InsertMacro_Editor myInsertMacroEditorAspect;
+  private LabelMacro_Editor myLabelMacroEditorAspect;
+  private LoopMacro_Editor myLoopMacroEditorAspect;
+  private MapSrcListMacro_Editor myMapSrcListMacroEditorAspect;
+  private MapSrcNodeMacro_Editor myMapSrcNodeMacroEditorAspect;
+  private MappingConfiguration_Editor myMappingConfigurationEditorAspect;
+  private MappingLabelDeclaration_Editor myMappingLabelDeclarationEditorAspect;
+  private MappingScript_Editor myMappingScriptEditorAspect;
+  private MappingScriptReference_Editor myMappingScriptReferenceEditorAspect;
+  private NodeMacro_Editor myNodeMacroEditorAspect;
+  private PatternReduction_MappingRule_Editor myPatternReduction_MappingRuleEditorAspect;
+  private PropertyMacro_Editor myPropertyMacroEditorAspect;
+  private Reduction_MappingRule_Editor myReduction_MappingRuleEditorAspect;
+  private ReferenceMacro_Editor myReferenceMacroEditorAspect;
+  private RootTemplateAnnotation_Editor myRootTemplateAnnotationEditorAspect;
+  private Root_MappingRule_Editor myRoot_MappingRuleEditorAspect;
+  private RuleConsequence_Editor myRuleConsequenceEditorAspect;
+  private SwitchMacro_Editor mySwitchMacroEditorAspect;
+  private TemplateArgumentLinkPatternRefExpression_Editor myTemplateArgumentLinkPatternRefExpressionEditorAspect;
+  private TemplateArgumentParameterExpression_Editor myTemplateArgumentParameterExpressionEditorAspect;
+  private TemplateArgumentPatternVarRefExpression_Editor myTemplateArgumentPatternVarRefExpressionEditorAspect;
+  private TemplateArgumentPropertyPatternRefExpression_Editor myTemplateArgumentPropertyPatternRefExpressionEditorAspect;
+  private TemplateArgumentQueryExpression_Editor myTemplateArgumentQueryExpressionEditorAspect;
+  private TemplateCallMacro_Editor myTemplateCallMacroEditorAspect;
+  private TemplateDeclaration_Editor myTemplateDeclarationEditorAspect;
+  private TemplateDeclarationReference_Editor myTemplateDeclarationReferenceEditorAspect;
+  private TemplateFragment_Editor myTemplateFragmentEditorAspect;
+  private TemplateParameterDeclaration_Editor myTemplateParameterDeclarationEditorAspect;
+  private TemplateSwitch_Editor myTemplateSwitchEditorAspect;
+  private TemplateSwitchReference_Editor myTemplateSwitchReferenceEditorAspect;
+  private TraceMacro_Editor myTraceMacroEditorAspect;
+  private VarMacro_Editor myVarMacroEditorAspect;
+  private WeaveEach_RuleConsequence_Editor myWeaveEach_RuleConsequenceEditorAspect;
+  private WeaveMacro_Editor myWeaveMacroEditorAspect;
+  private Weaving_MappingRule_Editor myWeaving_MappingRuleEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0yb, descriptor.getConceptFqName())) {
       case 0:
-        return new AbandonInput_RuleConsequence_Editor();
+        return getAbandonInput_RuleConsequenceEditorAspect();
       case 1:
-        return new CopySrcListMacro_Editor();
+        return getCopySrcListMacroEditorAspect();
       case 2:
-        return new CopySrcNodeMacro_Editor();
+        return getCopySrcNodeMacroEditorAspect();
       case 3:
-        return new CreateRootRule_Editor();
+        return getCreateRootRuleEditorAspect();
       case 4:
-        return new DismissTopMappingRule_Editor();
+        return getDismissTopMappingRuleEditorAspect();
       case 5:
-        return new DropRootRule_Editor();
+        return getDropRootRuleEditorAspect();
       case 6:
-        return new GeneratorDescriptor_Editor();
+        return getGeneratorDescriptorEditorAspect();
       case 7:
-        return new GeneratorMessage_Editor();
+        return getGeneratorMessageEditorAspect();
       case 8:
-        return new GeneratorParameterReference_Editor();
+        return getGeneratorParameterReferenceEditorAspect();
       case 9:
-        return new IfMacro_Editor();
+        return getIfMacroEditorAspect();
       case 10:
-        return new IncludeMacro_Editor();
+        return getIncludeMacroEditorAspect();
       case 11:
-        return new InlineSwitch_Case_Editor();
+        return getInlineSwitch_CaseEditorAspect();
       case 12:
-        return new InlineSwitch_RuleConsequence_Editor();
+        return getInlineSwitch_RuleConsequenceEditorAspect();
       case 13:
-        return new InlineTemplateWithContext_RuleConsequence_Editor();
+        return getInlineTemplateWithContext_RuleConsequenceEditorAspect();
       case 14:
-        return new InlineTemplate_RuleConsequence_Editor();
+        return getInlineTemplate_RuleConsequenceEditorAspect();
       case 15:
-        return new InsertMacro_Editor();
+        return getInsertMacroEditorAspect();
       case 16:
-        return new LabelMacro_Editor();
+        return getLabelMacroEditorAspect();
       case 17:
-        return new LoopMacro_Editor();
+        return getLoopMacroEditorAspect();
       case 18:
-        return new MapSrcListMacro_Editor();
+        return getMapSrcListMacroEditorAspect();
       case 19:
-        return new MapSrcNodeMacro_Editor();
+        return getMapSrcNodeMacroEditorAspect();
       case 20:
-        return new MappingConfiguration_Editor();
+        return getMappingConfigurationEditorAspect();
       case 21:
-        return new MappingLabelDeclaration_Editor();
+        return getMappingLabelDeclarationEditorAspect();
       case 22:
-        return new MappingScript_Editor();
+        return getMappingScriptEditorAspect();
       case 23:
-        return new MappingScriptReference_Editor();
+        return getMappingScriptReferenceEditorAspect();
       case 24:
-        return new NodeMacro_Editor();
+        return getNodeMacroEditorAspect();
       case 25:
-        return new PatternReduction_MappingRule_Editor();
+        return getPatternReduction_MappingRuleEditorAspect();
       case 26:
-        return new PropertyMacro_Editor();
+        return getPropertyMacroEditorAspect();
       case 27:
-        return new Reduction_MappingRule_Editor();
+        return getReduction_MappingRuleEditorAspect();
       case 28:
-        return new ReferenceMacro_Editor();
+        return getReferenceMacroEditorAspect();
       case 29:
-        return new RootTemplateAnnotation_Editor();
+        return getRootTemplateAnnotationEditorAspect();
       case 30:
-        return new Root_MappingRule_Editor();
+        return getRoot_MappingRuleEditorAspect();
       case 31:
-        return new RuleConsequence_Editor();
+        return getRuleConsequenceEditorAspect();
       case 32:
-        return new SwitchMacro_Editor();
+        return getSwitchMacroEditorAspect();
       case 33:
-        return new TemplateArgumentLinkPatternRefExpression_Editor();
+        return getTemplateArgumentLinkPatternRefExpressionEditorAspect();
       case 34:
-        return new TemplateArgumentParameterExpression_Editor();
+        return getTemplateArgumentParameterExpressionEditorAspect();
       case 35:
-        return new TemplateArgumentPatternVarRefExpression_Editor();
+        return getTemplateArgumentPatternVarRefExpressionEditorAspect();
       case 36:
-        return new TemplateArgumentPropertyPatternRefExpression_Editor();
+        return getTemplateArgumentPropertyPatternRefExpressionEditorAspect();
       case 37:
-        return new TemplateArgumentQueryExpression_Editor();
+        return getTemplateArgumentQueryExpressionEditorAspect();
       case 38:
-        return new TemplateCallMacro_Editor();
+        return getTemplateCallMacroEditorAspect();
       case 39:
-        return new TemplateDeclaration_Editor();
+        return getTemplateDeclarationEditorAspect();
       case 40:
-        return new TemplateDeclarationReference_Editor();
+        return getTemplateDeclarationReferenceEditorAspect();
       case 41:
-        return new TemplateFragment_Editor();
+        return getTemplateFragmentEditorAspect();
       case 42:
-        return new TemplateParameterDeclaration_Editor();
+        return getTemplateParameterDeclarationEditorAspect();
       case 43:
-        return new TemplateSwitch_Editor();
+        return getTemplateSwitchEditorAspect();
       case 44:
-        return new TemplateSwitchReference_Editor();
+        return getTemplateSwitchReferenceEditorAspect();
       case 45:
-        return new TraceMacro_Editor();
+        return getTraceMacroEditorAspect();
       case 46:
-        return new VarMacro_Editor();
+        return getVarMacroEditorAspect();
       case 47:
-        return new WeaveEach_RuleConsequence_Editor();
+        return getWeaveEach_RuleConsequenceEditorAspect();
       case 48:
-        return new WeaveMacro_Editor();
+        return getWeaveMacroEditorAspect();
       case 49:
-        return new Weaving_MappingRule_Editor();
+        return getWeaving_MappingRuleEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence", "jetbrains.mps.lang.generator.structure.CopySrcListMacro", "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", "jetbrains.mps.lang.generator.structure.CreateRootRule", "jetbrains.mps.lang.generator.structure.DismissTopMappingRule", "jetbrains.mps.lang.generator.structure.DropRootRule", "jetbrains.mps.lang.generator.structure.GeneratorDescriptor", "jetbrains.mps.lang.generator.structure.GeneratorMessage", "jetbrains.mps.lang.generator.structure.GeneratorParameterReference", "jetbrains.mps.lang.generator.structure.IfMacro", "jetbrains.mps.lang.generator.structure.IncludeMacro", "jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InsertMacro", "jetbrains.mps.lang.generator.structure.LabelMacro", "jetbrains.mps.lang.generator.structure.LoopMacro", "jetbrains.mps.lang.generator.structure.MapSrcListMacro", "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", "jetbrains.mps.lang.generator.structure.MappingConfiguration", "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration", "jetbrains.mps.lang.generator.structure.MappingScript", "jetbrains.mps.lang.generator.structure.MappingScriptReference", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", "jetbrains.mps.lang.generator.structure.Root_MappingRule", "jetbrains.mps.lang.generator.structure.RuleConsequence", "jetbrains.mps.lang.generator.structure.SwitchMacro", "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", "jetbrains.mps.lang.generator.structure.TemplateCallMacro", "jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", "jetbrains.mps.lang.generator.structure.TemplateFragment", "jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration", "jetbrains.mps.lang.generator.structure.TemplateSwitch", "jetbrains.mps.lang.generator.structure.TemplateSwitchReference", "jetbrains.mps.lang.generator.structure.TraceMacro", "jetbrains.mps.lang.generator.structure.VarMacro", "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", "jetbrains.mps.lang.generator.structure.WeaveMacro", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAbandonInput_RuleConsequenceEditorAspect = null;
+    myCopySrcListMacroEditorAspect = null;
+    myCopySrcNodeMacroEditorAspect = null;
+    myCreateRootRuleEditorAspect = null;
+    myDismissTopMappingRuleEditorAspect = null;
+    myDropRootRuleEditorAspect = null;
+    myGeneratorDescriptorEditorAspect = null;
+    myGeneratorMessageEditorAspect = null;
+    myGeneratorParameterReferenceEditorAspect = null;
+    myIfMacroEditorAspect = null;
+    myIncludeMacroEditorAspect = null;
+    myInlineSwitch_CaseEditorAspect = null;
+    myInlineSwitch_RuleConsequenceEditorAspect = null;
+    myInlineTemplateWithContext_RuleConsequenceEditorAspect = null;
+    myInlineTemplate_RuleConsequenceEditorAspect = null;
+    myInsertMacroEditorAspect = null;
+    myLabelMacroEditorAspect = null;
+    myLoopMacroEditorAspect = null;
+    myMapSrcListMacroEditorAspect = null;
+    myMapSrcNodeMacroEditorAspect = null;
+    myMappingConfigurationEditorAspect = null;
+    myMappingLabelDeclarationEditorAspect = null;
+    myMappingScriptEditorAspect = null;
+    myMappingScriptReferenceEditorAspect = null;
+    myNodeMacroEditorAspect = null;
+    myPatternReduction_MappingRuleEditorAspect = null;
+    myPropertyMacroEditorAspect = null;
+    myReduction_MappingRuleEditorAspect = null;
+    myReferenceMacroEditorAspect = null;
+    myRootTemplateAnnotationEditorAspect = null;
+    myRoot_MappingRuleEditorAspect = null;
+    myRuleConsequenceEditorAspect = null;
+    mySwitchMacroEditorAspect = null;
+    myTemplateArgumentLinkPatternRefExpressionEditorAspect = null;
+    myTemplateArgumentParameterExpressionEditorAspect = null;
+    myTemplateArgumentPatternVarRefExpressionEditorAspect = null;
+    myTemplateArgumentPropertyPatternRefExpressionEditorAspect = null;
+    myTemplateArgumentQueryExpressionEditorAspect = null;
+    myTemplateCallMacroEditorAspect = null;
+    myTemplateDeclarationEditorAspect = null;
+    myTemplateDeclarationReferenceEditorAspect = null;
+    myTemplateFragmentEditorAspect = null;
+    myTemplateParameterDeclarationEditorAspect = null;
+    myTemplateSwitchEditorAspect = null;
+    myTemplateSwitchReferenceEditorAspect = null;
+    myTraceMacroEditorAspect = null;
+    myVarMacroEditorAspect = null;
+    myWeaveEach_RuleConsequenceEditorAspect = null;
+    myWeaveMacroEditorAspect = null;
+    myWeaving_MappingRuleEditorAspect = null;
+  }
+
+  private AbandonInput_RuleConsequence_Editor getAbandonInput_RuleConsequenceEditorAspect() {
+    if (myAbandonInput_RuleConsequenceEditorAspect == null) {
+      myAbandonInput_RuleConsequenceEditorAspect = new AbandonInput_RuleConsequence_Editor();
+    }
+    return myAbandonInput_RuleConsequenceEditorAspect;
+  }
+
+  private CopySrcListMacro_Editor getCopySrcListMacroEditorAspect() {
+    if (myCopySrcListMacroEditorAspect == null) {
+      myCopySrcListMacroEditorAspect = new CopySrcListMacro_Editor();
+    }
+    return myCopySrcListMacroEditorAspect;
+  }
+
+  private CopySrcNodeMacro_Editor getCopySrcNodeMacroEditorAspect() {
+    if (myCopySrcNodeMacroEditorAspect == null) {
+      myCopySrcNodeMacroEditorAspect = new CopySrcNodeMacro_Editor();
+    }
+    return myCopySrcNodeMacroEditorAspect;
+  }
+
+  private CreateRootRule_Editor getCreateRootRuleEditorAspect() {
+    if (myCreateRootRuleEditorAspect == null) {
+      myCreateRootRuleEditorAspect = new CreateRootRule_Editor();
+    }
+    return myCreateRootRuleEditorAspect;
+  }
+
+  private DismissTopMappingRule_Editor getDismissTopMappingRuleEditorAspect() {
+    if (myDismissTopMappingRuleEditorAspect == null) {
+      myDismissTopMappingRuleEditorAspect = new DismissTopMappingRule_Editor();
+    }
+    return myDismissTopMappingRuleEditorAspect;
+  }
+
+  private DropRootRule_Editor getDropRootRuleEditorAspect() {
+    if (myDropRootRuleEditorAspect == null) {
+      myDropRootRuleEditorAspect = new DropRootRule_Editor();
+    }
+    return myDropRootRuleEditorAspect;
+  }
+
+  private GeneratorDescriptor_Editor getGeneratorDescriptorEditorAspect() {
+    if (myGeneratorDescriptorEditorAspect == null) {
+      myGeneratorDescriptorEditorAspect = new GeneratorDescriptor_Editor();
+    }
+    return myGeneratorDescriptorEditorAspect;
+  }
+
+  private GeneratorMessage_Editor getGeneratorMessageEditorAspect() {
+    if (myGeneratorMessageEditorAspect == null) {
+      myGeneratorMessageEditorAspect = new GeneratorMessage_Editor();
+    }
+    return myGeneratorMessageEditorAspect;
+  }
+
+  private GeneratorParameterReference_Editor getGeneratorParameterReferenceEditorAspect() {
+    if (myGeneratorParameterReferenceEditorAspect == null) {
+      myGeneratorParameterReferenceEditorAspect = new GeneratorParameterReference_Editor();
+    }
+    return myGeneratorParameterReferenceEditorAspect;
+  }
+
+  private IfMacro_Editor getIfMacroEditorAspect() {
+    if (myIfMacroEditorAspect == null) {
+      myIfMacroEditorAspect = new IfMacro_Editor();
+    }
+    return myIfMacroEditorAspect;
+  }
+
+  private IncludeMacro_Editor getIncludeMacroEditorAspect() {
+    if (myIncludeMacroEditorAspect == null) {
+      myIncludeMacroEditorAspect = new IncludeMacro_Editor();
+    }
+    return myIncludeMacroEditorAspect;
+  }
+
+  private InlineSwitch_Case_Editor getInlineSwitch_CaseEditorAspect() {
+    if (myInlineSwitch_CaseEditorAspect == null) {
+      myInlineSwitch_CaseEditorAspect = new InlineSwitch_Case_Editor();
+    }
+    return myInlineSwitch_CaseEditorAspect;
+  }
+
+  private InlineSwitch_RuleConsequence_Editor getInlineSwitch_RuleConsequenceEditorAspect() {
+    if (myInlineSwitch_RuleConsequenceEditorAspect == null) {
+      myInlineSwitch_RuleConsequenceEditorAspect = new InlineSwitch_RuleConsequence_Editor();
+    }
+    return myInlineSwitch_RuleConsequenceEditorAspect;
+  }
+
+  private InlineTemplateWithContext_RuleConsequence_Editor getInlineTemplateWithContext_RuleConsequenceEditorAspect() {
+    if (myInlineTemplateWithContext_RuleConsequenceEditorAspect == null) {
+      myInlineTemplateWithContext_RuleConsequenceEditorAspect = new InlineTemplateWithContext_RuleConsequence_Editor();
+    }
+    return myInlineTemplateWithContext_RuleConsequenceEditorAspect;
+  }
+
+  private InlineTemplate_RuleConsequence_Editor getInlineTemplate_RuleConsequenceEditorAspect() {
+    if (myInlineTemplate_RuleConsequenceEditorAspect == null) {
+      myInlineTemplate_RuleConsequenceEditorAspect = new InlineTemplate_RuleConsequence_Editor();
+    }
+    return myInlineTemplate_RuleConsequenceEditorAspect;
+  }
+
+  private InsertMacro_Editor getInsertMacroEditorAspect() {
+    if (myInsertMacroEditorAspect == null) {
+      myInsertMacroEditorAspect = new InsertMacro_Editor();
+    }
+    return myInsertMacroEditorAspect;
+  }
+
+  private LabelMacro_Editor getLabelMacroEditorAspect() {
+    if (myLabelMacroEditorAspect == null) {
+      myLabelMacroEditorAspect = new LabelMacro_Editor();
+    }
+    return myLabelMacroEditorAspect;
+  }
+
+  private LoopMacro_Editor getLoopMacroEditorAspect() {
+    if (myLoopMacroEditorAspect == null) {
+      myLoopMacroEditorAspect = new LoopMacro_Editor();
+    }
+    return myLoopMacroEditorAspect;
+  }
+
+  private MapSrcListMacro_Editor getMapSrcListMacroEditorAspect() {
+    if (myMapSrcListMacroEditorAspect == null) {
+      myMapSrcListMacroEditorAspect = new MapSrcListMacro_Editor();
+    }
+    return myMapSrcListMacroEditorAspect;
+  }
+
+  private MapSrcNodeMacro_Editor getMapSrcNodeMacroEditorAspect() {
+    if (myMapSrcNodeMacroEditorAspect == null) {
+      myMapSrcNodeMacroEditorAspect = new MapSrcNodeMacro_Editor();
+    }
+    return myMapSrcNodeMacroEditorAspect;
+  }
+
+  private MappingConfiguration_Editor getMappingConfigurationEditorAspect() {
+    if (myMappingConfigurationEditorAspect == null) {
+      myMappingConfigurationEditorAspect = new MappingConfiguration_Editor();
+    }
+    return myMappingConfigurationEditorAspect;
+  }
+
+  private MappingLabelDeclaration_Editor getMappingLabelDeclarationEditorAspect() {
+    if (myMappingLabelDeclarationEditorAspect == null) {
+      myMappingLabelDeclarationEditorAspect = new MappingLabelDeclaration_Editor();
+    }
+    return myMappingLabelDeclarationEditorAspect;
+  }
+
+  private MappingScript_Editor getMappingScriptEditorAspect() {
+    if (myMappingScriptEditorAspect == null) {
+      myMappingScriptEditorAspect = new MappingScript_Editor();
+    }
+    return myMappingScriptEditorAspect;
+  }
+
+  private MappingScriptReference_Editor getMappingScriptReferenceEditorAspect() {
+    if (myMappingScriptReferenceEditorAspect == null) {
+      myMappingScriptReferenceEditorAspect = new MappingScriptReference_Editor();
+    }
+    return myMappingScriptReferenceEditorAspect;
+  }
+
+  private NodeMacro_Editor getNodeMacroEditorAspect() {
+    if (myNodeMacroEditorAspect == null) {
+      myNodeMacroEditorAspect = new NodeMacro_Editor();
+    }
+    return myNodeMacroEditorAspect;
+  }
+
+  private PatternReduction_MappingRule_Editor getPatternReduction_MappingRuleEditorAspect() {
+    if (myPatternReduction_MappingRuleEditorAspect == null) {
+      myPatternReduction_MappingRuleEditorAspect = new PatternReduction_MappingRule_Editor();
+    }
+    return myPatternReduction_MappingRuleEditorAspect;
+  }
+
+  private PropertyMacro_Editor getPropertyMacroEditorAspect() {
+    if (myPropertyMacroEditorAspect == null) {
+      myPropertyMacroEditorAspect = new PropertyMacro_Editor();
+    }
+    return myPropertyMacroEditorAspect;
+  }
+
+  private Reduction_MappingRule_Editor getReduction_MappingRuleEditorAspect() {
+    if (myReduction_MappingRuleEditorAspect == null) {
+      myReduction_MappingRuleEditorAspect = new Reduction_MappingRule_Editor();
+    }
+    return myReduction_MappingRuleEditorAspect;
+  }
+
+  private ReferenceMacro_Editor getReferenceMacroEditorAspect() {
+    if (myReferenceMacroEditorAspect == null) {
+      myReferenceMacroEditorAspect = new ReferenceMacro_Editor();
+    }
+    return myReferenceMacroEditorAspect;
+  }
+
+  private RootTemplateAnnotation_Editor getRootTemplateAnnotationEditorAspect() {
+    if (myRootTemplateAnnotationEditorAspect == null) {
+      myRootTemplateAnnotationEditorAspect = new RootTemplateAnnotation_Editor();
+    }
+    return myRootTemplateAnnotationEditorAspect;
+  }
+
+  private Root_MappingRule_Editor getRoot_MappingRuleEditorAspect() {
+    if (myRoot_MappingRuleEditorAspect == null) {
+      myRoot_MappingRuleEditorAspect = new Root_MappingRule_Editor();
+    }
+    return myRoot_MappingRuleEditorAspect;
+  }
+
+  private RuleConsequence_Editor getRuleConsequenceEditorAspect() {
+    if (myRuleConsequenceEditorAspect == null) {
+      myRuleConsequenceEditorAspect = new RuleConsequence_Editor();
+    }
+    return myRuleConsequenceEditorAspect;
+  }
+
+  private SwitchMacro_Editor getSwitchMacroEditorAspect() {
+    if (mySwitchMacroEditorAspect == null) {
+      mySwitchMacroEditorAspect = new SwitchMacro_Editor();
+    }
+    return mySwitchMacroEditorAspect;
+  }
+
+  private TemplateArgumentLinkPatternRefExpression_Editor getTemplateArgumentLinkPatternRefExpressionEditorAspect() {
+    if (myTemplateArgumentLinkPatternRefExpressionEditorAspect == null) {
+      myTemplateArgumentLinkPatternRefExpressionEditorAspect = new TemplateArgumentLinkPatternRefExpression_Editor();
+    }
+    return myTemplateArgumentLinkPatternRefExpressionEditorAspect;
+  }
+
+  private TemplateArgumentParameterExpression_Editor getTemplateArgumentParameterExpressionEditorAspect() {
+    if (myTemplateArgumentParameterExpressionEditorAspect == null) {
+      myTemplateArgumentParameterExpressionEditorAspect = new TemplateArgumentParameterExpression_Editor();
+    }
+    return myTemplateArgumentParameterExpressionEditorAspect;
+  }
+
+  private TemplateArgumentPatternVarRefExpression_Editor getTemplateArgumentPatternVarRefExpressionEditorAspect() {
+    if (myTemplateArgumentPatternVarRefExpressionEditorAspect == null) {
+      myTemplateArgumentPatternVarRefExpressionEditorAspect = new TemplateArgumentPatternVarRefExpression_Editor();
+    }
+    return myTemplateArgumentPatternVarRefExpressionEditorAspect;
+  }
+
+  private TemplateArgumentPropertyPatternRefExpression_Editor getTemplateArgumentPropertyPatternRefExpressionEditorAspect() {
+    if (myTemplateArgumentPropertyPatternRefExpressionEditorAspect == null) {
+      myTemplateArgumentPropertyPatternRefExpressionEditorAspect = new TemplateArgumentPropertyPatternRefExpression_Editor();
+    }
+    return myTemplateArgumentPropertyPatternRefExpressionEditorAspect;
+  }
+
+  private TemplateArgumentQueryExpression_Editor getTemplateArgumentQueryExpressionEditorAspect() {
+    if (myTemplateArgumentQueryExpressionEditorAspect == null) {
+      myTemplateArgumentQueryExpressionEditorAspect = new TemplateArgumentQueryExpression_Editor();
+    }
+    return myTemplateArgumentQueryExpressionEditorAspect;
+  }
+
+  private TemplateCallMacro_Editor getTemplateCallMacroEditorAspect() {
+    if (myTemplateCallMacroEditorAspect == null) {
+      myTemplateCallMacroEditorAspect = new TemplateCallMacro_Editor();
+    }
+    return myTemplateCallMacroEditorAspect;
+  }
+
+  private TemplateDeclaration_Editor getTemplateDeclarationEditorAspect() {
+    if (myTemplateDeclarationEditorAspect == null) {
+      myTemplateDeclarationEditorAspect = new TemplateDeclaration_Editor();
+    }
+    return myTemplateDeclarationEditorAspect;
+  }
+
+  private TemplateDeclarationReference_Editor getTemplateDeclarationReferenceEditorAspect() {
+    if (myTemplateDeclarationReferenceEditorAspect == null) {
+      myTemplateDeclarationReferenceEditorAspect = new TemplateDeclarationReference_Editor();
+    }
+    return myTemplateDeclarationReferenceEditorAspect;
+  }
+
+  private TemplateFragment_Editor getTemplateFragmentEditorAspect() {
+    if (myTemplateFragmentEditorAspect == null) {
+      myTemplateFragmentEditorAspect = new TemplateFragment_Editor();
+    }
+    return myTemplateFragmentEditorAspect;
+  }
+
+  private TemplateParameterDeclaration_Editor getTemplateParameterDeclarationEditorAspect() {
+    if (myTemplateParameterDeclarationEditorAspect == null) {
+      myTemplateParameterDeclarationEditorAspect = new TemplateParameterDeclaration_Editor();
+    }
+    return myTemplateParameterDeclarationEditorAspect;
+  }
+
+  private TemplateSwitch_Editor getTemplateSwitchEditorAspect() {
+    if (myTemplateSwitchEditorAspect == null) {
+      myTemplateSwitchEditorAspect = new TemplateSwitch_Editor();
+    }
+    return myTemplateSwitchEditorAspect;
+  }
+
+  private TemplateSwitchReference_Editor getTemplateSwitchReferenceEditorAspect() {
+    if (myTemplateSwitchReferenceEditorAspect == null) {
+      myTemplateSwitchReferenceEditorAspect = new TemplateSwitchReference_Editor();
+    }
+    return myTemplateSwitchReferenceEditorAspect;
+  }
+
+  private TraceMacro_Editor getTraceMacroEditorAspect() {
+    if (myTraceMacroEditorAspect == null) {
+      myTraceMacroEditorAspect = new TraceMacro_Editor();
+    }
+    return myTraceMacroEditorAspect;
+  }
+
+  private VarMacro_Editor getVarMacroEditorAspect() {
+    if (myVarMacroEditorAspect == null) {
+      myVarMacroEditorAspect = new VarMacro_Editor();
+    }
+    return myVarMacroEditorAspect;
+  }
+
+  private WeaveEach_RuleConsequence_Editor getWeaveEach_RuleConsequenceEditorAspect() {
+    if (myWeaveEach_RuleConsequenceEditorAspect == null) {
+      myWeaveEach_RuleConsequenceEditorAspect = new WeaveEach_RuleConsequence_Editor();
+    }
+    return myWeaveEach_RuleConsequenceEditorAspect;
+  }
+
+  private WeaveMacro_Editor getWeaveMacroEditorAspect() {
+    if (myWeaveMacroEditorAspect == null) {
+      myWeaveMacroEditorAspect = new WeaveMacro_Editor();
+    }
+    return myWeaveMacroEditorAspect;
+  }
+
+  private Weaving_MappingRule_Editor getWeaving_MappingRuleEditorAspect() {
+    if (myWeaving_MappingRuleEditorAspect == null) {
+      myWeaving_MappingRuleEditorAspect = new Weaving_MappingRule_Editor();
+    }
+    return myWeaving_MappingRuleEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0yb = new String[]{"jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence", "jetbrains.mps.lang.generator.structure.CopySrcListMacro", "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", "jetbrains.mps.lang.generator.structure.CreateRootRule", "jetbrains.mps.lang.generator.structure.DismissTopMappingRule", "jetbrains.mps.lang.generator.structure.DropRootRule", "jetbrains.mps.lang.generator.structure.GeneratorDescriptor", "jetbrains.mps.lang.generator.structure.GeneratorMessage", "jetbrains.mps.lang.generator.structure.GeneratorParameterReference", "jetbrains.mps.lang.generator.structure.IfMacro", "jetbrains.mps.lang.generator.structure.IncludeMacro", "jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InsertMacro", "jetbrains.mps.lang.generator.structure.LabelMacro", "jetbrains.mps.lang.generator.structure.LoopMacro", "jetbrains.mps.lang.generator.structure.MapSrcListMacro", "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", "jetbrains.mps.lang.generator.structure.MappingConfiguration", "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration", "jetbrains.mps.lang.generator.structure.MappingScript", "jetbrains.mps.lang.generator.structure.MappingScriptReference", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", "jetbrains.mps.lang.generator.structure.Root_MappingRule", "jetbrains.mps.lang.generator.structure.RuleConsequence", "jetbrains.mps.lang.generator.structure.SwitchMacro", "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", "jetbrains.mps.lang.generator.structure.TemplateCallMacro", "jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", "jetbrains.mps.lang.generator.structure.TemplateFragment", "jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration", "jetbrains.mps.lang.generator.structure.TemplateSwitch", "jetbrains.mps.lang.generator.structure.TemplateSwitchReference", "jetbrains.mps.lang.generator.structure.TraceMacro", "jetbrains.mps.lang.generator.structure.VarMacro", "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", "jetbrains.mps.lang.generator.structure.WeaveMacro", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"};
 }

@@ -8,44 +8,196 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AdvanceWorkStatement_Editor myAdvanceWorkStatementEditorAspect;
+  private AllWorkLeftExpression_Editor myAllWorkLeftExpressionEditorAspect;
+  private BeginWorkStatement_Editor myBeginWorkStatementEditorAspect;
+  private ExpectedOption_Editor myExpectedOptionEditorAspect;
+  private FinishWorkStatement_Editor myFinishWorkStatementEditorAspect;
+  private JobDeclaration_Editor myJobDeclarationEditorAspect;
+  private Option_Editor myOptionEditorAspect;
+  private OptionExpression_Editor myOptionExpressionEditorAspect;
+  private OptionType_Editor myOptionTypeEditorAspect;
+  private OutputResources_Editor myOutputResourcesEditorAspect;
+  private QueryDefinition_Editor myQueryDefinitionEditorAspect;
+  private RelayQueryExpression_Editor myRelayQueryExpressionEditorAspect;
+  private ReportFeedbackStatement_Editor myReportFeedbackStatementEditorAspect;
+  private ResourceType_Editor myResourceTypeEditorAspect;
+  private ResultStatement_Editor myResultStatementEditorAspect;
+  private Text_Editor myTextEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0q, descriptor.getConceptFqName())) {
       case 0:
-        return new AdvanceWorkStatement_Editor();
+        return getAdvanceWorkStatementEditorAspect();
       case 1:
-        return new AllWorkLeftExpression_Editor();
+        return getAllWorkLeftExpressionEditorAspect();
       case 2:
-        return new BeginWorkStatement_Editor();
+        return getBeginWorkStatementEditorAspect();
       case 3:
-        return new ExpectedOption_Editor();
+        return getExpectedOptionEditorAspect();
       case 4:
-        return new FinishWorkStatement_Editor();
+        return getFinishWorkStatementEditorAspect();
       case 5:
-        return new JobDeclaration_Editor();
+        return getJobDeclarationEditorAspect();
       case 6:
-        return new Option_Editor();
+        return getOptionEditorAspect();
       case 7:
-        return new OptionExpression_Editor();
+        return getOptionExpressionEditorAspect();
       case 8:
-        return new OptionType_Editor();
+        return getOptionTypeEditorAspect();
       case 9:
-        return new OutputResources_Editor();
+        return getOutputResourcesEditorAspect();
       case 10:
-        return new QueryDefinition_Editor();
+        return getQueryDefinitionEditorAspect();
       case 11:
-        return new RelayQueryExpression_Editor();
+        return getRelayQueryExpressionEditorAspect();
       case 12:
-        return new ReportFeedbackStatement_Editor();
+        return getReportFeedbackStatementEditorAspect();
       case 13:
-        return new ResourceType_Editor();
+        return getResourceTypeEditorAspect();
       case 14:
-        return new ResultStatement_Editor();
+        return getResultStatementEditorAspect();
       case 15:
-        return new Text_Editor();
+        return getTextEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.AllWorkLeftExpression", "jetbrains.mps.make.script.structure.BeginWorkStatement", "jetbrains.mps.make.script.structure.ExpectedOption", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.JobDeclaration", "jetbrains.mps.make.script.structure.Option", "jetbrains.mps.make.script.structure.OptionExpression", "jetbrains.mps.make.script.structure.OptionType", "jetbrains.mps.make.script.structure.OutputResources", "jetbrains.mps.make.script.structure.QueryDefinition", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ReportFeedbackStatement", "jetbrains.mps.make.script.structure.ResourceType", "jetbrains.mps.make.script.structure.ResultStatement", "jetbrains.mps.make.script.structure.Text"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAdvanceWorkStatementEditorAspect = null;
+    myAllWorkLeftExpressionEditorAspect = null;
+    myBeginWorkStatementEditorAspect = null;
+    myExpectedOptionEditorAspect = null;
+    myFinishWorkStatementEditorAspect = null;
+    myJobDeclarationEditorAspect = null;
+    myOptionEditorAspect = null;
+    myOptionExpressionEditorAspect = null;
+    myOptionTypeEditorAspect = null;
+    myOutputResourcesEditorAspect = null;
+    myQueryDefinitionEditorAspect = null;
+    myRelayQueryExpressionEditorAspect = null;
+    myReportFeedbackStatementEditorAspect = null;
+    myResourceTypeEditorAspect = null;
+    myResultStatementEditorAspect = null;
+    myTextEditorAspect = null;
+  }
+
+  private AdvanceWorkStatement_Editor getAdvanceWorkStatementEditorAspect() {
+    if (myAdvanceWorkStatementEditorAspect == null) {
+      myAdvanceWorkStatementEditorAspect = new AdvanceWorkStatement_Editor();
+    }
+    return myAdvanceWorkStatementEditorAspect;
+  }
+
+  private AllWorkLeftExpression_Editor getAllWorkLeftExpressionEditorAspect() {
+    if (myAllWorkLeftExpressionEditorAspect == null) {
+      myAllWorkLeftExpressionEditorAspect = new AllWorkLeftExpression_Editor();
+    }
+    return myAllWorkLeftExpressionEditorAspect;
+  }
+
+  private BeginWorkStatement_Editor getBeginWorkStatementEditorAspect() {
+    if (myBeginWorkStatementEditorAspect == null) {
+      myBeginWorkStatementEditorAspect = new BeginWorkStatement_Editor();
+    }
+    return myBeginWorkStatementEditorAspect;
+  }
+
+  private ExpectedOption_Editor getExpectedOptionEditorAspect() {
+    if (myExpectedOptionEditorAspect == null) {
+      myExpectedOptionEditorAspect = new ExpectedOption_Editor();
+    }
+    return myExpectedOptionEditorAspect;
+  }
+
+  private FinishWorkStatement_Editor getFinishWorkStatementEditorAspect() {
+    if (myFinishWorkStatementEditorAspect == null) {
+      myFinishWorkStatementEditorAspect = new FinishWorkStatement_Editor();
+    }
+    return myFinishWorkStatementEditorAspect;
+  }
+
+  private JobDeclaration_Editor getJobDeclarationEditorAspect() {
+    if (myJobDeclarationEditorAspect == null) {
+      myJobDeclarationEditorAspect = new JobDeclaration_Editor();
+    }
+    return myJobDeclarationEditorAspect;
+  }
+
+  private Option_Editor getOptionEditorAspect() {
+    if (myOptionEditorAspect == null) {
+      myOptionEditorAspect = new Option_Editor();
+    }
+    return myOptionEditorAspect;
+  }
+
+  private OptionExpression_Editor getOptionExpressionEditorAspect() {
+    if (myOptionExpressionEditorAspect == null) {
+      myOptionExpressionEditorAspect = new OptionExpression_Editor();
+    }
+    return myOptionExpressionEditorAspect;
+  }
+
+  private OptionType_Editor getOptionTypeEditorAspect() {
+    if (myOptionTypeEditorAspect == null) {
+      myOptionTypeEditorAspect = new OptionType_Editor();
+    }
+    return myOptionTypeEditorAspect;
+  }
+
+  private OutputResources_Editor getOutputResourcesEditorAspect() {
+    if (myOutputResourcesEditorAspect == null) {
+      myOutputResourcesEditorAspect = new OutputResources_Editor();
+    }
+    return myOutputResourcesEditorAspect;
+  }
+
+  private QueryDefinition_Editor getQueryDefinitionEditorAspect() {
+    if (myQueryDefinitionEditorAspect == null) {
+      myQueryDefinitionEditorAspect = new QueryDefinition_Editor();
+    }
+    return myQueryDefinitionEditorAspect;
+  }
+
+  private RelayQueryExpression_Editor getRelayQueryExpressionEditorAspect() {
+    if (myRelayQueryExpressionEditorAspect == null) {
+      myRelayQueryExpressionEditorAspect = new RelayQueryExpression_Editor();
+    }
+    return myRelayQueryExpressionEditorAspect;
+  }
+
+  private ReportFeedbackStatement_Editor getReportFeedbackStatementEditorAspect() {
+    if (myReportFeedbackStatementEditorAspect == null) {
+      myReportFeedbackStatementEditorAspect = new ReportFeedbackStatement_Editor();
+    }
+    return myReportFeedbackStatementEditorAspect;
+  }
+
+  private ResourceType_Editor getResourceTypeEditorAspect() {
+    if (myResourceTypeEditorAspect == null) {
+      myResourceTypeEditorAspect = new ResourceType_Editor();
+    }
+    return myResourceTypeEditorAspect;
+  }
+
+  private ResultStatement_Editor getResultStatementEditorAspect() {
+    if (myResultStatementEditorAspect == null) {
+      myResultStatementEditorAspect = new ResultStatement_Editor();
+    }
+    return myResultStatementEditorAspect;
+  }
+
+  private Text_Editor getTextEditorAspect() {
+    if (myTextEditorAspect == null) {
+      myTextEditorAspect = new Text_Editor();
+    }
+    return myTextEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0q = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.AllWorkLeftExpression", "jetbrains.mps.make.script.structure.BeginWorkStatement", "jetbrains.mps.make.script.structure.ExpectedOption", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.JobDeclaration", "jetbrains.mps.make.script.structure.Option", "jetbrains.mps.make.script.structure.OptionExpression", "jetbrains.mps.make.script.structure.OptionType", "jetbrains.mps.make.script.structure.OutputResources", "jetbrains.mps.make.script.structure.QueryDefinition", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ReportFeedbackStatement", "jetbrains.mps.make.script.structure.ResourceType", "jetbrains.mps.make.script.structure.ResultStatement", "jetbrains.mps.make.script.structure.Text"};
 }

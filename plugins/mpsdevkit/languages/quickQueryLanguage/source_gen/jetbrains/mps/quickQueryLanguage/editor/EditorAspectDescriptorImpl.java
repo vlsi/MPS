@@ -8,16 +8,42 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ModelQuery_Editor myModelQueryEditorAspect;
+  private ReplaceModelQuery_Editor myReplaceModelQueryEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
-        return new ModelQuery_Editor();
+        return getModelQueryEditorAspect();
       case 1:
-        return new ReplaceModelQuery_Editor();
+        return getReplaceModelQueryEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.quickQueryLanguage.structure.ModelQuery", "jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myModelQueryEditorAspect = null;
+    myReplaceModelQueryEditorAspect = null;
+  }
+
+  private ModelQuery_Editor getModelQueryEditorAspect() {
+    if (myModelQueryEditorAspect == null) {
+      myModelQueryEditorAspect = new ModelQuery_Editor();
+    }
+    return myModelQueryEditorAspect;
+  }
+
+  private ReplaceModelQuery_Editor getReplaceModelQueryEditorAspect() {
+    if (myReplaceModelQueryEditorAspect == null) {
+      myReplaceModelQueryEditorAspect = new ReplaceModelQuery_Editor();
+    }
+    return myReplaceModelQueryEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.quickQueryLanguage.structure.ModelQuery", "jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery"};
 }

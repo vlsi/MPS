@@ -8,28 +8,108 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ExtensionMethodCall_Editor myExtensionMethodCallEditorAspect;
+  private ExtensionMethodDeclaration_Editor myExtensionMethodDeclarationEditorAspect;
+  private ExtensionStaticFieldDeclaration_Editor myExtensionStaticFieldDeclarationEditorAspect;
+  private ExtensionStaticFieldReference_Editor myExtensionStaticFieldReferenceEditorAspect;
+  private LocalExtendedMethodCall_Editor myLocalExtendedMethodCallEditorAspect;
+  private SimpleExtensionMethodsContainer_Editor mySimpleExtensionMethodsContainerEditorAspect;
+  private ThisExtensionExpression_Editor myThisExtensionExpressionEditorAspect;
+  private TypeExtension_Editor myTypeExtensionEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0i, descriptor.getConceptFqName())) {
       case 0:
-        return new ExtensionMethodCall_Editor();
+        return getExtensionMethodCallEditorAspect();
       case 1:
-        return new ExtensionMethodDeclaration_Editor();
+        return getExtensionMethodDeclarationEditorAspect();
       case 2:
-        return new ExtensionStaticFieldDeclaration_Editor();
+        return getExtensionStaticFieldDeclarationEditorAspect();
       case 3:
-        return new ExtensionStaticFieldReference_Editor();
+        return getExtensionStaticFieldReferenceEditorAspect();
       case 4:
-        return new LocalExtendedMethodCall_Editor();
+        return getLocalExtendedMethodCallEditorAspect();
       case 5:
-        return new SimpleExtensionMethodsContainer_Editor();
+        return getSimpleExtensionMethodsContainerEditorAspect();
       case 6:
-        return new ThisExtensionExpression_Editor();
+        return getThisExtensionExpressionEditorAspect();
       case 7:
-        return new TypeExtension_Editor();
+        return getTypeExtensionEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference", "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression", "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myExtensionMethodCallEditorAspect = null;
+    myExtensionMethodDeclarationEditorAspect = null;
+    myExtensionStaticFieldDeclarationEditorAspect = null;
+    myExtensionStaticFieldReferenceEditorAspect = null;
+    myLocalExtendedMethodCallEditorAspect = null;
+    mySimpleExtensionMethodsContainerEditorAspect = null;
+    myThisExtensionExpressionEditorAspect = null;
+    myTypeExtensionEditorAspect = null;
+  }
+
+  private ExtensionMethodCall_Editor getExtensionMethodCallEditorAspect() {
+    if (myExtensionMethodCallEditorAspect == null) {
+      myExtensionMethodCallEditorAspect = new ExtensionMethodCall_Editor();
+    }
+    return myExtensionMethodCallEditorAspect;
+  }
+
+  private ExtensionMethodDeclaration_Editor getExtensionMethodDeclarationEditorAspect() {
+    if (myExtensionMethodDeclarationEditorAspect == null) {
+      myExtensionMethodDeclarationEditorAspect = new ExtensionMethodDeclaration_Editor();
+    }
+    return myExtensionMethodDeclarationEditorAspect;
+  }
+
+  private ExtensionStaticFieldDeclaration_Editor getExtensionStaticFieldDeclarationEditorAspect() {
+    if (myExtensionStaticFieldDeclarationEditorAspect == null) {
+      myExtensionStaticFieldDeclarationEditorAspect = new ExtensionStaticFieldDeclaration_Editor();
+    }
+    return myExtensionStaticFieldDeclarationEditorAspect;
+  }
+
+  private ExtensionStaticFieldReference_Editor getExtensionStaticFieldReferenceEditorAspect() {
+    if (myExtensionStaticFieldReferenceEditorAspect == null) {
+      myExtensionStaticFieldReferenceEditorAspect = new ExtensionStaticFieldReference_Editor();
+    }
+    return myExtensionStaticFieldReferenceEditorAspect;
+  }
+
+  private LocalExtendedMethodCall_Editor getLocalExtendedMethodCallEditorAspect() {
+    if (myLocalExtendedMethodCallEditorAspect == null) {
+      myLocalExtendedMethodCallEditorAspect = new LocalExtendedMethodCall_Editor();
+    }
+    return myLocalExtendedMethodCallEditorAspect;
+  }
+
+  private SimpleExtensionMethodsContainer_Editor getSimpleExtensionMethodsContainerEditorAspect() {
+    if (mySimpleExtensionMethodsContainerEditorAspect == null) {
+      mySimpleExtensionMethodsContainerEditorAspect = new SimpleExtensionMethodsContainer_Editor();
+    }
+    return mySimpleExtensionMethodsContainerEditorAspect;
+  }
+
+  private ThisExtensionExpression_Editor getThisExtensionExpressionEditorAspect() {
+    if (myThisExtensionExpressionEditorAspect == null) {
+      myThisExtensionExpressionEditorAspect = new ThisExtensionExpression_Editor();
+    }
+    return myThisExtensionExpressionEditorAspect;
+  }
+
+  private TypeExtension_Editor getTypeExtensionEditorAspect() {
+    if (myTypeExtensionEditorAspect == null) {
+      myTypeExtensionEditorAspect = new TypeExtension_Editor();
+    }
+    return myTypeExtensionEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0i = new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference", "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression", "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"};
 }

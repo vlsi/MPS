@@ -8,88 +8,438 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AnonymousCellAnnotation_Editor myAnonymousCellAnnotationEditorAspect;
+  private AssertMatch_Editor myAssertMatchEditorAspect;
+  private BootstrapActionReference_Editor myBootstrapActionReferenceEditorAspect;
+  private CheckDataFlowOperation_Editor myCheckDataFlowOperationEditorAspect;
+  private CheckNodeDataflow_Editor myCheckNodeDataflowEditorAspect;
+  private CheckNodeForErrors_Editor myCheckNodeForErrorsEditorAspect;
+  private EditorComponentExpression_Editor myEditorComponentExpressionEditorAspect;
+  private EditorExpression_Editor myEditorExpressionEditorAspect;
+  private EditorTestCase_Editor myEditorTestCaseEditorAspect;
+  private ExpressionContainer_Editor myExpressionContainerEditorAspect;
+  private InvokeActionStatement_Editor myInvokeActionStatementEditorAspect;
+  private InvokeIntentionStatement_Editor myInvokeIntentionStatementEditorAspect;
+  private MPSActionReference_Editor myMPSActionReferenceEditorAspect;
+  private MockAnnotation_Editor myMockAnnotationEditorAspect;
+  private ModelExpression_Editor myModelExpressionEditorAspect;
+  private NodeErrorPropety_Editor myNodeErrorPropetyEditorAspect;
+  private NodeOperationsContainer_Editor myNodeOperationsContainerEditorAspect;
+  private NodePropertiesContainer_Editor myNodePropertiesContainerEditorAspect;
+  private NodeReachable_Editor myNodeReachableEditorAspect;
+  private NodeTypeProperty_Editor myNodeTypePropertyEditorAspect;
+  private NodeTypeSetProperty_Editor myNodeTypeSetPropertyEditorAspect;
+  private NodeUnreachable_Editor myNodeUnreachableEditorAspect;
+  private NodeWarningProperty_Editor myNodeWarningPropertyEditorAspect;
+  private NodesTestCase_Editor myNodesTestCaseEditorAspect;
+  private PressKeyStatement_Editor myPressKeyStatementEditorAspect;
+  private ProjectExpression_Editor myProjectExpressionEditorAspect;
+  private ScopesExpectedNode_Editor myScopesExpectedNodeEditorAspect;
+  private ScopesTest_Editor myScopesTestEditorAspect;
+  private SimpleNodeTest_Editor mySimpleNodeTestEditorAspect;
+  private SwitchToInspector_Editor mySwitchToInspectorEditorAspect;
+  private TestInfo_Editor myTestInfoEditorAspect;
+  private TestNode_Editor myTestNodeEditorAspect;
+  private TestNodeAnnotation_Editor myTestNodeAnnotationEditorAspect;
+  private TestNodeReference_Editor myTestNodeReferenceEditorAspect;
+  private TypeKeyStatement_Editor myTypeKeyStatementEditorAspect;
+  private TypesCheckOperation_Editor myTypesCheckOperationEditorAspect;
+  private VariableInialized_Editor myVariableInializedEditorAspect;
+  private VariableLive_Editor myVariableLiveEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0mb, descriptor.getConceptFqName())) {
       case 0:
-        return new AnonymousCellAnnotation_Editor();
+        return getAnonymousCellAnnotationEditorAspect();
       case 1:
-        return new AssertMatch_Editor();
+        return getAssertMatchEditorAspect();
       case 2:
-        return new BootstrapActionReference_Editor();
+        return getBootstrapActionReferenceEditorAspect();
       case 3:
-        return new CheckDataFlowOperation_Editor();
+        return getCheckDataFlowOperationEditorAspect();
       case 4:
-        return new CheckNodeDataflow_Editor();
+        return getCheckNodeDataflowEditorAspect();
       case 5:
-        return new CheckNodeForErrors_Editor();
+        return getCheckNodeForErrorsEditorAspect();
       case 6:
-        return new EditorComponentExpression_Editor();
+        return getEditorComponentExpressionEditorAspect();
       case 7:
-        return new EditorExpression_Editor();
+        return getEditorExpressionEditorAspect();
       case 8:
-        return new EditorTestCase_Editor();
+        return getEditorTestCaseEditorAspect();
       case 9:
-        return new ExpressionContainer_Editor();
+        return getExpressionContainerEditorAspect();
       case 10:
-        return new InvokeActionStatement_Editor();
+        return getInvokeActionStatementEditorAspect();
       case 11:
-        return new InvokeIntentionStatement_Editor();
+        return getInvokeIntentionStatementEditorAspect();
       case 12:
-        return new MPSActionReference_Editor();
+        return getMPSActionReferenceEditorAspect();
       case 13:
-        return new MockAnnotation_Editor();
+        return getMockAnnotationEditorAspect();
       case 14:
-        return new ModelExpression_Editor();
+        return getModelExpressionEditorAspect();
       case 15:
-        return new NodeErrorPropety_Editor();
+        return getNodeErrorPropetyEditorAspect();
       case 16:
-        return new NodeOperationsContainer_Editor();
+        return getNodeOperationsContainerEditorAspect();
       case 17:
-        return new NodePropertiesContainer_Editor();
+        return getNodePropertiesContainerEditorAspect();
       case 18:
-        return new NodeReachable_Editor();
+        return getNodeReachableEditorAspect();
       case 19:
-        return new NodeTypeProperty_Editor();
+        return getNodeTypePropertyEditorAspect();
       case 20:
-        return new NodeTypeSetProperty_Editor();
+        return getNodeTypeSetPropertyEditorAspect();
       case 21:
-        return new NodeUnreachable_Editor();
+        return getNodeUnreachableEditorAspect();
       case 22:
-        return new NodeWarningProperty_Editor();
+        return getNodeWarningPropertyEditorAspect();
       case 23:
-        return new NodesTestCase_Editor();
+        return getNodesTestCaseEditorAspect();
       case 24:
-        return new PressKeyStatement_Editor();
+        return getPressKeyStatementEditorAspect();
       case 25:
-        return new ProjectExpression_Editor();
+        return getProjectExpressionEditorAspect();
       case 26:
-        return new ScopesExpectedNode_Editor();
+        return getScopesExpectedNodeEditorAspect();
       case 27:
-        return new ScopesTest_Editor();
+        return getScopesTestEditorAspect();
       case 28:
-        return new SimpleNodeTest_Editor();
+        return getSimpleNodeTestEditorAspect();
       case 29:
-        return new SwitchToInspector_Editor();
+        return getSwitchToInspectorEditorAspect();
       case 30:
-        return new TestInfo_Editor();
+        return getTestInfoEditorAspect();
       case 31:
-        return new TestNode_Editor();
+        return getTestNodeEditorAspect();
       case 32:
-        return new TestNodeAnnotation_Editor();
+        return getTestNodeAnnotationEditorAspect();
       case 33:
-        return new TestNodeReference_Editor();
+        return getTestNodeReferenceEditorAspect();
       case 34:
-        return new TypeKeyStatement_Editor();
+        return getTypeKeyStatementEditorAspect();
       case 35:
-        return new TypesCheckOperation_Editor();
+        return getTypesCheckOperationEditorAspect();
       case 36:
-        return new VariableInialized_Editor();
+        return getVariableInializedEditorAspect();
       case 37:
-        return new VariableLive_Editor();
+        return getVariableLiveEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeErrorPropety", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodePropertiesContainer", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeTypeProperty", "jetbrains.mps.lang.test.structure.NodeTypeSetProperty", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningProperty", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.TypesCheckOperation", "jetbrains.mps.lang.test.structure.VariableInialized", "jetbrains.mps.lang.test.structure.VariableLive"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAnonymousCellAnnotationEditorAspect = null;
+    myAssertMatchEditorAspect = null;
+    myBootstrapActionReferenceEditorAspect = null;
+    myCheckDataFlowOperationEditorAspect = null;
+    myCheckNodeDataflowEditorAspect = null;
+    myCheckNodeForErrorsEditorAspect = null;
+    myEditorComponentExpressionEditorAspect = null;
+    myEditorExpressionEditorAspect = null;
+    myEditorTestCaseEditorAspect = null;
+    myExpressionContainerEditorAspect = null;
+    myInvokeActionStatementEditorAspect = null;
+    myInvokeIntentionStatementEditorAspect = null;
+    myMPSActionReferenceEditorAspect = null;
+    myMockAnnotationEditorAspect = null;
+    myModelExpressionEditorAspect = null;
+    myNodeErrorPropetyEditorAspect = null;
+    myNodeOperationsContainerEditorAspect = null;
+    myNodePropertiesContainerEditorAspect = null;
+    myNodeReachableEditorAspect = null;
+    myNodeTypePropertyEditorAspect = null;
+    myNodeTypeSetPropertyEditorAspect = null;
+    myNodeUnreachableEditorAspect = null;
+    myNodeWarningPropertyEditorAspect = null;
+    myNodesTestCaseEditorAspect = null;
+    myPressKeyStatementEditorAspect = null;
+    myProjectExpressionEditorAspect = null;
+    myScopesExpectedNodeEditorAspect = null;
+    myScopesTestEditorAspect = null;
+    mySimpleNodeTestEditorAspect = null;
+    mySwitchToInspectorEditorAspect = null;
+    myTestInfoEditorAspect = null;
+    myTestNodeEditorAspect = null;
+    myTestNodeAnnotationEditorAspect = null;
+    myTestNodeReferenceEditorAspect = null;
+    myTypeKeyStatementEditorAspect = null;
+    myTypesCheckOperationEditorAspect = null;
+    myVariableInializedEditorAspect = null;
+    myVariableLiveEditorAspect = null;
+  }
+
+  private AnonymousCellAnnotation_Editor getAnonymousCellAnnotationEditorAspect() {
+    if (myAnonymousCellAnnotationEditorAspect == null) {
+      myAnonymousCellAnnotationEditorAspect = new AnonymousCellAnnotation_Editor();
+    }
+    return myAnonymousCellAnnotationEditorAspect;
+  }
+
+  private AssertMatch_Editor getAssertMatchEditorAspect() {
+    if (myAssertMatchEditorAspect == null) {
+      myAssertMatchEditorAspect = new AssertMatch_Editor();
+    }
+    return myAssertMatchEditorAspect;
+  }
+
+  private BootstrapActionReference_Editor getBootstrapActionReferenceEditorAspect() {
+    if (myBootstrapActionReferenceEditorAspect == null) {
+      myBootstrapActionReferenceEditorAspect = new BootstrapActionReference_Editor();
+    }
+    return myBootstrapActionReferenceEditorAspect;
+  }
+
+  private CheckDataFlowOperation_Editor getCheckDataFlowOperationEditorAspect() {
+    if (myCheckDataFlowOperationEditorAspect == null) {
+      myCheckDataFlowOperationEditorAspect = new CheckDataFlowOperation_Editor();
+    }
+    return myCheckDataFlowOperationEditorAspect;
+  }
+
+  private CheckNodeDataflow_Editor getCheckNodeDataflowEditorAspect() {
+    if (myCheckNodeDataflowEditorAspect == null) {
+      myCheckNodeDataflowEditorAspect = new CheckNodeDataflow_Editor();
+    }
+    return myCheckNodeDataflowEditorAspect;
+  }
+
+  private CheckNodeForErrors_Editor getCheckNodeForErrorsEditorAspect() {
+    if (myCheckNodeForErrorsEditorAspect == null) {
+      myCheckNodeForErrorsEditorAspect = new CheckNodeForErrors_Editor();
+    }
+    return myCheckNodeForErrorsEditorAspect;
+  }
+
+  private EditorComponentExpression_Editor getEditorComponentExpressionEditorAspect() {
+    if (myEditorComponentExpressionEditorAspect == null) {
+      myEditorComponentExpressionEditorAspect = new EditorComponentExpression_Editor();
+    }
+    return myEditorComponentExpressionEditorAspect;
+  }
+
+  private EditorExpression_Editor getEditorExpressionEditorAspect() {
+    if (myEditorExpressionEditorAspect == null) {
+      myEditorExpressionEditorAspect = new EditorExpression_Editor();
+    }
+    return myEditorExpressionEditorAspect;
+  }
+
+  private EditorTestCase_Editor getEditorTestCaseEditorAspect() {
+    if (myEditorTestCaseEditorAspect == null) {
+      myEditorTestCaseEditorAspect = new EditorTestCase_Editor();
+    }
+    return myEditorTestCaseEditorAspect;
+  }
+
+  private ExpressionContainer_Editor getExpressionContainerEditorAspect() {
+    if (myExpressionContainerEditorAspect == null) {
+      myExpressionContainerEditorAspect = new ExpressionContainer_Editor();
+    }
+    return myExpressionContainerEditorAspect;
+  }
+
+  private InvokeActionStatement_Editor getInvokeActionStatementEditorAspect() {
+    if (myInvokeActionStatementEditorAspect == null) {
+      myInvokeActionStatementEditorAspect = new InvokeActionStatement_Editor();
+    }
+    return myInvokeActionStatementEditorAspect;
+  }
+
+  private InvokeIntentionStatement_Editor getInvokeIntentionStatementEditorAspect() {
+    if (myInvokeIntentionStatementEditorAspect == null) {
+      myInvokeIntentionStatementEditorAspect = new InvokeIntentionStatement_Editor();
+    }
+    return myInvokeIntentionStatementEditorAspect;
+  }
+
+  private MPSActionReference_Editor getMPSActionReferenceEditorAspect() {
+    if (myMPSActionReferenceEditorAspect == null) {
+      myMPSActionReferenceEditorAspect = new MPSActionReference_Editor();
+    }
+    return myMPSActionReferenceEditorAspect;
+  }
+
+  private MockAnnotation_Editor getMockAnnotationEditorAspect() {
+    if (myMockAnnotationEditorAspect == null) {
+      myMockAnnotationEditorAspect = new MockAnnotation_Editor();
+    }
+    return myMockAnnotationEditorAspect;
+  }
+
+  private ModelExpression_Editor getModelExpressionEditorAspect() {
+    if (myModelExpressionEditorAspect == null) {
+      myModelExpressionEditorAspect = new ModelExpression_Editor();
+    }
+    return myModelExpressionEditorAspect;
+  }
+
+  private NodeErrorPropety_Editor getNodeErrorPropetyEditorAspect() {
+    if (myNodeErrorPropetyEditorAspect == null) {
+      myNodeErrorPropetyEditorAspect = new NodeErrorPropety_Editor();
+    }
+    return myNodeErrorPropetyEditorAspect;
+  }
+
+  private NodeOperationsContainer_Editor getNodeOperationsContainerEditorAspect() {
+    if (myNodeOperationsContainerEditorAspect == null) {
+      myNodeOperationsContainerEditorAspect = new NodeOperationsContainer_Editor();
+    }
+    return myNodeOperationsContainerEditorAspect;
+  }
+
+  private NodePropertiesContainer_Editor getNodePropertiesContainerEditorAspect() {
+    if (myNodePropertiesContainerEditorAspect == null) {
+      myNodePropertiesContainerEditorAspect = new NodePropertiesContainer_Editor();
+    }
+    return myNodePropertiesContainerEditorAspect;
+  }
+
+  private NodeReachable_Editor getNodeReachableEditorAspect() {
+    if (myNodeReachableEditorAspect == null) {
+      myNodeReachableEditorAspect = new NodeReachable_Editor();
+    }
+    return myNodeReachableEditorAspect;
+  }
+
+  private NodeTypeProperty_Editor getNodeTypePropertyEditorAspect() {
+    if (myNodeTypePropertyEditorAspect == null) {
+      myNodeTypePropertyEditorAspect = new NodeTypeProperty_Editor();
+    }
+    return myNodeTypePropertyEditorAspect;
+  }
+
+  private NodeTypeSetProperty_Editor getNodeTypeSetPropertyEditorAspect() {
+    if (myNodeTypeSetPropertyEditorAspect == null) {
+      myNodeTypeSetPropertyEditorAspect = new NodeTypeSetProperty_Editor();
+    }
+    return myNodeTypeSetPropertyEditorAspect;
+  }
+
+  private NodeUnreachable_Editor getNodeUnreachableEditorAspect() {
+    if (myNodeUnreachableEditorAspect == null) {
+      myNodeUnreachableEditorAspect = new NodeUnreachable_Editor();
+    }
+    return myNodeUnreachableEditorAspect;
+  }
+
+  private NodeWarningProperty_Editor getNodeWarningPropertyEditorAspect() {
+    if (myNodeWarningPropertyEditorAspect == null) {
+      myNodeWarningPropertyEditorAspect = new NodeWarningProperty_Editor();
+    }
+    return myNodeWarningPropertyEditorAspect;
+  }
+
+  private NodesTestCase_Editor getNodesTestCaseEditorAspect() {
+    if (myNodesTestCaseEditorAspect == null) {
+      myNodesTestCaseEditorAspect = new NodesTestCase_Editor();
+    }
+    return myNodesTestCaseEditorAspect;
+  }
+
+  private PressKeyStatement_Editor getPressKeyStatementEditorAspect() {
+    if (myPressKeyStatementEditorAspect == null) {
+      myPressKeyStatementEditorAspect = new PressKeyStatement_Editor();
+    }
+    return myPressKeyStatementEditorAspect;
+  }
+
+  private ProjectExpression_Editor getProjectExpressionEditorAspect() {
+    if (myProjectExpressionEditorAspect == null) {
+      myProjectExpressionEditorAspect = new ProjectExpression_Editor();
+    }
+    return myProjectExpressionEditorAspect;
+  }
+
+  private ScopesExpectedNode_Editor getScopesExpectedNodeEditorAspect() {
+    if (myScopesExpectedNodeEditorAspect == null) {
+      myScopesExpectedNodeEditorAspect = new ScopesExpectedNode_Editor();
+    }
+    return myScopesExpectedNodeEditorAspect;
+  }
+
+  private ScopesTest_Editor getScopesTestEditorAspect() {
+    if (myScopesTestEditorAspect == null) {
+      myScopesTestEditorAspect = new ScopesTest_Editor();
+    }
+    return myScopesTestEditorAspect;
+  }
+
+  private SimpleNodeTest_Editor getSimpleNodeTestEditorAspect() {
+    if (mySimpleNodeTestEditorAspect == null) {
+      mySimpleNodeTestEditorAspect = new SimpleNodeTest_Editor();
+    }
+    return mySimpleNodeTestEditorAspect;
+  }
+
+  private SwitchToInspector_Editor getSwitchToInspectorEditorAspect() {
+    if (mySwitchToInspectorEditorAspect == null) {
+      mySwitchToInspectorEditorAspect = new SwitchToInspector_Editor();
+    }
+    return mySwitchToInspectorEditorAspect;
+  }
+
+  private TestInfo_Editor getTestInfoEditorAspect() {
+    if (myTestInfoEditorAspect == null) {
+      myTestInfoEditorAspect = new TestInfo_Editor();
+    }
+    return myTestInfoEditorAspect;
+  }
+
+  private TestNode_Editor getTestNodeEditorAspect() {
+    if (myTestNodeEditorAspect == null) {
+      myTestNodeEditorAspect = new TestNode_Editor();
+    }
+    return myTestNodeEditorAspect;
+  }
+
+  private TestNodeAnnotation_Editor getTestNodeAnnotationEditorAspect() {
+    if (myTestNodeAnnotationEditorAspect == null) {
+      myTestNodeAnnotationEditorAspect = new TestNodeAnnotation_Editor();
+    }
+    return myTestNodeAnnotationEditorAspect;
+  }
+
+  private TestNodeReference_Editor getTestNodeReferenceEditorAspect() {
+    if (myTestNodeReferenceEditorAspect == null) {
+      myTestNodeReferenceEditorAspect = new TestNodeReference_Editor();
+    }
+    return myTestNodeReferenceEditorAspect;
+  }
+
+  private TypeKeyStatement_Editor getTypeKeyStatementEditorAspect() {
+    if (myTypeKeyStatementEditorAspect == null) {
+      myTypeKeyStatementEditorAspect = new TypeKeyStatement_Editor();
+    }
+    return myTypeKeyStatementEditorAspect;
+  }
+
+  private TypesCheckOperation_Editor getTypesCheckOperationEditorAspect() {
+    if (myTypesCheckOperationEditorAspect == null) {
+      myTypesCheckOperationEditorAspect = new TypesCheckOperation_Editor();
+    }
+    return myTypesCheckOperationEditorAspect;
+  }
+
+  private VariableInialized_Editor getVariableInializedEditorAspect() {
+    if (myVariableInializedEditorAspect == null) {
+      myVariableInializedEditorAspect = new VariableInialized_Editor();
+    }
+    return myVariableInializedEditorAspect;
+  }
+
+  private VariableLive_Editor getVariableLiveEditorAspect() {
+    if (myVariableLiveEditorAspect == null) {
+      myVariableLiveEditorAspect = new VariableLive_Editor();
+    }
+    return myVariableLiveEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0mb = new String[]{"jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeErrorPropety", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodePropertiesContainer", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeTypeProperty", "jetbrains.mps.lang.test.structure.NodeTypeSetProperty", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningProperty", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.TypesCheckOperation", "jetbrains.mps.lang.test.structure.VariableInialized", "jetbrains.mps.lang.test.structure.VariableLive"};
 }

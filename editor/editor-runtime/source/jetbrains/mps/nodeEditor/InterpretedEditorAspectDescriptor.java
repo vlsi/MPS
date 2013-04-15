@@ -50,6 +50,14 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
   }
 
   @Override
+  public void initialize() {
+  }
+
+  @Override
+  public void deinitialize() {
+  }
+
+  @Override
   public EditorAspect getAspect(ConceptDescriptor abstractConcept) {
     // TODO: check (assert) if passed concept is a part of associated language
     String conceptFQName = abstractConcept.getConceptFqName();

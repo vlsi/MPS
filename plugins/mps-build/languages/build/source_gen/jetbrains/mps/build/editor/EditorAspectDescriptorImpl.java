@@ -8,212 +8,1120 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private BuildAspect_Editor myBuildAspectEditorAspect;
+  private BuildCompositePath_Editor myBuildCompositePathEditorAspect;
+  private BuildCustomWorkflow_Editor myBuildCustomWorkflowEditorAspect;
+  private BuildDependency_Editor myBuildDependencyEditorAspect;
+  private BuildExternalLayout_Editor myBuildExternalLayoutEditorAspect;
+  private BuildExternalLayoutDependency_Editor myBuildExternalLayoutDependencyEditorAspect;
+  private BuildFileExcludeSelector_Editor myBuildFileExcludeSelectorEditorAspect;
+  private BuildFileIncludeSelector_Editor myBuildFileIncludeSelectorEditorAspect;
+  private BuildFileIncludesSelector_Editor myBuildFileIncludesSelectorEditorAspect;
+  private BuildFileSelector_Editor myBuildFileSelectorEditorAspect;
+  private BuildFolderMacro_Editor myBuildFolderMacroEditorAspect;
+  private BuildInputFiles_Editor myBuildInputFilesEditorAspect;
+  private BuildInputFolders_Editor myBuildInputFoldersEditorAspect;
+  private BuildInputResourceSet_Editor myBuildInputResourceSetEditorAspect;
+  private BuildInputSingleFile_Editor myBuildInputSingleFileEditorAspect;
+  private BuildInputSingleFolder_Editor myBuildInputSingleFolderEditorAspect;
+  private BuildJavaPlugin_Editor myBuildJavaPluginEditorAspect;
+  private BuildLayout_Editor myBuildLayoutEditorAspect;
+  private BuildLayout_AbstractCopy_Editor myBuildLayout_AbstractCopyEditorAspect;
+  private BuildLayout_Comment_Editor myBuildLayout_CommentEditorAspect;
+  private BuildLayout_CompileOutputOf_Editor myBuildLayout_CompileOutputOfEditorAspect;
+  private BuildLayout_CopyFilterFixCRLF_Editor myBuildLayout_CopyFilterFixCRLFEditorAspect;
+  private BuildLayout_CopyFilterReplaceRegex_Editor myBuildLayout_CopyFilterReplaceRegexEditorAspect;
+  private BuildLayout_CopyFilterReplaceTokens_Editor myBuildLayout_CopyFilterReplaceTokensEditorAspect;
+  private BuildLayout_CopyFlattenMapper_Editor myBuildLayout_CopyFlattenMapperEditorAspect;
+  private BuildLayout_CopyGlobMapper_Editor myBuildLayout_CopyGlobMapperEditorAspect;
+  private BuildLayout_CopyHandler_Editor myBuildLayout_CopyHandlerEditorAspect;
+  private BuildLayout_CopyRegexMapper_Editor myBuildLayout_CopyRegexMapperEditorAspect;
+  private BuildLayout_CustomCopy_Editor myBuildLayout_CustomCopyEditorAspect;
+  private BuildLayout_EchoProperties_Editor myBuildLayout_EchoPropertiesEditorAspect;
+  private BuildLayout_EchoPropertyEntry_Editor myBuildLayout_EchoPropertyEntryEditorAspect;
+  private BuildLayout_EchoXml_Editor myBuildLayout_EchoXmlEditorAspect;
+  private BuildLayout_ExportAsJavaLibrary_Editor myBuildLayout_ExportAsJavaLibraryEditorAspect;
+  private BuildLayout_File_Editor myBuildLayout_FileEditorAspect;
+  private BuildLayout_FileStub_Editor myBuildLayout_FileStubEditorAspect;
+  private BuildLayout_Filemode_Editor myBuildLayout_FilemodeEditorAspect;
+  private BuildLayout_Files_Editor myBuildLayout_FilesEditorAspect;
+  private BuildLayout_FilesOf_Editor myBuildLayout_FilesOfEditorAspect;
+  private BuildLayout_Import_Editor myBuildLayout_ImportEditorAspect;
+  private BuildLayout_ImportContent_Editor myBuildLayout_ImportContentEditorAspect;
+  private BuildLayout_JarManifest_Editor myBuildLayout_JarManifestEditorAspect;
+  private BuildLayout_JarManifest_Attribute_Editor myBuildLayout_JarManifest_AttributeEditorAspect;
+  private BuildLayout_JarManifest_Section_Editor myBuildLayout_JarManifest_SectionEditorAspect;
+  private BuildLayout_NamedContainer_Editor myBuildLayout_NamedContainerEditorAspect;
+  private BuildLayout_Node_Editor myBuildLayout_NodeEditorAspect;
+  private BuildLayout_Tar_Editor myBuildLayout_TarEditorAspect;
+  private BuildLayout_TransparentContainer_Editor myBuildLayout_TransparentContainerEditorAspect;
+  private BuildMacro_Editor myBuildMacroEditorAspect;
+  private BuildNamedLayout_Editor myBuildNamedLayoutEditorAspect;
+  private BuildPlugin_Editor myBuildPluginEditorAspect;
+  private BuildProject_Editor myBuildProjectEditorAspect;
+  private BuildProjectDependency_Editor myBuildProjectDependencyEditorAspect;
+  private BuildProjectPart_Editor myBuildProjectPartEditorAspect;
+  private BuildSourceArchiveRelativePath_Editor myBuildSourceArchiveRelativePathEditorAspect;
+  private BuildSourceMacroRelativePath_Editor myBuildSourceMacroRelativePathEditorAspect;
+  private BuildSourcePath_Editor myBuildSourcePathEditorAspect;
+  private BuildSourceProjectRelativePath_Editor myBuildSourceProjectRelativePathEditorAspect;
+  private BuildSource_JavaCP_Editor myBuildSource_JavaCPEditorAspect;
+  private BuildSource_JavaClassFolder_Editor myBuildSource_JavaClassFolderEditorAspect;
+  private BuildSource_JavaContentFolder_Editor myBuildSource_JavaContentFolderEditorAspect;
+  private BuildSource_JavaContentRoot_Editor myBuildSource_JavaContentRootEditorAspect;
+  private BuildSource_JavaDependency_Editor myBuildSource_JavaDependencyEditorAspect;
+  private BuildSource_JavaDependencyExternalJar_Editor myBuildSource_JavaDependencyExternalJarEditorAspect;
+  private BuildSource_JavaDependencyExternalJarInFolder_Editor myBuildSource_JavaDependencyExternalJarInFolderEditorAspect;
+  private BuildSource_JavaDependencyFileset_Editor myBuildSource_JavaDependencyFilesetEditorAspect;
+  private BuildSource_JavaDependencyJar_Editor myBuildSource_JavaDependencyJarEditorAspect;
+  private BuildSource_JavaDependencyLibrary_Editor myBuildSource_JavaDependencyLibraryEditorAspect;
+  private BuildSource_JavaDependencyModule_Editor myBuildSource_JavaDependencyModuleEditorAspect;
+  private BuildSource_JavaExternalJarFolderRef_Editor myBuildSource_JavaExternalJarFolderRefEditorAspect;
+  private BuildSource_JavaExternalJarRef_Editor myBuildSource_JavaExternalJarRefEditorAspect;
+  private BuildSource_JavaFiles_Editor myBuildSource_JavaFilesEditorAspect;
+  private BuildSource_JavaJar_Editor myBuildSource_JavaJarEditorAspect;
+  private BuildSource_JavaJars_Editor myBuildSource_JavaJarsEditorAspect;
+  private BuildSource_JavaLibrary_Editor myBuildSource_JavaLibraryEditorAspect;
+  private BuildSource_JavaLibraryCP_Editor myBuildSource_JavaLibraryCPEditorAspect;
+  private BuildSource_JavaLibraryElement_Editor myBuildSource_JavaLibraryElementEditorAspect;
+  private BuildSource_JavaLibraryExternalJar_Editor myBuildSource_JavaLibraryExternalJarEditorAspect;
+  private BuildSource_JavaLibraryExternalJarFolder_Editor myBuildSource_JavaLibraryExternalJarFolderEditorAspect;
+  private BuildSource_JavaModule_Editor myBuildSource_JavaModuleEditorAspect;
+  private BuildSource_JavaModuleOptions_Editor myBuildSource_JavaModuleOptionsEditorAspect;
+  private BuildSource_JavaOptions_Editor myBuildSource_JavaOptionsEditorAspect;
+  private BuildSource_JavaResources_Editor myBuildSource_JavaResourcesEditorAspect;
+  private BuildSource_JavaSources_Editor myBuildSource_JavaSourcesEditorAspect;
+  private BuildString_Editor myBuildStringEditorAspect;
+  private BuildStringNotEmpty_Editor myBuildStringNotEmptyEditorAspect;
+  private BuildStringPart_Editor myBuildStringPartEditorAspect;
+  private BuildTextStringPart_Editor myBuildTextStringPartEditorAspect;
+  private BuildVarRefStringPart_Editor myBuildVarRefStringPartEditorAspect;
+  private BuildVariableMacro_Editor myBuildVariableMacroEditorAspect;
+  private BuildVariableMacroInitValue_Editor myBuildVariableMacroInitValueEditorAspect;
+  private BuildVariableMacroInitWithDate_Editor myBuildVariableMacroInitWithDateEditorAspect;
+  private BuildVariableMacroInitWithString_Editor myBuildVariableMacroInitWithStringEditorAspect;
+  private BuildVariableMacroInitWithValueFromFile_Editor myBuildVariableMacroInitWithValueFromFileEditorAspect;
+  private GeneratorInternal_BuildSource_JavaJar_Editor myGeneratorInternal_BuildSource_JavaJarEditorAspect;
+  private GeneratorInternal_BuildSource_JavaLibrary_Editor myGeneratorInternal_BuildSource_JavaLibraryEditorAspect;
+  private GeneratorInternal_BuildSource_JavaModule_Editor myGeneratorInternal_BuildSource_JavaModuleEditorAspect;
+  private GeneratorInternal_BuildSource_SingleFile_Editor myGeneratorInternal_BuildSource_SingleFileEditorAspect;
+  private GeneratorInternal_IWorkflowParticipantReference_Editor myGeneratorInternal_IWorkflowParticipantReferenceEditorAspect;
+  private GeneratorInternal_IWorkfowParticipants_Editor myGeneratorInternal_IWorkfowParticipantsEditorAspect;
+  private GeneratorInternal_ProjectDependency_Editor myGeneratorInternal_ProjectDependencyEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0wd, descriptor.getConceptFqName())) {
       case 0:
-        return new BuildAspect_Editor();
+        return getBuildAspectEditorAspect();
       case 1:
-        return new BuildCompositePath_Editor();
+        return getBuildCompositePathEditorAspect();
       case 2:
-        return new BuildCustomWorkflow_Editor();
+        return getBuildCustomWorkflowEditorAspect();
       case 3:
-        return new BuildDependency_Editor();
+        return getBuildDependencyEditorAspect();
       case 4:
-        return new BuildExternalLayout_Editor();
+        return getBuildExternalLayoutEditorAspect();
       case 5:
-        return new BuildExternalLayoutDependency_Editor();
+        return getBuildExternalLayoutDependencyEditorAspect();
       case 6:
-        return new BuildFileExcludeSelector_Editor();
+        return getBuildFileExcludeSelectorEditorAspect();
       case 7:
-        return new BuildFileIncludeSelector_Editor();
+        return getBuildFileIncludeSelectorEditorAspect();
       case 8:
-        return new BuildFileIncludesSelector_Editor();
+        return getBuildFileIncludesSelectorEditorAspect();
       case 9:
-        return new BuildFileSelector_Editor();
+        return getBuildFileSelectorEditorAspect();
       case 10:
-        return new BuildFolderMacro_Editor();
+        return getBuildFolderMacroEditorAspect();
       case 11:
-        return new BuildInputFiles_Editor();
+        return getBuildInputFilesEditorAspect();
       case 12:
-        return new BuildInputFolders_Editor();
+        return getBuildInputFoldersEditorAspect();
       case 13:
-        return new BuildInputResourceSet_Editor();
+        return getBuildInputResourceSetEditorAspect();
       case 14:
-        return new BuildInputSingleFile_Editor();
+        return getBuildInputSingleFileEditorAspect();
       case 15:
-        return new BuildInputSingleFolder_Editor();
+        return getBuildInputSingleFolderEditorAspect();
       case 16:
-        return new BuildJavaPlugin_Editor();
+        return getBuildJavaPluginEditorAspect();
       case 17:
-        return new BuildLayout_Editor();
+        return getBuildLayoutEditorAspect();
       case 18:
-        return new BuildLayout_AbstractCopy_Editor();
+        return getBuildLayout_AbstractCopyEditorAspect();
       case 19:
-        return new BuildLayout_Comment_Editor();
+        return getBuildLayout_CommentEditorAspect();
       case 20:
-        return new BuildLayout_CompileOutputOf_Editor();
+        return getBuildLayout_CompileOutputOfEditorAspect();
       case 21:
-        return new BuildLayout_CopyFilterFixCRLF_Editor();
+        return getBuildLayout_CopyFilterFixCRLFEditorAspect();
       case 22:
-        return new BuildLayout_CopyFilterReplaceRegex_Editor();
+        return getBuildLayout_CopyFilterReplaceRegexEditorAspect();
       case 23:
-        return new BuildLayout_CopyFilterReplaceTokens_Editor();
+        return getBuildLayout_CopyFilterReplaceTokensEditorAspect();
       case 24:
-        return new BuildLayout_CopyFlattenMapper_Editor();
+        return getBuildLayout_CopyFlattenMapperEditorAspect();
       case 25:
-        return new BuildLayout_CopyGlobMapper_Editor();
+        return getBuildLayout_CopyGlobMapperEditorAspect();
       case 26:
-        return new BuildLayout_CopyHandler_Editor();
+        return getBuildLayout_CopyHandlerEditorAspect();
       case 27:
-        return new BuildLayout_CopyRegexMapper_Editor();
+        return getBuildLayout_CopyRegexMapperEditorAspect();
       case 28:
-        return new BuildLayout_CustomCopy_Editor();
+        return getBuildLayout_CustomCopyEditorAspect();
       case 29:
-        return new BuildLayout_EchoProperties_Editor();
+        return getBuildLayout_EchoPropertiesEditorAspect();
       case 30:
-        return new BuildLayout_EchoPropertyEntry_Editor();
+        return getBuildLayout_EchoPropertyEntryEditorAspect();
       case 31:
-        return new BuildLayout_EchoXml_Editor();
+        return getBuildLayout_EchoXmlEditorAspect();
       case 32:
-        return new BuildLayout_ExportAsJavaLibrary_Editor();
+        return getBuildLayout_ExportAsJavaLibraryEditorAspect();
       case 33:
-        return new BuildLayout_File_Editor();
+        return getBuildLayout_FileEditorAspect();
       case 34:
-        return new BuildLayout_FileStub_Editor();
+        return getBuildLayout_FileStubEditorAspect();
       case 35:
-        return new BuildLayout_Filemode_Editor();
+        return getBuildLayout_FilemodeEditorAspect();
       case 36:
-        return new BuildLayout_Files_Editor();
+        return getBuildLayout_FilesEditorAspect();
       case 37:
-        return new BuildLayout_FilesOf_Editor();
+        return getBuildLayout_FilesOfEditorAspect();
       case 38:
-        return new BuildLayout_Import_Editor();
+        return getBuildLayout_ImportEditorAspect();
       case 39:
-        return new BuildLayout_ImportContent_Editor();
+        return getBuildLayout_ImportContentEditorAspect();
       case 40:
-        return new BuildLayout_JarManifest_Editor();
+        return getBuildLayout_JarManifestEditorAspect();
       case 41:
-        return new BuildLayout_JarManifest_Attribute_Editor();
+        return getBuildLayout_JarManifest_AttributeEditorAspect();
       case 42:
-        return new BuildLayout_JarManifest_Section_Editor();
+        return getBuildLayout_JarManifest_SectionEditorAspect();
       case 43:
-        return new BuildLayout_NamedContainer_Editor();
+        return getBuildLayout_NamedContainerEditorAspect();
       case 44:
-        return new BuildLayout_Node_Editor();
+        return getBuildLayout_NodeEditorAspect();
       case 45:
-        return new BuildLayout_Tar_Editor();
+        return getBuildLayout_TarEditorAspect();
       case 46:
-        return new BuildLayout_TransparentContainer_Editor();
+        return getBuildLayout_TransparentContainerEditorAspect();
       case 47:
-        return new BuildMacro_Editor();
+        return getBuildMacroEditorAspect();
       case 48:
-        return new BuildNamedLayout_Editor();
+        return getBuildNamedLayoutEditorAspect();
       case 49:
-        return new BuildPlugin_Editor();
+        return getBuildPluginEditorAspect();
       case 50:
-        return new BuildProject_Editor();
+        return getBuildProjectEditorAspect();
       case 51:
-        return new BuildProjectDependency_Editor();
+        return getBuildProjectDependencyEditorAspect();
       case 52:
-        return new BuildProjectPart_Editor();
+        return getBuildProjectPartEditorAspect();
       case 53:
-        return new BuildSourceArchiveRelativePath_Editor();
+        return getBuildSourceArchiveRelativePathEditorAspect();
       case 54:
-        return new BuildSourceMacroRelativePath_Editor();
+        return getBuildSourceMacroRelativePathEditorAspect();
       case 55:
-        return new BuildSourcePath_Editor();
+        return getBuildSourcePathEditorAspect();
       case 56:
-        return new BuildSourceProjectRelativePath_Editor();
+        return getBuildSourceProjectRelativePathEditorAspect();
       case 57:
-        return new BuildSource_JavaCP_Editor();
+        return getBuildSource_JavaCPEditorAspect();
       case 58:
-        return new BuildSource_JavaClassFolder_Editor();
+        return getBuildSource_JavaClassFolderEditorAspect();
       case 59:
-        return new BuildSource_JavaContentFolder_Editor();
+        return getBuildSource_JavaContentFolderEditorAspect();
       case 60:
-        return new BuildSource_JavaContentRoot_Editor();
+        return getBuildSource_JavaContentRootEditorAspect();
       case 61:
-        return new BuildSource_JavaDependency_Editor();
+        return getBuildSource_JavaDependencyEditorAspect();
       case 62:
-        return new BuildSource_JavaDependencyExternalJar_Editor();
+        return getBuildSource_JavaDependencyExternalJarEditorAspect();
       case 63:
-        return new BuildSource_JavaDependencyExternalJarInFolder_Editor();
+        return getBuildSource_JavaDependencyExternalJarInFolderEditorAspect();
       case 64:
-        return new BuildSource_JavaDependencyFileset_Editor();
+        return getBuildSource_JavaDependencyFilesetEditorAspect();
       case 65:
-        return new BuildSource_JavaDependencyJar_Editor();
+        return getBuildSource_JavaDependencyJarEditorAspect();
       case 66:
-        return new BuildSource_JavaDependencyLibrary_Editor();
+        return getBuildSource_JavaDependencyLibraryEditorAspect();
       case 67:
-        return new BuildSource_JavaDependencyModule_Editor();
+        return getBuildSource_JavaDependencyModuleEditorAspect();
       case 68:
-        return new BuildSource_JavaExternalJarFolderRef_Editor();
+        return getBuildSource_JavaExternalJarFolderRefEditorAspect();
       case 69:
-        return new BuildSource_JavaExternalJarRef_Editor();
+        return getBuildSource_JavaExternalJarRefEditorAspect();
       case 70:
-        return new BuildSource_JavaFiles_Editor();
+        return getBuildSource_JavaFilesEditorAspect();
       case 71:
-        return new BuildSource_JavaJar_Editor();
+        return getBuildSource_JavaJarEditorAspect();
       case 72:
-        return new BuildSource_JavaJars_Editor();
+        return getBuildSource_JavaJarsEditorAspect();
       case 73:
-        return new BuildSource_JavaLibrary_Editor();
+        return getBuildSource_JavaLibraryEditorAspect();
       case 74:
-        return new BuildSource_JavaLibraryCP_Editor();
+        return getBuildSource_JavaLibraryCPEditorAspect();
       case 75:
-        return new BuildSource_JavaLibraryElement_Editor();
+        return getBuildSource_JavaLibraryElementEditorAspect();
       case 76:
-        return new BuildSource_JavaLibraryExternalJar_Editor();
+        return getBuildSource_JavaLibraryExternalJarEditorAspect();
       case 77:
-        return new BuildSource_JavaLibraryExternalJarFolder_Editor();
+        return getBuildSource_JavaLibraryExternalJarFolderEditorAspect();
       case 78:
-        return new BuildSource_JavaModule_Editor();
+        return getBuildSource_JavaModuleEditorAspect();
       case 79:
-        return new BuildSource_JavaModuleOptions_Editor();
+        return getBuildSource_JavaModuleOptionsEditorAspect();
       case 80:
-        return new BuildSource_JavaOptions_Editor();
+        return getBuildSource_JavaOptionsEditorAspect();
       case 81:
-        return new BuildSource_JavaResources_Editor();
+        return getBuildSource_JavaResourcesEditorAspect();
       case 82:
-        return new BuildSource_JavaSources_Editor();
+        return getBuildSource_JavaSourcesEditorAspect();
       case 83:
-        return new BuildString_Editor();
+        return getBuildStringEditorAspect();
       case 84:
-        return new BuildStringNotEmpty_Editor();
+        return getBuildStringNotEmptyEditorAspect();
       case 85:
-        return new BuildStringPart_Editor();
+        return getBuildStringPartEditorAspect();
       case 86:
-        return new BuildTextStringPart_Editor();
+        return getBuildTextStringPartEditorAspect();
       case 87:
-        return new BuildVarRefStringPart_Editor();
+        return getBuildVarRefStringPartEditorAspect();
       case 88:
-        return new BuildVariableMacro_Editor();
+        return getBuildVariableMacroEditorAspect();
       case 89:
-        return new BuildVariableMacroInitValue_Editor();
+        return getBuildVariableMacroInitValueEditorAspect();
       case 90:
-        return new BuildVariableMacroInitWithDate_Editor();
+        return getBuildVariableMacroInitWithDateEditorAspect();
       case 91:
-        return new BuildVariableMacroInitWithString_Editor();
+        return getBuildVariableMacroInitWithStringEditorAspect();
       case 92:
-        return new BuildVariableMacroInitWithValueFromFile_Editor();
+        return getBuildVariableMacroInitWithValueFromFileEditorAspect();
       case 93:
-        return new GeneratorInternal_BuildSource_JavaJar_Editor();
+        return getGeneratorInternal_BuildSource_JavaJarEditorAspect();
       case 94:
-        return new GeneratorInternal_BuildSource_JavaLibrary_Editor();
+        return getGeneratorInternal_BuildSource_JavaLibraryEditorAspect();
       case 95:
-        return new GeneratorInternal_BuildSource_JavaModule_Editor();
+        return getGeneratorInternal_BuildSource_JavaModuleEditorAspect();
       case 96:
-        return new GeneratorInternal_BuildSource_SingleFile_Editor();
+        return getGeneratorInternal_BuildSource_SingleFileEditorAspect();
       case 97:
-        return new GeneratorInternal_IWorkflowParticipantReference_Editor();
+        return getGeneratorInternal_IWorkflowParticipantReferenceEditorAspect();
       case 98:
-        return new GeneratorInternal_IWorkfowParticipants_Editor();
+        return getGeneratorInternal_IWorkfowParticipantsEditorAspect();
       case 99:
-        return new GeneratorInternal_ProjectDependency_Editor();
+        return getGeneratorInternal_ProjectDependencyEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.structure.BuildAspect", "jetbrains.mps.build.structure.BuildCompositePath", "jetbrains.mps.build.structure.BuildCustomWorkflow", "jetbrains.mps.build.structure.BuildDependency", "jetbrains.mps.build.structure.BuildExternalLayout", "jetbrains.mps.build.structure.BuildExternalLayoutDependency", "jetbrains.mps.build.structure.BuildFileExcludeSelector", "jetbrains.mps.build.structure.BuildFileIncludeSelector", "jetbrains.mps.build.structure.BuildFileIncludesSelector", "jetbrains.mps.build.structure.BuildFileSelector", "jetbrains.mps.build.structure.BuildFolderMacro", "jetbrains.mps.build.structure.BuildInputFiles", "jetbrains.mps.build.structure.BuildInputFolders", "jetbrains.mps.build.structure.BuildInputResourceSet", "jetbrains.mps.build.structure.BuildInputSingleFile", "jetbrains.mps.build.structure.BuildInputSingleFolder", "jetbrains.mps.build.structure.BuildJavaPlugin", "jetbrains.mps.build.structure.BuildLayout", "jetbrains.mps.build.structure.BuildLayout_AbstractCopy", "jetbrains.mps.build.structure.BuildLayout_Comment", "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf", "jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF", "jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceRegex", "jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceTokens", "jetbrains.mps.build.structure.BuildLayout_CopyFlattenMapper", "jetbrains.mps.build.structure.BuildLayout_CopyGlobMapper", "jetbrains.mps.build.structure.BuildLayout_CopyHandler", "jetbrains.mps.build.structure.BuildLayout_CopyRegexMapper", "jetbrains.mps.build.structure.BuildLayout_CustomCopy", "jetbrains.mps.build.structure.BuildLayout_EchoProperties", "jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry", "jetbrains.mps.build.structure.BuildLayout_EchoXml", "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary", "jetbrains.mps.build.structure.BuildLayout_File", "jetbrains.mps.build.structure.BuildLayout_FileStub", "jetbrains.mps.build.structure.BuildLayout_Filemode", "jetbrains.mps.build.structure.BuildLayout_Files", "jetbrains.mps.build.structure.BuildLayout_FilesOf", "jetbrains.mps.build.structure.BuildLayout_Import", "jetbrains.mps.build.structure.BuildLayout_ImportContent", "jetbrains.mps.build.structure.BuildLayout_JarManifest", "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute", "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section", "jetbrains.mps.build.structure.BuildLayout_NamedContainer", "jetbrains.mps.build.structure.BuildLayout_Node", "jetbrains.mps.build.structure.BuildLayout_Tar", "jetbrains.mps.build.structure.BuildLayout_TransparentContainer", "jetbrains.mps.build.structure.BuildMacro", "jetbrains.mps.build.structure.BuildNamedLayout", "jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildProject", "jetbrains.mps.build.structure.BuildProjectDependency", "jetbrains.mps.build.structure.BuildProjectPart", "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath", "jetbrains.mps.build.structure.BuildSourceMacroRelativePath", "jetbrains.mps.build.structure.BuildSourcePath", "jetbrains.mps.build.structure.BuildSourceProjectRelativePath", "jetbrains.mps.build.structure.BuildSource_JavaCP", "jetbrains.mps.build.structure.BuildSource_JavaClassFolder", "jetbrains.mps.build.structure.BuildSource_JavaContentFolder", "jetbrains.mps.build.structure.BuildSource_JavaContentRoot", "jetbrains.mps.build.structure.BuildSource_JavaDependency", "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar", "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJarInFolder", "jetbrains.mps.build.structure.BuildSource_JavaDependencyFileset", "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar", "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary", "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule", "jetbrains.mps.build.structure.BuildSource_JavaExternalJarFolderRef", "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef", "jetbrains.mps.build.structure.BuildSource_JavaFiles", "jetbrains.mps.build.structure.BuildSource_JavaJar", "jetbrains.mps.build.structure.BuildSource_JavaJars", "jetbrains.mps.build.structure.BuildSource_JavaLibrary", "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP", "jetbrains.mps.build.structure.BuildSource_JavaLibraryElement", "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar", "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder", "jetbrains.mps.build.structure.BuildSource_JavaModule", "jetbrains.mps.build.structure.BuildSource_JavaModuleOptions", "jetbrains.mps.build.structure.BuildSource_JavaOptions", "jetbrains.mps.build.structure.BuildSource_JavaResources", "jetbrains.mps.build.structure.BuildSource_JavaSources", "jetbrains.mps.build.structure.BuildString", "jetbrains.mps.build.structure.BuildStringNotEmpty", "jetbrains.mps.build.structure.BuildStringPart", "jetbrains.mps.build.structure.BuildTextStringPart", "jetbrains.mps.build.structure.BuildVarRefStringPart", "jetbrains.mps.build.structure.BuildVariableMacro", "jetbrains.mps.build.structure.BuildVariableMacroInitValue", "jetbrains.mps.build.structure.BuildVariableMacroInitWithDate", "jetbrains.mps.build.structure.BuildVariableMacroInitWithString", "jetbrains.mps.build.structure.BuildVariableMacroInitWithValueFromFile", "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaJar", "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary", "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule", "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile", "jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference", "jetbrains.mps.build.structure.GeneratorInternal_IWorkfowParticipants", "jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myBuildAspectEditorAspect = null;
+    myBuildCompositePathEditorAspect = null;
+    myBuildCustomWorkflowEditorAspect = null;
+    myBuildDependencyEditorAspect = null;
+    myBuildExternalLayoutEditorAspect = null;
+    myBuildExternalLayoutDependencyEditorAspect = null;
+    myBuildFileExcludeSelectorEditorAspect = null;
+    myBuildFileIncludeSelectorEditorAspect = null;
+    myBuildFileIncludesSelectorEditorAspect = null;
+    myBuildFileSelectorEditorAspect = null;
+    myBuildFolderMacroEditorAspect = null;
+    myBuildInputFilesEditorAspect = null;
+    myBuildInputFoldersEditorAspect = null;
+    myBuildInputResourceSetEditorAspect = null;
+    myBuildInputSingleFileEditorAspect = null;
+    myBuildInputSingleFolderEditorAspect = null;
+    myBuildJavaPluginEditorAspect = null;
+    myBuildLayoutEditorAspect = null;
+    myBuildLayout_AbstractCopyEditorAspect = null;
+    myBuildLayout_CommentEditorAspect = null;
+    myBuildLayout_CompileOutputOfEditorAspect = null;
+    myBuildLayout_CopyFilterFixCRLFEditorAspect = null;
+    myBuildLayout_CopyFilterReplaceRegexEditorAspect = null;
+    myBuildLayout_CopyFilterReplaceTokensEditorAspect = null;
+    myBuildLayout_CopyFlattenMapperEditorAspect = null;
+    myBuildLayout_CopyGlobMapperEditorAspect = null;
+    myBuildLayout_CopyHandlerEditorAspect = null;
+    myBuildLayout_CopyRegexMapperEditorAspect = null;
+    myBuildLayout_CustomCopyEditorAspect = null;
+    myBuildLayout_EchoPropertiesEditorAspect = null;
+    myBuildLayout_EchoPropertyEntryEditorAspect = null;
+    myBuildLayout_EchoXmlEditorAspect = null;
+    myBuildLayout_ExportAsJavaLibraryEditorAspect = null;
+    myBuildLayout_FileEditorAspect = null;
+    myBuildLayout_FileStubEditorAspect = null;
+    myBuildLayout_FilemodeEditorAspect = null;
+    myBuildLayout_FilesEditorAspect = null;
+    myBuildLayout_FilesOfEditorAspect = null;
+    myBuildLayout_ImportEditorAspect = null;
+    myBuildLayout_ImportContentEditorAspect = null;
+    myBuildLayout_JarManifestEditorAspect = null;
+    myBuildLayout_JarManifest_AttributeEditorAspect = null;
+    myBuildLayout_JarManifest_SectionEditorAspect = null;
+    myBuildLayout_NamedContainerEditorAspect = null;
+    myBuildLayout_NodeEditorAspect = null;
+    myBuildLayout_TarEditorAspect = null;
+    myBuildLayout_TransparentContainerEditorAspect = null;
+    myBuildMacroEditorAspect = null;
+    myBuildNamedLayoutEditorAspect = null;
+    myBuildPluginEditorAspect = null;
+    myBuildProjectEditorAspect = null;
+    myBuildProjectDependencyEditorAspect = null;
+    myBuildProjectPartEditorAspect = null;
+    myBuildSourceArchiveRelativePathEditorAspect = null;
+    myBuildSourceMacroRelativePathEditorAspect = null;
+    myBuildSourcePathEditorAspect = null;
+    myBuildSourceProjectRelativePathEditorAspect = null;
+    myBuildSource_JavaCPEditorAspect = null;
+    myBuildSource_JavaClassFolderEditorAspect = null;
+    myBuildSource_JavaContentFolderEditorAspect = null;
+    myBuildSource_JavaContentRootEditorAspect = null;
+    myBuildSource_JavaDependencyEditorAspect = null;
+    myBuildSource_JavaDependencyExternalJarEditorAspect = null;
+    myBuildSource_JavaDependencyExternalJarInFolderEditorAspect = null;
+    myBuildSource_JavaDependencyFilesetEditorAspect = null;
+    myBuildSource_JavaDependencyJarEditorAspect = null;
+    myBuildSource_JavaDependencyLibraryEditorAspect = null;
+    myBuildSource_JavaDependencyModuleEditorAspect = null;
+    myBuildSource_JavaExternalJarFolderRefEditorAspect = null;
+    myBuildSource_JavaExternalJarRefEditorAspect = null;
+    myBuildSource_JavaFilesEditorAspect = null;
+    myBuildSource_JavaJarEditorAspect = null;
+    myBuildSource_JavaJarsEditorAspect = null;
+    myBuildSource_JavaLibraryEditorAspect = null;
+    myBuildSource_JavaLibraryCPEditorAspect = null;
+    myBuildSource_JavaLibraryElementEditorAspect = null;
+    myBuildSource_JavaLibraryExternalJarEditorAspect = null;
+    myBuildSource_JavaLibraryExternalJarFolderEditorAspect = null;
+    myBuildSource_JavaModuleEditorAspect = null;
+    myBuildSource_JavaModuleOptionsEditorAspect = null;
+    myBuildSource_JavaOptionsEditorAspect = null;
+    myBuildSource_JavaResourcesEditorAspect = null;
+    myBuildSource_JavaSourcesEditorAspect = null;
+    myBuildStringEditorAspect = null;
+    myBuildStringNotEmptyEditorAspect = null;
+    myBuildStringPartEditorAspect = null;
+    myBuildTextStringPartEditorAspect = null;
+    myBuildVarRefStringPartEditorAspect = null;
+    myBuildVariableMacroEditorAspect = null;
+    myBuildVariableMacroInitValueEditorAspect = null;
+    myBuildVariableMacroInitWithDateEditorAspect = null;
+    myBuildVariableMacroInitWithStringEditorAspect = null;
+    myBuildVariableMacroInitWithValueFromFileEditorAspect = null;
+    myGeneratorInternal_BuildSource_JavaJarEditorAspect = null;
+    myGeneratorInternal_BuildSource_JavaLibraryEditorAspect = null;
+    myGeneratorInternal_BuildSource_JavaModuleEditorAspect = null;
+    myGeneratorInternal_BuildSource_SingleFileEditorAspect = null;
+    myGeneratorInternal_IWorkflowParticipantReferenceEditorAspect = null;
+    myGeneratorInternal_IWorkfowParticipantsEditorAspect = null;
+    myGeneratorInternal_ProjectDependencyEditorAspect = null;
+  }
+
+  private BuildAspect_Editor getBuildAspectEditorAspect() {
+    if (myBuildAspectEditorAspect == null) {
+      myBuildAspectEditorAspect = new BuildAspect_Editor();
+    }
+    return myBuildAspectEditorAspect;
+  }
+
+  private BuildCompositePath_Editor getBuildCompositePathEditorAspect() {
+    if (myBuildCompositePathEditorAspect == null) {
+      myBuildCompositePathEditorAspect = new BuildCompositePath_Editor();
+    }
+    return myBuildCompositePathEditorAspect;
+  }
+
+  private BuildCustomWorkflow_Editor getBuildCustomWorkflowEditorAspect() {
+    if (myBuildCustomWorkflowEditorAspect == null) {
+      myBuildCustomWorkflowEditorAspect = new BuildCustomWorkflow_Editor();
+    }
+    return myBuildCustomWorkflowEditorAspect;
+  }
+
+  private BuildDependency_Editor getBuildDependencyEditorAspect() {
+    if (myBuildDependencyEditorAspect == null) {
+      myBuildDependencyEditorAspect = new BuildDependency_Editor();
+    }
+    return myBuildDependencyEditorAspect;
+  }
+
+  private BuildExternalLayout_Editor getBuildExternalLayoutEditorAspect() {
+    if (myBuildExternalLayoutEditorAspect == null) {
+      myBuildExternalLayoutEditorAspect = new BuildExternalLayout_Editor();
+    }
+    return myBuildExternalLayoutEditorAspect;
+  }
+
+  private BuildExternalLayoutDependency_Editor getBuildExternalLayoutDependencyEditorAspect() {
+    if (myBuildExternalLayoutDependencyEditorAspect == null) {
+      myBuildExternalLayoutDependencyEditorAspect = new BuildExternalLayoutDependency_Editor();
+    }
+    return myBuildExternalLayoutDependencyEditorAspect;
+  }
+
+  private BuildFileExcludeSelector_Editor getBuildFileExcludeSelectorEditorAspect() {
+    if (myBuildFileExcludeSelectorEditorAspect == null) {
+      myBuildFileExcludeSelectorEditorAspect = new BuildFileExcludeSelector_Editor();
+    }
+    return myBuildFileExcludeSelectorEditorAspect;
+  }
+
+  private BuildFileIncludeSelector_Editor getBuildFileIncludeSelectorEditorAspect() {
+    if (myBuildFileIncludeSelectorEditorAspect == null) {
+      myBuildFileIncludeSelectorEditorAspect = new BuildFileIncludeSelector_Editor();
+    }
+    return myBuildFileIncludeSelectorEditorAspect;
+  }
+
+  private BuildFileIncludesSelector_Editor getBuildFileIncludesSelectorEditorAspect() {
+    if (myBuildFileIncludesSelectorEditorAspect == null) {
+      myBuildFileIncludesSelectorEditorAspect = new BuildFileIncludesSelector_Editor();
+    }
+    return myBuildFileIncludesSelectorEditorAspect;
+  }
+
+  private BuildFileSelector_Editor getBuildFileSelectorEditorAspect() {
+    if (myBuildFileSelectorEditorAspect == null) {
+      myBuildFileSelectorEditorAspect = new BuildFileSelector_Editor();
+    }
+    return myBuildFileSelectorEditorAspect;
+  }
+
+  private BuildFolderMacro_Editor getBuildFolderMacroEditorAspect() {
+    if (myBuildFolderMacroEditorAspect == null) {
+      myBuildFolderMacroEditorAspect = new BuildFolderMacro_Editor();
+    }
+    return myBuildFolderMacroEditorAspect;
+  }
+
+  private BuildInputFiles_Editor getBuildInputFilesEditorAspect() {
+    if (myBuildInputFilesEditorAspect == null) {
+      myBuildInputFilesEditorAspect = new BuildInputFiles_Editor();
+    }
+    return myBuildInputFilesEditorAspect;
+  }
+
+  private BuildInputFolders_Editor getBuildInputFoldersEditorAspect() {
+    if (myBuildInputFoldersEditorAspect == null) {
+      myBuildInputFoldersEditorAspect = new BuildInputFolders_Editor();
+    }
+    return myBuildInputFoldersEditorAspect;
+  }
+
+  private BuildInputResourceSet_Editor getBuildInputResourceSetEditorAspect() {
+    if (myBuildInputResourceSetEditorAspect == null) {
+      myBuildInputResourceSetEditorAspect = new BuildInputResourceSet_Editor();
+    }
+    return myBuildInputResourceSetEditorAspect;
+  }
+
+  private BuildInputSingleFile_Editor getBuildInputSingleFileEditorAspect() {
+    if (myBuildInputSingleFileEditorAspect == null) {
+      myBuildInputSingleFileEditorAspect = new BuildInputSingleFile_Editor();
+    }
+    return myBuildInputSingleFileEditorAspect;
+  }
+
+  private BuildInputSingleFolder_Editor getBuildInputSingleFolderEditorAspect() {
+    if (myBuildInputSingleFolderEditorAspect == null) {
+      myBuildInputSingleFolderEditorAspect = new BuildInputSingleFolder_Editor();
+    }
+    return myBuildInputSingleFolderEditorAspect;
+  }
+
+  private BuildJavaPlugin_Editor getBuildJavaPluginEditorAspect() {
+    if (myBuildJavaPluginEditorAspect == null) {
+      myBuildJavaPluginEditorAspect = new BuildJavaPlugin_Editor();
+    }
+    return myBuildJavaPluginEditorAspect;
+  }
+
+  private BuildLayout_Editor getBuildLayoutEditorAspect() {
+    if (myBuildLayoutEditorAspect == null) {
+      myBuildLayoutEditorAspect = new BuildLayout_Editor();
+    }
+    return myBuildLayoutEditorAspect;
+  }
+
+  private BuildLayout_AbstractCopy_Editor getBuildLayout_AbstractCopyEditorAspect() {
+    if (myBuildLayout_AbstractCopyEditorAspect == null) {
+      myBuildLayout_AbstractCopyEditorAspect = new BuildLayout_AbstractCopy_Editor();
+    }
+    return myBuildLayout_AbstractCopyEditorAspect;
+  }
+
+  private BuildLayout_Comment_Editor getBuildLayout_CommentEditorAspect() {
+    if (myBuildLayout_CommentEditorAspect == null) {
+      myBuildLayout_CommentEditorAspect = new BuildLayout_Comment_Editor();
+    }
+    return myBuildLayout_CommentEditorAspect;
+  }
+
+  private BuildLayout_CompileOutputOf_Editor getBuildLayout_CompileOutputOfEditorAspect() {
+    if (myBuildLayout_CompileOutputOfEditorAspect == null) {
+      myBuildLayout_CompileOutputOfEditorAspect = new BuildLayout_CompileOutputOf_Editor();
+    }
+    return myBuildLayout_CompileOutputOfEditorAspect;
+  }
+
+  private BuildLayout_CopyFilterFixCRLF_Editor getBuildLayout_CopyFilterFixCRLFEditorAspect() {
+    if (myBuildLayout_CopyFilterFixCRLFEditorAspect == null) {
+      myBuildLayout_CopyFilterFixCRLFEditorAspect = new BuildLayout_CopyFilterFixCRLF_Editor();
+    }
+    return myBuildLayout_CopyFilterFixCRLFEditorAspect;
+  }
+
+  private BuildLayout_CopyFilterReplaceRegex_Editor getBuildLayout_CopyFilterReplaceRegexEditorAspect() {
+    if (myBuildLayout_CopyFilterReplaceRegexEditorAspect == null) {
+      myBuildLayout_CopyFilterReplaceRegexEditorAspect = new BuildLayout_CopyFilterReplaceRegex_Editor();
+    }
+    return myBuildLayout_CopyFilterReplaceRegexEditorAspect;
+  }
+
+  private BuildLayout_CopyFilterReplaceTokens_Editor getBuildLayout_CopyFilterReplaceTokensEditorAspect() {
+    if (myBuildLayout_CopyFilterReplaceTokensEditorAspect == null) {
+      myBuildLayout_CopyFilterReplaceTokensEditorAspect = new BuildLayout_CopyFilterReplaceTokens_Editor();
+    }
+    return myBuildLayout_CopyFilterReplaceTokensEditorAspect;
+  }
+
+  private BuildLayout_CopyFlattenMapper_Editor getBuildLayout_CopyFlattenMapperEditorAspect() {
+    if (myBuildLayout_CopyFlattenMapperEditorAspect == null) {
+      myBuildLayout_CopyFlattenMapperEditorAspect = new BuildLayout_CopyFlattenMapper_Editor();
+    }
+    return myBuildLayout_CopyFlattenMapperEditorAspect;
+  }
+
+  private BuildLayout_CopyGlobMapper_Editor getBuildLayout_CopyGlobMapperEditorAspect() {
+    if (myBuildLayout_CopyGlobMapperEditorAspect == null) {
+      myBuildLayout_CopyGlobMapperEditorAspect = new BuildLayout_CopyGlobMapper_Editor();
+    }
+    return myBuildLayout_CopyGlobMapperEditorAspect;
+  }
+
+  private BuildLayout_CopyHandler_Editor getBuildLayout_CopyHandlerEditorAspect() {
+    if (myBuildLayout_CopyHandlerEditorAspect == null) {
+      myBuildLayout_CopyHandlerEditorAspect = new BuildLayout_CopyHandler_Editor();
+    }
+    return myBuildLayout_CopyHandlerEditorAspect;
+  }
+
+  private BuildLayout_CopyRegexMapper_Editor getBuildLayout_CopyRegexMapperEditorAspect() {
+    if (myBuildLayout_CopyRegexMapperEditorAspect == null) {
+      myBuildLayout_CopyRegexMapperEditorAspect = new BuildLayout_CopyRegexMapper_Editor();
+    }
+    return myBuildLayout_CopyRegexMapperEditorAspect;
+  }
+
+  private BuildLayout_CustomCopy_Editor getBuildLayout_CustomCopyEditorAspect() {
+    if (myBuildLayout_CustomCopyEditorAspect == null) {
+      myBuildLayout_CustomCopyEditorAspect = new BuildLayout_CustomCopy_Editor();
+    }
+    return myBuildLayout_CustomCopyEditorAspect;
+  }
+
+  private BuildLayout_EchoProperties_Editor getBuildLayout_EchoPropertiesEditorAspect() {
+    if (myBuildLayout_EchoPropertiesEditorAspect == null) {
+      myBuildLayout_EchoPropertiesEditorAspect = new BuildLayout_EchoProperties_Editor();
+    }
+    return myBuildLayout_EchoPropertiesEditorAspect;
+  }
+
+  private BuildLayout_EchoPropertyEntry_Editor getBuildLayout_EchoPropertyEntryEditorAspect() {
+    if (myBuildLayout_EchoPropertyEntryEditorAspect == null) {
+      myBuildLayout_EchoPropertyEntryEditorAspect = new BuildLayout_EchoPropertyEntry_Editor();
+    }
+    return myBuildLayout_EchoPropertyEntryEditorAspect;
+  }
+
+  private BuildLayout_EchoXml_Editor getBuildLayout_EchoXmlEditorAspect() {
+    if (myBuildLayout_EchoXmlEditorAspect == null) {
+      myBuildLayout_EchoXmlEditorAspect = new BuildLayout_EchoXml_Editor();
+    }
+    return myBuildLayout_EchoXmlEditorAspect;
+  }
+
+  private BuildLayout_ExportAsJavaLibrary_Editor getBuildLayout_ExportAsJavaLibraryEditorAspect() {
+    if (myBuildLayout_ExportAsJavaLibraryEditorAspect == null) {
+      myBuildLayout_ExportAsJavaLibraryEditorAspect = new BuildLayout_ExportAsJavaLibrary_Editor();
+    }
+    return myBuildLayout_ExportAsJavaLibraryEditorAspect;
+  }
+
+  private BuildLayout_File_Editor getBuildLayout_FileEditorAspect() {
+    if (myBuildLayout_FileEditorAspect == null) {
+      myBuildLayout_FileEditorAspect = new BuildLayout_File_Editor();
+    }
+    return myBuildLayout_FileEditorAspect;
+  }
+
+  private BuildLayout_FileStub_Editor getBuildLayout_FileStubEditorAspect() {
+    if (myBuildLayout_FileStubEditorAspect == null) {
+      myBuildLayout_FileStubEditorAspect = new BuildLayout_FileStub_Editor();
+    }
+    return myBuildLayout_FileStubEditorAspect;
+  }
+
+  private BuildLayout_Filemode_Editor getBuildLayout_FilemodeEditorAspect() {
+    if (myBuildLayout_FilemodeEditorAspect == null) {
+      myBuildLayout_FilemodeEditorAspect = new BuildLayout_Filemode_Editor();
+    }
+    return myBuildLayout_FilemodeEditorAspect;
+  }
+
+  private BuildLayout_Files_Editor getBuildLayout_FilesEditorAspect() {
+    if (myBuildLayout_FilesEditorAspect == null) {
+      myBuildLayout_FilesEditorAspect = new BuildLayout_Files_Editor();
+    }
+    return myBuildLayout_FilesEditorAspect;
+  }
+
+  private BuildLayout_FilesOf_Editor getBuildLayout_FilesOfEditorAspect() {
+    if (myBuildLayout_FilesOfEditorAspect == null) {
+      myBuildLayout_FilesOfEditorAspect = new BuildLayout_FilesOf_Editor();
+    }
+    return myBuildLayout_FilesOfEditorAspect;
+  }
+
+  private BuildLayout_Import_Editor getBuildLayout_ImportEditorAspect() {
+    if (myBuildLayout_ImportEditorAspect == null) {
+      myBuildLayout_ImportEditorAspect = new BuildLayout_Import_Editor();
+    }
+    return myBuildLayout_ImportEditorAspect;
+  }
+
+  private BuildLayout_ImportContent_Editor getBuildLayout_ImportContentEditorAspect() {
+    if (myBuildLayout_ImportContentEditorAspect == null) {
+      myBuildLayout_ImportContentEditorAspect = new BuildLayout_ImportContent_Editor();
+    }
+    return myBuildLayout_ImportContentEditorAspect;
+  }
+
+  private BuildLayout_JarManifest_Editor getBuildLayout_JarManifestEditorAspect() {
+    if (myBuildLayout_JarManifestEditorAspect == null) {
+      myBuildLayout_JarManifestEditorAspect = new BuildLayout_JarManifest_Editor();
+    }
+    return myBuildLayout_JarManifestEditorAspect;
+  }
+
+  private BuildLayout_JarManifest_Attribute_Editor getBuildLayout_JarManifest_AttributeEditorAspect() {
+    if (myBuildLayout_JarManifest_AttributeEditorAspect == null) {
+      myBuildLayout_JarManifest_AttributeEditorAspect = new BuildLayout_JarManifest_Attribute_Editor();
+    }
+    return myBuildLayout_JarManifest_AttributeEditorAspect;
+  }
+
+  private BuildLayout_JarManifest_Section_Editor getBuildLayout_JarManifest_SectionEditorAspect() {
+    if (myBuildLayout_JarManifest_SectionEditorAspect == null) {
+      myBuildLayout_JarManifest_SectionEditorAspect = new BuildLayout_JarManifest_Section_Editor();
+    }
+    return myBuildLayout_JarManifest_SectionEditorAspect;
+  }
+
+  private BuildLayout_NamedContainer_Editor getBuildLayout_NamedContainerEditorAspect() {
+    if (myBuildLayout_NamedContainerEditorAspect == null) {
+      myBuildLayout_NamedContainerEditorAspect = new BuildLayout_NamedContainer_Editor();
+    }
+    return myBuildLayout_NamedContainerEditorAspect;
+  }
+
+  private BuildLayout_Node_Editor getBuildLayout_NodeEditorAspect() {
+    if (myBuildLayout_NodeEditorAspect == null) {
+      myBuildLayout_NodeEditorAspect = new BuildLayout_Node_Editor();
+    }
+    return myBuildLayout_NodeEditorAspect;
+  }
+
+  private BuildLayout_Tar_Editor getBuildLayout_TarEditorAspect() {
+    if (myBuildLayout_TarEditorAspect == null) {
+      myBuildLayout_TarEditorAspect = new BuildLayout_Tar_Editor();
+    }
+    return myBuildLayout_TarEditorAspect;
+  }
+
+  private BuildLayout_TransparentContainer_Editor getBuildLayout_TransparentContainerEditorAspect() {
+    if (myBuildLayout_TransparentContainerEditorAspect == null) {
+      myBuildLayout_TransparentContainerEditorAspect = new BuildLayout_TransparentContainer_Editor();
+    }
+    return myBuildLayout_TransparentContainerEditorAspect;
+  }
+
+  private BuildMacro_Editor getBuildMacroEditorAspect() {
+    if (myBuildMacroEditorAspect == null) {
+      myBuildMacroEditorAspect = new BuildMacro_Editor();
+    }
+    return myBuildMacroEditorAspect;
+  }
+
+  private BuildNamedLayout_Editor getBuildNamedLayoutEditorAspect() {
+    if (myBuildNamedLayoutEditorAspect == null) {
+      myBuildNamedLayoutEditorAspect = new BuildNamedLayout_Editor();
+    }
+    return myBuildNamedLayoutEditorAspect;
+  }
+
+  private BuildPlugin_Editor getBuildPluginEditorAspect() {
+    if (myBuildPluginEditorAspect == null) {
+      myBuildPluginEditorAspect = new BuildPlugin_Editor();
+    }
+    return myBuildPluginEditorAspect;
+  }
+
+  private BuildProject_Editor getBuildProjectEditorAspect() {
+    if (myBuildProjectEditorAspect == null) {
+      myBuildProjectEditorAspect = new BuildProject_Editor();
+    }
+    return myBuildProjectEditorAspect;
+  }
+
+  private BuildProjectDependency_Editor getBuildProjectDependencyEditorAspect() {
+    if (myBuildProjectDependencyEditorAspect == null) {
+      myBuildProjectDependencyEditorAspect = new BuildProjectDependency_Editor();
+    }
+    return myBuildProjectDependencyEditorAspect;
+  }
+
+  private BuildProjectPart_Editor getBuildProjectPartEditorAspect() {
+    if (myBuildProjectPartEditorAspect == null) {
+      myBuildProjectPartEditorAspect = new BuildProjectPart_Editor();
+    }
+    return myBuildProjectPartEditorAspect;
+  }
+
+  private BuildSourceArchiveRelativePath_Editor getBuildSourceArchiveRelativePathEditorAspect() {
+    if (myBuildSourceArchiveRelativePathEditorAspect == null) {
+      myBuildSourceArchiveRelativePathEditorAspect = new BuildSourceArchiveRelativePath_Editor();
+    }
+    return myBuildSourceArchiveRelativePathEditorAspect;
+  }
+
+  private BuildSourceMacroRelativePath_Editor getBuildSourceMacroRelativePathEditorAspect() {
+    if (myBuildSourceMacroRelativePathEditorAspect == null) {
+      myBuildSourceMacroRelativePathEditorAspect = new BuildSourceMacroRelativePath_Editor();
+    }
+    return myBuildSourceMacroRelativePathEditorAspect;
+  }
+
+  private BuildSourcePath_Editor getBuildSourcePathEditorAspect() {
+    if (myBuildSourcePathEditorAspect == null) {
+      myBuildSourcePathEditorAspect = new BuildSourcePath_Editor();
+    }
+    return myBuildSourcePathEditorAspect;
+  }
+
+  private BuildSourceProjectRelativePath_Editor getBuildSourceProjectRelativePathEditorAspect() {
+    if (myBuildSourceProjectRelativePathEditorAspect == null) {
+      myBuildSourceProjectRelativePathEditorAspect = new BuildSourceProjectRelativePath_Editor();
+    }
+    return myBuildSourceProjectRelativePathEditorAspect;
+  }
+
+  private BuildSource_JavaCP_Editor getBuildSource_JavaCPEditorAspect() {
+    if (myBuildSource_JavaCPEditorAspect == null) {
+      myBuildSource_JavaCPEditorAspect = new BuildSource_JavaCP_Editor();
+    }
+    return myBuildSource_JavaCPEditorAspect;
+  }
+
+  private BuildSource_JavaClassFolder_Editor getBuildSource_JavaClassFolderEditorAspect() {
+    if (myBuildSource_JavaClassFolderEditorAspect == null) {
+      myBuildSource_JavaClassFolderEditorAspect = new BuildSource_JavaClassFolder_Editor();
+    }
+    return myBuildSource_JavaClassFolderEditorAspect;
+  }
+
+  private BuildSource_JavaContentFolder_Editor getBuildSource_JavaContentFolderEditorAspect() {
+    if (myBuildSource_JavaContentFolderEditorAspect == null) {
+      myBuildSource_JavaContentFolderEditorAspect = new BuildSource_JavaContentFolder_Editor();
+    }
+    return myBuildSource_JavaContentFolderEditorAspect;
+  }
+
+  private BuildSource_JavaContentRoot_Editor getBuildSource_JavaContentRootEditorAspect() {
+    if (myBuildSource_JavaContentRootEditorAspect == null) {
+      myBuildSource_JavaContentRootEditorAspect = new BuildSource_JavaContentRoot_Editor();
+    }
+    return myBuildSource_JavaContentRootEditorAspect;
+  }
+
+  private BuildSource_JavaDependency_Editor getBuildSource_JavaDependencyEditorAspect() {
+    if (myBuildSource_JavaDependencyEditorAspect == null) {
+      myBuildSource_JavaDependencyEditorAspect = new BuildSource_JavaDependency_Editor();
+    }
+    return myBuildSource_JavaDependencyEditorAspect;
+  }
+
+  private BuildSource_JavaDependencyExternalJar_Editor getBuildSource_JavaDependencyExternalJarEditorAspect() {
+    if (myBuildSource_JavaDependencyExternalJarEditorAspect == null) {
+      myBuildSource_JavaDependencyExternalJarEditorAspect = new BuildSource_JavaDependencyExternalJar_Editor();
+    }
+    return myBuildSource_JavaDependencyExternalJarEditorAspect;
+  }
+
+  private BuildSource_JavaDependencyExternalJarInFolder_Editor getBuildSource_JavaDependencyExternalJarInFolderEditorAspect() {
+    if (myBuildSource_JavaDependencyExternalJarInFolderEditorAspect == null) {
+      myBuildSource_JavaDependencyExternalJarInFolderEditorAspect = new BuildSource_JavaDependencyExternalJarInFolder_Editor();
+    }
+    return myBuildSource_JavaDependencyExternalJarInFolderEditorAspect;
+  }
+
+  private BuildSource_JavaDependencyFileset_Editor getBuildSource_JavaDependencyFilesetEditorAspect() {
+    if (myBuildSource_JavaDependencyFilesetEditorAspect == null) {
+      myBuildSource_JavaDependencyFilesetEditorAspect = new BuildSource_JavaDependencyFileset_Editor();
+    }
+    return myBuildSource_JavaDependencyFilesetEditorAspect;
+  }
+
+  private BuildSource_JavaDependencyJar_Editor getBuildSource_JavaDependencyJarEditorAspect() {
+    if (myBuildSource_JavaDependencyJarEditorAspect == null) {
+      myBuildSource_JavaDependencyJarEditorAspect = new BuildSource_JavaDependencyJar_Editor();
+    }
+    return myBuildSource_JavaDependencyJarEditorAspect;
+  }
+
+  private BuildSource_JavaDependencyLibrary_Editor getBuildSource_JavaDependencyLibraryEditorAspect() {
+    if (myBuildSource_JavaDependencyLibraryEditorAspect == null) {
+      myBuildSource_JavaDependencyLibraryEditorAspect = new BuildSource_JavaDependencyLibrary_Editor();
+    }
+    return myBuildSource_JavaDependencyLibraryEditorAspect;
+  }
+
+  private BuildSource_JavaDependencyModule_Editor getBuildSource_JavaDependencyModuleEditorAspect() {
+    if (myBuildSource_JavaDependencyModuleEditorAspect == null) {
+      myBuildSource_JavaDependencyModuleEditorAspect = new BuildSource_JavaDependencyModule_Editor();
+    }
+    return myBuildSource_JavaDependencyModuleEditorAspect;
+  }
+
+  private BuildSource_JavaExternalJarFolderRef_Editor getBuildSource_JavaExternalJarFolderRefEditorAspect() {
+    if (myBuildSource_JavaExternalJarFolderRefEditorAspect == null) {
+      myBuildSource_JavaExternalJarFolderRefEditorAspect = new BuildSource_JavaExternalJarFolderRef_Editor();
+    }
+    return myBuildSource_JavaExternalJarFolderRefEditorAspect;
+  }
+
+  private BuildSource_JavaExternalJarRef_Editor getBuildSource_JavaExternalJarRefEditorAspect() {
+    if (myBuildSource_JavaExternalJarRefEditorAspect == null) {
+      myBuildSource_JavaExternalJarRefEditorAspect = new BuildSource_JavaExternalJarRef_Editor();
+    }
+    return myBuildSource_JavaExternalJarRefEditorAspect;
+  }
+
+  private BuildSource_JavaFiles_Editor getBuildSource_JavaFilesEditorAspect() {
+    if (myBuildSource_JavaFilesEditorAspect == null) {
+      myBuildSource_JavaFilesEditorAspect = new BuildSource_JavaFiles_Editor();
+    }
+    return myBuildSource_JavaFilesEditorAspect;
+  }
+
+  private BuildSource_JavaJar_Editor getBuildSource_JavaJarEditorAspect() {
+    if (myBuildSource_JavaJarEditorAspect == null) {
+      myBuildSource_JavaJarEditorAspect = new BuildSource_JavaJar_Editor();
+    }
+    return myBuildSource_JavaJarEditorAspect;
+  }
+
+  private BuildSource_JavaJars_Editor getBuildSource_JavaJarsEditorAspect() {
+    if (myBuildSource_JavaJarsEditorAspect == null) {
+      myBuildSource_JavaJarsEditorAspect = new BuildSource_JavaJars_Editor();
+    }
+    return myBuildSource_JavaJarsEditorAspect;
+  }
+
+  private BuildSource_JavaLibrary_Editor getBuildSource_JavaLibraryEditorAspect() {
+    if (myBuildSource_JavaLibraryEditorAspect == null) {
+      myBuildSource_JavaLibraryEditorAspect = new BuildSource_JavaLibrary_Editor();
+    }
+    return myBuildSource_JavaLibraryEditorAspect;
+  }
+
+  private BuildSource_JavaLibraryCP_Editor getBuildSource_JavaLibraryCPEditorAspect() {
+    if (myBuildSource_JavaLibraryCPEditorAspect == null) {
+      myBuildSource_JavaLibraryCPEditorAspect = new BuildSource_JavaLibraryCP_Editor();
+    }
+    return myBuildSource_JavaLibraryCPEditorAspect;
+  }
+
+  private BuildSource_JavaLibraryElement_Editor getBuildSource_JavaLibraryElementEditorAspect() {
+    if (myBuildSource_JavaLibraryElementEditorAspect == null) {
+      myBuildSource_JavaLibraryElementEditorAspect = new BuildSource_JavaLibraryElement_Editor();
+    }
+    return myBuildSource_JavaLibraryElementEditorAspect;
+  }
+
+  private BuildSource_JavaLibraryExternalJar_Editor getBuildSource_JavaLibraryExternalJarEditorAspect() {
+    if (myBuildSource_JavaLibraryExternalJarEditorAspect == null) {
+      myBuildSource_JavaLibraryExternalJarEditorAspect = new BuildSource_JavaLibraryExternalJar_Editor();
+    }
+    return myBuildSource_JavaLibraryExternalJarEditorAspect;
+  }
+
+  private BuildSource_JavaLibraryExternalJarFolder_Editor getBuildSource_JavaLibraryExternalJarFolderEditorAspect() {
+    if (myBuildSource_JavaLibraryExternalJarFolderEditorAspect == null) {
+      myBuildSource_JavaLibraryExternalJarFolderEditorAspect = new BuildSource_JavaLibraryExternalJarFolder_Editor();
+    }
+    return myBuildSource_JavaLibraryExternalJarFolderEditorAspect;
+  }
+
+  private BuildSource_JavaModule_Editor getBuildSource_JavaModuleEditorAspect() {
+    if (myBuildSource_JavaModuleEditorAspect == null) {
+      myBuildSource_JavaModuleEditorAspect = new BuildSource_JavaModule_Editor();
+    }
+    return myBuildSource_JavaModuleEditorAspect;
+  }
+
+  private BuildSource_JavaModuleOptions_Editor getBuildSource_JavaModuleOptionsEditorAspect() {
+    if (myBuildSource_JavaModuleOptionsEditorAspect == null) {
+      myBuildSource_JavaModuleOptionsEditorAspect = new BuildSource_JavaModuleOptions_Editor();
+    }
+    return myBuildSource_JavaModuleOptionsEditorAspect;
+  }
+
+  private BuildSource_JavaOptions_Editor getBuildSource_JavaOptionsEditorAspect() {
+    if (myBuildSource_JavaOptionsEditorAspect == null) {
+      myBuildSource_JavaOptionsEditorAspect = new BuildSource_JavaOptions_Editor();
+    }
+    return myBuildSource_JavaOptionsEditorAspect;
+  }
+
+  private BuildSource_JavaResources_Editor getBuildSource_JavaResourcesEditorAspect() {
+    if (myBuildSource_JavaResourcesEditorAspect == null) {
+      myBuildSource_JavaResourcesEditorAspect = new BuildSource_JavaResources_Editor();
+    }
+    return myBuildSource_JavaResourcesEditorAspect;
+  }
+
+  private BuildSource_JavaSources_Editor getBuildSource_JavaSourcesEditorAspect() {
+    if (myBuildSource_JavaSourcesEditorAspect == null) {
+      myBuildSource_JavaSourcesEditorAspect = new BuildSource_JavaSources_Editor();
+    }
+    return myBuildSource_JavaSourcesEditorAspect;
+  }
+
+  private BuildString_Editor getBuildStringEditorAspect() {
+    if (myBuildStringEditorAspect == null) {
+      myBuildStringEditorAspect = new BuildString_Editor();
+    }
+    return myBuildStringEditorAspect;
+  }
+
+  private BuildStringNotEmpty_Editor getBuildStringNotEmptyEditorAspect() {
+    if (myBuildStringNotEmptyEditorAspect == null) {
+      myBuildStringNotEmptyEditorAspect = new BuildStringNotEmpty_Editor();
+    }
+    return myBuildStringNotEmptyEditorAspect;
+  }
+
+  private BuildStringPart_Editor getBuildStringPartEditorAspect() {
+    if (myBuildStringPartEditorAspect == null) {
+      myBuildStringPartEditorAspect = new BuildStringPart_Editor();
+    }
+    return myBuildStringPartEditorAspect;
+  }
+
+  private BuildTextStringPart_Editor getBuildTextStringPartEditorAspect() {
+    if (myBuildTextStringPartEditorAspect == null) {
+      myBuildTextStringPartEditorAspect = new BuildTextStringPart_Editor();
+    }
+    return myBuildTextStringPartEditorAspect;
+  }
+
+  private BuildVarRefStringPart_Editor getBuildVarRefStringPartEditorAspect() {
+    if (myBuildVarRefStringPartEditorAspect == null) {
+      myBuildVarRefStringPartEditorAspect = new BuildVarRefStringPart_Editor();
+    }
+    return myBuildVarRefStringPartEditorAspect;
+  }
+
+  private BuildVariableMacro_Editor getBuildVariableMacroEditorAspect() {
+    if (myBuildVariableMacroEditorAspect == null) {
+      myBuildVariableMacroEditorAspect = new BuildVariableMacro_Editor();
+    }
+    return myBuildVariableMacroEditorAspect;
+  }
+
+  private BuildVariableMacroInitValue_Editor getBuildVariableMacroInitValueEditorAspect() {
+    if (myBuildVariableMacroInitValueEditorAspect == null) {
+      myBuildVariableMacroInitValueEditorAspect = new BuildVariableMacroInitValue_Editor();
+    }
+    return myBuildVariableMacroInitValueEditorAspect;
+  }
+
+  private BuildVariableMacroInitWithDate_Editor getBuildVariableMacroInitWithDateEditorAspect() {
+    if (myBuildVariableMacroInitWithDateEditorAspect == null) {
+      myBuildVariableMacroInitWithDateEditorAspect = new BuildVariableMacroInitWithDate_Editor();
+    }
+    return myBuildVariableMacroInitWithDateEditorAspect;
+  }
+
+  private BuildVariableMacroInitWithString_Editor getBuildVariableMacroInitWithStringEditorAspect() {
+    if (myBuildVariableMacroInitWithStringEditorAspect == null) {
+      myBuildVariableMacroInitWithStringEditorAspect = new BuildVariableMacroInitWithString_Editor();
+    }
+    return myBuildVariableMacroInitWithStringEditorAspect;
+  }
+
+  private BuildVariableMacroInitWithValueFromFile_Editor getBuildVariableMacroInitWithValueFromFileEditorAspect() {
+    if (myBuildVariableMacroInitWithValueFromFileEditorAspect == null) {
+      myBuildVariableMacroInitWithValueFromFileEditorAspect = new BuildVariableMacroInitWithValueFromFile_Editor();
+    }
+    return myBuildVariableMacroInitWithValueFromFileEditorAspect;
+  }
+
+  private GeneratorInternal_BuildSource_JavaJar_Editor getGeneratorInternal_BuildSource_JavaJarEditorAspect() {
+    if (myGeneratorInternal_BuildSource_JavaJarEditorAspect == null) {
+      myGeneratorInternal_BuildSource_JavaJarEditorAspect = new GeneratorInternal_BuildSource_JavaJar_Editor();
+    }
+    return myGeneratorInternal_BuildSource_JavaJarEditorAspect;
+  }
+
+  private GeneratorInternal_BuildSource_JavaLibrary_Editor getGeneratorInternal_BuildSource_JavaLibraryEditorAspect() {
+    if (myGeneratorInternal_BuildSource_JavaLibraryEditorAspect == null) {
+      myGeneratorInternal_BuildSource_JavaLibraryEditorAspect = new GeneratorInternal_BuildSource_JavaLibrary_Editor();
+    }
+    return myGeneratorInternal_BuildSource_JavaLibraryEditorAspect;
+  }
+
+  private GeneratorInternal_BuildSource_JavaModule_Editor getGeneratorInternal_BuildSource_JavaModuleEditorAspect() {
+    if (myGeneratorInternal_BuildSource_JavaModuleEditorAspect == null) {
+      myGeneratorInternal_BuildSource_JavaModuleEditorAspect = new GeneratorInternal_BuildSource_JavaModule_Editor();
+    }
+    return myGeneratorInternal_BuildSource_JavaModuleEditorAspect;
+  }
+
+  private GeneratorInternal_BuildSource_SingleFile_Editor getGeneratorInternal_BuildSource_SingleFileEditorAspect() {
+    if (myGeneratorInternal_BuildSource_SingleFileEditorAspect == null) {
+      myGeneratorInternal_BuildSource_SingleFileEditorAspect = new GeneratorInternal_BuildSource_SingleFile_Editor();
+    }
+    return myGeneratorInternal_BuildSource_SingleFileEditorAspect;
+  }
+
+  private GeneratorInternal_IWorkflowParticipantReference_Editor getGeneratorInternal_IWorkflowParticipantReferenceEditorAspect() {
+    if (myGeneratorInternal_IWorkflowParticipantReferenceEditorAspect == null) {
+      myGeneratorInternal_IWorkflowParticipantReferenceEditorAspect = new GeneratorInternal_IWorkflowParticipantReference_Editor();
+    }
+    return myGeneratorInternal_IWorkflowParticipantReferenceEditorAspect;
+  }
+
+  private GeneratorInternal_IWorkfowParticipants_Editor getGeneratorInternal_IWorkfowParticipantsEditorAspect() {
+    if (myGeneratorInternal_IWorkfowParticipantsEditorAspect == null) {
+      myGeneratorInternal_IWorkfowParticipantsEditorAspect = new GeneratorInternal_IWorkfowParticipants_Editor();
+    }
+    return myGeneratorInternal_IWorkfowParticipantsEditorAspect;
+  }
+
+  private GeneratorInternal_ProjectDependency_Editor getGeneratorInternal_ProjectDependencyEditorAspect() {
+    if (myGeneratorInternal_ProjectDependencyEditorAspect == null) {
+      myGeneratorInternal_ProjectDependencyEditorAspect = new GeneratorInternal_ProjectDependency_Editor();
+    }
+    return myGeneratorInternal_ProjectDependencyEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0wd = new String[]{"jetbrains.mps.build.structure.BuildAspect", "jetbrains.mps.build.structure.BuildCompositePath", "jetbrains.mps.build.structure.BuildCustomWorkflow", "jetbrains.mps.build.structure.BuildDependency", "jetbrains.mps.build.structure.BuildExternalLayout", "jetbrains.mps.build.structure.BuildExternalLayoutDependency", "jetbrains.mps.build.structure.BuildFileExcludeSelector", "jetbrains.mps.build.structure.BuildFileIncludeSelector", "jetbrains.mps.build.structure.BuildFileIncludesSelector", "jetbrains.mps.build.structure.BuildFileSelector", "jetbrains.mps.build.structure.BuildFolderMacro", "jetbrains.mps.build.structure.BuildInputFiles", "jetbrains.mps.build.structure.BuildInputFolders", "jetbrains.mps.build.structure.BuildInputResourceSet", "jetbrains.mps.build.structure.BuildInputSingleFile", "jetbrains.mps.build.structure.BuildInputSingleFolder", "jetbrains.mps.build.structure.BuildJavaPlugin", "jetbrains.mps.build.structure.BuildLayout", "jetbrains.mps.build.structure.BuildLayout_AbstractCopy", "jetbrains.mps.build.structure.BuildLayout_Comment", "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf", "jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF", "jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceRegex", "jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceTokens", "jetbrains.mps.build.structure.BuildLayout_CopyFlattenMapper", "jetbrains.mps.build.structure.BuildLayout_CopyGlobMapper", "jetbrains.mps.build.structure.BuildLayout_CopyHandler", "jetbrains.mps.build.structure.BuildLayout_CopyRegexMapper", "jetbrains.mps.build.structure.BuildLayout_CustomCopy", "jetbrains.mps.build.structure.BuildLayout_EchoProperties", "jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry", "jetbrains.mps.build.structure.BuildLayout_EchoXml", "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary", "jetbrains.mps.build.structure.BuildLayout_File", "jetbrains.mps.build.structure.BuildLayout_FileStub", "jetbrains.mps.build.structure.BuildLayout_Filemode", "jetbrains.mps.build.structure.BuildLayout_Files", "jetbrains.mps.build.structure.BuildLayout_FilesOf", "jetbrains.mps.build.structure.BuildLayout_Import", "jetbrains.mps.build.structure.BuildLayout_ImportContent", "jetbrains.mps.build.structure.BuildLayout_JarManifest", "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute", "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section", "jetbrains.mps.build.structure.BuildLayout_NamedContainer", "jetbrains.mps.build.structure.BuildLayout_Node", "jetbrains.mps.build.structure.BuildLayout_Tar", "jetbrains.mps.build.structure.BuildLayout_TransparentContainer", "jetbrains.mps.build.structure.BuildMacro", "jetbrains.mps.build.structure.BuildNamedLayout", "jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildProject", "jetbrains.mps.build.structure.BuildProjectDependency", "jetbrains.mps.build.structure.BuildProjectPart", "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath", "jetbrains.mps.build.structure.BuildSourceMacroRelativePath", "jetbrains.mps.build.structure.BuildSourcePath", "jetbrains.mps.build.structure.BuildSourceProjectRelativePath", "jetbrains.mps.build.structure.BuildSource_JavaCP", "jetbrains.mps.build.structure.BuildSource_JavaClassFolder", "jetbrains.mps.build.structure.BuildSource_JavaContentFolder", "jetbrains.mps.build.structure.BuildSource_JavaContentRoot", "jetbrains.mps.build.structure.BuildSource_JavaDependency", "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar", "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJarInFolder", "jetbrains.mps.build.structure.BuildSource_JavaDependencyFileset", "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar", "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary", "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule", "jetbrains.mps.build.structure.BuildSource_JavaExternalJarFolderRef", "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef", "jetbrains.mps.build.structure.BuildSource_JavaFiles", "jetbrains.mps.build.structure.BuildSource_JavaJar", "jetbrains.mps.build.structure.BuildSource_JavaJars", "jetbrains.mps.build.structure.BuildSource_JavaLibrary", "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP", "jetbrains.mps.build.structure.BuildSource_JavaLibraryElement", "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar", "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder", "jetbrains.mps.build.structure.BuildSource_JavaModule", "jetbrains.mps.build.structure.BuildSource_JavaModuleOptions", "jetbrains.mps.build.structure.BuildSource_JavaOptions", "jetbrains.mps.build.structure.BuildSource_JavaResources", "jetbrains.mps.build.structure.BuildSource_JavaSources", "jetbrains.mps.build.structure.BuildString", "jetbrains.mps.build.structure.BuildStringNotEmpty", "jetbrains.mps.build.structure.BuildStringPart", "jetbrains.mps.build.structure.BuildTextStringPart", "jetbrains.mps.build.structure.BuildVarRefStringPart", "jetbrains.mps.build.structure.BuildVariableMacro", "jetbrains.mps.build.structure.BuildVariableMacroInitValue", "jetbrains.mps.build.structure.BuildVariableMacroInitWithDate", "jetbrains.mps.build.structure.BuildVariableMacroInitWithString", "jetbrains.mps.build.structure.BuildVariableMacroInitWithValueFromFile", "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaJar", "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary", "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule", "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile", "jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference", "jetbrains.mps.build.structure.GeneratorInternal_IWorkfowParticipants", "jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency"};
 }

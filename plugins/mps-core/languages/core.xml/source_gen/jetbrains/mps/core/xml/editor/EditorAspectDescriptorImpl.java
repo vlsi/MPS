@@ -8,62 +8,295 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private XmlAttribute_Editor myXmlAttributeEditorAspect;
+  private XmlBaseAttribute_Editor myXmlBaseAttributeEditorAspect;
+  private XmlBaseElement_Editor myXmlBaseElementEditorAspect;
+  private XmlCDATA_Editor myXmlCDATAEditorAspect;
+  private XmlCharRef_Editor myXmlCharRefEditorAspect;
+  private XmlCharRefValue_Editor myXmlCharRefValueEditorAspect;
+  private XmlComment_Editor myXmlCommentEditorAspect;
+  private XmlCommentLine_Editor myXmlCommentLineEditorAspect;
+  private XmlContent_Editor myXmlContentEditorAspect;
+  private XmlDeclaration_Editor myXmlDeclarationEditorAspect;
+  private XmlDoctypeDeclaration_Editor myXmlDoctypeDeclarationEditorAspect;
+  private XmlDocument_Editor myXmlDocumentEditorAspect;
+  private XmlElement_Editor myXmlElementEditorAspect;
+  private XmlEntityRef_Editor myXmlEntityRefEditorAspect;
+  private XmlEntityRefValue_Editor myXmlEntityRefValueEditorAspect;
+  private XmlExternalId_Editor myXmlExternalIdEditorAspect;
+  private XmlFile_Editor myXmlFileEditorAspect;
+  private XmlNoSpaceValue_Editor myXmlNoSpaceValueEditorAspect;
+  private XmlProcessingInstruction_Editor myXmlProcessingInstructionEditorAspect;
+  private XmlProlog_Editor myXmlPrologEditorAspect;
+  private XmlPrologElement_Editor myXmlPrologElementEditorAspect;
+  private XmlText_Editor myXmlTextEditorAspect;
+  private XmlTextValue_Editor myXmlTextValueEditorAspect;
+  private XmlValuePart_Editor myXmlValuePartEditorAspect;
+  private XmlWhitespace_Editor myXmlWhitespaceEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0z, descriptor.getConceptFqName())) {
       case 0:
-        return new XmlAttribute_Editor();
+        return getXmlAttributeEditorAspect();
       case 1:
-        return new XmlBaseAttribute_Editor();
+        return getXmlBaseAttributeEditorAspect();
       case 2:
-        return new XmlBaseElement_Editor();
+        return getXmlBaseElementEditorAspect();
       case 3:
-        return new XmlCDATA_Editor();
+        return getXmlCDATAEditorAspect();
       case 4:
-        return new XmlCharRef_Editor();
+        return getXmlCharRefEditorAspect();
       case 5:
-        return new XmlCharRefValue_Editor();
+        return getXmlCharRefValueEditorAspect();
       case 6:
-        return new XmlComment_Editor();
+        return getXmlCommentEditorAspect();
       case 7:
-        return new XmlCommentLine_Editor();
+        return getXmlCommentLineEditorAspect();
       case 8:
-        return new XmlContent_Editor();
+        return getXmlContentEditorAspect();
       case 9:
-        return new XmlDeclaration_Editor();
+        return getXmlDeclarationEditorAspect();
       case 10:
-        return new XmlDoctypeDeclaration_Editor();
+        return getXmlDoctypeDeclarationEditorAspect();
       case 11:
-        return new XmlDocument_Editor();
+        return getXmlDocumentEditorAspect();
       case 12:
-        return new XmlElement_Editor();
+        return getXmlElementEditorAspect();
       case 13:
-        return new XmlEntityRef_Editor();
+        return getXmlEntityRefEditorAspect();
       case 14:
-        return new XmlEntityRefValue_Editor();
+        return getXmlEntityRefValueEditorAspect();
       case 15:
-        return new XmlExternalId_Editor();
+        return getXmlExternalIdEditorAspect();
       case 16:
-        return new XmlFile_Editor();
+        return getXmlFileEditorAspect();
       case 17:
-        return new XmlNoSpaceValue_Editor();
+        return getXmlNoSpaceValueEditorAspect();
       case 18:
-        return new XmlProcessingInstruction_Editor();
+        return getXmlProcessingInstructionEditorAspect();
       case 19:
-        return new XmlProlog_Editor();
+        return getXmlPrologEditorAspect();
       case 20:
-        return new XmlPrologElement_Editor();
+        return getXmlPrologElementEditorAspect();
       case 21:
-        return new XmlText_Editor();
+        return getXmlTextEditorAspect();
       case 22:
-        return new XmlTextValue_Editor();
+        return getXmlTextValueEditorAspect();
       case 23:
-        return new XmlValuePart_Editor();
+        return getXmlValuePartEditorAspect();
       case 24:
-        return new XmlWhitespace_Editor();
+        return getXmlWhitespaceEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.core.xml.structure.XmlAttribute", "jetbrains.mps.core.xml.structure.XmlBaseAttribute", "jetbrains.mps.core.xml.structure.XmlBaseElement", "jetbrains.mps.core.xml.structure.XmlCDATA", "jetbrains.mps.core.xml.structure.XmlCharRef", "jetbrains.mps.core.xml.structure.XmlCharRefValue", "jetbrains.mps.core.xml.structure.XmlComment", "jetbrains.mps.core.xml.structure.XmlCommentLine", "jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.core.xml.structure.XmlDeclaration", "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration", "jetbrains.mps.core.xml.structure.XmlDocument", "jetbrains.mps.core.xml.structure.XmlElement", "jetbrains.mps.core.xml.structure.XmlEntityRef", "jetbrains.mps.core.xml.structure.XmlEntityRefValue", "jetbrains.mps.core.xml.structure.XmlExternalId", "jetbrains.mps.core.xml.structure.XmlFile", "jetbrains.mps.core.xml.structure.XmlNoSpaceValue", "jetbrains.mps.core.xml.structure.XmlProcessingInstruction", "jetbrains.mps.core.xml.structure.XmlProlog", "jetbrains.mps.core.xml.structure.XmlPrologElement", "jetbrains.mps.core.xml.structure.XmlText", "jetbrains.mps.core.xml.structure.XmlTextValue", "jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.core.xml.structure.XmlWhitespace"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myXmlAttributeEditorAspect = null;
+    myXmlBaseAttributeEditorAspect = null;
+    myXmlBaseElementEditorAspect = null;
+    myXmlCDATAEditorAspect = null;
+    myXmlCharRefEditorAspect = null;
+    myXmlCharRefValueEditorAspect = null;
+    myXmlCommentEditorAspect = null;
+    myXmlCommentLineEditorAspect = null;
+    myXmlContentEditorAspect = null;
+    myXmlDeclarationEditorAspect = null;
+    myXmlDoctypeDeclarationEditorAspect = null;
+    myXmlDocumentEditorAspect = null;
+    myXmlElementEditorAspect = null;
+    myXmlEntityRefEditorAspect = null;
+    myXmlEntityRefValueEditorAspect = null;
+    myXmlExternalIdEditorAspect = null;
+    myXmlFileEditorAspect = null;
+    myXmlNoSpaceValueEditorAspect = null;
+    myXmlProcessingInstructionEditorAspect = null;
+    myXmlPrologEditorAspect = null;
+    myXmlPrologElementEditorAspect = null;
+    myXmlTextEditorAspect = null;
+    myXmlTextValueEditorAspect = null;
+    myXmlValuePartEditorAspect = null;
+    myXmlWhitespaceEditorAspect = null;
+  }
+
+  private XmlAttribute_Editor getXmlAttributeEditorAspect() {
+    if (myXmlAttributeEditorAspect == null) {
+      myXmlAttributeEditorAspect = new XmlAttribute_Editor();
+    }
+    return myXmlAttributeEditorAspect;
+  }
+
+  private XmlBaseAttribute_Editor getXmlBaseAttributeEditorAspect() {
+    if (myXmlBaseAttributeEditorAspect == null) {
+      myXmlBaseAttributeEditorAspect = new XmlBaseAttribute_Editor();
+    }
+    return myXmlBaseAttributeEditorAspect;
+  }
+
+  private XmlBaseElement_Editor getXmlBaseElementEditorAspect() {
+    if (myXmlBaseElementEditorAspect == null) {
+      myXmlBaseElementEditorAspect = new XmlBaseElement_Editor();
+    }
+    return myXmlBaseElementEditorAspect;
+  }
+
+  private XmlCDATA_Editor getXmlCDATAEditorAspect() {
+    if (myXmlCDATAEditorAspect == null) {
+      myXmlCDATAEditorAspect = new XmlCDATA_Editor();
+    }
+    return myXmlCDATAEditorAspect;
+  }
+
+  private XmlCharRef_Editor getXmlCharRefEditorAspect() {
+    if (myXmlCharRefEditorAspect == null) {
+      myXmlCharRefEditorAspect = new XmlCharRef_Editor();
+    }
+    return myXmlCharRefEditorAspect;
+  }
+
+  private XmlCharRefValue_Editor getXmlCharRefValueEditorAspect() {
+    if (myXmlCharRefValueEditorAspect == null) {
+      myXmlCharRefValueEditorAspect = new XmlCharRefValue_Editor();
+    }
+    return myXmlCharRefValueEditorAspect;
+  }
+
+  private XmlComment_Editor getXmlCommentEditorAspect() {
+    if (myXmlCommentEditorAspect == null) {
+      myXmlCommentEditorAspect = new XmlComment_Editor();
+    }
+    return myXmlCommentEditorAspect;
+  }
+
+  private XmlCommentLine_Editor getXmlCommentLineEditorAspect() {
+    if (myXmlCommentLineEditorAspect == null) {
+      myXmlCommentLineEditorAspect = new XmlCommentLine_Editor();
+    }
+    return myXmlCommentLineEditorAspect;
+  }
+
+  private XmlContent_Editor getXmlContentEditorAspect() {
+    if (myXmlContentEditorAspect == null) {
+      myXmlContentEditorAspect = new XmlContent_Editor();
+    }
+    return myXmlContentEditorAspect;
+  }
+
+  private XmlDeclaration_Editor getXmlDeclarationEditorAspect() {
+    if (myXmlDeclarationEditorAspect == null) {
+      myXmlDeclarationEditorAspect = new XmlDeclaration_Editor();
+    }
+    return myXmlDeclarationEditorAspect;
+  }
+
+  private XmlDoctypeDeclaration_Editor getXmlDoctypeDeclarationEditorAspect() {
+    if (myXmlDoctypeDeclarationEditorAspect == null) {
+      myXmlDoctypeDeclarationEditorAspect = new XmlDoctypeDeclaration_Editor();
+    }
+    return myXmlDoctypeDeclarationEditorAspect;
+  }
+
+  private XmlDocument_Editor getXmlDocumentEditorAspect() {
+    if (myXmlDocumentEditorAspect == null) {
+      myXmlDocumentEditorAspect = new XmlDocument_Editor();
+    }
+    return myXmlDocumentEditorAspect;
+  }
+
+  private XmlElement_Editor getXmlElementEditorAspect() {
+    if (myXmlElementEditorAspect == null) {
+      myXmlElementEditorAspect = new XmlElement_Editor();
+    }
+    return myXmlElementEditorAspect;
+  }
+
+  private XmlEntityRef_Editor getXmlEntityRefEditorAspect() {
+    if (myXmlEntityRefEditorAspect == null) {
+      myXmlEntityRefEditorAspect = new XmlEntityRef_Editor();
+    }
+    return myXmlEntityRefEditorAspect;
+  }
+
+  private XmlEntityRefValue_Editor getXmlEntityRefValueEditorAspect() {
+    if (myXmlEntityRefValueEditorAspect == null) {
+      myXmlEntityRefValueEditorAspect = new XmlEntityRefValue_Editor();
+    }
+    return myXmlEntityRefValueEditorAspect;
+  }
+
+  private XmlExternalId_Editor getXmlExternalIdEditorAspect() {
+    if (myXmlExternalIdEditorAspect == null) {
+      myXmlExternalIdEditorAspect = new XmlExternalId_Editor();
+    }
+    return myXmlExternalIdEditorAspect;
+  }
+
+  private XmlFile_Editor getXmlFileEditorAspect() {
+    if (myXmlFileEditorAspect == null) {
+      myXmlFileEditorAspect = new XmlFile_Editor();
+    }
+    return myXmlFileEditorAspect;
+  }
+
+  private XmlNoSpaceValue_Editor getXmlNoSpaceValueEditorAspect() {
+    if (myXmlNoSpaceValueEditorAspect == null) {
+      myXmlNoSpaceValueEditorAspect = new XmlNoSpaceValue_Editor();
+    }
+    return myXmlNoSpaceValueEditorAspect;
+  }
+
+  private XmlProcessingInstruction_Editor getXmlProcessingInstructionEditorAspect() {
+    if (myXmlProcessingInstructionEditorAspect == null) {
+      myXmlProcessingInstructionEditorAspect = new XmlProcessingInstruction_Editor();
+    }
+    return myXmlProcessingInstructionEditorAspect;
+  }
+
+  private XmlProlog_Editor getXmlPrologEditorAspect() {
+    if (myXmlPrologEditorAspect == null) {
+      myXmlPrologEditorAspect = new XmlProlog_Editor();
+    }
+    return myXmlPrologEditorAspect;
+  }
+
+  private XmlPrologElement_Editor getXmlPrologElementEditorAspect() {
+    if (myXmlPrologElementEditorAspect == null) {
+      myXmlPrologElementEditorAspect = new XmlPrologElement_Editor();
+    }
+    return myXmlPrologElementEditorAspect;
+  }
+
+  private XmlText_Editor getXmlTextEditorAspect() {
+    if (myXmlTextEditorAspect == null) {
+      myXmlTextEditorAspect = new XmlText_Editor();
+    }
+    return myXmlTextEditorAspect;
+  }
+
+  private XmlTextValue_Editor getXmlTextValueEditorAspect() {
+    if (myXmlTextValueEditorAspect == null) {
+      myXmlTextValueEditorAspect = new XmlTextValue_Editor();
+    }
+    return myXmlTextValueEditorAspect;
+  }
+
+  private XmlValuePart_Editor getXmlValuePartEditorAspect() {
+    if (myXmlValuePartEditorAspect == null) {
+      myXmlValuePartEditorAspect = new XmlValuePart_Editor();
+    }
+    return myXmlValuePartEditorAspect;
+  }
+
+  private XmlWhitespace_Editor getXmlWhitespaceEditorAspect() {
+    if (myXmlWhitespaceEditorAspect == null) {
+      myXmlWhitespaceEditorAspect = new XmlWhitespace_Editor();
+    }
+    return myXmlWhitespaceEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0z = new String[]{"jetbrains.mps.core.xml.structure.XmlAttribute", "jetbrains.mps.core.xml.structure.XmlBaseAttribute", "jetbrains.mps.core.xml.structure.XmlBaseElement", "jetbrains.mps.core.xml.structure.XmlCDATA", "jetbrains.mps.core.xml.structure.XmlCharRef", "jetbrains.mps.core.xml.structure.XmlCharRefValue", "jetbrains.mps.core.xml.structure.XmlComment", "jetbrains.mps.core.xml.structure.XmlCommentLine", "jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.core.xml.structure.XmlDeclaration", "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration", "jetbrains.mps.core.xml.structure.XmlDocument", "jetbrains.mps.core.xml.structure.XmlElement", "jetbrains.mps.core.xml.structure.XmlEntityRef", "jetbrains.mps.core.xml.structure.XmlEntityRefValue", "jetbrains.mps.core.xml.structure.XmlExternalId", "jetbrains.mps.core.xml.structure.XmlFile", "jetbrains.mps.core.xml.structure.XmlNoSpaceValue", "jetbrains.mps.core.xml.structure.XmlProcessingInstruction", "jetbrains.mps.core.xml.structure.XmlProlog", "jetbrains.mps.core.xml.structure.XmlPrologElement", "jetbrains.mps.core.xml.structure.XmlText", "jetbrains.mps.core.xml.structure.XmlTextValue", "jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.core.xml.structure.XmlWhitespace"};
 }

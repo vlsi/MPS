@@ -8,26 +8,97 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ConvertTo_Editor myConvertToEditorAspect;
+  private CurrencyDefTable_Editor myCurrencyDefTableEditorAspect;
+  private CurrencyUnit_Editor myCurrencyUnitEditorAspect;
+  private GetAmount_Editor myGetAmountEditorAspect;
+  private GetCurrency_Editor myGetCurrencyEditorAspect;
+  private MoneyLiteral_Editor myMoneyLiteralEditorAspect;
+  private MoneyType_Editor myMoneyTypeEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0h, descriptor.getConceptFqName())) {
       case 0:
-        return new ConvertTo_Editor();
+        return getConvertToEditorAspect();
       case 1:
-        return new CurrencyDefTable_Editor();
+        return getCurrencyDefTableEditorAspect();
       case 2:
-        return new CurrencyUnit_Editor();
+        return getCurrencyUnitEditorAspect();
       case 3:
-        return new GetAmount_Editor();
+        return getGetAmountEditorAspect();
       case 4:
-        return new GetCurrency_Editor();
+        return getGetCurrencyEditorAspect();
       case 5:
-        return new MoneyLiteral_Editor();
+        return getMoneyLiteralEditorAspect();
       case 6:
-        return new MoneyType_Editor();
+        return getMoneyTypeEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myConvertToEditorAspect = null;
+    myCurrencyDefTableEditorAspect = null;
+    myCurrencyUnitEditorAspect = null;
+    myGetAmountEditorAspect = null;
+    myGetCurrencyEditorAspect = null;
+    myMoneyLiteralEditorAspect = null;
+    myMoneyTypeEditorAspect = null;
+  }
+
+  private ConvertTo_Editor getConvertToEditorAspect() {
+    if (myConvertToEditorAspect == null) {
+      myConvertToEditorAspect = new ConvertTo_Editor();
+    }
+    return myConvertToEditorAspect;
+  }
+
+  private CurrencyDefTable_Editor getCurrencyDefTableEditorAspect() {
+    if (myCurrencyDefTableEditorAspect == null) {
+      myCurrencyDefTableEditorAspect = new CurrencyDefTable_Editor();
+    }
+    return myCurrencyDefTableEditorAspect;
+  }
+
+  private CurrencyUnit_Editor getCurrencyUnitEditorAspect() {
+    if (myCurrencyUnitEditorAspect == null) {
+      myCurrencyUnitEditorAspect = new CurrencyUnit_Editor();
+    }
+    return myCurrencyUnitEditorAspect;
+  }
+
+  private GetAmount_Editor getGetAmountEditorAspect() {
+    if (myGetAmountEditorAspect == null) {
+      myGetAmountEditorAspect = new GetAmount_Editor();
+    }
+    return myGetAmountEditorAspect;
+  }
+
+  private GetCurrency_Editor getGetCurrencyEditorAspect() {
+    if (myGetCurrencyEditorAspect == null) {
+      myGetCurrencyEditorAspect = new GetCurrency_Editor();
+    }
+    return myGetCurrencyEditorAspect;
+  }
+
+  private MoneyLiteral_Editor getMoneyLiteralEditorAspect() {
+    if (myMoneyLiteralEditorAspect == null) {
+      myMoneyLiteralEditorAspect = new MoneyLiteral_Editor();
+    }
+    return myMoneyLiteralEditorAspect;
+  }
+
+  private MoneyType_Editor getMoneyTypeEditorAspect() {
+    if (myMoneyTypeEditorAspect == null) {
+      myMoneyTypeEditorAspect = new MoneyType_Editor();
+    }
+    return myMoneyTypeEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0h = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType"};
 }

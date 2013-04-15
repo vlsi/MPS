@@ -8,44 +8,196 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AttractsFocusBlock_Editor myAttractsFocusBlockEditorAspect;
+  private BinaryExpression_Editor myBinaryExpressionEditorAspect;
+  private BracesBlock_Editor myBracesBlockEditorAspect;
+  private BracesStubBlock_Editor myBracesStubBlockEditorAspect;
+  private IBaseTestBlock_Editor myIBaseTestBlockEditorAspect;
+  private InspectorBlock_Editor myInspectorBlockEditorAspect;
+  private IntegerLiteral_Editor myIntegerLiteralEditorAspect;
+  private NonEmptyProperty_Editor myNonEmptyPropertyEditorAspect;
+  private NotEditableVaraileReference_Editor myNotEditableVaraileReferenceEditorAspect;
+  private ReferenceAnnotataion_Editor myReferenceAnnotataionEditorAspect;
+  private SideTranformWrapper_Editor mySideTranformWrapperEditorAspect;
+  private StubBlock_Editor myStubBlockEditorAspect;
+  private TestBlockList_Editor myTestBlockListEditorAspect;
+  private VariableDeclarationBlock_Editor myVariableDeclarationBlockEditorAspect;
+  private VariableDeclarationReference_Editor myVariableDeclarationReferenceEditorAspect;
+  private VerticalLayoutBlockList_Editor myVerticalLayoutBlockListEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0q, descriptor.getConceptFqName())) {
       case 0:
-        return new AttractsFocusBlock_Editor();
+        return getAttractsFocusBlockEditorAspect();
       case 1:
-        return new BinaryExpression_Editor();
+        return getBinaryExpressionEditorAspect();
       case 2:
-        return new BracesBlock_Editor();
+        return getBracesBlockEditorAspect();
       case 3:
-        return new BracesStubBlock_Editor();
+        return getBracesStubBlockEditorAspect();
       case 4:
-        return new IBaseTestBlock_Editor();
+        return getIBaseTestBlockEditorAspect();
       case 5:
-        return new InspectorBlock_Editor();
+        return getInspectorBlockEditorAspect();
       case 6:
-        return new IntegerLiteral_Editor();
+        return getIntegerLiteralEditorAspect();
       case 7:
-        return new NonEmptyProperty_Editor();
+        return getNonEmptyPropertyEditorAspect();
       case 8:
-        return new NotEditableVaraileReference_Editor();
+        return getNotEditableVaraileReferenceEditorAspect();
       case 9:
-        return new ReferenceAnnotataion_Editor();
+        return getReferenceAnnotataionEditorAspect();
       case 10:
-        return new SideTranformWrapper_Editor();
+        return getSideTranformWrapperEditorAspect();
       case 11:
-        return new StubBlock_Editor();
+        return getStubBlockEditorAspect();
       case 12:
-        return new TestBlockList_Editor();
+        return getTestBlockListEditorAspect();
       case 13:
-        return new VariableDeclarationBlock_Editor();
+        return getVariableDeclarationBlockEditorAspect();
       case 14:
-        return new VariableDeclarationReference_Editor();
+        return getVariableDeclarationReferenceEditorAspect();
       case 15:
-        return new VerticalLayoutBlockList_Editor();
+        return getVerticalLayoutBlockListEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAttractsFocusBlockEditorAspect = null;
+    myBinaryExpressionEditorAspect = null;
+    myBracesBlockEditorAspect = null;
+    myBracesStubBlockEditorAspect = null;
+    myIBaseTestBlockEditorAspect = null;
+    myInspectorBlockEditorAspect = null;
+    myIntegerLiteralEditorAspect = null;
+    myNonEmptyPropertyEditorAspect = null;
+    myNotEditableVaraileReferenceEditorAspect = null;
+    myReferenceAnnotataionEditorAspect = null;
+    mySideTranformWrapperEditorAspect = null;
+    myStubBlockEditorAspect = null;
+    myTestBlockListEditorAspect = null;
+    myVariableDeclarationBlockEditorAspect = null;
+    myVariableDeclarationReferenceEditorAspect = null;
+    myVerticalLayoutBlockListEditorAspect = null;
+  }
+
+  private AttractsFocusBlock_Editor getAttractsFocusBlockEditorAspect() {
+    if (myAttractsFocusBlockEditorAspect == null) {
+      myAttractsFocusBlockEditorAspect = new AttractsFocusBlock_Editor();
+    }
+    return myAttractsFocusBlockEditorAspect;
+  }
+
+  private BinaryExpression_Editor getBinaryExpressionEditorAspect() {
+    if (myBinaryExpressionEditorAspect == null) {
+      myBinaryExpressionEditorAspect = new BinaryExpression_Editor();
+    }
+    return myBinaryExpressionEditorAspect;
+  }
+
+  private BracesBlock_Editor getBracesBlockEditorAspect() {
+    if (myBracesBlockEditorAspect == null) {
+      myBracesBlockEditorAspect = new BracesBlock_Editor();
+    }
+    return myBracesBlockEditorAspect;
+  }
+
+  private BracesStubBlock_Editor getBracesStubBlockEditorAspect() {
+    if (myBracesStubBlockEditorAspect == null) {
+      myBracesStubBlockEditorAspect = new BracesStubBlock_Editor();
+    }
+    return myBracesStubBlockEditorAspect;
+  }
+
+  private IBaseTestBlock_Editor getIBaseTestBlockEditorAspect() {
+    if (myIBaseTestBlockEditorAspect == null) {
+      myIBaseTestBlockEditorAspect = new IBaseTestBlock_Editor();
+    }
+    return myIBaseTestBlockEditorAspect;
+  }
+
+  private InspectorBlock_Editor getInspectorBlockEditorAspect() {
+    if (myInspectorBlockEditorAspect == null) {
+      myInspectorBlockEditorAspect = new InspectorBlock_Editor();
+    }
+    return myInspectorBlockEditorAspect;
+  }
+
+  private IntegerLiteral_Editor getIntegerLiteralEditorAspect() {
+    if (myIntegerLiteralEditorAspect == null) {
+      myIntegerLiteralEditorAspect = new IntegerLiteral_Editor();
+    }
+    return myIntegerLiteralEditorAspect;
+  }
+
+  private NonEmptyProperty_Editor getNonEmptyPropertyEditorAspect() {
+    if (myNonEmptyPropertyEditorAspect == null) {
+      myNonEmptyPropertyEditorAspect = new NonEmptyProperty_Editor();
+    }
+    return myNonEmptyPropertyEditorAspect;
+  }
+
+  private NotEditableVaraileReference_Editor getNotEditableVaraileReferenceEditorAspect() {
+    if (myNotEditableVaraileReferenceEditorAspect == null) {
+      myNotEditableVaraileReferenceEditorAspect = new NotEditableVaraileReference_Editor();
+    }
+    return myNotEditableVaraileReferenceEditorAspect;
+  }
+
+  private ReferenceAnnotataion_Editor getReferenceAnnotataionEditorAspect() {
+    if (myReferenceAnnotataionEditorAspect == null) {
+      myReferenceAnnotataionEditorAspect = new ReferenceAnnotataion_Editor();
+    }
+    return myReferenceAnnotataionEditorAspect;
+  }
+
+  private SideTranformWrapper_Editor getSideTranformWrapperEditorAspect() {
+    if (mySideTranformWrapperEditorAspect == null) {
+      mySideTranformWrapperEditorAspect = new SideTranformWrapper_Editor();
+    }
+    return mySideTranformWrapperEditorAspect;
+  }
+
+  private StubBlock_Editor getStubBlockEditorAspect() {
+    if (myStubBlockEditorAspect == null) {
+      myStubBlockEditorAspect = new StubBlock_Editor();
+    }
+    return myStubBlockEditorAspect;
+  }
+
+  private TestBlockList_Editor getTestBlockListEditorAspect() {
+    if (myTestBlockListEditorAspect == null) {
+      myTestBlockListEditorAspect = new TestBlockList_Editor();
+    }
+    return myTestBlockListEditorAspect;
+  }
+
+  private VariableDeclarationBlock_Editor getVariableDeclarationBlockEditorAspect() {
+    if (myVariableDeclarationBlockEditorAspect == null) {
+      myVariableDeclarationBlockEditorAspect = new VariableDeclarationBlock_Editor();
+    }
+    return myVariableDeclarationBlockEditorAspect;
+  }
+
+  private VariableDeclarationReference_Editor getVariableDeclarationReferenceEditorAspect() {
+    if (myVariableDeclarationReferenceEditorAspect == null) {
+      myVariableDeclarationReferenceEditorAspect = new VariableDeclarationReference_Editor();
+    }
+    return myVariableDeclarationReferenceEditorAspect;
+  }
+
+  private VerticalLayoutBlockList_Editor getVerticalLayoutBlockListEditorAspect() {
+    if (myVerticalLayoutBlockListEditorAspect == null) {
+      myVerticalLayoutBlockListEditorAspect = new VerticalLayoutBlockList_Editor();
+    }
+    return myVerticalLayoutBlockListEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0q = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
 }

@@ -8,18 +8,53 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ElementMacro_Editor myElementMacroEditorAspect;
+  private TextMacro_Editor myTextMacroEditorAspect;
+  private XmlLiteral_Editor myXmlLiteralEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        return new ElementMacro_Editor();
+        return getElementMacroEditorAspect();
       case 1:
-        return new TextMacro_Editor();
+        return getTextMacroEditorAspect();
       case 2:
-        return new XmlLiteral_Editor();
+        return getXmlLiteralEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", "jetbrains.mps.samples.xmlLiterals.structure.TextMacro", "jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myElementMacroEditorAspect = null;
+    myTextMacroEditorAspect = null;
+    myXmlLiteralEditorAspect = null;
+  }
+
+  private ElementMacro_Editor getElementMacroEditorAspect() {
+    if (myElementMacroEditorAspect == null) {
+      myElementMacroEditorAspect = new ElementMacro_Editor();
+    }
+    return myElementMacroEditorAspect;
+  }
+
+  private TextMacro_Editor getTextMacroEditorAspect() {
+    if (myTextMacroEditorAspect == null) {
+      myTextMacroEditorAspect = new TextMacro_Editor();
+    }
+    return myTextMacroEditorAspect;
+  }
+
+  private XmlLiteral_Editor getXmlLiteralEditorAspect() {
+    if (myXmlLiteralEditorAspect == null) {
+      myXmlLiteralEditorAspect = new XmlLiteral_Editor();
+    }
+    return myXmlLiteralEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", "jetbrains.mps.samples.xmlLiterals.structure.TextMacro", "jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral"};
 }

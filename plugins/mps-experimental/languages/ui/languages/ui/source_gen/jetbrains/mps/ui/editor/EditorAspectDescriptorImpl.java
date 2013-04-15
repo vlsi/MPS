@@ -8,80 +8,394 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AccessUIPropertyOperation_Editor myAccessUIPropertyOperationEditorAspect;
+  private AppendUIObjectStatement_Editor myAppendUIObjectStatementEditorAspect;
+  private BeanPropertyView_Editor myBeanPropertyViewEditorAspect;
+  private CallUIActionOperation_Editor myCallUIActionOperationEditorAspect;
+  private ChildAspect_Editor myChildAspectEditorAspect;
+  private ClearCompartmentStatement_Editor myClearCompartmentStatementEditorAspect;
+  private CompartmentProviderStatement_Editor myCompartmentProviderStatementEditorAspect;
+  private CompartmentReferenceExpression_Editor myCompartmentReferenceExpressionEditorAspect;
+  private ContainerCompartment_Editor myContainerCompartmentEditorAspect;
+  private ContainerType_Editor myContainerTypeEditorAspect;
+  private Controller_Editor myControllerEditorAspect;
+  private ControllerBinding_Editor myControllerBindingEditorAspect;
+  private CreateUIObjectStatement_Editor myCreateUIObjectStatementEditorAspect;
+  private EnclosingContextCompartmentExpression_Editor myEnclosingContextCompartmentExpressionEditorAspect;
+  private EventPropertyAccessOp_Editor myEventPropertyAccessOpEditorAspect;
+  private EventType_Editor myEventTypeEditorAspect;
+  private ExpressionView_Editor myExpressionViewEditorAspect;
+  private ForceLayoutStatement_Editor myForceLayoutStatementEditorAspect;
+  private FunctionParameterDeclaration_Editor myFunctionParameterDeclarationEditorAspect;
+  private InlineController_Editor myInlineControllerEditorAspect;
+  private InsertUIObjectStatement_Editor myInsertUIObjectStatementEditorAspect;
+  private IterateContentsStatement_Editor myIterateContentsStatementEditorAspect;
+  private IterateContentsVariable_Editor myIterateContentsVariableEditorAspect;
+  private IterateContentsVariableReference_Editor myIterateContentsVariableReferenceEditorAspect;
+  private RemoveUIObjectStatement_Editor myRemoveUIObjectStatementEditorAspect;
+  private UIObjectProviderStatement_Editor myUIObjectProviderStatementEditorAspect;
+  private UIObjectReference_Editor myUIObjectReferenceEditorAspect;
+  private UIObjectStatement_Editor myUIObjectStatementEditorAspect;
+  private UIObjectType_Editor myUIObjectTypeEditorAspect;
+  private ValidateBlock_Editor myValidateBlockEditorAspect;
+  private ValidatingView_Editor myValidatingViewEditorAspect;
+  private Validator_Editor myValidatorEditorAspect;
+  private View_Editor myViewEditorAspect;
+  private ViewBinding_Editor myViewBindingEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0ib, descriptor.getConceptFqName())) {
       case 0:
-        return new AccessUIPropertyOperation_Editor();
+        return getAccessUIPropertyOperationEditorAspect();
       case 1:
-        return new AppendUIObjectStatement_Editor();
+        return getAppendUIObjectStatementEditorAspect();
       case 2:
-        return new BeanPropertyView_Editor();
+        return getBeanPropertyViewEditorAspect();
       case 3:
-        return new CallUIActionOperation_Editor();
+        return getCallUIActionOperationEditorAspect();
       case 4:
-        return new ChildAspect_Editor();
+        return getChildAspectEditorAspect();
       case 5:
-        return new ClearCompartmentStatement_Editor();
+        return getClearCompartmentStatementEditorAspect();
       case 6:
-        return new CompartmentProviderStatement_Editor();
+        return getCompartmentProviderStatementEditorAspect();
       case 7:
-        return new CompartmentReferenceExpression_Editor();
+        return getCompartmentReferenceExpressionEditorAspect();
       case 8:
-        return new ContainerCompartment_Editor();
+        return getContainerCompartmentEditorAspect();
       case 9:
-        return new ContainerType_Editor();
+        return getContainerTypeEditorAspect();
       case 10:
-        return new Controller_Editor();
+        return getControllerEditorAspect();
       case 11:
-        return new ControllerBinding_Editor();
+        return getControllerBindingEditorAspect();
       case 12:
-        return new CreateUIObjectStatement_Editor();
+        return getCreateUIObjectStatementEditorAspect();
       case 13:
-        return new EnclosingContextCompartmentExpression_Editor();
+        return getEnclosingContextCompartmentExpressionEditorAspect();
       case 14:
-        return new EventPropertyAccessOp_Editor();
+        return getEventPropertyAccessOpEditorAspect();
       case 15:
-        return new EventType_Editor();
+        return getEventTypeEditorAspect();
       case 16:
-        return new ExpressionView_Editor();
+        return getExpressionViewEditorAspect();
       case 17:
-        return new ForceLayoutStatement_Editor();
+        return getForceLayoutStatementEditorAspect();
       case 18:
-        return new FunctionParameterDeclaration_Editor();
+        return getFunctionParameterDeclarationEditorAspect();
       case 19:
-        return new InlineController_Editor();
+        return getInlineControllerEditorAspect();
       case 20:
-        return new InsertUIObjectStatement_Editor();
+        return getInsertUIObjectStatementEditorAspect();
       case 21:
-        return new IterateContentsStatement_Editor();
+        return getIterateContentsStatementEditorAspect();
       case 22:
-        return new IterateContentsVariable_Editor();
+        return getIterateContentsVariableEditorAspect();
       case 23:
-        return new IterateContentsVariableReference_Editor();
+        return getIterateContentsVariableReferenceEditorAspect();
       case 24:
-        return new RemoveUIObjectStatement_Editor();
+        return getRemoveUIObjectStatementEditorAspect();
       case 25:
-        return new UIObjectProviderStatement_Editor();
+        return getUIObjectProviderStatementEditorAspect();
       case 26:
-        return new UIObjectReference_Editor();
+        return getUIObjectReferenceEditorAspect();
       case 27:
-        return new UIObjectStatement_Editor();
+        return getUIObjectStatementEditorAspect();
       case 28:
-        return new UIObjectType_Editor();
+        return getUIObjectTypeEditorAspect();
       case 29:
-        return new ValidateBlock_Editor();
+        return getValidateBlockEditorAspect();
       case 30:
-        return new ValidatingView_Editor();
+        return getValidatingViewEditorAspect();
       case 31:
-        return new Validator_Editor();
+        return getValidatorEditorAspect();
       case 32:
-        return new View_Editor();
+        return getViewEditorAspect();
       case 33:
-        return new ViewBinding_Editor();
+        return getViewBindingEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.ui.structure.AccessUIPropertyOperation", "jetbrains.mps.ui.structure.AppendUIObjectStatement", "jetbrains.mps.ui.structure.BeanPropertyView", "jetbrains.mps.ui.structure.CallUIActionOperation", "jetbrains.mps.ui.structure.ChildAspect", "jetbrains.mps.ui.structure.ClearCompartmentStatement", "jetbrains.mps.ui.structure.CompartmentProviderStatement", "jetbrains.mps.ui.structure.CompartmentReferenceExpression", "jetbrains.mps.ui.structure.ContainerCompartment", "jetbrains.mps.ui.structure.ContainerType", "jetbrains.mps.ui.structure.Controller", "jetbrains.mps.ui.structure.ControllerBinding", "jetbrains.mps.ui.structure.CreateUIObjectStatement", "jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression", "jetbrains.mps.ui.structure.EventPropertyAccessOp", "jetbrains.mps.ui.structure.EventType", "jetbrains.mps.ui.structure.ExpressionView", "jetbrains.mps.ui.structure.ForceLayoutStatement", "jetbrains.mps.ui.structure.FunctionParameterDeclaration", "jetbrains.mps.ui.structure.InlineController", "jetbrains.mps.ui.structure.InsertUIObjectStatement", "jetbrains.mps.ui.structure.IterateContentsStatement", "jetbrains.mps.ui.structure.IterateContentsVariable", "jetbrains.mps.ui.structure.IterateContentsVariableReference", "jetbrains.mps.ui.structure.RemoveUIObjectStatement", "jetbrains.mps.ui.structure.UIObjectProviderStatement", "jetbrains.mps.ui.structure.UIObjectReference", "jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.ui.structure.UIObjectType", "jetbrains.mps.ui.structure.ValidateBlock", "jetbrains.mps.ui.structure.ValidatingView", "jetbrains.mps.ui.structure.Validator", "jetbrains.mps.ui.structure.View", "jetbrains.mps.ui.structure.ViewBinding"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAccessUIPropertyOperationEditorAspect = null;
+    myAppendUIObjectStatementEditorAspect = null;
+    myBeanPropertyViewEditorAspect = null;
+    myCallUIActionOperationEditorAspect = null;
+    myChildAspectEditorAspect = null;
+    myClearCompartmentStatementEditorAspect = null;
+    myCompartmentProviderStatementEditorAspect = null;
+    myCompartmentReferenceExpressionEditorAspect = null;
+    myContainerCompartmentEditorAspect = null;
+    myContainerTypeEditorAspect = null;
+    myControllerEditorAspect = null;
+    myControllerBindingEditorAspect = null;
+    myCreateUIObjectStatementEditorAspect = null;
+    myEnclosingContextCompartmentExpressionEditorAspect = null;
+    myEventPropertyAccessOpEditorAspect = null;
+    myEventTypeEditorAspect = null;
+    myExpressionViewEditorAspect = null;
+    myForceLayoutStatementEditorAspect = null;
+    myFunctionParameterDeclarationEditorAspect = null;
+    myInlineControllerEditorAspect = null;
+    myInsertUIObjectStatementEditorAspect = null;
+    myIterateContentsStatementEditorAspect = null;
+    myIterateContentsVariableEditorAspect = null;
+    myIterateContentsVariableReferenceEditorAspect = null;
+    myRemoveUIObjectStatementEditorAspect = null;
+    myUIObjectProviderStatementEditorAspect = null;
+    myUIObjectReferenceEditorAspect = null;
+    myUIObjectStatementEditorAspect = null;
+    myUIObjectTypeEditorAspect = null;
+    myValidateBlockEditorAspect = null;
+    myValidatingViewEditorAspect = null;
+    myValidatorEditorAspect = null;
+    myViewEditorAspect = null;
+    myViewBindingEditorAspect = null;
+  }
+
+  private AccessUIPropertyOperation_Editor getAccessUIPropertyOperationEditorAspect() {
+    if (myAccessUIPropertyOperationEditorAspect == null) {
+      myAccessUIPropertyOperationEditorAspect = new AccessUIPropertyOperation_Editor();
+    }
+    return myAccessUIPropertyOperationEditorAspect;
+  }
+
+  private AppendUIObjectStatement_Editor getAppendUIObjectStatementEditorAspect() {
+    if (myAppendUIObjectStatementEditorAspect == null) {
+      myAppendUIObjectStatementEditorAspect = new AppendUIObjectStatement_Editor();
+    }
+    return myAppendUIObjectStatementEditorAspect;
+  }
+
+  private BeanPropertyView_Editor getBeanPropertyViewEditorAspect() {
+    if (myBeanPropertyViewEditorAspect == null) {
+      myBeanPropertyViewEditorAspect = new BeanPropertyView_Editor();
+    }
+    return myBeanPropertyViewEditorAspect;
+  }
+
+  private CallUIActionOperation_Editor getCallUIActionOperationEditorAspect() {
+    if (myCallUIActionOperationEditorAspect == null) {
+      myCallUIActionOperationEditorAspect = new CallUIActionOperation_Editor();
+    }
+    return myCallUIActionOperationEditorAspect;
+  }
+
+  private ChildAspect_Editor getChildAspectEditorAspect() {
+    if (myChildAspectEditorAspect == null) {
+      myChildAspectEditorAspect = new ChildAspect_Editor();
+    }
+    return myChildAspectEditorAspect;
+  }
+
+  private ClearCompartmentStatement_Editor getClearCompartmentStatementEditorAspect() {
+    if (myClearCompartmentStatementEditorAspect == null) {
+      myClearCompartmentStatementEditorAspect = new ClearCompartmentStatement_Editor();
+    }
+    return myClearCompartmentStatementEditorAspect;
+  }
+
+  private CompartmentProviderStatement_Editor getCompartmentProviderStatementEditorAspect() {
+    if (myCompartmentProviderStatementEditorAspect == null) {
+      myCompartmentProviderStatementEditorAspect = new CompartmentProviderStatement_Editor();
+    }
+    return myCompartmentProviderStatementEditorAspect;
+  }
+
+  private CompartmentReferenceExpression_Editor getCompartmentReferenceExpressionEditorAspect() {
+    if (myCompartmentReferenceExpressionEditorAspect == null) {
+      myCompartmentReferenceExpressionEditorAspect = new CompartmentReferenceExpression_Editor();
+    }
+    return myCompartmentReferenceExpressionEditorAspect;
+  }
+
+  private ContainerCompartment_Editor getContainerCompartmentEditorAspect() {
+    if (myContainerCompartmentEditorAspect == null) {
+      myContainerCompartmentEditorAspect = new ContainerCompartment_Editor();
+    }
+    return myContainerCompartmentEditorAspect;
+  }
+
+  private ContainerType_Editor getContainerTypeEditorAspect() {
+    if (myContainerTypeEditorAspect == null) {
+      myContainerTypeEditorAspect = new ContainerType_Editor();
+    }
+    return myContainerTypeEditorAspect;
+  }
+
+  private Controller_Editor getControllerEditorAspect() {
+    if (myControllerEditorAspect == null) {
+      myControllerEditorAspect = new Controller_Editor();
+    }
+    return myControllerEditorAspect;
+  }
+
+  private ControllerBinding_Editor getControllerBindingEditorAspect() {
+    if (myControllerBindingEditorAspect == null) {
+      myControllerBindingEditorAspect = new ControllerBinding_Editor();
+    }
+    return myControllerBindingEditorAspect;
+  }
+
+  private CreateUIObjectStatement_Editor getCreateUIObjectStatementEditorAspect() {
+    if (myCreateUIObjectStatementEditorAspect == null) {
+      myCreateUIObjectStatementEditorAspect = new CreateUIObjectStatement_Editor();
+    }
+    return myCreateUIObjectStatementEditorAspect;
+  }
+
+  private EnclosingContextCompartmentExpression_Editor getEnclosingContextCompartmentExpressionEditorAspect() {
+    if (myEnclosingContextCompartmentExpressionEditorAspect == null) {
+      myEnclosingContextCompartmentExpressionEditorAspect = new EnclosingContextCompartmentExpression_Editor();
+    }
+    return myEnclosingContextCompartmentExpressionEditorAspect;
+  }
+
+  private EventPropertyAccessOp_Editor getEventPropertyAccessOpEditorAspect() {
+    if (myEventPropertyAccessOpEditorAspect == null) {
+      myEventPropertyAccessOpEditorAspect = new EventPropertyAccessOp_Editor();
+    }
+    return myEventPropertyAccessOpEditorAspect;
+  }
+
+  private EventType_Editor getEventTypeEditorAspect() {
+    if (myEventTypeEditorAspect == null) {
+      myEventTypeEditorAspect = new EventType_Editor();
+    }
+    return myEventTypeEditorAspect;
+  }
+
+  private ExpressionView_Editor getExpressionViewEditorAspect() {
+    if (myExpressionViewEditorAspect == null) {
+      myExpressionViewEditorAspect = new ExpressionView_Editor();
+    }
+    return myExpressionViewEditorAspect;
+  }
+
+  private ForceLayoutStatement_Editor getForceLayoutStatementEditorAspect() {
+    if (myForceLayoutStatementEditorAspect == null) {
+      myForceLayoutStatementEditorAspect = new ForceLayoutStatement_Editor();
+    }
+    return myForceLayoutStatementEditorAspect;
+  }
+
+  private FunctionParameterDeclaration_Editor getFunctionParameterDeclarationEditorAspect() {
+    if (myFunctionParameterDeclarationEditorAspect == null) {
+      myFunctionParameterDeclarationEditorAspect = new FunctionParameterDeclaration_Editor();
+    }
+    return myFunctionParameterDeclarationEditorAspect;
+  }
+
+  private InlineController_Editor getInlineControllerEditorAspect() {
+    if (myInlineControllerEditorAspect == null) {
+      myInlineControllerEditorAspect = new InlineController_Editor();
+    }
+    return myInlineControllerEditorAspect;
+  }
+
+  private InsertUIObjectStatement_Editor getInsertUIObjectStatementEditorAspect() {
+    if (myInsertUIObjectStatementEditorAspect == null) {
+      myInsertUIObjectStatementEditorAspect = new InsertUIObjectStatement_Editor();
+    }
+    return myInsertUIObjectStatementEditorAspect;
+  }
+
+  private IterateContentsStatement_Editor getIterateContentsStatementEditorAspect() {
+    if (myIterateContentsStatementEditorAspect == null) {
+      myIterateContentsStatementEditorAspect = new IterateContentsStatement_Editor();
+    }
+    return myIterateContentsStatementEditorAspect;
+  }
+
+  private IterateContentsVariable_Editor getIterateContentsVariableEditorAspect() {
+    if (myIterateContentsVariableEditorAspect == null) {
+      myIterateContentsVariableEditorAspect = new IterateContentsVariable_Editor();
+    }
+    return myIterateContentsVariableEditorAspect;
+  }
+
+  private IterateContentsVariableReference_Editor getIterateContentsVariableReferenceEditorAspect() {
+    if (myIterateContentsVariableReferenceEditorAspect == null) {
+      myIterateContentsVariableReferenceEditorAspect = new IterateContentsVariableReference_Editor();
+    }
+    return myIterateContentsVariableReferenceEditorAspect;
+  }
+
+  private RemoveUIObjectStatement_Editor getRemoveUIObjectStatementEditorAspect() {
+    if (myRemoveUIObjectStatementEditorAspect == null) {
+      myRemoveUIObjectStatementEditorAspect = new RemoveUIObjectStatement_Editor();
+    }
+    return myRemoveUIObjectStatementEditorAspect;
+  }
+
+  private UIObjectProviderStatement_Editor getUIObjectProviderStatementEditorAspect() {
+    if (myUIObjectProviderStatementEditorAspect == null) {
+      myUIObjectProviderStatementEditorAspect = new UIObjectProviderStatement_Editor();
+    }
+    return myUIObjectProviderStatementEditorAspect;
+  }
+
+  private UIObjectReference_Editor getUIObjectReferenceEditorAspect() {
+    if (myUIObjectReferenceEditorAspect == null) {
+      myUIObjectReferenceEditorAspect = new UIObjectReference_Editor();
+    }
+    return myUIObjectReferenceEditorAspect;
+  }
+
+  private UIObjectStatement_Editor getUIObjectStatementEditorAspect() {
+    if (myUIObjectStatementEditorAspect == null) {
+      myUIObjectStatementEditorAspect = new UIObjectStatement_Editor();
+    }
+    return myUIObjectStatementEditorAspect;
+  }
+
+  private UIObjectType_Editor getUIObjectTypeEditorAspect() {
+    if (myUIObjectTypeEditorAspect == null) {
+      myUIObjectTypeEditorAspect = new UIObjectType_Editor();
+    }
+    return myUIObjectTypeEditorAspect;
+  }
+
+  private ValidateBlock_Editor getValidateBlockEditorAspect() {
+    if (myValidateBlockEditorAspect == null) {
+      myValidateBlockEditorAspect = new ValidateBlock_Editor();
+    }
+    return myValidateBlockEditorAspect;
+  }
+
+  private ValidatingView_Editor getValidatingViewEditorAspect() {
+    if (myValidatingViewEditorAspect == null) {
+      myValidatingViewEditorAspect = new ValidatingView_Editor();
+    }
+    return myValidatingViewEditorAspect;
+  }
+
+  private Validator_Editor getValidatorEditorAspect() {
+    if (myValidatorEditorAspect == null) {
+      myValidatorEditorAspect = new Validator_Editor();
+    }
+    return myValidatorEditorAspect;
+  }
+
+  private View_Editor getViewEditorAspect() {
+    if (myViewEditorAspect == null) {
+      myViewEditorAspect = new View_Editor();
+    }
+    return myViewEditorAspect;
+  }
+
+  private ViewBinding_Editor getViewBindingEditorAspect() {
+    if (myViewBindingEditorAspect == null) {
+      myViewBindingEditorAspect = new ViewBinding_Editor();
+    }
+    return myViewBindingEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0ib = new String[]{"jetbrains.mps.ui.structure.AccessUIPropertyOperation", "jetbrains.mps.ui.structure.AppendUIObjectStatement", "jetbrains.mps.ui.structure.BeanPropertyView", "jetbrains.mps.ui.structure.CallUIActionOperation", "jetbrains.mps.ui.structure.ChildAspect", "jetbrains.mps.ui.structure.ClearCompartmentStatement", "jetbrains.mps.ui.structure.CompartmentProviderStatement", "jetbrains.mps.ui.structure.CompartmentReferenceExpression", "jetbrains.mps.ui.structure.ContainerCompartment", "jetbrains.mps.ui.structure.ContainerType", "jetbrains.mps.ui.structure.Controller", "jetbrains.mps.ui.structure.ControllerBinding", "jetbrains.mps.ui.structure.CreateUIObjectStatement", "jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression", "jetbrains.mps.ui.structure.EventPropertyAccessOp", "jetbrains.mps.ui.structure.EventType", "jetbrains.mps.ui.structure.ExpressionView", "jetbrains.mps.ui.structure.ForceLayoutStatement", "jetbrains.mps.ui.structure.FunctionParameterDeclaration", "jetbrains.mps.ui.structure.InlineController", "jetbrains.mps.ui.structure.InsertUIObjectStatement", "jetbrains.mps.ui.structure.IterateContentsStatement", "jetbrains.mps.ui.structure.IterateContentsVariable", "jetbrains.mps.ui.structure.IterateContentsVariableReference", "jetbrains.mps.ui.structure.RemoveUIObjectStatement", "jetbrains.mps.ui.structure.UIObjectProviderStatement", "jetbrains.mps.ui.structure.UIObjectReference", "jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.ui.structure.UIObjectType", "jetbrains.mps.ui.structure.ValidateBlock", "jetbrains.mps.ui.structure.ValidatingView", "jetbrains.mps.ui.structure.Validator", "jetbrains.mps.ui.structure.View", "jetbrains.mps.ui.structure.ViewBinding"};
 }

@@ -8,48 +8,218 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ActionAsPattern_Editor myActionAsPatternEditorAspect;
+  private AsPattern_Editor myAsPatternEditorAspect;
+  private GeneratorInternal_ChildDescriptor_Editor myGeneratorInternal_ChildDescriptorEditorAspect;
+  private GeneratorInternal_PropertyDescriptor_Editor myGeneratorInternal_PropertyDescriptorEditorAspect;
+  private GeneratorInternal_ReferenceDescriptor_Editor myGeneratorInternal_ReferenceDescriptorEditorAspect;
+  private InsertAfterPosition_Editor myInsertAfterPositionEditorAspect;
+  private InsertBeforePosition_Editor myInsertBeforePositionEditorAspect;
+  private LinkPatternVariableDeclaration_Editor myLinkPatternVariableDeclarationEditorAspect;
+  private ListPattern_Editor myListPatternEditorAspect;
+  private OrPattern_Editor myOrPatternEditorAspect;
+  private OrPatternClause_Editor myOrPatternClauseEditorAspect;
+  private OrPatternVariableReference_Editor myOrPatternVariableReferenceEditorAspect;
+  private Pattern_Editor myPatternEditorAspect;
+  private PatternExpression_Editor myPatternExpressionEditorAspect;
+  private PatternVariableDeclaration_Editor myPatternVariableDeclarationEditorAspect;
+  private PatternVariableReference_Editor myPatternVariableReferenceEditorAspect;
+  private PropertyPatternVariableDeclaration_Editor myPropertyPatternVariableDeclarationEditorAspect;
+  private WildcardPattern_Editor myWildcardPatternEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0s, descriptor.getConceptFqName())) {
       case 0:
-        return new ActionAsPattern_Editor();
+        return getActionAsPatternEditorAspect();
       case 1:
-        return new AsPattern_Editor();
+        return getAsPatternEditorAspect();
       case 2:
-        return new GeneratorInternal_ChildDescriptor_Editor();
+        return getGeneratorInternal_ChildDescriptorEditorAspect();
       case 3:
-        return new GeneratorInternal_PropertyDescriptor_Editor();
+        return getGeneratorInternal_PropertyDescriptorEditorAspect();
       case 4:
-        return new GeneratorInternal_ReferenceDescriptor_Editor();
+        return getGeneratorInternal_ReferenceDescriptorEditorAspect();
       case 5:
-        return new InsertAfterPosition_Editor();
+        return getInsertAfterPositionEditorAspect();
       case 6:
-        return new InsertBeforePosition_Editor();
+        return getInsertBeforePositionEditorAspect();
       case 7:
-        return new LinkPatternVariableDeclaration_Editor();
+        return getLinkPatternVariableDeclarationEditorAspect();
       case 8:
-        return new ListPattern_Editor();
+        return getListPatternEditorAspect();
       case 9:
-        return new OrPattern_Editor();
+        return getOrPatternEditorAspect();
       case 10:
-        return new OrPatternClause_Editor();
+        return getOrPatternClauseEditorAspect();
       case 11:
-        return new OrPatternVariableReference_Editor();
+        return getOrPatternVariableReferenceEditorAspect();
       case 12:
-        return new Pattern_Editor();
+        return getPatternEditorAspect();
       case 13:
-        return new PatternExpression_Editor();
+        return getPatternExpressionEditorAspect();
       case 14:
-        return new PatternVariableDeclaration_Editor();
+        return getPatternVariableDeclarationEditorAspect();
       case 15:
-        return new PatternVariableReference_Editor();
+        return getPatternVariableReferenceEditorAspect();
       case 16:
-        return new PropertyPatternVariableDeclaration_Editor();
+        return getPropertyPatternVariableDeclarationEditorAspect();
       case 17:
-        return new WildcardPattern_Editor();
+        return getWildcardPatternEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.pattern.structure.ActionAsPattern", "jetbrains.mps.lang.pattern.structure.AsPattern", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor", "jetbrains.mps.lang.pattern.structure.InsertAfterPosition", "jetbrains.mps.lang.pattern.structure.InsertBeforePosition", "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.ListPattern", "jetbrains.mps.lang.pattern.structure.OrPattern", "jetbrains.mps.lang.pattern.structure.OrPatternClause", "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference", "jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.pattern.structure.PatternExpression", "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.PatternVariableReference", "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.WildcardPattern"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myActionAsPatternEditorAspect = null;
+    myAsPatternEditorAspect = null;
+    myGeneratorInternal_ChildDescriptorEditorAspect = null;
+    myGeneratorInternal_PropertyDescriptorEditorAspect = null;
+    myGeneratorInternal_ReferenceDescriptorEditorAspect = null;
+    myInsertAfterPositionEditorAspect = null;
+    myInsertBeforePositionEditorAspect = null;
+    myLinkPatternVariableDeclarationEditorAspect = null;
+    myListPatternEditorAspect = null;
+    myOrPatternEditorAspect = null;
+    myOrPatternClauseEditorAspect = null;
+    myOrPatternVariableReferenceEditorAspect = null;
+    myPatternEditorAspect = null;
+    myPatternExpressionEditorAspect = null;
+    myPatternVariableDeclarationEditorAspect = null;
+    myPatternVariableReferenceEditorAspect = null;
+    myPropertyPatternVariableDeclarationEditorAspect = null;
+    myWildcardPatternEditorAspect = null;
+  }
+
+  private ActionAsPattern_Editor getActionAsPatternEditorAspect() {
+    if (myActionAsPatternEditorAspect == null) {
+      myActionAsPatternEditorAspect = new ActionAsPattern_Editor();
+    }
+    return myActionAsPatternEditorAspect;
+  }
+
+  private AsPattern_Editor getAsPatternEditorAspect() {
+    if (myAsPatternEditorAspect == null) {
+      myAsPatternEditorAspect = new AsPattern_Editor();
+    }
+    return myAsPatternEditorAspect;
+  }
+
+  private GeneratorInternal_ChildDescriptor_Editor getGeneratorInternal_ChildDescriptorEditorAspect() {
+    if (myGeneratorInternal_ChildDescriptorEditorAspect == null) {
+      myGeneratorInternal_ChildDescriptorEditorAspect = new GeneratorInternal_ChildDescriptor_Editor();
+    }
+    return myGeneratorInternal_ChildDescriptorEditorAspect;
+  }
+
+  private GeneratorInternal_PropertyDescriptor_Editor getGeneratorInternal_PropertyDescriptorEditorAspect() {
+    if (myGeneratorInternal_PropertyDescriptorEditorAspect == null) {
+      myGeneratorInternal_PropertyDescriptorEditorAspect = new GeneratorInternal_PropertyDescriptor_Editor();
+    }
+    return myGeneratorInternal_PropertyDescriptorEditorAspect;
+  }
+
+  private GeneratorInternal_ReferenceDescriptor_Editor getGeneratorInternal_ReferenceDescriptorEditorAspect() {
+    if (myGeneratorInternal_ReferenceDescriptorEditorAspect == null) {
+      myGeneratorInternal_ReferenceDescriptorEditorAspect = new GeneratorInternal_ReferenceDescriptor_Editor();
+    }
+    return myGeneratorInternal_ReferenceDescriptorEditorAspect;
+  }
+
+  private InsertAfterPosition_Editor getInsertAfterPositionEditorAspect() {
+    if (myInsertAfterPositionEditorAspect == null) {
+      myInsertAfterPositionEditorAspect = new InsertAfterPosition_Editor();
+    }
+    return myInsertAfterPositionEditorAspect;
+  }
+
+  private InsertBeforePosition_Editor getInsertBeforePositionEditorAspect() {
+    if (myInsertBeforePositionEditorAspect == null) {
+      myInsertBeforePositionEditorAspect = new InsertBeforePosition_Editor();
+    }
+    return myInsertBeforePositionEditorAspect;
+  }
+
+  private LinkPatternVariableDeclaration_Editor getLinkPatternVariableDeclarationEditorAspect() {
+    if (myLinkPatternVariableDeclarationEditorAspect == null) {
+      myLinkPatternVariableDeclarationEditorAspect = new LinkPatternVariableDeclaration_Editor();
+    }
+    return myLinkPatternVariableDeclarationEditorAspect;
+  }
+
+  private ListPattern_Editor getListPatternEditorAspect() {
+    if (myListPatternEditorAspect == null) {
+      myListPatternEditorAspect = new ListPattern_Editor();
+    }
+    return myListPatternEditorAspect;
+  }
+
+  private OrPattern_Editor getOrPatternEditorAspect() {
+    if (myOrPatternEditorAspect == null) {
+      myOrPatternEditorAspect = new OrPattern_Editor();
+    }
+    return myOrPatternEditorAspect;
+  }
+
+  private OrPatternClause_Editor getOrPatternClauseEditorAspect() {
+    if (myOrPatternClauseEditorAspect == null) {
+      myOrPatternClauseEditorAspect = new OrPatternClause_Editor();
+    }
+    return myOrPatternClauseEditorAspect;
+  }
+
+  private OrPatternVariableReference_Editor getOrPatternVariableReferenceEditorAspect() {
+    if (myOrPatternVariableReferenceEditorAspect == null) {
+      myOrPatternVariableReferenceEditorAspect = new OrPatternVariableReference_Editor();
+    }
+    return myOrPatternVariableReferenceEditorAspect;
+  }
+
+  private Pattern_Editor getPatternEditorAspect() {
+    if (myPatternEditorAspect == null) {
+      myPatternEditorAspect = new Pattern_Editor();
+    }
+    return myPatternEditorAspect;
+  }
+
+  private PatternExpression_Editor getPatternExpressionEditorAspect() {
+    if (myPatternExpressionEditorAspect == null) {
+      myPatternExpressionEditorAspect = new PatternExpression_Editor();
+    }
+    return myPatternExpressionEditorAspect;
+  }
+
+  private PatternVariableDeclaration_Editor getPatternVariableDeclarationEditorAspect() {
+    if (myPatternVariableDeclarationEditorAspect == null) {
+      myPatternVariableDeclarationEditorAspect = new PatternVariableDeclaration_Editor();
+    }
+    return myPatternVariableDeclarationEditorAspect;
+  }
+
+  private PatternVariableReference_Editor getPatternVariableReferenceEditorAspect() {
+    if (myPatternVariableReferenceEditorAspect == null) {
+      myPatternVariableReferenceEditorAspect = new PatternVariableReference_Editor();
+    }
+    return myPatternVariableReferenceEditorAspect;
+  }
+
+  private PropertyPatternVariableDeclaration_Editor getPropertyPatternVariableDeclarationEditorAspect() {
+    if (myPropertyPatternVariableDeclarationEditorAspect == null) {
+      myPropertyPatternVariableDeclarationEditorAspect = new PropertyPatternVariableDeclaration_Editor();
+    }
+    return myPropertyPatternVariableDeclarationEditorAspect;
+  }
+
+  private WildcardPattern_Editor getWildcardPatternEditorAspect() {
+    if (myWildcardPatternEditorAspect == null) {
+      myWildcardPatternEditorAspect = new WildcardPattern_Editor();
+    }
+    return myWildcardPatternEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0s = new String[]{"jetbrains.mps.lang.pattern.structure.ActionAsPattern", "jetbrains.mps.lang.pattern.structure.AsPattern", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor", "jetbrains.mps.lang.pattern.structure.InsertAfterPosition", "jetbrains.mps.lang.pattern.structure.InsertBeforePosition", "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.ListPattern", "jetbrains.mps.lang.pattern.structure.OrPattern", "jetbrains.mps.lang.pattern.structure.OrPatternClause", "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference", "jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.pattern.structure.PatternExpression", "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.PatternVariableReference", "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.WildcardPattern"};
 }

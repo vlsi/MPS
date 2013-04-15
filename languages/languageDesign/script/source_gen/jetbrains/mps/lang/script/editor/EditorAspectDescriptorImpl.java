@@ -8,34 +8,141 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CommentMigrationScriptPart_Editor myCommentMigrationScriptPartEditorAspect;
+  private DirectClassifierSpecification_Editor myDirectClassifierSpecificationEditorAspect;
+  private DirectMethodSpecification_Editor myDirectMethodSpecificationEditorAspect;
+  private ExtractInterfaceMigration_Editor myExtractInterfaceMigrationEditorAspect;
+  private FQNameClassifierSpecification_Editor myFQNameClassifierSpecificationEditorAspect;
+  private FQNameMethodSpecification_Editor myFQNameMethodSpecificationEditorAspect;
+  private FactoryMigrationScriptPart_Editor myFactoryMigrationScriptPartEditorAspect;
+  private MigrationScript_Editor myMigrationScriptEditorAspect;
+  private MigrationScriptPart_Instance_Editor myMigrationScriptPart_InstanceEditorAspect;
+  private PullUpMethod_Editor myPullUpMethodEditorAspect;
+  private WhitespaceMigrationScriptPart_Editor myWhitespaceMigrationScriptPartEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0l, descriptor.getConceptFqName())) {
       case 0:
-        return new CommentMigrationScriptPart_Editor();
+        return getCommentMigrationScriptPartEditorAspect();
       case 1:
-        return new DirectClassifierSpecification_Editor();
+        return getDirectClassifierSpecificationEditorAspect();
       case 2:
-        return new DirectMethodSpecification_Editor();
+        return getDirectMethodSpecificationEditorAspect();
       case 3:
-        return new ExtractInterfaceMigration_Editor();
+        return getExtractInterfaceMigrationEditorAspect();
       case 4:
-        return new FQNameClassifierSpecification_Editor();
+        return getFQNameClassifierSpecificationEditorAspect();
       case 5:
-        return new FQNameMethodSpecification_Editor();
+        return getFQNameMethodSpecificationEditorAspect();
       case 6:
-        return new FactoryMigrationScriptPart_Editor();
+        return getFactoryMigrationScriptPartEditorAspect();
       case 7:
-        return new MigrationScript_Editor();
+        return getMigrationScriptEditorAspect();
       case 8:
-        return new MigrationScriptPart_Instance_Editor();
+        return getMigrationScriptPart_InstanceEditorAspect();
       case 9:
-        return new PullUpMethod_Editor();
+        return getPullUpMethodEditorAspect();
       case 10:
-        return new WhitespaceMigrationScriptPart_Editor();
+        return getWhitespaceMigrationScriptPartEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.script.structure.CommentMigrationScriptPart", "jetbrains.mps.lang.script.structure.DirectClassifierSpecification", "jetbrains.mps.lang.script.structure.DirectMethodSpecification", "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification", "jetbrains.mps.lang.script.structure.FQNameMethodSpecification", "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.script.structure.PullUpMethod", "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCommentMigrationScriptPartEditorAspect = null;
+    myDirectClassifierSpecificationEditorAspect = null;
+    myDirectMethodSpecificationEditorAspect = null;
+    myExtractInterfaceMigrationEditorAspect = null;
+    myFQNameClassifierSpecificationEditorAspect = null;
+    myFQNameMethodSpecificationEditorAspect = null;
+    myFactoryMigrationScriptPartEditorAspect = null;
+    myMigrationScriptEditorAspect = null;
+    myMigrationScriptPart_InstanceEditorAspect = null;
+    myPullUpMethodEditorAspect = null;
+    myWhitespaceMigrationScriptPartEditorAspect = null;
+  }
+
+  private CommentMigrationScriptPart_Editor getCommentMigrationScriptPartEditorAspect() {
+    if (myCommentMigrationScriptPartEditorAspect == null) {
+      myCommentMigrationScriptPartEditorAspect = new CommentMigrationScriptPart_Editor();
+    }
+    return myCommentMigrationScriptPartEditorAspect;
+  }
+
+  private DirectClassifierSpecification_Editor getDirectClassifierSpecificationEditorAspect() {
+    if (myDirectClassifierSpecificationEditorAspect == null) {
+      myDirectClassifierSpecificationEditorAspect = new DirectClassifierSpecification_Editor();
+    }
+    return myDirectClassifierSpecificationEditorAspect;
+  }
+
+  private DirectMethodSpecification_Editor getDirectMethodSpecificationEditorAspect() {
+    if (myDirectMethodSpecificationEditorAspect == null) {
+      myDirectMethodSpecificationEditorAspect = new DirectMethodSpecification_Editor();
+    }
+    return myDirectMethodSpecificationEditorAspect;
+  }
+
+  private ExtractInterfaceMigration_Editor getExtractInterfaceMigrationEditorAspect() {
+    if (myExtractInterfaceMigrationEditorAspect == null) {
+      myExtractInterfaceMigrationEditorAspect = new ExtractInterfaceMigration_Editor();
+    }
+    return myExtractInterfaceMigrationEditorAspect;
+  }
+
+  private FQNameClassifierSpecification_Editor getFQNameClassifierSpecificationEditorAspect() {
+    if (myFQNameClassifierSpecificationEditorAspect == null) {
+      myFQNameClassifierSpecificationEditorAspect = new FQNameClassifierSpecification_Editor();
+    }
+    return myFQNameClassifierSpecificationEditorAspect;
+  }
+
+  private FQNameMethodSpecification_Editor getFQNameMethodSpecificationEditorAspect() {
+    if (myFQNameMethodSpecificationEditorAspect == null) {
+      myFQNameMethodSpecificationEditorAspect = new FQNameMethodSpecification_Editor();
+    }
+    return myFQNameMethodSpecificationEditorAspect;
+  }
+
+  private FactoryMigrationScriptPart_Editor getFactoryMigrationScriptPartEditorAspect() {
+    if (myFactoryMigrationScriptPartEditorAspect == null) {
+      myFactoryMigrationScriptPartEditorAspect = new FactoryMigrationScriptPart_Editor();
+    }
+    return myFactoryMigrationScriptPartEditorAspect;
+  }
+
+  private MigrationScript_Editor getMigrationScriptEditorAspect() {
+    if (myMigrationScriptEditorAspect == null) {
+      myMigrationScriptEditorAspect = new MigrationScript_Editor();
+    }
+    return myMigrationScriptEditorAspect;
+  }
+
+  private MigrationScriptPart_Instance_Editor getMigrationScriptPart_InstanceEditorAspect() {
+    if (myMigrationScriptPart_InstanceEditorAspect == null) {
+      myMigrationScriptPart_InstanceEditorAspect = new MigrationScriptPart_Instance_Editor();
+    }
+    return myMigrationScriptPart_InstanceEditorAspect;
+  }
+
+  private PullUpMethod_Editor getPullUpMethodEditorAspect() {
+    if (myPullUpMethodEditorAspect == null) {
+      myPullUpMethodEditorAspect = new PullUpMethod_Editor();
+    }
+    return myPullUpMethodEditorAspect;
+  }
+
+  private WhitespaceMigrationScriptPart_Editor getWhitespaceMigrationScriptPartEditorAspect() {
+    if (myWhitespaceMigrationScriptPartEditorAspect == null) {
+      myWhitespaceMigrationScriptPartEditorAspect = new WhitespaceMigrationScriptPart_Editor();
+    }
+    return myWhitespaceMigrationScriptPartEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0l = new String[]{"jetbrains.mps.lang.script.structure.CommentMigrationScriptPart", "jetbrains.mps.lang.script.structure.DirectClassifierSpecification", "jetbrains.mps.lang.script.structure.DirectMethodSpecification", "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification", "jetbrains.mps.lang.script.structure.FQNameMethodSpecification", "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.script.structure.PullUpMethod", "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"};
 }

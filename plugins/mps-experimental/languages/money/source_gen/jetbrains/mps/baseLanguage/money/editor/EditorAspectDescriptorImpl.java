@@ -8,18 +8,53 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private MoneyCreator_Editor myMoneyCreatorEditorAspect;
+  private MoneyLiteral_Editor myMoneyLiteralEditorAspect;
+  private MoneyMethodCall_Editor myMoneyMethodCallEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        return new MoneyCreator_Editor();
+        return getMoneyCreatorEditorAspect();
       case 1:
-        return new MoneyLiteral_Editor();
+        return getMoneyLiteralEditorAspect();
       case 2:
-        return new MoneyMethodCall_Editor();
+        return getMoneyMethodCallEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyCreator", "jetbrains.mps.baseLanguage.money.structure.MoneyLiteral", "jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myMoneyCreatorEditorAspect = null;
+    myMoneyLiteralEditorAspect = null;
+    myMoneyMethodCallEditorAspect = null;
+  }
+
+  private MoneyCreator_Editor getMoneyCreatorEditorAspect() {
+    if (myMoneyCreatorEditorAspect == null) {
+      myMoneyCreatorEditorAspect = new MoneyCreator_Editor();
+    }
+    return myMoneyCreatorEditorAspect;
+  }
+
+  private MoneyLiteral_Editor getMoneyLiteralEditorAspect() {
+    if (myMoneyLiteralEditorAspect == null) {
+      myMoneyLiteralEditorAspect = new MoneyLiteral_Editor();
+    }
+    return myMoneyLiteralEditorAspect;
+  }
+
+  private MoneyMethodCall_Editor getMoneyMethodCallEditorAspect() {
+    if (myMoneyMethodCallEditorAspect == null) {
+      myMoneyMethodCallEditorAspect = new MoneyMethodCall_Editor();
+    }
+    return myMoneyMethodCallEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyCreator", "jetbrains.mps.baseLanguage.money.structure.MoneyLiteral", "jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"};
 }

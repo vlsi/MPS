@@ -8,28 +8,108 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CheckCancelledStatusStatement_Editor myCheckCancelledStatusStatementEditorAspect;
+  private ExecuteFinderExpression_Editor myExecuteFinderExpressionEditorAspect;
+  private ExecuteFindersGetSearchResults_Editor myExecuteFindersGetSearchResultsEditorAspect;
+  private FinderDeclaration_Editor myFinderDeclarationEditorAspect;
+  private FinderReference_Editor myFinderReferenceEditorAspect;
+  private MakeResultProvider_Editor myMakeResultProviderEditorAspect;
+  private NodeStatement_Editor myNodeStatementEditorAspect;
+  private ResultStatement_Editor myResultStatementEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0i, descriptor.getConceptFqName())) {
       case 0:
-        return new CheckCancelledStatusStatement_Editor();
+        return getCheckCancelledStatusStatementEditorAspect();
       case 1:
-        return new ExecuteFinderExpression_Editor();
+        return getExecuteFinderExpressionEditorAspect();
       case 2:
-        return new ExecuteFindersGetSearchResults_Editor();
+        return getExecuteFindersGetSearchResultsEditorAspect();
       case 3:
-        return new FinderDeclaration_Editor();
+        return getFinderDeclarationEditorAspect();
       case 4:
-        return new FinderReference_Editor();
+        return getFinderReferenceEditorAspect();
       case 5:
-        return new MakeResultProvider_Editor();
+        return getMakeResultProviderEditorAspect();
       case 6:
-        return new NodeStatement_Editor();
+        return getNodeStatementEditorAspect();
       case 7:
-        return new ResultStatement_Editor();
+        return getResultStatementEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement", "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression", "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults", "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "jetbrains.mps.lang.findUsages.structure.FinderReference", "jetbrains.mps.lang.findUsages.structure.MakeResultProvider", "jetbrains.mps.lang.findUsages.structure.NodeStatement", "jetbrains.mps.lang.findUsages.structure.ResultStatement"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCheckCancelledStatusStatementEditorAspect = null;
+    myExecuteFinderExpressionEditorAspect = null;
+    myExecuteFindersGetSearchResultsEditorAspect = null;
+    myFinderDeclarationEditorAspect = null;
+    myFinderReferenceEditorAspect = null;
+    myMakeResultProviderEditorAspect = null;
+    myNodeStatementEditorAspect = null;
+    myResultStatementEditorAspect = null;
+  }
+
+  private CheckCancelledStatusStatement_Editor getCheckCancelledStatusStatementEditorAspect() {
+    if (myCheckCancelledStatusStatementEditorAspect == null) {
+      myCheckCancelledStatusStatementEditorAspect = new CheckCancelledStatusStatement_Editor();
+    }
+    return myCheckCancelledStatusStatementEditorAspect;
+  }
+
+  private ExecuteFinderExpression_Editor getExecuteFinderExpressionEditorAspect() {
+    if (myExecuteFinderExpressionEditorAspect == null) {
+      myExecuteFinderExpressionEditorAspect = new ExecuteFinderExpression_Editor();
+    }
+    return myExecuteFinderExpressionEditorAspect;
+  }
+
+  private ExecuteFindersGetSearchResults_Editor getExecuteFindersGetSearchResultsEditorAspect() {
+    if (myExecuteFindersGetSearchResultsEditorAspect == null) {
+      myExecuteFindersGetSearchResultsEditorAspect = new ExecuteFindersGetSearchResults_Editor();
+    }
+    return myExecuteFindersGetSearchResultsEditorAspect;
+  }
+
+  private FinderDeclaration_Editor getFinderDeclarationEditorAspect() {
+    if (myFinderDeclarationEditorAspect == null) {
+      myFinderDeclarationEditorAspect = new FinderDeclaration_Editor();
+    }
+    return myFinderDeclarationEditorAspect;
+  }
+
+  private FinderReference_Editor getFinderReferenceEditorAspect() {
+    if (myFinderReferenceEditorAspect == null) {
+      myFinderReferenceEditorAspect = new FinderReference_Editor();
+    }
+    return myFinderReferenceEditorAspect;
+  }
+
+  private MakeResultProvider_Editor getMakeResultProviderEditorAspect() {
+    if (myMakeResultProviderEditorAspect == null) {
+      myMakeResultProviderEditorAspect = new MakeResultProvider_Editor();
+    }
+    return myMakeResultProviderEditorAspect;
+  }
+
+  private NodeStatement_Editor getNodeStatementEditorAspect() {
+    if (myNodeStatementEditorAspect == null) {
+      myNodeStatementEditorAspect = new NodeStatement_Editor();
+    }
+    return myNodeStatementEditorAspect;
+  }
+
+  private ResultStatement_Editor getResultStatementEditorAspect() {
+    if (myResultStatementEditorAspect == null) {
+      myResultStatementEditorAspect = new ResultStatement_Editor();
+    }
+    return myResultStatementEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0i = new String[]{"jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement", "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression", "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults", "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "jetbrains.mps.lang.findUsages.structure.FinderReference", "jetbrains.mps.lang.findUsages.structure.MakeResultProvider", "jetbrains.mps.lang.findUsages.structure.NodeStatement", "jetbrains.mps.lang.findUsages.structure.ResultStatement"};
 }

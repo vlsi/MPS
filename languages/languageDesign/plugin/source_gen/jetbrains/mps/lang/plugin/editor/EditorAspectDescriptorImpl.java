@@ -8,140 +8,724 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ActionAccessOperation_Editor myActionAccessOperationEditorAspect;
+  private ActionConstructionParameterDeclaration_Editor myActionConstructionParameterDeclarationEditorAspect;
+  private ActionConstructorParameterReferenceOperation_Editor myActionConstructorParameterReferenceOperationEditorAspect;
+  private ActionDataParameterDeclaration_Editor myActionDataParameterDeclarationEditorAspect;
+  private ActionDataParameterReferenceOperation_Editor myActionDataParameterReferenceOperationEditorAspect;
+  private ActionDeclaration_Editor myActionDeclarationEditorAspect;
+  private ActionGroupDeclaration_Editor myActionGroupDeclarationEditorAspect;
+  private ActionGroupRef_Editor myActionGroupRefEditorAspect;
+  private ActionInstance_Editor myActionInstanceEditorAspect;
+  private ActionParameterDeclaration_Editor myActionParameterDeclarationEditorAspect;
+  private ActionParameterReferenceOperation_Editor myActionParameterReferenceOperationEditorAspect;
+  private ActionReference_Editor myActionReferenceEditorAspect;
+  private ActionType_Editor myActionTypeEditorAspect;
+  private AddElementStatement_Editor myAddElementStatementEditorAspect;
+  private AddKeystrokeStatement_Editor myAddKeystrokeStatementEditorAspect;
+  private AddStatement_Editor myAddStatementEditorAspect;
+  private AddTabOperation_Editor myAddTabOperationEditorAspect;
+  private ButtonCreator_Editor myButtonCreatorEditorAspect;
+  private CloseTabOperation_Editor myCloseTabOperationEditorAspect;
+  private ConceptCondition_Editor myConceptConditionEditorAspect;
+  private CreateTabBlock_Editor myCreateTabBlockEditorAspect;
+  private EditableModel_Editor myEditableModelEditorAspect;
+  private EditorTab_Editor myEditorTabEditorAspect;
+  private EditorTabReference_Editor myEditorTabReferenceEditorAspect;
+  private ElementListContents_Editor myElementListContentsEditorAspect;
+  private EverywhereActionPlace_Editor myEverywhereActionPlaceEditorAspect;
+  private GetGroupOperation_Editor myGetGroupOperationEditorAspect;
+  private GetSelectedTabOperation_Editor myGetSelectedTabOperationEditorAspect;
+  private GroupAccessOperation_Editor myGroupAccessOperationEditorAspect;
+  private GroupAnchor_Editor myGroupAnchorEditorAspect;
+  private GroupType_Editor myGroupTypeEditorAspect;
+  private IdeaActionsDescriptor_Editor myIdeaActionsDescriptorEditorAspect;
+  private IdeaConfigurationXml_Editor myIdeaConfigurationXmlEditorAspect;
+  private IdeaInitializerDescriptor_Editor myIdeaInitializerDescriptorEditorAspect;
+  private IdeaPluginDependency_Editor myIdeaPluginDependencyEditorAspect;
+  private InterfaceExtentionPoint_Editor myInterfaceExtentionPointEditorAspect;
+  private InterfaceGroup_Editor myInterfaceGroupEditorAspect;
+  private KeyMapKeystroke_Editor myKeyMapKeystrokeEditorAspect;
+  private KeyStrokeType_Editor myKeyStrokeTypeEditorAspect;
+  private KeymapChangesDeclaration_Editor myKeymapChangesDeclarationEditorAspect;
+  private KeymapRef_Editor myKeymapRefEditorAspect;
+  private MPSPluginDependency_Editor myMPSPluginDependencyEditorAspect;
+  private ModificationStatement_Editor myModificationStatementEditorAspect;
+  private NonDumbAwareActions_Editor myNonDumbAwareActionsEditorAspect;
+  private Order_Editor myOrderEditorAspect;
+  private OrderReference_Editor myOrderReferenceEditorAspect;
+  private ParameterizedShortcutChange_Editor myParameterizedShortcutChangeEditorAspect;
+  private PersistentPropertyDeclaration_Editor myPersistentPropertyDeclarationEditorAspect;
+  private PersistentPropertyReference_Editor myPersistentPropertyReferenceEditorAspect;
+  private PopupCreator_Editor myPopupCreatorEditorAspect;
+  private PreferencePage_Editor myPreferencePageEditorAspect;
+  private PreferencesComponentDeclaration_Editor myPreferencesComponentDeclarationEditorAspect;
+  private PreferencesComponentType_Editor myPreferencesComponentTypeEditorAspect;
+  private RequiredCondition_Editor myRequiredConditionEditorAspect;
+  private Separator_Editor mySeparatorEditorAspect;
+  private SimpleShortcutChange_Editor mySimpleShortcutChangeEditorAspect;
+  private SmartDisposeClosureParameterDeclaration_Editor mySmartDisposeClosureParameterDeclarationEditorAspect;
+  private TabbedToolDeclaration_Editor myTabbedToolDeclarationEditorAspect;
+  private ToolDeclaration_Editor myToolDeclarationEditorAspect;
+  private ToolInstanceExpression_Editor myToolInstanceExpressionEditorAspect;
+  private ToolTab_Editor myToolTabEditorAspect;
+  private ToolType_Editor myToolTypeEditorAspect;
+  private ToolbarCreator_Editor myToolbarCreatorEditorAspect;
+  private UpdateGroupBlock_Editor myUpdateGroupBlockEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0mc, descriptor.getConceptFqName())) {
       case 0:
-        return new ActionAccessOperation_Editor();
+        return getActionAccessOperationEditorAspect();
       case 1:
-        return new ActionConstructionParameterDeclaration_Editor();
+        return getActionConstructionParameterDeclarationEditorAspect();
       case 2:
-        return new ActionConstructorParameterReferenceOperation_Editor();
+        return getActionConstructorParameterReferenceOperationEditorAspect();
       case 3:
-        return new ActionDataParameterDeclaration_Editor();
+        return getActionDataParameterDeclarationEditorAspect();
       case 4:
-        return new ActionDataParameterReferenceOperation_Editor();
+        return getActionDataParameterReferenceOperationEditorAspect();
       case 5:
-        return new ActionDeclaration_Editor();
+        return getActionDeclarationEditorAspect();
       case 6:
-        return new ActionGroupDeclaration_Editor();
+        return getActionGroupDeclarationEditorAspect();
       case 7:
-        return new ActionGroupRef_Editor();
+        return getActionGroupRefEditorAspect();
       case 8:
-        return new ActionInstance_Editor();
+        return getActionInstanceEditorAspect();
       case 9:
-        return new ActionParameterDeclaration_Editor();
+        return getActionParameterDeclarationEditorAspect();
       case 10:
-        return new ActionParameterReferenceOperation_Editor();
+        return getActionParameterReferenceOperationEditorAspect();
       case 11:
-        return new ActionReference_Editor();
+        return getActionReferenceEditorAspect();
       case 12:
-        return new ActionType_Editor();
+        return getActionTypeEditorAspect();
       case 13:
-        return new AddElementStatement_Editor();
+        return getAddElementStatementEditorAspect();
       case 14:
-        return new AddKeystrokeStatement_Editor();
+        return getAddKeystrokeStatementEditorAspect();
       case 15:
-        return new AddStatement_Editor();
+        return getAddStatementEditorAspect();
       case 16:
-        return new AddTabOperation_Editor();
+        return getAddTabOperationEditorAspect();
       case 17:
-        return new ButtonCreator_Editor();
+        return getButtonCreatorEditorAspect();
       case 18:
-        return new CloseTabOperation_Editor();
+        return getCloseTabOperationEditorAspect();
       case 19:
-        return new ConceptCondition_Editor();
+        return getConceptConditionEditorAspect();
       case 20:
-        return new CreateTabBlock_Editor();
+        return getCreateTabBlockEditorAspect();
       case 21:
-        return new EditableModel_Editor();
+        return getEditableModelEditorAspect();
       case 22:
-        return new EditorTab_Editor();
+        return getEditorTabEditorAspect();
       case 23:
-        return new EditorTabReference_Editor();
+        return getEditorTabReferenceEditorAspect();
       case 24:
-        return new ElementListContents_Editor();
+        return getElementListContentsEditorAspect();
       case 25:
-        return new EverywhereActionPlace_Editor();
+        return getEverywhereActionPlaceEditorAspect();
       case 26:
-        return new GetGroupOperation_Editor();
+        return getGetGroupOperationEditorAspect();
       case 27:
-        return new GetSelectedTabOperation_Editor();
+        return getGetSelectedTabOperationEditorAspect();
       case 28:
-        return new GroupAccessOperation_Editor();
+        return getGroupAccessOperationEditorAspect();
       case 29:
-        return new GroupAnchor_Editor();
+        return getGroupAnchorEditorAspect();
       case 30:
-        return new GroupType_Editor();
+        return getGroupTypeEditorAspect();
       case 31:
-        return new IdeaActionsDescriptor_Editor();
+        return getIdeaActionsDescriptorEditorAspect();
       case 32:
-        return new IdeaConfigurationXml_Editor();
+        return getIdeaConfigurationXmlEditorAspect();
       case 33:
-        return new IdeaInitializerDescriptor_Editor();
+        return getIdeaInitializerDescriptorEditorAspect();
       case 34:
-        return new IdeaPluginDependency_Editor();
+        return getIdeaPluginDependencyEditorAspect();
       case 35:
-        return new InterfaceExtentionPoint_Editor();
+        return getInterfaceExtentionPointEditorAspect();
       case 36:
-        return new InterfaceGroup_Editor();
+        return getInterfaceGroupEditorAspect();
       case 37:
-        return new KeyMapKeystroke_Editor();
+        return getKeyMapKeystrokeEditorAspect();
       case 38:
-        return new KeyStrokeType_Editor();
+        return getKeyStrokeTypeEditorAspect();
       case 39:
-        return new KeymapChangesDeclaration_Editor();
+        return getKeymapChangesDeclarationEditorAspect();
       case 40:
-        return new KeymapRef_Editor();
+        return getKeymapRefEditorAspect();
       case 41:
-        return new MPSPluginDependency_Editor();
+        return getMPSPluginDependencyEditorAspect();
       case 42:
-        return new ModificationStatement_Editor();
+        return getModificationStatementEditorAspect();
       case 43:
-        return new NonDumbAwareActions_Editor();
+        return getNonDumbAwareActionsEditorAspect();
       case 44:
-        return new Order_Editor();
+        return getOrderEditorAspect();
       case 45:
-        return new OrderReference_Editor();
+        return getOrderReferenceEditorAspect();
       case 46:
-        return new ParameterizedShortcutChange_Editor();
+        return getParameterizedShortcutChangeEditorAspect();
       case 47:
-        return new PersistentPropertyDeclaration_Editor();
+        return getPersistentPropertyDeclarationEditorAspect();
       case 48:
-        return new PersistentPropertyReference_Editor();
+        return getPersistentPropertyReferenceEditorAspect();
       case 49:
-        return new PopupCreator_Editor();
+        return getPopupCreatorEditorAspect();
       case 50:
-        return new PreferencePage_Editor();
+        return getPreferencePageEditorAspect();
       case 51:
-        return new PreferencesComponentDeclaration_Editor();
+        return getPreferencesComponentDeclarationEditorAspect();
       case 52:
-        return new PreferencesComponentType_Editor();
+        return getPreferencesComponentTypeEditorAspect();
       case 53:
-        return new RequiredCondition_Editor();
+        return getRequiredConditionEditorAspect();
       case 54:
-        return new Separator_Editor();
+        return getSeparatorEditorAspect();
       case 55:
-        return new SimpleShortcutChange_Editor();
+        return getSimpleShortcutChangeEditorAspect();
       case 56:
-        return new SmartDisposeClosureParameterDeclaration_Editor();
+        return getSmartDisposeClosureParameterDeclarationEditorAspect();
       case 57:
-        return new TabbedToolDeclaration_Editor();
+        return getTabbedToolDeclarationEditorAspect();
       case 58:
-        return new ToolDeclaration_Editor();
+        return getToolDeclarationEditorAspect();
       case 59:
-        return new ToolInstanceExpression_Editor();
+        return getToolInstanceExpressionEditorAspect();
       case 60:
-        return new ToolTab_Editor();
+        return getToolTabEditorAspect();
       case 61:
-        return new ToolType_Editor();
+        return getToolTypeEditorAspect();
       case 62:
-        return new ToolbarCreator_Editor();
+        return getToolbarCreatorEditorAspect();
       case 63:
-        return new UpdateGroupBlock_Editor();
+        return getUpdateGroupBlockEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.plugin.structure.ActionAccessOperation", "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupRef", "jetbrains.mps.lang.plugin.structure.ActionInstance", "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionReference", "jetbrains.mps.lang.plugin.structure.ActionType", "jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement", "jetbrains.mps.lang.plugin.structure.AddStatement", "jetbrains.mps.lang.plugin.structure.AddTabOperation", "jetbrains.mps.lang.plugin.structure.ButtonCreator", "jetbrains.mps.lang.plugin.structure.CloseTabOperation", "jetbrains.mps.lang.plugin.structure.ConceptCondition", "jetbrains.mps.lang.plugin.structure.CreateTabBlock", "jetbrains.mps.lang.plugin.structure.EditableModel", "jetbrains.mps.lang.plugin.structure.EditorTab", "jetbrains.mps.lang.plugin.structure.EditorTabReference", "jetbrains.mps.lang.plugin.structure.ElementListContents", "jetbrains.mps.lang.plugin.structure.EverywhereActionPlace", "jetbrains.mps.lang.plugin.structure.GetGroupOperation", "jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation", "jetbrains.mps.lang.plugin.structure.GroupAccessOperation", "jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.plugin.structure.GroupType", "jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor", "jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml", "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.plugin.structure.IdeaPluginDependency", "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.InterfaceGroup", "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke", "jetbrains.mps.lang.plugin.structure.KeyStrokeType", "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration", "jetbrains.mps.lang.plugin.structure.KeymapRef", "jetbrains.mps.lang.plugin.structure.MPSPluginDependency", "jetbrains.mps.lang.plugin.structure.ModificationStatement", "jetbrains.mps.lang.plugin.structure.NonDumbAwareActions", "jetbrains.mps.lang.plugin.structure.Order", "jetbrains.mps.lang.plugin.structure.OrderReference", "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange", "jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration", "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference", "jetbrains.mps.lang.plugin.structure.PopupCreator", "jetbrains.mps.lang.plugin.structure.PreferencePage", "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", "jetbrains.mps.lang.plugin.structure.PreferencesComponentType", "jetbrains.mps.lang.plugin.structure.RequiredCondition", "jetbrains.mps.lang.plugin.structure.Separator", "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration", "jetbrains.mps.lang.plugin.structure.ToolDeclaration", "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", "jetbrains.mps.lang.plugin.structure.ToolTab", "jetbrains.mps.lang.plugin.structure.ToolType", "jetbrains.mps.lang.plugin.structure.ToolbarCreator", "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myActionAccessOperationEditorAspect = null;
+    myActionConstructionParameterDeclarationEditorAspect = null;
+    myActionConstructorParameterReferenceOperationEditorAspect = null;
+    myActionDataParameterDeclarationEditorAspect = null;
+    myActionDataParameterReferenceOperationEditorAspect = null;
+    myActionDeclarationEditorAspect = null;
+    myActionGroupDeclarationEditorAspect = null;
+    myActionGroupRefEditorAspect = null;
+    myActionInstanceEditorAspect = null;
+    myActionParameterDeclarationEditorAspect = null;
+    myActionParameterReferenceOperationEditorAspect = null;
+    myActionReferenceEditorAspect = null;
+    myActionTypeEditorAspect = null;
+    myAddElementStatementEditorAspect = null;
+    myAddKeystrokeStatementEditorAspect = null;
+    myAddStatementEditorAspect = null;
+    myAddTabOperationEditorAspect = null;
+    myButtonCreatorEditorAspect = null;
+    myCloseTabOperationEditorAspect = null;
+    myConceptConditionEditorAspect = null;
+    myCreateTabBlockEditorAspect = null;
+    myEditableModelEditorAspect = null;
+    myEditorTabEditorAspect = null;
+    myEditorTabReferenceEditorAspect = null;
+    myElementListContentsEditorAspect = null;
+    myEverywhereActionPlaceEditorAspect = null;
+    myGetGroupOperationEditorAspect = null;
+    myGetSelectedTabOperationEditorAspect = null;
+    myGroupAccessOperationEditorAspect = null;
+    myGroupAnchorEditorAspect = null;
+    myGroupTypeEditorAspect = null;
+    myIdeaActionsDescriptorEditorAspect = null;
+    myIdeaConfigurationXmlEditorAspect = null;
+    myIdeaInitializerDescriptorEditorAspect = null;
+    myIdeaPluginDependencyEditorAspect = null;
+    myInterfaceExtentionPointEditorAspect = null;
+    myInterfaceGroupEditorAspect = null;
+    myKeyMapKeystrokeEditorAspect = null;
+    myKeyStrokeTypeEditorAspect = null;
+    myKeymapChangesDeclarationEditorAspect = null;
+    myKeymapRefEditorAspect = null;
+    myMPSPluginDependencyEditorAspect = null;
+    myModificationStatementEditorAspect = null;
+    myNonDumbAwareActionsEditorAspect = null;
+    myOrderEditorAspect = null;
+    myOrderReferenceEditorAspect = null;
+    myParameterizedShortcutChangeEditorAspect = null;
+    myPersistentPropertyDeclarationEditorAspect = null;
+    myPersistentPropertyReferenceEditorAspect = null;
+    myPopupCreatorEditorAspect = null;
+    myPreferencePageEditorAspect = null;
+    myPreferencesComponentDeclarationEditorAspect = null;
+    myPreferencesComponentTypeEditorAspect = null;
+    myRequiredConditionEditorAspect = null;
+    mySeparatorEditorAspect = null;
+    mySimpleShortcutChangeEditorAspect = null;
+    mySmartDisposeClosureParameterDeclarationEditorAspect = null;
+    myTabbedToolDeclarationEditorAspect = null;
+    myToolDeclarationEditorAspect = null;
+    myToolInstanceExpressionEditorAspect = null;
+    myToolTabEditorAspect = null;
+    myToolTypeEditorAspect = null;
+    myToolbarCreatorEditorAspect = null;
+    myUpdateGroupBlockEditorAspect = null;
+  }
+
+  private ActionAccessOperation_Editor getActionAccessOperationEditorAspect() {
+    if (myActionAccessOperationEditorAspect == null) {
+      myActionAccessOperationEditorAspect = new ActionAccessOperation_Editor();
+    }
+    return myActionAccessOperationEditorAspect;
+  }
+
+  private ActionConstructionParameterDeclaration_Editor getActionConstructionParameterDeclarationEditorAspect() {
+    if (myActionConstructionParameterDeclarationEditorAspect == null) {
+      myActionConstructionParameterDeclarationEditorAspect = new ActionConstructionParameterDeclaration_Editor();
+    }
+    return myActionConstructionParameterDeclarationEditorAspect;
+  }
+
+  private ActionConstructorParameterReferenceOperation_Editor getActionConstructorParameterReferenceOperationEditorAspect() {
+    if (myActionConstructorParameterReferenceOperationEditorAspect == null) {
+      myActionConstructorParameterReferenceOperationEditorAspect = new ActionConstructorParameterReferenceOperation_Editor();
+    }
+    return myActionConstructorParameterReferenceOperationEditorAspect;
+  }
+
+  private ActionDataParameterDeclaration_Editor getActionDataParameterDeclarationEditorAspect() {
+    if (myActionDataParameterDeclarationEditorAspect == null) {
+      myActionDataParameterDeclarationEditorAspect = new ActionDataParameterDeclaration_Editor();
+    }
+    return myActionDataParameterDeclarationEditorAspect;
+  }
+
+  private ActionDataParameterReferenceOperation_Editor getActionDataParameterReferenceOperationEditorAspect() {
+    if (myActionDataParameterReferenceOperationEditorAspect == null) {
+      myActionDataParameterReferenceOperationEditorAspect = new ActionDataParameterReferenceOperation_Editor();
+    }
+    return myActionDataParameterReferenceOperationEditorAspect;
+  }
+
+  private ActionDeclaration_Editor getActionDeclarationEditorAspect() {
+    if (myActionDeclarationEditorAspect == null) {
+      myActionDeclarationEditorAspect = new ActionDeclaration_Editor();
+    }
+    return myActionDeclarationEditorAspect;
+  }
+
+  private ActionGroupDeclaration_Editor getActionGroupDeclarationEditorAspect() {
+    if (myActionGroupDeclarationEditorAspect == null) {
+      myActionGroupDeclarationEditorAspect = new ActionGroupDeclaration_Editor();
+    }
+    return myActionGroupDeclarationEditorAspect;
+  }
+
+  private ActionGroupRef_Editor getActionGroupRefEditorAspect() {
+    if (myActionGroupRefEditorAspect == null) {
+      myActionGroupRefEditorAspect = new ActionGroupRef_Editor();
+    }
+    return myActionGroupRefEditorAspect;
+  }
+
+  private ActionInstance_Editor getActionInstanceEditorAspect() {
+    if (myActionInstanceEditorAspect == null) {
+      myActionInstanceEditorAspect = new ActionInstance_Editor();
+    }
+    return myActionInstanceEditorAspect;
+  }
+
+  private ActionParameterDeclaration_Editor getActionParameterDeclarationEditorAspect() {
+    if (myActionParameterDeclarationEditorAspect == null) {
+      myActionParameterDeclarationEditorAspect = new ActionParameterDeclaration_Editor();
+    }
+    return myActionParameterDeclarationEditorAspect;
+  }
+
+  private ActionParameterReferenceOperation_Editor getActionParameterReferenceOperationEditorAspect() {
+    if (myActionParameterReferenceOperationEditorAspect == null) {
+      myActionParameterReferenceOperationEditorAspect = new ActionParameterReferenceOperation_Editor();
+    }
+    return myActionParameterReferenceOperationEditorAspect;
+  }
+
+  private ActionReference_Editor getActionReferenceEditorAspect() {
+    if (myActionReferenceEditorAspect == null) {
+      myActionReferenceEditorAspect = new ActionReference_Editor();
+    }
+    return myActionReferenceEditorAspect;
+  }
+
+  private ActionType_Editor getActionTypeEditorAspect() {
+    if (myActionTypeEditorAspect == null) {
+      myActionTypeEditorAspect = new ActionType_Editor();
+    }
+    return myActionTypeEditorAspect;
+  }
+
+  private AddElementStatement_Editor getAddElementStatementEditorAspect() {
+    if (myAddElementStatementEditorAspect == null) {
+      myAddElementStatementEditorAspect = new AddElementStatement_Editor();
+    }
+    return myAddElementStatementEditorAspect;
+  }
+
+  private AddKeystrokeStatement_Editor getAddKeystrokeStatementEditorAspect() {
+    if (myAddKeystrokeStatementEditorAspect == null) {
+      myAddKeystrokeStatementEditorAspect = new AddKeystrokeStatement_Editor();
+    }
+    return myAddKeystrokeStatementEditorAspect;
+  }
+
+  private AddStatement_Editor getAddStatementEditorAspect() {
+    if (myAddStatementEditorAspect == null) {
+      myAddStatementEditorAspect = new AddStatement_Editor();
+    }
+    return myAddStatementEditorAspect;
+  }
+
+  private AddTabOperation_Editor getAddTabOperationEditorAspect() {
+    if (myAddTabOperationEditorAspect == null) {
+      myAddTabOperationEditorAspect = new AddTabOperation_Editor();
+    }
+    return myAddTabOperationEditorAspect;
+  }
+
+  private ButtonCreator_Editor getButtonCreatorEditorAspect() {
+    if (myButtonCreatorEditorAspect == null) {
+      myButtonCreatorEditorAspect = new ButtonCreator_Editor();
+    }
+    return myButtonCreatorEditorAspect;
+  }
+
+  private CloseTabOperation_Editor getCloseTabOperationEditorAspect() {
+    if (myCloseTabOperationEditorAspect == null) {
+      myCloseTabOperationEditorAspect = new CloseTabOperation_Editor();
+    }
+    return myCloseTabOperationEditorAspect;
+  }
+
+  private ConceptCondition_Editor getConceptConditionEditorAspect() {
+    if (myConceptConditionEditorAspect == null) {
+      myConceptConditionEditorAspect = new ConceptCondition_Editor();
+    }
+    return myConceptConditionEditorAspect;
+  }
+
+  private CreateTabBlock_Editor getCreateTabBlockEditorAspect() {
+    if (myCreateTabBlockEditorAspect == null) {
+      myCreateTabBlockEditorAspect = new CreateTabBlock_Editor();
+    }
+    return myCreateTabBlockEditorAspect;
+  }
+
+  private EditableModel_Editor getEditableModelEditorAspect() {
+    if (myEditableModelEditorAspect == null) {
+      myEditableModelEditorAspect = new EditableModel_Editor();
+    }
+    return myEditableModelEditorAspect;
+  }
+
+  private EditorTab_Editor getEditorTabEditorAspect() {
+    if (myEditorTabEditorAspect == null) {
+      myEditorTabEditorAspect = new EditorTab_Editor();
+    }
+    return myEditorTabEditorAspect;
+  }
+
+  private EditorTabReference_Editor getEditorTabReferenceEditorAspect() {
+    if (myEditorTabReferenceEditorAspect == null) {
+      myEditorTabReferenceEditorAspect = new EditorTabReference_Editor();
+    }
+    return myEditorTabReferenceEditorAspect;
+  }
+
+  private ElementListContents_Editor getElementListContentsEditorAspect() {
+    if (myElementListContentsEditorAspect == null) {
+      myElementListContentsEditorAspect = new ElementListContents_Editor();
+    }
+    return myElementListContentsEditorAspect;
+  }
+
+  private EverywhereActionPlace_Editor getEverywhereActionPlaceEditorAspect() {
+    if (myEverywhereActionPlaceEditorAspect == null) {
+      myEverywhereActionPlaceEditorAspect = new EverywhereActionPlace_Editor();
+    }
+    return myEverywhereActionPlaceEditorAspect;
+  }
+
+  private GetGroupOperation_Editor getGetGroupOperationEditorAspect() {
+    if (myGetGroupOperationEditorAspect == null) {
+      myGetGroupOperationEditorAspect = new GetGroupOperation_Editor();
+    }
+    return myGetGroupOperationEditorAspect;
+  }
+
+  private GetSelectedTabOperation_Editor getGetSelectedTabOperationEditorAspect() {
+    if (myGetSelectedTabOperationEditorAspect == null) {
+      myGetSelectedTabOperationEditorAspect = new GetSelectedTabOperation_Editor();
+    }
+    return myGetSelectedTabOperationEditorAspect;
+  }
+
+  private GroupAccessOperation_Editor getGroupAccessOperationEditorAspect() {
+    if (myGroupAccessOperationEditorAspect == null) {
+      myGroupAccessOperationEditorAspect = new GroupAccessOperation_Editor();
+    }
+    return myGroupAccessOperationEditorAspect;
+  }
+
+  private GroupAnchor_Editor getGroupAnchorEditorAspect() {
+    if (myGroupAnchorEditorAspect == null) {
+      myGroupAnchorEditorAspect = new GroupAnchor_Editor();
+    }
+    return myGroupAnchorEditorAspect;
+  }
+
+  private GroupType_Editor getGroupTypeEditorAspect() {
+    if (myGroupTypeEditorAspect == null) {
+      myGroupTypeEditorAspect = new GroupType_Editor();
+    }
+    return myGroupTypeEditorAspect;
+  }
+
+  private IdeaActionsDescriptor_Editor getIdeaActionsDescriptorEditorAspect() {
+    if (myIdeaActionsDescriptorEditorAspect == null) {
+      myIdeaActionsDescriptorEditorAspect = new IdeaActionsDescriptor_Editor();
+    }
+    return myIdeaActionsDescriptorEditorAspect;
+  }
+
+  private IdeaConfigurationXml_Editor getIdeaConfigurationXmlEditorAspect() {
+    if (myIdeaConfigurationXmlEditorAspect == null) {
+      myIdeaConfigurationXmlEditorAspect = new IdeaConfigurationXml_Editor();
+    }
+    return myIdeaConfigurationXmlEditorAspect;
+  }
+
+  private IdeaInitializerDescriptor_Editor getIdeaInitializerDescriptorEditorAspect() {
+    if (myIdeaInitializerDescriptorEditorAspect == null) {
+      myIdeaInitializerDescriptorEditorAspect = new IdeaInitializerDescriptor_Editor();
+    }
+    return myIdeaInitializerDescriptorEditorAspect;
+  }
+
+  private IdeaPluginDependency_Editor getIdeaPluginDependencyEditorAspect() {
+    if (myIdeaPluginDependencyEditorAspect == null) {
+      myIdeaPluginDependencyEditorAspect = new IdeaPluginDependency_Editor();
+    }
+    return myIdeaPluginDependencyEditorAspect;
+  }
+
+  private InterfaceExtentionPoint_Editor getInterfaceExtentionPointEditorAspect() {
+    if (myInterfaceExtentionPointEditorAspect == null) {
+      myInterfaceExtentionPointEditorAspect = new InterfaceExtentionPoint_Editor();
+    }
+    return myInterfaceExtentionPointEditorAspect;
+  }
+
+  private InterfaceGroup_Editor getInterfaceGroupEditorAspect() {
+    if (myInterfaceGroupEditorAspect == null) {
+      myInterfaceGroupEditorAspect = new InterfaceGroup_Editor();
+    }
+    return myInterfaceGroupEditorAspect;
+  }
+
+  private KeyMapKeystroke_Editor getKeyMapKeystrokeEditorAspect() {
+    if (myKeyMapKeystrokeEditorAspect == null) {
+      myKeyMapKeystrokeEditorAspect = new KeyMapKeystroke_Editor();
+    }
+    return myKeyMapKeystrokeEditorAspect;
+  }
+
+  private KeyStrokeType_Editor getKeyStrokeTypeEditorAspect() {
+    if (myKeyStrokeTypeEditorAspect == null) {
+      myKeyStrokeTypeEditorAspect = new KeyStrokeType_Editor();
+    }
+    return myKeyStrokeTypeEditorAspect;
+  }
+
+  private KeymapChangesDeclaration_Editor getKeymapChangesDeclarationEditorAspect() {
+    if (myKeymapChangesDeclarationEditorAspect == null) {
+      myKeymapChangesDeclarationEditorAspect = new KeymapChangesDeclaration_Editor();
+    }
+    return myKeymapChangesDeclarationEditorAspect;
+  }
+
+  private KeymapRef_Editor getKeymapRefEditorAspect() {
+    if (myKeymapRefEditorAspect == null) {
+      myKeymapRefEditorAspect = new KeymapRef_Editor();
+    }
+    return myKeymapRefEditorAspect;
+  }
+
+  private MPSPluginDependency_Editor getMPSPluginDependencyEditorAspect() {
+    if (myMPSPluginDependencyEditorAspect == null) {
+      myMPSPluginDependencyEditorAspect = new MPSPluginDependency_Editor();
+    }
+    return myMPSPluginDependencyEditorAspect;
+  }
+
+  private ModificationStatement_Editor getModificationStatementEditorAspect() {
+    if (myModificationStatementEditorAspect == null) {
+      myModificationStatementEditorAspect = new ModificationStatement_Editor();
+    }
+    return myModificationStatementEditorAspect;
+  }
+
+  private NonDumbAwareActions_Editor getNonDumbAwareActionsEditorAspect() {
+    if (myNonDumbAwareActionsEditorAspect == null) {
+      myNonDumbAwareActionsEditorAspect = new NonDumbAwareActions_Editor();
+    }
+    return myNonDumbAwareActionsEditorAspect;
+  }
+
+  private Order_Editor getOrderEditorAspect() {
+    if (myOrderEditorAspect == null) {
+      myOrderEditorAspect = new Order_Editor();
+    }
+    return myOrderEditorAspect;
+  }
+
+  private OrderReference_Editor getOrderReferenceEditorAspect() {
+    if (myOrderReferenceEditorAspect == null) {
+      myOrderReferenceEditorAspect = new OrderReference_Editor();
+    }
+    return myOrderReferenceEditorAspect;
+  }
+
+  private ParameterizedShortcutChange_Editor getParameterizedShortcutChangeEditorAspect() {
+    if (myParameterizedShortcutChangeEditorAspect == null) {
+      myParameterizedShortcutChangeEditorAspect = new ParameterizedShortcutChange_Editor();
+    }
+    return myParameterizedShortcutChangeEditorAspect;
+  }
+
+  private PersistentPropertyDeclaration_Editor getPersistentPropertyDeclarationEditorAspect() {
+    if (myPersistentPropertyDeclarationEditorAspect == null) {
+      myPersistentPropertyDeclarationEditorAspect = new PersistentPropertyDeclaration_Editor();
+    }
+    return myPersistentPropertyDeclarationEditorAspect;
+  }
+
+  private PersistentPropertyReference_Editor getPersistentPropertyReferenceEditorAspect() {
+    if (myPersistentPropertyReferenceEditorAspect == null) {
+      myPersistentPropertyReferenceEditorAspect = new PersistentPropertyReference_Editor();
+    }
+    return myPersistentPropertyReferenceEditorAspect;
+  }
+
+  private PopupCreator_Editor getPopupCreatorEditorAspect() {
+    if (myPopupCreatorEditorAspect == null) {
+      myPopupCreatorEditorAspect = new PopupCreator_Editor();
+    }
+    return myPopupCreatorEditorAspect;
+  }
+
+  private PreferencePage_Editor getPreferencePageEditorAspect() {
+    if (myPreferencePageEditorAspect == null) {
+      myPreferencePageEditorAspect = new PreferencePage_Editor();
+    }
+    return myPreferencePageEditorAspect;
+  }
+
+  private PreferencesComponentDeclaration_Editor getPreferencesComponentDeclarationEditorAspect() {
+    if (myPreferencesComponentDeclarationEditorAspect == null) {
+      myPreferencesComponentDeclarationEditorAspect = new PreferencesComponentDeclaration_Editor();
+    }
+    return myPreferencesComponentDeclarationEditorAspect;
+  }
+
+  private PreferencesComponentType_Editor getPreferencesComponentTypeEditorAspect() {
+    if (myPreferencesComponentTypeEditorAspect == null) {
+      myPreferencesComponentTypeEditorAspect = new PreferencesComponentType_Editor();
+    }
+    return myPreferencesComponentTypeEditorAspect;
+  }
+
+  private RequiredCondition_Editor getRequiredConditionEditorAspect() {
+    if (myRequiredConditionEditorAspect == null) {
+      myRequiredConditionEditorAspect = new RequiredCondition_Editor();
+    }
+    return myRequiredConditionEditorAspect;
+  }
+
+  private Separator_Editor getSeparatorEditorAspect() {
+    if (mySeparatorEditorAspect == null) {
+      mySeparatorEditorAspect = new Separator_Editor();
+    }
+    return mySeparatorEditorAspect;
+  }
+
+  private SimpleShortcutChange_Editor getSimpleShortcutChangeEditorAspect() {
+    if (mySimpleShortcutChangeEditorAspect == null) {
+      mySimpleShortcutChangeEditorAspect = new SimpleShortcutChange_Editor();
+    }
+    return mySimpleShortcutChangeEditorAspect;
+  }
+
+  private SmartDisposeClosureParameterDeclaration_Editor getSmartDisposeClosureParameterDeclarationEditorAspect() {
+    if (mySmartDisposeClosureParameterDeclarationEditorAspect == null) {
+      mySmartDisposeClosureParameterDeclarationEditorAspect = new SmartDisposeClosureParameterDeclaration_Editor();
+    }
+    return mySmartDisposeClosureParameterDeclarationEditorAspect;
+  }
+
+  private TabbedToolDeclaration_Editor getTabbedToolDeclarationEditorAspect() {
+    if (myTabbedToolDeclarationEditorAspect == null) {
+      myTabbedToolDeclarationEditorAspect = new TabbedToolDeclaration_Editor();
+    }
+    return myTabbedToolDeclarationEditorAspect;
+  }
+
+  private ToolDeclaration_Editor getToolDeclarationEditorAspect() {
+    if (myToolDeclarationEditorAspect == null) {
+      myToolDeclarationEditorAspect = new ToolDeclaration_Editor();
+    }
+    return myToolDeclarationEditorAspect;
+  }
+
+  private ToolInstanceExpression_Editor getToolInstanceExpressionEditorAspect() {
+    if (myToolInstanceExpressionEditorAspect == null) {
+      myToolInstanceExpressionEditorAspect = new ToolInstanceExpression_Editor();
+    }
+    return myToolInstanceExpressionEditorAspect;
+  }
+
+  private ToolTab_Editor getToolTabEditorAspect() {
+    if (myToolTabEditorAspect == null) {
+      myToolTabEditorAspect = new ToolTab_Editor();
+    }
+    return myToolTabEditorAspect;
+  }
+
+  private ToolType_Editor getToolTypeEditorAspect() {
+    if (myToolTypeEditorAspect == null) {
+      myToolTypeEditorAspect = new ToolType_Editor();
+    }
+    return myToolTypeEditorAspect;
+  }
+
+  private ToolbarCreator_Editor getToolbarCreatorEditorAspect() {
+    if (myToolbarCreatorEditorAspect == null) {
+      myToolbarCreatorEditorAspect = new ToolbarCreator_Editor();
+    }
+    return myToolbarCreatorEditorAspect;
+  }
+
+  private UpdateGroupBlock_Editor getUpdateGroupBlockEditorAspect() {
+    if (myUpdateGroupBlockEditorAspect == null) {
+      myUpdateGroupBlockEditorAspect = new UpdateGroupBlock_Editor();
+    }
+    return myUpdateGroupBlockEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0mc = new String[]{"jetbrains.mps.lang.plugin.structure.ActionAccessOperation", "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupRef", "jetbrains.mps.lang.plugin.structure.ActionInstance", "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation", "jetbrains.mps.lang.plugin.structure.ActionReference", "jetbrains.mps.lang.plugin.structure.ActionType", "jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement", "jetbrains.mps.lang.plugin.structure.AddStatement", "jetbrains.mps.lang.plugin.structure.AddTabOperation", "jetbrains.mps.lang.plugin.structure.ButtonCreator", "jetbrains.mps.lang.plugin.structure.CloseTabOperation", "jetbrains.mps.lang.plugin.structure.ConceptCondition", "jetbrains.mps.lang.plugin.structure.CreateTabBlock", "jetbrains.mps.lang.plugin.structure.EditableModel", "jetbrains.mps.lang.plugin.structure.EditorTab", "jetbrains.mps.lang.plugin.structure.EditorTabReference", "jetbrains.mps.lang.plugin.structure.ElementListContents", "jetbrains.mps.lang.plugin.structure.EverywhereActionPlace", "jetbrains.mps.lang.plugin.structure.GetGroupOperation", "jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation", "jetbrains.mps.lang.plugin.structure.GroupAccessOperation", "jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.plugin.structure.GroupType", "jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor", "jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml", "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.plugin.structure.IdeaPluginDependency", "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.InterfaceGroup", "jetbrains.mps.lang.plugin.structure.KeyMapKeystroke", "jetbrains.mps.lang.plugin.structure.KeyStrokeType", "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration", "jetbrains.mps.lang.plugin.structure.KeymapRef", "jetbrains.mps.lang.plugin.structure.MPSPluginDependency", "jetbrains.mps.lang.plugin.structure.ModificationStatement", "jetbrains.mps.lang.plugin.structure.NonDumbAwareActions", "jetbrains.mps.lang.plugin.structure.Order", "jetbrains.mps.lang.plugin.structure.OrderReference", "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange", "jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration", "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference", "jetbrains.mps.lang.plugin.structure.PopupCreator", "jetbrains.mps.lang.plugin.structure.PreferencePage", "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", "jetbrains.mps.lang.plugin.structure.PreferencesComponentType", "jetbrains.mps.lang.plugin.structure.RequiredCondition", "jetbrains.mps.lang.plugin.structure.Separator", "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration", "jetbrains.mps.lang.plugin.structure.ToolDeclaration", "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", "jetbrains.mps.lang.plugin.structure.ToolTab", "jetbrains.mps.lang.plugin.structure.ToolType", "jetbrains.mps.lang.plugin.structure.ToolbarCreator", "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock"};
 }

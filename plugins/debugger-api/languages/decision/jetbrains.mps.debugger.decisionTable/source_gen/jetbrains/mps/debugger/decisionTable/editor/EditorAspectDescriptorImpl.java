@@ -8,24 +8,86 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CaseExpression_Editor myCaseExpressionEditorAspect;
+  private DecideOperation_Editor myDecideOperationEditorAspect;
+  private DecisionTable_Editor myDecisionTableEditorAspect;
+  private DecisionTableType_Editor myDecisionTableTypeEditorAspect;
+  private XVariableReference_Editor myXVariableReferenceEditorAspect;
+  private YVariableReference_Editor myYVariableReferenceEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0g, descriptor.getConceptFqName())) {
       case 0:
-        return new CaseExpression_Editor();
+        return getCaseExpressionEditorAspect();
       case 1:
-        return new DecideOperation_Editor();
+        return getDecideOperationEditorAspect();
       case 2:
-        return new DecisionTable_Editor();
+        return getDecisionTableEditorAspect();
       case 3:
-        return new DecisionTableType_Editor();
+        return getDecisionTableTypeEditorAspect();
       case 4:
-        return new XVariableReference_Editor();
+        return getXVariableReferenceEditorAspect();
       case 5:
-        return new YVariableReference_Editor();
+        return getYVariableReferenceEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.debugger.decisionTable.structure.CaseExpression", "jetbrains.mps.debugger.decisionTable.structure.DecideOperation", "jetbrains.mps.debugger.decisionTable.structure.DecisionTable", "jetbrains.mps.debugger.decisionTable.structure.DecisionTableType", "jetbrains.mps.debugger.decisionTable.structure.XVariableReference", "jetbrains.mps.debugger.decisionTable.structure.YVariableReference"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCaseExpressionEditorAspect = null;
+    myDecideOperationEditorAspect = null;
+    myDecisionTableEditorAspect = null;
+    myDecisionTableTypeEditorAspect = null;
+    myXVariableReferenceEditorAspect = null;
+    myYVariableReferenceEditorAspect = null;
+  }
+
+  private CaseExpression_Editor getCaseExpressionEditorAspect() {
+    if (myCaseExpressionEditorAspect == null) {
+      myCaseExpressionEditorAspect = new CaseExpression_Editor();
+    }
+    return myCaseExpressionEditorAspect;
+  }
+
+  private DecideOperation_Editor getDecideOperationEditorAspect() {
+    if (myDecideOperationEditorAspect == null) {
+      myDecideOperationEditorAspect = new DecideOperation_Editor();
+    }
+    return myDecideOperationEditorAspect;
+  }
+
+  private DecisionTable_Editor getDecisionTableEditorAspect() {
+    if (myDecisionTableEditorAspect == null) {
+      myDecisionTableEditorAspect = new DecisionTable_Editor();
+    }
+    return myDecisionTableEditorAspect;
+  }
+
+  private DecisionTableType_Editor getDecisionTableTypeEditorAspect() {
+    if (myDecisionTableTypeEditorAspect == null) {
+      myDecisionTableTypeEditorAspect = new DecisionTableType_Editor();
+    }
+    return myDecisionTableTypeEditorAspect;
+  }
+
+  private XVariableReference_Editor getXVariableReferenceEditorAspect() {
+    if (myXVariableReferenceEditorAspect == null) {
+      myXVariableReferenceEditorAspect = new XVariableReference_Editor();
+    }
+    return myXVariableReferenceEditorAspect;
+  }
+
+  private YVariableReference_Editor getYVariableReferenceEditorAspect() {
+    if (myYVariableReferenceEditorAspect == null) {
+      myYVariableReferenceEditorAspect = new YVariableReference_Editor();
+    }
+    return myYVariableReferenceEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0g = new String[]{"jetbrains.mps.debugger.decisionTable.structure.CaseExpression", "jetbrains.mps.debugger.decisionTable.structure.DecideOperation", "jetbrains.mps.debugger.decisionTable.structure.DecisionTable", "jetbrains.mps.debugger.decisionTable.structure.DecisionTableType", "jetbrains.mps.debugger.decisionTable.structure.XVariableReference", "jetbrains.mps.debugger.decisionTable.structure.YVariableReference"};
 }

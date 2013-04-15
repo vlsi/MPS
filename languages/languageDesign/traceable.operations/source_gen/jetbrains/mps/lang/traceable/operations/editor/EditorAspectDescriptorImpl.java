@@ -8,16 +8,42 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private NList_CopyWithTraceOperation_Editor myNList_CopyWithTraceOperationEditorAspect;
+  private Node_CopyWithTraceOperation_Editor myNode_CopyWithTraceOperationEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
-        return new NList_CopyWithTraceOperation_Editor();
+        return getNList_CopyWithTraceOperationEditorAspect();
       case 1:
-        return new Node_CopyWithTraceOperation_Editor();
+        return getNode_CopyWithTraceOperationEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation", "jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myNList_CopyWithTraceOperationEditorAspect = null;
+    myNode_CopyWithTraceOperationEditorAspect = null;
+  }
+
+  private NList_CopyWithTraceOperation_Editor getNList_CopyWithTraceOperationEditorAspect() {
+    if (myNList_CopyWithTraceOperationEditorAspect == null) {
+      myNList_CopyWithTraceOperationEditorAspect = new NList_CopyWithTraceOperation_Editor();
+    }
+    return myNList_CopyWithTraceOperationEditorAspect;
+  }
+
+  private Node_CopyWithTraceOperation_Editor getNode_CopyWithTraceOperationEditorAspect() {
+    if (myNode_CopyWithTraceOperationEditorAspect == null) {
+      myNode_CopyWithTraceOperationEditorAspect = new Node_CopyWithTraceOperation_Editor();
+    }
+    return myNode_CopyWithTraceOperationEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation", "jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation"};
 }

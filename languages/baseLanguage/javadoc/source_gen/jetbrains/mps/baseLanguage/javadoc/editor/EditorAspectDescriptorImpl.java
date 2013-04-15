@@ -8,72 +8,350 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AuthorBlockDocTag_Editor myAuthorBlockDocTagEditorAspect;
+  private BaseDocReference_Editor myBaseDocReferenceEditorAspect;
+  private BaseInlineDocTag_Editor myBaseInlineDocTagEditorAspect;
+  private BaseParameterReference_Editor myBaseParameterReferenceEditorAspect;
+  private BaseVariableDocReference_Editor myBaseVariableDocReferenceEditorAspect;
+  private ClassifierDocComment_Editor myClassifierDocCommentEditorAspect;
+  private ClassifierDocReference_Editor myClassifierDocReferenceEditorAspect;
+  private CodeInlineDocTag_Editor myCodeInlineDocTagEditorAspect;
+  private CodeSnippet_Editor myCodeSnippetEditorAspect;
+  private CommentLine_Editor myCommentLineEditorAspect;
+  private DeprecatedBlockDocTag_Editor myDeprecatedBlockDocTagEditorAspect;
+  private DocMethodParameterReference_Editor myDocMethodParameterReferenceEditorAspect;
+  private DocTypeParameterReference_Editor myDocTypeParameterReferenceEditorAspect;
+  private FieldDocComment_Editor myFieldDocCommentEditorAspect;
+  private FieldDocReference_Editor myFieldDocReferenceEditorAspect;
+  private HTMLElement_Editor myHTMLElementEditorAspect;
+  private InheritDocInlineDocTag_Editor myInheritDocInlineDocTagEditorAspect;
+  private InlineTagCommentLinePart_Editor myInlineTagCommentLinePartEditorAspect;
+  private LinkInlineDocTag_Editor myLinkInlineDocTagEditorAspect;
+  private MethodDocComment_Editor myMethodDocCommentEditorAspect;
+  private MethodDocReference_Editor myMethodDocReferenceEditorAspect;
+  private ParameterBlockDocTag_Editor myParameterBlockDocTagEditorAspect;
+  private ReturnBlockDocTag_Editor myReturnBlockDocTagEditorAspect;
+  private SeeBlockDocTag_Editor mySeeBlockDocTagEditorAspect;
+  private SinceBlockDocTag_Editor mySinceBlockDocTagEditorAspect;
+  private StaticFieldDocReference_Editor myStaticFieldDocReferenceEditorAspect;
+  private TextCommentLinePart_Editor myTextCommentLinePartEditorAspect;
+  private ThrowsBlockDocTag_Editor myThrowsBlockDocTagEditorAspect;
+  private ValueInlineDocTag_Editor myValueInlineDocTagEditorAspect;
+  private VersionBlockDocTag_Editor myVersionBlockDocTagEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0eb, descriptor.getConceptFqName())) {
       case 0:
-        return new AuthorBlockDocTag_Editor();
+        return getAuthorBlockDocTagEditorAspect();
       case 1:
-        return new BaseDocReference_Editor();
+        return getBaseDocReferenceEditorAspect();
       case 2:
-        return new BaseInlineDocTag_Editor();
+        return getBaseInlineDocTagEditorAspect();
       case 3:
-        return new BaseParameterReference_Editor();
+        return getBaseParameterReferenceEditorAspect();
       case 4:
-        return new BaseVariableDocReference_Editor();
+        return getBaseVariableDocReferenceEditorAspect();
       case 5:
-        return new ClassifierDocComment_Editor();
+        return getClassifierDocCommentEditorAspect();
       case 6:
-        return new ClassifierDocReference_Editor();
+        return getClassifierDocReferenceEditorAspect();
       case 7:
-        return new CodeInlineDocTag_Editor();
+        return getCodeInlineDocTagEditorAspect();
       case 8:
-        return new CodeSnippet_Editor();
+        return getCodeSnippetEditorAspect();
       case 9:
-        return new CommentLine_Editor();
+        return getCommentLineEditorAspect();
       case 10:
-        return new DeprecatedBlockDocTag_Editor();
+        return getDeprecatedBlockDocTagEditorAspect();
       case 11:
-        return new DocMethodParameterReference_Editor();
+        return getDocMethodParameterReferenceEditorAspect();
       case 12:
-        return new DocTypeParameterReference_Editor();
+        return getDocTypeParameterReferenceEditorAspect();
       case 13:
-        return new FieldDocComment_Editor();
+        return getFieldDocCommentEditorAspect();
       case 14:
-        return new FieldDocReference_Editor();
+        return getFieldDocReferenceEditorAspect();
       case 15:
-        return new HTMLElement_Editor();
+        return getHTMLElementEditorAspect();
       case 16:
-        return new InheritDocInlineDocTag_Editor();
+        return getInheritDocInlineDocTagEditorAspect();
       case 17:
-        return new InlineTagCommentLinePart_Editor();
+        return getInlineTagCommentLinePartEditorAspect();
       case 18:
-        return new LinkInlineDocTag_Editor();
+        return getLinkInlineDocTagEditorAspect();
       case 19:
-        return new MethodDocComment_Editor();
+        return getMethodDocCommentEditorAspect();
       case 20:
-        return new MethodDocReference_Editor();
+        return getMethodDocReferenceEditorAspect();
       case 21:
-        return new ParameterBlockDocTag_Editor();
+        return getParameterBlockDocTagEditorAspect();
       case 22:
-        return new ReturnBlockDocTag_Editor();
+        return getReturnBlockDocTagEditorAspect();
       case 23:
-        return new SeeBlockDocTag_Editor();
+        return getSeeBlockDocTagEditorAspect();
       case 24:
-        return new SinceBlockDocTag_Editor();
+        return getSinceBlockDocTagEditorAspect();
       case 25:
-        return new StaticFieldDocReference_Editor();
+        return getStaticFieldDocReferenceEditorAspect();
       case 26:
-        return new TextCommentLinePart_Editor();
+        return getTextCommentLinePartEditorAspect();
       case 27:
-        return new ThrowsBlockDocTag_Editor();
+        return getThrowsBlockDocTagEditorAspect();
       case 28:
-        return new ValueInlineDocTag_Editor();
+        return getValueInlineDocTagEditorAspect();
       case 29:
-        return new VersionBlockDocTag_Editor();
+        return getVersionBlockDocTagEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", "jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAuthorBlockDocTagEditorAspect = null;
+    myBaseDocReferenceEditorAspect = null;
+    myBaseInlineDocTagEditorAspect = null;
+    myBaseParameterReferenceEditorAspect = null;
+    myBaseVariableDocReferenceEditorAspect = null;
+    myClassifierDocCommentEditorAspect = null;
+    myClassifierDocReferenceEditorAspect = null;
+    myCodeInlineDocTagEditorAspect = null;
+    myCodeSnippetEditorAspect = null;
+    myCommentLineEditorAspect = null;
+    myDeprecatedBlockDocTagEditorAspect = null;
+    myDocMethodParameterReferenceEditorAspect = null;
+    myDocTypeParameterReferenceEditorAspect = null;
+    myFieldDocCommentEditorAspect = null;
+    myFieldDocReferenceEditorAspect = null;
+    myHTMLElementEditorAspect = null;
+    myInheritDocInlineDocTagEditorAspect = null;
+    myInlineTagCommentLinePartEditorAspect = null;
+    myLinkInlineDocTagEditorAspect = null;
+    myMethodDocCommentEditorAspect = null;
+    myMethodDocReferenceEditorAspect = null;
+    myParameterBlockDocTagEditorAspect = null;
+    myReturnBlockDocTagEditorAspect = null;
+    mySeeBlockDocTagEditorAspect = null;
+    mySinceBlockDocTagEditorAspect = null;
+    myStaticFieldDocReferenceEditorAspect = null;
+    myTextCommentLinePartEditorAspect = null;
+    myThrowsBlockDocTagEditorAspect = null;
+    myValueInlineDocTagEditorAspect = null;
+    myVersionBlockDocTagEditorAspect = null;
+  }
+
+  private AuthorBlockDocTag_Editor getAuthorBlockDocTagEditorAspect() {
+    if (myAuthorBlockDocTagEditorAspect == null) {
+      myAuthorBlockDocTagEditorAspect = new AuthorBlockDocTag_Editor();
+    }
+    return myAuthorBlockDocTagEditorAspect;
+  }
+
+  private BaseDocReference_Editor getBaseDocReferenceEditorAspect() {
+    if (myBaseDocReferenceEditorAspect == null) {
+      myBaseDocReferenceEditorAspect = new BaseDocReference_Editor();
+    }
+    return myBaseDocReferenceEditorAspect;
+  }
+
+  private BaseInlineDocTag_Editor getBaseInlineDocTagEditorAspect() {
+    if (myBaseInlineDocTagEditorAspect == null) {
+      myBaseInlineDocTagEditorAspect = new BaseInlineDocTag_Editor();
+    }
+    return myBaseInlineDocTagEditorAspect;
+  }
+
+  private BaseParameterReference_Editor getBaseParameterReferenceEditorAspect() {
+    if (myBaseParameterReferenceEditorAspect == null) {
+      myBaseParameterReferenceEditorAspect = new BaseParameterReference_Editor();
+    }
+    return myBaseParameterReferenceEditorAspect;
+  }
+
+  private BaseVariableDocReference_Editor getBaseVariableDocReferenceEditorAspect() {
+    if (myBaseVariableDocReferenceEditorAspect == null) {
+      myBaseVariableDocReferenceEditorAspect = new BaseVariableDocReference_Editor();
+    }
+    return myBaseVariableDocReferenceEditorAspect;
+  }
+
+  private ClassifierDocComment_Editor getClassifierDocCommentEditorAspect() {
+    if (myClassifierDocCommentEditorAspect == null) {
+      myClassifierDocCommentEditorAspect = new ClassifierDocComment_Editor();
+    }
+    return myClassifierDocCommentEditorAspect;
+  }
+
+  private ClassifierDocReference_Editor getClassifierDocReferenceEditorAspect() {
+    if (myClassifierDocReferenceEditorAspect == null) {
+      myClassifierDocReferenceEditorAspect = new ClassifierDocReference_Editor();
+    }
+    return myClassifierDocReferenceEditorAspect;
+  }
+
+  private CodeInlineDocTag_Editor getCodeInlineDocTagEditorAspect() {
+    if (myCodeInlineDocTagEditorAspect == null) {
+      myCodeInlineDocTagEditorAspect = new CodeInlineDocTag_Editor();
+    }
+    return myCodeInlineDocTagEditorAspect;
+  }
+
+  private CodeSnippet_Editor getCodeSnippetEditorAspect() {
+    if (myCodeSnippetEditorAspect == null) {
+      myCodeSnippetEditorAspect = new CodeSnippet_Editor();
+    }
+    return myCodeSnippetEditorAspect;
+  }
+
+  private CommentLine_Editor getCommentLineEditorAspect() {
+    if (myCommentLineEditorAspect == null) {
+      myCommentLineEditorAspect = new CommentLine_Editor();
+    }
+    return myCommentLineEditorAspect;
+  }
+
+  private DeprecatedBlockDocTag_Editor getDeprecatedBlockDocTagEditorAspect() {
+    if (myDeprecatedBlockDocTagEditorAspect == null) {
+      myDeprecatedBlockDocTagEditorAspect = new DeprecatedBlockDocTag_Editor();
+    }
+    return myDeprecatedBlockDocTagEditorAspect;
+  }
+
+  private DocMethodParameterReference_Editor getDocMethodParameterReferenceEditorAspect() {
+    if (myDocMethodParameterReferenceEditorAspect == null) {
+      myDocMethodParameterReferenceEditorAspect = new DocMethodParameterReference_Editor();
+    }
+    return myDocMethodParameterReferenceEditorAspect;
+  }
+
+  private DocTypeParameterReference_Editor getDocTypeParameterReferenceEditorAspect() {
+    if (myDocTypeParameterReferenceEditorAspect == null) {
+      myDocTypeParameterReferenceEditorAspect = new DocTypeParameterReference_Editor();
+    }
+    return myDocTypeParameterReferenceEditorAspect;
+  }
+
+  private FieldDocComment_Editor getFieldDocCommentEditorAspect() {
+    if (myFieldDocCommentEditorAspect == null) {
+      myFieldDocCommentEditorAspect = new FieldDocComment_Editor();
+    }
+    return myFieldDocCommentEditorAspect;
+  }
+
+  private FieldDocReference_Editor getFieldDocReferenceEditorAspect() {
+    if (myFieldDocReferenceEditorAspect == null) {
+      myFieldDocReferenceEditorAspect = new FieldDocReference_Editor();
+    }
+    return myFieldDocReferenceEditorAspect;
+  }
+
+  private HTMLElement_Editor getHTMLElementEditorAspect() {
+    if (myHTMLElementEditorAspect == null) {
+      myHTMLElementEditorAspect = new HTMLElement_Editor();
+    }
+    return myHTMLElementEditorAspect;
+  }
+
+  private InheritDocInlineDocTag_Editor getInheritDocInlineDocTagEditorAspect() {
+    if (myInheritDocInlineDocTagEditorAspect == null) {
+      myInheritDocInlineDocTagEditorAspect = new InheritDocInlineDocTag_Editor();
+    }
+    return myInheritDocInlineDocTagEditorAspect;
+  }
+
+  private InlineTagCommentLinePart_Editor getInlineTagCommentLinePartEditorAspect() {
+    if (myInlineTagCommentLinePartEditorAspect == null) {
+      myInlineTagCommentLinePartEditorAspect = new InlineTagCommentLinePart_Editor();
+    }
+    return myInlineTagCommentLinePartEditorAspect;
+  }
+
+  private LinkInlineDocTag_Editor getLinkInlineDocTagEditorAspect() {
+    if (myLinkInlineDocTagEditorAspect == null) {
+      myLinkInlineDocTagEditorAspect = new LinkInlineDocTag_Editor();
+    }
+    return myLinkInlineDocTagEditorAspect;
+  }
+
+  private MethodDocComment_Editor getMethodDocCommentEditorAspect() {
+    if (myMethodDocCommentEditorAspect == null) {
+      myMethodDocCommentEditorAspect = new MethodDocComment_Editor();
+    }
+    return myMethodDocCommentEditorAspect;
+  }
+
+  private MethodDocReference_Editor getMethodDocReferenceEditorAspect() {
+    if (myMethodDocReferenceEditorAspect == null) {
+      myMethodDocReferenceEditorAspect = new MethodDocReference_Editor();
+    }
+    return myMethodDocReferenceEditorAspect;
+  }
+
+  private ParameterBlockDocTag_Editor getParameterBlockDocTagEditorAspect() {
+    if (myParameterBlockDocTagEditorAspect == null) {
+      myParameterBlockDocTagEditorAspect = new ParameterBlockDocTag_Editor();
+    }
+    return myParameterBlockDocTagEditorAspect;
+  }
+
+  private ReturnBlockDocTag_Editor getReturnBlockDocTagEditorAspect() {
+    if (myReturnBlockDocTagEditorAspect == null) {
+      myReturnBlockDocTagEditorAspect = new ReturnBlockDocTag_Editor();
+    }
+    return myReturnBlockDocTagEditorAspect;
+  }
+
+  private SeeBlockDocTag_Editor getSeeBlockDocTagEditorAspect() {
+    if (mySeeBlockDocTagEditorAspect == null) {
+      mySeeBlockDocTagEditorAspect = new SeeBlockDocTag_Editor();
+    }
+    return mySeeBlockDocTagEditorAspect;
+  }
+
+  private SinceBlockDocTag_Editor getSinceBlockDocTagEditorAspect() {
+    if (mySinceBlockDocTagEditorAspect == null) {
+      mySinceBlockDocTagEditorAspect = new SinceBlockDocTag_Editor();
+    }
+    return mySinceBlockDocTagEditorAspect;
+  }
+
+  private StaticFieldDocReference_Editor getStaticFieldDocReferenceEditorAspect() {
+    if (myStaticFieldDocReferenceEditorAspect == null) {
+      myStaticFieldDocReferenceEditorAspect = new StaticFieldDocReference_Editor();
+    }
+    return myStaticFieldDocReferenceEditorAspect;
+  }
+
+  private TextCommentLinePart_Editor getTextCommentLinePartEditorAspect() {
+    if (myTextCommentLinePartEditorAspect == null) {
+      myTextCommentLinePartEditorAspect = new TextCommentLinePart_Editor();
+    }
+    return myTextCommentLinePartEditorAspect;
+  }
+
+  private ThrowsBlockDocTag_Editor getThrowsBlockDocTagEditorAspect() {
+    if (myThrowsBlockDocTagEditorAspect == null) {
+      myThrowsBlockDocTagEditorAspect = new ThrowsBlockDocTag_Editor();
+    }
+    return myThrowsBlockDocTagEditorAspect;
+  }
+
+  private ValueInlineDocTag_Editor getValueInlineDocTagEditorAspect() {
+    if (myValueInlineDocTagEditorAspect == null) {
+      myValueInlineDocTagEditorAspect = new ValueInlineDocTag_Editor();
+    }
+    return myValueInlineDocTagEditorAspect;
+  }
+
+  private VersionBlockDocTag_Editor getVersionBlockDocTagEditorAspect() {
+    if (myVersionBlockDocTagEditorAspect == null) {
+      myVersionBlockDocTagEditorAspect = new VersionBlockDocTag_Editor();
+    }
+    return myVersionBlockDocTagEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0eb = new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", "jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"};
 }

@@ -8,18 +8,53 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ClassPathItem_Editor myClassPathItemEditorAspect;
+  private MpsStartupScript_Editor myMpsStartupScriptEditorAspect;
+  private SimpleVmOptions_Editor mySimpleVmOptionsEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        return new ClassPathItem_Editor();
+        return getClassPathItemEditorAspect();
       case 1:
-        return new MpsStartupScript_Editor();
+        return getMpsStartupScriptEditorAspect();
       case 2:
-        return new SimpleVmOptions_Editor();
+        return getSimpleVmOptionsEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.build.startup.structure.SimpleVmOptions"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myClassPathItemEditorAspect = null;
+    myMpsStartupScriptEditorAspect = null;
+    mySimpleVmOptionsEditorAspect = null;
+  }
+
+  private ClassPathItem_Editor getClassPathItemEditorAspect() {
+    if (myClassPathItemEditorAspect == null) {
+      myClassPathItemEditorAspect = new ClassPathItem_Editor();
+    }
+    return myClassPathItemEditorAspect;
+  }
+
+  private MpsStartupScript_Editor getMpsStartupScriptEditorAspect() {
+    if (myMpsStartupScriptEditorAspect == null) {
+      myMpsStartupScriptEditorAspect = new MpsStartupScript_Editor();
+    }
+    return myMpsStartupScriptEditorAspect;
+  }
+
+  private SimpleVmOptions_Editor getSimpleVmOptionsEditorAspect() {
+    if (mySimpleVmOptionsEditorAspect == null) {
+      mySimpleVmOptionsEditorAspect = new SimpleVmOptions_Editor();
+    }
+    return mySimpleVmOptionsEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.build.startup.structure.SimpleVmOptions"};
 }

@@ -8,52 +8,240 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CommandBuilderExpression_Editor myCommandBuilderExpressionEditorAspect;
+  private CommandDebuggerOperation_Editor myCommandDebuggerOperationEditorAspect;
+  private CommandDeclaration_Editor myCommandDeclarationEditorAspect;
+  private CommandParameterAssignment_Editor myCommandParameterAssignmentEditorAspect;
+  private CommandParameterReference_Editor myCommandParameterReferenceEditorAspect;
+  private CommandPartLengthOperation_Editor myCommandPartLengthOperationEditorAspect;
+  private CommandPartToListOperation_Editor myCommandPartToListOperationEditorAspect;
+  private CommandProcessType_Editor myCommandProcessTypeEditorAspect;
+  private CommandReferenceExpression_Editor myCommandReferenceExpressionEditorAspect;
+  private CommandType_Editor myCommandTypeEditorAspect;
+  private DebuggerSettingsCommandParameterDeclaration_Editor myDebuggerSettingsCommandParameterDeclarationEditorAspect;
+  private ExecuteCommandPart_Editor myExecuteCommandPartEditorAspect;
+  private ExplicitCommandParameterDeclaration_Editor myExplicitCommandParameterDeclarationEditorAspect;
+  private KeyValueCommandPart_Editor myKeyValueCommandPartEditorAspect;
+  private ListCommandPart_Editor myListCommandPartEditorAspect;
+  private NewProcessBuilderExpression_Editor myNewProcessBuilderExpressionEditorAspect;
+  private PropertyCommandPart_Editor myPropertyCommandPartEditorAspect;
+  private RedirectOutputExpression_Editor myRedirectOutputExpressionEditorAspect;
+  private ReportErrorStatement_Editor myReportErrorStatementEditorAspect;
+  private StartAndWaitOperation_Editor myStartAndWaitOperationEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0u, descriptor.getConceptFqName())) {
       case 0:
-        return new CommandBuilderExpression_Editor();
+        return getCommandBuilderExpressionEditorAspect();
       case 1:
-        return new CommandDebuggerOperation_Editor();
+        return getCommandDebuggerOperationEditorAspect();
       case 2:
-        return new CommandDeclaration_Editor();
+        return getCommandDeclarationEditorAspect();
       case 3:
-        return new CommandParameterAssignment_Editor();
+        return getCommandParameterAssignmentEditorAspect();
       case 4:
-        return new CommandParameterReference_Editor();
+        return getCommandParameterReferenceEditorAspect();
       case 5:
-        return new CommandPartLengthOperation_Editor();
+        return getCommandPartLengthOperationEditorAspect();
       case 6:
-        return new CommandPartToListOperation_Editor();
+        return getCommandPartToListOperationEditorAspect();
       case 7:
-        return new CommandProcessType_Editor();
+        return getCommandProcessTypeEditorAspect();
       case 8:
-        return new CommandReferenceExpression_Editor();
+        return getCommandReferenceExpressionEditorAspect();
       case 9:
-        return new CommandType_Editor();
+        return getCommandTypeEditorAspect();
       case 10:
-        return new DebuggerSettingsCommandParameterDeclaration_Editor();
+        return getDebuggerSettingsCommandParameterDeclarationEditorAspect();
       case 11:
-        return new ExecuteCommandPart_Editor();
+        return getExecuteCommandPartEditorAspect();
       case 12:
-        return new ExplicitCommandParameterDeclaration_Editor();
+        return getExplicitCommandParameterDeclarationEditorAspect();
       case 13:
-        return new KeyValueCommandPart_Editor();
+        return getKeyValueCommandPartEditorAspect();
       case 14:
-        return new ListCommandPart_Editor();
+        return getListCommandPartEditorAspect();
       case 15:
-        return new NewProcessBuilderExpression_Editor();
+        return getNewProcessBuilderExpressionEditorAspect();
       case 16:
-        return new PropertyCommandPart_Editor();
+        return getPropertyCommandPartEditorAspect();
       case 17:
-        return new RedirectOutputExpression_Editor();
+        return getRedirectOutputExpressionEditorAspect();
       case 18:
-        return new ReportErrorStatement_Editor();
+        return getReportErrorStatementEditorAspect();
       case 19:
-        return new StartAndWaitOperation_Editor();
+        return getStartAndWaitOperationEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.execution.commands.structure.CommandBuilderExpression", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandDeclaration", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterReference", "jetbrains.mps.execution.commands.structure.CommandPartLengthOperation", "jetbrains.mps.execution.commands.structure.CommandPartToListOperation", "jetbrains.mps.execution.commands.structure.CommandProcessType", "jetbrains.mps.execution.commands.structure.CommandReferenceExpression", "jetbrains.mps.execution.commands.structure.CommandType", "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.KeyValueCommandPart", "jetbrains.mps.execution.commands.structure.ListCommandPart", "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression", "jetbrains.mps.execution.commands.structure.PropertyCommandPart", "jetbrains.mps.execution.commands.structure.RedirectOutputExpression", "jetbrains.mps.execution.commands.structure.ReportErrorStatement", "jetbrains.mps.execution.commands.structure.StartAndWaitOperation"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCommandBuilderExpressionEditorAspect = null;
+    myCommandDebuggerOperationEditorAspect = null;
+    myCommandDeclarationEditorAspect = null;
+    myCommandParameterAssignmentEditorAspect = null;
+    myCommandParameterReferenceEditorAspect = null;
+    myCommandPartLengthOperationEditorAspect = null;
+    myCommandPartToListOperationEditorAspect = null;
+    myCommandProcessTypeEditorAspect = null;
+    myCommandReferenceExpressionEditorAspect = null;
+    myCommandTypeEditorAspect = null;
+    myDebuggerSettingsCommandParameterDeclarationEditorAspect = null;
+    myExecuteCommandPartEditorAspect = null;
+    myExplicitCommandParameterDeclarationEditorAspect = null;
+    myKeyValueCommandPartEditorAspect = null;
+    myListCommandPartEditorAspect = null;
+    myNewProcessBuilderExpressionEditorAspect = null;
+    myPropertyCommandPartEditorAspect = null;
+    myRedirectOutputExpressionEditorAspect = null;
+    myReportErrorStatementEditorAspect = null;
+    myStartAndWaitOperationEditorAspect = null;
+  }
+
+  private CommandBuilderExpression_Editor getCommandBuilderExpressionEditorAspect() {
+    if (myCommandBuilderExpressionEditorAspect == null) {
+      myCommandBuilderExpressionEditorAspect = new CommandBuilderExpression_Editor();
+    }
+    return myCommandBuilderExpressionEditorAspect;
+  }
+
+  private CommandDebuggerOperation_Editor getCommandDebuggerOperationEditorAspect() {
+    if (myCommandDebuggerOperationEditorAspect == null) {
+      myCommandDebuggerOperationEditorAspect = new CommandDebuggerOperation_Editor();
+    }
+    return myCommandDebuggerOperationEditorAspect;
+  }
+
+  private CommandDeclaration_Editor getCommandDeclarationEditorAspect() {
+    if (myCommandDeclarationEditorAspect == null) {
+      myCommandDeclarationEditorAspect = new CommandDeclaration_Editor();
+    }
+    return myCommandDeclarationEditorAspect;
+  }
+
+  private CommandParameterAssignment_Editor getCommandParameterAssignmentEditorAspect() {
+    if (myCommandParameterAssignmentEditorAspect == null) {
+      myCommandParameterAssignmentEditorAspect = new CommandParameterAssignment_Editor();
+    }
+    return myCommandParameterAssignmentEditorAspect;
+  }
+
+  private CommandParameterReference_Editor getCommandParameterReferenceEditorAspect() {
+    if (myCommandParameterReferenceEditorAspect == null) {
+      myCommandParameterReferenceEditorAspect = new CommandParameterReference_Editor();
+    }
+    return myCommandParameterReferenceEditorAspect;
+  }
+
+  private CommandPartLengthOperation_Editor getCommandPartLengthOperationEditorAspect() {
+    if (myCommandPartLengthOperationEditorAspect == null) {
+      myCommandPartLengthOperationEditorAspect = new CommandPartLengthOperation_Editor();
+    }
+    return myCommandPartLengthOperationEditorAspect;
+  }
+
+  private CommandPartToListOperation_Editor getCommandPartToListOperationEditorAspect() {
+    if (myCommandPartToListOperationEditorAspect == null) {
+      myCommandPartToListOperationEditorAspect = new CommandPartToListOperation_Editor();
+    }
+    return myCommandPartToListOperationEditorAspect;
+  }
+
+  private CommandProcessType_Editor getCommandProcessTypeEditorAspect() {
+    if (myCommandProcessTypeEditorAspect == null) {
+      myCommandProcessTypeEditorAspect = new CommandProcessType_Editor();
+    }
+    return myCommandProcessTypeEditorAspect;
+  }
+
+  private CommandReferenceExpression_Editor getCommandReferenceExpressionEditorAspect() {
+    if (myCommandReferenceExpressionEditorAspect == null) {
+      myCommandReferenceExpressionEditorAspect = new CommandReferenceExpression_Editor();
+    }
+    return myCommandReferenceExpressionEditorAspect;
+  }
+
+  private CommandType_Editor getCommandTypeEditorAspect() {
+    if (myCommandTypeEditorAspect == null) {
+      myCommandTypeEditorAspect = new CommandType_Editor();
+    }
+    return myCommandTypeEditorAspect;
+  }
+
+  private DebuggerSettingsCommandParameterDeclaration_Editor getDebuggerSettingsCommandParameterDeclarationEditorAspect() {
+    if (myDebuggerSettingsCommandParameterDeclarationEditorAspect == null) {
+      myDebuggerSettingsCommandParameterDeclarationEditorAspect = new DebuggerSettingsCommandParameterDeclaration_Editor();
+    }
+    return myDebuggerSettingsCommandParameterDeclarationEditorAspect;
+  }
+
+  private ExecuteCommandPart_Editor getExecuteCommandPartEditorAspect() {
+    if (myExecuteCommandPartEditorAspect == null) {
+      myExecuteCommandPartEditorAspect = new ExecuteCommandPart_Editor();
+    }
+    return myExecuteCommandPartEditorAspect;
+  }
+
+  private ExplicitCommandParameterDeclaration_Editor getExplicitCommandParameterDeclarationEditorAspect() {
+    if (myExplicitCommandParameterDeclarationEditorAspect == null) {
+      myExplicitCommandParameterDeclarationEditorAspect = new ExplicitCommandParameterDeclaration_Editor();
+    }
+    return myExplicitCommandParameterDeclarationEditorAspect;
+  }
+
+  private KeyValueCommandPart_Editor getKeyValueCommandPartEditorAspect() {
+    if (myKeyValueCommandPartEditorAspect == null) {
+      myKeyValueCommandPartEditorAspect = new KeyValueCommandPart_Editor();
+    }
+    return myKeyValueCommandPartEditorAspect;
+  }
+
+  private ListCommandPart_Editor getListCommandPartEditorAspect() {
+    if (myListCommandPartEditorAspect == null) {
+      myListCommandPartEditorAspect = new ListCommandPart_Editor();
+    }
+    return myListCommandPartEditorAspect;
+  }
+
+  private NewProcessBuilderExpression_Editor getNewProcessBuilderExpressionEditorAspect() {
+    if (myNewProcessBuilderExpressionEditorAspect == null) {
+      myNewProcessBuilderExpressionEditorAspect = new NewProcessBuilderExpression_Editor();
+    }
+    return myNewProcessBuilderExpressionEditorAspect;
+  }
+
+  private PropertyCommandPart_Editor getPropertyCommandPartEditorAspect() {
+    if (myPropertyCommandPartEditorAspect == null) {
+      myPropertyCommandPartEditorAspect = new PropertyCommandPart_Editor();
+    }
+    return myPropertyCommandPartEditorAspect;
+  }
+
+  private RedirectOutputExpression_Editor getRedirectOutputExpressionEditorAspect() {
+    if (myRedirectOutputExpressionEditorAspect == null) {
+      myRedirectOutputExpressionEditorAspect = new RedirectOutputExpression_Editor();
+    }
+    return myRedirectOutputExpressionEditorAspect;
+  }
+
+  private ReportErrorStatement_Editor getReportErrorStatementEditorAspect() {
+    if (myReportErrorStatementEditorAspect == null) {
+      myReportErrorStatementEditorAspect = new ReportErrorStatement_Editor();
+    }
+    return myReportErrorStatementEditorAspect;
+  }
+
+  private StartAndWaitOperation_Editor getStartAndWaitOperationEditorAspect() {
+    if (myStartAndWaitOperationEditorAspect == null) {
+      myStartAndWaitOperationEditorAspect = new StartAndWaitOperation_Editor();
+    }
+    return myStartAndWaitOperationEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0u = new String[]{"jetbrains.mps.execution.commands.structure.CommandBuilderExpression", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandDeclaration", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterReference", "jetbrains.mps.execution.commands.structure.CommandPartLengthOperation", "jetbrains.mps.execution.commands.structure.CommandPartToListOperation", "jetbrains.mps.execution.commands.structure.CommandProcessType", "jetbrains.mps.execution.commands.structure.CommandReferenceExpression", "jetbrains.mps.execution.commands.structure.CommandType", "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.KeyValueCommandPart", "jetbrains.mps.execution.commands.structure.ListCommandPart", "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression", "jetbrains.mps.execution.commands.structure.PropertyCommandPart", "jetbrains.mps.execution.commands.structure.RedirectOutputExpression", "jetbrains.mps.execution.commands.structure.ReportErrorStatement", "jetbrains.mps.execution.commands.structure.StartAndWaitOperation"};
 }

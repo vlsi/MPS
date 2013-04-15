@@ -8,26 +8,97 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private BreakpointCreator_Editor myBreakpointCreatorEditorAspect;
+  private BreakpointableNodeItem_Editor myBreakpointableNodeItemEditorAspect;
+  private ConceptDeclarationReference_Editor myConceptDeclarationReferenceEditorAspect;
+  private CreateBreakpointOperation_Editor myCreateBreakpointOperationEditorAspect;
+  private DebuggerConfiguration_Editor myDebuggerConfigurationEditorAspect;
+  private DebuggerReference_Editor myDebuggerReferenceEditorAspect;
+  private DebuggerType_Editor myDebuggerTypeEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0h, descriptor.getConceptFqName())) {
       case 0:
-        return new BreakpointCreator_Editor();
+        return getBreakpointCreatorEditorAspect();
       case 1:
-        return new BreakpointableNodeItem_Editor();
+        return getBreakpointableNodeItemEditorAspect();
       case 2:
-        return new ConceptDeclarationReference_Editor();
+        return getConceptDeclarationReferenceEditorAspect();
       case 3:
-        return new CreateBreakpointOperation_Editor();
+        return getCreateBreakpointOperationEditorAspect();
       case 4:
-        return new DebuggerConfiguration_Editor();
+        return getDebuggerConfigurationEditorAspect();
       case 5:
-        return new DebuggerReference_Editor();
+        return getDebuggerReferenceEditorAspect();
       case 6:
-        return new DebuggerType_Editor();
+        return getDebuggerTypeEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.debugger.api.lang.structure.BreakpointCreator", "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem", "jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference", "jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation", "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration", "jetbrains.mps.debugger.api.lang.structure.DebuggerReference", "jetbrains.mps.debugger.api.lang.structure.DebuggerType"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myBreakpointCreatorEditorAspect = null;
+    myBreakpointableNodeItemEditorAspect = null;
+    myConceptDeclarationReferenceEditorAspect = null;
+    myCreateBreakpointOperationEditorAspect = null;
+    myDebuggerConfigurationEditorAspect = null;
+    myDebuggerReferenceEditorAspect = null;
+    myDebuggerTypeEditorAspect = null;
+  }
+
+  private BreakpointCreator_Editor getBreakpointCreatorEditorAspect() {
+    if (myBreakpointCreatorEditorAspect == null) {
+      myBreakpointCreatorEditorAspect = new BreakpointCreator_Editor();
+    }
+    return myBreakpointCreatorEditorAspect;
+  }
+
+  private BreakpointableNodeItem_Editor getBreakpointableNodeItemEditorAspect() {
+    if (myBreakpointableNodeItemEditorAspect == null) {
+      myBreakpointableNodeItemEditorAspect = new BreakpointableNodeItem_Editor();
+    }
+    return myBreakpointableNodeItemEditorAspect;
+  }
+
+  private ConceptDeclarationReference_Editor getConceptDeclarationReferenceEditorAspect() {
+    if (myConceptDeclarationReferenceEditorAspect == null) {
+      myConceptDeclarationReferenceEditorAspect = new ConceptDeclarationReference_Editor();
+    }
+    return myConceptDeclarationReferenceEditorAspect;
+  }
+
+  private CreateBreakpointOperation_Editor getCreateBreakpointOperationEditorAspect() {
+    if (myCreateBreakpointOperationEditorAspect == null) {
+      myCreateBreakpointOperationEditorAspect = new CreateBreakpointOperation_Editor();
+    }
+    return myCreateBreakpointOperationEditorAspect;
+  }
+
+  private DebuggerConfiguration_Editor getDebuggerConfigurationEditorAspect() {
+    if (myDebuggerConfigurationEditorAspect == null) {
+      myDebuggerConfigurationEditorAspect = new DebuggerConfiguration_Editor();
+    }
+    return myDebuggerConfigurationEditorAspect;
+  }
+
+  private DebuggerReference_Editor getDebuggerReferenceEditorAspect() {
+    if (myDebuggerReferenceEditorAspect == null) {
+      myDebuggerReferenceEditorAspect = new DebuggerReference_Editor();
+    }
+    return myDebuggerReferenceEditorAspect;
+  }
+
+  private DebuggerType_Editor getDebuggerTypeEditorAspect() {
+    if (myDebuggerTypeEditorAspect == null) {
+      myDebuggerTypeEditorAspect = new DebuggerType_Editor();
+    }
+    return myDebuggerTypeEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0h = new String[]{"jetbrains.mps.debugger.api.lang.structure.BreakpointCreator", "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem", "jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference", "jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation", "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration", "jetbrains.mps.debugger.api.lang.structure.DebuggerReference", "jetbrains.mps.debugger.api.lang.structure.DebuggerType"};
 }

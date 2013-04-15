@@ -8,18 +8,53 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private WannabeClass_Editor myWannabeClassEditorAspect;
+  private WannabeMethod_Editor myWannabeMethodEditorAspect;
+  private WannabeMethodCall_Editor myWannabeMethodCallEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        return new WannabeClass_Editor();
+        return getWannabeClassEditorAspect();
       case 1:
-        return new WannabeMethod_Editor();
+        return getWannabeMethodEditorAspect();
       case 2:
-        return new WannabeMethodCall_Editor();
+        return getWannabeMethodCallEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.debug.sampleLanguage.structure.WannabeClass", "jetbrains.mps.debug.sampleLanguage.structure.WannabeMethod", "jetbrains.mps.debug.sampleLanguage.structure.WannabeMethodCall"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myWannabeClassEditorAspect = null;
+    myWannabeMethodEditorAspect = null;
+    myWannabeMethodCallEditorAspect = null;
+  }
+
+  private WannabeClass_Editor getWannabeClassEditorAspect() {
+    if (myWannabeClassEditorAspect == null) {
+      myWannabeClassEditorAspect = new WannabeClass_Editor();
+    }
+    return myWannabeClassEditorAspect;
+  }
+
+  private WannabeMethod_Editor getWannabeMethodEditorAspect() {
+    if (myWannabeMethodEditorAspect == null) {
+      myWannabeMethodEditorAspect = new WannabeMethod_Editor();
+    }
+    return myWannabeMethodEditorAspect;
+  }
+
+  private WannabeMethodCall_Editor getWannabeMethodCallEditorAspect() {
+    if (myWannabeMethodCallEditorAspect == null) {
+      myWannabeMethodCallEditorAspect = new WannabeMethodCall_Editor();
+    }
+    return myWannabeMethodCallEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.debug.sampleLanguage.structure.WannabeClass", "jetbrains.mps.debug.sampleLanguage.structure.WannabeMethod", "jetbrains.mps.debug.sampleLanguage.structure.WannabeMethodCall"};
 }

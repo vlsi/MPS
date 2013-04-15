@@ -8,46 +8,207 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private DevKit_Editor myDevKitEditorAspect;
+  private Generator_Editor myGeneratorEditorAspect;
+  private Language_Editor myLanguageEditorAspect;
+  private MappingConfigExternalRef_Editor myMappingConfigExternalRefEditorAspect;
+  private MappingConfigNormalRef_Editor myMappingConfigNormalRefEditorAspect;
+  private MappingConfigRefAllGlobal_Editor myMappingConfigRefAllGlobalEditorAspect;
+  private MappingConfigRefAllLocal_Editor myMappingConfigRefAllLocalEditorAspect;
+  private MappingConfigRefSet_Editor myMappingConfigRefSetEditorAspect;
+  private MappingPriorityRule_Editor myMappingPriorityRuleEditorAspect;
+  private ModelReference_Editor myModelReferenceEditorAspect;
+  private ModelRoot_Editor myModelRootEditorAspect;
+  private ModuleDependency_Editor myModuleDependencyEditorAspect;
+  private ModuleReference_Editor myModuleReferenceEditorAspect;
+  private Solution_Editor mySolutionEditorAspect;
+  private SourcePath_Editor mySourcePathEditorAspect;
+  private StubEntry_Editor myStubEntryEditorAspect;
+  private StubSolution_Editor myStubSolutionEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0r, descriptor.getConceptFqName())) {
       case 0:
-        return new DevKit_Editor();
+        return getDevKitEditorAspect();
       case 1:
-        return new Generator_Editor();
+        return getGeneratorEditorAspect();
       case 2:
-        return new Language_Editor();
+        return getLanguageEditorAspect();
       case 3:
-        return new MappingConfigExternalRef_Editor();
+        return getMappingConfigExternalRefEditorAspect();
       case 4:
-        return new MappingConfigNormalRef_Editor();
+        return getMappingConfigNormalRefEditorAspect();
       case 5:
-        return new MappingConfigRefAllGlobal_Editor();
+        return getMappingConfigRefAllGlobalEditorAspect();
       case 6:
-        return new MappingConfigRefAllLocal_Editor();
+        return getMappingConfigRefAllLocalEditorAspect();
       case 7:
-        return new MappingConfigRefSet_Editor();
+        return getMappingConfigRefSetEditorAspect();
       case 8:
-        return new MappingPriorityRule_Editor();
+        return getMappingPriorityRuleEditorAspect();
       case 9:
-        return new ModelReference_Editor();
+        return getModelReferenceEditorAspect();
       case 10:
-        return new ModelRoot_Editor();
+        return getModelRootEditorAspect();
       case 11:
-        return new ModuleDependency_Editor();
+        return getModuleDependencyEditorAspect();
       case 12:
-        return new ModuleReference_Editor();
+        return getModuleReferenceEditorAspect();
       case 13:
-        return new Solution_Editor();
+        return getSolutionEditorAspect();
       case 14:
-        return new SourcePath_Editor();
+        return getSourcePathEditorAspect();
       case 15:
-        return new StubEntry_Editor();
+        return getStubEntryEditorAspect();
       case 16:
-        return new StubSolution_Editor();
+        return getStubSolutionEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.project.structure.DevKit", "jetbrains.mps.lang.project.structure.Generator", "jetbrains.mps.lang.project.structure.Language", "jetbrains.mps.lang.project.structure.MappingConfigExternalRef", "jetbrains.mps.lang.project.structure.MappingConfigNormalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal", "jetbrains.mps.lang.project.structure.MappingConfigRefSet", "jetbrains.mps.lang.project.structure.MappingPriorityRule", "jetbrains.mps.lang.project.structure.ModelReference", "jetbrains.mps.lang.project.structure.ModelRoot", "jetbrains.mps.lang.project.structure.ModuleDependency", "jetbrains.mps.lang.project.structure.ModuleReference", "jetbrains.mps.lang.project.structure.Solution", "jetbrains.mps.lang.project.structure.SourcePath", "jetbrains.mps.lang.project.structure.StubEntry", "jetbrains.mps.lang.project.structure.StubSolution"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myDevKitEditorAspect = null;
+    myGeneratorEditorAspect = null;
+    myLanguageEditorAspect = null;
+    myMappingConfigExternalRefEditorAspect = null;
+    myMappingConfigNormalRefEditorAspect = null;
+    myMappingConfigRefAllGlobalEditorAspect = null;
+    myMappingConfigRefAllLocalEditorAspect = null;
+    myMappingConfigRefSetEditorAspect = null;
+    myMappingPriorityRuleEditorAspect = null;
+    myModelReferenceEditorAspect = null;
+    myModelRootEditorAspect = null;
+    myModuleDependencyEditorAspect = null;
+    myModuleReferenceEditorAspect = null;
+    mySolutionEditorAspect = null;
+    mySourcePathEditorAspect = null;
+    myStubEntryEditorAspect = null;
+    myStubSolutionEditorAspect = null;
+  }
+
+  private DevKit_Editor getDevKitEditorAspect() {
+    if (myDevKitEditorAspect == null) {
+      myDevKitEditorAspect = new DevKit_Editor();
+    }
+    return myDevKitEditorAspect;
+  }
+
+  private Generator_Editor getGeneratorEditorAspect() {
+    if (myGeneratorEditorAspect == null) {
+      myGeneratorEditorAspect = new Generator_Editor();
+    }
+    return myGeneratorEditorAspect;
+  }
+
+  private Language_Editor getLanguageEditorAspect() {
+    if (myLanguageEditorAspect == null) {
+      myLanguageEditorAspect = new Language_Editor();
+    }
+    return myLanguageEditorAspect;
+  }
+
+  private MappingConfigExternalRef_Editor getMappingConfigExternalRefEditorAspect() {
+    if (myMappingConfigExternalRefEditorAspect == null) {
+      myMappingConfigExternalRefEditorAspect = new MappingConfigExternalRef_Editor();
+    }
+    return myMappingConfigExternalRefEditorAspect;
+  }
+
+  private MappingConfigNormalRef_Editor getMappingConfigNormalRefEditorAspect() {
+    if (myMappingConfigNormalRefEditorAspect == null) {
+      myMappingConfigNormalRefEditorAspect = new MappingConfigNormalRef_Editor();
+    }
+    return myMappingConfigNormalRefEditorAspect;
+  }
+
+  private MappingConfigRefAllGlobal_Editor getMappingConfigRefAllGlobalEditorAspect() {
+    if (myMappingConfigRefAllGlobalEditorAspect == null) {
+      myMappingConfigRefAllGlobalEditorAspect = new MappingConfigRefAllGlobal_Editor();
+    }
+    return myMappingConfigRefAllGlobalEditorAspect;
+  }
+
+  private MappingConfigRefAllLocal_Editor getMappingConfigRefAllLocalEditorAspect() {
+    if (myMappingConfigRefAllLocalEditorAspect == null) {
+      myMappingConfigRefAllLocalEditorAspect = new MappingConfigRefAllLocal_Editor();
+    }
+    return myMappingConfigRefAllLocalEditorAspect;
+  }
+
+  private MappingConfigRefSet_Editor getMappingConfigRefSetEditorAspect() {
+    if (myMappingConfigRefSetEditorAspect == null) {
+      myMappingConfigRefSetEditorAspect = new MappingConfigRefSet_Editor();
+    }
+    return myMappingConfigRefSetEditorAspect;
+  }
+
+  private MappingPriorityRule_Editor getMappingPriorityRuleEditorAspect() {
+    if (myMappingPriorityRuleEditorAspect == null) {
+      myMappingPriorityRuleEditorAspect = new MappingPriorityRule_Editor();
+    }
+    return myMappingPriorityRuleEditorAspect;
+  }
+
+  private ModelReference_Editor getModelReferenceEditorAspect() {
+    if (myModelReferenceEditorAspect == null) {
+      myModelReferenceEditorAspect = new ModelReference_Editor();
+    }
+    return myModelReferenceEditorAspect;
+  }
+
+  private ModelRoot_Editor getModelRootEditorAspect() {
+    if (myModelRootEditorAspect == null) {
+      myModelRootEditorAspect = new ModelRoot_Editor();
+    }
+    return myModelRootEditorAspect;
+  }
+
+  private ModuleDependency_Editor getModuleDependencyEditorAspect() {
+    if (myModuleDependencyEditorAspect == null) {
+      myModuleDependencyEditorAspect = new ModuleDependency_Editor();
+    }
+    return myModuleDependencyEditorAspect;
+  }
+
+  private ModuleReference_Editor getModuleReferenceEditorAspect() {
+    if (myModuleReferenceEditorAspect == null) {
+      myModuleReferenceEditorAspect = new ModuleReference_Editor();
+    }
+    return myModuleReferenceEditorAspect;
+  }
+
+  private Solution_Editor getSolutionEditorAspect() {
+    if (mySolutionEditorAspect == null) {
+      mySolutionEditorAspect = new Solution_Editor();
+    }
+    return mySolutionEditorAspect;
+  }
+
+  private SourcePath_Editor getSourcePathEditorAspect() {
+    if (mySourcePathEditorAspect == null) {
+      mySourcePathEditorAspect = new SourcePath_Editor();
+    }
+    return mySourcePathEditorAspect;
+  }
+
+  private StubEntry_Editor getStubEntryEditorAspect() {
+    if (myStubEntryEditorAspect == null) {
+      myStubEntryEditorAspect = new StubEntry_Editor();
+    }
+    return myStubEntryEditorAspect;
+  }
+
+  private StubSolution_Editor getStubSolutionEditorAspect() {
+    if (myStubSolutionEditorAspect == null) {
+      myStubSolutionEditorAspect = new StubSolution_Editor();
+    }
+    return myStubSolutionEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0r = new String[]{"jetbrains.mps.lang.project.structure.DevKit", "jetbrains.mps.lang.project.structure.Generator", "jetbrains.mps.lang.project.structure.Language", "jetbrains.mps.lang.project.structure.MappingConfigExternalRef", "jetbrains.mps.lang.project.structure.MappingConfigNormalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal", "jetbrains.mps.lang.project.structure.MappingConfigRefSet", "jetbrains.mps.lang.project.structure.MappingPriorityRule", "jetbrains.mps.lang.project.structure.ModelReference", "jetbrains.mps.lang.project.structure.ModelRoot", "jetbrains.mps.lang.project.structure.ModuleDependency", "jetbrains.mps.lang.project.structure.ModuleReference", "jetbrains.mps.lang.project.structure.Solution", "jetbrains.mps.lang.project.structure.SourcePath", "jetbrains.mps.lang.project.structure.StubEntry", "jetbrains.mps.lang.project.structure.StubSolution"};
 }

@@ -8,18 +8,53 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private BaseExecuteCommandStatement_Editor myBaseExecuteCommandStatementEditorAspect;
+  private CommandClosureLiteral_Editor myCommandClosureLiteralEditorAspect;
+  private ExecuteCommandInEDTStatement_Editor myExecuteCommandInEDTStatementEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        return new BaseExecuteCommandStatement_Editor();
+        return getBaseExecuteCommandStatementEditorAspect();
       case 1:
-        return new CommandClosureLiteral_Editor();
+        return getCommandClosureLiteralEditorAspect();
       case 2:
-        return new ExecuteCommandInEDTStatement_Editor();
+        return getExecuteCommandInEDTStatementEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.access.structure.CommandClosureLiteral", "jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myBaseExecuteCommandStatementEditorAspect = null;
+    myCommandClosureLiteralEditorAspect = null;
+    myExecuteCommandInEDTStatementEditorAspect = null;
+  }
+
+  private BaseExecuteCommandStatement_Editor getBaseExecuteCommandStatementEditorAspect() {
+    if (myBaseExecuteCommandStatementEditorAspect == null) {
+      myBaseExecuteCommandStatementEditorAspect = new BaseExecuteCommandStatement_Editor();
+    }
+    return myBaseExecuteCommandStatementEditorAspect;
+  }
+
+  private CommandClosureLiteral_Editor getCommandClosureLiteralEditorAspect() {
+    if (myCommandClosureLiteralEditorAspect == null) {
+      myCommandClosureLiteralEditorAspect = new CommandClosureLiteral_Editor();
+    }
+    return myCommandClosureLiteralEditorAspect;
+  }
+
+  private ExecuteCommandInEDTStatement_Editor getExecuteCommandInEDTStatementEditorAspect() {
+    if (myExecuteCommandInEDTStatementEditorAspect == null) {
+      myExecuteCommandInEDTStatementEditorAspect = new ExecuteCommandInEDTStatement_Editor();
+    }
+    return myExecuteCommandInEDTStatementEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.access.structure.CommandClosureLiteral", "jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement"};
 }

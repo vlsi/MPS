@@ -8,38 +8,163 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AssertEquals_Editor myAssertEqualsEditorAspect;
+  private AssertFalse_Editor myAssertFalseEditorAspect;
+  private AssertInNotNull_Editor myAssertInNotNullEditorAspect;
+  private AssertIsNull_Editor myAssertIsNullEditorAspect;
+  private AssertSame_Editor myAssertSameEditorAspect;
+  private AssertThrows_Editor myAssertThrowsEditorAspect;
+  private AssertTrue_Editor myAssertTrueEditorAspect;
+  private BTestCase_Editor myBTestCaseEditorAspect;
+  private Fail_Editor myFailEditorAspect;
+  private Message_Editor myMessageEditorAspect;
+  private PrepareMethod_Editor myPrepareMethodEditorAspect;
+  private TestMethod_Editor myTestMethodEditorAspect;
+  private TestMethodList_Editor myTestMethodListEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0n, descriptor.getConceptFqName())) {
       case 0:
-        return new AssertEquals_Editor();
+        return getAssertEqualsEditorAspect();
       case 1:
-        return new AssertFalse_Editor();
+        return getAssertFalseEditorAspect();
       case 2:
-        return new AssertInNotNull_Editor();
+        return getAssertInNotNullEditorAspect();
       case 3:
-        return new AssertIsNull_Editor();
+        return getAssertIsNullEditorAspect();
       case 4:
-        return new AssertSame_Editor();
+        return getAssertSameEditorAspect();
       case 5:
-        return new AssertThrows_Editor();
+        return getAssertThrowsEditorAspect();
       case 6:
-        return new AssertTrue_Editor();
+        return getAssertTrueEditorAspect();
       case 7:
-        return new BTestCase_Editor();
+        return getBTestCaseEditorAspect();
       case 8:
-        return new Fail_Editor();
+        return getFailEditorAspect();
       case 9:
-        return new Message_Editor();
+        return getMessageEditorAspect();
       case 10:
-        return new PrepareMethod_Editor();
+        return getPrepareMethodEditorAspect();
       case 11:
-        return new TestMethod_Editor();
+        return getTestMethodEditorAspect();
       case 12:
-        return new TestMethodList_Editor();
+        return getTestMethodListEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", "jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse", "jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows", "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue", "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", "jetbrains.mps.baseLanguage.unitTest.structure.Fail", "jetbrains.mps.baseLanguage.unitTest.structure.Message", "jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAssertEqualsEditorAspect = null;
+    myAssertFalseEditorAspect = null;
+    myAssertInNotNullEditorAspect = null;
+    myAssertIsNullEditorAspect = null;
+    myAssertSameEditorAspect = null;
+    myAssertThrowsEditorAspect = null;
+    myAssertTrueEditorAspect = null;
+    myBTestCaseEditorAspect = null;
+    myFailEditorAspect = null;
+    myMessageEditorAspect = null;
+    myPrepareMethodEditorAspect = null;
+    myTestMethodEditorAspect = null;
+    myTestMethodListEditorAspect = null;
+  }
+
+  private AssertEquals_Editor getAssertEqualsEditorAspect() {
+    if (myAssertEqualsEditorAspect == null) {
+      myAssertEqualsEditorAspect = new AssertEquals_Editor();
+    }
+    return myAssertEqualsEditorAspect;
+  }
+
+  private AssertFalse_Editor getAssertFalseEditorAspect() {
+    if (myAssertFalseEditorAspect == null) {
+      myAssertFalseEditorAspect = new AssertFalse_Editor();
+    }
+    return myAssertFalseEditorAspect;
+  }
+
+  private AssertInNotNull_Editor getAssertInNotNullEditorAspect() {
+    if (myAssertInNotNullEditorAspect == null) {
+      myAssertInNotNullEditorAspect = new AssertInNotNull_Editor();
+    }
+    return myAssertInNotNullEditorAspect;
+  }
+
+  private AssertIsNull_Editor getAssertIsNullEditorAspect() {
+    if (myAssertIsNullEditorAspect == null) {
+      myAssertIsNullEditorAspect = new AssertIsNull_Editor();
+    }
+    return myAssertIsNullEditorAspect;
+  }
+
+  private AssertSame_Editor getAssertSameEditorAspect() {
+    if (myAssertSameEditorAspect == null) {
+      myAssertSameEditorAspect = new AssertSame_Editor();
+    }
+    return myAssertSameEditorAspect;
+  }
+
+  private AssertThrows_Editor getAssertThrowsEditorAspect() {
+    if (myAssertThrowsEditorAspect == null) {
+      myAssertThrowsEditorAspect = new AssertThrows_Editor();
+    }
+    return myAssertThrowsEditorAspect;
+  }
+
+  private AssertTrue_Editor getAssertTrueEditorAspect() {
+    if (myAssertTrueEditorAspect == null) {
+      myAssertTrueEditorAspect = new AssertTrue_Editor();
+    }
+    return myAssertTrueEditorAspect;
+  }
+
+  private BTestCase_Editor getBTestCaseEditorAspect() {
+    if (myBTestCaseEditorAspect == null) {
+      myBTestCaseEditorAspect = new BTestCase_Editor();
+    }
+    return myBTestCaseEditorAspect;
+  }
+
+  private Fail_Editor getFailEditorAspect() {
+    if (myFailEditorAspect == null) {
+      myFailEditorAspect = new Fail_Editor();
+    }
+    return myFailEditorAspect;
+  }
+
+  private Message_Editor getMessageEditorAspect() {
+    if (myMessageEditorAspect == null) {
+      myMessageEditorAspect = new Message_Editor();
+    }
+    return myMessageEditorAspect;
+  }
+
+  private PrepareMethod_Editor getPrepareMethodEditorAspect() {
+    if (myPrepareMethodEditorAspect == null) {
+      myPrepareMethodEditorAspect = new PrepareMethod_Editor();
+    }
+    return myPrepareMethodEditorAspect;
+  }
+
+  private TestMethod_Editor getTestMethodEditorAspect() {
+    if (myTestMethodEditorAspect == null) {
+      myTestMethodEditorAspect = new TestMethod_Editor();
+    }
+    return myTestMethodEditorAspect;
+  }
+
+  private TestMethodList_Editor getTestMethodListEditorAspect() {
+    if (myTestMethodListEditorAspect == null) {
+      myTestMethodListEditorAspect = new TestMethodList_Editor();
+    }
+    return myTestMethodListEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0n = new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", "jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse", "jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows", "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue", "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", "jetbrains.mps.baseLanguage.unitTest.structure.Fail", "jetbrains.mps.baseLanguage.unitTest.structure.Message", "jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList"};
 }

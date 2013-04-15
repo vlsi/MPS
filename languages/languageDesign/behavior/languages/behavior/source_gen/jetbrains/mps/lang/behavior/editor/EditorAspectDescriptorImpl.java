@@ -8,30 +8,119 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ConceptBehavior_Editor myConceptBehaviorEditorAspect;
+  private ConceptConstructorDeclaration_Editor myConceptConstructorDeclarationEditorAspect;
+  private ConceptMethodDeclaration_Editor myConceptMethodDeclarationEditorAspect;
+  private InternalConceptDeclarationReference_Editor myInternalConceptDeclarationReferenceEditorAspect;
+  private InternalConceptDeclarationsHolder_Editor myInternalConceptDeclarationsHolderEditorAspect;
+  private LocalBehaviorMethodCall_Editor myLocalBehaviorMethodCallEditorAspect;
+  private StaticConceptMethodDeclaration_Editor myStaticConceptMethodDeclarationEditorAspect;
+  private SuperNodeExpression_Editor mySuperNodeExpressionEditorAspect;
+  private ThisNodeExpression_Editor myThisNodeExpressionEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0j, descriptor.getConceptFqName())) {
       case 0:
-        return new ConceptBehavior_Editor();
+        return getConceptBehaviorEditorAspect();
       case 1:
-        return new ConceptConstructorDeclaration_Editor();
+        return getConceptConstructorDeclarationEditorAspect();
       case 2:
-        return new ConceptMethodDeclaration_Editor();
+        return getConceptMethodDeclarationEditorAspect();
       case 3:
-        return new InternalConceptDeclarationReference_Editor();
+        return getInternalConceptDeclarationReferenceEditorAspect();
       case 4:
-        return new InternalConceptDeclarationsHolder_Editor();
+        return getInternalConceptDeclarationsHolderEditorAspect();
       case 5:
-        return new LocalBehaviorMethodCall_Editor();
+        return getLocalBehaviorMethodCallEditorAspect();
       case 6:
-        return new StaticConceptMethodDeclaration_Editor();
+        return getStaticConceptMethodDeclarationEditorAspect();
       case 7:
-        return new SuperNodeExpression_Editor();
+        return getSuperNodeExpressionEditorAspect();
       case 8:
-        return new ThisNodeExpression_Editor();
+        return getThisNodeExpressionEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myConceptBehaviorEditorAspect = null;
+    myConceptConstructorDeclarationEditorAspect = null;
+    myConceptMethodDeclarationEditorAspect = null;
+    myInternalConceptDeclarationReferenceEditorAspect = null;
+    myInternalConceptDeclarationsHolderEditorAspect = null;
+    myLocalBehaviorMethodCallEditorAspect = null;
+    myStaticConceptMethodDeclarationEditorAspect = null;
+    mySuperNodeExpressionEditorAspect = null;
+    myThisNodeExpressionEditorAspect = null;
+  }
+
+  private ConceptBehavior_Editor getConceptBehaviorEditorAspect() {
+    if (myConceptBehaviorEditorAspect == null) {
+      myConceptBehaviorEditorAspect = new ConceptBehavior_Editor();
+    }
+    return myConceptBehaviorEditorAspect;
+  }
+
+  private ConceptConstructorDeclaration_Editor getConceptConstructorDeclarationEditorAspect() {
+    if (myConceptConstructorDeclarationEditorAspect == null) {
+      myConceptConstructorDeclarationEditorAspect = new ConceptConstructorDeclaration_Editor();
+    }
+    return myConceptConstructorDeclarationEditorAspect;
+  }
+
+  private ConceptMethodDeclaration_Editor getConceptMethodDeclarationEditorAspect() {
+    if (myConceptMethodDeclarationEditorAspect == null) {
+      myConceptMethodDeclarationEditorAspect = new ConceptMethodDeclaration_Editor();
+    }
+    return myConceptMethodDeclarationEditorAspect;
+  }
+
+  private InternalConceptDeclarationReference_Editor getInternalConceptDeclarationReferenceEditorAspect() {
+    if (myInternalConceptDeclarationReferenceEditorAspect == null) {
+      myInternalConceptDeclarationReferenceEditorAspect = new InternalConceptDeclarationReference_Editor();
+    }
+    return myInternalConceptDeclarationReferenceEditorAspect;
+  }
+
+  private InternalConceptDeclarationsHolder_Editor getInternalConceptDeclarationsHolderEditorAspect() {
+    if (myInternalConceptDeclarationsHolderEditorAspect == null) {
+      myInternalConceptDeclarationsHolderEditorAspect = new InternalConceptDeclarationsHolder_Editor();
+    }
+    return myInternalConceptDeclarationsHolderEditorAspect;
+  }
+
+  private LocalBehaviorMethodCall_Editor getLocalBehaviorMethodCallEditorAspect() {
+    if (myLocalBehaviorMethodCallEditorAspect == null) {
+      myLocalBehaviorMethodCallEditorAspect = new LocalBehaviorMethodCall_Editor();
+    }
+    return myLocalBehaviorMethodCallEditorAspect;
+  }
+
+  private StaticConceptMethodDeclaration_Editor getStaticConceptMethodDeclarationEditorAspect() {
+    if (myStaticConceptMethodDeclarationEditorAspect == null) {
+      myStaticConceptMethodDeclarationEditorAspect = new StaticConceptMethodDeclaration_Editor();
+    }
+    return myStaticConceptMethodDeclarationEditorAspect;
+  }
+
+  private SuperNodeExpression_Editor getSuperNodeExpressionEditorAspect() {
+    if (mySuperNodeExpressionEditorAspect == null) {
+      mySuperNodeExpressionEditorAspect = new SuperNodeExpression_Editor();
+    }
+    return mySuperNodeExpressionEditorAspect;
+  }
+
+  private ThisNodeExpression_Editor getThisNodeExpressionEditorAspect() {
+    if (myThisNodeExpressionEditorAspect == null) {
+      myThisNodeExpressionEditorAspect = new ThisNodeExpression_Editor();
+    }
+    return myThisNodeExpressionEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0j = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
 }

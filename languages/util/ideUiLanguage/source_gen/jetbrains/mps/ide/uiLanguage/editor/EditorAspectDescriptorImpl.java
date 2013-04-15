@@ -8,28 +8,108 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private DialogDimensions_Editor myDialogDimensionsEditorAspect;
+  private DialogExpression_Editor myDialogExpressionEditorAspect;
+  private DisposeDialogExpression_Editor myDisposeDialogExpressionEditorAspect;
+  private DisposeDialogStatement_Editor myDisposeDialogStatementEditorAspect;
+  private IDEDialog_Editor myIDEDialogEditorAspect;
+  private IDEDialogButton_Editor myIDEDialogButtonEditorAspect;
+  private ReportErrorExpression_Editor myReportErrorExpressionEditorAspect;
+  private ReportErrorStatement_Editor myReportErrorStatementEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0i, descriptor.getConceptFqName())) {
       case 0:
-        return new DialogDimensions_Editor();
+        return getDialogDimensionsEditorAspect();
       case 1:
-        return new DialogExpression_Editor();
+        return getDialogExpressionEditorAspect();
       case 2:
-        return new DisposeDialogExpression_Editor();
+        return getDisposeDialogExpressionEditorAspect();
       case 3:
-        return new DisposeDialogStatement_Editor();
+        return getDisposeDialogStatementEditorAspect();
       case 4:
-        return new IDEDialog_Editor();
+        return getIDEDialogEditorAspect();
       case 5:
-        return new IDEDialogButton_Editor();
+        return getIDEDialogButtonEditorAspect();
       case 6:
-        return new ReportErrorExpression_Editor();
+        return getReportErrorExpressionEditorAspect();
       case 7:
-        return new ReportErrorStatement_Editor();
+        return getReportErrorStatementEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.ide.uiLanguage.structure.DialogDimensions", "jetbrains.mps.ide.uiLanguage.structure.DialogExpression", "jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression", "jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement", "jetbrains.mps.ide.uiLanguage.structure.IDEDialog", "jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", "jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", "jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myDialogDimensionsEditorAspect = null;
+    myDialogExpressionEditorAspect = null;
+    myDisposeDialogExpressionEditorAspect = null;
+    myDisposeDialogStatementEditorAspect = null;
+    myIDEDialogEditorAspect = null;
+    myIDEDialogButtonEditorAspect = null;
+    myReportErrorExpressionEditorAspect = null;
+    myReportErrorStatementEditorAspect = null;
+  }
+
+  private DialogDimensions_Editor getDialogDimensionsEditorAspect() {
+    if (myDialogDimensionsEditorAspect == null) {
+      myDialogDimensionsEditorAspect = new DialogDimensions_Editor();
+    }
+    return myDialogDimensionsEditorAspect;
+  }
+
+  private DialogExpression_Editor getDialogExpressionEditorAspect() {
+    if (myDialogExpressionEditorAspect == null) {
+      myDialogExpressionEditorAspect = new DialogExpression_Editor();
+    }
+    return myDialogExpressionEditorAspect;
+  }
+
+  private DisposeDialogExpression_Editor getDisposeDialogExpressionEditorAspect() {
+    if (myDisposeDialogExpressionEditorAspect == null) {
+      myDisposeDialogExpressionEditorAspect = new DisposeDialogExpression_Editor();
+    }
+    return myDisposeDialogExpressionEditorAspect;
+  }
+
+  private DisposeDialogStatement_Editor getDisposeDialogStatementEditorAspect() {
+    if (myDisposeDialogStatementEditorAspect == null) {
+      myDisposeDialogStatementEditorAspect = new DisposeDialogStatement_Editor();
+    }
+    return myDisposeDialogStatementEditorAspect;
+  }
+
+  private IDEDialog_Editor getIDEDialogEditorAspect() {
+    if (myIDEDialogEditorAspect == null) {
+      myIDEDialogEditorAspect = new IDEDialog_Editor();
+    }
+    return myIDEDialogEditorAspect;
+  }
+
+  private IDEDialogButton_Editor getIDEDialogButtonEditorAspect() {
+    if (myIDEDialogButtonEditorAspect == null) {
+      myIDEDialogButtonEditorAspect = new IDEDialogButton_Editor();
+    }
+    return myIDEDialogButtonEditorAspect;
+  }
+
+  private ReportErrorExpression_Editor getReportErrorExpressionEditorAspect() {
+    if (myReportErrorExpressionEditorAspect == null) {
+      myReportErrorExpressionEditorAspect = new ReportErrorExpression_Editor();
+    }
+    return myReportErrorExpressionEditorAspect;
+  }
+
+  private ReportErrorStatement_Editor getReportErrorStatementEditorAspect() {
+    if (myReportErrorStatementEditorAspect == null) {
+      myReportErrorStatementEditorAspect = new ReportErrorStatement_Editor();
+    }
+    return myReportErrorStatementEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0i = new String[]{"jetbrains.mps.ide.uiLanguage.structure.DialogDimensions", "jetbrains.mps.ide.uiLanguage.structure.DialogExpression", "jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression", "jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement", "jetbrains.mps.ide.uiLanguage.structure.IDEDialog", "jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", "jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", "jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement"};
 }

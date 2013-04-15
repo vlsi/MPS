@@ -8,64 +8,306 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CommandList_Editor myCommandListEditorAspect;
+  private CommentLine_Editor myCommentLineEditorAspect;
+  private Drop_Editor myDropEditorAspect;
+  private East_Editor myEastEditorAspect;
+  private EmptyLine_Editor myEmptyLineEditorAspect;
+  private Heading_Editor myHeadingEditorAspect;
+  private IfStatement_Editor myIfStatementEditorAspect;
+  private IsFull_Editor myIsFullEditorAspect;
+  private IsMark_Editor myIsMarkEditorAspect;
+  private IsWall_Editor myIsWallEditorAspect;
+  private LeftTurn_Editor myLeftTurnEditorAspect;
+  private Library_Editor myLibraryEditorAspect;
+  private Looking_Editor myLookingEditorAspect;
+  private North_Editor myNorthEditorAspect;
+  private Not_Editor myNotEditorAspect;
+  private Pick_Editor myPickEditorAspect;
+  private Repeat_Editor myRepeatEditorAspect;
+  private Require_Editor myRequireEditorAspect;
+  private RoutineCall_Editor myRoutineCallEditorAspect;
+  private RoutineDefinition_Editor myRoutineDefinitionEditorAspect;
+  private Script_Editor myScriptEditorAspect;
+  private South_Editor mySouthEditorAspect;
+  private Step_Editor myStepEditorAspect;
+  private TraceMessage_Editor myTraceMessageEditorAspect;
+  private West_Editor myWestEditorAspect;
+  private While_Editor myWhileEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0ab, descriptor.getConceptFqName())) {
       case 0:
-        return new CommandList_Editor();
+        return getCommandListEditorAspect();
       case 1:
-        return new CommentLine_Editor();
+        return getCommentLineEditorAspect();
       case 2:
-        return new Drop_Editor();
+        return getDropEditorAspect();
       case 3:
-        return new East_Editor();
+        return getEastEditorAspect();
       case 4:
-        return new EmptyLine_Editor();
+        return getEmptyLineEditorAspect();
       case 5:
-        return new Heading_Editor();
+        return getHeadingEditorAspect();
       case 6:
-        return new IfStatement_Editor();
+        return getIfStatementEditorAspect();
       case 7:
-        return new IsFull_Editor();
+        return getIsFullEditorAspect();
       case 8:
-        return new IsMark_Editor();
+        return getIsMarkEditorAspect();
       case 9:
-        return new IsWall_Editor();
+        return getIsWallEditorAspect();
       case 10:
-        return new LeftTurn_Editor();
+        return getLeftTurnEditorAspect();
       case 11:
-        return new Library_Editor();
+        return getLibraryEditorAspect();
       case 12:
-        return new Looking_Editor();
+        return getLookingEditorAspect();
       case 13:
-        return new North_Editor();
+        return getNorthEditorAspect();
       case 14:
-        return new Not_Editor();
+        return getNotEditorAspect();
       case 15:
-        return new Pick_Editor();
+        return getPickEditorAspect();
       case 16:
-        return new Repeat_Editor();
+        return getRepeatEditorAspect();
       case 17:
-        return new Require_Editor();
+        return getRequireEditorAspect();
       case 18:
-        return new RoutineCall_Editor();
+        return getRoutineCallEditorAspect();
       case 19:
-        return new RoutineDefinition_Editor();
+        return getRoutineDefinitionEditorAspect();
       case 20:
-        return new Script_Editor();
+        return getScriptEditorAspect();
       case 21:
-        return new South_Editor();
+        return getSouthEditorAspect();
       case 22:
-        return new Step_Editor();
+        return getStepEditorAspect();
       case 23:
-        return new TraceMessage_Editor();
+        return getTraceMessageEditorAspect();
       case 24:
-        return new West_Editor();
+        return getWestEditorAspect();
       case 25:
-        return new While_Editor();
+        return getWhileEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.Kaja.structure.CommandList", "jetbrains.mps.samples.Kaja.structure.CommentLine", "jetbrains.mps.samples.Kaja.structure.Drop", "jetbrains.mps.samples.Kaja.structure.East", "jetbrains.mps.samples.Kaja.structure.EmptyLine", "jetbrains.mps.samples.Kaja.structure.Heading", "jetbrains.mps.samples.Kaja.structure.IfStatement", "jetbrains.mps.samples.Kaja.structure.IsFull", "jetbrains.mps.samples.Kaja.structure.IsMark", "jetbrains.mps.samples.Kaja.structure.IsWall", "jetbrains.mps.samples.Kaja.structure.LeftTurn", "jetbrains.mps.samples.Kaja.structure.Library", "jetbrains.mps.samples.Kaja.structure.Looking", "jetbrains.mps.samples.Kaja.structure.North", "jetbrains.mps.samples.Kaja.structure.Not", "jetbrains.mps.samples.Kaja.structure.Pick", "jetbrains.mps.samples.Kaja.structure.Repeat", "jetbrains.mps.samples.Kaja.structure.Require", "jetbrains.mps.samples.Kaja.structure.RoutineCall", "jetbrains.mps.samples.Kaja.structure.RoutineDefinition", "jetbrains.mps.samples.Kaja.structure.Script", "jetbrains.mps.samples.Kaja.structure.South", "jetbrains.mps.samples.Kaja.structure.Step", "jetbrains.mps.samples.Kaja.structure.TraceMessage", "jetbrains.mps.samples.Kaja.structure.West", "jetbrains.mps.samples.Kaja.structure.While"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCommandListEditorAspect = null;
+    myCommentLineEditorAspect = null;
+    myDropEditorAspect = null;
+    myEastEditorAspect = null;
+    myEmptyLineEditorAspect = null;
+    myHeadingEditorAspect = null;
+    myIfStatementEditorAspect = null;
+    myIsFullEditorAspect = null;
+    myIsMarkEditorAspect = null;
+    myIsWallEditorAspect = null;
+    myLeftTurnEditorAspect = null;
+    myLibraryEditorAspect = null;
+    myLookingEditorAspect = null;
+    myNorthEditorAspect = null;
+    myNotEditorAspect = null;
+    myPickEditorAspect = null;
+    myRepeatEditorAspect = null;
+    myRequireEditorAspect = null;
+    myRoutineCallEditorAspect = null;
+    myRoutineDefinitionEditorAspect = null;
+    myScriptEditorAspect = null;
+    mySouthEditorAspect = null;
+    myStepEditorAspect = null;
+    myTraceMessageEditorAspect = null;
+    myWestEditorAspect = null;
+    myWhileEditorAspect = null;
+  }
+
+  private CommandList_Editor getCommandListEditorAspect() {
+    if (myCommandListEditorAspect == null) {
+      myCommandListEditorAspect = new CommandList_Editor();
+    }
+    return myCommandListEditorAspect;
+  }
+
+  private CommentLine_Editor getCommentLineEditorAspect() {
+    if (myCommentLineEditorAspect == null) {
+      myCommentLineEditorAspect = new CommentLine_Editor();
+    }
+    return myCommentLineEditorAspect;
+  }
+
+  private Drop_Editor getDropEditorAspect() {
+    if (myDropEditorAspect == null) {
+      myDropEditorAspect = new Drop_Editor();
+    }
+    return myDropEditorAspect;
+  }
+
+  private East_Editor getEastEditorAspect() {
+    if (myEastEditorAspect == null) {
+      myEastEditorAspect = new East_Editor();
+    }
+    return myEastEditorAspect;
+  }
+
+  private EmptyLine_Editor getEmptyLineEditorAspect() {
+    if (myEmptyLineEditorAspect == null) {
+      myEmptyLineEditorAspect = new EmptyLine_Editor();
+    }
+    return myEmptyLineEditorAspect;
+  }
+
+  private Heading_Editor getHeadingEditorAspect() {
+    if (myHeadingEditorAspect == null) {
+      myHeadingEditorAspect = new Heading_Editor();
+    }
+    return myHeadingEditorAspect;
+  }
+
+  private IfStatement_Editor getIfStatementEditorAspect() {
+    if (myIfStatementEditorAspect == null) {
+      myIfStatementEditorAspect = new IfStatement_Editor();
+    }
+    return myIfStatementEditorAspect;
+  }
+
+  private IsFull_Editor getIsFullEditorAspect() {
+    if (myIsFullEditorAspect == null) {
+      myIsFullEditorAspect = new IsFull_Editor();
+    }
+    return myIsFullEditorAspect;
+  }
+
+  private IsMark_Editor getIsMarkEditorAspect() {
+    if (myIsMarkEditorAspect == null) {
+      myIsMarkEditorAspect = new IsMark_Editor();
+    }
+    return myIsMarkEditorAspect;
+  }
+
+  private IsWall_Editor getIsWallEditorAspect() {
+    if (myIsWallEditorAspect == null) {
+      myIsWallEditorAspect = new IsWall_Editor();
+    }
+    return myIsWallEditorAspect;
+  }
+
+  private LeftTurn_Editor getLeftTurnEditorAspect() {
+    if (myLeftTurnEditorAspect == null) {
+      myLeftTurnEditorAspect = new LeftTurn_Editor();
+    }
+    return myLeftTurnEditorAspect;
+  }
+
+  private Library_Editor getLibraryEditorAspect() {
+    if (myLibraryEditorAspect == null) {
+      myLibraryEditorAspect = new Library_Editor();
+    }
+    return myLibraryEditorAspect;
+  }
+
+  private Looking_Editor getLookingEditorAspect() {
+    if (myLookingEditorAspect == null) {
+      myLookingEditorAspect = new Looking_Editor();
+    }
+    return myLookingEditorAspect;
+  }
+
+  private North_Editor getNorthEditorAspect() {
+    if (myNorthEditorAspect == null) {
+      myNorthEditorAspect = new North_Editor();
+    }
+    return myNorthEditorAspect;
+  }
+
+  private Not_Editor getNotEditorAspect() {
+    if (myNotEditorAspect == null) {
+      myNotEditorAspect = new Not_Editor();
+    }
+    return myNotEditorAspect;
+  }
+
+  private Pick_Editor getPickEditorAspect() {
+    if (myPickEditorAspect == null) {
+      myPickEditorAspect = new Pick_Editor();
+    }
+    return myPickEditorAspect;
+  }
+
+  private Repeat_Editor getRepeatEditorAspect() {
+    if (myRepeatEditorAspect == null) {
+      myRepeatEditorAspect = new Repeat_Editor();
+    }
+    return myRepeatEditorAspect;
+  }
+
+  private Require_Editor getRequireEditorAspect() {
+    if (myRequireEditorAspect == null) {
+      myRequireEditorAspect = new Require_Editor();
+    }
+    return myRequireEditorAspect;
+  }
+
+  private RoutineCall_Editor getRoutineCallEditorAspect() {
+    if (myRoutineCallEditorAspect == null) {
+      myRoutineCallEditorAspect = new RoutineCall_Editor();
+    }
+    return myRoutineCallEditorAspect;
+  }
+
+  private RoutineDefinition_Editor getRoutineDefinitionEditorAspect() {
+    if (myRoutineDefinitionEditorAspect == null) {
+      myRoutineDefinitionEditorAspect = new RoutineDefinition_Editor();
+    }
+    return myRoutineDefinitionEditorAspect;
+  }
+
+  private Script_Editor getScriptEditorAspect() {
+    if (myScriptEditorAspect == null) {
+      myScriptEditorAspect = new Script_Editor();
+    }
+    return myScriptEditorAspect;
+  }
+
+  private South_Editor getSouthEditorAspect() {
+    if (mySouthEditorAspect == null) {
+      mySouthEditorAspect = new South_Editor();
+    }
+    return mySouthEditorAspect;
+  }
+
+  private Step_Editor getStepEditorAspect() {
+    if (myStepEditorAspect == null) {
+      myStepEditorAspect = new Step_Editor();
+    }
+    return myStepEditorAspect;
+  }
+
+  private TraceMessage_Editor getTraceMessageEditorAspect() {
+    if (myTraceMessageEditorAspect == null) {
+      myTraceMessageEditorAspect = new TraceMessage_Editor();
+    }
+    return myTraceMessageEditorAspect;
+  }
+
+  private West_Editor getWestEditorAspect() {
+    if (myWestEditorAspect == null) {
+      myWestEditorAspect = new West_Editor();
+    }
+    return myWestEditorAspect;
+  }
+
+  private While_Editor getWhileEditorAspect() {
+    if (myWhileEditorAspect == null) {
+      myWhileEditorAspect = new While_Editor();
+    }
+    return myWhileEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0ab = new String[]{"jetbrains.mps.samples.Kaja.structure.CommandList", "jetbrains.mps.samples.Kaja.structure.CommentLine", "jetbrains.mps.samples.Kaja.structure.Drop", "jetbrains.mps.samples.Kaja.structure.East", "jetbrains.mps.samples.Kaja.structure.EmptyLine", "jetbrains.mps.samples.Kaja.structure.Heading", "jetbrains.mps.samples.Kaja.structure.IfStatement", "jetbrains.mps.samples.Kaja.structure.IsFull", "jetbrains.mps.samples.Kaja.structure.IsMark", "jetbrains.mps.samples.Kaja.structure.IsWall", "jetbrains.mps.samples.Kaja.structure.LeftTurn", "jetbrains.mps.samples.Kaja.structure.Library", "jetbrains.mps.samples.Kaja.structure.Looking", "jetbrains.mps.samples.Kaja.structure.North", "jetbrains.mps.samples.Kaja.structure.Not", "jetbrains.mps.samples.Kaja.structure.Pick", "jetbrains.mps.samples.Kaja.structure.Repeat", "jetbrains.mps.samples.Kaja.structure.Require", "jetbrains.mps.samples.Kaja.structure.RoutineCall", "jetbrains.mps.samples.Kaja.structure.RoutineDefinition", "jetbrains.mps.samples.Kaja.structure.Script", "jetbrains.mps.samples.Kaja.structure.South", "jetbrains.mps.samples.Kaja.structure.Step", "jetbrains.mps.samples.Kaja.structure.TraceMessage", "jetbrains.mps.samples.Kaja.structure.West", "jetbrains.mps.samples.Kaja.structure.While"};
 }

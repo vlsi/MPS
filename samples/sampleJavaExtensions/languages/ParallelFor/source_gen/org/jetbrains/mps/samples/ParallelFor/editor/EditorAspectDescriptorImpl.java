@@ -8,22 +8,75 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private NonThreadSafeClass_Editor myNonThreadSafeClassEditorAspect;
+  private ParallelFor_Editor myParallelForEditorAspect;
+  private ParallelLoopVariable_Editor myParallelLoopVariableEditorAspect;
+  private ThreadPool_Editor myThreadPoolEditorAspect;
+  private ThreadSafe_Editor myThreadSafeEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0f, descriptor.getConceptFqName())) {
       case 0:
-        return new NonThreadSafeClass_Editor();
+        return getNonThreadSafeClassEditorAspect();
       case 1:
-        return new ParallelFor_Editor();
+        return getParallelForEditorAspect();
       case 2:
-        return new ParallelLoopVariable_Editor();
+        return getParallelLoopVariableEditorAspect();
       case 3:
-        return new ThreadPool_Editor();
+        return getThreadPoolEditorAspect();
       case 4:
-        return new ThreadSafe_Editor();
+        return getThreadSafeEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myNonThreadSafeClassEditorAspect = null;
+    myParallelForEditorAspect = null;
+    myParallelLoopVariableEditorAspect = null;
+    myThreadPoolEditorAspect = null;
+    myThreadSafeEditorAspect = null;
+  }
+
+  private NonThreadSafeClass_Editor getNonThreadSafeClassEditorAspect() {
+    if (myNonThreadSafeClassEditorAspect == null) {
+      myNonThreadSafeClassEditorAspect = new NonThreadSafeClass_Editor();
+    }
+    return myNonThreadSafeClassEditorAspect;
+  }
+
+  private ParallelFor_Editor getParallelForEditorAspect() {
+    if (myParallelForEditorAspect == null) {
+      myParallelForEditorAspect = new ParallelFor_Editor();
+    }
+    return myParallelForEditorAspect;
+  }
+
+  private ParallelLoopVariable_Editor getParallelLoopVariableEditorAspect() {
+    if (myParallelLoopVariableEditorAspect == null) {
+      myParallelLoopVariableEditorAspect = new ParallelLoopVariable_Editor();
+    }
+    return myParallelLoopVariableEditorAspect;
+  }
+
+  private ThreadPool_Editor getThreadPoolEditorAspect() {
+    if (myThreadPoolEditorAspect == null) {
+      myThreadPoolEditorAspect = new ThreadPool_Editor();
+    }
+    return myThreadPoolEditorAspect;
+  }
+
+  private ThreadSafe_Editor getThreadSafeEditorAspect() {
+    if (myThreadSafeEditorAspect == null) {
+      myThreadSafeEditorAspect = new ThreadSafe_Editor();
+    }
+    return myThreadSafeEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0f = new String[]{"org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"};
 }

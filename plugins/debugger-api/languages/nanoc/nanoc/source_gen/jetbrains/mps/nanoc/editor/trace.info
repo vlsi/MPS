@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="10" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.nanoc.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="10" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.nanoc.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/6585869519574700070">
     <nodeInfo nodeId="6585869519574700070" fileName="CExpressionStatement_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6585869519574700070" fileName="CExpressionStatement_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -8,64 +8,306 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AggregationConceptLink_Editor myAggregationConceptLinkEditorAspect;
+  private AggregationConceptLinkDeclaration_Editor myAggregationConceptLinkDeclarationEditorAspect;
+  private AnnotationLinkDeclaration_Editor myAnnotationLinkDeclarationEditorAspect;
+  private BooleanConceptProperty_Editor myBooleanConceptPropertyEditorAspect;
+  private BooleanConceptPropertyDeclaration_Editor myBooleanConceptPropertyDeclarationEditorAspect;
+  private ConceptDeclaration_Editor myConceptDeclarationEditorAspect;
+  private ConceptLink_Editor myConceptLinkEditorAspect;
+  private ConceptLinkDeclaration_Editor myConceptLinkDeclarationEditorAspect;
+  private ConceptProperty_Editor myConceptPropertyEditorAspect;
+  private ConceptPropertyDeclaration_Editor myConceptPropertyDeclarationEditorAspect;
+  private ConstrainedDataTypeDeclaration_Editor myConstrainedDataTypeDeclarationEditorAspect;
+  private DeprecatedNodeAnnotation_Editor myDeprecatedNodeAnnotationEditorAspect;
+  private EnumerationDataTypeDeclaration_Editor myEnumerationDataTypeDeclarationEditorAspect;
+  private EnumerationMemberDeclaration_Editor myEnumerationMemberDeclarationEditorAspect;
+  private IntegerConceptProperty_Editor myIntegerConceptPropertyEditorAspect;
+  private IntegerConceptPropertyDeclaration_Editor myIntegerConceptPropertyDeclarationEditorAspect;
+  private InterfaceConceptDeclaration_Editor myInterfaceConceptDeclarationEditorAspect;
+  private InterfaceConceptReference_Editor myInterfaceConceptReferenceEditorAspect;
+  private LinkDeclaration_Editor myLinkDeclarationEditorAspect;
+  private MigratedToMethodAnnotation_Editor myMigratedToMethodAnnotationEditorAspect;
+  private PrimitiveDataTypeDeclaration_Editor myPrimitiveDataTypeDeclarationEditorAspect;
+  private PropertyDeclaration_Editor myPropertyDeclarationEditorAspect;
+  private ReferenceConceptLink_Editor myReferenceConceptLinkEditorAspect;
+  private ReferenceConceptLinkDeclaration_Editor myReferenceConceptLinkDeclarationEditorAspect;
+  private StringConceptProperty_Editor myStringConceptPropertyEditorAspect;
+  private StringConceptPropertyDeclaration_Editor myStringConceptPropertyDeclarationEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0ab, descriptor.getConceptFqName())) {
       case 0:
-        return new AggregationConceptLink_Editor();
+        return getAggregationConceptLinkEditorAspect();
       case 1:
-        return new AggregationConceptLinkDeclaration_Editor();
+        return getAggregationConceptLinkDeclarationEditorAspect();
       case 2:
-        return new AnnotationLinkDeclaration_Editor();
+        return getAnnotationLinkDeclarationEditorAspect();
       case 3:
-        return new BooleanConceptProperty_Editor();
+        return getBooleanConceptPropertyEditorAspect();
       case 4:
-        return new BooleanConceptPropertyDeclaration_Editor();
+        return getBooleanConceptPropertyDeclarationEditorAspect();
       case 5:
-        return new ConceptDeclaration_Editor();
+        return getConceptDeclarationEditorAspect();
       case 6:
-        return new ConceptLink_Editor();
+        return getConceptLinkEditorAspect();
       case 7:
-        return new ConceptLinkDeclaration_Editor();
+        return getConceptLinkDeclarationEditorAspect();
       case 8:
-        return new ConceptProperty_Editor();
+        return getConceptPropertyEditorAspect();
       case 9:
-        return new ConceptPropertyDeclaration_Editor();
+        return getConceptPropertyDeclarationEditorAspect();
       case 10:
-        return new ConstrainedDataTypeDeclaration_Editor();
+        return getConstrainedDataTypeDeclarationEditorAspect();
       case 11:
-        return new DeprecatedNodeAnnotation_Editor();
+        return getDeprecatedNodeAnnotationEditorAspect();
       case 12:
-        return new EnumerationDataTypeDeclaration_Editor();
+        return getEnumerationDataTypeDeclarationEditorAspect();
       case 13:
-        return new EnumerationMemberDeclaration_Editor();
+        return getEnumerationMemberDeclarationEditorAspect();
       case 14:
-        return new IntegerConceptProperty_Editor();
+        return getIntegerConceptPropertyEditorAspect();
       case 15:
-        return new IntegerConceptPropertyDeclaration_Editor();
+        return getIntegerConceptPropertyDeclarationEditorAspect();
       case 16:
-        return new InterfaceConceptDeclaration_Editor();
+        return getInterfaceConceptDeclarationEditorAspect();
       case 17:
-        return new InterfaceConceptReference_Editor();
+        return getInterfaceConceptReferenceEditorAspect();
       case 18:
-        return new LinkDeclaration_Editor();
+        return getLinkDeclarationEditorAspect();
       case 19:
-        return new MigratedToMethodAnnotation_Editor();
+        return getMigratedToMethodAnnotationEditorAspect();
       case 20:
-        return new PrimitiveDataTypeDeclaration_Editor();
+        return getPrimitiveDataTypeDeclarationEditorAspect();
       case 21:
-        return new PropertyDeclaration_Editor();
+        return getPropertyDeclarationEditorAspect();
       case 22:
-        return new ReferenceConceptLink_Editor();
+        return getReferenceConceptLinkEditorAspect();
       case 23:
-        return new ReferenceConceptLinkDeclaration_Editor();
+        return getReferenceConceptLinkDeclarationEditorAspect();
       case 24:
-        return new StringConceptProperty_Editor();
+        return getStringConceptPropertyEditorAspect();
       case 25:
-        return new StringConceptPropertyDeclaration_Editor();
+        return getStringConceptPropertyDeclarationEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.structure.structure.AggregationConceptLink", "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", "jetbrains.mps.lang.structure.structure.BooleanConceptProperty", "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptProperty", "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.IntegerConceptProperty", "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceConceptLink", "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.StringConceptProperty", "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAggregationConceptLinkEditorAspect = null;
+    myAggregationConceptLinkDeclarationEditorAspect = null;
+    myAnnotationLinkDeclarationEditorAspect = null;
+    myBooleanConceptPropertyEditorAspect = null;
+    myBooleanConceptPropertyDeclarationEditorAspect = null;
+    myConceptDeclarationEditorAspect = null;
+    myConceptLinkEditorAspect = null;
+    myConceptLinkDeclarationEditorAspect = null;
+    myConceptPropertyEditorAspect = null;
+    myConceptPropertyDeclarationEditorAspect = null;
+    myConstrainedDataTypeDeclarationEditorAspect = null;
+    myDeprecatedNodeAnnotationEditorAspect = null;
+    myEnumerationDataTypeDeclarationEditorAspect = null;
+    myEnumerationMemberDeclarationEditorAspect = null;
+    myIntegerConceptPropertyEditorAspect = null;
+    myIntegerConceptPropertyDeclarationEditorAspect = null;
+    myInterfaceConceptDeclarationEditorAspect = null;
+    myInterfaceConceptReferenceEditorAspect = null;
+    myLinkDeclarationEditorAspect = null;
+    myMigratedToMethodAnnotationEditorAspect = null;
+    myPrimitiveDataTypeDeclarationEditorAspect = null;
+    myPropertyDeclarationEditorAspect = null;
+    myReferenceConceptLinkEditorAspect = null;
+    myReferenceConceptLinkDeclarationEditorAspect = null;
+    myStringConceptPropertyEditorAspect = null;
+    myStringConceptPropertyDeclarationEditorAspect = null;
+  }
+
+  private AggregationConceptLink_Editor getAggregationConceptLinkEditorAspect() {
+    if (myAggregationConceptLinkEditorAspect == null) {
+      myAggregationConceptLinkEditorAspect = new AggregationConceptLink_Editor();
+    }
+    return myAggregationConceptLinkEditorAspect;
+  }
+
+  private AggregationConceptLinkDeclaration_Editor getAggregationConceptLinkDeclarationEditorAspect() {
+    if (myAggregationConceptLinkDeclarationEditorAspect == null) {
+      myAggregationConceptLinkDeclarationEditorAspect = new AggregationConceptLinkDeclaration_Editor();
+    }
+    return myAggregationConceptLinkDeclarationEditorAspect;
+  }
+
+  private AnnotationLinkDeclaration_Editor getAnnotationLinkDeclarationEditorAspect() {
+    if (myAnnotationLinkDeclarationEditorAspect == null) {
+      myAnnotationLinkDeclarationEditorAspect = new AnnotationLinkDeclaration_Editor();
+    }
+    return myAnnotationLinkDeclarationEditorAspect;
+  }
+
+  private BooleanConceptProperty_Editor getBooleanConceptPropertyEditorAspect() {
+    if (myBooleanConceptPropertyEditorAspect == null) {
+      myBooleanConceptPropertyEditorAspect = new BooleanConceptProperty_Editor();
+    }
+    return myBooleanConceptPropertyEditorAspect;
+  }
+
+  private BooleanConceptPropertyDeclaration_Editor getBooleanConceptPropertyDeclarationEditorAspect() {
+    if (myBooleanConceptPropertyDeclarationEditorAspect == null) {
+      myBooleanConceptPropertyDeclarationEditorAspect = new BooleanConceptPropertyDeclaration_Editor();
+    }
+    return myBooleanConceptPropertyDeclarationEditorAspect;
+  }
+
+  private ConceptDeclaration_Editor getConceptDeclarationEditorAspect() {
+    if (myConceptDeclarationEditorAspect == null) {
+      myConceptDeclarationEditorAspect = new ConceptDeclaration_Editor();
+    }
+    return myConceptDeclarationEditorAspect;
+  }
+
+  private ConceptLink_Editor getConceptLinkEditorAspect() {
+    if (myConceptLinkEditorAspect == null) {
+      myConceptLinkEditorAspect = new ConceptLink_Editor();
+    }
+    return myConceptLinkEditorAspect;
+  }
+
+  private ConceptLinkDeclaration_Editor getConceptLinkDeclarationEditorAspect() {
+    if (myConceptLinkDeclarationEditorAspect == null) {
+      myConceptLinkDeclarationEditorAspect = new ConceptLinkDeclaration_Editor();
+    }
+    return myConceptLinkDeclarationEditorAspect;
+  }
+
+  private ConceptProperty_Editor getConceptPropertyEditorAspect() {
+    if (myConceptPropertyEditorAspect == null) {
+      myConceptPropertyEditorAspect = new ConceptProperty_Editor();
+    }
+    return myConceptPropertyEditorAspect;
+  }
+
+  private ConceptPropertyDeclaration_Editor getConceptPropertyDeclarationEditorAspect() {
+    if (myConceptPropertyDeclarationEditorAspect == null) {
+      myConceptPropertyDeclarationEditorAspect = new ConceptPropertyDeclaration_Editor();
+    }
+    return myConceptPropertyDeclarationEditorAspect;
+  }
+
+  private ConstrainedDataTypeDeclaration_Editor getConstrainedDataTypeDeclarationEditorAspect() {
+    if (myConstrainedDataTypeDeclarationEditorAspect == null) {
+      myConstrainedDataTypeDeclarationEditorAspect = new ConstrainedDataTypeDeclaration_Editor();
+    }
+    return myConstrainedDataTypeDeclarationEditorAspect;
+  }
+
+  private DeprecatedNodeAnnotation_Editor getDeprecatedNodeAnnotationEditorAspect() {
+    if (myDeprecatedNodeAnnotationEditorAspect == null) {
+      myDeprecatedNodeAnnotationEditorAspect = new DeprecatedNodeAnnotation_Editor();
+    }
+    return myDeprecatedNodeAnnotationEditorAspect;
+  }
+
+  private EnumerationDataTypeDeclaration_Editor getEnumerationDataTypeDeclarationEditorAspect() {
+    if (myEnumerationDataTypeDeclarationEditorAspect == null) {
+      myEnumerationDataTypeDeclarationEditorAspect = new EnumerationDataTypeDeclaration_Editor();
+    }
+    return myEnumerationDataTypeDeclarationEditorAspect;
+  }
+
+  private EnumerationMemberDeclaration_Editor getEnumerationMemberDeclarationEditorAspect() {
+    if (myEnumerationMemberDeclarationEditorAspect == null) {
+      myEnumerationMemberDeclarationEditorAspect = new EnumerationMemberDeclaration_Editor();
+    }
+    return myEnumerationMemberDeclarationEditorAspect;
+  }
+
+  private IntegerConceptProperty_Editor getIntegerConceptPropertyEditorAspect() {
+    if (myIntegerConceptPropertyEditorAspect == null) {
+      myIntegerConceptPropertyEditorAspect = new IntegerConceptProperty_Editor();
+    }
+    return myIntegerConceptPropertyEditorAspect;
+  }
+
+  private IntegerConceptPropertyDeclaration_Editor getIntegerConceptPropertyDeclarationEditorAspect() {
+    if (myIntegerConceptPropertyDeclarationEditorAspect == null) {
+      myIntegerConceptPropertyDeclarationEditorAspect = new IntegerConceptPropertyDeclaration_Editor();
+    }
+    return myIntegerConceptPropertyDeclarationEditorAspect;
+  }
+
+  private InterfaceConceptDeclaration_Editor getInterfaceConceptDeclarationEditorAspect() {
+    if (myInterfaceConceptDeclarationEditorAspect == null) {
+      myInterfaceConceptDeclarationEditorAspect = new InterfaceConceptDeclaration_Editor();
+    }
+    return myInterfaceConceptDeclarationEditorAspect;
+  }
+
+  private InterfaceConceptReference_Editor getInterfaceConceptReferenceEditorAspect() {
+    if (myInterfaceConceptReferenceEditorAspect == null) {
+      myInterfaceConceptReferenceEditorAspect = new InterfaceConceptReference_Editor();
+    }
+    return myInterfaceConceptReferenceEditorAspect;
+  }
+
+  private LinkDeclaration_Editor getLinkDeclarationEditorAspect() {
+    if (myLinkDeclarationEditorAspect == null) {
+      myLinkDeclarationEditorAspect = new LinkDeclaration_Editor();
+    }
+    return myLinkDeclarationEditorAspect;
+  }
+
+  private MigratedToMethodAnnotation_Editor getMigratedToMethodAnnotationEditorAspect() {
+    if (myMigratedToMethodAnnotationEditorAspect == null) {
+      myMigratedToMethodAnnotationEditorAspect = new MigratedToMethodAnnotation_Editor();
+    }
+    return myMigratedToMethodAnnotationEditorAspect;
+  }
+
+  private PrimitiveDataTypeDeclaration_Editor getPrimitiveDataTypeDeclarationEditorAspect() {
+    if (myPrimitiveDataTypeDeclarationEditorAspect == null) {
+      myPrimitiveDataTypeDeclarationEditorAspect = new PrimitiveDataTypeDeclaration_Editor();
+    }
+    return myPrimitiveDataTypeDeclarationEditorAspect;
+  }
+
+  private PropertyDeclaration_Editor getPropertyDeclarationEditorAspect() {
+    if (myPropertyDeclarationEditorAspect == null) {
+      myPropertyDeclarationEditorAspect = new PropertyDeclaration_Editor();
+    }
+    return myPropertyDeclarationEditorAspect;
+  }
+
+  private ReferenceConceptLink_Editor getReferenceConceptLinkEditorAspect() {
+    if (myReferenceConceptLinkEditorAspect == null) {
+      myReferenceConceptLinkEditorAspect = new ReferenceConceptLink_Editor();
+    }
+    return myReferenceConceptLinkEditorAspect;
+  }
+
+  private ReferenceConceptLinkDeclaration_Editor getReferenceConceptLinkDeclarationEditorAspect() {
+    if (myReferenceConceptLinkDeclarationEditorAspect == null) {
+      myReferenceConceptLinkDeclarationEditorAspect = new ReferenceConceptLinkDeclaration_Editor();
+    }
+    return myReferenceConceptLinkDeclarationEditorAspect;
+  }
+
+  private StringConceptProperty_Editor getStringConceptPropertyEditorAspect() {
+    if (myStringConceptPropertyEditorAspect == null) {
+      myStringConceptPropertyEditorAspect = new StringConceptProperty_Editor();
+    }
+    return myStringConceptPropertyEditorAspect;
+  }
+
+  private StringConceptPropertyDeclaration_Editor getStringConceptPropertyDeclarationEditorAspect() {
+    if (myStringConceptPropertyDeclarationEditorAspect == null) {
+      myStringConceptPropertyDeclarationEditorAspect = new StringConceptPropertyDeclaration_Editor();
+    }
+    return myStringConceptPropertyDeclarationEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0ab = new String[]{"jetbrains.mps.lang.structure.structure.AggregationConceptLink", "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", "jetbrains.mps.lang.structure.structure.BooleanConceptProperty", "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptProperty", "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.IntegerConceptProperty", "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceConceptLink", "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.StringConceptProperty", "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration"};
 }

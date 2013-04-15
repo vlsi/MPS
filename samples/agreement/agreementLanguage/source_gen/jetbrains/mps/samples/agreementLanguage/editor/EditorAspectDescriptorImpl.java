@@ -8,44 +8,196 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AccountType_Editor myAccountTypeEditorAspect;
+  private AgreementDeclarations_Editor myAgreementDeclarationsEditorAspect;
+  private Date_Editor myDateEditorAspect;
+  private Date_Future_Editor myDate_FutureEditorAspect;
+  private Date_Past_Editor myDate_PastEditorAspect;
+  private Event_Editor myEventEditorAspect;
+  private EventType_Editor myEventTypeEditorAspect;
+  private EventVariable_Editor myEventVariableEditorAspect;
+  private EventVariableReference_Editor myEventVariableReferenceEditorAspect;
+  private Plan_Editor myPlanEditorAspect;
+  private PostingRule_Editor myPostingRuleEditorAspect;
+  private PostingRuleTemporalProperty_Editor myPostingRuleTemporalPropertyEditorAspect;
+  private Quantity_Editor myQuantityEditorAspect;
+  private QuantityTemporalProperty_Editor myQuantityTemporalPropertyEditorAspect;
+  private Value_Editor myValueEditorAspect;
+  private ValueReference_Editor myValueReferenceEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0q, descriptor.getConceptFqName())) {
       case 0:
-        return new AccountType_Editor();
+        return getAccountTypeEditorAspect();
       case 1:
-        return new AgreementDeclarations_Editor();
+        return getAgreementDeclarationsEditorAspect();
       case 2:
-        return new Date_Editor();
+        return getDateEditorAspect();
       case 3:
-        return new Date_Future_Editor();
+        return getDate_FutureEditorAspect();
       case 4:
-        return new Date_Past_Editor();
+        return getDate_PastEditorAspect();
       case 5:
-        return new Event_Editor();
+        return getEventEditorAspect();
       case 6:
-        return new EventType_Editor();
+        return getEventTypeEditorAspect();
       case 7:
-        return new EventVariable_Editor();
+        return getEventVariableEditorAspect();
       case 8:
-        return new EventVariableReference_Editor();
+        return getEventVariableReferenceEditorAspect();
       case 9:
-        return new Plan_Editor();
+        return getPlanEditorAspect();
       case 10:
-        return new PostingRule_Editor();
+        return getPostingRuleEditorAspect();
       case 11:
-        return new PostingRuleTemporalProperty_Editor();
+        return getPostingRuleTemporalPropertyEditorAspect();
       case 12:
-        return new Quantity_Editor();
+        return getQuantityEditorAspect();
       case 13:
-        return new QuantityTemporalProperty_Editor();
+        return getQuantityTemporalPropertyEditorAspect();
       case 14:
-        return new Value_Editor();
+        return getValueEditorAspect();
       case 15:
-        return new ValueReference_Editor();
+        return getValueReferenceEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAccountTypeEditorAspect = null;
+    myAgreementDeclarationsEditorAspect = null;
+    myDateEditorAspect = null;
+    myDate_FutureEditorAspect = null;
+    myDate_PastEditorAspect = null;
+    myEventEditorAspect = null;
+    myEventTypeEditorAspect = null;
+    myEventVariableEditorAspect = null;
+    myEventVariableReferenceEditorAspect = null;
+    myPlanEditorAspect = null;
+    myPostingRuleEditorAspect = null;
+    myPostingRuleTemporalPropertyEditorAspect = null;
+    myQuantityEditorAspect = null;
+    myQuantityTemporalPropertyEditorAspect = null;
+    myValueEditorAspect = null;
+    myValueReferenceEditorAspect = null;
+  }
+
+  private AccountType_Editor getAccountTypeEditorAspect() {
+    if (myAccountTypeEditorAspect == null) {
+      myAccountTypeEditorAspect = new AccountType_Editor();
+    }
+    return myAccountTypeEditorAspect;
+  }
+
+  private AgreementDeclarations_Editor getAgreementDeclarationsEditorAspect() {
+    if (myAgreementDeclarationsEditorAspect == null) {
+      myAgreementDeclarationsEditorAspect = new AgreementDeclarations_Editor();
+    }
+    return myAgreementDeclarationsEditorAspect;
+  }
+
+  private Date_Editor getDateEditorAspect() {
+    if (myDateEditorAspect == null) {
+      myDateEditorAspect = new Date_Editor();
+    }
+    return myDateEditorAspect;
+  }
+
+  private Date_Future_Editor getDate_FutureEditorAspect() {
+    if (myDate_FutureEditorAspect == null) {
+      myDate_FutureEditorAspect = new Date_Future_Editor();
+    }
+    return myDate_FutureEditorAspect;
+  }
+
+  private Date_Past_Editor getDate_PastEditorAspect() {
+    if (myDate_PastEditorAspect == null) {
+      myDate_PastEditorAspect = new Date_Past_Editor();
+    }
+    return myDate_PastEditorAspect;
+  }
+
+  private Event_Editor getEventEditorAspect() {
+    if (myEventEditorAspect == null) {
+      myEventEditorAspect = new Event_Editor();
+    }
+    return myEventEditorAspect;
+  }
+
+  private EventType_Editor getEventTypeEditorAspect() {
+    if (myEventTypeEditorAspect == null) {
+      myEventTypeEditorAspect = new EventType_Editor();
+    }
+    return myEventTypeEditorAspect;
+  }
+
+  private EventVariable_Editor getEventVariableEditorAspect() {
+    if (myEventVariableEditorAspect == null) {
+      myEventVariableEditorAspect = new EventVariable_Editor();
+    }
+    return myEventVariableEditorAspect;
+  }
+
+  private EventVariableReference_Editor getEventVariableReferenceEditorAspect() {
+    if (myEventVariableReferenceEditorAspect == null) {
+      myEventVariableReferenceEditorAspect = new EventVariableReference_Editor();
+    }
+    return myEventVariableReferenceEditorAspect;
+  }
+
+  private Plan_Editor getPlanEditorAspect() {
+    if (myPlanEditorAspect == null) {
+      myPlanEditorAspect = new Plan_Editor();
+    }
+    return myPlanEditorAspect;
+  }
+
+  private PostingRule_Editor getPostingRuleEditorAspect() {
+    if (myPostingRuleEditorAspect == null) {
+      myPostingRuleEditorAspect = new PostingRule_Editor();
+    }
+    return myPostingRuleEditorAspect;
+  }
+
+  private PostingRuleTemporalProperty_Editor getPostingRuleTemporalPropertyEditorAspect() {
+    if (myPostingRuleTemporalPropertyEditorAspect == null) {
+      myPostingRuleTemporalPropertyEditorAspect = new PostingRuleTemporalProperty_Editor();
+    }
+    return myPostingRuleTemporalPropertyEditorAspect;
+  }
+
+  private Quantity_Editor getQuantityEditorAspect() {
+    if (myQuantityEditorAspect == null) {
+      myQuantityEditorAspect = new Quantity_Editor();
+    }
+    return myQuantityEditorAspect;
+  }
+
+  private QuantityTemporalProperty_Editor getQuantityTemporalPropertyEditorAspect() {
+    if (myQuantityTemporalPropertyEditorAspect == null) {
+      myQuantityTemporalPropertyEditorAspect = new QuantityTemporalProperty_Editor();
+    }
+    return myQuantityTemporalPropertyEditorAspect;
+  }
+
+  private Value_Editor getValueEditorAspect() {
+    if (myValueEditorAspect == null) {
+      myValueEditorAspect = new Value_Editor();
+    }
+    return myValueEditorAspect;
+  }
+
+  private ValueReference_Editor getValueReferenceEditorAspect() {
+    if (myValueReferenceEditorAspect == null) {
+      myValueReferenceEditorAspect = new ValueReference_Editor();
+    }
+    return myValueReferenceEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0q = new String[]{"jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"};
 }

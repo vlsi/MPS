@@ -8,178 +8,933 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AbstractCommand_Editor myAbstractCommandEditorAspect;
+  private AppendingOutputErrorRedirection_Editor myAppendingOutputErrorRedirectionEditorAspect;
+  private AppendingOutputRedirection_Editor myAppendingOutputRedirectionEditorAspect;
+  private Argument_Editor myArgumentEditorAspect;
+  private ArgumentList_Editor myArgumentListEditorAspect;
+  private ArgumentListReference_Editor myArgumentListReferenceEditorAspect;
+  private ArgumentReference_Editor myArgumentReferenceEditorAspect;
+  private ArithmeticCommand_Editor myArithmeticCommandEditorAspect;
+  private ArithmeticExpansion_Editor myArithmeticExpansionEditorAspect;
+  private AsyncTerminator_Editor myAsyncTerminatorEditorAspect;
+  private BaseAssingmentExpression_Editor myBaseAssingmentExpressionEditorAspect;
+  private BaseCommandSubstitution_Editor myBaseCommandSubstitutionEditorAspect;
+  private BaseVariableAssingment_Editor myBaseVariableAssingmentEditorAspect;
+  private BasedIntegerLiteral_Editor myBasedIntegerLiteralEditorAspect;
+  private BasicParameterExpansion_Editor myBasicParameterExpansionEditorAspect;
+  private BinaryArithmeticExpression_Editor myBinaryArithmeticExpressionEditorAspect;
+  private BinaryConditionalExpression_Editor myBinaryConditionalExpressionEditorAspect;
+  private BracketConditionalExpression_Editor myBracketConditionalExpressionEditorAspect;
+  private BracketExpression_Editor myBracketExpressionEditorAspect;
+  private CaseClause_Editor myCaseClauseEditorAspect;
+  private CaseCommand_Editor myCaseCommandEditorAspect;
+  private CaseTerminator_Editor myCaseTerminatorEditorAspect;
+  private CombiningConditionalExpression_Editor myCombiningConditionalExpressionEditorAspect;
+  private Command_Editor myCommandEditorAspect;
+  private CommandList_Editor myCommandListEditorAspect;
+  private CommandTerminator_Editor myCommandTerminatorEditorAspect;
+  private CommentedCommandList_Editor myCommentedCommandListEditorAspect;
+  private CommentedFollowingCommandList_Editor myCommentedFollowingCommandListEditorAspect;
+  private CommentedText_Editor myCommentedTextEditorAspect;
+  private ConditionalCommand_Editor myConditionalCommandEditorAspect;
+  private ConditionalOperation_Editor myConditionalOperationEditorAspect;
+  private DecimalConstant_Editor myDecimalConstantEditorAspect;
+  private DuplicateInputFileDiscriptor_Editor myDuplicateInputFileDiscriptorEditorAspect;
+  private DuplicateOutputFileDiscriptor_Editor myDuplicateOutputFileDiscriptorEditorAspect;
+  private ElifCommand_Editor myElifCommandEditorAspect;
+  private ExternalCommandCall_Editor myExternalCommandCallEditorAspect;
+  private ExternalCommandDeclaration_Editor myExternalCommandDeclarationEditorAspect;
+  private FollowingCommandList_Editor myFollowingCommandListEditorAspect;
+  private FollowingPipeline_Editor myFollowingPipelineEditorAspect;
+  private ForCommand_Editor myForCommandEditorAspect;
+  private ForeachCommand_Editor myForeachCommandEditorAspect;
+  private FreeCommand_Editor myFreeCommandEditorAspect;
+  private FunctionCallCommand_Editor myFunctionCallCommandEditorAspect;
+  private FunctionDeclaration_Editor myFunctionDeclarationEditorAspect;
+  private GeneralizedWord_Editor myGeneralizedWordEditorAspect;
+  private GroupingCommand_Editor myGroupingCommandEditorAspect;
+  private HeadCommandList_Editor myHeadCommandListEditorAspect;
+  private HeadPipeline_Editor myHeadPipelineEditorAspect;
+  private HereDocumentRedirection_Editor myHereDocumentRedirectionEditorAspect;
+  private HereStringRedirection_Editor myHereStringRedirectionEditorAspect;
+  private HexIntegerLiteral_Editor myHexIntegerLiteralEditorAspect;
+  private IfCommand_Editor myIfCommandEditorAspect;
+  private InputLines_Editor myInputLinesEditorAspect;
+  private InputRedirection_Editor myInputRedirectionEditorAspect;
+  private NotCommand_Editor myNotCommandEditorAspect;
+  private Option_Editor myOptionEditorAspect;
+  private OptionReference_Editor myOptionReferenceEditorAspect;
+  private OptionSet_Editor myOptionSetEditorAspect;
+  private OptionSetReference_Editor myOptionSetReferenceEditorAspect;
+  private OptionWithParam_Editor myOptionWithParamEditorAspect;
+  private OptionWithParamReference_Editor myOptionWithParamReferenceEditorAspect;
+  private OutputErrorRedirection_Editor myOutputErrorRedirectionEditorAspect;
+  private OutputRedirection_Editor myOutputRedirectionEditorAspect;
+  private PostVariableExpression_Editor myPostVariableExpressionEditorAspect;
+  private PreVariableExpression_Editor myPreVariableExpressionEditorAspect;
+  private QuotedWord_Editor myQuotedWordEditorAspect;
+  private QuotesCommandSubstitution_Editor myQuotesCommandSubstitutionEditorAspect;
+  private ReadingWritingRedirection_Editor myReadingWritingRedirectionEditorAspect;
+  private RedirectedCommand_Editor myRedirectedCommandEditorAspect;
+  private SelectCommand_Editor mySelectCommandEditorAspect;
+  private SemicolonTerminator_Editor mySemicolonTerminatorEditorAspect;
+  private ShellScript_Editor myShellScriptEditorAspect;
+  private SimpleCommand_Editor mySimpleCommandEditorAspect;
+  private SimpleWord_Editor mySimpleWordEditorAspect;
+  private StringConditionalExpression_Editor myStringConditionalExpressionEditorAspect;
+  private TildeExpansion_Editor myTildeExpansionEditorAspect;
+  private UnaryArithmeticExpression_Editor myUnaryArithmeticExpressionEditorAspect;
+  private UnaryConditionalExpression_Editor myUnaryConditionalExpressionEditorAspect;
+  private UntilLoopCommand_Editor myUntilLoopCommandEditorAspect;
+  private VariableNameDeclaration_Editor myVariableNameDeclarationEditorAspect;
+  private VariableReference_Editor myVariableReferenceEditorAspect;
+  private WhileLoopCommand_Editor myWhileLoopCommandEditorAspect;
+  private WordList_Editor myWordListEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0fd, descriptor.getConceptFqName())) {
       case 0:
-        return new AbstractCommand_Editor();
+        return getAbstractCommandEditorAspect();
       case 1:
-        return new AppendingOutputErrorRedirection_Editor();
+        return getAppendingOutputErrorRedirectionEditorAspect();
       case 2:
-        return new AppendingOutputRedirection_Editor();
+        return getAppendingOutputRedirectionEditorAspect();
       case 3:
-        return new Argument_Editor();
+        return getArgumentEditorAspect();
       case 4:
-        return new ArgumentList_Editor();
+        return getArgumentListEditorAspect();
       case 5:
-        return new ArgumentListReference_Editor();
+        return getArgumentListReferenceEditorAspect();
       case 6:
-        return new ArgumentReference_Editor();
+        return getArgumentReferenceEditorAspect();
       case 7:
-        return new ArithmeticCommand_Editor();
+        return getArithmeticCommandEditorAspect();
       case 8:
-        return new ArithmeticExpansion_Editor();
+        return getArithmeticExpansionEditorAspect();
       case 9:
-        return new AsyncTerminator_Editor();
+        return getAsyncTerminatorEditorAspect();
       case 10:
-        return new BaseAssingmentExpression_Editor();
+        return getBaseAssingmentExpressionEditorAspect();
       case 11:
-        return new BaseCommandSubstitution_Editor();
+        return getBaseCommandSubstitutionEditorAspect();
       case 12:
-        return new BaseVariableAssingment_Editor();
+        return getBaseVariableAssingmentEditorAspect();
       case 13:
-        return new BasedIntegerLiteral_Editor();
+        return getBasedIntegerLiteralEditorAspect();
       case 14:
-        return new BasicParameterExpansion_Editor();
+        return getBasicParameterExpansionEditorAspect();
       case 15:
-        return new BinaryArithmeticExpression_Editor();
+        return getBinaryArithmeticExpressionEditorAspect();
       case 16:
-        return new BinaryConditionalExpression_Editor();
+        return getBinaryConditionalExpressionEditorAspect();
       case 17:
-        return new BracketConditionalExpression_Editor();
+        return getBracketConditionalExpressionEditorAspect();
       case 18:
-        return new BracketExpression_Editor();
+        return getBracketExpressionEditorAspect();
       case 19:
-        return new CaseClause_Editor();
+        return getCaseClauseEditorAspect();
       case 20:
-        return new CaseCommand_Editor();
+        return getCaseCommandEditorAspect();
       case 21:
-        return new CaseTerminator_Editor();
+        return getCaseTerminatorEditorAspect();
       case 22:
-        return new CombiningConditionalExpression_Editor();
+        return getCombiningConditionalExpressionEditorAspect();
       case 23:
-        return new Command_Editor();
+        return getCommandEditorAspect();
       case 24:
-        return new CommandList_Editor();
+        return getCommandListEditorAspect();
       case 25:
-        return new CommandTerminator_Editor();
+        return getCommandTerminatorEditorAspect();
       case 26:
-        return new CommentedCommandList_Editor();
+        return getCommentedCommandListEditorAspect();
       case 27:
-        return new CommentedFollowingCommandList_Editor();
+        return getCommentedFollowingCommandListEditorAspect();
       case 28:
-        return new CommentedText_Editor();
+        return getCommentedTextEditorAspect();
       case 29:
-        return new ConditionalCommand_Editor();
+        return getConditionalCommandEditorAspect();
       case 30:
-        return new ConditionalOperation_Editor();
+        return getConditionalOperationEditorAspect();
       case 31:
-        return new DecimalConstant_Editor();
+        return getDecimalConstantEditorAspect();
       case 32:
-        return new DuplicateInputFileDiscriptor_Editor();
+        return getDuplicateInputFileDiscriptorEditorAspect();
       case 33:
-        return new DuplicateOutputFileDiscriptor_Editor();
+        return getDuplicateOutputFileDiscriptorEditorAspect();
       case 34:
-        return new ElifCommand_Editor();
+        return getElifCommandEditorAspect();
       case 35:
-        return new ExternalCommandCall_Editor();
+        return getExternalCommandCallEditorAspect();
       case 36:
-        return new ExternalCommandDeclaration_Editor();
+        return getExternalCommandDeclarationEditorAspect();
       case 37:
-        return new FollowingCommandList_Editor();
+        return getFollowingCommandListEditorAspect();
       case 38:
-        return new FollowingPipeline_Editor();
+        return getFollowingPipelineEditorAspect();
       case 39:
-        return new ForCommand_Editor();
+        return getForCommandEditorAspect();
       case 40:
-        return new ForeachCommand_Editor();
+        return getForeachCommandEditorAspect();
       case 41:
-        return new FreeCommand_Editor();
+        return getFreeCommandEditorAspect();
       case 42:
-        return new FunctionCallCommand_Editor();
+        return getFunctionCallCommandEditorAspect();
       case 43:
-        return new FunctionDeclaration_Editor();
+        return getFunctionDeclarationEditorAspect();
       case 44:
-        return new GeneralizedWord_Editor();
+        return getGeneralizedWordEditorAspect();
       case 45:
-        return new GroupingCommand_Editor();
+        return getGroupingCommandEditorAspect();
       case 46:
-        return new HeadCommandList_Editor();
+        return getHeadCommandListEditorAspect();
       case 47:
-        return new HeadPipeline_Editor();
+        return getHeadPipelineEditorAspect();
       case 48:
-        return new HereDocumentRedirection_Editor();
+        return getHereDocumentRedirectionEditorAspect();
       case 49:
-        return new HereStringRedirection_Editor();
+        return getHereStringRedirectionEditorAspect();
       case 50:
-        return new HexIntegerLiteral_Editor();
+        return getHexIntegerLiteralEditorAspect();
       case 51:
-        return new IfCommand_Editor();
+        return getIfCommandEditorAspect();
       case 52:
-        return new InputLines_Editor();
+        return getInputLinesEditorAspect();
       case 53:
-        return new InputRedirection_Editor();
+        return getInputRedirectionEditorAspect();
       case 54:
-        return new NotCommand_Editor();
+        return getNotCommandEditorAspect();
       case 55:
-        return new Option_Editor();
+        return getOptionEditorAspect();
       case 56:
-        return new OptionReference_Editor();
+        return getOptionReferenceEditorAspect();
       case 57:
-        return new OptionSet_Editor();
+        return getOptionSetEditorAspect();
       case 58:
-        return new OptionSetReference_Editor();
+        return getOptionSetReferenceEditorAspect();
       case 59:
-        return new OptionWithParam_Editor();
+        return getOptionWithParamEditorAspect();
       case 60:
-        return new OptionWithParamReference_Editor();
+        return getOptionWithParamReferenceEditorAspect();
       case 61:
-        return new OutputErrorRedirection_Editor();
+        return getOutputErrorRedirectionEditorAspect();
       case 62:
-        return new OutputRedirection_Editor();
+        return getOutputRedirectionEditorAspect();
       case 63:
-        return new PostVariableExpression_Editor();
+        return getPostVariableExpressionEditorAspect();
       case 64:
-        return new PreVariableExpression_Editor();
+        return getPreVariableExpressionEditorAspect();
       case 65:
-        return new QuotedWord_Editor();
+        return getQuotedWordEditorAspect();
       case 66:
-        return new QuotesCommandSubstitution_Editor();
+        return getQuotesCommandSubstitutionEditorAspect();
       case 67:
-        return new ReadingWritingRedirection_Editor();
+        return getReadingWritingRedirectionEditorAspect();
       case 68:
-        return new RedirectedCommand_Editor();
+        return getRedirectedCommandEditorAspect();
       case 69:
-        return new SelectCommand_Editor();
+        return getSelectCommandEditorAspect();
       case 70:
-        return new SemicolonTerminator_Editor();
+        return getSemicolonTerminatorEditorAspect();
       case 71:
-        return new ShellScript_Editor();
+        return getShellScriptEditorAspect();
       case 72:
-        return new SimpleCommand_Editor();
+        return getSimpleCommandEditorAspect();
       case 73:
-        return new SimpleWord_Editor();
+        return getSimpleWordEditorAspect();
       case 74:
-        return new StringConditionalExpression_Editor();
+        return getStringConditionalExpressionEditorAspect();
       case 75:
-        return new TildeExpansion_Editor();
+        return getTildeExpansionEditorAspect();
       case 76:
-        return new UnaryArithmeticExpression_Editor();
+        return getUnaryArithmeticExpressionEditorAspect();
       case 77:
-        return new UnaryConditionalExpression_Editor();
+        return getUnaryConditionalExpressionEditorAspect();
       case 78:
-        return new UntilLoopCommand_Editor();
+        return getUntilLoopCommandEditorAspect();
       case 79:
-        return new VariableNameDeclaration_Editor();
+        return getVariableNameDeclarationEditorAspect();
       case 80:
-        return new VariableReference_Editor();
+        return getVariableReferenceEditorAspect();
       case 81:
-        return new WhileLoopCommand_Editor();
+        return getWhileLoopCommandEditorAspect();
       case 82:
-        return new WordList_Editor();
+        return getWordListEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.bash.structure.AbstractCommand", "jetbrains.mps.bash.structure.AppendingOutputErrorRedirection", "jetbrains.mps.bash.structure.AppendingOutputRedirection", "jetbrains.mps.bash.structure.Argument", "jetbrains.mps.bash.structure.ArgumentList", "jetbrains.mps.bash.structure.ArgumentListReference", "jetbrains.mps.bash.structure.ArgumentReference", "jetbrains.mps.bash.structure.ArithmeticCommand", "jetbrains.mps.bash.structure.ArithmeticExpansion", "jetbrains.mps.bash.structure.AsyncTerminator", "jetbrains.mps.bash.structure.BaseAssingmentExpression", "jetbrains.mps.bash.structure.BaseCommandSubstitution", "jetbrains.mps.bash.structure.BaseVariableAssingment", "jetbrains.mps.bash.structure.BasedIntegerLiteral", "jetbrains.mps.bash.structure.BasicParameterExpansion", "jetbrains.mps.bash.structure.BinaryArithmeticExpression", "jetbrains.mps.bash.structure.BinaryConditionalExpression", "jetbrains.mps.bash.structure.BracketConditionalExpression", "jetbrains.mps.bash.structure.BracketExpression", "jetbrains.mps.bash.structure.CaseClause", "jetbrains.mps.bash.structure.CaseCommand", "jetbrains.mps.bash.structure.CaseTerminator", "jetbrains.mps.bash.structure.CombiningConditionalExpression", "jetbrains.mps.bash.structure.Command", "jetbrains.mps.bash.structure.CommandList", "jetbrains.mps.bash.structure.CommandTerminator", "jetbrains.mps.bash.structure.CommentedCommandList", "jetbrains.mps.bash.structure.CommentedFollowingCommandList", "jetbrains.mps.bash.structure.CommentedText", "jetbrains.mps.bash.structure.ConditionalCommand", "jetbrains.mps.bash.structure.ConditionalOperation", "jetbrains.mps.bash.structure.DecimalConstant", "jetbrains.mps.bash.structure.DuplicateInputFileDiscriptor", "jetbrains.mps.bash.structure.DuplicateOutputFileDiscriptor", "jetbrains.mps.bash.structure.ElifCommand", "jetbrains.mps.bash.structure.ExternalCommandCall", "jetbrains.mps.bash.structure.ExternalCommandDeclaration", "jetbrains.mps.bash.structure.FollowingCommandList", "jetbrains.mps.bash.structure.FollowingPipeline", "jetbrains.mps.bash.structure.ForCommand", "jetbrains.mps.bash.structure.ForeachCommand", "jetbrains.mps.bash.structure.FreeCommand", "jetbrains.mps.bash.structure.FunctionCallCommand", "jetbrains.mps.bash.structure.FunctionDeclaration", "jetbrains.mps.bash.structure.GeneralizedWord", "jetbrains.mps.bash.structure.GroupingCommand", "jetbrains.mps.bash.structure.HeadCommandList", "jetbrains.mps.bash.structure.HeadPipeline", "jetbrains.mps.bash.structure.HereDocumentRedirection", "jetbrains.mps.bash.structure.HereStringRedirection", "jetbrains.mps.bash.structure.HexIntegerLiteral", "jetbrains.mps.bash.structure.IfCommand", "jetbrains.mps.bash.structure.InputLines", "jetbrains.mps.bash.structure.InputRedirection", "jetbrains.mps.bash.structure.NotCommand", "jetbrains.mps.bash.structure.Option", "jetbrains.mps.bash.structure.OptionReference", "jetbrains.mps.bash.structure.OptionSet", "jetbrains.mps.bash.structure.OptionSetReference", "jetbrains.mps.bash.structure.OptionWithParam", "jetbrains.mps.bash.structure.OptionWithParamReference", "jetbrains.mps.bash.structure.OutputErrorRedirection", "jetbrains.mps.bash.structure.OutputRedirection", "jetbrains.mps.bash.structure.PostVariableExpression", "jetbrains.mps.bash.structure.PreVariableExpression", "jetbrains.mps.bash.structure.QuotedWord", "jetbrains.mps.bash.structure.QuotesCommandSubstitution", "jetbrains.mps.bash.structure.ReadingWritingRedirection", "jetbrains.mps.bash.structure.RedirectedCommand", "jetbrains.mps.bash.structure.SelectCommand", "jetbrains.mps.bash.structure.SemicolonTerminator", "jetbrains.mps.bash.structure.ShellScript", "jetbrains.mps.bash.structure.SimpleCommand", "jetbrains.mps.bash.structure.SimpleWord", "jetbrains.mps.bash.structure.StringConditionalExpression", "jetbrains.mps.bash.structure.TildeExpansion", "jetbrains.mps.bash.structure.UnaryArithmeticExpression", "jetbrains.mps.bash.structure.UnaryConditionalExpression", "jetbrains.mps.bash.structure.UntilLoopCommand", "jetbrains.mps.bash.structure.VariableNameDeclaration", "jetbrains.mps.bash.structure.VariableReference", "jetbrains.mps.bash.structure.WhileLoopCommand", "jetbrains.mps.bash.structure.WordList"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAbstractCommandEditorAspect = null;
+    myAppendingOutputErrorRedirectionEditorAspect = null;
+    myAppendingOutputRedirectionEditorAspect = null;
+    myArgumentEditorAspect = null;
+    myArgumentListEditorAspect = null;
+    myArgumentListReferenceEditorAspect = null;
+    myArgumentReferenceEditorAspect = null;
+    myArithmeticCommandEditorAspect = null;
+    myArithmeticExpansionEditorAspect = null;
+    myAsyncTerminatorEditorAspect = null;
+    myBaseAssingmentExpressionEditorAspect = null;
+    myBaseCommandSubstitutionEditorAspect = null;
+    myBaseVariableAssingmentEditorAspect = null;
+    myBasedIntegerLiteralEditorAspect = null;
+    myBasicParameterExpansionEditorAspect = null;
+    myBinaryArithmeticExpressionEditorAspect = null;
+    myBinaryConditionalExpressionEditorAspect = null;
+    myBracketConditionalExpressionEditorAspect = null;
+    myBracketExpressionEditorAspect = null;
+    myCaseClauseEditorAspect = null;
+    myCaseCommandEditorAspect = null;
+    myCaseTerminatorEditorAspect = null;
+    myCombiningConditionalExpressionEditorAspect = null;
+    myCommandEditorAspect = null;
+    myCommandListEditorAspect = null;
+    myCommandTerminatorEditorAspect = null;
+    myCommentedCommandListEditorAspect = null;
+    myCommentedFollowingCommandListEditorAspect = null;
+    myCommentedTextEditorAspect = null;
+    myConditionalCommandEditorAspect = null;
+    myConditionalOperationEditorAspect = null;
+    myDecimalConstantEditorAspect = null;
+    myDuplicateInputFileDiscriptorEditorAspect = null;
+    myDuplicateOutputFileDiscriptorEditorAspect = null;
+    myElifCommandEditorAspect = null;
+    myExternalCommandCallEditorAspect = null;
+    myExternalCommandDeclarationEditorAspect = null;
+    myFollowingCommandListEditorAspect = null;
+    myFollowingPipelineEditorAspect = null;
+    myForCommandEditorAspect = null;
+    myForeachCommandEditorAspect = null;
+    myFreeCommandEditorAspect = null;
+    myFunctionCallCommandEditorAspect = null;
+    myFunctionDeclarationEditorAspect = null;
+    myGeneralizedWordEditorAspect = null;
+    myGroupingCommandEditorAspect = null;
+    myHeadCommandListEditorAspect = null;
+    myHeadPipelineEditorAspect = null;
+    myHereDocumentRedirectionEditorAspect = null;
+    myHereStringRedirectionEditorAspect = null;
+    myHexIntegerLiteralEditorAspect = null;
+    myIfCommandEditorAspect = null;
+    myInputLinesEditorAspect = null;
+    myInputRedirectionEditorAspect = null;
+    myNotCommandEditorAspect = null;
+    myOptionEditorAspect = null;
+    myOptionReferenceEditorAspect = null;
+    myOptionSetEditorAspect = null;
+    myOptionSetReferenceEditorAspect = null;
+    myOptionWithParamEditorAspect = null;
+    myOptionWithParamReferenceEditorAspect = null;
+    myOutputErrorRedirectionEditorAspect = null;
+    myOutputRedirectionEditorAspect = null;
+    myPostVariableExpressionEditorAspect = null;
+    myPreVariableExpressionEditorAspect = null;
+    myQuotedWordEditorAspect = null;
+    myQuotesCommandSubstitutionEditorAspect = null;
+    myReadingWritingRedirectionEditorAspect = null;
+    myRedirectedCommandEditorAspect = null;
+    mySelectCommandEditorAspect = null;
+    mySemicolonTerminatorEditorAspect = null;
+    myShellScriptEditorAspect = null;
+    mySimpleCommandEditorAspect = null;
+    mySimpleWordEditorAspect = null;
+    myStringConditionalExpressionEditorAspect = null;
+    myTildeExpansionEditorAspect = null;
+    myUnaryArithmeticExpressionEditorAspect = null;
+    myUnaryConditionalExpressionEditorAspect = null;
+    myUntilLoopCommandEditorAspect = null;
+    myVariableNameDeclarationEditorAspect = null;
+    myVariableReferenceEditorAspect = null;
+    myWhileLoopCommandEditorAspect = null;
+    myWordListEditorAspect = null;
+  }
+
+  private AbstractCommand_Editor getAbstractCommandEditorAspect() {
+    if (myAbstractCommandEditorAspect == null) {
+      myAbstractCommandEditorAspect = new AbstractCommand_Editor();
+    }
+    return myAbstractCommandEditorAspect;
+  }
+
+  private AppendingOutputErrorRedirection_Editor getAppendingOutputErrorRedirectionEditorAspect() {
+    if (myAppendingOutputErrorRedirectionEditorAspect == null) {
+      myAppendingOutputErrorRedirectionEditorAspect = new AppendingOutputErrorRedirection_Editor();
+    }
+    return myAppendingOutputErrorRedirectionEditorAspect;
+  }
+
+  private AppendingOutputRedirection_Editor getAppendingOutputRedirectionEditorAspect() {
+    if (myAppendingOutputRedirectionEditorAspect == null) {
+      myAppendingOutputRedirectionEditorAspect = new AppendingOutputRedirection_Editor();
+    }
+    return myAppendingOutputRedirectionEditorAspect;
+  }
+
+  private Argument_Editor getArgumentEditorAspect() {
+    if (myArgumentEditorAspect == null) {
+      myArgumentEditorAspect = new Argument_Editor();
+    }
+    return myArgumentEditorAspect;
+  }
+
+  private ArgumentList_Editor getArgumentListEditorAspect() {
+    if (myArgumentListEditorAspect == null) {
+      myArgumentListEditorAspect = new ArgumentList_Editor();
+    }
+    return myArgumentListEditorAspect;
+  }
+
+  private ArgumentListReference_Editor getArgumentListReferenceEditorAspect() {
+    if (myArgumentListReferenceEditorAspect == null) {
+      myArgumentListReferenceEditorAspect = new ArgumentListReference_Editor();
+    }
+    return myArgumentListReferenceEditorAspect;
+  }
+
+  private ArgumentReference_Editor getArgumentReferenceEditorAspect() {
+    if (myArgumentReferenceEditorAspect == null) {
+      myArgumentReferenceEditorAspect = new ArgumentReference_Editor();
+    }
+    return myArgumentReferenceEditorAspect;
+  }
+
+  private ArithmeticCommand_Editor getArithmeticCommandEditorAspect() {
+    if (myArithmeticCommandEditorAspect == null) {
+      myArithmeticCommandEditorAspect = new ArithmeticCommand_Editor();
+    }
+    return myArithmeticCommandEditorAspect;
+  }
+
+  private ArithmeticExpansion_Editor getArithmeticExpansionEditorAspect() {
+    if (myArithmeticExpansionEditorAspect == null) {
+      myArithmeticExpansionEditorAspect = new ArithmeticExpansion_Editor();
+    }
+    return myArithmeticExpansionEditorAspect;
+  }
+
+  private AsyncTerminator_Editor getAsyncTerminatorEditorAspect() {
+    if (myAsyncTerminatorEditorAspect == null) {
+      myAsyncTerminatorEditorAspect = new AsyncTerminator_Editor();
+    }
+    return myAsyncTerminatorEditorAspect;
+  }
+
+  private BaseAssingmentExpression_Editor getBaseAssingmentExpressionEditorAspect() {
+    if (myBaseAssingmentExpressionEditorAspect == null) {
+      myBaseAssingmentExpressionEditorAspect = new BaseAssingmentExpression_Editor();
+    }
+    return myBaseAssingmentExpressionEditorAspect;
+  }
+
+  private BaseCommandSubstitution_Editor getBaseCommandSubstitutionEditorAspect() {
+    if (myBaseCommandSubstitutionEditorAspect == null) {
+      myBaseCommandSubstitutionEditorAspect = new BaseCommandSubstitution_Editor();
+    }
+    return myBaseCommandSubstitutionEditorAspect;
+  }
+
+  private BaseVariableAssingment_Editor getBaseVariableAssingmentEditorAspect() {
+    if (myBaseVariableAssingmentEditorAspect == null) {
+      myBaseVariableAssingmentEditorAspect = new BaseVariableAssingment_Editor();
+    }
+    return myBaseVariableAssingmentEditorAspect;
+  }
+
+  private BasedIntegerLiteral_Editor getBasedIntegerLiteralEditorAspect() {
+    if (myBasedIntegerLiteralEditorAspect == null) {
+      myBasedIntegerLiteralEditorAspect = new BasedIntegerLiteral_Editor();
+    }
+    return myBasedIntegerLiteralEditorAspect;
+  }
+
+  private BasicParameterExpansion_Editor getBasicParameterExpansionEditorAspect() {
+    if (myBasicParameterExpansionEditorAspect == null) {
+      myBasicParameterExpansionEditorAspect = new BasicParameterExpansion_Editor();
+    }
+    return myBasicParameterExpansionEditorAspect;
+  }
+
+  private BinaryArithmeticExpression_Editor getBinaryArithmeticExpressionEditorAspect() {
+    if (myBinaryArithmeticExpressionEditorAspect == null) {
+      myBinaryArithmeticExpressionEditorAspect = new BinaryArithmeticExpression_Editor();
+    }
+    return myBinaryArithmeticExpressionEditorAspect;
+  }
+
+  private BinaryConditionalExpression_Editor getBinaryConditionalExpressionEditorAspect() {
+    if (myBinaryConditionalExpressionEditorAspect == null) {
+      myBinaryConditionalExpressionEditorAspect = new BinaryConditionalExpression_Editor();
+    }
+    return myBinaryConditionalExpressionEditorAspect;
+  }
+
+  private BracketConditionalExpression_Editor getBracketConditionalExpressionEditorAspect() {
+    if (myBracketConditionalExpressionEditorAspect == null) {
+      myBracketConditionalExpressionEditorAspect = new BracketConditionalExpression_Editor();
+    }
+    return myBracketConditionalExpressionEditorAspect;
+  }
+
+  private BracketExpression_Editor getBracketExpressionEditorAspect() {
+    if (myBracketExpressionEditorAspect == null) {
+      myBracketExpressionEditorAspect = new BracketExpression_Editor();
+    }
+    return myBracketExpressionEditorAspect;
+  }
+
+  private CaseClause_Editor getCaseClauseEditorAspect() {
+    if (myCaseClauseEditorAspect == null) {
+      myCaseClauseEditorAspect = new CaseClause_Editor();
+    }
+    return myCaseClauseEditorAspect;
+  }
+
+  private CaseCommand_Editor getCaseCommandEditorAspect() {
+    if (myCaseCommandEditorAspect == null) {
+      myCaseCommandEditorAspect = new CaseCommand_Editor();
+    }
+    return myCaseCommandEditorAspect;
+  }
+
+  private CaseTerminator_Editor getCaseTerminatorEditorAspect() {
+    if (myCaseTerminatorEditorAspect == null) {
+      myCaseTerminatorEditorAspect = new CaseTerminator_Editor();
+    }
+    return myCaseTerminatorEditorAspect;
+  }
+
+  private CombiningConditionalExpression_Editor getCombiningConditionalExpressionEditorAspect() {
+    if (myCombiningConditionalExpressionEditorAspect == null) {
+      myCombiningConditionalExpressionEditorAspect = new CombiningConditionalExpression_Editor();
+    }
+    return myCombiningConditionalExpressionEditorAspect;
+  }
+
+  private Command_Editor getCommandEditorAspect() {
+    if (myCommandEditorAspect == null) {
+      myCommandEditorAspect = new Command_Editor();
+    }
+    return myCommandEditorAspect;
+  }
+
+  private CommandList_Editor getCommandListEditorAspect() {
+    if (myCommandListEditorAspect == null) {
+      myCommandListEditorAspect = new CommandList_Editor();
+    }
+    return myCommandListEditorAspect;
+  }
+
+  private CommandTerminator_Editor getCommandTerminatorEditorAspect() {
+    if (myCommandTerminatorEditorAspect == null) {
+      myCommandTerminatorEditorAspect = new CommandTerminator_Editor();
+    }
+    return myCommandTerminatorEditorAspect;
+  }
+
+  private CommentedCommandList_Editor getCommentedCommandListEditorAspect() {
+    if (myCommentedCommandListEditorAspect == null) {
+      myCommentedCommandListEditorAspect = new CommentedCommandList_Editor();
+    }
+    return myCommentedCommandListEditorAspect;
+  }
+
+  private CommentedFollowingCommandList_Editor getCommentedFollowingCommandListEditorAspect() {
+    if (myCommentedFollowingCommandListEditorAspect == null) {
+      myCommentedFollowingCommandListEditorAspect = new CommentedFollowingCommandList_Editor();
+    }
+    return myCommentedFollowingCommandListEditorAspect;
+  }
+
+  private CommentedText_Editor getCommentedTextEditorAspect() {
+    if (myCommentedTextEditorAspect == null) {
+      myCommentedTextEditorAspect = new CommentedText_Editor();
+    }
+    return myCommentedTextEditorAspect;
+  }
+
+  private ConditionalCommand_Editor getConditionalCommandEditorAspect() {
+    if (myConditionalCommandEditorAspect == null) {
+      myConditionalCommandEditorAspect = new ConditionalCommand_Editor();
+    }
+    return myConditionalCommandEditorAspect;
+  }
+
+  private ConditionalOperation_Editor getConditionalOperationEditorAspect() {
+    if (myConditionalOperationEditorAspect == null) {
+      myConditionalOperationEditorAspect = new ConditionalOperation_Editor();
+    }
+    return myConditionalOperationEditorAspect;
+  }
+
+  private DecimalConstant_Editor getDecimalConstantEditorAspect() {
+    if (myDecimalConstantEditorAspect == null) {
+      myDecimalConstantEditorAspect = new DecimalConstant_Editor();
+    }
+    return myDecimalConstantEditorAspect;
+  }
+
+  private DuplicateInputFileDiscriptor_Editor getDuplicateInputFileDiscriptorEditorAspect() {
+    if (myDuplicateInputFileDiscriptorEditorAspect == null) {
+      myDuplicateInputFileDiscriptorEditorAspect = new DuplicateInputFileDiscriptor_Editor();
+    }
+    return myDuplicateInputFileDiscriptorEditorAspect;
+  }
+
+  private DuplicateOutputFileDiscriptor_Editor getDuplicateOutputFileDiscriptorEditorAspect() {
+    if (myDuplicateOutputFileDiscriptorEditorAspect == null) {
+      myDuplicateOutputFileDiscriptorEditorAspect = new DuplicateOutputFileDiscriptor_Editor();
+    }
+    return myDuplicateOutputFileDiscriptorEditorAspect;
+  }
+
+  private ElifCommand_Editor getElifCommandEditorAspect() {
+    if (myElifCommandEditorAspect == null) {
+      myElifCommandEditorAspect = new ElifCommand_Editor();
+    }
+    return myElifCommandEditorAspect;
+  }
+
+  private ExternalCommandCall_Editor getExternalCommandCallEditorAspect() {
+    if (myExternalCommandCallEditorAspect == null) {
+      myExternalCommandCallEditorAspect = new ExternalCommandCall_Editor();
+    }
+    return myExternalCommandCallEditorAspect;
+  }
+
+  private ExternalCommandDeclaration_Editor getExternalCommandDeclarationEditorAspect() {
+    if (myExternalCommandDeclarationEditorAspect == null) {
+      myExternalCommandDeclarationEditorAspect = new ExternalCommandDeclaration_Editor();
+    }
+    return myExternalCommandDeclarationEditorAspect;
+  }
+
+  private FollowingCommandList_Editor getFollowingCommandListEditorAspect() {
+    if (myFollowingCommandListEditorAspect == null) {
+      myFollowingCommandListEditorAspect = new FollowingCommandList_Editor();
+    }
+    return myFollowingCommandListEditorAspect;
+  }
+
+  private FollowingPipeline_Editor getFollowingPipelineEditorAspect() {
+    if (myFollowingPipelineEditorAspect == null) {
+      myFollowingPipelineEditorAspect = new FollowingPipeline_Editor();
+    }
+    return myFollowingPipelineEditorAspect;
+  }
+
+  private ForCommand_Editor getForCommandEditorAspect() {
+    if (myForCommandEditorAspect == null) {
+      myForCommandEditorAspect = new ForCommand_Editor();
+    }
+    return myForCommandEditorAspect;
+  }
+
+  private ForeachCommand_Editor getForeachCommandEditorAspect() {
+    if (myForeachCommandEditorAspect == null) {
+      myForeachCommandEditorAspect = new ForeachCommand_Editor();
+    }
+    return myForeachCommandEditorAspect;
+  }
+
+  private FreeCommand_Editor getFreeCommandEditorAspect() {
+    if (myFreeCommandEditorAspect == null) {
+      myFreeCommandEditorAspect = new FreeCommand_Editor();
+    }
+    return myFreeCommandEditorAspect;
+  }
+
+  private FunctionCallCommand_Editor getFunctionCallCommandEditorAspect() {
+    if (myFunctionCallCommandEditorAspect == null) {
+      myFunctionCallCommandEditorAspect = new FunctionCallCommand_Editor();
+    }
+    return myFunctionCallCommandEditorAspect;
+  }
+
+  private FunctionDeclaration_Editor getFunctionDeclarationEditorAspect() {
+    if (myFunctionDeclarationEditorAspect == null) {
+      myFunctionDeclarationEditorAspect = new FunctionDeclaration_Editor();
+    }
+    return myFunctionDeclarationEditorAspect;
+  }
+
+  private GeneralizedWord_Editor getGeneralizedWordEditorAspect() {
+    if (myGeneralizedWordEditorAspect == null) {
+      myGeneralizedWordEditorAspect = new GeneralizedWord_Editor();
+    }
+    return myGeneralizedWordEditorAspect;
+  }
+
+  private GroupingCommand_Editor getGroupingCommandEditorAspect() {
+    if (myGroupingCommandEditorAspect == null) {
+      myGroupingCommandEditorAspect = new GroupingCommand_Editor();
+    }
+    return myGroupingCommandEditorAspect;
+  }
+
+  private HeadCommandList_Editor getHeadCommandListEditorAspect() {
+    if (myHeadCommandListEditorAspect == null) {
+      myHeadCommandListEditorAspect = new HeadCommandList_Editor();
+    }
+    return myHeadCommandListEditorAspect;
+  }
+
+  private HeadPipeline_Editor getHeadPipelineEditorAspect() {
+    if (myHeadPipelineEditorAspect == null) {
+      myHeadPipelineEditorAspect = new HeadPipeline_Editor();
+    }
+    return myHeadPipelineEditorAspect;
+  }
+
+  private HereDocumentRedirection_Editor getHereDocumentRedirectionEditorAspect() {
+    if (myHereDocumentRedirectionEditorAspect == null) {
+      myHereDocumentRedirectionEditorAspect = new HereDocumentRedirection_Editor();
+    }
+    return myHereDocumentRedirectionEditorAspect;
+  }
+
+  private HereStringRedirection_Editor getHereStringRedirectionEditorAspect() {
+    if (myHereStringRedirectionEditorAspect == null) {
+      myHereStringRedirectionEditorAspect = new HereStringRedirection_Editor();
+    }
+    return myHereStringRedirectionEditorAspect;
+  }
+
+  private HexIntegerLiteral_Editor getHexIntegerLiteralEditorAspect() {
+    if (myHexIntegerLiteralEditorAspect == null) {
+      myHexIntegerLiteralEditorAspect = new HexIntegerLiteral_Editor();
+    }
+    return myHexIntegerLiteralEditorAspect;
+  }
+
+  private IfCommand_Editor getIfCommandEditorAspect() {
+    if (myIfCommandEditorAspect == null) {
+      myIfCommandEditorAspect = new IfCommand_Editor();
+    }
+    return myIfCommandEditorAspect;
+  }
+
+  private InputLines_Editor getInputLinesEditorAspect() {
+    if (myInputLinesEditorAspect == null) {
+      myInputLinesEditorAspect = new InputLines_Editor();
+    }
+    return myInputLinesEditorAspect;
+  }
+
+  private InputRedirection_Editor getInputRedirectionEditorAspect() {
+    if (myInputRedirectionEditorAspect == null) {
+      myInputRedirectionEditorAspect = new InputRedirection_Editor();
+    }
+    return myInputRedirectionEditorAspect;
+  }
+
+  private NotCommand_Editor getNotCommandEditorAspect() {
+    if (myNotCommandEditorAspect == null) {
+      myNotCommandEditorAspect = new NotCommand_Editor();
+    }
+    return myNotCommandEditorAspect;
+  }
+
+  private Option_Editor getOptionEditorAspect() {
+    if (myOptionEditorAspect == null) {
+      myOptionEditorAspect = new Option_Editor();
+    }
+    return myOptionEditorAspect;
+  }
+
+  private OptionReference_Editor getOptionReferenceEditorAspect() {
+    if (myOptionReferenceEditorAspect == null) {
+      myOptionReferenceEditorAspect = new OptionReference_Editor();
+    }
+    return myOptionReferenceEditorAspect;
+  }
+
+  private OptionSet_Editor getOptionSetEditorAspect() {
+    if (myOptionSetEditorAspect == null) {
+      myOptionSetEditorAspect = new OptionSet_Editor();
+    }
+    return myOptionSetEditorAspect;
+  }
+
+  private OptionSetReference_Editor getOptionSetReferenceEditorAspect() {
+    if (myOptionSetReferenceEditorAspect == null) {
+      myOptionSetReferenceEditorAspect = new OptionSetReference_Editor();
+    }
+    return myOptionSetReferenceEditorAspect;
+  }
+
+  private OptionWithParam_Editor getOptionWithParamEditorAspect() {
+    if (myOptionWithParamEditorAspect == null) {
+      myOptionWithParamEditorAspect = new OptionWithParam_Editor();
+    }
+    return myOptionWithParamEditorAspect;
+  }
+
+  private OptionWithParamReference_Editor getOptionWithParamReferenceEditorAspect() {
+    if (myOptionWithParamReferenceEditorAspect == null) {
+      myOptionWithParamReferenceEditorAspect = new OptionWithParamReference_Editor();
+    }
+    return myOptionWithParamReferenceEditorAspect;
+  }
+
+  private OutputErrorRedirection_Editor getOutputErrorRedirectionEditorAspect() {
+    if (myOutputErrorRedirectionEditorAspect == null) {
+      myOutputErrorRedirectionEditorAspect = new OutputErrorRedirection_Editor();
+    }
+    return myOutputErrorRedirectionEditorAspect;
+  }
+
+  private OutputRedirection_Editor getOutputRedirectionEditorAspect() {
+    if (myOutputRedirectionEditorAspect == null) {
+      myOutputRedirectionEditorAspect = new OutputRedirection_Editor();
+    }
+    return myOutputRedirectionEditorAspect;
+  }
+
+  private PostVariableExpression_Editor getPostVariableExpressionEditorAspect() {
+    if (myPostVariableExpressionEditorAspect == null) {
+      myPostVariableExpressionEditorAspect = new PostVariableExpression_Editor();
+    }
+    return myPostVariableExpressionEditorAspect;
+  }
+
+  private PreVariableExpression_Editor getPreVariableExpressionEditorAspect() {
+    if (myPreVariableExpressionEditorAspect == null) {
+      myPreVariableExpressionEditorAspect = new PreVariableExpression_Editor();
+    }
+    return myPreVariableExpressionEditorAspect;
+  }
+
+  private QuotedWord_Editor getQuotedWordEditorAspect() {
+    if (myQuotedWordEditorAspect == null) {
+      myQuotedWordEditorAspect = new QuotedWord_Editor();
+    }
+    return myQuotedWordEditorAspect;
+  }
+
+  private QuotesCommandSubstitution_Editor getQuotesCommandSubstitutionEditorAspect() {
+    if (myQuotesCommandSubstitutionEditorAspect == null) {
+      myQuotesCommandSubstitutionEditorAspect = new QuotesCommandSubstitution_Editor();
+    }
+    return myQuotesCommandSubstitutionEditorAspect;
+  }
+
+  private ReadingWritingRedirection_Editor getReadingWritingRedirectionEditorAspect() {
+    if (myReadingWritingRedirectionEditorAspect == null) {
+      myReadingWritingRedirectionEditorAspect = new ReadingWritingRedirection_Editor();
+    }
+    return myReadingWritingRedirectionEditorAspect;
+  }
+
+  private RedirectedCommand_Editor getRedirectedCommandEditorAspect() {
+    if (myRedirectedCommandEditorAspect == null) {
+      myRedirectedCommandEditorAspect = new RedirectedCommand_Editor();
+    }
+    return myRedirectedCommandEditorAspect;
+  }
+
+  private SelectCommand_Editor getSelectCommandEditorAspect() {
+    if (mySelectCommandEditorAspect == null) {
+      mySelectCommandEditorAspect = new SelectCommand_Editor();
+    }
+    return mySelectCommandEditorAspect;
+  }
+
+  private SemicolonTerminator_Editor getSemicolonTerminatorEditorAspect() {
+    if (mySemicolonTerminatorEditorAspect == null) {
+      mySemicolonTerminatorEditorAspect = new SemicolonTerminator_Editor();
+    }
+    return mySemicolonTerminatorEditorAspect;
+  }
+
+  private ShellScript_Editor getShellScriptEditorAspect() {
+    if (myShellScriptEditorAspect == null) {
+      myShellScriptEditorAspect = new ShellScript_Editor();
+    }
+    return myShellScriptEditorAspect;
+  }
+
+  private SimpleCommand_Editor getSimpleCommandEditorAspect() {
+    if (mySimpleCommandEditorAspect == null) {
+      mySimpleCommandEditorAspect = new SimpleCommand_Editor();
+    }
+    return mySimpleCommandEditorAspect;
+  }
+
+  private SimpleWord_Editor getSimpleWordEditorAspect() {
+    if (mySimpleWordEditorAspect == null) {
+      mySimpleWordEditorAspect = new SimpleWord_Editor();
+    }
+    return mySimpleWordEditorAspect;
+  }
+
+  private StringConditionalExpression_Editor getStringConditionalExpressionEditorAspect() {
+    if (myStringConditionalExpressionEditorAspect == null) {
+      myStringConditionalExpressionEditorAspect = new StringConditionalExpression_Editor();
+    }
+    return myStringConditionalExpressionEditorAspect;
+  }
+
+  private TildeExpansion_Editor getTildeExpansionEditorAspect() {
+    if (myTildeExpansionEditorAspect == null) {
+      myTildeExpansionEditorAspect = new TildeExpansion_Editor();
+    }
+    return myTildeExpansionEditorAspect;
+  }
+
+  private UnaryArithmeticExpression_Editor getUnaryArithmeticExpressionEditorAspect() {
+    if (myUnaryArithmeticExpressionEditorAspect == null) {
+      myUnaryArithmeticExpressionEditorAspect = new UnaryArithmeticExpression_Editor();
+    }
+    return myUnaryArithmeticExpressionEditorAspect;
+  }
+
+  private UnaryConditionalExpression_Editor getUnaryConditionalExpressionEditorAspect() {
+    if (myUnaryConditionalExpressionEditorAspect == null) {
+      myUnaryConditionalExpressionEditorAspect = new UnaryConditionalExpression_Editor();
+    }
+    return myUnaryConditionalExpressionEditorAspect;
+  }
+
+  private UntilLoopCommand_Editor getUntilLoopCommandEditorAspect() {
+    if (myUntilLoopCommandEditorAspect == null) {
+      myUntilLoopCommandEditorAspect = new UntilLoopCommand_Editor();
+    }
+    return myUntilLoopCommandEditorAspect;
+  }
+
+  private VariableNameDeclaration_Editor getVariableNameDeclarationEditorAspect() {
+    if (myVariableNameDeclarationEditorAspect == null) {
+      myVariableNameDeclarationEditorAspect = new VariableNameDeclaration_Editor();
+    }
+    return myVariableNameDeclarationEditorAspect;
+  }
+
+  private VariableReference_Editor getVariableReferenceEditorAspect() {
+    if (myVariableReferenceEditorAspect == null) {
+      myVariableReferenceEditorAspect = new VariableReference_Editor();
+    }
+    return myVariableReferenceEditorAspect;
+  }
+
+  private WhileLoopCommand_Editor getWhileLoopCommandEditorAspect() {
+    if (myWhileLoopCommandEditorAspect == null) {
+      myWhileLoopCommandEditorAspect = new WhileLoopCommand_Editor();
+    }
+    return myWhileLoopCommandEditorAspect;
+  }
+
+  private WordList_Editor getWordListEditorAspect() {
+    if (myWordListEditorAspect == null) {
+      myWordListEditorAspect = new WordList_Editor();
+    }
+    return myWordListEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0fd = new String[]{"jetbrains.mps.bash.structure.AbstractCommand", "jetbrains.mps.bash.structure.AppendingOutputErrorRedirection", "jetbrains.mps.bash.structure.AppendingOutputRedirection", "jetbrains.mps.bash.structure.Argument", "jetbrains.mps.bash.structure.ArgumentList", "jetbrains.mps.bash.structure.ArgumentListReference", "jetbrains.mps.bash.structure.ArgumentReference", "jetbrains.mps.bash.structure.ArithmeticCommand", "jetbrains.mps.bash.structure.ArithmeticExpansion", "jetbrains.mps.bash.structure.AsyncTerminator", "jetbrains.mps.bash.structure.BaseAssingmentExpression", "jetbrains.mps.bash.structure.BaseCommandSubstitution", "jetbrains.mps.bash.structure.BaseVariableAssingment", "jetbrains.mps.bash.structure.BasedIntegerLiteral", "jetbrains.mps.bash.structure.BasicParameterExpansion", "jetbrains.mps.bash.structure.BinaryArithmeticExpression", "jetbrains.mps.bash.structure.BinaryConditionalExpression", "jetbrains.mps.bash.structure.BracketConditionalExpression", "jetbrains.mps.bash.structure.BracketExpression", "jetbrains.mps.bash.structure.CaseClause", "jetbrains.mps.bash.structure.CaseCommand", "jetbrains.mps.bash.structure.CaseTerminator", "jetbrains.mps.bash.structure.CombiningConditionalExpression", "jetbrains.mps.bash.structure.Command", "jetbrains.mps.bash.structure.CommandList", "jetbrains.mps.bash.structure.CommandTerminator", "jetbrains.mps.bash.structure.CommentedCommandList", "jetbrains.mps.bash.structure.CommentedFollowingCommandList", "jetbrains.mps.bash.structure.CommentedText", "jetbrains.mps.bash.structure.ConditionalCommand", "jetbrains.mps.bash.structure.ConditionalOperation", "jetbrains.mps.bash.structure.DecimalConstant", "jetbrains.mps.bash.structure.DuplicateInputFileDiscriptor", "jetbrains.mps.bash.structure.DuplicateOutputFileDiscriptor", "jetbrains.mps.bash.structure.ElifCommand", "jetbrains.mps.bash.structure.ExternalCommandCall", "jetbrains.mps.bash.structure.ExternalCommandDeclaration", "jetbrains.mps.bash.structure.FollowingCommandList", "jetbrains.mps.bash.structure.FollowingPipeline", "jetbrains.mps.bash.structure.ForCommand", "jetbrains.mps.bash.structure.ForeachCommand", "jetbrains.mps.bash.structure.FreeCommand", "jetbrains.mps.bash.structure.FunctionCallCommand", "jetbrains.mps.bash.structure.FunctionDeclaration", "jetbrains.mps.bash.structure.GeneralizedWord", "jetbrains.mps.bash.structure.GroupingCommand", "jetbrains.mps.bash.structure.HeadCommandList", "jetbrains.mps.bash.structure.HeadPipeline", "jetbrains.mps.bash.structure.HereDocumentRedirection", "jetbrains.mps.bash.structure.HereStringRedirection", "jetbrains.mps.bash.structure.HexIntegerLiteral", "jetbrains.mps.bash.structure.IfCommand", "jetbrains.mps.bash.structure.InputLines", "jetbrains.mps.bash.structure.InputRedirection", "jetbrains.mps.bash.structure.NotCommand", "jetbrains.mps.bash.structure.Option", "jetbrains.mps.bash.structure.OptionReference", "jetbrains.mps.bash.structure.OptionSet", "jetbrains.mps.bash.structure.OptionSetReference", "jetbrains.mps.bash.structure.OptionWithParam", "jetbrains.mps.bash.structure.OptionWithParamReference", "jetbrains.mps.bash.structure.OutputErrorRedirection", "jetbrains.mps.bash.structure.OutputRedirection", "jetbrains.mps.bash.structure.PostVariableExpression", "jetbrains.mps.bash.structure.PreVariableExpression", "jetbrains.mps.bash.structure.QuotedWord", "jetbrains.mps.bash.structure.QuotesCommandSubstitution", "jetbrains.mps.bash.structure.ReadingWritingRedirection", "jetbrains.mps.bash.structure.RedirectedCommand", "jetbrains.mps.bash.structure.SelectCommand", "jetbrains.mps.bash.structure.SemicolonTerminator", "jetbrains.mps.bash.structure.ShellScript", "jetbrains.mps.bash.structure.SimpleCommand", "jetbrains.mps.bash.structure.SimpleWord", "jetbrains.mps.bash.structure.StringConditionalExpression", "jetbrains.mps.bash.structure.TildeExpansion", "jetbrains.mps.bash.structure.UnaryArithmeticExpression", "jetbrains.mps.bash.structure.UnaryConditionalExpression", "jetbrains.mps.bash.structure.UntilLoopCommand", "jetbrains.mps.bash.structure.VariableNameDeclaration", "jetbrains.mps.bash.structure.VariableReference", "jetbrains.mps.bash.structure.WhileLoopCommand", "jetbrains.mps.bash.structure.WordList"};
 }

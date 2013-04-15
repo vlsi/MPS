@@ -8,20 +8,64 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private BuildWall_Editor myBuildWallEditorAspect;
+  private DestroyWall_Editor myDestroyWallEditorAspect;
+  private DropMark_Editor myDropMarkEditorAspect;
+  private PickMark_Editor myPickMarkEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0e, descriptor.getConceptFqName())) {
       case 0:
-        return new BuildWall_Editor();
+        return getBuildWallEditorAspect();
       case 1:
-        return new DestroyWall_Editor();
+        return getDestroyWallEditorAspect();
       case 2:
-        return new DropMark_Editor();
+        return getDropMarkEditorAspect();
       case 3:
-        return new PickMark_Editor();
+        return getPickMarkEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myBuildWallEditorAspect = null;
+    myDestroyWallEditorAspect = null;
+    myDropMarkEditorAspect = null;
+    myPickMarkEditorAspect = null;
+  }
+
+  private BuildWall_Editor getBuildWallEditorAspect() {
+    if (myBuildWallEditorAspect == null) {
+      myBuildWallEditorAspect = new BuildWall_Editor();
+    }
+    return myBuildWallEditorAspect;
+  }
+
+  private DestroyWall_Editor getDestroyWallEditorAspect() {
+    if (myDestroyWallEditorAspect == null) {
+      myDestroyWallEditorAspect = new DestroyWall_Editor();
+    }
+    return myDestroyWallEditorAspect;
+  }
+
+  private DropMark_Editor getDropMarkEditorAspect() {
+    if (myDropMarkEditorAspect == null) {
+      myDropMarkEditorAspect = new DropMark_Editor();
+    }
+    return myDropMarkEditorAspect;
+  }
+
+  private PickMark_Editor getPickMarkEditorAspect() {
+    if (myPickMarkEditorAspect == null) {
+      myPickMarkEditorAspect = new PickMark_Editor();
+    }
+    return myPickMarkEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0e = new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark"};
 }

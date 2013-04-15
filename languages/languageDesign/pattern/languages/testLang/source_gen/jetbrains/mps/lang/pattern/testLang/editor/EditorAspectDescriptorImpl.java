@@ -8,26 +8,97 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ListValue_Editor myListValueEditorAspect;
+  private PatternTest_Editor myPatternTestEditorAspect;
+  private PropertyValue_Editor myPropertyValueEditorAspect;
+  private TestListReference_Editor myTestListReferenceEditorAspect;
+  private TestPropertyVariableReference_Editor myTestPropertyVariableReferenceEditorAspect;
+  private TestVariableReference_Editor myTestVariableReferenceEditorAspect;
+  private VariableValue_Editor myVariableValueEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0h, descriptor.getConceptFqName())) {
       case 0:
-        return new ListValue_Editor();
+        return getListValueEditorAspect();
       case 1:
-        return new PatternTest_Editor();
+        return getPatternTestEditorAspect();
       case 2:
-        return new PropertyValue_Editor();
+        return getPropertyValueEditorAspect();
       case 3:
-        return new TestListReference_Editor();
+        return getTestListReferenceEditorAspect();
       case 4:
-        return new TestPropertyVariableReference_Editor();
+        return getTestPropertyVariableReferenceEditorAspect();
       case 5:
-        return new TestVariableReference_Editor();
+        return getTestVariableReferenceEditorAspect();
       case 6:
-        return new VariableValue_Editor();
+        return getVariableValueEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.pattern.testLang.structure.ListValue", "jetbrains.mps.lang.pattern.testLang.structure.PatternTest", "jetbrains.mps.lang.pattern.testLang.structure.PropertyValue", "jetbrains.mps.lang.pattern.testLang.structure.TestListReference", "jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference", "jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference", "jetbrains.mps.lang.pattern.testLang.structure.VariableValue"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myListValueEditorAspect = null;
+    myPatternTestEditorAspect = null;
+    myPropertyValueEditorAspect = null;
+    myTestListReferenceEditorAspect = null;
+    myTestPropertyVariableReferenceEditorAspect = null;
+    myTestVariableReferenceEditorAspect = null;
+    myVariableValueEditorAspect = null;
+  }
+
+  private ListValue_Editor getListValueEditorAspect() {
+    if (myListValueEditorAspect == null) {
+      myListValueEditorAspect = new ListValue_Editor();
+    }
+    return myListValueEditorAspect;
+  }
+
+  private PatternTest_Editor getPatternTestEditorAspect() {
+    if (myPatternTestEditorAspect == null) {
+      myPatternTestEditorAspect = new PatternTest_Editor();
+    }
+    return myPatternTestEditorAspect;
+  }
+
+  private PropertyValue_Editor getPropertyValueEditorAspect() {
+    if (myPropertyValueEditorAspect == null) {
+      myPropertyValueEditorAspect = new PropertyValue_Editor();
+    }
+    return myPropertyValueEditorAspect;
+  }
+
+  private TestListReference_Editor getTestListReferenceEditorAspect() {
+    if (myTestListReferenceEditorAspect == null) {
+      myTestListReferenceEditorAspect = new TestListReference_Editor();
+    }
+    return myTestListReferenceEditorAspect;
+  }
+
+  private TestPropertyVariableReference_Editor getTestPropertyVariableReferenceEditorAspect() {
+    if (myTestPropertyVariableReferenceEditorAspect == null) {
+      myTestPropertyVariableReferenceEditorAspect = new TestPropertyVariableReference_Editor();
+    }
+    return myTestPropertyVariableReferenceEditorAspect;
+  }
+
+  private TestVariableReference_Editor getTestVariableReferenceEditorAspect() {
+    if (myTestVariableReferenceEditorAspect == null) {
+      myTestVariableReferenceEditorAspect = new TestVariableReference_Editor();
+    }
+    return myTestVariableReferenceEditorAspect;
+  }
+
+  private VariableValue_Editor getVariableValueEditorAspect() {
+    if (myVariableValueEditorAspect == null) {
+      myVariableValueEditorAspect = new VariableValue_Editor();
+    }
+    return myVariableValueEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0h = new String[]{"jetbrains.mps.lang.pattern.testLang.structure.ListValue", "jetbrains.mps.lang.pattern.testLang.structure.PatternTest", "jetbrains.mps.lang.pattern.testLang.structure.PropertyValue", "jetbrains.mps.lang.pattern.testLang.structure.TestListReference", "jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference", "jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference", "jetbrains.mps.lang.pattern.testLang.structure.VariableValue"};
 }

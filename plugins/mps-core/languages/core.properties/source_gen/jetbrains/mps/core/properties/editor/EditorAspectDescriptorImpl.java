@@ -8,20 +8,64 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private PropertiesComment_Editor myPropertiesCommentEditorAspect;
+  private PropertiesDeclaration_Editor myPropertiesDeclarationEditorAspect;
+  private PropertiesFile_Editor myPropertiesFileEditorAspect;
+  private PropertiesLine_Editor myPropertiesLineEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0e, descriptor.getConceptFqName())) {
       case 0:
-        return new PropertiesComment_Editor();
+        return getPropertiesCommentEditorAspect();
       case 1:
-        return new PropertiesDeclaration_Editor();
+        return getPropertiesDeclarationEditorAspect();
       case 2:
-        return new PropertiesFile_Editor();
+        return getPropertiesFileEditorAspect();
       case 3:
-        return new PropertiesLine_Editor();
+        return getPropertiesLineEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.core.properties.structure.PropertiesComment", "jetbrains.mps.core.properties.structure.PropertiesDeclaration", "jetbrains.mps.core.properties.structure.PropertiesFile", "jetbrains.mps.core.properties.structure.PropertiesLine"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myPropertiesCommentEditorAspect = null;
+    myPropertiesDeclarationEditorAspect = null;
+    myPropertiesFileEditorAspect = null;
+    myPropertiesLineEditorAspect = null;
+  }
+
+  private PropertiesComment_Editor getPropertiesCommentEditorAspect() {
+    if (myPropertiesCommentEditorAspect == null) {
+      myPropertiesCommentEditorAspect = new PropertiesComment_Editor();
+    }
+    return myPropertiesCommentEditorAspect;
+  }
+
+  private PropertiesDeclaration_Editor getPropertiesDeclarationEditorAspect() {
+    if (myPropertiesDeclarationEditorAspect == null) {
+      myPropertiesDeclarationEditorAspect = new PropertiesDeclaration_Editor();
+    }
+    return myPropertiesDeclarationEditorAspect;
+  }
+
+  private PropertiesFile_Editor getPropertiesFileEditorAspect() {
+    if (myPropertiesFileEditorAspect == null) {
+      myPropertiesFileEditorAspect = new PropertiesFile_Editor();
+    }
+    return myPropertiesFileEditorAspect;
+  }
+
+  private PropertiesLine_Editor getPropertiesLineEditorAspect() {
+    if (myPropertiesLineEditorAspect == null) {
+      myPropertiesLineEditorAspect = new PropertiesLine_Editor();
+    }
+    return myPropertiesLineEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0e = new String[]{"jetbrains.mps.core.properties.structure.PropertiesComment", "jetbrains.mps.core.properties.structure.PropertiesDeclaration", "jetbrains.mps.core.properties.structure.PropertiesFile", "jetbrains.mps.core.properties.structure.PropertiesLine"};
 }

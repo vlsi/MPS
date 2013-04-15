@@ -8,16 +8,42 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Button_Editor myButtonEditorAspect;
+  private Label_Editor myLabelEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
-        return new Button_Editor();
+        return getButtonEditorAspect();
       case 1:
-        return new Label_Editor();
+        return getLabelEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", "jetbrains.mps.samples.generator_demo.demoLang6.structure.Label"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myButtonEditorAspect = null;
+    myLabelEditorAspect = null;
+  }
+
+  private Button_Editor getButtonEditorAspect() {
+    if (myButtonEditorAspect == null) {
+      myButtonEditorAspect = new Button_Editor();
+    }
+    return myButtonEditorAspect;
+  }
+
+  private Label_Editor getLabelEditorAspect() {
+    if (myLabelEditorAspect == null) {
+      myLabelEditorAspect = new Label_Editor();
+    }
+    return myLabelEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", "jetbrains.mps.samples.generator_demo.demoLang6.structure.Label"};
 }

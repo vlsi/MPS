@@ -8,122 +8,625 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AlignmentLayoutConstraint_Editor myAlignmentLayoutConstraintEditorAspect;
+  private ApplyConstraintStatement_Editor myApplyConstraintStatementEditorAspect;
+  private AspectParameterDecl_Editor myAspectParameterDeclEditorAspect;
+  private AspectParameterRef_Editor myAspectParameterRefEditorAspect;
+  private AuxObjectAccessOp_Editor myAuxObjectAccessOpEditorAspect;
+  private AuxObjectFactory_Editor myAuxObjectFactoryEditorAspect;
+  private AuxObjectTemplate_Editor myAuxObjectTemplateEditorAspect;
+  private Auxillary_Editor myAuxillaryEditorAspect;
+  private BeforeUIObjectParam_Editor myBeforeUIObjectParamEditorAspect;
+  private BoxLayoutConstraint_Editor myBoxLayoutConstraintEditorAspect;
+  private CellLayoutConstraint_Editor myCellLayoutConstraintEditorAspect;
+  private ChildAspectDefinition_Editor myChildAspectDefinitionEditorAspect;
+  private ColumnLayoutConstraint_Editor myColumnLayoutConstraintEditorAspect;
+  private Container_Editor myContainerEditorAspect;
+  private ContainerItemAdder_Editor myContainerItemAdderEditorAspect;
+  private ContainerItemClearer_Editor myContainerItemClearerEditorAspect;
+  private ContainerItemInserter_Editor myContainerItemInserterEditorAspect;
+  private ContainerItemIterator_Editor myContainerItemIteratorEditorAspect;
+  private ContainerItemRemover_Editor myContainerItemRemoverEditorAspect;
+  private ContainerTemplate_Editor myContainerTemplateEditorAspect;
+  private Context_Editor myContextEditorAspect;
+  private ContextUIObjectParam_Editor myContextUIObjectParamEditorAspect;
+  private EditableUIProperty_Editor myEditableUIPropertyEditorAspect;
+  private EditableUIPropertyAccessCode_Editor myEditableUIPropertyAccessCodeEditorAspect;
+  private Event_Editor myEventEditorAspect;
+  private EventHandlerSetup_Editor myEventHandlerSetupEditorAspect;
+  private EventHandlerTemplate_Editor myEventHandlerTemplateEditorAspect;
+  private EventProducer_Editor myEventProducerEditorAspect;
+  private EventProperty_Editor myEventPropertyEditorAspect;
+  private EventPropertyGetter_Editor myEventPropertyGetterEditorAspect;
+  private ExpressionWithUnit_Editor myExpressionWithUnitEditorAspect;
+  private ForceLayoutCode_Editor myForceLayoutCodeEditorAspect;
+  private Geometry_Editor myGeometryEditorAspect;
+  private HorizontalAlignment_Editor myHorizontalAlignmentEditorAspect;
+  private HorizontalConstraint_Editor myHorizontalConstraintEditorAspect;
+  private ItemUIObjectParam_Editor myItemUIObjectParamEditorAspect;
+  private LayoutConstraintExpression_Editor myLayoutConstraintExpressionEditorAspect;
+  private LayoutConstraintType_Editor myLayoutConstraintTypeEditorAspect;
+  private OverrideAnnotation_Editor myOverrideAnnotationEditorAspect;
+  private PropertyChangeHandlerSetup_Editor myPropertyChangeHandlerSetupEditorAspect;
+  private PropertyValueParam_Editor myPropertyValueParamEditorAspect;
+  private RowLayoutConstraint_Editor myRowLayoutConstraintEditorAspect;
+  private ThisUIObjectParam_Editor myThisUIObjectParamEditorAspect;
+  private UIAction_Editor myUIActionEditorAspect;
+  private UIActionCode_Editor myUIActionCodeEditorAspect;
+  private UIObject_Editor myUIObjectEditorAspect;
+  private UIObjectFactory_Editor myUIObjectFactoryEditorAspect;
+  private UIObjectTemplate_Editor myUIObjectTemplateEditorAspect;
+  private UIProperty_Editor myUIPropertyEditorAspect;
+  private UIPropertyAccessCode_Editor myUIPropertyAccessCodeEditorAspect;
+  private UIPropertyGetter_Editor myUIPropertyGetterEditorAspect;
+  private UIPropertySetter_Editor myUIPropertySetterEditorAspect;
+  private UnitType_Editor myUnitTypeEditorAspect;
+  private VerticalAlignment_Editor myVerticalAlignmentEditorAspect;
+  private VerticalConstraint_Editor myVerticalConstraintEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0dc, descriptor.getConceptFqName())) {
       case 0:
-        return new AlignmentLayoutConstraint_Editor();
+        return getAlignmentLayoutConstraintEditorAspect();
       case 1:
-        return new ApplyConstraintStatement_Editor();
+        return getApplyConstraintStatementEditorAspect();
       case 2:
-        return new AspectParameterDecl_Editor();
+        return getAspectParameterDeclEditorAspect();
       case 3:
-        return new AspectParameterRef_Editor();
+        return getAspectParameterRefEditorAspect();
       case 4:
-        return new AuxObjectAccessOp_Editor();
+        return getAuxObjectAccessOpEditorAspect();
       case 5:
-        return new AuxObjectFactory_Editor();
+        return getAuxObjectFactoryEditorAspect();
       case 6:
-        return new AuxObjectTemplate_Editor();
+        return getAuxObjectTemplateEditorAspect();
       case 7:
-        return new Auxillary_Editor();
+        return getAuxillaryEditorAspect();
       case 8:
-        return new BeforeUIObjectParam_Editor();
+        return getBeforeUIObjectParamEditorAspect();
       case 9:
-        return new BoxLayoutConstraint_Editor();
+        return getBoxLayoutConstraintEditorAspect();
       case 10:
-        return new CellLayoutConstraint_Editor();
+        return getCellLayoutConstraintEditorAspect();
       case 11:
-        return new ChildAspectDefinition_Editor();
+        return getChildAspectDefinitionEditorAspect();
       case 12:
-        return new ColumnLayoutConstraint_Editor();
+        return getColumnLayoutConstraintEditorAspect();
       case 13:
-        return new Container_Editor();
+        return getContainerEditorAspect();
       case 14:
-        return new ContainerItemAdder_Editor();
+        return getContainerItemAdderEditorAspect();
       case 15:
-        return new ContainerItemClearer_Editor();
+        return getContainerItemClearerEditorAspect();
       case 16:
-        return new ContainerItemInserter_Editor();
+        return getContainerItemInserterEditorAspect();
       case 17:
-        return new ContainerItemIterator_Editor();
+        return getContainerItemIteratorEditorAspect();
       case 18:
-        return new ContainerItemRemover_Editor();
+        return getContainerItemRemoverEditorAspect();
       case 19:
-        return new ContainerTemplate_Editor();
+        return getContainerTemplateEditorAspect();
       case 20:
-        return new Context_Editor();
+        return getContextEditorAspect();
       case 21:
-        return new ContextUIObjectParam_Editor();
+        return getContextUIObjectParamEditorAspect();
       case 22:
-        return new EditableUIProperty_Editor();
+        return getEditableUIPropertyEditorAspect();
       case 23:
-        return new EditableUIPropertyAccessCode_Editor();
+        return getEditableUIPropertyAccessCodeEditorAspect();
       case 24:
-        return new Event_Editor();
+        return getEventEditorAspect();
       case 25:
-        return new EventHandlerSetup_Editor();
+        return getEventHandlerSetupEditorAspect();
       case 26:
-        return new EventHandlerTemplate_Editor();
+        return getEventHandlerTemplateEditorAspect();
       case 27:
-        return new EventProducer_Editor();
+        return getEventProducerEditorAspect();
       case 28:
-        return new EventProperty_Editor();
+        return getEventPropertyEditorAspect();
       case 29:
-        return new EventPropertyGetter_Editor();
+        return getEventPropertyGetterEditorAspect();
       case 30:
-        return new ExpressionWithUnit_Editor();
+        return getExpressionWithUnitEditorAspect();
       case 31:
-        return new ForceLayoutCode_Editor();
+        return getForceLayoutCodeEditorAspect();
       case 32:
-        return new Geometry_Editor();
+        return getGeometryEditorAspect();
       case 33:
-        return new HorizontalAlignment_Editor();
+        return getHorizontalAlignmentEditorAspect();
       case 34:
-        return new HorizontalConstraint_Editor();
+        return getHorizontalConstraintEditorAspect();
       case 35:
-        return new ItemUIObjectParam_Editor();
+        return getItemUIObjectParamEditorAspect();
       case 36:
-        return new LayoutConstraintExpression_Editor();
+        return getLayoutConstraintExpressionEditorAspect();
       case 37:
-        return new LayoutConstraintType_Editor();
+        return getLayoutConstraintTypeEditorAspect();
       case 38:
-        return new OverrideAnnotation_Editor();
+        return getOverrideAnnotationEditorAspect();
       case 39:
-        return new PropertyChangeHandlerSetup_Editor();
+        return getPropertyChangeHandlerSetupEditorAspect();
       case 40:
-        return new PropertyValueParam_Editor();
+        return getPropertyValueParamEditorAspect();
       case 41:
-        return new RowLayoutConstraint_Editor();
+        return getRowLayoutConstraintEditorAspect();
       case 42:
-        return new ThisUIObjectParam_Editor();
+        return getThisUIObjectParamEditorAspect();
       case 43:
-        return new UIAction_Editor();
+        return getUIActionEditorAspect();
       case 44:
-        return new UIActionCode_Editor();
+        return getUIActionCodeEditorAspect();
       case 45:
-        return new UIObject_Editor();
+        return getUIObjectEditorAspect();
       case 46:
-        return new UIObjectFactory_Editor();
+        return getUIObjectFactoryEditorAspect();
       case 47:
-        return new UIObjectTemplate_Editor();
+        return getUIObjectTemplateEditorAspect();
       case 48:
-        return new UIProperty_Editor();
+        return getUIPropertyEditorAspect();
       case 49:
-        return new UIPropertyAccessCode_Editor();
+        return getUIPropertyAccessCodeEditorAspect();
       case 50:
-        return new UIPropertyGetter_Editor();
+        return getUIPropertyGetterEditorAspect();
       case 51:
-        return new UIPropertySetter_Editor();
+        return getUIPropertySetterEditorAspect();
       case 52:
-        return new UnitType_Editor();
+        return getUnitTypeEditorAspect();
       case 53:
-        return new VerticalAlignment_Editor();
+        return getVerticalAlignmentEditorAspect();
       case 54:
-        return new VerticalConstraint_Editor();
+        return getVerticalConstraintEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.ui.modeling.structure.AlignmentLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ApplyConstraintStatement", "jetbrains.mps.ui.modeling.structure.AspectParameterDecl", "jetbrains.mps.ui.modeling.structure.AspectParameterRef", "jetbrains.mps.ui.modeling.structure.AuxObjectAccessOp", "jetbrains.mps.ui.modeling.structure.AuxObjectFactory", "jetbrains.mps.ui.modeling.structure.AuxObjectTemplate", "jetbrains.mps.ui.modeling.structure.Auxillary", "jetbrains.mps.ui.modeling.structure.BeforeUIObjectParam", "jetbrains.mps.ui.modeling.structure.BoxLayoutConstraint", "jetbrains.mps.ui.modeling.structure.CellLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ChildAspectDefinition", "jetbrains.mps.ui.modeling.structure.ColumnLayoutConstraint", "jetbrains.mps.ui.modeling.structure.Container", "jetbrains.mps.ui.modeling.structure.ContainerItemAdder", "jetbrains.mps.ui.modeling.structure.ContainerItemClearer", "jetbrains.mps.ui.modeling.structure.ContainerItemInserter", "jetbrains.mps.ui.modeling.structure.ContainerItemIterator", "jetbrains.mps.ui.modeling.structure.ContainerItemRemover", "jetbrains.mps.ui.modeling.structure.ContainerTemplate", "jetbrains.mps.ui.modeling.structure.Context", "jetbrains.mps.ui.modeling.structure.ContextUIObjectParam", "jetbrains.mps.ui.modeling.structure.EditableUIProperty", "jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.Event", "jetbrains.mps.ui.modeling.structure.EventHandlerSetup", "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", "jetbrains.mps.ui.modeling.structure.EventProducer", "jetbrains.mps.ui.modeling.structure.EventProperty", "jetbrains.mps.ui.modeling.structure.EventPropertyGetter", "jetbrains.mps.ui.modeling.structure.ExpressionWithUnit", "jetbrains.mps.ui.modeling.structure.ForceLayoutCode", "jetbrains.mps.ui.modeling.structure.Geometry", "jetbrains.mps.ui.modeling.structure.HorizontalAlignment", "jetbrains.mps.ui.modeling.structure.HorizontalConstraint", "jetbrains.mps.ui.modeling.structure.ItemUIObjectParam", "jetbrains.mps.ui.modeling.structure.LayoutConstraintExpression", "jetbrains.mps.ui.modeling.structure.LayoutConstraintType", "jetbrains.mps.ui.modeling.structure.OverrideAnnotation", "jetbrains.mps.ui.modeling.structure.PropertyChangeHandlerSetup", "jetbrains.mps.ui.modeling.structure.PropertyValueParam", "jetbrains.mps.ui.modeling.structure.RowLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ThisUIObjectParam", "jetbrains.mps.ui.modeling.structure.UIAction", "jetbrains.mps.ui.modeling.structure.UIActionCode", "jetbrains.mps.ui.modeling.structure.UIObject", "jetbrains.mps.ui.modeling.structure.UIObjectFactory", "jetbrains.mps.ui.modeling.structure.UIObjectTemplate", "jetbrains.mps.ui.modeling.structure.UIProperty", "jetbrains.mps.ui.modeling.structure.UIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.UIPropertyGetter", "jetbrains.mps.ui.modeling.structure.UIPropertySetter", "jetbrains.mps.ui.modeling.structure.UnitType", "jetbrains.mps.ui.modeling.structure.VerticalAlignment", "jetbrains.mps.ui.modeling.structure.VerticalConstraint"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAlignmentLayoutConstraintEditorAspect = null;
+    myApplyConstraintStatementEditorAspect = null;
+    myAspectParameterDeclEditorAspect = null;
+    myAspectParameterRefEditorAspect = null;
+    myAuxObjectAccessOpEditorAspect = null;
+    myAuxObjectFactoryEditorAspect = null;
+    myAuxObjectTemplateEditorAspect = null;
+    myAuxillaryEditorAspect = null;
+    myBeforeUIObjectParamEditorAspect = null;
+    myBoxLayoutConstraintEditorAspect = null;
+    myCellLayoutConstraintEditorAspect = null;
+    myChildAspectDefinitionEditorAspect = null;
+    myColumnLayoutConstraintEditorAspect = null;
+    myContainerEditorAspect = null;
+    myContainerItemAdderEditorAspect = null;
+    myContainerItemClearerEditorAspect = null;
+    myContainerItemInserterEditorAspect = null;
+    myContainerItemIteratorEditorAspect = null;
+    myContainerItemRemoverEditorAspect = null;
+    myContainerTemplateEditorAspect = null;
+    myContextEditorAspect = null;
+    myContextUIObjectParamEditorAspect = null;
+    myEditableUIPropertyEditorAspect = null;
+    myEditableUIPropertyAccessCodeEditorAspect = null;
+    myEventEditorAspect = null;
+    myEventHandlerSetupEditorAspect = null;
+    myEventHandlerTemplateEditorAspect = null;
+    myEventProducerEditorAspect = null;
+    myEventPropertyEditorAspect = null;
+    myEventPropertyGetterEditorAspect = null;
+    myExpressionWithUnitEditorAspect = null;
+    myForceLayoutCodeEditorAspect = null;
+    myGeometryEditorAspect = null;
+    myHorizontalAlignmentEditorAspect = null;
+    myHorizontalConstraintEditorAspect = null;
+    myItemUIObjectParamEditorAspect = null;
+    myLayoutConstraintExpressionEditorAspect = null;
+    myLayoutConstraintTypeEditorAspect = null;
+    myOverrideAnnotationEditorAspect = null;
+    myPropertyChangeHandlerSetupEditorAspect = null;
+    myPropertyValueParamEditorAspect = null;
+    myRowLayoutConstraintEditorAspect = null;
+    myThisUIObjectParamEditorAspect = null;
+    myUIActionEditorAspect = null;
+    myUIActionCodeEditorAspect = null;
+    myUIObjectEditorAspect = null;
+    myUIObjectFactoryEditorAspect = null;
+    myUIObjectTemplateEditorAspect = null;
+    myUIPropertyEditorAspect = null;
+    myUIPropertyAccessCodeEditorAspect = null;
+    myUIPropertyGetterEditorAspect = null;
+    myUIPropertySetterEditorAspect = null;
+    myUnitTypeEditorAspect = null;
+    myVerticalAlignmentEditorAspect = null;
+    myVerticalConstraintEditorAspect = null;
+  }
+
+  private AlignmentLayoutConstraint_Editor getAlignmentLayoutConstraintEditorAspect() {
+    if (myAlignmentLayoutConstraintEditorAspect == null) {
+      myAlignmentLayoutConstraintEditorAspect = new AlignmentLayoutConstraint_Editor();
+    }
+    return myAlignmentLayoutConstraintEditorAspect;
+  }
+
+  private ApplyConstraintStatement_Editor getApplyConstraintStatementEditorAspect() {
+    if (myApplyConstraintStatementEditorAspect == null) {
+      myApplyConstraintStatementEditorAspect = new ApplyConstraintStatement_Editor();
+    }
+    return myApplyConstraintStatementEditorAspect;
+  }
+
+  private AspectParameterDecl_Editor getAspectParameterDeclEditorAspect() {
+    if (myAspectParameterDeclEditorAspect == null) {
+      myAspectParameterDeclEditorAspect = new AspectParameterDecl_Editor();
+    }
+    return myAspectParameterDeclEditorAspect;
+  }
+
+  private AspectParameterRef_Editor getAspectParameterRefEditorAspect() {
+    if (myAspectParameterRefEditorAspect == null) {
+      myAspectParameterRefEditorAspect = new AspectParameterRef_Editor();
+    }
+    return myAspectParameterRefEditorAspect;
+  }
+
+  private AuxObjectAccessOp_Editor getAuxObjectAccessOpEditorAspect() {
+    if (myAuxObjectAccessOpEditorAspect == null) {
+      myAuxObjectAccessOpEditorAspect = new AuxObjectAccessOp_Editor();
+    }
+    return myAuxObjectAccessOpEditorAspect;
+  }
+
+  private AuxObjectFactory_Editor getAuxObjectFactoryEditorAspect() {
+    if (myAuxObjectFactoryEditorAspect == null) {
+      myAuxObjectFactoryEditorAspect = new AuxObjectFactory_Editor();
+    }
+    return myAuxObjectFactoryEditorAspect;
+  }
+
+  private AuxObjectTemplate_Editor getAuxObjectTemplateEditorAspect() {
+    if (myAuxObjectTemplateEditorAspect == null) {
+      myAuxObjectTemplateEditorAspect = new AuxObjectTemplate_Editor();
+    }
+    return myAuxObjectTemplateEditorAspect;
+  }
+
+  private Auxillary_Editor getAuxillaryEditorAspect() {
+    if (myAuxillaryEditorAspect == null) {
+      myAuxillaryEditorAspect = new Auxillary_Editor();
+    }
+    return myAuxillaryEditorAspect;
+  }
+
+  private BeforeUIObjectParam_Editor getBeforeUIObjectParamEditorAspect() {
+    if (myBeforeUIObjectParamEditorAspect == null) {
+      myBeforeUIObjectParamEditorAspect = new BeforeUIObjectParam_Editor();
+    }
+    return myBeforeUIObjectParamEditorAspect;
+  }
+
+  private BoxLayoutConstraint_Editor getBoxLayoutConstraintEditorAspect() {
+    if (myBoxLayoutConstraintEditorAspect == null) {
+      myBoxLayoutConstraintEditorAspect = new BoxLayoutConstraint_Editor();
+    }
+    return myBoxLayoutConstraintEditorAspect;
+  }
+
+  private CellLayoutConstraint_Editor getCellLayoutConstraintEditorAspect() {
+    if (myCellLayoutConstraintEditorAspect == null) {
+      myCellLayoutConstraintEditorAspect = new CellLayoutConstraint_Editor();
+    }
+    return myCellLayoutConstraintEditorAspect;
+  }
+
+  private ChildAspectDefinition_Editor getChildAspectDefinitionEditorAspect() {
+    if (myChildAspectDefinitionEditorAspect == null) {
+      myChildAspectDefinitionEditorAspect = new ChildAspectDefinition_Editor();
+    }
+    return myChildAspectDefinitionEditorAspect;
+  }
+
+  private ColumnLayoutConstraint_Editor getColumnLayoutConstraintEditorAspect() {
+    if (myColumnLayoutConstraintEditorAspect == null) {
+      myColumnLayoutConstraintEditorAspect = new ColumnLayoutConstraint_Editor();
+    }
+    return myColumnLayoutConstraintEditorAspect;
+  }
+
+  private Container_Editor getContainerEditorAspect() {
+    if (myContainerEditorAspect == null) {
+      myContainerEditorAspect = new Container_Editor();
+    }
+    return myContainerEditorAspect;
+  }
+
+  private ContainerItemAdder_Editor getContainerItemAdderEditorAspect() {
+    if (myContainerItemAdderEditorAspect == null) {
+      myContainerItemAdderEditorAspect = new ContainerItemAdder_Editor();
+    }
+    return myContainerItemAdderEditorAspect;
+  }
+
+  private ContainerItemClearer_Editor getContainerItemClearerEditorAspect() {
+    if (myContainerItemClearerEditorAspect == null) {
+      myContainerItemClearerEditorAspect = new ContainerItemClearer_Editor();
+    }
+    return myContainerItemClearerEditorAspect;
+  }
+
+  private ContainerItemInserter_Editor getContainerItemInserterEditorAspect() {
+    if (myContainerItemInserterEditorAspect == null) {
+      myContainerItemInserterEditorAspect = new ContainerItemInserter_Editor();
+    }
+    return myContainerItemInserterEditorAspect;
+  }
+
+  private ContainerItemIterator_Editor getContainerItemIteratorEditorAspect() {
+    if (myContainerItemIteratorEditorAspect == null) {
+      myContainerItemIteratorEditorAspect = new ContainerItemIterator_Editor();
+    }
+    return myContainerItemIteratorEditorAspect;
+  }
+
+  private ContainerItemRemover_Editor getContainerItemRemoverEditorAspect() {
+    if (myContainerItemRemoverEditorAspect == null) {
+      myContainerItemRemoverEditorAspect = new ContainerItemRemover_Editor();
+    }
+    return myContainerItemRemoverEditorAspect;
+  }
+
+  private ContainerTemplate_Editor getContainerTemplateEditorAspect() {
+    if (myContainerTemplateEditorAspect == null) {
+      myContainerTemplateEditorAspect = new ContainerTemplate_Editor();
+    }
+    return myContainerTemplateEditorAspect;
+  }
+
+  private Context_Editor getContextEditorAspect() {
+    if (myContextEditorAspect == null) {
+      myContextEditorAspect = new Context_Editor();
+    }
+    return myContextEditorAspect;
+  }
+
+  private ContextUIObjectParam_Editor getContextUIObjectParamEditorAspect() {
+    if (myContextUIObjectParamEditorAspect == null) {
+      myContextUIObjectParamEditorAspect = new ContextUIObjectParam_Editor();
+    }
+    return myContextUIObjectParamEditorAspect;
+  }
+
+  private EditableUIProperty_Editor getEditableUIPropertyEditorAspect() {
+    if (myEditableUIPropertyEditorAspect == null) {
+      myEditableUIPropertyEditorAspect = new EditableUIProperty_Editor();
+    }
+    return myEditableUIPropertyEditorAspect;
+  }
+
+  private EditableUIPropertyAccessCode_Editor getEditableUIPropertyAccessCodeEditorAspect() {
+    if (myEditableUIPropertyAccessCodeEditorAspect == null) {
+      myEditableUIPropertyAccessCodeEditorAspect = new EditableUIPropertyAccessCode_Editor();
+    }
+    return myEditableUIPropertyAccessCodeEditorAspect;
+  }
+
+  private Event_Editor getEventEditorAspect() {
+    if (myEventEditorAspect == null) {
+      myEventEditorAspect = new Event_Editor();
+    }
+    return myEventEditorAspect;
+  }
+
+  private EventHandlerSetup_Editor getEventHandlerSetupEditorAspect() {
+    if (myEventHandlerSetupEditorAspect == null) {
+      myEventHandlerSetupEditorAspect = new EventHandlerSetup_Editor();
+    }
+    return myEventHandlerSetupEditorAspect;
+  }
+
+  private EventHandlerTemplate_Editor getEventHandlerTemplateEditorAspect() {
+    if (myEventHandlerTemplateEditorAspect == null) {
+      myEventHandlerTemplateEditorAspect = new EventHandlerTemplate_Editor();
+    }
+    return myEventHandlerTemplateEditorAspect;
+  }
+
+  private EventProducer_Editor getEventProducerEditorAspect() {
+    if (myEventProducerEditorAspect == null) {
+      myEventProducerEditorAspect = new EventProducer_Editor();
+    }
+    return myEventProducerEditorAspect;
+  }
+
+  private EventProperty_Editor getEventPropertyEditorAspect() {
+    if (myEventPropertyEditorAspect == null) {
+      myEventPropertyEditorAspect = new EventProperty_Editor();
+    }
+    return myEventPropertyEditorAspect;
+  }
+
+  private EventPropertyGetter_Editor getEventPropertyGetterEditorAspect() {
+    if (myEventPropertyGetterEditorAspect == null) {
+      myEventPropertyGetterEditorAspect = new EventPropertyGetter_Editor();
+    }
+    return myEventPropertyGetterEditorAspect;
+  }
+
+  private ExpressionWithUnit_Editor getExpressionWithUnitEditorAspect() {
+    if (myExpressionWithUnitEditorAspect == null) {
+      myExpressionWithUnitEditorAspect = new ExpressionWithUnit_Editor();
+    }
+    return myExpressionWithUnitEditorAspect;
+  }
+
+  private ForceLayoutCode_Editor getForceLayoutCodeEditorAspect() {
+    if (myForceLayoutCodeEditorAspect == null) {
+      myForceLayoutCodeEditorAspect = new ForceLayoutCode_Editor();
+    }
+    return myForceLayoutCodeEditorAspect;
+  }
+
+  private Geometry_Editor getGeometryEditorAspect() {
+    if (myGeometryEditorAspect == null) {
+      myGeometryEditorAspect = new Geometry_Editor();
+    }
+    return myGeometryEditorAspect;
+  }
+
+  private HorizontalAlignment_Editor getHorizontalAlignmentEditorAspect() {
+    if (myHorizontalAlignmentEditorAspect == null) {
+      myHorizontalAlignmentEditorAspect = new HorizontalAlignment_Editor();
+    }
+    return myHorizontalAlignmentEditorAspect;
+  }
+
+  private HorizontalConstraint_Editor getHorizontalConstraintEditorAspect() {
+    if (myHorizontalConstraintEditorAspect == null) {
+      myHorizontalConstraintEditorAspect = new HorizontalConstraint_Editor();
+    }
+    return myHorizontalConstraintEditorAspect;
+  }
+
+  private ItemUIObjectParam_Editor getItemUIObjectParamEditorAspect() {
+    if (myItemUIObjectParamEditorAspect == null) {
+      myItemUIObjectParamEditorAspect = new ItemUIObjectParam_Editor();
+    }
+    return myItemUIObjectParamEditorAspect;
+  }
+
+  private LayoutConstraintExpression_Editor getLayoutConstraintExpressionEditorAspect() {
+    if (myLayoutConstraintExpressionEditorAspect == null) {
+      myLayoutConstraintExpressionEditorAspect = new LayoutConstraintExpression_Editor();
+    }
+    return myLayoutConstraintExpressionEditorAspect;
+  }
+
+  private LayoutConstraintType_Editor getLayoutConstraintTypeEditorAspect() {
+    if (myLayoutConstraintTypeEditorAspect == null) {
+      myLayoutConstraintTypeEditorAspect = new LayoutConstraintType_Editor();
+    }
+    return myLayoutConstraintTypeEditorAspect;
+  }
+
+  private OverrideAnnotation_Editor getOverrideAnnotationEditorAspect() {
+    if (myOverrideAnnotationEditorAspect == null) {
+      myOverrideAnnotationEditorAspect = new OverrideAnnotation_Editor();
+    }
+    return myOverrideAnnotationEditorAspect;
+  }
+
+  private PropertyChangeHandlerSetup_Editor getPropertyChangeHandlerSetupEditorAspect() {
+    if (myPropertyChangeHandlerSetupEditorAspect == null) {
+      myPropertyChangeHandlerSetupEditorAspect = new PropertyChangeHandlerSetup_Editor();
+    }
+    return myPropertyChangeHandlerSetupEditorAspect;
+  }
+
+  private PropertyValueParam_Editor getPropertyValueParamEditorAspect() {
+    if (myPropertyValueParamEditorAspect == null) {
+      myPropertyValueParamEditorAspect = new PropertyValueParam_Editor();
+    }
+    return myPropertyValueParamEditorAspect;
+  }
+
+  private RowLayoutConstraint_Editor getRowLayoutConstraintEditorAspect() {
+    if (myRowLayoutConstraintEditorAspect == null) {
+      myRowLayoutConstraintEditorAspect = new RowLayoutConstraint_Editor();
+    }
+    return myRowLayoutConstraintEditorAspect;
+  }
+
+  private ThisUIObjectParam_Editor getThisUIObjectParamEditorAspect() {
+    if (myThisUIObjectParamEditorAspect == null) {
+      myThisUIObjectParamEditorAspect = new ThisUIObjectParam_Editor();
+    }
+    return myThisUIObjectParamEditorAspect;
+  }
+
+  private UIAction_Editor getUIActionEditorAspect() {
+    if (myUIActionEditorAspect == null) {
+      myUIActionEditorAspect = new UIAction_Editor();
+    }
+    return myUIActionEditorAspect;
+  }
+
+  private UIActionCode_Editor getUIActionCodeEditorAspect() {
+    if (myUIActionCodeEditorAspect == null) {
+      myUIActionCodeEditorAspect = new UIActionCode_Editor();
+    }
+    return myUIActionCodeEditorAspect;
+  }
+
+  private UIObject_Editor getUIObjectEditorAspect() {
+    if (myUIObjectEditorAspect == null) {
+      myUIObjectEditorAspect = new UIObject_Editor();
+    }
+    return myUIObjectEditorAspect;
+  }
+
+  private UIObjectFactory_Editor getUIObjectFactoryEditorAspect() {
+    if (myUIObjectFactoryEditorAspect == null) {
+      myUIObjectFactoryEditorAspect = new UIObjectFactory_Editor();
+    }
+    return myUIObjectFactoryEditorAspect;
+  }
+
+  private UIObjectTemplate_Editor getUIObjectTemplateEditorAspect() {
+    if (myUIObjectTemplateEditorAspect == null) {
+      myUIObjectTemplateEditorAspect = new UIObjectTemplate_Editor();
+    }
+    return myUIObjectTemplateEditorAspect;
+  }
+
+  private UIProperty_Editor getUIPropertyEditorAspect() {
+    if (myUIPropertyEditorAspect == null) {
+      myUIPropertyEditorAspect = new UIProperty_Editor();
+    }
+    return myUIPropertyEditorAspect;
+  }
+
+  private UIPropertyAccessCode_Editor getUIPropertyAccessCodeEditorAspect() {
+    if (myUIPropertyAccessCodeEditorAspect == null) {
+      myUIPropertyAccessCodeEditorAspect = new UIPropertyAccessCode_Editor();
+    }
+    return myUIPropertyAccessCodeEditorAspect;
+  }
+
+  private UIPropertyGetter_Editor getUIPropertyGetterEditorAspect() {
+    if (myUIPropertyGetterEditorAspect == null) {
+      myUIPropertyGetterEditorAspect = new UIPropertyGetter_Editor();
+    }
+    return myUIPropertyGetterEditorAspect;
+  }
+
+  private UIPropertySetter_Editor getUIPropertySetterEditorAspect() {
+    if (myUIPropertySetterEditorAspect == null) {
+      myUIPropertySetterEditorAspect = new UIPropertySetter_Editor();
+    }
+    return myUIPropertySetterEditorAspect;
+  }
+
+  private UnitType_Editor getUnitTypeEditorAspect() {
+    if (myUnitTypeEditorAspect == null) {
+      myUnitTypeEditorAspect = new UnitType_Editor();
+    }
+    return myUnitTypeEditorAspect;
+  }
+
+  private VerticalAlignment_Editor getVerticalAlignmentEditorAspect() {
+    if (myVerticalAlignmentEditorAspect == null) {
+      myVerticalAlignmentEditorAspect = new VerticalAlignment_Editor();
+    }
+    return myVerticalAlignmentEditorAspect;
+  }
+
+  private VerticalConstraint_Editor getVerticalConstraintEditorAspect() {
+    if (myVerticalConstraintEditorAspect == null) {
+      myVerticalConstraintEditorAspect = new VerticalConstraint_Editor();
+    }
+    return myVerticalConstraintEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0dc = new String[]{"jetbrains.mps.ui.modeling.structure.AlignmentLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ApplyConstraintStatement", "jetbrains.mps.ui.modeling.structure.AspectParameterDecl", "jetbrains.mps.ui.modeling.structure.AspectParameterRef", "jetbrains.mps.ui.modeling.structure.AuxObjectAccessOp", "jetbrains.mps.ui.modeling.structure.AuxObjectFactory", "jetbrains.mps.ui.modeling.structure.AuxObjectTemplate", "jetbrains.mps.ui.modeling.structure.Auxillary", "jetbrains.mps.ui.modeling.structure.BeforeUIObjectParam", "jetbrains.mps.ui.modeling.structure.BoxLayoutConstraint", "jetbrains.mps.ui.modeling.structure.CellLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ChildAspectDefinition", "jetbrains.mps.ui.modeling.structure.ColumnLayoutConstraint", "jetbrains.mps.ui.modeling.structure.Container", "jetbrains.mps.ui.modeling.structure.ContainerItemAdder", "jetbrains.mps.ui.modeling.structure.ContainerItemClearer", "jetbrains.mps.ui.modeling.structure.ContainerItemInserter", "jetbrains.mps.ui.modeling.structure.ContainerItemIterator", "jetbrains.mps.ui.modeling.structure.ContainerItemRemover", "jetbrains.mps.ui.modeling.structure.ContainerTemplate", "jetbrains.mps.ui.modeling.structure.Context", "jetbrains.mps.ui.modeling.structure.ContextUIObjectParam", "jetbrains.mps.ui.modeling.structure.EditableUIProperty", "jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.Event", "jetbrains.mps.ui.modeling.structure.EventHandlerSetup", "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", "jetbrains.mps.ui.modeling.structure.EventProducer", "jetbrains.mps.ui.modeling.structure.EventProperty", "jetbrains.mps.ui.modeling.structure.EventPropertyGetter", "jetbrains.mps.ui.modeling.structure.ExpressionWithUnit", "jetbrains.mps.ui.modeling.structure.ForceLayoutCode", "jetbrains.mps.ui.modeling.structure.Geometry", "jetbrains.mps.ui.modeling.structure.HorizontalAlignment", "jetbrains.mps.ui.modeling.structure.HorizontalConstraint", "jetbrains.mps.ui.modeling.structure.ItemUIObjectParam", "jetbrains.mps.ui.modeling.structure.LayoutConstraintExpression", "jetbrains.mps.ui.modeling.structure.LayoutConstraintType", "jetbrains.mps.ui.modeling.structure.OverrideAnnotation", "jetbrains.mps.ui.modeling.structure.PropertyChangeHandlerSetup", "jetbrains.mps.ui.modeling.structure.PropertyValueParam", "jetbrains.mps.ui.modeling.structure.RowLayoutConstraint", "jetbrains.mps.ui.modeling.structure.ThisUIObjectParam", "jetbrains.mps.ui.modeling.structure.UIAction", "jetbrains.mps.ui.modeling.structure.UIActionCode", "jetbrains.mps.ui.modeling.structure.UIObject", "jetbrains.mps.ui.modeling.structure.UIObjectFactory", "jetbrains.mps.ui.modeling.structure.UIObjectTemplate", "jetbrains.mps.ui.modeling.structure.UIProperty", "jetbrains.mps.ui.modeling.structure.UIPropertyAccessCode", "jetbrains.mps.ui.modeling.structure.UIPropertyGetter", "jetbrains.mps.ui.modeling.structure.UIPropertySetter", "jetbrains.mps.ui.modeling.structure.UnitType", "jetbrains.mps.ui.modeling.structure.VerticalAlignment", "jetbrains.mps.ui.modeling.structure.VerticalConstraint"};
 }

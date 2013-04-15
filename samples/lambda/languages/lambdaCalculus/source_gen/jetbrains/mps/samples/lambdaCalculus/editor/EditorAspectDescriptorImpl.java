@@ -8,40 +8,174 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private BinaryOperation_Editor myBinaryOperationEditorAspect;
+  private FunctionType_Editor myFunctionTypeEditorAspect;
+  private LambdaAbstraction_Editor myLambdaAbstractionEditorAspect;
+  private LambdaApplication_Editor myLambdaApplicationEditorAspect;
+  private LetExpression_Editor myLetExpressionEditorAspect;
+  private MultipleExpression_Editor myMultipleExpressionEditorAspect;
+  private NumberType_Editor myNumberTypeEditorAspect;
+  private NumericConstant_Editor myNumericConstantEditorAspect;
+  private ParenthesisExpression_Editor myParenthesisExpressionEditorAspect;
+  private Program_Editor myProgramEditorAspect;
+  private StringConstant_Editor myStringConstantEditorAspect;
+  private StringType_Editor myStringTypeEditorAspect;
+  private Variable_Editor myVariableEditorAspect;
+  private VariableReference_Editor myVariableReferenceEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0o, descriptor.getConceptFqName())) {
       case 0:
-        return new BinaryOperation_Editor();
+        return getBinaryOperationEditorAspect();
       case 1:
-        return new FunctionType_Editor();
+        return getFunctionTypeEditorAspect();
       case 2:
-        return new LambdaAbstraction_Editor();
+        return getLambdaAbstractionEditorAspect();
       case 3:
-        return new LambdaApplication_Editor();
+        return getLambdaApplicationEditorAspect();
       case 4:
-        return new LetExpression_Editor();
+        return getLetExpressionEditorAspect();
       case 5:
-        return new MultipleExpression_Editor();
+        return getMultipleExpressionEditorAspect();
       case 6:
-        return new NumberType_Editor();
+        return getNumberTypeEditorAspect();
       case 7:
-        return new NumericConstant_Editor();
+        return getNumericConstantEditorAspect();
       case 8:
-        return new ParenthesisExpression_Editor();
+        return getParenthesisExpressionEditorAspect();
       case 9:
-        return new Program_Editor();
+        return getProgramEditorAspect();
       case 10:
-        return new StringConstant_Editor();
+        return getStringConstantEditorAspect();
       case 11:
-        return new StringType_Editor();
+        return getStringTypeEditorAspect();
       case 12:
-        return new Variable_Editor();
+        return getVariableEditorAspect();
       case 13:
-        return new VariableReference_Editor();
+        return getVariableReferenceEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation", "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication", "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression", "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression", "jetbrains.mps.samples.lambdaCalculus.structure.NumberType", "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant", "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", "jetbrains.mps.samples.lambdaCalculus.structure.Program", "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant", "jetbrains.mps.samples.lambdaCalculus.structure.StringType", "jetbrains.mps.samples.lambdaCalculus.structure.Variable", "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myBinaryOperationEditorAspect = null;
+    myFunctionTypeEditorAspect = null;
+    myLambdaAbstractionEditorAspect = null;
+    myLambdaApplicationEditorAspect = null;
+    myLetExpressionEditorAspect = null;
+    myMultipleExpressionEditorAspect = null;
+    myNumberTypeEditorAspect = null;
+    myNumericConstantEditorAspect = null;
+    myParenthesisExpressionEditorAspect = null;
+    myProgramEditorAspect = null;
+    myStringConstantEditorAspect = null;
+    myStringTypeEditorAspect = null;
+    myVariableEditorAspect = null;
+    myVariableReferenceEditorAspect = null;
+  }
+
+  private BinaryOperation_Editor getBinaryOperationEditorAspect() {
+    if (myBinaryOperationEditorAspect == null) {
+      myBinaryOperationEditorAspect = new BinaryOperation_Editor();
+    }
+    return myBinaryOperationEditorAspect;
+  }
+
+  private FunctionType_Editor getFunctionTypeEditorAspect() {
+    if (myFunctionTypeEditorAspect == null) {
+      myFunctionTypeEditorAspect = new FunctionType_Editor();
+    }
+    return myFunctionTypeEditorAspect;
+  }
+
+  private LambdaAbstraction_Editor getLambdaAbstractionEditorAspect() {
+    if (myLambdaAbstractionEditorAspect == null) {
+      myLambdaAbstractionEditorAspect = new LambdaAbstraction_Editor();
+    }
+    return myLambdaAbstractionEditorAspect;
+  }
+
+  private LambdaApplication_Editor getLambdaApplicationEditorAspect() {
+    if (myLambdaApplicationEditorAspect == null) {
+      myLambdaApplicationEditorAspect = new LambdaApplication_Editor();
+    }
+    return myLambdaApplicationEditorAspect;
+  }
+
+  private LetExpression_Editor getLetExpressionEditorAspect() {
+    if (myLetExpressionEditorAspect == null) {
+      myLetExpressionEditorAspect = new LetExpression_Editor();
+    }
+    return myLetExpressionEditorAspect;
+  }
+
+  private MultipleExpression_Editor getMultipleExpressionEditorAspect() {
+    if (myMultipleExpressionEditorAspect == null) {
+      myMultipleExpressionEditorAspect = new MultipleExpression_Editor();
+    }
+    return myMultipleExpressionEditorAspect;
+  }
+
+  private NumberType_Editor getNumberTypeEditorAspect() {
+    if (myNumberTypeEditorAspect == null) {
+      myNumberTypeEditorAspect = new NumberType_Editor();
+    }
+    return myNumberTypeEditorAspect;
+  }
+
+  private NumericConstant_Editor getNumericConstantEditorAspect() {
+    if (myNumericConstantEditorAspect == null) {
+      myNumericConstantEditorAspect = new NumericConstant_Editor();
+    }
+    return myNumericConstantEditorAspect;
+  }
+
+  private ParenthesisExpression_Editor getParenthesisExpressionEditorAspect() {
+    if (myParenthesisExpressionEditorAspect == null) {
+      myParenthesisExpressionEditorAspect = new ParenthesisExpression_Editor();
+    }
+    return myParenthesisExpressionEditorAspect;
+  }
+
+  private Program_Editor getProgramEditorAspect() {
+    if (myProgramEditorAspect == null) {
+      myProgramEditorAspect = new Program_Editor();
+    }
+    return myProgramEditorAspect;
+  }
+
+  private StringConstant_Editor getStringConstantEditorAspect() {
+    if (myStringConstantEditorAspect == null) {
+      myStringConstantEditorAspect = new StringConstant_Editor();
+    }
+    return myStringConstantEditorAspect;
+  }
+
+  private StringType_Editor getStringTypeEditorAspect() {
+    if (myStringTypeEditorAspect == null) {
+      myStringTypeEditorAspect = new StringType_Editor();
+    }
+    return myStringTypeEditorAspect;
+  }
+
+  private Variable_Editor getVariableEditorAspect() {
+    if (myVariableEditorAspect == null) {
+      myVariableEditorAspect = new Variable_Editor();
+    }
+    return myVariableEditorAspect;
+  }
+
+  private VariableReference_Editor getVariableReferenceEditorAspect() {
+    if (myVariableReferenceEditorAspect == null) {
+      myVariableReferenceEditorAspect = new VariableReference_Editor();
+    }
+    return myVariableReferenceEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0o = new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation", "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication", "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression", "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression", "jetbrains.mps.samples.lambdaCalculus.structure.NumberType", "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant", "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", "jetbrains.mps.samples.lambdaCalculus.structure.Program", "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant", "jetbrains.mps.samples.lambdaCalculus.structure.StringType", "jetbrains.mps.samples.lambdaCalculus.structure.Variable", "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"};
 }

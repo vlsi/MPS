@@ -8,16 +8,42 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private PropertyRefExpression_Editor myPropertyRefExpressionEditorAspect;
+  private PropertyRefType_Editor myPropertyRefTypeEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
-        return new PropertyRefExpression_Editor();
+        return getPropertyRefExpressionEditorAspect();
       case 1:
-        return new PropertyRefType_Editor();
+        return getPropertyRefTypeEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.checkedName.structure.PropertyRefExpression", "jetbrains.mps.lang.checkedName.structure.PropertyRefType"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myPropertyRefExpressionEditorAspect = null;
+    myPropertyRefTypeEditorAspect = null;
+  }
+
+  private PropertyRefExpression_Editor getPropertyRefExpressionEditorAspect() {
+    if (myPropertyRefExpressionEditorAspect == null) {
+      myPropertyRefExpressionEditorAspect = new PropertyRefExpression_Editor();
+    }
+    return myPropertyRefExpressionEditorAspect;
+  }
+
+  private PropertyRefType_Editor getPropertyRefTypeEditorAspect() {
+    if (myPropertyRefTypeEditorAspect == null) {
+      myPropertyRefTypeEditorAspect = new PropertyRefType_Editor();
+    }
+    return myPropertyRefTypeEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.checkedName.structure.PropertyRefExpression", "jetbrains.mps.lang.checkedName.structure.PropertyRefType"};
 }

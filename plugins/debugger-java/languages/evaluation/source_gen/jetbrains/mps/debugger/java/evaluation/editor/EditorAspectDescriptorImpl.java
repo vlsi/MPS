@@ -8,34 +8,141 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private DebuggedType_Editor myDebuggedTypeEditorAspect;
+  private DownCastToLowLevel_Editor myDownCastToLowLevelEditorAspect;
+  private Evaluator_Editor myEvaluatorEditorAspect;
+  private EvaluatorConcept_Editor myEvaluatorConceptEditorAspect;
+  private EvaluatorsSuperMethodCall_Editor myEvaluatorsSuperMethodCallEditorAspect;
+  private EvaluatorsThisExpression_Editor myEvaluatorsThisExpressionEditorAspect;
+  private GenerationHelperAnnotation_Editor myGenerationHelperAnnotationEditorAspect;
+  private LowLevelVariable_Editor myLowLevelVariableEditorAspect;
+  private LowLevelVariableReference_Editor myLowLevelVariableReferenceEditorAspect;
+  private ToEvaluateAnnotation_Editor myToEvaluateAnnotationEditorAspect;
+  private UnitNode_Editor myUnitNodeEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0l, descriptor.getConceptFqName())) {
       case 0:
-        return new DebuggedType_Editor();
+        return getDebuggedTypeEditorAspect();
       case 1:
-        return new DownCastToLowLevel_Editor();
+        return getDownCastToLowLevelEditorAspect();
       case 2:
-        return new Evaluator_Editor();
+        return getEvaluatorEditorAspect();
       case 3:
-        return new EvaluatorConcept_Editor();
+        return getEvaluatorConceptEditorAspect();
       case 4:
-        return new EvaluatorsSuperMethodCall_Editor();
+        return getEvaluatorsSuperMethodCallEditorAspect();
       case 5:
-        return new EvaluatorsThisExpression_Editor();
+        return getEvaluatorsThisExpressionEditorAspect();
       case 6:
-        return new GenerationHelperAnnotation_Editor();
+        return getGenerationHelperAnnotationEditorAspect();
       case 7:
-        return new LowLevelVariable_Editor();
+        return getLowLevelVariableEditorAspect();
       case 8:
-        return new LowLevelVariableReference_Editor();
+        return getLowLevelVariableReferenceEditorAspect();
       case 9:
-        return new ToEvaluateAnnotation_Editor();
+        return getToEvaluateAnnotationEditorAspect();
       case 10:
-        return new UnitNode_Editor();
+        return getUnitNodeEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel", "jetbrains.mps.debugger.java.evaluation.structure.Evaluator", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.UnitNode"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myDebuggedTypeEditorAspect = null;
+    myDownCastToLowLevelEditorAspect = null;
+    myEvaluatorEditorAspect = null;
+    myEvaluatorConceptEditorAspect = null;
+    myEvaluatorsSuperMethodCallEditorAspect = null;
+    myEvaluatorsThisExpressionEditorAspect = null;
+    myGenerationHelperAnnotationEditorAspect = null;
+    myLowLevelVariableEditorAspect = null;
+    myLowLevelVariableReferenceEditorAspect = null;
+    myToEvaluateAnnotationEditorAspect = null;
+    myUnitNodeEditorAspect = null;
+  }
+
+  private DebuggedType_Editor getDebuggedTypeEditorAspect() {
+    if (myDebuggedTypeEditorAspect == null) {
+      myDebuggedTypeEditorAspect = new DebuggedType_Editor();
+    }
+    return myDebuggedTypeEditorAspect;
+  }
+
+  private DownCastToLowLevel_Editor getDownCastToLowLevelEditorAspect() {
+    if (myDownCastToLowLevelEditorAspect == null) {
+      myDownCastToLowLevelEditorAspect = new DownCastToLowLevel_Editor();
+    }
+    return myDownCastToLowLevelEditorAspect;
+  }
+
+  private Evaluator_Editor getEvaluatorEditorAspect() {
+    if (myEvaluatorEditorAspect == null) {
+      myEvaluatorEditorAspect = new Evaluator_Editor();
+    }
+    return myEvaluatorEditorAspect;
+  }
+
+  private EvaluatorConcept_Editor getEvaluatorConceptEditorAspect() {
+    if (myEvaluatorConceptEditorAspect == null) {
+      myEvaluatorConceptEditorAspect = new EvaluatorConcept_Editor();
+    }
+    return myEvaluatorConceptEditorAspect;
+  }
+
+  private EvaluatorsSuperMethodCall_Editor getEvaluatorsSuperMethodCallEditorAspect() {
+    if (myEvaluatorsSuperMethodCallEditorAspect == null) {
+      myEvaluatorsSuperMethodCallEditorAspect = new EvaluatorsSuperMethodCall_Editor();
+    }
+    return myEvaluatorsSuperMethodCallEditorAspect;
+  }
+
+  private EvaluatorsThisExpression_Editor getEvaluatorsThisExpressionEditorAspect() {
+    if (myEvaluatorsThisExpressionEditorAspect == null) {
+      myEvaluatorsThisExpressionEditorAspect = new EvaluatorsThisExpression_Editor();
+    }
+    return myEvaluatorsThisExpressionEditorAspect;
+  }
+
+  private GenerationHelperAnnotation_Editor getGenerationHelperAnnotationEditorAspect() {
+    if (myGenerationHelperAnnotationEditorAspect == null) {
+      myGenerationHelperAnnotationEditorAspect = new GenerationHelperAnnotation_Editor();
+    }
+    return myGenerationHelperAnnotationEditorAspect;
+  }
+
+  private LowLevelVariable_Editor getLowLevelVariableEditorAspect() {
+    if (myLowLevelVariableEditorAspect == null) {
+      myLowLevelVariableEditorAspect = new LowLevelVariable_Editor();
+    }
+    return myLowLevelVariableEditorAspect;
+  }
+
+  private LowLevelVariableReference_Editor getLowLevelVariableReferenceEditorAspect() {
+    if (myLowLevelVariableReferenceEditorAspect == null) {
+      myLowLevelVariableReferenceEditorAspect = new LowLevelVariableReference_Editor();
+    }
+    return myLowLevelVariableReferenceEditorAspect;
+  }
+
+  private ToEvaluateAnnotation_Editor getToEvaluateAnnotationEditorAspect() {
+    if (myToEvaluateAnnotationEditorAspect == null) {
+      myToEvaluateAnnotationEditorAspect = new ToEvaluateAnnotation_Editor();
+    }
+    return myToEvaluateAnnotationEditorAspect;
+  }
+
+  private UnitNode_Editor getUnitNodeEditorAspect() {
+    if (myUnitNodeEditorAspect == null) {
+      myUnitNodeEditorAspect = new UnitNode_Editor();
+    }
+    return myUnitNodeEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0l = new String[]{"jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel", "jetbrains.mps.debugger.java.evaluation.structure.Evaluator", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.UnitNode"};
 }

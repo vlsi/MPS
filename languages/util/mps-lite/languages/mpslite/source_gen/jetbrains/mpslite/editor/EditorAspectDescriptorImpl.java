@@ -8,50 +8,229 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AbstractConceptReference_Editor myAbstractConceptReferenceEditorAspect;
+  private BinaryOperationConcept_Editor myBinaryOperationConceptEditorAspect;
+  private BlockBodyPart_Editor myBlockBodyPartEditorAspect;
+  private BlockConcept_Editor myBlockConceptEditorAspect;
+  private ConceptContainer_Editor myConceptContainerEditorAspect;
+  private ConcreteChildPart_Editor myConcreteChildPartEditorAspect;
+  private ConcretePropertyPart_Editor myConcretePropertyPartEditorAspect;
+  private ConcreteReferencePart_Editor myConcreteReferencePartEditorAspect;
+  private ConstantLinePart_Editor myConstantLinePartEditorAspect;
+  private ExpressionConcept_Editor myExpressionConceptEditorAspect;
+  private IndentLinePart_Editor myIndentLinePartEditorAspect;
+  private Line_Editor myLineEditorAspect;
+  private LineList_Editor myLineListEditorAspect;
+  private MPSLiteConceptDeclaration_Editor myMPSLiteConceptDeclarationEditorAspect;
+  private NamePropertyNamePart_Editor myNamePropertyNamePartEditorAspect;
+  private OptionalPart_Editor myOptionalPartEditorAspect;
+  private StatementConcept_Editor myStatementConceptEditorAspect;
+  private TypePart_Editor myTypePartEditorAspect;
+  private VariableConcept_Editor myVariableConceptEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0t, descriptor.getConceptFqName())) {
       case 0:
-        return new AbstractConceptReference_Editor();
+        return getAbstractConceptReferenceEditorAspect();
       case 1:
-        return new BinaryOperationConcept_Editor();
+        return getBinaryOperationConceptEditorAspect();
       case 2:
-        return new BlockBodyPart_Editor();
+        return getBlockBodyPartEditorAspect();
       case 3:
-        return new BlockConcept_Editor();
+        return getBlockConceptEditorAspect();
       case 4:
-        return new ConceptContainer_Editor();
+        return getConceptContainerEditorAspect();
       case 5:
-        return new ConcreteChildPart_Editor();
+        return getConcreteChildPartEditorAspect();
       case 6:
-        return new ConcretePropertyPart_Editor();
+        return getConcretePropertyPartEditorAspect();
       case 7:
-        return new ConcreteReferencePart_Editor();
+        return getConcreteReferencePartEditorAspect();
       case 8:
-        return new ConstantLinePart_Editor();
+        return getConstantLinePartEditorAspect();
       case 9:
-        return new ExpressionConcept_Editor();
+        return getExpressionConceptEditorAspect();
       case 10:
-        return new IndentLinePart_Editor();
+        return getIndentLinePartEditorAspect();
       case 11:
-        return new Line_Editor();
+        return getLineEditorAspect();
       case 12:
-        return new LineList_Editor();
+        return getLineListEditorAspect();
       case 13:
-        return new MPSLiteConceptDeclaration_Editor();
+        return getMPSLiteConceptDeclarationEditorAspect();
       case 14:
-        return new NamePropertyNamePart_Editor();
+        return getNamePropertyNamePartEditorAspect();
       case 15:
-        return new OptionalPart_Editor();
+        return getOptionalPartEditorAspect();
       case 16:
-        return new StatementConcept_Editor();
+        return getStatementConceptEditorAspect();
       case 17:
-        return new TypePart_Editor();
+        return getTypePartEditorAspect();
       case 18:
-        return new VariableConcept_Editor();
+        return getVariableConceptEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mpslite.structure.AbstractConceptReference", "jetbrains.mpslite.structure.BinaryOperationConcept", "jetbrains.mpslite.structure.BlockBodyPart", "jetbrains.mpslite.structure.BlockConcept", "jetbrains.mpslite.structure.ConceptContainer", "jetbrains.mpslite.structure.ConcreteChildPart", "jetbrains.mpslite.structure.ConcretePropertyPart", "jetbrains.mpslite.structure.ConcreteReferencePart", "jetbrains.mpslite.structure.ConstantLinePart", "jetbrains.mpslite.structure.ExpressionConcept", "jetbrains.mpslite.structure.IndentLinePart", "jetbrains.mpslite.structure.Line", "jetbrains.mpslite.structure.LineList", "jetbrains.mpslite.structure.MPSLiteConceptDeclaration", "jetbrains.mpslite.structure.NamePropertyNamePart", "jetbrains.mpslite.structure.OptionalPart", "jetbrains.mpslite.structure.StatementConcept", "jetbrains.mpslite.structure.TypePart", "jetbrains.mpslite.structure.VariableConcept"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAbstractConceptReferenceEditorAspect = null;
+    myBinaryOperationConceptEditorAspect = null;
+    myBlockBodyPartEditorAspect = null;
+    myBlockConceptEditorAspect = null;
+    myConceptContainerEditorAspect = null;
+    myConcreteChildPartEditorAspect = null;
+    myConcretePropertyPartEditorAspect = null;
+    myConcreteReferencePartEditorAspect = null;
+    myConstantLinePartEditorAspect = null;
+    myExpressionConceptEditorAspect = null;
+    myIndentLinePartEditorAspect = null;
+    myLineEditorAspect = null;
+    myLineListEditorAspect = null;
+    myMPSLiteConceptDeclarationEditorAspect = null;
+    myNamePropertyNamePartEditorAspect = null;
+    myOptionalPartEditorAspect = null;
+    myStatementConceptEditorAspect = null;
+    myTypePartEditorAspect = null;
+    myVariableConceptEditorAspect = null;
+  }
+
+  private AbstractConceptReference_Editor getAbstractConceptReferenceEditorAspect() {
+    if (myAbstractConceptReferenceEditorAspect == null) {
+      myAbstractConceptReferenceEditorAspect = new AbstractConceptReference_Editor();
+    }
+    return myAbstractConceptReferenceEditorAspect;
+  }
+
+  private BinaryOperationConcept_Editor getBinaryOperationConceptEditorAspect() {
+    if (myBinaryOperationConceptEditorAspect == null) {
+      myBinaryOperationConceptEditorAspect = new BinaryOperationConcept_Editor();
+    }
+    return myBinaryOperationConceptEditorAspect;
+  }
+
+  private BlockBodyPart_Editor getBlockBodyPartEditorAspect() {
+    if (myBlockBodyPartEditorAspect == null) {
+      myBlockBodyPartEditorAspect = new BlockBodyPart_Editor();
+    }
+    return myBlockBodyPartEditorAspect;
+  }
+
+  private BlockConcept_Editor getBlockConceptEditorAspect() {
+    if (myBlockConceptEditorAspect == null) {
+      myBlockConceptEditorAspect = new BlockConcept_Editor();
+    }
+    return myBlockConceptEditorAspect;
+  }
+
+  private ConceptContainer_Editor getConceptContainerEditorAspect() {
+    if (myConceptContainerEditorAspect == null) {
+      myConceptContainerEditorAspect = new ConceptContainer_Editor();
+    }
+    return myConceptContainerEditorAspect;
+  }
+
+  private ConcreteChildPart_Editor getConcreteChildPartEditorAspect() {
+    if (myConcreteChildPartEditorAspect == null) {
+      myConcreteChildPartEditorAspect = new ConcreteChildPart_Editor();
+    }
+    return myConcreteChildPartEditorAspect;
+  }
+
+  private ConcretePropertyPart_Editor getConcretePropertyPartEditorAspect() {
+    if (myConcretePropertyPartEditorAspect == null) {
+      myConcretePropertyPartEditorAspect = new ConcretePropertyPart_Editor();
+    }
+    return myConcretePropertyPartEditorAspect;
+  }
+
+  private ConcreteReferencePart_Editor getConcreteReferencePartEditorAspect() {
+    if (myConcreteReferencePartEditorAspect == null) {
+      myConcreteReferencePartEditorAspect = new ConcreteReferencePart_Editor();
+    }
+    return myConcreteReferencePartEditorAspect;
+  }
+
+  private ConstantLinePart_Editor getConstantLinePartEditorAspect() {
+    if (myConstantLinePartEditorAspect == null) {
+      myConstantLinePartEditorAspect = new ConstantLinePart_Editor();
+    }
+    return myConstantLinePartEditorAspect;
+  }
+
+  private ExpressionConcept_Editor getExpressionConceptEditorAspect() {
+    if (myExpressionConceptEditorAspect == null) {
+      myExpressionConceptEditorAspect = new ExpressionConcept_Editor();
+    }
+    return myExpressionConceptEditorAspect;
+  }
+
+  private IndentLinePart_Editor getIndentLinePartEditorAspect() {
+    if (myIndentLinePartEditorAspect == null) {
+      myIndentLinePartEditorAspect = new IndentLinePart_Editor();
+    }
+    return myIndentLinePartEditorAspect;
+  }
+
+  private Line_Editor getLineEditorAspect() {
+    if (myLineEditorAspect == null) {
+      myLineEditorAspect = new Line_Editor();
+    }
+    return myLineEditorAspect;
+  }
+
+  private LineList_Editor getLineListEditorAspect() {
+    if (myLineListEditorAspect == null) {
+      myLineListEditorAspect = new LineList_Editor();
+    }
+    return myLineListEditorAspect;
+  }
+
+  private MPSLiteConceptDeclaration_Editor getMPSLiteConceptDeclarationEditorAspect() {
+    if (myMPSLiteConceptDeclarationEditorAspect == null) {
+      myMPSLiteConceptDeclarationEditorAspect = new MPSLiteConceptDeclaration_Editor();
+    }
+    return myMPSLiteConceptDeclarationEditorAspect;
+  }
+
+  private NamePropertyNamePart_Editor getNamePropertyNamePartEditorAspect() {
+    if (myNamePropertyNamePartEditorAspect == null) {
+      myNamePropertyNamePartEditorAspect = new NamePropertyNamePart_Editor();
+    }
+    return myNamePropertyNamePartEditorAspect;
+  }
+
+  private OptionalPart_Editor getOptionalPartEditorAspect() {
+    if (myOptionalPartEditorAspect == null) {
+      myOptionalPartEditorAspect = new OptionalPart_Editor();
+    }
+    return myOptionalPartEditorAspect;
+  }
+
+  private StatementConcept_Editor getStatementConceptEditorAspect() {
+    if (myStatementConceptEditorAspect == null) {
+      myStatementConceptEditorAspect = new StatementConcept_Editor();
+    }
+    return myStatementConceptEditorAspect;
+  }
+
+  private TypePart_Editor getTypePartEditorAspect() {
+    if (myTypePartEditorAspect == null) {
+      myTypePartEditorAspect = new TypePart_Editor();
+    }
+    return myTypePartEditorAspect;
+  }
+
+  private VariableConcept_Editor getVariableConceptEditorAspect() {
+    if (myVariableConceptEditorAspect == null) {
+      myVariableConceptEditorAspect = new VariableConcept_Editor();
+    }
+    return myVariableConceptEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0t = new String[]{"jetbrains.mpslite.structure.AbstractConceptReference", "jetbrains.mpslite.structure.BinaryOperationConcept", "jetbrains.mpslite.structure.BlockBodyPart", "jetbrains.mpslite.structure.BlockConcept", "jetbrains.mpslite.structure.ConceptContainer", "jetbrains.mpslite.structure.ConcreteChildPart", "jetbrains.mpslite.structure.ConcretePropertyPart", "jetbrains.mpslite.structure.ConcreteReferencePart", "jetbrains.mpslite.structure.ConstantLinePart", "jetbrains.mpslite.structure.ExpressionConcept", "jetbrains.mpslite.structure.IndentLinePart", "jetbrains.mpslite.structure.Line", "jetbrains.mpslite.structure.LineList", "jetbrains.mpslite.structure.MPSLiteConceptDeclaration", "jetbrains.mpslite.structure.NamePropertyNamePart", "jetbrains.mpslite.structure.OptionalPart", "jetbrains.mpslite.structure.StatementConcept", "jetbrains.mpslite.structure.TypePart", "jetbrains.mpslite.structure.VariableConcept"};
 }

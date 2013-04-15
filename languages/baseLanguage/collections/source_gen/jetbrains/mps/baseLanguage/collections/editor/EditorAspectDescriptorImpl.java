@@ -8,176 +8,922 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AbstractContainerCreator_Editor myAbstractContainerCreatorEditorAspect;
+  private AbstractContainerType_Editor myAbstractContainerTypeEditorAspect;
+  private AbstractEnumeratorOperation_Editor myAbstractEnumeratorOperationEditorAspect;
+  private AbstractIteratorOperation_Editor myAbstractIteratorOperationEditorAspect;
+  private AbstractMappingOperation_Editor myAbstractMappingOperationEditorAspect;
+  private AddAllSetElementsOperation_Editor myAddAllSetElementsOperationEditorAspect;
+  private AddSetElementOperation_Editor myAddSetElementOperationEditorAspect;
+  private AllConstant_Editor myAllConstantEditorAspect;
+  private AsSequenceOperation_Editor myAsSequenceOperationEditorAspect;
+  private BinaryOperation_Editor myBinaryOperationEditorAspect;
+  private ChunkOperation_Editor myChunkOperationEditorAspect;
+  private ClearSetOperation_Editor myClearSetOperationEditorAspect;
+  private ComparatorSortOperation_Editor myComparatorSortOperationEditorAspect;
+  private ContainsKeyOperation_Editor myContainsKeyOperationEditorAspect;
+  private ContainsValueOperation_Editor myContainsValueOperationEditorAspect;
+  private CustomContainerCreator_Editor myCustomContainerCreatorEditorAspect;
+  private CustomContainerDeclaration_Editor myCustomContainerDeclarationEditorAspect;
+  private CustomContainers_Editor myCustomContainersEditorAspect;
+  private CustomMapCreator_Editor myCustomMapCreatorEditorAspect;
+  private DowncastExpression_Editor myDowncastExpressionEditorAspect;
+  private EnumeratorType_Editor myEnumeratorTypeEditorAspect;
+  private FoldLeftOperation_Editor myFoldLeftOperationEditorAspect;
+  private FoldRightOperation_Editor myFoldRightOperationEditorAspect;
+  private ForEachStatement_Editor myForEachStatementEditorAspect;
+  private ForEachVariable_Editor myForEachVariableEditorAspect;
+  private ForEachVariableReference_Editor myForEachVariableReferenceEditorAspect;
+  private GetKeysOperation_Editor myGetKeysOperationEditorAspect;
+  private GetValuesOperation_Editor myGetValuesOperationEditorAspect;
+  private HashMapCreator_Editor myHashMapCreatorEditorAspect;
+  private HeadListOperation_Editor myHeadListOperationEditorAspect;
+  private HeadMapOperation_Editor myHeadMapOperationEditorAspect;
+  private HeadSetOperation_Editor myHeadSetOperationEditorAspect;
+  private InsertElementOperation_Editor myInsertElementOperationEditorAspect;
+  private InternalSequenceOperation_Editor myInternalSequenceOperationEditorAspect;
+  private IteratorType_Editor myIteratorTypeEditorAspect;
+  private JoinOperation_Editor myJoinOperationEditorAspect;
+  private LinkedHashMapCreator_Editor myLinkedHashMapCreatorEditorAspect;
+  private ListElementAccessExpression_Editor myListElementAccessExpressionEditorAspect;
+  private ListType_Editor myListTypeEditorAspect;
+  private MapClearOperation_Editor myMapClearOperationEditorAspect;
+  private MapElement_Editor myMapElementEditorAspect;
+  private MapEntry_Editor myMapEntryEditorAspect;
+  private MapInitializer_Editor myMapInitializerEditorAspect;
+  private MapOperationExpression_Editor myMapOperationExpressionEditorAspect;
+  private MapRemoveOperation_Editor myMapRemoveOperationEditorAspect;
+  private MapType_Editor myMapTypeEditorAspect;
+  private MappingType_Editor myMappingTypeEditorAspect;
+  private MappingsSetOperation_Editor myMappingsSetOperationEditorAspect;
+  private MultiForEachPair_Editor myMultiForEachPairEditorAspect;
+  private MultiForEachStatement_Editor myMultiForEachStatementEditorAspect;
+  private MultiForEachVariable_Editor myMultiForEachVariableEditorAspect;
+  private MultiForEachVariableReference_Editor myMultiForEachVariableReferenceEditorAspect;
+  private NoArgumentsSequenceOperation_Editor myNoArgumentsSequenceOperationEditorAspect;
+  private OfTypeOperation_Editor myOfTypeOperationEditorAspect;
+  private PageOperation_Editor myPageOperationEditorAspect;
+  private PutAllOperation_Editor myPutAllOperationEditorAspect;
+  private RemoveAllSetElementsOperation_Editor myRemoveAllSetElementsOperationEditorAspect;
+  private RemoveAtElementOperation_Editor myRemoveAtElementOperationEditorAspect;
+  private RemoveSetElementOperation_Editor myRemoveSetElementOperationEditorAspect;
+  private SequenceCreator_Editor mySequenceCreatorEditorAspect;
+  private SequenceOperation_Editor mySequenceOperationEditorAspect;
+  private SequenceType_Editor mySequenceTypeEditorAspect;
+  private SetElementOperation_Editor mySetElementOperationEditorAspect;
+  private SetType_Editor mySetTypeEditorAspect;
+  private SingleArgumentSequenceOperation_Editor mySingleArgumentSequenceOperationEditorAspect;
+  private SingletonSequenceCreator_Editor mySingletonSequenceCreatorEditorAspect;
+  private SkipOperation_Editor mySkipOperationEditorAspect;
+  private SkipStatement_Editor mySkipStatementEditorAspect;
+  private SmartClosureParameterDeclaration_Editor mySmartClosureParameterDeclarationEditorAspect;
+  private SortDirection_Editor mySortDirectionEditorAspect;
+  private SortOperation_Editor mySortOperationEditorAspect;
+  private StopStatement_Editor myStopStatementEditorAspect;
+  private SubListOperation_Editor mySubListOperationEditorAspect;
+  private SubMapOperation_Editor mySubMapOperationEditorAspect;
+  private SubSetOperation_Editor mySubSetOperationEditorAspect;
+  private TailListOperation_Editor myTailListOperationEditorAspect;
+  private TailMapOperation_Editor myTailMapOperationEditorAspect;
+  private TailSetOperation_Editor myTailSetOperationEditorAspect;
+  private TakeOperation_Editor myTakeOperationEditorAspect;
+  private ToIteratorOperation_Editor myToIteratorOperationEditorAspect;
+  private ToListOperation_Editor myToListOperationEditorAspect;
+  private TreeSetCreator_Editor myTreeSetCreatorEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0ed, descriptor.getConceptFqName())) {
       case 0:
-        return new AbstractContainerCreator_Editor();
+        return getAbstractContainerCreatorEditorAspect();
       case 1:
-        return new AbstractContainerType_Editor();
+        return getAbstractContainerTypeEditorAspect();
       case 2:
-        return new AbstractEnumeratorOperation_Editor();
+        return getAbstractEnumeratorOperationEditorAspect();
       case 3:
-        return new AbstractIteratorOperation_Editor();
+        return getAbstractIteratorOperationEditorAspect();
       case 4:
-        return new AbstractMappingOperation_Editor();
+        return getAbstractMappingOperationEditorAspect();
       case 5:
-        return new AddAllSetElementsOperation_Editor();
+        return getAddAllSetElementsOperationEditorAspect();
       case 6:
-        return new AddSetElementOperation_Editor();
+        return getAddSetElementOperationEditorAspect();
       case 7:
-        return new AllConstant_Editor();
+        return getAllConstantEditorAspect();
       case 8:
-        return new AsSequenceOperation_Editor();
+        return getAsSequenceOperationEditorAspect();
       case 9:
-        return new BinaryOperation_Editor();
+        return getBinaryOperationEditorAspect();
       case 10:
-        return new ChunkOperation_Editor();
+        return getChunkOperationEditorAspect();
       case 11:
-        return new ClearSetOperation_Editor();
+        return getClearSetOperationEditorAspect();
       case 12:
-        return new ComparatorSortOperation_Editor();
+        return getComparatorSortOperationEditorAspect();
       case 13:
-        return new ContainsKeyOperation_Editor();
+        return getContainsKeyOperationEditorAspect();
       case 14:
-        return new ContainsValueOperation_Editor();
+        return getContainsValueOperationEditorAspect();
       case 15:
-        return new CustomContainerCreator_Editor();
+        return getCustomContainerCreatorEditorAspect();
       case 16:
-        return new CustomContainerDeclaration_Editor();
+        return getCustomContainerDeclarationEditorAspect();
       case 17:
-        return new CustomContainers_Editor();
+        return getCustomContainersEditorAspect();
       case 18:
-        return new CustomMapCreator_Editor();
+        return getCustomMapCreatorEditorAspect();
       case 19:
-        return new DowncastExpression_Editor();
+        return getDowncastExpressionEditorAspect();
       case 20:
-        return new EnumeratorType_Editor();
+        return getEnumeratorTypeEditorAspect();
       case 21:
-        return new FoldLeftOperation_Editor();
+        return getFoldLeftOperationEditorAspect();
       case 22:
-        return new FoldRightOperation_Editor();
+        return getFoldRightOperationEditorAspect();
       case 23:
-        return new ForEachStatement_Editor();
+        return getForEachStatementEditorAspect();
       case 24:
-        return new ForEachVariable_Editor();
+        return getForEachVariableEditorAspect();
       case 25:
-        return new ForEachVariableReference_Editor();
+        return getForEachVariableReferenceEditorAspect();
       case 26:
-        return new GetKeysOperation_Editor();
+        return getGetKeysOperationEditorAspect();
       case 27:
-        return new GetValuesOperation_Editor();
+        return getGetValuesOperationEditorAspect();
       case 28:
-        return new HashMapCreator_Editor();
+        return getHashMapCreatorEditorAspect();
       case 29:
-        return new HeadListOperation_Editor();
+        return getHeadListOperationEditorAspect();
       case 30:
-        return new HeadMapOperation_Editor();
+        return getHeadMapOperationEditorAspect();
       case 31:
-        return new HeadSetOperation_Editor();
+        return getHeadSetOperationEditorAspect();
       case 32:
-        return new InsertElementOperation_Editor();
+        return getInsertElementOperationEditorAspect();
       case 33:
-        return new InternalSequenceOperation_Editor();
+        return getInternalSequenceOperationEditorAspect();
       case 34:
-        return new IteratorType_Editor();
+        return getIteratorTypeEditorAspect();
       case 35:
-        return new JoinOperation_Editor();
+        return getJoinOperationEditorAspect();
       case 36:
-        return new LinkedHashMapCreator_Editor();
+        return getLinkedHashMapCreatorEditorAspect();
       case 37:
-        return new ListElementAccessExpression_Editor();
+        return getListElementAccessExpressionEditorAspect();
       case 38:
-        return new ListType_Editor();
+        return getListTypeEditorAspect();
       case 39:
-        return new MapClearOperation_Editor();
+        return getMapClearOperationEditorAspect();
       case 40:
-        return new MapElement_Editor();
+        return getMapElementEditorAspect();
       case 41:
-        return new MapEntry_Editor();
+        return getMapEntryEditorAspect();
       case 42:
-        return new MapInitializer_Editor();
+        return getMapInitializerEditorAspect();
       case 43:
-        return new MapOperationExpression_Editor();
+        return getMapOperationExpressionEditorAspect();
       case 44:
-        return new MapRemoveOperation_Editor();
+        return getMapRemoveOperationEditorAspect();
       case 45:
-        return new MapType_Editor();
+        return getMapTypeEditorAspect();
       case 46:
-        return new MappingType_Editor();
+        return getMappingTypeEditorAspect();
       case 47:
-        return new MappingsSetOperation_Editor();
+        return getMappingsSetOperationEditorAspect();
       case 48:
-        return new MultiForEachPair_Editor();
+        return getMultiForEachPairEditorAspect();
       case 49:
-        return new MultiForEachStatement_Editor();
+        return getMultiForEachStatementEditorAspect();
       case 50:
-        return new MultiForEachVariable_Editor();
+        return getMultiForEachVariableEditorAspect();
       case 51:
-        return new MultiForEachVariableReference_Editor();
+        return getMultiForEachVariableReferenceEditorAspect();
       case 52:
-        return new NoArgumentsSequenceOperation_Editor();
+        return getNoArgumentsSequenceOperationEditorAspect();
       case 53:
-        return new OfTypeOperation_Editor();
+        return getOfTypeOperationEditorAspect();
       case 54:
-        return new PageOperation_Editor();
+        return getPageOperationEditorAspect();
       case 55:
-        return new PutAllOperation_Editor();
+        return getPutAllOperationEditorAspect();
       case 56:
-        return new RemoveAllSetElementsOperation_Editor();
+        return getRemoveAllSetElementsOperationEditorAspect();
       case 57:
-        return new RemoveAtElementOperation_Editor();
+        return getRemoveAtElementOperationEditorAspect();
       case 58:
-        return new RemoveSetElementOperation_Editor();
+        return getRemoveSetElementOperationEditorAspect();
       case 59:
-        return new SequenceCreator_Editor();
+        return getSequenceCreatorEditorAspect();
       case 60:
-        return new SequenceOperation_Editor();
+        return getSequenceOperationEditorAspect();
       case 61:
-        return new SequenceType_Editor();
+        return getSequenceTypeEditorAspect();
       case 62:
-        return new SetElementOperation_Editor();
+        return getSetElementOperationEditorAspect();
       case 63:
-        return new SetType_Editor();
+        return getSetTypeEditorAspect();
       case 64:
-        return new SingleArgumentSequenceOperation_Editor();
+        return getSingleArgumentSequenceOperationEditorAspect();
       case 65:
-        return new SingletonSequenceCreator_Editor();
+        return getSingletonSequenceCreatorEditorAspect();
       case 66:
-        return new SkipOperation_Editor();
+        return getSkipOperationEditorAspect();
       case 67:
-        return new SkipStatement_Editor();
+        return getSkipStatementEditorAspect();
       case 68:
-        return new SmartClosureParameterDeclaration_Editor();
+        return getSmartClosureParameterDeclarationEditorAspect();
       case 69:
-        return new SortDirection_Editor();
+        return getSortDirectionEditorAspect();
       case 70:
-        return new SortOperation_Editor();
+        return getSortOperationEditorAspect();
       case 71:
-        return new StopStatement_Editor();
+        return getStopStatementEditorAspect();
       case 72:
-        return new SubListOperation_Editor();
+        return getSubListOperationEditorAspect();
       case 73:
-        return new SubMapOperation_Editor();
+        return getSubMapOperationEditorAspect();
       case 74:
-        return new SubSetOperation_Editor();
+        return getSubSetOperationEditorAspect();
       case 75:
-        return new TailListOperation_Editor();
+        return getTailListOperationEditorAspect();
       case 76:
-        return new TailMapOperation_Editor();
+        return getTailMapOperationEditorAspect();
       case 77:
-        return new TailSetOperation_Editor();
+        return getTailSetOperationEditorAspect();
       case 78:
-        return new TakeOperation_Editor();
+        return getTakeOperationEditorAspect();
       case 79:
-        return new ToIteratorOperation_Editor();
+        return getToIteratorOperationEditorAspect();
       case 80:
-        return new ToListOperation_Editor();
+        return getToListOperationEditorAspect();
       case 81:
-        return new TreeSetCreator_Editor();
+        return getTreeSetCreatorEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType", "jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation", "jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.AllConstant", "jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation", "jetbrains.mps.baseLanguage.collections.structure.ChunkOperation", "jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation", "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration", "jetbrains.mps.baseLanguage.collections.structure.CustomContainers", "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", "jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", "jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation", "jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation", "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", "jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation", "jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation", "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", "jetbrains.mps.baseLanguage.collections.structure.HeadListOperation", "jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", "jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation", "jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation", "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.IteratorType", "jetbrains.mps.baseLanguage.collections.structure.JoinOperation", "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator", "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", "jetbrains.mps.baseLanguage.collections.structure.ListType", "jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", "jetbrains.mps.baseLanguage.collections.structure.MapElement", "jetbrains.mps.baseLanguage.collections.structure.MapEntry", "jetbrains.mps.baseLanguage.collections.structure.MapInitializer", "jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", "jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", "jetbrains.mps.baseLanguage.collections.structure.MapType", "jetbrains.mps.baseLanguage.collections.structure.MappingType", "jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference", "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation", "jetbrains.mps.baseLanguage.collections.structure.PageOperation", "jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.SequenceType", "jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.SetType", "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", "jetbrains.mps.baseLanguage.collections.structure.SkipOperation", "jetbrains.mps.baseLanguage.collections.structure.SkipStatement", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", "jetbrains.mps.baseLanguage.collections.structure.SortDirection", "jetbrains.mps.baseLanguage.collections.structure.SortOperation", "jetbrains.mps.baseLanguage.collections.structure.StopStatement", "jetbrains.mps.baseLanguage.collections.structure.SubListOperation", "jetbrains.mps.baseLanguage.collections.structure.SubMapOperation", "jetbrains.mps.baseLanguage.collections.structure.SubSetOperation", "jetbrains.mps.baseLanguage.collections.structure.TailListOperation", "jetbrains.mps.baseLanguage.collections.structure.TailMapOperation", "jetbrains.mps.baseLanguage.collections.structure.TailSetOperation", "jetbrains.mps.baseLanguage.collections.structure.TakeOperation", "jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.ToListOperation", "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAbstractContainerCreatorEditorAspect = null;
+    myAbstractContainerTypeEditorAspect = null;
+    myAbstractEnumeratorOperationEditorAspect = null;
+    myAbstractIteratorOperationEditorAspect = null;
+    myAbstractMappingOperationEditorAspect = null;
+    myAddAllSetElementsOperationEditorAspect = null;
+    myAddSetElementOperationEditorAspect = null;
+    myAllConstantEditorAspect = null;
+    myAsSequenceOperationEditorAspect = null;
+    myBinaryOperationEditorAspect = null;
+    myChunkOperationEditorAspect = null;
+    myClearSetOperationEditorAspect = null;
+    myComparatorSortOperationEditorAspect = null;
+    myContainsKeyOperationEditorAspect = null;
+    myContainsValueOperationEditorAspect = null;
+    myCustomContainerCreatorEditorAspect = null;
+    myCustomContainerDeclarationEditorAspect = null;
+    myCustomContainersEditorAspect = null;
+    myCustomMapCreatorEditorAspect = null;
+    myDowncastExpressionEditorAspect = null;
+    myEnumeratorTypeEditorAspect = null;
+    myFoldLeftOperationEditorAspect = null;
+    myFoldRightOperationEditorAspect = null;
+    myForEachStatementEditorAspect = null;
+    myForEachVariableEditorAspect = null;
+    myForEachVariableReferenceEditorAspect = null;
+    myGetKeysOperationEditorAspect = null;
+    myGetValuesOperationEditorAspect = null;
+    myHashMapCreatorEditorAspect = null;
+    myHeadListOperationEditorAspect = null;
+    myHeadMapOperationEditorAspect = null;
+    myHeadSetOperationEditorAspect = null;
+    myInsertElementOperationEditorAspect = null;
+    myInternalSequenceOperationEditorAspect = null;
+    myIteratorTypeEditorAspect = null;
+    myJoinOperationEditorAspect = null;
+    myLinkedHashMapCreatorEditorAspect = null;
+    myListElementAccessExpressionEditorAspect = null;
+    myListTypeEditorAspect = null;
+    myMapClearOperationEditorAspect = null;
+    myMapElementEditorAspect = null;
+    myMapEntryEditorAspect = null;
+    myMapInitializerEditorAspect = null;
+    myMapOperationExpressionEditorAspect = null;
+    myMapRemoveOperationEditorAspect = null;
+    myMapTypeEditorAspect = null;
+    myMappingTypeEditorAspect = null;
+    myMappingsSetOperationEditorAspect = null;
+    myMultiForEachPairEditorAspect = null;
+    myMultiForEachStatementEditorAspect = null;
+    myMultiForEachVariableEditorAspect = null;
+    myMultiForEachVariableReferenceEditorAspect = null;
+    myNoArgumentsSequenceOperationEditorAspect = null;
+    myOfTypeOperationEditorAspect = null;
+    myPageOperationEditorAspect = null;
+    myPutAllOperationEditorAspect = null;
+    myRemoveAllSetElementsOperationEditorAspect = null;
+    myRemoveAtElementOperationEditorAspect = null;
+    myRemoveSetElementOperationEditorAspect = null;
+    mySequenceCreatorEditorAspect = null;
+    mySequenceOperationEditorAspect = null;
+    mySequenceTypeEditorAspect = null;
+    mySetElementOperationEditorAspect = null;
+    mySetTypeEditorAspect = null;
+    mySingleArgumentSequenceOperationEditorAspect = null;
+    mySingletonSequenceCreatorEditorAspect = null;
+    mySkipOperationEditorAspect = null;
+    mySkipStatementEditorAspect = null;
+    mySmartClosureParameterDeclarationEditorAspect = null;
+    mySortDirectionEditorAspect = null;
+    mySortOperationEditorAspect = null;
+    myStopStatementEditorAspect = null;
+    mySubListOperationEditorAspect = null;
+    mySubMapOperationEditorAspect = null;
+    mySubSetOperationEditorAspect = null;
+    myTailListOperationEditorAspect = null;
+    myTailMapOperationEditorAspect = null;
+    myTailSetOperationEditorAspect = null;
+    myTakeOperationEditorAspect = null;
+    myToIteratorOperationEditorAspect = null;
+    myToListOperationEditorAspect = null;
+    myTreeSetCreatorEditorAspect = null;
+  }
+
+  private AbstractContainerCreator_Editor getAbstractContainerCreatorEditorAspect() {
+    if (myAbstractContainerCreatorEditorAspect == null) {
+      myAbstractContainerCreatorEditorAspect = new AbstractContainerCreator_Editor();
+    }
+    return myAbstractContainerCreatorEditorAspect;
+  }
+
+  private AbstractContainerType_Editor getAbstractContainerTypeEditorAspect() {
+    if (myAbstractContainerTypeEditorAspect == null) {
+      myAbstractContainerTypeEditorAspect = new AbstractContainerType_Editor();
+    }
+    return myAbstractContainerTypeEditorAspect;
+  }
+
+  private AbstractEnumeratorOperation_Editor getAbstractEnumeratorOperationEditorAspect() {
+    if (myAbstractEnumeratorOperationEditorAspect == null) {
+      myAbstractEnumeratorOperationEditorAspect = new AbstractEnumeratorOperation_Editor();
+    }
+    return myAbstractEnumeratorOperationEditorAspect;
+  }
+
+  private AbstractIteratorOperation_Editor getAbstractIteratorOperationEditorAspect() {
+    if (myAbstractIteratorOperationEditorAspect == null) {
+      myAbstractIteratorOperationEditorAspect = new AbstractIteratorOperation_Editor();
+    }
+    return myAbstractIteratorOperationEditorAspect;
+  }
+
+  private AbstractMappingOperation_Editor getAbstractMappingOperationEditorAspect() {
+    if (myAbstractMappingOperationEditorAspect == null) {
+      myAbstractMappingOperationEditorAspect = new AbstractMappingOperation_Editor();
+    }
+    return myAbstractMappingOperationEditorAspect;
+  }
+
+  private AddAllSetElementsOperation_Editor getAddAllSetElementsOperationEditorAspect() {
+    if (myAddAllSetElementsOperationEditorAspect == null) {
+      myAddAllSetElementsOperationEditorAspect = new AddAllSetElementsOperation_Editor();
+    }
+    return myAddAllSetElementsOperationEditorAspect;
+  }
+
+  private AddSetElementOperation_Editor getAddSetElementOperationEditorAspect() {
+    if (myAddSetElementOperationEditorAspect == null) {
+      myAddSetElementOperationEditorAspect = new AddSetElementOperation_Editor();
+    }
+    return myAddSetElementOperationEditorAspect;
+  }
+
+  private AllConstant_Editor getAllConstantEditorAspect() {
+    if (myAllConstantEditorAspect == null) {
+      myAllConstantEditorAspect = new AllConstant_Editor();
+    }
+    return myAllConstantEditorAspect;
+  }
+
+  private AsSequenceOperation_Editor getAsSequenceOperationEditorAspect() {
+    if (myAsSequenceOperationEditorAspect == null) {
+      myAsSequenceOperationEditorAspect = new AsSequenceOperation_Editor();
+    }
+    return myAsSequenceOperationEditorAspect;
+  }
+
+  private BinaryOperation_Editor getBinaryOperationEditorAspect() {
+    if (myBinaryOperationEditorAspect == null) {
+      myBinaryOperationEditorAspect = new BinaryOperation_Editor();
+    }
+    return myBinaryOperationEditorAspect;
+  }
+
+  private ChunkOperation_Editor getChunkOperationEditorAspect() {
+    if (myChunkOperationEditorAspect == null) {
+      myChunkOperationEditorAspect = new ChunkOperation_Editor();
+    }
+    return myChunkOperationEditorAspect;
+  }
+
+  private ClearSetOperation_Editor getClearSetOperationEditorAspect() {
+    if (myClearSetOperationEditorAspect == null) {
+      myClearSetOperationEditorAspect = new ClearSetOperation_Editor();
+    }
+    return myClearSetOperationEditorAspect;
+  }
+
+  private ComparatorSortOperation_Editor getComparatorSortOperationEditorAspect() {
+    if (myComparatorSortOperationEditorAspect == null) {
+      myComparatorSortOperationEditorAspect = new ComparatorSortOperation_Editor();
+    }
+    return myComparatorSortOperationEditorAspect;
+  }
+
+  private ContainsKeyOperation_Editor getContainsKeyOperationEditorAspect() {
+    if (myContainsKeyOperationEditorAspect == null) {
+      myContainsKeyOperationEditorAspect = new ContainsKeyOperation_Editor();
+    }
+    return myContainsKeyOperationEditorAspect;
+  }
+
+  private ContainsValueOperation_Editor getContainsValueOperationEditorAspect() {
+    if (myContainsValueOperationEditorAspect == null) {
+      myContainsValueOperationEditorAspect = new ContainsValueOperation_Editor();
+    }
+    return myContainsValueOperationEditorAspect;
+  }
+
+  private CustomContainerCreator_Editor getCustomContainerCreatorEditorAspect() {
+    if (myCustomContainerCreatorEditorAspect == null) {
+      myCustomContainerCreatorEditorAspect = new CustomContainerCreator_Editor();
+    }
+    return myCustomContainerCreatorEditorAspect;
+  }
+
+  private CustomContainerDeclaration_Editor getCustomContainerDeclarationEditorAspect() {
+    if (myCustomContainerDeclarationEditorAspect == null) {
+      myCustomContainerDeclarationEditorAspect = new CustomContainerDeclaration_Editor();
+    }
+    return myCustomContainerDeclarationEditorAspect;
+  }
+
+  private CustomContainers_Editor getCustomContainersEditorAspect() {
+    if (myCustomContainersEditorAspect == null) {
+      myCustomContainersEditorAspect = new CustomContainers_Editor();
+    }
+    return myCustomContainersEditorAspect;
+  }
+
+  private CustomMapCreator_Editor getCustomMapCreatorEditorAspect() {
+    if (myCustomMapCreatorEditorAspect == null) {
+      myCustomMapCreatorEditorAspect = new CustomMapCreator_Editor();
+    }
+    return myCustomMapCreatorEditorAspect;
+  }
+
+  private DowncastExpression_Editor getDowncastExpressionEditorAspect() {
+    if (myDowncastExpressionEditorAspect == null) {
+      myDowncastExpressionEditorAspect = new DowncastExpression_Editor();
+    }
+    return myDowncastExpressionEditorAspect;
+  }
+
+  private EnumeratorType_Editor getEnumeratorTypeEditorAspect() {
+    if (myEnumeratorTypeEditorAspect == null) {
+      myEnumeratorTypeEditorAspect = new EnumeratorType_Editor();
+    }
+    return myEnumeratorTypeEditorAspect;
+  }
+
+  private FoldLeftOperation_Editor getFoldLeftOperationEditorAspect() {
+    if (myFoldLeftOperationEditorAspect == null) {
+      myFoldLeftOperationEditorAspect = new FoldLeftOperation_Editor();
+    }
+    return myFoldLeftOperationEditorAspect;
+  }
+
+  private FoldRightOperation_Editor getFoldRightOperationEditorAspect() {
+    if (myFoldRightOperationEditorAspect == null) {
+      myFoldRightOperationEditorAspect = new FoldRightOperation_Editor();
+    }
+    return myFoldRightOperationEditorAspect;
+  }
+
+  private ForEachStatement_Editor getForEachStatementEditorAspect() {
+    if (myForEachStatementEditorAspect == null) {
+      myForEachStatementEditorAspect = new ForEachStatement_Editor();
+    }
+    return myForEachStatementEditorAspect;
+  }
+
+  private ForEachVariable_Editor getForEachVariableEditorAspect() {
+    if (myForEachVariableEditorAspect == null) {
+      myForEachVariableEditorAspect = new ForEachVariable_Editor();
+    }
+    return myForEachVariableEditorAspect;
+  }
+
+  private ForEachVariableReference_Editor getForEachVariableReferenceEditorAspect() {
+    if (myForEachVariableReferenceEditorAspect == null) {
+      myForEachVariableReferenceEditorAspect = new ForEachVariableReference_Editor();
+    }
+    return myForEachVariableReferenceEditorAspect;
+  }
+
+  private GetKeysOperation_Editor getGetKeysOperationEditorAspect() {
+    if (myGetKeysOperationEditorAspect == null) {
+      myGetKeysOperationEditorAspect = new GetKeysOperation_Editor();
+    }
+    return myGetKeysOperationEditorAspect;
+  }
+
+  private GetValuesOperation_Editor getGetValuesOperationEditorAspect() {
+    if (myGetValuesOperationEditorAspect == null) {
+      myGetValuesOperationEditorAspect = new GetValuesOperation_Editor();
+    }
+    return myGetValuesOperationEditorAspect;
+  }
+
+  private HashMapCreator_Editor getHashMapCreatorEditorAspect() {
+    if (myHashMapCreatorEditorAspect == null) {
+      myHashMapCreatorEditorAspect = new HashMapCreator_Editor();
+    }
+    return myHashMapCreatorEditorAspect;
+  }
+
+  private HeadListOperation_Editor getHeadListOperationEditorAspect() {
+    if (myHeadListOperationEditorAspect == null) {
+      myHeadListOperationEditorAspect = new HeadListOperation_Editor();
+    }
+    return myHeadListOperationEditorAspect;
+  }
+
+  private HeadMapOperation_Editor getHeadMapOperationEditorAspect() {
+    if (myHeadMapOperationEditorAspect == null) {
+      myHeadMapOperationEditorAspect = new HeadMapOperation_Editor();
+    }
+    return myHeadMapOperationEditorAspect;
+  }
+
+  private HeadSetOperation_Editor getHeadSetOperationEditorAspect() {
+    if (myHeadSetOperationEditorAspect == null) {
+      myHeadSetOperationEditorAspect = new HeadSetOperation_Editor();
+    }
+    return myHeadSetOperationEditorAspect;
+  }
+
+  private InsertElementOperation_Editor getInsertElementOperationEditorAspect() {
+    if (myInsertElementOperationEditorAspect == null) {
+      myInsertElementOperationEditorAspect = new InsertElementOperation_Editor();
+    }
+    return myInsertElementOperationEditorAspect;
+  }
+
+  private InternalSequenceOperation_Editor getInternalSequenceOperationEditorAspect() {
+    if (myInternalSequenceOperationEditorAspect == null) {
+      myInternalSequenceOperationEditorAspect = new InternalSequenceOperation_Editor();
+    }
+    return myInternalSequenceOperationEditorAspect;
+  }
+
+  private IteratorType_Editor getIteratorTypeEditorAspect() {
+    if (myIteratorTypeEditorAspect == null) {
+      myIteratorTypeEditorAspect = new IteratorType_Editor();
+    }
+    return myIteratorTypeEditorAspect;
+  }
+
+  private JoinOperation_Editor getJoinOperationEditorAspect() {
+    if (myJoinOperationEditorAspect == null) {
+      myJoinOperationEditorAspect = new JoinOperation_Editor();
+    }
+    return myJoinOperationEditorAspect;
+  }
+
+  private LinkedHashMapCreator_Editor getLinkedHashMapCreatorEditorAspect() {
+    if (myLinkedHashMapCreatorEditorAspect == null) {
+      myLinkedHashMapCreatorEditorAspect = new LinkedHashMapCreator_Editor();
+    }
+    return myLinkedHashMapCreatorEditorAspect;
+  }
+
+  private ListElementAccessExpression_Editor getListElementAccessExpressionEditorAspect() {
+    if (myListElementAccessExpressionEditorAspect == null) {
+      myListElementAccessExpressionEditorAspect = new ListElementAccessExpression_Editor();
+    }
+    return myListElementAccessExpressionEditorAspect;
+  }
+
+  private ListType_Editor getListTypeEditorAspect() {
+    if (myListTypeEditorAspect == null) {
+      myListTypeEditorAspect = new ListType_Editor();
+    }
+    return myListTypeEditorAspect;
+  }
+
+  private MapClearOperation_Editor getMapClearOperationEditorAspect() {
+    if (myMapClearOperationEditorAspect == null) {
+      myMapClearOperationEditorAspect = new MapClearOperation_Editor();
+    }
+    return myMapClearOperationEditorAspect;
+  }
+
+  private MapElement_Editor getMapElementEditorAspect() {
+    if (myMapElementEditorAspect == null) {
+      myMapElementEditorAspect = new MapElement_Editor();
+    }
+    return myMapElementEditorAspect;
+  }
+
+  private MapEntry_Editor getMapEntryEditorAspect() {
+    if (myMapEntryEditorAspect == null) {
+      myMapEntryEditorAspect = new MapEntry_Editor();
+    }
+    return myMapEntryEditorAspect;
+  }
+
+  private MapInitializer_Editor getMapInitializerEditorAspect() {
+    if (myMapInitializerEditorAspect == null) {
+      myMapInitializerEditorAspect = new MapInitializer_Editor();
+    }
+    return myMapInitializerEditorAspect;
+  }
+
+  private MapOperationExpression_Editor getMapOperationExpressionEditorAspect() {
+    if (myMapOperationExpressionEditorAspect == null) {
+      myMapOperationExpressionEditorAspect = new MapOperationExpression_Editor();
+    }
+    return myMapOperationExpressionEditorAspect;
+  }
+
+  private MapRemoveOperation_Editor getMapRemoveOperationEditorAspect() {
+    if (myMapRemoveOperationEditorAspect == null) {
+      myMapRemoveOperationEditorAspect = new MapRemoveOperation_Editor();
+    }
+    return myMapRemoveOperationEditorAspect;
+  }
+
+  private MapType_Editor getMapTypeEditorAspect() {
+    if (myMapTypeEditorAspect == null) {
+      myMapTypeEditorAspect = new MapType_Editor();
+    }
+    return myMapTypeEditorAspect;
+  }
+
+  private MappingType_Editor getMappingTypeEditorAspect() {
+    if (myMappingTypeEditorAspect == null) {
+      myMappingTypeEditorAspect = new MappingType_Editor();
+    }
+    return myMappingTypeEditorAspect;
+  }
+
+  private MappingsSetOperation_Editor getMappingsSetOperationEditorAspect() {
+    if (myMappingsSetOperationEditorAspect == null) {
+      myMappingsSetOperationEditorAspect = new MappingsSetOperation_Editor();
+    }
+    return myMappingsSetOperationEditorAspect;
+  }
+
+  private MultiForEachPair_Editor getMultiForEachPairEditorAspect() {
+    if (myMultiForEachPairEditorAspect == null) {
+      myMultiForEachPairEditorAspect = new MultiForEachPair_Editor();
+    }
+    return myMultiForEachPairEditorAspect;
+  }
+
+  private MultiForEachStatement_Editor getMultiForEachStatementEditorAspect() {
+    if (myMultiForEachStatementEditorAspect == null) {
+      myMultiForEachStatementEditorAspect = new MultiForEachStatement_Editor();
+    }
+    return myMultiForEachStatementEditorAspect;
+  }
+
+  private MultiForEachVariable_Editor getMultiForEachVariableEditorAspect() {
+    if (myMultiForEachVariableEditorAspect == null) {
+      myMultiForEachVariableEditorAspect = new MultiForEachVariable_Editor();
+    }
+    return myMultiForEachVariableEditorAspect;
+  }
+
+  private MultiForEachVariableReference_Editor getMultiForEachVariableReferenceEditorAspect() {
+    if (myMultiForEachVariableReferenceEditorAspect == null) {
+      myMultiForEachVariableReferenceEditorAspect = new MultiForEachVariableReference_Editor();
+    }
+    return myMultiForEachVariableReferenceEditorAspect;
+  }
+
+  private NoArgumentsSequenceOperation_Editor getNoArgumentsSequenceOperationEditorAspect() {
+    if (myNoArgumentsSequenceOperationEditorAspect == null) {
+      myNoArgumentsSequenceOperationEditorAspect = new NoArgumentsSequenceOperation_Editor();
+    }
+    return myNoArgumentsSequenceOperationEditorAspect;
+  }
+
+  private OfTypeOperation_Editor getOfTypeOperationEditorAspect() {
+    if (myOfTypeOperationEditorAspect == null) {
+      myOfTypeOperationEditorAspect = new OfTypeOperation_Editor();
+    }
+    return myOfTypeOperationEditorAspect;
+  }
+
+  private PageOperation_Editor getPageOperationEditorAspect() {
+    if (myPageOperationEditorAspect == null) {
+      myPageOperationEditorAspect = new PageOperation_Editor();
+    }
+    return myPageOperationEditorAspect;
+  }
+
+  private PutAllOperation_Editor getPutAllOperationEditorAspect() {
+    if (myPutAllOperationEditorAspect == null) {
+      myPutAllOperationEditorAspect = new PutAllOperation_Editor();
+    }
+    return myPutAllOperationEditorAspect;
+  }
+
+  private RemoveAllSetElementsOperation_Editor getRemoveAllSetElementsOperationEditorAspect() {
+    if (myRemoveAllSetElementsOperationEditorAspect == null) {
+      myRemoveAllSetElementsOperationEditorAspect = new RemoveAllSetElementsOperation_Editor();
+    }
+    return myRemoveAllSetElementsOperationEditorAspect;
+  }
+
+  private RemoveAtElementOperation_Editor getRemoveAtElementOperationEditorAspect() {
+    if (myRemoveAtElementOperationEditorAspect == null) {
+      myRemoveAtElementOperationEditorAspect = new RemoveAtElementOperation_Editor();
+    }
+    return myRemoveAtElementOperationEditorAspect;
+  }
+
+  private RemoveSetElementOperation_Editor getRemoveSetElementOperationEditorAspect() {
+    if (myRemoveSetElementOperationEditorAspect == null) {
+      myRemoveSetElementOperationEditorAspect = new RemoveSetElementOperation_Editor();
+    }
+    return myRemoveSetElementOperationEditorAspect;
+  }
+
+  private SequenceCreator_Editor getSequenceCreatorEditorAspect() {
+    if (mySequenceCreatorEditorAspect == null) {
+      mySequenceCreatorEditorAspect = new SequenceCreator_Editor();
+    }
+    return mySequenceCreatorEditorAspect;
+  }
+
+  private SequenceOperation_Editor getSequenceOperationEditorAspect() {
+    if (mySequenceOperationEditorAspect == null) {
+      mySequenceOperationEditorAspect = new SequenceOperation_Editor();
+    }
+    return mySequenceOperationEditorAspect;
+  }
+
+  private SequenceType_Editor getSequenceTypeEditorAspect() {
+    if (mySequenceTypeEditorAspect == null) {
+      mySequenceTypeEditorAspect = new SequenceType_Editor();
+    }
+    return mySequenceTypeEditorAspect;
+  }
+
+  private SetElementOperation_Editor getSetElementOperationEditorAspect() {
+    if (mySetElementOperationEditorAspect == null) {
+      mySetElementOperationEditorAspect = new SetElementOperation_Editor();
+    }
+    return mySetElementOperationEditorAspect;
+  }
+
+  private SetType_Editor getSetTypeEditorAspect() {
+    if (mySetTypeEditorAspect == null) {
+      mySetTypeEditorAspect = new SetType_Editor();
+    }
+    return mySetTypeEditorAspect;
+  }
+
+  private SingleArgumentSequenceOperation_Editor getSingleArgumentSequenceOperationEditorAspect() {
+    if (mySingleArgumentSequenceOperationEditorAspect == null) {
+      mySingleArgumentSequenceOperationEditorAspect = new SingleArgumentSequenceOperation_Editor();
+    }
+    return mySingleArgumentSequenceOperationEditorAspect;
+  }
+
+  private SingletonSequenceCreator_Editor getSingletonSequenceCreatorEditorAspect() {
+    if (mySingletonSequenceCreatorEditorAspect == null) {
+      mySingletonSequenceCreatorEditorAspect = new SingletonSequenceCreator_Editor();
+    }
+    return mySingletonSequenceCreatorEditorAspect;
+  }
+
+  private SkipOperation_Editor getSkipOperationEditorAspect() {
+    if (mySkipOperationEditorAspect == null) {
+      mySkipOperationEditorAspect = new SkipOperation_Editor();
+    }
+    return mySkipOperationEditorAspect;
+  }
+
+  private SkipStatement_Editor getSkipStatementEditorAspect() {
+    if (mySkipStatementEditorAspect == null) {
+      mySkipStatementEditorAspect = new SkipStatement_Editor();
+    }
+    return mySkipStatementEditorAspect;
+  }
+
+  private SmartClosureParameterDeclaration_Editor getSmartClosureParameterDeclarationEditorAspect() {
+    if (mySmartClosureParameterDeclarationEditorAspect == null) {
+      mySmartClosureParameterDeclarationEditorAspect = new SmartClosureParameterDeclaration_Editor();
+    }
+    return mySmartClosureParameterDeclarationEditorAspect;
+  }
+
+  private SortDirection_Editor getSortDirectionEditorAspect() {
+    if (mySortDirectionEditorAspect == null) {
+      mySortDirectionEditorAspect = new SortDirection_Editor();
+    }
+    return mySortDirectionEditorAspect;
+  }
+
+  private SortOperation_Editor getSortOperationEditorAspect() {
+    if (mySortOperationEditorAspect == null) {
+      mySortOperationEditorAspect = new SortOperation_Editor();
+    }
+    return mySortOperationEditorAspect;
+  }
+
+  private StopStatement_Editor getStopStatementEditorAspect() {
+    if (myStopStatementEditorAspect == null) {
+      myStopStatementEditorAspect = new StopStatement_Editor();
+    }
+    return myStopStatementEditorAspect;
+  }
+
+  private SubListOperation_Editor getSubListOperationEditorAspect() {
+    if (mySubListOperationEditorAspect == null) {
+      mySubListOperationEditorAspect = new SubListOperation_Editor();
+    }
+    return mySubListOperationEditorAspect;
+  }
+
+  private SubMapOperation_Editor getSubMapOperationEditorAspect() {
+    if (mySubMapOperationEditorAspect == null) {
+      mySubMapOperationEditorAspect = new SubMapOperation_Editor();
+    }
+    return mySubMapOperationEditorAspect;
+  }
+
+  private SubSetOperation_Editor getSubSetOperationEditorAspect() {
+    if (mySubSetOperationEditorAspect == null) {
+      mySubSetOperationEditorAspect = new SubSetOperation_Editor();
+    }
+    return mySubSetOperationEditorAspect;
+  }
+
+  private TailListOperation_Editor getTailListOperationEditorAspect() {
+    if (myTailListOperationEditorAspect == null) {
+      myTailListOperationEditorAspect = new TailListOperation_Editor();
+    }
+    return myTailListOperationEditorAspect;
+  }
+
+  private TailMapOperation_Editor getTailMapOperationEditorAspect() {
+    if (myTailMapOperationEditorAspect == null) {
+      myTailMapOperationEditorAspect = new TailMapOperation_Editor();
+    }
+    return myTailMapOperationEditorAspect;
+  }
+
+  private TailSetOperation_Editor getTailSetOperationEditorAspect() {
+    if (myTailSetOperationEditorAspect == null) {
+      myTailSetOperationEditorAspect = new TailSetOperation_Editor();
+    }
+    return myTailSetOperationEditorAspect;
+  }
+
+  private TakeOperation_Editor getTakeOperationEditorAspect() {
+    if (myTakeOperationEditorAspect == null) {
+      myTakeOperationEditorAspect = new TakeOperation_Editor();
+    }
+    return myTakeOperationEditorAspect;
+  }
+
+  private ToIteratorOperation_Editor getToIteratorOperationEditorAspect() {
+    if (myToIteratorOperationEditorAspect == null) {
+      myToIteratorOperationEditorAspect = new ToIteratorOperation_Editor();
+    }
+    return myToIteratorOperationEditorAspect;
+  }
+
+  private ToListOperation_Editor getToListOperationEditorAspect() {
+    if (myToListOperationEditorAspect == null) {
+      myToListOperationEditorAspect = new ToListOperation_Editor();
+    }
+    return myToListOperationEditorAspect;
+  }
+
+  private TreeSetCreator_Editor getTreeSetCreatorEditorAspect() {
+    if (myTreeSetCreatorEditorAspect == null) {
+      myTreeSetCreatorEditorAspect = new TreeSetCreator_Editor();
+    }
+    return myTreeSetCreatorEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0ed = new String[]{"jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType", "jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation", "jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.AllConstant", "jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation", "jetbrains.mps.baseLanguage.collections.structure.ChunkOperation", "jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation", "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration", "jetbrains.mps.baseLanguage.collections.structure.CustomContainers", "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", "jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", "jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation", "jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation", "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", "jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation", "jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation", "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", "jetbrains.mps.baseLanguage.collections.structure.HeadListOperation", "jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", "jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation", "jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation", "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.IteratorType", "jetbrains.mps.baseLanguage.collections.structure.JoinOperation", "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator", "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", "jetbrains.mps.baseLanguage.collections.structure.ListType", "jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", "jetbrains.mps.baseLanguage.collections.structure.MapElement", "jetbrains.mps.baseLanguage.collections.structure.MapEntry", "jetbrains.mps.baseLanguage.collections.structure.MapInitializer", "jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", "jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", "jetbrains.mps.baseLanguage.collections.structure.MapType", "jetbrains.mps.baseLanguage.collections.structure.MappingType", "jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference", "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation", "jetbrains.mps.baseLanguage.collections.structure.PageOperation", "jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.SequenceType", "jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.SetType", "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", "jetbrains.mps.baseLanguage.collections.structure.SkipOperation", "jetbrains.mps.baseLanguage.collections.structure.SkipStatement", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", "jetbrains.mps.baseLanguage.collections.structure.SortDirection", "jetbrains.mps.baseLanguage.collections.structure.SortOperation", "jetbrains.mps.baseLanguage.collections.structure.StopStatement", "jetbrains.mps.baseLanguage.collections.structure.SubListOperation", "jetbrains.mps.baseLanguage.collections.structure.SubMapOperation", "jetbrains.mps.baseLanguage.collections.structure.SubSetOperation", "jetbrains.mps.baseLanguage.collections.structure.TailListOperation", "jetbrains.mps.baseLanguage.collections.structure.TailMapOperation", "jetbrains.mps.baseLanguage.collections.structure.TailSetOperation", "jetbrains.mps.baseLanguage.collections.structure.TakeOperation", "jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.ToListOperation", "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"};
 }

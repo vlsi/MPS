@@ -8,274 +8,1461 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AbstractOperationParameter_Editor myAbstractOperationParameterEditorAspect;
+  private AllAttributeQualifier_Editor myAllAttributeQualifierEditorAspect;
+  private AttributeAccess_Editor myAttributeAccessEditorAspect;
+  private CheckedModuleReference_Editor myCheckedModuleReferenceEditorAspect;
+  private ChildNodeRefExpression_Editor myChildNodeRefExpressionEditorAspect;
+  private ConceptFqNameRefExpression_Editor myConceptFqNameRefExpressionEditorAspect;
+  private ConceptPropertyNameRefExpression_Editor myConceptPropertyNameRefExpressionEditorAspect;
+  private ConceptProperty_SetOperation_Editor myConceptProperty_SetOperationEditorAspect;
+  private ConceptRefExpression_Editor myConceptRefExpressionEditorAspect;
+  private ConceptReference_Editor myConceptReferenceEditorAspect;
+  private ConceptSwitchStatement_Editor myConceptSwitchStatementEditorAspect;
+  private ConceptSwitchStatementCase_Editor myConceptSwitchStatementCaseEditorAspect;
+  private Concept_FindInstances_Editor myConcept_FindInstancesEditorAspect;
+  private Concept_GetAllSubConcepts_Editor myConcept_GetAllSubConceptsEditorAspect;
+  private Concept_GetAllSuperConcepts_Editor myConcept_GetAllSuperConceptsEditorAspect;
+  private Concept_GetDirectSuperConcepts_Editor myConcept_GetDirectSuperConceptsEditorAspect;
+  private Concept_GetHierarchy_Editor myConcept_GetHierarchyEditorAspect;
+  private Concept_IsExactlyOperation_Editor myConcept_IsExactlyOperationEditorAspect;
+  private Concept_IsSubConceptOfOperation_Editor myConcept_IsSubConceptOfOperationEditorAspect;
+  private Concept_IsSuperConceptOfOperation_Editor myConcept_IsSuperConceptOfOperationEditorAspect;
+  private Concept_NewInstance_Editor myConcept_NewInstanceEditorAspect;
+  private EnumMemberReference_Editor myEnumMemberReferenceEditorAspect;
+  private EnumMemberValueRefExpression_Editor myEnumMemberValueRefExpressionEditorAspect;
+  private EnumMember_NameOperation_Editor myEnumMember_NameOperationEditorAspect;
+  private EnumMember_ValueOperation_Editor myEnumMember_ValueOperationEditorAspect;
+  private EqualsStructurallyExpression_Editor myEqualsStructurallyExpressionEditorAspect;
+  private IfInstanceOfStatement_Editor myIfInstanceOfStatementEditorAspect;
+  private IfInstanceOfVariable_Editor myIfInstanceOfVariableEditorAspect;
+  private LinkAttributeQualifier_Editor myLinkAttributeQualifierEditorAspect;
+  private LinkList_AddAllOperation_Editor myLinkList_AddAllOperationEditorAspect;
+  private LinkList_AddChildOperation_Editor myLinkList_AddChildOperationEditorAspect;
+  private LinkList_AddNewChildOperation_Editor myLinkList_AddNewChildOperationEditorAspect;
+  private LinkList_InsertChildFirstOperation_Editor myLinkList_InsertChildFirstOperationEditorAspect;
+  private LinkList_RemoveAllChildrenOperation_Editor myLinkList_RemoveAllChildrenOperationEditorAspect;
+  private LinkNameRefExpression_Editor myLinkNameRefExpressionEditorAspect;
+  private LinkQualifier_Editor myLinkQualifierEditorAspect;
+  private LinkRefExpression_Editor myLinkRefExpressionEditorAspect;
+  private LinkRefQualifier_Editor myLinkRefQualifierEditorAspect;
+  private Link_DeleteChildOperation_Editor myLink_DeleteChildOperationEditorAspect;
+  private Link_SetNewChildOperation_Editor myLink_SetNewChildOperationEditorAspect;
+  private Link_SetTargetOperation_Editor myLink_SetTargetOperationEditorAspect;
+  private ModelReferenceExpression_Editor myModelReferenceExpressionEditorAspect;
+  private Model_AddRootOperation_Editor myModel_AddRootOperationEditorAspect;
+  private Model_CreateNewNodeOperation_Editor myModel_CreateNewNodeOperationEditorAspect;
+  private Model_CreateNewRootNodeOperation_Editor myModel_CreateNewRootNodeOperationEditorAspect;
+  private Model_GetModule_Editor myModel_GetModuleEditorAspect;
+  private Model_NodesIncludingImportedOperation_Editor myModel_NodesIncludingImportedOperationEditorAspect;
+  private Model_NodesOperation_Editor myModel_NodesOperationEditorAspect;
+  private Model_RootsIncludingImportedOperation_Editor myModel_RootsIncludingImportedOperationEditorAspect;
+  private Model_RootsOperation_Editor myModel_RootsOperationEditorAspect;
+  private ModuleReferenceExpression_Editor myModuleReferenceExpressionEditorAspect;
+  private NodeAttributeQualifier_Editor myNodeAttributeQualifierEditorAspect;
+  private NodePointerExpression_Editor myNodePointerExpressionEditorAspect;
+  private NodeRefExpression_Editor myNodeRefExpressionEditorAspect;
+  private Node_ConceptMethodCall_Editor myNode_ConceptMethodCallEditorAspect;
+  private Node_CopyOperation_Editor myNode_CopyOperationEditorAspect;
+  private Node_DeleteOperation_Editor myNode_DeleteOperationEditorAspect;
+  private Node_DetachOperation_Editor myNode_DetachOperationEditorAspect;
+  private Node_GetAllSiblingsOperation_Editor myNode_GetAllSiblingsOperationEditorAspect;
+  private Node_GetAncestorOperation_Editor myNode_GetAncestorOperationEditorAspect;
+  private Node_GetAncestorsOperation_Editor myNode_GetAncestorsOperationEditorAspect;
+  private Node_GetChildrenOperation_Editor myNode_GetChildrenOperationEditorAspect;
+  private Node_GetConceptOperation_Editor myNode_GetConceptOperationEditorAspect;
+  private Node_GetContainingLinkOperation_Editor myNode_GetContainingLinkOperationEditorAspect;
+  private Node_GetContainingRoleOperation_Editor myNode_GetContainingRoleOperationEditorAspect;
+  private Node_GetContainingRootOperation_Editor myNode_GetContainingRootOperationEditorAspect;
+  private Node_GetDescendantsOperation_Editor myNode_GetDescendantsOperationEditorAspect;
+  private Node_GetIndexInParentOperation_Editor myNode_GetIndexInParentOperationEditorAspect;
+  private Node_GetModelOperation_Editor myNode_GetModelOperationEditorAspect;
+  private Node_GetNextSiblingOperation_Editor myNode_GetNextSiblingOperationEditorAspect;
+  private Node_GetNextSiblingsOperation_Editor myNode_GetNextSiblingsOperationEditorAspect;
+  private Node_GetParentOperation_Editor myNode_GetParentOperationEditorAspect;
+  private Node_GetPrevSiblingOperation_Editor myNode_GetPrevSiblingOperationEditorAspect;
+  private Node_GetPrevSiblingsOperation_Editor myNode_GetPrevSiblingsOperationEditorAspect;
+  private Node_GetReferenceOperation_Editor myNode_GetReferenceOperationEditorAspect;
+  private Node_GetReferencesOperation_Editor myNode_GetReferencesOperationEditorAspect;
+  private Node_GetReferentSearchScopeOperation_Editor myNode_GetReferentSearchScopeOperationEditorAspect;
+  private Node_InsertNewNextSiblingOperation_Editor myNode_InsertNewNextSiblingOperationEditorAspect;
+  private Node_InsertNewPrevSiblingOperation_Editor myNode_InsertNewPrevSiblingOperationEditorAspect;
+  private Node_InsertNextSiblingOperation_Editor myNode_InsertNextSiblingOperationEditorAspect;
+  private Node_InsertPrevSiblingOperation_Editor myNode_InsertPrevSiblingOperationEditorAspect;
+  private Node_IsAttributeOperation_Editor myNode_IsAttributeOperationEditorAspect;
+  private Node_IsInstanceOfOperation_Editor myNode_IsInstanceOfOperationEditorAspect;
+  private Node_IsNotNullOperation_Editor myNode_IsNotNullOperationEditorAspect;
+  private Node_IsNullOperation_Editor myNode_IsNullOperationEditorAspect;
+  private Node_IsRoleOperation_Editor myNode_IsRoleOperationEditorAspect;
+  private Node_ReplaceWithAnotherOperation_Editor myNode_ReplaceWithAnotherOperationEditorAspect;
+  private Node_ReplaceWithNewOperation_Editor myNode_ReplaceWithNewOperationEditorAspect;
+  private OperationParm_Concept_Editor myOperationParm_ConceptEditorAspect;
+  private OperationParm_ConceptList_Editor myOperationParm_ConceptListEditorAspect;
+  private OperationParm_LinkQualifier_Editor myOperationParm_LinkQualifierEditorAspect;
+  private OperationParm_StopConceptList_Editor myOperationParm_StopConceptListEditorAspect;
+  private PoundExpression_Editor myPoundExpressionEditorAspect;
+  private PropertyAttributeQualifier_Editor myPropertyAttributeQualifierEditorAspect;
+  private PropertyNameRefExpression_Editor myPropertyNameRefExpressionEditorAspect;
+  private PropertyQualifier_Editor myPropertyQualifierEditorAspect;
+  private Property_HasValue_Enum_Editor myProperty_HasValue_EnumEditorAspect;
+  private Property_HasValue_Simple_Editor myProperty_HasValue_SimpleEditorAspect;
+  private Property_SetOperation_Editor myProperty_SetOperationEditorAspect;
+  private ReadConceptReferenceExpression_Editor myReadConceptReferenceExpressionEditorAspect;
+  private RefConcept_Reference_Editor myRefConcept_ReferenceEditorAspect;
+  private Reference_GetLinkDeclarationOperation_Editor myReference_GetLinkDeclarationOperationEditorAspect;
+  private Reference_GetResolveInfo_Editor myReference_GetResolveInfoEditorAspect;
+  private Reference_GetRoleOperation_Editor myReference_GetRoleOperationEditorAspect;
+  private Reference_GetTargetOperation_Editor myReference_GetTargetOperationEditorAspect;
+  private SConceptLinkAccess_Editor mySConceptLinkAccessEditorAspect;
+  private SConceptPropertyAccess_Editor mySConceptPropertyAccessEditorAspect;
+  private SConceptType_Editor mySConceptTypeEditorAspect;
+  private SEnumMemberType_Editor mySEnumMemberTypeEditorAspect;
+  private SEnumOperationInvocation_Editor mySEnumOperationInvocationEditorAspect;
+  private SEnum_MemberForNameOperation_Editor mySEnum_MemberForNameOperationEditorAspect;
+  private SEnum_MemberForValueOperation_Editor mySEnum_MemberForValueOperationEditorAspect;
+  private SEnum_MemberOperation_Editor mySEnum_MemberOperationEditorAspect;
+  private SEnum_MembersOperation_Editor mySEnum_MembersOperationEditorAspect;
+  private SLinkAccess_Editor mySLinkAccessEditorAspect;
+  private SLinkImplicitSelect_Editor mySLinkImplicitSelectEditorAspect;
+  private SLinkListAccess_Editor mySLinkListAccessEditorAspect;
+  private SModelType_Editor mySModelTypeEditorAspect;
+  private SNodeCreator_Editor mySNodeCreatorEditorAspect;
+  private SNodeListCreator_Editor mySNodeListCreatorEditorAspect;
+  private SNodeListType_Editor mySNodeListTypeEditorAspect;
+  private SNodeOperation_Editor mySNodeOperationEditorAspect;
+  private SNodeType_Editor mySNodeTypeEditorAspect;
+  private SNodeTypeCastExpression_Editor mySNodeTypeCastExpressionEditorAspect;
+  private SPropertyAccess_Editor mySPropertyAccessEditorAspect;
+  private SReferenceType_Editor mySReferenceTypeEditorAspect;
+  private SearchScopeType_Editor mySearchScopeTypeEditorAspect;
+  private SearchScope_ContainsOperation_Editor mySearchScope_ContainsOperationEditorAspect;
+  private SemanticDowncastExpression_Editor mySemanticDowncastExpressionEditorAspect;
+  private StaticConceptMethodCall_Editor myStaticConceptMethodCallEditorAspect;
+  private _LinkAccessT_Editor my_LinkAccessTEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0bf, descriptor.getConceptFqName())) {
       case 0:
-        return new AbstractOperationParameter_Editor();
+        return getAbstractOperationParameterEditorAspect();
       case 1:
-        return new AllAttributeQualifier_Editor();
+        return getAllAttributeQualifierEditorAspect();
       case 2:
-        return new AttributeAccess_Editor();
+        return getAttributeAccessEditorAspect();
       case 3:
-        return new CheckedModuleReference_Editor();
+        return getCheckedModuleReferenceEditorAspect();
       case 4:
-        return new ChildNodeRefExpression_Editor();
+        return getChildNodeRefExpressionEditorAspect();
       case 5:
-        return new ConceptFqNameRefExpression_Editor();
+        return getConceptFqNameRefExpressionEditorAspect();
       case 6:
-        return new ConceptPropertyNameRefExpression_Editor();
+        return getConceptPropertyNameRefExpressionEditorAspect();
       case 7:
-        return new ConceptProperty_SetOperation_Editor();
+        return getConceptProperty_SetOperationEditorAspect();
       case 8:
-        return new ConceptRefExpression_Editor();
+        return getConceptRefExpressionEditorAspect();
       case 9:
-        return new ConceptReference_Editor();
+        return getConceptReferenceEditorAspect();
       case 10:
-        return new ConceptSwitchStatement_Editor();
+        return getConceptSwitchStatementEditorAspect();
       case 11:
-        return new ConceptSwitchStatementCase_Editor();
+        return getConceptSwitchStatementCaseEditorAspect();
       case 12:
-        return new Concept_FindInstances_Editor();
+        return getConcept_FindInstancesEditorAspect();
       case 13:
-        return new Concept_GetAllSubConcepts_Editor();
+        return getConcept_GetAllSubConceptsEditorAspect();
       case 14:
-        return new Concept_GetAllSuperConcepts_Editor();
+        return getConcept_GetAllSuperConceptsEditorAspect();
       case 15:
-        return new Concept_GetDirectSuperConcepts_Editor();
+        return getConcept_GetDirectSuperConceptsEditorAspect();
       case 16:
-        return new Concept_GetHierarchy_Editor();
+        return getConcept_GetHierarchyEditorAspect();
       case 17:
-        return new Concept_IsExactlyOperation_Editor();
+        return getConcept_IsExactlyOperationEditorAspect();
       case 18:
-        return new Concept_IsSubConceptOfOperation_Editor();
+        return getConcept_IsSubConceptOfOperationEditorAspect();
       case 19:
-        return new Concept_IsSuperConceptOfOperation_Editor();
+        return getConcept_IsSuperConceptOfOperationEditorAspect();
       case 20:
-        return new Concept_NewInstance_Editor();
+        return getConcept_NewInstanceEditorAspect();
       case 21:
-        return new EnumMemberReference_Editor();
+        return getEnumMemberReferenceEditorAspect();
       case 22:
-        return new EnumMemberValueRefExpression_Editor();
+        return getEnumMemberValueRefExpressionEditorAspect();
       case 23:
-        return new EnumMember_NameOperation_Editor();
+        return getEnumMember_NameOperationEditorAspect();
       case 24:
-        return new EnumMember_ValueOperation_Editor();
+        return getEnumMember_ValueOperationEditorAspect();
       case 25:
-        return new EqualsStructurallyExpression_Editor();
+        return getEqualsStructurallyExpressionEditorAspect();
       case 26:
-        return new IfInstanceOfStatement_Editor();
+        return getIfInstanceOfStatementEditorAspect();
       case 27:
-        return new IfInstanceOfVariable_Editor();
+        return getIfInstanceOfVariableEditorAspect();
       case 28:
-        return new LinkAttributeQualifier_Editor();
+        return getLinkAttributeQualifierEditorAspect();
       case 29:
-        return new LinkList_AddAllOperation_Editor();
+        return getLinkList_AddAllOperationEditorAspect();
       case 30:
-        return new LinkList_AddChildOperation_Editor();
+        return getLinkList_AddChildOperationEditorAspect();
       case 31:
-        return new LinkList_AddNewChildOperation_Editor();
+        return getLinkList_AddNewChildOperationEditorAspect();
       case 32:
-        return new LinkList_InsertChildFirstOperation_Editor();
+        return getLinkList_InsertChildFirstOperationEditorAspect();
       case 33:
-        return new LinkList_RemoveAllChildrenOperation_Editor();
+        return getLinkList_RemoveAllChildrenOperationEditorAspect();
       case 34:
-        return new LinkNameRefExpression_Editor();
+        return getLinkNameRefExpressionEditorAspect();
       case 35:
-        return new LinkQualifier_Editor();
+        return getLinkQualifierEditorAspect();
       case 36:
-        return new LinkRefExpression_Editor();
+        return getLinkRefExpressionEditorAspect();
       case 37:
-        return new LinkRefQualifier_Editor();
+        return getLinkRefQualifierEditorAspect();
       case 38:
-        return new Link_DeleteChildOperation_Editor();
+        return getLink_DeleteChildOperationEditorAspect();
       case 39:
-        return new Link_SetNewChildOperation_Editor();
+        return getLink_SetNewChildOperationEditorAspect();
       case 40:
-        return new Link_SetTargetOperation_Editor();
+        return getLink_SetTargetOperationEditorAspect();
       case 41:
-        return new ModelReferenceExpression_Editor();
+        return getModelReferenceExpressionEditorAspect();
       case 42:
-        return new Model_AddRootOperation_Editor();
+        return getModel_AddRootOperationEditorAspect();
       case 43:
-        return new Model_CreateNewNodeOperation_Editor();
+        return getModel_CreateNewNodeOperationEditorAspect();
       case 44:
-        return new Model_CreateNewRootNodeOperation_Editor();
+        return getModel_CreateNewRootNodeOperationEditorAspect();
       case 45:
-        return new Model_GetModule_Editor();
+        return getModel_GetModuleEditorAspect();
       case 46:
-        return new Model_NodesIncludingImportedOperation_Editor();
+        return getModel_NodesIncludingImportedOperationEditorAspect();
       case 47:
-        return new Model_NodesOperation_Editor();
+        return getModel_NodesOperationEditorAspect();
       case 48:
-        return new Model_RootsIncludingImportedOperation_Editor();
+        return getModel_RootsIncludingImportedOperationEditorAspect();
       case 49:
-        return new Model_RootsOperation_Editor();
+        return getModel_RootsOperationEditorAspect();
       case 50:
-        return new ModuleReferenceExpression_Editor();
+        return getModuleReferenceExpressionEditorAspect();
       case 51:
-        return new NodeAttributeQualifier_Editor();
+        return getNodeAttributeQualifierEditorAspect();
       case 52:
-        return new NodePointerExpression_Editor();
+        return getNodePointerExpressionEditorAspect();
       case 53:
-        return new NodeRefExpression_Editor();
+        return getNodeRefExpressionEditorAspect();
       case 54:
-        return new Node_ConceptMethodCall_Editor();
+        return getNode_ConceptMethodCallEditorAspect();
       case 55:
-        return new Node_CopyOperation_Editor();
+        return getNode_CopyOperationEditorAspect();
       case 56:
-        return new Node_DeleteOperation_Editor();
+        return getNode_DeleteOperationEditorAspect();
       case 57:
-        return new Node_DetachOperation_Editor();
+        return getNode_DetachOperationEditorAspect();
       case 58:
-        return new Node_GetAllSiblingsOperation_Editor();
+        return getNode_GetAllSiblingsOperationEditorAspect();
       case 59:
-        return new Node_GetAncestorOperation_Editor();
+        return getNode_GetAncestorOperationEditorAspect();
       case 60:
-        return new Node_GetAncestorsOperation_Editor();
+        return getNode_GetAncestorsOperationEditorAspect();
       case 61:
-        return new Node_GetChildrenOperation_Editor();
+        return getNode_GetChildrenOperationEditorAspect();
       case 62:
-        return new Node_GetConceptOperation_Editor();
+        return getNode_GetConceptOperationEditorAspect();
       case 63:
-        return new Node_GetContainingLinkOperation_Editor();
+        return getNode_GetContainingLinkOperationEditorAspect();
       case 64:
-        return new Node_GetContainingRoleOperation_Editor();
+        return getNode_GetContainingRoleOperationEditorAspect();
       case 65:
-        return new Node_GetContainingRootOperation_Editor();
+        return getNode_GetContainingRootOperationEditorAspect();
       case 66:
-        return new Node_GetDescendantsOperation_Editor();
+        return getNode_GetDescendantsOperationEditorAspect();
       case 67:
-        return new Node_GetIndexInParentOperation_Editor();
+        return getNode_GetIndexInParentOperationEditorAspect();
       case 68:
-        return new Node_GetModelOperation_Editor();
+        return getNode_GetModelOperationEditorAspect();
       case 69:
-        return new Node_GetNextSiblingOperation_Editor();
+        return getNode_GetNextSiblingOperationEditorAspect();
       case 70:
-        return new Node_GetNextSiblingsOperation_Editor();
+        return getNode_GetNextSiblingsOperationEditorAspect();
       case 71:
-        return new Node_GetParentOperation_Editor();
+        return getNode_GetParentOperationEditorAspect();
       case 72:
-        return new Node_GetPrevSiblingOperation_Editor();
+        return getNode_GetPrevSiblingOperationEditorAspect();
       case 73:
-        return new Node_GetPrevSiblingsOperation_Editor();
+        return getNode_GetPrevSiblingsOperationEditorAspect();
       case 74:
-        return new Node_GetReferenceOperation_Editor();
+        return getNode_GetReferenceOperationEditorAspect();
       case 75:
-        return new Node_GetReferencesOperation_Editor();
+        return getNode_GetReferencesOperationEditorAspect();
       case 76:
-        return new Node_GetReferentSearchScopeOperation_Editor();
+        return getNode_GetReferentSearchScopeOperationEditorAspect();
       case 77:
-        return new Node_InsertNewNextSiblingOperation_Editor();
+        return getNode_InsertNewNextSiblingOperationEditorAspect();
       case 78:
-        return new Node_InsertNewPrevSiblingOperation_Editor();
+        return getNode_InsertNewPrevSiblingOperationEditorAspect();
       case 79:
-        return new Node_InsertNextSiblingOperation_Editor();
+        return getNode_InsertNextSiblingOperationEditorAspect();
       case 80:
-        return new Node_InsertPrevSiblingOperation_Editor();
+        return getNode_InsertPrevSiblingOperationEditorAspect();
       case 81:
-        return new Node_IsAttributeOperation_Editor();
+        return getNode_IsAttributeOperationEditorAspect();
       case 82:
-        return new Node_IsInstanceOfOperation_Editor();
+        return getNode_IsInstanceOfOperationEditorAspect();
       case 83:
-        return new Node_IsNotNullOperation_Editor();
+        return getNode_IsNotNullOperationEditorAspect();
       case 84:
-        return new Node_IsNullOperation_Editor();
+        return getNode_IsNullOperationEditorAspect();
       case 85:
-        return new Node_IsRoleOperation_Editor();
+        return getNode_IsRoleOperationEditorAspect();
       case 86:
-        return new Node_ReplaceWithAnotherOperation_Editor();
+        return getNode_ReplaceWithAnotherOperationEditorAspect();
       case 87:
-        return new Node_ReplaceWithNewOperation_Editor();
+        return getNode_ReplaceWithNewOperationEditorAspect();
       case 88:
-        return new OperationParm_Concept_Editor();
+        return getOperationParm_ConceptEditorAspect();
       case 89:
-        return new OperationParm_ConceptList_Editor();
+        return getOperationParm_ConceptListEditorAspect();
       case 90:
-        return new OperationParm_LinkQualifier_Editor();
+        return getOperationParm_LinkQualifierEditorAspect();
       case 91:
-        return new OperationParm_StopConceptList_Editor();
+        return getOperationParm_StopConceptListEditorAspect();
       case 92:
-        return new PoundExpression_Editor();
+        return getPoundExpressionEditorAspect();
       case 93:
-        return new PropertyAttributeQualifier_Editor();
+        return getPropertyAttributeQualifierEditorAspect();
       case 94:
-        return new PropertyNameRefExpression_Editor();
+        return getPropertyNameRefExpressionEditorAspect();
       case 95:
-        return new PropertyQualifier_Editor();
+        return getPropertyQualifierEditorAspect();
       case 96:
-        return new Property_HasValue_Enum_Editor();
+        return getProperty_HasValue_EnumEditorAspect();
       case 97:
-        return new Property_HasValue_Simple_Editor();
+        return getProperty_HasValue_SimpleEditorAspect();
       case 98:
-        return new Property_SetOperation_Editor();
+        return getProperty_SetOperationEditorAspect();
       case 99:
-        return new ReadConceptReferenceExpression_Editor();
+        return getReadConceptReferenceExpressionEditorAspect();
       case 100:
-        return new RefConcept_Reference_Editor();
+        return getRefConcept_ReferenceEditorAspect();
       case 101:
-        return new Reference_GetLinkDeclarationOperation_Editor();
+        return getReference_GetLinkDeclarationOperationEditorAspect();
       case 102:
-        return new Reference_GetResolveInfo_Editor();
+        return getReference_GetResolveInfoEditorAspect();
       case 103:
-        return new Reference_GetRoleOperation_Editor();
+        return getReference_GetRoleOperationEditorAspect();
       case 104:
-        return new Reference_GetTargetOperation_Editor();
+        return getReference_GetTargetOperationEditorAspect();
       case 105:
-        return new SConceptLinkAccess_Editor();
+        return getSConceptLinkAccessEditorAspect();
       case 106:
-        return new SConceptPropertyAccess_Editor();
+        return getSConceptPropertyAccessEditorAspect();
       case 107:
-        return new SConceptType_Editor();
+        return getSConceptTypeEditorAspect();
       case 108:
-        return new SEnumMemberType_Editor();
+        return getSEnumMemberTypeEditorAspect();
       case 109:
-        return new SEnumOperationInvocation_Editor();
+        return getSEnumOperationInvocationEditorAspect();
       case 110:
-        return new SEnum_MemberForNameOperation_Editor();
+        return getSEnum_MemberForNameOperationEditorAspect();
       case 111:
-        return new SEnum_MemberForValueOperation_Editor();
+        return getSEnum_MemberForValueOperationEditorAspect();
       case 112:
-        return new SEnum_MemberOperation_Editor();
+        return getSEnum_MemberOperationEditorAspect();
       case 113:
-        return new SEnum_MembersOperation_Editor();
+        return getSEnum_MembersOperationEditorAspect();
       case 114:
-        return new SLinkAccess_Editor();
+        return getSLinkAccessEditorAspect();
       case 115:
-        return new SLinkImplicitSelect_Editor();
+        return getSLinkImplicitSelectEditorAspect();
       case 116:
-        return new SLinkListAccess_Editor();
+        return getSLinkListAccessEditorAspect();
       case 117:
-        return new SModelType_Editor();
+        return getSModelTypeEditorAspect();
       case 118:
-        return new SNodeCreator_Editor();
+        return getSNodeCreatorEditorAspect();
       case 119:
-        return new SNodeListCreator_Editor();
+        return getSNodeListCreatorEditorAspect();
       case 120:
-        return new SNodeListType_Editor();
+        return getSNodeListTypeEditorAspect();
       case 121:
-        return new SNodeOperation_Editor();
+        return getSNodeOperationEditorAspect();
       case 122:
-        return new SNodeType_Editor();
+        return getSNodeTypeEditorAspect();
       case 123:
-        return new SNodeTypeCastExpression_Editor();
+        return getSNodeTypeCastExpressionEditorAspect();
       case 124:
-        return new SPropertyAccess_Editor();
+        return getSPropertyAccessEditorAspect();
       case 125:
-        return new SReferenceType_Editor();
+        return getSReferenceTypeEditorAspect();
       case 126:
-        return new SearchScopeType_Editor();
+        return getSearchScopeTypeEditorAspect();
       case 127:
-        return new SearchScope_ContainsOperation_Editor();
+        return getSearchScope_ContainsOperationEditorAspect();
       case 128:
-        return new SemanticDowncastExpression_Editor();
+        return getSemanticDowncastExpressionEditorAspect();
       case 129:
-        return new StaticConceptMethodCall_Editor();
+        return getStaticConceptMethodCallEditorAspect();
       case 130:
-        return new _LinkAccessT_Editor();
+        return get_LinkAccessTEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier", "jetbrains.mps.lang.smodel.structure.AttributeAccess", "jetbrains.mps.lang.smodel.structure.CheckedModuleReference", "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptPropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation", "jetbrains.mps.lang.smodel.structure.ConceptRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptReference", "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement", "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase", "jetbrains.mps.lang.smodel.structure.Concept_FindInstances", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy", "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_NewInstance", "jetbrains.mps.lang.smodel.structure.EnumMemberReference", "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression", "jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation", "jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation", "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression", "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable", "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation", "jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation", "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation", "jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation", "jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation", "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression", "jetbrains.mps.lang.smodel.structure.LinkQualifier", "jetbrains.mps.lang.smodel.structure.LinkRefExpression", "jetbrains.mps.lang.smodel.structure.LinkRefQualifier", "jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation", "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation", "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression", "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_GetModule", "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_NodesOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsOperation", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression", "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier", "jetbrains.mps.lang.smodel.structure.NodePointerExpression", "jetbrains.mps.lang.smodel.structure.NodeRefExpression", "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", "jetbrains.mps.lang.smodel.structure.Node_CopyOperation", "jetbrains.mps.lang.smodel.structure.Node_DeleteOperation", "jetbrains.mps.lang.smodel.structure.Node_DetachOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation", "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation", "jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetModelOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation", "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation", "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier", "jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList", "jetbrains.mps.lang.smodel.structure.PoundExpression", "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyQualifier", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", "jetbrains.mps.lang.smodel.structure.Property_SetOperation", "jetbrains.mps.lang.smodel.structure.ReadConceptReferenceExpression", "jetbrains.mps.lang.smodel.structure.RefConcept_Reference", "jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo", "jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation", "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess", "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess", "jetbrains.mps.lang.smodel.structure.SConceptType", "jetbrains.mps.lang.smodel.structure.SEnumMemberType", "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation", "jetbrains.mps.lang.smodel.structure.SLinkAccess", "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", "jetbrains.mps.lang.smodel.structure.SLinkListAccess", "jetbrains.mps.lang.smodel.structure.SModelType", "jetbrains.mps.lang.smodel.structure.SNodeCreator", "jetbrains.mps.lang.smodel.structure.SNodeListCreator", "jetbrains.mps.lang.smodel.structure.SNodeListType", "jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.smodel.structure.SNodeType", "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", "jetbrains.mps.lang.smodel.structure.SPropertyAccess", "jetbrains.mps.lang.smodel.structure.SReferenceType", "jetbrains.mps.lang.smodel.structure.SearchScopeType", "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", "jetbrains.mps.lang.smodel.structure._LinkAccessT"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAbstractOperationParameterEditorAspect = null;
+    myAllAttributeQualifierEditorAspect = null;
+    myAttributeAccessEditorAspect = null;
+    myCheckedModuleReferenceEditorAspect = null;
+    myChildNodeRefExpressionEditorAspect = null;
+    myConceptFqNameRefExpressionEditorAspect = null;
+    myConceptPropertyNameRefExpressionEditorAspect = null;
+    myConceptProperty_SetOperationEditorAspect = null;
+    myConceptRefExpressionEditorAspect = null;
+    myConceptReferenceEditorAspect = null;
+    myConceptSwitchStatementEditorAspect = null;
+    myConceptSwitchStatementCaseEditorAspect = null;
+    myConcept_FindInstancesEditorAspect = null;
+    myConcept_GetAllSubConceptsEditorAspect = null;
+    myConcept_GetAllSuperConceptsEditorAspect = null;
+    myConcept_GetDirectSuperConceptsEditorAspect = null;
+    myConcept_GetHierarchyEditorAspect = null;
+    myConcept_IsExactlyOperationEditorAspect = null;
+    myConcept_IsSubConceptOfOperationEditorAspect = null;
+    myConcept_IsSuperConceptOfOperationEditorAspect = null;
+    myConcept_NewInstanceEditorAspect = null;
+    myEnumMemberReferenceEditorAspect = null;
+    myEnumMemberValueRefExpressionEditorAspect = null;
+    myEnumMember_NameOperationEditorAspect = null;
+    myEnumMember_ValueOperationEditorAspect = null;
+    myEqualsStructurallyExpressionEditorAspect = null;
+    myIfInstanceOfStatementEditorAspect = null;
+    myIfInstanceOfVariableEditorAspect = null;
+    myLinkAttributeQualifierEditorAspect = null;
+    myLinkList_AddAllOperationEditorAspect = null;
+    myLinkList_AddChildOperationEditorAspect = null;
+    myLinkList_AddNewChildOperationEditorAspect = null;
+    myLinkList_InsertChildFirstOperationEditorAspect = null;
+    myLinkList_RemoveAllChildrenOperationEditorAspect = null;
+    myLinkNameRefExpressionEditorAspect = null;
+    myLinkQualifierEditorAspect = null;
+    myLinkRefExpressionEditorAspect = null;
+    myLinkRefQualifierEditorAspect = null;
+    myLink_DeleteChildOperationEditorAspect = null;
+    myLink_SetNewChildOperationEditorAspect = null;
+    myLink_SetTargetOperationEditorAspect = null;
+    myModelReferenceExpressionEditorAspect = null;
+    myModel_AddRootOperationEditorAspect = null;
+    myModel_CreateNewNodeOperationEditorAspect = null;
+    myModel_CreateNewRootNodeOperationEditorAspect = null;
+    myModel_GetModuleEditorAspect = null;
+    myModel_NodesIncludingImportedOperationEditorAspect = null;
+    myModel_NodesOperationEditorAspect = null;
+    myModel_RootsIncludingImportedOperationEditorAspect = null;
+    myModel_RootsOperationEditorAspect = null;
+    myModuleReferenceExpressionEditorAspect = null;
+    myNodeAttributeQualifierEditorAspect = null;
+    myNodePointerExpressionEditorAspect = null;
+    myNodeRefExpressionEditorAspect = null;
+    myNode_ConceptMethodCallEditorAspect = null;
+    myNode_CopyOperationEditorAspect = null;
+    myNode_DeleteOperationEditorAspect = null;
+    myNode_DetachOperationEditorAspect = null;
+    myNode_GetAllSiblingsOperationEditorAspect = null;
+    myNode_GetAncestorOperationEditorAspect = null;
+    myNode_GetAncestorsOperationEditorAspect = null;
+    myNode_GetChildrenOperationEditorAspect = null;
+    myNode_GetConceptOperationEditorAspect = null;
+    myNode_GetContainingLinkOperationEditorAspect = null;
+    myNode_GetContainingRoleOperationEditorAspect = null;
+    myNode_GetContainingRootOperationEditorAspect = null;
+    myNode_GetDescendantsOperationEditorAspect = null;
+    myNode_GetIndexInParentOperationEditorAspect = null;
+    myNode_GetModelOperationEditorAspect = null;
+    myNode_GetNextSiblingOperationEditorAspect = null;
+    myNode_GetNextSiblingsOperationEditorAspect = null;
+    myNode_GetParentOperationEditorAspect = null;
+    myNode_GetPrevSiblingOperationEditorAspect = null;
+    myNode_GetPrevSiblingsOperationEditorAspect = null;
+    myNode_GetReferenceOperationEditorAspect = null;
+    myNode_GetReferencesOperationEditorAspect = null;
+    myNode_GetReferentSearchScopeOperationEditorAspect = null;
+    myNode_InsertNewNextSiblingOperationEditorAspect = null;
+    myNode_InsertNewPrevSiblingOperationEditorAspect = null;
+    myNode_InsertNextSiblingOperationEditorAspect = null;
+    myNode_InsertPrevSiblingOperationEditorAspect = null;
+    myNode_IsAttributeOperationEditorAspect = null;
+    myNode_IsInstanceOfOperationEditorAspect = null;
+    myNode_IsNotNullOperationEditorAspect = null;
+    myNode_IsNullOperationEditorAspect = null;
+    myNode_IsRoleOperationEditorAspect = null;
+    myNode_ReplaceWithAnotherOperationEditorAspect = null;
+    myNode_ReplaceWithNewOperationEditorAspect = null;
+    myOperationParm_ConceptEditorAspect = null;
+    myOperationParm_ConceptListEditorAspect = null;
+    myOperationParm_LinkQualifierEditorAspect = null;
+    myOperationParm_StopConceptListEditorAspect = null;
+    myPoundExpressionEditorAspect = null;
+    myPropertyAttributeQualifierEditorAspect = null;
+    myPropertyNameRefExpressionEditorAspect = null;
+    myPropertyQualifierEditorAspect = null;
+    myProperty_HasValue_EnumEditorAspect = null;
+    myProperty_HasValue_SimpleEditorAspect = null;
+    myProperty_SetOperationEditorAspect = null;
+    myReadConceptReferenceExpressionEditorAspect = null;
+    myRefConcept_ReferenceEditorAspect = null;
+    myReference_GetLinkDeclarationOperationEditorAspect = null;
+    myReference_GetResolveInfoEditorAspect = null;
+    myReference_GetRoleOperationEditorAspect = null;
+    myReference_GetTargetOperationEditorAspect = null;
+    mySConceptLinkAccessEditorAspect = null;
+    mySConceptPropertyAccessEditorAspect = null;
+    mySConceptTypeEditorAspect = null;
+    mySEnumMemberTypeEditorAspect = null;
+    mySEnumOperationInvocationEditorAspect = null;
+    mySEnum_MemberForNameOperationEditorAspect = null;
+    mySEnum_MemberForValueOperationEditorAspect = null;
+    mySEnum_MemberOperationEditorAspect = null;
+    mySEnum_MembersOperationEditorAspect = null;
+    mySLinkAccessEditorAspect = null;
+    mySLinkImplicitSelectEditorAspect = null;
+    mySLinkListAccessEditorAspect = null;
+    mySModelTypeEditorAspect = null;
+    mySNodeCreatorEditorAspect = null;
+    mySNodeListCreatorEditorAspect = null;
+    mySNodeListTypeEditorAspect = null;
+    mySNodeOperationEditorAspect = null;
+    mySNodeTypeEditorAspect = null;
+    mySNodeTypeCastExpressionEditorAspect = null;
+    mySPropertyAccessEditorAspect = null;
+    mySReferenceTypeEditorAspect = null;
+    mySearchScopeTypeEditorAspect = null;
+    mySearchScope_ContainsOperationEditorAspect = null;
+    mySemanticDowncastExpressionEditorAspect = null;
+    myStaticConceptMethodCallEditorAspect = null;
+    my_LinkAccessTEditorAspect = null;
+  }
+
+  private AbstractOperationParameter_Editor getAbstractOperationParameterEditorAspect() {
+    if (myAbstractOperationParameterEditorAspect == null) {
+      myAbstractOperationParameterEditorAspect = new AbstractOperationParameter_Editor();
+    }
+    return myAbstractOperationParameterEditorAspect;
+  }
+
+  private AllAttributeQualifier_Editor getAllAttributeQualifierEditorAspect() {
+    if (myAllAttributeQualifierEditorAspect == null) {
+      myAllAttributeQualifierEditorAspect = new AllAttributeQualifier_Editor();
+    }
+    return myAllAttributeQualifierEditorAspect;
+  }
+
+  private AttributeAccess_Editor getAttributeAccessEditorAspect() {
+    if (myAttributeAccessEditorAspect == null) {
+      myAttributeAccessEditorAspect = new AttributeAccess_Editor();
+    }
+    return myAttributeAccessEditorAspect;
+  }
+
+  private CheckedModuleReference_Editor getCheckedModuleReferenceEditorAspect() {
+    if (myCheckedModuleReferenceEditorAspect == null) {
+      myCheckedModuleReferenceEditorAspect = new CheckedModuleReference_Editor();
+    }
+    return myCheckedModuleReferenceEditorAspect;
+  }
+
+  private ChildNodeRefExpression_Editor getChildNodeRefExpressionEditorAspect() {
+    if (myChildNodeRefExpressionEditorAspect == null) {
+      myChildNodeRefExpressionEditorAspect = new ChildNodeRefExpression_Editor();
+    }
+    return myChildNodeRefExpressionEditorAspect;
+  }
+
+  private ConceptFqNameRefExpression_Editor getConceptFqNameRefExpressionEditorAspect() {
+    if (myConceptFqNameRefExpressionEditorAspect == null) {
+      myConceptFqNameRefExpressionEditorAspect = new ConceptFqNameRefExpression_Editor();
+    }
+    return myConceptFqNameRefExpressionEditorAspect;
+  }
+
+  private ConceptPropertyNameRefExpression_Editor getConceptPropertyNameRefExpressionEditorAspect() {
+    if (myConceptPropertyNameRefExpressionEditorAspect == null) {
+      myConceptPropertyNameRefExpressionEditorAspect = new ConceptPropertyNameRefExpression_Editor();
+    }
+    return myConceptPropertyNameRefExpressionEditorAspect;
+  }
+
+  private ConceptProperty_SetOperation_Editor getConceptProperty_SetOperationEditorAspect() {
+    if (myConceptProperty_SetOperationEditorAspect == null) {
+      myConceptProperty_SetOperationEditorAspect = new ConceptProperty_SetOperation_Editor();
+    }
+    return myConceptProperty_SetOperationEditorAspect;
+  }
+
+  private ConceptRefExpression_Editor getConceptRefExpressionEditorAspect() {
+    if (myConceptRefExpressionEditorAspect == null) {
+      myConceptRefExpressionEditorAspect = new ConceptRefExpression_Editor();
+    }
+    return myConceptRefExpressionEditorAspect;
+  }
+
+  private ConceptReference_Editor getConceptReferenceEditorAspect() {
+    if (myConceptReferenceEditorAspect == null) {
+      myConceptReferenceEditorAspect = new ConceptReference_Editor();
+    }
+    return myConceptReferenceEditorAspect;
+  }
+
+  private ConceptSwitchStatement_Editor getConceptSwitchStatementEditorAspect() {
+    if (myConceptSwitchStatementEditorAspect == null) {
+      myConceptSwitchStatementEditorAspect = new ConceptSwitchStatement_Editor();
+    }
+    return myConceptSwitchStatementEditorAspect;
+  }
+
+  private ConceptSwitchStatementCase_Editor getConceptSwitchStatementCaseEditorAspect() {
+    if (myConceptSwitchStatementCaseEditorAspect == null) {
+      myConceptSwitchStatementCaseEditorAspect = new ConceptSwitchStatementCase_Editor();
+    }
+    return myConceptSwitchStatementCaseEditorAspect;
+  }
+
+  private Concept_FindInstances_Editor getConcept_FindInstancesEditorAspect() {
+    if (myConcept_FindInstancesEditorAspect == null) {
+      myConcept_FindInstancesEditorAspect = new Concept_FindInstances_Editor();
+    }
+    return myConcept_FindInstancesEditorAspect;
+  }
+
+  private Concept_GetAllSubConcepts_Editor getConcept_GetAllSubConceptsEditorAspect() {
+    if (myConcept_GetAllSubConceptsEditorAspect == null) {
+      myConcept_GetAllSubConceptsEditorAspect = new Concept_GetAllSubConcepts_Editor();
+    }
+    return myConcept_GetAllSubConceptsEditorAspect;
+  }
+
+  private Concept_GetAllSuperConcepts_Editor getConcept_GetAllSuperConceptsEditorAspect() {
+    if (myConcept_GetAllSuperConceptsEditorAspect == null) {
+      myConcept_GetAllSuperConceptsEditorAspect = new Concept_GetAllSuperConcepts_Editor();
+    }
+    return myConcept_GetAllSuperConceptsEditorAspect;
+  }
+
+  private Concept_GetDirectSuperConcepts_Editor getConcept_GetDirectSuperConceptsEditorAspect() {
+    if (myConcept_GetDirectSuperConceptsEditorAspect == null) {
+      myConcept_GetDirectSuperConceptsEditorAspect = new Concept_GetDirectSuperConcepts_Editor();
+    }
+    return myConcept_GetDirectSuperConceptsEditorAspect;
+  }
+
+  private Concept_GetHierarchy_Editor getConcept_GetHierarchyEditorAspect() {
+    if (myConcept_GetHierarchyEditorAspect == null) {
+      myConcept_GetHierarchyEditorAspect = new Concept_GetHierarchy_Editor();
+    }
+    return myConcept_GetHierarchyEditorAspect;
+  }
+
+  private Concept_IsExactlyOperation_Editor getConcept_IsExactlyOperationEditorAspect() {
+    if (myConcept_IsExactlyOperationEditorAspect == null) {
+      myConcept_IsExactlyOperationEditorAspect = new Concept_IsExactlyOperation_Editor();
+    }
+    return myConcept_IsExactlyOperationEditorAspect;
+  }
+
+  private Concept_IsSubConceptOfOperation_Editor getConcept_IsSubConceptOfOperationEditorAspect() {
+    if (myConcept_IsSubConceptOfOperationEditorAspect == null) {
+      myConcept_IsSubConceptOfOperationEditorAspect = new Concept_IsSubConceptOfOperation_Editor();
+    }
+    return myConcept_IsSubConceptOfOperationEditorAspect;
+  }
+
+  private Concept_IsSuperConceptOfOperation_Editor getConcept_IsSuperConceptOfOperationEditorAspect() {
+    if (myConcept_IsSuperConceptOfOperationEditorAspect == null) {
+      myConcept_IsSuperConceptOfOperationEditorAspect = new Concept_IsSuperConceptOfOperation_Editor();
+    }
+    return myConcept_IsSuperConceptOfOperationEditorAspect;
+  }
+
+  private Concept_NewInstance_Editor getConcept_NewInstanceEditorAspect() {
+    if (myConcept_NewInstanceEditorAspect == null) {
+      myConcept_NewInstanceEditorAspect = new Concept_NewInstance_Editor();
+    }
+    return myConcept_NewInstanceEditorAspect;
+  }
+
+  private EnumMemberReference_Editor getEnumMemberReferenceEditorAspect() {
+    if (myEnumMemberReferenceEditorAspect == null) {
+      myEnumMemberReferenceEditorAspect = new EnumMemberReference_Editor();
+    }
+    return myEnumMemberReferenceEditorAspect;
+  }
+
+  private EnumMemberValueRefExpression_Editor getEnumMemberValueRefExpressionEditorAspect() {
+    if (myEnumMemberValueRefExpressionEditorAspect == null) {
+      myEnumMemberValueRefExpressionEditorAspect = new EnumMemberValueRefExpression_Editor();
+    }
+    return myEnumMemberValueRefExpressionEditorAspect;
+  }
+
+  private EnumMember_NameOperation_Editor getEnumMember_NameOperationEditorAspect() {
+    if (myEnumMember_NameOperationEditorAspect == null) {
+      myEnumMember_NameOperationEditorAspect = new EnumMember_NameOperation_Editor();
+    }
+    return myEnumMember_NameOperationEditorAspect;
+  }
+
+  private EnumMember_ValueOperation_Editor getEnumMember_ValueOperationEditorAspect() {
+    if (myEnumMember_ValueOperationEditorAspect == null) {
+      myEnumMember_ValueOperationEditorAspect = new EnumMember_ValueOperation_Editor();
+    }
+    return myEnumMember_ValueOperationEditorAspect;
+  }
+
+  private EqualsStructurallyExpression_Editor getEqualsStructurallyExpressionEditorAspect() {
+    if (myEqualsStructurallyExpressionEditorAspect == null) {
+      myEqualsStructurallyExpressionEditorAspect = new EqualsStructurallyExpression_Editor();
+    }
+    return myEqualsStructurallyExpressionEditorAspect;
+  }
+
+  private IfInstanceOfStatement_Editor getIfInstanceOfStatementEditorAspect() {
+    if (myIfInstanceOfStatementEditorAspect == null) {
+      myIfInstanceOfStatementEditorAspect = new IfInstanceOfStatement_Editor();
+    }
+    return myIfInstanceOfStatementEditorAspect;
+  }
+
+  private IfInstanceOfVariable_Editor getIfInstanceOfVariableEditorAspect() {
+    if (myIfInstanceOfVariableEditorAspect == null) {
+      myIfInstanceOfVariableEditorAspect = new IfInstanceOfVariable_Editor();
+    }
+    return myIfInstanceOfVariableEditorAspect;
+  }
+
+  private LinkAttributeQualifier_Editor getLinkAttributeQualifierEditorAspect() {
+    if (myLinkAttributeQualifierEditorAspect == null) {
+      myLinkAttributeQualifierEditorAspect = new LinkAttributeQualifier_Editor();
+    }
+    return myLinkAttributeQualifierEditorAspect;
+  }
+
+  private LinkList_AddAllOperation_Editor getLinkList_AddAllOperationEditorAspect() {
+    if (myLinkList_AddAllOperationEditorAspect == null) {
+      myLinkList_AddAllOperationEditorAspect = new LinkList_AddAllOperation_Editor();
+    }
+    return myLinkList_AddAllOperationEditorAspect;
+  }
+
+  private LinkList_AddChildOperation_Editor getLinkList_AddChildOperationEditorAspect() {
+    if (myLinkList_AddChildOperationEditorAspect == null) {
+      myLinkList_AddChildOperationEditorAspect = new LinkList_AddChildOperation_Editor();
+    }
+    return myLinkList_AddChildOperationEditorAspect;
+  }
+
+  private LinkList_AddNewChildOperation_Editor getLinkList_AddNewChildOperationEditorAspect() {
+    if (myLinkList_AddNewChildOperationEditorAspect == null) {
+      myLinkList_AddNewChildOperationEditorAspect = new LinkList_AddNewChildOperation_Editor();
+    }
+    return myLinkList_AddNewChildOperationEditorAspect;
+  }
+
+  private LinkList_InsertChildFirstOperation_Editor getLinkList_InsertChildFirstOperationEditorAspect() {
+    if (myLinkList_InsertChildFirstOperationEditorAspect == null) {
+      myLinkList_InsertChildFirstOperationEditorAspect = new LinkList_InsertChildFirstOperation_Editor();
+    }
+    return myLinkList_InsertChildFirstOperationEditorAspect;
+  }
+
+  private LinkList_RemoveAllChildrenOperation_Editor getLinkList_RemoveAllChildrenOperationEditorAspect() {
+    if (myLinkList_RemoveAllChildrenOperationEditorAspect == null) {
+      myLinkList_RemoveAllChildrenOperationEditorAspect = new LinkList_RemoveAllChildrenOperation_Editor();
+    }
+    return myLinkList_RemoveAllChildrenOperationEditorAspect;
+  }
+
+  private LinkNameRefExpression_Editor getLinkNameRefExpressionEditorAspect() {
+    if (myLinkNameRefExpressionEditorAspect == null) {
+      myLinkNameRefExpressionEditorAspect = new LinkNameRefExpression_Editor();
+    }
+    return myLinkNameRefExpressionEditorAspect;
+  }
+
+  private LinkQualifier_Editor getLinkQualifierEditorAspect() {
+    if (myLinkQualifierEditorAspect == null) {
+      myLinkQualifierEditorAspect = new LinkQualifier_Editor();
+    }
+    return myLinkQualifierEditorAspect;
+  }
+
+  private LinkRefExpression_Editor getLinkRefExpressionEditorAspect() {
+    if (myLinkRefExpressionEditorAspect == null) {
+      myLinkRefExpressionEditorAspect = new LinkRefExpression_Editor();
+    }
+    return myLinkRefExpressionEditorAspect;
+  }
+
+  private LinkRefQualifier_Editor getLinkRefQualifierEditorAspect() {
+    if (myLinkRefQualifierEditorAspect == null) {
+      myLinkRefQualifierEditorAspect = new LinkRefQualifier_Editor();
+    }
+    return myLinkRefQualifierEditorAspect;
+  }
+
+  private Link_DeleteChildOperation_Editor getLink_DeleteChildOperationEditorAspect() {
+    if (myLink_DeleteChildOperationEditorAspect == null) {
+      myLink_DeleteChildOperationEditorAspect = new Link_DeleteChildOperation_Editor();
+    }
+    return myLink_DeleteChildOperationEditorAspect;
+  }
+
+  private Link_SetNewChildOperation_Editor getLink_SetNewChildOperationEditorAspect() {
+    if (myLink_SetNewChildOperationEditorAspect == null) {
+      myLink_SetNewChildOperationEditorAspect = new Link_SetNewChildOperation_Editor();
+    }
+    return myLink_SetNewChildOperationEditorAspect;
+  }
+
+  private Link_SetTargetOperation_Editor getLink_SetTargetOperationEditorAspect() {
+    if (myLink_SetTargetOperationEditorAspect == null) {
+      myLink_SetTargetOperationEditorAspect = new Link_SetTargetOperation_Editor();
+    }
+    return myLink_SetTargetOperationEditorAspect;
+  }
+
+  private ModelReferenceExpression_Editor getModelReferenceExpressionEditorAspect() {
+    if (myModelReferenceExpressionEditorAspect == null) {
+      myModelReferenceExpressionEditorAspect = new ModelReferenceExpression_Editor();
+    }
+    return myModelReferenceExpressionEditorAspect;
+  }
+
+  private Model_AddRootOperation_Editor getModel_AddRootOperationEditorAspect() {
+    if (myModel_AddRootOperationEditorAspect == null) {
+      myModel_AddRootOperationEditorAspect = new Model_AddRootOperation_Editor();
+    }
+    return myModel_AddRootOperationEditorAspect;
+  }
+
+  private Model_CreateNewNodeOperation_Editor getModel_CreateNewNodeOperationEditorAspect() {
+    if (myModel_CreateNewNodeOperationEditorAspect == null) {
+      myModel_CreateNewNodeOperationEditorAspect = new Model_CreateNewNodeOperation_Editor();
+    }
+    return myModel_CreateNewNodeOperationEditorAspect;
+  }
+
+  private Model_CreateNewRootNodeOperation_Editor getModel_CreateNewRootNodeOperationEditorAspect() {
+    if (myModel_CreateNewRootNodeOperationEditorAspect == null) {
+      myModel_CreateNewRootNodeOperationEditorAspect = new Model_CreateNewRootNodeOperation_Editor();
+    }
+    return myModel_CreateNewRootNodeOperationEditorAspect;
+  }
+
+  private Model_GetModule_Editor getModel_GetModuleEditorAspect() {
+    if (myModel_GetModuleEditorAspect == null) {
+      myModel_GetModuleEditorAspect = new Model_GetModule_Editor();
+    }
+    return myModel_GetModuleEditorAspect;
+  }
+
+  private Model_NodesIncludingImportedOperation_Editor getModel_NodesIncludingImportedOperationEditorAspect() {
+    if (myModel_NodesIncludingImportedOperationEditorAspect == null) {
+      myModel_NodesIncludingImportedOperationEditorAspect = new Model_NodesIncludingImportedOperation_Editor();
+    }
+    return myModel_NodesIncludingImportedOperationEditorAspect;
+  }
+
+  private Model_NodesOperation_Editor getModel_NodesOperationEditorAspect() {
+    if (myModel_NodesOperationEditorAspect == null) {
+      myModel_NodesOperationEditorAspect = new Model_NodesOperation_Editor();
+    }
+    return myModel_NodesOperationEditorAspect;
+  }
+
+  private Model_RootsIncludingImportedOperation_Editor getModel_RootsIncludingImportedOperationEditorAspect() {
+    if (myModel_RootsIncludingImportedOperationEditorAspect == null) {
+      myModel_RootsIncludingImportedOperationEditorAspect = new Model_RootsIncludingImportedOperation_Editor();
+    }
+    return myModel_RootsIncludingImportedOperationEditorAspect;
+  }
+
+  private Model_RootsOperation_Editor getModel_RootsOperationEditorAspect() {
+    if (myModel_RootsOperationEditorAspect == null) {
+      myModel_RootsOperationEditorAspect = new Model_RootsOperation_Editor();
+    }
+    return myModel_RootsOperationEditorAspect;
+  }
+
+  private ModuleReferenceExpression_Editor getModuleReferenceExpressionEditorAspect() {
+    if (myModuleReferenceExpressionEditorAspect == null) {
+      myModuleReferenceExpressionEditorAspect = new ModuleReferenceExpression_Editor();
+    }
+    return myModuleReferenceExpressionEditorAspect;
+  }
+
+  private NodeAttributeQualifier_Editor getNodeAttributeQualifierEditorAspect() {
+    if (myNodeAttributeQualifierEditorAspect == null) {
+      myNodeAttributeQualifierEditorAspect = new NodeAttributeQualifier_Editor();
+    }
+    return myNodeAttributeQualifierEditorAspect;
+  }
+
+  private NodePointerExpression_Editor getNodePointerExpressionEditorAspect() {
+    if (myNodePointerExpressionEditorAspect == null) {
+      myNodePointerExpressionEditorAspect = new NodePointerExpression_Editor();
+    }
+    return myNodePointerExpressionEditorAspect;
+  }
+
+  private NodeRefExpression_Editor getNodeRefExpressionEditorAspect() {
+    if (myNodeRefExpressionEditorAspect == null) {
+      myNodeRefExpressionEditorAspect = new NodeRefExpression_Editor();
+    }
+    return myNodeRefExpressionEditorAspect;
+  }
+
+  private Node_ConceptMethodCall_Editor getNode_ConceptMethodCallEditorAspect() {
+    if (myNode_ConceptMethodCallEditorAspect == null) {
+      myNode_ConceptMethodCallEditorAspect = new Node_ConceptMethodCall_Editor();
+    }
+    return myNode_ConceptMethodCallEditorAspect;
+  }
+
+  private Node_CopyOperation_Editor getNode_CopyOperationEditorAspect() {
+    if (myNode_CopyOperationEditorAspect == null) {
+      myNode_CopyOperationEditorAspect = new Node_CopyOperation_Editor();
+    }
+    return myNode_CopyOperationEditorAspect;
+  }
+
+  private Node_DeleteOperation_Editor getNode_DeleteOperationEditorAspect() {
+    if (myNode_DeleteOperationEditorAspect == null) {
+      myNode_DeleteOperationEditorAspect = new Node_DeleteOperation_Editor();
+    }
+    return myNode_DeleteOperationEditorAspect;
+  }
+
+  private Node_DetachOperation_Editor getNode_DetachOperationEditorAspect() {
+    if (myNode_DetachOperationEditorAspect == null) {
+      myNode_DetachOperationEditorAspect = new Node_DetachOperation_Editor();
+    }
+    return myNode_DetachOperationEditorAspect;
+  }
+
+  private Node_GetAllSiblingsOperation_Editor getNode_GetAllSiblingsOperationEditorAspect() {
+    if (myNode_GetAllSiblingsOperationEditorAspect == null) {
+      myNode_GetAllSiblingsOperationEditorAspect = new Node_GetAllSiblingsOperation_Editor();
+    }
+    return myNode_GetAllSiblingsOperationEditorAspect;
+  }
+
+  private Node_GetAncestorOperation_Editor getNode_GetAncestorOperationEditorAspect() {
+    if (myNode_GetAncestorOperationEditorAspect == null) {
+      myNode_GetAncestorOperationEditorAspect = new Node_GetAncestorOperation_Editor();
+    }
+    return myNode_GetAncestorOperationEditorAspect;
+  }
+
+  private Node_GetAncestorsOperation_Editor getNode_GetAncestorsOperationEditorAspect() {
+    if (myNode_GetAncestorsOperationEditorAspect == null) {
+      myNode_GetAncestorsOperationEditorAspect = new Node_GetAncestorsOperation_Editor();
+    }
+    return myNode_GetAncestorsOperationEditorAspect;
+  }
+
+  private Node_GetChildrenOperation_Editor getNode_GetChildrenOperationEditorAspect() {
+    if (myNode_GetChildrenOperationEditorAspect == null) {
+      myNode_GetChildrenOperationEditorAspect = new Node_GetChildrenOperation_Editor();
+    }
+    return myNode_GetChildrenOperationEditorAspect;
+  }
+
+  private Node_GetConceptOperation_Editor getNode_GetConceptOperationEditorAspect() {
+    if (myNode_GetConceptOperationEditorAspect == null) {
+      myNode_GetConceptOperationEditorAspect = new Node_GetConceptOperation_Editor();
+    }
+    return myNode_GetConceptOperationEditorAspect;
+  }
+
+  private Node_GetContainingLinkOperation_Editor getNode_GetContainingLinkOperationEditorAspect() {
+    if (myNode_GetContainingLinkOperationEditorAspect == null) {
+      myNode_GetContainingLinkOperationEditorAspect = new Node_GetContainingLinkOperation_Editor();
+    }
+    return myNode_GetContainingLinkOperationEditorAspect;
+  }
+
+  private Node_GetContainingRoleOperation_Editor getNode_GetContainingRoleOperationEditorAspect() {
+    if (myNode_GetContainingRoleOperationEditorAspect == null) {
+      myNode_GetContainingRoleOperationEditorAspect = new Node_GetContainingRoleOperation_Editor();
+    }
+    return myNode_GetContainingRoleOperationEditorAspect;
+  }
+
+  private Node_GetContainingRootOperation_Editor getNode_GetContainingRootOperationEditorAspect() {
+    if (myNode_GetContainingRootOperationEditorAspect == null) {
+      myNode_GetContainingRootOperationEditorAspect = new Node_GetContainingRootOperation_Editor();
+    }
+    return myNode_GetContainingRootOperationEditorAspect;
+  }
+
+  private Node_GetDescendantsOperation_Editor getNode_GetDescendantsOperationEditorAspect() {
+    if (myNode_GetDescendantsOperationEditorAspect == null) {
+      myNode_GetDescendantsOperationEditorAspect = new Node_GetDescendantsOperation_Editor();
+    }
+    return myNode_GetDescendantsOperationEditorAspect;
+  }
+
+  private Node_GetIndexInParentOperation_Editor getNode_GetIndexInParentOperationEditorAspect() {
+    if (myNode_GetIndexInParentOperationEditorAspect == null) {
+      myNode_GetIndexInParentOperationEditorAspect = new Node_GetIndexInParentOperation_Editor();
+    }
+    return myNode_GetIndexInParentOperationEditorAspect;
+  }
+
+  private Node_GetModelOperation_Editor getNode_GetModelOperationEditorAspect() {
+    if (myNode_GetModelOperationEditorAspect == null) {
+      myNode_GetModelOperationEditorAspect = new Node_GetModelOperation_Editor();
+    }
+    return myNode_GetModelOperationEditorAspect;
+  }
+
+  private Node_GetNextSiblingOperation_Editor getNode_GetNextSiblingOperationEditorAspect() {
+    if (myNode_GetNextSiblingOperationEditorAspect == null) {
+      myNode_GetNextSiblingOperationEditorAspect = new Node_GetNextSiblingOperation_Editor();
+    }
+    return myNode_GetNextSiblingOperationEditorAspect;
+  }
+
+  private Node_GetNextSiblingsOperation_Editor getNode_GetNextSiblingsOperationEditorAspect() {
+    if (myNode_GetNextSiblingsOperationEditorAspect == null) {
+      myNode_GetNextSiblingsOperationEditorAspect = new Node_GetNextSiblingsOperation_Editor();
+    }
+    return myNode_GetNextSiblingsOperationEditorAspect;
+  }
+
+  private Node_GetParentOperation_Editor getNode_GetParentOperationEditorAspect() {
+    if (myNode_GetParentOperationEditorAspect == null) {
+      myNode_GetParentOperationEditorAspect = new Node_GetParentOperation_Editor();
+    }
+    return myNode_GetParentOperationEditorAspect;
+  }
+
+  private Node_GetPrevSiblingOperation_Editor getNode_GetPrevSiblingOperationEditorAspect() {
+    if (myNode_GetPrevSiblingOperationEditorAspect == null) {
+      myNode_GetPrevSiblingOperationEditorAspect = new Node_GetPrevSiblingOperation_Editor();
+    }
+    return myNode_GetPrevSiblingOperationEditorAspect;
+  }
+
+  private Node_GetPrevSiblingsOperation_Editor getNode_GetPrevSiblingsOperationEditorAspect() {
+    if (myNode_GetPrevSiblingsOperationEditorAspect == null) {
+      myNode_GetPrevSiblingsOperationEditorAspect = new Node_GetPrevSiblingsOperation_Editor();
+    }
+    return myNode_GetPrevSiblingsOperationEditorAspect;
+  }
+
+  private Node_GetReferenceOperation_Editor getNode_GetReferenceOperationEditorAspect() {
+    if (myNode_GetReferenceOperationEditorAspect == null) {
+      myNode_GetReferenceOperationEditorAspect = new Node_GetReferenceOperation_Editor();
+    }
+    return myNode_GetReferenceOperationEditorAspect;
+  }
+
+  private Node_GetReferencesOperation_Editor getNode_GetReferencesOperationEditorAspect() {
+    if (myNode_GetReferencesOperationEditorAspect == null) {
+      myNode_GetReferencesOperationEditorAspect = new Node_GetReferencesOperation_Editor();
+    }
+    return myNode_GetReferencesOperationEditorAspect;
+  }
+
+  private Node_GetReferentSearchScopeOperation_Editor getNode_GetReferentSearchScopeOperationEditorAspect() {
+    if (myNode_GetReferentSearchScopeOperationEditorAspect == null) {
+      myNode_GetReferentSearchScopeOperationEditorAspect = new Node_GetReferentSearchScopeOperation_Editor();
+    }
+    return myNode_GetReferentSearchScopeOperationEditorAspect;
+  }
+
+  private Node_InsertNewNextSiblingOperation_Editor getNode_InsertNewNextSiblingOperationEditorAspect() {
+    if (myNode_InsertNewNextSiblingOperationEditorAspect == null) {
+      myNode_InsertNewNextSiblingOperationEditorAspect = new Node_InsertNewNextSiblingOperation_Editor();
+    }
+    return myNode_InsertNewNextSiblingOperationEditorAspect;
+  }
+
+  private Node_InsertNewPrevSiblingOperation_Editor getNode_InsertNewPrevSiblingOperationEditorAspect() {
+    if (myNode_InsertNewPrevSiblingOperationEditorAspect == null) {
+      myNode_InsertNewPrevSiblingOperationEditorAspect = new Node_InsertNewPrevSiblingOperation_Editor();
+    }
+    return myNode_InsertNewPrevSiblingOperationEditorAspect;
+  }
+
+  private Node_InsertNextSiblingOperation_Editor getNode_InsertNextSiblingOperationEditorAspect() {
+    if (myNode_InsertNextSiblingOperationEditorAspect == null) {
+      myNode_InsertNextSiblingOperationEditorAspect = new Node_InsertNextSiblingOperation_Editor();
+    }
+    return myNode_InsertNextSiblingOperationEditorAspect;
+  }
+
+  private Node_InsertPrevSiblingOperation_Editor getNode_InsertPrevSiblingOperationEditorAspect() {
+    if (myNode_InsertPrevSiblingOperationEditorAspect == null) {
+      myNode_InsertPrevSiblingOperationEditorAspect = new Node_InsertPrevSiblingOperation_Editor();
+    }
+    return myNode_InsertPrevSiblingOperationEditorAspect;
+  }
+
+  private Node_IsAttributeOperation_Editor getNode_IsAttributeOperationEditorAspect() {
+    if (myNode_IsAttributeOperationEditorAspect == null) {
+      myNode_IsAttributeOperationEditorAspect = new Node_IsAttributeOperation_Editor();
+    }
+    return myNode_IsAttributeOperationEditorAspect;
+  }
+
+  private Node_IsInstanceOfOperation_Editor getNode_IsInstanceOfOperationEditorAspect() {
+    if (myNode_IsInstanceOfOperationEditorAspect == null) {
+      myNode_IsInstanceOfOperationEditorAspect = new Node_IsInstanceOfOperation_Editor();
+    }
+    return myNode_IsInstanceOfOperationEditorAspect;
+  }
+
+  private Node_IsNotNullOperation_Editor getNode_IsNotNullOperationEditorAspect() {
+    if (myNode_IsNotNullOperationEditorAspect == null) {
+      myNode_IsNotNullOperationEditorAspect = new Node_IsNotNullOperation_Editor();
+    }
+    return myNode_IsNotNullOperationEditorAspect;
+  }
+
+  private Node_IsNullOperation_Editor getNode_IsNullOperationEditorAspect() {
+    if (myNode_IsNullOperationEditorAspect == null) {
+      myNode_IsNullOperationEditorAspect = new Node_IsNullOperation_Editor();
+    }
+    return myNode_IsNullOperationEditorAspect;
+  }
+
+  private Node_IsRoleOperation_Editor getNode_IsRoleOperationEditorAspect() {
+    if (myNode_IsRoleOperationEditorAspect == null) {
+      myNode_IsRoleOperationEditorAspect = new Node_IsRoleOperation_Editor();
+    }
+    return myNode_IsRoleOperationEditorAspect;
+  }
+
+  private Node_ReplaceWithAnotherOperation_Editor getNode_ReplaceWithAnotherOperationEditorAspect() {
+    if (myNode_ReplaceWithAnotherOperationEditorAspect == null) {
+      myNode_ReplaceWithAnotherOperationEditorAspect = new Node_ReplaceWithAnotherOperation_Editor();
+    }
+    return myNode_ReplaceWithAnotherOperationEditorAspect;
+  }
+
+  private Node_ReplaceWithNewOperation_Editor getNode_ReplaceWithNewOperationEditorAspect() {
+    if (myNode_ReplaceWithNewOperationEditorAspect == null) {
+      myNode_ReplaceWithNewOperationEditorAspect = new Node_ReplaceWithNewOperation_Editor();
+    }
+    return myNode_ReplaceWithNewOperationEditorAspect;
+  }
+
+  private OperationParm_Concept_Editor getOperationParm_ConceptEditorAspect() {
+    if (myOperationParm_ConceptEditorAspect == null) {
+      myOperationParm_ConceptEditorAspect = new OperationParm_Concept_Editor();
+    }
+    return myOperationParm_ConceptEditorAspect;
+  }
+
+  private OperationParm_ConceptList_Editor getOperationParm_ConceptListEditorAspect() {
+    if (myOperationParm_ConceptListEditorAspect == null) {
+      myOperationParm_ConceptListEditorAspect = new OperationParm_ConceptList_Editor();
+    }
+    return myOperationParm_ConceptListEditorAspect;
+  }
+
+  private OperationParm_LinkQualifier_Editor getOperationParm_LinkQualifierEditorAspect() {
+    if (myOperationParm_LinkQualifierEditorAspect == null) {
+      myOperationParm_LinkQualifierEditorAspect = new OperationParm_LinkQualifier_Editor();
+    }
+    return myOperationParm_LinkQualifierEditorAspect;
+  }
+
+  private OperationParm_StopConceptList_Editor getOperationParm_StopConceptListEditorAspect() {
+    if (myOperationParm_StopConceptListEditorAspect == null) {
+      myOperationParm_StopConceptListEditorAspect = new OperationParm_StopConceptList_Editor();
+    }
+    return myOperationParm_StopConceptListEditorAspect;
+  }
+
+  private PoundExpression_Editor getPoundExpressionEditorAspect() {
+    if (myPoundExpressionEditorAspect == null) {
+      myPoundExpressionEditorAspect = new PoundExpression_Editor();
+    }
+    return myPoundExpressionEditorAspect;
+  }
+
+  private PropertyAttributeQualifier_Editor getPropertyAttributeQualifierEditorAspect() {
+    if (myPropertyAttributeQualifierEditorAspect == null) {
+      myPropertyAttributeQualifierEditorAspect = new PropertyAttributeQualifier_Editor();
+    }
+    return myPropertyAttributeQualifierEditorAspect;
+  }
+
+  private PropertyNameRefExpression_Editor getPropertyNameRefExpressionEditorAspect() {
+    if (myPropertyNameRefExpressionEditorAspect == null) {
+      myPropertyNameRefExpressionEditorAspect = new PropertyNameRefExpression_Editor();
+    }
+    return myPropertyNameRefExpressionEditorAspect;
+  }
+
+  private PropertyQualifier_Editor getPropertyQualifierEditorAspect() {
+    if (myPropertyQualifierEditorAspect == null) {
+      myPropertyQualifierEditorAspect = new PropertyQualifier_Editor();
+    }
+    return myPropertyQualifierEditorAspect;
+  }
+
+  private Property_HasValue_Enum_Editor getProperty_HasValue_EnumEditorAspect() {
+    if (myProperty_HasValue_EnumEditorAspect == null) {
+      myProperty_HasValue_EnumEditorAspect = new Property_HasValue_Enum_Editor();
+    }
+    return myProperty_HasValue_EnumEditorAspect;
+  }
+
+  private Property_HasValue_Simple_Editor getProperty_HasValue_SimpleEditorAspect() {
+    if (myProperty_HasValue_SimpleEditorAspect == null) {
+      myProperty_HasValue_SimpleEditorAspect = new Property_HasValue_Simple_Editor();
+    }
+    return myProperty_HasValue_SimpleEditorAspect;
+  }
+
+  private Property_SetOperation_Editor getProperty_SetOperationEditorAspect() {
+    if (myProperty_SetOperationEditorAspect == null) {
+      myProperty_SetOperationEditorAspect = new Property_SetOperation_Editor();
+    }
+    return myProperty_SetOperationEditorAspect;
+  }
+
+  private ReadConceptReferenceExpression_Editor getReadConceptReferenceExpressionEditorAspect() {
+    if (myReadConceptReferenceExpressionEditorAspect == null) {
+      myReadConceptReferenceExpressionEditorAspect = new ReadConceptReferenceExpression_Editor();
+    }
+    return myReadConceptReferenceExpressionEditorAspect;
+  }
+
+  private RefConcept_Reference_Editor getRefConcept_ReferenceEditorAspect() {
+    if (myRefConcept_ReferenceEditorAspect == null) {
+      myRefConcept_ReferenceEditorAspect = new RefConcept_Reference_Editor();
+    }
+    return myRefConcept_ReferenceEditorAspect;
+  }
+
+  private Reference_GetLinkDeclarationOperation_Editor getReference_GetLinkDeclarationOperationEditorAspect() {
+    if (myReference_GetLinkDeclarationOperationEditorAspect == null) {
+      myReference_GetLinkDeclarationOperationEditorAspect = new Reference_GetLinkDeclarationOperation_Editor();
+    }
+    return myReference_GetLinkDeclarationOperationEditorAspect;
+  }
+
+  private Reference_GetResolveInfo_Editor getReference_GetResolveInfoEditorAspect() {
+    if (myReference_GetResolveInfoEditorAspect == null) {
+      myReference_GetResolveInfoEditorAspect = new Reference_GetResolveInfo_Editor();
+    }
+    return myReference_GetResolveInfoEditorAspect;
+  }
+
+  private Reference_GetRoleOperation_Editor getReference_GetRoleOperationEditorAspect() {
+    if (myReference_GetRoleOperationEditorAspect == null) {
+      myReference_GetRoleOperationEditorAspect = new Reference_GetRoleOperation_Editor();
+    }
+    return myReference_GetRoleOperationEditorAspect;
+  }
+
+  private Reference_GetTargetOperation_Editor getReference_GetTargetOperationEditorAspect() {
+    if (myReference_GetTargetOperationEditorAspect == null) {
+      myReference_GetTargetOperationEditorAspect = new Reference_GetTargetOperation_Editor();
+    }
+    return myReference_GetTargetOperationEditorAspect;
+  }
+
+  private SConceptLinkAccess_Editor getSConceptLinkAccessEditorAspect() {
+    if (mySConceptLinkAccessEditorAspect == null) {
+      mySConceptLinkAccessEditorAspect = new SConceptLinkAccess_Editor();
+    }
+    return mySConceptLinkAccessEditorAspect;
+  }
+
+  private SConceptPropertyAccess_Editor getSConceptPropertyAccessEditorAspect() {
+    if (mySConceptPropertyAccessEditorAspect == null) {
+      mySConceptPropertyAccessEditorAspect = new SConceptPropertyAccess_Editor();
+    }
+    return mySConceptPropertyAccessEditorAspect;
+  }
+
+  private SConceptType_Editor getSConceptTypeEditorAspect() {
+    if (mySConceptTypeEditorAspect == null) {
+      mySConceptTypeEditorAspect = new SConceptType_Editor();
+    }
+    return mySConceptTypeEditorAspect;
+  }
+
+  private SEnumMemberType_Editor getSEnumMemberTypeEditorAspect() {
+    if (mySEnumMemberTypeEditorAspect == null) {
+      mySEnumMemberTypeEditorAspect = new SEnumMemberType_Editor();
+    }
+    return mySEnumMemberTypeEditorAspect;
+  }
+
+  private SEnumOperationInvocation_Editor getSEnumOperationInvocationEditorAspect() {
+    if (mySEnumOperationInvocationEditorAspect == null) {
+      mySEnumOperationInvocationEditorAspect = new SEnumOperationInvocation_Editor();
+    }
+    return mySEnumOperationInvocationEditorAspect;
+  }
+
+  private SEnum_MemberForNameOperation_Editor getSEnum_MemberForNameOperationEditorAspect() {
+    if (mySEnum_MemberForNameOperationEditorAspect == null) {
+      mySEnum_MemberForNameOperationEditorAspect = new SEnum_MemberForNameOperation_Editor();
+    }
+    return mySEnum_MemberForNameOperationEditorAspect;
+  }
+
+  private SEnum_MemberForValueOperation_Editor getSEnum_MemberForValueOperationEditorAspect() {
+    if (mySEnum_MemberForValueOperationEditorAspect == null) {
+      mySEnum_MemberForValueOperationEditorAspect = new SEnum_MemberForValueOperation_Editor();
+    }
+    return mySEnum_MemberForValueOperationEditorAspect;
+  }
+
+  private SEnum_MemberOperation_Editor getSEnum_MemberOperationEditorAspect() {
+    if (mySEnum_MemberOperationEditorAspect == null) {
+      mySEnum_MemberOperationEditorAspect = new SEnum_MemberOperation_Editor();
+    }
+    return mySEnum_MemberOperationEditorAspect;
+  }
+
+  private SEnum_MembersOperation_Editor getSEnum_MembersOperationEditorAspect() {
+    if (mySEnum_MembersOperationEditorAspect == null) {
+      mySEnum_MembersOperationEditorAspect = new SEnum_MembersOperation_Editor();
+    }
+    return mySEnum_MembersOperationEditorAspect;
+  }
+
+  private SLinkAccess_Editor getSLinkAccessEditorAspect() {
+    if (mySLinkAccessEditorAspect == null) {
+      mySLinkAccessEditorAspect = new SLinkAccess_Editor();
+    }
+    return mySLinkAccessEditorAspect;
+  }
+
+  private SLinkImplicitSelect_Editor getSLinkImplicitSelectEditorAspect() {
+    if (mySLinkImplicitSelectEditorAspect == null) {
+      mySLinkImplicitSelectEditorAspect = new SLinkImplicitSelect_Editor();
+    }
+    return mySLinkImplicitSelectEditorAspect;
+  }
+
+  private SLinkListAccess_Editor getSLinkListAccessEditorAspect() {
+    if (mySLinkListAccessEditorAspect == null) {
+      mySLinkListAccessEditorAspect = new SLinkListAccess_Editor();
+    }
+    return mySLinkListAccessEditorAspect;
+  }
+
+  private SModelType_Editor getSModelTypeEditorAspect() {
+    if (mySModelTypeEditorAspect == null) {
+      mySModelTypeEditorAspect = new SModelType_Editor();
+    }
+    return mySModelTypeEditorAspect;
+  }
+
+  private SNodeCreator_Editor getSNodeCreatorEditorAspect() {
+    if (mySNodeCreatorEditorAspect == null) {
+      mySNodeCreatorEditorAspect = new SNodeCreator_Editor();
+    }
+    return mySNodeCreatorEditorAspect;
+  }
+
+  private SNodeListCreator_Editor getSNodeListCreatorEditorAspect() {
+    if (mySNodeListCreatorEditorAspect == null) {
+      mySNodeListCreatorEditorAspect = new SNodeListCreator_Editor();
+    }
+    return mySNodeListCreatorEditorAspect;
+  }
+
+  private SNodeListType_Editor getSNodeListTypeEditorAspect() {
+    if (mySNodeListTypeEditorAspect == null) {
+      mySNodeListTypeEditorAspect = new SNodeListType_Editor();
+    }
+    return mySNodeListTypeEditorAspect;
+  }
+
+  private SNodeOperation_Editor getSNodeOperationEditorAspect() {
+    if (mySNodeOperationEditorAspect == null) {
+      mySNodeOperationEditorAspect = new SNodeOperation_Editor();
+    }
+    return mySNodeOperationEditorAspect;
+  }
+
+  private SNodeType_Editor getSNodeTypeEditorAspect() {
+    if (mySNodeTypeEditorAspect == null) {
+      mySNodeTypeEditorAspect = new SNodeType_Editor();
+    }
+    return mySNodeTypeEditorAspect;
+  }
+
+  private SNodeTypeCastExpression_Editor getSNodeTypeCastExpressionEditorAspect() {
+    if (mySNodeTypeCastExpressionEditorAspect == null) {
+      mySNodeTypeCastExpressionEditorAspect = new SNodeTypeCastExpression_Editor();
+    }
+    return mySNodeTypeCastExpressionEditorAspect;
+  }
+
+  private SPropertyAccess_Editor getSPropertyAccessEditorAspect() {
+    if (mySPropertyAccessEditorAspect == null) {
+      mySPropertyAccessEditorAspect = new SPropertyAccess_Editor();
+    }
+    return mySPropertyAccessEditorAspect;
+  }
+
+  private SReferenceType_Editor getSReferenceTypeEditorAspect() {
+    if (mySReferenceTypeEditorAspect == null) {
+      mySReferenceTypeEditorAspect = new SReferenceType_Editor();
+    }
+    return mySReferenceTypeEditorAspect;
+  }
+
+  private SearchScopeType_Editor getSearchScopeTypeEditorAspect() {
+    if (mySearchScopeTypeEditorAspect == null) {
+      mySearchScopeTypeEditorAspect = new SearchScopeType_Editor();
+    }
+    return mySearchScopeTypeEditorAspect;
+  }
+
+  private SearchScope_ContainsOperation_Editor getSearchScope_ContainsOperationEditorAspect() {
+    if (mySearchScope_ContainsOperationEditorAspect == null) {
+      mySearchScope_ContainsOperationEditorAspect = new SearchScope_ContainsOperation_Editor();
+    }
+    return mySearchScope_ContainsOperationEditorAspect;
+  }
+
+  private SemanticDowncastExpression_Editor getSemanticDowncastExpressionEditorAspect() {
+    if (mySemanticDowncastExpressionEditorAspect == null) {
+      mySemanticDowncastExpressionEditorAspect = new SemanticDowncastExpression_Editor();
+    }
+    return mySemanticDowncastExpressionEditorAspect;
+  }
+
+  private StaticConceptMethodCall_Editor getStaticConceptMethodCallEditorAspect() {
+    if (myStaticConceptMethodCallEditorAspect == null) {
+      myStaticConceptMethodCallEditorAspect = new StaticConceptMethodCall_Editor();
+    }
+    return myStaticConceptMethodCallEditorAspect;
+  }
+
+  private _LinkAccessT_Editor get_LinkAccessTEditorAspect() {
+    if (my_LinkAccessTEditorAspect == null) {
+      my_LinkAccessTEditorAspect = new _LinkAccessT_Editor();
+    }
+    return my_LinkAccessTEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0bf = new String[]{"jetbrains.mps.lang.smodel.structure.AbstractOperationParameter", "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier", "jetbrains.mps.lang.smodel.structure.AttributeAccess", "jetbrains.mps.lang.smodel.structure.CheckedModuleReference", "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptPropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation", "jetbrains.mps.lang.smodel.structure.ConceptRefExpression", "jetbrains.mps.lang.smodel.structure.ConceptReference", "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement", "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase", "jetbrains.mps.lang.smodel.structure.Concept_FindInstances", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts", "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy", "jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation", "jetbrains.mps.lang.smodel.structure.Concept_NewInstance", "jetbrains.mps.lang.smodel.structure.EnumMemberReference", "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression", "jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation", "jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation", "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression", "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable", "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation", "jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation", "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation", "jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation", "jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation", "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression", "jetbrains.mps.lang.smodel.structure.LinkQualifier", "jetbrains.mps.lang.smodel.structure.LinkRefExpression", "jetbrains.mps.lang.smodel.structure.LinkRefQualifier", "jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation", "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation", "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression", "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.smodel.structure.Model_GetModule", "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_NodesOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation", "jetbrains.mps.lang.smodel.structure.Model_RootsOperation", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression", "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier", "jetbrains.mps.lang.smodel.structure.NodePointerExpression", "jetbrains.mps.lang.smodel.structure.NodeRefExpression", "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", "jetbrains.mps.lang.smodel.structure.Node_CopyOperation", "jetbrains.mps.lang.smodel.structure.Node_DeleteOperation", "jetbrains.mps.lang.smodel.structure.Node_DetachOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation", "jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation", "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation", "jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetModelOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetParentOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation", "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", "jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation", "jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsNullOperation", "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation", "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier", "jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList", "jetbrains.mps.lang.smodel.structure.PoundExpression", "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyQualifier", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", "jetbrains.mps.lang.smodel.structure.Property_SetOperation", "jetbrains.mps.lang.smodel.structure.ReadConceptReferenceExpression", "jetbrains.mps.lang.smodel.structure.RefConcept_Reference", "jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo", "jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation", "jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation", "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess", "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess", "jetbrains.mps.lang.smodel.structure.SConceptType", "jetbrains.mps.lang.smodel.structure.SEnumMemberType", "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", "jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation", "jetbrains.mps.lang.smodel.structure.SLinkAccess", "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", "jetbrains.mps.lang.smodel.structure.SLinkListAccess", "jetbrains.mps.lang.smodel.structure.SModelType", "jetbrains.mps.lang.smodel.structure.SNodeCreator", "jetbrains.mps.lang.smodel.structure.SNodeListCreator", "jetbrains.mps.lang.smodel.structure.SNodeListType", "jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.smodel.structure.SNodeType", "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", "jetbrains.mps.lang.smodel.structure.SPropertyAccess", "jetbrains.mps.lang.smodel.structure.SReferenceType", "jetbrains.mps.lang.smodel.structure.SearchScopeType", "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", "jetbrains.mps.lang.smodel.structure._LinkAccessT"};
 }

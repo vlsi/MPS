@@ -8,16 +8,42 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private LogStatement_Editor myLogStatementEditorAspect;
+  private PrintStatement_Editor myPrintStatementEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
-        return new LogStatement_Editor();
+        return getLogStatementEditorAspect();
       case 1:
-        return new PrintStatement_Editor();
+        return getPrintStatementEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.logging.structure.LogStatement", "jetbrains.mps.baseLanguage.logging.structure.PrintStatement"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myLogStatementEditorAspect = null;
+    myPrintStatementEditorAspect = null;
+  }
+
+  private LogStatement_Editor getLogStatementEditorAspect() {
+    if (myLogStatementEditorAspect == null) {
+      myLogStatementEditorAspect = new LogStatement_Editor();
+    }
+    return myLogStatementEditorAspect;
+  }
+
+  private PrintStatement_Editor getPrintStatementEditorAspect() {
+    if (myPrintStatementEditorAspect == null) {
+      myPrintStatementEditorAspect = new PrintStatement_Editor();
+    }
+    return myPrintStatementEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.baseLanguage.logging.structure.LogStatement", "jetbrains.mps.baseLanguage.logging.structure.PrintStatement"};
 }

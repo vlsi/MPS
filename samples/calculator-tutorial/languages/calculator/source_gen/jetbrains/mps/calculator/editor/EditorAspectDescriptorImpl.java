@@ -8,20 +8,64 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Calculator_Editor myCalculatorEditorAspect;
+  private InputField_Editor myInputFieldEditorAspect;
+  private InputFieldReference_Editor myInputFieldReferenceEditorAspect;
+  private OutputField_Editor myOutputFieldEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0e, descriptor.getConceptFqName())) {
       case 0:
-        return new Calculator_Editor();
+        return getCalculatorEditorAspect();
       case 1:
-        return new InputField_Editor();
+        return getInputFieldEditorAspect();
       case 2:
-        return new InputFieldReference_Editor();
+        return getInputFieldReferenceEditorAspect();
       case 3:
-        return new OutputField_Editor();
+        return getOutputFieldEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.calculator.structure.Calculator", "jetbrains.mps.calculator.structure.InputField", "jetbrains.mps.calculator.structure.InputFieldReference", "jetbrains.mps.calculator.structure.OutputField"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCalculatorEditorAspect = null;
+    myInputFieldEditorAspect = null;
+    myInputFieldReferenceEditorAspect = null;
+    myOutputFieldEditorAspect = null;
+  }
+
+  private Calculator_Editor getCalculatorEditorAspect() {
+    if (myCalculatorEditorAspect == null) {
+      myCalculatorEditorAspect = new Calculator_Editor();
+    }
+    return myCalculatorEditorAspect;
+  }
+
+  private InputField_Editor getInputFieldEditorAspect() {
+    if (myInputFieldEditorAspect == null) {
+      myInputFieldEditorAspect = new InputField_Editor();
+    }
+    return myInputFieldEditorAspect;
+  }
+
+  private InputFieldReference_Editor getInputFieldReferenceEditorAspect() {
+    if (myInputFieldReferenceEditorAspect == null) {
+      myInputFieldReferenceEditorAspect = new InputFieldReference_Editor();
+    }
+    return myInputFieldReferenceEditorAspect;
+  }
+
+  private OutputField_Editor getOutputFieldEditorAspect() {
+    if (myOutputFieldEditorAspect == null) {
+      myOutputFieldEditorAspect = new OutputField_Editor();
+    }
+    return myOutputFieldEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0e = new String[]{"jetbrains.mps.calculator.structure.Calculator", "jetbrains.mps.calculator.structure.InputField", "jetbrains.mps.calculator.structure.InputFieldReference", "jetbrains.mps.calculator.structure.OutputField"};
 }

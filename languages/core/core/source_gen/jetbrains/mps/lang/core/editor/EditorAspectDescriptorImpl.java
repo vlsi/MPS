@@ -8,22 +8,75 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Attribute_Editor myAttributeEditorAspect;
+  private BaseConcept_Editor myBaseConceptEditorAspect;
+  private ExportScopeModule_Editor myExportScopeModuleEditorAspect;
+  private ExportScopeNamespace_Editor myExportScopeNamespaceEditorAspect;
+  private ExportScopePublic_Editor myExportScopePublicEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0f, descriptor.getConceptFqName())) {
       case 0:
-        return new Attribute_Editor();
+        return getAttributeEditorAspect();
       case 1:
-        return new BaseConcept_Editor();
+        return getBaseConceptEditorAspect();
       case 2:
-        return new ExportScopeModule_Editor();
+        return getExportScopeModuleEditorAspect();
       case 3:
-        return new ExportScopeNamespace_Editor();
+        return getExportScopeNamespaceEditorAspect();
       case 4:
-        return new ExportScopePublic_Editor();
+        return getExportScopePublicEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAttributeEditorAspect = null;
+    myBaseConceptEditorAspect = null;
+    myExportScopeModuleEditorAspect = null;
+    myExportScopeNamespaceEditorAspect = null;
+    myExportScopePublicEditorAspect = null;
+  }
+
+  private Attribute_Editor getAttributeEditorAspect() {
+    if (myAttributeEditorAspect == null) {
+      myAttributeEditorAspect = new Attribute_Editor();
+    }
+    return myAttributeEditorAspect;
+  }
+
+  private BaseConcept_Editor getBaseConceptEditorAspect() {
+    if (myBaseConceptEditorAspect == null) {
+      myBaseConceptEditorAspect = new BaseConcept_Editor();
+    }
+    return myBaseConceptEditorAspect;
+  }
+
+  private ExportScopeModule_Editor getExportScopeModuleEditorAspect() {
+    if (myExportScopeModuleEditorAspect == null) {
+      myExportScopeModuleEditorAspect = new ExportScopeModule_Editor();
+    }
+    return myExportScopeModuleEditorAspect;
+  }
+
+  private ExportScopeNamespace_Editor getExportScopeNamespaceEditorAspect() {
+    if (myExportScopeNamespaceEditorAspect == null) {
+      myExportScopeNamespaceEditorAspect = new ExportScopeNamespace_Editor();
+    }
+    return myExportScopeNamespaceEditorAspect;
+  }
+
+  private ExportScopePublic_Editor getExportScopePublicEditorAspect() {
+    if (myExportScopePublicEditorAspect == null) {
+      myExportScopePublicEditorAspect = new ExportScopePublic_Editor();
+    }
+    return myExportScopePublicEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0f = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic"};
 }

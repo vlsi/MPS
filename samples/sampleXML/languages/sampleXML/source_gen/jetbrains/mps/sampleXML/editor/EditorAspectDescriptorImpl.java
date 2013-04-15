@@ -8,22 +8,75 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Attribute_Editor myAttributeEditorAspect;
+  private Document_Editor myDocumentEditorAspect;
+  private Element_Editor myElementEditorAspect;
+  private ElementPart_Editor myElementPartEditorAspect;
+  private Text_Editor myTextEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0f, descriptor.getConceptFqName())) {
       case 0:
-        return new Attribute_Editor();
+        return getAttributeEditorAspect();
       case 1:
-        return new Document_Editor();
+        return getDocumentEditorAspect();
       case 2:
-        return new Element_Editor();
+        return getElementEditorAspect();
       case 3:
-        return new ElementPart_Editor();
+        return getElementPartEditorAspect();
       case 4:
-        return new Text_Editor();
+        return getTextEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.sampleXML.structure.Attribute", "jetbrains.mps.sampleXML.structure.Document", "jetbrains.mps.sampleXML.structure.Element", "jetbrains.mps.sampleXML.structure.ElementPart", "jetbrains.mps.sampleXML.structure.Text"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAttributeEditorAspect = null;
+    myDocumentEditorAspect = null;
+    myElementEditorAspect = null;
+    myElementPartEditorAspect = null;
+    myTextEditorAspect = null;
+  }
+
+  private Attribute_Editor getAttributeEditorAspect() {
+    if (myAttributeEditorAspect == null) {
+      myAttributeEditorAspect = new Attribute_Editor();
+    }
+    return myAttributeEditorAspect;
+  }
+
+  private Document_Editor getDocumentEditorAspect() {
+    if (myDocumentEditorAspect == null) {
+      myDocumentEditorAspect = new Document_Editor();
+    }
+    return myDocumentEditorAspect;
+  }
+
+  private Element_Editor getElementEditorAspect() {
+    if (myElementEditorAspect == null) {
+      myElementEditorAspect = new Element_Editor();
+    }
+    return myElementEditorAspect;
+  }
+
+  private ElementPart_Editor getElementPartEditorAspect() {
+    if (myElementPartEditorAspect == null) {
+      myElementPartEditorAspect = new ElementPart_Editor();
+    }
+    return myElementPartEditorAspect;
+  }
+
+  private Text_Editor getTextEditorAspect() {
+    if (myTextEditorAspect == null) {
+      myTextEditorAspect = new Text_Editor();
+    }
+    return myTextEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0f = new String[]{"jetbrains.mps.sampleXML.structure.Attribute", "jetbrains.mps.sampleXML.structure.Document", "jetbrains.mps.sampleXML.structure.Element", "jetbrains.mps.sampleXML.structure.ElementPart", "jetbrains.mps.sampleXML.structure.Text"};
 }

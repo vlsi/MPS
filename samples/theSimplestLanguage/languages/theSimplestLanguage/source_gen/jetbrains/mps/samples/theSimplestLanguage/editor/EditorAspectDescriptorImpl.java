@@ -8,14 +8,31 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private TheSimplestConcept_Editor myTheSimplestConceptEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return new TheSimplestConcept_Editor();
+        return getTheSimplestConceptEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myTheSimplestConceptEditorAspect = null;
+  }
+
+  private TheSimplestConcept_Editor getTheSimplestConceptEditorAspect() {
+    if (myTheSimplestConceptEditorAspect == null) {
+      myTheSimplestConceptEditorAspect = new TheSimplestConcept_Editor();
+    }
+    return myTheSimplestConceptEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept"};
 }

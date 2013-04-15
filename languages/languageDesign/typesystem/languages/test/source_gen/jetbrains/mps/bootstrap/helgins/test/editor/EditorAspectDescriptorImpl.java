@@ -8,16 +8,42 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AConcept_Editor myAConceptEditorAspect;
+  private BConcept_Editor myBConceptEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
-        return new AConcept_Editor();
+        return getAConceptEditorAspect();
       case 1:
-        return new BConcept_Editor();
+        return getBConceptEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.bootstrap.helgins.test.structure.AConcept", "jetbrains.mps.bootstrap.helgins.test.structure.BConcept"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAConceptEditorAspect = null;
+    myBConceptEditorAspect = null;
+  }
+
+  private AConcept_Editor getAConceptEditorAspect() {
+    if (myAConceptEditorAspect == null) {
+      myAConceptEditorAspect = new AConcept_Editor();
+    }
+    return myAConceptEditorAspect;
+  }
+
+  private BConcept_Editor getBConceptEditorAspect() {
+    if (myBConceptEditorAspect == null) {
+      myBConceptEditorAspect = new BConcept_Editor();
+    }
+    return myBConceptEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.bootstrap.helgins.test.structure.AConcept", "jetbrains.mps.bootstrap.helgins.test.structure.BConcept"};
 }

@@ -8,20 +8,64 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CreateBlock_Editor myCreateBlockEditorAspect;
+  private LanguageRef_Editor myLanguageRefEditorAspect;
+  private ModelCreationSettings_Editor myModelCreationSettingsEditorAspect;
+  private ModelManagerDeclaration_Editor myModelManagerDeclarationEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0e, descriptor.getConceptFqName())) {
       case 0:
-        return new CreateBlock_Editor();
+        return getCreateBlockEditorAspect();
       case 1:
-        return new LanguageRef_Editor();
+        return getLanguageRefEditorAspect();
       case 2:
-        return new ModelCreationSettings_Editor();
+        return getModelCreationSettingsEditorAspect();
       case 3:
-        return new ModelManagerDeclaration_Editor();
+        return getModelManagerDeclarationEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCreateBlockEditorAspect = null;
+    myLanguageRefEditorAspect = null;
+    myModelCreationSettingsEditorAspect = null;
+    myModelManagerDeclarationEditorAspect = null;
+  }
+
+  private CreateBlock_Editor getCreateBlockEditorAspect() {
+    if (myCreateBlockEditorAspect == null) {
+      myCreateBlockEditorAspect = new CreateBlock_Editor();
+    }
+    return myCreateBlockEditorAspect;
+  }
+
+  private LanguageRef_Editor getLanguageRefEditorAspect() {
+    if (myLanguageRefEditorAspect == null) {
+      myLanguageRefEditorAspect = new LanguageRef_Editor();
+    }
+    return myLanguageRefEditorAspect;
+  }
+
+  private ModelCreationSettings_Editor getModelCreationSettingsEditorAspect() {
+    if (myModelCreationSettingsEditorAspect == null) {
+      myModelCreationSettingsEditorAspect = new ModelCreationSettings_Editor();
+    }
+    return myModelCreationSettingsEditorAspect;
+  }
+
+  private ModelManagerDeclaration_Editor getModelManagerDeclarationEditorAspect() {
+    if (myModelManagerDeclarationEditorAspect == null) {
+      myModelManagerDeclarationEditorAspect = new ModelManagerDeclaration_Editor();
+    }
+    return myModelManagerDeclarationEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0e = new String[]{"jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"};
 }

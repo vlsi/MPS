@@ -8,26 +8,97 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ExtensionDeclaration_Editor myExtensionDeclarationEditorAspect;
+  private ExtensionFieldDeclaration_Editor myExtensionFieldDeclarationEditorAspect;
+  private ExtensionFieldReference_Editor myExtensionFieldReferenceEditorAspect;
+  private ExtensionPointDeclaration_Editor myExtensionPointDeclarationEditorAspect;
+  private ExtensionPointExpression_Editor myExtensionPointExpressionEditorAspect;
+  private ExtensionPointType_Editor myExtensionPointTypeEditorAspect;
+  private GetExtensionObjectsOperation_Editor myGetExtensionObjectsOperationEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0h, descriptor.getConceptFqName())) {
       case 0:
-        return new ExtensionDeclaration_Editor();
+        return getExtensionDeclarationEditorAspect();
       case 1:
-        return new ExtensionFieldDeclaration_Editor();
+        return getExtensionFieldDeclarationEditorAspect();
       case 2:
-        return new ExtensionFieldReference_Editor();
+        return getExtensionFieldReferenceEditorAspect();
       case 3:
-        return new ExtensionPointDeclaration_Editor();
+        return getExtensionPointDeclarationEditorAspect();
       case 4:
-        return new ExtensionPointExpression_Editor();
+        return getExtensionPointExpressionEditorAspect();
       case 5:
-        return new ExtensionPointType_Editor();
+        return getExtensionPointTypeEditorAspect();
       case 6:
-        return new GetExtensionObjectsOperation_Editor();
+        return getGetExtensionObjectsOperationEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myExtensionDeclarationEditorAspect = null;
+    myExtensionFieldDeclarationEditorAspect = null;
+    myExtensionFieldReferenceEditorAspect = null;
+    myExtensionPointDeclarationEditorAspect = null;
+    myExtensionPointExpressionEditorAspect = null;
+    myExtensionPointTypeEditorAspect = null;
+    myGetExtensionObjectsOperationEditorAspect = null;
+  }
+
+  private ExtensionDeclaration_Editor getExtensionDeclarationEditorAspect() {
+    if (myExtensionDeclarationEditorAspect == null) {
+      myExtensionDeclarationEditorAspect = new ExtensionDeclaration_Editor();
+    }
+    return myExtensionDeclarationEditorAspect;
+  }
+
+  private ExtensionFieldDeclaration_Editor getExtensionFieldDeclarationEditorAspect() {
+    if (myExtensionFieldDeclarationEditorAspect == null) {
+      myExtensionFieldDeclarationEditorAspect = new ExtensionFieldDeclaration_Editor();
+    }
+    return myExtensionFieldDeclarationEditorAspect;
+  }
+
+  private ExtensionFieldReference_Editor getExtensionFieldReferenceEditorAspect() {
+    if (myExtensionFieldReferenceEditorAspect == null) {
+      myExtensionFieldReferenceEditorAspect = new ExtensionFieldReference_Editor();
+    }
+    return myExtensionFieldReferenceEditorAspect;
+  }
+
+  private ExtensionPointDeclaration_Editor getExtensionPointDeclarationEditorAspect() {
+    if (myExtensionPointDeclarationEditorAspect == null) {
+      myExtensionPointDeclarationEditorAspect = new ExtensionPointDeclaration_Editor();
+    }
+    return myExtensionPointDeclarationEditorAspect;
+  }
+
+  private ExtensionPointExpression_Editor getExtensionPointExpressionEditorAspect() {
+    if (myExtensionPointExpressionEditorAspect == null) {
+      myExtensionPointExpressionEditorAspect = new ExtensionPointExpression_Editor();
+    }
+    return myExtensionPointExpressionEditorAspect;
+  }
+
+  private ExtensionPointType_Editor getExtensionPointTypeEditorAspect() {
+    if (myExtensionPointTypeEditorAspect == null) {
+      myExtensionPointTypeEditorAspect = new ExtensionPointType_Editor();
+    }
+    return myExtensionPointTypeEditorAspect;
+  }
+
+  private GetExtensionObjectsOperation_Editor getGetExtensionObjectsOperationEditorAspect() {
+    if (myGetExtensionObjectsOperationEditorAspect == null) {
+      myGetExtensionObjectsOperationEditorAspect = new GetExtensionObjectsOperation_Editor();
+    }
+    return myGetExtensionObjectsOperationEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0h = new String[]{"jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"};
 }

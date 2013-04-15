@@ -8,72 +8,350 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Action_Editor myActionEditorAspect;
+  private ActionReference_Editor myActionReferenceEditorAspect;
+  private Actions_Editor myActionsEditorAspect;
+  private BeanExtension_Editor myBeanExtensionEditorAspect;
+  private BeanExtensionAttribute_Editor myBeanExtensionAttributeEditorAspect;
+  private BeanExtensionPoint_Editor myBeanExtensionPointEditorAspect;
+  private Component_Editor myComponentEditorAspect;
+  private ComponentRoot_Editor myComponentRootEditorAspect;
+  private Components_Editor myComponentsEditorAspect;
+  private ComponentsRoot_Editor myComponentsRootEditorAspect;
+  private ConfigurationXmlDocument_Editor myConfigurationXmlDocumentEditorAspect;
+  private Extension_Editor myExtensionEditorAspect;
+  private ExtensionPoints_Editor myExtensionPointsEditorAspect;
+  private Extensions_Editor myExtensionsEditorAspect;
+  private Group_Editor myGroupEditorAspect;
+  private GroupReference_Editor myGroupReferenceEditorAspect;
+  private IdeaVersion_Editor myIdeaVersionEditorAspect;
+  private IntefaceExtensionPoint_Editor myIntefaceExtensionPointEditorAspect;
+  private InterfaceExtension_Editor myInterfaceExtensionEditorAspect;
+  private MouseShortcut_Editor myMouseShortcutEditorAspect;
+  private Plugin_Editor myPluginEditorAspect;
+  private PluginDependency_Editor myPluginDependencyEditorAspect;
+  private PluginDetails_Editor myPluginDetailsEditorAspect;
+  private PluginHelpset_Editor myPluginHelpsetEditorAspect;
+  private PluginVendor_Editor myPluginVendorEditorAspect;
+  private RootRoot_Editor myRootRootEditorAspect;
+  private Separator_Editor mySeparatorEditorAspect;
+  private Service_Editor myServiceEditorAspect;
+  private Shortcut_Editor myShortcutEditorAspect;
+  private XInclude_Editor myXIncludeEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0eb, descriptor.getConceptFqName())) {
       case 0:
-        return new Action_Editor();
+        return getActionEditorAspect();
       case 1:
-        return new ActionReference_Editor();
+        return getActionReferenceEditorAspect();
       case 2:
-        return new Actions_Editor();
+        return getActionsEditorAspect();
       case 3:
-        return new BeanExtension_Editor();
+        return getBeanExtensionEditorAspect();
       case 4:
-        return new BeanExtensionAttribute_Editor();
+        return getBeanExtensionAttributeEditorAspect();
       case 5:
-        return new BeanExtensionPoint_Editor();
+        return getBeanExtensionPointEditorAspect();
       case 6:
-        return new Component_Editor();
+        return getComponentEditorAspect();
       case 7:
-        return new ComponentRoot_Editor();
+        return getComponentRootEditorAspect();
       case 8:
-        return new Components_Editor();
+        return getComponentsEditorAspect();
       case 9:
-        return new ComponentsRoot_Editor();
+        return getComponentsRootEditorAspect();
       case 10:
-        return new ConfigurationXmlDocument_Editor();
+        return getConfigurationXmlDocumentEditorAspect();
       case 11:
-        return new Extension_Editor();
+        return getExtensionEditorAspect();
       case 12:
-        return new ExtensionPoints_Editor();
+        return getExtensionPointsEditorAspect();
       case 13:
-        return new Extensions_Editor();
+        return getExtensionsEditorAspect();
       case 14:
-        return new Group_Editor();
+        return getGroupEditorAspect();
       case 15:
-        return new GroupReference_Editor();
+        return getGroupReferenceEditorAspect();
       case 16:
-        return new IdeaVersion_Editor();
+        return getIdeaVersionEditorAspect();
       case 17:
-        return new IntefaceExtensionPoint_Editor();
+        return getIntefaceExtensionPointEditorAspect();
       case 18:
-        return new InterfaceExtension_Editor();
+        return getInterfaceExtensionEditorAspect();
       case 19:
-        return new MouseShortcut_Editor();
+        return getMouseShortcutEditorAspect();
       case 20:
-        return new Plugin_Editor();
+        return getPluginEditorAspect();
       case 21:
-        return new PluginDependency_Editor();
+        return getPluginDependencyEditorAspect();
       case 22:
-        return new PluginDetails_Editor();
+        return getPluginDetailsEditorAspect();
       case 23:
-        return new PluginHelpset_Editor();
+        return getPluginHelpsetEditorAspect();
       case 24:
-        return new PluginVendor_Editor();
+        return getPluginVendorEditorAspect();
       case 25:
-        return new RootRoot_Editor();
+        return getRootRootEditorAspect();
       case 26:
-        return new Separator_Editor();
+        return getSeparatorEditorAspect();
       case 27:
-        return new Service_Editor();
+        return getServiceEditorAspect();
       case 28:
-        return new Shortcut_Editor();
+        return getShortcutEditorAspect();
       case 29:
-        return new XInclude_Editor();
+        return getXIncludeEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.platform.conf.structure.Action", "jetbrains.mps.platform.conf.structure.ActionReference", "jetbrains.mps.platform.conf.structure.Actions", "jetbrains.mps.platform.conf.structure.BeanExtension", "jetbrains.mps.platform.conf.structure.BeanExtensionAttribute", "jetbrains.mps.platform.conf.structure.BeanExtensionPoint", "jetbrains.mps.platform.conf.structure.Component", "jetbrains.mps.platform.conf.structure.ComponentRoot", "jetbrains.mps.platform.conf.structure.Components", "jetbrains.mps.platform.conf.structure.ComponentsRoot", "jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", "jetbrains.mps.platform.conf.structure.Extension", "jetbrains.mps.platform.conf.structure.ExtensionPoints", "jetbrains.mps.platform.conf.structure.Extensions", "jetbrains.mps.platform.conf.structure.Group", "jetbrains.mps.platform.conf.structure.GroupReference", "jetbrains.mps.platform.conf.structure.IdeaVersion", "jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", "jetbrains.mps.platform.conf.structure.InterfaceExtension", "jetbrains.mps.platform.conf.structure.MouseShortcut", "jetbrains.mps.platform.conf.structure.Plugin", "jetbrains.mps.platform.conf.structure.PluginDependency", "jetbrains.mps.platform.conf.structure.PluginDetails", "jetbrains.mps.platform.conf.structure.PluginHelpset", "jetbrains.mps.platform.conf.structure.PluginVendor", "jetbrains.mps.platform.conf.structure.RootRoot", "jetbrains.mps.platform.conf.structure.Separator", "jetbrains.mps.platform.conf.structure.Service", "jetbrains.mps.platform.conf.structure.Shortcut", "jetbrains.mps.platform.conf.structure.XInclude"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myActionEditorAspect = null;
+    myActionReferenceEditorAspect = null;
+    myActionsEditorAspect = null;
+    myBeanExtensionEditorAspect = null;
+    myBeanExtensionAttributeEditorAspect = null;
+    myBeanExtensionPointEditorAspect = null;
+    myComponentEditorAspect = null;
+    myComponentRootEditorAspect = null;
+    myComponentsEditorAspect = null;
+    myComponentsRootEditorAspect = null;
+    myConfigurationXmlDocumentEditorAspect = null;
+    myExtensionEditorAspect = null;
+    myExtensionPointsEditorAspect = null;
+    myExtensionsEditorAspect = null;
+    myGroupEditorAspect = null;
+    myGroupReferenceEditorAspect = null;
+    myIdeaVersionEditorAspect = null;
+    myIntefaceExtensionPointEditorAspect = null;
+    myInterfaceExtensionEditorAspect = null;
+    myMouseShortcutEditorAspect = null;
+    myPluginEditorAspect = null;
+    myPluginDependencyEditorAspect = null;
+    myPluginDetailsEditorAspect = null;
+    myPluginHelpsetEditorAspect = null;
+    myPluginVendorEditorAspect = null;
+    myRootRootEditorAspect = null;
+    mySeparatorEditorAspect = null;
+    myServiceEditorAspect = null;
+    myShortcutEditorAspect = null;
+    myXIncludeEditorAspect = null;
+  }
+
+  private Action_Editor getActionEditorAspect() {
+    if (myActionEditorAspect == null) {
+      myActionEditorAspect = new Action_Editor();
+    }
+    return myActionEditorAspect;
+  }
+
+  private ActionReference_Editor getActionReferenceEditorAspect() {
+    if (myActionReferenceEditorAspect == null) {
+      myActionReferenceEditorAspect = new ActionReference_Editor();
+    }
+    return myActionReferenceEditorAspect;
+  }
+
+  private Actions_Editor getActionsEditorAspect() {
+    if (myActionsEditorAspect == null) {
+      myActionsEditorAspect = new Actions_Editor();
+    }
+    return myActionsEditorAspect;
+  }
+
+  private BeanExtension_Editor getBeanExtensionEditorAspect() {
+    if (myBeanExtensionEditorAspect == null) {
+      myBeanExtensionEditorAspect = new BeanExtension_Editor();
+    }
+    return myBeanExtensionEditorAspect;
+  }
+
+  private BeanExtensionAttribute_Editor getBeanExtensionAttributeEditorAspect() {
+    if (myBeanExtensionAttributeEditorAspect == null) {
+      myBeanExtensionAttributeEditorAspect = new BeanExtensionAttribute_Editor();
+    }
+    return myBeanExtensionAttributeEditorAspect;
+  }
+
+  private BeanExtensionPoint_Editor getBeanExtensionPointEditorAspect() {
+    if (myBeanExtensionPointEditorAspect == null) {
+      myBeanExtensionPointEditorAspect = new BeanExtensionPoint_Editor();
+    }
+    return myBeanExtensionPointEditorAspect;
+  }
+
+  private Component_Editor getComponentEditorAspect() {
+    if (myComponentEditorAspect == null) {
+      myComponentEditorAspect = new Component_Editor();
+    }
+    return myComponentEditorAspect;
+  }
+
+  private ComponentRoot_Editor getComponentRootEditorAspect() {
+    if (myComponentRootEditorAspect == null) {
+      myComponentRootEditorAspect = new ComponentRoot_Editor();
+    }
+    return myComponentRootEditorAspect;
+  }
+
+  private Components_Editor getComponentsEditorAspect() {
+    if (myComponentsEditorAspect == null) {
+      myComponentsEditorAspect = new Components_Editor();
+    }
+    return myComponentsEditorAspect;
+  }
+
+  private ComponentsRoot_Editor getComponentsRootEditorAspect() {
+    if (myComponentsRootEditorAspect == null) {
+      myComponentsRootEditorAspect = new ComponentsRoot_Editor();
+    }
+    return myComponentsRootEditorAspect;
+  }
+
+  private ConfigurationXmlDocument_Editor getConfigurationXmlDocumentEditorAspect() {
+    if (myConfigurationXmlDocumentEditorAspect == null) {
+      myConfigurationXmlDocumentEditorAspect = new ConfigurationXmlDocument_Editor();
+    }
+    return myConfigurationXmlDocumentEditorAspect;
+  }
+
+  private Extension_Editor getExtensionEditorAspect() {
+    if (myExtensionEditorAspect == null) {
+      myExtensionEditorAspect = new Extension_Editor();
+    }
+    return myExtensionEditorAspect;
+  }
+
+  private ExtensionPoints_Editor getExtensionPointsEditorAspect() {
+    if (myExtensionPointsEditorAspect == null) {
+      myExtensionPointsEditorAspect = new ExtensionPoints_Editor();
+    }
+    return myExtensionPointsEditorAspect;
+  }
+
+  private Extensions_Editor getExtensionsEditorAspect() {
+    if (myExtensionsEditorAspect == null) {
+      myExtensionsEditorAspect = new Extensions_Editor();
+    }
+    return myExtensionsEditorAspect;
+  }
+
+  private Group_Editor getGroupEditorAspect() {
+    if (myGroupEditorAspect == null) {
+      myGroupEditorAspect = new Group_Editor();
+    }
+    return myGroupEditorAspect;
+  }
+
+  private GroupReference_Editor getGroupReferenceEditorAspect() {
+    if (myGroupReferenceEditorAspect == null) {
+      myGroupReferenceEditorAspect = new GroupReference_Editor();
+    }
+    return myGroupReferenceEditorAspect;
+  }
+
+  private IdeaVersion_Editor getIdeaVersionEditorAspect() {
+    if (myIdeaVersionEditorAspect == null) {
+      myIdeaVersionEditorAspect = new IdeaVersion_Editor();
+    }
+    return myIdeaVersionEditorAspect;
+  }
+
+  private IntefaceExtensionPoint_Editor getIntefaceExtensionPointEditorAspect() {
+    if (myIntefaceExtensionPointEditorAspect == null) {
+      myIntefaceExtensionPointEditorAspect = new IntefaceExtensionPoint_Editor();
+    }
+    return myIntefaceExtensionPointEditorAspect;
+  }
+
+  private InterfaceExtension_Editor getInterfaceExtensionEditorAspect() {
+    if (myInterfaceExtensionEditorAspect == null) {
+      myInterfaceExtensionEditorAspect = new InterfaceExtension_Editor();
+    }
+    return myInterfaceExtensionEditorAspect;
+  }
+
+  private MouseShortcut_Editor getMouseShortcutEditorAspect() {
+    if (myMouseShortcutEditorAspect == null) {
+      myMouseShortcutEditorAspect = new MouseShortcut_Editor();
+    }
+    return myMouseShortcutEditorAspect;
+  }
+
+  private Plugin_Editor getPluginEditorAspect() {
+    if (myPluginEditorAspect == null) {
+      myPluginEditorAspect = new Plugin_Editor();
+    }
+    return myPluginEditorAspect;
+  }
+
+  private PluginDependency_Editor getPluginDependencyEditorAspect() {
+    if (myPluginDependencyEditorAspect == null) {
+      myPluginDependencyEditorAspect = new PluginDependency_Editor();
+    }
+    return myPluginDependencyEditorAspect;
+  }
+
+  private PluginDetails_Editor getPluginDetailsEditorAspect() {
+    if (myPluginDetailsEditorAspect == null) {
+      myPluginDetailsEditorAspect = new PluginDetails_Editor();
+    }
+    return myPluginDetailsEditorAspect;
+  }
+
+  private PluginHelpset_Editor getPluginHelpsetEditorAspect() {
+    if (myPluginHelpsetEditorAspect == null) {
+      myPluginHelpsetEditorAspect = new PluginHelpset_Editor();
+    }
+    return myPluginHelpsetEditorAspect;
+  }
+
+  private PluginVendor_Editor getPluginVendorEditorAspect() {
+    if (myPluginVendorEditorAspect == null) {
+      myPluginVendorEditorAspect = new PluginVendor_Editor();
+    }
+    return myPluginVendorEditorAspect;
+  }
+
+  private RootRoot_Editor getRootRootEditorAspect() {
+    if (myRootRootEditorAspect == null) {
+      myRootRootEditorAspect = new RootRoot_Editor();
+    }
+    return myRootRootEditorAspect;
+  }
+
+  private Separator_Editor getSeparatorEditorAspect() {
+    if (mySeparatorEditorAspect == null) {
+      mySeparatorEditorAspect = new Separator_Editor();
+    }
+    return mySeparatorEditorAspect;
+  }
+
+  private Service_Editor getServiceEditorAspect() {
+    if (myServiceEditorAspect == null) {
+      myServiceEditorAspect = new Service_Editor();
+    }
+    return myServiceEditorAspect;
+  }
+
+  private Shortcut_Editor getShortcutEditorAspect() {
+    if (myShortcutEditorAspect == null) {
+      myShortcutEditorAspect = new Shortcut_Editor();
+    }
+    return myShortcutEditorAspect;
+  }
+
+  private XInclude_Editor getXIncludeEditorAspect() {
+    if (myXIncludeEditorAspect == null) {
+      myXIncludeEditorAspect = new XInclude_Editor();
+    }
+    return myXIncludeEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0eb = new String[]{"jetbrains.mps.platform.conf.structure.Action", "jetbrains.mps.platform.conf.structure.ActionReference", "jetbrains.mps.platform.conf.structure.Actions", "jetbrains.mps.platform.conf.structure.BeanExtension", "jetbrains.mps.platform.conf.structure.BeanExtensionAttribute", "jetbrains.mps.platform.conf.structure.BeanExtensionPoint", "jetbrains.mps.platform.conf.structure.Component", "jetbrains.mps.platform.conf.structure.ComponentRoot", "jetbrains.mps.platform.conf.structure.Components", "jetbrains.mps.platform.conf.structure.ComponentsRoot", "jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", "jetbrains.mps.platform.conf.structure.Extension", "jetbrains.mps.platform.conf.structure.ExtensionPoints", "jetbrains.mps.platform.conf.structure.Extensions", "jetbrains.mps.platform.conf.structure.Group", "jetbrains.mps.platform.conf.structure.GroupReference", "jetbrains.mps.platform.conf.structure.IdeaVersion", "jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", "jetbrains.mps.platform.conf.structure.InterfaceExtension", "jetbrains.mps.platform.conf.structure.MouseShortcut", "jetbrains.mps.platform.conf.structure.Plugin", "jetbrains.mps.platform.conf.structure.PluginDependency", "jetbrains.mps.platform.conf.structure.PluginDetails", "jetbrains.mps.platform.conf.structure.PluginHelpset", "jetbrains.mps.platform.conf.structure.PluginVendor", "jetbrains.mps.platform.conf.structure.RootRoot", "jetbrains.mps.platform.conf.structure.Separator", "jetbrains.mps.platform.conf.structure.Service", "jetbrains.mps.platform.conf.structure.Shortcut", "jetbrains.mps.platform.conf.structure.XInclude"};
 }

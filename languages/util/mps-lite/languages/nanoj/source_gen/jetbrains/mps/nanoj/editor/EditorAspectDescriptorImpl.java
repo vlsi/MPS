@@ -8,26 +8,97 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private MinusExpression_Editor myMinusExpressionEditorAspect;
+  private NanoClass_Editor myNanoClassEditorAspect;
+  private NanoExpression_Editor myNanoExpressionEditorAspect;
+  private NanoStatement_Editor myNanoStatementEditorAspect;
+  private NanoStatementList_Editor myNanoStatementListEditorAspect;
+  private VarDecl_Editor myVarDeclEditorAspect;
+  private VarDeclReference_Editor myVarDeclReferenceEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0h, descriptor.getConceptFqName())) {
       case 0:
-        return new MinusExpression_Editor();
+        return getMinusExpressionEditorAspect();
       case 1:
-        return new NanoClass_Editor();
+        return getNanoClassEditorAspect();
       case 2:
-        return new NanoExpression_Editor();
+        return getNanoExpressionEditorAspect();
       case 3:
-        return new NanoStatement_Editor();
+        return getNanoStatementEditorAspect();
       case 4:
-        return new NanoStatementList_Editor();
+        return getNanoStatementListEditorAspect();
       case 5:
-        return new VarDecl_Editor();
+        return getVarDeclEditorAspect();
       case 6:
-        return new VarDeclReference_Editor();
+        return getVarDeclReferenceEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.nanoj.structure.MinusExpression", "jetbrains.mps.nanoj.structure.NanoClass", "jetbrains.mps.nanoj.structure.NanoExpression", "jetbrains.mps.nanoj.structure.NanoStatement", "jetbrains.mps.nanoj.structure.NanoStatementList", "jetbrains.mps.nanoj.structure.VarDecl", "jetbrains.mps.nanoj.structure.VarDeclReference"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myMinusExpressionEditorAspect = null;
+    myNanoClassEditorAspect = null;
+    myNanoExpressionEditorAspect = null;
+    myNanoStatementEditorAspect = null;
+    myNanoStatementListEditorAspect = null;
+    myVarDeclEditorAspect = null;
+    myVarDeclReferenceEditorAspect = null;
+  }
+
+  private MinusExpression_Editor getMinusExpressionEditorAspect() {
+    if (myMinusExpressionEditorAspect == null) {
+      myMinusExpressionEditorAspect = new MinusExpression_Editor();
+    }
+    return myMinusExpressionEditorAspect;
+  }
+
+  private NanoClass_Editor getNanoClassEditorAspect() {
+    if (myNanoClassEditorAspect == null) {
+      myNanoClassEditorAspect = new NanoClass_Editor();
+    }
+    return myNanoClassEditorAspect;
+  }
+
+  private NanoExpression_Editor getNanoExpressionEditorAspect() {
+    if (myNanoExpressionEditorAspect == null) {
+      myNanoExpressionEditorAspect = new NanoExpression_Editor();
+    }
+    return myNanoExpressionEditorAspect;
+  }
+
+  private NanoStatement_Editor getNanoStatementEditorAspect() {
+    if (myNanoStatementEditorAspect == null) {
+      myNanoStatementEditorAspect = new NanoStatement_Editor();
+    }
+    return myNanoStatementEditorAspect;
+  }
+
+  private NanoStatementList_Editor getNanoStatementListEditorAspect() {
+    if (myNanoStatementListEditorAspect == null) {
+      myNanoStatementListEditorAspect = new NanoStatementList_Editor();
+    }
+    return myNanoStatementListEditorAspect;
+  }
+
+  private VarDecl_Editor getVarDeclEditorAspect() {
+    if (myVarDeclEditorAspect == null) {
+      myVarDeclEditorAspect = new VarDecl_Editor();
+    }
+    return myVarDeclEditorAspect;
+  }
+
+  private VarDeclReference_Editor getVarDeclReferenceEditorAspect() {
+    if (myVarDeclReferenceEditorAspect == null) {
+      myVarDeclReferenceEditorAspect = new VarDeclReference_Editor();
+    }
+    return myVarDeclReferenceEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0h = new String[]{"jetbrains.mps.nanoj.structure.MinusExpression", "jetbrains.mps.nanoj.structure.NanoClass", "jetbrains.mps.nanoj.structure.NanoExpression", "jetbrains.mps.nanoj.structure.NanoStatement", "jetbrains.mps.nanoj.structure.NanoStatementList", "jetbrains.mps.nanoj.structure.VarDecl", "jetbrains.mps.nanoj.structure.VarDeclReference"};
 }

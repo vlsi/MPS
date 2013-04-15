@@ -8,16 +8,42 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private MyVeryGoodConcept1_Editor myMyVeryGoodConcept1EditorAspect;
+  private YetAnotherGoodConcept_Editor myYetAnotherGoodConceptEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
-        return new MyVeryGoodConcept1_Editor();
+        return getMyVeryGoodConcept1EditorAspect();
       case 1:
-        return new YetAnotherGoodConcept_Editor();
+        return getYetAnotherGoodConceptEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"testRefactoring.structure.MyVeryGoodConcept1", "testRefactoring.structure.YetAnotherGoodConcept"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myMyVeryGoodConcept1EditorAspect = null;
+    myYetAnotherGoodConceptEditorAspect = null;
+  }
+
+  private MyVeryGoodConcept1_Editor getMyVeryGoodConcept1EditorAspect() {
+    if (myMyVeryGoodConcept1EditorAspect == null) {
+      myMyVeryGoodConcept1EditorAspect = new MyVeryGoodConcept1_Editor();
+    }
+    return myMyVeryGoodConcept1EditorAspect;
+  }
+
+  private YetAnotherGoodConcept_Editor getYetAnotherGoodConceptEditorAspect() {
+    if (myYetAnotherGoodConceptEditorAspect == null) {
+      myYetAnotherGoodConceptEditorAspect = new YetAnotherGoodConcept_Editor();
+    }
+    return myYetAnotherGoodConceptEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"testRefactoring.structure.MyVeryGoodConcept1", "testRefactoring.structure.YetAnotherGoodConcept"};
 }

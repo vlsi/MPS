@@ -8,318 +8,1703 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AbstractClassifierReference_Editor myAbstractClassifierReferenceEditorAspect;
+  private AbstractCreator_Editor myAbstractCreatorEditorAspect;
+  private AbstractOperation_Editor myAbstractOperationEditorAspect;
+  private AdditionalForLoopVariable_Editor myAdditionalForLoopVariableEditorAspect;
+  private Annotation_Editor myAnnotationEditorAspect;
+  private AnnotationInstance_Editor myAnnotationInstanceEditorAspect;
+  private AnnotationInstanceExpression_Editor myAnnotationInstanceExpressionEditorAspect;
+  private AnnotationInstanceValue_Editor myAnnotationInstanceValueEditorAspect;
+  private AnnotationMethodDeclaration_Editor myAnnotationMethodDeclarationEditorAspect;
+  private AnonymousClass_Editor myAnonymousClassEditorAspect;
+  private AnonymousClassCreator_Editor myAnonymousClassCreatorEditorAspect;
+  private ArrayAccessExpression_Editor myArrayAccessExpressionEditorAspect;
+  private ArrayClassExpression_Editor myArrayClassExpressionEditorAspect;
+  private ArrayCloneOperation_Editor myArrayCloneOperationEditorAspect;
+  private ArrayCreator_Editor myArrayCreatorEditorAspect;
+  private ArrayCreatorWithInitializer_Editor myArrayCreatorWithInitializerEditorAspect;
+  private ArrayLengthOperation_Editor myArrayLengthOperationEditorAspect;
+  private ArrayLiteral_Editor myArrayLiteralEditorAspect;
+  private ArrayType_Editor myArrayTypeEditorAspect;
+  private AsExpression_Editor myAsExpressionEditorAspect;
+  private AssertStatement_Editor myAssertStatementEditorAspect;
+  private BLBottomType_Editor myBLBottomTypeEditorAspect;
+  private BaseAssignmentExpression_Editor myBaseAssignmentExpressionEditorAspect;
+  private BaseVariableDeclaration_Editor myBaseVariableDeclarationEditorAspect;
+  private BaseVariableReference_Editor myBaseVariableReferenceEditorAspect;
+  private BinaryOperation_Editor myBinaryOperationEditorAspect;
+  private BitwiseNotExpression_Editor myBitwiseNotExpressionEditorAspect;
+  private BlockStatement_Editor myBlockStatementEditorAspect;
+  private BooleanConstant_Editor myBooleanConstantEditorAspect;
+  private BreakStatement_Editor myBreakStatementEditorAspect;
+  private CastExpression_Editor myCastExpressionEditorAspect;
+  private CatchClause_Editor myCatchClauseEditorAspect;
+  private CharConstant_Editor myCharConstantEditorAspect;
+  private ClassConcept_Editor myClassConceptEditorAspect;
+  private ClassCreator_Editor myClassCreatorEditorAspect;
+  private ClassifierClassExpression_Editor myClassifierClassExpressionEditorAspect;
+  private ClassifierType_Editor myClassifierTypeEditorAspect;
+  private ClosureParameter_Editor myClosureParameterEditorAspect;
+  private ClosureParameterReference_Editor myClosureParameterReferenceEditorAspect;
+  private CommentedStatement_Editor myCommentedStatementEditorAspect;
+  private CommentedStatementsBlock_Editor myCommentedStatementsBlockEditorAspect;
+  private ConceptFunction_Editor myConceptFunctionEditorAspect;
+  private ConceptFunctionParameter_Editor myConceptFunctionParameterEditorAspect;
+  private ConstructorDeclaration_Editor myConstructorDeclarationEditorAspect;
+  private ContinueStatement_Editor myContinueStatementEditorAspect;
+  private CustomPropertyImplementation_Editor myCustomPropertyImplementationEditorAspect;
+  private DefaultClassCreator_Editor myDefaultClassCreatorEditorAspect;
+  private DefaultGetAccessor_Editor myDefaultGetAccessorEditorAspect;
+  private DefaultPropertyImplementation_Editor myDefaultPropertyImplementationEditorAspect;
+  private DefaultSetAccessor_Editor myDefaultSetAccessorEditorAspect;
+  private DimensionExpression_Editor myDimensionExpressionEditorAspect;
+  private DoWhileStatement_Editor myDoWhileStatementEditorAspect;
+  private DotExpression_Editor myDotExpressionEditorAspect;
+  private ElsifClause_Editor myElsifClauseEditorAspect;
+  private EnumClass_Editor myEnumClassEditorAspect;
+  private EnumConstantDeclaration_Editor myEnumConstantDeclarationEditorAspect;
+  private EnumConstantReference_Editor myEnumConstantReferenceEditorAspect;
+  private EnumValueOfExpression_Editor myEnumValueOfExpressionEditorAspect;
+  private EnumValuesExpression_Editor myEnumValuesExpressionEditorAspect;
+  private EscapeOperation_Editor myEscapeOperationEditorAspect;
+  private Expression_Editor myExpressionEditorAspect;
+  private ExpressionStatement_Editor myExpressionStatementEditorAspect;
+  private FieldDeclaration_Editor myFieldDeclarationEditorAspect;
+  private FieldReferenceOperation_Editor myFieldReferenceOperationEditorAspect;
+  private FloatingPointConstant_Editor myFloatingPointConstantEditorAspect;
+  private FloatingPointFloatConstant_Editor myFloatingPointFloatConstantEditorAspect;
+  private ForStatement_Editor myForStatementEditorAspect;
+  private ForeachStatement_Editor myForeachStatementEditorAspect;
+  private GenericNewExpression_Editor myGenericNewExpressionEditorAspect;
+  private GetAccessor_Editor myGetAccessorEditorAspect;
+  private HexIntegerLiteral_Editor myHexIntegerLiteralEditorAspect;
+  private IfStatement_Editor myIfStatementEditorAspect;
+  private ImplicitAnnotationInstanceValue_Editor myImplicitAnnotationInstanceValueEditorAspect;
+  private IncompleteMemberDeclaration_Editor myIncompleteMemberDeclarationEditorAspect;
+  private InstanceInitializer_Editor myInstanceInitializerEditorAspect;
+  private InstanceMethodCallOperation_Editor myInstanceMethodCallOperationEditorAspect;
+  private InstanceMethodDeclaration_Editor myInstanceMethodDeclarationEditorAspect;
+  private InstanceOfExpression_Editor myInstanceOfExpressionEditorAspect;
+  private IntegerConstant_Editor myIntegerConstantEditorAspect;
+  private Interface_Editor myInterfaceEditorAspect;
+  private JavaImport_Editor myJavaImportEditorAspect;
+  private JavaImports_Editor myJavaImportsEditorAspect;
+  private LocalMethodCall_Editor myLocalMethodCallEditorAspect;
+  private LocalPropertyReference_Editor myLocalPropertyReferenceEditorAspect;
+  private LocalVariableDeclaration_Editor myLocalVariableDeclarationEditorAspect;
+  private LocalVariableDeclarationStatement_Editor myLocalVariableDeclarationStatementEditorAspect;
+  private LongLiteral_Editor myLongLiteralEditorAspect;
+  private LoopLabel_Editor myLoopLabelEditorAspect;
+  private LoopLabelReference_Editor myLoopLabelReferenceEditorAspect;
+  private LowerBoundType_Editor myLowerBoundTypeEditorAspect;
+  private NotExpression_Editor myNotExpressionEditorAspect;
+  private NullLiteral_Editor myNullLiteralEditorAspect;
+  private Number_Editor myNumberEditorAspect;
+  private ParameterDeclaration_Editor myParameterDeclarationEditorAspect;
+  private ParenthesizedExpression_Editor myParenthesizedExpressionEditorAspect;
+  private PlaceholderMember_Editor myPlaceholderMemberEditorAspect;
+  private PlaceholderMethodDeclaration_Editor myPlaceholderMethodDeclarationEditorAspect;
+  private PostfixDecrementExpression_Editor myPostfixDecrementExpressionEditorAspect;
+  private PostfixIncrementExpression_Editor myPostfixIncrementExpressionEditorAspect;
+  private PrefixDecrementExpression_Editor myPrefixDecrementExpressionEditorAspect;
+  private PrefixIncrementExpression_Editor myPrefixIncrementExpressionEditorAspect;
+  private PrimitiveClassExpression_Editor myPrimitiveClassExpressionEditorAspect;
+  private Property_Editor myPropertyEditorAspect;
+  private PropertyReference_Editor myPropertyReferenceEditorAspect;
+  private RemarkStatement_Editor myRemarkStatementEditorAspect;
+  private ReturnStatement_Editor myReturnStatementEditorAspect;
+  private SetAccessor_Editor mySetAccessorEditorAspect;
+  private SingleLineComment_Editor mySingleLineCommentEditorAspect;
+  private Statement_Editor myStatementEditorAspect;
+  private StatementCommentPart_Editor myStatementCommentPartEditorAspect;
+  private StatementList_Editor myStatementListEditorAspect;
+  private StaticFieldDeclaration_Editor myStaticFieldDeclarationEditorAspect;
+  private StaticFieldReference_Editor myStaticFieldReferenceEditorAspect;
+  private StaticInitializer_Editor myStaticInitializerEditorAspect;
+  private StaticMethodCall_Editor myStaticMethodCallEditorAspect;
+  private StaticMethodDeclaration_Editor myStaticMethodDeclarationEditorAspect;
+  private StringBooleanOperation_Editor myStringBooleanOperationEditorAspect;
+  private StringLiteral_Editor myStringLiteralEditorAspect;
+  private StringToken_Editor myStringTokenEditorAspect;
+  private StubStatementList_Editor myStubStatementListEditorAspect;
+  private SubstringExpression_Editor mySubstringExpressionEditorAspect;
+  private SuperConstructorInvocation_Editor mySuperConstructorInvocationEditorAspect;
+  private SuperMethodCall_Editor mySuperMethodCallEditorAspect;
+  private SwitchCase_Editor mySwitchCaseEditorAspect;
+  private SwitchStatement_Editor mySwitchStatementEditorAspect;
+  private SynchronizedStatement_Editor mySynchronizedStatementEditorAspect;
+  private TernaryOperatorExpression_Editor myTernaryOperatorExpressionEditorAspect;
+  private TextCommentPart_Editor myTextCommentPartEditorAspect;
+  private ThisConstructorInvocation_Editor myThisConstructorInvocationEditorAspect;
+  private ThisExpression_Editor myThisExpressionEditorAspect;
+  private ThrowStatement_Editor myThrowStatementEditorAspect;
+  private TrimOperation_Editor myTrimOperationEditorAspect;
+  private TryCatchStatement_Editor myTryCatchStatementEditorAspect;
+  private TryStatement_Editor myTryStatementEditorAspect;
+  private Type_Editor myTypeEditorAspect;
+  private TypeVariableDeclaration_Editor myTypeVariableDeclarationEditorAspect;
+  private TypeVariableReference_Editor myTypeVariableReferenceEditorAspect;
+  private UnaryMinus_Editor myUnaryMinusEditorAspect;
+  private UndefinedType_Editor myUndefinedTypeEditorAspect;
+  private UnknownConsCall_Editor myUnknownConsCallEditorAspect;
+  private UnknownDotCall_Editor myUnknownDotCallEditorAspect;
+  private UnknownLocalCall_Editor myUnknownLocalCallEditorAspect;
+  private UnknownNameRef_Editor myUnknownNameRefEditorAspect;
+  private UnknownNew_Editor myUnknownNewEditorAspect;
+  private UnresolvedNameReference_Editor myUnresolvedNameReferenceEditorAspect;
+  private UpperBoundType_Editor myUpperBoundTypeEditorAspect;
+  private UsingStatement_Editor myUsingStatementEditorAspect;
+  private ValueParameter_Editor myValueParameterEditorAspect;
+  private VariableArityType_Editor myVariableArityTypeEditorAspect;
+  private VariableReference_Editor myVariableReferenceEditorAspect;
+  private Visibility_Editor myVisibilityEditorAspect;
+  private WhileStatement_Editor myWhileStatementEditorAspect;
+  private WildCardType_Editor myWildCardTypeEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0xf, descriptor.getConceptFqName())) {
       case 0:
-        return new AbstractClassifierReference_Editor();
+        return getAbstractClassifierReferenceEditorAspect();
       case 1:
-        return new AbstractCreator_Editor();
+        return getAbstractCreatorEditorAspect();
       case 2:
-        return new AbstractOperation_Editor();
+        return getAbstractOperationEditorAspect();
       case 3:
-        return new AdditionalForLoopVariable_Editor();
+        return getAdditionalForLoopVariableEditorAspect();
       case 4:
-        return new Annotation_Editor();
+        return getAnnotationEditorAspect();
       case 5:
-        return new AnnotationInstance_Editor();
+        return getAnnotationInstanceEditorAspect();
       case 6:
-        return new AnnotationInstanceExpression_Editor();
+        return getAnnotationInstanceExpressionEditorAspect();
       case 7:
-        return new AnnotationInstanceValue_Editor();
+        return getAnnotationInstanceValueEditorAspect();
       case 8:
-        return new AnnotationMethodDeclaration_Editor();
+        return getAnnotationMethodDeclarationEditorAspect();
       case 9:
-        return new AnonymousClass_Editor();
+        return getAnonymousClassEditorAspect();
       case 10:
-        return new AnonymousClassCreator_Editor();
+        return getAnonymousClassCreatorEditorAspect();
       case 11:
-        return new ArrayAccessExpression_Editor();
+        return getArrayAccessExpressionEditorAspect();
       case 12:
-        return new ArrayClassExpression_Editor();
+        return getArrayClassExpressionEditorAspect();
       case 13:
-        return new ArrayCloneOperation_Editor();
+        return getArrayCloneOperationEditorAspect();
       case 14:
-        return new ArrayCreator_Editor();
+        return getArrayCreatorEditorAspect();
       case 15:
-        return new ArrayCreatorWithInitializer_Editor();
+        return getArrayCreatorWithInitializerEditorAspect();
       case 16:
-        return new ArrayLengthOperation_Editor();
+        return getArrayLengthOperationEditorAspect();
       case 17:
-        return new ArrayLiteral_Editor();
+        return getArrayLiteralEditorAspect();
       case 18:
-        return new ArrayType_Editor();
+        return getArrayTypeEditorAspect();
       case 19:
-        return new AsExpression_Editor();
+        return getAsExpressionEditorAspect();
       case 20:
-        return new AssertStatement_Editor();
+        return getAssertStatementEditorAspect();
       case 21:
-        return new BLBottomType_Editor();
+        return getBLBottomTypeEditorAspect();
       case 22:
-        return new BaseAssignmentExpression_Editor();
+        return getBaseAssignmentExpressionEditorAspect();
       case 23:
-        return new BaseVariableDeclaration_Editor();
+        return getBaseVariableDeclarationEditorAspect();
       case 24:
-        return new BaseVariableReference_Editor();
+        return getBaseVariableReferenceEditorAspect();
       case 25:
-        return new BinaryOperation_Editor();
+        return getBinaryOperationEditorAspect();
       case 26:
-        return new BitwiseNotExpression_Editor();
+        return getBitwiseNotExpressionEditorAspect();
       case 27:
-        return new BlockStatement_Editor();
+        return getBlockStatementEditorAspect();
       case 28:
-        return new BooleanConstant_Editor();
+        return getBooleanConstantEditorAspect();
       case 29:
-        return new BreakStatement_Editor();
+        return getBreakStatementEditorAspect();
       case 30:
-        return new CastExpression_Editor();
+        return getCastExpressionEditorAspect();
       case 31:
-        return new CatchClause_Editor();
+        return getCatchClauseEditorAspect();
       case 32:
-        return new CharConstant_Editor();
+        return getCharConstantEditorAspect();
       case 33:
-        return new ClassConcept_Editor();
+        return getClassConceptEditorAspect();
       case 34:
-        return new ClassCreator_Editor();
+        return getClassCreatorEditorAspect();
       case 35:
-        return new ClassifierClassExpression_Editor();
+        return getClassifierClassExpressionEditorAspect();
       case 36:
-        return new ClassifierType_Editor();
+        return getClassifierTypeEditorAspect();
       case 37:
-        return new ClosureParameter_Editor();
+        return getClosureParameterEditorAspect();
       case 38:
-        return new ClosureParameterReference_Editor();
+        return getClosureParameterReferenceEditorAspect();
       case 39:
-        return new CommentedStatement_Editor();
+        return getCommentedStatementEditorAspect();
       case 40:
-        return new CommentedStatementsBlock_Editor();
+        return getCommentedStatementsBlockEditorAspect();
       case 41:
-        return new ConceptFunction_Editor();
+        return getConceptFunctionEditorAspect();
       case 42:
-        return new ConceptFunctionParameter_Editor();
+        return getConceptFunctionParameterEditorAspect();
       case 43:
-        return new ConstructorDeclaration_Editor();
+        return getConstructorDeclarationEditorAspect();
       case 44:
-        return new ContinueStatement_Editor();
+        return getContinueStatementEditorAspect();
       case 45:
-        return new CustomPropertyImplementation_Editor();
+        return getCustomPropertyImplementationEditorAspect();
       case 46:
-        return new DefaultClassCreator_Editor();
+        return getDefaultClassCreatorEditorAspect();
       case 47:
-        return new DefaultGetAccessor_Editor();
+        return getDefaultGetAccessorEditorAspect();
       case 48:
-        return new DefaultPropertyImplementation_Editor();
+        return getDefaultPropertyImplementationEditorAspect();
       case 49:
-        return new DefaultSetAccessor_Editor();
+        return getDefaultSetAccessorEditorAspect();
       case 50:
-        return new DimensionExpression_Editor();
+        return getDimensionExpressionEditorAspect();
       case 51:
-        return new DoWhileStatement_Editor();
+        return getDoWhileStatementEditorAspect();
       case 52:
-        return new DotExpression_Editor();
+        return getDotExpressionEditorAspect();
       case 53:
-        return new ElsifClause_Editor();
+        return getElsifClauseEditorAspect();
       case 54:
-        return new EnumClass_Editor();
+        return getEnumClassEditorAspect();
       case 55:
-        return new EnumConstantDeclaration_Editor();
+        return getEnumConstantDeclarationEditorAspect();
       case 56:
-        return new EnumConstantReference_Editor();
+        return getEnumConstantReferenceEditorAspect();
       case 57:
-        return new EnumValueOfExpression_Editor();
+        return getEnumValueOfExpressionEditorAspect();
       case 58:
-        return new EnumValuesExpression_Editor();
+        return getEnumValuesExpressionEditorAspect();
       case 59:
-        return new EscapeOperation_Editor();
+        return getEscapeOperationEditorAspect();
       case 60:
-        return new Expression_Editor();
+        return getExpressionEditorAspect();
       case 61:
-        return new ExpressionStatement_Editor();
+        return getExpressionStatementEditorAspect();
       case 62:
-        return new FieldDeclaration_Editor();
+        return getFieldDeclarationEditorAspect();
       case 63:
-        return new FieldReferenceOperation_Editor();
+        return getFieldReferenceOperationEditorAspect();
       case 64:
-        return new FloatingPointConstant_Editor();
+        return getFloatingPointConstantEditorAspect();
       case 65:
-        return new FloatingPointFloatConstant_Editor();
+        return getFloatingPointFloatConstantEditorAspect();
       case 66:
-        return new ForStatement_Editor();
+        return getForStatementEditorAspect();
       case 67:
-        return new ForeachStatement_Editor();
+        return getForeachStatementEditorAspect();
       case 68:
-        return new GenericNewExpression_Editor();
+        return getGenericNewExpressionEditorAspect();
       case 69:
-        return new GetAccessor_Editor();
+        return getGetAccessorEditorAspect();
       case 70:
-        return new HexIntegerLiteral_Editor();
+        return getHexIntegerLiteralEditorAspect();
       case 71:
-        return new IfStatement_Editor();
+        return getIfStatementEditorAspect();
       case 72:
-        return new ImplicitAnnotationInstanceValue_Editor();
+        return getImplicitAnnotationInstanceValueEditorAspect();
       case 73:
-        return new IncompleteMemberDeclaration_Editor();
+        return getIncompleteMemberDeclarationEditorAspect();
       case 74:
-        return new InstanceInitializer_Editor();
+        return getInstanceInitializerEditorAspect();
       case 75:
-        return new InstanceMethodCallOperation_Editor();
+        return getInstanceMethodCallOperationEditorAspect();
       case 76:
-        return new InstanceMethodDeclaration_Editor();
+        return getInstanceMethodDeclarationEditorAspect();
       case 77:
-        return new InstanceOfExpression_Editor();
+        return getInstanceOfExpressionEditorAspect();
       case 78:
-        return new IntegerConstant_Editor();
+        return getIntegerConstantEditorAspect();
       case 79:
-        return new Interface_Editor();
+        return getInterfaceEditorAspect();
       case 80:
-        return new JavaImport_Editor();
+        return getJavaImportEditorAspect();
       case 81:
-        return new JavaImports_Editor();
+        return getJavaImportsEditorAspect();
       case 82:
-        return new LocalMethodCall_Editor();
+        return getLocalMethodCallEditorAspect();
       case 83:
-        return new LocalPropertyReference_Editor();
+        return getLocalPropertyReferenceEditorAspect();
       case 84:
-        return new LocalVariableDeclaration_Editor();
+        return getLocalVariableDeclarationEditorAspect();
       case 85:
-        return new LocalVariableDeclarationStatement_Editor();
+        return getLocalVariableDeclarationStatementEditorAspect();
       case 86:
-        return new LongLiteral_Editor();
+        return getLongLiteralEditorAspect();
       case 87:
-        return new LoopLabel_Editor();
+        return getLoopLabelEditorAspect();
       case 88:
-        return new LoopLabelReference_Editor();
+        return getLoopLabelReferenceEditorAspect();
       case 89:
-        return new LowerBoundType_Editor();
+        return getLowerBoundTypeEditorAspect();
       case 90:
-        return new NotExpression_Editor();
+        return getNotExpressionEditorAspect();
       case 91:
-        return new NullLiteral_Editor();
+        return getNullLiteralEditorAspect();
       case 92:
-        return new Number_Editor();
+        return getNumberEditorAspect();
       case 93:
-        return new ParameterDeclaration_Editor();
+        return getParameterDeclarationEditorAspect();
       case 94:
-        return new ParenthesizedExpression_Editor();
+        return getParenthesizedExpressionEditorAspect();
       case 95:
-        return new PlaceholderMember_Editor();
+        return getPlaceholderMemberEditorAspect();
       case 96:
-        return new PlaceholderMethodDeclaration_Editor();
+        return getPlaceholderMethodDeclarationEditorAspect();
       case 97:
-        return new PostfixDecrementExpression_Editor();
+        return getPostfixDecrementExpressionEditorAspect();
       case 98:
-        return new PostfixIncrementExpression_Editor();
+        return getPostfixIncrementExpressionEditorAspect();
       case 99:
-        return new PrefixDecrementExpression_Editor();
+        return getPrefixDecrementExpressionEditorAspect();
       case 100:
-        return new PrefixIncrementExpression_Editor();
+        return getPrefixIncrementExpressionEditorAspect();
       case 101:
-        return new PrimitiveClassExpression_Editor();
+        return getPrimitiveClassExpressionEditorAspect();
       case 102:
-        return new Property_Editor();
+        return getPropertyEditorAspect();
       case 103:
-        return new PropertyReference_Editor();
+        return getPropertyReferenceEditorAspect();
       case 104:
-        return new RemarkStatement_Editor();
+        return getRemarkStatementEditorAspect();
       case 105:
-        return new ReturnStatement_Editor();
+        return getReturnStatementEditorAspect();
       case 106:
-        return new SetAccessor_Editor();
+        return getSetAccessorEditorAspect();
       case 107:
-        return new SingleLineComment_Editor();
+        return getSingleLineCommentEditorAspect();
       case 108:
-        return new Statement_Editor();
+        return getStatementEditorAspect();
       case 109:
-        return new StatementCommentPart_Editor();
+        return getStatementCommentPartEditorAspect();
       case 110:
-        return new StatementList_Editor();
+        return getStatementListEditorAspect();
       case 111:
-        return new StaticFieldDeclaration_Editor();
+        return getStaticFieldDeclarationEditorAspect();
       case 112:
-        return new StaticFieldReference_Editor();
+        return getStaticFieldReferenceEditorAspect();
       case 113:
-        return new StaticInitializer_Editor();
+        return getStaticInitializerEditorAspect();
       case 114:
-        return new StaticMethodCall_Editor();
+        return getStaticMethodCallEditorAspect();
       case 115:
-        return new StaticMethodDeclaration_Editor();
+        return getStaticMethodDeclarationEditorAspect();
       case 116:
-        return new StringBooleanOperation_Editor();
+        return getStringBooleanOperationEditorAspect();
       case 117:
-        return new StringLiteral_Editor();
+        return getStringLiteralEditorAspect();
       case 118:
-        return new StringToken_Editor();
+        return getStringTokenEditorAspect();
       case 119:
-        return new StubStatementList_Editor();
+        return getStubStatementListEditorAspect();
       case 120:
-        return new SubstringExpression_Editor();
+        return getSubstringExpressionEditorAspect();
       case 121:
-        return new SuperConstructorInvocation_Editor();
+        return getSuperConstructorInvocationEditorAspect();
       case 122:
-        return new SuperMethodCall_Editor();
+        return getSuperMethodCallEditorAspect();
       case 123:
-        return new SwitchCase_Editor();
+        return getSwitchCaseEditorAspect();
       case 124:
-        return new SwitchStatement_Editor();
+        return getSwitchStatementEditorAspect();
       case 125:
-        return new SynchronizedStatement_Editor();
+        return getSynchronizedStatementEditorAspect();
       case 126:
-        return new TernaryOperatorExpression_Editor();
+        return getTernaryOperatorExpressionEditorAspect();
       case 127:
-        return new TextCommentPart_Editor();
+        return getTextCommentPartEditorAspect();
       case 128:
-        return new ThisConstructorInvocation_Editor();
+        return getThisConstructorInvocationEditorAspect();
       case 129:
-        return new ThisExpression_Editor();
+        return getThisExpressionEditorAspect();
       case 130:
-        return new ThrowStatement_Editor();
+        return getThrowStatementEditorAspect();
       case 131:
-        return new TrimOperation_Editor();
+        return getTrimOperationEditorAspect();
       case 132:
-        return new TryCatchStatement_Editor();
+        return getTryCatchStatementEditorAspect();
       case 133:
-        return new TryStatement_Editor();
+        return getTryStatementEditorAspect();
       case 134:
-        return new Type_Editor();
+        return getTypeEditorAspect();
       case 135:
-        return new TypeVariableDeclaration_Editor();
+        return getTypeVariableDeclarationEditorAspect();
       case 136:
-        return new TypeVariableReference_Editor();
+        return getTypeVariableReferenceEditorAspect();
       case 137:
-        return new UnaryMinus_Editor();
+        return getUnaryMinusEditorAspect();
       case 138:
-        return new UndefinedType_Editor();
+        return getUndefinedTypeEditorAspect();
       case 139:
-        return new UnknownConsCall_Editor();
+        return getUnknownConsCallEditorAspect();
       case 140:
-        return new UnknownDotCall_Editor();
+        return getUnknownDotCallEditorAspect();
       case 141:
-        return new UnknownLocalCall_Editor();
+        return getUnknownLocalCallEditorAspect();
       case 142:
-        return new UnknownNameRef_Editor();
+        return getUnknownNameRefEditorAspect();
       case 143:
-        return new UnknownNew_Editor();
+        return getUnknownNewEditorAspect();
       case 144:
-        return new UnresolvedNameReference_Editor();
+        return getUnresolvedNameReferenceEditorAspect();
       case 145:
-        return new UpperBoundType_Editor();
+        return getUpperBoundTypeEditorAspect();
       case 146:
-        return new UsingStatement_Editor();
+        return getUsingStatementEditorAspect();
       case 147:
-        return new ValueParameter_Editor();
+        return getValueParameterEditorAspect();
       case 148:
-        return new VariableArityType_Editor();
+        return getVariableArityTypeEditorAspect();
       case 149:
-        return new VariableReference_Editor();
+        return getVariableReferenceEditorAspect();
       case 150:
-        return new Visibility_Editor();
+        return getVisibilityEditorAspect();
       case 151:
-        return new WhileStatement_Editor();
+        return getWhileStatementEditorAspect();
       case 152:
-        return new WildCardType_Editor();
+        return getWildCardTypeEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", "jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.structure.AbstractOperation", "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", "jetbrains.mps.baseLanguage.structure.Annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", "jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", "jetbrains.mps.baseLanguage.structure.ArrayClassExpression", "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation", "jetbrains.mps.baseLanguage.structure.ArrayCreator", "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", "jetbrains.mps.baseLanguage.structure.ArrayLiteral", "jetbrains.mps.baseLanguage.structure.ArrayType", "jetbrains.mps.baseLanguage.structure.AsExpression", "jetbrains.mps.baseLanguage.structure.AssertStatement", "jetbrains.mps.baseLanguage.structure.BLBottomType", "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.baseLanguage.structure.BaseVariableReference", "jetbrains.mps.baseLanguage.structure.BinaryOperation", "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression", "jetbrains.mps.baseLanguage.structure.BlockStatement", "jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.BreakStatement", "jetbrains.mps.baseLanguage.structure.CastExpression", "jetbrains.mps.baseLanguage.structure.CatchClause", "jetbrains.mps.baseLanguage.structure.CharConstant", "jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.ClassCreator", "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", "jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.ClosureParameter", "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", "jetbrains.mps.baseLanguage.structure.CommentedStatement", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "jetbrains.mps.baseLanguage.structure.ContinueStatement", "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultClassCreator", "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor", "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultSetAccessor", "jetbrains.mps.baseLanguage.structure.DimensionExpression", "jetbrains.mps.baseLanguage.structure.DoWhileStatement", "jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.baseLanguage.structure.ElsifClause", "jetbrains.mps.baseLanguage.structure.EnumClass", "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", "jetbrains.mps.baseLanguage.structure.EnumConstantReference", "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", "jetbrains.mps.baseLanguage.structure.EscapeOperation", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ExpressionStatement", "jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", "jetbrains.mps.baseLanguage.structure.ForStatement", "jetbrains.mps.baseLanguage.structure.ForeachStatement", "jetbrains.mps.baseLanguage.structure.GenericNewExpression", "jetbrains.mps.baseLanguage.structure.GetAccessor", "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", "jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration", "jetbrains.mps.baseLanguage.structure.InstanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", "jetbrains.mps.baseLanguage.structure.IntegerConstant", "jetbrains.mps.baseLanguage.structure.Interface", "jetbrains.mps.baseLanguage.structure.JavaImport", "jetbrains.mps.baseLanguage.structure.JavaImports", "jetbrains.mps.baseLanguage.structure.LocalMethodCall", "jetbrains.mps.baseLanguage.structure.LocalPropertyReference", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", "jetbrains.mps.baseLanguage.structure.LongLiteral", "jetbrains.mps.baseLanguage.structure.LoopLabel", "jetbrains.mps.baseLanguage.structure.LoopLabelReference", "jetbrains.mps.baseLanguage.structure.LowerBoundType", "jetbrains.mps.baseLanguage.structure.NotExpression", "jetbrains.mps.baseLanguage.structure.NullLiteral", "jetbrains.mps.baseLanguage.structure.Number", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", "jetbrains.mps.baseLanguage.structure.PlaceholderMember", "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", "jetbrains.mps.baseLanguage.structure.Property", "jetbrains.mps.baseLanguage.structure.PropertyReference", "jetbrains.mps.baseLanguage.structure.RemarkStatement", "jetbrains.mps.baseLanguage.structure.ReturnStatement", "jetbrains.mps.baseLanguage.structure.SetAccessor", "jetbrains.mps.baseLanguage.structure.SingleLineComment", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.StatementCommentPart", "jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticInitializer", "jetbrains.mps.baseLanguage.structure.StaticMethodCall", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StringBooleanOperation", "jetbrains.mps.baseLanguage.structure.StringLiteral", "jetbrains.mps.baseLanguage.structure.StringToken", "jetbrains.mps.baseLanguage.structure.StubStatementList", "jetbrains.mps.baseLanguage.structure.SubstringExpression", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "jetbrains.mps.baseLanguage.structure.SuperMethodCall", "jetbrains.mps.baseLanguage.structure.SwitchCase", "jetbrains.mps.baseLanguage.structure.SwitchStatement", "jetbrains.mps.baseLanguage.structure.SynchronizedStatement", "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", "jetbrains.mps.baseLanguage.structure.TextCommentPart", "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "jetbrains.mps.baseLanguage.structure.ThisExpression", "jetbrains.mps.baseLanguage.structure.ThrowStatement", "jetbrains.mps.baseLanguage.structure.TrimOperation", "jetbrains.mps.baseLanguage.structure.TryCatchStatement", "jetbrains.mps.baseLanguage.structure.TryStatement", "jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableReference", "jetbrains.mps.baseLanguage.structure.UnaryMinus", "jetbrains.mps.baseLanguage.structure.UndefinedType", "jetbrains.mps.baseLanguage.structure.UnknownConsCall", "jetbrains.mps.baseLanguage.structure.UnknownDotCall", "jetbrains.mps.baseLanguage.structure.UnknownLocalCall", "jetbrains.mps.baseLanguage.structure.UnknownNameRef", "jetbrains.mps.baseLanguage.structure.UnknownNew", "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference", "jetbrains.mps.baseLanguage.structure.UpperBoundType", "jetbrains.mps.baseLanguage.structure.UsingStatement", "jetbrains.mps.baseLanguage.structure.ValueParameter", "jetbrains.mps.baseLanguage.structure.VariableArityType", "jetbrains.mps.baseLanguage.structure.VariableReference", "jetbrains.mps.baseLanguage.structure.Visibility", "jetbrains.mps.baseLanguage.structure.WhileStatement", "jetbrains.mps.baseLanguage.structure.WildCardType"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAbstractClassifierReferenceEditorAspect = null;
+    myAbstractCreatorEditorAspect = null;
+    myAbstractOperationEditorAspect = null;
+    myAdditionalForLoopVariableEditorAspect = null;
+    myAnnotationEditorAspect = null;
+    myAnnotationInstanceEditorAspect = null;
+    myAnnotationInstanceExpressionEditorAspect = null;
+    myAnnotationInstanceValueEditorAspect = null;
+    myAnnotationMethodDeclarationEditorAspect = null;
+    myAnonymousClassEditorAspect = null;
+    myAnonymousClassCreatorEditorAspect = null;
+    myArrayAccessExpressionEditorAspect = null;
+    myArrayClassExpressionEditorAspect = null;
+    myArrayCloneOperationEditorAspect = null;
+    myArrayCreatorEditorAspect = null;
+    myArrayCreatorWithInitializerEditorAspect = null;
+    myArrayLengthOperationEditorAspect = null;
+    myArrayLiteralEditorAspect = null;
+    myArrayTypeEditorAspect = null;
+    myAsExpressionEditorAspect = null;
+    myAssertStatementEditorAspect = null;
+    myBLBottomTypeEditorAspect = null;
+    myBaseAssignmentExpressionEditorAspect = null;
+    myBaseVariableDeclarationEditorAspect = null;
+    myBaseVariableReferenceEditorAspect = null;
+    myBinaryOperationEditorAspect = null;
+    myBitwiseNotExpressionEditorAspect = null;
+    myBlockStatementEditorAspect = null;
+    myBooleanConstantEditorAspect = null;
+    myBreakStatementEditorAspect = null;
+    myCastExpressionEditorAspect = null;
+    myCatchClauseEditorAspect = null;
+    myCharConstantEditorAspect = null;
+    myClassConceptEditorAspect = null;
+    myClassCreatorEditorAspect = null;
+    myClassifierClassExpressionEditorAspect = null;
+    myClassifierTypeEditorAspect = null;
+    myClosureParameterEditorAspect = null;
+    myClosureParameterReferenceEditorAspect = null;
+    myCommentedStatementEditorAspect = null;
+    myCommentedStatementsBlockEditorAspect = null;
+    myConceptFunctionEditorAspect = null;
+    myConceptFunctionParameterEditorAspect = null;
+    myConstructorDeclarationEditorAspect = null;
+    myContinueStatementEditorAspect = null;
+    myCustomPropertyImplementationEditorAspect = null;
+    myDefaultClassCreatorEditorAspect = null;
+    myDefaultGetAccessorEditorAspect = null;
+    myDefaultPropertyImplementationEditorAspect = null;
+    myDefaultSetAccessorEditorAspect = null;
+    myDimensionExpressionEditorAspect = null;
+    myDoWhileStatementEditorAspect = null;
+    myDotExpressionEditorAspect = null;
+    myElsifClauseEditorAspect = null;
+    myEnumClassEditorAspect = null;
+    myEnumConstantDeclarationEditorAspect = null;
+    myEnumConstantReferenceEditorAspect = null;
+    myEnumValueOfExpressionEditorAspect = null;
+    myEnumValuesExpressionEditorAspect = null;
+    myEscapeOperationEditorAspect = null;
+    myExpressionEditorAspect = null;
+    myExpressionStatementEditorAspect = null;
+    myFieldDeclarationEditorAspect = null;
+    myFieldReferenceOperationEditorAspect = null;
+    myFloatingPointConstantEditorAspect = null;
+    myFloatingPointFloatConstantEditorAspect = null;
+    myForStatementEditorAspect = null;
+    myForeachStatementEditorAspect = null;
+    myGenericNewExpressionEditorAspect = null;
+    myGetAccessorEditorAspect = null;
+    myHexIntegerLiteralEditorAspect = null;
+    myIfStatementEditorAspect = null;
+    myImplicitAnnotationInstanceValueEditorAspect = null;
+    myIncompleteMemberDeclarationEditorAspect = null;
+    myInstanceInitializerEditorAspect = null;
+    myInstanceMethodCallOperationEditorAspect = null;
+    myInstanceMethodDeclarationEditorAspect = null;
+    myInstanceOfExpressionEditorAspect = null;
+    myIntegerConstantEditorAspect = null;
+    myInterfaceEditorAspect = null;
+    myJavaImportEditorAspect = null;
+    myJavaImportsEditorAspect = null;
+    myLocalMethodCallEditorAspect = null;
+    myLocalPropertyReferenceEditorAspect = null;
+    myLocalVariableDeclarationEditorAspect = null;
+    myLocalVariableDeclarationStatementEditorAspect = null;
+    myLongLiteralEditorAspect = null;
+    myLoopLabelEditorAspect = null;
+    myLoopLabelReferenceEditorAspect = null;
+    myLowerBoundTypeEditorAspect = null;
+    myNotExpressionEditorAspect = null;
+    myNullLiteralEditorAspect = null;
+    myNumberEditorAspect = null;
+    myParameterDeclarationEditorAspect = null;
+    myParenthesizedExpressionEditorAspect = null;
+    myPlaceholderMemberEditorAspect = null;
+    myPlaceholderMethodDeclarationEditorAspect = null;
+    myPostfixDecrementExpressionEditorAspect = null;
+    myPostfixIncrementExpressionEditorAspect = null;
+    myPrefixDecrementExpressionEditorAspect = null;
+    myPrefixIncrementExpressionEditorAspect = null;
+    myPrimitiveClassExpressionEditorAspect = null;
+    myPropertyEditorAspect = null;
+    myPropertyReferenceEditorAspect = null;
+    myRemarkStatementEditorAspect = null;
+    myReturnStatementEditorAspect = null;
+    mySetAccessorEditorAspect = null;
+    mySingleLineCommentEditorAspect = null;
+    myStatementEditorAspect = null;
+    myStatementCommentPartEditorAspect = null;
+    myStatementListEditorAspect = null;
+    myStaticFieldDeclarationEditorAspect = null;
+    myStaticFieldReferenceEditorAspect = null;
+    myStaticInitializerEditorAspect = null;
+    myStaticMethodCallEditorAspect = null;
+    myStaticMethodDeclarationEditorAspect = null;
+    myStringBooleanOperationEditorAspect = null;
+    myStringLiteralEditorAspect = null;
+    myStringTokenEditorAspect = null;
+    myStubStatementListEditorAspect = null;
+    mySubstringExpressionEditorAspect = null;
+    mySuperConstructorInvocationEditorAspect = null;
+    mySuperMethodCallEditorAspect = null;
+    mySwitchCaseEditorAspect = null;
+    mySwitchStatementEditorAspect = null;
+    mySynchronizedStatementEditorAspect = null;
+    myTernaryOperatorExpressionEditorAspect = null;
+    myTextCommentPartEditorAspect = null;
+    myThisConstructorInvocationEditorAspect = null;
+    myThisExpressionEditorAspect = null;
+    myThrowStatementEditorAspect = null;
+    myTrimOperationEditorAspect = null;
+    myTryCatchStatementEditorAspect = null;
+    myTryStatementEditorAspect = null;
+    myTypeEditorAspect = null;
+    myTypeVariableDeclarationEditorAspect = null;
+    myTypeVariableReferenceEditorAspect = null;
+    myUnaryMinusEditorAspect = null;
+    myUndefinedTypeEditorAspect = null;
+    myUnknownConsCallEditorAspect = null;
+    myUnknownDotCallEditorAspect = null;
+    myUnknownLocalCallEditorAspect = null;
+    myUnknownNameRefEditorAspect = null;
+    myUnknownNewEditorAspect = null;
+    myUnresolvedNameReferenceEditorAspect = null;
+    myUpperBoundTypeEditorAspect = null;
+    myUsingStatementEditorAspect = null;
+    myValueParameterEditorAspect = null;
+    myVariableArityTypeEditorAspect = null;
+    myVariableReferenceEditorAspect = null;
+    myVisibilityEditorAspect = null;
+    myWhileStatementEditorAspect = null;
+    myWildCardTypeEditorAspect = null;
+  }
+
+  private AbstractClassifierReference_Editor getAbstractClassifierReferenceEditorAspect() {
+    if (myAbstractClassifierReferenceEditorAspect == null) {
+      myAbstractClassifierReferenceEditorAspect = new AbstractClassifierReference_Editor();
+    }
+    return myAbstractClassifierReferenceEditorAspect;
+  }
+
+  private AbstractCreator_Editor getAbstractCreatorEditorAspect() {
+    if (myAbstractCreatorEditorAspect == null) {
+      myAbstractCreatorEditorAspect = new AbstractCreator_Editor();
+    }
+    return myAbstractCreatorEditorAspect;
+  }
+
+  private AbstractOperation_Editor getAbstractOperationEditorAspect() {
+    if (myAbstractOperationEditorAspect == null) {
+      myAbstractOperationEditorAspect = new AbstractOperation_Editor();
+    }
+    return myAbstractOperationEditorAspect;
+  }
+
+  private AdditionalForLoopVariable_Editor getAdditionalForLoopVariableEditorAspect() {
+    if (myAdditionalForLoopVariableEditorAspect == null) {
+      myAdditionalForLoopVariableEditorAspect = new AdditionalForLoopVariable_Editor();
+    }
+    return myAdditionalForLoopVariableEditorAspect;
+  }
+
+  private Annotation_Editor getAnnotationEditorAspect() {
+    if (myAnnotationEditorAspect == null) {
+      myAnnotationEditorAspect = new Annotation_Editor();
+    }
+    return myAnnotationEditorAspect;
+  }
+
+  private AnnotationInstance_Editor getAnnotationInstanceEditorAspect() {
+    if (myAnnotationInstanceEditorAspect == null) {
+      myAnnotationInstanceEditorAspect = new AnnotationInstance_Editor();
+    }
+    return myAnnotationInstanceEditorAspect;
+  }
+
+  private AnnotationInstanceExpression_Editor getAnnotationInstanceExpressionEditorAspect() {
+    if (myAnnotationInstanceExpressionEditorAspect == null) {
+      myAnnotationInstanceExpressionEditorAspect = new AnnotationInstanceExpression_Editor();
+    }
+    return myAnnotationInstanceExpressionEditorAspect;
+  }
+
+  private AnnotationInstanceValue_Editor getAnnotationInstanceValueEditorAspect() {
+    if (myAnnotationInstanceValueEditorAspect == null) {
+      myAnnotationInstanceValueEditorAspect = new AnnotationInstanceValue_Editor();
+    }
+    return myAnnotationInstanceValueEditorAspect;
+  }
+
+  private AnnotationMethodDeclaration_Editor getAnnotationMethodDeclarationEditorAspect() {
+    if (myAnnotationMethodDeclarationEditorAspect == null) {
+      myAnnotationMethodDeclarationEditorAspect = new AnnotationMethodDeclaration_Editor();
+    }
+    return myAnnotationMethodDeclarationEditorAspect;
+  }
+
+  private AnonymousClass_Editor getAnonymousClassEditorAspect() {
+    if (myAnonymousClassEditorAspect == null) {
+      myAnonymousClassEditorAspect = new AnonymousClass_Editor();
+    }
+    return myAnonymousClassEditorAspect;
+  }
+
+  private AnonymousClassCreator_Editor getAnonymousClassCreatorEditorAspect() {
+    if (myAnonymousClassCreatorEditorAspect == null) {
+      myAnonymousClassCreatorEditorAspect = new AnonymousClassCreator_Editor();
+    }
+    return myAnonymousClassCreatorEditorAspect;
+  }
+
+  private ArrayAccessExpression_Editor getArrayAccessExpressionEditorAspect() {
+    if (myArrayAccessExpressionEditorAspect == null) {
+      myArrayAccessExpressionEditorAspect = new ArrayAccessExpression_Editor();
+    }
+    return myArrayAccessExpressionEditorAspect;
+  }
+
+  private ArrayClassExpression_Editor getArrayClassExpressionEditorAspect() {
+    if (myArrayClassExpressionEditorAspect == null) {
+      myArrayClassExpressionEditorAspect = new ArrayClassExpression_Editor();
+    }
+    return myArrayClassExpressionEditorAspect;
+  }
+
+  private ArrayCloneOperation_Editor getArrayCloneOperationEditorAspect() {
+    if (myArrayCloneOperationEditorAspect == null) {
+      myArrayCloneOperationEditorAspect = new ArrayCloneOperation_Editor();
+    }
+    return myArrayCloneOperationEditorAspect;
+  }
+
+  private ArrayCreator_Editor getArrayCreatorEditorAspect() {
+    if (myArrayCreatorEditorAspect == null) {
+      myArrayCreatorEditorAspect = new ArrayCreator_Editor();
+    }
+    return myArrayCreatorEditorAspect;
+  }
+
+  private ArrayCreatorWithInitializer_Editor getArrayCreatorWithInitializerEditorAspect() {
+    if (myArrayCreatorWithInitializerEditorAspect == null) {
+      myArrayCreatorWithInitializerEditorAspect = new ArrayCreatorWithInitializer_Editor();
+    }
+    return myArrayCreatorWithInitializerEditorAspect;
+  }
+
+  private ArrayLengthOperation_Editor getArrayLengthOperationEditorAspect() {
+    if (myArrayLengthOperationEditorAspect == null) {
+      myArrayLengthOperationEditorAspect = new ArrayLengthOperation_Editor();
+    }
+    return myArrayLengthOperationEditorAspect;
+  }
+
+  private ArrayLiteral_Editor getArrayLiteralEditorAspect() {
+    if (myArrayLiteralEditorAspect == null) {
+      myArrayLiteralEditorAspect = new ArrayLiteral_Editor();
+    }
+    return myArrayLiteralEditorAspect;
+  }
+
+  private ArrayType_Editor getArrayTypeEditorAspect() {
+    if (myArrayTypeEditorAspect == null) {
+      myArrayTypeEditorAspect = new ArrayType_Editor();
+    }
+    return myArrayTypeEditorAspect;
+  }
+
+  private AsExpression_Editor getAsExpressionEditorAspect() {
+    if (myAsExpressionEditorAspect == null) {
+      myAsExpressionEditorAspect = new AsExpression_Editor();
+    }
+    return myAsExpressionEditorAspect;
+  }
+
+  private AssertStatement_Editor getAssertStatementEditorAspect() {
+    if (myAssertStatementEditorAspect == null) {
+      myAssertStatementEditorAspect = new AssertStatement_Editor();
+    }
+    return myAssertStatementEditorAspect;
+  }
+
+  private BLBottomType_Editor getBLBottomTypeEditorAspect() {
+    if (myBLBottomTypeEditorAspect == null) {
+      myBLBottomTypeEditorAspect = new BLBottomType_Editor();
+    }
+    return myBLBottomTypeEditorAspect;
+  }
+
+  private BaseAssignmentExpression_Editor getBaseAssignmentExpressionEditorAspect() {
+    if (myBaseAssignmentExpressionEditorAspect == null) {
+      myBaseAssignmentExpressionEditorAspect = new BaseAssignmentExpression_Editor();
+    }
+    return myBaseAssignmentExpressionEditorAspect;
+  }
+
+  private BaseVariableDeclaration_Editor getBaseVariableDeclarationEditorAspect() {
+    if (myBaseVariableDeclarationEditorAspect == null) {
+      myBaseVariableDeclarationEditorAspect = new BaseVariableDeclaration_Editor();
+    }
+    return myBaseVariableDeclarationEditorAspect;
+  }
+
+  private BaseVariableReference_Editor getBaseVariableReferenceEditorAspect() {
+    if (myBaseVariableReferenceEditorAspect == null) {
+      myBaseVariableReferenceEditorAspect = new BaseVariableReference_Editor();
+    }
+    return myBaseVariableReferenceEditorAspect;
+  }
+
+  private BinaryOperation_Editor getBinaryOperationEditorAspect() {
+    if (myBinaryOperationEditorAspect == null) {
+      myBinaryOperationEditorAspect = new BinaryOperation_Editor();
+    }
+    return myBinaryOperationEditorAspect;
+  }
+
+  private BitwiseNotExpression_Editor getBitwiseNotExpressionEditorAspect() {
+    if (myBitwiseNotExpressionEditorAspect == null) {
+      myBitwiseNotExpressionEditorAspect = new BitwiseNotExpression_Editor();
+    }
+    return myBitwiseNotExpressionEditorAspect;
+  }
+
+  private BlockStatement_Editor getBlockStatementEditorAspect() {
+    if (myBlockStatementEditorAspect == null) {
+      myBlockStatementEditorAspect = new BlockStatement_Editor();
+    }
+    return myBlockStatementEditorAspect;
+  }
+
+  private BooleanConstant_Editor getBooleanConstantEditorAspect() {
+    if (myBooleanConstantEditorAspect == null) {
+      myBooleanConstantEditorAspect = new BooleanConstant_Editor();
+    }
+    return myBooleanConstantEditorAspect;
+  }
+
+  private BreakStatement_Editor getBreakStatementEditorAspect() {
+    if (myBreakStatementEditorAspect == null) {
+      myBreakStatementEditorAspect = new BreakStatement_Editor();
+    }
+    return myBreakStatementEditorAspect;
+  }
+
+  private CastExpression_Editor getCastExpressionEditorAspect() {
+    if (myCastExpressionEditorAspect == null) {
+      myCastExpressionEditorAspect = new CastExpression_Editor();
+    }
+    return myCastExpressionEditorAspect;
+  }
+
+  private CatchClause_Editor getCatchClauseEditorAspect() {
+    if (myCatchClauseEditorAspect == null) {
+      myCatchClauseEditorAspect = new CatchClause_Editor();
+    }
+    return myCatchClauseEditorAspect;
+  }
+
+  private CharConstant_Editor getCharConstantEditorAspect() {
+    if (myCharConstantEditorAspect == null) {
+      myCharConstantEditorAspect = new CharConstant_Editor();
+    }
+    return myCharConstantEditorAspect;
+  }
+
+  private ClassConcept_Editor getClassConceptEditorAspect() {
+    if (myClassConceptEditorAspect == null) {
+      myClassConceptEditorAspect = new ClassConcept_Editor();
+    }
+    return myClassConceptEditorAspect;
+  }
+
+  private ClassCreator_Editor getClassCreatorEditorAspect() {
+    if (myClassCreatorEditorAspect == null) {
+      myClassCreatorEditorAspect = new ClassCreator_Editor();
+    }
+    return myClassCreatorEditorAspect;
+  }
+
+  private ClassifierClassExpression_Editor getClassifierClassExpressionEditorAspect() {
+    if (myClassifierClassExpressionEditorAspect == null) {
+      myClassifierClassExpressionEditorAspect = new ClassifierClassExpression_Editor();
+    }
+    return myClassifierClassExpressionEditorAspect;
+  }
+
+  private ClassifierType_Editor getClassifierTypeEditorAspect() {
+    if (myClassifierTypeEditorAspect == null) {
+      myClassifierTypeEditorAspect = new ClassifierType_Editor();
+    }
+    return myClassifierTypeEditorAspect;
+  }
+
+  private ClosureParameter_Editor getClosureParameterEditorAspect() {
+    if (myClosureParameterEditorAspect == null) {
+      myClosureParameterEditorAspect = new ClosureParameter_Editor();
+    }
+    return myClosureParameterEditorAspect;
+  }
+
+  private ClosureParameterReference_Editor getClosureParameterReferenceEditorAspect() {
+    if (myClosureParameterReferenceEditorAspect == null) {
+      myClosureParameterReferenceEditorAspect = new ClosureParameterReference_Editor();
+    }
+    return myClosureParameterReferenceEditorAspect;
+  }
+
+  private CommentedStatement_Editor getCommentedStatementEditorAspect() {
+    if (myCommentedStatementEditorAspect == null) {
+      myCommentedStatementEditorAspect = new CommentedStatement_Editor();
+    }
+    return myCommentedStatementEditorAspect;
+  }
+
+  private CommentedStatementsBlock_Editor getCommentedStatementsBlockEditorAspect() {
+    if (myCommentedStatementsBlockEditorAspect == null) {
+      myCommentedStatementsBlockEditorAspect = new CommentedStatementsBlock_Editor();
+    }
+    return myCommentedStatementsBlockEditorAspect;
+  }
+
+  private ConceptFunction_Editor getConceptFunctionEditorAspect() {
+    if (myConceptFunctionEditorAspect == null) {
+      myConceptFunctionEditorAspect = new ConceptFunction_Editor();
+    }
+    return myConceptFunctionEditorAspect;
+  }
+
+  private ConceptFunctionParameter_Editor getConceptFunctionParameterEditorAspect() {
+    if (myConceptFunctionParameterEditorAspect == null) {
+      myConceptFunctionParameterEditorAspect = new ConceptFunctionParameter_Editor();
+    }
+    return myConceptFunctionParameterEditorAspect;
+  }
+
+  private ConstructorDeclaration_Editor getConstructorDeclarationEditorAspect() {
+    if (myConstructorDeclarationEditorAspect == null) {
+      myConstructorDeclarationEditorAspect = new ConstructorDeclaration_Editor();
+    }
+    return myConstructorDeclarationEditorAspect;
+  }
+
+  private ContinueStatement_Editor getContinueStatementEditorAspect() {
+    if (myContinueStatementEditorAspect == null) {
+      myContinueStatementEditorAspect = new ContinueStatement_Editor();
+    }
+    return myContinueStatementEditorAspect;
+  }
+
+  private CustomPropertyImplementation_Editor getCustomPropertyImplementationEditorAspect() {
+    if (myCustomPropertyImplementationEditorAspect == null) {
+      myCustomPropertyImplementationEditorAspect = new CustomPropertyImplementation_Editor();
+    }
+    return myCustomPropertyImplementationEditorAspect;
+  }
+
+  private DefaultClassCreator_Editor getDefaultClassCreatorEditorAspect() {
+    if (myDefaultClassCreatorEditorAspect == null) {
+      myDefaultClassCreatorEditorAspect = new DefaultClassCreator_Editor();
+    }
+    return myDefaultClassCreatorEditorAspect;
+  }
+
+  private DefaultGetAccessor_Editor getDefaultGetAccessorEditorAspect() {
+    if (myDefaultGetAccessorEditorAspect == null) {
+      myDefaultGetAccessorEditorAspect = new DefaultGetAccessor_Editor();
+    }
+    return myDefaultGetAccessorEditorAspect;
+  }
+
+  private DefaultPropertyImplementation_Editor getDefaultPropertyImplementationEditorAspect() {
+    if (myDefaultPropertyImplementationEditorAspect == null) {
+      myDefaultPropertyImplementationEditorAspect = new DefaultPropertyImplementation_Editor();
+    }
+    return myDefaultPropertyImplementationEditorAspect;
+  }
+
+  private DefaultSetAccessor_Editor getDefaultSetAccessorEditorAspect() {
+    if (myDefaultSetAccessorEditorAspect == null) {
+      myDefaultSetAccessorEditorAspect = new DefaultSetAccessor_Editor();
+    }
+    return myDefaultSetAccessorEditorAspect;
+  }
+
+  private DimensionExpression_Editor getDimensionExpressionEditorAspect() {
+    if (myDimensionExpressionEditorAspect == null) {
+      myDimensionExpressionEditorAspect = new DimensionExpression_Editor();
+    }
+    return myDimensionExpressionEditorAspect;
+  }
+
+  private DoWhileStatement_Editor getDoWhileStatementEditorAspect() {
+    if (myDoWhileStatementEditorAspect == null) {
+      myDoWhileStatementEditorAspect = new DoWhileStatement_Editor();
+    }
+    return myDoWhileStatementEditorAspect;
+  }
+
+  private DotExpression_Editor getDotExpressionEditorAspect() {
+    if (myDotExpressionEditorAspect == null) {
+      myDotExpressionEditorAspect = new DotExpression_Editor();
+    }
+    return myDotExpressionEditorAspect;
+  }
+
+  private ElsifClause_Editor getElsifClauseEditorAspect() {
+    if (myElsifClauseEditorAspect == null) {
+      myElsifClauseEditorAspect = new ElsifClause_Editor();
+    }
+    return myElsifClauseEditorAspect;
+  }
+
+  private EnumClass_Editor getEnumClassEditorAspect() {
+    if (myEnumClassEditorAspect == null) {
+      myEnumClassEditorAspect = new EnumClass_Editor();
+    }
+    return myEnumClassEditorAspect;
+  }
+
+  private EnumConstantDeclaration_Editor getEnumConstantDeclarationEditorAspect() {
+    if (myEnumConstantDeclarationEditorAspect == null) {
+      myEnumConstantDeclarationEditorAspect = new EnumConstantDeclaration_Editor();
+    }
+    return myEnumConstantDeclarationEditorAspect;
+  }
+
+  private EnumConstantReference_Editor getEnumConstantReferenceEditorAspect() {
+    if (myEnumConstantReferenceEditorAspect == null) {
+      myEnumConstantReferenceEditorAspect = new EnumConstantReference_Editor();
+    }
+    return myEnumConstantReferenceEditorAspect;
+  }
+
+  private EnumValueOfExpression_Editor getEnumValueOfExpressionEditorAspect() {
+    if (myEnumValueOfExpressionEditorAspect == null) {
+      myEnumValueOfExpressionEditorAspect = new EnumValueOfExpression_Editor();
+    }
+    return myEnumValueOfExpressionEditorAspect;
+  }
+
+  private EnumValuesExpression_Editor getEnumValuesExpressionEditorAspect() {
+    if (myEnumValuesExpressionEditorAspect == null) {
+      myEnumValuesExpressionEditorAspect = new EnumValuesExpression_Editor();
+    }
+    return myEnumValuesExpressionEditorAspect;
+  }
+
+  private EscapeOperation_Editor getEscapeOperationEditorAspect() {
+    if (myEscapeOperationEditorAspect == null) {
+      myEscapeOperationEditorAspect = new EscapeOperation_Editor();
+    }
+    return myEscapeOperationEditorAspect;
+  }
+
+  private Expression_Editor getExpressionEditorAspect() {
+    if (myExpressionEditorAspect == null) {
+      myExpressionEditorAspect = new Expression_Editor();
+    }
+    return myExpressionEditorAspect;
+  }
+
+  private ExpressionStatement_Editor getExpressionStatementEditorAspect() {
+    if (myExpressionStatementEditorAspect == null) {
+      myExpressionStatementEditorAspect = new ExpressionStatement_Editor();
+    }
+    return myExpressionStatementEditorAspect;
+  }
+
+  private FieldDeclaration_Editor getFieldDeclarationEditorAspect() {
+    if (myFieldDeclarationEditorAspect == null) {
+      myFieldDeclarationEditorAspect = new FieldDeclaration_Editor();
+    }
+    return myFieldDeclarationEditorAspect;
+  }
+
+  private FieldReferenceOperation_Editor getFieldReferenceOperationEditorAspect() {
+    if (myFieldReferenceOperationEditorAspect == null) {
+      myFieldReferenceOperationEditorAspect = new FieldReferenceOperation_Editor();
+    }
+    return myFieldReferenceOperationEditorAspect;
+  }
+
+  private FloatingPointConstant_Editor getFloatingPointConstantEditorAspect() {
+    if (myFloatingPointConstantEditorAspect == null) {
+      myFloatingPointConstantEditorAspect = new FloatingPointConstant_Editor();
+    }
+    return myFloatingPointConstantEditorAspect;
+  }
+
+  private FloatingPointFloatConstant_Editor getFloatingPointFloatConstantEditorAspect() {
+    if (myFloatingPointFloatConstantEditorAspect == null) {
+      myFloatingPointFloatConstantEditorAspect = new FloatingPointFloatConstant_Editor();
+    }
+    return myFloatingPointFloatConstantEditorAspect;
+  }
+
+  private ForStatement_Editor getForStatementEditorAspect() {
+    if (myForStatementEditorAspect == null) {
+      myForStatementEditorAspect = new ForStatement_Editor();
+    }
+    return myForStatementEditorAspect;
+  }
+
+  private ForeachStatement_Editor getForeachStatementEditorAspect() {
+    if (myForeachStatementEditorAspect == null) {
+      myForeachStatementEditorAspect = new ForeachStatement_Editor();
+    }
+    return myForeachStatementEditorAspect;
+  }
+
+  private GenericNewExpression_Editor getGenericNewExpressionEditorAspect() {
+    if (myGenericNewExpressionEditorAspect == null) {
+      myGenericNewExpressionEditorAspect = new GenericNewExpression_Editor();
+    }
+    return myGenericNewExpressionEditorAspect;
+  }
+
+  private GetAccessor_Editor getGetAccessorEditorAspect() {
+    if (myGetAccessorEditorAspect == null) {
+      myGetAccessorEditorAspect = new GetAccessor_Editor();
+    }
+    return myGetAccessorEditorAspect;
+  }
+
+  private HexIntegerLiteral_Editor getHexIntegerLiteralEditorAspect() {
+    if (myHexIntegerLiteralEditorAspect == null) {
+      myHexIntegerLiteralEditorAspect = new HexIntegerLiteral_Editor();
+    }
+    return myHexIntegerLiteralEditorAspect;
+  }
+
+  private IfStatement_Editor getIfStatementEditorAspect() {
+    if (myIfStatementEditorAspect == null) {
+      myIfStatementEditorAspect = new IfStatement_Editor();
+    }
+    return myIfStatementEditorAspect;
+  }
+
+  private ImplicitAnnotationInstanceValue_Editor getImplicitAnnotationInstanceValueEditorAspect() {
+    if (myImplicitAnnotationInstanceValueEditorAspect == null) {
+      myImplicitAnnotationInstanceValueEditorAspect = new ImplicitAnnotationInstanceValue_Editor();
+    }
+    return myImplicitAnnotationInstanceValueEditorAspect;
+  }
+
+  private IncompleteMemberDeclaration_Editor getIncompleteMemberDeclarationEditorAspect() {
+    if (myIncompleteMemberDeclarationEditorAspect == null) {
+      myIncompleteMemberDeclarationEditorAspect = new IncompleteMemberDeclaration_Editor();
+    }
+    return myIncompleteMemberDeclarationEditorAspect;
+  }
+
+  private InstanceInitializer_Editor getInstanceInitializerEditorAspect() {
+    if (myInstanceInitializerEditorAspect == null) {
+      myInstanceInitializerEditorAspect = new InstanceInitializer_Editor();
+    }
+    return myInstanceInitializerEditorAspect;
+  }
+
+  private InstanceMethodCallOperation_Editor getInstanceMethodCallOperationEditorAspect() {
+    if (myInstanceMethodCallOperationEditorAspect == null) {
+      myInstanceMethodCallOperationEditorAspect = new InstanceMethodCallOperation_Editor();
+    }
+    return myInstanceMethodCallOperationEditorAspect;
+  }
+
+  private InstanceMethodDeclaration_Editor getInstanceMethodDeclarationEditorAspect() {
+    if (myInstanceMethodDeclarationEditorAspect == null) {
+      myInstanceMethodDeclarationEditorAspect = new InstanceMethodDeclaration_Editor();
+    }
+    return myInstanceMethodDeclarationEditorAspect;
+  }
+
+  private InstanceOfExpression_Editor getInstanceOfExpressionEditorAspect() {
+    if (myInstanceOfExpressionEditorAspect == null) {
+      myInstanceOfExpressionEditorAspect = new InstanceOfExpression_Editor();
+    }
+    return myInstanceOfExpressionEditorAspect;
+  }
+
+  private IntegerConstant_Editor getIntegerConstantEditorAspect() {
+    if (myIntegerConstantEditorAspect == null) {
+      myIntegerConstantEditorAspect = new IntegerConstant_Editor();
+    }
+    return myIntegerConstantEditorAspect;
+  }
+
+  private Interface_Editor getInterfaceEditorAspect() {
+    if (myInterfaceEditorAspect == null) {
+      myInterfaceEditorAspect = new Interface_Editor();
+    }
+    return myInterfaceEditorAspect;
+  }
+
+  private JavaImport_Editor getJavaImportEditorAspect() {
+    if (myJavaImportEditorAspect == null) {
+      myJavaImportEditorAspect = new JavaImport_Editor();
+    }
+    return myJavaImportEditorAspect;
+  }
+
+  private JavaImports_Editor getJavaImportsEditorAspect() {
+    if (myJavaImportsEditorAspect == null) {
+      myJavaImportsEditorAspect = new JavaImports_Editor();
+    }
+    return myJavaImportsEditorAspect;
+  }
+
+  private LocalMethodCall_Editor getLocalMethodCallEditorAspect() {
+    if (myLocalMethodCallEditorAspect == null) {
+      myLocalMethodCallEditorAspect = new LocalMethodCall_Editor();
+    }
+    return myLocalMethodCallEditorAspect;
+  }
+
+  private LocalPropertyReference_Editor getLocalPropertyReferenceEditorAspect() {
+    if (myLocalPropertyReferenceEditorAspect == null) {
+      myLocalPropertyReferenceEditorAspect = new LocalPropertyReference_Editor();
+    }
+    return myLocalPropertyReferenceEditorAspect;
+  }
+
+  private LocalVariableDeclaration_Editor getLocalVariableDeclarationEditorAspect() {
+    if (myLocalVariableDeclarationEditorAspect == null) {
+      myLocalVariableDeclarationEditorAspect = new LocalVariableDeclaration_Editor();
+    }
+    return myLocalVariableDeclarationEditorAspect;
+  }
+
+  private LocalVariableDeclarationStatement_Editor getLocalVariableDeclarationStatementEditorAspect() {
+    if (myLocalVariableDeclarationStatementEditorAspect == null) {
+      myLocalVariableDeclarationStatementEditorAspect = new LocalVariableDeclarationStatement_Editor();
+    }
+    return myLocalVariableDeclarationStatementEditorAspect;
+  }
+
+  private LongLiteral_Editor getLongLiteralEditorAspect() {
+    if (myLongLiteralEditorAspect == null) {
+      myLongLiteralEditorAspect = new LongLiteral_Editor();
+    }
+    return myLongLiteralEditorAspect;
+  }
+
+  private LoopLabel_Editor getLoopLabelEditorAspect() {
+    if (myLoopLabelEditorAspect == null) {
+      myLoopLabelEditorAspect = new LoopLabel_Editor();
+    }
+    return myLoopLabelEditorAspect;
+  }
+
+  private LoopLabelReference_Editor getLoopLabelReferenceEditorAspect() {
+    if (myLoopLabelReferenceEditorAspect == null) {
+      myLoopLabelReferenceEditorAspect = new LoopLabelReference_Editor();
+    }
+    return myLoopLabelReferenceEditorAspect;
+  }
+
+  private LowerBoundType_Editor getLowerBoundTypeEditorAspect() {
+    if (myLowerBoundTypeEditorAspect == null) {
+      myLowerBoundTypeEditorAspect = new LowerBoundType_Editor();
+    }
+    return myLowerBoundTypeEditorAspect;
+  }
+
+  private NotExpression_Editor getNotExpressionEditorAspect() {
+    if (myNotExpressionEditorAspect == null) {
+      myNotExpressionEditorAspect = new NotExpression_Editor();
+    }
+    return myNotExpressionEditorAspect;
+  }
+
+  private NullLiteral_Editor getNullLiteralEditorAspect() {
+    if (myNullLiteralEditorAspect == null) {
+      myNullLiteralEditorAspect = new NullLiteral_Editor();
+    }
+    return myNullLiteralEditorAspect;
+  }
+
+  private Number_Editor getNumberEditorAspect() {
+    if (myNumberEditorAspect == null) {
+      myNumberEditorAspect = new Number_Editor();
+    }
+    return myNumberEditorAspect;
+  }
+
+  private ParameterDeclaration_Editor getParameterDeclarationEditorAspect() {
+    if (myParameterDeclarationEditorAspect == null) {
+      myParameterDeclarationEditorAspect = new ParameterDeclaration_Editor();
+    }
+    return myParameterDeclarationEditorAspect;
+  }
+
+  private ParenthesizedExpression_Editor getParenthesizedExpressionEditorAspect() {
+    if (myParenthesizedExpressionEditorAspect == null) {
+      myParenthesizedExpressionEditorAspect = new ParenthesizedExpression_Editor();
+    }
+    return myParenthesizedExpressionEditorAspect;
+  }
+
+  private PlaceholderMember_Editor getPlaceholderMemberEditorAspect() {
+    if (myPlaceholderMemberEditorAspect == null) {
+      myPlaceholderMemberEditorAspect = new PlaceholderMember_Editor();
+    }
+    return myPlaceholderMemberEditorAspect;
+  }
+
+  private PlaceholderMethodDeclaration_Editor getPlaceholderMethodDeclarationEditorAspect() {
+    if (myPlaceholderMethodDeclarationEditorAspect == null) {
+      myPlaceholderMethodDeclarationEditorAspect = new PlaceholderMethodDeclaration_Editor();
+    }
+    return myPlaceholderMethodDeclarationEditorAspect;
+  }
+
+  private PostfixDecrementExpression_Editor getPostfixDecrementExpressionEditorAspect() {
+    if (myPostfixDecrementExpressionEditorAspect == null) {
+      myPostfixDecrementExpressionEditorAspect = new PostfixDecrementExpression_Editor();
+    }
+    return myPostfixDecrementExpressionEditorAspect;
+  }
+
+  private PostfixIncrementExpression_Editor getPostfixIncrementExpressionEditorAspect() {
+    if (myPostfixIncrementExpressionEditorAspect == null) {
+      myPostfixIncrementExpressionEditorAspect = new PostfixIncrementExpression_Editor();
+    }
+    return myPostfixIncrementExpressionEditorAspect;
+  }
+
+  private PrefixDecrementExpression_Editor getPrefixDecrementExpressionEditorAspect() {
+    if (myPrefixDecrementExpressionEditorAspect == null) {
+      myPrefixDecrementExpressionEditorAspect = new PrefixDecrementExpression_Editor();
+    }
+    return myPrefixDecrementExpressionEditorAspect;
+  }
+
+  private PrefixIncrementExpression_Editor getPrefixIncrementExpressionEditorAspect() {
+    if (myPrefixIncrementExpressionEditorAspect == null) {
+      myPrefixIncrementExpressionEditorAspect = new PrefixIncrementExpression_Editor();
+    }
+    return myPrefixIncrementExpressionEditorAspect;
+  }
+
+  private PrimitiveClassExpression_Editor getPrimitiveClassExpressionEditorAspect() {
+    if (myPrimitiveClassExpressionEditorAspect == null) {
+      myPrimitiveClassExpressionEditorAspect = new PrimitiveClassExpression_Editor();
+    }
+    return myPrimitiveClassExpressionEditorAspect;
+  }
+
+  private Property_Editor getPropertyEditorAspect() {
+    if (myPropertyEditorAspect == null) {
+      myPropertyEditorAspect = new Property_Editor();
+    }
+    return myPropertyEditorAspect;
+  }
+
+  private PropertyReference_Editor getPropertyReferenceEditorAspect() {
+    if (myPropertyReferenceEditorAspect == null) {
+      myPropertyReferenceEditorAspect = new PropertyReference_Editor();
+    }
+    return myPropertyReferenceEditorAspect;
+  }
+
+  private RemarkStatement_Editor getRemarkStatementEditorAspect() {
+    if (myRemarkStatementEditorAspect == null) {
+      myRemarkStatementEditorAspect = new RemarkStatement_Editor();
+    }
+    return myRemarkStatementEditorAspect;
+  }
+
+  private ReturnStatement_Editor getReturnStatementEditorAspect() {
+    if (myReturnStatementEditorAspect == null) {
+      myReturnStatementEditorAspect = new ReturnStatement_Editor();
+    }
+    return myReturnStatementEditorAspect;
+  }
+
+  private SetAccessor_Editor getSetAccessorEditorAspect() {
+    if (mySetAccessorEditorAspect == null) {
+      mySetAccessorEditorAspect = new SetAccessor_Editor();
+    }
+    return mySetAccessorEditorAspect;
+  }
+
+  private SingleLineComment_Editor getSingleLineCommentEditorAspect() {
+    if (mySingleLineCommentEditorAspect == null) {
+      mySingleLineCommentEditorAspect = new SingleLineComment_Editor();
+    }
+    return mySingleLineCommentEditorAspect;
+  }
+
+  private Statement_Editor getStatementEditorAspect() {
+    if (myStatementEditorAspect == null) {
+      myStatementEditorAspect = new Statement_Editor();
+    }
+    return myStatementEditorAspect;
+  }
+
+  private StatementCommentPart_Editor getStatementCommentPartEditorAspect() {
+    if (myStatementCommentPartEditorAspect == null) {
+      myStatementCommentPartEditorAspect = new StatementCommentPart_Editor();
+    }
+    return myStatementCommentPartEditorAspect;
+  }
+
+  private StatementList_Editor getStatementListEditorAspect() {
+    if (myStatementListEditorAspect == null) {
+      myStatementListEditorAspect = new StatementList_Editor();
+    }
+    return myStatementListEditorAspect;
+  }
+
+  private StaticFieldDeclaration_Editor getStaticFieldDeclarationEditorAspect() {
+    if (myStaticFieldDeclarationEditorAspect == null) {
+      myStaticFieldDeclarationEditorAspect = new StaticFieldDeclaration_Editor();
+    }
+    return myStaticFieldDeclarationEditorAspect;
+  }
+
+  private StaticFieldReference_Editor getStaticFieldReferenceEditorAspect() {
+    if (myStaticFieldReferenceEditorAspect == null) {
+      myStaticFieldReferenceEditorAspect = new StaticFieldReference_Editor();
+    }
+    return myStaticFieldReferenceEditorAspect;
+  }
+
+  private StaticInitializer_Editor getStaticInitializerEditorAspect() {
+    if (myStaticInitializerEditorAspect == null) {
+      myStaticInitializerEditorAspect = new StaticInitializer_Editor();
+    }
+    return myStaticInitializerEditorAspect;
+  }
+
+  private StaticMethodCall_Editor getStaticMethodCallEditorAspect() {
+    if (myStaticMethodCallEditorAspect == null) {
+      myStaticMethodCallEditorAspect = new StaticMethodCall_Editor();
+    }
+    return myStaticMethodCallEditorAspect;
+  }
+
+  private StaticMethodDeclaration_Editor getStaticMethodDeclarationEditorAspect() {
+    if (myStaticMethodDeclarationEditorAspect == null) {
+      myStaticMethodDeclarationEditorAspect = new StaticMethodDeclaration_Editor();
+    }
+    return myStaticMethodDeclarationEditorAspect;
+  }
+
+  private StringBooleanOperation_Editor getStringBooleanOperationEditorAspect() {
+    if (myStringBooleanOperationEditorAspect == null) {
+      myStringBooleanOperationEditorAspect = new StringBooleanOperation_Editor();
+    }
+    return myStringBooleanOperationEditorAspect;
+  }
+
+  private StringLiteral_Editor getStringLiteralEditorAspect() {
+    if (myStringLiteralEditorAspect == null) {
+      myStringLiteralEditorAspect = new StringLiteral_Editor();
+    }
+    return myStringLiteralEditorAspect;
+  }
+
+  private StringToken_Editor getStringTokenEditorAspect() {
+    if (myStringTokenEditorAspect == null) {
+      myStringTokenEditorAspect = new StringToken_Editor();
+    }
+    return myStringTokenEditorAspect;
+  }
+
+  private StubStatementList_Editor getStubStatementListEditorAspect() {
+    if (myStubStatementListEditorAspect == null) {
+      myStubStatementListEditorAspect = new StubStatementList_Editor();
+    }
+    return myStubStatementListEditorAspect;
+  }
+
+  private SubstringExpression_Editor getSubstringExpressionEditorAspect() {
+    if (mySubstringExpressionEditorAspect == null) {
+      mySubstringExpressionEditorAspect = new SubstringExpression_Editor();
+    }
+    return mySubstringExpressionEditorAspect;
+  }
+
+  private SuperConstructorInvocation_Editor getSuperConstructorInvocationEditorAspect() {
+    if (mySuperConstructorInvocationEditorAspect == null) {
+      mySuperConstructorInvocationEditorAspect = new SuperConstructorInvocation_Editor();
+    }
+    return mySuperConstructorInvocationEditorAspect;
+  }
+
+  private SuperMethodCall_Editor getSuperMethodCallEditorAspect() {
+    if (mySuperMethodCallEditorAspect == null) {
+      mySuperMethodCallEditorAspect = new SuperMethodCall_Editor();
+    }
+    return mySuperMethodCallEditorAspect;
+  }
+
+  private SwitchCase_Editor getSwitchCaseEditorAspect() {
+    if (mySwitchCaseEditorAspect == null) {
+      mySwitchCaseEditorAspect = new SwitchCase_Editor();
+    }
+    return mySwitchCaseEditorAspect;
+  }
+
+  private SwitchStatement_Editor getSwitchStatementEditorAspect() {
+    if (mySwitchStatementEditorAspect == null) {
+      mySwitchStatementEditorAspect = new SwitchStatement_Editor();
+    }
+    return mySwitchStatementEditorAspect;
+  }
+
+  private SynchronizedStatement_Editor getSynchronizedStatementEditorAspect() {
+    if (mySynchronizedStatementEditorAspect == null) {
+      mySynchronizedStatementEditorAspect = new SynchronizedStatement_Editor();
+    }
+    return mySynchronizedStatementEditorAspect;
+  }
+
+  private TernaryOperatorExpression_Editor getTernaryOperatorExpressionEditorAspect() {
+    if (myTernaryOperatorExpressionEditorAspect == null) {
+      myTernaryOperatorExpressionEditorAspect = new TernaryOperatorExpression_Editor();
+    }
+    return myTernaryOperatorExpressionEditorAspect;
+  }
+
+  private TextCommentPart_Editor getTextCommentPartEditorAspect() {
+    if (myTextCommentPartEditorAspect == null) {
+      myTextCommentPartEditorAspect = new TextCommentPart_Editor();
+    }
+    return myTextCommentPartEditorAspect;
+  }
+
+  private ThisConstructorInvocation_Editor getThisConstructorInvocationEditorAspect() {
+    if (myThisConstructorInvocationEditorAspect == null) {
+      myThisConstructorInvocationEditorAspect = new ThisConstructorInvocation_Editor();
+    }
+    return myThisConstructorInvocationEditorAspect;
+  }
+
+  private ThisExpression_Editor getThisExpressionEditorAspect() {
+    if (myThisExpressionEditorAspect == null) {
+      myThisExpressionEditorAspect = new ThisExpression_Editor();
+    }
+    return myThisExpressionEditorAspect;
+  }
+
+  private ThrowStatement_Editor getThrowStatementEditorAspect() {
+    if (myThrowStatementEditorAspect == null) {
+      myThrowStatementEditorAspect = new ThrowStatement_Editor();
+    }
+    return myThrowStatementEditorAspect;
+  }
+
+  private TrimOperation_Editor getTrimOperationEditorAspect() {
+    if (myTrimOperationEditorAspect == null) {
+      myTrimOperationEditorAspect = new TrimOperation_Editor();
+    }
+    return myTrimOperationEditorAspect;
+  }
+
+  private TryCatchStatement_Editor getTryCatchStatementEditorAspect() {
+    if (myTryCatchStatementEditorAspect == null) {
+      myTryCatchStatementEditorAspect = new TryCatchStatement_Editor();
+    }
+    return myTryCatchStatementEditorAspect;
+  }
+
+  private TryStatement_Editor getTryStatementEditorAspect() {
+    if (myTryStatementEditorAspect == null) {
+      myTryStatementEditorAspect = new TryStatement_Editor();
+    }
+    return myTryStatementEditorAspect;
+  }
+
+  private Type_Editor getTypeEditorAspect() {
+    if (myTypeEditorAspect == null) {
+      myTypeEditorAspect = new Type_Editor();
+    }
+    return myTypeEditorAspect;
+  }
+
+  private TypeVariableDeclaration_Editor getTypeVariableDeclarationEditorAspect() {
+    if (myTypeVariableDeclarationEditorAspect == null) {
+      myTypeVariableDeclarationEditorAspect = new TypeVariableDeclaration_Editor();
+    }
+    return myTypeVariableDeclarationEditorAspect;
+  }
+
+  private TypeVariableReference_Editor getTypeVariableReferenceEditorAspect() {
+    if (myTypeVariableReferenceEditorAspect == null) {
+      myTypeVariableReferenceEditorAspect = new TypeVariableReference_Editor();
+    }
+    return myTypeVariableReferenceEditorAspect;
+  }
+
+  private UnaryMinus_Editor getUnaryMinusEditorAspect() {
+    if (myUnaryMinusEditorAspect == null) {
+      myUnaryMinusEditorAspect = new UnaryMinus_Editor();
+    }
+    return myUnaryMinusEditorAspect;
+  }
+
+  private UndefinedType_Editor getUndefinedTypeEditorAspect() {
+    if (myUndefinedTypeEditorAspect == null) {
+      myUndefinedTypeEditorAspect = new UndefinedType_Editor();
+    }
+    return myUndefinedTypeEditorAspect;
+  }
+
+  private UnknownConsCall_Editor getUnknownConsCallEditorAspect() {
+    if (myUnknownConsCallEditorAspect == null) {
+      myUnknownConsCallEditorAspect = new UnknownConsCall_Editor();
+    }
+    return myUnknownConsCallEditorAspect;
+  }
+
+  private UnknownDotCall_Editor getUnknownDotCallEditorAspect() {
+    if (myUnknownDotCallEditorAspect == null) {
+      myUnknownDotCallEditorAspect = new UnknownDotCall_Editor();
+    }
+    return myUnknownDotCallEditorAspect;
+  }
+
+  private UnknownLocalCall_Editor getUnknownLocalCallEditorAspect() {
+    if (myUnknownLocalCallEditorAspect == null) {
+      myUnknownLocalCallEditorAspect = new UnknownLocalCall_Editor();
+    }
+    return myUnknownLocalCallEditorAspect;
+  }
+
+  private UnknownNameRef_Editor getUnknownNameRefEditorAspect() {
+    if (myUnknownNameRefEditorAspect == null) {
+      myUnknownNameRefEditorAspect = new UnknownNameRef_Editor();
+    }
+    return myUnknownNameRefEditorAspect;
+  }
+
+  private UnknownNew_Editor getUnknownNewEditorAspect() {
+    if (myUnknownNewEditorAspect == null) {
+      myUnknownNewEditorAspect = new UnknownNew_Editor();
+    }
+    return myUnknownNewEditorAspect;
+  }
+
+  private UnresolvedNameReference_Editor getUnresolvedNameReferenceEditorAspect() {
+    if (myUnresolvedNameReferenceEditorAspect == null) {
+      myUnresolvedNameReferenceEditorAspect = new UnresolvedNameReference_Editor();
+    }
+    return myUnresolvedNameReferenceEditorAspect;
+  }
+
+  private UpperBoundType_Editor getUpperBoundTypeEditorAspect() {
+    if (myUpperBoundTypeEditorAspect == null) {
+      myUpperBoundTypeEditorAspect = new UpperBoundType_Editor();
+    }
+    return myUpperBoundTypeEditorAspect;
+  }
+
+  private UsingStatement_Editor getUsingStatementEditorAspect() {
+    if (myUsingStatementEditorAspect == null) {
+      myUsingStatementEditorAspect = new UsingStatement_Editor();
+    }
+    return myUsingStatementEditorAspect;
+  }
+
+  private ValueParameter_Editor getValueParameterEditorAspect() {
+    if (myValueParameterEditorAspect == null) {
+      myValueParameterEditorAspect = new ValueParameter_Editor();
+    }
+    return myValueParameterEditorAspect;
+  }
+
+  private VariableArityType_Editor getVariableArityTypeEditorAspect() {
+    if (myVariableArityTypeEditorAspect == null) {
+      myVariableArityTypeEditorAspect = new VariableArityType_Editor();
+    }
+    return myVariableArityTypeEditorAspect;
+  }
+
+  private VariableReference_Editor getVariableReferenceEditorAspect() {
+    if (myVariableReferenceEditorAspect == null) {
+      myVariableReferenceEditorAspect = new VariableReference_Editor();
+    }
+    return myVariableReferenceEditorAspect;
+  }
+
+  private Visibility_Editor getVisibilityEditorAspect() {
+    if (myVisibilityEditorAspect == null) {
+      myVisibilityEditorAspect = new Visibility_Editor();
+    }
+    return myVisibilityEditorAspect;
+  }
+
+  private WhileStatement_Editor getWhileStatementEditorAspect() {
+    if (myWhileStatementEditorAspect == null) {
+      myWhileStatementEditorAspect = new WhileStatement_Editor();
+    }
+    return myWhileStatementEditorAspect;
+  }
+
+  private WildCardType_Editor getWildCardTypeEditorAspect() {
+    if (myWildCardTypeEditorAspect == null) {
+      myWildCardTypeEditorAspect = new WildCardType_Editor();
+    }
+    return myWildCardTypeEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0xf = new String[]{"jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", "jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.structure.AbstractOperation", "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", "jetbrains.mps.baseLanguage.structure.Annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", "jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", "jetbrains.mps.baseLanguage.structure.ArrayClassExpression", "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation", "jetbrains.mps.baseLanguage.structure.ArrayCreator", "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", "jetbrains.mps.baseLanguage.structure.ArrayLiteral", "jetbrains.mps.baseLanguage.structure.ArrayType", "jetbrains.mps.baseLanguage.structure.AsExpression", "jetbrains.mps.baseLanguage.structure.AssertStatement", "jetbrains.mps.baseLanguage.structure.BLBottomType", "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.baseLanguage.structure.BaseVariableReference", "jetbrains.mps.baseLanguage.structure.BinaryOperation", "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression", "jetbrains.mps.baseLanguage.structure.BlockStatement", "jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.BreakStatement", "jetbrains.mps.baseLanguage.structure.CastExpression", "jetbrains.mps.baseLanguage.structure.CatchClause", "jetbrains.mps.baseLanguage.structure.CharConstant", "jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.ClassCreator", "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", "jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.ClosureParameter", "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", "jetbrains.mps.baseLanguage.structure.CommentedStatement", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "jetbrains.mps.baseLanguage.structure.ContinueStatement", "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultClassCreator", "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor", "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultSetAccessor", "jetbrains.mps.baseLanguage.structure.DimensionExpression", "jetbrains.mps.baseLanguage.structure.DoWhileStatement", "jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.baseLanguage.structure.ElsifClause", "jetbrains.mps.baseLanguage.structure.EnumClass", "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", "jetbrains.mps.baseLanguage.structure.EnumConstantReference", "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", "jetbrains.mps.baseLanguage.structure.EscapeOperation", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ExpressionStatement", "jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", "jetbrains.mps.baseLanguage.structure.ForStatement", "jetbrains.mps.baseLanguage.structure.ForeachStatement", "jetbrains.mps.baseLanguage.structure.GenericNewExpression", "jetbrains.mps.baseLanguage.structure.GetAccessor", "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", "jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration", "jetbrains.mps.baseLanguage.structure.InstanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", "jetbrains.mps.baseLanguage.structure.IntegerConstant", "jetbrains.mps.baseLanguage.structure.Interface", "jetbrains.mps.baseLanguage.structure.JavaImport", "jetbrains.mps.baseLanguage.structure.JavaImports", "jetbrains.mps.baseLanguage.structure.LocalMethodCall", "jetbrains.mps.baseLanguage.structure.LocalPropertyReference", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", "jetbrains.mps.baseLanguage.structure.LongLiteral", "jetbrains.mps.baseLanguage.structure.LoopLabel", "jetbrains.mps.baseLanguage.structure.LoopLabelReference", "jetbrains.mps.baseLanguage.structure.LowerBoundType", "jetbrains.mps.baseLanguage.structure.NotExpression", "jetbrains.mps.baseLanguage.structure.NullLiteral", "jetbrains.mps.baseLanguage.structure.Number", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", "jetbrains.mps.baseLanguage.structure.PlaceholderMember", "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", "jetbrains.mps.baseLanguage.structure.Property", "jetbrains.mps.baseLanguage.structure.PropertyReference", "jetbrains.mps.baseLanguage.structure.RemarkStatement", "jetbrains.mps.baseLanguage.structure.ReturnStatement", "jetbrains.mps.baseLanguage.structure.SetAccessor", "jetbrains.mps.baseLanguage.structure.SingleLineComment", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.StatementCommentPart", "jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticInitializer", "jetbrains.mps.baseLanguage.structure.StaticMethodCall", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StringBooleanOperation", "jetbrains.mps.baseLanguage.structure.StringLiteral", "jetbrains.mps.baseLanguage.structure.StringToken", "jetbrains.mps.baseLanguage.structure.StubStatementList", "jetbrains.mps.baseLanguage.structure.SubstringExpression", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "jetbrains.mps.baseLanguage.structure.SuperMethodCall", "jetbrains.mps.baseLanguage.structure.SwitchCase", "jetbrains.mps.baseLanguage.structure.SwitchStatement", "jetbrains.mps.baseLanguage.structure.SynchronizedStatement", "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", "jetbrains.mps.baseLanguage.structure.TextCommentPart", "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "jetbrains.mps.baseLanguage.structure.ThisExpression", "jetbrains.mps.baseLanguage.structure.ThrowStatement", "jetbrains.mps.baseLanguage.structure.TrimOperation", "jetbrains.mps.baseLanguage.structure.TryCatchStatement", "jetbrains.mps.baseLanguage.structure.TryStatement", "jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableReference", "jetbrains.mps.baseLanguage.structure.UnaryMinus", "jetbrains.mps.baseLanguage.structure.UndefinedType", "jetbrains.mps.baseLanguage.structure.UnknownConsCall", "jetbrains.mps.baseLanguage.structure.UnknownDotCall", "jetbrains.mps.baseLanguage.structure.UnknownLocalCall", "jetbrains.mps.baseLanguage.structure.UnknownNameRef", "jetbrains.mps.baseLanguage.structure.UnknownNew", "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference", "jetbrains.mps.baseLanguage.structure.UpperBoundType", "jetbrains.mps.baseLanguage.structure.UsingStatement", "jetbrains.mps.baseLanguage.structure.ValueParameter", "jetbrains.mps.baseLanguage.structure.VariableArityType", "jetbrains.mps.baseLanguage.structure.VariableReference", "jetbrains.mps.baseLanguage.structure.Visibility", "jetbrains.mps.baseLanguage.structure.WhileStatement", "jetbrains.mps.baseLanguage.structure.WildCardType"};
 }

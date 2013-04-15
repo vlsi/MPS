@@ -8,18 +8,53 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Field_Editor myFieldEditorAspect;
+  private Mapping_Editor myMappingEditorAspect;
+  private ReaderConfiguration_Editor myReaderConfigurationEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        return new Field_Editor();
+        return getFieldEditorAspect();
       case 1:
-        return new Mapping_Editor();
+        return getMappingEditorAspect();
       case 2:
-        return new ReaderConfiguration_Editor();
+        return getReaderConfigurationEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.readerConfigLanguage.structure.Field", "jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", "jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myFieldEditorAspect = null;
+    myMappingEditorAspect = null;
+    myReaderConfigurationEditorAspect = null;
+  }
+
+  private Field_Editor getFieldEditorAspect() {
+    if (myFieldEditorAspect == null) {
+      myFieldEditorAspect = new Field_Editor();
+    }
+    return myFieldEditorAspect;
+  }
+
+  private Mapping_Editor getMappingEditorAspect() {
+    if (myMappingEditorAspect == null) {
+      myMappingEditorAspect = new Mapping_Editor();
+    }
+    return myMappingEditorAspect;
+  }
+
+  private ReaderConfiguration_Editor getReaderConfigurationEditorAspect() {
+    if (myReaderConfigurationEditorAspect == null) {
+      myReaderConfigurationEditorAspect = new ReaderConfiguration_Editor();
+    }
+    return myReaderConfigurationEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.samples.readerConfigLanguage.structure.Field", "jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", "jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration"};
 }

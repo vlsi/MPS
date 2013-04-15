@@ -8,14 +8,31 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private DispatchModifier_Editor myDispatchModifierEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return new DispatchModifier_Editor();
+        return getDispatchModifierEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myDispatchModifierEditorAspect = null;
+  }
+
+  private DispatchModifier_Editor getDispatchModifierEditorAspect() {
+    if (myDispatchModifierEditorAspect == null) {
+      myDispatchModifierEditorAspect = new DispatchModifier_Editor();
+    }
+    return myDispatchModifierEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier"};
 }

@@ -8,50 +8,229 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private BeforeTask_Editor myBeforeTaskEditorAspect;
+  private BeforeTaskCall_Editor myBeforeTaskCallEditorAspect;
+  private BeforeTaskParameter_Editor myBeforeTaskParameterEditorAspect;
+  private BeforeTaskParameterReference_Editor myBeforeTaskParameterReferenceEditorAspect;
+  private ConfigurationFromExecutorReference_Editor myConfigurationFromExecutorReferenceEditorAspect;
+  private ConsoleCreator_Editor myConsoleCreatorEditorAspect;
+  private ConsoleType_Editor myConsoleTypeEditorAspect;
+  private ExecuteConfiguration_Function_Editor myExecuteConfiguration_FunctionEditorAspect;
+  private GetProjectOperation_Editor myGetProjectOperationEditorAspect;
+  private NodeListSource_Editor myNodeListSourceEditorAspect;
+  private NodeSource_Editor myNodeSourceEditorAspect;
+  private RunConfiguration_Editor myRunConfigurationEditorAspect;
+  private RunConfigurationCreator_Editor myRunConfigurationCreatorEditorAspect;
+  private RunConfigurationExecutor_Editor myRunConfigurationExecutorEditorAspect;
+  private RunConfigurationKind_Editor myRunConfigurationKindEditorAspect;
+  private RunConfigurationProducer_Editor myRunConfigurationProducerEditorAspect;
+  private RunConfigurationProducerPart_Editor myRunConfigurationProducerPartEditorAspect;
+  private RunConfigurationSource_Editor myRunConfigurationSourceEditorAspect;
+  private StartProcessHandlerStatement_Editor myStartProcessHandlerStatementEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0t, descriptor.getConceptFqName())) {
       case 0:
-        return new BeforeTask_Editor();
+        return getBeforeTaskEditorAspect();
       case 1:
-        return new BeforeTaskCall_Editor();
+        return getBeforeTaskCallEditorAspect();
       case 2:
-        return new BeforeTaskParameter_Editor();
+        return getBeforeTaskParameterEditorAspect();
       case 3:
-        return new BeforeTaskParameterReference_Editor();
+        return getBeforeTaskParameterReferenceEditorAspect();
       case 4:
-        return new ConfigurationFromExecutorReference_Editor();
+        return getConfigurationFromExecutorReferenceEditorAspect();
       case 5:
-        return new ConsoleCreator_Editor();
+        return getConsoleCreatorEditorAspect();
       case 6:
-        return new ConsoleType_Editor();
+        return getConsoleTypeEditorAspect();
       case 7:
-        return new ExecuteConfiguration_Function_Editor();
+        return getExecuteConfiguration_FunctionEditorAspect();
       case 8:
-        return new GetProjectOperation_Editor();
+        return getGetProjectOperationEditorAspect();
       case 9:
-        return new NodeListSource_Editor();
+        return getNodeListSourceEditorAspect();
       case 10:
-        return new NodeSource_Editor();
+        return getNodeSourceEditorAspect();
       case 11:
-        return new RunConfiguration_Editor();
+        return getRunConfigurationEditorAspect();
       case 12:
-        return new RunConfigurationCreator_Editor();
+        return getRunConfigurationCreatorEditorAspect();
       case 13:
-        return new RunConfigurationExecutor_Editor();
+        return getRunConfigurationExecutorEditorAspect();
       case 14:
-        return new RunConfigurationKind_Editor();
+        return getRunConfigurationKindEditorAspect();
       case 15:
-        return new RunConfigurationProducer_Editor();
+        return getRunConfigurationProducerEditorAspect();
       case 16:
-        return new RunConfigurationProducerPart_Editor();
+        return getRunConfigurationProducerPartEditorAspect();
       case 17:
-        return new RunConfigurationSource_Editor();
+        return getRunConfigurationSourceEditorAspect();
       case 18:
-        return new StartProcessHandlerStatement_Editor();
+        return getStartProcessHandlerStatementEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.ConsoleCreator", "jetbrains.mps.execution.configurations.structure.ConsoleType", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myBeforeTaskEditorAspect = null;
+    myBeforeTaskCallEditorAspect = null;
+    myBeforeTaskParameterEditorAspect = null;
+    myBeforeTaskParameterReferenceEditorAspect = null;
+    myConfigurationFromExecutorReferenceEditorAspect = null;
+    myConsoleCreatorEditorAspect = null;
+    myConsoleTypeEditorAspect = null;
+    myExecuteConfiguration_FunctionEditorAspect = null;
+    myGetProjectOperationEditorAspect = null;
+    myNodeListSourceEditorAspect = null;
+    myNodeSourceEditorAspect = null;
+    myRunConfigurationEditorAspect = null;
+    myRunConfigurationCreatorEditorAspect = null;
+    myRunConfigurationExecutorEditorAspect = null;
+    myRunConfigurationKindEditorAspect = null;
+    myRunConfigurationProducerEditorAspect = null;
+    myRunConfigurationProducerPartEditorAspect = null;
+    myRunConfigurationSourceEditorAspect = null;
+    myStartProcessHandlerStatementEditorAspect = null;
+  }
+
+  private BeforeTask_Editor getBeforeTaskEditorAspect() {
+    if (myBeforeTaskEditorAspect == null) {
+      myBeforeTaskEditorAspect = new BeforeTask_Editor();
+    }
+    return myBeforeTaskEditorAspect;
+  }
+
+  private BeforeTaskCall_Editor getBeforeTaskCallEditorAspect() {
+    if (myBeforeTaskCallEditorAspect == null) {
+      myBeforeTaskCallEditorAspect = new BeforeTaskCall_Editor();
+    }
+    return myBeforeTaskCallEditorAspect;
+  }
+
+  private BeforeTaskParameter_Editor getBeforeTaskParameterEditorAspect() {
+    if (myBeforeTaskParameterEditorAspect == null) {
+      myBeforeTaskParameterEditorAspect = new BeforeTaskParameter_Editor();
+    }
+    return myBeforeTaskParameterEditorAspect;
+  }
+
+  private BeforeTaskParameterReference_Editor getBeforeTaskParameterReferenceEditorAspect() {
+    if (myBeforeTaskParameterReferenceEditorAspect == null) {
+      myBeforeTaskParameterReferenceEditorAspect = new BeforeTaskParameterReference_Editor();
+    }
+    return myBeforeTaskParameterReferenceEditorAspect;
+  }
+
+  private ConfigurationFromExecutorReference_Editor getConfigurationFromExecutorReferenceEditorAspect() {
+    if (myConfigurationFromExecutorReferenceEditorAspect == null) {
+      myConfigurationFromExecutorReferenceEditorAspect = new ConfigurationFromExecutorReference_Editor();
+    }
+    return myConfigurationFromExecutorReferenceEditorAspect;
+  }
+
+  private ConsoleCreator_Editor getConsoleCreatorEditorAspect() {
+    if (myConsoleCreatorEditorAspect == null) {
+      myConsoleCreatorEditorAspect = new ConsoleCreator_Editor();
+    }
+    return myConsoleCreatorEditorAspect;
+  }
+
+  private ConsoleType_Editor getConsoleTypeEditorAspect() {
+    if (myConsoleTypeEditorAspect == null) {
+      myConsoleTypeEditorAspect = new ConsoleType_Editor();
+    }
+    return myConsoleTypeEditorAspect;
+  }
+
+  private ExecuteConfiguration_Function_Editor getExecuteConfiguration_FunctionEditorAspect() {
+    if (myExecuteConfiguration_FunctionEditorAspect == null) {
+      myExecuteConfiguration_FunctionEditorAspect = new ExecuteConfiguration_Function_Editor();
+    }
+    return myExecuteConfiguration_FunctionEditorAspect;
+  }
+
+  private GetProjectOperation_Editor getGetProjectOperationEditorAspect() {
+    if (myGetProjectOperationEditorAspect == null) {
+      myGetProjectOperationEditorAspect = new GetProjectOperation_Editor();
+    }
+    return myGetProjectOperationEditorAspect;
+  }
+
+  private NodeListSource_Editor getNodeListSourceEditorAspect() {
+    if (myNodeListSourceEditorAspect == null) {
+      myNodeListSourceEditorAspect = new NodeListSource_Editor();
+    }
+    return myNodeListSourceEditorAspect;
+  }
+
+  private NodeSource_Editor getNodeSourceEditorAspect() {
+    if (myNodeSourceEditorAspect == null) {
+      myNodeSourceEditorAspect = new NodeSource_Editor();
+    }
+    return myNodeSourceEditorAspect;
+  }
+
+  private RunConfiguration_Editor getRunConfigurationEditorAspect() {
+    if (myRunConfigurationEditorAspect == null) {
+      myRunConfigurationEditorAspect = new RunConfiguration_Editor();
+    }
+    return myRunConfigurationEditorAspect;
+  }
+
+  private RunConfigurationCreator_Editor getRunConfigurationCreatorEditorAspect() {
+    if (myRunConfigurationCreatorEditorAspect == null) {
+      myRunConfigurationCreatorEditorAspect = new RunConfigurationCreator_Editor();
+    }
+    return myRunConfigurationCreatorEditorAspect;
+  }
+
+  private RunConfigurationExecutor_Editor getRunConfigurationExecutorEditorAspect() {
+    if (myRunConfigurationExecutorEditorAspect == null) {
+      myRunConfigurationExecutorEditorAspect = new RunConfigurationExecutor_Editor();
+    }
+    return myRunConfigurationExecutorEditorAspect;
+  }
+
+  private RunConfigurationKind_Editor getRunConfigurationKindEditorAspect() {
+    if (myRunConfigurationKindEditorAspect == null) {
+      myRunConfigurationKindEditorAspect = new RunConfigurationKind_Editor();
+    }
+    return myRunConfigurationKindEditorAspect;
+  }
+
+  private RunConfigurationProducer_Editor getRunConfigurationProducerEditorAspect() {
+    if (myRunConfigurationProducerEditorAspect == null) {
+      myRunConfigurationProducerEditorAspect = new RunConfigurationProducer_Editor();
+    }
+    return myRunConfigurationProducerEditorAspect;
+  }
+
+  private RunConfigurationProducerPart_Editor getRunConfigurationProducerPartEditorAspect() {
+    if (myRunConfigurationProducerPartEditorAspect == null) {
+      myRunConfigurationProducerPartEditorAspect = new RunConfigurationProducerPart_Editor();
+    }
+    return myRunConfigurationProducerPartEditorAspect;
+  }
+
+  private RunConfigurationSource_Editor getRunConfigurationSourceEditorAspect() {
+    if (myRunConfigurationSourceEditorAspect == null) {
+      myRunConfigurationSourceEditorAspect = new RunConfigurationSource_Editor();
+    }
+    return myRunConfigurationSourceEditorAspect;
+  }
+
+  private StartProcessHandlerStatement_Editor getStartProcessHandlerStatementEditorAspect() {
+    if (myStartProcessHandlerStatementEditorAspect == null) {
+      myStartProcessHandlerStatementEditorAspect = new StartProcessHandlerStatement_Editor();
+    }
+    return myStartProcessHandlerStatementEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0t = new String[]{"jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.ConsoleCreator", "jetbrains.mps.execution.configurations.structure.ConsoleType", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
 }

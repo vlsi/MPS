@@ -8,18 +8,53 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Constant_Editor myConstantEditorAspect;
+  private ConstantReference_Editor myConstantReferenceEditorAspect;
+  private Constants_Editor myConstantsEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        return new Constant_Editor();
+        return getConstantEditorAspect();
       case 1:
-        return new ConstantReference_Editor();
+        return getConstantReferenceEditorAspect();
       case 2:
-        return new Constants_Editor();
+        return getConstantsEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.Constants"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myConstantEditorAspect = null;
+    myConstantReferenceEditorAspect = null;
+    myConstantsEditorAspect = null;
+  }
+
+  private Constant_Editor getConstantEditorAspect() {
+    if (myConstantEditorAspect == null) {
+      myConstantEditorAspect = new Constant_Editor();
+    }
+    return myConstantEditorAspect;
+  }
+
+  private ConstantReference_Editor getConstantReferenceEditorAspect() {
+    if (myConstantReferenceEditorAspect == null) {
+      myConstantReferenceEditorAspect = new ConstantReference_Editor();
+    }
+    return myConstantReferenceEditorAspect;
+  }
+
+  private Constants_Editor getConstantsEditorAspect() {
+    if (myConstantsEditorAspect == null) {
+      myConstantsEditorAspect = new Constants_Editor();
+    }
+    return myConstantsEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.Constants"};
 }

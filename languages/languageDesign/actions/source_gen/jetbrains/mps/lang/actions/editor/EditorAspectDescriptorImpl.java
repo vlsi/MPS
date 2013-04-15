@@ -8,90 +8,449 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AddMenuPart_Editor myAddMenuPartEditorAspect;
+  private ConceptRightTransformPart_Editor myConceptRightTransformPartEditorAspect;
+  private ConceptSubstitutePart_Editor myConceptSubstitutePartEditorAspect;
+  private ConceptsSubstituteMenuPart_Editor myConceptsSubstituteMenuPartEditorAspect;
+  private CopyPasteHandlers_Editor myCopyPasteHandlersEditorAspect;
+  private CopyPreProcessor_Editor myCopyPreProcessorEditorAspect;
+  private GenerateCodeAction_Editor myGenerateCodeActionEditorAspect;
+  private GenericSubstituteMenuPart_Editor myGenericSubstituteMenuPartEditorAspect;
+  private IncludeRightTransformForNodePart_Editor myIncludeRightTransformForNodePartEditorAspect;
+  private MenuPart_Editor myMenuPartEditorAspect;
+  private NF_Concept_NewInstance_Editor myNF_Concept_NewInstanceEditorAspect;
+  private NF_Model_CreateNewNodeOperation_Editor myNF_Model_CreateNewNodeOperationEditorAspect;
+  private NF_Model_CreateNewRootNodeOperation_Editor myNF_Model_CreateNewRootNodeOperationEditorAspect;
+  private NodeFactories_Editor myNodeFactoriesEditorAspect;
+  private NodeFactory_Editor myNodeFactoryEditorAspect;
+  private NodeSubstituteActions_Editor myNodeSubstituteActionsEditorAspect;
+  private NodeSubstituteActionsBuilder_Editor myNodeSubstituteActionsBuilderEditorAspect;
+  private ParameterizedSideTransformMenuPart_Editor myParameterizedSideTransformMenuPartEditorAspect;
+  private ParameterizedSubstituteMenuPart_Editor myParameterizedSubstituteMenuPartEditorAspect;
+  private PastePostProcessor_Editor myPastePostProcessorEditorAspect;
+  private PasteWrapper_Editor myPasteWrapperEditorAspect;
+  private PasteWrappers_Editor myPasteWrappersEditorAspect;
+  private RemoveByConditionPart_Editor myRemoveByConditionPartEditorAspect;
+  private RemoveDefaultsPart_Editor myRemoveDefaultsPartEditorAspect;
+  private RemovePart_Editor myRemovePartEditorAspect;
+  private RemoveSTByConditionPart_Editor myRemoveSTByConditionPartEditorAspect;
+  private SNodeCreatorAndInitializer_Editor mySNodeCreatorAndInitializerEditorAspect;
+  private SideTransformHintSubstituteActions_Editor mySideTransformHintSubstituteActionsEditorAspect;
+  private SideTransformHintSubstituteActionsBuilder_Editor mySideTransformHintSubstituteActionsBuilderEditorAspect;
+  private SideTransformVariableDeclaration_Editor mySideTransformVariableDeclarationEditorAspect;
+  private SideTransform_SimpleString_Editor mySideTransform_SimpleStringEditorAspect;
+  private SimpleItemSubstitutePart_Editor mySimpleItemSubstitutePartEditorAspect;
+  private SimpleSideTransformMenuPart_Editor mySimpleSideTransformMenuPartEditorAspect;
+  private SmartActionParameter_Editor mySmartActionParameterEditorAspect;
+  private SmartActionParameterReference_Editor mySmartActionParameterReferenceEditorAspect;
+  private SmartEditorActions_Editor mySmartEditorActionsEditorAspect;
+  private SubstituteNodeBuilderVariableDeclaration_Editor mySubstituteNodeBuilderVariableDeclarationEditorAspect;
+  private Substitute_SimpleString_Editor mySubstitute_SimpleStringEditorAspect;
+  private WrapperSubstituteMenuPart_Editor myWrapperSubstituteMenuPartEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0nb, descriptor.getConceptFqName())) {
       case 0:
-        return new AddMenuPart_Editor();
+        return getAddMenuPartEditorAspect();
       case 1:
-        return new ConceptRightTransformPart_Editor();
+        return getConceptRightTransformPartEditorAspect();
       case 2:
-        return new ConceptSubstitutePart_Editor();
+        return getConceptSubstitutePartEditorAspect();
       case 3:
-        return new ConceptsSubstituteMenuPart_Editor();
+        return getConceptsSubstituteMenuPartEditorAspect();
       case 4:
-        return new CopyPasteHandlers_Editor();
+        return getCopyPasteHandlersEditorAspect();
       case 5:
-        return new CopyPreProcessor_Editor();
+        return getCopyPreProcessorEditorAspect();
       case 6:
-        return new GenerateCodeAction_Editor();
+        return getGenerateCodeActionEditorAspect();
       case 7:
-        return new GenericSubstituteMenuPart_Editor();
+        return getGenericSubstituteMenuPartEditorAspect();
       case 8:
-        return new IncludeRightTransformForNodePart_Editor();
+        return getIncludeRightTransformForNodePartEditorAspect();
       case 9:
-        return new MenuPart_Editor();
+        return getMenuPartEditorAspect();
       case 10:
-        return new NF_Concept_NewInstance_Editor();
+        return getNF_Concept_NewInstanceEditorAspect();
       case 11:
-        return new NF_Model_CreateNewNodeOperation_Editor();
+        return getNF_Model_CreateNewNodeOperationEditorAspect();
       case 12:
-        return new NF_Model_CreateNewRootNodeOperation_Editor();
+        return getNF_Model_CreateNewRootNodeOperationEditorAspect();
       case 13:
-        return new NodeFactories_Editor();
+        return getNodeFactoriesEditorAspect();
       case 14:
-        return new NodeFactory_Editor();
+        return getNodeFactoryEditorAspect();
       case 15:
-        return new NodeSubstituteActions_Editor();
+        return getNodeSubstituteActionsEditorAspect();
       case 16:
-        return new NodeSubstituteActionsBuilder_Editor();
+        return getNodeSubstituteActionsBuilderEditorAspect();
       case 17:
-        return new ParameterizedSideTransformMenuPart_Editor();
+        return getParameterizedSideTransformMenuPartEditorAspect();
       case 18:
-        return new ParameterizedSubstituteMenuPart_Editor();
+        return getParameterizedSubstituteMenuPartEditorAspect();
       case 19:
-        return new PastePostProcessor_Editor();
+        return getPastePostProcessorEditorAspect();
       case 20:
-        return new PasteWrapper_Editor();
+        return getPasteWrapperEditorAspect();
       case 21:
-        return new PasteWrappers_Editor();
+        return getPasteWrappersEditorAspect();
       case 22:
-        return new RemoveByConditionPart_Editor();
+        return getRemoveByConditionPartEditorAspect();
       case 23:
-        return new RemoveDefaultsPart_Editor();
+        return getRemoveDefaultsPartEditorAspect();
       case 24:
-        return new RemovePart_Editor();
+        return getRemovePartEditorAspect();
       case 25:
-        return new RemoveSTByConditionPart_Editor();
+        return getRemoveSTByConditionPartEditorAspect();
       case 26:
-        return new SNodeCreatorAndInitializer_Editor();
+        return getSNodeCreatorAndInitializerEditorAspect();
       case 27:
-        return new SideTransformHintSubstituteActions_Editor();
+        return getSideTransformHintSubstituteActionsEditorAspect();
       case 28:
-        return new SideTransformHintSubstituteActionsBuilder_Editor();
+        return getSideTransformHintSubstituteActionsBuilderEditorAspect();
       case 29:
-        return new SideTransformVariableDeclaration_Editor();
+        return getSideTransformVariableDeclarationEditorAspect();
       case 30:
-        return new SideTransform_SimpleString_Editor();
+        return getSideTransform_SimpleStringEditorAspect();
       case 31:
-        return new SimpleItemSubstitutePart_Editor();
+        return getSimpleItemSubstitutePartEditorAspect();
       case 32:
-        return new SimpleSideTransformMenuPart_Editor();
+        return getSimpleSideTransformMenuPartEditorAspect();
       case 33:
-        return new SmartActionParameter_Editor();
+        return getSmartActionParameterEditorAspect();
       case 34:
-        return new SmartActionParameterReference_Editor();
+        return getSmartActionParameterReferenceEditorAspect();
       case 35:
-        return new SmartEditorActions_Editor();
+        return getSmartEditorActionsEditorAspect();
       case 36:
-        return new SubstituteNodeBuilderVariableDeclaration_Editor();
+        return getSubstituteNodeBuilderVariableDeclarationEditorAspect();
       case 37:
-        return new Substitute_SimpleString_Editor();
+        return getSubstitute_SimpleStringEditorAspect();
       case 38:
-        return new WrapperSubstituteMenuPart_Editor();
+        return getWrapperSubstituteMenuPartEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "jetbrains.mps.lang.actions.structure.GenerateCodeAction", "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", "jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.PastePostProcessor", "jetbrains.mps.lang.actions.structure.PasteWrapper", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", "jetbrains.mps.lang.actions.structure.RemovePart", "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SmartActionParameter", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SmartEditorActions", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAddMenuPartEditorAspect = null;
+    myConceptRightTransformPartEditorAspect = null;
+    myConceptSubstitutePartEditorAspect = null;
+    myConceptsSubstituteMenuPartEditorAspect = null;
+    myCopyPasteHandlersEditorAspect = null;
+    myCopyPreProcessorEditorAspect = null;
+    myGenerateCodeActionEditorAspect = null;
+    myGenericSubstituteMenuPartEditorAspect = null;
+    myIncludeRightTransformForNodePartEditorAspect = null;
+    myMenuPartEditorAspect = null;
+    myNF_Concept_NewInstanceEditorAspect = null;
+    myNF_Model_CreateNewNodeOperationEditorAspect = null;
+    myNF_Model_CreateNewRootNodeOperationEditorAspect = null;
+    myNodeFactoriesEditorAspect = null;
+    myNodeFactoryEditorAspect = null;
+    myNodeSubstituteActionsEditorAspect = null;
+    myNodeSubstituteActionsBuilderEditorAspect = null;
+    myParameterizedSideTransformMenuPartEditorAspect = null;
+    myParameterizedSubstituteMenuPartEditorAspect = null;
+    myPastePostProcessorEditorAspect = null;
+    myPasteWrapperEditorAspect = null;
+    myPasteWrappersEditorAspect = null;
+    myRemoveByConditionPartEditorAspect = null;
+    myRemoveDefaultsPartEditorAspect = null;
+    myRemovePartEditorAspect = null;
+    myRemoveSTByConditionPartEditorAspect = null;
+    mySNodeCreatorAndInitializerEditorAspect = null;
+    mySideTransformHintSubstituteActionsEditorAspect = null;
+    mySideTransformHintSubstituteActionsBuilderEditorAspect = null;
+    mySideTransformVariableDeclarationEditorAspect = null;
+    mySideTransform_SimpleStringEditorAspect = null;
+    mySimpleItemSubstitutePartEditorAspect = null;
+    mySimpleSideTransformMenuPartEditorAspect = null;
+    mySmartActionParameterEditorAspect = null;
+    mySmartActionParameterReferenceEditorAspect = null;
+    mySmartEditorActionsEditorAspect = null;
+    mySubstituteNodeBuilderVariableDeclarationEditorAspect = null;
+    mySubstitute_SimpleStringEditorAspect = null;
+    myWrapperSubstituteMenuPartEditorAspect = null;
+  }
+
+  private AddMenuPart_Editor getAddMenuPartEditorAspect() {
+    if (myAddMenuPartEditorAspect == null) {
+      myAddMenuPartEditorAspect = new AddMenuPart_Editor();
+    }
+    return myAddMenuPartEditorAspect;
+  }
+
+  private ConceptRightTransformPart_Editor getConceptRightTransformPartEditorAspect() {
+    if (myConceptRightTransformPartEditorAspect == null) {
+      myConceptRightTransformPartEditorAspect = new ConceptRightTransformPart_Editor();
+    }
+    return myConceptRightTransformPartEditorAspect;
+  }
+
+  private ConceptSubstitutePart_Editor getConceptSubstitutePartEditorAspect() {
+    if (myConceptSubstitutePartEditorAspect == null) {
+      myConceptSubstitutePartEditorAspect = new ConceptSubstitutePart_Editor();
+    }
+    return myConceptSubstitutePartEditorAspect;
+  }
+
+  private ConceptsSubstituteMenuPart_Editor getConceptsSubstituteMenuPartEditorAspect() {
+    if (myConceptsSubstituteMenuPartEditorAspect == null) {
+      myConceptsSubstituteMenuPartEditorAspect = new ConceptsSubstituteMenuPart_Editor();
+    }
+    return myConceptsSubstituteMenuPartEditorAspect;
+  }
+
+  private CopyPasteHandlers_Editor getCopyPasteHandlersEditorAspect() {
+    if (myCopyPasteHandlersEditorAspect == null) {
+      myCopyPasteHandlersEditorAspect = new CopyPasteHandlers_Editor();
+    }
+    return myCopyPasteHandlersEditorAspect;
+  }
+
+  private CopyPreProcessor_Editor getCopyPreProcessorEditorAspect() {
+    if (myCopyPreProcessorEditorAspect == null) {
+      myCopyPreProcessorEditorAspect = new CopyPreProcessor_Editor();
+    }
+    return myCopyPreProcessorEditorAspect;
+  }
+
+  private GenerateCodeAction_Editor getGenerateCodeActionEditorAspect() {
+    if (myGenerateCodeActionEditorAspect == null) {
+      myGenerateCodeActionEditorAspect = new GenerateCodeAction_Editor();
+    }
+    return myGenerateCodeActionEditorAspect;
+  }
+
+  private GenericSubstituteMenuPart_Editor getGenericSubstituteMenuPartEditorAspect() {
+    if (myGenericSubstituteMenuPartEditorAspect == null) {
+      myGenericSubstituteMenuPartEditorAspect = new GenericSubstituteMenuPart_Editor();
+    }
+    return myGenericSubstituteMenuPartEditorAspect;
+  }
+
+  private IncludeRightTransformForNodePart_Editor getIncludeRightTransformForNodePartEditorAspect() {
+    if (myIncludeRightTransformForNodePartEditorAspect == null) {
+      myIncludeRightTransformForNodePartEditorAspect = new IncludeRightTransformForNodePart_Editor();
+    }
+    return myIncludeRightTransformForNodePartEditorAspect;
+  }
+
+  private MenuPart_Editor getMenuPartEditorAspect() {
+    if (myMenuPartEditorAspect == null) {
+      myMenuPartEditorAspect = new MenuPart_Editor();
+    }
+    return myMenuPartEditorAspect;
+  }
+
+  private NF_Concept_NewInstance_Editor getNF_Concept_NewInstanceEditorAspect() {
+    if (myNF_Concept_NewInstanceEditorAspect == null) {
+      myNF_Concept_NewInstanceEditorAspect = new NF_Concept_NewInstance_Editor();
+    }
+    return myNF_Concept_NewInstanceEditorAspect;
+  }
+
+  private NF_Model_CreateNewNodeOperation_Editor getNF_Model_CreateNewNodeOperationEditorAspect() {
+    if (myNF_Model_CreateNewNodeOperationEditorAspect == null) {
+      myNF_Model_CreateNewNodeOperationEditorAspect = new NF_Model_CreateNewNodeOperation_Editor();
+    }
+    return myNF_Model_CreateNewNodeOperationEditorAspect;
+  }
+
+  private NF_Model_CreateNewRootNodeOperation_Editor getNF_Model_CreateNewRootNodeOperationEditorAspect() {
+    if (myNF_Model_CreateNewRootNodeOperationEditorAspect == null) {
+      myNF_Model_CreateNewRootNodeOperationEditorAspect = new NF_Model_CreateNewRootNodeOperation_Editor();
+    }
+    return myNF_Model_CreateNewRootNodeOperationEditorAspect;
+  }
+
+  private NodeFactories_Editor getNodeFactoriesEditorAspect() {
+    if (myNodeFactoriesEditorAspect == null) {
+      myNodeFactoriesEditorAspect = new NodeFactories_Editor();
+    }
+    return myNodeFactoriesEditorAspect;
+  }
+
+  private NodeFactory_Editor getNodeFactoryEditorAspect() {
+    if (myNodeFactoryEditorAspect == null) {
+      myNodeFactoryEditorAspect = new NodeFactory_Editor();
+    }
+    return myNodeFactoryEditorAspect;
+  }
+
+  private NodeSubstituteActions_Editor getNodeSubstituteActionsEditorAspect() {
+    if (myNodeSubstituteActionsEditorAspect == null) {
+      myNodeSubstituteActionsEditorAspect = new NodeSubstituteActions_Editor();
+    }
+    return myNodeSubstituteActionsEditorAspect;
+  }
+
+  private NodeSubstituteActionsBuilder_Editor getNodeSubstituteActionsBuilderEditorAspect() {
+    if (myNodeSubstituteActionsBuilderEditorAspect == null) {
+      myNodeSubstituteActionsBuilderEditorAspect = new NodeSubstituteActionsBuilder_Editor();
+    }
+    return myNodeSubstituteActionsBuilderEditorAspect;
+  }
+
+  private ParameterizedSideTransformMenuPart_Editor getParameterizedSideTransformMenuPartEditorAspect() {
+    if (myParameterizedSideTransformMenuPartEditorAspect == null) {
+      myParameterizedSideTransformMenuPartEditorAspect = new ParameterizedSideTransformMenuPart_Editor();
+    }
+    return myParameterizedSideTransformMenuPartEditorAspect;
+  }
+
+  private ParameterizedSubstituteMenuPart_Editor getParameterizedSubstituteMenuPartEditorAspect() {
+    if (myParameterizedSubstituteMenuPartEditorAspect == null) {
+      myParameterizedSubstituteMenuPartEditorAspect = new ParameterizedSubstituteMenuPart_Editor();
+    }
+    return myParameterizedSubstituteMenuPartEditorAspect;
+  }
+
+  private PastePostProcessor_Editor getPastePostProcessorEditorAspect() {
+    if (myPastePostProcessorEditorAspect == null) {
+      myPastePostProcessorEditorAspect = new PastePostProcessor_Editor();
+    }
+    return myPastePostProcessorEditorAspect;
+  }
+
+  private PasteWrapper_Editor getPasteWrapperEditorAspect() {
+    if (myPasteWrapperEditorAspect == null) {
+      myPasteWrapperEditorAspect = new PasteWrapper_Editor();
+    }
+    return myPasteWrapperEditorAspect;
+  }
+
+  private PasteWrappers_Editor getPasteWrappersEditorAspect() {
+    if (myPasteWrappersEditorAspect == null) {
+      myPasteWrappersEditorAspect = new PasteWrappers_Editor();
+    }
+    return myPasteWrappersEditorAspect;
+  }
+
+  private RemoveByConditionPart_Editor getRemoveByConditionPartEditorAspect() {
+    if (myRemoveByConditionPartEditorAspect == null) {
+      myRemoveByConditionPartEditorAspect = new RemoveByConditionPart_Editor();
+    }
+    return myRemoveByConditionPartEditorAspect;
+  }
+
+  private RemoveDefaultsPart_Editor getRemoveDefaultsPartEditorAspect() {
+    if (myRemoveDefaultsPartEditorAspect == null) {
+      myRemoveDefaultsPartEditorAspect = new RemoveDefaultsPart_Editor();
+    }
+    return myRemoveDefaultsPartEditorAspect;
+  }
+
+  private RemovePart_Editor getRemovePartEditorAspect() {
+    if (myRemovePartEditorAspect == null) {
+      myRemovePartEditorAspect = new RemovePart_Editor();
+    }
+    return myRemovePartEditorAspect;
+  }
+
+  private RemoveSTByConditionPart_Editor getRemoveSTByConditionPartEditorAspect() {
+    if (myRemoveSTByConditionPartEditorAspect == null) {
+      myRemoveSTByConditionPartEditorAspect = new RemoveSTByConditionPart_Editor();
+    }
+    return myRemoveSTByConditionPartEditorAspect;
+  }
+
+  private SNodeCreatorAndInitializer_Editor getSNodeCreatorAndInitializerEditorAspect() {
+    if (mySNodeCreatorAndInitializerEditorAspect == null) {
+      mySNodeCreatorAndInitializerEditorAspect = new SNodeCreatorAndInitializer_Editor();
+    }
+    return mySNodeCreatorAndInitializerEditorAspect;
+  }
+
+  private SideTransformHintSubstituteActions_Editor getSideTransformHintSubstituteActionsEditorAspect() {
+    if (mySideTransformHintSubstituteActionsEditorAspect == null) {
+      mySideTransformHintSubstituteActionsEditorAspect = new SideTransformHintSubstituteActions_Editor();
+    }
+    return mySideTransformHintSubstituteActionsEditorAspect;
+  }
+
+  private SideTransformHintSubstituteActionsBuilder_Editor getSideTransformHintSubstituteActionsBuilderEditorAspect() {
+    if (mySideTransformHintSubstituteActionsBuilderEditorAspect == null) {
+      mySideTransformHintSubstituteActionsBuilderEditorAspect = new SideTransformHintSubstituteActionsBuilder_Editor();
+    }
+    return mySideTransformHintSubstituteActionsBuilderEditorAspect;
+  }
+
+  private SideTransformVariableDeclaration_Editor getSideTransformVariableDeclarationEditorAspect() {
+    if (mySideTransformVariableDeclarationEditorAspect == null) {
+      mySideTransformVariableDeclarationEditorAspect = new SideTransformVariableDeclaration_Editor();
+    }
+    return mySideTransformVariableDeclarationEditorAspect;
+  }
+
+  private SideTransform_SimpleString_Editor getSideTransform_SimpleStringEditorAspect() {
+    if (mySideTransform_SimpleStringEditorAspect == null) {
+      mySideTransform_SimpleStringEditorAspect = new SideTransform_SimpleString_Editor();
+    }
+    return mySideTransform_SimpleStringEditorAspect;
+  }
+
+  private SimpleItemSubstitutePart_Editor getSimpleItemSubstitutePartEditorAspect() {
+    if (mySimpleItemSubstitutePartEditorAspect == null) {
+      mySimpleItemSubstitutePartEditorAspect = new SimpleItemSubstitutePart_Editor();
+    }
+    return mySimpleItemSubstitutePartEditorAspect;
+  }
+
+  private SimpleSideTransformMenuPart_Editor getSimpleSideTransformMenuPartEditorAspect() {
+    if (mySimpleSideTransformMenuPartEditorAspect == null) {
+      mySimpleSideTransformMenuPartEditorAspect = new SimpleSideTransformMenuPart_Editor();
+    }
+    return mySimpleSideTransformMenuPartEditorAspect;
+  }
+
+  private SmartActionParameter_Editor getSmartActionParameterEditorAspect() {
+    if (mySmartActionParameterEditorAspect == null) {
+      mySmartActionParameterEditorAspect = new SmartActionParameter_Editor();
+    }
+    return mySmartActionParameterEditorAspect;
+  }
+
+  private SmartActionParameterReference_Editor getSmartActionParameterReferenceEditorAspect() {
+    if (mySmartActionParameterReferenceEditorAspect == null) {
+      mySmartActionParameterReferenceEditorAspect = new SmartActionParameterReference_Editor();
+    }
+    return mySmartActionParameterReferenceEditorAspect;
+  }
+
+  private SmartEditorActions_Editor getSmartEditorActionsEditorAspect() {
+    if (mySmartEditorActionsEditorAspect == null) {
+      mySmartEditorActionsEditorAspect = new SmartEditorActions_Editor();
+    }
+    return mySmartEditorActionsEditorAspect;
+  }
+
+  private SubstituteNodeBuilderVariableDeclaration_Editor getSubstituteNodeBuilderVariableDeclarationEditorAspect() {
+    if (mySubstituteNodeBuilderVariableDeclarationEditorAspect == null) {
+      mySubstituteNodeBuilderVariableDeclarationEditorAspect = new SubstituteNodeBuilderVariableDeclaration_Editor();
+    }
+    return mySubstituteNodeBuilderVariableDeclarationEditorAspect;
+  }
+
+  private Substitute_SimpleString_Editor getSubstitute_SimpleStringEditorAspect() {
+    if (mySubstitute_SimpleStringEditorAspect == null) {
+      mySubstitute_SimpleStringEditorAspect = new Substitute_SimpleString_Editor();
+    }
+    return mySubstitute_SimpleStringEditorAspect;
+  }
+
+  private WrapperSubstituteMenuPart_Editor getWrapperSubstituteMenuPartEditorAspect() {
+    if (myWrapperSubstituteMenuPartEditorAspect == null) {
+      myWrapperSubstituteMenuPartEditorAspect = new WrapperSubstituteMenuPart_Editor();
+    }
+    return myWrapperSubstituteMenuPartEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0nb = new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "jetbrains.mps.lang.actions.structure.GenerateCodeAction", "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", "jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.PastePostProcessor", "jetbrains.mps.lang.actions.structure.PasteWrapper", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", "jetbrains.mps.lang.actions.structure.RemovePart", "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SmartActionParameter", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SmartEditorActions", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"};
 }

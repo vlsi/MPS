@@ -8,30 +8,119 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private IndexedTupleLiteral_Editor myIndexedTupleLiteralEditorAspect;
+  private IndexedTupleMemberAccessExpression_Editor myIndexedTupleMemberAccessExpressionEditorAspect;
+  private IndexedTupleType_Editor myIndexedTupleTypeEditorAspect;
+  private NamedTupleComponentAccessOperation_Editor myNamedTupleComponentAccessOperationEditorAspect;
+  private NamedTupleComponentDeclaration_Editor myNamedTupleComponentDeclarationEditorAspect;
+  private NamedTupleComponentReference_Editor myNamedTupleComponentReferenceEditorAspect;
+  private NamedTupleDeclaration_Editor myNamedTupleDeclarationEditorAspect;
+  private NamedTupleLiteral_Editor myNamedTupleLiteralEditorAspect;
+  private NamedTupleType_Editor myNamedTupleTypeEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0j, descriptor.getConceptFqName())) {
       case 0:
-        return new IndexedTupleLiteral_Editor();
+        return getIndexedTupleLiteralEditorAspect();
       case 1:
-        return new IndexedTupleMemberAccessExpression_Editor();
+        return getIndexedTupleMemberAccessExpressionEditorAspect();
       case 2:
-        return new IndexedTupleType_Editor();
+        return getIndexedTupleTypeEditorAspect();
       case 3:
-        return new NamedTupleComponentAccessOperation_Editor();
+        return getNamedTupleComponentAccessOperationEditorAspect();
       case 4:
-        return new NamedTupleComponentDeclaration_Editor();
+        return getNamedTupleComponentDeclarationEditorAspect();
       case 5:
-        return new NamedTupleComponentReference_Editor();
+        return getNamedTupleComponentReferenceEditorAspect();
       case 6:
-        return new NamedTupleDeclaration_Editor();
+        return getNamedTupleDeclarationEditorAspect();
       case 7:
-        return new NamedTupleLiteral_Editor();
+        return getNamedTupleLiteralEditorAspect();
       case 8:
-        return new NamedTupleType_Editor();
+        return getNamedTupleTypeEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myIndexedTupleLiteralEditorAspect = null;
+    myIndexedTupleMemberAccessExpressionEditorAspect = null;
+    myIndexedTupleTypeEditorAspect = null;
+    myNamedTupleComponentAccessOperationEditorAspect = null;
+    myNamedTupleComponentDeclarationEditorAspect = null;
+    myNamedTupleComponentReferenceEditorAspect = null;
+    myNamedTupleDeclarationEditorAspect = null;
+    myNamedTupleLiteralEditorAspect = null;
+    myNamedTupleTypeEditorAspect = null;
+  }
+
+  private IndexedTupleLiteral_Editor getIndexedTupleLiteralEditorAspect() {
+    if (myIndexedTupleLiteralEditorAspect == null) {
+      myIndexedTupleLiteralEditorAspect = new IndexedTupleLiteral_Editor();
+    }
+    return myIndexedTupleLiteralEditorAspect;
+  }
+
+  private IndexedTupleMemberAccessExpression_Editor getIndexedTupleMemberAccessExpressionEditorAspect() {
+    if (myIndexedTupleMemberAccessExpressionEditorAspect == null) {
+      myIndexedTupleMemberAccessExpressionEditorAspect = new IndexedTupleMemberAccessExpression_Editor();
+    }
+    return myIndexedTupleMemberAccessExpressionEditorAspect;
+  }
+
+  private IndexedTupleType_Editor getIndexedTupleTypeEditorAspect() {
+    if (myIndexedTupleTypeEditorAspect == null) {
+      myIndexedTupleTypeEditorAspect = new IndexedTupleType_Editor();
+    }
+    return myIndexedTupleTypeEditorAspect;
+  }
+
+  private NamedTupleComponentAccessOperation_Editor getNamedTupleComponentAccessOperationEditorAspect() {
+    if (myNamedTupleComponentAccessOperationEditorAspect == null) {
+      myNamedTupleComponentAccessOperationEditorAspect = new NamedTupleComponentAccessOperation_Editor();
+    }
+    return myNamedTupleComponentAccessOperationEditorAspect;
+  }
+
+  private NamedTupleComponentDeclaration_Editor getNamedTupleComponentDeclarationEditorAspect() {
+    if (myNamedTupleComponentDeclarationEditorAspect == null) {
+      myNamedTupleComponentDeclarationEditorAspect = new NamedTupleComponentDeclaration_Editor();
+    }
+    return myNamedTupleComponentDeclarationEditorAspect;
+  }
+
+  private NamedTupleComponentReference_Editor getNamedTupleComponentReferenceEditorAspect() {
+    if (myNamedTupleComponentReferenceEditorAspect == null) {
+      myNamedTupleComponentReferenceEditorAspect = new NamedTupleComponentReference_Editor();
+    }
+    return myNamedTupleComponentReferenceEditorAspect;
+  }
+
+  private NamedTupleDeclaration_Editor getNamedTupleDeclarationEditorAspect() {
+    if (myNamedTupleDeclarationEditorAspect == null) {
+      myNamedTupleDeclarationEditorAspect = new NamedTupleDeclaration_Editor();
+    }
+    return myNamedTupleDeclarationEditorAspect;
+  }
+
+  private NamedTupleLiteral_Editor getNamedTupleLiteralEditorAspect() {
+    if (myNamedTupleLiteralEditorAspect == null) {
+      myNamedTupleLiteralEditorAspect = new NamedTupleLiteral_Editor();
+    }
+    return myNamedTupleLiteralEditorAspect;
+  }
+
+  private NamedTupleType_Editor getNamedTupleTypeEditorAspect() {
+    if (myNamedTupleTypeEditorAspect == null) {
+      myNamedTupleTypeEditorAspect = new NamedTupleType_Editor();
+    }
+    return myNamedTupleTypeEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0j = new String[]{"jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"};
 }

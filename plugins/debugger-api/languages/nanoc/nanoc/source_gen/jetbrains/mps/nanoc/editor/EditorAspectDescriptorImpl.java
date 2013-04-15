@@ -8,38 +8,163 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CAssignmentExpression_Editor myCAssignmentExpressionEditorAspect;
+  private CBinaryOp_Editor myCBinaryOpEditorAspect;
+  private CBody_Editor myCBodyEditorAspect;
+  private CExpressionStatement_Editor myCExpressionStatementEditorAspect;
+  private CFor_Editor myCForEditorAspect;
+  private CParenthesis_Editor myCParenthesisEditorAspect;
+  private CType_Editor myCTypeEditorAspect;
+  private CWhile_Editor myCWhileEditorAspect;
+  private File_Editor myFileEditorAspect;
+  private IntConst_Editor myIntConstEditorAspect;
+  private VarDecl_Editor myVarDeclEditorAspect;
+  private VarDeclStatement_Editor myVarDeclStatementEditorAspect;
+  private VarRef_Editor myVarRefEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0n, descriptor.getConceptFqName())) {
       case 0:
-        return new CAssignmentExpression_Editor();
+        return getCAssignmentExpressionEditorAspect();
       case 1:
-        return new CBinaryOp_Editor();
+        return getCBinaryOpEditorAspect();
       case 2:
-        return new CBody_Editor();
+        return getCBodyEditorAspect();
       case 3:
-        return new CExpressionStatement_Editor();
+        return getCExpressionStatementEditorAspect();
       case 4:
-        return new CFor_Editor();
+        return getCForEditorAspect();
       case 5:
-        return new CParenthesis_Editor();
+        return getCParenthesisEditorAspect();
       case 6:
-        return new CType_Editor();
+        return getCTypeEditorAspect();
       case 7:
-        return new CWhile_Editor();
+        return getCWhileEditorAspect();
       case 8:
-        return new File_Editor();
+        return getFileEditorAspect();
       case 9:
-        return new IntConst_Editor();
+        return getIntConstEditorAspect();
       case 10:
-        return new VarDecl_Editor();
+        return getVarDeclEditorAspect();
       case 11:
-        return new VarDeclStatement_Editor();
+        return getVarDeclStatementEditorAspect();
       case 12:
-        return new VarRef_Editor();
+        return getVarRefEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.nanoc.structure.CAssignmentExpression", "jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CBody", "jetbrains.mps.nanoc.structure.CExpressionStatement", "jetbrains.mps.nanoc.structure.CFor", "jetbrains.mps.nanoc.structure.CParenthesis", "jetbrains.mps.nanoc.structure.CType", "jetbrains.mps.nanoc.structure.CWhile", "jetbrains.mps.nanoc.structure.File", "jetbrains.mps.nanoc.structure.IntConst", "jetbrains.mps.nanoc.structure.VarDecl", "jetbrains.mps.nanoc.structure.VarDeclStatement", "jetbrains.mps.nanoc.structure.VarRef"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCAssignmentExpressionEditorAspect = null;
+    myCBinaryOpEditorAspect = null;
+    myCBodyEditorAspect = null;
+    myCExpressionStatementEditorAspect = null;
+    myCForEditorAspect = null;
+    myCParenthesisEditorAspect = null;
+    myCTypeEditorAspect = null;
+    myCWhileEditorAspect = null;
+    myFileEditorAspect = null;
+    myIntConstEditorAspect = null;
+    myVarDeclEditorAspect = null;
+    myVarDeclStatementEditorAspect = null;
+    myVarRefEditorAspect = null;
+  }
+
+  private CAssignmentExpression_Editor getCAssignmentExpressionEditorAspect() {
+    if (myCAssignmentExpressionEditorAspect == null) {
+      myCAssignmentExpressionEditorAspect = new CAssignmentExpression_Editor();
+    }
+    return myCAssignmentExpressionEditorAspect;
+  }
+
+  private CBinaryOp_Editor getCBinaryOpEditorAspect() {
+    if (myCBinaryOpEditorAspect == null) {
+      myCBinaryOpEditorAspect = new CBinaryOp_Editor();
+    }
+    return myCBinaryOpEditorAspect;
+  }
+
+  private CBody_Editor getCBodyEditorAspect() {
+    if (myCBodyEditorAspect == null) {
+      myCBodyEditorAspect = new CBody_Editor();
+    }
+    return myCBodyEditorAspect;
+  }
+
+  private CExpressionStatement_Editor getCExpressionStatementEditorAspect() {
+    if (myCExpressionStatementEditorAspect == null) {
+      myCExpressionStatementEditorAspect = new CExpressionStatement_Editor();
+    }
+    return myCExpressionStatementEditorAspect;
+  }
+
+  private CFor_Editor getCForEditorAspect() {
+    if (myCForEditorAspect == null) {
+      myCForEditorAspect = new CFor_Editor();
+    }
+    return myCForEditorAspect;
+  }
+
+  private CParenthesis_Editor getCParenthesisEditorAspect() {
+    if (myCParenthesisEditorAspect == null) {
+      myCParenthesisEditorAspect = new CParenthesis_Editor();
+    }
+    return myCParenthesisEditorAspect;
+  }
+
+  private CType_Editor getCTypeEditorAspect() {
+    if (myCTypeEditorAspect == null) {
+      myCTypeEditorAspect = new CType_Editor();
+    }
+    return myCTypeEditorAspect;
+  }
+
+  private CWhile_Editor getCWhileEditorAspect() {
+    if (myCWhileEditorAspect == null) {
+      myCWhileEditorAspect = new CWhile_Editor();
+    }
+    return myCWhileEditorAspect;
+  }
+
+  private File_Editor getFileEditorAspect() {
+    if (myFileEditorAspect == null) {
+      myFileEditorAspect = new File_Editor();
+    }
+    return myFileEditorAspect;
+  }
+
+  private IntConst_Editor getIntConstEditorAspect() {
+    if (myIntConstEditorAspect == null) {
+      myIntConstEditorAspect = new IntConst_Editor();
+    }
+    return myIntConstEditorAspect;
+  }
+
+  private VarDecl_Editor getVarDeclEditorAspect() {
+    if (myVarDeclEditorAspect == null) {
+      myVarDeclEditorAspect = new VarDecl_Editor();
+    }
+    return myVarDeclEditorAspect;
+  }
+
+  private VarDeclStatement_Editor getVarDeclStatementEditorAspect() {
+    if (myVarDeclStatementEditorAspect == null) {
+      myVarDeclStatementEditorAspect = new VarDeclStatement_Editor();
+    }
+    return myVarDeclStatementEditorAspect;
+  }
+
+  private VarRef_Editor getVarRefEditorAspect() {
+    if (myVarRefEditorAspect == null) {
+      myVarRefEditorAspect = new VarRef_Editor();
+    }
+    return myVarRefEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0n = new String[]{"jetbrains.mps.nanoc.structure.CAssignmentExpression", "jetbrains.mps.nanoc.structure.CBinaryOp", "jetbrains.mps.nanoc.structure.CBody", "jetbrains.mps.nanoc.structure.CExpressionStatement", "jetbrains.mps.nanoc.structure.CFor", "jetbrains.mps.nanoc.structure.CParenthesis", "jetbrains.mps.nanoc.structure.CType", "jetbrains.mps.nanoc.structure.CWhile", "jetbrains.mps.nanoc.structure.File", "jetbrains.mps.nanoc.structure.IntConst", "jetbrains.mps.nanoc.structure.VarDecl", "jetbrains.mps.nanoc.structure.VarDeclStatement", "jetbrains.mps.nanoc.structure.VarRef"};
 }

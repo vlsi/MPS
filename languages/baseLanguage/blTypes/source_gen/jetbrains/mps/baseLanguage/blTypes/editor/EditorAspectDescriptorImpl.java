@@ -8,24 +8,86 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private BLArrayType_Editor myBLArrayTypeEditorAspect;
+  private BarConcept_Editor myBarConceptEditorAspect;
+  private FooConcept_Editor myFooConceptEditorAspect;
+  private FunctionType_Editor myFunctionTypeEditorAspect;
+  private PrimitiveTypeDescriptor_Editor myPrimitiveTypeDescriptorEditorAspect;
+  private PrimitiveTypeRef_Editor myPrimitiveTypeRefEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0g, descriptor.getConceptFqName())) {
       case 0:
-        return new BLArrayType_Editor();
+        return getBLArrayTypeEditorAspect();
       case 1:
-        return new BarConcept_Editor();
+        return getBarConceptEditorAspect();
       case 2:
-        return new FooConcept_Editor();
+        return getFooConceptEditorAspect();
       case 3:
-        return new FunctionType_Editor();
+        return getFunctionTypeEditorAspect();
       case 4:
-        return new PrimitiveTypeDescriptor_Editor();
+        return getPrimitiveTypeDescriptorEditorAspect();
       case 5:
-        return new PrimitiveTypeRef_Editor();
+        return getPrimitiveTypeRefEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType", "jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FooConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FunctionType", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myBLArrayTypeEditorAspect = null;
+    myBarConceptEditorAspect = null;
+    myFooConceptEditorAspect = null;
+    myFunctionTypeEditorAspect = null;
+    myPrimitiveTypeDescriptorEditorAspect = null;
+    myPrimitiveTypeRefEditorAspect = null;
+  }
+
+  private BLArrayType_Editor getBLArrayTypeEditorAspect() {
+    if (myBLArrayTypeEditorAspect == null) {
+      myBLArrayTypeEditorAspect = new BLArrayType_Editor();
+    }
+    return myBLArrayTypeEditorAspect;
+  }
+
+  private BarConcept_Editor getBarConceptEditorAspect() {
+    if (myBarConceptEditorAspect == null) {
+      myBarConceptEditorAspect = new BarConcept_Editor();
+    }
+    return myBarConceptEditorAspect;
+  }
+
+  private FooConcept_Editor getFooConceptEditorAspect() {
+    if (myFooConceptEditorAspect == null) {
+      myFooConceptEditorAspect = new FooConcept_Editor();
+    }
+    return myFooConceptEditorAspect;
+  }
+
+  private FunctionType_Editor getFunctionTypeEditorAspect() {
+    if (myFunctionTypeEditorAspect == null) {
+      myFunctionTypeEditorAspect = new FunctionType_Editor();
+    }
+    return myFunctionTypeEditorAspect;
+  }
+
+  private PrimitiveTypeDescriptor_Editor getPrimitiveTypeDescriptorEditorAspect() {
+    if (myPrimitiveTypeDescriptorEditorAspect == null) {
+      myPrimitiveTypeDescriptorEditorAspect = new PrimitiveTypeDescriptor_Editor();
+    }
+    return myPrimitiveTypeDescriptorEditorAspect;
+  }
+
+  private PrimitiveTypeRef_Editor getPrimitiveTypeRefEditorAspect() {
+    if (myPrimitiveTypeRefEditorAspect == null) {
+      myPrimitiveTypeRefEditorAspect = new PrimitiveTypeRef_Editor();
+    }
+    return myPrimitiveTypeRefEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0g = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType", "jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FooConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FunctionType", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"};
 }

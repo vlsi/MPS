@@ -8,70 +8,339 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AbstractMoveExpression_Editor myAbstractMoveExpressionEditorAspect;
+  private AbstractUIArgumentExpression_Editor myAbstractUIArgumentExpressionEditorAspect;
+  private ChangeFeatureNameExpression_Editor myChangeFeatureNameExpressionEditorAspect;
+  private ChangeFeatureNameOperation_Editor myChangeFeatureNameOperationEditorAspect;
+  private ContextMemberOperation_Editor myContextMemberOperationEditorAspect;
+  private ContextType_Editor myContextTypeEditorAspect;
+  private CreateRefactoringContext_Editor myCreateRefactoringContextEditorAspect;
+  private DeleteFeatureExpression_Editor myDeleteFeatureExpressionEditorAspect;
+  private DeleteFeatureOperation_Editor myDeleteFeatureOperationEditorAspect;
+  private ExecuteFindersExpression_Editor myExecuteFindersExpressionEditorAspect;
+  private ExecuteRefactoringStatement_Editor myExecuteRefactoringStatementEditorAspect;
+  private FinderReference_Editor myFinderReferenceEditorAspect;
+  private IsRefactoringApplicable_Editor myIsRefactoringApplicableEditorAspect;
+  private MergeNodeWithAnotherNodeExpression_Editor myMergeNodeWithAnotherNodeExpressionEditorAspect;
+  private ModelTarget_Editor myModelTargetEditorAspect;
+  private ModelsToGenerateByDefault_Editor myModelsToGenerateByDefaultEditorAspect;
+  private ModuleTarget_Editor myModuleTargetEditorAspect;
+  private MoveNodeToNodeExpression_Editor myMoveNodeToNodeExpressionEditorAspect;
+  private MoveNodesToNodeExpression_Editor myMoveNodesToNodeExpressionEditorAspect;
+  private NodeTarget_Editor myNodeTargetEditorAspect;
+  private OldRefactoring_Editor myOldRefactoringEditorAspect;
+  private Refactoring_Editor myRefactoringEditorAspect;
+  private RefactoringParameter_Editor myRefactoringParameterEditorAspect;
+  private RefactoringParameterReference_Editor myRefactoringParameterReferenceEditorAspect;
+  private RequiredAdditionalArgument_Editor myRequiredAdditionalArgumentEditorAspect;
+  private RequiredAdditionalArgumentReference_Editor myRequiredAdditionalArgumentReferenceEditorAspect;
+  private RequiredUserEnteredArgument_Editor myRequiredUserEnteredArgumentEditorAspect;
+  private UpdateModelByDefaultOperation_Editor myUpdateModelByDefaultOperationEditorAspect;
+  private UpdateModelProcedure_Editor myUpdateModelProcedureEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0db, descriptor.getConceptFqName())) {
       case 0:
-        return new AbstractMoveExpression_Editor();
+        return getAbstractMoveExpressionEditorAspect();
       case 1:
-        return new AbstractUIArgumentExpression_Editor();
+        return getAbstractUIArgumentExpressionEditorAspect();
       case 2:
-        return new ChangeFeatureNameExpression_Editor();
+        return getChangeFeatureNameExpressionEditorAspect();
       case 3:
-        return new ChangeFeatureNameOperation_Editor();
+        return getChangeFeatureNameOperationEditorAspect();
       case 4:
-        return new ContextMemberOperation_Editor();
+        return getContextMemberOperationEditorAspect();
       case 5:
-        return new ContextType_Editor();
+        return getContextTypeEditorAspect();
       case 6:
-        return new CreateRefactoringContext_Editor();
+        return getCreateRefactoringContextEditorAspect();
       case 7:
-        return new DeleteFeatureExpression_Editor();
+        return getDeleteFeatureExpressionEditorAspect();
       case 8:
-        return new DeleteFeatureOperation_Editor();
+        return getDeleteFeatureOperationEditorAspect();
       case 9:
-        return new ExecuteFindersExpression_Editor();
+        return getExecuteFindersExpressionEditorAspect();
       case 10:
-        return new ExecuteRefactoringStatement_Editor();
+        return getExecuteRefactoringStatementEditorAspect();
       case 11:
-        return new FinderReference_Editor();
+        return getFinderReferenceEditorAspect();
       case 12:
-        return new IsRefactoringApplicable_Editor();
+        return getIsRefactoringApplicableEditorAspect();
       case 13:
-        return new MergeNodeWithAnotherNodeExpression_Editor();
+        return getMergeNodeWithAnotherNodeExpressionEditorAspect();
       case 14:
-        return new ModelTarget_Editor();
+        return getModelTargetEditorAspect();
       case 15:
-        return new ModelsToGenerateByDefault_Editor();
+        return getModelsToGenerateByDefaultEditorAspect();
       case 16:
-        return new ModuleTarget_Editor();
+        return getModuleTargetEditorAspect();
       case 17:
-        return new MoveNodeToNodeExpression_Editor();
+        return getMoveNodeToNodeExpressionEditorAspect();
       case 18:
-        return new MoveNodesToNodeExpression_Editor();
+        return getMoveNodesToNodeExpressionEditorAspect();
       case 19:
-        return new NodeTarget_Editor();
+        return getNodeTargetEditorAspect();
       case 20:
-        return new OldRefactoring_Editor();
+        return getOldRefactoringEditorAspect();
       case 21:
-        return new Refactoring_Editor();
+        return getRefactoringEditorAspect();
       case 22:
-        return new RefactoringParameter_Editor();
+        return getRefactoringParameterEditorAspect();
       case 23:
-        return new RefactoringParameterReference_Editor();
+        return getRefactoringParameterReferenceEditorAspect();
       case 24:
-        return new RequiredAdditionalArgument_Editor();
+        return getRequiredAdditionalArgumentEditorAspect();
       case 25:
-        return new RequiredAdditionalArgumentReference_Editor();
+        return getRequiredAdditionalArgumentReferenceEditorAspect();
       case 26:
-        return new RequiredUserEnteredArgument_Editor();
+        return getRequiredUserEnteredArgumentEditorAspect();
       case 27:
-        return new UpdateModelByDefaultOperation_Editor();
+        return getUpdateModelByDefaultOperationEditorAspect();
       case 28:
-        return new UpdateModelProcedure_Editor();
+        return getUpdateModelProcedureEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", "jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", "jetbrains.mps.lang.refactoring.structure.FinderReference", "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", "jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.OldRefactoring", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAbstractMoveExpressionEditorAspect = null;
+    myAbstractUIArgumentExpressionEditorAspect = null;
+    myChangeFeatureNameExpressionEditorAspect = null;
+    myChangeFeatureNameOperationEditorAspect = null;
+    myContextMemberOperationEditorAspect = null;
+    myContextTypeEditorAspect = null;
+    myCreateRefactoringContextEditorAspect = null;
+    myDeleteFeatureExpressionEditorAspect = null;
+    myDeleteFeatureOperationEditorAspect = null;
+    myExecuteFindersExpressionEditorAspect = null;
+    myExecuteRefactoringStatementEditorAspect = null;
+    myFinderReferenceEditorAspect = null;
+    myIsRefactoringApplicableEditorAspect = null;
+    myMergeNodeWithAnotherNodeExpressionEditorAspect = null;
+    myModelTargetEditorAspect = null;
+    myModelsToGenerateByDefaultEditorAspect = null;
+    myModuleTargetEditorAspect = null;
+    myMoveNodeToNodeExpressionEditorAspect = null;
+    myMoveNodesToNodeExpressionEditorAspect = null;
+    myNodeTargetEditorAspect = null;
+    myOldRefactoringEditorAspect = null;
+    myRefactoringEditorAspect = null;
+    myRefactoringParameterEditorAspect = null;
+    myRefactoringParameterReferenceEditorAspect = null;
+    myRequiredAdditionalArgumentEditorAspect = null;
+    myRequiredAdditionalArgumentReferenceEditorAspect = null;
+    myRequiredUserEnteredArgumentEditorAspect = null;
+    myUpdateModelByDefaultOperationEditorAspect = null;
+    myUpdateModelProcedureEditorAspect = null;
+  }
+
+  private AbstractMoveExpression_Editor getAbstractMoveExpressionEditorAspect() {
+    if (myAbstractMoveExpressionEditorAspect == null) {
+      myAbstractMoveExpressionEditorAspect = new AbstractMoveExpression_Editor();
+    }
+    return myAbstractMoveExpressionEditorAspect;
+  }
+
+  private AbstractUIArgumentExpression_Editor getAbstractUIArgumentExpressionEditorAspect() {
+    if (myAbstractUIArgumentExpressionEditorAspect == null) {
+      myAbstractUIArgumentExpressionEditorAspect = new AbstractUIArgumentExpression_Editor();
+    }
+    return myAbstractUIArgumentExpressionEditorAspect;
+  }
+
+  private ChangeFeatureNameExpression_Editor getChangeFeatureNameExpressionEditorAspect() {
+    if (myChangeFeatureNameExpressionEditorAspect == null) {
+      myChangeFeatureNameExpressionEditorAspect = new ChangeFeatureNameExpression_Editor();
+    }
+    return myChangeFeatureNameExpressionEditorAspect;
+  }
+
+  private ChangeFeatureNameOperation_Editor getChangeFeatureNameOperationEditorAspect() {
+    if (myChangeFeatureNameOperationEditorAspect == null) {
+      myChangeFeatureNameOperationEditorAspect = new ChangeFeatureNameOperation_Editor();
+    }
+    return myChangeFeatureNameOperationEditorAspect;
+  }
+
+  private ContextMemberOperation_Editor getContextMemberOperationEditorAspect() {
+    if (myContextMemberOperationEditorAspect == null) {
+      myContextMemberOperationEditorAspect = new ContextMemberOperation_Editor();
+    }
+    return myContextMemberOperationEditorAspect;
+  }
+
+  private ContextType_Editor getContextTypeEditorAspect() {
+    if (myContextTypeEditorAspect == null) {
+      myContextTypeEditorAspect = new ContextType_Editor();
+    }
+    return myContextTypeEditorAspect;
+  }
+
+  private CreateRefactoringContext_Editor getCreateRefactoringContextEditorAspect() {
+    if (myCreateRefactoringContextEditorAspect == null) {
+      myCreateRefactoringContextEditorAspect = new CreateRefactoringContext_Editor();
+    }
+    return myCreateRefactoringContextEditorAspect;
+  }
+
+  private DeleteFeatureExpression_Editor getDeleteFeatureExpressionEditorAspect() {
+    if (myDeleteFeatureExpressionEditorAspect == null) {
+      myDeleteFeatureExpressionEditorAspect = new DeleteFeatureExpression_Editor();
+    }
+    return myDeleteFeatureExpressionEditorAspect;
+  }
+
+  private DeleteFeatureOperation_Editor getDeleteFeatureOperationEditorAspect() {
+    if (myDeleteFeatureOperationEditorAspect == null) {
+      myDeleteFeatureOperationEditorAspect = new DeleteFeatureOperation_Editor();
+    }
+    return myDeleteFeatureOperationEditorAspect;
+  }
+
+  private ExecuteFindersExpression_Editor getExecuteFindersExpressionEditorAspect() {
+    if (myExecuteFindersExpressionEditorAspect == null) {
+      myExecuteFindersExpressionEditorAspect = new ExecuteFindersExpression_Editor();
+    }
+    return myExecuteFindersExpressionEditorAspect;
+  }
+
+  private ExecuteRefactoringStatement_Editor getExecuteRefactoringStatementEditorAspect() {
+    if (myExecuteRefactoringStatementEditorAspect == null) {
+      myExecuteRefactoringStatementEditorAspect = new ExecuteRefactoringStatement_Editor();
+    }
+    return myExecuteRefactoringStatementEditorAspect;
+  }
+
+  private FinderReference_Editor getFinderReferenceEditorAspect() {
+    if (myFinderReferenceEditorAspect == null) {
+      myFinderReferenceEditorAspect = new FinderReference_Editor();
+    }
+    return myFinderReferenceEditorAspect;
+  }
+
+  private IsRefactoringApplicable_Editor getIsRefactoringApplicableEditorAspect() {
+    if (myIsRefactoringApplicableEditorAspect == null) {
+      myIsRefactoringApplicableEditorAspect = new IsRefactoringApplicable_Editor();
+    }
+    return myIsRefactoringApplicableEditorAspect;
+  }
+
+  private MergeNodeWithAnotherNodeExpression_Editor getMergeNodeWithAnotherNodeExpressionEditorAspect() {
+    if (myMergeNodeWithAnotherNodeExpressionEditorAspect == null) {
+      myMergeNodeWithAnotherNodeExpressionEditorAspect = new MergeNodeWithAnotherNodeExpression_Editor();
+    }
+    return myMergeNodeWithAnotherNodeExpressionEditorAspect;
+  }
+
+  private ModelTarget_Editor getModelTargetEditorAspect() {
+    if (myModelTargetEditorAspect == null) {
+      myModelTargetEditorAspect = new ModelTarget_Editor();
+    }
+    return myModelTargetEditorAspect;
+  }
+
+  private ModelsToGenerateByDefault_Editor getModelsToGenerateByDefaultEditorAspect() {
+    if (myModelsToGenerateByDefaultEditorAspect == null) {
+      myModelsToGenerateByDefaultEditorAspect = new ModelsToGenerateByDefault_Editor();
+    }
+    return myModelsToGenerateByDefaultEditorAspect;
+  }
+
+  private ModuleTarget_Editor getModuleTargetEditorAspect() {
+    if (myModuleTargetEditorAspect == null) {
+      myModuleTargetEditorAspect = new ModuleTarget_Editor();
+    }
+    return myModuleTargetEditorAspect;
+  }
+
+  private MoveNodeToNodeExpression_Editor getMoveNodeToNodeExpressionEditorAspect() {
+    if (myMoveNodeToNodeExpressionEditorAspect == null) {
+      myMoveNodeToNodeExpressionEditorAspect = new MoveNodeToNodeExpression_Editor();
+    }
+    return myMoveNodeToNodeExpressionEditorAspect;
+  }
+
+  private MoveNodesToNodeExpression_Editor getMoveNodesToNodeExpressionEditorAspect() {
+    if (myMoveNodesToNodeExpressionEditorAspect == null) {
+      myMoveNodesToNodeExpressionEditorAspect = new MoveNodesToNodeExpression_Editor();
+    }
+    return myMoveNodesToNodeExpressionEditorAspect;
+  }
+
+  private NodeTarget_Editor getNodeTargetEditorAspect() {
+    if (myNodeTargetEditorAspect == null) {
+      myNodeTargetEditorAspect = new NodeTarget_Editor();
+    }
+    return myNodeTargetEditorAspect;
+  }
+
+  private OldRefactoring_Editor getOldRefactoringEditorAspect() {
+    if (myOldRefactoringEditorAspect == null) {
+      myOldRefactoringEditorAspect = new OldRefactoring_Editor();
+    }
+    return myOldRefactoringEditorAspect;
+  }
+
+  private Refactoring_Editor getRefactoringEditorAspect() {
+    if (myRefactoringEditorAspect == null) {
+      myRefactoringEditorAspect = new Refactoring_Editor();
+    }
+    return myRefactoringEditorAspect;
+  }
+
+  private RefactoringParameter_Editor getRefactoringParameterEditorAspect() {
+    if (myRefactoringParameterEditorAspect == null) {
+      myRefactoringParameterEditorAspect = new RefactoringParameter_Editor();
+    }
+    return myRefactoringParameterEditorAspect;
+  }
+
+  private RefactoringParameterReference_Editor getRefactoringParameterReferenceEditorAspect() {
+    if (myRefactoringParameterReferenceEditorAspect == null) {
+      myRefactoringParameterReferenceEditorAspect = new RefactoringParameterReference_Editor();
+    }
+    return myRefactoringParameterReferenceEditorAspect;
+  }
+
+  private RequiredAdditionalArgument_Editor getRequiredAdditionalArgumentEditorAspect() {
+    if (myRequiredAdditionalArgumentEditorAspect == null) {
+      myRequiredAdditionalArgumentEditorAspect = new RequiredAdditionalArgument_Editor();
+    }
+    return myRequiredAdditionalArgumentEditorAspect;
+  }
+
+  private RequiredAdditionalArgumentReference_Editor getRequiredAdditionalArgumentReferenceEditorAspect() {
+    if (myRequiredAdditionalArgumentReferenceEditorAspect == null) {
+      myRequiredAdditionalArgumentReferenceEditorAspect = new RequiredAdditionalArgumentReference_Editor();
+    }
+    return myRequiredAdditionalArgumentReferenceEditorAspect;
+  }
+
+  private RequiredUserEnteredArgument_Editor getRequiredUserEnteredArgumentEditorAspect() {
+    if (myRequiredUserEnteredArgumentEditorAspect == null) {
+      myRequiredUserEnteredArgumentEditorAspect = new RequiredUserEnteredArgument_Editor();
+    }
+    return myRequiredUserEnteredArgumentEditorAspect;
+  }
+
+  private UpdateModelByDefaultOperation_Editor getUpdateModelByDefaultOperationEditorAspect() {
+    if (myUpdateModelByDefaultOperationEditorAspect == null) {
+      myUpdateModelByDefaultOperationEditorAspect = new UpdateModelByDefaultOperation_Editor();
+    }
+    return myUpdateModelByDefaultOperationEditorAspect;
+  }
+
+  private UpdateModelProcedure_Editor getUpdateModelProcedureEditorAspect() {
+    if (myUpdateModelProcedureEditorAspect == null) {
+      myUpdateModelProcedureEditorAspect = new UpdateModelProcedure_Editor();
+    }
+    return myUpdateModelProcedureEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0db = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", "jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", "jetbrains.mps.lang.refactoring.structure.FinderReference", "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", "jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.OldRefactoring", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
 }

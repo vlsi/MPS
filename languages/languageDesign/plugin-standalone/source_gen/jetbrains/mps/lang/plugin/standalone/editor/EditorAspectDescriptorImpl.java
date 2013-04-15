@@ -8,26 +8,97 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ApplicationPluginDeclaration_Editor myApplicationPluginDeclarationEditorAspect;
+  private ApplicationPluginType_Editor myApplicationPluginTypeEditorAspect;
+  private GetPreferencesComponentInProjectOperation_Editor myGetPreferencesComponentInProjectOperationEditorAspect;
+  private GetToolInProjectOperation_Editor myGetToolInProjectOperationEditorAspect;
+  private ProjectPluginDeclaration_Editor myProjectPluginDeclarationEditorAspect;
+  private ProjectPluginType_Editor myProjectPluginTypeEditorAspect;
+  private StandalonePluginDescriptor_Editor myStandalonePluginDescriptorEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0h, descriptor.getConceptFqName())) {
       case 0:
-        return new ApplicationPluginDeclaration_Editor();
+        return getApplicationPluginDeclarationEditorAspect();
       case 1:
-        return new ApplicationPluginType_Editor();
+        return getApplicationPluginTypeEditorAspect();
       case 2:
-        return new GetPreferencesComponentInProjectOperation_Editor();
+        return getGetPreferencesComponentInProjectOperationEditorAspect();
       case 3:
-        return new GetToolInProjectOperation_Editor();
+        return getGetToolInProjectOperationEditorAspect();
       case 4:
-        return new ProjectPluginDeclaration_Editor();
+        return getProjectPluginDeclarationEditorAspect();
       case 5:
-        return new ProjectPluginType_Editor();
+        return getProjectPluginTypeEditorAspect();
       case 6:
-        return new StandalonePluginDescriptor_Editor();
+        return getStandalonePluginDescriptorEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDeclaration", "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", "jetbrains.mps.lang.plugin.standalone.structure.GetPreferencesComponentInProjectOperation", "jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDeclaration", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType", "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myApplicationPluginDeclarationEditorAspect = null;
+    myApplicationPluginTypeEditorAspect = null;
+    myGetPreferencesComponentInProjectOperationEditorAspect = null;
+    myGetToolInProjectOperationEditorAspect = null;
+    myProjectPluginDeclarationEditorAspect = null;
+    myProjectPluginTypeEditorAspect = null;
+    myStandalonePluginDescriptorEditorAspect = null;
+  }
+
+  private ApplicationPluginDeclaration_Editor getApplicationPluginDeclarationEditorAspect() {
+    if (myApplicationPluginDeclarationEditorAspect == null) {
+      myApplicationPluginDeclarationEditorAspect = new ApplicationPluginDeclaration_Editor();
+    }
+    return myApplicationPluginDeclarationEditorAspect;
+  }
+
+  private ApplicationPluginType_Editor getApplicationPluginTypeEditorAspect() {
+    if (myApplicationPluginTypeEditorAspect == null) {
+      myApplicationPluginTypeEditorAspect = new ApplicationPluginType_Editor();
+    }
+    return myApplicationPluginTypeEditorAspect;
+  }
+
+  private GetPreferencesComponentInProjectOperation_Editor getGetPreferencesComponentInProjectOperationEditorAspect() {
+    if (myGetPreferencesComponentInProjectOperationEditorAspect == null) {
+      myGetPreferencesComponentInProjectOperationEditorAspect = new GetPreferencesComponentInProjectOperation_Editor();
+    }
+    return myGetPreferencesComponentInProjectOperationEditorAspect;
+  }
+
+  private GetToolInProjectOperation_Editor getGetToolInProjectOperationEditorAspect() {
+    if (myGetToolInProjectOperationEditorAspect == null) {
+      myGetToolInProjectOperationEditorAspect = new GetToolInProjectOperation_Editor();
+    }
+    return myGetToolInProjectOperationEditorAspect;
+  }
+
+  private ProjectPluginDeclaration_Editor getProjectPluginDeclarationEditorAspect() {
+    if (myProjectPluginDeclarationEditorAspect == null) {
+      myProjectPluginDeclarationEditorAspect = new ProjectPluginDeclaration_Editor();
+    }
+    return myProjectPluginDeclarationEditorAspect;
+  }
+
+  private ProjectPluginType_Editor getProjectPluginTypeEditorAspect() {
+    if (myProjectPluginTypeEditorAspect == null) {
+      myProjectPluginTypeEditorAspect = new ProjectPluginType_Editor();
+    }
+    return myProjectPluginTypeEditorAspect;
+  }
+
+  private StandalonePluginDescriptor_Editor getStandalonePluginDescriptorEditorAspect() {
+    if (myStandalonePluginDescriptorEditorAspect == null) {
+      myStandalonePluginDescriptorEditorAspect = new StandalonePluginDescriptor_Editor();
+    }
+    return myStandalonePluginDescriptorEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0h = new String[]{"jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDeclaration", "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", "jetbrains.mps.lang.plugin.standalone.structure.GetPreferencesComponentInProjectOperation", "jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDeclaration", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType", "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor"};
 }

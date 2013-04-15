@@ -8,28 +8,108 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CustomWatchable_Editor myCustomWatchableEditorAspect;
+  private CustomWatchablesContainer_Editor myCustomWatchablesContainerEditorAspect;
+  private HighLevelCustomViewer_Editor myHighLevelCustomViewerEditorAspect;
+  private HighLevelWatchableCreator_Editor myHighLevelWatchableCreatorEditorAspect;
+  private ToProcessMethod_Editor myToProcessMethodEditorAspect;
+  private WatchableListType_Editor myWatchableListTypeEditorAspect;
+  private WatchableType_Editor myWatchableTypeEditorAspect;
+  private WatchablesListCreator_Editor myWatchablesListCreatorEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0i, descriptor.getConceptFqName())) {
       case 0:
-        return new CustomWatchable_Editor();
+        return getCustomWatchableEditorAspect();
       case 1:
-        return new CustomWatchablesContainer_Editor();
+        return getCustomWatchablesContainerEditorAspect();
       case 2:
-        return new HighLevelCustomViewer_Editor();
+        return getHighLevelCustomViewerEditorAspect();
       case 3:
-        return new HighLevelWatchableCreator_Editor();
+        return getHighLevelWatchableCreatorEditorAspect();
       case 4:
-        return new ToProcessMethod_Editor();
+        return getToProcessMethodEditorAspect();
       case 5:
-        return new WatchableListType_Editor();
+        return getWatchableListTypeEditorAspect();
       case 6:
-        return new WatchableType_Editor();
+        return getWatchableTypeEditorAspect();
       case 7:
-        return new WatchablesListCreator_Editor();
+        return getWatchablesListCreatorEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.debugger.java.customViewers.structure.CustomWatchable", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod", "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", "jetbrains.mps.debugger.java.customViewers.structure.WatchableType", "jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCustomWatchableEditorAspect = null;
+    myCustomWatchablesContainerEditorAspect = null;
+    myHighLevelCustomViewerEditorAspect = null;
+    myHighLevelWatchableCreatorEditorAspect = null;
+    myToProcessMethodEditorAspect = null;
+    myWatchableListTypeEditorAspect = null;
+    myWatchableTypeEditorAspect = null;
+    myWatchablesListCreatorEditorAspect = null;
+  }
+
+  private CustomWatchable_Editor getCustomWatchableEditorAspect() {
+    if (myCustomWatchableEditorAspect == null) {
+      myCustomWatchableEditorAspect = new CustomWatchable_Editor();
+    }
+    return myCustomWatchableEditorAspect;
+  }
+
+  private CustomWatchablesContainer_Editor getCustomWatchablesContainerEditorAspect() {
+    if (myCustomWatchablesContainerEditorAspect == null) {
+      myCustomWatchablesContainerEditorAspect = new CustomWatchablesContainer_Editor();
+    }
+    return myCustomWatchablesContainerEditorAspect;
+  }
+
+  private HighLevelCustomViewer_Editor getHighLevelCustomViewerEditorAspect() {
+    if (myHighLevelCustomViewerEditorAspect == null) {
+      myHighLevelCustomViewerEditorAspect = new HighLevelCustomViewer_Editor();
+    }
+    return myHighLevelCustomViewerEditorAspect;
+  }
+
+  private HighLevelWatchableCreator_Editor getHighLevelWatchableCreatorEditorAspect() {
+    if (myHighLevelWatchableCreatorEditorAspect == null) {
+      myHighLevelWatchableCreatorEditorAspect = new HighLevelWatchableCreator_Editor();
+    }
+    return myHighLevelWatchableCreatorEditorAspect;
+  }
+
+  private ToProcessMethod_Editor getToProcessMethodEditorAspect() {
+    if (myToProcessMethodEditorAspect == null) {
+      myToProcessMethodEditorAspect = new ToProcessMethod_Editor();
+    }
+    return myToProcessMethodEditorAspect;
+  }
+
+  private WatchableListType_Editor getWatchableListTypeEditorAspect() {
+    if (myWatchableListTypeEditorAspect == null) {
+      myWatchableListTypeEditorAspect = new WatchableListType_Editor();
+    }
+    return myWatchableListTypeEditorAspect;
+  }
+
+  private WatchableType_Editor getWatchableTypeEditorAspect() {
+    if (myWatchableTypeEditorAspect == null) {
+      myWatchableTypeEditorAspect = new WatchableType_Editor();
+    }
+    return myWatchableTypeEditorAspect;
+  }
+
+  private WatchablesListCreator_Editor getWatchablesListCreatorEditorAspect() {
+    if (myWatchablesListCreatorEditorAspect == null) {
+      myWatchablesListCreatorEditorAspect = new WatchablesListCreator_Editor();
+    }
+    return myWatchablesListCreatorEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0i = new String[]{"jetbrains.mps.debugger.java.customViewers.structure.CustomWatchable", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod", "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", "jetbrains.mps.debugger.java.customViewers.structure.WatchableType", "jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator"};
 }

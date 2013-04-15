@@ -8,34 +8,141 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private InputNode_A_Editor myInputNode_AEditorAspect;
+  private InputNode_B_Editor myInputNode_BEditorAspect;
+  private InputNode_C_Editor myInputNode_CEditorAspect;
+  private InputRoot_Editor myInputRootEditorAspect;
+  private InputRootWithStatementList_Editor myInputRootWithStatementListEditorAspect;
+  private RefTestClass_Editor myRefTestClassEditorAspect;
+  private RefTestExpression_Editor myRefTestExpressionEditorAspect;
+  private RefTestMethod_Editor myRefTestMethodEditorAspect;
+  private RefTestMethodCall_Editor myRefTestMethodCallEditorAspect;
+  private RefTestParam_Editor myRefTestParamEditorAspect;
+  private RefTestParamRef_Editor myRefTestParamRefEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0l, descriptor.getConceptFqName())) {
       case 0:
-        return new InputNode_A_Editor();
+        return getInputNode_AEditorAspect();
       case 1:
-        return new InputNode_B_Editor();
+        return getInputNode_BEditorAspect();
       case 2:
-        return new InputNode_C_Editor();
+        return getInputNode_CEditorAspect();
       case 3:
-        return new InputRoot_Editor();
+        return getInputRootEditorAspect();
       case 4:
-        return new InputRootWithStatementList_Editor();
+        return getInputRootWithStatementListEditorAspect();
       case 5:
-        return new RefTestClass_Editor();
+        return getRefTestClassEditorAspect();
       case 6:
-        return new RefTestExpression_Editor();
+        return getRefTestExpressionEditorAspect();
       case 7:
-        return new RefTestMethod_Editor();
+        return getRefTestMethodEditorAspect();
       case 8:
-        return new RefTestMethodCall_Editor();
+        return getRefTestMethodCallEditorAspect();
       case 9:
-        return new RefTestParam_Editor();
+        return getRefTestParamEditorAspect();
       case 10:
-        return new RefTestParamRef_Editor();
+        return getRefTestParamRefEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_B", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_C", "jetbrains.mps.transformation.test.inputLang.structure.InputRoot", "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList", "jetbrains.mps.transformation.test.inputLang.structure.RefTestClass", "jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression", "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod", "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethodCall", "jetbrains.mps.transformation.test.inputLang.structure.RefTestParam", "jetbrains.mps.transformation.test.inputLang.structure.RefTestParamRef"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myInputNode_AEditorAspect = null;
+    myInputNode_BEditorAspect = null;
+    myInputNode_CEditorAspect = null;
+    myInputRootEditorAspect = null;
+    myInputRootWithStatementListEditorAspect = null;
+    myRefTestClassEditorAspect = null;
+    myRefTestExpressionEditorAspect = null;
+    myRefTestMethodEditorAspect = null;
+    myRefTestMethodCallEditorAspect = null;
+    myRefTestParamEditorAspect = null;
+    myRefTestParamRefEditorAspect = null;
+  }
+
+  private InputNode_A_Editor getInputNode_AEditorAspect() {
+    if (myInputNode_AEditorAspect == null) {
+      myInputNode_AEditorAspect = new InputNode_A_Editor();
+    }
+    return myInputNode_AEditorAspect;
+  }
+
+  private InputNode_B_Editor getInputNode_BEditorAspect() {
+    if (myInputNode_BEditorAspect == null) {
+      myInputNode_BEditorAspect = new InputNode_B_Editor();
+    }
+    return myInputNode_BEditorAspect;
+  }
+
+  private InputNode_C_Editor getInputNode_CEditorAspect() {
+    if (myInputNode_CEditorAspect == null) {
+      myInputNode_CEditorAspect = new InputNode_C_Editor();
+    }
+    return myInputNode_CEditorAspect;
+  }
+
+  private InputRoot_Editor getInputRootEditorAspect() {
+    if (myInputRootEditorAspect == null) {
+      myInputRootEditorAspect = new InputRoot_Editor();
+    }
+    return myInputRootEditorAspect;
+  }
+
+  private InputRootWithStatementList_Editor getInputRootWithStatementListEditorAspect() {
+    if (myInputRootWithStatementListEditorAspect == null) {
+      myInputRootWithStatementListEditorAspect = new InputRootWithStatementList_Editor();
+    }
+    return myInputRootWithStatementListEditorAspect;
+  }
+
+  private RefTestClass_Editor getRefTestClassEditorAspect() {
+    if (myRefTestClassEditorAspect == null) {
+      myRefTestClassEditorAspect = new RefTestClass_Editor();
+    }
+    return myRefTestClassEditorAspect;
+  }
+
+  private RefTestExpression_Editor getRefTestExpressionEditorAspect() {
+    if (myRefTestExpressionEditorAspect == null) {
+      myRefTestExpressionEditorAspect = new RefTestExpression_Editor();
+    }
+    return myRefTestExpressionEditorAspect;
+  }
+
+  private RefTestMethod_Editor getRefTestMethodEditorAspect() {
+    if (myRefTestMethodEditorAspect == null) {
+      myRefTestMethodEditorAspect = new RefTestMethod_Editor();
+    }
+    return myRefTestMethodEditorAspect;
+  }
+
+  private RefTestMethodCall_Editor getRefTestMethodCallEditorAspect() {
+    if (myRefTestMethodCallEditorAspect == null) {
+      myRefTestMethodCallEditorAspect = new RefTestMethodCall_Editor();
+    }
+    return myRefTestMethodCallEditorAspect;
+  }
+
+  private RefTestParam_Editor getRefTestParamEditorAspect() {
+    if (myRefTestParamEditorAspect == null) {
+      myRefTestParamEditorAspect = new RefTestParam_Editor();
+    }
+    return myRefTestParamEditorAspect;
+  }
+
+  private RefTestParamRef_Editor getRefTestParamRefEditorAspect() {
+    if (myRefTestParamRefEditorAspect == null) {
+      myRefTestParamRefEditorAspect = new RefTestParamRef_Editor();
+    }
+    return myRefTestParamRefEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0l = new String[]{"jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_B", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_C", "jetbrains.mps.transformation.test.inputLang.structure.InputRoot", "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList", "jetbrains.mps.transformation.test.inputLang.structure.RefTestClass", "jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression", "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod", "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethodCall", "jetbrains.mps.transformation.test.inputLang.structure.RefTestParam", "jetbrains.mps.transformation.test.inputLang.structure.RefTestParamRef"};
 }

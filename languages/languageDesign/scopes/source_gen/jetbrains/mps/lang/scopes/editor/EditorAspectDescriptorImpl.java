@@ -8,18 +8,53 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ComeFromExpression_Editor myComeFromExpressionEditorAspect;
+  private CompositeWithParentScopeExpression_Editor myCompositeWithParentScopeExpressionEditorAspect;
+  private ParentScope_Editor myParentScopeEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        return new ComeFromExpression_Editor();
+        return getComeFromExpressionEditorAspect();
       case 1:
-        return new CompositeWithParentScopeExpression_Editor();
+        return getCompositeWithParentScopeExpressionEditorAspect();
       case 2:
-        return new ParentScope_Editor();
+        return getParentScopeEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.scopes.structure.ComeFromExpression", "jetbrains.mps.lang.scopes.structure.CompositeWithParentScopeExpression", "jetbrains.mps.lang.scopes.structure.ParentScope"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myComeFromExpressionEditorAspect = null;
+    myCompositeWithParentScopeExpressionEditorAspect = null;
+    myParentScopeEditorAspect = null;
+  }
+
+  private ComeFromExpression_Editor getComeFromExpressionEditorAspect() {
+    if (myComeFromExpressionEditorAspect == null) {
+      myComeFromExpressionEditorAspect = new ComeFromExpression_Editor();
+    }
+    return myComeFromExpressionEditorAspect;
+  }
+
+  private CompositeWithParentScopeExpression_Editor getCompositeWithParentScopeExpressionEditorAspect() {
+    if (myCompositeWithParentScopeExpressionEditorAspect == null) {
+      myCompositeWithParentScopeExpressionEditorAspect = new CompositeWithParentScopeExpression_Editor();
+    }
+    return myCompositeWithParentScopeExpressionEditorAspect;
+  }
+
+  private ParentScope_Editor getParentScopeEditorAspect() {
+    if (myParentScopeEditorAspect == null) {
+      myParentScopeEditorAspect = new ParentScope_Editor();
+    }
+    return myParentScopeEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.lang.scopes.structure.ComeFromExpression", "jetbrains.mps.lang.scopes.structure.CompositeWithParentScopeExpression", "jetbrains.mps.lang.scopes.structure.ParentScope"};
 }

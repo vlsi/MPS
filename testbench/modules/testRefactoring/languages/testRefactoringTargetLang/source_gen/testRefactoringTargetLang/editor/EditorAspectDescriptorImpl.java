@@ -8,14 +8,31 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AnsotherGoodConcept_Editor myAnsotherGoodConceptEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return new AnsotherGoodConcept_Editor();
+        return getAnsotherGoodConceptEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"testRefactoringTargetLang.structure.AnsotherGoodConcept"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAnsotherGoodConceptEditorAspect = null;
+  }
+
+  private AnsotherGoodConcept_Editor getAnsotherGoodConceptEditorAspect() {
+    if (myAnsotherGoodConceptEditorAspect == null) {
+      myAnsotherGoodConceptEditorAspect = new AnsotherGoodConcept_Editor();
+    }
+    return myAnsotherGoodConceptEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"testRefactoringTargetLang.structure.AnsotherGoodConcept"};
 }

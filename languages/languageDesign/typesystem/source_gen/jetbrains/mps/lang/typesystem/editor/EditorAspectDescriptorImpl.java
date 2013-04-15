@@ -8,174 +8,911 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AbstractComparableStatement_Editor myAbstractComparableStatementEditorAspect;
+  private AbstractEquationStatement_Editor myAbstractEquationStatementEditorAspect;
+  private AbstractInequationStatement_Editor myAbstractInequationStatementEditorAspect;
+  private AddDependencyStatement_Editor myAddDependencyStatementEditorAspect;
+  private ApplicableNodeCondition_Editor myApplicableNodeConditionEditorAspect;
+  private ApplicableNodeReference_Editor myApplicableNodeReferenceEditorAspect;
+  private AssertStatement_Editor myAssertStatementEditorAspect;
+  private CaretPositionOperation_Editor myCaretPositionOperationEditorAspect;
+  private CoerceExpression_Editor myCoerceExpressionEditorAspect;
+  private CoerceStatement_Editor myCoerceStatementEditorAspect;
+  private CoerceStrongExpression_Editor myCoerceStrongExpressionEditorAspect;
+  private ComparisonRule_Editor myComparisonRuleEditorAspect;
+  private ConceptClauseLinkInfo_Editor myConceptClauseLinkInfoEditorAspect;
+  private ConceptReference_Editor myConceptReferenceEditorAspect;
+  private ConceptTypeClause_Editor myConceptTypeClauseEditorAspect;
+  private CreateEquationStatement_Editor myCreateEquationStatementEditorAspect;
+  private DefaultGroupReference_Editor myDefaultGroupReferenceEditorAspect;
+  private Dependency_Editor myDependencyEditorAspect;
+  private DependentComputationItem_Editor myDependentComputationItemEditorAspect;
+  private ErrorInfoExpression_Editor myErrorInfoExpressionEditorAspect;
+  private GetOperationType_Editor myGetOperationTypeEditorAspect;
+  private ImmediateSupertypesExpression_Editor myImmediateSupertypesExpressionEditorAspect;
+  private InequationReference_Editor myInequationReferenceEditorAspect;
+  private InequationReplacementRule_Editor myInequationReplacementRuleEditorAspect;
+  private InferenceRule_Editor myInferenceRuleEditorAspect;
+  private InfoStatement_Editor myInfoStatementEditorAspect;
+  private IsStrongSubtypeExpression_Editor myIsStrongSubtypeExpressionEditorAspect;
+  private IsSubtypeExpression_Editor myIsSubtypeExpressionEditorAspect;
+  private JoinContainer_Editor myJoinContainerEditorAspect;
+  private JoinType_Editor myJoinTypeEditorAspect;
+  private LinkPatternVariableReference_Editor myLinkPatternVariableReferenceEditorAspect;
+  private MatchStatement_Editor myMatchStatementEditorAspect;
+  private MatchStatementItem_Editor myMatchStatementItemEditorAspect;
+  private MeetContainer_Editor myMeetContainerEditorAspect;
+  private MeetType_Editor myMeetTypeEditorAspect;
+  private MultipleForeachLoop_Editor myMultipleForeachLoopEditorAspect;
+  private MultipleForeachLoopVariable_Editor myMultipleForeachLoopVariableEditorAspect;
+  private NodeInfo_Editor myNodeInfoEditorAspect;
+  private Node_InferTypeOperation_Editor myNode_InferTypeOperationEditorAspect;
+  private Node_TypeOperation_Editor myNode_TypeOperationEditorAspect;
+  private NonTypesystemRule_Editor myNonTypesystemRuleEditorAspect;
+  private NormalTypeClause_Editor myNormalTypeClauseEditorAspect;
+  private OperationContextExpression_Editor myOperationContextExpressionEditorAspect;
+  private OrStatement_Editor myOrStatementEditorAspect;
+  private OriginalNodeId_Editor myOriginalNodeIdEditorAspect;
+  private OverloadedOpRulesContainer_Editor myOverloadedOpRulesContainerEditorAspect;
+  private OverloadedOpTypeRule_OneTypeSpecified_Editor myOverloadedOpTypeRule_OneTypeSpecifiedEditorAspect;
+  private OverloadedOperatorTypeRule_Editor myOverloadedOperatorTypeRuleEditorAspect;
+  private PatternCondition_Editor myPatternConditionEditorAspect;
+  private PatternVariableReference_Editor myPatternVariableReferenceEditorAspect;
+  private PrintToTrace_Editor myPrintToTraceEditorAspect;
+  private PropertyMessageTarget_Editor myPropertyMessageTargetEditorAspect;
+  private PropertyNameTarget_Editor myPropertyNameTargetEditorAspect;
+  private PropertyPatternVariableReference_Editor myPropertyPatternVariableReferenceEditorAspect;
+  private QuickFixArgument_Editor myQuickFixArgumentEditorAspect;
+  private QuickFixArgumentReference_Editor myQuickFixArgumentReferenceEditorAspect;
+  private QuickFixField_Editor myQuickFixFieldEditorAspect;
+  private QuickFixFieldReference_Editor myQuickFixFieldReferenceEditorAspect;
+  private ReferenceMessageTarget_Editor myReferenceMessageTargetEditorAspect;
+  private ReferenceRoleTarget_Editor myReferenceRoleTargetEditorAspect;
+  private ReplacementRuleReference_Editor myReplacementRuleReferenceEditorAspect;
+  private ReportErrorStatement_Editor myReportErrorStatementEditorAspect;
+  private RuntimeErrorType_Editor myRuntimeErrorTypeEditorAspect;
+  private RuntimeTypeVariable_Editor myRuntimeTypeVariableEditorAspect;
+  private SelectionType_Editor mySelectionTypeEditorAspect;
+  private SubtypingRule_Editor mySubtypingRuleEditorAspect;
+  private TypeCheckerAccessExpression_Editor myTypeCheckerAccessExpressionEditorAspect;
+  private TypeClause_Editor myTypeClauseEditorAspect;
+  private TypeOfExpression_Editor myTypeOfExpressionEditorAspect;
+  private TypeVarDeclaration_Editor myTypeVarDeclarationEditorAspect;
+  private TypeVarReference_Editor myTypeVarReferenceEditorAspect;
+  private TypesystemIntention_Editor myTypesystemIntentionEditorAspect;
+  private TypesystemIntentionArgument_Editor myTypesystemIntentionArgumentEditorAspect;
+  private TypesystemQuickFix_Editor myTypesystemQuickFixEditorAspect;
+  private VariableConverterItem_Editor myVariableConverterItemEditorAspect;
+  private VariableConvertersContainer_Editor myVariableConvertersContainerEditorAspect;
+  private WarningStatement_Editor myWarningStatementEditorAspect;
+  private WasSelectedNodeOperation_Editor myWasSelectedNodeOperationEditorAspect;
+  private WhenConcreteStatement_Editor myWhenConcreteStatementEditorAspect;
+  private WhenConcreteVariableDeclaration_Editor myWhenConcreteVariableDeclarationEditorAspect;
+  private WhenConcreteVariableReference_Editor myWhenConcreteVariableReferenceEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0dd, descriptor.getConceptFqName())) {
       case 0:
-        return new AbstractComparableStatement_Editor();
+        return getAbstractComparableStatementEditorAspect();
       case 1:
-        return new AbstractEquationStatement_Editor();
+        return getAbstractEquationStatementEditorAspect();
       case 2:
-        return new AbstractInequationStatement_Editor();
+        return getAbstractInequationStatementEditorAspect();
       case 3:
-        return new AddDependencyStatement_Editor();
+        return getAddDependencyStatementEditorAspect();
       case 4:
-        return new ApplicableNodeCondition_Editor();
+        return getApplicableNodeConditionEditorAspect();
       case 5:
-        return new ApplicableNodeReference_Editor();
+        return getApplicableNodeReferenceEditorAspect();
       case 6:
-        return new AssertStatement_Editor();
+        return getAssertStatementEditorAspect();
       case 7:
-        return new CaretPositionOperation_Editor();
+        return getCaretPositionOperationEditorAspect();
       case 8:
-        return new CoerceExpression_Editor();
+        return getCoerceExpressionEditorAspect();
       case 9:
-        return new CoerceStatement_Editor();
+        return getCoerceStatementEditorAspect();
       case 10:
-        return new CoerceStrongExpression_Editor();
+        return getCoerceStrongExpressionEditorAspect();
       case 11:
-        return new ComparisonRule_Editor();
+        return getComparisonRuleEditorAspect();
       case 12:
-        return new ConceptClauseLinkInfo_Editor();
+        return getConceptClauseLinkInfoEditorAspect();
       case 13:
-        return new ConceptReference_Editor();
+        return getConceptReferenceEditorAspect();
       case 14:
-        return new ConceptTypeClause_Editor();
+        return getConceptTypeClauseEditorAspect();
       case 15:
-        return new CreateEquationStatement_Editor();
+        return getCreateEquationStatementEditorAspect();
       case 16:
-        return new DefaultGroupReference_Editor();
+        return getDefaultGroupReferenceEditorAspect();
       case 17:
-        return new Dependency_Editor();
+        return getDependencyEditorAspect();
       case 18:
-        return new DependentComputationItem_Editor();
+        return getDependentComputationItemEditorAspect();
       case 19:
-        return new ErrorInfoExpression_Editor();
+        return getErrorInfoExpressionEditorAspect();
       case 20:
-        return new GetOperationType_Editor();
+        return getGetOperationTypeEditorAspect();
       case 21:
-        return new ImmediateSupertypesExpression_Editor();
+        return getImmediateSupertypesExpressionEditorAspect();
       case 22:
-        return new InequationReference_Editor();
+        return getInequationReferenceEditorAspect();
       case 23:
-        return new InequationReplacementRule_Editor();
+        return getInequationReplacementRuleEditorAspect();
       case 24:
-        return new InferenceRule_Editor();
+        return getInferenceRuleEditorAspect();
       case 25:
-        return new InfoStatement_Editor();
+        return getInfoStatementEditorAspect();
       case 26:
-        return new IsStrongSubtypeExpression_Editor();
+        return getIsStrongSubtypeExpressionEditorAspect();
       case 27:
-        return new IsSubtypeExpression_Editor();
+        return getIsSubtypeExpressionEditorAspect();
       case 28:
-        return new JoinContainer_Editor();
+        return getJoinContainerEditorAspect();
       case 29:
-        return new JoinType_Editor();
+        return getJoinTypeEditorAspect();
       case 30:
-        return new LinkPatternVariableReference_Editor();
+        return getLinkPatternVariableReferenceEditorAspect();
       case 31:
-        return new MatchStatement_Editor();
+        return getMatchStatementEditorAspect();
       case 32:
-        return new MatchStatementItem_Editor();
+        return getMatchStatementItemEditorAspect();
       case 33:
-        return new MeetContainer_Editor();
+        return getMeetContainerEditorAspect();
       case 34:
-        return new MeetType_Editor();
+        return getMeetTypeEditorAspect();
       case 35:
-        return new MultipleForeachLoop_Editor();
+        return getMultipleForeachLoopEditorAspect();
       case 36:
-        return new MultipleForeachLoopVariable_Editor();
+        return getMultipleForeachLoopVariableEditorAspect();
       case 37:
-        return new NodeInfo_Editor();
+        return getNodeInfoEditorAspect();
       case 38:
-        return new Node_InferTypeOperation_Editor();
+        return getNode_InferTypeOperationEditorAspect();
       case 39:
-        return new Node_TypeOperation_Editor();
+        return getNode_TypeOperationEditorAspect();
       case 40:
-        return new NonTypesystemRule_Editor();
+        return getNonTypesystemRuleEditorAspect();
       case 41:
-        return new NormalTypeClause_Editor();
+        return getNormalTypeClauseEditorAspect();
       case 42:
-        return new OperationContextExpression_Editor();
+        return getOperationContextExpressionEditorAspect();
       case 43:
-        return new OrStatement_Editor();
+        return getOrStatementEditorAspect();
       case 44:
-        return new OriginalNodeId_Editor();
+        return getOriginalNodeIdEditorAspect();
       case 45:
-        return new OverloadedOpRulesContainer_Editor();
+        return getOverloadedOpRulesContainerEditorAspect();
       case 46:
-        return new OverloadedOpTypeRule_OneTypeSpecified_Editor();
+        return getOverloadedOpTypeRule_OneTypeSpecifiedEditorAspect();
       case 47:
-        return new OverloadedOperatorTypeRule_Editor();
+        return getOverloadedOperatorTypeRuleEditorAspect();
       case 48:
-        return new PatternCondition_Editor();
+        return getPatternConditionEditorAspect();
       case 49:
-        return new PatternVariableReference_Editor();
+        return getPatternVariableReferenceEditorAspect();
       case 50:
-        return new PrintToTrace_Editor();
+        return getPrintToTraceEditorAspect();
       case 51:
-        return new PropertyMessageTarget_Editor();
+        return getPropertyMessageTargetEditorAspect();
       case 52:
-        return new PropertyNameTarget_Editor();
+        return getPropertyNameTargetEditorAspect();
       case 53:
-        return new PropertyPatternVariableReference_Editor();
+        return getPropertyPatternVariableReferenceEditorAspect();
       case 54:
-        return new QuickFixArgument_Editor();
+        return getQuickFixArgumentEditorAspect();
       case 55:
-        return new QuickFixArgumentReference_Editor();
+        return getQuickFixArgumentReferenceEditorAspect();
       case 56:
-        return new QuickFixField_Editor();
+        return getQuickFixFieldEditorAspect();
       case 57:
-        return new QuickFixFieldReference_Editor();
+        return getQuickFixFieldReferenceEditorAspect();
       case 58:
-        return new ReferenceMessageTarget_Editor();
+        return getReferenceMessageTargetEditorAspect();
       case 59:
-        return new ReferenceRoleTarget_Editor();
+        return getReferenceRoleTargetEditorAspect();
       case 60:
-        return new ReplacementRuleReference_Editor();
+        return getReplacementRuleReferenceEditorAspect();
       case 61:
-        return new ReportErrorStatement_Editor();
+        return getReportErrorStatementEditorAspect();
       case 62:
-        return new RuntimeErrorType_Editor();
+        return getRuntimeErrorTypeEditorAspect();
       case 63:
-        return new RuntimeTypeVariable_Editor();
+        return getRuntimeTypeVariableEditorAspect();
       case 64:
-        return new SelectionType_Editor();
+        return getSelectionTypeEditorAspect();
       case 65:
-        return new SubtypingRule_Editor();
+        return getSubtypingRuleEditorAspect();
       case 66:
-        return new TypeCheckerAccessExpression_Editor();
+        return getTypeCheckerAccessExpressionEditorAspect();
       case 67:
-        return new TypeClause_Editor();
+        return getTypeClauseEditorAspect();
       case 68:
-        return new TypeOfExpression_Editor();
+        return getTypeOfExpressionEditorAspect();
       case 69:
-        return new TypeVarDeclaration_Editor();
+        return getTypeVarDeclarationEditorAspect();
       case 70:
-        return new TypeVarReference_Editor();
+        return getTypeVarReferenceEditorAspect();
       case 71:
-        return new TypesystemIntention_Editor();
+        return getTypesystemIntentionEditorAspect();
       case 72:
-        return new TypesystemIntentionArgument_Editor();
+        return getTypesystemIntentionArgumentEditorAspect();
       case 73:
-        return new TypesystemQuickFix_Editor();
+        return getTypesystemQuickFixEditorAspect();
       case 74:
-        return new VariableConverterItem_Editor();
+        return getVariableConverterItemEditorAspect();
       case 75:
-        return new VariableConvertersContainer_Editor();
+        return getVariableConvertersContainerEditorAspect();
       case 76:
-        return new WarningStatement_Editor();
+        return getWarningStatementEditorAspect();
       case 77:
-        return new WasSelectedNodeOperation_Editor();
+        return getWasSelectedNodeOperationEditorAspect();
       case 78:
-        return new WhenConcreteStatement_Editor();
+        return getWhenConcreteStatementEditorAspect();
       case 79:
-        return new WhenConcreteVariableDeclaration_Editor();
+        return getWhenConcreteVariableDeclarationEditorAspect();
       case 80:
-        return new WhenConcreteVariableReference_Editor();
+        return getWhenConcreteVariableReferenceEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.lang.typesystem.structure.AssertStatement", "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.typesystem.structure.CoerceExpression", "jetbrains.mps.lang.typesystem.structure.CoerceStatement", "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression", "jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", "jetbrains.mps.lang.typesystem.structure.Dependency", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem", "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", "jetbrains.mps.lang.typesystem.structure.GetOperationType", "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", "jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.InfoStatement", "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.JoinContainer", "jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.MatchStatement", "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", "jetbrains.mps.lang.typesystem.structure.MeetContainer", "jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", "jetbrains.mps.lang.typesystem.structure.NodeInfo", "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", "jetbrains.mps.lang.typesystem.structure.OperationContextExpression", "jetbrains.mps.lang.typesystem.structure.OrStatement", "jetbrains.mps.lang.typesystem.structure.OriginalNodeId", "jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", "jetbrains.mps.lang.typesystem.structure.PatternCondition", "jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.lang.typesystem.structure.PrintToTrace", "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.QuickFixArgument", "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.lang.typesystem.structure.QuickFixField", "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", "jetbrains.mps.lang.typesystem.structure.SelectionType", "jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression", "jetbrains.mps.lang.typesystem.structure.TypeClause", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem", "jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", "jetbrains.mps.lang.typesystem.structure.WarningStatement", "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAbstractComparableStatementEditorAspect = null;
+    myAbstractEquationStatementEditorAspect = null;
+    myAbstractInequationStatementEditorAspect = null;
+    myAddDependencyStatementEditorAspect = null;
+    myApplicableNodeConditionEditorAspect = null;
+    myApplicableNodeReferenceEditorAspect = null;
+    myAssertStatementEditorAspect = null;
+    myCaretPositionOperationEditorAspect = null;
+    myCoerceExpressionEditorAspect = null;
+    myCoerceStatementEditorAspect = null;
+    myCoerceStrongExpressionEditorAspect = null;
+    myComparisonRuleEditorAspect = null;
+    myConceptClauseLinkInfoEditorAspect = null;
+    myConceptReferenceEditorAspect = null;
+    myConceptTypeClauseEditorAspect = null;
+    myCreateEquationStatementEditorAspect = null;
+    myDefaultGroupReferenceEditorAspect = null;
+    myDependencyEditorAspect = null;
+    myDependentComputationItemEditorAspect = null;
+    myErrorInfoExpressionEditorAspect = null;
+    myGetOperationTypeEditorAspect = null;
+    myImmediateSupertypesExpressionEditorAspect = null;
+    myInequationReferenceEditorAspect = null;
+    myInequationReplacementRuleEditorAspect = null;
+    myInferenceRuleEditorAspect = null;
+    myInfoStatementEditorAspect = null;
+    myIsStrongSubtypeExpressionEditorAspect = null;
+    myIsSubtypeExpressionEditorAspect = null;
+    myJoinContainerEditorAspect = null;
+    myJoinTypeEditorAspect = null;
+    myLinkPatternVariableReferenceEditorAspect = null;
+    myMatchStatementEditorAspect = null;
+    myMatchStatementItemEditorAspect = null;
+    myMeetContainerEditorAspect = null;
+    myMeetTypeEditorAspect = null;
+    myMultipleForeachLoopEditorAspect = null;
+    myMultipleForeachLoopVariableEditorAspect = null;
+    myNodeInfoEditorAspect = null;
+    myNode_InferTypeOperationEditorAspect = null;
+    myNode_TypeOperationEditorAspect = null;
+    myNonTypesystemRuleEditorAspect = null;
+    myNormalTypeClauseEditorAspect = null;
+    myOperationContextExpressionEditorAspect = null;
+    myOrStatementEditorAspect = null;
+    myOriginalNodeIdEditorAspect = null;
+    myOverloadedOpRulesContainerEditorAspect = null;
+    myOverloadedOpTypeRule_OneTypeSpecifiedEditorAspect = null;
+    myOverloadedOperatorTypeRuleEditorAspect = null;
+    myPatternConditionEditorAspect = null;
+    myPatternVariableReferenceEditorAspect = null;
+    myPrintToTraceEditorAspect = null;
+    myPropertyMessageTargetEditorAspect = null;
+    myPropertyNameTargetEditorAspect = null;
+    myPropertyPatternVariableReferenceEditorAspect = null;
+    myQuickFixArgumentEditorAspect = null;
+    myQuickFixArgumentReferenceEditorAspect = null;
+    myQuickFixFieldEditorAspect = null;
+    myQuickFixFieldReferenceEditorAspect = null;
+    myReferenceMessageTargetEditorAspect = null;
+    myReferenceRoleTargetEditorAspect = null;
+    myReplacementRuleReferenceEditorAspect = null;
+    myReportErrorStatementEditorAspect = null;
+    myRuntimeErrorTypeEditorAspect = null;
+    myRuntimeTypeVariableEditorAspect = null;
+    mySelectionTypeEditorAspect = null;
+    mySubtypingRuleEditorAspect = null;
+    myTypeCheckerAccessExpressionEditorAspect = null;
+    myTypeClauseEditorAspect = null;
+    myTypeOfExpressionEditorAspect = null;
+    myTypeVarDeclarationEditorAspect = null;
+    myTypeVarReferenceEditorAspect = null;
+    myTypesystemIntentionEditorAspect = null;
+    myTypesystemIntentionArgumentEditorAspect = null;
+    myTypesystemQuickFixEditorAspect = null;
+    myVariableConverterItemEditorAspect = null;
+    myVariableConvertersContainerEditorAspect = null;
+    myWarningStatementEditorAspect = null;
+    myWasSelectedNodeOperationEditorAspect = null;
+    myWhenConcreteStatementEditorAspect = null;
+    myWhenConcreteVariableDeclarationEditorAspect = null;
+    myWhenConcreteVariableReferenceEditorAspect = null;
+  }
+
+  private AbstractComparableStatement_Editor getAbstractComparableStatementEditorAspect() {
+    if (myAbstractComparableStatementEditorAspect == null) {
+      myAbstractComparableStatementEditorAspect = new AbstractComparableStatement_Editor();
+    }
+    return myAbstractComparableStatementEditorAspect;
+  }
+
+  private AbstractEquationStatement_Editor getAbstractEquationStatementEditorAspect() {
+    if (myAbstractEquationStatementEditorAspect == null) {
+      myAbstractEquationStatementEditorAspect = new AbstractEquationStatement_Editor();
+    }
+    return myAbstractEquationStatementEditorAspect;
+  }
+
+  private AbstractInequationStatement_Editor getAbstractInequationStatementEditorAspect() {
+    if (myAbstractInequationStatementEditorAspect == null) {
+      myAbstractInequationStatementEditorAspect = new AbstractInequationStatement_Editor();
+    }
+    return myAbstractInequationStatementEditorAspect;
+  }
+
+  private AddDependencyStatement_Editor getAddDependencyStatementEditorAspect() {
+    if (myAddDependencyStatementEditorAspect == null) {
+      myAddDependencyStatementEditorAspect = new AddDependencyStatement_Editor();
+    }
+    return myAddDependencyStatementEditorAspect;
+  }
+
+  private ApplicableNodeCondition_Editor getApplicableNodeConditionEditorAspect() {
+    if (myApplicableNodeConditionEditorAspect == null) {
+      myApplicableNodeConditionEditorAspect = new ApplicableNodeCondition_Editor();
+    }
+    return myApplicableNodeConditionEditorAspect;
+  }
+
+  private ApplicableNodeReference_Editor getApplicableNodeReferenceEditorAspect() {
+    if (myApplicableNodeReferenceEditorAspect == null) {
+      myApplicableNodeReferenceEditorAspect = new ApplicableNodeReference_Editor();
+    }
+    return myApplicableNodeReferenceEditorAspect;
+  }
+
+  private AssertStatement_Editor getAssertStatementEditorAspect() {
+    if (myAssertStatementEditorAspect == null) {
+      myAssertStatementEditorAspect = new AssertStatement_Editor();
+    }
+    return myAssertStatementEditorAspect;
+  }
+
+  private CaretPositionOperation_Editor getCaretPositionOperationEditorAspect() {
+    if (myCaretPositionOperationEditorAspect == null) {
+      myCaretPositionOperationEditorAspect = new CaretPositionOperation_Editor();
+    }
+    return myCaretPositionOperationEditorAspect;
+  }
+
+  private CoerceExpression_Editor getCoerceExpressionEditorAspect() {
+    if (myCoerceExpressionEditorAspect == null) {
+      myCoerceExpressionEditorAspect = new CoerceExpression_Editor();
+    }
+    return myCoerceExpressionEditorAspect;
+  }
+
+  private CoerceStatement_Editor getCoerceStatementEditorAspect() {
+    if (myCoerceStatementEditorAspect == null) {
+      myCoerceStatementEditorAspect = new CoerceStatement_Editor();
+    }
+    return myCoerceStatementEditorAspect;
+  }
+
+  private CoerceStrongExpression_Editor getCoerceStrongExpressionEditorAspect() {
+    if (myCoerceStrongExpressionEditorAspect == null) {
+      myCoerceStrongExpressionEditorAspect = new CoerceStrongExpression_Editor();
+    }
+    return myCoerceStrongExpressionEditorAspect;
+  }
+
+  private ComparisonRule_Editor getComparisonRuleEditorAspect() {
+    if (myComparisonRuleEditorAspect == null) {
+      myComparisonRuleEditorAspect = new ComparisonRule_Editor();
+    }
+    return myComparisonRuleEditorAspect;
+  }
+
+  private ConceptClauseLinkInfo_Editor getConceptClauseLinkInfoEditorAspect() {
+    if (myConceptClauseLinkInfoEditorAspect == null) {
+      myConceptClauseLinkInfoEditorAspect = new ConceptClauseLinkInfo_Editor();
+    }
+    return myConceptClauseLinkInfoEditorAspect;
+  }
+
+  private ConceptReference_Editor getConceptReferenceEditorAspect() {
+    if (myConceptReferenceEditorAspect == null) {
+      myConceptReferenceEditorAspect = new ConceptReference_Editor();
+    }
+    return myConceptReferenceEditorAspect;
+  }
+
+  private ConceptTypeClause_Editor getConceptTypeClauseEditorAspect() {
+    if (myConceptTypeClauseEditorAspect == null) {
+      myConceptTypeClauseEditorAspect = new ConceptTypeClause_Editor();
+    }
+    return myConceptTypeClauseEditorAspect;
+  }
+
+  private CreateEquationStatement_Editor getCreateEquationStatementEditorAspect() {
+    if (myCreateEquationStatementEditorAspect == null) {
+      myCreateEquationStatementEditorAspect = new CreateEquationStatement_Editor();
+    }
+    return myCreateEquationStatementEditorAspect;
+  }
+
+  private DefaultGroupReference_Editor getDefaultGroupReferenceEditorAspect() {
+    if (myDefaultGroupReferenceEditorAspect == null) {
+      myDefaultGroupReferenceEditorAspect = new DefaultGroupReference_Editor();
+    }
+    return myDefaultGroupReferenceEditorAspect;
+  }
+
+  private Dependency_Editor getDependencyEditorAspect() {
+    if (myDependencyEditorAspect == null) {
+      myDependencyEditorAspect = new Dependency_Editor();
+    }
+    return myDependencyEditorAspect;
+  }
+
+  private DependentComputationItem_Editor getDependentComputationItemEditorAspect() {
+    if (myDependentComputationItemEditorAspect == null) {
+      myDependentComputationItemEditorAspect = new DependentComputationItem_Editor();
+    }
+    return myDependentComputationItemEditorAspect;
+  }
+
+  private ErrorInfoExpression_Editor getErrorInfoExpressionEditorAspect() {
+    if (myErrorInfoExpressionEditorAspect == null) {
+      myErrorInfoExpressionEditorAspect = new ErrorInfoExpression_Editor();
+    }
+    return myErrorInfoExpressionEditorAspect;
+  }
+
+  private GetOperationType_Editor getGetOperationTypeEditorAspect() {
+    if (myGetOperationTypeEditorAspect == null) {
+      myGetOperationTypeEditorAspect = new GetOperationType_Editor();
+    }
+    return myGetOperationTypeEditorAspect;
+  }
+
+  private ImmediateSupertypesExpression_Editor getImmediateSupertypesExpressionEditorAspect() {
+    if (myImmediateSupertypesExpressionEditorAspect == null) {
+      myImmediateSupertypesExpressionEditorAspect = new ImmediateSupertypesExpression_Editor();
+    }
+    return myImmediateSupertypesExpressionEditorAspect;
+  }
+
+  private InequationReference_Editor getInequationReferenceEditorAspect() {
+    if (myInequationReferenceEditorAspect == null) {
+      myInequationReferenceEditorAspect = new InequationReference_Editor();
+    }
+    return myInequationReferenceEditorAspect;
+  }
+
+  private InequationReplacementRule_Editor getInequationReplacementRuleEditorAspect() {
+    if (myInequationReplacementRuleEditorAspect == null) {
+      myInequationReplacementRuleEditorAspect = new InequationReplacementRule_Editor();
+    }
+    return myInequationReplacementRuleEditorAspect;
+  }
+
+  private InferenceRule_Editor getInferenceRuleEditorAspect() {
+    if (myInferenceRuleEditorAspect == null) {
+      myInferenceRuleEditorAspect = new InferenceRule_Editor();
+    }
+    return myInferenceRuleEditorAspect;
+  }
+
+  private InfoStatement_Editor getInfoStatementEditorAspect() {
+    if (myInfoStatementEditorAspect == null) {
+      myInfoStatementEditorAspect = new InfoStatement_Editor();
+    }
+    return myInfoStatementEditorAspect;
+  }
+
+  private IsStrongSubtypeExpression_Editor getIsStrongSubtypeExpressionEditorAspect() {
+    if (myIsStrongSubtypeExpressionEditorAspect == null) {
+      myIsStrongSubtypeExpressionEditorAspect = new IsStrongSubtypeExpression_Editor();
+    }
+    return myIsStrongSubtypeExpressionEditorAspect;
+  }
+
+  private IsSubtypeExpression_Editor getIsSubtypeExpressionEditorAspect() {
+    if (myIsSubtypeExpressionEditorAspect == null) {
+      myIsSubtypeExpressionEditorAspect = new IsSubtypeExpression_Editor();
+    }
+    return myIsSubtypeExpressionEditorAspect;
+  }
+
+  private JoinContainer_Editor getJoinContainerEditorAspect() {
+    if (myJoinContainerEditorAspect == null) {
+      myJoinContainerEditorAspect = new JoinContainer_Editor();
+    }
+    return myJoinContainerEditorAspect;
+  }
+
+  private JoinType_Editor getJoinTypeEditorAspect() {
+    if (myJoinTypeEditorAspect == null) {
+      myJoinTypeEditorAspect = new JoinType_Editor();
+    }
+    return myJoinTypeEditorAspect;
+  }
+
+  private LinkPatternVariableReference_Editor getLinkPatternVariableReferenceEditorAspect() {
+    if (myLinkPatternVariableReferenceEditorAspect == null) {
+      myLinkPatternVariableReferenceEditorAspect = new LinkPatternVariableReference_Editor();
+    }
+    return myLinkPatternVariableReferenceEditorAspect;
+  }
+
+  private MatchStatement_Editor getMatchStatementEditorAspect() {
+    if (myMatchStatementEditorAspect == null) {
+      myMatchStatementEditorAspect = new MatchStatement_Editor();
+    }
+    return myMatchStatementEditorAspect;
+  }
+
+  private MatchStatementItem_Editor getMatchStatementItemEditorAspect() {
+    if (myMatchStatementItemEditorAspect == null) {
+      myMatchStatementItemEditorAspect = new MatchStatementItem_Editor();
+    }
+    return myMatchStatementItemEditorAspect;
+  }
+
+  private MeetContainer_Editor getMeetContainerEditorAspect() {
+    if (myMeetContainerEditorAspect == null) {
+      myMeetContainerEditorAspect = new MeetContainer_Editor();
+    }
+    return myMeetContainerEditorAspect;
+  }
+
+  private MeetType_Editor getMeetTypeEditorAspect() {
+    if (myMeetTypeEditorAspect == null) {
+      myMeetTypeEditorAspect = new MeetType_Editor();
+    }
+    return myMeetTypeEditorAspect;
+  }
+
+  private MultipleForeachLoop_Editor getMultipleForeachLoopEditorAspect() {
+    if (myMultipleForeachLoopEditorAspect == null) {
+      myMultipleForeachLoopEditorAspect = new MultipleForeachLoop_Editor();
+    }
+    return myMultipleForeachLoopEditorAspect;
+  }
+
+  private MultipleForeachLoopVariable_Editor getMultipleForeachLoopVariableEditorAspect() {
+    if (myMultipleForeachLoopVariableEditorAspect == null) {
+      myMultipleForeachLoopVariableEditorAspect = new MultipleForeachLoopVariable_Editor();
+    }
+    return myMultipleForeachLoopVariableEditorAspect;
+  }
+
+  private NodeInfo_Editor getNodeInfoEditorAspect() {
+    if (myNodeInfoEditorAspect == null) {
+      myNodeInfoEditorAspect = new NodeInfo_Editor();
+    }
+    return myNodeInfoEditorAspect;
+  }
+
+  private Node_InferTypeOperation_Editor getNode_InferTypeOperationEditorAspect() {
+    if (myNode_InferTypeOperationEditorAspect == null) {
+      myNode_InferTypeOperationEditorAspect = new Node_InferTypeOperation_Editor();
+    }
+    return myNode_InferTypeOperationEditorAspect;
+  }
+
+  private Node_TypeOperation_Editor getNode_TypeOperationEditorAspect() {
+    if (myNode_TypeOperationEditorAspect == null) {
+      myNode_TypeOperationEditorAspect = new Node_TypeOperation_Editor();
+    }
+    return myNode_TypeOperationEditorAspect;
+  }
+
+  private NonTypesystemRule_Editor getNonTypesystemRuleEditorAspect() {
+    if (myNonTypesystemRuleEditorAspect == null) {
+      myNonTypesystemRuleEditorAspect = new NonTypesystemRule_Editor();
+    }
+    return myNonTypesystemRuleEditorAspect;
+  }
+
+  private NormalTypeClause_Editor getNormalTypeClauseEditorAspect() {
+    if (myNormalTypeClauseEditorAspect == null) {
+      myNormalTypeClauseEditorAspect = new NormalTypeClause_Editor();
+    }
+    return myNormalTypeClauseEditorAspect;
+  }
+
+  private OperationContextExpression_Editor getOperationContextExpressionEditorAspect() {
+    if (myOperationContextExpressionEditorAspect == null) {
+      myOperationContextExpressionEditorAspect = new OperationContextExpression_Editor();
+    }
+    return myOperationContextExpressionEditorAspect;
+  }
+
+  private OrStatement_Editor getOrStatementEditorAspect() {
+    if (myOrStatementEditorAspect == null) {
+      myOrStatementEditorAspect = new OrStatement_Editor();
+    }
+    return myOrStatementEditorAspect;
+  }
+
+  private OriginalNodeId_Editor getOriginalNodeIdEditorAspect() {
+    if (myOriginalNodeIdEditorAspect == null) {
+      myOriginalNodeIdEditorAspect = new OriginalNodeId_Editor();
+    }
+    return myOriginalNodeIdEditorAspect;
+  }
+
+  private OverloadedOpRulesContainer_Editor getOverloadedOpRulesContainerEditorAspect() {
+    if (myOverloadedOpRulesContainerEditorAspect == null) {
+      myOverloadedOpRulesContainerEditorAspect = new OverloadedOpRulesContainer_Editor();
+    }
+    return myOverloadedOpRulesContainerEditorAspect;
+  }
+
+  private OverloadedOpTypeRule_OneTypeSpecified_Editor getOverloadedOpTypeRule_OneTypeSpecifiedEditorAspect() {
+    if (myOverloadedOpTypeRule_OneTypeSpecifiedEditorAspect == null) {
+      myOverloadedOpTypeRule_OneTypeSpecifiedEditorAspect = new OverloadedOpTypeRule_OneTypeSpecified_Editor();
+    }
+    return myOverloadedOpTypeRule_OneTypeSpecifiedEditorAspect;
+  }
+
+  private OverloadedOperatorTypeRule_Editor getOverloadedOperatorTypeRuleEditorAspect() {
+    if (myOverloadedOperatorTypeRuleEditorAspect == null) {
+      myOverloadedOperatorTypeRuleEditorAspect = new OverloadedOperatorTypeRule_Editor();
+    }
+    return myOverloadedOperatorTypeRuleEditorAspect;
+  }
+
+  private PatternCondition_Editor getPatternConditionEditorAspect() {
+    if (myPatternConditionEditorAspect == null) {
+      myPatternConditionEditorAspect = new PatternCondition_Editor();
+    }
+    return myPatternConditionEditorAspect;
+  }
+
+  private PatternVariableReference_Editor getPatternVariableReferenceEditorAspect() {
+    if (myPatternVariableReferenceEditorAspect == null) {
+      myPatternVariableReferenceEditorAspect = new PatternVariableReference_Editor();
+    }
+    return myPatternVariableReferenceEditorAspect;
+  }
+
+  private PrintToTrace_Editor getPrintToTraceEditorAspect() {
+    if (myPrintToTraceEditorAspect == null) {
+      myPrintToTraceEditorAspect = new PrintToTrace_Editor();
+    }
+    return myPrintToTraceEditorAspect;
+  }
+
+  private PropertyMessageTarget_Editor getPropertyMessageTargetEditorAspect() {
+    if (myPropertyMessageTargetEditorAspect == null) {
+      myPropertyMessageTargetEditorAspect = new PropertyMessageTarget_Editor();
+    }
+    return myPropertyMessageTargetEditorAspect;
+  }
+
+  private PropertyNameTarget_Editor getPropertyNameTargetEditorAspect() {
+    if (myPropertyNameTargetEditorAspect == null) {
+      myPropertyNameTargetEditorAspect = new PropertyNameTarget_Editor();
+    }
+    return myPropertyNameTargetEditorAspect;
+  }
+
+  private PropertyPatternVariableReference_Editor getPropertyPatternVariableReferenceEditorAspect() {
+    if (myPropertyPatternVariableReferenceEditorAspect == null) {
+      myPropertyPatternVariableReferenceEditorAspect = new PropertyPatternVariableReference_Editor();
+    }
+    return myPropertyPatternVariableReferenceEditorAspect;
+  }
+
+  private QuickFixArgument_Editor getQuickFixArgumentEditorAspect() {
+    if (myQuickFixArgumentEditorAspect == null) {
+      myQuickFixArgumentEditorAspect = new QuickFixArgument_Editor();
+    }
+    return myQuickFixArgumentEditorAspect;
+  }
+
+  private QuickFixArgumentReference_Editor getQuickFixArgumentReferenceEditorAspect() {
+    if (myQuickFixArgumentReferenceEditorAspect == null) {
+      myQuickFixArgumentReferenceEditorAspect = new QuickFixArgumentReference_Editor();
+    }
+    return myQuickFixArgumentReferenceEditorAspect;
+  }
+
+  private QuickFixField_Editor getQuickFixFieldEditorAspect() {
+    if (myQuickFixFieldEditorAspect == null) {
+      myQuickFixFieldEditorAspect = new QuickFixField_Editor();
+    }
+    return myQuickFixFieldEditorAspect;
+  }
+
+  private QuickFixFieldReference_Editor getQuickFixFieldReferenceEditorAspect() {
+    if (myQuickFixFieldReferenceEditorAspect == null) {
+      myQuickFixFieldReferenceEditorAspect = new QuickFixFieldReference_Editor();
+    }
+    return myQuickFixFieldReferenceEditorAspect;
+  }
+
+  private ReferenceMessageTarget_Editor getReferenceMessageTargetEditorAspect() {
+    if (myReferenceMessageTargetEditorAspect == null) {
+      myReferenceMessageTargetEditorAspect = new ReferenceMessageTarget_Editor();
+    }
+    return myReferenceMessageTargetEditorAspect;
+  }
+
+  private ReferenceRoleTarget_Editor getReferenceRoleTargetEditorAspect() {
+    if (myReferenceRoleTargetEditorAspect == null) {
+      myReferenceRoleTargetEditorAspect = new ReferenceRoleTarget_Editor();
+    }
+    return myReferenceRoleTargetEditorAspect;
+  }
+
+  private ReplacementRuleReference_Editor getReplacementRuleReferenceEditorAspect() {
+    if (myReplacementRuleReferenceEditorAspect == null) {
+      myReplacementRuleReferenceEditorAspect = new ReplacementRuleReference_Editor();
+    }
+    return myReplacementRuleReferenceEditorAspect;
+  }
+
+  private ReportErrorStatement_Editor getReportErrorStatementEditorAspect() {
+    if (myReportErrorStatementEditorAspect == null) {
+      myReportErrorStatementEditorAspect = new ReportErrorStatement_Editor();
+    }
+    return myReportErrorStatementEditorAspect;
+  }
+
+  private RuntimeErrorType_Editor getRuntimeErrorTypeEditorAspect() {
+    if (myRuntimeErrorTypeEditorAspect == null) {
+      myRuntimeErrorTypeEditorAspect = new RuntimeErrorType_Editor();
+    }
+    return myRuntimeErrorTypeEditorAspect;
+  }
+
+  private RuntimeTypeVariable_Editor getRuntimeTypeVariableEditorAspect() {
+    if (myRuntimeTypeVariableEditorAspect == null) {
+      myRuntimeTypeVariableEditorAspect = new RuntimeTypeVariable_Editor();
+    }
+    return myRuntimeTypeVariableEditorAspect;
+  }
+
+  private SelectionType_Editor getSelectionTypeEditorAspect() {
+    if (mySelectionTypeEditorAspect == null) {
+      mySelectionTypeEditorAspect = new SelectionType_Editor();
+    }
+    return mySelectionTypeEditorAspect;
+  }
+
+  private SubtypingRule_Editor getSubtypingRuleEditorAspect() {
+    if (mySubtypingRuleEditorAspect == null) {
+      mySubtypingRuleEditorAspect = new SubtypingRule_Editor();
+    }
+    return mySubtypingRuleEditorAspect;
+  }
+
+  private TypeCheckerAccessExpression_Editor getTypeCheckerAccessExpressionEditorAspect() {
+    if (myTypeCheckerAccessExpressionEditorAspect == null) {
+      myTypeCheckerAccessExpressionEditorAspect = new TypeCheckerAccessExpression_Editor();
+    }
+    return myTypeCheckerAccessExpressionEditorAspect;
+  }
+
+  private TypeClause_Editor getTypeClauseEditorAspect() {
+    if (myTypeClauseEditorAspect == null) {
+      myTypeClauseEditorAspect = new TypeClause_Editor();
+    }
+    return myTypeClauseEditorAspect;
+  }
+
+  private TypeOfExpression_Editor getTypeOfExpressionEditorAspect() {
+    if (myTypeOfExpressionEditorAspect == null) {
+      myTypeOfExpressionEditorAspect = new TypeOfExpression_Editor();
+    }
+    return myTypeOfExpressionEditorAspect;
+  }
+
+  private TypeVarDeclaration_Editor getTypeVarDeclarationEditorAspect() {
+    if (myTypeVarDeclarationEditorAspect == null) {
+      myTypeVarDeclarationEditorAspect = new TypeVarDeclaration_Editor();
+    }
+    return myTypeVarDeclarationEditorAspect;
+  }
+
+  private TypeVarReference_Editor getTypeVarReferenceEditorAspect() {
+    if (myTypeVarReferenceEditorAspect == null) {
+      myTypeVarReferenceEditorAspect = new TypeVarReference_Editor();
+    }
+    return myTypeVarReferenceEditorAspect;
+  }
+
+  private TypesystemIntention_Editor getTypesystemIntentionEditorAspect() {
+    if (myTypesystemIntentionEditorAspect == null) {
+      myTypesystemIntentionEditorAspect = new TypesystemIntention_Editor();
+    }
+    return myTypesystemIntentionEditorAspect;
+  }
+
+  private TypesystemIntentionArgument_Editor getTypesystemIntentionArgumentEditorAspect() {
+    if (myTypesystemIntentionArgumentEditorAspect == null) {
+      myTypesystemIntentionArgumentEditorAspect = new TypesystemIntentionArgument_Editor();
+    }
+    return myTypesystemIntentionArgumentEditorAspect;
+  }
+
+  private TypesystemQuickFix_Editor getTypesystemQuickFixEditorAspect() {
+    if (myTypesystemQuickFixEditorAspect == null) {
+      myTypesystemQuickFixEditorAspect = new TypesystemQuickFix_Editor();
+    }
+    return myTypesystemQuickFixEditorAspect;
+  }
+
+  private VariableConverterItem_Editor getVariableConverterItemEditorAspect() {
+    if (myVariableConverterItemEditorAspect == null) {
+      myVariableConverterItemEditorAspect = new VariableConverterItem_Editor();
+    }
+    return myVariableConverterItemEditorAspect;
+  }
+
+  private VariableConvertersContainer_Editor getVariableConvertersContainerEditorAspect() {
+    if (myVariableConvertersContainerEditorAspect == null) {
+      myVariableConvertersContainerEditorAspect = new VariableConvertersContainer_Editor();
+    }
+    return myVariableConvertersContainerEditorAspect;
+  }
+
+  private WarningStatement_Editor getWarningStatementEditorAspect() {
+    if (myWarningStatementEditorAspect == null) {
+      myWarningStatementEditorAspect = new WarningStatement_Editor();
+    }
+    return myWarningStatementEditorAspect;
+  }
+
+  private WasSelectedNodeOperation_Editor getWasSelectedNodeOperationEditorAspect() {
+    if (myWasSelectedNodeOperationEditorAspect == null) {
+      myWasSelectedNodeOperationEditorAspect = new WasSelectedNodeOperation_Editor();
+    }
+    return myWasSelectedNodeOperationEditorAspect;
+  }
+
+  private WhenConcreteStatement_Editor getWhenConcreteStatementEditorAspect() {
+    if (myWhenConcreteStatementEditorAspect == null) {
+      myWhenConcreteStatementEditorAspect = new WhenConcreteStatement_Editor();
+    }
+    return myWhenConcreteStatementEditorAspect;
+  }
+
+  private WhenConcreteVariableDeclaration_Editor getWhenConcreteVariableDeclarationEditorAspect() {
+    if (myWhenConcreteVariableDeclarationEditorAspect == null) {
+      myWhenConcreteVariableDeclarationEditorAspect = new WhenConcreteVariableDeclaration_Editor();
+    }
+    return myWhenConcreteVariableDeclarationEditorAspect;
+  }
+
+  private WhenConcreteVariableReference_Editor getWhenConcreteVariableReferenceEditorAspect() {
+    if (myWhenConcreteVariableReferenceEditorAspect == null) {
+      myWhenConcreteVariableReferenceEditorAspect = new WhenConcreteVariableReference_Editor();
+    }
+    return myWhenConcreteVariableReferenceEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0dd = new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.lang.typesystem.structure.AssertStatement", "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.typesystem.structure.CoerceExpression", "jetbrains.mps.lang.typesystem.structure.CoerceStatement", "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression", "jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", "jetbrains.mps.lang.typesystem.structure.Dependency", "jetbrains.mps.lang.typesystem.structure.DependentComputationItem", "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", "jetbrains.mps.lang.typesystem.structure.GetOperationType", "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", "jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.InfoStatement", "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.JoinContainer", "jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.MatchStatement", "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", "jetbrains.mps.lang.typesystem.structure.MeetContainer", "jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", "jetbrains.mps.lang.typesystem.structure.NodeInfo", "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", "jetbrains.mps.lang.typesystem.structure.OperationContextExpression", "jetbrains.mps.lang.typesystem.structure.OrStatement", "jetbrains.mps.lang.typesystem.structure.OriginalNodeId", "jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", "jetbrains.mps.lang.typesystem.structure.PatternCondition", "jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.lang.typesystem.structure.PrintToTrace", "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.QuickFixArgument", "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.lang.typesystem.structure.QuickFixField", "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", "jetbrains.mps.lang.typesystem.structure.SelectionType", "jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression", "jetbrains.mps.lang.typesystem.structure.TypeClause", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem", "jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", "jetbrains.mps.lang.typesystem.structure.WarningStatement", "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"};
 }

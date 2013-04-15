@@ -8,14 +8,31 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CheckedDotExpression_Editor myCheckedDotExpressionEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return new CheckedDotExpression_Editor();
+        return getCheckedDotExpressionEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCheckedDotExpressionEditorAspect = null;
+  }
+
+  private CheckedDotExpression_Editor getCheckedDotExpressionEditorAspect() {
+    if (myCheckedDotExpressionEditorAspect == null) {
+      myCheckedDotExpressionEditorAspect = new CheckedDotExpression_Editor();
+    }
+    return myCheckedDotExpressionEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"};
 }

@@ -8,26 +8,97 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Event_Editor myEventEditorAspect;
+  private HandleEvent_Editor myHandleEventEditorAspect;
+  private State_Editor myStateEditorAspect;
+  private StateMachine_Editor myStateMachineEditorAspect;
+  private StateMachineTest_Editor myStateMachineTestEditorAspect;
+  private StateMachineTestMethod_Editor myStateMachineTestMethodEditorAspect;
+  private Transition_Editor myTransitionEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0h, descriptor.getConceptFqName())) {
       case 0:
-        return new Event_Editor();
+        return getEventEditorAspect();
       case 1:
-        return new HandleEvent_Editor();
+        return getHandleEventEditorAspect();
       case 2:
-        return new State_Editor();
+        return getStateEditorAspect();
       case 3:
-        return new StateMachine_Editor();
+        return getStateMachineEditorAspect();
       case 4:
-        return new StateMachineTest_Editor();
+        return getStateMachineTestEditorAspect();
       case 5:
-        return new StateMachineTestMethod_Editor();
+        return getStateMachineTestMethodEditorAspect();
       case 6:
-        return new Transition_Editor();
+        return getTransitionEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.secretCompartmentLanguage.structure.Event", "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent", "jetbrains.mps.samples.secretCompartmentLanguage.structure.State", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod", "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myEventEditorAspect = null;
+    myHandleEventEditorAspect = null;
+    myStateEditorAspect = null;
+    myStateMachineEditorAspect = null;
+    myStateMachineTestEditorAspect = null;
+    myStateMachineTestMethodEditorAspect = null;
+    myTransitionEditorAspect = null;
+  }
+
+  private Event_Editor getEventEditorAspect() {
+    if (myEventEditorAspect == null) {
+      myEventEditorAspect = new Event_Editor();
+    }
+    return myEventEditorAspect;
+  }
+
+  private HandleEvent_Editor getHandleEventEditorAspect() {
+    if (myHandleEventEditorAspect == null) {
+      myHandleEventEditorAspect = new HandleEvent_Editor();
+    }
+    return myHandleEventEditorAspect;
+  }
+
+  private State_Editor getStateEditorAspect() {
+    if (myStateEditorAspect == null) {
+      myStateEditorAspect = new State_Editor();
+    }
+    return myStateEditorAspect;
+  }
+
+  private StateMachine_Editor getStateMachineEditorAspect() {
+    if (myStateMachineEditorAspect == null) {
+      myStateMachineEditorAspect = new StateMachine_Editor();
+    }
+    return myStateMachineEditorAspect;
+  }
+
+  private StateMachineTest_Editor getStateMachineTestEditorAspect() {
+    if (myStateMachineTestEditorAspect == null) {
+      myStateMachineTestEditorAspect = new StateMachineTest_Editor();
+    }
+    return myStateMachineTestEditorAspect;
+  }
+
+  private StateMachineTestMethod_Editor getStateMachineTestMethodEditorAspect() {
+    if (myStateMachineTestMethodEditorAspect == null) {
+      myStateMachineTestMethodEditorAspect = new StateMachineTestMethod_Editor();
+    }
+    return myStateMachineTestMethodEditorAspect;
+  }
+
+  private Transition_Editor getTransitionEditorAspect() {
+    if (myTransitionEditorAspect == null) {
+      myTransitionEditorAspect = new Transition_Editor();
+    }
+    return myTransitionEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0h = new String[]{"jetbrains.mps.samples.secretCompartmentLanguage.structure.Event", "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent", "jetbrains.mps.samples.secretCompartmentLanguage.structure.State", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod", "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"};
 }

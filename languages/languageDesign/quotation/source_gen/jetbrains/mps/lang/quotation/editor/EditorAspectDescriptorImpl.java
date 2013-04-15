@@ -8,40 +8,174 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AbstractAntiquotation_Editor myAbstractAntiquotationEditorAspect;
+  private Antiquotation_Editor myAntiquotationEditorAspect;
+  private ListAntiquotation_Editor myListAntiquotationEditorAspect;
+  private NodeBuilder_Editor myNodeBuilderEditorAspect;
+  private NodeBuilderExpression_Editor myNodeBuilderExpressionEditorAspect;
+  private NodeBuilderInitLink_Editor myNodeBuilderInitLinkEditorAspect;
+  private NodeBuilderInitPart_Editor myNodeBuilderInitPartEditorAspect;
+  private NodeBuilderInitProperty_Editor myNodeBuilderInitPropertyEditorAspect;
+  private NodeBuilderList_Editor myNodeBuilderListEditorAspect;
+  private NodeBuilderNode_Editor myNodeBuilderNodeEditorAspect;
+  private NodeBuilderRef_Editor myNodeBuilderRefEditorAspect;
+  private PropertyAntiquotation_Editor myPropertyAntiquotationEditorAspect;
+  private Quotation_Editor myQuotationEditorAspect;
+  private ReferenceAntiquotation_Editor myReferenceAntiquotationEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0o, descriptor.getConceptFqName())) {
       case 0:
-        return new AbstractAntiquotation_Editor();
+        return getAbstractAntiquotationEditorAspect();
       case 1:
-        return new Antiquotation_Editor();
+        return getAntiquotationEditorAspect();
       case 2:
-        return new ListAntiquotation_Editor();
+        return getListAntiquotationEditorAspect();
       case 3:
-        return new NodeBuilder_Editor();
+        return getNodeBuilderEditorAspect();
       case 4:
-        return new NodeBuilderExpression_Editor();
+        return getNodeBuilderExpressionEditorAspect();
       case 5:
-        return new NodeBuilderInitLink_Editor();
+        return getNodeBuilderInitLinkEditorAspect();
       case 6:
-        return new NodeBuilderInitPart_Editor();
+        return getNodeBuilderInitPartEditorAspect();
       case 7:
-        return new NodeBuilderInitProperty_Editor();
+        return getNodeBuilderInitPropertyEditorAspect();
       case 8:
-        return new NodeBuilderList_Editor();
+        return getNodeBuilderListEditorAspect();
       case 9:
-        return new NodeBuilderNode_Editor();
+        return getNodeBuilderNodeEditorAspect();
       case 10:
-        return new NodeBuilderRef_Editor();
+        return getNodeBuilderRefEditorAspect();
       case 11:
-        return new PropertyAntiquotation_Editor();
+        return getPropertyAntiquotationEditorAspect();
       case 12:
-        return new Quotation_Editor();
+        return getQuotationEditorAspect();
       case 13:
-        return new ReferenceAntiquotation_Editor();
+        return getReferenceAntiquotationEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.quotation.structure.NodeBuilder", "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", "jetbrains.mps.lang.quotation.structure.NodeBuilderList", "jetbrains.mps.lang.quotation.structure.NodeBuilderNode", "jetbrains.mps.lang.quotation.structure.NodeBuilderRef", "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAbstractAntiquotationEditorAspect = null;
+    myAntiquotationEditorAspect = null;
+    myListAntiquotationEditorAspect = null;
+    myNodeBuilderEditorAspect = null;
+    myNodeBuilderExpressionEditorAspect = null;
+    myNodeBuilderInitLinkEditorAspect = null;
+    myNodeBuilderInitPartEditorAspect = null;
+    myNodeBuilderInitPropertyEditorAspect = null;
+    myNodeBuilderListEditorAspect = null;
+    myNodeBuilderNodeEditorAspect = null;
+    myNodeBuilderRefEditorAspect = null;
+    myPropertyAntiquotationEditorAspect = null;
+    myQuotationEditorAspect = null;
+    myReferenceAntiquotationEditorAspect = null;
+  }
+
+  private AbstractAntiquotation_Editor getAbstractAntiquotationEditorAspect() {
+    if (myAbstractAntiquotationEditorAspect == null) {
+      myAbstractAntiquotationEditorAspect = new AbstractAntiquotation_Editor();
+    }
+    return myAbstractAntiquotationEditorAspect;
+  }
+
+  private Antiquotation_Editor getAntiquotationEditorAspect() {
+    if (myAntiquotationEditorAspect == null) {
+      myAntiquotationEditorAspect = new Antiquotation_Editor();
+    }
+    return myAntiquotationEditorAspect;
+  }
+
+  private ListAntiquotation_Editor getListAntiquotationEditorAspect() {
+    if (myListAntiquotationEditorAspect == null) {
+      myListAntiquotationEditorAspect = new ListAntiquotation_Editor();
+    }
+    return myListAntiquotationEditorAspect;
+  }
+
+  private NodeBuilder_Editor getNodeBuilderEditorAspect() {
+    if (myNodeBuilderEditorAspect == null) {
+      myNodeBuilderEditorAspect = new NodeBuilder_Editor();
+    }
+    return myNodeBuilderEditorAspect;
+  }
+
+  private NodeBuilderExpression_Editor getNodeBuilderExpressionEditorAspect() {
+    if (myNodeBuilderExpressionEditorAspect == null) {
+      myNodeBuilderExpressionEditorAspect = new NodeBuilderExpression_Editor();
+    }
+    return myNodeBuilderExpressionEditorAspect;
+  }
+
+  private NodeBuilderInitLink_Editor getNodeBuilderInitLinkEditorAspect() {
+    if (myNodeBuilderInitLinkEditorAspect == null) {
+      myNodeBuilderInitLinkEditorAspect = new NodeBuilderInitLink_Editor();
+    }
+    return myNodeBuilderInitLinkEditorAspect;
+  }
+
+  private NodeBuilderInitPart_Editor getNodeBuilderInitPartEditorAspect() {
+    if (myNodeBuilderInitPartEditorAspect == null) {
+      myNodeBuilderInitPartEditorAspect = new NodeBuilderInitPart_Editor();
+    }
+    return myNodeBuilderInitPartEditorAspect;
+  }
+
+  private NodeBuilderInitProperty_Editor getNodeBuilderInitPropertyEditorAspect() {
+    if (myNodeBuilderInitPropertyEditorAspect == null) {
+      myNodeBuilderInitPropertyEditorAspect = new NodeBuilderInitProperty_Editor();
+    }
+    return myNodeBuilderInitPropertyEditorAspect;
+  }
+
+  private NodeBuilderList_Editor getNodeBuilderListEditorAspect() {
+    if (myNodeBuilderListEditorAspect == null) {
+      myNodeBuilderListEditorAspect = new NodeBuilderList_Editor();
+    }
+    return myNodeBuilderListEditorAspect;
+  }
+
+  private NodeBuilderNode_Editor getNodeBuilderNodeEditorAspect() {
+    if (myNodeBuilderNodeEditorAspect == null) {
+      myNodeBuilderNodeEditorAspect = new NodeBuilderNode_Editor();
+    }
+    return myNodeBuilderNodeEditorAspect;
+  }
+
+  private NodeBuilderRef_Editor getNodeBuilderRefEditorAspect() {
+    if (myNodeBuilderRefEditorAspect == null) {
+      myNodeBuilderRefEditorAspect = new NodeBuilderRef_Editor();
+    }
+    return myNodeBuilderRefEditorAspect;
+  }
+
+  private PropertyAntiquotation_Editor getPropertyAntiquotationEditorAspect() {
+    if (myPropertyAntiquotationEditorAspect == null) {
+      myPropertyAntiquotationEditorAspect = new PropertyAntiquotation_Editor();
+    }
+    return myPropertyAntiquotationEditorAspect;
+  }
+
+  private Quotation_Editor getQuotationEditorAspect() {
+    if (myQuotationEditorAspect == null) {
+      myQuotationEditorAspect = new Quotation_Editor();
+    }
+    return myQuotationEditorAspect;
+  }
+
+  private ReferenceAntiquotation_Editor getReferenceAntiquotationEditorAspect() {
+    if (myReferenceAntiquotationEditorAspect == null) {
+      myReferenceAntiquotationEditorAspect = new ReferenceAntiquotation_Editor();
+    }
+    return myReferenceAntiquotationEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0o = new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.quotation.structure.NodeBuilder", "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", "jetbrains.mps.lang.quotation.structure.NodeBuilderList", "jetbrains.mps.lang.quotation.structure.NodeBuilderNode", "jetbrains.mps.lang.quotation.structure.NodeBuilderRef", "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"};
 }

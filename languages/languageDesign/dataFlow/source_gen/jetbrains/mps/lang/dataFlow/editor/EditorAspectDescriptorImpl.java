@@ -8,44 +8,196 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private BaseEmitJumpStatement_Editor myBaseEmitJumpStatementEditorAspect;
+  private BaseEmitVariableStatement_Editor myBaseEmitVariableStatementEditorAspect;
+  private BaseInstructionOperation_Editor myBaseInstructionOperationEditorAspect;
+  private DataFlowBuilderDeclaration_Editor myDataFlowBuilderDeclarationEditorAspect;
+  private EmitCodeForStatement_Editor myEmitCodeForStatementEditorAspect;
+  private EmitLabelStatement_Editor myEmitLabelStatementEditorAspect;
+  private EmitMayBeUnreachable_Editor myEmitMayBeUnreachableEditorAspect;
+  private EmitNopStatement_Editor myEmitNopStatementEditorAspect;
+  private EmitRetStatement_Editor myEmitRetStatementEditorAspect;
+  private EmitTryFinallyStatement_Editor myEmitTryFinallyStatementEditorAspect;
+  private EmitWriteStatement_Editor myEmitWriteStatementEditorAspect;
+  private GetCodeForExpression_Editor myGetCodeForExpressionEditorAspect;
+  private InsertAfter_Editor myInsertAfterEditorAspect;
+  private InsertBefore_Editor myInsertBeforeEditorAspect;
+  private LabelPosition_Editor myLabelPositionEditorAspect;
+  private RelativePosition_Editor myRelativePositionEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0q, descriptor.getConceptFqName())) {
       case 0:
-        return new BaseEmitJumpStatement_Editor();
+        return getBaseEmitJumpStatementEditorAspect();
       case 1:
-        return new BaseEmitVariableStatement_Editor();
+        return getBaseEmitVariableStatementEditorAspect();
       case 2:
-        return new BaseInstructionOperation_Editor();
+        return getBaseInstructionOperationEditorAspect();
       case 3:
-        return new DataFlowBuilderDeclaration_Editor();
+        return getDataFlowBuilderDeclarationEditorAspect();
       case 4:
-        return new EmitCodeForStatement_Editor();
+        return getEmitCodeForStatementEditorAspect();
       case 5:
-        return new EmitLabelStatement_Editor();
+        return getEmitLabelStatementEditorAspect();
       case 6:
-        return new EmitMayBeUnreachable_Editor();
+        return getEmitMayBeUnreachableEditorAspect();
       case 7:
-        return new EmitNopStatement_Editor();
+        return getEmitNopStatementEditorAspect();
       case 8:
-        return new EmitRetStatement_Editor();
+        return getEmitRetStatementEditorAspect();
       case 9:
-        return new EmitTryFinallyStatement_Editor();
+        return getEmitTryFinallyStatementEditorAspect();
       case 10:
-        return new EmitWriteStatement_Editor();
+        return getEmitWriteStatementEditorAspect();
       case 11:
-        return new GetCodeForExpression_Editor();
+        return getGetCodeForExpressionEditorAspect();
       case 12:
-        return new InsertAfter_Editor();
+        return getInsertAfterEditorAspect();
       case 13:
-        return new InsertBefore_Editor();
+        return getInsertBeforeEditorAspect();
       case 14:
-        return new LabelPosition_Editor();
+        return getLabelPositionEditorAspect();
       case 15:
-        return new RelativePosition_Editor();
+        return getRelativePositionEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement", "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement", "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation", "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement", "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement", "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement", "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement", "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement", "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression", "jetbrains.mps.lang.dataFlow.structure.InsertAfter", "jetbrains.mps.lang.dataFlow.structure.InsertBefore", "jetbrains.mps.lang.dataFlow.structure.LabelPosition", "jetbrains.mps.lang.dataFlow.structure.RelativePosition"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myBaseEmitJumpStatementEditorAspect = null;
+    myBaseEmitVariableStatementEditorAspect = null;
+    myBaseInstructionOperationEditorAspect = null;
+    myDataFlowBuilderDeclarationEditorAspect = null;
+    myEmitCodeForStatementEditorAspect = null;
+    myEmitLabelStatementEditorAspect = null;
+    myEmitMayBeUnreachableEditorAspect = null;
+    myEmitNopStatementEditorAspect = null;
+    myEmitRetStatementEditorAspect = null;
+    myEmitTryFinallyStatementEditorAspect = null;
+    myEmitWriteStatementEditorAspect = null;
+    myGetCodeForExpressionEditorAspect = null;
+    myInsertAfterEditorAspect = null;
+    myInsertBeforeEditorAspect = null;
+    myLabelPositionEditorAspect = null;
+    myRelativePositionEditorAspect = null;
+  }
+
+  private BaseEmitJumpStatement_Editor getBaseEmitJumpStatementEditorAspect() {
+    if (myBaseEmitJumpStatementEditorAspect == null) {
+      myBaseEmitJumpStatementEditorAspect = new BaseEmitJumpStatement_Editor();
+    }
+    return myBaseEmitJumpStatementEditorAspect;
+  }
+
+  private BaseEmitVariableStatement_Editor getBaseEmitVariableStatementEditorAspect() {
+    if (myBaseEmitVariableStatementEditorAspect == null) {
+      myBaseEmitVariableStatementEditorAspect = new BaseEmitVariableStatement_Editor();
+    }
+    return myBaseEmitVariableStatementEditorAspect;
+  }
+
+  private BaseInstructionOperation_Editor getBaseInstructionOperationEditorAspect() {
+    if (myBaseInstructionOperationEditorAspect == null) {
+      myBaseInstructionOperationEditorAspect = new BaseInstructionOperation_Editor();
+    }
+    return myBaseInstructionOperationEditorAspect;
+  }
+
+  private DataFlowBuilderDeclaration_Editor getDataFlowBuilderDeclarationEditorAspect() {
+    if (myDataFlowBuilderDeclarationEditorAspect == null) {
+      myDataFlowBuilderDeclarationEditorAspect = new DataFlowBuilderDeclaration_Editor();
+    }
+    return myDataFlowBuilderDeclarationEditorAspect;
+  }
+
+  private EmitCodeForStatement_Editor getEmitCodeForStatementEditorAspect() {
+    if (myEmitCodeForStatementEditorAspect == null) {
+      myEmitCodeForStatementEditorAspect = new EmitCodeForStatement_Editor();
+    }
+    return myEmitCodeForStatementEditorAspect;
+  }
+
+  private EmitLabelStatement_Editor getEmitLabelStatementEditorAspect() {
+    if (myEmitLabelStatementEditorAspect == null) {
+      myEmitLabelStatementEditorAspect = new EmitLabelStatement_Editor();
+    }
+    return myEmitLabelStatementEditorAspect;
+  }
+
+  private EmitMayBeUnreachable_Editor getEmitMayBeUnreachableEditorAspect() {
+    if (myEmitMayBeUnreachableEditorAspect == null) {
+      myEmitMayBeUnreachableEditorAspect = new EmitMayBeUnreachable_Editor();
+    }
+    return myEmitMayBeUnreachableEditorAspect;
+  }
+
+  private EmitNopStatement_Editor getEmitNopStatementEditorAspect() {
+    if (myEmitNopStatementEditorAspect == null) {
+      myEmitNopStatementEditorAspect = new EmitNopStatement_Editor();
+    }
+    return myEmitNopStatementEditorAspect;
+  }
+
+  private EmitRetStatement_Editor getEmitRetStatementEditorAspect() {
+    if (myEmitRetStatementEditorAspect == null) {
+      myEmitRetStatementEditorAspect = new EmitRetStatement_Editor();
+    }
+    return myEmitRetStatementEditorAspect;
+  }
+
+  private EmitTryFinallyStatement_Editor getEmitTryFinallyStatementEditorAspect() {
+    if (myEmitTryFinallyStatementEditorAspect == null) {
+      myEmitTryFinallyStatementEditorAspect = new EmitTryFinallyStatement_Editor();
+    }
+    return myEmitTryFinallyStatementEditorAspect;
+  }
+
+  private EmitWriteStatement_Editor getEmitWriteStatementEditorAspect() {
+    if (myEmitWriteStatementEditorAspect == null) {
+      myEmitWriteStatementEditorAspect = new EmitWriteStatement_Editor();
+    }
+    return myEmitWriteStatementEditorAspect;
+  }
+
+  private GetCodeForExpression_Editor getGetCodeForExpressionEditorAspect() {
+    if (myGetCodeForExpressionEditorAspect == null) {
+      myGetCodeForExpressionEditorAspect = new GetCodeForExpression_Editor();
+    }
+    return myGetCodeForExpressionEditorAspect;
+  }
+
+  private InsertAfter_Editor getInsertAfterEditorAspect() {
+    if (myInsertAfterEditorAspect == null) {
+      myInsertAfterEditorAspect = new InsertAfter_Editor();
+    }
+    return myInsertAfterEditorAspect;
+  }
+
+  private InsertBefore_Editor getInsertBeforeEditorAspect() {
+    if (myInsertBeforeEditorAspect == null) {
+      myInsertBeforeEditorAspect = new InsertBefore_Editor();
+    }
+    return myInsertBeforeEditorAspect;
+  }
+
+  private LabelPosition_Editor getLabelPositionEditorAspect() {
+    if (myLabelPositionEditorAspect == null) {
+      myLabelPositionEditorAspect = new LabelPosition_Editor();
+    }
+    return myLabelPositionEditorAspect;
+  }
+
+  private RelativePosition_Editor getRelativePositionEditorAspect() {
+    if (myRelativePositionEditorAspect == null) {
+      myRelativePositionEditorAspect = new RelativePosition_Editor();
+    }
+    return myRelativePositionEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0q = new String[]{"jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement", "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement", "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation", "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement", "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement", "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement", "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement", "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement", "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression", "jetbrains.mps.lang.dataFlow.structure.InsertAfter", "jetbrains.mps.lang.dataFlow.structure.InsertBefore", "jetbrains.mps.lang.dataFlow.structure.LabelPosition", "jetbrains.mps.lang.dataFlow.structure.RelativePosition"};
 }

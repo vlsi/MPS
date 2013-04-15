@@ -8,16 +8,42 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private LibraryFolder_Editor myLibraryFolderEditorAspect;
+  private MPSBuild_Editor myMPSBuildEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
-        return new LibraryFolder_Editor();
+        return getLibraryFolderEditorAspect();
       case 1:
-        return new MPSBuild_Editor();
+        return getMPSBuildEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.custommps.structure.LibraryFolder", "jetbrains.mps.build.custommps.structure.MPSBuild"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myLibraryFolderEditorAspect = null;
+    myMPSBuildEditorAspect = null;
+  }
+
+  private LibraryFolder_Editor getLibraryFolderEditorAspect() {
+    if (myLibraryFolderEditorAspect == null) {
+      myLibraryFolderEditorAspect = new LibraryFolder_Editor();
+    }
+    return myLibraryFolderEditorAspect;
+  }
+
+  private MPSBuild_Editor getMPSBuildEditorAspect() {
+    if (myMPSBuildEditorAspect == null) {
+      myMPSBuildEditorAspect = new MPSBuild_Editor();
+    }
+    return myMPSBuildEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.build.custommps.structure.LibraryFolder", "jetbrains.mps.build.custommps.structure.MPSBuild"};
 }

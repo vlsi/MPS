@@ -8,46 +8,207 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AppendOperation_Editor myAppendOperationEditorAspect;
+  private CollectionAppendPart_Editor myCollectionAppendPartEditorAspect;
+  private ConceptTextGenDeclaration_Editor myConceptTextGenDeclarationEditorAspect;
+  private ConstantStringAppendPart_Editor myConstantStringAppendPartEditorAspect;
+  private EncodingLiteral_Editor myEncodingLiteralEditorAspect;
+  private FoundErrorOperation_Editor myFoundErrorOperationEditorAspect;
+  private InfoAppendPart_Editor myInfoAppendPartEditorAspect;
+  private LanguageTextGenDeclaration_Editor myLanguageTextGenDeclarationEditorAspect;
+  private NewLineAppendPart_Editor myNewLineAppendPartEditorAspect;
+  private NodeAppendPart_Editor myNodeAppendPartEditorAspect;
+  private OperationCall_Editor myOperationCallEditorAspect;
+  private OperationDeclaration_Editor myOperationDeclarationEditorAspect;
+  private ReferenceAppendPart_Editor myReferenceAppendPartEditorAspect;
+  private SimpleTextGenOperation_Editor mySimpleTextGenOperationEditorAspect;
+  private UtilityMethodCall_Editor myUtilityMethodCallEditorAspect;
+  private UtilityMethodDeclaration_Editor myUtilityMethodDeclarationEditorAspect;
+  private WithIndentOperation_Editor myWithIndentOperationEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0r, descriptor.getConceptFqName())) {
       case 0:
-        return new AppendOperation_Editor();
+        return getAppendOperationEditorAspect();
       case 1:
-        return new CollectionAppendPart_Editor();
+        return getCollectionAppendPartEditorAspect();
       case 2:
-        return new ConceptTextGenDeclaration_Editor();
+        return getConceptTextGenDeclarationEditorAspect();
       case 3:
-        return new ConstantStringAppendPart_Editor();
+        return getConstantStringAppendPartEditorAspect();
       case 4:
-        return new EncodingLiteral_Editor();
+        return getEncodingLiteralEditorAspect();
       case 5:
-        return new FoundErrorOperation_Editor();
+        return getFoundErrorOperationEditorAspect();
       case 6:
-        return new InfoAppendPart_Editor();
+        return getInfoAppendPartEditorAspect();
       case 7:
-        return new LanguageTextGenDeclaration_Editor();
+        return getLanguageTextGenDeclarationEditorAspect();
       case 8:
-        return new NewLineAppendPart_Editor();
+        return getNewLineAppendPartEditorAspect();
       case 9:
-        return new NodeAppendPart_Editor();
+        return getNodeAppendPartEditorAspect();
       case 10:
-        return new OperationCall_Editor();
+        return getOperationCallEditorAspect();
       case 11:
-        return new OperationDeclaration_Editor();
+        return getOperationDeclarationEditorAspect();
       case 12:
-        return new ReferenceAppendPart_Editor();
+        return getReferenceAppendPartEditorAspect();
       case 13:
-        return new SimpleTextGenOperation_Editor();
+        return getSimpleTextGenOperationEditorAspect();
       case 14:
-        return new UtilityMethodCall_Editor();
+        return getUtilityMethodCallEditorAspect();
       case 15:
-        return new UtilityMethodDeclaration_Editor();
+        return getUtilityMethodDeclarationEditorAspect();
       case 16:
-        return new WithIndentOperation_Editor();
+        return getWithIndentOperationEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.textGen.structure.AppendOperation", "jetbrains.mps.lang.textGen.structure.CollectionAppendPart", "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", "jetbrains.mps.lang.textGen.structure.EncodingLiteral", "jetbrains.mps.lang.textGen.structure.FoundErrorOperation", "jetbrains.mps.lang.textGen.structure.InfoAppendPart", "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.NewLineAppendPart", "jetbrains.mps.lang.textGen.structure.NodeAppendPart", "jetbrains.mps.lang.textGen.structure.OperationCall", "jetbrains.mps.lang.textGen.structure.OperationDeclaration", "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", "jetbrains.mps.lang.textGen.structure.UtilityMethodCall", "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", "jetbrains.mps.lang.textGen.structure.WithIndentOperation"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAppendOperationEditorAspect = null;
+    myCollectionAppendPartEditorAspect = null;
+    myConceptTextGenDeclarationEditorAspect = null;
+    myConstantStringAppendPartEditorAspect = null;
+    myEncodingLiteralEditorAspect = null;
+    myFoundErrorOperationEditorAspect = null;
+    myInfoAppendPartEditorAspect = null;
+    myLanguageTextGenDeclarationEditorAspect = null;
+    myNewLineAppendPartEditorAspect = null;
+    myNodeAppendPartEditorAspect = null;
+    myOperationCallEditorAspect = null;
+    myOperationDeclarationEditorAspect = null;
+    myReferenceAppendPartEditorAspect = null;
+    mySimpleTextGenOperationEditorAspect = null;
+    myUtilityMethodCallEditorAspect = null;
+    myUtilityMethodDeclarationEditorAspect = null;
+    myWithIndentOperationEditorAspect = null;
+  }
+
+  private AppendOperation_Editor getAppendOperationEditorAspect() {
+    if (myAppendOperationEditorAspect == null) {
+      myAppendOperationEditorAspect = new AppendOperation_Editor();
+    }
+    return myAppendOperationEditorAspect;
+  }
+
+  private CollectionAppendPart_Editor getCollectionAppendPartEditorAspect() {
+    if (myCollectionAppendPartEditorAspect == null) {
+      myCollectionAppendPartEditorAspect = new CollectionAppendPart_Editor();
+    }
+    return myCollectionAppendPartEditorAspect;
+  }
+
+  private ConceptTextGenDeclaration_Editor getConceptTextGenDeclarationEditorAspect() {
+    if (myConceptTextGenDeclarationEditorAspect == null) {
+      myConceptTextGenDeclarationEditorAspect = new ConceptTextGenDeclaration_Editor();
+    }
+    return myConceptTextGenDeclarationEditorAspect;
+  }
+
+  private ConstantStringAppendPart_Editor getConstantStringAppendPartEditorAspect() {
+    if (myConstantStringAppendPartEditorAspect == null) {
+      myConstantStringAppendPartEditorAspect = new ConstantStringAppendPart_Editor();
+    }
+    return myConstantStringAppendPartEditorAspect;
+  }
+
+  private EncodingLiteral_Editor getEncodingLiteralEditorAspect() {
+    if (myEncodingLiteralEditorAspect == null) {
+      myEncodingLiteralEditorAspect = new EncodingLiteral_Editor();
+    }
+    return myEncodingLiteralEditorAspect;
+  }
+
+  private FoundErrorOperation_Editor getFoundErrorOperationEditorAspect() {
+    if (myFoundErrorOperationEditorAspect == null) {
+      myFoundErrorOperationEditorAspect = new FoundErrorOperation_Editor();
+    }
+    return myFoundErrorOperationEditorAspect;
+  }
+
+  private InfoAppendPart_Editor getInfoAppendPartEditorAspect() {
+    if (myInfoAppendPartEditorAspect == null) {
+      myInfoAppendPartEditorAspect = new InfoAppendPart_Editor();
+    }
+    return myInfoAppendPartEditorAspect;
+  }
+
+  private LanguageTextGenDeclaration_Editor getLanguageTextGenDeclarationEditorAspect() {
+    if (myLanguageTextGenDeclarationEditorAspect == null) {
+      myLanguageTextGenDeclarationEditorAspect = new LanguageTextGenDeclaration_Editor();
+    }
+    return myLanguageTextGenDeclarationEditorAspect;
+  }
+
+  private NewLineAppendPart_Editor getNewLineAppendPartEditorAspect() {
+    if (myNewLineAppendPartEditorAspect == null) {
+      myNewLineAppendPartEditorAspect = new NewLineAppendPart_Editor();
+    }
+    return myNewLineAppendPartEditorAspect;
+  }
+
+  private NodeAppendPart_Editor getNodeAppendPartEditorAspect() {
+    if (myNodeAppendPartEditorAspect == null) {
+      myNodeAppendPartEditorAspect = new NodeAppendPart_Editor();
+    }
+    return myNodeAppendPartEditorAspect;
+  }
+
+  private OperationCall_Editor getOperationCallEditorAspect() {
+    if (myOperationCallEditorAspect == null) {
+      myOperationCallEditorAspect = new OperationCall_Editor();
+    }
+    return myOperationCallEditorAspect;
+  }
+
+  private OperationDeclaration_Editor getOperationDeclarationEditorAspect() {
+    if (myOperationDeclarationEditorAspect == null) {
+      myOperationDeclarationEditorAspect = new OperationDeclaration_Editor();
+    }
+    return myOperationDeclarationEditorAspect;
+  }
+
+  private ReferenceAppendPart_Editor getReferenceAppendPartEditorAspect() {
+    if (myReferenceAppendPartEditorAspect == null) {
+      myReferenceAppendPartEditorAspect = new ReferenceAppendPart_Editor();
+    }
+    return myReferenceAppendPartEditorAspect;
+  }
+
+  private SimpleTextGenOperation_Editor getSimpleTextGenOperationEditorAspect() {
+    if (mySimpleTextGenOperationEditorAspect == null) {
+      mySimpleTextGenOperationEditorAspect = new SimpleTextGenOperation_Editor();
+    }
+    return mySimpleTextGenOperationEditorAspect;
+  }
+
+  private UtilityMethodCall_Editor getUtilityMethodCallEditorAspect() {
+    if (myUtilityMethodCallEditorAspect == null) {
+      myUtilityMethodCallEditorAspect = new UtilityMethodCall_Editor();
+    }
+    return myUtilityMethodCallEditorAspect;
+  }
+
+  private UtilityMethodDeclaration_Editor getUtilityMethodDeclarationEditorAspect() {
+    if (myUtilityMethodDeclarationEditorAspect == null) {
+      myUtilityMethodDeclarationEditorAspect = new UtilityMethodDeclaration_Editor();
+    }
+    return myUtilityMethodDeclarationEditorAspect;
+  }
+
+  private WithIndentOperation_Editor getWithIndentOperationEditorAspect() {
+    if (myWithIndentOperationEditorAspect == null) {
+      myWithIndentOperationEditorAspect = new WithIndentOperation_Editor();
+    }
+    return myWithIndentOperationEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0r = new String[]{"jetbrains.mps.lang.textGen.structure.AppendOperation", "jetbrains.mps.lang.textGen.structure.CollectionAppendPart", "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", "jetbrains.mps.lang.textGen.structure.EncodingLiteral", "jetbrains.mps.lang.textGen.structure.FoundErrorOperation", "jetbrains.mps.lang.textGen.structure.InfoAppendPart", "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.NewLineAppendPart", "jetbrains.mps.lang.textGen.structure.NodeAppendPart", "jetbrains.mps.lang.textGen.structure.OperationCall", "jetbrains.mps.lang.textGen.structure.OperationDeclaration", "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", "jetbrains.mps.lang.textGen.structure.UtilityMethodCall", "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", "jetbrains.mps.lang.textGen.structure.WithIndentOperation"};
 }

@@ -8,100 +8,504 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private Antcall_Editor myAntcallEditorAspect;
+  private Block_Editor myBlockEditorAspect;
+  private BlockReference_Editor myBlockReferenceEditorAspect;
+  private Branding_Editor myBrandingEditorAspect;
+  private BuildLanguageTargetReference_Editor myBuildLanguageTargetReferenceEditorAspect;
+  private ComponentsList_Editor myComponentsListEditorAspect;
+  private CompositePathComponent_Editor myCompositePathComponentEditorAspect;
+  private CompositeString_Editor myCompositeStringEditorAspect;
+  private Configuration_Editor myConfigurationEditorAspect;
+  private ConfigurationReference_Editor myConfigurationReferenceEditorAspect;
+  private Copy_Editor myCopyEditorAspect;
+  private Echo_Editor myEchoEditorAspect;
+  private File_Editor myFileEditorAspect;
+  private FileExistsCondition_Editor myFileExistsConditionEditorAspect;
+  private Folder_Editor myFolderEditorAspect;
+  private Help_Editor myHelpEditorAspect;
+  private IdeaInitializerReference_Editor myIdeaInitializerReferenceEditorAspect;
+  private Jar_Editor myJarEditorAspect;
+  private Layout_Editor myLayoutEditorAspect;
+  private Library_Editor myLibraryEditorAspect;
+  private MPSLayoutConfigurationReferencePropertyValueExpression_Editor myMPSLayoutConfigurationReferencePropertyValueExpressionEditorAspect;
+  private Macro_Editor myMacroEditorAspect;
+  private MacroReference_Editor myMacroReferenceEditorAspect;
+  private Manifest_Editor myManifestEditorAspect;
+  private ManifestAttribute_Editor myManifestAttributeEditorAspect;
+  private Module_Editor myModuleEditorAspect;
+  private NonExistingPath_Editor myNonExistingPathEditorAspect;
+  private NotCondition_Editor myNotConditionEditorAspect;
+  private Pair_Editor myPairEditorAspect;
+  private Path_Editor myPathEditorAspect;
+  private PathComponent_Editor myPathComponentEditorAspect;
+  private PathHolder_Editor myPathHolderEditorAspect;
+  private Plugin_Editor myPluginEditorAspect;
+  private PluginModule_Editor myPluginModuleEditorAspect;
+  private PropertyFileImport_Editor myPropertyFileImportEditorAspect;
+  private PropertyNodeImport_Editor myPropertyNodeImportEditorAspect;
+  private Replace_Editor myReplaceEditorAspect;
+  private SimpleString_Editor mySimpleStringEditorAspect;
+  private Space_Editor mySpaceEditorAspect;
+  private UpdateWebsite_Editor myUpdateWebsiteEditorAspect;
+  private Variable_Editor myVariableEditorAspect;
+  private VariableReference_Editor myVariableReferenceEditorAspect;
+  private WelcomeScreen_Editor myWelcomeScreenEditorAspect;
+  private Zip_Editor myZipEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0sb, descriptor.getConceptFqName())) {
       case 0:
-        return new Antcall_Editor();
+        return getAntcallEditorAspect();
       case 1:
-        return new Block_Editor();
+        return getBlockEditorAspect();
       case 2:
-        return new BlockReference_Editor();
+        return getBlockReferenceEditorAspect();
       case 3:
-        return new Branding_Editor();
+        return getBrandingEditorAspect();
       case 4:
-        return new BuildLanguageTargetReference_Editor();
+        return getBuildLanguageTargetReferenceEditorAspect();
       case 5:
-        return new ComponentsList_Editor();
+        return getComponentsListEditorAspect();
       case 6:
-        return new CompositePathComponent_Editor();
+        return getCompositePathComponentEditorAspect();
       case 7:
-        return new CompositeString_Editor();
+        return getCompositeStringEditorAspect();
       case 8:
-        return new Configuration_Editor();
+        return getConfigurationEditorAspect();
       case 9:
-        return new ConfigurationReference_Editor();
+        return getConfigurationReferenceEditorAspect();
       case 10:
-        return new Copy_Editor();
+        return getCopyEditorAspect();
       case 11:
-        return new Echo_Editor();
+        return getEchoEditorAspect();
       case 12:
-        return new File_Editor();
+        return getFileEditorAspect();
       case 13:
-        return new FileExistsCondition_Editor();
+        return getFileExistsConditionEditorAspect();
       case 14:
-        return new Folder_Editor();
+        return getFolderEditorAspect();
       case 15:
-        return new Help_Editor();
+        return getHelpEditorAspect();
       case 16:
-        return new IdeaInitializerReference_Editor();
+        return getIdeaInitializerReferenceEditorAspect();
       case 17:
-        return new Jar_Editor();
+        return getJarEditorAspect();
       case 18:
-        return new Layout_Editor();
+        return getLayoutEditorAspect();
       case 19:
-        return new Library_Editor();
+        return getLibraryEditorAspect();
       case 20:
-        return new MPSLayoutConfigurationReferencePropertyValueExpression_Editor();
+        return getMPSLayoutConfigurationReferencePropertyValueExpressionEditorAspect();
       case 21:
-        return new Macro_Editor();
+        return getMacroEditorAspect();
       case 22:
-        return new MacroReference_Editor();
+        return getMacroReferenceEditorAspect();
       case 23:
-        return new Manifest_Editor();
+        return getManifestEditorAspect();
       case 24:
-        return new ManifestAttribute_Editor();
+        return getManifestAttributeEditorAspect();
       case 25:
-        return new Module_Editor();
+        return getModuleEditorAspect();
       case 26:
-        return new NonExistingPath_Editor();
+        return getNonExistingPathEditorAspect();
       case 27:
-        return new NotCondition_Editor();
+        return getNotConditionEditorAspect();
       case 28:
-        return new Pair_Editor();
+        return getPairEditorAspect();
       case 29:
-        return new Path_Editor();
+        return getPathEditorAspect();
       case 30:
-        return new PathComponent_Editor();
+        return getPathComponentEditorAspect();
       case 31:
-        return new PathHolder_Editor();
+        return getPathHolderEditorAspect();
       case 32:
-        return new Plugin_Editor();
+        return getPluginEditorAspect();
       case 33:
-        return new PluginModule_Editor();
+        return getPluginModuleEditorAspect();
       case 34:
-        return new PropertyFileImport_Editor();
+        return getPropertyFileImportEditorAspect();
       case 35:
-        return new PropertyNodeImport_Editor();
+        return getPropertyNodeImportEditorAspect();
       case 36:
-        return new Replace_Editor();
+        return getReplaceEditorAspect();
       case 37:
-        return new SimpleString_Editor();
+        return getSimpleStringEditorAspect();
       case 38:
-        return new Space_Editor();
+        return getSpaceEditorAspect();
       case 39:
-        return new UpdateWebsite_Editor();
+        return getUpdateWebsiteEditorAspect();
       case 40:
-        return new Variable_Editor();
+        return getVariableEditorAspect();
       case 41:
-        return new VariableReference_Editor();
+        return getVariableReferenceEditorAspect();
       case 42:
-        return new WelcomeScreen_Editor();
+        return getWelcomeScreenEditorAspect();
       case 43:
-        return new Zip_Editor();
+        return getZipEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.packaging.structure.Antcall", "jetbrains.mps.build.packaging.structure.Block", "jetbrains.mps.build.packaging.structure.BlockReference", "jetbrains.mps.build.packaging.structure.Branding", "jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference", "jetbrains.mps.build.packaging.structure.ComponentsList", "jetbrains.mps.build.packaging.structure.CompositePathComponent", "jetbrains.mps.build.packaging.structure.CompositeString", "jetbrains.mps.build.packaging.structure.Configuration", "jetbrains.mps.build.packaging.structure.ConfigurationReference", "jetbrains.mps.build.packaging.structure.Copy", "jetbrains.mps.build.packaging.structure.Echo", "jetbrains.mps.build.packaging.structure.File", "jetbrains.mps.build.packaging.structure.FileExistsCondition", "jetbrains.mps.build.packaging.structure.Folder", "jetbrains.mps.build.packaging.structure.Help", "jetbrains.mps.build.packaging.structure.IdeaInitializerReference", "jetbrains.mps.build.packaging.structure.Jar", "jetbrains.mps.build.packaging.structure.Layout", "jetbrains.mps.build.packaging.structure.Library", "jetbrains.mps.build.packaging.structure.MPSLayoutConfigurationReferencePropertyValueExpression", "jetbrains.mps.build.packaging.structure.Macro", "jetbrains.mps.build.packaging.structure.MacroReference", "jetbrains.mps.build.packaging.structure.Manifest", "jetbrains.mps.build.packaging.structure.ManifestAttribute", "jetbrains.mps.build.packaging.structure.Module", "jetbrains.mps.build.packaging.structure.NonExistingPath", "jetbrains.mps.build.packaging.structure.NotCondition", "jetbrains.mps.build.packaging.structure.Pair", "jetbrains.mps.build.packaging.structure.Path", "jetbrains.mps.build.packaging.structure.PathComponent", "jetbrains.mps.build.packaging.structure.PathHolder", "jetbrains.mps.build.packaging.structure.Plugin", "jetbrains.mps.build.packaging.structure.PluginModule", "jetbrains.mps.build.packaging.structure.PropertyFileImport", "jetbrains.mps.build.packaging.structure.PropertyNodeImport", "jetbrains.mps.build.packaging.structure.Replace", "jetbrains.mps.build.packaging.structure.SimpleString", "jetbrains.mps.build.packaging.structure.Space", "jetbrains.mps.build.packaging.structure.UpdateWebsite", "jetbrains.mps.build.packaging.structure.Variable", "jetbrains.mps.build.packaging.structure.VariableReference", "jetbrains.mps.build.packaging.structure.WelcomeScreen", "jetbrains.mps.build.packaging.structure.Zip"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAntcallEditorAspect = null;
+    myBlockEditorAspect = null;
+    myBlockReferenceEditorAspect = null;
+    myBrandingEditorAspect = null;
+    myBuildLanguageTargetReferenceEditorAspect = null;
+    myComponentsListEditorAspect = null;
+    myCompositePathComponentEditorAspect = null;
+    myCompositeStringEditorAspect = null;
+    myConfigurationEditorAspect = null;
+    myConfigurationReferenceEditorAspect = null;
+    myCopyEditorAspect = null;
+    myEchoEditorAspect = null;
+    myFileEditorAspect = null;
+    myFileExistsConditionEditorAspect = null;
+    myFolderEditorAspect = null;
+    myHelpEditorAspect = null;
+    myIdeaInitializerReferenceEditorAspect = null;
+    myJarEditorAspect = null;
+    myLayoutEditorAspect = null;
+    myLibraryEditorAspect = null;
+    myMPSLayoutConfigurationReferencePropertyValueExpressionEditorAspect = null;
+    myMacroEditorAspect = null;
+    myMacroReferenceEditorAspect = null;
+    myManifestEditorAspect = null;
+    myManifestAttributeEditorAspect = null;
+    myModuleEditorAspect = null;
+    myNonExistingPathEditorAspect = null;
+    myNotConditionEditorAspect = null;
+    myPairEditorAspect = null;
+    myPathEditorAspect = null;
+    myPathComponentEditorAspect = null;
+    myPathHolderEditorAspect = null;
+    myPluginEditorAspect = null;
+    myPluginModuleEditorAspect = null;
+    myPropertyFileImportEditorAspect = null;
+    myPropertyNodeImportEditorAspect = null;
+    myReplaceEditorAspect = null;
+    mySimpleStringEditorAspect = null;
+    mySpaceEditorAspect = null;
+    myUpdateWebsiteEditorAspect = null;
+    myVariableEditorAspect = null;
+    myVariableReferenceEditorAspect = null;
+    myWelcomeScreenEditorAspect = null;
+    myZipEditorAspect = null;
+  }
+
+  private Antcall_Editor getAntcallEditorAspect() {
+    if (myAntcallEditorAspect == null) {
+      myAntcallEditorAspect = new Antcall_Editor();
+    }
+    return myAntcallEditorAspect;
+  }
+
+  private Block_Editor getBlockEditorAspect() {
+    if (myBlockEditorAspect == null) {
+      myBlockEditorAspect = new Block_Editor();
+    }
+    return myBlockEditorAspect;
+  }
+
+  private BlockReference_Editor getBlockReferenceEditorAspect() {
+    if (myBlockReferenceEditorAspect == null) {
+      myBlockReferenceEditorAspect = new BlockReference_Editor();
+    }
+    return myBlockReferenceEditorAspect;
+  }
+
+  private Branding_Editor getBrandingEditorAspect() {
+    if (myBrandingEditorAspect == null) {
+      myBrandingEditorAspect = new Branding_Editor();
+    }
+    return myBrandingEditorAspect;
+  }
+
+  private BuildLanguageTargetReference_Editor getBuildLanguageTargetReferenceEditorAspect() {
+    if (myBuildLanguageTargetReferenceEditorAspect == null) {
+      myBuildLanguageTargetReferenceEditorAspect = new BuildLanguageTargetReference_Editor();
+    }
+    return myBuildLanguageTargetReferenceEditorAspect;
+  }
+
+  private ComponentsList_Editor getComponentsListEditorAspect() {
+    if (myComponentsListEditorAspect == null) {
+      myComponentsListEditorAspect = new ComponentsList_Editor();
+    }
+    return myComponentsListEditorAspect;
+  }
+
+  private CompositePathComponent_Editor getCompositePathComponentEditorAspect() {
+    if (myCompositePathComponentEditorAspect == null) {
+      myCompositePathComponentEditorAspect = new CompositePathComponent_Editor();
+    }
+    return myCompositePathComponentEditorAspect;
+  }
+
+  private CompositeString_Editor getCompositeStringEditorAspect() {
+    if (myCompositeStringEditorAspect == null) {
+      myCompositeStringEditorAspect = new CompositeString_Editor();
+    }
+    return myCompositeStringEditorAspect;
+  }
+
+  private Configuration_Editor getConfigurationEditorAspect() {
+    if (myConfigurationEditorAspect == null) {
+      myConfigurationEditorAspect = new Configuration_Editor();
+    }
+    return myConfigurationEditorAspect;
+  }
+
+  private ConfigurationReference_Editor getConfigurationReferenceEditorAspect() {
+    if (myConfigurationReferenceEditorAspect == null) {
+      myConfigurationReferenceEditorAspect = new ConfigurationReference_Editor();
+    }
+    return myConfigurationReferenceEditorAspect;
+  }
+
+  private Copy_Editor getCopyEditorAspect() {
+    if (myCopyEditorAspect == null) {
+      myCopyEditorAspect = new Copy_Editor();
+    }
+    return myCopyEditorAspect;
+  }
+
+  private Echo_Editor getEchoEditorAspect() {
+    if (myEchoEditorAspect == null) {
+      myEchoEditorAspect = new Echo_Editor();
+    }
+    return myEchoEditorAspect;
+  }
+
+  private File_Editor getFileEditorAspect() {
+    if (myFileEditorAspect == null) {
+      myFileEditorAspect = new File_Editor();
+    }
+    return myFileEditorAspect;
+  }
+
+  private FileExistsCondition_Editor getFileExistsConditionEditorAspect() {
+    if (myFileExistsConditionEditorAspect == null) {
+      myFileExistsConditionEditorAspect = new FileExistsCondition_Editor();
+    }
+    return myFileExistsConditionEditorAspect;
+  }
+
+  private Folder_Editor getFolderEditorAspect() {
+    if (myFolderEditorAspect == null) {
+      myFolderEditorAspect = new Folder_Editor();
+    }
+    return myFolderEditorAspect;
+  }
+
+  private Help_Editor getHelpEditorAspect() {
+    if (myHelpEditorAspect == null) {
+      myHelpEditorAspect = new Help_Editor();
+    }
+    return myHelpEditorAspect;
+  }
+
+  private IdeaInitializerReference_Editor getIdeaInitializerReferenceEditorAspect() {
+    if (myIdeaInitializerReferenceEditorAspect == null) {
+      myIdeaInitializerReferenceEditorAspect = new IdeaInitializerReference_Editor();
+    }
+    return myIdeaInitializerReferenceEditorAspect;
+  }
+
+  private Jar_Editor getJarEditorAspect() {
+    if (myJarEditorAspect == null) {
+      myJarEditorAspect = new Jar_Editor();
+    }
+    return myJarEditorAspect;
+  }
+
+  private Layout_Editor getLayoutEditorAspect() {
+    if (myLayoutEditorAspect == null) {
+      myLayoutEditorAspect = new Layout_Editor();
+    }
+    return myLayoutEditorAspect;
+  }
+
+  private Library_Editor getLibraryEditorAspect() {
+    if (myLibraryEditorAspect == null) {
+      myLibraryEditorAspect = new Library_Editor();
+    }
+    return myLibraryEditorAspect;
+  }
+
+  private MPSLayoutConfigurationReferencePropertyValueExpression_Editor getMPSLayoutConfigurationReferencePropertyValueExpressionEditorAspect() {
+    if (myMPSLayoutConfigurationReferencePropertyValueExpressionEditorAspect == null) {
+      myMPSLayoutConfigurationReferencePropertyValueExpressionEditorAspect = new MPSLayoutConfigurationReferencePropertyValueExpression_Editor();
+    }
+    return myMPSLayoutConfigurationReferencePropertyValueExpressionEditorAspect;
+  }
+
+  private Macro_Editor getMacroEditorAspect() {
+    if (myMacroEditorAspect == null) {
+      myMacroEditorAspect = new Macro_Editor();
+    }
+    return myMacroEditorAspect;
+  }
+
+  private MacroReference_Editor getMacroReferenceEditorAspect() {
+    if (myMacroReferenceEditorAspect == null) {
+      myMacroReferenceEditorAspect = new MacroReference_Editor();
+    }
+    return myMacroReferenceEditorAspect;
+  }
+
+  private Manifest_Editor getManifestEditorAspect() {
+    if (myManifestEditorAspect == null) {
+      myManifestEditorAspect = new Manifest_Editor();
+    }
+    return myManifestEditorAspect;
+  }
+
+  private ManifestAttribute_Editor getManifestAttributeEditorAspect() {
+    if (myManifestAttributeEditorAspect == null) {
+      myManifestAttributeEditorAspect = new ManifestAttribute_Editor();
+    }
+    return myManifestAttributeEditorAspect;
+  }
+
+  private Module_Editor getModuleEditorAspect() {
+    if (myModuleEditorAspect == null) {
+      myModuleEditorAspect = new Module_Editor();
+    }
+    return myModuleEditorAspect;
+  }
+
+  private NonExistingPath_Editor getNonExistingPathEditorAspect() {
+    if (myNonExistingPathEditorAspect == null) {
+      myNonExistingPathEditorAspect = new NonExistingPath_Editor();
+    }
+    return myNonExistingPathEditorAspect;
+  }
+
+  private NotCondition_Editor getNotConditionEditorAspect() {
+    if (myNotConditionEditorAspect == null) {
+      myNotConditionEditorAspect = new NotCondition_Editor();
+    }
+    return myNotConditionEditorAspect;
+  }
+
+  private Pair_Editor getPairEditorAspect() {
+    if (myPairEditorAspect == null) {
+      myPairEditorAspect = new Pair_Editor();
+    }
+    return myPairEditorAspect;
+  }
+
+  private Path_Editor getPathEditorAspect() {
+    if (myPathEditorAspect == null) {
+      myPathEditorAspect = new Path_Editor();
+    }
+    return myPathEditorAspect;
+  }
+
+  private PathComponent_Editor getPathComponentEditorAspect() {
+    if (myPathComponentEditorAspect == null) {
+      myPathComponentEditorAspect = new PathComponent_Editor();
+    }
+    return myPathComponentEditorAspect;
+  }
+
+  private PathHolder_Editor getPathHolderEditorAspect() {
+    if (myPathHolderEditorAspect == null) {
+      myPathHolderEditorAspect = new PathHolder_Editor();
+    }
+    return myPathHolderEditorAspect;
+  }
+
+  private Plugin_Editor getPluginEditorAspect() {
+    if (myPluginEditorAspect == null) {
+      myPluginEditorAspect = new Plugin_Editor();
+    }
+    return myPluginEditorAspect;
+  }
+
+  private PluginModule_Editor getPluginModuleEditorAspect() {
+    if (myPluginModuleEditorAspect == null) {
+      myPluginModuleEditorAspect = new PluginModule_Editor();
+    }
+    return myPluginModuleEditorAspect;
+  }
+
+  private PropertyFileImport_Editor getPropertyFileImportEditorAspect() {
+    if (myPropertyFileImportEditorAspect == null) {
+      myPropertyFileImportEditorAspect = new PropertyFileImport_Editor();
+    }
+    return myPropertyFileImportEditorAspect;
+  }
+
+  private PropertyNodeImport_Editor getPropertyNodeImportEditorAspect() {
+    if (myPropertyNodeImportEditorAspect == null) {
+      myPropertyNodeImportEditorAspect = new PropertyNodeImport_Editor();
+    }
+    return myPropertyNodeImportEditorAspect;
+  }
+
+  private Replace_Editor getReplaceEditorAspect() {
+    if (myReplaceEditorAspect == null) {
+      myReplaceEditorAspect = new Replace_Editor();
+    }
+    return myReplaceEditorAspect;
+  }
+
+  private SimpleString_Editor getSimpleStringEditorAspect() {
+    if (mySimpleStringEditorAspect == null) {
+      mySimpleStringEditorAspect = new SimpleString_Editor();
+    }
+    return mySimpleStringEditorAspect;
+  }
+
+  private Space_Editor getSpaceEditorAspect() {
+    if (mySpaceEditorAspect == null) {
+      mySpaceEditorAspect = new Space_Editor();
+    }
+    return mySpaceEditorAspect;
+  }
+
+  private UpdateWebsite_Editor getUpdateWebsiteEditorAspect() {
+    if (myUpdateWebsiteEditorAspect == null) {
+      myUpdateWebsiteEditorAspect = new UpdateWebsite_Editor();
+    }
+    return myUpdateWebsiteEditorAspect;
+  }
+
+  private Variable_Editor getVariableEditorAspect() {
+    if (myVariableEditorAspect == null) {
+      myVariableEditorAspect = new Variable_Editor();
+    }
+    return myVariableEditorAspect;
+  }
+
+  private VariableReference_Editor getVariableReferenceEditorAspect() {
+    if (myVariableReferenceEditorAspect == null) {
+      myVariableReferenceEditorAspect = new VariableReference_Editor();
+    }
+    return myVariableReferenceEditorAspect;
+  }
+
+  private WelcomeScreen_Editor getWelcomeScreenEditorAspect() {
+    if (myWelcomeScreenEditorAspect == null) {
+      myWelcomeScreenEditorAspect = new WelcomeScreen_Editor();
+    }
+    return myWelcomeScreenEditorAspect;
+  }
+
+  private Zip_Editor getZipEditorAspect() {
+    if (myZipEditorAspect == null) {
+      myZipEditorAspect = new Zip_Editor();
+    }
+    return myZipEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0sb = new String[]{"jetbrains.mps.build.packaging.structure.Antcall", "jetbrains.mps.build.packaging.structure.Block", "jetbrains.mps.build.packaging.structure.BlockReference", "jetbrains.mps.build.packaging.structure.Branding", "jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference", "jetbrains.mps.build.packaging.structure.ComponentsList", "jetbrains.mps.build.packaging.structure.CompositePathComponent", "jetbrains.mps.build.packaging.structure.CompositeString", "jetbrains.mps.build.packaging.structure.Configuration", "jetbrains.mps.build.packaging.structure.ConfigurationReference", "jetbrains.mps.build.packaging.structure.Copy", "jetbrains.mps.build.packaging.structure.Echo", "jetbrains.mps.build.packaging.structure.File", "jetbrains.mps.build.packaging.structure.FileExistsCondition", "jetbrains.mps.build.packaging.structure.Folder", "jetbrains.mps.build.packaging.structure.Help", "jetbrains.mps.build.packaging.structure.IdeaInitializerReference", "jetbrains.mps.build.packaging.structure.Jar", "jetbrains.mps.build.packaging.structure.Layout", "jetbrains.mps.build.packaging.structure.Library", "jetbrains.mps.build.packaging.structure.MPSLayoutConfigurationReferencePropertyValueExpression", "jetbrains.mps.build.packaging.structure.Macro", "jetbrains.mps.build.packaging.structure.MacroReference", "jetbrains.mps.build.packaging.structure.Manifest", "jetbrains.mps.build.packaging.structure.ManifestAttribute", "jetbrains.mps.build.packaging.structure.Module", "jetbrains.mps.build.packaging.structure.NonExistingPath", "jetbrains.mps.build.packaging.structure.NotCondition", "jetbrains.mps.build.packaging.structure.Pair", "jetbrains.mps.build.packaging.structure.Path", "jetbrains.mps.build.packaging.structure.PathComponent", "jetbrains.mps.build.packaging.structure.PathHolder", "jetbrains.mps.build.packaging.structure.Plugin", "jetbrains.mps.build.packaging.structure.PluginModule", "jetbrains.mps.build.packaging.structure.PropertyFileImport", "jetbrains.mps.build.packaging.structure.PropertyNodeImport", "jetbrains.mps.build.packaging.structure.Replace", "jetbrains.mps.build.packaging.structure.SimpleString", "jetbrains.mps.build.packaging.structure.Space", "jetbrains.mps.build.packaging.structure.UpdateWebsite", "jetbrains.mps.build.packaging.structure.Variable", "jetbrains.mps.build.packaging.structure.VariableReference", "jetbrains.mps.build.packaging.structure.WelcomeScreen", "jetbrains.mps.build.packaging.structure.Zip"};
 }

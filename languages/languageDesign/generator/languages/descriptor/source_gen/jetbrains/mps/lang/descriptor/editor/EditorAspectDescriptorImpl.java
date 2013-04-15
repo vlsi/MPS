@@ -8,14 +8,31 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private LanguageDescriptor_Editor myLanguageDescriptorEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return new LanguageDescriptor_Editor();
+        return getLanguageDescriptorEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.descriptor.structure.LanguageDescriptor"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myLanguageDescriptorEditorAspect = null;
+  }
+
+  private LanguageDescriptor_Editor getLanguageDescriptorEditorAspect() {
+    if (myLanguageDescriptorEditorAspect == null) {
+      myLanguageDescriptorEditorAspect = new LanguageDescriptor_Editor();
+    }
+    return myLanguageDescriptorEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.descriptor.structure.LanguageDescriptor"};
 }

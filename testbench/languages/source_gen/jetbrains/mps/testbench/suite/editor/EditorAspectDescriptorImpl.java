@@ -8,24 +8,86 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ITestRef_Editor myITestRefEditorAspect;
+  private JUnit3TestCaseRef_Editor myJUnit3TestCaseRefEditorAspect;
+  private JUnit4TestCaseRef_Editor myJUnit4TestCaseRefEditorAspect;
+  private ModuleSuite_Editor myModuleSuiteEditorAspect;
+  private SolutionRef_Editor mySolutionRefEditorAspect;
+  private TestCaseRef_Editor myTestCaseRefEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0g, descriptor.getConceptFqName())) {
       case 0:
-        return new ITestRef_Editor();
+        return getITestRefEditorAspect();
       case 1:
-        return new JUnit3TestCaseRef_Editor();
+        return getJUnit3TestCaseRefEditorAspect();
       case 2:
-        return new JUnit4TestCaseRef_Editor();
+        return getJUnit4TestCaseRefEditorAspect();
       case 3:
-        return new ModuleSuite_Editor();
+        return getModuleSuiteEditorAspect();
       case 4:
-        return new SolutionRef_Editor();
+        return getSolutionRefEditorAspect();
       case 5:
-        return new TestCaseRef_Editor();
+        return getTestCaseRefEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef", "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", "jetbrains.mps.testbench.suite.structure.ModuleSuite", "jetbrains.mps.testbench.suite.structure.SolutionRef", "jetbrains.mps.testbench.suite.structure.TestCaseRef"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myITestRefEditorAspect = null;
+    myJUnit3TestCaseRefEditorAspect = null;
+    myJUnit4TestCaseRefEditorAspect = null;
+    myModuleSuiteEditorAspect = null;
+    mySolutionRefEditorAspect = null;
+    myTestCaseRefEditorAspect = null;
+  }
+
+  private ITestRef_Editor getITestRefEditorAspect() {
+    if (myITestRefEditorAspect == null) {
+      myITestRefEditorAspect = new ITestRef_Editor();
+    }
+    return myITestRefEditorAspect;
+  }
+
+  private JUnit3TestCaseRef_Editor getJUnit3TestCaseRefEditorAspect() {
+    if (myJUnit3TestCaseRefEditorAspect == null) {
+      myJUnit3TestCaseRefEditorAspect = new JUnit3TestCaseRef_Editor();
+    }
+    return myJUnit3TestCaseRefEditorAspect;
+  }
+
+  private JUnit4TestCaseRef_Editor getJUnit4TestCaseRefEditorAspect() {
+    if (myJUnit4TestCaseRefEditorAspect == null) {
+      myJUnit4TestCaseRefEditorAspect = new JUnit4TestCaseRef_Editor();
+    }
+    return myJUnit4TestCaseRefEditorAspect;
+  }
+
+  private ModuleSuite_Editor getModuleSuiteEditorAspect() {
+    if (myModuleSuiteEditorAspect == null) {
+      myModuleSuiteEditorAspect = new ModuleSuite_Editor();
+    }
+    return myModuleSuiteEditorAspect;
+  }
+
+  private SolutionRef_Editor getSolutionRefEditorAspect() {
+    if (mySolutionRefEditorAspect == null) {
+      mySolutionRefEditorAspect = new SolutionRef_Editor();
+    }
+    return mySolutionRefEditorAspect;
+  }
+
+  private TestCaseRef_Editor getTestCaseRefEditorAspect() {
+    if (myTestCaseRefEditorAspect == null) {
+      myTestCaseRefEditorAspect = new TestCaseRef_Editor();
+    }
+    return myTestCaseRefEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0g = new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef", "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", "jetbrains.mps.testbench.suite.structure.ModuleSuite", "jetbrains.mps.testbench.suite.structure.SolutionRef", "jetbrains.mps.testbench.suite.structure.TestCaseRef"};
 }

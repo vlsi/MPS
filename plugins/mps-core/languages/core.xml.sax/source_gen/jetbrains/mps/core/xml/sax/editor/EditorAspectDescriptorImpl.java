@@ -8,32 +8,130 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private XMLSAXAttributeReference_Editor myXMLSAXAttributeReferenceEditorAspect;
+  private XMLSAXAttributeRule_Editor myXMLSAXAttributeRuleEditorAspect;
+  private XMLSAXBreakStatement_Editor myXMLSAXBreakStatementEditorAspect;
+  private XMLSAXChildRule_Editor myXMLSAXChildRuleEditorAspect;
+  private XMLSAXFieldDeclaration_Editor myXMLSAXFieldDeclarationEditorAspect;
+  private XMLSAXFieldReference_Editor myXMLSAXFieldReferenceEditorAspect;
+  private XMLSAXLocatorExpression_Editor myXMLSAXLocatorExpressionEditorAspect;
+  private XMLSAXNodeRule_Editor myXMLSAXNodeRuleEditorAspect;
+  private XMLSAXParser_Editor myXMLSAXParserEditorAspect;
+  private XMLSAXTextRule_Editor myXMLSAXTextRuleEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0k, descriptor.getConceptFqName())) {
       case 0:
-        return new XMLSAXAttributeReference_Editor();
+        return getXMLSAXAttributeReferenceEditorAspect();
       case 1:
-        return new XMLSAXAttributeRule_Editor();
+        return getXMLSAXAttributeRuleEditorAspect();
       case 2:
-        return new XMLSAXBreakStatement_Editor();
+        return getXMLSAXBreakStatementEditorAspect();
       case 3:
-        return new XMLSAXChildRule_Editor();
+        return getXMLSAXChildRuleEditorAspect();
       case 4:
-        return new XMLSAXFieldDeclaration_Editor();
+        return getXMLSAXFieldDeclarationEditorAspect();
       case 5:
-        return new XMLSAXFieldReference_Editor();
+        return getXMLSAXFieldReferenceEditorAspect();
       case 6:
-        return new XMLSAXLocatorExpression_Editor();
+        return getXMLSAXLocatorExpressionEditorAspect();
       case 7:
-        return new XMLSAXNodeRule_Editor();
+        return getXMLSAXNodeRuleEditorAspect();
       case 8:
-        return new XMLSAXParser_Editor();
+        return getXMLSAXParserEditorAspect();
       case 9:
-        return new XMLSAXTextRule_Editor();
+        return getXMLSAXTextRuleEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldDeclaration", "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", "jetbrains.mps.core.xml.sax.structure.XMLSAXTextRule"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myXMLSAXAttributeReferenceEditorAspect = null;
+    myXMLSAXAttributeRuleEditorAspect = null;
+    myXMLSAXBreakStatementEditorAspect = null;
+    myXMLSAXChildRuleEditorAspect = null;
+    myXMLSAXFieldDeclarationEditorAspect = null;
+    myXMLSAXFieldReferenceEditorAspect = null;
+    myXMLSAXLocatorExpressionEditorAspect = null;
+    myXMLSAXNodeRuleEditorAspect = null;
+    myXMLSAXParserEditorAspect = null;
+    myXMLSAXTextRuleEditorAspect = null;
+  }
+
+  private XMLSAXAttributeReference_Editor getXMLSAXAttributeReferenceEditorAspect() {
+    if (myXMLSAXAttributeReferenceEditorAspect == null) {
+      myXMLSAXAttributeReferenceEditorAspect = new XMLSAXAttributeReference_Editor();
+    }
+    return myXMLSAXAttributeReferenceEditorAspect;
+  }
+
+  private XMLSAXAttributeRule_Editor getXMLSAXAttributeRuleEditorAspect() {
+    if (myXMLSAXAttributeRuleEditorAspect == null) {
+      myXMLSAXAttributeRuleEditorAspect = new XMLSAXAttributeRule_Editor();
+    }
+    return myXMLSAXAttributeRuleEditorAspect;
+  }
+
+  private XMLSAXBreakStatement_Editor getXMLSAXBreakStatementEditorAspect() {
+    if (myXMLSAXBreakStatementEditorAspect == null) {
+      myXMLSAXBreakStatementEditorAspect = new XMLSAXBreakStatement_Editor();
+    }
+    return myXMLSAXBreakStatementEditorAspect;
+  }
+
+  private XMLSAXChildRule_Editor getXMLSAXChildRuleEditorAspect() {
+    if (myXMLSAXChildRuleEditorAspect == null) {
+      myXMLSAXChildRuleEditorAspect = new XMLSAXChildRule_Editor();
+    }
+    return myXMLSAXChildRuleEditorAspect;
+  }
+
+  private XMLSAXFieldDeclaration_Editor getXMLSAXFieldDeclarationEditorAspect() {
+    if (myXMLSAXFieldDeclarationEditorAspect == null) {
+      myXMLSAXFieldDeclarationEditorAspect = new XMLSAXFieldDeclaration_Editor();
+    }
+    return myXMLSAXFieldDeclarationEditorAspect;
+  }
+
+  private XMLSAXFieldReference_Editor getXMLSAXFieldReferenceEditorAspect() {
+    if (myXMLSAXFieldReferenceEditorAspect == null) {
+      myXMLSAXFieldReferenceEditorAspect = new XMLSAXFieldReference_Editor();
+    }
+    return myXMLSAXFieldReferenceEditorAspect;
+  }
+
+  private XMLSAXLocatorExpression_Editor getXMLSAXLocatorExpressionEditorAspect() {
+    if (myXMLSAXLocatorExpressionEditorAspect == null) {
+      myXMLSAXLocatorExpressionEditorAspect = new XMLSAXLocatorExpression_Editor();
+    }
+    return myXMLSAXLocatorExpressionEditorAspect;
+  }
+
+  private XMLSAXNodeRule_Editor getXMLSAXNodeRuleEditorAspect() {
+    if (myXMLSAXNodeRuleEditorAspect == null) {
+      myXMLSAXNodeRuleEditorAspect = new XMLSAXNodeRule_Editor();
+    }
+    return myXMLSAXNodeRuleEditorAspect;
+  }
+
+  private XMLSAXParser_Editor getXMLSAXParserEditorAspect() {
+    if (myXMLSAXParserEditorAspect == null) {
+      myXMLSAXParserEditorAspect = new XMLSAXParser_Editor();
+    }
+    return myXMLSAXParserEditorAspect;
+  }
+
+  private XMLSAXTextRule_Editor getXMLSAXTextRuleEditorAspect() {
+    if (myXMLSAXTextRuleEditorAspect == null) {
+      myXMLSAXTextRuleEditorAspect = new XMLSAXTextRule_Editor();
+    }
+    return myXMLSAXTextRuleEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0k = new String[]{"jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldDeclaration", "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", "jetbrains.mps.core.xml.sax.structure.XMLSAXTextRule"};
 }

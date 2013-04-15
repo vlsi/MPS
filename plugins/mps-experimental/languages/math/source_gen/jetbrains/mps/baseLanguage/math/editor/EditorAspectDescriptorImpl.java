@@ -8,74 +8,361 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AbsExpression_Editor myAbsExpressionEditorAspect;
+  private ComplexLiteral_Editor myComplexLiteralEditorAspect;
+  private DecimalBinaryOperation_Editor myDecimalBinaryOperationEditorAspect;
+  private DivExpressionFraction_Editor myDivExpressionFractionEditorAspect;
+  private ExponentialOperation_Editor myExponentialOperationEditorAspect;
+  private InIntervalExpression_Editor myInIntervalExpressionEditorAspect;
+  private IntervalContainsExpression_Editor myIntervalContainsExpressionEditorAspect;
+  private IntervalLiteral_Editor myIntervalLiteralEditorAspect;
+  private IntervalType_Editor myIntervalTypeEditorAspect;
+  private LinearSolveOperation_Editor myLinearSolveOperationEditorAspect;
+  private LiteralI_Editor myLiteralIEditorAspect;
+  private MathFuncExpression_Editor myMathFuncExpressionEditorAspect;
+  private MathSymbol_Editor myMathSymbolEditorAspect;
+  private MathSymbolFromToIndex_Editor myMathSymbolFromToIndexEditorAspect;
+  private MathSymbolIndex_Editor myMathSymbolIndexEditorAspect;
+  private MathSymbolIndexReference_Editor myMathSymbolIndexReferenceEditorAspect;
+  private MathTypeCast_Editor myMathTypeCastEditorAspect;
+  private MatrixConstructor_Editor myMatrixConstructorEditorAspect;
+  private MatrixElementAccessExpression_Editor myMatrixElementAccessExpressionEditorAspect;
+  private MatrixIndexWildcard_Editor myMatrixIndexWildcardEditorAspect;
+  private MatrixInitializer_Editor myMatrixInitializerEditorAspect;
+  private MatrixInitializerIndex_Editor myMatrixInitializerIndexEditorAspect;
+  private MatrixInitializerIndexReference_Editor myMatrixInitializerIndexReferenceEditorAspect;
+  private MatrixInverseOperation_Editor myMatrixInverseOperationEditorAspect;
+  private MatrixNorm_Editor myMatrixNormEditorAspect;
+  private MatrixType_Editor myMatrixTypeEditorAspect;
+  private MatrixUnit_Editor myMatrixUnitEditorAspect;
+  private MatrixZero_Editor myMatrixZeroEditorAspect;
+  private PowExpression_Editor myPowExpressionEditorAspect;
+  private VectorInitializer_Editor myVectorInitializerEditorAspect;
+  private VectorType_Editor myVectorTypeEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0fb, descriptor.getConceptFqName())) {
       case 0:
-        return new AbsExpression_Editor();
+        return getAbsExpressionEditorAspect();
       case 1:
-        return new ComplexLiteral_Editor();
+        return getComplexLiteralEditorAspect();
       case 2:
-        return new DecimalBinaryOperation_Editor();
+        return getDecimalBinaryOperationEditorAspect();
       case 3:
-        return new DivExpressionFraction_Editor();
+        return getDivExpressionFractionEditorAspect();
       case 4:
-        return new ExponentialOperation_Editor();
+        return getExponentialOperationEditorAspect();
       case 5:
-        return new InIntervalExpression_Editor();
+        return getInIntervalExpressionEditorAspect();
       case 6:
-        return new IntervalContainsExpression_Editor();
+        return getIntervalContainsExpressionEditorAspect();
       case 7:
-        return new IntervalLiteral_Editor();
+        return getIntervalLiteralEditorAspect();
       case 8:
-        return new IntervalType_Editor();
+        return getIntervalTypeEditorAspect();
       case 9:
-        return new LinearSolveOperation_Editor();
+        return getLinearSolveOperationEditorAspect();
       case 10:
-        return new LiteralI_Editor();
+        return getLiteralIEditorAspect();
       case 11:
-        return new MathFuncExpression_Editor();
+        return getMathFuncExpressionEditorAspect();
       case 12:
-        return new MathSymbol_Editor();
+        return getMathSymbolEditorAspect();
       case 13:
-        return new MathSymbolFromToIndex_Editor();
+        return getMathSymbolFromToIndexEditorAspect();
       case 14:
-        return new MathSymbolIndex_Editor();
+        return getMathSymbolIndexEditorAspect();
       case 15:
-        return new MathSymbolIndexReference_Editor();
+        return getMathSymbolIndexReferenceEditorAspect();
       case 16:
-        return new MathTypeCast_Editor();
+        return getMathTypeCastEditorAspect();
       case 17:
-        return new MatrixConstructor_Editor();
+        return getMatrixConstructorEditorAspect();
       case 18:
-        return new MatrixElementAccessExpression_Editor();
+        return getMatrixElementAccessExpressionEditorAspect();
       case 19:
-        return new MatrixIndexWildcard_Editor();
+        return getMatrixIndexWildcardEditorAspect();
       case 20:
-        return new MatrixInitializer_Editor();
+        return getMatrixInitializerEditorAspect();
       case 21:
-        return new MatrixInitializerIndex_Editor();
+        return getMatrixInitializerIndexEditorAspect();
       case 22:
-        return new MatrixInitializerIndexReference_Editor();
+        return getMatrixInitializerIndexReferenceEditorAspect();
       case 23:
-        return new MatrixInverseOperation_Editor();
+        return getMatrixInverseOperationEditorAspect();
       case 24:
-        return new MatrixNorm_Editor();
+        return getMatrixNormEditorAspect();
       case 25:
-        return new MatrixType_Editor();
+        return getMatrixTypeEditorAspect();
       case 26:
-        return new MatrixUnit_Editor();
+        return getMatrixUnitEditorAspect();
       case 27:
-        return new MatrixZero_Editor();
+        return getMatrixZeroEditorAspect();
       case 28:
-        return new PowExpression_Editor();
+        return getPowExpressionEditorAspect();
       case 29:
-        return new VectorInitializer_Editor();
+        return getVectorInitializerEditorAspect();
       case 30:
-        return new VectorType_Editor();
+        return getVectorTypeEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.math.structure.VectorType"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAbsExpressionEditorAspect = null;
+    myComplexLiteralEditorAspect = null;
+    myDecimalBinaryOperationEditorAspect = null;
+    myDivExpressionFractionEditorAspect = null;
+    myExponentialOperationEditorAspect = null;
+    myInIntervalExpressionEditorAspect = null;
+    myIntervalContainsExpressionEditorAspect = null;
+    myIntervalLiteralEditorAspect = null;
+    myIntervalTypeEditorAspect = null;
+    myLinearSolveOperationEditorAspect = null;
+    myLiteralIEditorAspect = null;
+    myMathFuncExpressionEditorAspect = null;
+    myMathSymbolEditorAspect = null;
+    myMathSymbolFromToIndexEditorAspect = null;
+    myMathSymbolIndexEditorAspect = null;
+    myMathSymbolIndexReferenceEditorAspect = null;
+    myMathTypeCastEditorAspect = null;
+    myMatrixConstructorEditorAspect = null;
+    myMatrixElementAccessExpressionEditorAspect = null;
+    myMatrixIndexWildcardEditorAspect = null;
+    myMatrixInitializerEditorAspect = null;
+    myMatrixInitializerIndexEditorAspect = null;
+    myMatrixInitializerIndexReferenceEditorAspect = null;
+    myMatrixInverseOperationEditorAspect = null;
+    myMatrixNormEditorAspect = null;
+    myMatrixTypeEditorAspect = null;
+    myMatrixUnitEditorAspect = null;
+    myMatrixZeroEditorAspect = null;
+    myPowExpressionEditorAspect = null;
+    myVectorInitializerEditorAspect = null;
+    myVectorTypeEditorAspect = null;
+  }
+
+  private AbsExpression_Editor getAbsExpressionEditorAspect() {
+    if (myAbsExpressionEditorAspect == null) {
+      myAbsExpressionEditorAspect = new AbsExpression_Editor();
+    }
+    return myAbsExpressionEditorAspect;
+  }
+
+  private ComplexLiteral_Editor getComplexLiteralEditorAspect() {
+    if (myComplexLiteralEditorAspect == null) {
+      myComplexLiteralEditorAspect = new ComplexLiteral_Editor();
+    }
+    return myComplexLiteralEditorAspect;
+  }
+
+  private DecimalBinaryOperation_Editor getDecimalBinaryOperationEditorAspect() {
+    if (myDecimalBinaryOperationEditorAspect == null) {
+      myDecimalBinaryOperationEditorAspect = new DecimalBinaryOperation_Editor();
+    }
+    return myDecimalBinaryOperationEditorAspect;
+  }
+
+  private DivExpressionFraction_Editor getDivExpressionFractionEditorAspect() {
+    if (myDivExpressionFractionEditorAspect == null) {
+      myDivExpressionFractionEditorAspect = new DivExpressionFraction_Editor();
+    }
+    return myDivExpressionFractionEditorAspect;
+  }
+
+  private ExponentialOperation_Editor getExponentialOperationEditorAspect() {
+    if (myExponentialOperationEditorAspect == null) {
+      myExponentialOperationEditorAspect = new ExponentialOperation_Editor();
+    }
+    return myExponentialOperationEditorAspect;
+  }
+
+  private InIntervalExpression_Editor getInIntervalExpressionEditorAspect() {
+    if (myInIntervalExpressionEditorAspect == null) {
+      myInIntervalExpressionEditorAspect = new InIntervalExpression_Editor();
+    }
+    return myInIntervalExpressionEditorAspect;
+  }
+
+  private IntervalContainsExpression_Editor getIntervalContainsExpressionEditorAspect() {
+    if (myIntervalContainsExpressionEditorAspect == null) {
+      myIntervalContainsExpressionEditorAspect = new IntervalContainsExpression_Editor();
+    }
+    return myIntervalContainsExpressionEditorAspect;
+  }
+
+  private IntervalLiteral_Editor getIntervalLiteralEditorAspect() {
+    if (myIntervalLiteralEditorAspect == null) {
+      myIntervalLiteralEditorAspect = new IntervalLiteral_Editor();
+    }
+    return myIntervalLiteralEditorAspect;
+  }
+
+  private IntervalType_Editor getIntervalTypeEditorAspect() {
+    if (myIntervalTypeEditorAspect == null) {
+      myIntervalTypeEditorAspect = new IntervalType_Editor();
+    }
+    return myIntervalTypeEditorAspect;
+  }
+
+  private LinearSolveOperation_Editor getLinearSolveOperationEditorAspect() {
+    if (myLinearSolveOperationEditorAspect == null) {
+      myLinearSolveOperationEditorAspect = new LinearSolveOperation_Editor();
+    }
+    return myLinearSolveOperationEditorAspect;
+  }
+
+  private LiteralI_Editor getLiteralIEditorAspect() {
+    if (myLiteralIEditorAspect == null) {
+      myLiteralIEditorAspect = new LiteralI_Editor();
+    }
+    return myLiteralIEditorAspect;
+  }
+
+  private MathFuncExpression_Editor getMathFuncExpressionEditorAspect() {
+    if (myMathFuncExpressionEditorAspect == null) {
+      myMathFuncExpressionEditorAspect = new MathFuncExpression_Editor();
+    }
+    return myMathFuncExpressionEditorAspect;
+  }
+
+  private MathSymbol_Editor getMathSymbolEditorAspect() {
+    if (myMathSymbolEditorAspect == null) {
+      myMathSymbolEditorAspect = new MathSymbol_Editor();
+    }
+    return myMathSymbolEditorAspect;
+  }
+
+  private MathSymbolFromToIndex_Editor getMathSymbolFromToIndexEditorAspect() {
+    if (myMathSymbolFromToIndexEditorAspect == null) {
+      myMathSymbolFromToIndexEditorAspect = new MathSymbolFromToIndex_Editor();
+    }
+    return myMathSymbolFromToIndexEditorAspect;
+  }
+
+  private MathSymbolIndex_Editor getMathSymbolIndexEditorAspect() {
+    if (myMathSymbolIndexEditorAspect == null) {
+      myMathSymbolIndexEditorAspect = new MathSymbolIndex_Editor();
+    }
+    return myMathSymbolIndexEditorAspect;
+  }
+
+  private MathSymbolIndexReference_Editor getMathSymbolIndexReferenceEditorAspect() {
+    if (myMathSymbolIndexReferenceEditorAspect == null) {
+      myMathSymbolIndexReferenceEditorAspect = new MathSymbolIndexReference_Editor();
+    }
+    return myMathSymbolIndexReferenceEditorAspect;
+  }
+
+  private MathTypeCast_Editor getMathTypeCastEditorAspect() {
+    if (myMathTypeCastEditorAspect == null) {
+      myMathTypeCastEditorAspect = new MathTypeCast_Editor();
+    }
+    return myMathTypeCastEditorAspect;
+  }
+
+  private MatrixConstructor_Editor getMatrixConstructorEditorAspect() {
+    if (myMatrixConstructorEditorAspect == null) {
+      myMatrixConstructorEditorAspect = new MatrixConstructor_Editor();
+    }
+    return myMatrixConstructorEditorAspect;
+  }
+
+  private MatrixElementAccessExpression_Editor getMatrixElementAccessExpressionEditorAspect() {
+    if (myMatrixElementAccessExpressionEditorAspect == null) {
+      myMatrixElementAccessExpressionEditorAspect = new MatrixElementAccessExpression_Editor();
+    }
+    return myMatrixElementAccessExpressionEditorAspect;
+  }
+
+  private MatrixIndexWildcard_Editor getMatrixIndexWildcardEditorAspect() {
+    if (myMatrixIndexWildcardEditorAspect == null) {
+      myMatrixIndexWildcardEditorAspect = new MatrixIndexWildcard_Editor();
+    }
+    return myMatrixIndexWildcardEditorAspect;
+  }
+
+  private MatrixInitializer_Editor getMatrixInitializerEditorAspect() {
+    if (myMatrixInitializerEditorAspect == null) {
+      myMatrixInitializerEditorAspect = new MatrixInitializer_Editor();
+    }
+    return myMatrixInitializerEditorAspect;
+  }
+
+  private MatrixInitializerIndex_Editor getMatrixInitializerIndexEditorAspect() {
+    if (myMatrixInitializerIndexEditorAspect == null) {
+      myMatrixInitializerIndexEditorAspect = new MatrixInitializerIndex_Editor();
+    }
+    return myMatrixInitializerIndexEditorAspect;
+  }
+
+  private MatrixInitializerIndexReference_Editor getMatrixInitializerIndexReferenceEditorAspect() {
+    if (myMatrixInitializerIndexReferenceEditorAspect == null) {
+      myMatrixInitializerIndexReferenceEditorAspect = new MatrixInitializerIndexReference_Editor();
+    }
+    return myMatrixInitializerIndexReferenceEditorAspect;
+  }
+
+  private MatrixInverseOperation_Editor getMatrixInverseOperationEditorAspect() {
+    if (myMatrixInverseOperationEditorAspect == null) {
+      myMatrixInverseOperationEditorAspect = new MatrixInverseOperation_Editor();
+    }
+    return myMatrixInverseOperationEditorAspect;
+  }
+
+  private MatrixNorm_Editor getMatrixNormEditorAspect() {
+    if (myMatrixNormEditorAspect == null) {
+      myMatrixNormEditorAspect = new MatrixNorm_Editor();
+    }
+    return myMatrixNormEditorAspect;
+  }
+
+  private MatrixType_Editor getMatrixTypeEditorAspect() {
+    if (myMatrixTypeEditorAspect == null) {
+      myMatrixTypeEditorAspect = new MatrixType_Editor();
+    }
+    return myMatrixTypeEditorAspect;
+  }
+
+  private MatrixUnit_Editor getMatrixUnitEditorAspect() {
+    if (myMatrixUnitEditorAspect == null) {
+      myMatrixUnitEditorAspect = new MatrixUnit_Editor();
+    }
+    return myMatrixUnitEditorAspect;
+  }
+
+  private MatrixZero_Editor getMatrixZeroEditorAspect() {
+    if (myMatrixZeroEditorAspect == null) {
+      myMatrixZeroEditorAspect = new MatrixZero_Editor();
+    }
+    return myMatrixZeroEditorAspect;
+  }
+
+  private PowExpression_Editor getPowExpressionEditorAspect() {
+    if (myPowExpressionEditorAspect == null) {
+      myPowExpressionEditorAspect = new PowExpression_Editor();
+    }
+    return myPowExpressionEditorAspect;
+  }
+
+  private VectorInitializer_Editor getVectorInitializerEditorAspect() {
+    if (myVectorInitializerEditorAspect == null) {
+      myVectorInitializerEditorAspect = new VectorInitializer_Editor();
+    }
+    return myVectorInitializerEditorAspect;
+  }
+
+  private VectorType_Editor getVectorTypeEditorAspect() {
+    if (myVectorTypeEditorAspect == null) {
+      myVectorTypeEditorAspect = new VectorType_Editor();
+    }
+    return myVectorTypeEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0fb = new String[]{"jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.math.structure.VectorType"};
 }

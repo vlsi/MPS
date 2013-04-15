@@ -8,24 +8,86 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private ConceptConstraints_Editor myConceptConstraintsEditorAspect;
+  private ConstraintFunction_ReferentSearchScope_AbstractBase_Editor myConstraintFunction_ReferentSearchScope_AbstractBaseEditorAspect;
+  private InheritedNodeScopeFactory_Editor myInheritedNodeScopeFactoryEditorAspect;
+  private NodeDefaultSearchScope_Editor myNodeDefaultSearchScopeEditorAspect;
+  private NodePropertyConstraint_Editor myNodePropertyConstraintEditorAspect;
+  private NodeReferentConstraint_Editor myNodeReferentConstraintEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0g, descriptor.getConceptFqName())) {
       case 0:
-        return new ConceptConstraints_Editor();
+        return getConceptConstraintsEditorAspect();
       case 1:
-        return new ConstraintFunction_ReferentSearchScope_AbstractBase_Editor();
+        return getConstraintFunction_ReferentSearchScope_AbstractBaseEditorAspect();
       case 2:
-        return new InheritedNodeScopeFactory_Editor();
+        return getInheritedNodeScopeFactoryEditorAspect();
       case 3:
-        return new NodeDefaultSearchScope_Editor();
+        return getNodeDefaultSearchScopeEditorAspect();
       case 4:
-        return new NodePropertyConstraint_Editor();
+        return getNodePropertyConstraintEditorAspect();
       case 5:
-        return new NodeReferentConstraint_Editor();
+        return getNodeReferentConstraintEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.constraints.structure.ConceptConstraints", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase", "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory", "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myConceptConstraintsEditorAspect = null;
+    myConstraintFunction_ReferentSearchScope_AbstractBaseEditorAspect = null;
+    myInheritedNodeScopeFactoryEditorAspect = null;
+    myNodeDefaultSearchScopeEditorAspect = null;
+    myNodePropertyConstraintEditorAspect = null;
+    myNodeReferentConstraintEditorAspect = null;
+  }
+
+  private ConceptConstraints_Editor getConceptConstraintsEditorAspect() {
+    if (myConceptConstraintsEditorAspect == null) {
+      myConceptConstraintsEditorAspect = new ConceptConstraints_Editor();
+    }
+    return myConceptConstraintsEditorAspect;
+  }
+
+  private ConstraintFunction_ReferentSearchScope_AbstractBase_Editor getConstraintFunction_ReferentSearchScope_AbstractBaseEditorAspect() {
+    if (myConstraintFunction_ReferentSearchScope_AbstractBaseEditorAspect == null) {
+      myConstraintFunction_ReferentSearchScope_AbstractBaseEditorAspect = new ConstraintFunction_ReferentSearchScope_AbstractBase_Editor();
+    }
+    return myConstraintFunction_ReferentSearchScope_AbstractBaseEditorAspect;
+  }
+
+  private InheritedNodeScopeFactory_Editor getInheritedNodeScopeFactoryEditorAspect() {
+    if (myInheritedNodeScopeFactoryEditorAspect == null) {
+      myInheritedNodeScopeFactoryEditorAspect = new InheritedNodeScopeFactory_Editor();
+    }
+    return myInheritedNodeScopeFactoryEditorAspect;
+  }
+
+  private NodeDefaultSearchScope_Editor getNodeDefaultSearchScopeEditorAspect() {
+    if (myNodeDefaultSearchScopeEditorAspect == null) {
+      myNodeDefaultSearchScopeEditorAspect = new NodeDefaultSearchScope_Editor();
+    }
+    return myNodeDefaultSearchScopeEditorAspect;
+  }
+
+  private NodePropertyConstraint_Editor getNodePropertyConstraintEditorAspect() {
+    if (myNodePropertyConstraintEditorAspect == null) {
+      myNodePropertyConstraintEditorAspect = new NodePropertyConstraint_Editor();
+    }
+    return myNodePropertyConstraintEditorAspect;
+  }
+
+  private NodeReferentConstraint_Editor getNodeReferentConstraintEditorAspect() {
+    if (myNodeReferentConstraintEditorAspect == null) {
+      myNodeReferentConstraintEditorAspect = new NodeReferentConstraint_Editor();
+    }
+    return myNodeReferentConstraintEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0g = new String[]{"jetbrains.mps.lang.constraints.structure.ConceptConstraints", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase", "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory", "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"};
 }

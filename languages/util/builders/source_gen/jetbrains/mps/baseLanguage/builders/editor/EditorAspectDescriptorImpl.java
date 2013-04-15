@@ -8,50 +8,229 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private AsBuilderStatement_Editor myAsBuilderStatementEditorAspect;
+  private AsTypeBuilder_Editor myAsTypeBuilderEditorAspect;
+  private BeanBuilder_Editor myBeanBuilderEditorAspect;
+  private BeanPropertyBuilder_Editor myBeanPropertyBuilderEditorAspect;
+  private Builder_Editor myBuilderEditorAspect;
+  private BuilderCreator_Editor myBuilderCreatorEditorAspect;
+  private BuilderStatement_Editor myBuilderStatementEditorAspect;
+  private ResultExpression_Editor myResultExpressionEditorAspect;
+  private SimpleBuilder_Editor mySimpleBuilderEditorAspect;
+  private SimpleBuilderChild_Editor mySimpleBuilderChildEditorAspect;
+  private SimpleBuilderDeclaration_Editor mySimpleBuilderDeclarationEditorAspect;
+  private SimpleBuilderExpression_Editor mySimpleBuilderExpressionEditorAspect;
+  private SimpleBuilderExtensionDeclaration_Editor mySimpleBuilderExtensionDeclarationEditorAspect;
+  private SimpleBuilderParameter_Editor mySimpleBuilderParameterEditorAspect;
+  private SimpleBuilderParameterReference_Editor mySimpleBuilderParameterReferenceEditorAspect;
+  private SimpleBuilderProperty_Editor mySimpleBuilderPropertyEditorAspect;
+  private SimpleBuilderPropertyBuilder_Editor mySimpleBuilderPropertyBuilderEditorAspect;
+  private SimpleBuilderPropertyExpression_Editor mySimpleBuilderPropertyExpressionEditorAspect;
+  private SimpleBuilders_Editor mySimpleBuildersEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0t, descriptor.getConceptFqName())) {
       case 0:
-        return new AsBuilderStatement_Editor();
+        return getAsBuilderStatementEditorAspect();
       case 1:
-        return new AsTypeBuilder_Editor();
+        return getAsTypeBuilderEditorAspect();
       case 2:
-        return new BeanBuilder_Editor();
+        return getBeanBuilderEditorAspect();
       case 3:
-        return new BeanPropertyBuilder_Editor();
+        return getBeanPropertyBuilderEditorAspect();
       case 4:
-        return new Builder_Editor();
+        return getBuilderEditorAspect();
       case 5:
-        return new BuilderCreator_Editor();
+        return getBuilderCreatorEditorAspect();
       case 6:
-        return new BuilderStatement_Editor();
+        return getBuilderStatementEditorAspect();
       case 7:
-        return new ResultExpression_Editor();
+        return getResultExpressionEditorAspect();
       case 8:
-        return new SimpleBuilder_Editor();
+        return getSimpleBuilderEditorAspect();
       case 9:
-        return new SimpleBuilderChild_Editor();
+        return getSimpleBuilderChildEditorAspect();
       case 10:
-        return new SimpleBuilderDeclaration_Editor();
+        return getSimpleBuilderDeclarationEditorAspect();
       case 11:
-        return new SimpleBuilderExpression_Editor();
+        return getSimpleBuilderExpressionEditorAspect();
       case 12:
-        return new SimpleBuilderExtensionDeclaration_Editor();
+        return getSimpleBuilderExtensionDeclarationEditorAspect();
       case 13:
-        return new SimpleBuilderParameter_Editor();
+        return getSimpleBuilderParameterEditorAspect();
       case 14:
-        return new SimpleBuilderParameterReference_Editor();
+        return getSimpleBuilderParameterReferenceEditorAspect();
       case 15:
-        return new SimpleBuilderProperty_Editor();
+        return getSimpleBuilderPropertyEditorAspect();
       case 16:
-        return new SimpleBuilderPropertyBuilder_Editor();
+        return getSimpleBuilderPropertyBuilderEditorAspect();
       case 17:
-        return new SimpleBuilderPropertyExpression_Editor();
+        return getSimpleBuilderPropertyExpressionEditorAspect();
       case 18:
-        return new SimpleBuilders_Editor();
+        return getSimpleBuildersEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.Builder", "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.ResultExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myAsBuilderStatementEditorAspect = null;
+    myAsTypeBuilderEditorAspect = null;
+    myBeanBuilderEditorAspect = null;
+    myBeanPropertyBuilderEditorAspect = null;
+    myBuilderEditorAspect = null;
+    myBuilderCreatorEditorAspect = null;
+    myBuilderStatementEditorAspect = null;
+    myResultExpressionEditorAspect = null;
+    mySimpleBuilderEditorAspect = null;
+    mySimpleBuilderChildEditorAspect = null;
+    mySimpleBuilderDeclarationEditorAspect = null;
+    mySimpleBuilderExpressionEditorAspect = null;
+    mySimpleBuilderExtensionDeclarationEditorAspect = null;
+    mySimpleBuilderParameterEditorAspect = null;
+    mySimpleBuilderParameterReferenceEditorAspect = null;
+    mySimpleBuilderPropertyEditorAspect = null;
+    mySimpleBuilderPropertyBuilderEditorAspect = null;
+    mySimpleBuilderPropertyExpressionEditorAspect = null;
+    mySimpleBuildersEditorAspect = null;
+  }
+
+  private AsBuilderStatement_Editor getAsBuilderStatementEditorAspect() {
+    if (myAsBuilderStatementEditorAspect == null) {
+      myAsBuilderStatementEditorAspect = new AsBuilderStatement_Editor();
+    }
+    return myAsBuilderStatementEditorAspect;
+  }
+
+  private AsTypeBuilder_Editor getAsTypeBuilderEditorAspect() {
+    if (myAsTypeBuilderEditorAspect == null) {
+      myAsTypeBuilderEditorAspect = new AsTypeBuilder_Editor();
+    }
+    return myAsTypeBuilderEditorAspect;
+  }
+
+  private BeanBuilder_Editor getBeanBuilderEditorAspect() {
+    if (myBeanBuilderEditorAspect == null) {
+      myBeanBuilderEditorAspect = new BeanBuilder_Editor();
+    }
+    return myBeanBuilderEditorAspect;
+  }
+
+  private BeanPropertyBuilder_Editor getBeanPropertyBuilderEditorAspect() {
+    if (myBeanPropertyBuilderEditorAspect == null) {
+      myBeanPropertyBuilderEditorAspect = new BeanPropertyBuilder_Editor();
+    }
+    return myBeanPropertyBuilderEditorAspect;
+  }
+
+  private Builder_Editor getBuilderEditorAspect() {
+    if (myBuilderEditorAspect == null) {
+      myBuilderEditorAspect = new Builder_Editor();
+    }
+    return myBuilderEditorAspect;
+  }
+
+  private BuilderCreator_Editor getBuilderCreatorEditorAspect() {
+    if (myBuilderCreatorEditorAspect == null) {
+      myBuilderCreatorEditorAspect = new BuilderCreator_Editor();
+    }
+    return myBuilderCreatorEditorAspect;
+  }
+
+  private BuilderStatement_Editor getBuilderStatementEditorAspect() {
+    if (myBuilderStatementEditorAspect == null) {
+      myBuilderStatementEditorAspect = new BuilderStatement_Editor();
+    }
+    return myBuilderStatementEditorAspect;
+  }
+
+  private ResultExpression_Editor getResultExpressionEditorAspect() {
+    if (myResultExpressionEditorAspect == null) {
+      myResultExpressionEditorAspect = new ResultExpression_Editor();
+    }
+    return myResultExpressionEditorAspect;
+  }
+
+  private SimpleBuilder_Editor getSimpleBuilderEditorAspect() {
+    if (mySimpleBuilderEditorAspect == null) {
+      mySimpleBuilderEditorAspect = new SimpleBuilder_Editor();
+    }
+    return mySimpleBuilderEditorAspect;
+  }
+
+  private SimpleBuilderChild_Editor getSimpleBuilderChildEditorAspect() {
+    if (mySimpleBuilderChildEditorAspect == null) {
+      mySimpleBuilderChildEditorAspect = new SimpleBuilderChild_Editor();
+    }
+    return mySimpleBuilderChildEditorAspect;
+  }
+
+  private SimpleBuilderDeclaration_Editor getSimpleBuilderDeclarationEditorAspect() {
+    if (mySimpleBuilderDeclarationEditorAspect == null) {
+      mySimpleBuilderDeclarationEditorAspect = new SimpleBuilderDeclaration_Editor();
+    }
+    return mySimpleBuilderDeclarationEditorAspect;
+  }
+
+  private SimpleBuilderExpression_Editor getSimpleBuilderExpressionEditorAspect() {
+    if (mySimpleBuilderExpressionEditorAspect == null) {
+      mySimpleBuilderExpressionEditorAspect = new SimpleBuilderExpression_Editor();
+    }
+    return mySimpleBuilderExpressionEditorAspect;
+  }
+
+  private SimpleBuilderExtensionDeclaration_Editor getSimpleBuilderExtensionDeclarationEditorAspect() {
+    if (mySimpleBuilderExtensionDeclarationEditorAspect == null) {
+      mySimpleBuilderExtensionDeclarationEditorAspect = new SimpleBuilderExtensionDeclaration_Editor();
+    }
+    return mySimpleBuilderExtensionDeclarationEditorAspect;
+  }
+
+  private SimpleBuilderParameter_Editor getSimpleBuilderParameterEditorAspect() {
+    if (mySimpleBuilderParameterEditorAspect == null) {
+      mySimpleBuilderParameterEditorAspect = new SimpleBuilderParameter_Editor();
+    }
+    return mySimpleBuilderParameterEditorAspect;
+  }
+
+  private SimpleBuilderParameterReference_Editor getSimpleBuilderParameterReferenceEditorAspect() {
+    if (mySimpleBuilderParameterReferenceEditorAspect == null) {
+      mySimpleBuilderParameterReferenceEditorAspect = new SimpleBuilderParameterReference_Editor();
+    }
+    return mySimpleBuilderParameterReferenceEditorAspect;
+  }
+
+  private SimpleBuilderProperty_Editor getSimpleBuilderPropertyEditorAspect() {
+    if (mySimpleBuilderPropertyEditorAspect == null) {
+      mySimpleBuilderPropertyEditorAspect = new SimpleBuilderProperty_Editor();
+    }
+    return mySimpleBuilderPropertyEditorAspect;
+  }
+
+  private SimpleBuilderPropertyBuilder_Editor getSimpleBuilderPropertyBuilderEditorAspect() {
+    if (mySimpleBuilderPropertyBuilderEditorAspect == null) {
+      mySimpleBuilderPropertyBuilderEditorAspect = new SimpleBuilderPropertyBuilder_Editor();
+    }
+    return mySimpleBuilderPropertyBuilderEditorAspect;
+  }
+
+  private SimpleBuilderPropertyExpression_Editor getSimpleBuilderPropertyExpressionEditorAspect() {
+    if (mySimpleBuilderPropertyExpressionEditorAspect == null) {
+      mySimpleBuilderPropertyExpressionEditorAspect = new SimpleBuilderPropertyExpression_Editor();
+    }
+    return mySimpleBuilderPropertyExpressionEditorAspect;
+  }
+
+  private SimpleBuilders_Editor getSimpleBuildersEditorAspect() {
+    if (mySimpleBuildersEditorAspect == null) {
+      mySimpleBuildersEditorAspect = new SimpleBuilders_Editor();
+    }
+    return mySimpleBuildersEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0t = new String[]{"jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.Builder", "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.ResultExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"};
 }

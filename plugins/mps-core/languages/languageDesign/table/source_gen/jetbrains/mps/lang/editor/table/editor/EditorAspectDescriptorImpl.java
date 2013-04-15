@@ -8,16 +8,42 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+  private CellModel_HierarchycalTable_Editor myCellModel_HierarchycalTableEditorAspect;
+  private CellModel_Table_Editor myCellModel_TableEditorAspect;
+
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
-        return new CellModel_HierarchycalTable_Editor();
+        return getCellModel_HierarchycalTableEditorAspect();
       case 1:
-        return new CellModel_Table_Editor();
+        return getCellModel_TableEditorAspect();
       default:
     }
     return null;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", "jetbrains.mps.lang.editor.table.structure.CellModel_Table"};
+  public void initialize() {
+    // Register editor extensions here 
+  }
+
+  public void deinitialize() {
+    myCellModel_HierarchycalTableEditorAspect = null;
+    myCellModel_TableEditorAspect = null;
+  }
+
+  private CellModel_HierarchycalTable_Editor getCellModel_HierarchycalTableEditorAspect() {
+    if (myCellModel_HierarchycalTableEditorAspect == null) {
+      myCellModel_HierarchycalTableEditorAspect = new CellModel_HierarchycalTable_Editor();
+    }
+    return myCellModel_HierarchycalTableEditorAspect;
+  }
+
+  private CellModel_Table_Editor getCellModel_TableEditorAspect() {
+    if (myCellModel_TableEditorAspect == null) {
+      myCellModel_TableEditorAspect = new CellModel_Table_Editor();
+    }
+    return myCellModel_TableEditorAspect;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", "jetbrains.mps.lang.editor.table.structure.CellModel_Table"};
 }
