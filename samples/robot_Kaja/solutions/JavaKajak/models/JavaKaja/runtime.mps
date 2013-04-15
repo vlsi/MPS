@@ -639,7 +639,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3308300503039555811">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Frame%dsetResizable(boolean)%cvoid" resolveInfo="setResizable" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3308300503039555812">
-                <property name="value" nameId="tpee.1068580123138" value="false" />
+                <property name="value" nameId="tpee.1068580123138" value="true" />
               </node>
             </node>
           </node>
