@@ -38,17 +38,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String conceptShortDescription;
   private final String helpUrl;
 
-  public CompiledConceptDescriptor(String conceptFqName,
-      @Nullable String superConcept,
-      boolean isInterfaceConcept,
-      String[] parents,
-      String[] ownPropertyNames,
-      String[] ownReferenceNames,
-      String[] ownChildNames,
-      boolean[] isMultiple
-      ) {
-    this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, ownChildNames, isMultiple, false, false, "", "","");
-  }
 
   public CompiledConceptDescriptor(String conceptFqName,
       @Nullable String superConcept,
