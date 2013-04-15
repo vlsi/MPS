@@ -24,7 +24,7 @@ public class SConceptNodeAdapter extends SConceptNodeAdapterBase implements SCon
     SNode xtends = SLinkOperations.getTarget(((SNode) (getConcept().resolve(MPSModuleRepository.getInstance()))), "extends", false);
     return (xtends == null ?
       null :
-      SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(xtends))
+      ((SConcept) SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(xtends)))
     );
   }
 

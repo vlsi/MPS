@@ -71,10 +71,7 @@ public class FindInstancesByCondition_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), ((IModule) MapSequence.fromMap(_params).get("langModule")));
-      if ((((SNode) MapSequence.fromMap(_params).get("node")) != null)) {
-        testDialog.setConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
-      }
+      FindInstancesDialog testDialog = new FindInstancesDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), ((IModule) MapSequence.fromMap(_params).get("langModule")));
       testDialog.showDialog();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

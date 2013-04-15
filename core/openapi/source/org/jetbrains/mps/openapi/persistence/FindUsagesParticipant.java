@@ -15,12 +15,13 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 
 import java.util.Collection;
 import java.util.Set;
@@ -41,7 +42,7 @@ public interface FindUsagesParticipant {
   /**
    * Finds instances of the provided concepts in the scope.
    */
-  void findInstances(Collection<SModel> scope, Set<SConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer);
+  void findInstances(Collection<SModel> scope, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer);
 
   /**
    * Finds models referencing the provided set of models in the scope.

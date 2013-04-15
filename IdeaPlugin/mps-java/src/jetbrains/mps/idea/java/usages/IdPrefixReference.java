@@ -34,7 +34,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.Map;
 import java.util.Set;
@@ -123,8 +125,11 @@ public class IdPrefixReference implements PsiReference {
       String oldId = source.getReference(myRole).getTargetNodeId().toString();
       String newId = oldId.replaceFirst(oldNode.getNodeId().toString(), newNode.getNodeId().toString());
 
+      SReference ref = source.getReference(myRole);
+      NodePtr realTarget = new NodePtr(ref.getTargetSModelReference(), ref.getTargetNodeId());
+
       // let's see if this target is not already handled by normal SReference
-      if (myParent.getProject().getComponent(MoveRenameBatch.class).isHandledAsSReference(oldNode)) {
+      if (myParent.getProject().getComponent(MoveRenameBatch.class).isHandledAsSReference(realTarget)) {
         return;
       }
 

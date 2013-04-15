@@ -10,7 +10,7 @@ import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class StaticFieldReference_Behavior {
@@ -52,7 +52,7 @@ public class StaticFieldReference_Behavior {
     }
   }
 
-  public static boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+  public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return true;
   }
 

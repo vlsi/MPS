@@ -6,11 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import org.jetbrains.mps.util.Condition;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -102,7 +103,7 @@ public class SNodeOperations {
   /**
    * todo rewrite the code using this
    */
-  public static SConcept getConcept(String name) {
+  public static SAbstractConcept getConcept(String name) {
     return SConceptRepository.getInstance().getConcept(name);
   }
 

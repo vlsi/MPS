@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.progress.ProgressMonitor;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import java.util.Set;
@@ -81,7 +81,7 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
 
   @Override
   protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor) {
-    SConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(myTargetConcept));
+    SAbstractConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(myTargetConcept));
 
     Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
     if (this.myAcceptor == null) {

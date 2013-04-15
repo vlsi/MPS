@@ -11,11 +11,11 @@
   <unitInfo fileName="ThisExtensionExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.ThisExtensionExpression_BehaviorDescriptor" />
   <unitInfo fileName="TypeExtension_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.TypeExtension_BehaviorDescriptor" />
   <root nodeRef="r:a5509d93-a6df-4356-9363-7de4efc47849(jetbrains.mps.baseLanguage.extensionMethods.behavior)/1262430001741717168">
-    <nodeInfo nodeId="1262430001741717166" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741717166" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717168" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741717168" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="1262430001741717168" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
     <scopeInfo nodeId="1262430001741717170" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741717165" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="17" />
+    <scopeInfo nodeId="1262430001741717165" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="17" />
     <scopeInfo nodeId="1262430001741717168" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741717168" varName="thisNode" />
     </scopeInfo>

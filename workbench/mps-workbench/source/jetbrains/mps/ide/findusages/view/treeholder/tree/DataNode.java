@@ -27,7 +27,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import org.jdom.Element;
 
 import java.lang.reflect.InvocationTargetException;

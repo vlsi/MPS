@@ -611,6 +611,11 @@ public class FullASTConverter extends ASTConverter {
   /*package*/ SNode convertExpression(ArrayAllocationExpression x) throws JavaParseException {
     SNode compType = convertTypeReference(x.type);
     if (x.initializer != null) {
+
+      if (x.dimensions.length > 1) {
+        compType = buildArrayType(compType, x.dimensions.length - 1);
+      }
+
       List<SNode> initializers = new ArrayList<SNode>();
       if (x.initializer.expressions != null) {
         for (Expression expression : x.initializer.expressions) {

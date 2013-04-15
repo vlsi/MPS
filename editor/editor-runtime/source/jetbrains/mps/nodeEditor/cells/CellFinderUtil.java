@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.openapi.editor.cells.*;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.AndCondition;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 

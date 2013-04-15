@@ -44,7 +44,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_Behavior" file="ExtensionFieldReference_Behavior.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_BehaviorDescriptor" file="ExtensionFieldReference_BehaviorDescriptor.java">

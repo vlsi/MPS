@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
 
 public class NullSafeIllegalBehaviorDescriptor implements BehaviorDescriptor {
   public static NullSafeIllegalBehaviorDescriptor INSTANCE = new NullSafeIllegalBehaviorDescriptor();
@@ -45,7 +45,7 @@ public class NullSafeIllegalBehaviorDescriptor implements BehaviorDescriptor {
   }
 
   @Override
-  public Object invokeStatic(@NotNull SConcept concept, String methodName, Object[] parameters) {
+  public Object invokeStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
     throw new IllegalArgumentException();
   }
 

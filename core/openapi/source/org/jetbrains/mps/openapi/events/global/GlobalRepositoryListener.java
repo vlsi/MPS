@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package org.jetbrains.mps.openapi.events.global;
 
-/**
- * evgeny, 3/6/13
- */
-public interface SModuleListener {
+public interface GlobalRepositoryListener<T> {
+  void attached(T m);
 
+  void detached(T m);
 }

@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -27,7 +27,7 @@ public class FunctionMethodDeclaration_Behavior {
     return _quotation_createNode_c7xn2w_a1a0(params, SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "returnType", true)));
   }
 
-  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SAbstractConcept thisConcept) {
     return false;
   }
 

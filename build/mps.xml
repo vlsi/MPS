@@ -152,6 +152,9 @@
     <copy todir="${build.layout}/plugins/mps-testing">
       <fileset dir="${artifacts.mpsTesting}/mps-testing" />
     </copy>
+    <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.mpsExperimental}" />
+    </copy>
     <zip destfile="${build.layout}/samples.zip">
       <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
     </zip>

@@ -38,13 +38,12 @@ public class ForeignIdReferenceCacheTest extends DataMPSFixtureTestCase {
   protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
     myModule = configuration.getFacet().getModule();
     String moduleFileName = myModule.getModuleFilePath();
-    copyResource(moduleFileName, "psiProject.iml", "/tests/psiProject/psiProject.iml");
 
     VirtualFile[] sourceRoots = ModuleRootManager.getInstance(myModule).getSourceRoots();
     assertEquals(sourceRoots.length, 1);
 
     VirtualFile sourceRoot = sourceRoots[0];
-    final IFile psiTestModel = copyResource(sourceRoot.getPath()+"/models/psiTest.mps", "psiTest.mps", "/tests/psiProject/models/jetbrains/mps/psiTest.mps");
+    final IFile psiTestModel = copyResource(sourceRoot.getPath()+"/psiTest.mps", "psiTest.mps", "/tests/psiProject/models/jetbrains/mps/psiTest.mps");
 
     DefaultModelRoot root = new DefaultModelRoot();
     root.setContentRoot(psiTestModel.getParent().getPath());

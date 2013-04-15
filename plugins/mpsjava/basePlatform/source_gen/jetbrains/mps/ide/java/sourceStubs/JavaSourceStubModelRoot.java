@@ -16,7 +16,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -112,12 +111,7 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
     boolean thereAreJavaFiles = dataSource.getAvailableStreams().iterator().hasNext();
 
     if (thereAreJavaFiles) {
-
-      SModelFqName fqName = new SModelFqName(pkg, "java_stub");
-      SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(fqName.getStereotype(), getModule().getModuleId().toString(), fqName.getLongName());
-
-      SModelReference modelRef = new jetbrains.mps.smodel.SModelReference(fqName, modelId);
-
+      SModelReference modelRef = Util.makeModelReference(pkg, getModule());
       JavaSourceStubModelDescriptor model = new JavaSourceStubModelDescriptor(modelRef, dataSource, pkg);
       SetSequence.fromSet(models).addElement(model);
 

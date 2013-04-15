@@ -35,7 +35,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.PathManager;
 import java.util.Collections;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.vfs.IFile;
 import java.util.Set;
@@ -294,7 +294,7 @@ public class Module_Behavior {
     );
   }
 
-  public static boolean virtual_acceptFiles_1262430001741497846(SConcept thisConcept) {
+  public static boolean virtual_acceptFiles_1262430001741497846(SAbstractConcept thisConcept) {
     return true;
   }
 

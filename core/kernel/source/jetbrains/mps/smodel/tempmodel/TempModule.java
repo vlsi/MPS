@@ -31,10 +31,8 @@ import java.util.Set;
 
 class TempModule extends AbstractModule implements SModule, MPSModuleOwner {
   private final ModuleDescriptor myDescriptor;
-  private IScope myScope;
 
-  public TempModule(IScope scope, Set<ModelRootDescriptor> modelRoots) {
-    myScope = scope;
+  public TempModule(Set<ModelRootDescriptor> modelRoots) {
     SModuleId id = ModuleId.regular();
     SModuleReference reference = new ModuleReference("TempModule" + id, id);
     setModuleReference(reference);
@@ -50,11 +48,5 @@ class TempModule extends AbstractModule implements SModule, MPSModuleOwner {
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     return myDescriptor;
-  }
-
-  @NotNull
-  @Override
-  public IScope getScope() {
-    return myScope;
   }
 }
