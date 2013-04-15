@@ -114,6 +114,26 @@ public class QueriesGenerated {
     return SPropertyOperations.getString_def(_context.getNode(), "sourceCardinality", "0..1").equals("0..n") || SPropertyOperations.getString_def(_context.getNode(), "sourceCardinality", "0..1").equals("1..n");
   }
 
+  public static Object propertyMacro_GetPropertyValue_4053113206042594332(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "abstract");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4053113206042638602(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "final");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4053113206042833361(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.escapeString(SPropertyOperations.getString(_context.getNode(), "conceptAlias"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4053113206042898186(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.escapeString(SPropertyOperations.getString(_context.getNode(), "conceptShortDescription"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4053113206042947387(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.escapeString(SPropertyOperations.getString(_context.getNode(), "helpURL"));
+  }
+
   public static Object propertyMacro_GetPropertyValue_1281791650135608729(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
@@ -142,7 +162,7 @@ public class QueriesGenerated {
       SPropertyOperations.set(string, "value", superConcept);
       return string;
     } else {
-      return _quotation_createNode_x583g4_a0a0a0w();
+      return _quotation_createNode_x583g4_a0a0a0bb();
     }
   }
 
@@ -288,7 +308,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "javaClass");
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0a0w() {
+  private static SNode _quotation_createNode_x583g4_a0a0a0bb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
