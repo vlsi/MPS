@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 @MPSLaunch

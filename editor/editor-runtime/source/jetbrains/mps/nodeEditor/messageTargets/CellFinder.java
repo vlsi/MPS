@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
 
 /**

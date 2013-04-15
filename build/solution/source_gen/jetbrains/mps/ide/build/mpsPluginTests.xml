@@ -68,6 +68,15 @@
       </fileset>
       <flattenmapper />
     </copy>
+    <mkdir dir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/java" />
+    <mkdir dir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/java/tests" />
+    <copy todir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/java/tests">
+      <fileset dir="${mps_home}/IdeaPlugin/tests/psiProject">
+        <include name="psiProject.iml" />
+        <include name="models/**/*" />
+      </fileset>
+      <flattenmapper />
+    </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-plugin-tests.jar">
       <fileset dir="${build.tmp}/java/out/mps-plugin-tests" />
       <zipfileset file="${mps_home}/IdeaPlugin/tests/editorTests/models/test.mps" prefix="jetbrains/mps/idea/core/tests" />
@@ -118,6 +127,7 @@
         <path location="${mps_home}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" />
         <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
         <path location="${mps_home}/testbench/source_gen" />
+        <path location="${mps_home}/IdeaPlugin/mps-java/testSrc" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-openapi.jar" />
@@ -132,6 +142,8 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-plugin.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tool.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-java/lib/mps-java-common.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-java/lib/mps-java.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -150,6 +162,7 @@
       <fileset dir="${mps_home}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/IdeaPlugin/mps-java/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

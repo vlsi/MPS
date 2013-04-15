@@ -17,7 +17,7 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
 

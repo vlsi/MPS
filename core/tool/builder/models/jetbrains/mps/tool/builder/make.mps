@@ -338,7 +338,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="878521226300902954">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~CollectionUtil" resolveInfo="CollectionUtil" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~CollectionUtil%dfilter(java%dutil%dSet,jetbrains%dmps%dutil%dCondition)%cjava%dutil%dSet" resolveInfo="filter" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~CollectionUtil%dfilter(java%dutil%dSet,org%djetbrains%dmps%dutil%dCondition)%cjava%dutil%dSet" resolveInfo="filter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="878521226300902955">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="878521226300902899" resolveInfo="toCompile" />
               </node>

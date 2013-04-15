@@ -31,6 +31,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.util.Condition;
 
 import java.io.File;
 import java.io.IOException;

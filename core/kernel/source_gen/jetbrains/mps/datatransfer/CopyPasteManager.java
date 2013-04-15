@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 

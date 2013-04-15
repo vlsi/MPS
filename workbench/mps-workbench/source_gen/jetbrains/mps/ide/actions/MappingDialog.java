@@ -32,7 +32,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import com.intellij.ui.treeStructure.Tree;
 import javax.swing.JOptionPane;
 import javax.swing.Icon;

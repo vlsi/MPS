@@ -4,7 +4,7 @@ package jetbrains.mps.make.script.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -13,7 +13,7 @@ public class JobDefinition_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
+  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "4671800353872995469"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "2360002718792625580"));

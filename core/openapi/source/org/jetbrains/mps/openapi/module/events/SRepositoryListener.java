@@ -13,21 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package org.jetbrains.mps.openapi.module.events;
+
+import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * Receives notifications whenever a repository gets updated
  */
 public interface SRepositoryListener {
-
   void moduleAdded(SModule module);
 
   void beforeModuleRemoved(SModule module);
 
+  //todo module ref
   void moduleRemoved(SModule module);
 
+  //todo remove or move to module listener
   void moduleInitialized(SModule module);
 
+  //todo remove or move to module listener
   void moduleChanged(SModule module);
 
   /**

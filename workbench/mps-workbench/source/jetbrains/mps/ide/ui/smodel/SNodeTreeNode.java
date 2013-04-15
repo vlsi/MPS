@@ -32,7 +32,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.tree.DefaultTreeModel;

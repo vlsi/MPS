@@ -13,11 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package org.jetbrains.mps.openapi.module.events;
 
-/**
- * evgeny, 3/6/13
- */
-public class SModuleListenerAdapter implements SModuleListener {
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SDependency;
 
+public interface SModuleListener {
+  void modelAdded(SModel model);
+
+  void beforeModelRemoved(SModel model);
+
+  void modelRemoved(SModelReference ref);
+
+  void dependencyAdded(SDependency dep);
+
+  void dependencyRemoved(SDependency dep);
+
+  void languageAdded(SLanguage lang);
+
+  void languageRemoved(SLanguage lang);
 }

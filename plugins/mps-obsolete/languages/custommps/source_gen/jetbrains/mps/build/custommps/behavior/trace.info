@@ -9,7 +9,7 @@
     <nodeInfo nodeId="1233680226706" fileName="MPSBuild_Behavior.java" startLine="35" startPosition="95" endLine="36" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1233680424016" fileName="MPSBuild_Behavior.java" startLine="37" startPosition="300" endLine="38" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1233680383854" fileName="MPSBuild_Behavior.java" startLine="39" startPosition="5" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741522003" fileName="MPSBuild_Behavior.java" startLine="43" startPosition="87" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741522003" fileName="MPSBuild_Behavior.java" startLine="43" startPosition="95" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234294639906" fileName="MPSBuild_Behavior.java" startLine="47" startPosition="64" endLine="48" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4738159245302664756" fileName="MPSBuild_Behavior.java" startLine="52" startPosition="57" endLine="53" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4738159245302664759" fileName="MPSBuild_Behavior.java" startLine="54" startPosition="5" endLine="55" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -31,7 +31,7 @@
     <nodeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getChildrenTargetDir_1237389224202#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1233680283599" fileName="MPSBuild_Behavior.java" startLine="36" startPosition="70" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_acceptFiles_1262430001741497846#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_acceptFiles_1262430001741497846#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
     <nodeInfo nodeId="1233155892819" fileName="MPSBuild_Behavior.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMPSBuildToolsZipName_1234294616845#()Ljava/lang/String;" />
     <nodeInfo nodeId="4738159245302641933" fileName="MPSBuild_Behavior.java" startLine="51" startPosition="78" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238403427109" fileName="MPSBuild_Behavior.java" startLine="60" startPosition="89" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -44,7 +44,7 @@
     <scopeInfo nodeId="1233155892821" fileName="MPSBuild_Behavior.java" startLine="27" startPosition="43" endLine="28" endPosition="75" />
     <scopeInfo nodeId="1233155913968" fileName="MPSBuild_Behavior.java" startLine="31" startPosition="83" endLine="32" endPosition="92" />
     <scopeInfo nodeId="1233680283600" fileName="MPSBuild_Behavior.java" startLine="37" startPosition="300" endLine="38" endPosition="101" />
-    <scopeInfo nodeId="1262430001741522002" fileName="MPSBuild_Behavior.java" startLine="43" startPosition="87" endLine="44" endPosition="16" />
+    <scopeInfo nodeId="1262430001741522002" fileName="MPSBuild_Behavior.java" startLine="43" startPosition="95" endLine="44" endPosition="16" />
     <scopeInfo nodeId="1234294616847" fileName="MPSBuild_Behavior.java" startLine="47" startPosition="64" endLine="48" endPosition="32" />
     <scopeInfo nodeId="4738159245302641934" fileName="MPSBuild_Behavior.java" startLine="52" startPosition="57" endLine="53" endPosition="27" />
     <scopeInfo nodeId="1238403427110" fileName="MPSBuild_Behavior.java" startLine="61" startPosition="27" endLine="62" endPosition="19" />

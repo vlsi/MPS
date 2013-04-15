@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -37,7 +37,7 @@ public class Builder_Behavior {
     throw new UnsupportedOperationException();
   }
 
-  public static boolean virtual_leaf_1262430001741498370(SConcept thisConcept) {
+  public static boolean virtual_leaf_1262430001741498370(SAbstractConcept thisConcept) {
     return false;
   }
 

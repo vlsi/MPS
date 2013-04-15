@@ -19,7 +19,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;

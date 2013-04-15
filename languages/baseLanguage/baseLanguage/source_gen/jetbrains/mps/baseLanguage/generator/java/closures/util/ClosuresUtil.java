@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.generator.java.closures.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import org.apache.log4j.Priority;
 import java.util.List;
 import jetbrains.mps.generator.template.ITemplateGenerator;

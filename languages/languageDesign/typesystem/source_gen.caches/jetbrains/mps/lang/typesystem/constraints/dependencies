@@ -199,10 +199,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.search.IsInstanceCondition" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.SearchScopeWithNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.MessageStatement_Constraints" file="MessageStatement_Constraints.java">
@@ -417,10 +417,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
     <classNode dependClassName="jetbrains.mps.smodel.search.IsInstanceCondition" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.SearchScopeWithNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.TypesystemIntentionArgument_Constraints" file="TypesystemIntentionArgument_Constraints.java">

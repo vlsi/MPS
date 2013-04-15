@@ -698,7 +698,7 @@ public class ASTConverter {
       if (typRef instanceof ArrayTypeReference && !(typRef instanceof ParameterizedSingleTypeReference)) {
         // it turns out this is an array, wrap base type in arraytype 
         // (in elicpse ParamSingleTypRef is subclass of ArrayTypRef) 
-        return _quotation_createNode_rbndtb_a2a5a82(typ);
+        return buildArrayType(typ, ((ArrayTypeReference) typRef).dimensions());
       } else {
         return typ;
       }
@@ -782,10 +782,18 @@ public class ASTConverter {
     SNode base = buildClassifierType(qname);
 
     if (typRef instanceof ArrayQualifiedTypeReference && !(typRef instanceof ParameterizedQualifiedTypeReference)) {
-      return _quotation_createNode_rbndtb_a0a7a23(base);
+      return buildArrayType(base, ((ArrayQualifiedTypeReference) typRef).dimensions());
     } else {
       return base;
     }
+  }
+
+  protected SNode buildArrayType(SNode base, int dimensions) {
+    SNode arrType = base;
+    for (int i = 0; i < dimensions; i++) {
+      arrType = _quotation_createNode_rbndtb_a0a0b0hb(arrType);
+    }
+    return arrType;
   }
 
   public SNode buildClassifierType(String typ) {
@@ -872,7 +880,7 @@ public class ASTConverter {
       // FIXME do expressions in annotations properly 
 
       if (1 < 0) {
-        return _quotation_createNode_rbndtb_a0a2a14();
+        return _quotation_createNode_rbndtb_a0a2a24();
 
       } else if (x instanceof QualifiedNameReference) {
 
@@ -896,7 +904,7 @@ public class ASTConverter {
 
       } else if (x instanceof SingleNameReference) {
         // FIXME 
-        return _quotation_createNode_rbndtb_a1a1c0pb();
+        return _quotation_createNode_rbndtb_a1a1c0qb();
       } else {
         LOG.error("This kind of expression is not supported yet: " + x.getClass().getName());
         return null;
@@ -918,7 +926,7 @@ public class ASTConverter {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
     } else {
       // import token as string constant even if it was an error in literal 
-      return _quotation_createNode_rbndtb_a1a0c0rb(NameUtil.escapeString(new String(((Literal) x).source())));
+      return _quotation_createNode_rbndtb_a1a0c0sb(NameUtil.escapeString(new String(((Literal) x).source())));
     }
   }
 
@@ -1144,13 +1152,6 @@ public class ASTConverter {
     }
   }
 
-  public static   enum Enm {
-    ONE(1);
-
-    Enm(int x) {
-    }
-  }
-
   private static SNode _quotation_createNode_rbndtb_a0b0c0g0k() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1240,18 +1241,6 @@ public class ASTConverter {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_rbndtb_a2a5a82(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) parameter_1;
-    if (quotedNode_3 != null) {
-      quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode_3));
-    }
-    return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_rbndtb_a0a0a03() {
@@ -1348,7 +1337,7 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a7a23(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a0a0b0hb(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1360,7 +1349,7 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a2a14() {
+  private static SNode _quotation_createNode_rbndtb_a0a2a24() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
@@ -1368,7 +1357,7 @@ public class ASTConverter {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a1a1c0pb() {
+  private static SNode _quotation_createNode_rbndtb_a1a1c0qb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
@@ -1376,7 +1365,7 @@ public class ASTConverter {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a1a0c0rb(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a1a0c0sb(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);

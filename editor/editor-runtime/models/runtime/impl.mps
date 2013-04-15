@@ -628,7 +628,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1182113674817469694">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1182113674817469695">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1182113674817469697">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~MPSModuleRepository%daddModuleRepositoryListener(org%djetbrains%dmps%dopenapi%dmodule%dSRepositoryListener)%cvoid" resolveInfo="addModuleRepositoryListener" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~MPSModuleRepository%daddModuleRepositoryListener(org%djetbrains%dmps%dopenapi%dmodule%devents%dSRepositoryListener)%cvoid" resolveInfo="addModuleRepositoryListener" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1182113674817469698">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1182113674817469624" resolveInfo="myListener" />
               </node>
@@ -677,7 +677,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1182113674817469629" resolveInfo="myRepository" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1182113674817469714">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~MPSModuleRepository%dremoveModuleRepositoryListener(org%djetbrains%dmps%dopenapi%dmodule%dSRepositoryListener)%cvoid" resolveInfo="removeModuleRepositoryListener" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~MPSModuleRepository%dremoveModuleRepositoryListener(org%djetbrains%dmps%dopenapi%dmodule%devents%dSRepositoryListener)%cvoid" resolveInfo="removeModuleRepositoryListener" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1182113674817469715">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1182113674817469624" resolveInfo="myListener" />
               </node>

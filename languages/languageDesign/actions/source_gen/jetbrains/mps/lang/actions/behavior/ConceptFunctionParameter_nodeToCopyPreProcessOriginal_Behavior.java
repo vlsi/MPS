@@ -4,7 +4,7 @@ package jetbrains.mps.lang.actions.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Behavior {
   public static void init(SNode thisNode) {
@@ -14,7 +14,7 @@ public class ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Behavior {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.CopyPreProcessor", false, false);
   }
 
-  public static boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
+  public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
     return true;
   }
 }

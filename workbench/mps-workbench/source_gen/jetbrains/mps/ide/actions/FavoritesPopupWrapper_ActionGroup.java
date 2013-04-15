@@ -8,7 +8,7 @@ import org.apache.log4j.LogManager;
 import java.util.Set;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.workbench.ActionPlace;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;

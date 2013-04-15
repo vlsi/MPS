@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.tempmodel;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SModelId.RegularSModelId;
+import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -110,6 +112,6 @@ class TempModel extends SModelBase implements EditableSModel {
 
   private static SModelReference createModelRef() {
     SModelId id = SModelId.generate();
-    return PersistenceFacade.getInstance().createModelReference(null, id, "TempModel" + id);
+    return PersistenceFacade.getInstance().createModelReference(null, id, "TempModel");
   }
 }

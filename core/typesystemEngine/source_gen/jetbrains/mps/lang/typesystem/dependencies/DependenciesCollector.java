@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;

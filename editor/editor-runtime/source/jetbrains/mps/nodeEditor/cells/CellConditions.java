@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.openapi.editor.cells.*;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 
 public class CellConditions {
   public static final Condition<EditorCell> SELECTABLE = new Condition<EditorCell>() {

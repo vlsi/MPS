@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.mps.util.Condition;
+
 public class AndCondition<T> implements Condition<T> {
   private Condition<T> myC1;
   private Condition<T> myC2;

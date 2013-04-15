@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -31,7 +31,7 @@ public class BeanPropertyBuilder_Behavior {
     return _quotation_createNode_ec1xrx_a0a2(parentRef, childRef, SLinkOperations.getTarget(thisNode, "setter", false));
   }
 
-  public static boolean virtual_leaf_1262430001741498370(SConcept thisConcept) {
+  public static boolean virtual_leaf_1262430001741498370(SAbstractConcept thisConcept) {
     return true;
   }
 

@@ -12,7 +12,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class LanguageTextGenDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -67,7 +67,7 @@ public class LanguageTextGenDeclaration_Behavior {
     return "textGen";
   }
 
-  public static List<SNode> virtual_getApplicableHiddenParameter_3044950653914717099(SConcept thisConcept) {
+  public static List<SNode> virtual_getApplicableHiddenParameter_3044950653914717099(SAbstractConcept thisConcept) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234351783410"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234279682891"));

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.util;
+package org.jetbrains.mps.util;
 
 public interface Consumer<T> {
   Consumer EMPTY_CONSUMER = new Consumer() {

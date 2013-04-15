@@ -36,6 +36,7 @@ import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -43,7 +44,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -85,14 +86,14 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
   }
 
   @Override
-  public void findInstances(Collection<SModel> scope, Set<SConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
-    MultiMap<SModel, SConcept> candidates = findCandidates(scope, concepts, processedConsumer, new Mapper<SConcept, String>() {
+  public void findInstances(Collection<SModel> scope, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
+    MultiMap<SModel, SAbstractConcept> candidates = findCandidates(scope, concepts, processedConsumer, new Mapper<SAbstractConcept, String>() {
       @Override
-      public String value(SConcept key) {
+      public String value(SAbstractConcept key) {
         return key.getName();
       }
     });
-    for (Entry<SModel, Collection<SConcept>> candidate : candidates.entrySet()) {
+    for (Entry<SModel, Collection<SAbstractConcept>> candidate : candidates.entrySet()) {
       FindUsagesManager.collectInstances(candidate.getKey(), candidate.getValue(), consumer);
     }
   }

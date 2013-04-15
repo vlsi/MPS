@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,11 +27,11 @@ public class TreeSetCreator_Behavior {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && (SLinkOperations.getTarget(thisNode, "comparator", true) == null);
   }
 
-  public static boolean virtual_hasInitSize_1262430001741498238(SConcept thisConcept) {
+  public static boolean virtual_hasInitSize_1262430001741498238(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static List<SNode> virtual_getAvailableFor_3044950653914717035(SConcept thisConcept) {
+  public static List<SNode> virtual_getAvailableFor_3044950653914717035(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", "virtual_getAvailableFor_3044950653914717035", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1226511727824"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "7125221305512719026"));

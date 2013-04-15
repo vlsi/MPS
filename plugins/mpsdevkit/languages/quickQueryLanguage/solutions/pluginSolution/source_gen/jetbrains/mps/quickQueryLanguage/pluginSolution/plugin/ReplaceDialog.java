@@ -12,9 +12,12 @@ import java.awt.BorderLayout;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import java.util.Set;
@@ -23,8 +26,6 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import java.awt.Dimension;
 import javax.swing.JComponent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.Collections;
@@ -36,8 +37,13 @@ import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ReplaceDialog extends BaseDialog {
   private EmbeddableEditor myEditor;
@@ -47,15 +53,20 @@ public class ReplaceDialog extends BaseDialog {
   private JPanel myPanel = new JPanel(new BorderLayout());
   private boolean myDisposed = false;
 
-  public ReplaceDialog(final IOperationContext context, final Language language) {
+  public ReplaceDialog(final SNode concept, final IOperationContext context, final Language language) {
     super(ProjectHelper.toMainFrame(context.getProject()), "Modify Instances by condition");
     this.myContext = context;
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        ReplaceDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", null);
+        ReplaceDialog.this.myNode = _quotation_createNode_bs6rum_a0a0a2a6((concept == null ?
+          SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626") :
+          concept
+        ));
         ReplaceDialog.this.myEditor = new EmbeddableEditor(context.getProject(), new _FunctionTypes._void_P1_E0<SModel>() {
           public void invoke(SModel m) {
             m.addRootNode(myNode);
+            ((SModelInternal) m).addLanguage(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c")).getModuleReference());
+            ((SModelInternal) m).addDevKit(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference());
           }
         }, true) {
           @Override
@@ -88,14 +99,6 @@ public class ReplaceDialog extends BaseDialog {
   @Override
   protected JComponent getMainComponent() {
     return this.myPanel;
-  }
-
-  public void setConceptDeclaration(final SNode declaration) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SLinkOperations.setTarget(ReplaceDialog.this.myNode, "conceptDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
-      }
-    });
   }
 
   @BaseDialog.Button(position = 0, name = "Modify", mnemonic = 'M', defaultButton = true)
@@ -174,5 +177,32 @@ public class ReplaceDialog extends BaseDialog {
         myEditor.disposeEditor();
       }
     });
+  }
+
+  private static SNode _quotation_createNode_bs6rum_a0a0a2a6(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    SNode quotedNode_6 = null;
+    SNode quotedNode_7 = null;
+    SNode quotedNode_8 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "conceptDeclaration", (SNode) parameter_1);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.QueryReplace", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.addChild("body", quotedNode_5);
+    quotedNode_2.addChild("replace", quotedNode_3);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.QueryCondition", null, null, GlobalScope.getInstance(), false);
+    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
+    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
+    quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_8, "value", "true");
+    quotedNode_7.addChild("expression", quotedNode_8);
+    quotedNode_6.addChild("statement", quotedNode_7);
+    quotedNode_4.addChild("body", quotedNode_6);
+    quotedNode_2.addChild("condition", quotedNode_4);
+    return quotedNode_2;
   }
 }
