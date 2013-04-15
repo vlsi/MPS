@@ -14,11 +14,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.PropertyRefExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"propertyDeclaration"}, new String[]{"nodeExpr"}, new boolean[]{false});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.PropertyRefExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"propertyDeclaration"}, new String[]{"nodeExpr"}, new boolean[]{false}, false, false, "property/<node>,<role>/", "property reference", "");
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.PropertyRefType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.checkedName.structure.PropertyRefType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "propRef", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

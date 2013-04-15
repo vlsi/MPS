@@ -14,17 +14,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.IconResource", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.Resource"}, new String[]{}, new String[]{}, new String[]{"iconExpression"}, new boolean[]{false});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.IconResource", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.Resource"}, new String[]{}, new String[]{}, new String[]{"iconExpression"}, new boolean[]{false}, false, false, "", "", "");
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.IconResourceBundle", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"icons"}, new boolean[]{true});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.IconResourceBundle", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"icons"}, new boolean[]{true}, false, false, "", "", "");
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.IconResourceDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"iconExpression"}, new boolean[]{false});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.IconResourceDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"iconExpression"}, new boolean[]{false}, false, false, "", "", "");
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.IconResourceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"icon"}, new boolean[]{false});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.IconResourceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"icon"}, new boolean[]{false}, false, false, "icon", "", "");
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.IconResourceReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"declaration"}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.IconResourceReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"declaration"}, new String[]{}, new boolean[]{}, false, false, "icon", "", "");
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.Resource", null, true, new String[]{}, new String[]{"path"}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.resources.structure.Resource", null, true, new String[]{}, new String[]{"path"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

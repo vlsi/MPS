@@ -14,15 +14,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{"row", "col"}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{"row", "col"}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "build wall", "", "");
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "destroy wall", "", "");
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "drop mark", "", "");
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "pick mark", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

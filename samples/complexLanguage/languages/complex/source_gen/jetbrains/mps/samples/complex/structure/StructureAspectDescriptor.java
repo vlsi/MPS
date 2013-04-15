@@ -14,23 +14,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.AbsExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.AbsExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "abs", "", "");
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ArgExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ArgExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "arg", "", "");
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ComplexType", "jetbrains.mps.baseLanguage.structure.PrimitiveType", false, new String[]{"jetbrains.mps.baseLanguage.structure.PrimitiveType"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ComplexType", "jetbrains.mps.baseLanguage.structure.PrimitiveType", false, new String[]{"jetbrains.mps.baseLanguage.structure.PrimitiveType"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "complex", "", "");
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ConjugateComplexExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ConjugateComplexExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "conj", "", "");
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.DegreeComplexExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{"degree"}, new boolean[]{false});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.DegreeComplexExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{"degree"}, new boolean[]{false}, false, false, "deg", "", "");
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ImExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ImExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "im", "", "");
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ImaginaryUnit", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ImaginaryUnit", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "i", "complex imaginary unit", "");
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ReExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.ReExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression", false, new String[]{"jetbrains.mps.samples.complex.structure.SingleComplexExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "re", "", "");
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.SingleComplexExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"complexExpression"}, new boolean[]{false});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.complex.structure.SingleComplexExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"complexExpression"}, new boolean[]{false}, true, false, "", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

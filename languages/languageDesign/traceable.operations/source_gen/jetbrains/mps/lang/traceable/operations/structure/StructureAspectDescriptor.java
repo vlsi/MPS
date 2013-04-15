@@ -14,9 +14,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"argument"}, new boolean[]{false});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"argument"}, new boolean[]{false}, false, false, "copy list with trace", "copies a list of nodes with trace", "");
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation", "jetbrains.mps.lang.smodel.structure.SNodeOperation", false, new String[]{"jetbrains.mps.lang.smodel.structure.SNodeOperation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "copy with trace", "copy a node with trace", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

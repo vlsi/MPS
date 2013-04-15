@@ -14,43 +14,43 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Attr", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Attr", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.CaseSensitive", "jetbrains.mps.gwt.client.structure.Attr", false, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.CaseSensitive", "jetbrains.mps.gwt.client.structure.Attr", false, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "casesensitive", "", "");
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.DefaultExcludes", "jetbrains.mps.gwt.client.structure.Attr", false, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.DefaultExcludes", "jetbrains.mps.gwt.client.structure.Attr", false, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "defaultexcludes", "", "");
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Element", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.EntryPoint", "jetbrains.mps.gwt.client.structure.Element", false, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{}, new String[]{"entryPoint"}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.EntryPoint", "jetbrains.mps.gwt.client.structure.Element", false, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{}, new String[]{"entryPoint"}, new String[]{}, new boolean[]{}, false, false, "entry-point", "", "");
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Exclude", "jetbrains.mps.gwt.client.structure.PatternHolder", false, new String[]{"jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Exclude", "jetbrains.mps.gwt.client.structure.PatternHolder", false, new String[]{"jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "exclude", "", "");
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Excludes", "jetbrains.mps.gwt.client.structure.Attr", false, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{}, new String[]{}, new String[]{"pattern"}, new boolean[]{false});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Excludes", "jetbrains.mps.gwt.client.structure.Attr", false, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{}, new String[]{}, new String[]{"pattern"}, new boolean[]{false}, false, false, "excludes", "", "");
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.GWTModule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"}, new String[]{}, new String[]{}, new String[]{"renameTo", "element"}, new boolean[]{false, true});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.GWTModule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo"}, new String[]{}, new String[]{}, new String[]{"renameTo", "element"}, new boolean[]{false, true}, false, false, "GWT module", "", "");
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Include", "jetbrains.mps.gwt.client.structure.PatternHolder", false, new String[]{"jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Include", "jetbrains.mps.gwt.client.structure.PatternHolder", false, new String[]{"jetbrains.mps.gwt.client.structure.PatternHolder"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "include", "", "");
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Includes", "jetbrains.mps.gwt.client.structure.Attr", false, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{}, new String[]{}, new String[]{"pattern"}, new boolean[]{false});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Includes", "jetbrains.mps.gwt.client.structure.Attr", false, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{}, new String[]{}, new String[]{"pattern"}, new boolean[]{false}, false, false, "includes", "", "");
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Inherits", "jetbrains.mps.gwt.client.structure.Element", false, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{}, new String[]{"module"}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Inherits", "jetbrains.mps.gwt.client.structure.Element", false, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{}, new String[]{"module"}, new String[]{}, new boolean[]{}, false, false, "inherits", "", "");
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Path", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Path", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "path", "", "");
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Pattern", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Pattern", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.PatternFilter", "jetbrains.mps.gwt.client.structure.Element", false, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{}, new String[]{}, new String[]{"path", "attr", "pattern"}, new boolean[]{false, true, true});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.PatternFilter", "jetbrains.mps.gwt.client.structure.Element", false, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{}, new String[]{}, new String[]{"path", "attr", "pattern"}, new boolean[]{false, true, true}, true, false, "", "", "");
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.PatternHolder", "jetbrains.mps.gwt.client.structure.Element", false, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{}, new String[]{}, new String[]{"pattern"}, new boolean[]{false});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.PatternHolder", "jetbrains.mps.gwt.client.structure.Element", false, new String[]{"jetbrains.mps.gwt.client.structure.Element"}, new String[]{}, new String[]{}, new String[]{"pattern"}, new boolean[]{false}, true, false, "", "", "");
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Public", "jetbrains.mps.gwt.client.structure.PatternFilter", false, new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Public", "jetbrains.mps.gwt.client.structure.PatternFilter", false, new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "public", "", "");
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.RenameTo", "jetbrains.mps.gwt.client.structure.Attr", false, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.RenameTo", "jetbrains.mps.gwt.client.structure.Attr", false, new String[]{"jetbrains.mps.gwt.client.structure.Attr"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "rename-to", "", "");
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Source", "jetbrains.mps.gwt.client.structure.PatternFilter", false, new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.Source", "jetbrains.mps.gwt.client.structure.PatternFilter", false, new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "source", "", "");
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.SuperSource", "jetbrains.mps.gwt.client.structure.PatternFilter", false, new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.gwt.client.structure.SuperSource", "jetbrains.mps.gwt.client.structure.PatternFilter", false, new String[]{"jetbrains.mps.gwt.client.structure.PatternFilter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "super-source", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

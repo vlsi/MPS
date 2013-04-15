@@ -14,13 +14,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"path"}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"path"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"startupFolder", "startupClass"}, new String[]{}, new String[]{"bootClasspath", "vmOptions"}, new boolean[]{true, true});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"startupFolder", "startupClass"}, new String[]{}, new String[]{"bootClasspath", "vmOptions"}, new boolean[]{true, true}, false, false, "", "", "");
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.startup.structure.SimpleVmOptions", "jetbrains.mps.build.startup.structure.VmOptions", false, new String[]{"jetbrains.mps.build.startup.structure.VmOptions"}, new String[]{"options", "commented"}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.startup.structure.SimpleVmOptions", "jetbrains.mps.build.startup.structure.VmOptions", false, new String[]{"jetbrains.mps.build.startup.structure.VmOptions"}, new String[]{"options", "commented"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.startup.structure.VmOptions", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.startup.structure.VmOptions", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

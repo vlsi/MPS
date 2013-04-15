@@ -14,17 +14,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.Condition", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.Condition", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, true, false, "", "", "");
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "this", "", "");
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{"condition"}, new boolean[]{true});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{"condition"}, new boolean[]{true}, false, false, "", "", "");
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.Postcondition", "jetbrains.mps.baseLanguage.contracts.structure.Condition", false, new String[]{"jetbrains.mps.baseLanguage.contracts.structure.Condition"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.Postcondition", "jetbrains.mps.baseLanguage.contracts.structure.Condition", false, new String[]{"jetbrains.mps.baseLanguage.contracts.structure.Condition"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "postcondition", "", "");
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.Precondition", "jetbrains.mps.baseLanguage.contracts.structure.Condition", false, new String[]{"jetbrains.mps.baseLanguage.contracts.structure.Condition"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.Precondition", "jetbrains.mps.baseLanguage.contracts.structure.Condition", false, new String[]{"jetbrains.mps.baseLanguage.contracts.structure.Condition"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "precondition", "", "");
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.ResultExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.contracts.structure.ResultExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "!result", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
