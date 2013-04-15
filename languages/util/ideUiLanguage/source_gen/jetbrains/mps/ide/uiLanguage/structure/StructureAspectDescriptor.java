@@ -14,21 +14,21 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"left", "top", "width", "height"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"left", "top", "width", "height"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DialogExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DialogExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "dialog", "", "");
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "disposeDialog", "", "");
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "disposeDialog", "", "");
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.uiLanguage.structure.IComponentInstance"}, new String[]{"stretch", "title"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.uiLanguage.structure.IComponentInstance"}, new String[]{"stretch", "title"}, new String[]{}, new String[]{"dimensions", "contentPane", "button"}, new boolean[]{false, false, true}, false, false, "", "", "");
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"text", "isDefault"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"text", "isDefault"}, new String[]{}, new String[]{"handler"}, new boolean[]{false}, false, false, "", "", "");
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"errorText"}, new boolean[]{false}, false, false, "reportError", "", "");
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"errorText"}, new boolean[]{false}, false, false, "reportError", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
