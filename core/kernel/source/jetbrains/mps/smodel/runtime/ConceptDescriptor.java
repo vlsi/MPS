@@ -38,9 +38,9 @@ public interface ConceptDescriptor {
 
   List<String> getChildrenNames();
 
-  boolean hasChildren(String name);
+  boolean hasChild(String name);
 
-  //true if true, false if false or !hasChildren(name);
+  //true if true, false if false or !hasChild(name);
   boolean isMultipleChild(String name);
 
   // LanguageHierarchyCache replace

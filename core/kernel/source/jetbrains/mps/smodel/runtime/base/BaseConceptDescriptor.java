@@ -47,7 +47,7 @@ public abstract class BaseConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public boolean hasChildren(String name) {
+  public boolean hasChild(String name) {
     if (childrenNamesSet == null) {
       childrenNamesSet = new HashSet<String>(getReferenceNames());
     }

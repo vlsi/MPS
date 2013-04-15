@@ -69,7 +69,7 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public boolean hasChildren(String name) {
+  public boolean hasChild(String name) {
     return false;
   }
 
