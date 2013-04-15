@@ -55,7 +55,8 @@ public class TemporaryModels {
     return model;
   }
 
-  public void fixImports(SModel model) {
+  //todo: this must be removed as soon as we have module API and can create a module that shows its model dependencies as its dependencies ("auto fixes" imports)
+  public void addMissingModuleImports(SModel model) {
     assert model instanceof TempModel : "TemporaryModels is asked to handle non-temporary model " + model.getModelName();
 
     SModelOperations.validateLanguagesAndImports(model, false, true);

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.openapi.editor.cells;
 
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 
 /**
  * Semen Alperovich

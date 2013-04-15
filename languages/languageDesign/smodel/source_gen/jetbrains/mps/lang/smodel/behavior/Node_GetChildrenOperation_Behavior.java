@@ -5,7 +5,7 @@ package jetbrains.mps.lang.smodel.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,15 +18,15 @@ public class Node_GetChildrenOperation_Behavior {
     return SNodeOperations.cast(SNodeOperation_Behavior.call_getParameter_1213877508972(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier")), "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier");
   }
 
-  public static boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
+  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return true;
   }
 
-  public static boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return true;
   }
 
-  public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SConcept thisConcept) {
+  public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.smodel.structure.SNodeOperation", "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "5168775467716640652"));
     return result;

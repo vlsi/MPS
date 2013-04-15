@@ -16,7 +16,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassifierMember_Behavior {
@@ -99,7 +99,7 @@ public class ClassifierMember_Behavior {
     return false;
   }
 
-  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SAbstractConcept thisConcept) {
     return false;
   }
 

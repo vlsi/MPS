@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IOperation_Behavior {
@@ -39,7 +39,7 @@ public class IOperation_Behavior {
     return true;
   }
 
-  public static boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
+  public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
     return false;
   }
 

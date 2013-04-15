@@ -102,7 +102,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.ReferenceLineContent" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationAspectSubcolumn" />
-    <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationHelper" />
     <classNode dependClassName="jetbrains.mps.vcs.annotate.CommitNumberSubcolumn" />
     <classNode dependClassName="jetbrains.mps.vcs.annotate.EditorUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.annotate.HighlightRevisionSubcolumn" />
@@ -127,7 +126,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode extendsClassName="com.intellij.openapi.vcs.annotate.AnnotationListener" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.leftHighlighter.AbstractLeftColumn" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />

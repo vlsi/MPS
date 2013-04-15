@@ -145,8 +145,12 @@ public class ModuleLoader {
       // ignore 
     }
     IFile file = FileSystem.getInstance().getFileByPath(moduleFilePath);
-    if (!(file.exists()) || file.isDirectory()) {
+    if (!(file.exists())) {
       report("cannot import module file for " + SPropertyOperations.getString(myModule, "name") + ": file doesn't exist (" + moduleFilePath + ")", myOriginalModule);
+      return;
+    }
+    if (file.isDirectory()) {
+      report("cannot import module file for " + SPropertyOperations.getString(myModule, "name") + ": file is a directory (" + moduleFilePath + ")", myOriginalModule);
       return;
     }
 

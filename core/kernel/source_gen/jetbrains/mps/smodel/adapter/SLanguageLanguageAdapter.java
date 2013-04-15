@@ -43,7 +43,7 @@ public class SLanguageLanguageAdapter implements SLanguage {
       }
     }).select(new ISelector<SNode, SConcept>() {
       public SConcept select(SNode it) {
-        return SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it));
+        return ((SConcept) SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)));
       }
     }));
     ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {

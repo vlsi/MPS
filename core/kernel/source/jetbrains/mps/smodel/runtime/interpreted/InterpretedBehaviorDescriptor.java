@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.InvocationTargetException;
@@ -53,7 +53,7 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
   }
 
   @Override
-  public Object invokeStatic(@NotNull SConcept concept, String methodName, Object[] parameters) {
+  public Object invokeStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
     return genericInvoke(concept, methodName, parameters);
   }
 

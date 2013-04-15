@@ -74,7 +74,6 @@
     <classNode dependClassName="javax.swing.TransferHandler" />
     <classNode dependClassName="javax.swing.border.TitledBorder" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport" />
@@ -82,6 +81,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectLevelRenderer" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="java.awt.event.KeyAdapter" />
     <classNode extendsClassName="java.lang.Runnable" />
     <classNode extendsClassName="javax.swing.JPanel" />

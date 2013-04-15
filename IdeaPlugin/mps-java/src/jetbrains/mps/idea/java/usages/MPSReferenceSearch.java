@@ -54,11 +54,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -96,36 +94,26 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
         Set<SNode> targetNodes = new HashSet<SNode>(1);
         targetNodes.add(targetNode);
 
-        for (Module module : ModuleManager.getInstance(project).getModules()) {
-          if (!scope.isSearchInModuleContent(module)) continue;
-          MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-          if (facet == null) continue;
+        Set<SReference> references = FindUsagesManager.getInstance().findUsages(targetNodes, SearchType.USAGES, new IdeaSearchScope(scope), null);
 
-          final Solution facetSolution = facet.getSolution();
+        for (SReference sReference : references) {
+          SNode source = sReference.getSourceNode();
+          MPSPsiNode psiNode = (MPSPsiNode) psiProvider.getPsi(source);
+          // the source could have come from the psi stub itself
+          if (psiNode == null) return;
+          String refRole = sReference.getRole();
+          MPSPsiRef[] refs = psiNode.getReferences(refRole);
 
-          for (SModel model : SModelRepository.getInstance().getModelDescriptors(facetSolution)) {
-
-            Set<SReference> references = FindUsagesManager.getInstance().findUsages(targetNodes, SearchType.USAGES, new IdeaSearchScope(scope), null);
-
-            for (SReference sReference : references) {
-              SNode source = sReference.getSourceNode();
-              MPSPsiNode psiNode = (MPSPsiNode) psiProvider.getPsi(source);
-              // the source could have come from the psi stub itself
-              if (psiNode == null) return;
-              String refRole = sReference.getRole();
-              MPSPsiRef[] refs = psiNode.getReferences(refRole);
-
-              for (MPSPsiRef r : refs) {
-                if (targetNode.getNodeId().equals(r.getNodeId())) {
-                  // it's our reference: giving it out to find usages
-                  consumer.process(r.getReference());
-                }
-              }
+          for (MPSPsiRef r : refs) {
+            if (targetNode.getNodeId().equals(r.getNodeId())) {
+              // it's our reference: giving it out to find usages
+              consumer.process(r.getReference());
             }
-
           }
         }
+
       }
+
     });
   }
 

@@ -64,6 +64,7 @@ import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -296,6 +297,14 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
         }
       }
     });
+    Comparator<SModuleReference> moduleComparator = new Comparator<SModuleReference>() {
+      @Override
+      public int compare(SModuleReference o1, SModuleReference o2) {
+        return o1.getModuleName().compareTo(o2.getModuleName());
+      }
+    };
+    Collections.sort(availableSolutions, moduleComparator);
+    Collections.sort(availableLanguages, moduleComparator);
     List<SModuleReference> result = new ArrayList<SModuleReference>();
     result.addAll(availableSolutions);
     result.addAll(availableLanguages);

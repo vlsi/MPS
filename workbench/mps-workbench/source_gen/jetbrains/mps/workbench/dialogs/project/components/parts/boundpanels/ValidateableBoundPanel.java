@@ -5,7 +5,7 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels;
 import javax.swing.JPanel;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import java.util.List;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.TransferHandler;
 import jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator;

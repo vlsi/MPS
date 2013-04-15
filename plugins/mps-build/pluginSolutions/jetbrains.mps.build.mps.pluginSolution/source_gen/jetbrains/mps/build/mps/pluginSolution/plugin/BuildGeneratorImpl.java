@@ -124,10 +124,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         iconsDir.mkdirs();
 
         ApplicationInfoEx instanceEx = ApplicationInfoEx.getInstanceEx();
-        copyIcon(instanceEx.getAboutLogoUrl(), iconsDir, "about.png");
+        copyIcon(instanceEx.getAboutImageUrl(), iconsDir, "about.png");
         copyIcon(instanceEx.getSmallIconUrl(), iconsDir, "MPS16.png");
         copyIcon(instanceEx.getIconUrl(), iconsDir, "MPS32.png");
-        copyIcon(instanceEx.getLogoUrl(), iconsDir, "splash.png");
+        copyIcon(instanceEx.getSplashImageUrl(), iconsDir, "splash.png");
         copyIcon(instanceEx.getWelcomeScreenCaptionUrl(), iconsDir, "caption.png");
         copyIcon(instanceEx.getWelcomeScreenDeveloperSloganUrl(), iconsDir, "slogan.png");
         copyIcon(MPSApplicationInfo.getInstance().getDialogImageURL(), iconsDir, "dialogImage.png");

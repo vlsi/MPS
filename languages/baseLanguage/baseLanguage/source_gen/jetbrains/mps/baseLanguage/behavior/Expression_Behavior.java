@@ -8,7 +8,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Expression_Behavior {
@@ -42,15 +42,15 @@ public class Expression_Behavior {
     return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(thisNode))), "virtual_legalAsStatement_1262430001741498032", new Object[]{});
   }
 
-  public static boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
+  public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
+  public static boolean virtual_legalAsStatement_1262430001741498032(SAbstractConcept thisConcept) {
     return false;
   }
 
-  public static boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
+  public static boolean virtual_constant_1262430001741498050(SAbstractConcept thisConcept) {
     return false;
   }
 

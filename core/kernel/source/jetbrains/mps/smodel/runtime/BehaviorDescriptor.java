@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -30,7 +31,7 @@ public interface BehaviorDescriptor {
 
   public Object invoke(@NotNull SNode node, String methodName, Object[] parameters);
 
-  Object invokeStatic(@NotNull SConcept concept, String methodName, Object[] parameters);
+  Object invokeStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters);
 
   @Deprecated
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters);

@@ -35,7 +35,7 @@ import javax.swing.JLabel;
 import com.intellij.openapi.progress.ProgressManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import java.util.Set;
@@ -172,7 +172,7 @@ public class ListPanel extends JPanel {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               for (SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
-                SConcept c = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept));
+                SAbstractConcept c = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept));
                 Set<SNode> usages = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(c), SearchType.INSTANCES, GlobalScope.getInstance(), new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator())));
                 ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(usages));
               }

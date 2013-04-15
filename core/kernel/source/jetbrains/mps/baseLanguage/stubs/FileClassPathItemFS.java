@@ -17,7 +17,7 @@ package jetbrains.mps.baseLanguage.stubs;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;

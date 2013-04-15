@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class MathSymbol_Behavior {
   public static void init(SNode thisNode) {
@@ -29,7 +29,7 @@ public class MathSymbol_Behavior {
     return new ArrayList<SNode>();
   }
 
-  public static String virtual_getOpName_1262430001741497894(SConcept thisConcept) {
+  public static String virtual_getOpName_1262430001741497894(SAbstractConcept thisConcept) {
     return null;
   }
 }

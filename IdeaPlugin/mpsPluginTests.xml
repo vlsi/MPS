@@ -68,6 +68,8 @@
       </fileset>
       <flattenmapper />
     </copy>
+    <mkdir dir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/java" />
+    <mkdir dir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/java/tests" />
     <copy todir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps/idea/java/tests">
       <fileset dir="${mps_home}/IdeaPlugin/tests/psiProject">
         <include name="psiProject.iml" />
@@ -146,7 +148,7 @@
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -160,9 +162,10 @@
       <fileset dir="${mps_home}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/IdeaPlugin/mps-java/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
-
+  
   <target name="java.compile.mps-jps-plugin-tests" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-jps-plugin-tests" />
     <javac2 destdir="${build.tmp}/java/out/mps-jps-plugin-tests" fork="true" memorymaximumsize="256m" includeantruntime="false" debug="true">
@@ -188,7 +191,7 @@
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
