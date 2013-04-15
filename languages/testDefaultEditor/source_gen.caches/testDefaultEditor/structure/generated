@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ejs4os81kk1i3x818yjumikyt9docp9">
+<dependencies version="2" modelHash="-8fkogzcohu3auq6e38ebacm0lefwho">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-3838celc5jfzqce9x814phvz416cghc" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
@@ -24,7 +24,7 @@
   <source id="938834323431421842" name="Team" hash="473ddc8nbvs6s5utjfpc9zdqpfws529">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="938834323431434553" name="Developer" hash="9ttjnhstkd8ezzlaf656t5fp9ua3w4u">
+  <source id="938834323431434553" name="Developer" hash="1wecbxfscu85dtan4fmj6qmy3094btf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="938834323431472762" name="Friend" hash="d6vv8tayfu5nplm6w4k6zclbdm54pwm">

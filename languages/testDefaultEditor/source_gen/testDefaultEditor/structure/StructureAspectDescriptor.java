@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new CompiledConceptDescriptor("testDefaultEditor.structure.Company", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"team"}, new boolean[]{true}, false, false, "", "", "");
       case 1:
-        return new CompiledConceptDescriptor("testDefaultEditor.structure.Developer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"age", "sex", "lastName"}, new String[]{"bestFriend", "teamHeWants"}, new String[]{"friend"}, new boolean[]{true}, false, false, "", "", "");
+        return new CompiledConceptDescriptor("testDefaultEditor.structure.Developer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"age", "sex", "lastName"}, new String[]{"bestFriend", "teamHeWants"}, new String[]{"friend", "someChild"}, new boolean[]{true, false}, false, false, "", "", "");
       case 2:
         return new CompiledConceptDescriptor("testDefaultEditor.structure.DummyMethod", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"statements"}, new boolean[]{true}, false, false, "", "", "");
       case 3:
