@@ -161,11 +161,10 @@ public class DefaultEditor extends DefaultNodeEditor {
   private void cacheNameProperty() {
     final Map<String, Integer> priorityMap = new HashMap<String, Integer>();
     for (String property : myPropertyNames) {
-      String name = property;
-      int prio = name.equals("name") ? 10000 : 0;
-      prio += name.toLowerCase().contains("identifier") ? 1700 : 0;
-      prio += name.toLowerCase().contains("name") ? 1000 : 0;
-      prio += name.toLowerCase().contains("qualified") ? 200 : 0;
+      int prio = property.equals("name") ? 10000 : 0;
+      prio += property.toLowerCase().contains("identifier") ? 1700 : 0;
+      prio += property.toLowerCase().contains("name") ? 1000 : 0;
+      prio += property.toLowerCase().contains("qualified") ? 200 : 0;
       priorityMap.put(property, prio);
     }
     if (priorityMap.isEmpty()) {
@@ -385,7 +384,7 @@ public class DefaultEditor extends DefaultNodeEditor {
   private static class MyAbstractCellProvider extends AbstractCellProvider {
     @Override
     public EditorCell createEditorCell(EditorContext editorContext) {
-      EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      return EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
           if (getSNode().getName() != null) {
             return getSNode().getName();
@@ -400,7 +399,6 @@ public class DefaultEditor extends DefaultNodeEditor {
           return EqualUtil.equals(s, getText());
         }
       }, getSNode());
-      return editorCell;
     }
   }
 }
