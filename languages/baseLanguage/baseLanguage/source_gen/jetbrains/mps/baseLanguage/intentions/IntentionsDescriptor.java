@@ -26,6 +26,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new AddRuntimeExceptionToMethodSignature_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddThrows_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddTypeParameters_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AlterStatementListContainer_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ChangeStaticInInner_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertAssignmentToVariableDeclaration_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertClassCreatorToAnonimous_Intention());
