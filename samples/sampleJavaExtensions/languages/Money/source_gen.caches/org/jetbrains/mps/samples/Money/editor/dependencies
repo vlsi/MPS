@@ -44,7 +44,7 @@
   <dependency className="org.jetbrains.mps.samples.Money.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.ConvertTo_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_Editor" />
@@ -53,7 +53,7 @@
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.GetCurrency_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.MoneyLiteral_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Money.editor.MoneyType_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Money.editor.GetAmount_Editor" file="GetAmount_Editor.java">
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />

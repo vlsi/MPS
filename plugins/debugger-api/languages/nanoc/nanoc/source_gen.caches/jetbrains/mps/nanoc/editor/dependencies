@@ -128,9 +128,9 @@
     <classNode dependClassName="jetbrains.mps.nanoc.editor.VarDeclStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.nanoc.editor.VarDecl_Editor" />
     <classNode dependClassName="jetbrains.mps.nanoc.editor.VarRef_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.editor.File_Editor" file="File_Editor.java">
     <classNode dependClassName="java.lang.Class" />

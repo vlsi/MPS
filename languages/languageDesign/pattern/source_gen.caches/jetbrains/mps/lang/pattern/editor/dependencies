@@ -61,9 +61,9 @@
     <classNode dependClassName="jetbrains.mps.lang.pattern.editor.Pattern_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.editor.PropertyPatternVariableDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.editor.WildcardPattern_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.pattern.editor.GeneratorInternal_ChildDescriptor_Editor" file="GeneratorInternal_ChildDescriptor_Editor.java">
     <classNode dependClassName="java.lang.Class" />

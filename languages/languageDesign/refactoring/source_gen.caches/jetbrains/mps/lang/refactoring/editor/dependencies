@@ -210,9 +210,9 @@
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RequiredUserEnteredArgument_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.UpdateModelByDefaultOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.UpdateModelProcedure_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.editor.ExecuteFindersExpression_Editor" file="ExecuteFindersExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />

@@ -7,9 +7,9 @@
     <classNode dependClassName="jetbrains.mps.core.properties.editor.PropertiesDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.core.properties.editor.PropertiesFile_Editor" />
     <classNode dependClassName="jetbrains.mps.core.properties.editor.PropertiesLine_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.properties.editor.PropertiesComment_Editor" file="PropertiesComment_Editor.java">
     <classNode dependClassName="java.lang.Class" />

@@ -234,9 +234,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.ThrowsBlockDocTag_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.ValueInlineDocTag_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.VersionBlockDocTag_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.editor.FieldDocComment_Editor" file="FieldDocComment_Editor.java">
     <classNode dependClassName="java.lang.Boolean" />

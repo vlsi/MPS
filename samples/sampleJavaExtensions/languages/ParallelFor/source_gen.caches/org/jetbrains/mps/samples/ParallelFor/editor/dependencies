@@ -11,14 +11,14 @@
   <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.NonThreadSafeClass_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ParallelFor_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ParallelLoopVariable_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPool_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.editor.ThreadSafe_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.editor.NonThreadSafeClass_Editor" file="NonThreadSafeClass_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />

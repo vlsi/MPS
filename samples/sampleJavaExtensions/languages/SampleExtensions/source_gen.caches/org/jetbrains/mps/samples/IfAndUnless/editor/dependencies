@@ -3,12 +3,12 @@
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.Flow_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.MyIfStatement_Editor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.UnlessStatement_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.editor.Flow_Editor" file="Flow_Editor.java">
     <classNode dependClassName="java.awt.Color" />

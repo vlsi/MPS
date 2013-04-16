@@ -71,9 +71,9 @@
     <classNode dependClassName="jetbrains.mps.make.script.editor.ResourceType_Editor" />
     <classNode dependClassName="jetbrains.mps.make.script.editor.ResultStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.make.script.editor.Text_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.editor.ExpectedOption_Editor" file="ExpectedOption_Editor.java">
     <classNode dependClassName="java.lang.Class" />

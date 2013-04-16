@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,19 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.node;
+package jetbrains.mps.openapi.editor.descriptor;
 
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.runtime.ConceptAspect;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 
 /**
  * User: shatalin
- * Date: 10/2/12
+ * Date: 4/8/13
  */
-public interface EditorAspect extends ConceptAspect {
-  EditorCell createEditorCell(EditorContext editorContext, SNode node);
+public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
+  @Override
+  EditorAspect getAspect(ConceptDescriptor concept);
 
-  EditorCell createInspectedCell(EditorContext editorContext, SNode node);
+  void initialize();
+
+  void deinitialize();
 }

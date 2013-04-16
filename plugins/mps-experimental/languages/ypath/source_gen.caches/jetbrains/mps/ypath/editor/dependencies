@@ -3,7 +3,7 @@
   <dependency className="jetbrains.mps.ypath.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode dependClassName="jetbrains.mps.ypath.editor.FromOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.ypath.editor.GenericFeature_Editor" />
@@ -38,7 +38,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.editor.VisitParameterDeclarationList_Editor" />
     <classNode dependClassName="jetbrains.mps.ypath.editor.VisitParameterDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.ypath.editor.WhereOperation_Editor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.editor.FromOperation_Editor" file="FromOperation_Editor.java">
     <classNode dependClassName="java.lang.Class" />

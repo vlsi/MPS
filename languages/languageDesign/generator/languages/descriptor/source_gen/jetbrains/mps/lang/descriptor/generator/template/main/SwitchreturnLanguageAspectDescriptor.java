@@ -100,8 +100,8 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
               final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
               try {
                 environment.getTracer().pushTemplateNode(templateNode_2tkj9d_a0a0a1a3a1a3a2a5h);
-                environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314432562");
-                tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.node(MPS.Editor/jetbrains.mps.openapi.editor.node@java_stub)"), PersistenceFacade.getInstance().createNodeId("~EditorAspectDescriptor")));
+                environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5639814097751792625");
+                tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.descriptor(MPS.Editor/jetbrains.mps.openapi.editor.descriptor@java_stub)"), PersistenceFacade.getInstance().createNodeId("~EditorAspectDescriptor")));
 
               } finally {
                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));
@@ -417,7 +417,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
   private static SNodePointer conseq_2tkj9d_a0a0a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314304637");
   private static SNodePointer templateNode_2tkj9d_a0a0a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314373496");
   private static SNodePointer templateNode_2tkj9d_a0a0a1a3a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314406305");
-  private static SNodePointer templateNode_2tkj9d_a0a0a1a3a1a3a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314432562");
+  private static SNodePointer templateNode_2tkj9d_a0a0a1a3a1a3a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "5639814097751792625");
   private static SNodePointer templateNode_2tkj9d_a0a0a1a4a1a3a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314403561");
   private static SNodePointer templateNode_2tkj9d_a0a0a1a4a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314373507");
   private static SNodePointer templateNode_2tkj9d_a0a0a1a3a1a4a2a5h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314434575");

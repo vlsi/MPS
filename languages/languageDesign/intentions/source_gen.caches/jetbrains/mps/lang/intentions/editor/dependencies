@@ -35,9 +35,9 @@
     <classNode dependClassName="jetbrains.mps.lang.intentions.editor.IntentionParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.editor.ParameterizedIntentionDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.intentions.editor.IntentionParameter_Editor" file="IntentionParameter_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />

@@ -49,9 +49,9 @@
     <classNode dependClassName="jetbrains.mps.gwt.client.editor.PatternHolder_Editor" />
     <classNode dependClassName="jetbrains.mps.gwt.client.editor.Pattern_Editor" />
     <classNode dependClassName="jetbrains.mps.gwt.client.editor.RenameTo_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.gwt.client.editor.EntryPoint_Editor" file="EntryPoint_Editor.java">
     <classNode dependClassName="java.lang.Class" />

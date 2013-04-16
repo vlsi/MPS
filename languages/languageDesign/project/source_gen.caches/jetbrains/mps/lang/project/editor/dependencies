@@ -46,9 +46,9 @@
     <classNode dependClassName="jetbrains.mps.lang.project.editor.SourcePath_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.project.editor.StubEntry_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.project.editor.StubSolution_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.project.editor.Generator_Editor" file="Generator_Editor.java">
     <classNode dependClassName="java.lang.Class" />

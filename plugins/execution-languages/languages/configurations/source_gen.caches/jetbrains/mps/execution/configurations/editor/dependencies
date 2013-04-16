@@ -224,9 +224,9 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.editor.RunConfigurationSource_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.editor.RunConfiguration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.editor.StartProcessHandlerStatement_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.editor.ExecuteConfiguration_Function_Editor" file="ExecuteConfiguration_Function_Editor.java">
     <classNode dependClassName="java.lang.Class" />

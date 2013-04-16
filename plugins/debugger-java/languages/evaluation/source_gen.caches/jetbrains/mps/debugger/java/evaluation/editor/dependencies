@@ -62,9 +62,9 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.editor.LowLevelVariable_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.editor.ToEvaluateAnnotation_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.editor.UnitNode_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.editor.EvaluationStyles_StyleSheet" file="EvaluationStyles_StyleSheet.java">
     <classNode dependClassName="java.lang.Deprecated" />

@@ -304,7 +304,7 @@
   <dependency className="jetbrains.mps.platform.conf.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.platform.conf.editor.ActionReference_Editor" />
     <classNode dependClassName="jetbrains.mps.platform.conf.editor.Action_Editor" />
     <classNode dependClassName="jetbrains.mps.platform.conf.editor.Actions_Editor" />
@@ -336,7 +336,7 @@
     <classNode dependClassName="jetbrains.mps.platform.conf.editor.Shortcut_Editor" />
     <classNode dependClassName="jetbrains.mps.platform.conf.editor.XInclude_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.platform.conf.editor.ExtensionPoints_Editor" file="ExtensionPoints_Editor.java">
     <classNode dependClassName="java.lang.String" />

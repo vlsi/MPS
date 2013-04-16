@@ -16,8 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.openapi.editor.node.EditorAspect;
-import jetbrains.mps.openapi.editor.node.EditorAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;

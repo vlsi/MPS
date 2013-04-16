@@ -10,9 +10,9 @@
     <classNode dependClassName="jetbrains.mps.nanoj.editor.NanoStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.nanoj.editor.VarDeclReference_Editor" />
     <classNode dependClassName="jetbrains.mps.nanoj.editor.VarDecl_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.nanoj.editor.MinusExpression_Editor" file="MinusExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />

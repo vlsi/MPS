@@ -64,7 +64,7 @@
   <dependency className="jetbrains.mps.samples.Kaja.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.CommandList_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.CommentLine_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Drop_Editor" />
@@ -92,7 +92,7 @@
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.West_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.While_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.EmptyLine_Editor" file="EmptyLine_Editor.java">
     <classNode dependClassName="java.lang.String" />

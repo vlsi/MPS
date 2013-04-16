@@ -166,9 +166,9 @@
     <classNode dependClassName="jetbrains.mps.lang.test.editor.TypesCheckOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.VariableInialized_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.VariableLive_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.editor.EditorComponentExpression_Editor" file="EditorComponentExpression_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.core.editor.AliasEditorComponent" />

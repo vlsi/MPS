@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.openapi.editor.node.EditorAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.InterpretedLanguageAspectsRegistry;
 import jetbrains.mps.smodel.language.InterpretedLanguageAspectsRegistry.AspectDescriptorFactory;
 import jetbrains.mps.smodel.language.LanguageRuntime;

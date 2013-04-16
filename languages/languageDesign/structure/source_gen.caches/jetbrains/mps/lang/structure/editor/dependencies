@@ -310,9 +310,9 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.ReferenceConceptLink_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.StringConceptPropertyDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.StringConceptProperty_Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.node.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.node.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.editor.EnumerationDataTypeDeclaration_Editor" file="EnumerationDataTypeDeclaration_Editor.java">
     <classNode dependClassName="java.lang.Class" />
