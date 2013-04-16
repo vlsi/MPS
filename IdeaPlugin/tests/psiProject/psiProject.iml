@@ -32,8 +32,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="mps.closures.runtime_auto" level="project" />
     <orderEntry type="library" name="mps.collections.runtime_auto" level="project" />
+    <orderEntry type="library" name="mps.closures.runtime_auto" level="project" />
   </component>
 </module>
 

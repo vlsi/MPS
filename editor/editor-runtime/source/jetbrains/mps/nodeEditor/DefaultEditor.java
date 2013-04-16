@@ -87,7 +87,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     if (myNullConcept) {
       addPropertiesOrChild = mySNode.getChildren().iterator().hasNext() || mySNode.getPropertyNames().iterator().hasNext();
     } else {
-      addPropertiesOrChild = !myPropertyNames.isEmpty() || !myPropertyNames.isEmpty();
+      addPropertiesOrChild = !myChildrenNames.isEmpty() || !myPropertyNames.isEmpty();
     }
 
     if (addPropertiesOrChild) {
