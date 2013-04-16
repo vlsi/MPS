@@ -37,7 +37,7 @@
   </path>
   
   <path id="path.java.library.core-libraries">
-    <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
+    <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
     <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
     <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
     <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -3135,6 +3135,8 @@
         <pathelement path="${build.tmp}/java/out/mps-persistence" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-icons" />
+        <fileset file="${mps_home}/lib/platform.jar" />
+        <fileset file="${mps_home}/lib/platform-api.jar" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />

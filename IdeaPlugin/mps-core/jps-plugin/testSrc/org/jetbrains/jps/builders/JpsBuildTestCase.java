@@ -44,6 +44,8 @@ import org.jetbrains.jps.util.JpsPathUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.Map;
 
@@ -263,7 +265,7 @@ public abstract class JpsBuildTestCase extends UsefulTestCase {
     BuildResult result = new BuildResult();
     builder.addMessageHandler(result);
     try {
-      builder.build(scopeBuilder.build(), scopeBuilder.getBuildType() == BuildType.MAKE, scopeBuilder.getBuildType() == BuildType.PROJECT_REBUILD, false);
+      builder.build(scopeBuilder.build(), false);
     }
     catch (RebuildRequestedException e) {
       throw new RuntimeException(e);

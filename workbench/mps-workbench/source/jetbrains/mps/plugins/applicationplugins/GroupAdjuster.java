@@ -114,14 +114,12 @@ public class GroupAdjuster {
     for (Project project : openProjects) {
       final IdeFrameImpl frame = WindowManagerEx.getInstanceEx().getFrame(project);
       if (frame != null) {
-        frame.updateToolbar();
-        frame.updateMenuBar();
+        frame.updateView();;
       }
     }
     final IdeFrameImpl frame = WindowManagerEx.getInstanceEx().getFrame(null);
     if (frame != null) {
-      frame.updateToolbar();
-      frame.updateMenuBar();
+      frame.updateView();
     }
   }
 }

@@ -30,17 +30,37 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final Set<String> ancestors;
   private final List<String> propertyNames;
   private final List<String> referenceNames;
+  private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
+  private final List<String> childNames;
+  private final boolean isAbstract;
+  private final boolean isFinal;
+  private final String conceptAlias;
+  private final String conceptShortDescription;
+  private final String helpUrl;
+
 
   public CompiledConceptDescriptor(String conceptFqName,
-                                   @Nullable String superConcept,
-                                   boolean isInterfaceConcept,
-                                   String[] parents,
-                                   String[] ownPropertyNames,
-                                   String[] ownReferenceNames) {
+      @Nullable String superConcept,
+      boolean isInterfaceConcept,
+      String[] parents,
+      String[] ownPropertyNames,
+      String[] ownReferenceNames,
+      String[] ownChildNames,
+      boolean[] isMultiple,
+      boolean isAbstract,
+      boolean isFinal,
+      String conceptAlias,
+      String shortDescription,
+      String helpUrl) {
     this.conceptFqName = conceptFqName;
     this.superConcept = superConcept;
     this.isInterfaceConcept = isInterfaceConcept;
     this.parents = Arrays.asList(parents);
+    this.isAbstract = isAbstract;
+    this.isFinal = isFinal;
+    this.conceptAlias = conceptAlias;
+    this.conceptShortDescription = shortDescription;
+    this.helpUrl = helpUrl;
 
     // hierarchy
     // todo: common with StructureAspectInterpreted to new class!
@@ -79,6 +99,21 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     }
 
     referenceNames = new ArrayList<String>(references);
+
+    //children
+    assert ownChildNames.length == isMultiple.length;
+    for (int i = 0; i != ownChildNames.length; ++i) {
+      childMap.put(ownChildNames[i], isMultiple[i]);
+    }
+
+    for (ConceptDescriptor parentDescriptor : parentDescriptors) {
+      for (String child : parentDescriptor.getChildrenNames()) {
+        childMap.put(child, parentDescriptor.isMultipleChild(child));
+      }
+    }
+
+    childNames = new ArrayList<String>(childMap.keySet());
+
   }
 
   @Override
@@ -107,6 +142,11 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
+  public List<String> getChildrenNames() {
+    return childNames;
+  }
+
+  @Override
   public List<String> getParentsNames() {
     return parents;
   }
@@ -114,5 +154,37 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public Set<String> getAncestorsNames() {
     return ancestors;
+  }
+
+  @Override
+  public boolean isMultipleChild(String name) {
+    Boolean result = childMap.get(name);
+    return result == null ? false : result;
+  }
+
+  @Override
+  public boolean isAbstract() {
+    return isAbstract;
+  }
+
+  @Override
+  public boolean isFinal() {
+    return isFinal;
+  }
+
+
+  @Override
+  public String getConceptAlias() {
+    return conceptAlias;
+  }
+
+  @Override
+  public String getConceptShortDescription() {
+    return conceptShortDescription;
+  }
+
+  @Override
+  public String getHelpUrl() {
+    return helpUrl;
   }
 }

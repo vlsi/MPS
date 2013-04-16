@@ -170,7 +170,7 @@ public class DependenciesPanel extends JPanel {
 
   private class RerunAction extends AnAction {
     public RerunAction() {
-      super("Rerun", "Rerun dependencies viewer", AllIcons.Actions.RefreshUsages);
+      super("Rerun", "Rerun dependencies viewer", AllIcons.Actions.Refresh);
     }
 
     @Override

@@ -629,8 +629,9 @@ public class EditorManager {
   private EditorAspect getEditor(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
     SConcept concept = node.getConcept();
     boolean isInterface = false;
+    ConceptDescriptor conceptDescriptor = null;
     if (concept != null) {
-      ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(concept.getQualifiedName());
+      conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(concept.getQualifiedName());
       EditorAspect editorAspect = getActiveEditorAspect(conceptDescriptor);
       if (editorAspect != null) {
         return editorAspect;
@@ -638,8 +639,9 @@ public class EditorManager {
       isInterface = conceptDescriptor.isInterfaceConcept();
     }
 
-    // TODO: use always DefaultEditor ?
-    return isInterface ? new DefaultInterfaceEditor() : new DefaultEditor();
+
+    boolean isAbstract = isInterface || conceptDescriptor != null && conceptDescriptor.isAbstract();
+    return isAbstract ? new DefaultInterfaceEditor() : new DefaultEditor();
   }
 
   private EditorAspect getActiveEditorAspect(ConceptDescriptor conceptDescriptor) {
