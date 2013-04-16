@@ -78,7 +78,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     cacheParameters(node, editorContext);
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
-    addLabel(mySNode.getConcept() != null ? mySNode.getConcept().getName() : mySNode.getPresentation());
+    addLabel(mySNode.getConcept() != null ? mySNode.getConcept().getName().toLowerCase() : mySNode.getPresentation());
     if (myNameProperty != null) {
       addPropertyCell(myNameProperty);
     }
@@ -214,13 +214,14 @@ public class DefaultEditor extends DefaultNodeEditor {
 
   private void addLink(String role) {
 
-
+    addRoleLabel(role, "link");
+    addNewLine();
     if (myNullConcept) {
       for (SNode child : mySNode.getChildren(role)) {
-        addRoleLabel(role, "link");
-        addNewLine();
         EditorCell cell = new DefaultEditor().createEditorCell(myEditorContext, child);
         addCell(cell);
+        setIndent(cell);
+        addNewLine();
       }
 
     } else {
