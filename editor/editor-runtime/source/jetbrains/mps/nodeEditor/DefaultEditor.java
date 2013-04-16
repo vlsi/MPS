@@ -27,8 +27,10 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -51,6 +53,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -114,7 +117,8 @@ public class DefaultEditor extends DefaultNodeEditor {
   private void cacheParameters(SNode node, EditorContext editorContext) {
     myEditorContext = editorContext;
     mySNode = node;
-    SConcept concept = node.getConcept();
+    SConcept concept;
+    concept = node.getConcept();
     String qualifiedName = null;
     if (concept != null) {
       qualifiedName = concept.getQualifiedName();
@@ -140,7 +144,7 @@ public class DefaultEditor extends DefaultNodeEditor {
         myReferencesNames.add(ref.getRole());
       }
 
-      Set<String> rolesSet= new HashSet<String>();
+      Set<String> rolesSet = new HashSet<String>();
       for (SNode sNode : mySNode.getChildren()) {
         rolesSet.add(sNode.getRoleInParent());
       }
@@ -189,15 +193,63 @@ public class DefaultEditor extends DefaultNodeEditor {
     for (String reference : myReferencesNames) {
       addRoleLabel(reference, "reference");
       if (myNullConcept) {
-        addLabel(mySNode.getReferenceTarget(reference).getPresentation());
+        addRefCellForNullconcept(reference);
       } else {
-        CellProviderWithRole provider = new RefCellCellProvider(mySNode, myEditorContext);
-        provider.setAuxiliaryCellProvider(new MyAbstractCellProvider());
-        provider.setRole(reference);
-        provider.setNoTargetText("<no " + reference + ">");
-        EditorCell editorCell = provider.createEditorCell(myEditorContext);
-        editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-        addCell(editorCell);
+        addCellForNonNullConcept(reference);
+      }
+    }
+  }
+
+
+  protected void addRefCellForNullconcept(String role) {
+    SNode referentNode = null;
+
+    SReference reference = mySNode.getReference(role);
+    String myErrorText;
+    if (reference != null) {
+      referentNode = reference.getTargetNode();
+      if (referentNode == null || referentNode.getModel() == null || myEditorContext.getScope().getModelDescriptor(referentNode.getModel().getReference()) == null) {
+        String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
+        myErrorText = rinfo != null ? rinfo : "?" + role + "?";
+        addErrorCell(myErrorText);
+        return;
+      }
+    }
+
+
+    if (referentNode == null) {
+      addLabel("<no target>");
+      return;
+    }
+    AbstractCellProvider inlineComponent = new MyAbstractCellProvider();
+    inlineComponent.setSNode(referentNode);
+
+    EditorCell cell = ((jetbrains.mps.nodeEditor.EditorContext) myEditorContext).createReferentCell(inlineComponent, mySNode, referentNode, role);
+    setSemanticNodeToCells(cell, mySNode);
+    if (cell.getRole() == null) {
+      cell.setRole(role);
+    }
+    addCell(cell);
+  }
+
+  private void addCellForNonNullConcept(String reference) {
+    CellProviderWithRole provider = new RefCellCellProvider(mySNode, myEditorContext);
+    provider.setAuxiliaryCellProvider(new MyAbstractCellProvider());
+    provider.setRole(reference);
+    provider.setNoTargetText("<no " + reference + ">");
+    EditorCell editorCell = provider.createEditorCell(myEditorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    addCell(editorCell);
+  }
+
+  private void setSemanticNodeToCells(jetbrains.mps.openapi.editor.cells.EditorCell rootCell, SNode semanticNode) {
+    if (!(rootCell instanceof EditorCell_Basic) || semanticNode == null) {
+      return;
+    }
+    ((EditorCell_Basic) rootCell).setSNode(semanticNode);
+    if (rootCell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
+      for (EditorCell child: ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) rootCell)) {
+        setSemanticNodeToCells(child, semanticNode);
       }
     }
   }
@@ -289,6 +341,11 @@ public class DefaultEditor extends DefaultNodeEditor {
     childLabel.setCellId("constant_" + currentConstantIdNumber.toString());
     currentConstantIdNumber = currentConstantIdNumber.add(BigInteger.ONE);
     cellCollection.addEditorCell(childLabel);
+  }
+
+  protected void addErrorCell(String error) {
+    EditorCell_Error errorCell = new EditorCell_Error(myEditorContext, mySNode, error);
+    addCell(errorCell);
   }
 
   private void setIndent(EditorCell cell) {
