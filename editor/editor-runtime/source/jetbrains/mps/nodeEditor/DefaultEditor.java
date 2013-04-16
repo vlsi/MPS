@@ -62,7 +62,7 @@ public class DefaultEditor extends DefaultNodeEditor {
 
 
   private SNode mySNode;
-  private List<String> myPropertyNames;
+  private List<String> myPropertyNames = new ArrayList<String>();
   private List<String> myChildrenNames = new ArrayList<String>();
   private List<String> myReferencesNames = new ArrayList<String>();
   private String myNameProperty;
@@ -78,7 +78,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     cacheParameters(node, editorContext);
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
-    addLabel(mySNode.getConcept().getName());
+    addLabel(mySNode.getConcept() != null ? mySNode.getConcept().getName() : mySNode.getPresentation());
     if (myNameProperty != null) {
       addPropertyCell(myNameProperty);
     }
@@ -121,13 +121,25 @@ public class DefaultEditor extends DefaultNodeEditor {
 
     if (concept == null || myConceptDescriptor instanceof IllegalConceptDescriptor) {
       myNullConcept = true;
-      return;
     }
 
     ConceptDescriptor baseConceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor("jetbrains.mps.lang.core.structure.BaseConcept");
-    myPropertyNames = myConceptDescriptor.getPropertyNames();
-    myReferencesNames = myConceptDescriptor.getReferenceNames();
-    myChildrenNames = myConceptDescriptor.getChildrenNames();
+    if (!myNullConcept) {
+      myPropertyNames = myConceptDescriptor.getPropertyNames();
+      myReferencesNames = myConceptDescriptor.getReferenceNames();
+      myChildrenNames = myConceptDescriptor.getChildrenNames();
+    } else {
+      for (String name : mySNode.getPropertyNames()) {
+        myPropertyNames.add(name);
+      }
+      for (SReference ref : mySNode.getReferences()) {
+        myReferencesNames.add(ref.getRole());
+      }
+
+      for (SNode sNode : mySNode.getChildren()) {
+        myChildrenNames.add(sNode.getRoleInParent());
+      }
+    }
 
 
     List<String> basePropertyNames = baseConceptDescriptor.getPropertyNames();
@@ -169,34 +181,25 @@ public class DefaultEditor extends DefaultNodeEditor {
   }
 
   private void addReferences() {
-    if (myNullConcept) {
-      for (SReference reference : mySNode.getReferences()) {
-        String role = reference.getRole();
-        addRefRole(role);
-        addLabel(mySNode.getReferenceTarget(role).getPresentation());
-      }
-    } else {
-      for (String reference : myReferencesNames) {
-        addRefRole(reference);
-
-        EditorCell editorCell;
-
-
-        CellProviderWithRole provider;
-        provider = new RefCellCellProvider(mySNode, myEditorContext);
+    for (String reference : myReferencesNames) {
+      addRoleLabel(reference, "reference");
+      if (myNullConcept) {
+        addLabel(mySNode.getReferenceTarget(reference).getPresentation());
+      } else {
+        CellProviderWithRole provider = new RefCellCellProvider(mySNode, myEditorContext);
         provider.setAuxiliaryCellProvider(new MyAbstractCellProvider());
         provider.setRole(reference);
         provider.setNoTargetText("<no " + reference + ">");
-        editorCell = provider.createEditorCell(myEditorContext);
+        EditorCell editorCell = provider.createEditorCell(myEditorContext);
         editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
         addCell(editorCell);
       }
     }
   }
 
-  private void addRefRole(String role) {
+  private void addRoleLabel(String role, String type) {
     if (role == null) {
-      role = "<no reference>";
+      role = "<no " + type + ">";
     }
     addLabel(role);
     addLabel(":");
@@ -204,94 +207,70 @@ public class DefaultEditor extends DefaultNodeEditor {
 
 
   private void addChildren() {
-    if (myNullConcept) {
-      for (SNode child : mySNode.getChildren()) {
-        String name = child.getRoleInParent();
-        addLabel(name);
-        addLabel(":");
-        addLabel(child.getPresentation());
-        EditorCell cell = new DefaultEditor().createEditorCell(myEditorContext, child);
-        addCell(cell);
-        addNewLine();
-      }
-    } else {
-      for (String child : myChildrenNames) {
-        addLink(child);
-      }
+    for (String child : myChildrenNames) {
+      addLink(child);
     }
   }
 
   private void addLink(String role) {
 
-    if (role == null) {
-      role = "<no role>";
-    }
 
-    addLabel(role);
-    addLabel(":");
-    addNewLine();
+    if (myNullConcept) {
+      for (SNode child : mySNode.getChildren(role)) {
+        addRoleLabel(role, "link");
+        addNewLine();
+        EditorCell cell = new DefaultEditor().createEditorCell(myEditorContext, child);
+        addCell(cell);
+      }
 
-    EditorCell editorCell;
-
-    if (myConceptDescriptor.isMultipleChild(role)) {
-      AbstractCellListHandler handler = new ListHandler(mySNode, role, myEditorContext);
-      editorCell = handler.createCells(myEditorContext, new CellLayout_Indent(), false);
-      editorCell.setRole(handler.getElementRole());
-      addStyle(editorCell, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
     } else {
-      CellProviderWithRole provider;
-      provider = new RefNodeCellProvider(mySNode, myEditorContext);
-      provider.setRole(role);
-      provider.setNoTargetText("<no " + role + ">");
-      editorCell = provider.createEditorCell(myEditorContext);
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      EditorCell editorCell;
+
+      if (myConceptDescriptor.isMultipleChild(role)) {
+        AbstractCellListHandler handler = new ListHandler(mySNode, role, myEditorContext);
+        editorCell = handler.createCells(myEditorContext, new CellLayout_Indent(), false);
+        editorCell.setRole(handler.getElementRole());
+        addStyle(editorCell, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
+      } else {
+        CellProviderWithRole provider;
+        provider = new RefNodeCellProvider(mySNode, myEditorContext);
+        provider.setRole(role);
+        provider.setNoTargetText("<no " + role + ">");
+        editorCell = provider.createEditorCell(myEditorContext);
+        editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      }
+      setIndent(editorCell);
+      addCell(editorCell);
+      addNewLine();
     }
-    setIndent(editorCell);
-    addCell(editorCell);
-    addNewLine();
   }
 
   private void addProperties() {
-    if (myNullConcept) {
-      for (String property : mySNode.getPropertyNames()) {
-        if (property.equals("name")) {
-          continue;
-        }
-        addLabel(property);
-        addLabel(":");
-        addLabel(mySNode.getProperty(property));
-        addNewLine();
-      }
-
-    } else {
-      for (String property : myPropertyNames) {
-        if (property == myNameProperty) {
-          continue;
-        }
-        String name = property;
-      /*if (name == null || property.getType() == null) {
+    for (String property : myPropertyNames) {
+      if (property == myNameProperty) {
         continue;
-      } */
-        addLabel(name);
-        addLabel(":");
-        addPropertyCell(name);
-        addNewLine();
       }
+      addLabel(property);
+      addLabel(":");
+      addPropertyCell(property);
+      addNewLine();
     }
-
-
   }
 
 
   private void addPropertyCell(String name) {
-    CellProviderWithRole provider = new PropertyCellProvider(mySNode, myEditorContext);
-    provider.setRole(name);
-    provider.setNoTargetText("<no " + name + ">");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(myEditorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setCellId("property_" + name);
-    addCell(editorCell);
+    if (myNullConcept) {
+      addLabel(mySNode.getProperty(name));
+    } else {
+      CellProviderWithRole provider = new PropertyCellProvider(mySNode, myEditorContext);
+      provider.setRole(name);
+      provider.setNoTargetText("<no " + name + ">");
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(myEditorContext);
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      editorCell.setCellId("property_" + name);
+      addCell(editorCell);
+    }
   }
 
   private void addLabel(String label) {
