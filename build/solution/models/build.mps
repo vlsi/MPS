@@ -13038,6 +13038,20 @@
           <property name="text" nameId="3ior.4903714810883755350" value="http://forum.jetbrains.com/forum/Meta-Programming-System" />
         </node>
       </node>
+      <node role="welcomeLogo" roleId="kdzh.772379520210716142" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="772379520211581357">
+        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="772379520211581358">
+          <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="772379520211581359">
+            <property name="head" nameId="3ior.8618885170173601779" value="mps-workbench" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="772379520211581360">
+              <property name="head" nameId="3ior.8618885170173601779" value="source" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="772379520211581361">
+                <property name="head" nameId="3ior.8618885170173601779" value="MPS_32.png" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="4301118715654465616">
       <property name="name" nameId="tpck.1169194664001" value="build.number" />
