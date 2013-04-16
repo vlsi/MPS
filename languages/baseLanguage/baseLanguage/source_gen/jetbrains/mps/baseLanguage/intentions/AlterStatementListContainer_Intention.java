@@ -21,7 +21,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.behavior.IHasCondition_Behavior;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AlterStatementListContainer_Intention implements IntentionFactory {
@@ -118,10 +117,10 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
 
       SNodeOperations.replaceWithAnother(node, newInitializedInstance);
 
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IHasCondition") && SNodeOperations.isInstanceOf(newInitializedInstance, "jetbrains.mps.baseLanguage.structure.IHasCondition")) {
-        SNode originalCondition = IHasCondition_Behavior.call_getCondition_8176191621225415208(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IHasCondition"));
+      if (IntentionUtils.hasCondition(node) && IntentionUtils.hasCondition(newInitializedInstance)) {
+        SNode originalCondition = IntentionUtils.getCondition(node);
         if (originalCondition != null) {
-          SNodeOperations.replaceWithAnother(IHasCondition_Behavior.call_getCondition_8176191621225415208(SNodeOperations.cast(newInitializedInstance, "jetbrains.mps.baseLanguage.structure.IHasCondition")), SNodeOperations.copyNode(originalCondition));
+          SNodeOperations.replaceWithAnother(IntentionUtils.getCondition(newInitializedInstance), SNodeOperations.copyNode(originalCondition));
         }
       }
 

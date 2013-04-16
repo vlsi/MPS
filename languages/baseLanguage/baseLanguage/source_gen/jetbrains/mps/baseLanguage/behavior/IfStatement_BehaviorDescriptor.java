@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 
-public class IfStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IContainsStatementList_BehaviorDescriptor, IHasCondition_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
+public class IfStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IContainsStatementList_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public IfStatement_BehaviorDescriptor() {
   }
 
