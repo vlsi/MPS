@@ -1,208 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8611316981187517974">
-    <nodeInfo nodeId="8611316981187585813" fileName="PluginStateWidget.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="8611316981187585818" fileName="PluginStateWidget.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INITIAL_DELAY" />
-    <nodeInfo nodeId="8611316981187585822" fileName="PluginStateWidget.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CRITICAL_DELAY" />
-    <nodeInfo nodeId="8611316981187585826" fileName="PluginStateWidget.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DELAY_MUL" />
-    <nodeInfo nodeId="8611316981187585830" fileName="PluginStateWidget.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOCK" />
-    <nodeInfo nodeId="8611316981187585851" fileName="PluginStateWidget.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="8611316981187585366" fileName="PluginStateWidget.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTimer" />
-    <nodeInfo nodeId="8611316981187585359" fileName="PluginStateWidget.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
-    <nodeInfo nodeId="8611316981187585644" fileName="PluginStateWidget.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStatusBar" />
-    <nodeInfo nodeId="8611316981187585855" fileName="PluginStateWidget.java" startLine="34" startPosition="45" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585407" fileName="PluginStateWidget.java" startLine="41" startPosition="29" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585649" fileName="PluginStateWidget.java" startLine="50" startPosition="47" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585409" fileName="PluginStateWidget.java" startLine="51" startPosition="22" endLine="52" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585374" fileName="PluginStateWidget.java" startLine="61" startPosition="62" endLine="62" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585377" fileName="PluginStateWidget.java" startLine="62" startPosition="65" endLine="63" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187520325" fileName="PluginStateWidget.java" startLine="71" startPosition="105" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187585418" fileName="PluginStateWidget.java" startLine="77" startPosition="30" endLine="78" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585635" fileName="PluginStateWidget.java" startLine="84" startPosition="34" endLine="85" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187585628" fileName="PluginStateWidget.java" startLine="90" startPosition="25" endLine="91" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187520323" fileName="PluginStateWidget.java" startLine="96" startPosition="22" endLine="97" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187585430" fileName="PluginStateWidget.java" startLine="100" startPosition="23" endLine="101" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585550" fileName="PluginStateWidget.java" startLine="105" startPosition="29" endLine="106" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187585546" fileName="PluginStateWidget.java" startLine="107" startPosition="18" endLine="108" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585538" fileName="PluginStateWidget.java" startLine="110" startPosition="16" endLine="111" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585530" fileName="PluginStateWidget.java" startLine="116" startPosition="29" endLine="117" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585528" fileName="PluginStateWidget.java" startLine="118" startPosition="18" endLine="119" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187585520" fileName="PluginStateWidget.java" startLine="121" startPosition="16" endLine="122" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585512" fileName="PluginStateWidget.java" startLine="128" startPosition="31" endLine="129" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585508" fileName="PluginStateWidget.java" startLine="130" startPosition="20" endLine="131" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585492" fileName="PluginStateWidget.java" startLine="138" startPosition="29" endLine="139" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585488" fileName="PluginStateWidget.java" startLine="140" startPosition="18" endLine="141" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585459" fileName="PluginStateWidget.java" startLine="143" startPosition="16" endLine="144" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8611316981187585478" fileName="PluginStateWidget.java" startLine="145" startPosition="43" endLine="146" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585474" fileName="PluginStateWidget.java" startLine="147" startPosition="18" endLine="148" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585557" fileName="PluginStateWidget.java" startLine="155" startPosition="59" endLine="156" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="8611316981187585572" fileName="PluginStateWidget.java" startLine="156" startPosition="102" endLine="157" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585576" fileName="PluginStateWidget.java" startLine="157" startPosition="20" endLine="158" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585655" fileName="PluginStateWidget.java" startLine="161" startPosition="25" endLine="162" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585610" fileName="PluginStateWidget.java" startLine="167" startPosition="33" endLine="168" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187585618" fileName="PluginStateWidget.java" startLine="171" startPosition="32" endLine="172" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187585682" fileName="PluginStateWidget.java" startLine="181" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
-    <nodeInfo nodeId="8611316981187585685" fileName="PluginStateWidget.java" startLine="182" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHelpText" />
-    <nodeInfo nodeId="8611316981187585688" fileName="PluginStateWidget.java" startLine="183" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDefaultDelay" />
-    <nodeInfo nodeId="8611316981187585701" fileName="PluginStateWidget.java" startLine="185" startPosition="57" endLine="186" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585705" fileName="PluginStateWidget.java" startLine="186" startPosition="20" endLine="187" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585709" fileName="PluginStateWidget.java" startLine="187" startPosition="28" endLine="188" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585717" fileName="PluginStateWidget.java" startLine="191" startPosition="27" endLine="192" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187585723" fileName="PluginStateWidget.java" startLine="195" startPosition="33" endLine="196" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187585729" fileName="PluginStateWidget.java" startLine="199" startPosition="34" endLine="200" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187585796" fileName="PluginStateWidget.java" startLine="205" startPosition="45" endLine="206" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8611316981187585805" fileName="PluginStateWidget.java" startLine="209" startPosition="40" endLine="210" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585808" fileName="PluginStateWidget.java" startLine="210" startPosition="22" endLine="211" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585811" fileName="PluginStateWidget.java" startLine="211" startPosition="29" endLine="212" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585544" fileName="PluginStateWidget.java" startLine="107" startPosition="16" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8611316981187585536" fileName="PluginStateWidget.java" startLine="110" startPosition="14" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8611316981187585526" fileName="PluginStateWidget.java" startLine="118" startPosition="16" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8611316981187585518" fileName="PluginStateWidget.java" startLine="121" startPosition="14" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8611316981187585506" fileName="PluginStateWidget.java" startLine="130" startPosition="18" endLine="132" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8611316981187585486" fileName="PluginStateWidget.java" startLine="140" startPosition="16" endLine="142" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8611316981187585472" fileName="PluginStateWidget.java" startLine="147" startPosition="16" endLine="149" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8611316981187585413" fileName="PluginStateWidget.java" startLine="76" startPosition="25" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585606" fileName="PluginStateWidget.java" startLine="167" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConnected#()Z" />
-    <nodeInfo nodeId="8611316981187585614" fileName="PluginStateWidget.java" startLine="171" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canOperate#()Z" />
-    <nodeInfo nodeId="8611316981187585713" fileName="PluginStateWidget.java" startLine="191" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="8611316981187585719" fileName="PluginStateWidget.java" startLine="195" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHelpText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8611316981187585725" fileName="PluginStateWidget.java" startLine="199" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDelay#()I" />
-    <nodeInfo nodeId="8611316981187585790" fileName="PluginStateWidget.java" startLine="205" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTimer#(Ljava/awt/event/ActionListener;)V" />
-    <nodeInfo nodeId="8611316981187585403" fileName="PluginStateWidget.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8611316981187585369" fileName="PluginStateWidget.java" startLine="60" startPosition="45" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585588" fileName="PluginStateWidget.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8611316981187520275" fileName="PluginStateWidget.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/wm/StatusBar;)V" />
-    <nodeInfo nodeId="8611316981187520288" fileName="PluginStateWidget.java" startLine="69" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Lcom/intellij/openapi/wm/StatusBarWidget/PlatformType;)Lcom/intellij/openapi/wm/StatusBarWidget/WidgetPresentation;" />
-    <nodeInfo nodeId="8611316981187520300" fileName="PluginStateWidget.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTooltipText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8611316981187520305" fileName="PluginStateWidget.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="8611316981187520310" fileName="PluginStateWidget.java" startLine="94" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ID#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8611316981187585542" fileName="PluginStateWidget.java" startLine="104" startPosition="28" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585524" fileName="PluginStateWidget.java" startLine="115" startPosition="28" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585504" fileName="PluginStateWidget.java" startLine="127" startPosition="30" endLine="132" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585484" fileName="PluginStateWidget.java" startLine="137" startPosition="28" endLine="142" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585469" fileName="PluginStateWidget.java" startLine="144" startPosition="64" endLine="149" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585691" fileName="PluginStateWidget.java" startLine="185" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="State#(Ljavax/swing/Icon;Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="8611316981187585799" fileName="PluginStateWidget.java" startLine="209" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setNewDelay#(I)V" />
-    <nodeInfo nodeId="8611316981187585396" fileName="PluginStateWidget.java" startLine="38" startPosition="50" endLine="44" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187520296" fileName="PluginStateWidget.java" startLine="75" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="8611316981187585583" fileName="PluginStateWidget.java" startLine="158" startPosition="49" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187550178" fileName="PluginStateWidget.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="consume#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="8611316981187585501" fileName="PluginStateWidget.java" startLine="126" startPosition="62" endLine="133" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585457" fileName="PluginStateWidget.java" startLine="143" startPosition="14" endLine="150" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8611316981187585390" fileName="PluginStateWidget.java" startLine="37" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="8611316981187520757" fileName="PluginStateWidget.java" startLine="57" startPosition="50" endLine="66" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8611316981187585534" fileName="PluginStateWidget.java" startLine="103" startPosition="57" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585516" fileName="PluginStateWidget.java" startLine="114" startPosition="69" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585496" fileName="PluginStateWidget.java" startLine="125" startPosition="60" endLine="134" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585382" fileName="PluginStateWidget.java" startLine="35" startPosition="24" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8611316981187585551" fileName="PluginStateWidget.java" startLine="155" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setNewState#(Ljetbrains/mps/plugin/PluginStateWidget/State;)V" />
-    <nodeInfo nodeId="8611316981187520282" fileName="PluginStateWidget.java" startLine="55" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickConsumer#()Lcom/intellij/util/Consumer;" />
-    <nodeInfo nodeId="8611316981187517976" fileName="PluginStateWidget.java" startLine="34" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginStateWidget#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="8611316981187585455" fileName="PluginStateWidget.java" startLine="136" startPosition="65" endLine="150" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585450" fileName="PluginStateWidget.java" startLine="135" startPosition="12" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585446" fileName="PluginStateWidget.java" startLine="124" startPosition="12" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585442" fileName="PluginStateWidget.java" startLine="113" startPosition="12" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585438" fileName="PluginStateWidget.java" startLine="102" startPosition="25" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8611316981187585436" fileName="PluginStateWidget.java" startLine="101" startPosition="91" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8611316981187585426" fileName="PluginStateWidget.java" startLine="100" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tick#()V" />
-    <scopeInfo nodeId="8611316981187585406" fileName="PluginStateWidget.java" startLine="41" startPosition="29" endLine="42" endPosition="19" />
-    <scopeInfo nodeId="8611316981187520295" fileName="PluginStateWidget.java" startLine="71" startPosition="105" endLine="72" endPosition="16" />
-    <scopeInfo nodeId="8611316981187585417" fileName="PluginStateWidget.java" startLine="77" startPosition="30" endLine="78" endPosition="21" />
-    <scopeInfo nodeId="8611316981187520304" fileName="PluginStateWidget.java" startLine="84" startPosition="34" endLine="85" endPosition="33" />
-    <scopeInfo nodeId="8611316981187520309" fileName="PluginStateWidget.java" startLine="90" startPosition="25" endLine="91" endPosition="29" />
-    <scopeInfo nodeId="8611316981187520314" fileName="PluginStateWidget.java" startLine="96" startPosition="22" endLine="97" endPosition="35" />
-    <scopeInfo nodeId="8611316981187585549" fileName="PluginStateWidget.java" startLine="105" startPosition="29" endLine="106" endPosition="19" />
-    <scopeInfo nodeId="8611316981187585545" fileName="PluginStateWidget.java" startLine="107" startPosition="18" endLine="108" endPosition="71" />
-    <scopeInfo nodeId="8611316981187585537" fileName="PluginStateWidget.java" startLine="110" startPosition="16" endLine="111" endPosition="65" />
-    <scopeInfo nodeId="8611316981187585529" fileName="PluginStateWidget.java" startLine="116" startPosition="29" endLine="117" endPosition="59" />
-    <scopeInfo nodeId="8611316981187585527" fileName="PluginStateWidget.java" startLine="118" startPosition="18" endLine="119" endPosition="19" />
-    <scopeInfo nodeId="8611316981187585519" fileName="PluginStateWidget.java" startLine="121" startPosition="16" endLine="122" endPosition="65" />
-    <scopeInfo nodeId="8611316981187585511" fileName="PluginStateWidget.java" startLine="128" startPosition="31" endLine="129" endPosition="61" />
-    <scopeInfo nodeId="8611316981187585507" fileName="PluginStateWidget.java" startLine="130" startPosition="20" endLine="131" endPosition="73" />
-    <scopeInfo nodeId="8611316981187585491" fileName="PluginStateWidget.java" startLine="138" startPosition="29" endLine="139" endPosition="59" />
-    <scopeInfo nodeId="8611316981187585487" fileName="PluginStateWidget.java" startLine="140" startPosition="18" endLine="141" endPosition="71" />
-    <scopeInfo nodeId="8611316981187585477" fileName="PluginStateWidget.java" startLine="145" startPosition="43" endLine="146" endPosition="42" />
-    <scopeInfo nodeId="8611316981187585473" fileName="PluginStateWidget.java" startLine="147" startPosition="18" endLine="148" endPosition="62" />
-    <scopeInfo nodeId="8611316981187585591" fileName="PluginStateWidget.java" startLine="161" startPosition="25" endLine="162" endPosition="39" />
-    <scopeInfo nodeId="8611316981187585609" fileName="PluginStateWidget.java" startLine="167" startPosition="33" endLine="168" endPosition="51" />
-    <scopeInfo nodeId="8611316981187585617" fileName="PluginStateWidget.java" startLine="171" startPosition="32" endLine="172" endPosition="72" />
-    <scopeInfo nodeId="8611316981187585716" fileName="PluginStateWidget.java" startLine="191" startPosition="27" endLine="192" endPosition="20" />
-    <scopeInfo nodeId="8611316981187585722" fileName="PluginStateWidget.java" startLine="195" startPosition="33" endLine="196" endPosition="24" />
-    <scopeInfo nodeId="8611316981187585728" fileName="PluginStateWidget.java" startLine="199" startPosition="34" endLine="200" endPosition="28" />
-    <scopeInfo nodeId="8611316981187585795" fileName="PluginStateWidget.java" startLine="205" startPosition="45" endLine="206" endPosition="55" />
-    <scopeInfo nodeId="8611316981187520281" fileName="PluginStateWidget.java" startLine="50" startPosition="47" endLine="52" endPosition="20" />
-    <scopeInfo nodeId="8611316981187585373" fileName="PluginStateWidget.java" startLine="61" startPosition="62" endLine="63" endPosition="63" />
-    <scopeInfo nodeId="8611316981187520299" fileName="PluginStateWidget.java" startLine="76" startPosition="25" endLine="79" endPosition="5" />
-    <scopeInfo nodeId="8611316981187585606" fileName="PluginStateWidget.java" startLine="167" startPosition="0" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="8611316981187585614" fileName="PluginStateWidget.java" startLine="171" startPosition="0" endLine="174" endPosition="0" />
-    <scopeInfo nodeId="8611316981187585700" fileName="PluginStateWidget.java" startLine="185" startPosition="57" endLine="188" endPosition="36" />
-    <scopeInfo nodeId="8611316981187585713" fileName="PluginStateWidget.java" startLine="191" startPosition="0" endLine="194" endPosition="0" />
-    <scopeInfo nodeId="8611316981187585719" fileName="PluginStateWidget.java" startLine="195" startPosition="0" endLine="198" endPosition="0" />
-    <scopeInfo nodeId="8611316981187585725" fileName="PluginStateWidget.java" startLine="199" startPosition="0" endLine="202" endPosition="0" />
-    <scopeInfo nodeId="8611316981187585790" fileName="PluginStateWidget.java" startLine="205" startPosition="0" endLine="208" endPosition="0">
+    <nodeInfo nodeId="8611316981187585813" fileName="PluginStateWidget.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="8611316981187585818" fileName="PluginStateWidget.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INITIAL_DELAY" />
+    <nodeInfo nodeId="8611316981187585822" fileName="PluginStateWidget.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CRITICAL_DELAY" />
+    <nodeInfo nodeId="8611316981187585826" fileName="PluginStateWidget.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DELAY_MUL" />
+    <nodeInfo nodeId="8611316981187585830" fileName="PluginStateWidget.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOCK" />
+    <nodeInfo nodeId="8611316981187585851" fileName="PluginStateWidget.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="8611316981187585366" fileName="PluginStateWidget.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTimer" />
+    <nodeInfo nodeId="8611316981187585359" fileName="PluginStateWidget.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
+    <nodeInfo nodeId="8611316981187585644" fileName="PluginStateWidget.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStatusBar" />
+    <nodeInfo nodeId="8611316981187585855" fileName="PluginStateWidget.java" startLine="36" startPosition="45" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585407" fileName="PluginStateWidget.java" startLine="43" startPosition="29" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585649" fileName="PluginStateWidget.java" startLine="52" startPosition="47" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585409" fileName="PluginStateWidget.java" startLine="53" startPosition="22" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585374" fileName="PluginStateWidget.java" startLine="63" startPosition="62" endLine="64" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585377" fileName="PluginStateWidget.java" startLine="64" startPosition="65" endLine="65" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187520325" fileName="PluginStateWidget.java" startLine="73" startPosition="105" endLine="74" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8611316981187585418" fileName="PluginStateWidget.java" startLine="79" startPosition="30" endLine="80" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585635" fileName="PluginStateWidget.java" startLine="86" startPosition="34" endLine="87" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8611316981187585628" fileName="PluginStateWidget.java" startLine="92" startPosition="25" endLine="93" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8611316981187520323" fileName="PluginStateWidget.java" startLine="98" startPosition="22" endLine="99" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8611316981187585430" fileName="PluginStateWidget.java" startLine="102" startPosition="23" endLine="103" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8159985527863204395" fileName="PluginStateWidget.java" startLine="104" startPosition="9" endLine="105" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8159985527862633452" fileName="PluginStateWidget.java" startLine="107" startPosition="13" endLine="108" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8159985527862157935" fileName="PluginStateWidget.java" startLine="109" startPosition="19" endLine="110" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8159985527862823018" fileName="PluginStateWidget.java" startLine="113" startPosition="38" endLine="114" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8611316981187585550" fileName="PluginStateWidget.java" startLine="121" startPosition="27" endLine="122" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8611316981187585546" fileName="PluginStateWidget.java" startLine="123" startPosition="16" endLine="124" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585538" fileName="PluginStateWidget.java" startLine="126" startPosition="14" endLine="127" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585530" fileName="PluginStateWidget.java" startLine="132" startPosition="27" endLine="133" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585526" fileName="PluginStateWidget.java" startLine="134" startPosition="14" endLine="135" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8611316981187585520" fileName="PluginStateWidget.java" startLine="136" startPosition="14" endLine="137" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585512" fileName="PluginStateWidget.java" startLine="143" startPosition="29" endLine="144" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585508" fileName="PluginStateWidget.java" startLine="145" startPosition="18" endLine="146" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585492" fileName="PluginStateWidget.java" startLine="153" startPosition="27" endLine="154" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585488" fileName="PluginStateWidget.java" startLine="155" startPosition="16" endLine="156" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585459" fileName="PluginStateWidget.java" startLine="158" startPosition="14" endLine="159" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8611316981187585478" fileName="PluginStateWidget.java" startLine="160" startPosition="41" endLine="161" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585474" fileName="PluginStateWidget.java" startLine="162" startPosition="16" endLine="163" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585557" fileName="PluginStateWidget.java" startLine="169" startPosition="59" endLine="170" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="8611316981187585572" fileName="PluginStateWidget.java" startLine="170" startPosition="102" endLine="171" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585576" fileName="PluginStateWidget.java" startLine="171" startPosition="20" endLine="172" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585655" fileName="PluginStateWidget.java" startLine="175" startPosition="25" endLine="176" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585610" fileName="PluginStateWidget.java" startLine="181" startPosition="33" endLine="182" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8611316981187585618" fileName="PluginStateWidget.java" startLine="185" startPosition="32" endLine="186" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8611316981187585682" fileName="PluginStateWidget.java" startLine="195" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
+    <nodeInfo nodeId="8611316981187585685" fileName="PluginStateWidget.java" startLine="196" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHelpText" />
+    <nodeInfo nodeId="8611316981187585688" fileName="PluginStateWidget.java" startLine="197" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDefaultDelay" />
+    <nodeInfo nodeId="8611316981187585701" fileName="PluginStateWidget.java" startLine="199" startPosition="57" endLine="200" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585705" fileName="PluginStateWidget.java" startLine="200" startPosition="20" endLine="201" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585709" fileName="PluginStateWidget.java" startLine="201" startPosition="28" endLine="202" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585717" fileName="PluginStateWidget.java" startLine="205" startPosition="27" endLine="206" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8611316981187585723" fileName="PluginStateWidget.java" startLine="209" startPosition="33" endLine="210" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8611316981187585729" fileName="PluginStateWidget.java" startLine="213" startPosition="34" endLine="214" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8611316981187585796" fileName="PluginStateWidget.java" startLine="219" startPosition="45" endLine="220" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8611316981187585805" fileName="PluginStateWidget.java" startLine="223" startPosition="40" endLine="224" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585808" fileName="PluginStateWidget.java" startLine="224" startPosition="22" endLine="225" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585811" fileName="PluginStateWidget.java" startLine="225" startPosition="29" endLine="226" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585544" fileName="PluginStateWidget.java" startLine="123" startPosition="14" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8611316981187585536" fileName="PluginStateWidget.java" startLine="126" startPosition="12" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8611316981187585518" fileName="PluginStateWidget.java" startLine="136" startPosition="12" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8611316981187585506" fileName="PluginStateWidget.java" startLine="145" startPosition="16" endLine="147" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8611316981187585486" fileName="PluginStateWidget.java" startLine="155" startPosition="14" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8611316981187585472" fileName="PluginStateWidget.java" startLine="162" startPosition="14" endLine="164" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8611316981187585413" fileName="PluginStateWidget.java" startLine="78" startPosition="25" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585606" fileName="PluginStateWidget.java" startLine="181" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConnected#()Z" />
+    <nodeInfo nodeId="8611316981187585614" fileName="PluginStateWidget.java" startLine="185" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canOperate#()Z" />
+    <nodeInfo nodeId="8611316981187585713" fileName="PluginStateWidget.java" startLine="205" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="8611316981187585719" fileName="PluginStateWidget.java" startLine="209" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHelpText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8611316981187585725" fileName="PluginStateWidget.java" startLine="213" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDelay#()I" />
+    <nodeInfo nodeId="8611316981187585790" fileName="PluginStateWidget.java" startLine="219" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTimer#(Ljava/awt/event/ActionListener;)V" />
+    <nodeInfo nodeId="8611316981187585403" fileName="PluginStateWidget.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8611316981187585369" fileName="PluginStateWidget.java" startLine="62" startPosition="45" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585524" fileName="PluginStateWidget.java" startLine="131" startPosition="26" endLine="135" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585588" fileName="PluginStateWidget.java" startLine="174" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8611316981187520275" fileName="PluginStateWidget.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/wm/StatusBar;)V" />
+    <nodeInfo nodeId="8611316981187520288" fileName="PluginStateWidget.java" startLine="71" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Lcom/intellij/openapi/wm/StatusBarWidget/PlatformType;)Lcom/intellij/openapi/wm/StatusBarWidget/WidgetPresentation;" />
+    <nodeInfo nodeId="8611316981187520300" fileName="PluginStateWidget.java" startLine="84" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTooltipText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8611316981187520305" fileName="PluginStateWidget.java" startLine="90" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="8611316981187520310" fileName="PluginStateWidget.java" startLine="96" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ID#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8159985527862050365" fileName="PluginStateWidget.java" startLine="106" startPosition="67" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="8611316981187585542" fileName="PluginStateWidget.java" startLine="120" startPosition="26" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585504" fileName="PluginStateWidget.java" startLine="142" startPosition="28" endLine="147" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585484" fileName="PluginStateWidget.java" startLine="152" startPosition="26" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585469" fileName="PluginStateWidget.java" startLine="159" startPosition="62" endLine="164" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585691" fileName="PluginStateWidget.java" startLine="199" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="State#(Ljavax/swing/Icon;Ljava/lang/String;I)V" />
+    <nodeInfo nodeId="8611316981187585799" fileName="PluginStateWidget.java" startLine="223" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setNewDelay#(I)V" />
+    <nodeInfo nodeId="8611316981187585396" fileName="PluginStateWidget.java" startLine="40" startPosition="50" endLine="46" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187520296" fileName="PluginStateWidget.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="8611316981187585583" fileName="PluginStateWidget.java" startLine="172" startPosition="49" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187550178" fileName="PluginStateWidget.java" startLine="61" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="consume#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="8159985527862270380" fileName="PluginStateWidget.java" startLine="105" startPosition="49" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585501" fileName="PluginStateWidget.java" startLine="141" startPosition="60" endLine="148" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585457" fileName="PluginStateWidget.java" startLine="158" startPosition="12" endLine="165" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8611316981187585516" fileName="PluginStateWidget.java" startLine="130" startPosition="67" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585390" fileName="PluginStateWidget.java" startLine="39" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="8611316981187520757" fileName="PluginStateWidget.java" startLine="59" startPosition="50" endLine="68" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8611316981187585534" fileName="PluginStateWidget.java" startLine="119" startPosition="55" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585496" fileName="PluginStateWidget.java" startLine="140" startPosition="58" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585382" fileName="PluginStateWidget.java" startLine="37" startPosition="24" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8611316981187585551" fileName="PluginStateWidget.java" startLine="169" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setNewState#(Ljetbrains/mps/plugin/PluginStateWidget/State;)V" />
+    <nodeInfo nodeId="8159985527862683219" fileName="PluginStateWidget.java" startLine="103" startPosition="91" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8611316981187520282" fileName="PluginStateWidget.java" startLine="57" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickConsumer#()Lcom/intellij/util/Consumer;" />
+    <nodeInfo nodeId="8611316981187517976" fileName="PluginStateWidget.java" startLine="36" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginStateWidget#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="8611316981187585455" fileName="PluginStateWidget.java" startLine="151" startPosition="63" endLine="165" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585426" fileName="PluginStateWidget.java" startLine="102" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tick#()V" />
+    <nodeInfo nodeId="8611316981187585450" fileName="PluginStateWidget.java" startLine="150" startPosition="10" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585446" fileName="PluginStateWidget.java" startLine="139" startPosition="10" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585442" fileName="PluginStateWidget.java" startLine="129" startPosition="10" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8611316981187585438" fileName="PluginStateWidget.java" startLine="118" startPosition="27" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8159985527862575757" fileName="PluginStateWidget.java" startLine="118" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tickImpl#()V" />
+    <scopeInfo nodeId="8611316981187585527" fileName="PluginStateWidget.java" startLine="134" startPosition="16" endLine="134" endPosition="16" />
+    <scopeInfo nodeId="8611316981187585406" fileName="PluginStateWidget.java" startLine="43" startPosition="29" endLine="44" endPosition="19" />
+    <scopeInfo nodeId="8611316981187520295" fileName="PluginStateWidget.java" startLine="73" startPosition="105" endLine="74" endPosition="16" />
+    <scopeInfo nodeId="8611316981187585417" fileName="PluginStateWidget.java" startLine="79" startPosition="30" endLine="80" endPosition="21" />
+    <scopeInfo nodeId="8611316981187520304" fileName="PluginStateWidget.java" startLine="86" startPosition="34" endLine="87" endPosition="33" />
+    <scopeInfo nodeId="8611316981187520309" fileName="PluginStateWidget.java" startLine="92" startPosition="25" endLine="93" endPosition="29" />
+    <scopeInfo nodeId="8611316981187520314" fileName="PluginStateWidget.java" startLine="98" startPosition="22" endLine="99" endPosition="35" />
+    <scopeInfo nodeId="8159985527862050367" fileName="PluginStateWidget.java" startLine="107" startPosition="13" endLine="108" endPosition="21" />
+    <scopeInfo nodeId="8159985527862050368" fileName="PluginStateWidget.java" startLine="109" startPosition="19" endLine="110" endPosition="24" />
+    <scopeInfo nodeId="8159985527862683222" fileName="PluginStateWidget.java" startLine="113" startPosition="0" endLine="114" endPosition="37">
+      <varInfo nodeId="8159985527862683224" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="8159985527862683228" fileName="PluginStateWidget.java" startLine="113" startPosition="38" endLine="114" endPosition="37" />
+    <scopeInfo nodeId="8611316981187585549" fileName="PluginStateWidget.java" startLine="121" startPosition="27" endLine="122" endPosition="17" />
+    <scopeInfo nodeId="8611316981187585545" fileName="PluginStateWidget.java" startLine="123" startPosition="16" endLine="124" endPosition="69" />
+    <scopeInfo nodeId="8611316981187585537" fileName="PluginStateWidget.java" startLine="126" startPosition="14" endLine="127" endPosition="63" />
+    <scopeInfo nodeId="8611316981187585529" fileName="PluginStateWidget.java" startLine="132" startPosition="27" endLine="133" endPosition="57" />
+    <scopeInfo nodeId="8611316981187585519" fileName="PluginStateWidget.java" startLine="136" startPosition="14" endLine="137" endPosition="63" />
+    <scopeInfo nodeId="8611316981187585511" fileName="PluginStateWidget.java" startLine="143" startPosition="29" endLine="144" endPosition="59" />
+    <scopeInfo nodeId="8611316981187585507" fileName="PluginStateWidget.java" startLine="145" startPosition="18" endLine="146" endPosition="71" />
+    <scopeInfo nodeId="8611316981187585491" fileName="PluginStateWidget.java" startLine="153" startPosition="27" endLine="154" endPosition="57" />
+    <scopeInfo nodeId="8611316981187585487" fileName="PluginStateWidget.java" startLine="155" startPosition="16" endLine="156" endPosition="69" />
+    <scopeInfo nodeId="8611316981187585477" fileName="PluginStateWidget.java" startLine="160" startPosition="41" endLine="161" endPosition="40" />
+    <scopeInfo nodeId="8611316981187585473" fileName="PluginStateWidget.java" startLine="162" startPosition="16" endLine="163" endPosition="60" />
+    <scopeInfo nodeId="8611316981187585591" fileName="PluginStateWidget.java" startLine="175" startPosition="25" endLine="176" endPosition="39" />
+    <scopeInfo nodeId="8611316981187585609" fileName="PluginStateWidget.java" startLine="181" startPosition="33" endLine="182" endPosition="51" />
+    <scopeInfo nodeId="8611316981187585617" fileName="PluginStateWidget.java" startLine="185" startPosition="32" endLine="186" endPosition="72" />
+    <scopeInfo nodeId="8611316981187585716" fileName="PluginStateWidget.java" startLine="205" startPosition="27" endLine="206" endPosition="20" />
+    <scopeInfo nodeId="8611316981187585722" fileName="PluginStateWidget.java" startLine="209" startPosition="33" endLine="210" endPosition="24" />
+    <scopeInfo nodeId="8611316981187585728" fileName="PluginStateWidget.java" startLine="213" startPosition="34" endLine="214" endPosition="28" />
+    <scopeInfo nodeId="8611316981187585795" fileName="PluginStateWidget.java" startLine="219" startPosition="45" endLine="220" endPosition="55" />
+    <scopeInfo nodeId="8611316981187520281" fileName="PluginStateWidget.java" startLine="52" startPosition="47" endLine="54" endPosition="20" />
+    <scopeInfo nodeId="8611316981187585373" fileName="PluginStateWidget.java" startLine="63" startPosition="62" endLine="65" endPosition="63" />
+    <scopeInfo nodeId="8611316981187520299" fileName="PluginStateWidget.java" startLine="78" startPosition="25" endLine="81" endPosition="5" />
+    <scopeInfo nodeId="8611316981187585606" fileName="PluginStateWidget.java" startLine="181" startPosition="0" endLine="184" endPosition="0" />
+    <scopeInfo nodeId="8611316981187585614" fileName="PluginStateWidget.java" startLine="185" startPosition="0" endLine="188" endPosition="0" />
+    <scopeInfo nodeId="8611316981187585700" fileName="PluginStateWidget.java" startLine="199" startPosition="57" endLine="202" endPosition="36" />
+    <scopeInfo nodeId="8611316981187585713" fileName="PluginStateWidget.java" startLine="205" startPosition="0" endLine="208" endPosition="0" />
+    <scopeInfo nodeId="8611316981187585719" fileName="PluginStateWidget.java" startLine="209" startPosition="0" endLine="212" endPosition="0" />
+    <scopeInfo nodeId="8611316981187585725" fileName="PluginStateWidget.java" startLine="213" startPosition="0" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="8611316981187585790" fileName="PluginStateWidget.java" startLine="219" startPosition="0" endLine="222" endPosition="0">
       <varInfo nodeId="8611316981187585793" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="8611316981187585804" fileName="PluginStateWidget.java" startLine="209" startPosition="40" endLine="212" endPosition="16" />
-    <scopeInfo nodeId="8611316981187585403" fileName="PluginStateWidget.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="8611316981187550183" fileName="PluginStateWidget.java" startLine="60" startPosition="45" endLine="64" endPosition="9" />
-    <scopeInfo nodeId="8611316981187585588" fileName="PluginStateWidget.java" startLine="160" startPosition="0" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="8611316981187520275" fileName="PluginStateWidget.java" startLine="49" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="8611316981187585804" fileName="PluginStateWidget.java" startLine="223" startPosition="40" endLine="226" endPosition="16" />
+    <scopeInfo nodeId="8611316981187585403" fileName="PluginStateWidget.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="8611316981187550183" fileName="PluginStateWidget.java" startLine="62" startPosition="45" endLine="66" endPosition="9" />
+    <scopeInfo nodeId="8611316981187585523" fileName="PluginStateWidget.java" startLine="131" startPosition="26" endLine="135" endPosition="9" />
+    <scopeInfo nodeId="8611316981187585588" fileName="PluginStateWidget.java" startLine="174" startPosition="0" endLine="178" endPosition="0" />
+    <scopeInfo nodeId="8611316981187520275" fileName="PluginStateWidget.java" startLine="51" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="8611316981187520278" varName="bar" />
     </scopeInfo>
-    <scopeInfo nodeId="8611316981187520288" fileName="PluginStateWidget.java" startLine="69" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="8611316981187520288" fileName="PluginStateWidget.java" startLine="71" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="8611316981187520291" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="8611316981187520300" fileName="PluginStateWidget.java" startLine="82" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="8611316981187520305" fileName="PluginStateWidget.java" startLine="88" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="8611316981187520310" fileName="PluginStateWidget.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="8611316981187585541" fileName="PluginStateWidget.java" startLine="104" startPosition="28" endLine="109" endPosition="11" />
-    <scopeInfo nodeId="8611316981187585523" fileName="PluginStateWidget.java" startLine="115" startPosition="28" endLine="120" endPosition="11" />
-    <scopeInfo nodeId="8611316981187585503" fileName="PluginStateWidget.java" startLine="127" startPosition="30" endLine="132" endPosition="13" />
-    <scopeInfo nodeId="8611316981187585483" fileName="PluginStateWidget.java" startLine="137" startPosition="28" endLine="142" endPosition="11" />
-    <scopeInfo nodeId="8611316981187585691" fileName="PluginStateWidget.java" startLine="185" startPosition="0" endLine="190" endPosition="0">
+    <scopeInfo nodeId="8611316981187520300" fileName="PluginStateWidget.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="8611316981187520305" fileName="PluginStateWidget.java" startLine="90" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="8611316981187520310" fileName="PluginStateWidget.java" startLine="96" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="8159985527862270382" fileName="PluginStateWidget.java" startLine="106" startPosition="67" endLine="111" endPosition="9" />
+    <scopeInfo nodeId="8611316981187585541" fileName="PluginStateWidget.java" startLine="120" startPosition="26" endLine="125" endPosition="9" />
+    <scopeInfo nodeId="8611316981187585503" fileName="PluginStateWidget.java" startLine="142" startPosition="28" endLine="147" endPosition="11" />
+    <scopeInfo nodeId="8611316981187585483" fileName="PluginStateWidget.java" startLine="152" startPosition="26" endLine="157" endPosition="9" />
+    <scopeInfo nodeId="8611316981187585691" fileName="PluginStateWidget.java" startLine="199" startPosition="0" endLine="204" endPosition="0">
       <varInfo nodeId="8611316981187585698" varName="defaultDelay" />
       <varInfo nodeId="8611316981187585696" varName="helpText" />
       <varInfo nodeId="8611316981187585694" varName="icon" />
     </scopeInfo>
-    <scopeInfo nodeId="8611316981187585799" fileName="PluginStateWidget.java" startLine="209" startPosition="0" endLine="214" endPosition="0">
+    <scopeInfo nodeId="8611316981187585799" fileName="PluginStateWidget.java" startLine="223" startPosition="0" endLine="228" endPosition="0">
       <varInfo nodeId="8611316981187585802" varName="delay" />
     </scopeInfo>
-    <scopeInfo nodeId="8611316981187585395" fileName="PluginStateWidget.java" startLine="38" startPosition="50" endLine="44" endPosition="11" />
-    <scopeInfo nodeId="8611316981187520296" fileName="PluginStateWidget.java" startLine="75" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="8611316981187585458" fileName="PluginStateWidget.java" startLine="143" startPosition="16" endLine="149" endPosition="11">
+    <scopeInfo nodeId="8611316981187585395" fileName="PluginStateWidget.java" startLine="40" startPosition="50" endLine="46" endPosition="11" />
+    <scopeInfo nodeId="8611316981187520296" fileName="PluginStateWidget.java" startLine="77" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="8611316981187585458" fileName="PluginStateWidget.java" startLine="158" startPosition="14" endLine="164" endPosition="9">
       <varInfo nodeId="8611316981187585460" varName="newDelay" />
     </scopeInfo>
-    <scopeInfo nodeId="8611316981187550178" fileName="PluginStateWidget.java" startLine="59" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="8611316981187550178" fileName="PluginStateWidget.java" startLine="61" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="8611316981187550181" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8611316981187585500" fileName="PluginStateWidget.java" startLine="126" startPosition="62" endLine="133" endPosition="11" />
-    <scopeInfo nodeId="8611316981187585390" fileName="PluginStateWidget.java" startLine="37" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="8611316981187585500" fileName="PluginStateWidget.java" startLine="141" startPosition="60" endLine="148" endPosition="9" />
+    <scopeInfo nodeId="8159985527862683221" fileName="PluginStateWidget.java" startLine="104" startPosition="9" endLine="112" endPosition="7" />
+    <scopeInfo nodeId="8611316981187585515" fileName="PluginStateWidget.java" startLine="130" startPosition="67" endLine="138" endPosition="7" />
+    <scopeInfo nodeId="8611316981187585390" fileName="PluginStateWidget.java" startLine="39" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="8611316981187585393" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8611316981187520287" fileName="PluginStateWidget.java" startLine="57" startPosition="50" endLine="66" endPosition="6" />
-    <scopeInfo nodeId="8611316981187585533" fileName="PluginStateWidget.java" startLine="103" startPosition="57" endLine="112" endPosition="9" />
-    <scopeInfo nodeId="8611316981187585515" fileName="PluginStateWidget.java" startLine="114" startPosition="69" endLine="123" endPosition="9" />
-    <scopeInfo nodeId="8611316981187585495" fileName="PluginStateWidget.java" startLine="125" startPosition="60" endLine="134" endPosition="9" />
-    <scopeInfo nodeId="8611316981187585556" fileName="PluginStateWidget.java" startLine="155" startPosition="59" endLine="164" endPosition="7" />
-    <scopeInfo nodeId="8611316981187585551" fileName="PluginStateWidget.java" startLine="155" startPosition="0" endLine="166" endPosition="0">
+    <scopeInfo nodeId="8611316981187520287" fileName="PluginStateWidget.java" startLine="59" startPosition="50" endLine="68" endPosition="6" />
+    <scopeInfo nodeId="8611316981187585533" fileName="PluginStateWidget.java" startLine="119" startPosition="55" endLine="128" endPosition="7" />
+    <scopeInfo nodeId="8611316981187585495" fileName="PluginStateWidget.java" startLine="140" startPosition="58" endLine="149" endPosition="7" />
+    <scopeInfo nodeId="8611316981187585556" fileName="PluginStateWidget.java" startLine="169" startPosition="59" endLine="178" endPosition="7" />
+    <scopeInfo nodeId="8611316981187585551" fileName="PluginStateWidget.java" startLine="169" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="8611316981187585554" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="8611316981187517979" fileName="PluginStateWidget.java" startLine="34" startPosition="45" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="8611316981187520282" fileName="PluginStateWidget.java" startLine="55" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="8611316981187517976" fileName="PluginStateWidget.java" startLine="34" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="8611316981187517979" fileName="PluginStateWidget.java" startLine="36" startPosition="45" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="8611316981187520282" fileName="PluginStateWidget.java" startLine="57" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="8611316981187585429" fileName="PluginStateWidget.java" startLine="102" startPosition="23" endLine="115" endPosition="5" />
+    <scopeInfo nodeId="8611316981187517976" fileName="PluginStateWidget.java" startLine="36" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="8611316981187585848" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8611316981187585454" fileName="PluginStateWidget.java" startLine="136" startPosition="65" endLine="150" endPosition="9" />
-    <scopeInfo nodeId="8611316981187585437" fileName="PluginStateWidget.java" startLine="102" startPosition="25" endLine="151" endPosition="7" />
-    <scopeInfo nodeId="8611316981187585429" fileName="PluginStateWidget.java" startLine="100" startPosition="23" endLine="152" endPosition="5" />
-    <scopeInfo nodeId="8611316981187585426" fileName="PluginStateWidget.java" startLine="100" startPosition="0" endLine="154" endPosition="0" />
-    <unitInfo nodeId="8611316981187585402" fileName="PluginStateWidget.java" startLine="39" startPosition="70" endLine="44" endPosition="9" unitName="jetbrains.mps.plugin.PluginStateWidget$2" />
-    <unitInfo nodeId="8611316981187585587" fileName="PluginStateWidget.java" startLine="159" startPosition="35" endLine="164" endPosition="5" unitName="jetbrains.mps.plugin.PluginStateWidget$3" />
-    <unitInfo nodeId="8611316981187550176" fileName="PluginStateWidget.java" startLine="58" startPosition="15" endLine="66" endPosition="5" unitName="jetbrains.mps.plugin.PluginStateWidget$2" />
-    <unitInfo nodeId="8611316981187585389" fileName="PluginStateWidget.java" startLine="36" startPosition="48" endLine="46" endPosition="5" unitName="jetbrains.mps.plugin.PluginStateWidget$1" />
-    <unitInfo nodeId="8611316981187585787" fileName="PluginStateWidget.java" startLine="204" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateWidget$MyTimer" />
-    <unitInfo nodeId="8611316981187585664" fileName="PluginStateWidget.java" startLine="175" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateWidget$State" />
-    <unitInfo nodeId="8611316981187517974" fileName="PluginStateWidget.java" startLine="23" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateWidget" />
+    <scopeInfo nodeId="8611316981187585454" fileName="PluginStateWidget.java" startLine="151" startPosition="63" endLine="165" endPosition="7" />
+    <scopeInfo nodeId="8611316981187585426" fileName="PluginStateWidget.java" startLine="102" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="8159985527862575760" fileName="PluginStateWidget.java" startLine="118" startPosition="27" endLine="166" endPosition="5" />
+    <scopeInfo nodeId="8159985527862575757" fileName="PluginStateWidget.java" startLine="118" startPosition="0" endLine="168" endPosition="0" />
+    <unitInfo nodeId="8611316981187585402" fileName="PluginStateWidget.java" startLine="41" startPosition="70" endLine="46" endPosition="9" unitName="jetbrains.mps.plugin.PluginStateWidget$2" />
+    <unitInfo nodeId="8611316981187585587" fileName="PluginStateWidget.java" startLine="173" startPosition="35" endLine="178" endPosition="5" unitName="jetbrains.mps.plugin.PluginStateWidget$3" />
+    <unitInfo nodeId="8611316981187550176" fileName="PluginStateWidget.java" startLine="60" startPosition="15" endLine="68" endPosition="5" unitName="jetbrains.mps.plugin.PluginStateWidget$2" />
+    <unitInfo nodeId="8611316981187585389" fileName="PluginStateWidget.java" startLine="38" startPosition="48" endLine="48" endPosition="5" unitName="jetbrains.mps.plugin.PluginStateWidget$1" />
+    <unitInfo nodeId="8611316981187585787" fileName="PluginStateWidget.java" startLine="218" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateWidget$MyTimer" />
+    <unitInfo nodeId="8611316981187585664" fileName="PluginStateWidget.java" startLine="189" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateWidget$State" />
+    <unitInfo nodeId="8611316981187517974" fileName="PluginStateWidget.java" startLine="25" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateWidget" />
   </root>
   <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131070856">
     <nodeInfo nodeId="8632185942131070858" fileName="MPSPlugin.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
