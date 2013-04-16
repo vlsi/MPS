@@ -9,22 +9,19 @@ import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   private Attribute_Editor myAttributeEditorAspect;
-  private BaseConcept_Editor myBaseConceptEditorAspect;
   private ExportScopeModule_Editor myExportScopeModuleEditorAspect;
   private ExportScopeNamespace_Editor myExportScopeNamespaceEditorAspect;
   private ExportScopePublic_Editor myExportScopePublicEditorAspect;
 
   public EditorAspect getAspect(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0f, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0e, descriptor.getConceptFqName())) {
       case 0:
         return getAttributeEditorAspect();
       case 1:
-        return getBaseConceptEditorAspect();
-      case 2:
         return getExportScopeModuleEditorAspect();
-      case 3:
+      case 2:
         return getExportScopeNamespaceEditorAspect();
-      case 4:
+      case 3:
         return getExportScopePublicEditorAspect();
       default:
     }
@@ -37,7 +34,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
   public void deinitialize() {
     myAttributeEditorAspect = null;
-    myBaseConceptEditorAspect = null;
     myExportScopeModuleEditorAspect = null;
     myExportScopeNamespaceEditorAspect = null;
     myExportScopePublicEditorAspect = null;
@@ -48,13 +44,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       myAttributeEditorAspect = new Attribute_Editor();
     }
     return myAttributeEditorAspect;
-  }
-
-  private BaseConcept_Editor getBaseConceptEditorAspect() {
-    if (myBaseConceptEditorAspect == null) {
-      myBaseConceptEditorAspect = new BaseConcept_Editor();
-    }
-    return myBaseConceptEditorAspect;
   }
 
   private ExportScopeModule_Editor getExportScopeModuleEditorAspect() {
@@ -78,5 +67,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return myExportScopePublicEditorAspect;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0f = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0e = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic"};
 }
