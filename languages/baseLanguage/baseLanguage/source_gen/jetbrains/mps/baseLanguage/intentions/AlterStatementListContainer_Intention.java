@@ -105,9 +105,6 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (SNodeOperations.getConceptDeclaration(node) == myParameter) {
-        return;
-      }
       final SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.castConcept(myParameter, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")), null);
       ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), "statement", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {

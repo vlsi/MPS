@@ -49,14 +49,15 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
-import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import org.jetbrains.mps.util.Condition;
@@ -2270,6 +2271,64 @@ public class QueriesGenerated {
     }
 
     return SPropertyOperations.getBoolean(target, "static");
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_IContainsStatementList_8176191621234194954(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
+          List<SNode> list = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.WhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoWhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForeachStatement"));
+          ListSequence.fromList(list).removeElement(SNodeOperations.getConceptDeclaration(_context.getSourceNode()));
+          return list;
+        }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IContainsStatementList"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              final SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.castConcept((item), "jetbrains.mps.baseLanguage.structure.IContainsStatementList")), null);
+              ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(_context.getSourceNode()), "statement", true)).visitAll(new IVisitor<SNode>() {
+                public void visit(SNode it) {
+                  ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(newInitializedInstance), "statement", true)).addElement(SNodeOperations.copyNode(it));
+                }
+              });
+
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
+
+              if (AlterStatementListContainerUtils.hasCondition(_context.getSourceNode()) && AlterStatementListContainerUtils.hasCondition(newInitializedInstance)) {
+                SNode originalCondition = AlterStatementListContainerUtils.getCondition(_context.getSourceNode());
+                if (originalCondition != null) {
+                  SNodeOperations.replaceWithAnother(AlterStatementListContainerUtils.getCondition(newInitializedInstance), SNodeOperations.copyNode(originalCondition));
+                }
+              }
+
+              editorContext.selectWRTFocusPolicy(newInitializedInstance);
+              return newInitializedInstance;
+            }
+
+            public String getMatchingText(String pattern) {
+              return SPropertyOperations.getString((item), "conceptAlias");
+            }
+
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
+
+            public String getDescriptionText(String pattern) {
+              return "Change to " + SPropertyOperations.getString((item), "conceptAlias") + ((SConceptOperations.isExactly((item), "jetbrains.mps.baseLanguage.structure.ForeachStatement") ?
+                "each" :
+                ""
+              )) + (SConceptOperations.isExactly((item), "jetbrains.mps.baseLanguage.structure.DoWhileStatement") ?
+                "-While" :
+                ""
+              ) + " statement";
+            }
+          });
+        }
+      }
+    }
+    return result;
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1138168906052(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
