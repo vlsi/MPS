@@ -173,7 +173,7 @@ public class DefaultEditor extends DefaultNodeEditor {
       for (SReference reference : mySNode.getReferences()) {
         String role = reference.getRole();
         addRefRole(role);
-        addLabel(reference.toString());
+        addLabel(mySNode.getReferenceTarget(role).getPresentation());
       }
     } else {
       for (String reference : myReferencesNames) {
@@ -210,6 +210,8 @@ public class DefaultEditor extends DefaultNodeEditor {
         addLabel(name);
         addLabel(":");
         addLabel(child.getPresentation());
+        EditorCell cell = new DefaultEditor().createEditorCell(myEditorContext, child);
+        addCell(cell);
         addNewLine();
       }
     } else {
