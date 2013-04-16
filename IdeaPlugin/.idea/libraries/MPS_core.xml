@@ -15,7 +15,6 @@
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-icons.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-editor-runtime.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-tool.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../lib/ecj-4.2.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -35,7 +34,6 @@
       <root url="file://$PROJECT_DIR$/../core/kernel/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
-      <root url="file://$PROJECT_DIR$/../core/runtime/source" />
       <root url="file://$PROJECT_DIR$/../core/typesystemEngine/source" />
       <root url="file://$PROJECT_DIR$/../core/typesystemEngine/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/kernel/stubUtils/source_gen" />
@@ -68,7 +66,6 @@
       <root url="file://$PROJECT_DIR$/../core/tool/common/source_gen" />
       <root url="file://$PROJECT_DIR$/../editor/editorlang-runtime/source" />
       <root url="file://$PROJECT_DIR$/../editor/editorlang-runtime/source_gen" />
-      <root url="file://$PROJECT_DIR$/../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/source_gen" />
     </SOURCES>
   </library>
 </component>
