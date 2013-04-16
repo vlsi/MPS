@@ -14175,7 +14175,7 @@
                                     <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3730845620957014539">
                                       <property name="head" nameId="3ior.8618885170173601779" value="mac" />
                                       <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3730845620957014540">
-                                        <property name="head" nameId="3ior.8618885170173601779" value="relaunch" />
+                                        <property name="head" nameId="3ior.8618885170173601779" value="restarter" />
                                       </node>
                                     </node>
                                   </node>
@@ -14739,7 +14739,7 @@
                                   <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3730845620957031747">
                                     <property name="head" nameId="3ior.8618885170173601779" value="mac" />
                                     <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3730845620957031748">
-                                      <property name="head" nameId="3ior.8618885170173601779" value="relaunch" />
+                                      <property name="head" nameId="3ior.8618885170173601779" value="restarter" />
                                     </node>
                                   </node>
                                 </node>

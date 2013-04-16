@@ -1752,7 +1752,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_3, "head", "mac");
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_4, "head", "relaunch");
+    SNodeAccessUtil.setProperty(quotedNode_4, "head", "restarter");
     quotedNode_3.addChild("tail", quotedNode_4);
     quotedNode_2.addChild("tail", quotedNode_3);
     quotedNode_1.addChild("compositePart", quotedNode_2);
@@ -2251,7 +2251,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_3, "head", "mac");
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_4, "head", "relaunch");
+    SNodeAccessUtil.setProperty(quotedNode_4, "head", "restarter");
     quotedNode_3.addChild("tail", quotedNode_4);
     quotedNode_2.addChild("tail", quotedNode_3);
     quotedNode_1.addChild("compositePart", quotedNode_2);
