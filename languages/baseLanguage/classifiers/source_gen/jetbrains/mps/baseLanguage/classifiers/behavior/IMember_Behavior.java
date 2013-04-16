@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -49,7 +49,7 @@ public class IMember_Behavior {
     return true;
   }
 
-  public static List<SNode> virtual_getOperationConcept_3044950653914717125(SConcept thisConcept) {
+  public static List<SNode> virtual_getOperationConcept_3044950653914717125(SAbstractConcept thisConcept) {
     return ListSequence.fromList(new ArrayList<SNode>());
   }
 

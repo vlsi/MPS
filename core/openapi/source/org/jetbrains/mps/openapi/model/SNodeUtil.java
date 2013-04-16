@@ -17,6 +17,7 @@ package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 /**
@@ -25,7 +26,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
  * e.g. replacing a node with a root node from another model
  */
 public class SNodeUtil {
-  public static boolean isInstanceOf(@Nullable SNode node, @NotNull SConcept concept) {
+  public static boolean isInstanceOf(@Nullable SNode node, @NotNull SAbstractConcept concept) {
     if (node == null) return false;
     SConcept c = node.getConcept();
     if (c == null) return false;

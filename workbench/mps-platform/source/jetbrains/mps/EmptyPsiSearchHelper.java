@@ -15,6 +15,7 @@
  */
 package jetbrains.mps;
 
+import com.intellij.concurrency.AsyncFuture;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -91,8 +92,19 @@ public class EmptyPsiSearchHelper implements PsiSearchHelper {
   }
 
   @Override
+  public AsyncFuture<Boolean> processRequestsAsync(@NotNull SearchRequestCollector request, @NotNull Processor<PsiReference> processor) {
+    return null;
+  }
+
+  @Override
   public boolean processElementsWithWord(@NotNull TextOccurenceProcessor processor, @NotNull SearchScope searchScope, @NotNull String text, short searchContext, boolean caseSensitive) {
     return false;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @Override
+  public AsyncFuture<Boolean> processElementsWithWordAsync(@NotNull TextOccurenceProcessor processor, @NotNull SearchScope searchScope, @NotNull String text,
+      short searchContext, boolean caseSensitive) {
+    return null;
   }
 
   @Override

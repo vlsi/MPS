@@ -20,7 +20,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.module.events.SModuleListener;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.util.Condition;
 
 /**
  * A module represents a language or a solution.
@@ -108,4 +110,11 @@ public interface SModule {
   <T extends SModuleFacet> T getFacet(Class<T> clazz);
 
   Iterable<ModelRoot> getModelRoots();
+
+  /**
+   * Listener can be added only once, the second time it's just not added
+   */
+  void addModuleListener(SModuleListener listener);
+
+  void removeModuleListener(SModuleListener listener);
 }

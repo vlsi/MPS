@@ -43,7 +43,7 @@ import org.apache.log4j.Priority;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
@@ -230,7 +230,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     }
 
     FindUsagesManager manager = FindUsagesManager.getInstance();
-    SConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.traceable.structure.UnitConcept");
+    SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.traceable.structure.UnitConcept");
 
     Set<SNode> instances = manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, new ModelsScope(getCandidateNonStubModels(unitName)), new EmptyProgressMonitor());
     return SNodeOperations.cast(SetSequence.fromSet(instances).findFirst(new IWhereFilter<SNode>() {

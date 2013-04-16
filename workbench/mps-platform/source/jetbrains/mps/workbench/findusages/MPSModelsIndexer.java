@@ -26,7 +26,7 @@ import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.util.Consumer;
 
 import java.util.HashMap;
 import java.util.Map;

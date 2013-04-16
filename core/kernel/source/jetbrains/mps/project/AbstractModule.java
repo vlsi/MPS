@@ -70,6 +70,7 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.module.events.SModuleListener;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
@@ -455,6 +456,16 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
     // TODO: why java module facet by default?
     types.add(JavaModuleFacet.FACET_TYPE);
+  }
+
+  @Override
+  public void addModuleListener(SModuleListener listener) {
+
+  }
+
+  @Override
+  public void removeModuleListener(SModuleListener listener) {
+
   }
 
   protected ModuleFacetBase setupFacet(ModuleFacetBase facet, Memento memento) {

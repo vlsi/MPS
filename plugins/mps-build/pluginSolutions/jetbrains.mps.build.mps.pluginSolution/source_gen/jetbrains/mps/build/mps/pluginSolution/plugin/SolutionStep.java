@@ -10,7 +10,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.Solution;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 

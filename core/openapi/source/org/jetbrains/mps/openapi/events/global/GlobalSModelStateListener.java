@@ -13,15 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model;
+package org.jetbrains.mps.openapi.events.global;
 
-public interface SModelAccessListener {
-  //before write access occured
-  void nodeWritten(SNode node);
-  //before read access occured
-  void nodeRead(SNode node);
-  //before read access occured
-  void propertyRead(SNode node, String name);
-  //before read access occured
-  void referenceRead(SNode node, String role);
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.events.SModelStateListener;
+
+public interface GlobalSModelStateListener extends SModelStateListener, GlobalRepositoryListener<SModel> {
+
 }

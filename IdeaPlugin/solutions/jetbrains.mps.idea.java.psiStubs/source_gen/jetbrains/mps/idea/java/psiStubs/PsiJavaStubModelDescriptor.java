@@ -36,9 +36,9 @@ import com.intellij.psi.PsiImportStaticStatement;
 import java.util.StringTokenizer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.util.Pair;
 import com.google.common.collect.HashBiMap;
+import org.jetbrains.mps.util.Consumer;
 
 public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor implements PsiListener, DataSourceListener {
   private SModelReference myModelRef;

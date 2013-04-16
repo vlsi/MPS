@@ -15,7 +15,6 @@ public class GitUtils {
   public static void uncommmit(Project project, VirtualFile gitRoot) throws VcsException {
     GitSimpleHandler h = new GitSimpleHandler(project, gitRoot, GitCommand.RESET);
     h.addParameters("--mixed", "HEAD^");
-    h.setNoSSH(true);
     h.run();
   }
 }

@@ -64,6 +64,21 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
+  public List<String> getChildrenNames() {
+    return Collections.emptyList();
+  }
+
+  @Override
+  public boolean hasChild(String name) {
+    return false;
+  }
+
+  @Override
+  public boolean isMultipleChild(String name) {
+    return false;
+  }
+
+  @Override
   public List<String> getParentsNames() {
     return Collections.emptyList();
   }
@@ -76,5 +91,31 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @Override
   public Set<String> getAncestorsNames() {
     return Collections.emptySet();
+  }
+
+  @Override
+  public boolean isAbstract() {
+    return false;
+  }
+
+  @Override
+  public boolean isFinal() {
+    return false;
+  }
+
+
+  @Override
+  public String getConceptAlias() {
+    return "";
+  }
+
+  @Override
+  public String getConceptShortDescription() {
+    return "";
+  }
+
+  @Override
+  public String getHelpUrl() {
+    return "";
   }
 }

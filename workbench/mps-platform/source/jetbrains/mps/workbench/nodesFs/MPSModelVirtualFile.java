@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.nodesFs;
 
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.testFramework.DummyFileIdGenerator;
+import com.intellij.openapi.vfs.ex.dummy.DummyFileIdGenerator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;

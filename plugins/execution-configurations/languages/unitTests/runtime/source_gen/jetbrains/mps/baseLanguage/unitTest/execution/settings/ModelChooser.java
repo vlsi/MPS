@@ -13,7 +13,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -46,7 +46,7 @@ public class ModelChooser extends BaseChooserComponent {
     ListSequence.fromList(this.myCheckedModels).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
+        SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
         Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, GlobalScope.getInstance(), null);
         for (SNode node : ((Set<SNode>) ((Set) usages))) {
           SModel model = SNodeOperations.getModel(node);

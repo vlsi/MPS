@@ -30,12 +30,16 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModelScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
+import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.events.SModelStateListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
@@ -49,6 +53,9 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   private static final Logger LOG = LogManager.getLogger(SModelDescriptorStub.class);
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
+  private List<SModelAccessListener> myAccessListeners = new CopyOnWriteArrayList<SModelAccessListener>();
+  private List<SModelChangeListener> myChangeListeners = new CopyOnWriteArrayList<SModelChangeListener>();
+  private List<SModelStateListener> myStateListeners = new CopyOnWriteArrayList<SModelStateListener>();
 
   /**
    * Migration to 3.0. Loads and returns model data.
@@ -401,5 +408,35 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   @Override
   public final void copyPropertiesTo(SModelInternal to) {
     getSModelInternal().copyPropertiesTo(to);
+  }
+
+  @Override
+  public void addStateListener(SModelStateListener l) {
+    myStateListeners.add(l);
+  }
+
+  @Override
+  public void removeStateListener(SModelStateListener l) {
+    myStateListeners.remove(l);
+  }
+
+  @Override
+  public void addChangeListener(SModelChangeListener l) {
+    myChangeListeners.add(l);
+  }
+
+  @Override
+  public void removeChangeListener(SModelChangeListener l) {
+    myChangeListeners.remove(l);
+  }
+
+  @Override
+  public void addAccessListener(SModelAccessListener l) {
+    myAccessListeners.add(l);
+  }
+
+  @Override
+  public void removeAccessListener(SModelAccessListener l) {
+    myAccessListeners.remove(l);
   }
 }

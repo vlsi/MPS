@@ -10,11 +10,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -27,9 +31,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -61,9 +62,47 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_eb7h0d_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IfStatement_Editor.ReplaceWith_WhileStatement_cellMenu_eb7h0d_a0a0(), new IfStatement_Editor.ReplaceWith_DoWhileStatement_cellMenu_eb7h0d_b0a0(), new IfStatement_Editor.ReplaceWith_ForStatement_cellMenu_eb7h0d_c0a0(), new IfStatement_Editor.ReplaceWith_ForeachStatement_cellMenu_eb7h0d_d0a0()}));
     return editorCell;
+  }
+
+  public static class ReplaceWith_WhileStatement_cellMenu_eb7h0d_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_WhileStatement_cellMenu_eb7h0d_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.WhileStatement";
+    }
+  }
+
+  public static class ReplaceWith_DoWhileStatement_cellMenu_eb7h0d_b0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_DoWhileStatement_cellMenu_eb7h0d_b0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.DoWhileStatement";
+    }
+  }
+
+  public static class ReplaceWith_ForStatement_cellMenu_eb7h0d_c0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ForStatement_cellMenu_eb7h0d_c0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.ForStatement";
+    }
+  }
+
+  public static class ReplaceWith_ForeachStatement_cellMenu_eb7h0d_d0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ForeachStatement_cellMenu_eb7h0d_d0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.ForeachStatement";
+    }
   }
 
   private EditorCell createConstant_eb7h0d_b0(EditorContext editorContext, SNode node) {

@@ -21,6 +21,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -149,11 +153,49 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_q3zjs1_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DoWhileStatement_Editor.ReplaceWith_IfStatement_cellMenu_q3zjs1_a0c0(), new DoWhileStatement_Editor.ReplaceWith_WhileStatement_cellMenu_q3zjs1_b0c0(), new DoWhileStatement_Editor.ReplaceWith_ForStatement_cellMenu_q3zjs1_c0c0(), new DoWhileStatement_Editor.ReplaceWith_ForeachStatement_cellMenu_q3zjs1_d0c0()}));
     return editorCell;
+  }
+
+  public static class ReplaceWith_IfStatement_cellMenu_q3zjs1_a0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_IfStatement_cellMenu_q3zjs1_a0c0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.IfStatement";
+    }
+  }
+
+  public static class ReplaceWith_WhileStatement_cellMenu_q3zjs1_b0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_WhileStatement_cellMenu_q3zjs1_b0c0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.WhileStatement";
+    }
+  }
+
+  public static class ReplaceWith_ForStatement_cellMenu_q3zjs1_c0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ForStatement_cellMenu_q3zjs1_c0c0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.ForStatement";
+    }
+  }
+
+  public static class ReplaceWith_ForeachStatement_cellMenu_q3zjs1_d0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ForeachStatement_cellMenu_q3zjs1_d0c0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.structure.ForeachStatement";
+    }
   }
 
   private EditorCell createConstant_q3zjs1_d0(EditorContext editorContext, SNode node) {

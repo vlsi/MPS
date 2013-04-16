@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -36,7 +36,7 @@ public class ExecuteConfiguration_Function_Behavior {
     return _quotation_createNode_cw5ucd_a0a2();
   }
 
-  public static boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+  public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
   }
 

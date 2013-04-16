@@ -17,7 +17,7 @@ import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Iterator;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -100,11 +100,11 @@ public class NamedTupleType_Behavior {
     }
   }
 
-  public static String virtual_getLeftBracket_1262430001741497792(SConcept thisConcept) {
+  public static String virtual_getLeftBracket_1262430001741497792(SAbstractConcept thisConcept) {
     return "(";
   }
 
-  public static String virtual_getRightBracket_1262430001741497990(SConcept thisConcept) {
+  public static String virtual_getRightBracket_1262430001741497990(SAbstractConcept thisConcept) {
     return ")";
   }
 

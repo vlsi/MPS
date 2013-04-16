@@ -59,7 +59,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -259,6 +259,36 @@ public class QueriesGenerated {
     SLinkOperations.setTarget(_context.getNewNode(), "type", _quotation_createNode_ns07og_a0a0a0y(), true);
   }
 
+  public static void nodeFactory_NodeSetup_IfStatement_4920206213435985511(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
+    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+  }
+
+  public static void nodeFactory_NodeSetup_WhileStatement_4920206213425901381(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
+      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
+      AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_DoWhileStatement_4920206213435982911(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
+    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+  }
+
+  public static void nodeFactory_NodeSetup_ForStatement_4920206213436039859(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+  }
+
+  public static void nodeFactory_NodeSetup_ForeachStatement_4920206213436049782(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+  }
+
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -282,9 +312,9 @@ public class QueriesGenerated {
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             if (strictly) {
-              return REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a52.matcher(pattern).matches();
+              return REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a03.matcher(pattern).matches();
             } else {
-              return REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0z.matcher(pattern).matches();
+              return REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0eb.matcher(pattern).matches();
             }
           }
 
@@ -314,7 +344,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a2a52.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a2a03.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -373,7 +403,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a4a52.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a4a03.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -402,7 +432,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a52.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a03.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -423,7 +453,7 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode stringLiteral = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
             {
-              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0z;
+              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0eb;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.matches()) {
                 SPropertyOperations.set(stringLiteral, "value", _matcher_0.group(1));
@@ -437,7 +467,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a52.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a03.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -1760,7 +1790,7 @@ public class QueriesGenerated {
             for (SNode conceptDeclaration : SModelOperations.getRoots(blStructure, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
               if (SConceptOperations.isSubConceptOf(conceptDeclaration, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
                 SNode param = (SNode) conceptDeclaration;
-                if (isEmpty_x583g4_a0a0b0a0c0a0a0a0a0c0a0b0nc(SPropertyOperations.getString(param, "conceptAlias")) || SConceptOperations.isSubConceptOf(((SNode) param), "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault") || SPropertyOperations.getBoolean(param, "abstract")) {
+                if (isEmpty_x583g4_a0a0b0a0c0a0a0a0a0c0a0b0sc(SPropertyOperations.getString(param, "conceptAlias")) || SConceptOperations.isSubConceptOf(((SNode) param), "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault") || SPropertyOperations.getBoolean(param, "abstract")) {
                   continue;
                 }
                 ListSequence.fromList(result).addElement(param);
@@ -5142,15 +5172,15 @@ __switch__:
     return quotedNode_2;
   }
 
-  public static boolean isEmpty_x583g4_a0a0b0a0c0a0a0a0a0c0a0b0nc(String str) {
+  public static boolean isEmpty_x583g4_a0a0b0a0c0a0a0a0a0c0a0b0sc(String str) {
     return str == null || str.length() == 0;
   }
 
-  private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a52 = Pattern.compile("-?\\d+", 0);
-  private static Pattern REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0z = Pattern.compile("-?\\d*", 0);
-  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a2a52 = Pattern.compile("-?\\d+(?:l|L)", 0);
-  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a4a52 = Pattern.compile("(?:-?)\\d+\\.\\d*", 0);
-  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a52 = Pattern.compile("(?:-?)\\d+.\\d*(?:f|F)", 0);
-  private static Pattern REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0z = Pattern.compile("\"([^\\\\\"]*)\"?", 0);
-  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a52 = Pattern.compile("\"[^\\\\\"]*\"?", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a03 = Pattern.compile("-?\\d+", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0eb = Pattern.compile("-?\\d*", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a2a03 = Pattern.compile("-?\\d+(?:l|L)", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a4a03 = Pattern.compile("(?:-?)\\d+\\.\\d*", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a03 = Pattern.compile("(?:-?)\\d+.\\d*(?:f|F)", 0);
+  private static Pattern REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0eb = Pattern.compile("\"([^\\\\\"]*)\"?", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a03 = Pattern.compile("\"[^\\\\\"]*\"?", 0);
 }

@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class XmlText_Behavior {
   public static void init(SNode thisNode) {
@@ -38,7 +38,7 @@ public class XmlText_Behavior {
     return false;
   }
 
-  public static boolean virtual_textLike_1262430001741498277(SConcept thisConcept) {
+  public static boolean virtual_textLike_1262430001741498277(SAbstractConcept thisConcept) {
     return true;
   }
 

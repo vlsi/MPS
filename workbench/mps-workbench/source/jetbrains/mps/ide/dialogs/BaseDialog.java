@@ -18,12 +18,32 @@ package jetbrains.mps.ide.dialogs;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.KeyStroke;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dialog;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.GridLayout;
+import java.awt.HeadlessException;
+import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -34,8 +54,11 @@ import java.lang.annotation.Target;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 /*
  *  @Deprecated use DialogWrapper
@@ -115,7 +138,8 @@ public abstract class BaseDialog extends JDialog {
     myDialogDimensions.setLeft((int) p.getX());
     myDialogDimensions.setWidth((int) d.getWidth());
     myDialogDimensions.setHeight((int) d.getHeight());
-    saveDimensionSettings(myDialogDimensions.getLeft(), myDialogDimensions.getTop(), myDialogDimensions.getWidth(), myDialogDimensions.getHeight(), this.getClass());
+    saveDimensionSettings(myDialogDimensions.getLeft(), myDialogDimensions.getTop(), myDialogDimensions.getWidth(), myDialogDimensions.getHeight(),
+        this.getClass());
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
@@ -277,9 +301,9 @@ public abstract class BaseDialog extends JDialog {
             m.setAccessible(true);
             m.invoke(BaseDialog.this);
           } catch (IllegalAccessException e1) {
-            LOG.error(e1);
+            LOG.error(e1, e1);
           } catch (InvocationTargetException e1) {
-            LOG.error(e1);
+            LOG.error(e1, e1);
           }
         }
       });

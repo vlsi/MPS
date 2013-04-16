@@ -64,7 +64,7 @@ public abstract class KajaFrame {
     }
     world[1][1].setKaja();
     frame.setPreferredSize(new Dimension(width, height));
-    frame.setResizable(false);
+    frame.setResizable(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.add(BorderLayout.CENTER, canvas);
     frame.setVisible(true);

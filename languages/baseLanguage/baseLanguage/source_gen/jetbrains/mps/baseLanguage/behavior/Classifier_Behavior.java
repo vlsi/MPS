@@ -38,7 +38,7 @@ import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.scope.FilteringByNameScope;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScopeAdapter;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -519,7 +519,7 @@ public class Classifier_Behavior {
     });
   }
 
-  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SAbstractConcept thisConcept) {
     return true;
   }
 

@@ -14,15 +14,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow", "org.jetbrains.mps.samples.IfAndUnless.structure.Flow", false, new String[]{"org.jetbrains.mps.samples.IfAndUnless.structure.Flow"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow", "org.jetbrains.mps.samples.IfAndUnless.structure.Flow", false, new String[]{"org.jetbrains.mps.samples.IfAndUnless.structure.Flow"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       case 1:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.Flow", "jetbrains.mps.baseLanguage.structure.StatementList", false, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.Flow", "jetbrains.mps.baseLanguage.structure.StatementList", false, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
       case 2:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"condition", "body", "alternative"}, new boolean[]{false, false, false}, false, false, "my_if", "", "");
       case 3:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow", "org.jetbrains.mps.samples.IfAndUnless.structure.Flow", false, new String[]{"org.jetbrains.mps.samples.IfAndUnless.structure.Flow"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow", "org.jetbrains.mps.samples.IfAndUnless.structure.Flow", false, new String[]{"org.jetbrains.mps.samples.IfAndUnless.structure.Flow"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       case 4:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"condition", "body"}, new boolean[]{false, false}, false, false, "unless", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
