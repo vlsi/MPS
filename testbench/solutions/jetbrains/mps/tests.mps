@@ -2048,6 +2048,33 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8425917838863060644">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="709f.5936308221645772775" resolveInfo="TestBlPriorities" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274213000">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803029905321" resolveInfo="AddChild" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274215381">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803030060657" resolveInfo="AddReference" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274216657">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803034322732" resolveInfo="AddStatements" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274217186">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803030045032" resolveInfo="DeleteChild" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274217717">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803030056772" resolveInfo="EditBooleanProperty" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274218250">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803030048859" resolveInfo="EditIntegerProperty" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274218785">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803030056747" resolveInfo="EditStringProperty" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274219322">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.938834323431398136" resolveInfo="TypeName" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274219861">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.4172912343885056959" resolveInfo="DeleteEmptyCell" />
+    </node>
   </root>
   <root id="7917427600705105663">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7917427600705106075">

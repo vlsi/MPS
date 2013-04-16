@@ -460,7 +460,7 @@ public abstract class UsagesView implements IExternalizeable {
       }
 
       if (buttonConfiguration.isShowRerunButton()) {
-        actionGroup.addAction(new AnAction(getRerunSearchTooltip(), "", Actions.RefreshUsages) {
+        actionGroup.addAction(new AnAction(getRerunSearchTooltip(), "", Actions.Rerun) {
           @Override
           public void actionPerformed(AnActionEvent e) {
             assert mySearchQuery != null;

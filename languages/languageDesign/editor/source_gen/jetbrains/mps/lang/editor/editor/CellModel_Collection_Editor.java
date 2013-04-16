@@ -27,6 +27,7 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -308,11 +309,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return this.nodeFactory(listOwner, editorContext);
-    }
-
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Constant", null);
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
 
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
@@ -413,11 +410,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return this.nodeFactory(listOwner, editorContext);
-    }
-
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Constant", null);
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
 
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {

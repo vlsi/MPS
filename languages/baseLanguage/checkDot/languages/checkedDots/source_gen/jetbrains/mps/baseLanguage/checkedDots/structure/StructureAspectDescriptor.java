@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

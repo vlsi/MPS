@@ -14,29 +14,29 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.AuxObjectHandler", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"auxObjectTemplate"});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.AuxObjectHandler", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"auxObjectTemplate"}, new String[]{}, new boolean[]{}, false, false, "auxObjectTemplate", "", "");
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextBindingWrapper", "jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper"}, new String[]{}, new String[]{"container"});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextBindingWrapper", "jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper"}, new String[]{}, new String[]{"container"}, new String[]{"uiObject", "before", "childAspect"}, new boolean[]{false, false, true}, false, false, "bind", "", "");
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{}, new String[]{"container"});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextCompartmentWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{}, new String[]{"container"}, new String[]{}, new boolean[]{}, false, false, "compartment", "", "");
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextControllerWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextControllerWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{}, new String[]{}, new String[]{"controller"}, new boolean[]{false}, false, false, "controller", "", "");
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextViewWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextViewWrapper", "jetbrains.mps.ui.internal.structure.ContextWrapper", false, new String[]{"jetbrains.mps.ui.internal.structure.ContextWrapper"}, new String[]{}, new String[]{}, new String[]{"view"}, new boolean[]{false}, false, false, "view", "", "");
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextWrapper", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{}, new String[]{}, new String[]{"body"}, new boolean[]{false}, false, false, "withContext", "", "");
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextWrapperExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ContextWrapperExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.ui.internal.structure.IContextWrapper"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "withContext", "", "");
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ExpressionStub", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.ExpressionStub", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "expr_stub", "", "");
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.GeometryHandler", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"geometry"});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.GeometryHandler", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{"geometry"}, new String[]{}, new boolean[]{}, false, false, "geometry", "", "");
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.IContextWrapper", null, true, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.IContextWrapper", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{"context"}, new boolean[]{false}, false, false, "", "", "");
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.StatementStub", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.StatementStub", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "stmt_stub", "", "");
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.TypeStub", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.ui.internal.structure.TypeStub", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.ui.modeling.structure.IPartiallyDefinedStub"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "type_stub", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

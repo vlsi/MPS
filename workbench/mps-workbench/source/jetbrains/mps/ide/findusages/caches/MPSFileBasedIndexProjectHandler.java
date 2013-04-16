@@ -64,7 +64,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     myProjectManager = projectManager;
     myIndex = index;
 
-    final MPSUnindexedFilesUpdater updater = new MPSUnindexedFilesUpdater(myIndex, myRootManager);
+    final MPSUnindexedFilesUpdater updater = new MPSUnindexedFilesUpdater(myIndex, myRootManager, project);
 
     final StartupManagerEx startupManager = (StartupManagerEx) StartupManager.getInstance(myProject);
     if (startupManager == null) return;

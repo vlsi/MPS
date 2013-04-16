@@ -68,7 +68,7 @@
     <nodeInfo nodeId="8171671627657311858" fileName="DependenciesPanel.java" startLine="156" startPosition="27" endLine="157" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2921823006583088311" fileName="DependenciesPanel.java" startLine="161" startPosition="26" endLine="162" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2921823006583089551" fileName="DependenciesPanel.java" startLine="166" startPosition="54" endLine="167" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="613965280098045496" fileName="DependenciesPanel.java" startLine="172" startPosition="26" endLine="173" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="613965280098045496" fileName="DependenciesPanel.java" startLine="172" startPosition="26" endLine="173" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="613965280098045526" fileName="DependenciesPanel.java" startLine="177" startPosition="54" endLine="178" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1360822408787132121" fileName="DependenciesPanel.java" startLine="183" startPosition="34" endLine="184" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1360822408787132071" fileName="DependenciesPanel.java" startLine="188" startPosition="52" endLine="189" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -108,7 +108,7 @@
     <scopeInfo nodeId="8171671627657311857" fileName="DependenciesPanel.java" startLine="156" startPosition="27" endLine="157" endPosition="20" />
     <scopeInfo nodeId="2921823006583088308" fileName="DependenciesPanel.java" startLine="161" startPosition="26" endLine="162" endPosition="75" />
     <scopeInfo nodeId="2921823006583089550" fileName="DependenciesPanel.java" startLine="166" startPosition="54" endLine="167" endPosition="33" />
-    <scopeInfo nodeId="613965280098045495" fileName="DependenciesPanel.java" startLine="172" startPosition="26" endLine="173" endPosition="82" />
+    <scopeInfo nodeId="613965280098045495" fileName="DependenciesPanel.java" startLine="172" startPosition="26" endLine="173" endPosition="76" />
     <scopeInfo nodeId="613965280098045506" fileName="DependenciesPanel.java" startLine="177" startPosition="54" endLine="178" endPosition="59" />
     <scopeInfo nodeId="1360822408787132039" fileName="DependenciesPanel.java" startLine="183" startPosition="34" endLine="184" endPosition="83" />
     <scopeInfo nodeId="1360822408787132060" fileName="DependenciesPanel.java" startLine="188" startPosition="52" endLine="189" endPosition="22" />
