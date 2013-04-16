@@ -50,8 +50,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -62,9 +64,9 @@ public class DefaultEditor extends DefaultNodeEditor {
 
 
   private SNode mySNode;
-  private List<String> myPropertyNames = new ArrayList<String>();
-  private List<String> myChildrenNames = new ArrayList<String>();
-  private List<String> myReferencesNames = new ArrayList<String>();
+  private List<String> myPropertyNames;
+  private List<String> myChildrenNames;
+  private List<String> myReferencesNames;
   private String myNameProperty;
   private EditorContext myEditorContext;
   private Stack<EditorCell_Collection> collectionStack = new Stack<EditorCell_Collection>();
@@ -129,16 +131,20 @@ public class DefaultEditor extends DefaultNodeEditor {
       myReferencesNames = myConceptDescriptor.getReferenceNames();
       myChildrenNames = myConceptDescriptor.getChildrenNames();
     } else {
+      myPropertyNames = new ArrayList<String>();
       for (String name : mySNode.getPropertyNames()) {
         myPropertyNames.add(name);
       }
+      myReferencesNames = new ArrayList<String>();
       for (SReference ref : mySNode.getReferences()) {
         myReferencesNames.add(ref.getRole());
       }
 
+      Set<String> rolesSet= new HashSet<String>();
       for (SNode sNode : mySNode.getChildren()) {
-        myChildrenNames.add(sNode.getRoleInParent());
+        rolesSet.add(sNode.getRoleInParent());
       }
+      myChildrenNames = new ArrayList<String>(rolesSet);
     }
 
 
