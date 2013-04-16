@@ -14,8 +14,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -83,7 +83,9 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
   }
 
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromListAndArray(new ArrayList(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.WhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoWhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForeachStatement"));
+    List<SNode> list = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.WhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoWhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForeachStatement"));
+    ListSequence.fromList(list).removeElement(SNodeOperations.getConceptDeclaration(node));
+    return list;
   }
 
   public class IntentionImplementation implements IntentionExecutable {
