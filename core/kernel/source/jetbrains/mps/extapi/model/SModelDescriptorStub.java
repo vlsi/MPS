@@ -231,16 +231,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   }
 
   @Override
-  public void addRootNode(@NotNull SNode node) {
-    getSModelInternal().addRootNode(node);
-  }
-
-  @Override
-  public void removeRootNode(@NotNull SNode node) {
-    getSModelInternal().removeRootNode(node);
-  }
-
-  @Override
   public SNode getNode(SNodeId id) {
     return getSModelInternal().getNode(id);
   }

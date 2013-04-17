@@ -114,6 +114,18 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   @Override
+  public void addRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    fireNodeAdded(null, null, node);
+    getSModelInternal().addRootNode(node);
+  }
+
+  @Override
+  public void removeRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    fireNodeRemoved(null, null, node);
+    getSModelInternal().removeRootNode(node);
+  }
+
+  @Override
   public boolean isReadOnly() {
     return true;
   }
@@ -144,9 +156,11 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public void unload() {
+
   }
 
   public void attach() {
+
   }
 
   public void dispose() {
@@ -219,7 +233,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
       l.nodeAdded(node, role, child);
     }
   }
-
 
   public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     for (SModelChangeListener l : myChangeListeners) {

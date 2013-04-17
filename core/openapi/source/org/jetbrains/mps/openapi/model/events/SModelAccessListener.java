@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 /**
  * This is used for tracking which part of nodes has the user touched.
  * Each access can result in a number of access listener method invocations.
- * It is guaranteed that if for some "pure node function" O  a read listener was called for some
+ * It is guaranteed that if for some "pure node function" O, a read listener was called for some
  * set of features S, and there were no change or reload events on S, the next time O will be invoked, it
  * will return the same result.
  * A "pure node function" O means that
