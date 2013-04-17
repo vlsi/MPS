@@ -33,6 +33,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.*;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -275,9 +276,9 @@ public class DefaultEditor extends DefaultNodeEditor {
     addNewLine();
     if (myNullConcept) {
       for (SNode child : mySNode.getChildren(role)) {
-        EditorCell cell = new DefaultEditor().createEditorCell(myEditorContext, child);
-        addCell(cell);
-        setIndent(cell);
+        EditorCell nodeCell = myEditorContext.createNodeCell(child);
+        addCell(nodeCell);
+        setIndent(nodeCell);
         addNewLine();
       }
 
@@ -316,9 +317,23 @@ public class DefaultEditor extends DefaultNodeEditor {
   }
 
 
-  private void addPropertyCell(String name) {
+  private void addPropertyCell(final String name) {
     if (myNullConcept) {
-      addLabel(mySNode.getProperty(name));
+      EditorCell_Property cell = EditorCell_Property.create(myEditorContext, new ModelAccessor() {
+        public String getText() {
+          return mySNode.getProperty(name);
+        }
+
+        public void setText(String s) {
+        }
+
+        public boolean isValidText(String s) {
+          return EqualUtil.equals(s, getText());
+        }
+      }, mySNode);
+      cell.setDefaultText("<no " + name + ">");
+      cell.setEditable(false);
+      addCell(cell);
     } else {
       CellProviderWithRole provider = new PropertyCellProvider(mySNode, myEditorContext);
       provider.setRole(name);
