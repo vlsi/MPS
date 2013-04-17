@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("7a4dedfe-9c99-4610-b299-d4a37832823b(jetbrains.mps.samples.generator_demo.demoLang3)");
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.sampleXML", "jetbrains.mps.baseLanguage"};
 
   public Language() {
 
@@ -21,6 +22,11 @@ public class Language extends LanguageRuntime {
 
   public String getNamespace() {
     return "jetbrains.mps.samples.generator_demo.demoLang3";
+  }
+
+  @Override
+  protected String[] getExtendedLanguageIDs() {
+    return EXTENDED_LANGUAGE_IDS;
   }
 
   @Override

@@ -15,6 +15,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("343e2a8b-449f-45b3-9da8-1463945cb208(testRefactoring)");
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"testRefactoringTargetLang", "jetbrains.mps.lang.core"};
   private EditorAspectDescriptorImpl myEditorAspectDescriptor;
 
   public Language() {
@@ -23,6 +24,11 @@ public class Language extends LanguageRuntime {
 
   public String getNamespace() {
     return "testRefactoring";
+  }
+
+  @Override
+  protected String[] getExtendedLanguageIDs() {
+    return EXTENDED_LANGUAGE_IDS;
   }
 
   @Override

@@ -17,6 +17,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("f3347d8a-0e79-4f35-8ac9-1574f25c986f(jetbrains.mps.execution.commands)");
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.debugger.api.lang", "jetbrains.mps.lang.structure", "jetbrains.mps.lang.core", "jetbrains.mps.execution.common", "jetbrains.mps.baseLanguage"};
   private EditorAspectDescriptorImpl myEditorAspectDescriptor;
 
   public Language() {
@@ -25,6 +26,11 @@ public class Language extends LanguageRuntime {
 
   public String getNamespace() {
     return "jetbrains.mps.execution.commands";
+  }
+
+  @Override
+  protected String[] getExtendedLanguageIDs() {
+    return EXTENDED_LANGUAGE_IDS;
   }
 
   @Override

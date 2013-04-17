@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("411cfb96-468d-4c3f-accc-a13ad135b216(sampleFacet)");
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{};
 
   public Language() {
 
@@ -20,6 +21,11 @@ public class Language extends LanguageRuntime {
 
   public String getNamespace() {
     return "sampleFacet";
+  }
+
+  @Override
+  protected String[] getExtendedLanguageIDs() {
+    return EXTENDED_LANGUAGE_IDS;
   }
 
   @Override

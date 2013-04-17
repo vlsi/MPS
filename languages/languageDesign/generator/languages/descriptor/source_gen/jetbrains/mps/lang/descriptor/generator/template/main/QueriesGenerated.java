@@ -81,6 +81,10 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{});
   }
 
+  public static Object propertyMacro_GetPropertyValue_2229091780083882944(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "qualifiedName");
+  }
+
   public static Object propertyMacro_GetPropertyValue_5102832340571708655(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace");
   }
@@ -143,7 +147,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5102832340571646536(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
-    return SPropertyOperations.getString(l, "namespace") + "/" + ((isEmpty_x583g4_a0a0a1a12(SPropertyOperations.getString(_context.getNode(), "name")) ?
+    return SPropertyOperations.getString(l, "namespace") + "/" + ((isEmpty_x583g4_a0a0a1a22(SPropertyOperations.getString(_context.getNode(), "name")) ?
       "<no name>" :
       SPropertyOperations.getString(_context.getNode(), "name")
     ));
@@ -307,6 +311,10 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
+  public static Iterable sourceNodesQuery_2229091780083588954(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "language", true), "extendedLanguages", true);
+  }
+
   public static Iterable sourceNodesQuery_1570228009930646079(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "language", true), "model", true);
   }
@@ -330,7 +338,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6655394244919455802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0hc(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0jc(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -386,11 +394,11 @@ public class QueriesGenerated {
     return new TemplateModelImpl(module);
   }
 
-  public static boolean isEmpty_x583g4_a0a0a1a12(String str) {
+  public static boolean isEmpty_x583g4_a0a0a1a22(String str) {
     return str == null || str.length() == 0;
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0hc(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0jc(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

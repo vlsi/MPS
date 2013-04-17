@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("92f5dc44-466d-4972-9f92-b03994f153c4(jetbrains.mps.execution.migration)");
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.uiLanguage"};
 
   public Language() {
 
@@ -20,6 +21,11 @@ public class Language extends LanguageRuntime {
 
   public String getNamespace() {
     return "jetbrains.mps.execution.migration";
+  }
+
+  @Override
+  protected String[] getExtendedLanguageIDs() {
+    return EXTENDED_LANGUAGE_IDS;
   }
 
   @Override
