@@ -114,7 +114,7 @@
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="6066443303060460443">
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="6066443303060474339">
-        <property name="text" nameId="tpih.1164413036326" value="IF EXIST &quot;%JDK_HOME%&quot; set JDK=&quot;%JDK_HOME%&quot;" />
+        <property name="text" nameId="tpih.1164413036326" value="IF EXIST &quot;%JDK_HOME%&quot; set JDK=%JDK_HOME%" />
       </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="6066443303060651391">
@@ -124,7 +124,7 @@
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="6066443303060693301">
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="6066443303060693302">
-        <property name="text" nameId="tpih.1164413036326" value="IF EXIST &quot;%JAVA_HOME%&quot; set JDK=&quot;%JAVA_HOME%&quot;" />
+        <property name="text" nameId="tpih.1164413036326" value="IF EXIST &quot;%JAVA_HOME%&quot; set JDK=%JAVA_HOME%" />
       </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="6066443303060693299">
@@ -134,7 +134,7 @@
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="6066443303060677761">
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="6066443303060677762">
-        <property name="text" nameId="tpih.1164413036326" value="IF EXIST &quot;%PROJECT_HOME%jre&quot; set JDK=&quot;%PROJECT_HOME%jre&quot;" />
+        <property name="text" nameId="tpih.1164413036326" value="IF EXIST &quot;%PROJECT_HOME%jre&quot; set JDK=%PROJECT_HOME%jre" />
       </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="6066443303060677759">
@@ -150,12 +150,12 @@
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="3885435385580638739">
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638740">
-        <property name="text" nameId="tpih.1164413036326" value="IF EXIST %JDK% set JAVA=&quot;%JDK%\jre\bin\javaw.exe&quot;" />
+        <property name="text" nameId="tpih.1164413036326" value="IF EXIST &quot;%JDK%&quot; set JAVA=%JDK%\bin\javaw.exe" />
       </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="6066443303061011424">
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="6066443303061011425">
-        <property name="text" nameId="tpih.1164413036326" value="IF NOT EXIST &quot;%JAVA%&quot; set JAVA=&quot;%JDK%\jre\bin\javaw.exe&quot;" />
+        <property name="text" nameId="tpih.1164413036326" value="IF NOT EXIST &quot;%JAVA%&quot; set JAVA=%JDK%\jre\bin\javaw.exe" />
       </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="6066443303061173915">
@@ -193,7 +193,7 @@
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GNewLine" typeId="tpih.1164413172275" id="3885435385580638764" />
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638765">
-        <property name="text" nameId="tpih.1164413036326" value="SET MPS_VM_OPTIONS=&quot;%PROJECT_HOME%" />
+        <property name="text" nameId="tpih.1164413036326" value="SET MPS_VM_OPTIONS=%PROJECT_HOME%" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638766">
         <property name="text" nameId="tpih.1164413036326" value="vmoptions.file" />
@@ -246,9 +246,6 @@
           </node>
         </node>
       </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638774">
-        <property name="text" nameId="tpih.1164413036326" value="&quot;" />
-      </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GNewLine" typeId="tpih.1164413172275" id="3885435385580638775" />
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638776">
         <property name="text" nameId="tpih.1164413036326" value=")" />
@@ -263,7 +260,7 @@
         <property name="text" nameId="tpih.1164413036326" value="FOR /F &quot;delims=&quot; %%i in (" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638781">
-        <property name="text" nameId="tpih.1164413036326" value="'TYPE %MPS_VM_OPTIONS%'" />
+        <property name="text" nameId="tpih.1164413036326" value="'TYPE &quot;%MPS_VM_OPTIONS%&quot;'" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638782">
         <property name="text" nameId="tpih.1164413036326" value=") DO call :parse_vmoptions" />
@@ -321,7 +318,7 @@
         <property name="text" nameId="tpih.1164413036326" value="set CLASSPATH=" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638837">
-        <property name="text" nameId="tpih.1164413036326" value="&quot;%PROJECT_HOME%" />
+        <property name="text" nameId="tpih.1164413036326" value="%PROJECT_HOME%" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638838">
         <property name="text" nameId="tpih.1164413036326" value="path" />
@@ -360,16 +357,13 @@
           </node>
         </node>
       </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638858">
-        <property name="text" nameId="tpih.1164413036326" value="&quot;" />
-      </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="3885435385580638859">
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638860">
         <property name="text" nameId="tpih.1164413036326" value="set CLASSPATH=%CLASSPATH%;" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638861">
-        <property name="text" nameId="tpih.1164413036326" value="&quot;%PROJECT_HOME%" />
+        <property name="text" nameId="tpih.1164413036326" value="%PROJECT_HOME%" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638862">
         <property name="text" nameId="tpih.1164413036326" value="path" />
@@ -399,9 +393,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638874">
-        <property name="text" nameId="tpih.1164413036326" value="&quot;" />
       </node>
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="3885435385580638875">
         <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="3885435385580638876">
@@ -451,7 +442,7 @@
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="3885435385580638920">
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638921">
-        <property name="text" nameId="tpih.1164413036326" value="start &quot;&quot; %JAVA% %JVM_ARGS% %ADDITIONAL_JVM_ARGS% -classpath %CLASSPATH% %MAIN_CLASS% %*" />
+        <property name="text" nameId="tpih.1164413036326" value="start &quot;&quot; &quot;%JAVA%&quot; %JVM_ARGS% %ADDITIONAL_JVM_ARGS% -classpath &quot;%CLASSPATH%&quot; %MAIN_CLASS% %*" />
       </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="3885435385580638922">
