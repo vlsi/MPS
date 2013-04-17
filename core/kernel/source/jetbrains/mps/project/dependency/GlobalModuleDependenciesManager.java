@@ -17,8 +17,12 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -47,7 +51,7 @@ public class GlobalModuleDependenciesManager {
 
   // this is a temporary fix for MPS-15883, should be removed when generators are compiled with their own classpath
   private void addGenerators() {
-    Set<IModule> addModules = new HashSet<IModule>();
+    Set<SModule> addModules = new HashSet<SModule>();
     for (SModule m : myModules) {
       if (!(m instanceof Language)) continue;
       addModules.addAll(((Language) m).getGenerators());
@@ -61,7 +65,7 @@ public class GlobalModuleDependenciesManager {
   public Collection<Language> getUsedLanguages() {
     Set<Language> result = new HashSet<Language>();
     for (SModule module : myModules) {
-      result.addAll(((IModule)module).getDependenciesManager().directlyUsedLanguages());
+      result.addAll(directlyUsedLanguages(module));
     }
     return result;
   }
@@ -86,29 +90,64 @@ public class GlobalModuleDependenciesManager {
   public Collection<IModule> getModules(Deptype depType) {
     Set<SModule> neighbours = collectNeighbours(depType);
 
-    Set<IModule> result = new HashSet<IModule>();
+    Set<SModule> result = new HashSet<SModule>();
     for (SModule neighbour : neighbours) {
       collect(neighbour, result, depType);
     }
 
-    return result;
+    return (Collection) result;
   }
 
   private Set<SModule> collectNeighbours(Deptype depType) {
     HashSet<SModule> result = new HashSet<SModule>();
     for (SModule module : myModules) {
-      result.addAll(((IModule)module).getDependenciesManager().directlyUsedModules(true, depType.runtimes));
+      result.addAll(directlyUsedModules(module, true, depType.runtimes));
     }
     result.addAll(myModules);
     return result;
   }
 
-  private void collect(SModule current, Set<IModule> result, Deptype depType) {
+  private void collect(SModule current, Set<SModule> result, Deptype depType) {
     if (result.contains(current)) return;
-    result.add((IModule)current);
-    for (SModule m : ((IModule)current).getDependenciesManager().directlyUsedModules(depType.reexportAll, depType.runtimes)) {
+    result.add(current);
+    for (SModule m : directlyUsedModules(current, depType.reexportAll, depType.runtimes)) {
       collect(m, result, depType);
     }
+  }
+
+  public static Collection<Language> directlyUsedLanguages(@NotNull SModule module) {
+    Set<Language> result = new HashSet<Language>();
+    for (SLanguage language : module.getUsedLanguages()) {
+      result.add((Language) language.getModule());
+    }
+    return result;
+  }
+
+  public static Collection<SModule> directlyUsedModules(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
+    Set<SModule> result = new HashSet<SModule>();
+    for (SDependency dependency : module.getDeclaredDependencies()) {
+      SModule m = dependency.getTarget();
+      if (m == null) continue;
+
+      if (includeNonReexport || dependency.isReexport()) {
+        result.add(m);
+      }
+    }
+
+    if (includeNonReexport) {
+      if (runtimes) {
+        for (SLanguage l : module.getUsedLanguages()) {
+          for (SModuleReference runtimeRef : l.getLanguageRuntimes()) {
+            SModule runtime = ModuleRepositoryFacade.getInstance().getModule(runtimeRef);
+            if (runtime != null) {
+              result.add(runtime);
+            }
+          }
+        }
+      }
+    }
+
+    return result;
   }
 
   public enum Deptype {

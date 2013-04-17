@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.rules;
 
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -38,7 +39,7 @@ public class LanguageScopeExecutor {
   public static <T> T execWithLanguageScope(Language lang, Computable<T> computable) {
     LanguageScope languageScope = lang == null ? LanguageScope.getGlobal() :
       LanguageScopeFactory.getInstance().getLanguageScope(
-        lang.getDependenciesManager().getAllExtendedLanguages());
+        new LanguageDependenciesManager(lang).getAllExtendedLanguages());
     try{
        LanguageScope.pushCurrent(languageScope, computable);
        return computable.compute();
@@ -52,8 +53,8 @@ public class LanguageScopeExecutor {
     if (lang1 == null || lang2 == null) return execWithLanguageScope(lang1 != null ? lang1 : lang2, computable);
 
     LanguageScope languageScope = LanguageScopeFactory.getInstance().getLanguageScope(
-      lang1.getDependenciesManager().getAllExtendedLanguages(),
-      lang2.getDependenciesManager().getAllExtendedLanguages());
+      new LanguageDependenciesManager(lang1).getAllExtendedLanguages(),
+      new LanguageDependenciesManager(lang2).getAllExtendedLanguages());
     try{
       LanguageScope.pushCurrent(languageScope, computable);
       return computable.compute();

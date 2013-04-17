@@ -13,7 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
+
+import gnu.trove.THashSet;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -32,7 +36,9 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -74,7 +80,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
   private ClassLoader myStubsLoader = new MyClassLoader();
-  private final LanguageDependenciesManager myLanguageDependenciesManager = new LanguageDependenciesManager(this);
 
   protected Language(LanguageDescriptor descriptor, IFile file) {
     super(file);
@@ -86,11 +91,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   protected void reloadAfterDescriptorChange() {
     super.reloadAfterDescriptorChange();
     revalidateGenerators();
-  }
-
-  @Override
-  public LanguageDependenciesManager getDependenciesManager() {
-    return myLanguageDependenciesManager;
   }
 
   public void addExtendedLanguage(SModuleReference langRef) {
@@ -117,20 +117,42 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   @Override
-  public List<Dependency> getDependencies() {
-    List<Dependency> result = super.getDependencies();
-    for (SModuleReference ref : getExtendedLanguageRefs()) {
+  public Iterable<SDependency> getDeclaredDependencies() {
+    Set<SDependency> dependencies = new HashSet<SDependency>();
+    dependencies.addAll(IterableUtil.asCollection(super.getDeclaredDependencies()));
+
+    //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
+    for (Language language : getAllExtendedLanguages()) {
       Dependency dep = new Dependency();
-      dep.setModuleRef(ref);
+      dep.setModuleRef(language.getModuleReference());
       dep.setReexport(true);
-      result.add(dep);
+      dependencies.add(new SDependencyAdapter(dep));
     }
+
     Dependency dep = new Dependency();
     dep.setModuleRef(BootstrapLanguages.CORE);
     dep.setReexport(true);
-    result.add(dep);
+    dependencies.add(new SDependencyAdapter(dep));
 
-    return result;
+    return dependencies;
+  }
+
+  public Set<Language> getAllExtendedLanguages() {
+    // todo: ?
+    Set<Language> toProcess = new HashSet<Language>();
+    toProcess.add(this);
+    Set<Language> processed = new HashSet<Language>();
+
+    while (!(toProcess.isEmpty())) {
+      Language language = toProcess.iterator().next();
+      toProcess.remove(language);
+      if (!(processed.contains(language))) {
+        processed.add(language);
+        toProcess.addAll(language.getExtendedLanguages());
+      }
+    }
+
+    return processed;
   }
 
   public Collection<SModuleReference> getRuntimeModulesReferences() {
@@ -182,7 +204,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   @Override
   public void dispose() {
-    myLanguageDependenciesManager.dispose();
     super.dispose();
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
   }
@@ -252,8 +273,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     List<EditableSModelDescriptor> result = new ArrayList<EditableSModelDescriptor>();
     for (SModel md : getModels()) {
       if (SModelStereotype.getStereotype(md).equals(SModelStereotype.NONE)
-        && getAspectForModel(md) == null
-        && !isAccessoryModel(md.getReference())) {
+          && getAspectForModel(md) == null
+          && !isAccessoryModel(md.getReference())) {
         result.add(((EditableSModelDescriptor) md));
       }
     }

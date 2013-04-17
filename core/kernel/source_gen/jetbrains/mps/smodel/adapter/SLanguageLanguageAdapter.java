@@ -19,6 +19,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class SLanguageLanguageAdapter implements SLanguage {
@@ -60,11 +63,25 @@ public class SLanguageLanguageAdapter implements SLanguage {
 
   @Override
   public Iterable<SModuleReference> getLanguageRuntimes() {
-    return null;
+    Set<SModuleReference> runtimes = new HashSet<SModuleReference>();
+    for (Language language : SetSequence.fromSet(myLanguage.getAllExtendedLanguages())) {
+      runtimes.addAll(language.getRuntimeModulesReferences());
+    }
+    return runtimes;
   }
 
   @Override
   public SModule getModule() {
     return myLanguage;
+  }
+
+  @Override
+  public int hashCode() {
+    return myLanguage.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object object) {
+    return object instanceof SLanguage && myLanguage.equals(((SLanguage) object).getModule());
   }
 }
