@@ -28,17 +28,16 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class ProjectPathUtil {
-  public static IFile getClassesGenFolder(IFile moduleDescriptor) {
-    if (moduleDescriptor == null) {
+  public static IFile getClassesGenFolder(IFile moduleSourceDir) {
+    if (moduleSourceDir == null) {
       return null;
     }
-    if (moduleDescriptor.isReadOnly()) {
+    if (moduleSourceDir.isReadOnly()) {
       // packaged
-      IFile bundleHome = FileSystem.getInstance().getBundleHome(moduleDescriptor);
+      IFile bundleHome = FileSystem.getInstance().getBundleHome(moduleSourceDir);
       return bundleHome != null ? FileSystem.getInstance().getFileByPath(bundleHome.getPath() + "!") : null;
     }
-    IFile parent = moduleDescriptor.getParent();
-    return parent != null ? parent.getDescendant("classes_gen") : null;
+    return moduleSourceDir.getDescendant("classes_gen");
   }
 
   public static IFile getClassesFolder(IFile moduleDescriptor) {

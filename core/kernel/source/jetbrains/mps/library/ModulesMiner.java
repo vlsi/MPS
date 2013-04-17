@@ -238,7 +238,8 @@ public class ModulesMiner {
       excludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
     }
 
-    IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile);
+    // todo: exclude generator classes gen too!
+    IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile.getParent());
     if (classesGen != null) {
       excludes.add(classesGen);
     }
