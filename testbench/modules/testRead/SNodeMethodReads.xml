@@ -62,10 +62,6 @@
    <int>1</int>
   </void>
   <void method="put">
-   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getNextChild(org.jetbrains.mps.openapi.model.SNode)</string>
-   <int>1</int>
-  </void>
-  <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.visitProperties(org.jetbrains.mps.openapi.model.SNode$PropertyVisitor)</string>
    <int>1</int>
   </void>
@@ -140,10 +136,6 @@
   <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.removeReferent(java.lang.String)</string>
    <null/>
-  </void>
-  <void method="put">
-   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getNextChild(jetbrains.mps.smodel.SNode)</string>
-   <int>1</int>
   </void>
   <void method="put">
    <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.findConceptProperty(java.lang.String)</string>
@@ -258,10 +250,6 @@
    <int>1</int>
   </void>
   <void method="put">
-   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getPrevChild(jetbrains.mps.smodel.SNode)</string>
-   <int>1</int>
-  </void>
-  <void method="put">
    <string>public boolean jetbrains.mps.smodel.SNode.isRegistered()</string>
    <int>0</int>
   </void>
@@ -304,10 +292,6 @@
   <void method="put">
    <string>public boolean jetbrains.mps.smodel.SNode.isDescendantOf(jetbrains.mps.smodel.SNode,boolean)</string>
    <null/>
-  </void>
-  <void method="put">
-   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getPrevChild(org.jetbrains.mps.openapi.model.SNode)</string>
-   <int>1</int>
   </void>
   <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.setName(java.lang.String)</string>

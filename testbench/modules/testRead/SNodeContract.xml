@@ -61,19 +61,13 @@
   <void method="add"> 
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setProperty(java.lang.String,java.lang.String)</string> 
   </void> 
-  <void method="add"> 
-   <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getPrevChild(org.jetbrains.mps.openapi.model.SNode)</string> 
-  </void>
-  <void method="add"> 
+  <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.putUserObject(java.lang.Object,java.lang.Object)</string> 
   </void> 
   <void method="add"> 
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.removeChild(org.jetbrains.mps.openapi.model.SNode)</string> 
   </void> 
   <void method="add">
-   <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getNextChild(org.jetbrains.mps.openapi.model.SNode)</string> 
-  </void> 
-  <void method="add"> 
    <string>public abstract boolean org.jetbrains.mps.openapi.model.SNode.hasProperty(java.lang.String)</string> 
   </void> 
   <void method="add"> 
