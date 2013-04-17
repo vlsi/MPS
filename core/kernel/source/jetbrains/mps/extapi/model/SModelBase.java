@@ -24,14 +24,22 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
+import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.events.SModelStateListener;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
+  private List<SModelAccessListener> myAccessListeners = new CopyOnWriteArrayList<SModelAccessListener>();
+  private List<SModelChangeListener> myChangeListeners = new CopyOnWriteArrayList<SModelChangeListener>();
+  private List<SModelStateListener> myStateListeners = new CopyOnWriteArrayList<SModelStateListener>();
 
   @NotNull
   private final DataSource mySource;
@@ -144,17 +152,51 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     ModelAccess.assertLegalWrite();
   }
 
-  public void fireNodeRead(jetbrains.mps.smodel.SNode sNode){
-
+  @Override
+  public void addStateListener(SModelStateListener l) {
+    myStateListeners.add(l);
   }
 
-  public void fireReferenceRead(SNode sNode, String role) {
-
-
+  @Override
+  public void removeStateListener(SModelStateListener l) {
+    myStateListeners.remove(l);
   }
 
-  public void firePropertyRead(SNode sNode, String propertyName) {
+  @Override
+  public void addChangeListener(SModelChangeListener l) {
+    myChangeListeners.add(l);
+  }
 
+  @Override
+  public void removeChangeListener(SModelChangeListener l) {
+    myChangeListeners.remove(l);
+  }
 
+  @Override
+  public void addAccessListener(SModelAccessListener l) {
+    myAccessListeners.add(l);
+  }
+
+  @Override
+  public void removeAccessListener(SModelAccessListener l) {
+    myAccessListeners.remove(l);
+  }
+
+  public void fireNodeRead(SNode node) {
+    for (SModelAccessListener l : myAccessListeners) {
+      l.nodeRead(node);
+    }
+  }
+
+  public void fireReferenceRead(SNode node, String role) {
+    for (SModelAccessListener l : myAccessListeners) {
+      l.referenceRead(node, role);
+    }
+  }
+
+  public void firePropertyRead(SNode node, String propertyName) {
+    for (SModelAccessListener l : myAccessListeners) {
+      l.propertyRead(node, propertyName);
+    }
   }
 }

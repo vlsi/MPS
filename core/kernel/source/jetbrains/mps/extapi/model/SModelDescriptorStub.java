@@ -53,9 +53,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   private static final Logger LOG = LogManager.getLogger(SModelDescriptorStub.class);
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
-  private List<SModelAccessListener> myAccessListeners = new CopyOnWriteArrayList<SModelAccessListener>();
-  private List<SModelChangeListener> myChangeListeners = new CopyOnWriteArrayList<SModelChangeListener>();
-  private List<SModelStateListener> myStateListeners = new CopyOnWriteArrayList<SModelStateListener>();
 
   /**
    * Migration to 3.0. Loads and returns model data.
@@ -408,35 +405,5 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   @Override
   public final void copyPropertiesTo(SModelInternal to) {
     getSModelInternal().copyPropertiesTo(to);
-  }
-
-  @Override
-  public void addStateListener(SModelStateListener l) {
-    myStateListeners.add(l);
-  }
-
-  @Override
-  public void removeStateListener(SModelStateListener l) {
-    myStateListeners.remove(l);
-  }
-
-  @Override
-  public void addChangeListener(SModelChangeListener l) {
-    myChangeListeners.add(l);
-  }
-
-  @Override
-  public void removeChangeListener(SModelChangeListener l) {
-    myChangeListeners.remove(l);
-  }
-
-  @Override
-  public void addAccessListener(SModelAccessListener l) {
-    myAccessListeners.add(l);
-  }
-
-  @Override
-  public void removeAccessListener(SModelAccessListener l) {
-    myAccessListeners.remove(l);
   }
 }
