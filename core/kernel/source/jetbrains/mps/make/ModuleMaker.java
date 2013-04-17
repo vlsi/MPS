@@ -33,7 +33,6 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -404,7 +403,7 @@ public class ModuleMaker {
   }
 
   private boolean isExcluded(SModule m) {
-    return m instanceof Generator || m.isReadOnly() || !SModuleOperations.isCompileInMps(m);
+    return m.isReadOnly() || !SModuleOperations.isCompileInMps(m);
   }
 
   private class MyCompilationResultAdapter extends CompilationResultAdapter {
