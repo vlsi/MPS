@@ -189,9 +189,8 @@
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="3885435385580638762">
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638763">
-        <property name="text" nameId="tpih.1164413036326" value="IF &quot;%MPS_VM_OPTIONS%&quot; == &quot;&quot; (" />
+        <property name="text" nameId="tpih.1164413036326" value="IF &quot;%MPS_VM_OPTIONS%&quot; == &quot;&quot; " />
       </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GNewLine" typeId="tpih.1164413172275" id="3885435385580638764" />
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638765">
         <property name="text" nameId="tpih.1164413036326" value="SET MPS_VM_OPTIONS=%PROJECT_HOME%" />
       </node>
@@ -245,10 +244,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GNewLine" typeId="tpih.1164413172275" id="3885435385580638775" />
-      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="3885435385580638776">
-        <property name="text" nameId="tpih.1164413036326" value=")" />
       </node>
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="3885435385580638777">

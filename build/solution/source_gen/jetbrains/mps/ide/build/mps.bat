@@ -19,9 +19,7 @@ IF NOT EXIST "%JAVA%" set JAVA=%JDK%\jre\bin\javaw.exe
 IF NOT EXIST "%JAVA%" set JAVA=javaw.exe
 
 set MAIN_CLASS=jetbrains.mps.Launcher
-IF "%MPS_VM_OPTIONS%" == "" (
-SET MPS_VM_OPTIONS=%PROJECT_HOME%bin\mps.exe.vmoptions
-)
+IF "%MPS_VM_OPTIONS%" == "" SET MPS_VM_OPTIONS=%PROJECT_HOME%bin\mps.exe.vmoptions
 set ACC=
 FOR /F "delims=" %%i in ('TYPE "%MPS_VM_OPTIONS%"') DO call :parse_vmoptions "%%i"
 set JVM_ARGS=%ACC%
