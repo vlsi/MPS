@@ -37,42 +37,15 @@ public interface IModule extends SModule {
   // up reasonable getters to SModule
   ModuleDescriptor getModuleDescriptor();
 
-  //----deps
-
-  // review SDependency part in SModule
-
-  // extract methods from DependenciesManager to SModule ?
-  DependenciesManager getDependenciesManager();
-
-  // ?
-
   /**
-   * Explicitly declared deps +
-   * <p>explicitly extended languages + all the generators (for a lang)
-   * <p>explicitly ref'd generators + source lang + runtime modules of the source lang (for a generator)
-   *
-   * @return
+   * Remove all usages of this method?
+   * @see org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()
+   * @see jetbrains.mps.project.dependency.GlobalModuleDependenciesManager
+   * @see SModule#resolveInDependencies(org.jetbrains.mps.openapi.model.SModelId)
    */
-  List<Dependency> getDependencies();
-
-  // ?
-
-  /**
-   * Explicitly used langs +
-   * <p>all bootstrap langs (for a generator)
-   *
-   * @return
-   */
-  Collection<SModuleReference> getUsedLanguagesReferences();
-
-  // ?
-
-  /**
-   * Explicitly used devkits
-   *
-   * @return
-   */
-  Collection<SModuleReference> getUsedDevkitReferences();
+  @Deprecated
+  @NotNull
+  IScope getScope();
 
   // cast to AbstractModule to use this methods
   void addDependency(SModuleReference moduleRef, boolean reexport);
@@ -105,16 +78,31 @@ public interface IModule extends SModule {
   @Deprecated
   List<SModel> getOwnModelDescriptors();
 
+  // ----- deprecated part
+
   /**
-   * Two step migration: 1) IScope -> SearchScope 2) by rename
-   *
-   * @see org.jetbrains.mps.openapi.module.SModule#getModuleScope()
+   * @see jetbrains.mps.project.structure.modules.ModuleDescriptor#getUsedDevkits()
+   */
+  Collection<SModuleReference> getUsedDevkitReferences();
+
+  /**
+   * @see org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()
+   * @see org.jetbrains.mps.openapi.module.SModule#getDeclaredDependencies()
    */
   @Deprecated
-  @NotNull
-  IScope getScope();
+  DependenciesManager getDependenciesManager();
 
-  // ----- deprecated part
+  /**
+   * @see org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()
+   */
+  @Deprecated
+  Collection<SModuleReference> getUsedLanguagesReferences();
+
+  /**
+   * @see org.jetbrains.mps.openapi.module.SModule#getDeclaredDependencies()
+   */
+  @Deprecated
+  List<Dependency> getDependencies();
 
   /**
    * Do nothing for now. If method change dependencies it invalidates cache by calling dependenciesChanged()

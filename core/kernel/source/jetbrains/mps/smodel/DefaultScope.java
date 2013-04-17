@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -33,6 +34,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+// todo: review usages and remove
 public abstract class DefaultScope extends BaseScope {
   private final Object LOCK = new Object();
 
@@ -164,7 +166,7 @@ public abstract class DefaultScope extends BaseScope {
       myUsedLanguages.addAll(dk.getAllExportedLanguages());
     }
     for (Language l : new ArrayList<Language>(myUsedLanguages)) {
-      l.getDependenciesManager().collectAllExtendedLanguages(myUsedLanguages);
+      new LanguageDependenciesManager(l).collectAllExtendedLanguages(myUsedLanguages);
     }
   }
 
@@ -177,9 +179,11 @@ public abstract class DefaultScope extends BaseScope {
         myUsedDevkits.addAll(dk.getAllExtendedDevkits());
       }
 
-      for (DevKit dk : ModuleUtil.refsToDevkits(m.getUsedDevkitReferences())) {
-        myUsedDevkits.add(dk);
-        myUsedDevkits.addAll(dk.getAllExtendedDevkits());
+      if (m.getModuleDescriptor() != null && m.getModuleDescriptor().getUsedDevkits() != null) {
+        for (DevKit dk : ModuleUtil.refsToDevkits(m.getModuleDescriptor().getUsedDevkits())) {
+          myUsedDevkits.add(dk);
+          myUsedDevkits.addAll(dk.getAllExtendedDevkits());
+        }
       }
     }
   }

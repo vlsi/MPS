@@ -8,6 +8,7 @@ import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.jps.build.MPSCompilerUtil;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
@@ -26,6 +27,7 @@ import org.jetbrains.jps.model.library.JpsLibrary;
 import org.jetbrains.jps.model.module.*;
 import org.jetbrains.jps.service.JpsServiceManager;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -77,8 +79,8 @@ public class JpsSolutionIdea extends Solution {
   }
 
   @Override
-  public List<Dependency> getDependencies() {
-    List<Dependency> dependencies = new ArrayList<Dependency>();
+  public Iterable<SDependency> getDeclaredDependencies() {
+    List<SDependency> dependencies = new ArrayList<SDependency>();
 
     MPSCompilerUtil.debug(myCompileContext, "^^^^ getDependencies for " + myModule.getName());
 
@@ -120,7 +122,7 @@ public class JpsSolutionIdea extends Solution {
         Dependency dep = new Dependency();
         dep.setModuleRef(solution.getModuleReference());
         dep.setReexport(false);
-        dependencies.add(dep);
+        dependencies.add(new SDependencyAdapter(dep));
       }
     }
 
