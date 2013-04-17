@@ -2069,6 +2069,9 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274218785">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.6007318803030056747" resolveInfo="EditStringProperty" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5987562135990018122">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.5987562135989648290" resolveInfo="EditEnumProperty" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2495352385274219322">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.938834323431398136" resolveInfo="TypeName" />
     </node>
