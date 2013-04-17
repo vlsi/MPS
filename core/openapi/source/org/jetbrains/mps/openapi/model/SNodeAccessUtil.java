@@ -66,7 +66,6 @@ public class SNodeAccessUtil {
   public static void setProperty(SNode node, String propertyName, String propertyValue) {
     Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
     Pair<SNode, String> pair = new Pair<SNode, String>(node, propertyName);
-    SModel model = node.getModel();
 
     //todo try to remove
     if (threadSet.contains(pair)) {
