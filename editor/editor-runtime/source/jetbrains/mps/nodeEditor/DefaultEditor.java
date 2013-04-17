@@ -90,7 +90,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     cacheParameters(node, editorContext);
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
-    addLabel(mySNode.getConcept() != null ? mySNode.getConcept().getName().toLowerCase() : mySNode.getPresentation());
+    addLabel(mySNode.getConcept() != null ? camelToLabel(mySNode.getConcept().getName()) : mySNode.getPresentation());
     if (myNameProperty != null) {
       addPropertyCell(myNameProperty);
     }
@@ -355,11 +355,37 @@ public class DefaultEditor extends DefaultNodeEditor {
     }
   }
 
+  private String camelToLabel(String text) {
+    StringBuilder sb = new StringBuilder();
+    char[] cs = text.toCharArray();
+    for (int i = 0; i < cs.length; i++) {
+      if (Character.isUpperCase(cs[i])) {
+        if (sb.length() > 0) {
+          sb.append(' ');
+        }
+        if (i + 1 < cs.length && Character.isLowerCase(cs[i + 1])) {
+          sb.append(Character.toLowerCase(cs[i]));
+          continue;
+        }
+        while (i + 1 < cs.length && !(Character.isLowerCase(cs[i + 1]))) {
+          sb.append(cs[i]);
+          i++;
+        }
+        if (i + 1 < cs.length) {
+          i--;
+          continue;
+        }
+      }
+      sb.append(cs[i]);
+    }
+    return sb.toString();
+  }
+
   private void addRoleLabel(String role, String type) {
     if (role == null) {
       role = "<no " + type + ">";
     }
-    addLabel(role);
+    addLabel(camelToLabel(role));
     addLabel(":");
   }
 
