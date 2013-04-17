@@ -18,6 +18,7 @@ package jetbrains.mps.extapi.model;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -141,5 +142,19 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   public void dispose() {
     ModelAccess.assertLegalWrite();
+  }
+
+  public void fireNodeRead(jetbrains.mps.smodel.SNode sNode){
+
+  }
+
+  public void fireReferenceRead(SNode sNode, String role) {
+
+
+  }
+
+  public void firePropertyRead(SNode sNode, String propertyName) {
+
+
   }
 }

@@ -17,10 +17,14 @@ package org.jetbrains.mps.openapi.model.events;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * This is used for tracking which part of nodes has the user touched.
+ * Each access can result in a number of access listener method invocations.
+ * It is guaranteed that if for some "pure AST function" O (meaning O's result depends only on AST itself
+ * and does not change the AST) a read listener was called for some set of features S, and there were no
+ * change events on S, the next time O will be invoked, it will return the same result.
+ */
 public interface SModelAccessListener {
-  //before write access occured
-  void nodeWritten(SNode node);
-
   //before read access occured
   void nodeRead(SNode node);
 

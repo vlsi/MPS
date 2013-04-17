@@ -18,5 +18,5 @@ package org.jetbrains.mps.openapi.events.global;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
 
-public interface GlobalSModelAccessListener extends SModelAccessListener,GlobalRepositoryListener<SModel> {
+public interface GlobalSModelAccessListener extends SModelAccessListener, GlobalRepositoryListener<SModel> {
 }
