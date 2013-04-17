@@ -24,6 +24,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.events.SModelStateListener;
@@ -197,6 +198,32 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   public void firePropertyRead(SNode node, String propertyName) {
     for (SModelAccessListener l : myAccessListeners) {
       l.propertyRead(node, propertyName);
+    }
+  }
+
+  public void fireReferenceChanged(SNode node, String role, SReference oldValue, SReference newValue) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.referenceChanged(node, role, oldValue, newValue);
+    }
+  }
+
+
+  public void firePropertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.propertyChanged(node, propertyName, oldValue, newValue);
+    }
+  }
+
+  public void fireNodeAdded(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.nodeAdded(node, role, child);
+    }
+  }
+
+
+  public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.nodeRemoved(node, role, child);
     }
   }
 }

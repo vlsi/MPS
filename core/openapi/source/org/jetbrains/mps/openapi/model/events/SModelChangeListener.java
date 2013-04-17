@@ -19,16 +19,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
+/**
+ * Change listener is always invoked before a real change
+ */
 public interface SModelChangeListener{
-  //node is already in model
-  void nodeAdded(SNode node);
+  void nodeAdded(SNode node, String role, SNode child);
 
-  //node is not in model
-  void nodeRemoved(SNodeReference node);
+  void nodeRemoved(SNode node, String role, SNode child);
 
-  //new value is already set
-  void propertyChanged(SNode node, String oldValue, String newValue);
+  void propertyChanged(SNode node, String propertyName, String oldValue, String newValue);
 
-  //old ref is already detached,
-  void referenceChanged(SNode node, SReference oldRef, SReference newRef);
+  void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef);
 }

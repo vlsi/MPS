@@ -18,6 +18,6 @@ package org.jetbrains.mps.openapi.events.global;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
 
-public interface GlobalSModelChangeListener extends SModelChangeListener,GlobalRepositoryListener<SModel> {
+public interface GlobalSModelChangeListener extends SModelChangeListener, GlobalRepositoryListener<SModel> {
 
 }

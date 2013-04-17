@@ -180,7 +180,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
     int index = getPropertyIndex(propertyName);
     final String oldValue = index == -1 ? null : myProperties[index + 1];
-    if (propertyValue == null && oldValue == null) return;
+    if (EqualUtil.equals(oldValue, propertyValue)) return;
+    propertyChanged(propertyName, oldValue, propertyValue);
 
     if (propertyValue == null) {
       String[] oldProperties = myProperties;
@@ -230,6 +231,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
+    nodeAdded(role, child);
     SNode firstChild = firstChild();
     final SNode anchor = firstChild == null ? null : firstChild.treePrevious();
     insertChild(role, child, anchor);
@@ -281,9 +283,10 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Override
   public void removeChild(org.jetbrains.mps.openapi.model.SNode child) {
     if (child.getParent() != this) return;
-    ModelChange.assertLegalNodeChange(getModel(), this);
     final SNode wasChild = (SNode) child;
     final String wasRole = wasChild.getRoleInParent();
+    nodeRemoved(child, wasRole);
+    ModelChange.assertLegalNodeChange(getModel(), this);
     final SNode anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
 
     assert wasRole != null;
@@ -336,6 +339,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
       for (SReference reference : myReferences) {
         if (!reference.getRole().equals(role)) continue;
+        referenceChanged(role, reference, null);
         removeReferenceInternal(reference);
         return;
       }
@@ -343,24 +347,23 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     // remove old references
-    List<SReference> toDelete = new ArrayList<SReference>();
+    SReference toDelete = null;
     if (myReferences != null) {
       for (SReference reference : myReferences) {
-        if (reference.getRole().equals(role)) {
-          toDelete.add(reference);
-        }
+        if (!reference.getRole().equals(role)) continue;
+
+        toDelete = reference;
+        break;
       }
     }
-    if (toDelete.size() > 1) {
-      LOG.errorWithTrace(
-          "ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
-    }
 
-    for (SReference reference : toDelete) {
-      removeReferenceInternal(reference);
-    }
+    SReference newValue = SReference.create(role, this, target);
+    referenceChanged(role, toDelete, newValue);
 
-    addReferenceInternal(jetbrains.mps.smodel.SReference.create(role, this, target));
+    if (toDelete != null) {
+      removeReferenceInternal(toDelete);
+    }
+    addReferenceInternal(newValue);
   }
 
   @Override
@@ -405,12 +408,18 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
+    SReference toRemove = null;
     for (SReference r : myReferences) {
-      if (r.getRole().equals(role)) {
-        removeReferenceInternal(r);
-        break;
-      }
+      if (!r.getRole().equals(role)) continue;
+      toRemove = r;
+      break;
     }
+
+    referenceChanged(role, toRemove, reference);
+    if (toRemove != null) {
+      removeReferenceInternal(toRemove);
+    }
+
     if (reference != null) {
       assert reference.getSourceNode() == this;
       addReferenceInternal((SReference) reference);
@@ -476,6 +485,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     ModelChange.assertLegalNodeChange(getModel(), this);
 
+    nodeAdded(role, child);
+
     children_insertAfter(((SNode) anchor), schild);
     schild.setRoleInParent(role);
 
@@ -504,6 +515,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Override
   public String getRoleOf(org.jetbrains.mps.openapi.model.SNode child) {
     nodeRead();
+
     assertRead();
     assertDisposed();
 
@@ -777,6 +789,30 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SModelBase md = getRealModel();
     if (md == null) return;
     md.firePropertyRead(this, propertyName);
+  }
+
+  private void referenceChanged(String role, org.jetbrains.mps.openapi.model.SReference reference, org.jetbrains.mps.openapi.model.SReference newValue) {
+    SModelBase md = getRealModel();
+    if (md == null) return;
+    md.fireReferenceChanged(this, role, reference, newValue);
+  }
+
+  private void propertyChanged(String propertyName, String oldValue, String newValue) {
+    SModelBase md = getRealModel();
+    if (md == null) return;
+    md.firePropertyChanged(this, propertyName, oldValue, newValue);
+  }
+
+  private void nodeAdded(String role, org.jetbrains.mps.openapi.model.SNode child) {
+    SModelBase md = getRealModel();
+    if (md == null) return;
+    md.fireNodeAdded(this, role, child);
+  }
+
+  private void nodeRemoved(org.jetbrains.mps.openapi.model.SNode child, String role) {
+    SModelBase md = getRealModel();
+    if (md == null) return;
+    md.fireNodeRemoved(this, role, child);
   }
 
   public SModel getPersistentModel() {
