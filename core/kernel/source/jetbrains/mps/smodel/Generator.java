@@ -113,7 +113,8 @@ public class Generator extends AbstractModule {
 
   @Override
   public IFile getModuleSourceDir() {
-    return mySourceLanguage.getModuleSourceDir();
+    // todo: !
+    return mySourceLanguage.getModuleSourceDir().getDescendant("generator");
   }
 
   @Override
@@ -232,11 +233,6 @@ public class Generator extends AbstractModule {
       }
     }
     return result;
-  }
-
-  @Override
-  public IFile getOutputPath() {
-    return mySourceLanguage.getOutputPath();
   }
 
   private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {

@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -54,11 +55,14 @@ public class ProjectPathUtil {
   }
 
   public static IFile getGeneratorOutputPath(IFile moduleSourceDir, ModuleDescriptor descriptor) {
+    // todo: !
     String generatorOutputPath;
     if (descriptor instanceof SolutionDescriptor) {
       generatorOutputPath = ((SolutionDescriptor) descriptor).getOutputPath();
     } else if (descriptor instanceof LanguageDescriptor) {
       generatorOutputPath = ((LanguageDescriptor) descriptor).getGenPath();
+    } else if (descriptor instanceof GeneratorDescriptor) {
+      generatorOutputPath = null;
     } else {
       return null;
     }
