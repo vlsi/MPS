@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IntentionUtils {
   private IntentionUtils() {
@@ -80,5 +82,20 @@ public class IntentionUtils {
         return null;
       }
     }
+  }
+
+
+
+  /*package*/ static boolean hasCondition(SNode node) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.WhileStatement") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.DoWhileStatement");
+  }
+
+  /*package*/ static SNode getCondition(SNode node) {
+    assert hasCondition(node);
+    return SNodeOperations.cast(ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Expression");
+      }
+    }).first(), "jetbrains.mps.baseLanguage.structure.Expression");
   }
 }

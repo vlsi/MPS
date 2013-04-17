@@ -187,8 +187,8 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8722937377469659497">
       <property name="name" nameId="tpck.1169194664001" value="GenerateBuildForProjectAction" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Build Solution" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="create" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Build Solution" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8722937377469659543">
       <property name="name" nameId="tpck.1169194664001" value="ProjectPaneProjectAddition" />
@@ -10776,6 +10776,25 @@
                             </node>
                           </node>
                         </node>
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="772379520216445619">
+                          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="772379520216445620">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1622688651539160705" resolveInfo="copyIcon" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="772379520216445621">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="772379520216445622">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1622688651539229448" resolveInfo="instanceEx" />
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="772379520216445623">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6nxv.~ApplicationInfoEx%dgetWelcomeScreenLogoUrl()%cjava%dlang%dString" resolveInfo="getWelcomeScreenLogoUrl" />
+                              </node>
+                            </node>
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="772379520216445624">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1622688651539229447" resolveInfo="iconsDir" />
+                            </node>
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="772379520216445625">
+                              <property name="value" nameId="tpee.1070475926801" value="logo.png" />
+                            </node>
+                          </node>
+                        </node>
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1622688651539229531">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="1622688651539229532">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7949420916281972100" resolveInfo="copyIcon" />
@@ -12313,6 +12332,20 @@
                       <property name="minor" nameId="kdzh.3497141547781541445" value="0" />
                       <property name="name" nameId="tpck.1169194664001" value="MPS" />
                       <property name="major" nameId="kdzh.3497141547781541444" value="1" />
+                      <node role="welcomeLogo" roleId="kdzh.772379520210716142" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="772379520215444067">
+                        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="772379520215444068">
+                          <property name="head" nameId="3ior.8618885170173601779" value="icons" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="772379520215444069">
+                            <property name="head" nameId="3ior.8618885170173601779" value="logo.png" />
+                          </node>
+                          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="772379520215444070">
+                            <property name="propertyName" nameId="tpck.1757699476691236117" value="head" />
+                            <node role="expression" roleId="tp3r.1196350785111" type="tpee.VariableReference" typeId="tpee.1068498886296" id="772379520215444179">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1622688651539133305" resolveInfo="ICONS" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node role="buildNumber" roleId="kdzh.6108265972537229337" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="3256085672520549878">
                         <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="3256085672520549879">
                           <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="ffeo.4301118715654465616" resolveInfo="build.number" />
