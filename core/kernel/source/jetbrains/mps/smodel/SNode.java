@@ -15,25 +15,21 @@
  */
 package jetbrains.mps.smodel;
 
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SModelReference;
-
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractImmutableList;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.containers.EmptyIterable;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.migration.annotations.LongTermMigration;
@@ -44,7 +40,9 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -696,7 +694,16 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return result;
   }
 
-  public SModel getPersistentModel(){
+  public org.jetbrains.mps.openapi.model.SModel getModel() {
+    assertRead();
+    assertDisposed();
+
+    fireNodeReadAccess();
+
+    return internal_getModel();
+  }
+
+  public SModel getPersistentModel() {
     return myModel;
   }
 
@@ -800,15 +807,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //--------------
 
-  public org.jetbrains.mps.openapi.model.SModel getModel() {
-    assertRead();
-    assertDisposed();
-
-    fireNodeReadAccess();
-
-    return internal_getModel();
-  }
-
   private SModelDescriptor internal_getModel() {
     return myModel == null ? null : myModel.getModelDescriptor();
   }
@@ -901,7 +899,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private void assertDisposed() {
     //this is only while exceptions are not fixed
     //actually, detached models should not be distinguishable by some "disposed" property
-    if (myModel == null || !jetbrains.mps.util.SNodeOperations.isModelDisposed(internal_getModel() )) return;
+    if (myModel == null || !jetbrains.mps.util.SNodeOperations.isModelDisposed(internal_getModel())) return;
 
     String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(internal_getModel());
     if (ourErroredModels.add(modelName)) {
