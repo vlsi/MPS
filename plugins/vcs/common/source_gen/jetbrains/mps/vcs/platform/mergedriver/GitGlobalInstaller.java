@@ -104,7 +104,9 @@ import org.apache.log4j.LogManager;
         }
       }
       if (equal) {
-        return AbstractInstaller.State.INSTALLED;
+        if (dryRun) {
+          return AbstractInstaller.State.INSTALLED;
+        }
       } else {
         if (dryRun) {
           return AbstractInstaller.State.OUTDATED;
