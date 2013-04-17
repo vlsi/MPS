@@ -20,10 +20,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 /**
  * This is used for tracking which part of nodes has the user touched.
  * Each access can result in a number of access listener method invocations.
- * It is guaranteed that if for some "pure AST function" O (meaning O's result depends only on AST itself
- * and does not change the AST, also O does not depend o user objects) a read listener was called for some
+ * It is guaranteed that if for some "pure node function" O  a read listener was called for some
  * set of features S, and there were no change or reload events on S, the next time O will be invoked, it
  * will return the same result.
+ * A "pure node function" O means that
+ * 1) O's result depends only on nodes of the AST and does not depend on models, modules and user objects
+ * 2) O does not change the AST
+ * E.g. we suppose all typesystem rules and editor queries are "pure node functions"
+ *
+ * Note that since this kind of events occurs in read action, you can get events from other threads, so
+ * the right way to work with this kind of events if to store them in a thread-local sets while executing
+ * the interested code in the same thread.
  */
 public interface SModelAccessListener {
   //before read access occured
