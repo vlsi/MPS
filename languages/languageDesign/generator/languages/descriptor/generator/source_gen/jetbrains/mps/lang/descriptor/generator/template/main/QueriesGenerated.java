@@ -113,7 +113,7 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getModuleReference_9020561928507315628", new Object[]{});
   }
 
-  public static Object propertyMacro_GetPropertyValue_6655394244919455793(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3829836699771176869(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "qualifiedName") + ".TemplateModelImpl";
   }
 
@@ -206,7 +206,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "priorityRules", true)).isNotEmpty();
   }
 
-  public static boolean ifMacro_Condition_6655394244919461188(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_3829836699770777506(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).isNotEmpty();
   }
 
@@ -290,7 +290,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "priorityRules", true);
   }
 
-  public static Iterable sourceNodesQuery_6655394244919455802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_3829836699771395556(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_x583g4_a0a0a0a0a0a0a0yb(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
