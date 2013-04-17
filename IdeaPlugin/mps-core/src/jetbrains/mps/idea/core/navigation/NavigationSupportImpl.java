@@ -80,6 +80,9 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
     if (psiElement instanceof MPSPsiNodeBase) return false;
 
     Navigatable navig = PsiNavigationSupport.getInstance().getDescriptor(psiElement);
+    if (navig == null) {
+      return false;
+    }
     if (navig.canNavigate()) {
       navig.navigate(true);
       return true;
