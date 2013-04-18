@@ -107,17 +107,22 @@ public class FixBrokenReferences_Action extends BaseAction {
           LOG.warn("processing model " + SModelOperations.getModelName(model));
         }
         for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-          for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
+          for (final SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
             if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
               if (LOG.isEnabledFor(Priority.ERROR)) {
-                LOG.error("reference=" + ref.getTargetSModelReference() + " :#: " + ref.getTargetNodeId() + " -- resolveInfo=" + SLinkOperations.getResolveInfo(ref) + "; role=" + SLinkOperations.getRole(ref));
+                LOG.error(" reference =" + ref.getTargetSModelReference() + " :#: " + ref.getTargetNodeId() + " -- resolveInfo=" + SLinkOperations.getResolveInfo(ref) + "; role=" + SLinkOperations.getRole(ref));
               }
               boolean r = resolver.resolve(ref, node, new GlobalOperationContext());
-              if (LOG.isInfoEnabled()) {
-                LOG.info(((r ?
+              SReference rr = Sequence.fromIterable(SNodeOperations.getReferences(node)).findFirst(new IWhereFilter<SReference>() {
+                public boolean accept(SReference r) {
+                  return eq_g50bqp_a0a0a0a0a0a2a0a0a1a5a0a5(SLinkOperations.getRole(r), SLinkOperations.getRole(ref));
+                }
+              });
+              if (LOG.isEnabledFor(Priority.WARN)) {
+                LOG.warn(((r ?
                   "resolved to=" :
-                  "not resolved="
-                )) + ref.getTargetSModelReference() + " :#: " + ref.getTargetNodeId() + " -- resolveInfo=" + SLinkOperations.getResolveInfo(ref) + "; role=" + SLinkOperations.getRole(ref));
+                  "unresolved ="
+                )) + rr.getTargetSModelReference() + " :#: " + rr.getTargetNodeId() + " -- resolveInfo=" + SLinkOperations.getResolveInfo(rr) + "; role=" + SLinkOperations.getRole(rr));
               }
             }
           }
@@ -195,5 +200,12 @@ public class FixBrokenReferences_Action extends BaseAction {
       return checkedDotOperand.getModule();
     }
     return null;
+  }
+
+  private static boolean eq_g50bqp_a0a0a0a0a0a2a0a0a1a5a0a5(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

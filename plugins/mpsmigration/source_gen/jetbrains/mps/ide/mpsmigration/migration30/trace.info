@@ -271,37 +271,38 @@
     <nodeInfo nodeId="2227102057330302826" fileName="FixBrokenReferences_Action.java" startLine="98" startPosition="43" endLine="99" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="209675057486975934" fileName="FixBrokenReferences_Action.java" startLine="103" startPosition="9" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="209675057487310800" fileName="FixBrokenReferences_Action.java" startLine="106" startPosition="46" endLine="107" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="209675057488539176" fileName="FixBrokenReferences_Action.java" startLine="112" startPosition="53" endLine="113" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="209675057488539176" fileName="FixBrokenReferences_Action.java" startLine="112" startPosition="53" endLine="113" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2227102057330895579" fileName="FixBrokenReferences_Action.java" startLine="114" startPosition="15" endLine="115" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="127" startPosition="45" endLine="128" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4865545450441062511" fileName="FixBrokenReferences_Action.java" startLine="134" startPosition="53" endLine="135" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2253178666244634267" fileName="FixBrokenReferences_Action.java" startLine="136" startPosition="5" endLine="137" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6550340959293398121" fileName="FixBrokenReferences_Action.java" startLine="137" startPosition="48" endLine="138" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="377166553787518263" fileName="FixBrokenReferences_Action.java" startLine="138" startPosition="104" endLine="139" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="377166553787518262" fileName="FixBrokenReferences_Action.java" startLine="139" startPosition="28" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1453248744423273093" fileName="FixBrokenReferences_Action.java" startLine="142" startPosition="33" endLine="143" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3216869042385852667" fileName="FixBrokenReferences_Action.java" startLine="144" startPosition="7" endLine="145" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3216869042386398996" fileName="FixBrokenReferences_Action.java" startLine="146" startPosition="89" endLine="147" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3216869042386574079" fileName="FixBrokenReferences_Action.java" startLine="147" startPosition="42" endLine="148" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3216869042386384000" fileName="FixBrokenReferences_Action.java" startLine="148" startPosition="18" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1802459475176424275" fileName="FixBrokenReferences_Action.java" startLine="150" startPosition="84" endLine="151" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3216869042385852693" fileName="FixBrokenReferences_Action.java" startLine="152" startPosition="9" endLine="153" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3216869042385852701" fileName="FixBrokenReferences_Action.java" startLine="154" startPosition="26" endLine="155" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3216869042385852705" fileName="FixBrokenReferences_Action.java" startLine="156" startPosition="9" endLine="157" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3216869042385852744" fileName="FixBrokenReferences_Action.java" startLine="159" startPosition="120" endLine="160" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3216869042385852751" fileName="FixBrokenReferences_Action.java" startLine="160" startPosition="79" endLine="161" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3216869042386303671" fileName="FixBrokenReferences_Action.java" startLine="162" startPosition="42" endLine="163" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3216869042385852766" fileName="FixBrokenReferences_Action.java" startLine="164" startPosition="13" endLine="165" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3216869042386378032" fileName="FixBrokenReferences_Action.java" startLine="166" startPosition="33" endLine="167" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3216869042385852780" fileName="FixBrokenReferences_Action.java" startLine="168" startPosition="13" endLine="169" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="377166553787518281" fileName="FixBrokenReferences_Action.java" startLine="173" startPosition="5" endLine="174" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="177" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="180" startPosition="36" endLine="181" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="182" startPosition="5" endLine="183" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="187" startPosition="36" endLine="188" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="189" startPosition="5" endLine="190" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="194" startPosition="36" endLine="195" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="196" startPosition="5" endLine="197" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1049573924123574693" fileName="FixBrokenReferences_Action.java" startLine="117" startPosition="53" endLine="118" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="132" startPosition="45" endLine="133" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4865545450441062511" fileName="FixBrokenReferences_Action.java" startLine="139" startPosition="53" endLine="140" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2253178666244634267" fileName="FixBrokenReferences_Action.java" startLine="141" startPosition="5" endLine="142" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6550340959293398121" fileName="FixBrokenReferences_Action.java" startLine="142" startPosition="48" endLine="143" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="377166553787518263" fileName="FixBrokenReferences_Action.java" startLine="143" startPosition="104" endLine="144" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="377166553787518262" fileName="FixBrokenReferences_Action.java" startLine="144" startPosition="28" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1453248744423273093" fileName="FixBrokenReferences_Action.java" startLine="147" startPosition="33" endLine="148" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3216869042385852667" fileName="FixBrokenReferences_Action.java" startLine="149" startPosition="7" endLine="150" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3216869042386398996" fileName="FixBrokenReferences_Action.java" startLine="151" startPosition="89" endLine="152" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3216869042386574079" fileName="FixBrokenReferences_Action.java" startLine="152" startPosition="42" endLine="153" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3216869042386384000" fileName="FixBrokenReferences_Action.java" startLine="153" startPosition="18" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1802459475176424275" fileName="FixBrokenReferences_Action.java" startLine="155" startPosition="84" endLine="156" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3216869042385852693" fileName="FixBrokenReferences_Action.java" startLine="157" startPosition="9" endLine="158" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3216869042385852701" fileName="FixBrokenReferences_Action.java" startLine="159" startPosition="26" endLine="160" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="3216869042385852705" fileName="FixBrokenReferences_Action.java" startLine="161" startPosition="9" endLine="162" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3216869042385852744" fileName="FixBrokenReferences_Action.java" startLine="164" startPosition="120" endLine="165" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3216869042385852751" fileName="FixBrokenReferences_Action.java" startLine="165" startPosition="79" endLine="166" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3216869042386303671" fileName="FixBrokenReferences_Action.java" startLine="167" startPosition="42" endLine="168" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="3216869042385852766" fileName="FixBrokenReferences_Action.java" startLine="169" startPosition="13" endLine="170" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3216869042386378032" fileName="FixBrokenReferences_Action.java" startLine="171" startPosition="33" endLine="172" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="3216869042385852780" fileName="FixBrokenReferences_Action.java" startLine="173" startPosition="13" endLine="174" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="377166553787518281" fileName="FixBrokenReferences_Action.java" startLine="178" startPosition="5" endLine="179" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="182" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="185" startPosition="36" endLine="186" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="187" startPosition="5" endLine="188" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="192" startPosition="36" endLine="193" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="194" startPosition="5" endLine="195" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="199" startPosition="36" endLine="200" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="201" startPosition="5" endLine="202" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="59" startPosition="27" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="59" startPosition="27" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="67" startPosition="95" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -313,43 +314,47 @@
     <nodeInfo nodeId="209675057487310800" fileName="FixBrokenReferences_Action.java" startLine="105" startPosition="61" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="209675057488539176" fileName="FixBrokenReferences_Action.java" startLine="111" startPosition="88" endLine="114" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="209675057488539176" fileName="FixBrokenReferences_Action.java" startLine="111" startPosition="88" endLine="114" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="126" startPosition="27" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="126" startPosition="27" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4865545450441062480" fileName="FixBrokenReferences_Action.java" startLine="133" startPosition="141" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1453248744423273091" fileName="FixBrokenReferences_Action.java" startLine="141" startPosition="86" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3216869042385852687" fileName="FixBrokenReferences_Action.java" startLine="149" startPosition="0" endLine="152" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3216869042385852699" fileName="FixBrokenReferences_Action.java" startLine="153" startPosition="61" endLine="156" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3216869042385852759" fileName="FixBrokenReferences_Action.java" startLine="161" startPosition="107" endLine="164" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3216869042385852773" fileName="FixBrokenReferences_Action.java" startLine="165" startPosition="63" endLine="168" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="179" startPosition="89" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="186" startPosition="80" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="193" startPosition="79" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1049573924123533534" fileName="FixBrokenReferences_Action.java" startLine="117" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SReference;)Z" />
+    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="131" startPosition="27" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="131" startPosition="27" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4865545450441062480" fileName="FixBrokenReferences_Action.java" startLine="138" startPosition="141" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423273091" fileName="FixBrokenReferences_Action.java" startLine="146" startPosition="86" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3216869042385852687" fileName="FixBrokenReferences_Action.java" startLine="154" startPosition="0" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3216869042385852699" fileName="FixBrokenReferences_Action.java" startLine="158" startPosition="61" endLine="161" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3216869042385852759" fileName="FixBrokenReferences_Action.java" startLine="166" startPosition="107" endLine="169" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3216869042385852773" fileName="FixBrokenReferences_Action.java" startLine="170" startPosition="63" endLine="173" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="184" startPosition="89" endLine="187" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="191" startPosition="80" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="198" startPosition="79" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="209675057491229435" fileName="FixBrokenReferences_Action.java" startLine="87" startPosition="0" endLine="91" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2227102057330623175" fileName="FixBrokenReferences_Action.java" startLine="116" startPosition="40" endLine="120" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2227102057330623175" fileName="FixBrokenReferences_Action.java" startLine="121" startPosition="52" endLine="125" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1049573924123731249" fileName="FixBrokenReferences_Action.java" startLine="205" startPosition="81" endLine="209" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FixBrokenReferences_Action#()V" />
-    <nodeInfo nodeId="2227102057330623175" fileName="FixBrokenReferences_Action.java" startLine="115" startPosition="84" endLine="121" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2227102057330623175" fileName="FixBrokenReferences_Action.java" startLine="115" startPosition="84" endLine="121" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="179" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9fpjqh_a0b0a0h0c0f0a#(Ljetbrains/mps/project/IModule;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-    <nodeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="186" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9fpjqh_a0a1a0a7a2a5a0#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="193" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9fpjqh_a0d0a0h0c0f0a#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="1049573924123450699" fileName="FixBrokenReferences_Action.java" startLine="115" startPosition="84" endLine="120" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2227102057330623175" fileName="FixBrokenReferences_Action.java" startLine="120" startPosition="17" endLine="126" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2227102057330623175" fileName="FixBrokenReferences_Action.java" startLine="120" startPosition="17" endLine="126" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="184" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9fpjqh_a0b0a0h0c0f0a#(Ljetbrains/mps/project/IModule;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+    <nodeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="191" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9fpjqh_a0a1a0a7a2a5a0#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="198" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_9fpjqh_a0d0a0h0c0f0a#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="1049573924123731249" fileName="FixBrokenReferences_Action.java" startLine="205" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_g50bqp_a0a0a0a0a0a2a0a0a1a5a0a5#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="56" startPosition="89" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="56" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="209675057491387322" fileName="FixBrokenReferences_Action.java" startLine="91" startPosition="8" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="209675057488146444" fileName="FixBrokenReferences_Action.java" startLine="110" startPosition="93" endLine="122" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3216869042385852729" fileName="FixBrokenReferences_Action.java" startLine="158" startPosition="74" endLine="170" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="209675057487906311" fileName="FixBrokenReferences_Action.java" startLine="109" startPosition="90" endLine="123" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3216869042385852712" fileName="FixBrokenReferences_Action.java" startLine="157" startPosition="83" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3216869042385852729" fileName="FixBrokenReferences_Action.java" startLine="163" startPosition="74" endLine="175" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3216869042385852712" fileName="FixBrokenReferences_Action.java" startLine="162" startPosition="83" endLine="176" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="67" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="209675057487616445" fileName="FixBrokenReferences_Action.java" startLine="108" startPosition="9" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="209675057487098150" fileName="FixBrokenReferences_Action.java" startLine="104" startPosition="0" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3216869042385852669" fileName="FixBrokenReferences_Action.java" startLine="145" startPosition="41" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3216869042385852662" fileName="FixBrokenReferences_Action.java" startLine="140" startPosition="0" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3216869042385649326" fileName="FixBrokenReferences_Action.java" startLine="133" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/progress/ProgressMonitor;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="84" startPosition="96" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="84" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="209675057488146444" fileName="FixBrokenReferences_Action.java" startLine="110" startPosition="99" endLine="127" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="209675057487906311" fileName="FixBrokenReferences_Action.java" startLine="109" startPosition="90" endLine="128" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="209675057487616445" fileName="FixBrokenReferences_Action.java" startLine="108" startPosition="9" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="209675057487098150" fileName="FixBrokenReferences_Action.java" startLine="104" startPosition="0" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3216869042385852669" fileName="FixBrokenReferences_Action.java" startLine="150" startPosition="41" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3216869042385852662" fileName="FixBrokenReferences_Action.java" startLine="145" startPosition="0" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3216869042385649326" fileName="FixBrokenReferences_Action.java" startLine="138" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/progress/ProgressMonitor;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="84" startPosition="96" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="84" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="52" startPosition="32" endLine="53" endPosition="16" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="57" startPosition="9" endLine="58" endPosition="43" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="60" startPosition="45" endLine="61" endPosition="94" />
@@ -361,17 +366,18 @@
     <scopeInfo nodeId="2411932778231592204" fileName="FixBrokenReferences_Action.java" startLine="94" startPosition="57" endLine="95" endPosition="34" />
     <scopeInfo nodeId="2227102057330302825" fileName="FixBrokenReferences_Action.java" startLine="98" startPosition="43" endLine="99" endPosition="72" />
     <scopeInfo nodeId="209675057487310800" fileName="FixBrokenReferences_Action.java" startLine="106" startPosition="46" endLine="107" endPosition="79" />
-    <scopeInfo nodeId="209675057488539176" fileName="FixBrokenReferences_Action.java" startLine="112" startPosition="53" endLine="113" endPosition="209" />
-    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="127" startPosition="45" endLine="128" endPosition="93" />
-    <scopeInfo nodeId="4865545450441062481" fileName="FixBrokenReferences_Action.java" startLine="134" startPosition="53" endLine="135" endPosition="13" />
-    <scopeInfo nodeId="1453248744423273092" fileName="FixBrokenReferences_Action.java" startLine="142" startPosition="33" endLine="143" endPosition="14" />
-    <scopeInfo nodeId="3216869042385852688" fileName="FixBrokenReferences_Action.java" startLine="150" startPosition="84" endLine="151" endPosition="73" />
-    <scopeInfo nodeId="3216869042385852700" fileName="FixBrokenReferences_Action.java" startLine="154" startPosition="26" endLine="155" endPosition="19" />
-    <scopeInfo nodeId="3216869042385852763" fileName="FixBrokenReferences_Action.java" startLine="162" startPosition="42" endLine="163" endPosition="23" />
-    <scopeInfo nodeId="3216869042385852777" fileName="FixBrokenReferences_Action.java" startLine="166" startPosition="33" endLine="167" endPosition="23" />
-    <scopeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="180" startPosition="36" endLine="181" endPosition="52" />
-    <scopeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="187" startPosition="36" endLine="188" endPosition="43" />
-    <scopeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="194" startPosition="36" endLine="195" endPosition="43" />
+    <scopeInfo nodeId="209675057488539176" fileName="FixBrokenReferences_Action.java" startLine="112" startPosition="53" endLine="113" endPosition="211" />
+    <scopeInfo nodeId="1049573924123533535" fileName="FixBrokenReferences_Action.java" startLine="117" startPosition="53" endLine="118" endPosition="118" />
+    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="132" startPosition="45" endLine="133" endPosition="93" />
+    <scopeInfo nodeId="4865545450441062481" fileName="FixBrokenReferences_Action.java" startLine="139" startPosition="53" endLine="140" endPosition="13" />
+    <scopeInfo nodeId="1453248744423273092" fileName="FixBrokenReferences_Action.java" startLine="147" startPosition="33" endLine="148" endPosition="14" />
+    <scopeInfo nodeId="3216869042385852688" fileName="FixBrokenReferences_Action.java" startLine="155" startPosition="84" endLine="156" endPosition="73" />
+    <scopeInfo nodeId="3216869042385852700" fileName="FixBrokenReferences_Action.java" startLine="159" startPosition="26" endLine="160" endPosition="19" />
+    <scopeInfo nodeId="3216869042385852763" fileName="FixBrokenReferences_Action.java" startLine="167" startPosition="42" endLine="168" endPosition="23" />
+    <scopeInfo nodeId="3216869042385852777" fileName="FixBrokenReferences_Action.java" startLine="171" startPosition="33" endLine="172" endPosition="23" />
+    <scopeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="185" startPosition="36" endLine="186" endPosition="52" />
+    <scopeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="192" startPosition="36" endLine="193" endPosition="43" />
+    <scopeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="199" startPosition="36" endLine="200" endPosition="43" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="45" startPosition="39" endLine="48" endPosition="41" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="59" startPosition="27" endLine="62" endPosition="7" />
     <scopeInfo nodeId="2411932778231592203" fileName="FixBrokenReferences_Action.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
@@ -382,10 +388,13 @@
     </scopeInfo>
     <scopeInfo nodeId="209675057487310800" fileName="FixBrokenReferences_Action.java" startLine="105" startPosition="61" endLine="108" endPosition="9" />
     <scopeInfo nodeId="209675057488539176" fileName="FixBrokenReferences_Action.java" startLine="111" startPosition="88" endLine="114" endPosition="15" />
-    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="126" startPosition="0" endLine="129" endPosition="7">
+    <scopeInfo nodeId="1049573924123533534" fileName="FixBrokenReferences_Action.java" startLine="117" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="1049573924123533534" varName="r" />
+    </scopeInfo>
+    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="131" startPosition="0" endLine="134" endPosition="7">
       <varInfo nodeId="3216869042385200805" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="126" startPosition="27" endLine="129" endPosition="7" />
+    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="131" startPosition="27" endLine="134" endPosition="7" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="59" startPosition="0" endLine="63" endPosition="44">
       <varInfo nodeId="3216869042385200805" varName="t" />
@@ -393,86 +402,93 @@
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="59" startPosition="27" endLine="63" endPosition="44" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="2227102057330623175" fileName="FixBrokenReferences_Action.java" startLine="116" startPosition="40" endLine="120" endPosition="189" />
-    <scopeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="179" startPosition="89" endLine="183" endPosition="16" />
-    <scopeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="186" startPosition="80" endLine="190" endPosition="16" />
-    <scopeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="193" startPosition="79" endLine="197" endPosition="16" />
+    <scopeInfo nodeId="2227102057330623175" fileName="FixBrokenReferences_Action.java" startLine="121" startPosition="52" endLine="125" endPosition="185" />
+    <scopeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="184" startPosition="89" endLine="188" endPosition="16" />
+    <scopeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="191" startPosition="80" endLine="195" endPosition="16" />
+    <scopeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="198" startPosition="79" endLine="202" endPosition="16" />
+    <scopeInfo nodeId="1049573924123731249" fileName="FixBrokenReferences_Action.java" startLine="205" startPosition="81" endLine="209" endPosition="6" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="2227102057330623175" fileName="FixBrokenReferences_Action.java" startLine="115" startPosition="84" endLine="121" endPosition="15" />
-    <scopeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="179" startPosition="0" endLine="185" endPosition="0">
+    <scopeInfo nodeId="2227102057330623175" fileName="FixBrokenReferences_Action.java" startLine="120" startPosition="17" endLine="126" endPosition="15" />
+    <scopeInfo nodeId="3216869042385852754" fileName="FixBrokenReferences_Action.java" startLine="184" startPosition="0" endLine="190" endPosition="0">
       <varInfo nodeId="3216869042385852754" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="186" startPosition="0" endLine="192" endPosition="0">
+    <scopeInfo nodeId="3216869042385852755" fileName="FixBrokenReferences_Action.java" startLine="191" startPosition="0" endLine="197" endPosition="0">
       <varInfo nodeId="3216869042385852755" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="193" startPosition="0" endLine="199" endPosition="0">
+    <scopeInfo nodeId="3216869042385852769" fileName="FixBrokenReferences_Action.java" startLine="198" startPosition="0" endLine="204" endPosition="0">
       <varInfo nodeId="3216869042385852769" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="1049573924123731249" fileName="FixBrokenReferences_Action.java" startLine="205" startPosition="0" endLine="211" endPosition="0">
+      <varInfo nodeId="1049573924123731249" varName="a" />
+      <varInfo nodeId="1049573924123731249" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="56" startPosition="89" endLine="64" endPosition="5" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="56" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="3216869042385200805" varName="_params" />
       <varInfo nodeId="3216869042385200805" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="209675057488146445" fileName="FixBrokenReferences_Action.java" startLine="111" startPosition="88" endLine="121" endPosition="15">
-      <varInfo nodeId="2227102057330895582" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="3216869042385852743" fileName="FixBrokenReferences_Action.java" startLine="159" startPosition="120" endLine="169" endPosition="69">
+    <scopeInfo nodeId="3216869042385852743" fileName="FixBrokenReferences_Action.java" startLine="164" startPosition="120" endLine="174" endPosition="69">
       <varInfo nodeId="3216869042385852767" varName="module" />
       <varInfo nodeId="3216869042385852752" varName="moduleReference" />
       <varInfo nodeId="3216869042385852745" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="209675057487906314" fileName="FixBrokenReferences_Action.java" startLine="110" startPosition="93" endLine="122" endPosition="13" />
-    <scopeInfo nodeId="3216869042385852713" fileName="FixBrokenReferences_Action.java" startLine="158" startPosition="74" endLine="170" endPosition="11" />
+    <scopeInfo nodeId="3216869042385852713" fileName="FixBrokenReferences_Action.java" startLine="163" startPosition="74" endLine="175" endPosition="11" />
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="67" startPosition="95" endLine="81" endPosition="16" />
-    <scopeInfo nodeId="209675057487616451" fileName="FixBrokenReferences_Action.java" startLine="109" startPosition="90" endLine="123" endPosition="11" />
-    <scopeInfo nodeId="209675057487906311" fileName="FixBrokenReferences_Action.java" startLine="109" startPosition="90" endLine="123" endPosition="11">
-      <varInfo nodeId="209675057487906312" varName="ref" />
+    <scopeInfo nodeId="209675057488146445" fileName="FixBrokenReferences_Action.java" startLine="111" startPosition="88" endLine="126" endPosition="15">
+      <varInfo nodeId="2227102057330895582" varName="r" />
+      <varInfo nodeId="1049573924123450702" varName="rr" />
     </scopeInfo>
     <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="67" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="3216869042385200805" varName="_params" />
       <varInfo nodeId="3216869042385200805" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="209675057487616445" fileName="FixBrokenReferences_Action.java" startLine="108" startPosition="9" endLine="124" endPosition="9">
+    <scopeInfo nodeId="209675057487906314" fileName="FixBrokenReferences_Action.java" startLine="110" startPosition="99" endLine="127" endPosition="13" />
+    <scopeInfo nodeId="209675057487616451" fileName="FixBrokenReferences_Action.java" startLine="109" startPosition="90" endLine="128" endPosition="11" />
+    <scopeInfo nodeId="209675057487906311" fileName="FixBrokenReferences_Action.java" startLine="109" startPosition="90" endLine="128" endPosition="11">
+      <varInfo nodeId="209675057487906312" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="209675057487616445" fileName="FixBrokenReferences_Action.java" startLine="108" startPosition="9" endLine="129" endPosition="9">
       <varInfo nodeId="209675057487616447" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="209675057487098156" fileName="FixBrokenReferences_Action.java" startLine="105" startPosition="61" endLine="124" endPosition="9" />
-    <scopeInfo nodeId="209675057487098150" fileName="FixBrokenReferences_Action.java" startLine="104" startPosition="0" endLine="125" endPosition="7">
-      <varInfo nodeId="209675057487098152" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="3216869042385852673" fileName="FixBrokenReferences_Action.java" startLine="146" startPosition="89" endLine="171" endPosition="9">
+    <scopeInfo nodeId="209675057487098156" fileName="FixBrokenReferences_Action.java" startLine="105" startPosition="61" endLine="129" endPosition="9" />
+    <scopeInfo nodeId="3216869042385852673" fileName="FixBrokenReferences_Action.java" startLine="151" startPosition="89" endLine="176" endPosition="9">
       <varInfo nodeId="3216869042385852706" varName="descriptor" />
       <varInfo nodeId="3216869042385852694" varName="uid" />
     </scopeInfo>
-    <scopeInfo nodeId="3216869042385852669" fileName="FixBrokenReferences_Action.java" startLine="145" startPosition="41" endLine="172" endPosition="7">
+    <scopeInfo nodeId="209675057487098150" fileName="FixBrokenReferences_Action.java" startLine="104" startPosition="0" endLine="130" endPosition="7">
+      <varInfo nodeId="209675057487098152" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="3216869042385852669" fileName="FixBrokenReferences_Action.java" startLine="150" startPosition="41" endLine="177" endPosition="7">
       <varInfo nodeId="3216869042385852803" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="3216869042385852666" fileName="FixBrokenReferences_Action.java" startLine="141" startPosition="86" endLine="172" endPosition="7" />
-    <scopeInfo nodeId="3216869042385852662" fileName="FixBrokenReferences_Action.java" startLine="140" startPosition="0" endLine="173" endPosition="5">
+    <scopeInfo nodeId="3216869042385852666" fileName="FixBrokenReferences_Action.java" startLine="146" startPosition="86" endLine="177" endPosition="7" />
+    <scopeInfo nodeId="3216869042385852662" fileName="FixBrokenReferences_Action.java" startLine="145" startPosition="0" endLine="178" endPosition="5">
       <varInfo nodeId="3216869042385852804" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="85" startPosition="9" endLine="125" endPosition="7">
-      <varInfo nodeId="209675057491387325" varName="modellist" />
-      <varInfo nodeId="209675057491229438" varName="modulelist" />
-      <varInfo nodeId="1266669115275062722" varName="resolver" />
-    </scopeInfo>
-    <scopeInfo nodeId="3216869042385649328" fileName="FixBrokenReferences_Action.java" startLine="133" startPosition="141" endLine="174" endPosition="19">
+    <scopeInfo nodeId="3216869042385649328" fileName="FixBrokenReferences_Action.java" startLine="138" startPosition="141" endLine="179" endPosition="19">
       <varInfo nodeId="2253178666244634268" varName="scope" />
       <varInfo nodeId="6550340959293398122" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="3216869042385649326" fileName="FixBrokenReferences_Action.java" startLine="133" startPosition="0" endLine="176" endPosition="0">
+    <scopeInfo nodeId="3216869042385649326" fileName="FixBrokenReferences_Action.java" startLine="138" startPosition="0" endLine="181" endPosition="0">
       <varInfo nodeId="3216869042385649326" varName="_params" />
       <varInfo nodeId="3216869042385676787" varName="model" />
       <varInfo nodeId="3216869042385830957" varName="monitor" />
       <varInfo nodeId="3216869042385679531" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="84" startPosition="96" endLine="130" endPosition="5" />
-    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="84" startPosition="0" endLine="132" endPosition="0">
+    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="85" startPosition="9" endLine="130" endPosition="7">
+      <varInfo nodeId="209675057491387325" varName="modellist" />
+      <varInfo nodeId="209675057491229438" varName="modulelist" />
+      <varInfo nodeId="1266669115275062722" varName="resolver" />
+    </scopeInfo>
+    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="84" startPosition="96" endLine="135" endPosition="5" />
+    <scopeInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="84" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="3216869042385200805" varName="_params" />
       <varInfo nodeId="3216869042385200805" varName="event" />
     </scopeInfo>
     <unitInfo nodeId="2411932778231592203" fileName="FixBrokenReferences_Action.java" startLine="93" startPosition="56" endLine="97" endPosition="9" unitName="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action$1" />
     <unitInfo nodeId="2227102057330302824" fileName="FixBrokenReferences_Action.java" startLine="97" startPosition="21" endLine="101" endPosition="9" unitName="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action$2" />
-    <unitInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="42" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action" />
+    <unitInfo nodeId="1049573924123533534" fileName="FixBrokenReferences_Action.java" startLine="116" startPosition="103" endLine="120" endPosition="15" unitName="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action$3" />
+    <unitInfo nodeId="3216869042385200805" fileName="FixBrokenReferences_Action.java" startLine="42" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action" />
   </root>
   <root nodeRef="r:a2ca46a2-8624-46b0-b4e7-377810fc3ad8(jetbrains.mps.ide.mpsmigration.migration30)/4078974148625108566">
     <nodeInfo nodeId="4078974148625108566" fileName="MigrateToSModuleIdOpenAPI_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
