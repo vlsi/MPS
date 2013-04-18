@@ -18,15 +18,12 @@ package jetbrains.mps.openapi.editor.descriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 
+import java.util.Collection;
+
 /**
  * User: shatalin
  * Date: 4/8/13
  */
 public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
-  @Override
-  EditorAspect getAspect(ConceptDescriptor concept);
-
-  void initialize();
-
-  void deinitialize();
+  Collection<EditorAspect> getEditorAspects(ConceptDescriptor concept);
 }

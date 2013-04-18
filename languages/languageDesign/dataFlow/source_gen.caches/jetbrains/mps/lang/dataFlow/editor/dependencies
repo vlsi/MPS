@@ -95,6 +95,8 @@
   <dependency className="jetbrains.mps.lang.dataFlow.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.BaseEmitVariableStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.editor.BaseInstructionOperation_Editor" />

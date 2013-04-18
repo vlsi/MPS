@@ -134,6 +134,8 @@
   <dependency className="jetbrains.mps.lang.behavior.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.editor.ConceptBehavior_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.editor.ConceptConstructorDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.editor.ConceptMethodDeclaration_Editor" />

@@ -171,6 +171,7 @@ public abstract class LanguageRuntime {
   void initialize(LanguageRegistry registry) {
     Queue<String> extendedLanguageIDs = new java.util.LinkedList<String>(Arrays.asList(getExtendedLanguageIDs()));
     Set<String> visitedLanguages = new HashSet<String>();
+    visitedLanguages.add(getNamespace());
     while (!extendedLanguageIDs.isEmpty()) {
       String nextLanguageID = extendedLanguageIDs.remove();
       if (visitedLanguages.contains(nextLanguageID)) {

@@ -29,6 +29,8 @@ import org.apache.log4j.Logger;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,21 +52,14 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
   }
 
   @Override
-  public void initialize() {
-  }
-
-  @Override
-  public void deinitialize() {
-  }
-
-  @Override
-  public EditorAspect getAspect(ConceptDescriptor abstractConcept) {
+  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor abstractConcept) {
     // TODO: check (assert) if passed concept is a part of associated language
     String conceptFQName = abstractConcept.getConceptFqName();
     if (!myEditorAspects.containsKey(conceptFQName)) {
       myEditorAspects.put(conceptFQName, loadEditor(abstractConcept));
     }
-    return myEditorAspects.get(conceptFQName);
+    EditorAspect editorAspect = myEditorAspects.get(conceptFQName);
+    return editorAspect != null ? Collections.singletonList(editorAspect) : Collections.<EditorAspect>emptyList();
   }
 
   private EditorAspect loadEditor(ConceptDescriptor concept) {

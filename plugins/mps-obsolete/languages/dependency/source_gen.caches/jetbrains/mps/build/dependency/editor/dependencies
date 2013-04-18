@@ -44,6 +44,8 @@
   <dependency className="jetbrains.mps.build.dependency.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.build.dependency.editor.CycleReference_Editor" />
     <classNode dependClassName="jetbrains.mps.build.dependency.editor.Cycle_Editor" />
     <classNode dependClassName="jetbrains.mps.build.dependency.editor.Macros_Editor" />

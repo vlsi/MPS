@@ -621,6 +621,8 @@
   <dependency className="jetbrains.mps.bash.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.bash.editor.AbstractCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.AppendingOutputErrorRedirection_Editor" />
     <classNode dependClassName="jetbrains.mps.bash.editor.AppendingOutputRedirection_Editor" />

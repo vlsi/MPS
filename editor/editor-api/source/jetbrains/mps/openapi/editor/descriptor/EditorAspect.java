@@ -17,14 +17,13 @@ package jetbrains.mps.openapi.editor.descriptor;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.runtime.ConceptAspect;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * User: shatalin
  * Date: 10/2/12
  */
-public interface EditorAspect extends ConceptAspect {
+public interface EditorAspect {
   EditorCell createEditorCell(EditorContext editorContext, SNode node);
 
   EditorCell createInspectedCell(EditorContext editorContext, SNode node);

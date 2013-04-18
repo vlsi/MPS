@@ -56,6 +56,8 @@
   <dependency className="jetbrains.mps.debugger.decisionTable.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.debugger.decisionTable.editor.CaseExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.decisionTable.editor.DecideOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.decisionTable.editor.DecisionTableType_Editor" />

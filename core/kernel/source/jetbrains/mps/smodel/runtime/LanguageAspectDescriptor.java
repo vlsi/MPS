@@ -20,5 +20,4 @@ package jetbrains.mps.smodel.runtime;
  * Date: 4/8/13
  */
 public interface LanguageAspectDescriptor {
-  ConceptAspect getAspect(ConceptDescriptor concept);
 }

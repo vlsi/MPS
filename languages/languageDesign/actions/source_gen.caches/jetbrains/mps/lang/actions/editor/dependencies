@@ -158,6 +158,8 @@
   <dependency className="jetbrains.mps.lang.actions.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.actions.editor.AddMenuPart_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.editor.ConceptRightTransformPart_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.editor.ConceptSubstitutePart_Editor" />

@@ -53,6 +53,8 @@
   <dependency className="jetbrains.mps.lang.script.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.lang.script.editor.CommentMigrationScriptPart_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.script.editor.DirectClassifierSpecification_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.script.editor.DirectMethodSpecification_Editor" />

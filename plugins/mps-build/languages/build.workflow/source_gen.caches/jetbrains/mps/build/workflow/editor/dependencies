@@ -542,6 +542,8 @@
   <dependency className="jetbrains.mps.build.workflow.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfAntStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfAntTaskBundleDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.editor.BwfAntTaskDeclaration_Editor" />
