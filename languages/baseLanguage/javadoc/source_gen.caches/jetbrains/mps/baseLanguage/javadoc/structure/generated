@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cxs0nztvx39vpmizpo6048a6e144qye">
+<dependencies version="2" modelHash="-37uj6b91l3aqmsbpwhhc2p132q0jm5e">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-3838celc5jfzqce9x814phvz416cghc" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
@@ -67,7 +67,7 @@
   <source id="8465538089690331492" name="DeprecatedBlockDocTag" hash="1w6bn5aarpziw167vhfhzqbguvizhkr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8465538089690331500" name="CommentLine" hash="-azkmjd92xx1a391opsyrebo9acp04x">
+  <source id="8465538089690331500" name="CommentLine" hash="-6156qajaxfp7677eomoks0ned8pv748">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8465538089690881930" name="ParameterBlockDocTag" hash="-aruew0gwebw08v40vaif544kq87fsk8">
