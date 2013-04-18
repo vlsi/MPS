@@ -285,6 +285,12 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="convert *.mps into *.mpb (binary format)" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.1330375798058820290" resolveInfo="BuildLayout_CopyProcessor" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5507251971038816436">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildMps_Generator" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="generator" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149381388" resolveInfo="BuildMps_Module" />
+    </node>
   </roots>
   <root id="5253498789149381388">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1500819558096356884">
@@ -898,5 +904,10 @@
     </node>
   </root>
   <root id="1330375798066754656" />
+  <root id="5507251971038816436">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5507251971038817098">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
+  </root>
 </model>
 

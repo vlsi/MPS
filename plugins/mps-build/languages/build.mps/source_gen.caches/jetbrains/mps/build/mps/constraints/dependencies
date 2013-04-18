@@ -205,6 +205,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Generator_Constraints" file="BuildMps_Generator_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Group_Constraints" file="BuildMps_Group_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -481,6 +494,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.constraints.BuildMps_DevKitExportSolution_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.mps.constraints.BuildMps_DevKitRef_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.mps.constraints.BuildMps_DevKit_Constraints" />
+    <classNode dependClassName="jetbrains.mps.build.mps.constraints.BuildMps_Generator_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.mps.constraints.BuildMps_Group_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginDependency_Constraints" />
     <classNode dependClassName="jetbrains.mps.build.mps.constraints.BuildMps_IdeaPluginGroupCustomModule_Constraints" />
