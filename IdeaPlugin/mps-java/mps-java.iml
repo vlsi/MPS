@@ -5,13 +5,15 @@
     <facet type="MPS" name="MPS">
       <configuration>
         <option name="UUID" value="9cff0c7f-34fe-4409-aace-1680a0beef14" />
-        <option name="generatorOutputPath" value="$MODULE_DIR$/source_gen" />
+        <option name="generatorOutputPath" value="$MODULE_DIR$/../solutions/jetbrains.mps.idea.java.psiStubs/source_gen" />
         <option name="modelRoots" />
         <option name="usedLanguages">
           <array>
             <option value="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
             <option value="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
             <option value="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+            <option value="7db4447f-913e-4b81-bd75-c9a473319ac6(jetbrains.mps.baseLanguage.doubleDispatch)" />
+            <option value="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
             <option value="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
           </array>
         </option>
@@ -36,6 +38,7 @@
       <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testSrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/models" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../solutions/jetbrains.mps.idea.java.psiStubs">
       <sourceFolder url="file://$MODULE_DIR$/../solutions/jetbrains.mps.idea.java.psiStubs/source_gen" isTestSource="false" />

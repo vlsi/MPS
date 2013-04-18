@@ -14,12 +14,12 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.idea.core.psi.PsiChangesWatcher;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.psi.PsiManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.psi.PsiJavaFile;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -110,7 +110,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   @Override
   public Iterable<SModel> loadModels() {
     myModels = getModelMap();
-    for (SModel model : Sequence.fromIterable(MapSequence.fromMap(myModels).values())) {
+    for (SModel model : MapSequence.fromMap(myModels).values()) {
       register(model);
     }
     syncDirectoryMap();
@@ -124,14 +124,14 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     Map<PsiJavaStubDataSource, SModel> oldModelMap = new HashMap<PsiJavaStubDataSource, SModel>(myModels);
     Map<PsiJavaStubDataSource, SModel> newModelMap = getModelMap();
 
-    for (IMapping<PsiJavaStubDataSource, SModel> pair : MapSequence.fromMap(oldModelMap)) {
+    for (IMapping<PsiJavaStubDataSource, SModel> pair : MapSequence.fromMap(oldModelMap).mappingsSet()) {
       if (MapSequence.fromMap(newModelMap).containsKey(pair.key())) {
         continue;
       }
       unregister(pair.value());
     }
 
-    for (SModel model : Sequence.fromIterable(MapSequence.fromMap(newModelMap).values())) {
+    for (SModel model : MapSequence.fromMap(newModelMap).values()) {
       register(model);
     }
 
@@ -276,7 +276,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
     // TODO check carefully how they interact in different (refactoring) scenarios 
 
-    for (PsiFileSystemItem item : Sequence.fromIterable(event.getCreated())) {
+    for (PsiFileSystemItem item : event.getCreated()) {
 
       if (item instanceof PsiDirectory) {
         // it's not interesting per se (while it's empty) 
@@ -290,7 +290,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
       handleFileCreate((PsiFile) item, null, newDirs, changes);
     }
 
-    for (PsiListener.FSMove move : Sequence.fromIterable(event.getMoved())) {
+    for (PsiListener.FSMove move : event.getMoved()) {
       // recording 2 changes: delete and create 
       if (move.from instanceof PsiDirectory) {
         handleFileDelete((PsiFile) move.moved, (PsiDirectory) move.from, deletedDirs, changes);
@@ -300,7 +300,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
       }
     }
 
-    for (PsiFileSystemItem item : Sequence.fromIterable(event.getRemoved())) {
+    for (PsiFileSystemItem item : event.getRemoved()) {
 
       if (item instanceof PsiDirectory) {
         if (MapSequence.fromMap(myDataSources).containsKey((PsiDirectory) item)) {
@@ -316,7 +316,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
       handleFileDelete((PsiFile) item, null, deletedDirs, changes);
     }
 
-    for (PsiFile file : SetSequence.fromSet(event.getChanged().keySet())) {
+    for (PsiFile file : event.getChanged().keySet()) {
 
       if (!(file instanceof PsiJavaFile)) {
         continue;
@@ -329,7 +329,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
       }
 
       Set<PsiElement> changeSet = SetSequence.fromSet(new HashSet<PsiElement>());
-      for (PsiElement elem : SetSequence.fromSet(event.getChanged().get(file))) {
+      for (PsiElement elem : event.getChanged().get(file)) {
         if (!(filter(elem))) {
           continue;
         }
@@ -345,7 +345,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     }
 
     // delete models corresponding to directories 
-    for (PsiDirectory dir : SetSequence.fromSet(deletedDirs)) {
+    for (PsiDirectory dir : deletedDirs) {
 
       PsiJavaStubDataSource ds = MapSequence.fromMap(myDataSources).get(dir);
       if (ds == null) {
@@ -360,7 +360,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     }
 
     // create models for new directories 
-    for (PsiDirectory dir : SetSequence.fromSet(newDirs)) {
+    for (PsiDirectory dir : newDirs) {
       PsiDirectory ourSourceRoot = findOurSourceRoot(dir);
 
       PsiJavaStubModelDescriptor model = makeModelDescriptor(makeModelReference(ourSourceRoot, dir), dir);
@@ -371,7 +371,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     }
 
     // notify data sources 
-    for (IMapping<PsiJavaStubDataSource, PsiJavaStubModelRoot.PsiChange> notification : SetSequence.fromSet(MapSequence.fromMap(changes).mappingsSet())) {
+    for (IMapping<PsiJavaStubDataSource, PsiJavaStubModelRoot.PsiChange> notification : MapSequence.fromMap(changes).mappingsSet()) {
       PsiJavaStubDataSource ds = notification.key();
       PsiJavaStubModelRoot.PsiChange change = notification.value();
       if (!(change.isEmpty())) {
@@ -464,17 +464,17 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
     public Map<PsiFile, Set<PsiElement>> getChanged() {
       Map<PsiFile, Set<PsiElement>> origMap = event.getChanged();
-      for (PsiFileSystemItem fsItem : Sequence.fromIterable(getCreated())) {
+      for (PsiFileSystemItem fsItem : getCreated()) {
         if (fsItem instanceof PsiFile) {
           MapSequence.fromMap(origMap).removeKey((PsiFile) fsItem);
         }
       }
-      for (PsiFileSystemItem fsItem : Sequence.fromIterable(getRemoved())) {
+      for (PsiFileSystemItem fsItem : getRemoved()) {
         if (fsItem instanceof PsiFile) {
           MapSequence.fromMap(origMap).removeKey((PsiFile) fsItem);
         }
       }
-      for (PsiListener.FSMove move : Sequence.fromIterable(getMoved())) {
+      for (PsiListener.FSMove move : getMoved()) {
         if (move.moved instanceof PsiFile) {
           MapSequence.fromMap(origMap).removeKey((PsiFile) move.moved);
         }

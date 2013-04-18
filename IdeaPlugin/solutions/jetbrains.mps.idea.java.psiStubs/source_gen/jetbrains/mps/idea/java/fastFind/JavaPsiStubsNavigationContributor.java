@@ -10,7 +10,6 @@ import org.jetbrains.mps.util.Consumer;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor;
 import com.intellij.psi.PsiJavaFile;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.psi.PsiClass;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -31,7 +30,7 @@ public class JavaPsiStubsNavigationContributor implements NavigationParticipant,
         continue;
       }
 
-      for (PsiJavaFile javaFile : Sequence.fromIterable(((PsiJavaStubModelDescriptor) model).getSource().getJavaFiles())) {
+      for (PsiJavaFile javaFile : ((PsiJavaStubModelDescriptor) model).getSource().getJavaFiles()) {
         for (PsiClass psiClass : javaFile.getClasses()) {
 
           final PsiClass psiClaz = psiClass;

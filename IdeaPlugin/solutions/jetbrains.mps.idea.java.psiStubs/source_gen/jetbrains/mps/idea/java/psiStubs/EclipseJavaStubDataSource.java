@@ -116,7 +116,7 @@ public class EclipseJavaStubDataSource extends MPSJavaSrcDataSource {
       SetSequence.fromSet(changedItems).addSequence(SetSequence.fromSet(handleFsItems(path, event.getRemoved())));
       // not pretty 
       Set<PsiFileSystemItem> files = SetSequence.fromSet(new HashSet<PsiFileSystemItem>());
-      for (PsiFile f : SetSequence.fromSet(event.getChanged().keySet())) {
+      for (PsiFile f : event.getChanged().keySet()) {
         SetSequence.fromSet(files).addElement(f);
       }
       SetSequence.fromSet(changedItems).addSequence(SetSequence.fromSet(handleFsItems(path, files)));

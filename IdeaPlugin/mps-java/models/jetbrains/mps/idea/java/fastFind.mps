@@ -6,13 +6,8 @@
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="wvgn" modelUID="r:e32ada56-1876-4524-85c0-29075cbd8d32(jetbrains.mps.idea.java.psiStubs)" version="-1" />
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
-  <import index="6tc3" modelUID="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi.components(MPS.IdeaSdk/com.intellij.openapi.components@java_stub)" version="-1" />
-  <import index="as9o" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="qx6n" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" version="-1" />
-  <import index="z8de" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" version="-1" />
-  <import index="cttk" modelUID="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" version="-1" />
   <import index="t3eg" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" version="-1" />
-  <import index="cic7" modelUID="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.psi(MPS.IdeaSdk/com.intellij.psi@java_stub)" version="-1" />
   <import index="s08w" modelUID="f:java_stub#~MPS-core#org.jetbrains.mps.openapi.persistence(MPS-core/org.jetbrains.mps.openapi.persistence@java_stub)" version="-1" />
   <import index="81p4" modelUID="f:java_stub#~IDEA IC#com.intellij.openapi.components(IDEA IC/com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="s13e" modelUID="f:java_stub#~MPS-core#org.jetbrains.mps.openapi.model(MPS-core/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
@@ -230,16 +225,21 @@
                                       </node>
                                       <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="7414633741222028743">
                                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7414633741222056036">
-                                          <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7414633741222071953">
-                                            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6665967467965556868">
-                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kt3r.~SConceptRepository%dgetInstance()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConceptRepository" resolveInfo="getInstance" />
-                                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="kt3r.~SConceptRepository" resolveInfo="SConceptRepository" />
+                                          <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8876418788323259088">
+                                            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8876418788323259083">
+                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kt3r.~SConcept" resolveInfo="SConcept" />
                                             </node>
-                                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7414633741222076327">
-                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kt3r.~SConceptRepository%dgetConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
-                                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7414633741222027119">
-                                                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="2vhp.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
-                                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2vhp.~BootstrapLanguages%dconcept_baseLanguage_Annotation" resolveInfo="concept_baseLanguage_Annotation" />
+                                            <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8876418788323259084">
+                                              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8876418788323259085">
+                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kt3r.~SConceptRepository%dgetInstance()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConceptRepository" resolveInfo="getInstance" />
+                                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="kt3r.~SConceptRepository" resolveInfo="SConceptRepository" />
+                                              </node>
+                                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8876418788323259086">
+                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kt3r.~SConceptRepository%dgetConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
+                                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8876418788323259087">
+                                                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="2vhp.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
+                                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2vhp.~BootstrapLanguages%dconcept_baseLanguage_Annotation" resolveInfo="concept_baseLanguage_Annotation" />
+                                                </node>
                                               </node>
                                             </node>
                                           </node>
@@ -256,17 +256,22 @@
                                         </node>
                                         <node role="statementList" roleId="tpee.1206060644605" type="tpee.StatementList" typeId="tpee.1068580123136" id="7414633741222089485">
                                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7414633741222127277">
-                                            <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7414633741222127278">
-                                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7414633741222127279">
-                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
-                                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7414633741222127280">
-                                                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="2vhp.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
-                                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2vhp.~BootstrapLanguages%dconcept_baseLanguage_Interface" resolveInfo="concept_baseLanguage_Interface" />
-                                                </node>
+                                            <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8876418788323259125">
+                                              <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8876418788323259120">
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kt3r.~SConcept" resolveInfo="SConcept" />
                                               </node>
-                                              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7414633741222127281">
-                                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t3eg.~SConceptRepository" resolveInfo="SConceptRepository" />
-                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetInstance()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConceptRepository" resolveInfo="getInstance" />
+                                              <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8876418788323259121">
+                                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8876418788323259122">
+                                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
+                                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8876418788323259123">
+                                                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="2vhp.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
+                                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2vhp.~BootstrapLanguages%dconcept_baseLanguage_Interface" resolveInfo="concept_baseLanguage_Interface" />
+                                                  </node>
+                                                </node>
+                                                <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8876418788323259124">
+                                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t3eg.~SConceptRepository" resolveInfo="SConceptRepository" />
+                                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetInstance()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConceptRepository" resolveInfo="getInstance" />
+                                                </node>
                                               </node>
                                             </node>
                                           </node>
@@ -283,17 +288,22 @@
                                         </node>
                                         <node role="statementList" roleId="tpee.1206060644605" type="tpee.StatementList" typeId="tpee.1068580123136" id="7414633741222136834">
                                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7414633741222171550">
-                                            <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7414633741222171551">
-                                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7414633741222171552">
-                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
-                                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7414633741222171553">
-                                                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="2vhp.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
-                                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2vhp.~BootstrapLanguages%dconcept_baseLanguage_EnumClass" resolveInfo="concept_baseLanguage_EnumClass" />
-                                                </node>
+                                            <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8876418788323259162">
+                                              <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8876418788323259157">
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kt3r.~SConcept" resolveInfo="SConcept" />
                                               </node>
-                                              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7414633741222171554">
-                                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t3eg.~SConceptRepository" resolveInfo="SConceptRepository" />
-                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetInstance()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConceptRepository" resolveInfo="getInstance" />
+                                              <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8876418788323259158">
+                                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8876418788323259159">
+                                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
+                                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8876418788323259160">
+                                                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="2vhp.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
+                                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2vhp.~BootstrapLanguages%dconcept_baseLanguage_EnumClass" resolveInfo="concept_baseLanguage_EnumClass" />
+                                                  </node>
+                                                </node>
+                                                <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8876418788323259161">
+                                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t3eg.~SConceptRepository" resolveInfo="SConceptRepository" />
+                                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetInstance()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConceptRepository" resolveInfo="getInstance" />
+                                                </node>
                                               </node>
                                             </node>
                                           </node>
@@ -302,17 +312,22 @@
                                       <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="7414633741222180996">
                                         <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="7414633741222180997">
                                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7414633741222183837">
-                                            <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7414633741222183838">
-                                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7414633741222183839">
-                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
-                                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7414633741222183840">
-                                                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="2vhp.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
-                                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2vhp.~BootstrapLanguages%dconcept_baseLanguage_ClassConcept" resolveInfo="concept_baseLanguage_ClassConcept" />
-                                                </node>
+                                            <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8876418788323259199">
+                                              <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8876418788323259194">
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kt3r.~SConcept" resolveInfo="SConcept" />
                                               </node>
-                                              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7414633741222183841">
-                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetInstance()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConceptRepository" resolveInfo="getInstance" />
-                                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t3eg.~SConceptRepository" resolveInfo="SConceptRepository" />
+                                              <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8876418788323259195">
+                                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8876418788323259196">
+                                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
+                                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8876418788323259197">
+                                                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="2vhp.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
+                                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2vhp.~BootstrapLanguages%dconcept_baseLanguage_ClassConcept" resolveInfo="concept_baseLanguage_ClassConcept" />
+                                                  </node>
+                                                </node>
+                                                <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8876418788323259198">
+                                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SConceptRepository%dgetInstance()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConceptRepository" resolveInfo="getInstance" />
+                                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t3eg.~SConceptRepository" resolveInfo="SConceptRepository" />
+                                                </node>
                                               </node>
                                             </node>
                                           </node>
