@@ -270,7 +270,6 @@
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/tests.data/jetbrains.mps.execution.impl.tests.sandbox.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/tests/jetbrains.mps.execution.impl.tests.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="$PROJECT_DIR$/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="plugins" />
-      <modulePath path="$PROJECT_DIR$/plugins/migration25/solution/jetbrains.mps.ide.migration25.msd" folder="plugins" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="plugins" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build-deprecated/languages/buildlanguage/jetbrains.mps.buildlanguage.mpl" folder="languages.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build-deprecated/languages/generictasks/jetbrains.mps.build.generictasks.mpl" folder="languages.build" />
@@ -369,6 +368,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/testsolution/jetbrains.mps.ide.java.testMaterial.msd" folder="plugins.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" folder="plugins.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="plugins" />
+      <modulePath path="$PROJECT_DIR$/plugins/mpsmigration/solution/jetbrains.mps.ide.mpsmigration.msd" folder="plugins" />
       <modulePath path="$PROJECT_DIR$/plugins/samples/jetbrains.mps.samples.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" folder="plugins.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/common/jetbrains.mps.ide.vcs.platform.msd" folder="plugins.vcs" />
@@ -457,7 +457,7 @@
   </component>
   <component name="ProjectRootManager" version="2" />
   <component name="ProjectVersion">
-    <option name="version" value="2.5" />
+    <option name="version" value="3.0" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
