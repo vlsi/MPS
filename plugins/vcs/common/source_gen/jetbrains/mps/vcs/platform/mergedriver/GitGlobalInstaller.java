@@ -51,7 +51,7 @@ import org.apache.log4j.LogManager;
 
     if (!(dryRun)) {
       // copy driver files to the proper place 
-      MergeDriverPacker.getInstance().pack();
+      MergeDriverPacker.getInstance().pack(myProject);
     }
 
     AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, myScriptFile, dryRun);
@@ -104,7 +104,9 @@ import org.apache.log4j.LogManager;
         }
       }
       if (equal) {
-        return AbstractInstaller.State.INSTALLED;
+        if (dryRun) {
+          return AbstractInstaller.State.INSTALLED;
+        }
       } else {
         if (dryRun) {
           return AbstractInstaller.State.OUTDATED;
