@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1o0hfoq0sdpo2604etk4r79ee01r1ht">
+<dependencies version="2" modelHash="-ab8wii6z6deqxcoz7xkptzxuc4pwc99">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.cellProviders(MPS.Editor/jetbrains.mps.lang.editor.cellProviders@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
@@ -1320,7 +1320,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ClosureParameterReference_Editor.java" />
   </source>
-  <source id="1153952460625" name="TryStatement_Editor" hash="ex91apc61x39km22bob30x2cnrco8wz">
+  <source id="1153952460625" name="TryStatement_Editor" hash="5kyhlocs5a56zvezkodh37ptislokmn">
     <dep root="1186415538255" />
     <dep root="3726020645866465468" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
