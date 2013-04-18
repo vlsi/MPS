@@ -4,15 +4,21 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
+import org.apache.log4j.Priority;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CommentLinePart_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static NodeCaretPair virtual_smartDelete_9042833497008205283(SNode thisNode, boolean isBeginning) {
+    if (LOG.isEnabledFor(Priority.WARN)) {
+      LOG.warn("AAAAAAAAAAA " + isBeginning);
+    }
     SNodeOperations.deleteNode(thisNode);
     return null;
   }
@@ -26,4 +32,6 @@ public class CommentLinePart_Behavior {
   public static NodeCaretPair callSuper_smartDelete_9042833497008205283(SNode thisNode, String callerConceptFqName, boolean isBeginning) {
     return BehaviorManager.getInstance().invokeSuper(NodeCaretPair.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", new Class[]{SNode.class, Boolean.TYPE}, new Object[]{isBeginning});
   }
+
+  protected static Logger LOG = LogManager.getLogger(CommentLinePart_Behavior.class);
 }

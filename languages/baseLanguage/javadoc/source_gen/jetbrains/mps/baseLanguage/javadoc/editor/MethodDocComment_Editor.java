@@ -12,6 +12,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -22,8 +24,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -63,10 +63,21 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ls0i5e_a0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyJavaDoc(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, MethodDocComment_Editor._StyleParameter_QueryFunction_ls0i5e_a0a0a((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    )));
     editorCell.getStyle().putAll(style);
+    RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean _StyleParameter_QueryFunction_ls0i5e_a0a0a(EditorContext editorContext, SNode node) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "body", true)).isNotEmpty();
   }
 
   private EditorCell createRefNodeList_ls0i5e_b0a(EditorContext editorContext, SNode node) {
@@ -78,6 +89,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -124,9 +136,6 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_ls0i5e_a1a0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_ls0i5e_a1a0");
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-      editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -138,6 +147,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
+    RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_ls0i5e_a2a0(editorContext, node));
     if (renderingCondition_ls0i5e_a1c0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNodeList_ls0i5e_b2a0(editorContext, node));
