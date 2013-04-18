@@ -13,21 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model.events;
+package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SModel;
 
-/**
- * Change listener is always invoked after a real change
- */
-public interface SModelChangeListener{
-  void nodeAdded(SNode node, String role, SNode child);
-
-  void nodeRemoved(SNode node, String role, SNode child);
-
-  void propertyChanged(SNode node, String propertyName, String oldValue, String newValue);
-
-  void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef);
+public interface SModelStateListener {
+  void modelProblemsChanged(SModel model);
 }
