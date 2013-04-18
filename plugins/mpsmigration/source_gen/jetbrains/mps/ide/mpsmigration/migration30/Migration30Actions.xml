@@ -1,5 +1,6 @@
 <components>
   <actions>
+    <action id="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action" class="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeAccess_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeAccess_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeMethods_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeMethods_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelDescriptorOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelDescriptorOpenAPI_Action"></action>
@@ -14,10 +15,10 @@
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSReferenceOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSReferenceOpenAPI_Action"></action>
     <group id="Migrations30_ActionGroupfix_methods__fix_broken_refs___resolve_method_by_args_" />
     <group id="Migrations30_ActionGroupremove_concept_properties" />
-    <group id="jetbrains.mps.ide.mpsmigration.migration30.Migrations30_ActionGroup" text="Migrations 3.0" popup="true">
+    <group id="jetbrains.mps.ide.mpsmigration.migration30.Migrations30_ActionGroup" text="Migrations 3.0 (auto)" popup="true">
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action" />
       <reference ref="Migrations30_ActionGroupfix_methods__fix_broken_refs___resolve_method_by_args_" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeMethods_Action" />
-      <separator />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeAccess_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelOpenAPI_Action" />

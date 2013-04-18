@@ -11,22 +11,31 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.resolve.ScopeResolver;
+import java.util.List;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.project.GlobalOperationContext;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.IModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -67,11 +76,53 @@ public class FixBrokenReferences_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("iproject") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      ScopeResolver resolver = new ScopeResolver();
+
+      List<IModule> modulelist = (((List<IModule>) MapSequence.fromMap(_params).get("modules")) == null ?
+        ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators() :
+        ((List<IModule>) MapSequence.fromMap(_params).get("modules"))
+      );
+      List<SModel> modellist = (List<SModel>) ((((List<SModel>) MapSequence.fromMap(_params).get("models")) == null || ((List<SModel>) MapSequence.fromMap(_params).get("models")).isEmpty() ?
+        ListSequence.fromList(modulelist).translate(new ITranslator2<IModule, SModel>() {
+          public Iterable<SModel> translate(IModule it) {
+            return it.getModels();
+          }
+        }).where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel m) {
+            return SModelStereotype.isUserModel(m) && !(m.isReadOnly());
+          }
+        }).toListSequence() :
+        ((List<SModel>) MapSequence.fromMap(_params).get("models"))
+      ));
+
+      for (SModel model : ListSequence.fromList(modellist)) {
+        if (LOG.isEnabledFor(Priority.WARN)) {
+          LOG.warn("processing model " + SModelOperations.getModelName(model));
+        }
+        for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+          for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
+            if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
+              if (LOG.isEnabledFor(Priority.ERROR)) {
+                LOG.error("reference=" + ref.getTargetSModelReference() + " :#: " + ref.getTargetNodeId() + " -- resolveInfo=" + SLinkOperations.getResolveInfo(ref) + "; role=" + SLinkOperations.getRole(ref));
+              }
+              boolean r = resolver.resolve(ref, node, new GlobalOperationContext());
+              if (LOG.isInfoEnabled()) {
+                LOG.info(((r ?
+                  "resolved to=" :
+                  "not resolved="
+                )) + ref.getTargetSModelReference() + " :#: " + ref.getTargetNodeId() + " -- resolveInfo=" + SLinkOperations.getResolveInfo(ref) + "; role=" + SLinkOperations.getRole(ref));
+              }
+            }
+          }
+        }
+      }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FixBrokenReferences", t);
