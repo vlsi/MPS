@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
@@ -72,7 +73,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   private String[] myProperties = null;
 
-  protected volatile SModel myModel;
   private SNodeId myId;
 
   private Object[] myUserObjects; // key,value,key,value ; !copy-on-write
@@ -80,9 +80,29 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @NotNull
   private String myConceptFqName;
 
+  private final Object REPO_LOCK = new Object();
+  protected volatile SModel myModel; //todo make private non-volatile
+  private boolean myDisposed = false;
+
   public SNode(@NotNull String conceptFqName) {
     myConceptFqName = conceptFqName;
     myId = SModel.generateUniqueId();
+  }
+
+
+  @Override
+  public void attach(SRepository repo) {
+    synchronized (REPO_LOCK) {
+      org.jetbrains.mps.openapi.model.SModel model = getModel();
+      assert model != null && model.getModule()!=null && model.getModule().getRepository() != null;
+    }
+  }
+
+  @Override
+  public void detach() {
+    synchronized (REPO_LOCK) {
+      myDisposed = true;
+    }
   }
 
   @Override
