@@ -19,7 +19,7 @@ import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -91,7 +91,9 @@ import org.junit.BeforeClass;
 import jetbrains.mps.smodel.SReference;
 import com.intellij.openapi.util.registry.Registry;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import org.junit.AfterClass;
+import jetbrains.mps.ide.platform.watching.ReloadListener;
 
 public class ChangesManagerTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
@@ -139,7 +141,7 @@ public class ChangesManagerTest {
 
     myUtilVirtualFile = VirtualFileUtils.getVirtualFile(((FileDataSource) myUtilDiff.getModelDescriptor().getSource()).getFile());
 
-    FSChangesWatcher.instance().addReloadListener(new ChangesManagerTest.MyReloadListener());
+    ReloadManager.getInstance().addReloadListener(new ChangesManagerTest.MyReloadListener());
 
     myRegistry.getCommandQueue().setHadExceptions(false);
 
@@ -987,7 +989,7 @@ public class ChangesManagerTest {
     TestMain.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
   }
 
-  private class MyReloadListener implements FSChangesWatcher.IReloadListener {
+  private class MyReloadListener implements ReloadListener {
     public MyReloadListener() {
     }
 

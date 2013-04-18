@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.HashSet;
 
-public class FileProcessor extends EventProcessor {
+public class FileProcessor extends ReloadParticipant {
   private FileSystemListenersContainer listenersContainer;
   private Map<FileSystemListener, FileProcessor.ListenerData> dataMap = MapSequence.fromMap(new HashMap<FileSystemListener, FileProcessor.ListenerData>());
   private Queue<FileSystemListener> postNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
@@ -105,12 +105,10 @@ public class FileProcessor extends EventProcessor {
     }
   }
 
-  @Override
   protected boolean accepts(VirtualFile file) {
     return true;
   }
 
-  @Override
   protected void processDelete(VirtualFile file) {
     String path = file.getPath();
     final IFile ifile = FileSystem.getInstance().getFileByPath(path);
@@ -121,7 +119,6 @@ public class FileProcessor extends EventProcessor {
     });
   }
 
-  @Override
   protected void processCreate(VirtualFile file) {
     String path = file.getPath();
     final IFile ifile = FileSystem.getInstance().getFileByPath(path);
@@ -132,7 +129,6 @@ public class FileProcessor extends EventProcessor {
     });
   }
 
-  @Override
   protected void processContentChanged(VirtualFile file) {
     String path = file.getPath();
     final IFile ifile = FileSystem.getInstance().getFileByPath(path);
