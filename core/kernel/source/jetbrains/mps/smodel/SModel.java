@@ -1222,6 +1222,11 @@ public class SModel implements SModelData {
     }
 
     @Override
+    public void attach(SRepository repo) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
     public boolean isReadOnly() {
       return false;
     }

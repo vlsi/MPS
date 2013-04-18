@@ -22,12 +22,12 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModelStateListener;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -48,7 +48,10 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   private SModelReference myModelReference;
 
   private ModelRoot myModelRoot;
-  private volatile SModule myModule;
+
+  private final Object REPO_LOCK = new Object();
+  private SModule myModule;
+  private boolean myDisposed = false;
 
   protected SModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
@@ -63,6 +66,20 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public boolean isInRepository() {
     return getRepository() != null;
+  }
+
+  @Override
+  public void attach(SRepository repo) {
+    synchronized (REPO_LOCK) {
+      assert myModule != null && myModule.getRepository() != null;
+    }
+  }
+
+  @Override
+  public void detach() {
+    synchronized (REPO_LOCK) {
+      myDisposed = true;
+    }
   }
 
   @Override
