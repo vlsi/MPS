@@ -21,7 +21,7 @@ ROOT
     a thing that can be opened in editor [a bit incorrect. A thing that is opened by default when
        user tries to edit something. Though programmatically any node can be opened in editor, see "Show type"
        dialog  - MM]
-    a minimal thing that has own imports (models/lanqguages) [not true for now, not true for future - MM]
+    a minimal thing that has own imports (models/languages) [not true for now, not true for future - MM]
     a miniamal thing to be persisted [not true. model is a minimal thing to be persisted - MM]
     a maximal thing to be generated as a whole (not absolute truth)
 

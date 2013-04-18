@@ -62,7 +62,9 @@ public interface SModule {
 
   boolean isInRepository();
 
-  void setRepository(SRepository repo);
+  void attach(SRepository repo);
+
+  void detach();
 
   /**
    * Wraps and returns an optimized directory of all modules visible from the current module
