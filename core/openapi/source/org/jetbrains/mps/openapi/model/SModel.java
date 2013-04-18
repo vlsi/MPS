@@ -33,7 +33,7 @@ public interface SModel {
 
   SRepository getRepository();
 
-  // TODO remove (bad name)
+  // TODO remove (bad name)  [Mihail Muhin: SModule has a same method]
   boolean isInRepository();
 
   /**

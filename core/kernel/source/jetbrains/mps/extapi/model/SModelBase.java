@@ -115,14 +115,14 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public void addRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
-    fireNodeAdded(null, null, node);
     getSModelInternal().addRootNode(node);
+    fireNodeAdded(null, null, node);
   }
 
   @Override
   public void removeRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
-    fireNodeRemoved(null, null, node);
     getSModelInternal().removeRootNode(node);
+    fireNodeRemoved(null, null, node);
   }
 
   @Override

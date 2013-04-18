@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 /**
- * Change listener is always invoked before a real change
+ * Change listener is always invoked after a real change
  */
 public interface SModelChangeListener{
   void nodeAdded(SNode node, String role, SNode child);
