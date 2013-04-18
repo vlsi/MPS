@@ -45,12 +45,9 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -376,7 +373,7 @@ public class EditorManager {
       //reset creating inspected cell : we don't create not-root inspected cells
       myCreatingInspectedCell = false;
 
-      EditorAspect editor = getEditor(context, node);
+      EditorAspect editor = context.getEditorAspectManager().loadEditorAspect(node);
       EditorComponent editorComponent = getEditorComponent(context);
       EditorCell nodeCell = null;
       NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
@@ -618,23 +615,6 @@ public class EditorManager {
     return createRootCell(context, node, events, true);
   }
 
-  private EditorAspect getEditor(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
-    SConcept concept = node.getConcept();
-    boolean isInterface = false;
-    boolean isAbstract = false;
-    if (concept != null) {
-      ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(concept.getQualifiedName());
-      EditorAspect editorAspect = EditorAspectManager.getInstance().getEditorAspect(conceptDescriptor);
-      if (editorAspect != null) {
-        return editorAspect;
-      }
-      isInterface = conceptDescriptor.isInterfaceConcept();
-      isAbstract = conceptDescriptor.isAbstract();
-    }
-
-    return isInterface || isAbstract ? new DefaultInterfaceEditor() : new DefaultEditor();
-  }
-
   private EditorComponent getEditorComponent(jetbrains.mps.openapi.editor.EditorContext context) {
     return ((EditorContext) context).getNodeEditorComponent();
   }
@@ -677,21 +657,6 @@ public class EditorManager {
         return (jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell;
       }
       return rtHint;
-    }
-  }
-
-  public static class DefaultInterfaceEditor implements EditorAspect {
-    public DefaultInterfaceEditor() {
-    }
-
-    @Override
-    public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
-      return new EditorCell_Error(context, node, "    ");
-    }
-
-    @Override
-    public EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
-      return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
   }
 }

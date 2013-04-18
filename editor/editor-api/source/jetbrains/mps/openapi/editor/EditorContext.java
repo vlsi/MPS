@@ -16,6 +16,7 @@
 package jetbrains.mps.openapi.editor;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -105,4 +106,6 @@ public interface EditorContext {
   void runWithContextCell(EditorCell contextCell, Runnable r);
 
   <T> T runWithContextCell(EditorCell contextCell, Computable<T> r);
+
+  EditorAspectManager getEditorAspectManager();
 }

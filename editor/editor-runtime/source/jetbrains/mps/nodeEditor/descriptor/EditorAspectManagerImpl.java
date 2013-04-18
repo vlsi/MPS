@@ -13,19 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.descriptor;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.nodeEditor.DefaultEditor;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -37,31 +40,28 @@ import java.util.Set;
 
 /**
  * User: shatalin
- * Date: 4/16/13
+ * Date: 4/18/13
  */
-public class EditorAspectManager implements ApplicationComponent {
-  public static EditorAspectManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(EditorAspectManager.class);
-  }
-
-  public EditorAspectManager(MPSCoreComponents coreComponents) {
-  }
-
-  @NotNull
+public class EditorAspectManagerImpl implements EditorAspectManager {
   @Override
-  public String getComponentName() {
-    return "MPS Editor Aspect Manager";
+  public EditorAspect loadEditorAspect(SNode node) {
+    SConcept concept = node.getConcept();
+    boolean isInterface = false;
+    boolean isAbstract = false;
+    if (concept != null) {
+      ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(concept.getQualifiedName());
+      EditorAspect editorAspect = getEditorAspect(conceptDescriptor);
+      if (editorAspect != null) {
+        return editorAspect;
+      }
+      isInterface = conceptDescriptor.isInterfaceConcept();
+      isAbstract = conceptDescriptor.isAbstract();
+    }
+
+    return isInterface || isAbstract ? new DefaultInterfaceEditor() : new DefaultEditor();
   }
 
-  @Override
-  public void initComponent() {
-  }
-
-  @Override
-  public void disposeComponent() {
-  }
-
-  public EditorAspect getEditorAspect(ConceptDescriptor conceptDescriptor) {
+  private EditorAspect getEditorAspect(ConceptDescriptor conceptDescriptor) {
     Queue<ConceptDescriptor> queue = new LinkedList<ConceptDescriptor>();
     Set<String> processedConcepts = new HashSet<String>();
     queue.add(conceptDescriptor);
@@ -108,5 +108,20 @@ public class EditorAspectManager implements ApplicationComponent {
       languageRuntime = extendedLanguagesIterator.hasNext() ? extendedLanguagesIterator.next() : null;
     }
     return result;
+  }
+
+  public static class DefaultInterfaceEditor implements EditorAspect {
+    public DefaultInterfaceEditor() {
+    }
+
+    @Override
+    public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
+      return new EditorCell_Error(context, node, "    ");
+    }
+
+    @Override
+    public EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
+      return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
+    }
   }
 }
