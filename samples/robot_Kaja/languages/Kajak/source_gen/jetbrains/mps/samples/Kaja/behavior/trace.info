@@ -2,12 +2,12 @@
 <debugInfo>
   <unitInfo fileName="AbstractCommand_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.AbstractCommand_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="CommandList_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.CommandList_BehaviorDescriptor" />
+  <unitInfo fileName="CommandList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.CommandList_BehaviorDescriptor" />
   <unitInfo fileName="CommentLine_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.CommentLine_BehaviorDescriptor" />
   <unitInfo fileName="Direction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.Direction_BehaviorDescriptor" />
   <unitInfo fileName="Drop_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.Drop_BehaviorDescriptor" />
   <unitInfo fileName="East_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.East_BehaviorDescriptor" />
-  <unitInfo fileName="EmptyLine_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.EmptyLine_BehaviorDescriptor" />
+  <unitInfo fileName="EmptyLine_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.EmptyLine_BehaviorDescriptor" />
   <unitInfo fileName="Heading_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.Heading_BehaviorDescriptor" />
   <unitInfo fileName="IfStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.IfStatement_BehaviorDescriptor" />
   <unitInfo fileName="IsFull_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.Kaja.behavior.IsFull_BehaviorDescriptor" />
