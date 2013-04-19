@@ -119,7 +119,7 @@ public class ModuleLibrariesUtil {
     if (library != null) {
       return library;
     }
-    Set<VirtualFile> stubFiles = ModuleLibraryType.getModuleJars((Solution) usedModule);
+    Set<VirtualFile> stubFiles = ModuleLibraryType.getModuleJars(usedModule);
     IFile descriptorFile = usedModule.getDescriptorFile();
     VirtualFile descriptorVirtualFile = null;
     if (descriptorFile != null) {
