@@ -413,16 +413,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "separatorText");
   }
 
+  public static Object propertyMacro_GetPropertyValue_379263601016632549(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString_def(_context.getNode(), "separatorLayoutConstraint", null);
+  }
+
   public static Object propertyMacro_GetPropertyValue_1233145825494(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return StyleSheet_Behavior.call_getClassFqName_1213877515585(StyleSheetClass_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "separatorStyle", true), "parentClass", false)));
   }
 
   public static Object propertyMacro_GetPropertyValue_1233145825505(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return StyleSheetClass_Behavior.call_getApplyMethodName_1384401029875304557(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "separatorStyle", true), "parentClass", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1233007778005(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString_def(_context.getNode(), "separatorLayoutConstraint", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1200437135988(final IOperationContext operationContext, final PropertyMacroContext _context) {
