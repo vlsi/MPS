@@ -22,8 +22,6 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.model.SModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.xml.XmlConverter;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
@@ -32,6 +30,8 @@ import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.JDOMUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
@@ -82,18 +82,26 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
     String moduleRef = options.get(OPTION_MODULEREF);
     String relPath = options.get(OPTION_RELPATH);
     String modelName = options.get(OPTION_MODELNAME);
+    boolean contentOnly = "true".equals(options.get(OPTION_CONTENT_ONLY));
+
+    SModelReference ref;
     if (relPath == null || moduleRef == null || modelName == null) {
-      if (dataSource instanceof FileDataSource) {
-        LOG.error("cannot load " + dataSource.getLocation());
+      if (!contentOnly) {
+        if (dataSource instanceof FileDataSource) {
+          LOG.error("cannot load " + dataSource.getLocation() + ": relPath = " + relPath, new Throwable());
+        }
+        return null;
       }
-      return null;
+      ref = PersistenceFacade.getInstance().createModelReference(
+          null, jetbrains.mps.smodel.SModelId.generate(), "temp");
+    } else {
+      SModelId id = PersistenceFacade.getInstance().createModelId("path:" + relPath);
+      SModuleReference mref = ModuleReference.fromString(moduleRef);
+      if (mref == null) {
+        return null;
+      }
+      ref = PersistenceFacade.getInstance().createModelReference(mref, id, modelName);
     }
-    SModelId id = PersistenceFacade.getInstance().createModelId("path:" + relPath);
-    SModuleReference mref = ModuleReference.fromString(moduleRef);
-    if (mref == null) {
-      return null;
-    }
-    SModelReference ref = PersistenceFacade.getInstance().createModelReference(mref, id, modelName);
     return new CustomPersistenceSModel(ref, dataSource, this);
   }
 
@@ -163,7 +171,8 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
     // TODO check concepts
     if (IterableUtil.copyToList(model.getRootNodes()).size() > 1) {
       throw new ModelSaveException("cannot save more than one root into .xml file",
-          Collections.<Problem>singletonList(new PersistenceProblem(Kind.Save, "cannot save more than one root into .xml file", null, true, -1, -1, root)));
+          Collections.<Problem>singletonList(
+              new PersistenceProblem(Kind.Save, "cannot save more than one root into .xml file", null, true, -1, -1, root)));
     }
 
     TextGenerationResult result = TextGen.generateText(root);
