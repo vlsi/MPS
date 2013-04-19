@@ -1201,6 +1201,8 @@ public class QueriesGenerated {
       VisibleModules visibleModules = new VisibleModules(project, _context);
       visibleModules.collect();
 
+      ModuleLoader.Reporter reporter = new ModuleLoader.Reporter(_context);
+
       Iterable<SNode> parts = SLinkOperations.getTargets(project, "parts", true);
       parts = Sequence.fromIterable(parts).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -1222,7 +1224,7 @@ public class QueriesGenerated {
           continue;
         }
 
-        new ModuleLoader(module, visibleModules, pathConverter, _context).loadAndCheck();
+        ModuleLoader.createModuleLoader(module, visibleModules, pathConverter, _context, reporter).loadAndCheck();
       }
     }
   }

@@ -34,7 +34,7 @@ public class ModuleLoaderUtils {
 
 
   public static ModuleDescriptor loadModuleDescriptor(IFile moduleDescriptorFile, TemplateQueryContext genContext, SNode originalModule, ModuleLoader.Reporter reporter) {
-    MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(moduleDescriptorFile, genContext, originalModule, reporter);
+    MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(moduleDescriptorFile.getParent(), genContext, originalModule, reporter);
     String path = moduleDescriptorFile.getPath();
     if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
       return LanguageDescriptorPersistence.loadLanguageDescriptor(moduleDescriptorFile, helper);
