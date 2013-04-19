@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3yrykjwvop6idd9enc2j0rwckc56rxa">
+<dependencies version="2" modelHash="-cdkmv38x4yu68ycarihbjp5dtmgdt6t">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
@@ -290,7 +290,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="TextCommentLinePart_Editor.java" />
   </source>
-  <source id="8970989240999060766" name="InlineTagCommentLinePart_Editor" hash="c7x98wfm69jm3x2ccrhmbywwcp0pb9z">
+  <source id="8970989240999060766" name="InlineTagCommentLinePart_Editor" hash="-3v2du71ftg3zd9basp5rfktsq8dk07e">
     <dep root="4941637334112852301" />
     <dep root="7344646339284548672" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
@@ -400,7 +400,7 @@
     <dep model="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" />
     <file name="BaseInlineDocTag_Editor.java" />
   </source>
-  <source id="4941637334112852301" name="IntlineTagCommentLinePart_Actions" hash="-8pvo7bn3uddu5964mronwbepfwawcf3">
+  <source id="4941637334112852301" name="InlineTagCommentLinePart_Actions" hash="-b6xmncqwb0nm25pgjn8mlbscetgrgxa">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -416,7 +416,7 @@
     <dep model="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" />
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
-    <file name="IntlineTagCommentLinePart_Actions.java" />
+    <file name="InlineTagCommentLinePart_Actions.java" />
   </source>
   <source id="2546654756694876815" name="BaseDocReference_Editor" hash="5jkfxe3l4b9peqwv1lk40nf2a4mhmo4">
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />

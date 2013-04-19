@@ -117,7 +117,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="m373.6962838954693748792" resolveInfo="BaseInlineDocTag" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="4941637334112852301">
-      <property name="name" nameId="tpck.1169194664001" value="IntlineTagCommentLinePart_Actions" />
+      <property name="name" nameId="tpck.1169194664001" value="InlineTagCommentLinePart_Actions" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="m373.8970989240999019145" resolveInfo="InlineTagCommentLinePart" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2546654756694876815">
@@ -1092,11 +1092,11 @@
   </root>
   <root id="8970989240999060766">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6962838954693749194">
-      <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4941637334112852301" resolveInfo="IntlineTagCommentLinePart_Actions" />
+      <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4941637334112852301" resolveInfo="InlineTagCommentLinePart_Actions" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6962838954693749199">
         <property name="text" nameId="tpc2.1073389577007" value="{" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7344646339284548673" resolveInfo="Comment" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4941637334112852301" resolveInfo="IntlineTagCommentLinePart_Actions" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4941637334112852301" resolveInfo="InlineTagCommentLinePart_Actions" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="2217234381368825533">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -1110,7 +1110,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2217234381368599551">
         <property name="text" nameId="tpc2.1073389577007" value="@" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7344646339284771309" resolveInfo="CommentTag" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4941637334112852301" resolveInfo="IntlineTagCommentLinePart_Actions" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4941637334112852301" resolveInfo="InlineTagCommentLinePart_Actions" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="2217234381368629220">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -1130,7 +1130,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6962838954693749202">
         <property name="text" nameId="tpc2.1073389577007" value="}" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7344646339284548673" resolveInfo="Comment" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4941637334112852301" resolveInfo="IntlineTagCommentLinePart_Actions" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4941637334112852301" resolveInfo="InlineTagCommentLinePart_Actions" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="5507335811877301557">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -1979,32 +1979,6 @@
       <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
       <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="4941637334112852687">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4941637334112852688">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4941637334113435810">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4941637334113435811">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4941637334113435812">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~System" resolveInfo="System" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%dout" resolveInfo="out" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4941637334113435813">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2565027568479010261">
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2565027568479010944">
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2565027568479010947">
-                      <property name="value" nameId="tpee.1070475926801" value=": " />
-                    </node>
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2565027568479010942">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~System%dcurrentTimeMillis()%clong" resolveInfo="currentTimeMillis" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~System" resolveInfo="System" />
-                    </node>
-                  </node>
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4941637334113435815">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="4941637334113435816" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="4941637334113435817" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4941637334113609253">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4941637334113609254">
               <property name="name" nameId="tpck.1169194664001" value="commentLine" />

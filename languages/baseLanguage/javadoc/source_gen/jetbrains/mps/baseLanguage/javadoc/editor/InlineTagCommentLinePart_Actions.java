@@ -12,15 +12,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class IntlineTagCommentLinePart_Actions {
+public class InlineTagCommentLinePart_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new IntlineTagCommentLinePart_Actions.IntlineTagCommentLinePart_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new InlineTagCommentLinePart_Actions.InlineTagCommentLinePart_Actions_DELETE(node));
   }
 
-  public static class IntlineTagCommentLinePart_Actions_DELETE extends AbstractCellAction {
+  public static class InlineTagCommentLinePart_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
-    public IntlineTagCommentLinePart_Actions_DELETE(SNode node) {
+    public InlineTagCommentLinePart_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 
@@ -29,7 +29,6 @@ public class IntlineTagCommentLinePart_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      System.out.println(System.currentTimeMillis() + ": " + SNodeOperations.getConceptDeclaration(node));
       SNode commentLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
       SNodeOperations.deleteNode(node);
       for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).count() - 1; i++) {
