@@ -76,7 +76,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   }
 
   protected static String makeRelative(String contentHome, String fullPath) {
-    if ((fullPath == null || fullPath.length() == 0)) {
+    if ((fullPath == null || fullPath.length() == 0 || fullPath.equals(contentHome))) {
       return "";
     }
     String normalized = FileUtil.getAbsolutePath(fullPath).replace("\\", "/");
