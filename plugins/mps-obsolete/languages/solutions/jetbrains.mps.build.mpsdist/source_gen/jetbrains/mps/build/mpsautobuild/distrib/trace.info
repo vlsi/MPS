@@ -1170,7 +1170,7 @@
     <nodeInfo nodeId="3885435385580582779" fileName="mps.vmoptions" startLine="7" startPosition="31" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3885435385580582779" fileName="mps.vmoptions" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3885435385580582779" fileName="mps.vmoptions" startLine="8" startPosition="21" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <unitInfo nodeId="3885435385580582779" fileName="Info.plist.xml" startLine="1" startPosition="0" endLine="63" endPosition="8" unitName="jetbrains.mps.build.mpsautobuild.distrib.Info$plist" />
+    <unitInfo nodeId="3885435385580582779" fileName="Info.plist.xml" startLine="1" startPosition="0" endLine="74" endPosition="8" unitName="jetbrains.mps.build.mpsautobuild.distrib.Info$plist" />
     <unitInfo nodeId="3885435385580582779" fileName="mps.bat" startLine="1" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.build.mpsautobuild.distrib.mps$bat" />
     <unitInfo nodeId="3885435385580582779" fileName="mps.sh" startLine="1" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.build.mpsautobuild.distrib.mps$sh" />
     <unitInfo nodeId="3885435385580582779" fileName="mps.vmoptions" startLine="1" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.build.mpsautobuild.distrib.mps$vmoptions" />

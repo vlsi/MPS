@@ -2051,6 +2051,51 @@
               </node>
             </node>
           </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="544731568810834">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="544731568813377">
+              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleURLTypes" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="544731568813560">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="array" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="544731568813743">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="dict" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="544731568814733">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="544731568814735">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleTypeRole" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="544731568815730">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="544731568815734">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="Editor" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="544731568816733">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="544731568816739">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleURLName" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="544731568816749">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="544731568817750">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="Stacktrace" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="544731568818757">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="544731568818767">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleURLSchemes" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="544731568819778">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="array" />
+              </node>
+            </node>
+          </node>
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981890">
             <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981891">
@@ -2344,8 +2389,8 @@
           <property name="doctypeName" nameId="iuxj.2133624044437898910" value="plist" />
           <node role="externalId" roleId="iuxj.2133624044438029120" type="iuxj.XmlExternalId" typeId="iuxj.2133624044438029119" id="2133624044438137907">
             <property name="publicId" nameId="iuxj.2133624044438029123" value="-//Apple Computer//DTD PLIST 1.0//EN" />
-            <property name="systemId" nameId="iuxj.2133624044438029124" value="http://www.apple.com/DTDs/PropertyList-1.0.dtd" />
             <property name="isPublic" nameId="iuxj.2133624044438029125" value="true" />
+            <property name="systemId" nameId="iuxj.2133624044438029124" value="http://www.apple.com/DTDs/PropertyList-1.0.dtd" />
           </node>
         </node>
       </node>
