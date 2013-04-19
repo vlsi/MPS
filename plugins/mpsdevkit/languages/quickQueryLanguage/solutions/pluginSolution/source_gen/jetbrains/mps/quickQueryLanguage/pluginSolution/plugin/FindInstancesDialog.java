@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.Language;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import javax.swing.JComponent;
@@ -90,7 +91,7 @@ public class FindInstancesDialog extends BaseDialog {
       final Set<Language> languageList = SetSequence.fromSet(new HashSet<Language>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ((Language) module).getDependenciesManager().collectAllExtendedLanguages(languageList);
+          new LanguageDependenciesManager((Language) module).collectAllExtendedLanguages(languageList);
         }
       });
       for (Language extendedLanguage : languageList) {

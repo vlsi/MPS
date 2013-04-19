@@ -712,7 +712,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4132059805486521200" resolveInfo="language" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4132059805486521257">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetDependencies()%cjava%dutil%dList" resolveInfo="getDependencies" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetDependencies()%cjava%dutil%dList" resolveInfo="getDependencies" />
                 </node>
               </node>
             </node>
@@ -1039,7 +1039,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4132059805486521352" resolveInfo="generator" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4132059805486521381">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Generator%dgetDependencies()%cjava%dutil%dList" resolveInfo="getDependencies" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetDependencies()%cjava%dutil%dList" resolveInfo="getDependencies" />
                 </node>
               </node>
             </node>
@@ -2853,7 +2853,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4132059805486522038" resolveInfo="language" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4132059805486522095">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetDependencies()%cjava%dutil%dList" resolveInfo="getDependencies" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetDependencies()%cjava%dutil%dList" resolveInfo="getDependencies" />
                 </node>
               </node>
             </node>

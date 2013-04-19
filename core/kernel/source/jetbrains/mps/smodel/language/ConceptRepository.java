@@ -15,22 +15,22 @@
  */
 package jetbrains.mps.smodel.language;
 
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.adapter.SInterfaceConceptNodeAdapter;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -43,6 +43,11 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   private static Logger LOG = LogManager.getLogger(ConceptRepository.class);
 
   private final ConcurrentMap<String, SAbstractConcept> myConcepts = new ConcurrentHashMap<String, SAbstractConcept>();
+
+  @Override
+  public SConcept getInstanceConcept(String id) {
+    return (SConcept) SConceptRepository.getInstance().getConcept(id);
+  }
 
   @Override
   public SAbstractConcept getConcept(String id) {
@@ -68,12 +73,12 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
         // optimization - loading all concepts from this model into myConcepts cache
         for (SNode root : smd.getRootNodes()) {
           String conceptFQName = modelFqName + "." + root.getProperty(SNodeUtil.property_INamedConcept_name);
-          if (conceptFQName.equals(SNodeUtil.concept_ConceptDeclaration)){
+          if (conceptFQName.equals(SNodeUtil.concept_ConceptDeclaration)) {
             myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
           }
 
           String conceptId = root.getConcept().getId();
-          if (conceptId.equals(SNodeUtil.concept_ConceptDeclaration)){
+          if (conceptId.equals(SNodeUtil.concept_ConceptDeclaration)) {
             myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
           } else if (conceptId.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
             myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
@@ -81,11 +86,11 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
         }
         if (myConcepts.containsKey(id)) return;
         // logging error if concept was not in concept model
-        LOG.error("Creating a concept descriptor for a concept not yet loaded " + id, new Throwable());
+        //LOG.error("Creating a concept descriptor for a concept not yet loaded " + id, new Throwable());
       }
     }
     // adding
-    LOG.error("Creating a concept descriptor for a concept from a language not yet loaded " + id, new Throwable());
+    //LOG.error("Creating a concept descriptor for a concept from a language not yet loaded " + id, new Throwable());
     myConcepts.putIfAbsent(id, new SConceptNodeAdapter(id));
   }
 

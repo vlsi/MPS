@@ -6,6 +6,7 @@ import com.intellij.openapi.wm.StatusBarWidget;
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
+import java.util.concurrent.atomic.AtomicReference;
 import com.intellij.openapi.wm.StatusBar;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -21,14 +22,14 @@ import jetbrains.mps.plugin.icons.Icons;
 import javax.swing.Timer;
 
 public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconPresentation {
-  private static Logger LOG = Logger.getLogger(LogManager.getLogger(PluginStateWidget.class));
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(PluginStateWidget.class));
   private static final int INITIAL_DELAY = 4000;
   private static final int CRITICAL_DELAY = 16000;
   private static final double DELAY_MUL = 2.0;
-  private static final Object LOCK = new Object();
   private final Project myProject;
-  private PluginStateWidget.MyTimer myTimer;
-  private PluginStateWidget.State myState = PluginStateWidget.State.TRYING_TO_CONNECT;
+  private final PluginStateWidget.MyTimer myTimer;
+  private AtomicReference<PluginStateWidget.State> myState = new AtomicReference<PluginStateWidget.State>(PluginStateWidget.State.TRYING_TO_CONNECT);
+  private volatile boolean myConnecting = false;
   private StatusBar myStatusBar;
 
   public PluginStateWidget(Project project) {
@@ -36,12 +37,31 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
     myTimer = new PluginStateWidget.MyTimer(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-          @Override
-          public void run() {
-            tick();
-          }
-        });
+        if (myConnecting) {
+          // too complicated to do stuff here 
+          // lets not write sophisticated code, it is not worth it :( 
+          // another possibility to consider is use the Future that executeOnPooledThread returnes and when the next one wants to start just interrupt the old one 
+          // but I'm not sure, what happens when we interrupt a thread in a middle of rmi call 
+          // according to the stack trace ordinary io is used 
+          // so I'm guessing that just the thread interrupted state is set 
+          return;
+        }
+        myConnecting = true;
+        try {
+          ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+            @Override
+            public void run() {
+              try {
+                tick();
+              } finally {
+                myConnecting = false;
+              }
+            }
+          });
+        } catch (Throwable t) {
+          LOG.error(t);
+          myConnecting = false;
+        }
       }
     });
   }
@@ -58,9 +78,10 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
     return new Consumer<MouseEvent>() {
       @Override
       public void consume(MouseEvent event) {
-        if (myState == PluginStateWidget.State.DISCONNECTED) {
-          setNewState(PluginStateWidget.State.TRYING_TO_CONNECT);
-          myTimer.setNewDelay(PluginStateWidget.INITIAL_DELAY);
+        if (myState.get() == PluginStateWidget.State.DISCONNECTED) {
+          if (setNewState(PluginStateWidget.State.DISCONNECTED, PluginStateWidget.State.TRYING_TO_CONNECT)) {
+            myTimer.setNewDelay(PluginStateWidget.INITIAL_DELAY);
+          }
         }
       }
     };
@@ -82,13 +103,13 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
   @Nullable
   @Override
   public String getTooltipText() {
-    return myState.getHelpText();
+    return myState.get().getHelpText();
   }
 
   @NotNull
   @Override
   public Icon getIcon() {
-    return myState.getIcon();
+    return myState.get().getIcon();
   }
 
   @NotNull
@@ -99,69 +120,73 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
 
   private void tick() {
     LOG.assertLog(!(ThreadUtils.isEventDispatchThread()), "You should not do this in EDT");
-    synchronized (LOCK) {
-      if (myState == PluginStateWidget.State.CONNECTED) {
+    tickImpl();
+  }
+
+  private void tickImpl() {
+    PluginStateWidget.State state = myState.get();
+    if (state == PluginStateWidget.State.CONNECTED) {
+      if (isConnected()) {
+        if (canOperate()) {
+          return;
+        } else {
+          setNewState(state, PluginStateWidget.State.CONNECTED_BAD_PROJECT);
+        }
+      } else {
+        setNewState(state, PluginStateWidget.State.TRYING_TO_CONNECT);
+      }
+    } else
+    if (state == PluginStateWidget.State.CONNECTED_BAD_PROJECT) {
+      if (isConnected()) {
+        if (canOperate()) {
+          setNewState(state, PluginStateWidget.State.CONNECTED);
+        } else {
+        }
+      } else {
+        setNewState(state, PluginStateWidget.State.TRYING_TO_CONNECT);
+      }
+    } else
+    if (state == PluginStateWidget.State.DISCONNECTED) {
+      if (MPSPlugin.getInstance().openConnectionPresent()) {
         if (isConnected()) {
           if (canOperate()) {
-            return;
+            setNewState(state, PluginStateWidget.State.CONNECTED);
           } else {
-            setNewState(PluginStateWidget.State.CONNECTED_BAD_PROJECT);
-          }
-        } else {
-          setNewState(PluginStateWidget.State.TRYING_TO_CONNECT);
-        }
-      } else
-      if (myState == PluginStateWidget.State.CONNECTED_BAD_PROJECT) {
-        if (isConnected()) {
-          if (canOperate()) {
-            setNewState(PluginStateWidget.State.CONNECTED);
-          } else {
-            return;
-          }
-        } else {
-          setNewState(PluginStateWidget.State.TRYING_TO_CONNECT);
-        }
-      } else
-      if (myState == PluginStateWidget.State.DISCONNECTED) {
-        if (MPSPlugin.getInstance().openConnectionPresent()) {
-          if (isConnected()) {
-            if (canOperate()) {
-              setNewState(PluginStateWidget.State.CONNECTED);
-            } else {
-              setNewState(PluginStateWidget.State.CONNECTED_BAD_PROJECT);
-            }
+            setNewState(state, PluginStateWidget.State.CONNECTED_BAD_PROJECT);
           }
         }
-      } else
-      if (myState == PluginStateWidget.State.TRYING_TO_CONNECT) {
-        if (isConnected()) {
-          if (canOperate()) {
-            setNewState(PluginStateWidget.State.CONNECTED);
-          } else {
-            setNewState(PluginStateWidget.State.CONNECTED_BAD_PROJECT);
-          }
+      }
+    } else
+    if (state == PluginStateWidget.State.TRYING_TO_CONNECT) {
+      if (isConnected()) {
+        if (canOperate()) {
+          setNewState(state, PluginStateWidget.State.CONNECTED);
         } else {
-          int newDelay = (int) (myTimer.getDelay() * DELAY_MUL);
-          if (newDelay <= CRITICAL_DELAY) {
-            myTimer.setNewDelay(newDelay);
-          } else {
-            setNewState(PluginStateWidget.State.DISCONNECTED);
-          }
+          setNewState(state, PluginStateWidget.State.CONNECTED_BAD_PROJECT);
+        }
+      } else {
+        int newDelay = (int) (myTimer.getDelay() * DELAY_MUL);
+        if (newDelay <= CRITICAL_DELAY) {
+          myTimer.setNewDelay(newDelay);
+        } else {
+          setNewState(state, PluginStateWidget.State.DISCONNECTED);
         }
       }
     }
   }
 
-  private void setNewState(PluginStateWidget.State state) {
-    assert myState != state : "myState: " + myState.getHelpText() + "; state: " + state.getHelpText();
-    myState = state;
-    myTimer.setNewDelay(state.getDefaultDelay());
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        myStatusBar.updateWidget(ID());
-      }
-    });
+  private boolean setNewState(PluginStateWidget.State oldState, PluginStateWidget.State newState) {
+    if (myState.compareAndSet(oldState, newState)) {
+      myTimer.setNewDelay(myState.get().getDefaultDelay());
+      SwingUtilities.invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          myStatusBar.updateWidget(ID());
+        }
+      });
+      return true;
+    }
+    return false;
   }
 
   private boolean isConnected() {
@@ -178,9 +203,9 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
     CONNECTED_BAD_PROJECT(Icons.CONNECTED_ERRORS, "Connected to IDEA, Project does not match", PluginStateWidget.CRITICAL_DELAY),
     CONNECTED(Icons.CONNECTED, "Connected to IDEA", PluginStateWidget.INITIAL_DELAY);
 
-    private Icon myIcon;
-    private String myHelpText;
-    private int myDefaultDelay;
+    private final Icon myIcon;
+    private final String myHelpText;
+    private final int myDefaultDelay;
 
     State(Icon icon, String helpText, int defaultDelay) {
       myIcon = icon;

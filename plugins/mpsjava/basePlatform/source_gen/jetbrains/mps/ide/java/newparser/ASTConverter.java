@@ -23,16 +23,18 @@ import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.List;
 import java.util.Iterator;
 import org.eclipse.jdt.internal.compiler.ast.MethodDeclaration;
+import org.eclipse.jdt.internal.compiler.ast.AnnotationMethodDeclaration;
 import java.util.ArrayList;
 import org.eclipse.jdt.internal.compiler.ast.TypeParameter;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 import org.eclipse.jdt.internal.compiler.ast.SingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference;
@@ -252,13 +254,32 @@ public class ASTConverter {
       MapSequence.fromMap(myJavadocs).put(x.javadoc.sourceStart, AttributeOperations.getAttribute(cls, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))));
     }
 
+    if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Annotation")) {
+      // ! Annotation methods are stored in a deprecated child list 'methods' (not 'members') 
+      Iterable<SNode> annoMethods = ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration");
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration");
+        }
+      });
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Annotation"), "method", true)).addSequence(Sequence.fromIterable(annoMethods));
+      ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).removeWhere(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration");
+        }
+      });
+    }
+
     // sort classifier members according to their start positions 
     List<SNode> sortedMembers = ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
         return MapSequence.fromMap(memberStartPositions).get(it);
       }
     }, true).toListSequence();
-    // now handle the default (implicit) constructor; let's put him after first fields section 
+    // now handle the default (implicit) constructor; let's put it after first fields section 
     if ((defaultConstructor != null)) {
       ListSequence.fromList(sortedMembers).removeElement(defaultConstructor);
       int firstNonField = 0;
@@ -371,6 +392,10 @@ public class ASTConverter {
       if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) {
         SPropertyOperations.set(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract", "" + (true));
         SLinkOperations.setTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "visibility", _quotation_createNode_rbndtb_a0b0c0g0k(), true);
+      }
+
+      if (method instanceof AnnotationMethodDeclaration) {
+        SLinkOperations.setTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"), "defaultValue", convertExpression(((AnnotationMethodDeclaration) method).defaultValue), true);
       }
 
       convertMethodGuts((MethodDeclaration) method, clsStringId, result);

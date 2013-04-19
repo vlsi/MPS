@@ -33,7 +33,7 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
       }
     }));
 
-    final Iterable<String> CLASSPATHS = Arrays.asList("runtime", "kernel", "openapi", "make-runtime", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence");
+    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "openapi", "make-runtime", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence");
     String homePath = PathManager.getHomePath();
     final String corePath = homePath + File.separator + "core";
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(CLASSPATHS).select(new ISelector<String, String>() {
@@ -51,6 +51,8 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
     }));
     SetSequence.fromSet(classpathItems).addElement(languagesPath + File.separator + "baseLanguage" + File.separator + "baseLanguage" + File.separator + "solutions" + File.separator + "jetbrains.mps.baseLanguage.search" + File.separator + "classes");
     SetSequence.fromSet(classpathItems).addElement(languagesPath + File.separator + "baseLanguage" + File.separator + "baseLanguage" + File.separator + "solutions" + File.separator + "jetbrains.mps.baseLanguage.util" + File.separator + "classes");
+
+    SetSequence.fromSet(classpathItems).addElement(corePath + File.separator + "make-runtime" + File.separator + "solutions" + File.separator + "jetbrains.mps.make.facets" + File.separator + "classes");
 
     SetSequence.fromSet(classpathItems).addElement(getVCSCorePluginPath() + File.separator + "lib" + File.separator + "classes");
     return classpathItems;

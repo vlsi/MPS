@@ -585,20 +585,20 @@
           </node>
         </node>
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2856694665814355846">
-        <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1235136357252">
-          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2856694665814355830">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1235136357253">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1235136293836" resolveInfo="language" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2856694665814355835">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetDependenciesManager()%cjetbrains%dmps%dproject%ddependency%dmodules%dLanguageDependenciesManager" resolveInfo="getDependenciesManager" />
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2447771473068872722">
+        <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2447771473068878621">
+          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2447771473068882725">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kqrb.~LanguageDependenciesManager%dcollectAllExtendedLanguages(java%dutil%dSet)%cvoid" resolveInfo="collectAllExtendedLanguages" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2447771473068883070">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1235136357249" resolveInfo="extendedLanguages" />
             </node>
           </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1235136357254">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kqrb.~LanguageDependenciesManager%dcollectAllExtendedLanguages(java%dutil%dSet)%cvoid" resolveInfo="collectAllExtendedLanguages" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2856694665814355847">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1235136357249" resolveInfo="extendedLanguages" />
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2447771473068872718">
+            <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2447771473068877885">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kqrb.~LanguageDependenciesManager%d&lt;init&gt;(jetbrains%dmps%dsmodel%dLanguage)" resolveInfo="LanguageDependenciesManager" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2447771473068877944">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1235136293836" resolveInfo="language" />
+              </node>
             </node>
           </node>
         </node>

@@ -75,7 +75,7 @@ public class ModelsAutoImportsManager {
       ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(language.getModuleReference());
     }
     for (DevKit devKit : getAutoImportedDevKits(module, model)) {
-      if (!model.getModule().getUsedDevkitReferences().contains(devKit.getModuleReference())) {
+      if (!model.getModule().getModuleDescriptor().getUsedDevkits().contains(devKit.getModuleReference())) {
         model.getModule().addUsedDevkit(devKit.getModuleReference());
       }
       ((jetbrains.mps.smodel.SModelInternal) model).addDevKit(devKit.getModuleReference());

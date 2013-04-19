@@ -26,7 +26,6 @@ import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
-import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
@@ -37,6 +36,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
+import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -150,14 +150,62 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    // TODO API (implement)
-    return null;
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return new ArrayList<SDependency>();
+
+    // add declared dependencies
+    List<SDependency> dependencies = new ArrayList<SDependency>();
+    for (Dependency dependency : descriptor.getDependencies()) {
+      dependencies.add(new SDependencyAdapter(dependency));
+    }
+
+    // add dependencies provided by devkits as nonreexport dependencies
+    for (SModuleReference usedDevkit : getModuleDescriptor().getUsedDevkits()) {
+      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(usedDevkit, DevKit.class);
+      if (devKit != null) {
+        for (Solution solution : devKit.getAllExportedSolutions()) {
+          if (solution != null) {
+            dependencies.add(new SDependencyAdapter(new Dependency(solution.getModuleReference(), false)));
+          }
+        }
+      }
+    }
+
+    return dependencies;
   }
 
   @Override
-  public Iterable<SLanguage> getUsedLanguages() {
-    // TODO API (implement)
-    return null;
+  public Set<SLanguage> getUsedLanguages() {
+    // todo: collect languages for now? and convert to SLanguages in the end?
+    if (getModuleDescriptor() == null) {
+      return Collections.emptySet();
+    }
+
+    Set<SLanguage> languages = new HashSet<SLanguage>();
+    for (SModuleReference usedLanguage : getModuleDescriptor().getUsedLanguages()) {
+      Language language = ModuleRepositoryFacade.getInstance().getModule(usedLanguage, Language.class);
+      if (language != null) {
+        languages.add(new SLanguageLanguageAdapter(language));
+      }
+    }
+
+    for (SModuleReference usedDevkit : getModuleDescriptor().getUsedDevkits()) {
+      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(usedDevkit, DevKit.class);
+      if (devKit != null) {
+        for (Language language : devKit.getAllExportedLanguages()) {
+          if (language != null) {
+            languages.add(new SLanguageLanguageAdapter(language));
+          }
+        }
+      }
+    }
+
+    if (BootstrapLanguages.coreLanguage() != null) {
+      // todo: ???
+      languages.add(new SLanguageLanguageAdapter(BootstrapLanguages.coreLanguage()));
+    }
+
+    return languages; // todo: maybe collect extended languages here
   }
 
   @Override
@@ -303,22 +351,28 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   //----get deps
 
+  @Deprecated
   @Override
-  public DependenciesManager getDependenciesManager() {
-    return new ModuleDependenciesManager(this);
+  public final DependenciesManager getDependenciesManager() {
+    throw new UnsupportedOperationException();
   }
 
   @Override
-  public List<Dependency> getDependencies() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return new ArrayList<Dependency>();
-    return new ArrayList<Dependency>(descriptor.getDependencies());
+  public final List<Dependency> getDependencies() {
+    List<Dependency> dependencies = new ArrayList<Dependency>();
+    for (SDependency dependency : getDeclaredDependencies()) {
+      if (dependency instanceof SDependencyAdapter) {
+        dependencies.add(((SDependencyAdapter) dependency).getOriginalDependency());
+      }
+    }
+    return dependencies;
   }
 
   //----languages & devkits
 
+  @Deprecated
   @Override
-  public Collection<SModuleReference> getUsedLanguagesReferences() {
+  public final Collection<SModuleReference> getUsedLanguagesReferences() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return Collections.unmodifiableCollection(descriptor.getUsedLanguages());

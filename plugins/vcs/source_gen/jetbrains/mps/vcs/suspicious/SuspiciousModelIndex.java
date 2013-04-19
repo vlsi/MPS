@@ -4,8 +4,9 @@ package jetbrains.mps.vcs.suspicious;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.project.AbstractModule;
@@ -26,10 +27,11 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.LinkedList;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.util.Computable;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -37,13 +39,13 @@ import jetbrains.mps.vcs.MPSVcsManager;
 
 public class SuspiciousModelIndex implements ApplicationComponent {
   private final ProjectManager myProjectManager;
-  private final FSChangesWatcher myWatcher;
   private final VirtualFileManager myVirtualFileManager;
   private TaskQueue<Conflictable> myTaskQueue;
+  private ReloadManagerComponent myReloadManager;
 
-  public SuspiciousModelIndex(ProjectManager manager, FSChangesWatcher watcher, VirtualFileManager vfManager) {
+  public SuspiciousModelIndex(ProjectManager manager, FSChangesWatcher watcher, VirtualFileManager vfManager, ReloadManagerComponent reloadManager) {
     myProjectManager = manager;
-    myWatcher = watcher;
+    this.myReloadManager = reloadManager;
     myVirtualFileManager = vfManager;
   }
 
@@ -69,7 +71,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     if (MPSCore.getInstance().isTestMode()) {
       return;
     }
-    myTaskQueue = new SuspiciousModelIndex.MyTaskQueue(myProjectManager, myWatcher, myVirtualFileManager);
+    myTaskQueue = new SuspiciousModelIndex.MyTaskQueue(myProjectManager, myVirtualFileManager, myReloadManager);
     SuspiciousModelHandler.setHandler(new SuspiciousModelHandler() {
       @Override
       public void handleSuspiciousModel(SModel model, boolean inConflict) {
@@ -120,10 +122,8 @@ public class SuspiciousModelIndex implements ApplicationComponent {
       }
     });
 
-    FSChangesWatcher.instance().suspendTasksProcessing();
-
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
+    final Computable<Object> conflictableReload = new Computable<Object>() {
+      public Object compute() {
         for (final Project project : toMerge.keySet()) {
           List<VirtualFile> virtualFileList = new ArrayList<VirtualFile>();
           virtualFileList.addAll(AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project)));
@@ -134,18 +134,20 @@ public class SuspiciousModelIndex implements ApplicationComponent {
             }
           }
         }
-
-        try {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              for (Conflictable conflictable : toReload) {
-                conflictable.reloadFromDisk();
-              }
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            for (Conflictable conflictable : toReload) {
+              conflictable.reloadFromDisk();
             }
-          });
-        } finally {
-          FSChangesWatcher.instance().tryToResumeTasksProcessing();
-        }
+          }
+        });
+        return null;
+      }
+    };
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        myReloadManager.computeNoReload(conflictableReload);
+        return;
       }
     }, ModalityState.defaultModalityState());
   }
@@ -180,8 +182,8 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
 
   private class MyTaskQueue extends TaskQueue<Conflictable> {
-    public MyTaskQueue(ProjectManager manager, FSChangesWatcher watcher, VirtualFileManager virtualFileManager) {
-      super(manager, watcher, virtualFileManager);
+    public MyTaskQueue(ProjectManager manager, VirtualFileManager virtualFileManager, ReloadManagerComponent reloadManager) {
+      super(manager, virtualFileManager, reloadManager);
     }
 
     @Override

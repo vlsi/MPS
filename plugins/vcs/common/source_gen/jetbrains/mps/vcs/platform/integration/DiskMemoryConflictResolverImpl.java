@@ -11,7 +11,7 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import java.io.File;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.ui.Messages;
@@ -48,7 +48,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
         }
         assert SNodeOperations.isModelDisposed(model) == false;
 
-        boolean needSave = FSChangesWatcher.instance().executeUnderBlockedReload(new Computable<Boolean>() {
+        boolean needSave = ReloadManager.getInstance().computeNoReload(new Computable<Boolean>() {
           public Boolean compute() {
             if (file.exists()) {
               return showDiskMemoryQuestion(file, model, backupFile);

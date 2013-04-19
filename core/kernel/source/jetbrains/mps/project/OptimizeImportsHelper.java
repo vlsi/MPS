@@ -170,13 +170,13 @@ public class OptimizeImportsHelper {
     }
 
     List<SModuleReference> unusedLanguages = new ArrayList<SModuleReference>();
-    for (SModuleReference langRef : module.getUsedLanguagesReferences()) {
+    for (SModuleReference langRef : module.getModuleDescriptor().getUsedLanguages()) {
       SModuleReference ref = getUnusedLanguageRef(result, langRef);
       if (ref != null) unusedLanguages.add(langRef);
     }
 
     List<SModuleReference> unusedDevkits = new ArrayList<SModuleReference>();
-    for (SModuleReference devkitRef : module.getUsedDevkitReferences()) {
+    for (SModuleReference devkitRef : module.getModuleDescriptor().getUsedDevkits()) {
       SModuleReference ref = getUnusedDevkitRef(result, devkitRef);
       if (ref != null) unusedDevkits.add(devkitRef);
     }

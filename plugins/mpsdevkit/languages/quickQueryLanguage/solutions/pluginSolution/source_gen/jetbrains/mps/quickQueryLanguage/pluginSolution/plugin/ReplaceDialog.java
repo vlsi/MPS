@@ -23,6 +23,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import java.awt.Dimension;
 import javax.swing.JComponent;
@@ -83,7 +84,7 @@ public class ReplaceDialog extends BaseDialog {
     final Set<Language> languageList = SetSequence.fromSet(new HashSet<Language>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        language.getDependenciesManager().collectAllExtendedLanguages(languageList);
+        new LanguageDependenciesManager(language).collectAllExtendedLanguages(languageList);
       }
     });
 
