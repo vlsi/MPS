@@ -72,10 +72,6 @@ public class CommentLine_Editor extends DefaultNodeEditor {
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
 
-    private String getSeparatorText(EditorContext context, SNode node) {
-      return ":foo:";
-    }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
@@ -103,17 +99,6 @@ public class CommentLine_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-
-    @Override
-    public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), partListHandler_dzsxo_b0.this.getSeparatorText(editorContext, prevNode));
-      editorCell.setSelectable(false);
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      editorCell.getStyle().putAll(style);
-      return editorCell;
     }
 
     private EditorCell createConstant_dzsxo_a1a(EditorContext editorContext, SNode node) {
