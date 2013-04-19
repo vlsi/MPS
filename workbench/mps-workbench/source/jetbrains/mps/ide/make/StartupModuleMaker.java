@@ -24,6 +24,7 @@ import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
+import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.IMessage;
@@ -40,12 +41,12 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
-  private final FSChangesWatcher myWatcher;
+  private final ReloadManagerComponent myReloadManager;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, final FSChangesWatcher watcher) {
+  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, ReloadManagerComponent reloadManager) {
     super(project);
-    myWatcher = watcher;
+    myReloadManager = reloadManager;
   }
 
   @Override
@@ -77,7 +78,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
           final ModuleMaker maker = new ModuleMaker(new MessageHandler(), MessageKind.ERROR);
 
-          myWatcher.executeUnderBlockedReload(new Computable<Object>() {
+          myReloadManager.computeNoReload(new Computable<Object>() {
             @Override
             public Object compute() {
               maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9));

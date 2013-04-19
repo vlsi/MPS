@@ -630,6 +630,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="defaultEditor" />
       <property name="name" nameId="tpck.1169194664001" value="AddStatements" />
     </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5987562135989648290">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="defaultEditor" />
+      <property name="name" nameId="tpck.1169194664001" value="EditEnumProperty" />
+    </node>
   </roots>
   <root id="1230058635633">
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1230058635634">
@@ -10120,6 +10124,45 @@
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3215314425156963396">
         <property name="keys" nameId="tp5g.1227184461946" value="System.out.println" />
+      </node>
+    </node>
+  </root>
+  <root id="5987562135989648290">
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="5987562135989648323">
+      <property name="name" nameId="tpck.1169194664001" value="Julia" />
+      <property name="age" nameId="j0bb.938834323431434568" value="23" />
+      <property name="lastName" nameId="j0bb.938834323431434575" value="Beliaeva" />
+      <property name="politicWing" nameId="j0bb.5987562135989635839" value="LEFT" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5987562135989690264">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_politicWing" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="5987562135989657760">
+      <property name="name" nameId="tpck.1169194664001" value="Julia" />
+      <property name="age" nameId="j0bb.938834323431434568" value="23" />
+      <property name="lastName" nameId="j0bb.938834323431434575" value="Beliaeva" />
+      <property name="politicWing" nameId="j0bb.5987562135989635839" value="RIGHT" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5987562135990515549">
+        <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="5" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="5" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_politicWing" />
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5987562135989690173">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5987562135989690172">
+        <property name="keys" nameId="tp5g.1227184461946" value="right" />
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="5987562135989690179">
+        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="5987562135989690181">
+          <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
+          <property name="keycode" nameId="tp4k.1207318242774" value="VK_SPACE" />
+        </node>
       </node>
     </node>
   </root>

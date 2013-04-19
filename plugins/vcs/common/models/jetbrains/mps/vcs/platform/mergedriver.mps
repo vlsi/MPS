@@ -6958,6 +6958,9 @@
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8688150419538752754">
           <property name="value" nameId="tpee.1070475926801" value="mps-core.jar" />
         </node>
+        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3190963800354197338">
+          <property name="value" nameId="tpee.1070475926801" value="mps-openapi.jar" />
+        </node>
       </node>
       <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="8688150419538752728">
         <node role="elementType" roleId="tp2q.1151689745422" type="tpee.StringType" typeId="tpee.1225271177708" id="8688150419538752734" />

@@ -86,11 +86,11 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
         }
         if (myConcepts.containsKey(id)) return;
         // logging error if concept was not in concept model
-        LOG.error("Creating a concept descriptor for a concept not yet loaded " + id, new Throwable());
+        //LOG.error("Creating a concept descriptor for a concept not yet loaded " + id, new Throwable());
       }
     }
     // adding
-    LOG.error("Creating a concept descriptor for a concept from a language not yet loaded " + id, new Throwable());
+    //LOG.error("Creating a concept descriptor for a concept from a language not yet loaded " + id, new Throwable());
     myConcepts.putIfAbsent(id, new SConceptNodeAdapter(id));
   }
 

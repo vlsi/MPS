@@ -173,5 +173,4 @@ public class JpsSolutionIdea extends Solution {
 
     return sum;
   }
-
 }

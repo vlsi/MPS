@@ -342,7 +342,11 @@ public class ClassifierResolveUtils {
     // finally, let's go through all appropriate models and see if there is such a root 
 
     // adding contextNodeModel in the beginning of sequence 
-    models = Sequence.fromIterable(Sequence.<SModel>singleton(contextNodeModel)).concat(Sequence.fromIterable(models));
+    // (but really all models with the same name as contextNodeModel, because 
+    // we're talking about package names) 
+    String contextNodeModelName = jetbrains.mps.util.SNodeOperations.getModelLongName(contextNodeModel);
+    List<SModel> samePackageModels = SModelRepository.getInstance().getModelDescriptorsByModelName(contextNodeModelName);
+    models = ListSequence.fromList(samePackageModels).concat(Sequence.fromIterable(models));
 
     for (SModel model : Sequence.fromIterable(models)) {
       // FIXME will be unnecessary when transient models live in a separate repository 
@@ -380,7 +384,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<IModule> visibleModules = check_8z6r2b_a0a65a21(check_8z6r2b_a0a0ec0m(SNodeOperations.getModel(contextNode))).getVisibleModules();
+    Iterable<IModule> visibleModules = check_8z6r2b_a0a06a21(check_8z6r2b_a0a0ic0m(SNodeOperations.getModel(contextNode))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModel>() {
       public Iterable<SModel> translate(IModule it) {
         return it.getModels();
@@ -654,14 +658,14 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IScope check_8z6r2b_a0a65a21(IModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a06a21(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0ec0m(SModel checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0ic0m(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

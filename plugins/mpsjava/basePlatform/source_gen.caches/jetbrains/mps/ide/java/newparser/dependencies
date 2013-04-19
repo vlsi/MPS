@@ -19,6 +19,7 @@
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -44,6 +45,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.AllocationExpression" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Annotation" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.AnnotationMethodDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Argument" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ArrayQualifiedTypeReference" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ArrayTypeReference" />
