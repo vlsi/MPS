@@ -6,11 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import org.jetbrains.mps.util.Condition;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -20,6 +21,7 @@ import java.util.LinkedList;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -28,7 +30,6 @@ import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.FastNodeFinder;
@@ -102,7 +103,7 @@ public class SNodeOperations {
   /**
    * todo rewrite the code using this
    */
-  public static SConcept getConcept(String name) {
+  public static SAbstractConcept getConcept(String name) {
     return SConceptRepository.getInstance().getConcept(name);
   }
 
@@ -221,7 +222,11 @@ public class SNodeOperations {
   }
 
   public static Language getLanguage(SNode node) {
-    return ModuleRepositoryFacade.getInstance().getModule(node.getConcept().getLanguage().getPresentation(), Language.class);
+    final SLanguage language = node.getConcept().getLanguage();
+    if (language == null) {
+      return null;
+    }
+    return ModuleRepositoryFacade.getInstance().getModule(language.getPresentation(), Language.class);
   }
 
   public static void copyUserObjects(SNode from, final SNode to) {

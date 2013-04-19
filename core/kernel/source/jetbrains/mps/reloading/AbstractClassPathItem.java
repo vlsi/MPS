@@ -17,8 +17,8 @@ package jetbrains.mps.reloading;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.regex.Pattern;
 

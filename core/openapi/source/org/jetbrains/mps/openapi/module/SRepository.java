@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
+
 /**
  * A storage for modules
  * <p/>
@@ -46,13 +48,13 @@ public interface SRepository {
    */
   Iterable<SModule> getModules();
 
-  void addRepositoryListener(SRepositoryListener listener);
-
-  void removeRepositoryListener(SRepositoryListener listener);
-
   ModelAccess getModelAccess();
 
   RepositoryAccess getRepositoryAccess();
 
   void saveAll();
+
+  void addRepositoryListener(SRepositoryListener listener);
+
+  void removeRepositoryListener(SRepositoryListener listener);
 }

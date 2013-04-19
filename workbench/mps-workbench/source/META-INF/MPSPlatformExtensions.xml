@@ -90,8 +90,6 @@
 
   <applicationService serviceInterface="com.intellij.diagnostic.ErrorReportConfigurable"
                       serviceImplementation="com.intellij.diagnostic.ErrorReportConfigurable"/>
-  <applicationService serviceInterface="com.intellij.util.net.HttpConfigurable"
-                      serviceImplementation="com.intellij.util.net.HttpConfigurable"/>
   <applicationService serviceInterface="com.intellij.openapi.vfs.impl.http.RemoteFileManager"
                       serviceImplementation="com.intellij.openapi.vfs.impl.http.RemoteFileManagerImpl"/>
   <applicationService serviceInterface="com.intellij.openapi.vfs.newvfs.RefreshQueue"
@@ -321,4 +319,11 @@
   <patch.extension implementation="com.intellij.openapi.diff.impl.patch.CharsetEP"/>
 
   <iconLayerProvider implementation="com.intellij.ide.LockedIconLayerProvider"/>
+
+  <applicationService serviceInterface="org.jetbrains.ide.WebServerManager" serviceImplementation="org.jetbrains.ide.WebServerManagerImpl"/>
+  <applicationService serviceInterface="com.intellij.ide.XmlRpcServer" serviceImplementation="com.intellij.ide.XmlRpcServerImpl"/>
+  <httpRequestHandler implementation="com.intellij.ide.XmlRpcServerImpl$XmlRpcRequestHandler"/>
+  <postStartupActivity implementation="org.jetbrains.ide.WebServerManagerImpl$MyPostStartupActivity"/>
+
+  <frameEditorComponentProvider implementation="com.intellij.openapi.wm.ex.DefaultFrameEditorComponentProvider"/>
 </extensions>

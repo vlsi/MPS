@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -13,11 +13,11 @@ public class BuildMps_TestModuleAnnotation_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> virtual_getAttributed_3044950653914717013(SConcept thisConcept) {
+  public static List<SNode> virtual_getAttributed_3044950653914717013(SAbstractConcept thisConcept) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"));
   }
 
-  public static String virtual_getRole_1262430001741497900(SConcept thisConcept) {
+  public static String virtual_getRole_1262430001741497900(SAbstractConcept thisConcept) {
     return "testAnnotation";
   }
 }

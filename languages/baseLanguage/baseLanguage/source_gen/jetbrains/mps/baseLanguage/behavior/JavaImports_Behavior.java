@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -13,7 +13,7 @@ public class JavaImports_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> virtual_getAttributed_3044950653914717013(SConcept thisConcept) {
+  public static List<SNode> virtual_getAttributed_3044950653914717013(SAbstractConcept thisConcept) {
     // <node> 
 
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.core.structure.NodeAttribute", "virtual_getAttributed_3044950653914717013", new Object[]{});
@@ -22,7 +22,7 @@ public class JavaImports_Behavior {
 
   }
 
-  public static String virtual_getRole_1262430001741497900(SConcept thisConcept) {
+  public static String virtual_getRole_1262430001741497900(SAbstractConcept thisConcept) {
     return "javaImports";
   }
 }

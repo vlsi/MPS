@@ -45,6 +45,7 @@ import javax.swing.*;
 import javax.swing.event.HyperlinkListener;
 import javax.swing.event.HyperlinkEvent;
 import java.awt.BorderLayout;
+import java.awt.Color;
 
 public class InspectorTool extends BaseTool implements EditorInspector, ProjectComponent {
   public static final String ID = "Inspector";
@@ -158,8 +159,10 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     private MyMessagePanel() {
       setLayout(new BorderLayout());
 
-      setBackground(StyleRegistry.getInstance().getSimpleColor(LightColors.YELLOW));
+      setBackground(StyleRegistry.getInstance().isDarkTheme() ? Color.LIGHT_GRAY : LightColors.YELLOW);
       setBorder(BorderFactory.createEmptyBorder(0, 4, 0, 4));
+
+      myLabel.setForeground(StyleRegistry.getInstance().isDarkTheme() ? Color.DARK_GRAY: StyleRegistry.getInstance().getEditorForeground());
 
       add(myLabel, BorderLayout.CENTER);
       add(myOpenConceptLabel, BorderLayout.EAST);

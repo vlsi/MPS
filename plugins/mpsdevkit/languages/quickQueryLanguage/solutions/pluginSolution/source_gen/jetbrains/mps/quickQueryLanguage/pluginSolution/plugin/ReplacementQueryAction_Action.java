@@ -79,10 +79,7 @@ public class ReplacementQueryAction_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((IModule) MapSequence.fromMap(_params).get("langModule")));
-      if ((((SNode) MapSequence.fromMap(_params).get("node")) != null)) {
-        dialog.setConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
-      }
+      ReplaceDialog dialog = new ReplaceDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((IModule) MapSequence.fromMap(_params).get("langModule")));
       dialog.showDialog();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

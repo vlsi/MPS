@@ -23,11 +23,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
@@ -40,7 +41,6 @@ import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 
 import javax.swing.*;
@@ -161,7 +161,7 @@ public class ImportHelper {
           Language lang = ModuleRepositoryFacade.getInstance().getModule(getModuleReference(), Language.class);
 
           HashSet<Language> langs = new HashSet<Language>();
-          lang.getDependenciesManager().collectAllExtendedLanguages(langs);
+          new LanguageDependenciesManager(lang).collectAllExtendedLanguages(langs);
 
           langs.remove(lang);
           //this is added in language implicitly, so we don't show this import

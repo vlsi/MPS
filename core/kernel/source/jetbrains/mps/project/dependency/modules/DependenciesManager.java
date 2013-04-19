@@ -15,15 +15,17 @@
  */
 package jetbrains.mps.project.dependency.modules;
 
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
-import java.util.Set;
 
 /**
+ * @see org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()
+ * @see org.jetbrains.mps.openapi.module.SModule#getDeclaredDependencies()
  * This class says, which modules are immediately visible from its module
  */
+@Deprecated
 public interface DependenciesManager {
   /**
    * Returns languages, immediately used by this module
@@ -35,5 +37,5 @@ public interface DependenciesManager {
    * @param includeNonReexport - if set to ruue, include all dependencies, false - only reexport dependencies
    * @param runtimes - whether or not to include modules visible at runtime (i.e runtimes of used languages)
    */
-  Collection<IModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes);
+  Collection<SModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes);
 }

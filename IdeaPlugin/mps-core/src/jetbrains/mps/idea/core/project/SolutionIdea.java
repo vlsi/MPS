@@ -42,11 +42,13 @@ import jetbrains.mps.idea.core.library.ModuleLibraryType;
 import jetbrains.mps.idea.core.project.stubs.DifferentSdkException;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -64,7 +66,7 @@ import java.util.Map.Entry;
 public class SolutionIdea extends Solution {
   @NotNull
   private final Module myModule;
-  private List<Dependency> myDependencies;
+  private List<SDependency> myDependencies;
   private Set<ModelRoot> myContributedModelRoots;
   private MessageBusConnection myConnection;
   private final SolutionIdea.MyRootSetChangedListener myRootSetListener = new MyRootSetChangedListener();
@@ -165,9 +167,9 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public List<Dependency> getDependencies() {
+  public Iterable<SDependency> getDeclaredDependencies() {
     if (myDependencies == null) {
-      myDependencies = new ArrayList<Dependency>();
+      myDependencies = new ArrayList<SDependency>();
 
       ArrayList<Module> usedModules = new ArrayList<Module>(Arrays.asList(ModuleRootManager.getInstance(myModule).getDependencies()));
       for (Module usedModule : usedModules) {
@@ -176,7 +178,7 @@ public class SolutionIdea extends Solution {
           Dependency dep = new Dependency();
           dep.setModuleRef(usedModuleMPSFacet.getSolution().getModuleReference());
           dep.setReexport(false);
-          myDependencies.add(dep);
+          myDependencies.add(new SDependencyAdapter(dep));
         }
       }
 
@@ -194,18 +196,18 @@ public class SolutionIdea extends Solution {
     return myDependencies;
   }
 
-  private void addUsedSdk(final List<Dependency> dependencies) {
+  private void addUsedSdk(final List<SDependency> dependencies) {
     Solution sdkSolution = ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).getModuleSdkSolution(myModule);
     if (sdkSolution != null) {
-      dependencies.add(new Dependency(sdkSolution.getModuleReference(), false));
+      dependencies.add(new SDependencyAdapter(new Dependency(sdkSolution.getModuleReference(), false)));
     }
   }
 
-  private void addUsedLibraries(final List<Dependency> dependencies) {
+  private void addUsedLibraries(final List<SDependency> dependencies) {
     dependencies.addAll(calculateLibraryDependencies(ModuleRootManager.getInstance(myModule).orderEntries(), myModule.getProject(), true));
   }
 
-  public static List<Dependency> calculateLibraryDependencies(OrderEnumerator orderEnumerator, final Project project, final boolean includeStubs) {
+  public static List<SDependency> calculateLibraryDependencies(OrderEnumerator orderEnumerator, final Project project, final boolean includeStubs) {
     final Map<SModuleReference, Boolean> modules = new HashMap<SModuleReference, Boolean>();
     orderEnumerator.forEach(new Processor<OrderEntry>() {
       public boolean process(OrderEntry oe) {
@@ -239,9 +241,9 @@ public class SolutionIdea extends Solution {
         return true;
       }
     });
-    List<Dependency> result = new ArrayList<Dependency>();
+    List<SDependency> result = new ArrayList<SDependency>();
     for (Entry<SModuleReference, Boolean> entry : modules.entrySet()) {
-      result.add(new Dependency(entry.getKey(), entry.getValue()));
+      result.add(new SDependencyAdapter(new Dependency(entry.getKey(), entry.getValue())));
     }
     return result;
   }

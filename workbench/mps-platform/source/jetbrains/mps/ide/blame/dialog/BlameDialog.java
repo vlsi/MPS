@@ -74,6 +74,7 @@ public class BlameDialog extends DialogWrapper {
   public BlameDialog(Project project, Dialog dialog) {
     super(dialog, true);
     setTitle(CAPTION);
+    setModal(true);
     myProject = project;
     initDialog();
   }
@@ -81,6 +82,7 @@ public class BlameDialog extends DialogWrapper {
   public BlameDialog(Project project, Frame mainFrame) {
     super(mainFrame, true);
     setTitle(CAPTION);
+    setModal(true);
     myProject = project;
     initDialog();
   }

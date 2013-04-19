@@ -14,15 +14,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin", "jetbrains.mps.build.structure.BuildPlugin", false, new String[]{"jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildExternalDependency"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin", "jetbrains.mps.build.structure.BuildPlugin", false, new String[]{"jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildExternalDependency"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "module-tests", "adds ability to execute module tests to the project", "");
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content", false, new String[]{"jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"}, new String[]{}, new String[]{"module"});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content", false, new String[]{"jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"}, new String[]{}, new String[]{"module"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content", false, new String[]{"jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"}, new String[]{}, new String[]{"group"});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content", false, new String[]{"jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"}, new String[]{}, new String[]{"group"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules", "jetbrains.mps.build.structure.BuildAspect", false, new String[]{"jetbrains.mps.build.structure.BuildAspect", "jetbrains.mps.build.structure.BuildExternalDependency", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules", "jetbrains.mps.build.structure.BuildAspect", false, new String[]{"jetbrains.mps.build.structure.BuildAspect", "jetbrains.mps.build.structure.BuildExternalDependency", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{}, new String[]{"modules"}, new boolean[]{true}, false, false, "test modules", "", "");
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

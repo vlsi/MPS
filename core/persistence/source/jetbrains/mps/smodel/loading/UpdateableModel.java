@@ -15,9 +15,14 @@
  */
 package jetbrains.mps.smodel.loading;
 
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 
 /*
  * This class consists of 2 methods
@@ -77,7 +82,7 @@ public abstract class UpdateableModel {
         }
       });
       if (myModel != null) {
-        assert res.getModel() == myModel;
+        assert myModel instanceof InvalidSModel || res.getModel() == myModel;
       } else {
         myModel = res.getModel();
         myModel.setModelDescriptor(myDescriptor);

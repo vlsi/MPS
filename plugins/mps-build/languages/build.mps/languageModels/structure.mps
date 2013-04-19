@@ -5,7 +5,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" version="2" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
-  <import index="kdzh" modelUID="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" version="1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5253498789149381388">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
@@ -285,15 +284,15 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="convert *.mps into *.mpb (binary format)" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.1330375798058820290" resolveInfo="BuildLayout_CopyProcessor" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2389279258782627672">
-      <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleTestSource" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547823" resolveInfo="BuildMps_ModuleSource" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4560297596895912354">
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_TestModuleAnnotation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Testing" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2389279258782627672">
+      <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleTestSource" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547823" resolveInfo="BuildMps_ModuleSource" />
     </node>
   </roots>
   <root id="5253498789149381388">
@@ -634,6 +633,12 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3ior.7389400916848073790" resolveInfo="BuildSourcePath" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="772379520210716142">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="welcomeLogo" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3ior.7389400916848073790" resolveInfo="BuildSourcePath" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8108467228800445684">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="dialogImage" />
@@ -902,6 +907,7 @@
     </node>
   </root>
   <root id="1330375798066754656" />
+  <root id="4560297596895912354" />
   <root id="2389279258782627672">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2389279258782628330">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
@@ -913,6 +919,5 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3ior.2303926226081001727" resolveInfo="BuildInputSingleFolder" />
     </node>
   </root>
-  <root id="4560297596895912354" />
 </model>
 

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
 

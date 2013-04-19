@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.mps.util.Condition;
+
 import java.util.Iterator;
 
 public class ConditionalIterable<T> implements Iterable<T> {

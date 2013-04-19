@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -42,7 +42,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
-      SConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(node));
+      SAbstractConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(node));
       List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, scope, monitor));
       for (SNode resNode : resNodes) {
         ListSequence.fromList(_results).addElement(((SNode) resNode));

@@ -30,6 +30,7 @@ public interface ModelFactory {
   static final String OPTION_PACKAGE = "package";
   static final String OPTION_RELPATH = "relativePath";
   static final String OPTION_MODELNAME = "modelName";
+  static final String OPTION_CONTENT_ONLY = "contentOnly";
 
   /**
    * Instantiates a model on a given data source. Options can be used to pass additional parameters

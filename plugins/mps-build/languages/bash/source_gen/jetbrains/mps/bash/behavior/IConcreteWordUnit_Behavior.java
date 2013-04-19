@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class IConcreteWordUnit_Behavior {
   public static void init(SNode thisNode) {
@@ -21,7 +21,7 @@ public class IConcreteWordUnit_Behavior {
     return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getPattern_1262430001741497918", new Object[]{});
   }
 
-  public static String virtual_getPattern_1262430001741497918(SConcept thisConcept) {
+  public static String virtual_getPattern_1262430001741497918(SAbstractConcept thisConcept) {
     return null;
   }
 }

@@ -92,10 +92,10 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new GeneratorInternal_String_BehaviorDescriptor();
       case 0:
         return new BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor();
-      case 36:
-        return new BuildMps_ModuleTestSource_BehaviorDescriptor();
       case 38:
         return new BuildMps_TestModuleAnnotation_BehaviorDescriptor();
+      case 36:
+        return new BuildMps_ModuleTestSource_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

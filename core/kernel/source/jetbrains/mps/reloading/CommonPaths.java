@@ -187,7 +187,7 @@ public class CommonPaths {
     addIfExists(result, "/lib/log4j.jar");
     addIfExists(result, "/lib/trove4j.jar");
     addIfExists(result, "/lib/jdom.jar");
-    addIfExists(result, "/lib/ecj-4.2.jar");
+    addIfExists(result, "/lib/ecj-4.2.1.jar");
     addIfExists(result, "/lib/guava-12.0.jar");
     addIfExists(result, "/lib/xstream-1.4.3.jar");
     addIfExists(result, "/lib/diffutils-1.2.1.jar");

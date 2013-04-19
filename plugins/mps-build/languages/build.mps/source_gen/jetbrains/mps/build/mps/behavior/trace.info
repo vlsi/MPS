@@ -559,14 +559,14 @@
     <unitInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="24" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior" />
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/4560297596897443936">
-    <nodeInfo nodeId="4560297596897444709" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="16" startPosition="93" endLine="17" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4560297596898972302" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="20" startPosition="82" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4560297596897444709" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="16" startPosition="101" endLine="17" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4560297596898972302" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4560297596897443936" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4560297596897443936" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <nodeInfo nodeId="4560297596897443936" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4560297596897443936" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="4560297596897443936" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="4560297596897443938" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="4560297596897444157" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="16" startPosition="93" endLine="17" endPosition="169" />
-    <scopeInfo nodeId="4560297596898968854" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="20" startPosition="82" endLine="21" endPosition="28" />
+    <scopeInfo nodeId="4560297596897444157" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="16" startPosition="101" endLine="17" endPosition="169" />
+    <scopeInfo nodeId="4560297596898968854" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="28" />
     <scopeInfo nodeId="4560297596897443936" fileName="BuildMps_TestModuleAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="4560297596897443936" varName="thisNode" />
     </scopeInfo>

@@ -82,6 +82,7 @@
   <import index="c4ym" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.icons(MPS.Platform/jetbrains.mps.icons@java_stub)" version="-1" />
   <import index="51te" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.model(MPS.Core/jetbrains.mps.extapi.model@java_stub)" version="-1" />
   <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
+  <import index="r9fo" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(MPS.OpenAPI/org.jetbrains.mps.util@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -7575,7 +7576,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8722937377469657135">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~CollectionUtil" resolveInfo="CollectionUtil" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~CollectionUtil%dfilter(java%dutil%dList,jetbrains%dmps%dutil%dCondition)%cjava%dutil%dList" resolveInfo="filter" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~CollectionUtil%dfilter(java%dutil%dList,org%djetbrains%dmps%dutil%dCondition)%cjava%dutil%dList" resolveInfo="filter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8722937377469657136">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8722937377469657137">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="8722937377469657138">
@@ -7590,8 +7591,8 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8722937377469657141">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="8722937377469657142">
                   <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="8722937377469657143">
-                    <link role="classifier" roleId="tpee.1170346070688" targetNodeId="msyo.~Condition" resolveInfo="Condition" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+                    <link role="classifier" roleId="tpee.1170346070688" targetNodeId="r9fo.~Condition" resolveInfo="Condition" />
                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469657144" />
                     <node role="typeParameter" roleId="tpee.1201186121363" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469657145">
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
@@ -10669,7 +10670,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1622688651539229448" resolveInfo="instanceEx" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1622688651539229493">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6nxv.~ApplicationInfoEx%dgetAboutLogoUrl()%cjava%dlang%dString" resolveInfo="getAboutLogoUrl" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6nxv.~ApplicationInfoEx%dgetAboutImageUrl()%cjava%dlang%dString" resolveInfo="getAboutImageUrl" />
                               </node>
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1622688651539229494">
@@ -10726,7 +10727,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1622688651539229448" resolveInfo="instanceEx" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1622688651539229514">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6nxv.~ApplicationInfoEx%dgetLogoUrl()%cjava%dlang%dString" resolveInfo="getLogoUrl" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6nxv.~ApplicationInfoEx%dgetSplashImageUrl()%cjava%dlang%dString" resolveInfo="getSplashImageUrl" />
                               </node>
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1622688651539229515">
@@ -10772,6 +10773,25 @@
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1622688651539229530">
                               <property name="value" nameId="tpee.1070475926801" value="slogan.png" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="772379520216445619">
+                          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="772379520216445620">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1622688651539160705" resolveInfo="copyIcon" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="772379520216445621">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="772379520216445622">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1622688651539229448" resolveInfo="instanceEx" />
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="772379520216445623">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6nxv.~ApplicationInfoEx%dgetWelcomeScreenLogoUrl()%cjava%dlang%dString" resolveInfo="getWelcomeScreenLogoUrl" />
+                              </node>
+                            </node>
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="772379520216445624">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1622688651539229447" resolveInfo="iconsDir" />
+                            </node>
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="772379520216445625">
+                              <property name="value" nameId="tpee.1070475926801" value="logo.png" />
                             </node>
                           </node>
                         </node>
@@ -12312,6 +12332,20 @@
                       <property name="minor" nameId="kdzh.3497141547781541445" value="0" />
                       <property name="name" nameId="tpck.1169194664001" value="MPS" />
                       <property name="major" nameId="kdzh.3497141547781541444" value="1" />
+                      <node role="welcomeLogo" roleId="kdzh.772379520210716142" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="772379520215444067">
+                        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="772379520215444068">
+                          <property name="head" nameId="3ior.8618885170173601779" value="icons" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="772379520215444069">
+                            <property name="head" nameId="3ior.8618885170173601779" value="logo.png" />
+                          </node>
+                          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="772379520215444070">
+                            <property name="propertyName" nameId="tpck.1757699476691236117" value="head" />
+                            <node role="expression" roleId="tp3r.1196350785111" type="tpee.VariableReference" typeId="tpee.1068498886296" id="772379520215444179">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1622688651539133305" resolveInfo="ICONS" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node role="buildNumber" roleId="kdzh.6108265972537229337" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="3256085672520549878">
                         <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="3256085672520549879">
                           <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="ffeo.4301118715654465616" resolveInfo="build.number" />
@@ -14174,7 +14208,7 @@
                                     <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3730845620957014539">
                                       <property name="head" nameId="3ior.8618885170173601779" value="mac" />
                                       <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3730845620957014540">
-                                        <property name="head" nameId="3ior.8618885170173601779" value="relaunch" />
+                                        <property name="head" nameId="3ior.8618885170173601779" value="restarter" />
                                       </node>
                                     </node>
                                   </node>
@@ -14738,7 +14772,7 @@
                                   <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3730845620957031747">
                                     <property name="head" nameId="3ior.8618885170173601779" value="mac" />
                                     <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3730845620957031748">
-                                      <property name="head" nameId="3ior.8618885170173601779" value="relaunch" />
+                                      <property name="head" nameId="3ior.8618885170173601779" value="restarter" />
                                     </node>
                                   </node>
                                 </node>

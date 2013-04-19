@@ -29,5 +29,7 @@ public abstract class SConceptRepository {
     return INSTANCE;
   }
 
-  public abstract SConcept getConcept(String id);
+  public abstract SConcept getInstanceConcept(String id);
+
+  public abstract SAbstractConcept getConcept(String id);
 }

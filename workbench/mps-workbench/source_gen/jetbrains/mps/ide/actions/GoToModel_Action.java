@@ -19,7 +19,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.ConditionalIterable;
 import java.util.List;

@@ -23,7 +23,7 @@ import com.intellij.openapi.editor.actions.TextComponentEditorAction;
 import com.intellij.openapi.editor.ex.EditorEx;
 import com.intellij.openapi.fileTypes.FileTypes;
 import com.intellij.openapi.project.Project;
-import com.intellij.ui.EditorCustomization.Feature;
+import com.intellij.ui.EditorCustomization;
 import com.intellij.ui.EditorTextField;
 import com.intellij.ui.EditorTextFieldProvider;
 import org.jetbrains.annotations.NotNull;
@@ -73,8 +73,7 @@ public class EditorTextFieldProviderImpl implements EditorTextFieldProvider {
   @Override
   public EditorTextField getEditorField(@NotNull Language language,
                                         @NotNull Project project,
-                                        @NotNull Iterable<Feature> enabledFeatures,
-                                        @NotNull Iterable<Feature> disabledFeatures) {
+                                        @NotNull Iterable<EditorCustomization> features) {
     return primGetEditorField(project);
   }
 

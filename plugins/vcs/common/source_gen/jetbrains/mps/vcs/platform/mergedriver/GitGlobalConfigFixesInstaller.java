@@ -75,7 +75,6 @@ import org.apache.log4j.LogManager;
 
   private static void setGlobalProperty(Project project, String key, String value) throws VcsException {
     GitSimpleHandler h = new GitSimpleHandler(project, project.getBaseDir(), GitCommand.CONFIG);
-    h.setNoSSH(true);
     h.setSilent(true);
     h.ignoreErrorCode(1);
     h.addParameters("--global", key, value);

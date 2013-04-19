@@ -31,6 +31,9 @@
   <xi:include href="../classes/META-INF/VcsCommon.xml" xpointer="xpointer(/components/*)"/>
   <application-components>
     <component>
+      <implementation-class>jetbrains.mps.ide.platform.watching.ReloadManagerComponent</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.platform.watching.FSChangesWatcher</implementation-class>
     </component>
     <component>

@@ -17,7 +17,6 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.Generator;
@@ -38,14 +37,7 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * evgeny, 11/9/12
@@ -71,27 +63,25 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   public Iterable<SModel> loadModels() {
     List<SModel> result = new ArrayList<SModel>();
     Map<String, String> options = new HashMap<String, String>();
-    String moduleHome = null;
+    String contentHome = getContentRoot();
     SModule module = getModule();
     if (module != null) {
       options.put(ModelFactory.OPTION_MODULEREF, module.getModuleReference().toString());
-      IFile moduleSourceDir = ((AbstractModule) module).getModuleSourceDir();
-      moduleHome = moduleSourceDir != null ? moduleSourceDir.getPath().replace("\\", "/") : null;
     }
     for (String path : getFiles(SOURCE_ROOTS)) {
-      String relativePath = moduleHome != null ? makeRelative(moduleHome, path) : null;
+      String relativePath = contentHome != null ? makeRelative(contentHome, path) : null;
       collectModels(FileSystem.getInstance().getFileByPath(path), "", relativePath, options, result);
     }
     return result;
   }
 
-  protected static String makeRelative(String moduleHome, String fullPath) {
-    if ((fullPath == null || fullPath.length() == 0)) {
+  protected static String makeRelative(String contentHome, String fullPath) {
+    if ((fullPath == null || fullPath.length() == 0 || fullPath.equals(contentHome))) {
       return "";
     }
     String normalized = FileUtil.getAbsolutePath(fullPath).replace("\\", "/");
     try {
-      return FileUtil.getRelativePath(normalized, moduleHome, "/");
+      return FileUtil.getRelativePath(normalized, contentHome, "/");
     } catch (Exception ex) {
       return null;
     }
@@ -139,11 +129,11 @@ public class DefaultModelRoot extends FileBasedModelRoot {
 
       if (extension == null) continue;
       ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(extension);
-      if (modelFactory == null) continue;
+      if (modelFactory == null || file.isDirectory()) continue;
 
       FileDataSource source = new FileDataSource(file, this);
       options.put(ModelFactory.OPTION_PACKAGE, package_);
-      options.put(ModelFactory.OPTION_RELPATH, relativePath != null ? relativePath + "/" + fileName : null);
+      options.put(ModelFactory.OPTION_RELPATH, combinePath(relativePath, fileName));
       String fileNameWE = FileUtil.getNameWithoutExtension(fileName);
       options.put(ModelFactory.OPTION_MODELNAME, package_ != null ? (package_.isEmpty() ? fileNameWE : package_ + "." + fileNameWE) : null);
       SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
@@ -157,10 +147,17 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       if (childDir.isDirectory()) {
         String name = childDir.getName();
         String innerPackage = package_ != null && JavaNameUtil.isJavaIdentifier(name) ? (package_.isEmpty() ? name : package_ + "." + name) : null;
-        String innerPath = relativePath != null ? relativePath + "/" + name : null;
+        String innerPath = combinePath(relativePath, name);
         collectModels(childDir, innerPackage, innerPath, options, models);
       }
     }
+  }
+
+  protected final String combinePath(String left, String right) {
+    if (left == null) {
+      return null;
+    }
+    return left.length() == 0 ? right : left + "/" + right;
   }
 
   public FileDataSource createSource(String modelName, String extension, @Nullable String sourceRoot) {

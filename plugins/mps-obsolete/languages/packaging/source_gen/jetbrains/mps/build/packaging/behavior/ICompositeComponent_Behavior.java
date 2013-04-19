@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ICompositeComponent_Behavior {
@@ -39,7 +39,7 @@ public class ICompositeComponent_Behavior {
     );
   }
 
-  public static boolean virtual_cleanAfterTheJob_1262430001741498148(SConcept thisConcept) {
+  public static boolean virtual_cleanAfterTheJob_1262430001741498148(SAbstractConcept thisConcept) {
     return false;
   }
 

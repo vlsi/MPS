@@ -4,7 +4,7 @@ package jetbrains.mps.ide.java.platform.highlighters;
 
 import jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;

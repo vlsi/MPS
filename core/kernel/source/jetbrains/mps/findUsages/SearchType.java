@@ -17,6 +17,7 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.progress.ProgressMonitor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -30,8 +31,8 @@ public abstract class SearchType<T, R> {
   //--------const---------
 
   public static final SearchType<SReference, SNode> USAGES = new UsagesSearchType();
-  public static final SearchType<SNode, SConcept> INSTANCES = new InstancesSearchType(false);
-  public static final SearchType<SNode, SConcept> EXACT_INSTANCES = new InstancesSearchType(true);
+  public static final SearchType<SNode, SAbstractConcept> INSTANCES = new InstancesSearchType(false);
+  public static final SearchType<SNode, SAbstractConcept> EXACT_INSTANCES = new InstancesSearchType(true);
   public static final SearchType<SModel, SModelReference> MODEL_USAGES = new ModelUsagesSearchType();
 
 

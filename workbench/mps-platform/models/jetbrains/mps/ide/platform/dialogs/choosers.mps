@@ -2315,7 +2315,7 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="121110127371514326" resolveInfo="updateProcessor" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="121110127371514344">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qhcm.~PopupUpdateProcessor%dupdatePopup(java%dlang%dObject)%cvoid" resolveInfo="updatePopup" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qhcm.~PopupUpdateProcessorBase%dupdatePopup(java%dlang%dObject)%cvoid" resolveInfo="updatePopup" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="121110127371514345">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="121110127371514338" resolveInfo="node" />
                                       </node>

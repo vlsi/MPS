@@ -25,6 +25,8 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
@@ -49,8 +51,8 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
-import org.jetbrains.mps.openapi.module.SRepositoryListenerAdapter;
+import org.jetbrains.mps.openapi.module.events.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -75,7 +77,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private static ProjectStructureModule INSTANCE;
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {
   };
-  private final SRepositoryListener myListener = new SRepositoryListenerAdapter() {
+  private final SRepositoryListener myListener = new SRepositoryAdapter() {
     @Override
     public void moduleAdded(SModule module) {
       refreshModule(module, false);
@@ -218,8 +220,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   @Override
-  public Collection<SModuleReference> getUsedLanguagesReferences() {
-    return Collections.singleton(BootstrapLanguages.PROJECT);
+  public Set<SLanguage> getUsedLanguages() {
+    return Collections.<SLanguage>singleton(new SLanguageLanguageAdapter(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.PROJECT, Language.class)));
   }
 
   private void removeModel(SModel md) {

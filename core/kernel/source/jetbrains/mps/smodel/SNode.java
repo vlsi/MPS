@@ -24,12 +24,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractImmutableList;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
@@ -45,7 +44,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
@@ -551,7 +549,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       return new SConceptNodeAdapter(myConceptFqName);
     }
 
-    return SConceptRepository.getInstance().getConcept(myConceptFqName);
+    return SConceptRepository.getInstance().getInstanceConcept(myConceptFqName);
   }
 
   @Override

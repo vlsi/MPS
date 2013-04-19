@@ -23,11 +23,11 @@ import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.binary.BinaryModelHeader;
 import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -71,8 +71,6 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
     List<SModel> result = new ArrayList<SModel>();
     Map<String, String> options = new HashMap<String, String>();
     options.put(ModelFactory.OPTION_MODULEREF, module.getModuleReference().toString());
-    IFile moduleSourceDir = ((AbstractModule) module).getModuleSourceDir();
-    final String moduleHome = moduleSourceDir != null ? moduleSourceDir.getPath().replace("\\", "/") : null;
 
     for (CachedModelData mdata : models) {
       IFile file = FileSystem.getInstance().getFileByPath(mdata.getFile());
@@ -91,8 +89,7 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
         ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(extension);
         if (modelFactory == null) continue;
 
-        // TODO package & modelName
-        options.put(ModelFactory.OPTION_RELPATH, moduleHome != null ? makeRelative(moduleHome, file.getPath()) : null);
+        fillOptions(file, options);
         SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
         // TODO handle errors
         if (model != null) {
@@ -101,5 +98,48 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
       }
     }
     return result;
+  }
+
+  private void fillOptions(IFile file, Map<String, String> options) {
+    String relPath = null;
+    String filePath = file.getPath().replace("\\", "/");
+    for (String path : getFiles(SOURCE_ROOTS)) {
+      String normalized = FileUtil.getAbsolutePath(path).replace("\\", "/");
+      if (!normalized.endsWith("/")) {
+        normalized = normalized + "/";
+      }
+      if (filePath.startsWith(normalized)) {
+        relPath = filePath.substring(normalized.length());
+        break;
+      }
+    }
+
+    options.put(ModelFactory.OPTION_RELPATH, makeRelative(getContentRoot(), filePath));
+    options.remove(ModelFactory.OPTION_PACKAGE);
+    options.remove(ModelFactory.OPTION_MODELNAME);
+    if (relPath != null) {
+      StringBuilder p = new StringBuilder();
+      int slash = relPath.indexOf('/');
+      int start = 0;
+      while (slash >= 0) {
+        String part = relPath.substring(0, slash);
+        if (JavaNameUtil.isJavaIdentifier(part)) {
+          return;
+        }
+        start = slash + 1;
+        slash = relPath.indexOf('/', start);
+        if (p.length() != 0) {
+          p.append(".");
+        }
+        p.append(part);
+      }
+      options.put(ModelFactory.OPTION_PACKAGE, p.toString());
+      String fileNameWE = FileUtil.getNameWithoutExtension(relPath.substring(start));
+      if (p.length() != 0) {
+        p.append(".");
+      }
+      p.append(fileNameWE);
+      options.put(ModelFactory.OPTION_MODELNAME, p.toString());
+    }
   }
 }

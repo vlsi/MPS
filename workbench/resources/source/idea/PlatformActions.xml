@@ -161,8 +161,6 @@
         </group>
         <separator/>
         <action id="SaveAll" class="com.intellij.ide.actions.SaveAllAction" icon="AllIcons.Actions.Menu_saveall"/>
-        <action id="SaveAsNewFormat" class="com.intellij.ide.actions.SaveAsDirectoryBasedFormatAction" text="Save as Directory-Based Format...">
-        </action>
         <action id="Synchronize" class="com.intellij.ide.actions.SynchronizeAction" icon="AllIcons.Actions.Refresh"/>
         <action id="InvalidateCaches" class="com.intellij.ide.actions.InvalidateCachesAction"/>
 
@@ -291,7 +289,7 @@
         <!-- Mac OS Lion: In native apps toggle full screen mode is the last action in "View" menu -->
         <group id="ToggleFullScreenGroup">
           <separator/>
-          <action id="ToggleFullScreen" class="com.intellij.ide.actions.ToggleMacFullScreenAction"/>
+          <action id="ToggleFullScreen" class="com.intellij.ide.actions.ToggleFullScreenAction"/>
         </group>
       </group>
 
@@ -434,7 +432,9 @@
       <reference ref="Back"/>
       <reference ref="Forward"/>
       <separator/>
-      <reference ref="ShowSettings"/>
+      <group id="MainToolBarSettings">
+        <reference ref="ShowSettings"/>
+      </group>
       <!-- MPS Patch Start
       <separator/>
       <reference ref="HelpTopics"/>
@@ -512,7 +512,7 @@
     </group>
 
     <group id="FileChooser">
-      <action id="FileChooser.TogglePathShowing" class="com.intellij.openapi.fileChooser.actions.TooglePathShowingAction"/>
+      <action id="FileChooser.TogglePathShowing" class="com.intellij.openapi.fileChooser.actions.TogglePathShowingAction"/>
     </group>
 
     <action id="Diff.FocusOppositePane" class="com.intellij.openapi.diff.actions.FocusOppositePaneAction"
