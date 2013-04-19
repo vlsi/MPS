@@ -424,6 +424,7 @@
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5349172909345532811">
           <property name="text" nameId="tpc2.1073389577007" value=" */" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1223649189121" resolveInfo="JavaDoc" />
+          <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4831334526938791433" resolveInfo="RemoveDocComment" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5349172909345532815">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -435,6 +436,7 @@
         <node role="foldedCellModel" roleId="tpc2.7723470090030138869" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5098267094566476997">
           <property name="text" nameId="tpc2.1073389577007" value="/**...*/" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.5179638159363031272" resolveInfo="FoldedCell" />
+          <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4831334526938791433" resolveInfo="RemoveDocComment" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5098267094566476999">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
@@ -803,6 +805,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6832197706140896344">
         <property name="text" nameId="tpc2.1073389577007" value=" */" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4831334526938791433" resolveInfo="RemoveDocComment" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="6832197706140896345">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -1018,6 +1021,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2068944020170241711">
         <property name="text" nameId="tpc2.1073389577007" value=" */" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4831334526938791433" resolveInfo="RemoveDocComment" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="2068944020170241712">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -4286,7 +4290,7 @@
   <root id="4831334526949972752">
     <node role="item" roleId="tpc2.1136930944870" type="tpc2.CellKeyMapItem" typeId="tpc2.1136916919141" id="4831334526949972753">
       <node role="keystroke" roleId="tpc2.1136916998332" type="tpc2.CellKeyMapKeystroke" typeId="tpc2.1136916976737" id="4831334526949972754">
-        <property name="keycode" nameId="tpc2.1136923970224" value="letter or digit" />
+        <property name="keycode" nameId="tpc2.1136923970224" value="non-space char" />
       </node>
       <node role="keystroke" roleId="tpc2.1136916998332" type="tpc2.CellKeyMapKeystroke" typeId="tpc2.1136916976737" id="4831334526956366975">
         <property name="keycode" nameId="tpc2.1136923970224" value="VK_SPACE" />

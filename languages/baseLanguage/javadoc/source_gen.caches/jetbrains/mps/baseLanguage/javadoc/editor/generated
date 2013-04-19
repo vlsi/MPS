@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cdkmv38x4yu68ycarihbjp5dtmgdt6t">
+<dependencies version="2" modelHash="-27ak53uvlam7bpvr4h5pwwqicsids52">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
@@ -76,7 +76,7 @@
     <dep root="8970989240999019150" />
     <dep root="8970989240999060766" />
   </common>
-  <source id="5349172909345532803" name="MethodDocComment_Editor" hash="-4xxm6xewhgukzjx5283vcjhevn3pvzv">
+  <source id="5349172909345532803" name="MethodDocComment_Editor" hash="-7xuz4p67k4ctrrlai2xwmbrsx1prqao">
     <dep root="4831334526938791433" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
@@ -224,7 +224,7 @@
     <dep model="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" />
     <file name="BaseParameterReference_Editor.java" />
   </source>
-  <source id="6832197706140896245" name="FieldDocComment_Editor" hash="1c0lnuq7bdlm4zn2byq4s0901hdlgu6">
+  <source id="6832197706140896245" name="FieldDocComment_Editor" hash="8xq1zbkr6x6wauhl54cfeyp8qnb5yy">
     <dep root="4831334526938791433" />
     <dep root="7344646339284548672" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
@@ -248,7 +248,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FieldDocComment_Editor.java" />
   </source>
-  <source id="2068944020170241615" name="ClassifierDocComment_Editor" hash="2faf6voelsz4fdjzj5a2xmcvnbi3nj8">
+  <source id="2068944020170241615" name="ClassifierDocComment_Editor" hash="-8b8zizmssr5y0evxpwrnqqnvb2ehdzt">
     <dep root="4831334526938791433" />
     <dep root="7344646339284548672" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
@@ -569,7 +569,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="RemoveDocComment.java" />
   </source>
-  <source id="4831334526949972752" name="EmptyCommentLine" hash="178f32gkyo5x5ifycssxl5u65xqwzxt">
+  <source id="4831334526949972752" name="EmptyCommentLine" hash="doplz4tlzgvc9qqgk1u7oi0844qzx8a">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />

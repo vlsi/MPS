@@ -22,7 +22,7 @@ public class EmptyCommentLine extends KeyMapImpl {
     this.setApplicableToEveryModel(false);
     KeyMapAction action;
     action = new EmptyCommentLine.EmptyCommentLine_Action0();
-    this.putAction("any", "letter or digit", action);
+    this.putAction("any", "non-space char", action);
     this.putAction("any", "VK_SPACE", action);
   }
 
@@ -65,7 +65,7 @@ public class EmptyCommentLine extends KeyMapImpl {
     }
 
     public String getKeyStroke() {
-      return " letter or digit";
+      return " non-space char";
     }
   }
 }
