@@ -97,7 +97,12 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
 
   @Override
   public SLanguage getLanguage() {
-    return new SLanguageLanguageAdapter(((Language) jetbrains.mps.util.SNodeOperations.getModelFromNodeReference(getConcept()).getModule()));
+    final SNodePointer pointer = getConcept();
+    // If pointer is bad - just return null 
+    if (pointer.resolve(MPSModuleRepository.getInstance()) == null) {
+      return null;
+    }
+    return new SLanguageLanguageAdapter(((Language) jetbrains.mps.util.SNodeOperations.getModelFromNodeReference(pointer).getModule()));
   }
 
   public SNodePointer getConcept() {
