@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-37uj6b91l3aqmsbpwhhc2p132q0jm5e">
+<dependencies version="2" modelHash="5mm6zdlgz7k6se0hju3pcz19korhc5x">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-3838celc5jfzqce9x814phvz416cghc" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
@@ -46,7 +46,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="5349172909345501395" name="BaseDocComment" hash="9waax27r295cmrfknuwx6vk1elhgyjw">
+  <source id="5349172909345501395" name="BaseDocComment" hash="-4t6ybqt7d5srslpvymbtwe461nyu8mw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5349172909345530173" name="BaseBlockDocTag" hash="1nywwkgc3xkm911dp53jevsuyudz065">

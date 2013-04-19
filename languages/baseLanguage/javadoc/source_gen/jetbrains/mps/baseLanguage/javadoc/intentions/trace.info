@@ -21,24 +21,25 @@
     <nodeInfo nodeId="3106559687487194750" fileName="AddClassifierDocComment_Intention.java" startLine="99" startPosition="9" endLine="100" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3106559687487194713" fileName="AddClassifierDocComment_Intention.java" startLine="101" startPosition="7" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2068944020170373001" fileName="AddClassifierDocComment_Intention.java" startLine="102" startPosition="0" endLine="103" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526958325970" fileName="AddClassifierDocComment_Intention.java" startLine="103" startPosition="272" endLine="104" endPosition="382" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2068944020170434470" fileName="AddClassifierDocComment_Intention.java" startLine="104" startPosition="382" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7376433222636453099" fileName="AddClassifierDocComment_Intention.java" startLine="105" startPosition="0" endLine="106" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2068944020170434443" fileName="AddClassifierDocComment_Intention.java" startLine="107" startPosition="134" endLine="108" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2068944020170434449" fileName="AddClassifierDocComment_Intention.java" startLine="108" startPosition="137" endLine="109" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2068944020170434458" fileName="AddClassifierDocComment_Intention.java" startLine="109" startPosition="126" endLine="110" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8520807190704125150" fileName="AddClassifierDocComment_Intention.java" startLine="111" startPosition="7" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8520807190704126927" fileName="AddClassifierDocComment_Intention.java" startLine="112" startPosition="0" endLine="113" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="116" startPosition="48" endLine="117" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="121" startPosition="81" endLine="122" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="122" startPosition="63" endLine="123" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="123" startPosition="30" endLine="124" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="124" startPosition="184" endLine="125" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="125" startPosition="83" endLine="126" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8512638887612853634" fileName="AddClassifierDocComment_Intention.java" startLine="103" startPosition="272" endLine="104" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8512638887612731871" fileName="AddClassifierDocComment_Intention.java" startLine="104" startPosition="314" endLine="105" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2068944020170434470" fileName="AddClassifierDocComment_Intention.java" startLine="105" startPosition="123" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7376433222636453099" fileName="AddClassifierDocComment_Intention.java" startLine="106" startPosition="0" endLine="107" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2068944020170434443" fileName="AddClassifierDocComment_Intention.java" startLine="108" startPosition="134" endLine="109" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2068944020170434449" fileName="AddClassifierDocComment_Intention.java" startLine="109" startPosition="137" endLine="110" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2068944020170434458" fileName="AddClassifierDocComment_Intention.java" startLine="110" startPosition="126" endLine="111" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8520807190704125150" fileName="AddClassifierDocComment_Intention.java" startLine="112" startPosition="7" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8520807190704126927" fileName="AddClassifierDocComment_Intention.java" startLine="113" startPosition="0" endLine="114" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="117" startPosition="48" endLine="118" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="122" startPosition="81" endLine="123" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="123" startPosition="63" endLine="124" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="124" startPosition="30" endLine="125" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="125" startPosition="184" endLine="126" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="126" startPosition="83" endLine="127" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddClassifierDocComment_Intention#()V" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="84" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="123" startPosition="30" endLine="125" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="123" startPosition="30" endLine="125" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="124" startPosition="30" endLine="126" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="124" startPosition="30" endLine="126" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -51,15 +52,15 @@
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="76" startPosition="99" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8520807190707066240" fileName="AddClassifierDocComment_Intention.java" startLine="96" startPosition="205" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="117" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
     <nodeInfo nodeId="3106559687487194684" fileName="AddClassifierDocComment_Intention.java" startLine="87" startPosition="87" endLine="91" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2068944020170434437" fileName="AddClassifierDocComment_Intention.java" startLine="106" startPosition="25" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2068944020170434437" fileName="AddClassifierDocComment_Intention.java" startLine="107" startPosition="25" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="76" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="87" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="3106559687487194714" fileName="AddClassifierDocComment_Intention.java" startLine="94" startPosition="78" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="121" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_peeqac_a0b0g0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="94" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="122" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_peeqac_a0b0h0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="94" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="30" startPosition="46" endLine="30" endPosition="46" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="84" startPosition="38" endLine="84" endPosition="38" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="33" startPosition="30" endLine="34" endPosition="61" />
@@ -74,10 +75,10 @@
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="72" startPosition="35" endLine="73" endPosition="17" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="77" startPosition="37" endLine="78" endPosition="139" />
     <scopeInfo nodeId="8520807190707066242" fileName="AddClassifierDocComment_Intention.java" startLine="97" startPosition="54" endLine="98" endPosition="51" />
-    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="116" startPosition="48" endLine="117" endPosition="52" />
+    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="117" startPosition="48" endLine="118" endPosition="52" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="84" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="123" startPosition="30" endLine="125" endPosition="83" />
+    <scopeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="124" startPosition="30" endLine="126" endPosition="83" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
@@ -91,18 +92,18 @@
     </scopeInfo>
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="2068944020170434442" fileName="AddClassifierDocComment_Intention.java" startLine="107" startPosition="134" endLine="110" endPosition="286">
+    <scopeInfo nodeId="2068944020170434442" fileName="AddClassifierDocComment_Intention.java" startLine="108" startPosition="134" endLine="111" endPosition="286">
       <varInfo nodeId="2068944020170434444" varName="paramTag" />
     </scopeInfo>
-    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="116" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="117" startPosition="0" endLine="120" endPosition="0" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="57" startPosition="84" endLine="61" endPosition="16" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="76" startPosition="99" endLine="80" endPosition="30" />
     <scopeInfo nodeId="2068944020170372972" fileName="AddClassifierDocComment_Intention.java" startLine="87" startPosition="87" endLine="91" endPosition="8" />
     <scopeInfo nodeId="3106559687487194715" fileName="AddClassifierDocComment_Intention.java" startLine="95" startPosition="213" endLine="100" endPosition="15" />
-    <scopeInfo nodeId="2068944020170434437" fileName="AddClassifierDocComment_Intention.java" startLine="106" startPosition="25" endLine="111" endPosition="7">
+    <scopeInfo nodeId="2068944020170434437" fileName="AddClassifierDocComment_Intention.java" startLine="107" startPosition="25" endLine="112" endPosition="7">
       <varInfo nodeId="2068944020170434438" varName="typeVariableDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="121" startPosition="81" endLine="126" endPosition="24">
+    <scopeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="122" startPosition="81" endLine="127" endPosition="24">
       <varInfo nodeId="2068944020170493367" varName="facade" />
       <varInfo nodeId="2068944020170493367" varName="quotedNode_2" />
     </scopeInfo>
@@ -118,16 +119,18 @@
       <varInfo nodeId="2068944020170372970" varName="editorContext" />
       <varInfo nodeId="2068944020170372970" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="121" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="122" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="2068944020170493367" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="2068944020170372974" fileName="AddClassifierDocComment_Intention.java" startLine="94" startPosition="78" endLine="113" endPosition="292" />
-    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="94" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="2068944020170372974" fileName="AddClassifierDocComment_Intention.java" startLine="94" startPosition="78" endLine="114" endPosition="292">
+      <varInfo nodeId="8512638887612853635" varName="line" />
+    </scopeInfo>
+    <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="94" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="2068944020170372970" varName="editorContext" />
       <varInfo nodeId="2068944020170372970" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="83" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention$IntentionImplementation" />
-    <unitInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="27" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention" />
+    <unitInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="83" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention$IntentionImplementation" />
+    <unitInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="27" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention" />
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/2217234381367409810">
     <nodeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -230,44 +233,45 @@
     <nodeInfo nodeId="3106559687487133244" fileName="AddMethodDocComment_Intention.java" startLine="93" startPosition="0" endLine="94" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3106559687487133245" fileName="AddMethodDocComment_Intention.java" startLine="95" startPosition="7" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5349172909345532836" fileName="AddMethodDocComment_Intention.java" startLine="96" startPosition="0" endLine="97" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526958045695" fileName="AddMethodDocComment_Intention.java" startLine="97" startPosition="302" endLine="98" endPosition="378" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526958277888" fileName="AddMethodDocComment_Intention.java" startLine="98" startPosition="378" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7376433222636454039" fileName="AddMethodDocComment_Intention.java" startLine="99" startPosition="0" endLine="100" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8465538089690919897" fileName="AddMethodDocComment_Intention.java" startLine="101" startPosition="117" endLine="102" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6832197706140863127" fileName="AddMethodDocComment_Intention.java" startLine="102" startPosition="137" endLine="103" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8465538089690954501" fileName="AddMethodDocComment_Intention.java" startLine="103" startPosition="123" endLine="104" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4195442653257222497" fileName="AddMethodDocComment_Intention.java" startLine="105" startPosition="7" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7376433222636453751" fileName="AddMethodDocComment_Intention.java" startLine="106" startPosition="0" endLine="107" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2068944020170313336" fileName="AddMethodDocComment_Intention.java" startLine="108" startPosition="134" endLine="109" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2068944020170313343" fileName="AddMethodDocComment_Intention.java" startLine="109" startPosition="137" endLine="110" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2068944020170313363" fileName="AddMethodDocComment_Intention.java" startLine="110" startPosition="126" endLine="111" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4195442653257222466" fileName="AddMethodDocComment_Intention.java" startLine="112" startPosition="7" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7376433222636453725" fileName="AddMethodDocComment_Intention.java" startLine="113" startPosition="0" endLine="114" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5858074156537578730" fileName="AddMethodDocComment_Intention.java" startLine="115" startPosition="108" endLine="116" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5858074156537578738" fileName="AddMethodDocComment_Intention.java" startLine="116" startPosition="135" endLine="117" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5858074156537614439" fileName="AddMethodDocComment_Intention.java" startLine="117" startPosition="106" endLine="118" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4195442653257222500" fileName="AddMethodDocComment_Intention.java" startLine="119" startPosition="7" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7376433222636453057" fileName="AddMethodDocComment_Intention.java" startLine="120" startPosition="0" endLine="121" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5858074156537614528" fileName="AddMethodDocComment_Intention.java" startLine="122" startPosition="146" endLine="123" endPosition="348" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8520807190703050988" fileName="AddMethodDocComment_Intention.java" startLine="124" startPosition="7" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8520807190702645630" fileName="AddMethodDocComment_Intention.java" startLine="125" startPosition="0" endLine="126" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="129" startPosition="48" endLine="130" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="134" startPosition="81" endLine="135" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="135" startPosition="63" endLine="136" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="136" startPosition="30" endLine="137" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="137" startPosition="186" endLine="138" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="138" startPosition="83" endLine="139" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="142" startPosition="81" endLine="143" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="143" startPosition="63" endLine="144" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="144" startPosition="30" endLine="145" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="145" startPosition="184" endLine="146" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="146" startPosition="83" endLine="147" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8512638887612423873" fileName="AddMethodDocComment_Intention.java" startLine="97" startPosition="302" endLine="98" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4831334526958045695" fileName="AddMethodDocComment_Intention.java" startLine="98" startPosition="310" endLine="99" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526958277888" fileName="AddMethodDocComment_Intention.java" startLine="99" startPosition="123" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7376433222636454039" fileName="AddMethodDocComment_Intention.java" startLine="100" startPosition="0" endLine="101" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8465538089690919897" fileName="AddMethodDocComment_Intention.java" startLine="102" startPosition="117" endLine="103" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6832197706140863127" fileName="AddMethodDocComment_Intention.java" startLine="103" startPosition="137" endLine="104" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8465538089690954501" fileName="AddMethodDocComment_Intention.java" startLine="104" startPosition="123" endLine="105" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4195442653257222497" fileName="AddMethodDocComment_Intention.java" startLine="106" startPosition="7" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7376433222636453751" fileName="AddMethodDocComment_Intention.java" startLine="107" startPosition="0" endLine="108" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2068944020170313336" fileName="AddMethodDocComment_Intention.java" startLine="109" startPosition="134" endLine="110" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2068944020170313343" fileName="AddMethodDocComment_Intention.java" startLine="110" startPosition="137" endLine="111" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2068944020170313363" fileName="AddMethodDocComment_Intention.java" startLine="111" startPosition="126" endLine="112" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4195442653257222466" fileName="AddMethodDocComment_Intention.java" startLine="113" startPosition="7" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7376433222636453725" fileName="AddMethodDocComment_Intention.java" startLine="114" startPosition="0" endLine="115" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5858074156537578730" fileName="AddMethodDocComment_Intention.java" startLine="116" startPosition="108" endLine="117" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5858074156537578738" fileName="AddMethodDocComment_Intention.java" startLine="117" startPosition="135" endLine="118" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5858074156537614439" fileName="AddMethodDocComment_Intention.java" startLine="118" startPosition="106" endLine="119" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4195442653257222500" fileName="AddMethodDocComment_Intention.java" startLine="120" startPosition="7" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7376433222636453057" fileName="AddMethodDocComment_Intention.java" startLine="121" startPosition="0" endLine="122" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5858074156537614528" fileName="AddMethodDocComment_Intention.java" startLine="123" startPosition="146" endLine="124" endPosition="348" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8520807190703050988" fileName="AddMethodDocComment_Intention.java" startLine="125" startPosition="7" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8520807190702645630" fileName="AddMethodDocComment_Intention.java" startLine="126" startPosition="0" endLine="127" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="130" startPosition="48" endLine="131" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="135" startPosition="81" endLine="136" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="136" startPosition="63" endLine="137" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="137" startPosition="30" endLine="138" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="138" startPosition="186" endLine="139" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="139" startPosition="83" endLine="140" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="143" startPosition="81" endLine="144" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="144" startPosition="63" endLine="145" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="145" startPosition="30" endLine="146" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="146" startPosition="184" endLine="147" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="147" startPosition="83" endLine="148" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMethodDocComment_Intention#()V" />
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="136" startPosition="30" endLine="138" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="136" startPosition="30" endLine="138" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="144" startPosition="30" endLine="146" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="144" startPosition="30" endLine="146" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="137" startPosition="30" endLine="139" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="137" startPosition="30" endLine="139" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="145" startPosition="30" endLine="147" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="145" startPosition="30" endLine="147" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -279,18 +283,18 @@
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="69" startPosition="99" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8520807190707256655" fileName="AddMethodDocComment_Intention.java" startLine="89" startPosition="201" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5858074156537614466" fileName="AddMethodDocComment_Intention.java" startLine="121" startPosition="23" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="129" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="5858074156537614466" fileName="AddMethodDocComment_Intention.java" startLine="122" startPosition="23" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
     <nodeInfo nodeId="3106559687487130979" fileName="AddMethodDocComment_Intention.java" startLine="80" startPosition="87" endLine="84" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8465538089690919857" fileName="AddMethodDocComment_Intention.java" startLine="100" startPosition="28" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2068944020170311118" fileName="AddMethodDocComment_Intention.java" startLine="107" startPosition="25" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5858074156537576506" fileName="AddMethodDocComment_Intention.java" startLine="114" startPosition="28" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8465538089690919857" fileName="AddMethodDocComment_Intention.java" startLine="101" startPosition="28" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2068944020170311118" fileName="AddMethodDocComment_Intention.java" startLine="108" startPosition="25" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5858074156537576506" fileName="AddMethodDocComment_Intention.java" startLine="115" startPosition="28" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="134" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_i2k1f8_a0b0g0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="142" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_i2k1f8_a0b0j0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="135" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_i2k1f8_a0b0h0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="143" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_i2k1f8_a0b0k0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3106559687487133208" fileName="AddMethodDocComment_Intention.java" startLine="87" startPosition="78" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="87" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="87" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="30" startPosition="42" endLine="30" endPosition="42" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="77" startPosition="38" endLine="77" endPosition="38" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="33" startPosition="30" endLine="34" endPosition="72" />
@@ -304,12 +308,12 @@
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="65" startPosition="35" endLine="66" endPosition="17" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="135" />
     <scopeInfo nodeId="8520807190707256656" fileName="AddMethodDocComment_Intention.java" startLine="90" startPosition="54" endLine="91" endPosition="51" />
-    <scopeInfo nodeId="5858074156537614467" fileName="AddMethodDocComment_Intention.java" startLine="122" startPosition="146" endLine="123" endPosition="348" />
-    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="129" startPosition="48" endLine="130" endPosition="48" />
+    <scopeInfo nodeId="5858074156537614467" fileName="AddMethodDocComment_Intention.java" startLine="123" startPosition="146" endLine="124" endPosition="348" />
+    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="130" startPosition="48" endLine="131" endPosition="48" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="77" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="136" startPosition="30" endLine="138" endPosition="83" />
-    <scopeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="144" startPosition="30" endLine="146" endPosition="83" />
+    <scopeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="137" startPosition="30" endLine="139" endPosition="83" />
+    <scopeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="145" startPosition="30" endLine="147" endPosition="83" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
@@ -322,32 +326,32 @@
     </scopeInfo>
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="8465538089690919860" fileName="AddMethodDocComment_Intention.java" startLine="101" startPosition="117" endLine="104" endPosition="282">
+    <scopeInfo nodeId="8465538089690919860" fileName="AddMethodDocComment_Intention.java" startLine="102" startPosition="117" endLine="105" endPosition="282">
       <varInfo nodeId="8465538089690919898" varName="paramTag" />
     </scopeInfo>
-    <scopeInfo nodeId="2068944020170311121" fileName="AddMethodDocComment_Intention.java" startLine="108" startPosition="134" endLine="111" endPosition="282">
+    <scopeInfo nodeId="2068944020170311121" fileName="AddMethodDocComment_Intention.java" startLine="109" startPosition="134" endLine="112" endPosition="282">
       <varInfo nodeId="2068944020170313337" varName="paramTag" />
     </scopeInfo>
-    <scopeInfo nodeId="5858074156537576509" fileName="AddMethodDocComment_Intention.java" startLine="115" startPosition="108" endLine="118" endPosition="287">
+    <scopeInfo nodeId="5858074156537576509" fileName="AddMethodDocComment_Intention.java" startLine="116" startPosition="108" endLine="119" endPosition="287">
       <varInfo nodeId="5858074156537578731" varName="throwsTag" />
     </scopeInfo>
-    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="129" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="130" startPosition="0" endLine="133" endPosition="0" />
     <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="69" startPosition="99" endLine="73" endPosition="30" />
     <scopeInfo nodeId="3196018662491292783" fileName="AddMethodDocComment_Intention.java" startLine="80" startPosition="87" endLine="84" endPosition="8" />
-    <scopeInfo nodeId="8465538089690919857" fileName="AddMethodDocComment_Intention.java" startLine="100" startPosition="28" endLine="105" endPosition="7">
+    <scopeInfo nodeId="8465538089690919857" fileName="AddMethodDocComment_Intention.java" startLine="101" startPosition="28" endLine="106" endPosition="7">
       <varInfo nodeId="8465538089690919858" varName="parameterDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="2068944020170311118" fileName="AddMethodDocComment_Intention.java" startLine="107" startPosition="25" endLine="112" endPosition="7">
+    <scopeInfo nodeId="2068944020170311118" fileName="AddMethodDocComment_Intention.java" startLine="108" startPosition="25" endLine="113" endPosition="7">
       <varInfo nodeId="2068944020170311119" varName="typeVariableDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="5858074156537576506" fileName="AddMethodDocComment_Intention.java" startLine="114" startPosition="28" endLine="119" endPosition="7">
+    <scopeInfo nodeId="5858074156537576506" fileName="AddMethodDocComment_Intention.java" startLine="115" startPosition="28" endLine="120" endPosition="7">
       <varInfo nodeId="5858074156537576507" varName="throwsItem" />
     </scopeInfo>
-    <scopeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="134" startPosition="81" endLine="139" endPosition="24">
+    <scopeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="135" startPosition="81" endLine="140" endPosition="24">
       <varInfo nodeId="6832197706140863150" varName="facade" />
       <varInfo nodeId="6832197706140863150" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="142" startPosition="81" endLine="147" endPosition="24">
+    <scopeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="143" startPosition="81" endLine="148" endPosition="24">
       <varInfo nodeId="2068944020170313353" varName="facade" />
       <varInfo nodeId="2068944020170313353" varName="quotedNode_2" />
     </scopeInfo>
@@ -360,19 +364,21 @@
       <varInfo nodeId="3196018662491292781" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3106559687487133209" fileName="AddMethodDocComment_Intention.java" startLine="88" startPosition="209" endLine="94" endPosition="15" />
-    <scopeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="134" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="135" startPosition="0" endLine="142" endPosition="0">
       <varInfo nodeId="6832197706140863150" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="142" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="143" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="2068944020170313353" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="3196018662491292785" fileName="AddMethodDocComment_Intention.java" startLine="87" startPosition="78" endLine="126" endPosition="288" />
-    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="87" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="3196018662491292785" fileName="AddMethodDocComment_Intention.java" startLine="87" startPosition="78" endLine="127" endPosition="288">
+      <varInfo nodeId="8512638887612423874" varName="line" />
+    </scopeInfo>
+    <scopeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="87" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="3196018662491292781" varName="editorContext" />
       <varInfo nodeId="3196018662491292781" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="76" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention$IntentionImplementation" />
-    <unitInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="27" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention" />
+    <unitInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="76" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention$IntentionImplementation" />
+    <unitInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="27" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention" />
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/4021391592916341753">
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -388,13 +394,14 @@
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="65" startPosition="37" endLine="66" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="67" startPosition="5" endLine="68" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3106559687487194857" fileName="AddStaticFieldDocComment_Intention.java" startLine="83" startPosition="208" endLine="84" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526958806077" fileName="AddStaticFieldDocComment_Intention.java" startLine="84" startPosition="264" endLine="85" endPosition="379" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3106559687487194872" fileName="AddStaticFieldDocComment_Intention.java" startLine="86" startPosition="14" endLine="87" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8520807190704256002" fileName="AddStaticFieldDocComment_Intention.java" startLine="88" startPosition="7" endLine="89" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="92" startPosition="48" endLine="93" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8512638887613016128" fileName="AddStaticFieldDocComment_Intention.java" startLine="84" startPosition="264" endLine="85" endPosition="311" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8512638887612934057" fileName="AddStaticFieldDocComment_Intention.java" startLine="85" startPosition="311" endLine="86" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3106559687487194872" fileName="AddStaticFieldDocComment_Intention.java" startLine="87" startPosition="14" endLine="88" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8520807190704256002" fileName="AddStaticFieldDocComment_Intention.java" startLine="89" startPosition="7" endLine="90" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="93" startPosition="48" endLine="94" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddStaticFieldDocComment_Intention#()V" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="72" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="3106559687487194870" fileName="AddStaticFieldDocComment_Intention.java" startLine="86" startPosition="12" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3106559687487194870" fileName="AddStaticFieldDocComment_Intention.java" startLine="87" startPosition="12" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -405,12 +412,12 @@
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="64" startPosition="99" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
     <nodeInfo nodeId="3106559687487194844" fileName="AddStaticFieldDocComment_Intention.java" startLine="75" startPosition="87" endLine="79" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="64" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="75" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3106559687487194855" fileName="AddStaticFieldDocComment_Intention.java" startLine="82" startPosition="78" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="82" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3106559687487194855" fileName="AddStaticFieldDocComment_Intention.java" startLine="82" startPosition="78" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="82" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="25" startPosition="47" endLine="25" endPosition="47" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="72" startPosition="38" endLine="72" endPosition="38" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="73" />
@@ -423,11 +430,10 @@
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="56" startPosition="53" endLine="57" endPosition="140" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="60" startPosition="35" endLine="61" endPosition="17" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="65" startPosition="37" endLine="66" endPosition="140" />
-    <scopeInfo nodeId="3106559687487194871" fileName="AddStaticFieldDocComment_Intention.java" startLine="86" startPosition="14" endLine="87" endPosition="200" />
-    <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="92" startPosition="48" endLine="93" endPosition="53" />
+    <scopeInfo nodeId="3106559687487194871" fileName="AddStaticFieldDocComment_Intention.java" startLine="87" startPosition="14" endLine="88" endPosition="200" />
+    <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="93" startPosition="48" endLine="94" endPosition="53" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="72" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="3106559687487194856" fileName="AddStaticFieldDocComment_Intention.java" startLine="83" startPosition="208" endLine="85" endPosition="379" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
@@ -440,7 +446,10 @@
     </scopeInfo>
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="60" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="92" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="3106559687487194856" fileName="AddStaticFieldDocComment_Intention.java" startLine="83" startPosition="208" endLine="86" endPosition="125">
+      <varInfo nodeId="8512638887613016129" varName="line" />
+    </scopeInfo>
+    <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="93" startPosition="0" endLine="96" endPosition="0" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="64" startPosition="99" endLine="68" endPosition="30" />
     <scopeInfo nodeId="4021391592916341755" fileName="AddStaticFieldDocComment_Intention.java" startLine="75" startPosition="87" endLine="79" endPosition="8" />
     <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="64" startPosition="0" endLine="70" endPosition="0">
@@ -451,13 +460,13 @@
       <varInfo nodeId="4021391592916341753" varName="editorContext" />
       <varInfo nodeId="4021391592916341753" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4021391592916341757" fileName="AddStaticFieldDocComment_Intention.java" startLine="82" startPosition="78" endLine="89" endPosition="287" />
-    <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="82" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="4021391592916341757" fileName="AddStaticFieldDocComment_Intention.java" startLine="82" startPosition="78" endLine="90" endPosition="287" />
+    <scopeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="82" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="4021391592916341753" varName="editorContext" />
       <varInfo nodeId="4021391592916341753" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="71" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention$IntentionImplementation" />
-    <unitInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="22" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention" />
+    <unitInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="71" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention$IntentionImplementation" />
+    <unitInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="22" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention" />
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/5858074156537083239">
     <nodeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -823,10 +832,11 @@
     <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="67" startPosition="5" endLine="68" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3106559687487194800" fileName="AddFieldDocComment_Intention.java" startLine="83" startPosition="208" endLine="84" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3106559687487194824" fileName="AddFieldDocComment_Intention.java" startLine="85" startPosition="14" endLine="86" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526957212139" fileName="AddFieldDocComment_Intention.java" startLine="87" startPosition="7" endLine="88" endPosition="377" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8520807190703153031" fileName="AddFieldDocComment_Intention.java" startLine="88" startPosition="377" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8520807190703155910" fileName="AddFieldDocComment_Intention.java" startLine="89" startPosition="0" endLine="90" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="93" startPosition="48" endLine="94" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8512638887613152042" fileName="AddFieldDocComment_Intention.java" startLine="87" startPosition="7" endLine="88" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8512638887613060587" fileName="AddFieldDocComment_Intention.java" startLine="88" startPosition="309" endLine="89" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8520807190703153031" fileName="AddFieldDocComment_Intention.java" startLine="89" startPosition="123" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8520807190703155910" fileName="AddFieldDocComment_Intention.java" startLine="90" startPosition="0" endLine="91" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="94" startPosition="48" endLine="95" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddFieldDocComment_Intention#()V" />
     <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="72" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="3106559687487194810" fileName="AddFieldDocComment_Intention.java" startLine="85" startPosition="12" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -840,12 +850,12 @@
     <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
     <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
     <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="64" startPosition="99" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
     <nodeInfo nodeId="3106559687487194762" fileName="AddFieldDocComment_Intention.java" startLine="75" startPosition="87" endLine="79" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3106559687487194783" fileName="AddFieldDocComment_Intention.java" startLine="82" startPosition="78" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="64" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="75" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="82" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="82" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="25" startPosition="41" endLine="25" endPosition="41" />
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="72" startPosition="38" endLine="72" endPosition="38" />
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="67" />
@@ -860,7 +870,7 @@
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="65" startPosition="37" endLine="66" endPosition="134" />
     <scopeInfo nodeId="3106559687487194784" fileName="AddFieldDocComment_Intention.java" startLine="83" startPosition="208" endLine="84" endPosition="264" />
     <scopeInfo nodeId="3106559687487194811" fileName="AddFieldDocComment_Intention.java" startLine="85" startPosition="14" endLine="86" endPosition="200" />
-    <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="93" startPosition="48" endLine="94" endPosition="47" />
+    <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="94" startPosition="48" endLine="95" endPosition="47" />
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="72" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
@@ -875,7 +885,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="60" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="93" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="94" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="64" startPosition="99" endLine="68" endPosition="30" />
     <scopeInfo nodeId="6832197706140958202" fileName="AddFieldDocComment_Intention.java" startLine="75" startPosition="87" endLine="79" endPosition="8" />
     <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="64" startPosition="0" endLine="70" endPosition="0">
@@ -886,13 +896,15 @@
       <varInfo nodeId="6832197706140958200" varName="editorContext" />
       <varInfo nodeId="6832197706140958200" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6832197706140958204" fileName="AddFieldDocComment_Intention.java" startLine="82" startPosition="78" endLine="90" endPosition="287" />
-    <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="82" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="6832197706140958204" fileName="AddFieldDocComment_Intention.java" startLine="82" startPosition="78" endLine="91" endPosition="287">
+      <varInfo nodeId="8512638887613152043" varName="line" />
+    </scopeInfo>
+    <scopeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="82" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="6832197706140958200" varName="editorContext" />
       <varInfo nodeId="6832197706140958200" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="71" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention$IntentionImplementation" />
-    <unitInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="22" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention" />
+    <unitInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="71" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention$IntentionImplementation" />
+    <unitInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="22" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention" />
   </root>
   <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/8465538089690783660">
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
