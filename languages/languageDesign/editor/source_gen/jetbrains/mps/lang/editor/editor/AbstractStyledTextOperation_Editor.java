@@ -115,7 +115,6 @@ public class AbstractStyledTextOperation_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

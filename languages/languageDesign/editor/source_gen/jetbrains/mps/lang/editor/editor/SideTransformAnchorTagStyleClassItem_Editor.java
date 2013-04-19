@@ -199,7 +199,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
       Style style = new StyleImpl();
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-
       editorCell.getStyle().putAll(style);
       return editorCell;
     }
