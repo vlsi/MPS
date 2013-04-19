@@ -1210,11 +1210,13 @@ public class QueriesGenerated {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_Group"), "modules", true);
         }
-      }).union(Sequence.fromIterable(parts));
+      }).union(Sequence.fromIterable(parts)).toListSequence();
+
       for (SNode part : parts) {
         if (!(SNodeOperations.isInstanceOf(part, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"))) {
           continue;
         }
+
         SNode module = SNodeOperations.cast(part, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
         if ((SLinkOperations.getTarget(module, "path", true) == null)) {
           continue;

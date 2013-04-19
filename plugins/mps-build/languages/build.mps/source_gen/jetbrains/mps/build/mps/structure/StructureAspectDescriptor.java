@@ -54,7 +54,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 19:
         return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"}, new String[]{}, new String[]{}, new String[]{"dependency"}, new boolean[]{false}, false, false, "(extracted)", "", "");
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_Generator", "jetbrains.mps.build.mps.structure.BuildMps_Module", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Module", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "generator", "", "");
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_Generator", "jetbrains.mps.build.mps.structure.BuildMps_Module", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Module", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"sourceLanguage"}, new String[]{}, new boolean[]{}, false, false, "generator", "", "");
       case 21:
         return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.structure.BuildProjectPart", false, new String[]{"jetbrains.mps.build.structure.BuildProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"modules"}, new boolean[]{true}, false, false, "mps group", "", "");
       case 22:

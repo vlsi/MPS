@@ -24,9 +24,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -55,9 +55,7 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     if (renderingCondition_leuqor_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_leuqor_c0(editorContext, node));
     }
-    if (renderingCondition_leuqor_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_leuqor_d0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createCollection_leuqor_d0(editorContext, node));
     if (renderingCondition_leuqor_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_leuqor_e0(editorContext, node));
     }
@@ -168,29 +166,23 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_leuqor_a3a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_leuqor_b3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_leuqor_b3a(editorContext, node));
     return editorCell;
   }
 
-  private static boolean renderingCondition_leuqor_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "path", true) != null);
-  }
-
   private EditorCell createConstant_leuqor_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "load from");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source language");
     editorCell.setCellId("Constant_leuqor_a3a");
-    Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_leuqor_b3a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("path");
-    provider.setNoTargetText("<no path>");
+  private EditorCell createRefCell_leuqor_b3a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("sourceLanguage");
+    provider.setNoTargetText("<no sourceLanguage>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new BuildMps_Generator_Editor._Inline_leuqor_a1d0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -201,6 +193,39 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  public static class _Inline_leuqor_a1d0 extends InlineCellProvider {
+    public _Inline_leuqor_a1d0() {
+      super();
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createProperty_leuqor_a0b3a(editorContext, node);
+    }
+
+    private EditorCell createProperty_leuqor_a0b3a(EditorContext editorContext, SNode node) {
+      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+      provider.setRole("name");
+      provider.setNoTargetText("<no name>");
+      provider.setReadOnly(true);
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(editorContext);
+      editorCell.setCellId("property_name_1");
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      SNode attributeConcept = provider.getRoleAttribute();
+      Class attributeKind = provider.getRoleAttributeClass();
+      if (attributeConcept != null) {
+        IOperationContext opContext = editorContext.getOperationContext();
+        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      } else
+      return editorCell;
+    }
   }
 
   private EditorCell createCollection_leuqor_e0(EditorContext editorContext, SNode node) {
