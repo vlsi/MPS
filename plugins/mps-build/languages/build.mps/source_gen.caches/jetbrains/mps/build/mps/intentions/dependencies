@@ -59,6 +59,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoader" />
+    <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoaderException" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.PathConverter" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.VisibleModules" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />

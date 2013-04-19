@@ -55,7 +55,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
       final StringBuilder messages = new StringBuilder();
       new ModuleLoader(module, visible, new PathConverter(buildProject), null) {
         @Override
-        protected void report(String message, SNode node, Exception cause) {
+        public void report(String message, SNode node, Exception cause) {
           if (messages.length() > 0) {
             messages.append("\n");
           }

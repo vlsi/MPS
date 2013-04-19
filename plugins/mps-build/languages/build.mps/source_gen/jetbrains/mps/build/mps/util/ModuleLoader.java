@@ -6,9 +6,8 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -20,11 +19,6 @@ import jetbrains.mps.build.util.Context;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.util.MacroHelper;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -46,31 +40,32 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ProjectPathUtil;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.vfs.IFileUtils;
 
-public class ModuleLoader {
+public class ModuleLoader implements ModuleLoaderUtils.Reporter {
   private static final String CORE_LANGUAGE_UID = "ceab5195-25ea-4f22-9b92-103b95ca8c0c";
   private static final String DESCRIPTOR_LANGUAGE_UID = "f4ad079d-bc71-4ffb-9600-9328705cf998";
   private final TemplateQueryContext genContext;
   private final SNode myModule;
-  private SNode myOriginalModule;
+  private final SNode myOriginalModule;
   private ModuleDescriptor myModuleDescriptor;
   private IFile myModuleFile;
-  private VisibleModules visible;
-  private PathConverter pathConverter;
+  private final VisibleModules visible;
+  private final PathConverter pathConverter;
 
-  public ModuleLoader(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext) {
+
+  public ModuleLoader(SNode module, SNode originalModule, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext) {
     this.genContext = genContext;
     this.myModule = module;
-    this.myOriginalModule = SNodeOperations.as(DependenciesHelper.getOriginalNode(module, genContext), "jetbrains.mps.build.mps.structure.BuildMps_Module");
-    if (this.myOriginalModule == null) {
-      this.myOriginalModule = module;
-    }
+    this.myOriginalModule = originalModule;
     this.visible = visible;
     this.pathConverter = pathConverter;
   }
+
+  public ModuleLoader(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext) {
+    this(module, ModuleLoaderUtils.getOriginalModule(module, genContext), visible, pathConverter, genContext);
+  }
+
+
 
   public void importRequired() {
     loadFile();
@@ -155,7 +150,7 @@ public class ModuleLoader {
     }
 
     try {
-      ModuleDescriptor md = load(file);
+      ModuleDescriptor md = ModuleLoaderUtils.loadModuleDescriptor(file, genContext, myOriginalModule, this);
       if (md.getLoadException() != null) {
         report("cannot import module file for " + SPropertyOperations.getString(myModule, "name") + ": exception: " + md.getLoadException().getMessage(), myOriginalModule);
         return;
@@ -167,19 +162,6 @@ public class ModuleLoader {
       report("cannot import module file for " + SPropertyOperations.getString(myModule, "name") + ": exception: " + ex.getMessage(), myOriginalModule, ex);
       ex.printStackTrace(System.err);
     }
-  }
-
-  private ModuleDescriptor load(IFile file) {
-    MacroHelper helper = new ModuleLoader.ModuleMacroHelper(file);
-    String path = file.getPath();
-    if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
-      return LanguageDescriptorPersistence.loadLanguageDescriptor(file, helper);
-    } else if (path.endsWith(MPSExtentions.DOT_SOLUTION)) {
-      return SolutionDescriptorPersistence.loadSolutionDescriptor(file, helper);
-    } else if (path.endsWith(MPSExtentions.DOT_DEVKIT)) {
-      return DevkitDescriptorPersistence.loadDevKitDescriptor(file);
-    }
-    throw new RuntimeException("unknown file type: " + file.getName());
   }
 
   private void loadModule() {
@@ -238,7 +220,7 @@ public class ModuleLoader {
     SNode generator = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Generator", null);
     SPropertyOperations.set(generator, "name", generatorDescriptor.getGeneratorUID());
     SPropertyOperations.set(generator, "uuid", generatorDescriptor.getId().toString());
-    SLinkOperations.setTarget(generator, "sourceLanguage", myModule, false);
+    SLinkOperations.setTarget(generator, "sourceLanguage", SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), false);
 
     SNodeOperations.insertNextSiblingChild(myModule, generator);
   }
@@ -291,11 +273,11 @@ public class ModuleLoader {
   private boolean checkModuleReference(ModuleDescriptor md) {
     boolean success = true;
     SModuleReference moduleReference = md.getModuleReference();
-    if (neq_a6ewnz_a0c0s(SPropertyOperations.getString(myModule, "name"), moduleReference.getModuleName())) {
+    if (neq_a6ewnz_a0c0u(SPropertyOperations.getString(myModule, "name"), moduleReference.getModuleName())) {
       report("name in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleName(), myOriginalModule);
       success = false;
     }
-    if (neq_a6ewnz_a0d0s(SPropertyOperations.getString(myModule, "uuid"), moduleReference.getModuleId().toString())) {
+    if (neq_a6ewnz_a0d0u(SPropertyOperations.getString(myModule, "uuid"), moduleReference.getModuleId().toString())) {
       report("module id in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleId().toString(), myOriginalModule);
       success = false;
     }
@@ -706,7 +688,7 @@ public class ModuleLoader {
               SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
               it
             );
-            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0bb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
+            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0db(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
           }
         }))) {
           report("jar stub library should be extracted into build script: " + relPath, myOriginalModule);
@@ -791,7 +773,7 @@ public class ModuleLoader {
       if (path.endsWith(".jar")) {
         SNode extr = ListSequence.fromList(previous).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a0a0a0a0a0a0d0j0cb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a0a0a0a0a0a0d0j0eb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
           }
         });
 
@@ -895,128 +877,40 @@ public class ModuleLoader {
     }
   }
 
-  protected void report(String message, SNode node) {
+  public void report(String message, SNode node) {
     report(message, node, null);
   }
 
-  protected void report(String message, SNode node, Exception cause) {
+  public void report(String message, SNode node, Exception cause) {
     if (genContext == null) {
-      throw new ModuleLoader.ModuleLoaderException(message, node, cause);
+      throw new ModuleLoaderException(message, node, cause);
     }
 
     genContext.showErrorMessage(node, message);
   }
 
-  public static class ModuleLoaderException extends RuntimeException {
-    private SNode node;
-
-    public ModuleLoaderException(String message, SNode node, Throwable cause) {
-      super(message, cause);
-      this.node = node;
-    }
-
-    public SNode getNode() {
-      return node;
-    }
-  }
-
-  public class ModuleMacroHelper implements MacroHelper {
-    private IFile moduleFile;
-
-    public ModuleMacroHelper(IFile moduleFile) {
-      this.moduleFile = moduleFile;
-    }
-
-    @Override
-    public String expandPath(@Nullable String path) {
-      if (path == null) {
-        return null;
-      }
-
-      if (moduleFile != null) {
-        for (String macro : MacrosFactory.descriptors) {
-          if (path.startsWith(macro)) {
-            String relPath = path.substring(path.indexOf('}') + 1);
-            return IFileUtils.getCanonicalPath(moduleFile.getParent().getDescendant(relPath));
-          }
-        }
-      }
-      if (path.startsWith("${")) {
-        int index = path.indexOf("}");
-        if (index == -1) {
-          report("invalid macro in `" + path + "'", null);
-          return path;
-        }
-
-        String macroName = path.substring(2, index);
-        SNode found = null;
-        for (SNode macro : SLinkOperations.getTargets(SNodeOperations.getAncestor(myOriginalModule, "jetbrains.mps.build.structure.BuildProject", false, false), "macros", true)) {
-          if (!(SNodeOperations.isInstanceOf(macro, "jetbrains.mps.build.structure.BuildFolderMacro"))) {
-            continue;
-          }
-
-          if (eq_a6ewnz_a0c0f0d0c43(SPropertyOperations.getString(macro, "name"), macroName)) {
-            found = SNodeOperations.cast(macro, "jetbrains.mps.build.structure.BuildFolderMacro");
-            break;
-          }
-        }
-        if (found == null) {
-          report("macro is not declared in build script: " + path, null);
-          return path;
-        }
-
-        String localPath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(found, "defaultPath", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ?
-          Context.defaultContext(genContext) :
-          Context.defaultContext()
-        )});
-        if (localPath == null) {
-          if (genContext != null) {
-            genContext.showWarningMessage(found, "cannot resolve local path: " + path + ", macro has no default value");
-          }
-          return path;
-        }
-
-        String relPath = path.substring(index + 1);
-        return IFileUtils.getCanonicalPath(FileSystem.getInstance().getFileByPath(localPath).getDescendant(relPath));
-      }
-      return path;
-    }
-
-    @Override
-    public String shrinkPath(@Nullable String string) {
-      throw new UnsupportedOperationException("cannot shrink");
-    }
-  }
-
-  private static boolean neq_a6ewnz_a0c0s(Object a, Object b) {
+  private static boolean neq_a6ewnz_a0c0u(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean neq_a6ewnz_a0d0s(Object a, Object b) {
+  private static boolean neq_a6ewnz_a0d0u(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0d0r0bb(Object a, Object b) {
+  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0d0r0db(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_a6ewnz_a0a0a0a0a0a0a0d0j0cb(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_a6ewnz_a0c0f0d0c43(Object a, Object b) {
+  private static boolean eq_a6ewnz_a0a0a0a0a0a0a0d0j0eb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
