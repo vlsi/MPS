@@ -320,5 +320,10 @@
 
   <iconLayerProvider implementation="com.intellij.ide.LockedIconLayerProvider"/>
 
+  <applicationService serviceInterface="org.jetbrains.ide.WebServerManager" serviceImplementation="org.jetbrains.ide.WebServerManagerImpl"/>
+  <applicationService serviceInterface="com.intellij.ide.XmlRpcServer" serviceImplementation="com.intellij.ide.XmlRpcServerImpl"/>
+  <httpRequestHandler implementation="com.intellij.ide.XmlRpcServerImpl$XmlRpcRequestHandler"/>
+  <postStartupActivity implementation="org.jetbrains.ide.WebServerManagerImpl$MyPostStartupActivity"/>
+
   <frameEditorComponentProvider implementation="com.intellij.openapi.wm.ex.DefaultFrameEditorComponentProvider"/>
 </extensions>

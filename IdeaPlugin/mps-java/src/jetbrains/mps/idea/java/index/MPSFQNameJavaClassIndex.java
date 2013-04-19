@@ -24,6 +24,7 @@ import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Consumer;
 
 import java.util.Collection;
 
@@ -62,8 +63,8 @@ public class MPSFQNameJavaClassIndex extends AbstractMPSModelFileIndex {
   private static class MyIndexer extends SNodeDescriptorIndexer {
 
     @Override
-    protected Iterable<SNode> getObjectsToIndex(SModel sModel) {
-      return getJavaClasses(sModel);
+    protected void getObjectsToIndex(SModel sModel, Consumer<SNode> consumer) {
+      getJavaClasses(sModel, consumer);
     }
 
     @Override
