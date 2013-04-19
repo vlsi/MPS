@@ -49,7 +49,7 @@ public class PersistenceUtil {
         byte[] bytes = content.getBytes(FileUtil.DEFAULT_CHARSET);
         return new ByteArrayInputStream(bytes);
       }
-    }, Collections.<String, String>emptyMap());
+    }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
     if (model != null) {
       model.load();
     }
@@ -66,7 +66,7 @@ public class PersistenceUtil {
       public InputStream openInputStream() throws IOException {
         return new ByteArrayInputStream(content);
       }
-    }, Collections.<String, String>emptyMap());
+    }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
     if (model != null) {
       model.load();
     }
@@ -78,7 +78,8 @@ public class PersistenceUtil {
     if (factory == null) {
       return null;
     }
-    SModel model = factory.load(new FileDataSource(file), Collections.<String, String>emptyMap());
+    SModel model = factory.load(new FileDataSource(file), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY,
+        Boolean.TRUE.toString()));
     if (model != null) {
       model.load();
     }

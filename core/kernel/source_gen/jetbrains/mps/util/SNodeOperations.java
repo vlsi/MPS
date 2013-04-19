@@ -21,6 +21,7 @@ import java.util.LinkedList;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -29,7 +30,6 @@ import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.FastNodeFinder;
@@ -222,7 +222,11 @@ public class SNodeOperations {
   }
 
   public static Language getLanguage(SNode node) {
-    return ModuleRepositoryFacade.getInstance().getModule(node.getConcept().getLanguage().getPresentation(), Language.class);
+    final SLanguage language = node.getConcept().getLanguage();
+    if (language == null) {
+      return null;
+    }
+    return ModuleRepositoryFacade.getInstance().getModule(language.getPresentation(), Language.class);
   }
 
   public static void copyUserObjects(SNode from, final SNode to) {
