@@ -17,18 +17,19 @@
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="76" startPosition="37" endLine="77" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="78" startPosition="5" endLine="79" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1753793013241722030" fileName="ReloadModulesFromDisk_Intention.java" startLine="86" startPosition="87" endLine="87" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="91" startPosition="7" endLine="92" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="92" startPosition="191" endLine="93" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="94" startPosition="37" endLine="95" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2617896750899013085" fileName="ReloadModulesFromDisk_Intention.java" startLine="95" startPosition="40" endLine="96" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4278635856200790048" fileName="ReloadModulesFromDisk_Intention.java" startLine="96" startPosition="64" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5780287594867972891" fileName="ReloadModulesFromDisk_Intention.java" startLine="98" startPosition="15" endLine="99" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5780287594867972902" fileName="ReloadModulesFromDisk_Intention.java" startLine="99" startPosition="68" endLine="100" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2531699772406320942" fileName="ReloadModulesFromDisk_Intention.java" startLine="100" startPosition="30" endLine="101" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="103" startPosition="51" endLine="104" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5780287594867850300" fileName="ReloadModulesFromDisk_Intention.java" startLine="105" startPosition="13" endLine="106" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="112" startPosition="48" endLine="113" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="117" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5780287594867972891" fileName="ReloadModulesFromDisk_Intention.java" startLine="90" startPosition="78" endLine="91" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5780287594867972902" fileName="ReloadModulesFromDisk_Intention.java" startLine="91" startPosition="62" endLine="92" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7444640161798379484" fileName="ReloadModulesFromDisk_Intention.java" startLine="92" startPosition="24" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2617896750899013085" fileName="ReloadModulesFromDisk_Intention.java" startLine="93" startPosition="0" endLine="94" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7444640161798407505" fileName="ReloadModulesFromDisk_Intention.java" startLine="94" startPosition="60" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="96" startPosition="7" endLine="97" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="97" startPosition="191" endLine="98" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="99" startPosition="37" endLine="100" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7444640161798407880" fileName="ReloadModulesFromDisk_Intention.java" startLine="101" startPosition="15" endLine="102" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="104" startPosition="51" endLine="105" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5780287594867850300" fileName="ReloadModulesFromDisk_Intention.java" startLine="106" startPosition="13" endLine="107" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="113" startPosition="48" endLine="114" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="118" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadModulesFromDisk_Intention#()V" />
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="83" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
@@ -43,15 +44,15 @@
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="75" startPosition="99" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="102" startPosition="46" endLine="105" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="102" startPosition="46" endLine="105" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="103" startPosition="46" endLine="106" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="103" startPosition="46" endLine="106" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="75" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="5780287594867796919" fileName="ReloadModulesFromDisk_Intention.java" startLine="97" startPosition="0" endLine="107" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="93" startPosition="25" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="90" startPosition="78" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="90" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5780287594867796919" fileName="ReloadModulesFromDisk_Intention.java" startLine="100" startPosition="40" endLine="108" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="98" startPosition="25" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="95" startPosition="0" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="90" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="29" startPosition="44" endLine="29" endPosition="44" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="83" startPosition="38" endLine="83" endPosition="38" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="32" startPosition="30" endLine="33" endPosition="56" />
@@ -66,8 +67,9 @@
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="71" startPosition="35" endLine="72" endPosition="17" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="76" startPosition="37" endLine="77" endPosition="137" />
     <scopeInfo nodeId="1753793013241722027" fileName="ReloadModulesFromDisk_Intention.java" startLine="86" startPosition="87" endLine="87" endPosition="40" />
-    <scopeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="103" startPosition="51" endLine="104" endPosition="45" />
-    <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="112" startPosition="48" endLine="113" endPosition="50" />
+    <scopeInfo nodeId="5780287594867796920" fileName="ReloadModulesFromDisk_Intention.java" startLine="101" startPosition="15" endLine="102" endPosition="97" />
+    <scopeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="104" startPosition="51" endLine="105" endPosition="45" />
+    <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="113" startPosition="48" endLine="114" endPosition="50" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="83" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
@@ -86,17 +88,14 @@
       <varInfo nodeId="1753793013241722025" varName="editorContext" />
       <varInfo nodeId="1753793013241722025" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5780287594867796920" fileName="ReloadModulesFromDisk_Intention.java" startLine="98" startPosition="15" endLine="101" endPosition="88">
-      <varInfo nodeId="5780287594867972892" varName="visible" />
-    </scopeInfo>
-    <scopeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="102" startPosition="46" endLine="105" endPosition="13" />
-    <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="112" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="103" startPosition="46" endLine="106" endPosition="13" />
+    <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="113" startPosition="0" endLine="116" endPosition="0" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="56" startPosition="84" endLine="60" endPosition="16" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="75" startPosition="99" endLine="79" endPosition="30" />
-    <scopeInfo nodeId="5780287594867796922" fileName="ReloadModulesFromDisk_Intention.java" startLine="102" startPosition="0" endLine="106" endPosition="28">
+    <scopeInfo nodeId="5780287594867796922" fileName="ReloadModulesFromDisk_Intention.java" startLine="103" startPosition="0" endLine="107" endPosition="28">
       <varInfo nodeId="5780287594867796923" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="5780287594867796925" fileName="ReloadModulesFromDisk_Intention.java" startLine="102" startPosition="46" endLine="106" endPosition="28" />
+    <scopeInfo nodeId="5780287594867796925" fileName="ReloadModulesFromDisk_Intention.java" startLine="103" startPosition="46" endLine="107" endPosition="28" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="56" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1753793013241722025" varName="editorContext" />
       <varInfo nodeId="1753793013241722025" varName="node" />
@@ -105,20 +104,21 @@
       <varInfo nodeId="1753793013241722025" varName="context" />
       <varInfo nodeId="1753793013241722025" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="94" startPosition="37" endLine="107" endPosition="11">
-      <varInfo nodeId="2617896750899013086" varName="pathConverter" />
-    </scopeInfo>
-    <scopeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="91" startPosition="7" endLine="108" endPosition="9">
+    <scopeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="99" startPosition="37" endLine="108" endPosition="11" />
+    <scopeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="96" startPosition="7" endLine="109" endPosition="9">
       <varInfo nodeId="1753793013241722104" varName="module_it" />
       <varInfo nodeId="1753793013241722104" varName="module_var" />
     </scopeInfo>
-    <scopeInfo nodeId="1753793013241722029" fileName="ReloadModulesFromDisk_Intention.java" startLine="90" startPosition="78" endLine="109" endPosition="7" />
-    <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="90" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="1753793013241722029" fileName="ReloadModulesFromDisk_Intention.java" startLine="90" startPosition="78" endLine="110" endPosition="7">
+      <varInfo nodeId="2617896750899013086" varName="pathConverter" />
+      <varInfo nodeId="5780287594867972892" varName="visible" />
+    </scopeInfo>
+    <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="90" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="1753793013241722025" varName="editorContext" />
       <varInfo nodeId="1753793013241722025" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="82" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.build.mps.intentions.ReloadModulesFromDisk_Intention$IntentionImplementation" />
-    <unitInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="26" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.build.mps.intentions.ReloadModulesFromDisk_Intention" />
+    <unitInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="82" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.build.mps.intentions.ReloadModulesFromDisk_Intention$IntentionImplementation" />
+    <unitInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="26" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.build.mps.intentions.ReloadModulesFromDisk_Intention" />
   </root>
   <root nodeRef="r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)/202934866058893735">
     <nodeInfo nodeId="202934866058893735" fileName="AddCustomLocationRuntime_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />

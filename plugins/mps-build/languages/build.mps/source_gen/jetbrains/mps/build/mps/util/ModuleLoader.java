@@ -6,19 +6,19 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.Context;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -41,34 +41,76 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ProjectPathUtil;
 
-public class ModuleLoader implements ModuleLoaderUtils.Reporter {
+public class ModuleLoader {
   private static final String CORE_LANGUAGE_UID = "ceab5195-25ea-4f22-9b92-103b95ca8c0c";
   private static final String DESCRIPTOR_LANGUAGE_UID = "f4ad079d-bc71-4ffb-9600-9328705cf998";
-  private final TemplateQueryContext genContext;
+  private final TemplateQueryContext myGenContext;
   private final SNode myModule;
   private final SNode myOriginalModule;
-  private ModuleDescriptor myModuleDescriptor;
-  private IFile myModuleFile;
-  private final VisibleModules visible;
-  private final PathConverter pathConverter;
+  private final ModuleDescriptor myModuleDescriptor;
+  private final IFile myModuleSourceDir;
+  private final VisibleModules myVisibleModules;
+  private final PathConverter myPathConverter;
+  private final ModuleLoader.Reporter myReporter;
 
 
-  public ModuleLoader(SNode module, SNode originalModule, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext) {
-    this.genContext = genContext;
-    this.myModule = module;
-    this.myOriginalModule = originalModule;
-    this.visible = visible;
-    this.pathConverter = pathConverter;
+  public ModuleLoader(SNode module, SNode originalModule, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, IFile moduleSourceDir, ModuleDescriptor moduleDescriptor, ModuleLoader.Reporter reporter) {
+    myGenContext = genContext;
+    myModule = module;
+    myOriginalModule = originalModule;
+    myVisibleModules = visible;
+    myPathConverter = pathConverter;
+    myModuleSourceDir = moduleSourceDir;
+    myModuleDescriptor = moduleDescriptor;
+    myReporter = reporter;
   }
 
-  public ModuleLoader(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext) {
-    this(module, ModuleLoaderUtils.getOriginalModule(module, genContext), visible, pathConverter, genContext);
+
+
+  public static ModuleLoader createModuleLoader(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, ModuleLoader.Reporter reporter) {
+    SNode originalModule = ModuleLoaderUtils.getOriginalModule(module, genContext);
+
+    String moduleFilePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(module, "path", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ?
+      Context.defaultContext(genContext) :
+      Context.defaultContext()
+    )});
+    try {
+      moduleFilePath = new File(moduleFilePath).getCanonicalPath();
+    } catch (IOException ex) {
+      // ignore 
+    }
+
+    IFile file = FileSystem.getInstance().getFileByPath(moduleFilePath);
+    if (!(file.exists())) {
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": file doesn't exist (" + moduleFilePath + ")", originalModule, null);
+      return new ModuleLoader(module, originalModule, visible, pathConverter, genContext, null, null, reporter);
+    }
+    if (file.isDirectory()) {
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": file is a directory (" + moduleFilePath + ")", originalModule, null);
+      return new ModuleLoader(module, originalModule, visible, pathConverter, genContext, null, null, reporter);
+    }
+
+    ModuleDescriptor md = null;
+    try {
+      md = ModuleLoaderUtils.loadModuleDescriptor(file, genContext, originalModule, reporter);
+      if (md.getLoadException() != null) {
+        reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": exception: " + md.getLoadException().getMessage(), originalModule, null);
+      }
+    } catch (Exception ex) {
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": exception: " + ex.getMessage(), originalModule, ex);
+      ex.printStackTrace(System.err);
+    }
+
+    return new ModuleLoader(module, originalModule, visible, pathConverter, genContext, file.getParent(), md, reporter);
+  }
+
+  public static ModuleLoader createModuleLoader(SNode module, VisibleModules visible, PathConverter pathConverter) {
+    return createModuleLoader(module, visible, pathConverter, null, new ModuleLoader.Reporter(null));
   }
 
 
 
   public void importRequired() {
-    loadFile();
     if (myModuleDescriptor != null) {
       SPropertyOperations.set(myModule, "uuid", myModuleDescriptor.getModuleReference().getModuleId().toString());
       SPropertyOperations.set(myModule, "name", myModuleDescriptor.getModuleReference().getModuleName());
@@ -100,7 +142,6 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
   }
 
   public void checkModule() {
-    loadFile();
     if (myModuleDescriptor != null) {
       if (!(checkModuleReference(myModuleDescriptor))) {
         return;
@@ -122,46 +163,10 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
   }
 
   public void loadAndCheck() {
-    loadFile();
     if (myModuleDescriptor != null) {
       loadModule();
     }
     SPropertyOperations.set(myModule, "compact", "" + (false));
-  }
-
-  private void loadFile() {
-    String moduleFilePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(myModule, "path", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ?
-      Context.defaultContext(genContext) :
-      Context.defaultContext()
-    )});
-    try {
-      moduleFilePath = new File(moduleFilePath).getCanonicalPath();
-    } catch (IOException ex) {
-      // ignore 
-    }
-    IFile file = FileSystem.getInstance().getFileByPath(moduleFilePath);
-    if (!(file.exists())) {
-      report("cannot import module file for " + SPropertyOperations.getString(myModule, "name") + ": file doesn't exist (" + moduleFilePath + ")", myOriginalModule);
-      return;
-    }
-    if (file.isDirectory()) {
-      report("cannot import module file for " + SPropertyOperations.getString(myModule, "name") + ": file is a directory (" + moduleFilePath + ")", myOriginalModule);
-      return;
-    }
-
-    try {
-      ModuleDescriptor md = ModuleLoaderUtils.loadModuleDescriptor(file, genContext, myOriginalModule, this);
-      if (md.getLoadException() != null) {
-        report("cannot import module file for " + SPropertyOperations.getString(myModule, "name") + ": exception: " + md.getLoadException().getMessage(), myOriginalModule);
-        return;
-      }
-
-      myModuleDescriptor = md;
-      myModuleFile = file;
-    } catch (Exception ex) {
-      report("cannot import module file for " + SPropertyOperations.getString(myModule, "name") + ": exception: " + ex.getMessage(), myOriginalModule, ex);
-      ex.printStackTrace(System.err);
-    }
   }
 
   private void loadModule() {
@@ -273,11 +278,11 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
   private boolean checkModuleReference(ModuleDescriptor md) {
     boolean success = true;
     SModuleReference moduleReference = md.getModuleReference();
-    if (neq_a6ewnz_a0c0u(SPropertyOperations.getString(myModule, "name"), moduleReference.getModuleName())) {
+    if (neq_a6ewnz_a0c0w(SPropertyOperations.getString(myModule, "name"), moduleReference.getModuleName())) {
       report("name in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleName(), myOriginalModule);
       success = false;
     }
-    if (neq_a6ewnz_a0d0u(SPropertyOperations.getString(myModule, "uuid"), moduleReference.getModuleId().toString())) {
+    if (neq_a6ewnz_a0d0w(SPropertyOperations.getString(myModule, "uuid"), moduleReference.getModuleId().toString())) {
       report("module id in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleId().toString(), myOriginalModule);
       success = false;
     }
@@ -289,7 +294,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
     SNode devkit = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
 
     for (SModuleReference module : descriptor.getExtendedDevkits()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
       if (resolved == null) {
         report("cannot find devkit in dependencies: " + module.getModuleName(), myModule);
         continue;
@@ -305,7 +310,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
 
     }
     for (SModuleReference module : descriptor.getExportedLanguages()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
         report("cannot find exported languages in dependencies: " + module.getModuleName(), myModule);
         continue;
@@ -321,7 +326,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
 
     }
     for (SModuleReference module : descriptor.getExportedSolutions()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
       if (resolved == null) {
         report("cannot find exported solution in dependencies: " + module.getModuleName(), myModule);
         continue;
@@ -345,7 +350,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
     List<SNode> prevExp = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(devkit, "exports", true));
 
     for (SModuleReference module : descriptor.getExtendedDevkits()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
       if (resolved == null) {
         report("cannot find devkit in dependencies: " + module.getModuleName(), myModule);
         continue;
@@ -365,7 +370,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
       }
     }
     for (SModuleReference module : descriptor.getExportedLanguages()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
         report("cannot find exported languages in dependencies: " + module.getModuleName(), myModule);
         continue;
@@ -384,7 +389,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
       }
     }
     for (SModuleReference module : descriptor.getExportedSolutions()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
       if (resolved == null) {
         report("cannot find exported solution in dependencies: " + module.getModuleName(), myModule);
         continue;
@@ -409,7 +414,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
   private void importLanguageDeps(List<SNode> previous) {
     LanguageDescriptor descriptor = ((LanguageDescriptor) myModuleDescriptor);
     for (SModuleReference lang : descriptor.getExtendedLanguages()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(lang.getModuleName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
         report("cannot find extended language in dependencies: " + lang.getModuleName(), myModule);
         continue;
@@ -442,7 +447,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
       if (!(importsDescriptor) && DESCRIPTOR_LANGUAGE_UID.equals(lang.getModuleId().toString())) {
         importsDescriptor = true;
       }
-      final SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(lang.getModuleName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
         report("cannot find extended language in dependencies: " + lang.getModuleName(), myModule);
         continue;
@@ -458,7 +463,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
       }
     }
     if (!(importsCore) && !(checkOnly)) {
-      SNode resolved = SNodeOperations.as(visible.resolve("jetbrains.mps.lang.core", CORE_LANGUAGE_UID), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      SNode resolved = SNodeOperations.as(myVisibleModules.resolve("jetbrains.mps.lang.core", CORE_LANGUAGE_UID), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
         report("cannot find jetbrains.mps.lang.core language in dependencies for " + SPropertyOperations.getString(myModule, "name"), myModule);
       } else {
@@ -468,7 +473,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
       }
     }
     if (!(importsDescriptor) && !(checkOnly)) {
-      SNode resolved = SNodeOperations.as(visible.resolve("jetbrains.mps.lang.descriptor", DESCRIPTOR_LANGUAGE_UID), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      SNode resolved = SNodeOperations.as(myVisibleModules.resolve("jetbrains.mps.lang.descriptor", DESCRIPTOR_LANGUAGE_UID), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
         report("cannot find jetbrains.mps.lang.descriptor language in dependencies for " + SPropertyOperations.getString(myModule, "name"), myModule);
       } else {
@@ -483,8 +488,8 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
     if (SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(myModule)) {
       return node;
     }
-    return (genContext != null ?
-      genContext.getOriginalCopiedInputNode(node) :
+    return (myGenContext != null ?
+      myGenContext.getOriginalCopiedInputNode(node) :
       node
     );
   }
@@ -494,7 +499,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
     List<SNode> previous = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true));
 
     for (SModuleReference module : descriptor.getRuntimeModules()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
       if (resolved == null) {
         report("cannot find runtime solution in dependencies: " + module.getModuleName(), myModule);
         continue;
@@ -518,7 +523,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
   private void checkRuntime() {
     LanguageDescriptor descriptor = ((LanguageDescriptor) myModuleDescriptor);
     for (SModuleReference module : descriptor.getRuntimeModules()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
       if (resolved == null) {
         report("cannot find runtime solution in dependencies: " + module.getModuleName(), myModule);
         continue;
@@ -554,7 +559,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
     }
 
     for (SModuleReference lang : usedLanguages) {
-      SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      SNode resolved = SNodeOperations.as(myVisibleModules.resolve(lang.getModuleName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
         report("cannot find used language in dependencies: " + lang.getModuleName(), myModule);
         continue;
@@ -564,7 +569,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
       ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(ul);
     }
     for (SModuleReference devkit : usedDevkits) {
-      SNode resolved = SNodeOperations.as(visible.resolve(devkit.getModuleName(), devkit.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
+      SNode resolved = SNodeOperations.as(myVisibleModules.resolve(devkit.getModuleName(), devkit.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
       if (resolved == null) {
         report("cannot find used devkit in dependencies: " + devkit.getModuleName(), myModule);
         continue;
@@ -624,13 +629,13 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
       String targetName = moduleRef.getModuleName();
       int sharpIndex = targetName.indexOf("#");
       if (sharpIndex >= 0) {
-        resolved = SNodeOperations.as(visible.resolve(targetName.substring(0, sharpIndex), null), "jetbrains.mps.build.mps.structure.BuildMps_Module");
+        resolved = SNodeOperations.as(myVisibleModules.resolve(targetName.substring(0, sharpIndex), null), "jetbrains.mps.build.mps.structure.BuildMps_Module");
         if (resolved == null) {
           report("cannot resolve reference on generator's containing language by module name: " + targetName, myOriginalModule);
           continue;
         }
       } else {
-        resolved = SNodeOperations.as(visible.resolve(targetName, moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
+        resolved = SNodeOperations.as(myVisibleModules.resolve(targetName, moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
         if (resolved == null) {
           report("unsatisfied dependency: " + dep.getModuleRef().toString(), myOriginalModule);
           continue;
@@ -688,7 +693,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
               SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
               it
             );
-            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0db(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
+            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0fb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
           }
         }))) {
           report("jar stub library should be extracted into build script: " + relPath, myOriginalModule);
@@ -723,13 +728,13 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
       String targetName = moduleRef.getModuleName();
       int sharpIndex = targetName.indexOf("#");
       if (sharpIndex >= 0) {
-        resolved.value = SNodeOperations.as(visible.resolve(targetName.substring(0, sharpIndex), null), "jetbrains.mps.build.mps.structure.BuildMps_Module");
+        resolved.value = SNodeOperations.as(myVisibleModules.resolve(targetName.substring(0, sharpIndex), null), "jetbrains.mps.build.mps.structure.BuildMps_Module");
         if (resolved.value == null) {
           report("cannot resolve reference on generator's containing language by module name: " + targetName, myOriginalModule);
           continue;
         }
       } else {
-        resolved.value = SNodeOperations.as(visible.resolve(targetName, moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
+        resolved.value = SNodeOperations.as(myVisibleModules.resolve(targetName, moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
         if (resolved.value == null) {
           report("unsatisfied dependency: " + dep.getModuleRef().toString(), myOriginalModule);
           continue;
@@ -773,7 +778,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
       if (path.endsWith(".jar")) {
         SNode extr = ListSequence.fromList(previous).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a0a0a0a0a0a0d0j0eb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a0a0a0a0a0a0d0j0gb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
           }
         });
 
@@ -835,7 +840,7 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
     }
     String genPath = null;
     if (!(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) || hasModels) {
-      IFile genPathFile = ProjectPathUtil.getGeneratorOutputPath(myModuleFile.getParent(), myModuleDescriptor);
+      IFile genPathFile = ProjectPathUtil.getGeneratorOutputPath(myModuleSourceDir.getParent(), myModuleDescriptor);
       if (genPathFile != null) {
         genPath = genPathFile.getPath();
         res.add(genPath);
@@ -870,47 +875,63 @@ public class ModuleLoader implements ModuleLoaderUtils.Reporter {
 
   private List<SNode> convertPath(String path, SNode anchor) {
     try {
-      return pathConverter.convertPath(path, SNodeOperations.getModel(myModule));
+      return myPathConverter.convertPath(path, SNodeOperations.getModel(myModule));
     } catch (PathConverter.PathConvertException ex) {
       report(ex.getMessage(), anchor, ex);
       return null;
     }
   }
 
-  public void report(String message, SNode node) {
-    report(message, node, null);
+
+
+  private void report(String message, SNode node) {
+    myReporter.report(message, node, null);
   }
 
-  public void report(String message, SNode node, Exception cause) {
-    if (genContext == null) {
-      throw new ModuleLoaderException(message, node, cause);
+  private void report(String message, SNode node, Exception cause) {
+    myReporter.report(message, node, cause);
+  }
+
+
+
+  public static class Reporter {
+    private final TemplateQueryContext myGenContext;
+
+    public Reporter(TemplateQueryContext genContext) {
+      myGenContext = genContext;
     }
 
-    genContext.showErrorMessage(node, message);
+    public void report(String message, SNode node, Exception cause) {
+      if (myGenContext == null) {
+        throw new ModuleLoaderException(message, node, cause);
+      }
+
+      myGenContext.showErrorMessage(node, message);
+    }
   }
 
-  private static boolean neq_a6ewnz_a0c0u(Object a, Object b) {
+  private static boolean neq_a6ewnz_a0c0w(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean neq_a6ewnz_a0d0u(Object a, Object b) {
+  private static boolean neq_a6ewnz_a0d0w(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0d0r0db(Object a, Object b) {
+  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0d0r0fb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_a6ewnz_a0a0a0a0a0a0a0d0j0eb(Object a, Object b) {
+  private static boolean eq_a6ewnz_a0a0a0a0a0a0a0d0j0gb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

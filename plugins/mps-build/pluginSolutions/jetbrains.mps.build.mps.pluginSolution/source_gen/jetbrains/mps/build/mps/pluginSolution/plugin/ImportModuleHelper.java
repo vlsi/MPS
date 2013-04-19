@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.build.mps.util.ModuleLoaderException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -71,8 +72,8 @@ public class ImportModuleHelper {
     }
 
     try {
-      new ModuleLoader(created, visible, converter, null).importRequired();
-    } catch (ModuleLoader.ModuleLoaderException ex) {
+      ModuleLoader.createModuleLoader(created, visible, converter).importRequired();
+    } catch (ModuleLoaderException ex) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error(ex.getMessage());
       }

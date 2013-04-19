@@ -11,16 +11,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.build.mps.util.VisibleModules;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.mps.util.ModuleLoader;
-import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -33,27 +33,28 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
       return;
     }
 
-    VisibleModules visible = null;
-    String workingDir = null;
+    VisibleModules visible = new VisibleModules(buildProject, null);
+    visible.collect();
+
+    PathConverter pathConverter = new PathConverter(buildProject);
+
+    String workingDir = BuildProject_Behavior.call_getBasePath_4959435991187146924(buildProject, Context.defaultContext());
+    if ((workingDir == null || workingDir.length() == 0)) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(buildProject, "working directory is unavailable", "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "2531699772406302731", null, errorTarget);
+      }
+      return;
+    }
+
+
     for (final SNode module : ListSequence.fromList(SNodeOperations.getDescendants(buildProject, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "path", true) != null);
       }
     })) {
-      if (visible == null) {
-        visible = new VisibleModules(buildProject, null);
-        visible.collect();
-        workingDir = BuildProject_Behavior.call_getBasePath_4959435991187146924(buildProject, Context.defaultContext());
-        if ((workingDir == null || workingDir.length() == 0)) {
-          {
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(buildProject, "working directory is unavailable", "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "2531699772406302731", null, errorTarget);
-          }
-          return;
-        }
-      }
       final StringBuilder messages = new StringBuilder();
-      new ModuleLoader(module, visible, new PathConverter(buildProject), null) {
+      ModuleLoader.Reporter reporter = new ModuleLoader.Reporter(null) {
         @Override
         public void report(String message, SNode node, Exception cause) {
           if (messages.length() > 0) {
@@ -61,7 +62,9 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
           }
           messages.append(message);
         }
-      }.checkModule();
+      };
+
+      ModuleLoader.createModuleLoader(module, visible, pathConverter, null, reporter).checkModule();
       if (messages.length() > 0) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

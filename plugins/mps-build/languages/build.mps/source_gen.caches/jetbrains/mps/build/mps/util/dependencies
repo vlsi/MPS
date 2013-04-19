@@ -123,7 +123,6 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="jetbrains.mps.build.mps.util.Reporter" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.util.ModuleLoaderException" file="ModuleLoaderException.java">
     <classNode dependClassName="java.lang.String" />
@@ -132,12 +131,12 @@
     <classNode extendsClassName="java.lang.RuntimeException" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.util.ModuleLoaderUtils" file="ModuleLoaderUtils.java">
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoader" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />

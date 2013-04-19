@@ -33,7 +33,7 @@ public class ModuleLoaderUtils {
 
 
 
-  public static ModuleDescriptor loadModuleDescriptor(IFile moduleDescriptorFile, TemplateQueryContext genContext, SNode originalModule, ModuleLoaderUtils.Reporter reporter) {
+  public static ModuleDescriptor loadModuleDescriptor(IFile moduleDescriptorFile, TemplateQueryContext genContext, SNode originalModule, ModuleLoader.Reporter reporter) {
     MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(moduleDescriptorFile, genContext, originalModule, reporter);
     String path = moduleDescriptorFile.getPath();
     if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
@@ -52,9 +52,9 @@ public class ModuleLoaderUtils {
     private final IFile moduleSourceDir;
     private final TemplateQueryContext genContext;
     private final SNode originalModule;
-    private final ModuleLoaderUtils.Reporter reporter;
+    private final ModuleLoader.Reporter reporter;
 
-    public ModuleMacroHelper(IFile moduleSourceDir, TemplateQueryContext genContext, SNode originalModule, ModuleLoaderUtils.Reporter reporter) {
+    public ModuleMacroHelper(IFile moduleSourceDir, TemplateQueryContext genContext, SNode originalModule, ModuleLoader.Reporter reporter) {
       this.moduleSourceDir = moduleSourceDir;
       this.genContext = genContext;
       this.originalModule = originalModule;
@@ -78,7 +78,7 @@ public class ModuleLoaderUtils {
       if (path.startsWith("${")) {
         int index = path.indexOf("}");
         if (index == -1) {
-          reporter.report("invalid macro in `" + path + "'", null);
+          reporter.report("invalid macro in `" + path + "'", null, null);
           return path;
         }
 
@@ -95,7 +95,7 @@ public class ModuleLoaderUtils {
           }
         }
         if (found == null) {
-          reporter.report("macro is not declared in build script: " + path, null);
+          reporter.report("macro is not declared in build script: " + path, null, null);
           return path;
         }
 
@@ -127,12 +127,5 @@ public class ModuleLoaderUtils {
         a == b
       );
     }
-  }
-
-
-
-  public static interface Reporter {
-    public void report(String message, SNode node);
-    public void report(String message, SNode node, Exception cause);
   }
 }

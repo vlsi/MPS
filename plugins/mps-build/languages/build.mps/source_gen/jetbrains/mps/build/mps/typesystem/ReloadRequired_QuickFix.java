@@ -37,7 +37,7 @@ public class ReloadRequired_QuickFix extends QuickFix_Runtime {
     try {
       VisibleModules visible = new VisibleModules(project, null);
       visible.collect();
-      new ModuleLoader(module, visible, pathConverter, null).importRequired();
+      ModuleLoader.createModuleLoader(module, visible, pathConverter).importRequired();
     } catch (ModuleLoaderException ex) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error(ex.getMessage(), ex);
