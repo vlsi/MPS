@@ -221,13 +221,15 @@ public class ModuleLoader {
     }
 
     SNode generator = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Generator", null);
-    SPropertyOperations.set(generator, "name", generatorDescriptor.getGeneratorUID());
+    SPropertyOperations.set(generator, "name", generatorDescriptor.getNamespace());
     SPropertyOperations.set(generator, "uuid", generatorDescriptor.getId().toString());
     SLinkOperations.setTarget(generator, "sourceLanguage", SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), false);
 
     SNodeOperations.insertNextSiblingChild(myModule, generator);
 
-    new ModuleLoader(generator, generator, myVisibleModules, myPathConverter, myGenContext, myModuleSourceDir.getDescendant("generator"), generatorDescriptor, myReporter).loadAndCheck();
+    ModuleLoader moduleLoaderForGenerator = new ModuleLoader(generator, generator, myVisibleModules, myPathConverter, myGenContext, myModuleSourceDir.getDescendant("generator"), generatorDescriptor, myReporter);
+    moduleLoaderForGenerator.importRequired();
+    moduleLoaderForGenerator.loadAndCheck();
   }
 
   private void optimizeDeps() {
