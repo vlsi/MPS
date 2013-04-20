@@ -316,7 +316,11 @@ public class TestMain {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {
-        IdeaTestApplication.getInstance(null).dispose();
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            IdeaTestApplication.getInstance(null).dispose();
+          }
+        });
       }
     });
   }
