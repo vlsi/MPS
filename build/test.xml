@@ -19,7 +19,7 @@
   <property name="build.distribution" location="${build.dir}/artifacts/mpsDistribution"/>
   <loadproperties srcfile="${build.distribution}/build.properties"/>
   <property name="mps.zip" location="${build.distribution}/${mps.build.number}.zip"/>
-  <property name="mps_home" location="${build.tmp}/MPS ${mpsBootstrapCore.version}"/>
+  <property name="mps_build_home" location="${build.tmp}/MPS ${mpsBootstrapCore.version}"/>
 
   <target name="unpack">
     <unzip src="${mps.zip}" dest="${build.tmp}"/>
@@ -28,11 +28,11 @@
   <target name="check-project-structure" depends="unpack">
     <mkdir dir="${build.tmp}/buildtests.tmp"/>
     <path id="tests.classpath">
-      <fileset dir="${mps_home}/lib">
+      <fileset dir="${mps_build_home}/lib">
         <include name="**/*.jar"/>
       </fileset>
-      <path path="${mps_home}/lib/mps-backend.jar"/>
-      <path path="${mps_home}/lib/jdom.jar"/>
+      <path path="${mps_build_home}/lib/mps-backend.jar"/>
+      <path path="${mps_build_home}/lib/jdom.jar"/>
     </path>
     <javac classpathref="tests.classpath" destdir="${build.tmp}/buildtests.tmp" fork="true" includeantruntime="false"
            memorymaximumsize="1024m" debug="true">
@@ -41,12 +41,12 @@
         <path path="testbench/tests_gen"/>
       </src>
     </javac>
-    <jar destfile="${mps_home}/lib/mpstests.jar" duplicate="preserve" filesonly="true">
+    <jar destfile="${mps_build_home}/lib/mpstests.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${build.tmp}/buildtests.tmp"/>
     </jar>
     <delete dir="${build.tmp}/buildtests.tmp"/>
 
-    <junit fork="true" dir="${mps_home}" haltonfailure="true">
+    <junit fork="true" dir="${mps_build_home}" haltonfailure="true">
       <jvmarg value="-ea"/>
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1200m"/>
@@ -55,7 +55,7 @@
       <test name="CheckProjectStructure"/>
       <formatter type="xml"/>
       <classpath>
-        <fileset dir="${mps_home}/lib">
+        <fileset dir="${mps_build_home}/lib">
           <include name="*.jar"/>
         </fileset>
       </classpath>
@@ -64,10 +64,10 @@
 
   <target name="module-tests" depends="unpack">
     <ant antfile="build/tests/mpsExecution.xml" inheritAll="true" useNativeBasedir="true">
-      <property name="mps_home" value="${mps_home}"/>
+      <property name="mps_home" value="${mps_build_home}"/>
     </ant>
     <ant antfile="build/tests/mpsEditor.xml" inheritAll="true" useNativeBasedir="true">
-      <property name="mps_home" value="${mps_home}"/>
+      <property name="mps_home" value="${mps_build_home}"/>
     </ant>
   </target>
 
