@@ -225,11 +225,11 @@ public class ModuleLoader {
     SPropertyOperations.set(generator, "uuid", generatorDescriptor.getId().toString());
     SLinkOperations.setTarget(generator, "sourceLanguage", SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), false);
 
-    SNodeOperations.insertNextSiblingChild(myModule, generator);
+    // <node> 
 
-    ModuleLoader moduleLoaderForGenerator = new ModuleLoader(generator, generator, myVisibleModules, myPathConverter, myGenContext, myModuleSourceDir.getDescendant("generator"), generatorDescriptor, myReporter);
-    moduleLoaderForGenerator.importRequired();
-    moduleLoaderForGenerator.loadAndCheck();
+    // <node> 
+    // <node> 
+    // <node> 
   }
 
   private void optimizeDeps() {
@@ -842,7 +842,7 @@ public class ModuleLoader {
     }
     String genPath = null;
     if (!(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) || hasModels) {
-      IFile genPathFile = ProjectPathUtil.getGeneratorOutputPath(myModuleSourceDir.getParent(), myModuleDescriptor);
+      IFile genPathFile = ProjectPathUtil.getGeneratorOutputPath(myModuleSourceDir, myModuleDescriptor);
       if (genPathFile != null) {
         genPath = genPathFile.getPath();
         res.add(genPath);
