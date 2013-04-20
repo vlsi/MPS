@@ -303,11 +303,20 @@
         <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="9178146092071418846">
           <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="9178146092071418851">
-            <property name="head" nameId="3ior.8618885170173601779" value="languages" />
+            <property name="head" nameId="3ior.8618885170173601779" value="testbench" />
             <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="9178146092071418852">
-              <property name="head" nameId="3ior.8618885170173601779" value="testDefaultEditor" />
+              <property name="head" nameId="3ior.8618885170173601779" value="modules" />
               <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="9178146092071418853">
-                <property name="head" nameId="3ior.8618885170173601779" value="testDefaultEditor.mpl" />
+                <property name="head" nameId="3ior.8618885170173601779" value="testDefaultEditor" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5575867166679652460">
+                  <property name="head" nameId="3ior.8618885170173601779" value="languages" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5575867166679652462">
+                    <property name="head" nameId="3ior.8618885170173601779" value="testDefaultEditor" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5575867166679652464">
+                      <property name="head" nameId="3ior.8618885170173601779" value="testDefaultEditor.mpl" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

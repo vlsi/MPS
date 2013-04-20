@@ -130,20 +130,20 @@
     </echoxml>
     <jar destfile="${build.layout}/languages/testDefaultEditor.jar">
       <fileset dir="${build.tmp}/java/out/testDefaultEditor" />
-      <fileset dir="${basedir}/languages/testDefaultEditor" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/testDefaultEditor.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-testDefaultEditor-languageModels">
-      <fileset dir="${basedir}/languages/testDefaultEditor/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-languageModels">
+      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-testDefaultEditor-generator-template">
-      <fileset dir="${basedir}/languages/testDefaultEditor/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-generator-template">
+      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/languages/testDefaultEditor-src.jar">
-      <fileset dir="${basedir}/languages/testDefaultEditor/source_gen" includes="**/*.java" />
-      <zipfileset file="${basedir}/languages/testDefaultEditor/testDefaultEditor.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-testDefaultEditor-languageModels" prefix="module/languageModels" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-testDefaultEditor-generator-template" prefix="module/generator/template" />
+      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" includes="**/*.java" />
+      <zipfileset file="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/testDefaultEditor.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-languageModels" prefix="module/languageModels" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-generator-template" prefix="module/generator/template" />
     </jar>
     <mkdir dir="${build.layout}/tests" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.test.jar" />
@@ -351,7 +351,7 @@
       <chunk>
         <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/jetbrains.mps.lang.actions.testLanguage.mpl" />
         <module file="${basedir}/languages/languageDesign/editor/languages/tableTests/jetbrains.mps.lang.editor.tableTests.mpl" />
-        <module file="${basedir}/languages/testDefaultEditor/testDefaultEditor.mpl" />
+        <module file="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/testDefaultEditor.mpl" />
       </chunk>
       <chunk>
         <module file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.test.msd" />
@@ -451,7 +451,7 @@
     <javac2 destdir="${build.tmp}/java/out/testDefaultEditor" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/testDefaultEditor/source_gen" />
+        <path location="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
@@ -492,7 +492,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/testDefaultEditor">
-      <fileset dir="${basedir}/languages/testDefaultEditor/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -782,7 +782,7 @@
   <target name="cleanSources">
     <delete dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/editor/languages/tableTests/source_gen" />
-    <delete dir="${basedir}/languages/testDefaultEditor/source_gen" />
+    <delete dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" />
     <delete dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.test/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/editor/tests/table/source_gen" />

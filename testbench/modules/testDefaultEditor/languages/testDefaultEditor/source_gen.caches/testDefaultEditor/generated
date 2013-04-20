@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-4redzfx11iccz5u2j9b9sjcb7wpubco">
+  <dep model="r:3ece6893-49db-496b-9c1e-9d891442b410(testDefaultEditor.typesystem)" hash="-5jtq4y5zr57mgh902fhivecxw1ngiaa" />
+  <common>
+    <dep model="r:3ece6893-49db-496b-9c1e-9d891442b410(testDefaultEditor.typesystem)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+
