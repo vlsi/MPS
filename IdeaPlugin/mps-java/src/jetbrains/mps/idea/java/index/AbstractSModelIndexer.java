@@ -21,11 +21,13 @@ import com.intellij.util.indexing.FileContent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Consumer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -63,65 +65,60 @@ import java.util.Map;
     "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration",
   };
 
-  protected Collection<SNode> getJavaClasses(SModel sModel) {
-    ArrayList<SNode> classes = new ArrayList<SNode>();
+  protected void getJavaClasses(SModel sModel, Consumer<SNode> consumer) {
     for (SNode root : sModel.getRootNodes()) {
-      collectJavaClasses(root, classes);
+      collectJavaClasses(root, consumer);
     }
-    return classes;
   }
 
-  protected Collection<SNode> getJavaMethods(SModel sModel) {
-    ArrayList<SNode> classes = new ArrayList<SNode>();
+  protected void getJavaMethods(SModel sModel, Consumer<SNode> consumer) {
+    CollectConsumer<SNode> classes = new CollectConsumer<SNode>(new ArrayList<SNode>());
     for (SNode root : sModel.getRootNodes()) {
       collectJavaClasses(root, classes);
     }
     ArrayList<SNode> methods = new ArrayList<SNode>();
-    for (SNode cls : classes) {
-      collectJavaMethods(cls, methods);
+    for (SNode cls : classes.getResult()) {
+      collectJavaMethods(cls, consumer);
     }
-    return methods;
   }
 
-  protected Collection<SNode> getJavaFields(SModel sModel) {
-    ArrayList<SNode> classes = new ArrayList<SNode>();
+  protected void getJavaFields(SModel sModel, Consumer<SNode> consumer) {
+    CollectConsumer<SNode> classes = new CollectConsumer<SNode>(new ArrayList<SNode>());
     for (SNode root : sModel.getRootNodes()) {
       collectJavaClasses(root, classes);
     }
-    ArrayList<SNode> fields = new ArrayList<SNode>();
-    for (SNode cls : classes) {
-      collectJavaFields(cls, fields);
+    for (SNode cls : classes.getResult()) {
+      collectJavaFields(cls, consumer);
     }
-    return fields;
   }
 
-  private void collectJavaClasses(SNode cand, Collection<SNode> yield) {
+  private void collectJavaClasses(SNode cand, Consumer<SNode> consumer) {
     if (isClassOrInterface(cand)) {
-      yield.add(cand);
+      consumer.consume(cand);
       for (SNode chd : cand.getChildren()) {
-        collectJavaClasses(chd, yield);
+        collectJavaClasses(chd, consumer);
       }
     }
   }
 
-  private void collectJavaMethods(SNode node, Collection<SNode> yield) {
+  private void collectJavaMethods(SNode node, Consumer<SNode> consumer) {
     for (SNode cand : node.getChildren()) {
       if (isMethod(cand)) {
-        yield.add(cand);
+        consumer.consume(cand);
         continue;
         // TODO: walk the body and collect methods from the anonymous classes?
       }
-      collectJavaMethods(cand, yield);
+      collectJavaMethods(cand, consumer);
     }
   }
 
-  private void collectJavaFields(SNode node, Collection<SNode> yield) {
+  private void collectJavaFields(SNode node, Consumer<SNode> consumer) {
     for (SNode cand : node.getChildren()) {
       if (isField(cand)) {
-        yield.add(cand);
+        consumer.consume(cand);
         continue;
       }
-      collectJavaFields(cand, yield);
+      collectJavaFields(cand, consumer);
     }
   }
 
@@ -151,21 +148,24 @@ import java.util.Map;
       @Override
       public void run() {
         try {
-          SModel model = RootNodeNameIndex.doModelParsing(inputData);
-          SModelReference modelRef = model.getReference();
-          for (S object : getObjectsToIndex(model)) {
-            String[] keys = getKeys(model, object);
+          final SModel model = RootNodeNameIndex.doModelParsing(inputData);
+          final SModelReference modelRef = model.getReference();
+          getObjectsToIndex(model, new Consumer<S>() {
+            @Override
+            public void consume(S object) {
+              String[] keys = getKeys(model, object);
 
-            for (String key : keys) {
-              Collection<E> collection = map.get(key);
-              if (collection == null) {
-                collection = new ArrayList<E>();
-                map.put(key, collection);
+              for (String key : keys) {
+                Collection<E> collection = map.get(key);
+                if (collection == null) {
+                  collection = new ArrayList<E>();
+                  map.put(key, collection);
+                }
+
+                updateCollection(modelRef, object, collection);
               }
-
-              updateCollection(modelRef, object, collection);
             }
-          }
+          });
         } catch (Exception e) {
           LOG.error("Error indexing model file " + inputData.getFileName() + "; " + e.getMessage());
         }
@@ -174,7 +174,7 @@ import java.util.Map;
     return map;
   }
 
-  protected abstract Iterable<S> getObjectsToIndex(SModel sModel);
+  protected abstract void getObjectsToIndex(SModel sModel, Consumer<S> consumer);
 
   protected abstract String[] getKeys(SModel model, S object);
 

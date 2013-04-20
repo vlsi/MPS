@@ -67,6 +67,7 @@ public class TextCommentPartUtil {
 
     SNode thisLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
     SNode nextLine = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
+    SNodeFactoryOperations.addNewChild(nextLine, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
     SPropertyOperations.set(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)).getElement(0), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", rightPart);
     SNodeOperations.insertNextSiblingChild(thisLine, nextLine);
 

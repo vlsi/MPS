@@ -92,6 +92,8 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
       return myModel.getModel(ModelLoadingState.ROOTS_LOADED);
     }
     synchronized (myModel) {
+      if (myModel instanceof InvalidSModel) return myModel.getModel(null);
+
       oldState = myModel.getState();
       DefaultSModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion

@@ -34,6 +34,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.util.Consumer;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -81,14 +82,12 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
       }
 
       @Override
-      protected Iterable<SReference> getObjectsToIndex(SModel sModel) {
-        Collection<SReference> result = new ArrayList<SReference>();
+      protected void getObjectsToIndex(SModel sModel, Consumer<SReference> consumer) {
         for (SNode sNode : new NodesIterable(sModel)) {
           for (SReference sref : sNode.getReferences()) {
-            result.add(sref);
+            consumer.consume(sref);
           }
         }
-        return result;
       }
 
       @Override

@@ -270,8 +270,10 @@
 
   <target name="uninstall-plugin" depends="loadVars">
     <property name="pluginPath" value="${ideaPlugins}"/>
+    <delete dir="${pluginPath}/mps-build"/>
     <delete dir="${pluginPath}/mps-core"/>
+    <delete dir="${pluginPath}/mps-java"/>
+    <delete dir="${pluginPath}/mps-testing"/>
     <delete dir="${pluginPath}/mps-vcs"/>
-    <delete file="${pluginPath}/mps-java.jar"/>
   </target>
 </project>
