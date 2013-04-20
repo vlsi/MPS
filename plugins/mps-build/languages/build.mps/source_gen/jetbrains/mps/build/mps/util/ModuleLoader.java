@@ -31,8 +31,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.LinkedHashMap;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -545,20 +543,6 @@ public class ModuleLoader {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
     Iterable<SModuleReference> usedLanguages = myModuleDescriptor.getUsedLanguages();
     Iterable<SModuleReference> usedDevkits = myModuleDescriptor.getUsedDevkits();
-    if (myModuleDescriptor instanceof LanguageDescriptor) {
-      // see j.m.p.dependency.ModuleDependenciesManager#collectAllCompileTimeDependencies 
-      Iterable<GeneratorDescriptor> generators = ((LanguageDescriptor) myModuleDescriptor).getGenerators();
-      usedLanguages = Sequence.fromIterable(usedLanguages).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, SModuleReference>() {
-        public Iterable<SModuleReference> translate(GeneratorDescriptor it) {
-          return it.getUsedLanguages();
-        }
-      }));
-      usedDevkits = Sequence.fromIterable(usedDevkits).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, SModuleReference>() {
-        public Iterable<SModuleReference> translate(GeneratorDescriptor it) {
-          return it.getUsedDevkits();
-        }
-      }));
-    }
 
     for (SModuleReference lang : usedLanguages) {
       SNode resolved = SNodeOperations.as(myVisibleModules.resolve(lang.getModuleName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
@@ -611,15 +595,6 @@ public class ModuleLoader {
       if (moduleRef.getModuleName().contains("#")) {
         report("module cannot depend on generator: `" + moduleRef.getModuleName() + "'", myOriginalModule);
       }
-    }
-    if (myModuleDescriptor instanceof LanguageDescriptor) {
-      // see j.m.p.dependency.ModuleDependenciesManager#collectAllCompileTimeDependencies 
-      Iterable<GeneratorDescriptor> generators = ((LanguageDescriptor) myModuleDescriptor).getGenerators();
-      dependencies = Sequence.fromIterable(dependencies).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, Dependency>() {
-        public Iterable<Dependency> translate(GeneratorDescriptor it) {
-          return it.getDependencies();
-        }
-      }));
     }
 
     // resolve all dependencies 
@@ -695,7 +670,7 @@ public class ModuleLoader {
               SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
               it
             );
-            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0eb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
+            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0q0eb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
           }
         }))) {
           report("jar stub library should be extracted into build script: " + relPath, myOriginalModule);
@@ -711,15 +686,6 @@ public class ModuleLoader {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
 
     Iterable<Dependency> dependencies = myModuleDescriptor.getDependencies();
-    if (myModuleDescriptor instanceof LanguageDescriptor) {
-      // see j.m.p.dependency.ModuleDependenciesManager#collectAllCompileTimeDependencies 
-      Iterable<GeneratorDescriptor> generators = ((LanguageDescriptor) myModuleDescriptor).getGenerators();
-      dependencies = Sequence.fromIterable(dependencies).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, Dependency>() {
-        public Iterable<Dependency> translate(GeneratorDescriptor it) {
-          return it.getDependencies();
-        }
-      }));
-    }
 
     Map<SNode, SNode> seen = new HashMap<SNode, SNode>();
     for (Dependency dep : dependencies) {
@@ -780,7 +746,7 @@ public class ModuleLoader {
       if (path.endsWith(".jar")) {
         SNode extr = ListSequence.fromList(previous).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a0a0a0a0a0a0d0j0fb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a0a0a0a0a0a0d0i0fb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
           }
         });
 
@@ -803,14 +769,6 @@ public class ModuleLoader {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
     Iterable<ModelRootDescriptor> modelRoots = myModuleDescriptor.getModelRootDescriptors();
     boolean hasModels = false;
-    if (myModuleDescriptor instanceof LanguageDescriptor) {
-      Iterable<GeneratorDescriptor> generators = ((LanguageDescriptor) myModuleDescriptor).getGenerators();
-      modelRoots = Sequence.fromIterable(modelRoots).concat(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, ModelRootDescriptor>() {
-        public Iterable<ModelRootDescriptor> translate(GeneratorDescriptor it) {
-          return it.getModelRootDescriptors();
-        }
-      }));
-    }
     for (ModelRootDescriptor modelRootDescriptor : modelRoots) {
       if (!(PersistenceRegistry.DEFAULT_MODEL_ROOT.equals(modelRootDescriptor.getType()))) {
         continue;
@@ -926,14 +884,14 @@ public class ModuleLoader {
     ));
   }
 
-  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0d0r0eb(Object a, Object b) {
+  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0d0q0eb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_a6ewnz_a0a0a0a0a0a0a0d0j0fb(Object a, Object b) {
+  private static boolean eq_a6ewnz_a0a0a0a0a0a0a0d0i0fb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
