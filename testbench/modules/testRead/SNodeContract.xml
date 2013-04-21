@@ -95,6 +95,12 @@
    <string>public abstract boolean org.jetbrains.mps.openapi.model.SNode.isInRepository()</string>
   </void>
   <void method="add">
+   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.attach(org.jetbrains.mps.openapi.module.SRepository)</string>
+  </void>
+  <void method="add">
+   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.detach()</string>
+  </void>
+  <void method="add">
    <string>public abstract org.jetbrains.mps.openapi.module.SRepository org.jetbrains.mps.openapi.model.SNode.getRepository()</string>
   </void>
  </object>
