@@ -534,45 +534,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @Override
-  //todo remove
-  public SNode getPrevChild(org.jetbrains.mps.openapi.model.SNode child) {
-    assertRead();
-    assertDisposed();
-    fireNodeReadAccess();
-
-    SNode schild = (SNode) child;
-    String childRole = schild.getRoleInParent();
-    assert childRole != null : "role must be not null";
-
-    SNode fc = firstChild();
-    while (schild != fc) {
-      schild = schild.treePrevious();
-      if (schild.getRoleInParent().equals(childRole)) return schild;
-    }
-
-    return null;
-  }
-
-  @Override
-  //todo remove
-  public SNode getNextChild(org.jetbrains.mps.openapi.model.SNode child) {
-    assertRead();
-    assertDisposed();
-    fireNodeReadAccess();
-
-    SNode schild = (SNode) child;
-    String childRole = schild.getRoleInParent();
-    assert childRole != null : "role must be not null";
-
-    while (schild.treeNext() != null) {
-      schild = schild.treeNext();
-      if (schild.getRoleInParent().equals(childRole)) return schild;
-    }
-
-    return null;
-  }
-
-  @Override
   public SNodeReference getReference() {
     nodeRead();
 
@@ -696,16 +657,47 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public SNode getPrevSibling() {
     nodeRead();
 
-    if (getParent() == null) return null;
-    return getParent().getPrevChild(this);
+    SNode p = getParent();
+    if (p == null) return null;
+
+    assertRead();
+    assertDisposed();
+    fireNodeReadAccess();
+
+    SNode curent =  this;
+    String currentRole = getRoleInParent();
+    assert currentRole != null : "role must be not null";
+
+    SNode fc = p.firstChild();
+    while (curent != fc) {
+      curent = curent.treePrevious();
+      if (curent.getRoleInParent().equals(currentRole)) return curent;
+    }
+
+    return null;
   }
 
   @Override
   public SNode getNextSibling() {
     nodeRead();
 
-    if (getParent() == null) return null;
-    return getParent().getNextChild(this);
+    SNode p = getParent();
+    if (p == null) return null;
+
+    assertRead();
+    assertDisposed();
+    fireNodeReadAccess();
+
+    SNode current = this;
+    String currentRole = getRoleInParent();
+    assert currentRole != null : "role must be not null";
+
+    while (current.treeNext() != null) {
+      current = current.treeNext();
+      if (current.getRoleInParent().equals(currentRole)) return current;
+    }
+
+    return null;
   }
 
   @Override

@@ -134,16 +134,6 @@ public interface SNode {
    */
   Iterable<? extends SNode> getChildren(String role);
 
-  /**
-   * Null for first child
-   */
-  SNode getPrevChild(SNode child);
-
-  /**
-   * Null for last child
-   */
-  SNode getNextChild(SNode child);
-
   String getRoleOf(SNode child);
 
   /**
