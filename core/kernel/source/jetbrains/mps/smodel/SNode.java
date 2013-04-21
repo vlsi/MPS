@@ -41,7 +41,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
@@ -61,6 +60,8 @@ import java.util.Set;
 public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SNode.class));
   private static final String[] EMPTY_ARRAY = new String[0];
+
+  private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
 
@@ -82,7 +83,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   private final Object REPO_LOCK = new Object();
   protected volatile SModel myModel; //todo make private non-volatile
-  private boolean myDisposed = false;
+  private volatile SRepository myRepository = null;
 
   public SNode(@NotNull String conceptFqName) {
     myConceptFqName = conceptFqName;
@@ -94,16 +95,69 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public void attach(SRepository repo) {
     synchronized (REPO_LOCK) {
       org.jetbrains.mps.openapi.model.SModel model = getModel();
-      assert model != null && model.getModule()!=null && model.getModule().getRepository() != null;
+      assert model != null && model.getModule() != null && model.getModule().getRepository() != null;
+      assert myRepository == null : "Can't register disposed node or node from another repo. Repo:" + myRepository;
+      myRepository = repo;
     }
   }
 
   @Override
   public void detach() {
     synchronized (REPO_LOCK) {
-      myDisposed = true;
+      myRepository = DisposedRepository.INSTANCE;
     }
   }
+
+  protected void assertCanRead() {
+    if (myRepository == null) return;
+    if (myRepository instanceof DisposedRepository) {
+      showDisposedMessage();
+      return;
+    }
+
+    synchronized (REPO_LOCK) {
+      if (myRepository == null) return;
+      if (myRepository instanceof DisposedRepository) {
+        showDisposedMessage();
+        return;
+      }
+      myRepository.getModelAccess().checkReadAccess();
+    }
+  }
+
+  private void assertCanChange() {
+    if (myRepository == null) return;
+    if (myRepository instanceof DisposedRepository) {
+      showDisposedMessage();
+      return;
+    }
+
+    synchronized (REPO_LOCK) {
+      if (myRepository == null) return;
+      if (myRepository instanceof DisposedRepository) {
+        showDisposedMessage();
+        return;
+      }
+      myRepository.getModelAccess().checkWriteAccess();
+      if (!UndoHelper.getInstance().isInsideUndoableCommand()){
+        throw new IllegalModelChangeError(
+            "registered node can only be modified inside undoable command or in 'loading' model " +
+            org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
+        );
+      }
+    }
+  }
+
+  private void showDisposedMessage() {
+    SModelDescriptor model = internal_getModel();
+    String modelName = model == null ? "null" : jetbrains.mps.util.SNodeOperations.getModelLongName(model);
+    if (ourErroredModels.add(modelName)) {
+      System.err.println("CRITICAL: INVALID OPERATION DETECTED");
+      System.err.println("model: " + modelName);
+      LOG.error(new IllegalModelAccessError("Accessing disposed node"));
+    }
+  }
+
 
   @Override
   public SNodeId getNodeId() {
@@ -682,7 +736,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     assertDisposed();
     fireNodeReadAccess();
 
-    SNode curent =  this;
+    SNode curent = this;
     String currentRole = getRoleInParent();
     assert currentRole != null : "role must be not null";
 
@@ -1010,7 +1064,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //--------private-------
 
-  private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
 
   private void assertRead() {
     if (!isInRepository()) return;
