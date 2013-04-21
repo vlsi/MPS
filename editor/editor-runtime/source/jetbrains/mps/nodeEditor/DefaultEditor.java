@@ -501,6 +501,10 @@ public class DefaultEditor extends DefaultNodeEditor {
     public EditorCell createEditorCell(EditorContext editorContext) {
       return EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
+          String name = getSNode().getName();
+          if (name != null) {
+            return name;
+          }
           return getSNode().getPresentation();
         }
 
