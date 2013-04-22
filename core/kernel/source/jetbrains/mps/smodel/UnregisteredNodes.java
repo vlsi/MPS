@@ -57,6 +57,9 @@ public class UnregisteredNodes {
 
   public void clear() {
     synchronized (myLock) {
+      for (SNode node:myMap.values()){
+        node.detach();
+      }
       myMap.clear();
     }
   }

@@ -921,7 +921,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     UnregisteredNodes.instance().remove(this);
 
-    for (SNode child = first; child != null; child = child.next) {
+    for (SNode child = firstChild(); child != null; child = child.treeNext()) {
       child.registerInModel(model);
     }
   }
@@ -1069,7 +1069,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //--------private classes-------
 
-  private static class ChildrenList extends AbstractImmutableList<SNode> {
+  private class ChildrenList extends AbstractImmutableList<SNode> {
     public ChildrenList(SNode first) {
       super(first);
     }
@@ -1111,14 +1111,26 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   protected SNode firstChild() {
+    if (first == null) return null;
+    if (myRepository != null) {
+      first.attach(myRepository);
+    }
     return first;
   }
 
   protected SNode treePrevious() {
+    if (prev == null) return null;
+    if (myRepository != null) {
+      prev.attach(myRepository);
+    }
     return prev;
   }
 
   protected SNode treeNext() {
+    if (next == null) return null;
+    if (myRepository != null) {
+      next.attach(myRepository);
+    }
     return next;
   }
 
@@ -1147,6 +1159,9 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
         anchor.next.prev = node;
       }
       anchor.next = node;
+    }
+    if (myRepository != null) {
+      node.attach(myRepository);
     }
     node.parent = this;
   }

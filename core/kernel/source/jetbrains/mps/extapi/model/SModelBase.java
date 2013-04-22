@@ -19,11 +19,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.DisposedRepository;
 import jetbrains.mps.smodel.IllegalModelAccessError;
-import jetbrains.mps.smodel.IllegalModelChangeError;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -33,7 +31,9 @@ import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModelStateListener;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -87,8 +87,34 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   public void detach() {
     synchronized (REPO_LOCK) {
       myRepository = DisposedRepository.INSTANCE;
+      for (org.jetbrains.mps.openapi.model.SNode node : new NodesIterable(this)) {
+        node.detach();
+      }
     }
   }
+
+  @Override
+  public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
+    assertCanRead();
+    Iterable<org.jetbrains.mps.openapi.model.SNode> roots = getSModelInternal().getRootNodes();
+    if (myRepository != null) {
+      for (org.jetbrains.mps.openapi.model.SNode r : roots) {
+        r.attach(myRepository);
+      }
+    }
+    return roots;
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode getNode(SNodeId id) {
+    SNode node = getSModelInternal().getNode(id);
+    if (node == null) return null;
+    if (myRepository != null) {
+      node.attach(myRepository);
+    }
+    return node;
+  }
+
 
   @Override
   @NotNull

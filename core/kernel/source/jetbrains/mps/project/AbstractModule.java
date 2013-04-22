@@ -40,8 +40,11 @@ import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
+import jetbrains.mps.smodel.DisposedRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IllegalModelAccessError;
+import jetbrains.mps.smodel.IllegalModelChangeError;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -49,6 +52,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
@@ -56,6 +60,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.iterable.TranslatingIterator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -109,9 +114,9 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   protected boolean myChanged = false;
 
   private final Object REPO_LOCK = new Object();
-  private SRepository myRepo;
-  private boolean myDisposed = false;
+  private SRepository myRepository = null;
 
+  private static Set<String> ourErroredModules = new ConcurrentHashSet<String>();
 
   //----model creation
 
@@ -137,23 +142,28 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   @Override
   public void attach(SRepository repo) {
     synchronized (REPO_LOCK) {
-      assert myRepo == null;
-      myRepo = repo;
+      assert myRepository == null;
+      myRepository = repo;
+      for (SModel m : getOwnModelDescriptors()) {
+        m.attach(repo);
+      }
     }
   }
 
   @Override
   public void detach() {
     synchronized (REPO_LOCK) {
-      assert myRepo != null;
-      myRepo = null;
-      myDisposed = true;
+      assert myRepository != null;
+      for (SModel m : getOwnModelDescriptors()) {
+        m.detach();
+      }
+      myRepository = DisposedRepository.INSTANCE;
     }
   }
 
   @Override
   public SRepository getRepository() {
-    return myRepo;
+    return myRepository;
   }
 
   @Override
@@ -995,5 +1005,48 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   @Deprecated
   public final IFile getClassesGen() {
     return getJavaFacet(this).getClassesGen();
+  }
+
+  protected void assertCanRead() {
+    if (myRepository == null) return;
+    if (myRepository instanceof DisposedRepository) {
+      showDisposedMessage();
+      return;
+    }
+
+    synchronized (REPO_LOCK) {
+      if (myRepository == null) return;
+      if (myRepository instanceof DisposedRepository) {
+        showDisposedMessage();
+        return;
+      }
+      myRepository.getModelAccess().checkReadAccess();
+    }
+  }
+
+  protected void assertCanChange() {
+    if (myRepository == null) return;
+    if (myRepository instanceof DisposedRepository) {
+      showDisposedMessage();
+      return;
+    }
+
+    synchronized (REPO_LOCK) {
+      if (myRepository == null) return;
+      if (myRepository instanceof DisposedRepository) {
+        showDisposedMessage();
+        return;
+      }
+      myRepository.getModelAccess().checkWriteAccess();
+      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
+        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
+      }
+    }
+  }
+
+  private void showDisposedMessage() {
+    if (ourErroredModules.add(getModuleName())) {
+      LOG.error(new IllegalModelAccessError("Accessing disposed model " + getModuleName()));
+    }
   }
 }
