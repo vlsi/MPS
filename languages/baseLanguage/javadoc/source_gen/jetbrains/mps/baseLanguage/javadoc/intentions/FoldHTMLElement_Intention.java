@@ -85,6 +85,7 @@ public class FoldHTMLElement_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty()) {
         SNodeFactoryOperations.addNewChild(node, "line", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+        editorContext.selectWRTFocusPolicy(ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).first());
       } else {
         ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).clear();
       }

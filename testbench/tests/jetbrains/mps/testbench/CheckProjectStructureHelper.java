@@ -188,8 +188,6 @@ public class CheckProjectStructureHelper {
       Testbench.setMacro(macro[0], macro[1]);
     }
     Testbench.initLibs();
-    Testbench.makeAll();
-    Testbench.reloadAll();
 
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();

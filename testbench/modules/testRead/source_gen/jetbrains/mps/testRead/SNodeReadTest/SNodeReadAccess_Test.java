@@ -51,18 +51,6 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_getNextChild() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
-    this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getNextChild", true);
-  }
-
-  @Test
-  public void test_getPrevChild() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
-    this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getPrevChild", true);
-  }
-
-  @Test
   public void test_getProperty() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getProperty", true);
@@ -200,34 +188,6 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       sNode.getChildren("");
 
       this.assertMethod("public java.util.List<jetbrains.mps.smodel.SNode> jetbrains.mps.smodel.SNode.getChildren(java.lang.String)", listener.getResults().o1);
-    }
-
-    public void test_getNextChild() throws Exception {
-      this.addNodeById("8150353254540236423");
-      this.addNodeById("8150353254540236549");
-      this.addNodeById("4195712261513743410");
-      SNode sNode = SNodeOperations.cast(this.getNodeById("8150353254540236424"), "jetbrains.mps.baseLanguage.structure.BlockStatement");
-
-      StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
-      NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
-
-      sNode.getNextChild(sNode);
-
-      this.assertMethod("public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getNextChild(org.jetbrains.mps.openapi.model.SNode)", listener.getResults().o1);
-    }
-
-    public void test_getPrevChild() throws Exception {
-      this.addNodeById("8150353254540236423");
-      this.addNodeById("8150353254540236549");
-      this.addNodeById("4195712261513743410");
-      SNode sNode = SNodeOperations.cast(this.getNodeById("8150353254540236424"), "jetbrains.mps.baseLanguage.structure.BlockStatement");
-
-      StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
-      NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
-
-      sNode.getPrevChild(sNode);
-
-      this.assertMethod("public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getPrevChild(jetbrains.mps.smodel.SNode)", listener.getResults().o1);
     }
 
     public void test_getProperty() throws Exception {

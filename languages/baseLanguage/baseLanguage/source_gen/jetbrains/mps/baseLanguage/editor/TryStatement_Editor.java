@@ -53,6 +53,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
+    UnwrapStatementListContainer.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -65,6 +66,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.MATCHING_LABEL, "try");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    UnwrapStatementListContainer.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -97,6 +99,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "try");
     style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

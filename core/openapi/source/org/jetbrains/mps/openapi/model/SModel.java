@@ -17,9 +17,6 @@ package org.jetbrains.mps.openapi.model;
 
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.events.SModelAccessListener;
-import org.jetbrains.mps.openapi.model.events.SModelChangeListener;
-import org.jetbrains.mps.openapi.model.events.SModelStateListener;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -33,7 +30,7 @@ public interface SModel {
 
   SRepository getRepository();
 
-  // TODO remove (bad name)
+  // TODO remove (bad name)  [Mihail Muhin: SModule has a same method]
   boolean isInRepository();
 
   /**
@@ -61,6 +58,10 @@ public interface SModel {
    * TODO: fix remove IModule!
    */
   IModule getModule();
+
+  void attach(SRepository repo);
+
+  void detach();
 
   /**
    * Returns a collection of root nodes. Root nodes are all nodes added to model using addRootNode.

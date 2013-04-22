@@ -15,8 +15,6 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
-
 /**
  * A storage for modules
  * <p/>
