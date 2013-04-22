@@ -191,6 +191,10 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new HTMLElement_Editor.lineListHandler_h096ql_d0a(node, "line", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_line");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    HandleEnterInTheEnd.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
