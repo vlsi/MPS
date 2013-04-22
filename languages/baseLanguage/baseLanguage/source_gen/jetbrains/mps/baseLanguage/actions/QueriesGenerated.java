@@ -62,6 +62,11 @@ import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -5006,6 +5011,14 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        IModule module = SNodeOperations.getModel(_context.getSourceNode()).getModule();
+        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a732(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
+        SModuleReference javadocLangReference = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage.javadoc", Language.class).getModuleReference();
+        if (!(model.importedLanguages().contains(javadocLangReference))) {
+          module.addUsedLanguage(javadocLangReference);
+          model.addLanguage(javadocLangReference);
+        }
+
         SNode nextSibling = SNodeOperations.getNextSibling(_context.getSourceNode());
         while (nextSibling != null && SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.PlaceholderMember")) {
           SNode toBeRemoved = nextSibling;
@@ -5251,6 +5264,13 @@ __switch__:
 
   public static boolean isEmpty_x583g4_a0a0b0a0c0a0a0a0a0c0a0b0sc(String str) {
     return str == null || str.length() == 0;
+  }
+
+  private static <T> T as_x583g4_a0a1a0a0a0a0a1a732(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 
   private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a03 = Pattern.compile("-?\\d+", 0);
