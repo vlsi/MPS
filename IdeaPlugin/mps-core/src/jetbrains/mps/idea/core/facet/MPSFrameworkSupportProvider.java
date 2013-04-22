@@ -71,7 +71,7 @@ public class MPSFrameworkSupportProvider extends FacetBasedFrameworkSupportProvi
     oldRoots.add(mr);
     configurationBean.setModelRoots(oldRoots);
 
-    if (sourceFolder != null) {
+    if (configurationBean.getGeneratorOutputPath() == null && sourceFolder != null) {
       configurationBean.setGeneratorOutputPath(sourceFolder.getFile().getPath());
       configurationBean.setUseModuleSourceFolder(true);
       configurationBean.setUseTransientOutputFolder(false);
