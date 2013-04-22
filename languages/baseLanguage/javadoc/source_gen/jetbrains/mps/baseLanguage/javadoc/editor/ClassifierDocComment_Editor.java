@@ -11,6 +11,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -21,8 +23,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
@@ -51,10 +51,21 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_q2jz9e_a0");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, ClassifierDocComment_Editor._StyleParameter_QueryFunction_q2jz9e_a0a0((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    )));
     editorCell.getStyle().putAll(style);
+    RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean _StyleParameter_QueryFunction_q2jz9e_a0a0(EditorContext editorContext, SNode node) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "body", true)).isNotEmpty();
   }
 
   private EditorCell createRefNodeList_q2jz9e_b0(EditorContext editorContext, SNode node) {
@@ -66,6 +77,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -126,6 +138,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
+    RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_q2jz9e_a2a(editorContext, node));
     if (renderingCondition_q2jz9e_a1c0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNodeList_q2jz9e_b2a(editorContext, node));
@@ -433,6 +446,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

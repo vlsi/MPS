@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.events.global;
 
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.events.SModuleListener;
+import org.jetbrains.mps.openapi.module.SModuleListener;
 
 public interface GlobalSModuleListener extends SModuleListener, GlobalRepositoryListener<SModule> {
 

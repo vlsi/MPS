@@ -40,7 +40,7 @@ public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
           SNode anchorNode = getAnchorNode(context);
           SNode nodeToInsert = myListHandler.createNodeToInsert(context);
           SNode parentNode = myListHandler.getOwner();
-          parentNode.insertChild(myListHandler.getElementRole(), nodeToInsert, parentNode.getPrevChild(anchorNode));
+          parentNode.insertChild(myListHandler.getElementRole(), nodeToInsert, anchorNode.getPrevSibling());
         }
       };
       insertAction.setCaretPolicy(KeyMapAction.CARET_AT_FIRST_POSITION);

@@ -51,7 +51,7 @@ import org.apache.log4j.LogManager;
 
     if (!(dryRun)) {
       // copy driver files to the proper place 
-      MergeDriverPacker.getInstance().pack();
+      MergeDriverPacker.getInstance().pack(myProject);
     }
 
     AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, myScriptFile, dryRun);
@@ -104,6 +104,9 @@ import org.apache.log4j.LogManager;
         }
       }
       if (equal) {
+        if (!(dryRun)) {
+          showSuccessfullInfoMessage();
+        }
         return AbstractInstaller.State.INSTALLED;
       } else {
         if (dryRun) {
@@ -123,7 +126,7 @@ import org.apache.log4j.LogManager;
 
     try {
       StringsIO.writeLines(myConfigFile, configLines);
-      Messages.showInfoMessage(myProject, String.format("Successfully updated %s", myConfigFile.getAbsolutePath()), "Global Git Merge Driver Installed");
+      showSuccessfullInfoMessage();
       return AbstractInstaller.State.INSTALLED;
     } catch (IOException e) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
@@ -136,6 +139,10 @@ import org.apache.log4j.LogManager;
       Messages.showErrorDialog(myProject, "Writing gitconfig file failed. " + msg, "Writing .gitconfig Failed");
       return AbstractInstaller.State.NOT_INSTALLED;
     }
+  }
+
+  private void showSuccessfullInfoMessage() {
+    Messages.showInfoMessage(myProject, String.format("Successfully updated %s", myConfigFile.getAbsolutePath()), "Global Git Merge Driver Installed");
   }
 
   @Override

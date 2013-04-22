@@ -82,6 +82,8 @@ public class AddStaticFieldDocComment_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))) == null)) {
         SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
+        SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))), "body", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+        SNodeFactoryOperations.addNewChild(line, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
       } else {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), null);
       }

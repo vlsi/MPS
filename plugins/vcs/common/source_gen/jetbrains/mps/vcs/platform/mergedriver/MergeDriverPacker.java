@@ -5,6 +5,14 @@ package jetbrains.mps.vcs.platform.mergedriver;
 import java.util.Arrays;
 import com.intellij.openapi.application.PathManager;
 import java.io.File;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.ThreadUtils;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -40,31 +48,45 @@ public abstract class MergeDriverPacker {
     return new File(getPath());
   }
 
-  public void pack() {
-    File tmpDir = FileUtil.createTmpDir();
-    FileUtil.delete(getFile());
+  public void pack(final Project project) {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        ProgressManager.getInstance().run(new Task.Modal(project, "Installing", false) {
+          public void run(@NotNull ProgressIndicator indicator) {
+            ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
+            monitor.start("Installing vcs add-ons", 4);
+            monitor.step("Deleting old files");
+            File tmpDir = FileUtil.createTmpDir();
+            FileUtil.delete(getFile());
 
-    Iterable<String> classpathDirs = getClasspath(false);
-    Iterable<String> classPathJars = Sequence.fromIterable(classpathDirs).where(new IWhereFilter<String>() {
-      public boolean accept(String cpd) {
-        return cpd.endsWith(".jar");
+            Iterable<String> classpathDirs = getClasspath(false);
+            Iterable<String> classPathJars = Sequence.fromIterable(classpathDirs).where(new IWhereFilter<String>() {
+              public boolean accept(String cpd) {
+                return cpd.endsWith(".jar");
+              }
+            });
+            monitor.step("Packing new merge driver");
+            internalPack(classPathJars, tmpDir, false);
+
+            if (isFromSources()) {
+              Iterable<String> classpathInternal = Sequence.fromIterable(classpathDirs).where(new IWhereFilter<String>() {
+                public boolean accept(String cpd) {
+                  return !(cpd.endsWith(".jar"));
+                }
+              });
+              File tmpDirRT = FileUtil.createTmpDir();
+              internalPack(classpathInternal, tmpDirRT, true);
+              FileUtil.zip(tmpDirRT, new File(tmpDir + File.separator + MERGER_RT));
+              FileUtil.delete(tmpDirRT);
+            }
+            monitor.step("Installing merge driver");
+            FileUtil.copyDir(tmpDir, getFile());
+            monitor.step("Deleting temporary files");
+            FileUtil.delete(tmpDir);
+          }
+        });
       }
     });
-    internalPack(classPathJars, tmpDir, false);
-
-    if (isFromSources()) {
-      Iterable<String> classpathInternal = Sequence.fromIterable(classpathDirs).where(new IWhereFilter<String>() {
-        public boolean accept(String cpd) {
-          return !(cpd.endsWith(".jar"));
-        }
-      });
-      File tmpDirRT = FileUtil.createTmpDir();
-      internalPack(classpathInternal, tmpDirRT, true);
-      FileUtil.zip(tmpDirRT, new File(tmpDir + File.separator + MERGER_RT));
-      FileUtil.delete(tmpDirRT);
-    }
-    FileUtil.copyDir(tmpDir, getFile());
-    FileUtil.delete(tmpDir);
   }
 
   private void internalPack(Iterable<String> classpathDirs, File tmpDir, boolean isForZip) {

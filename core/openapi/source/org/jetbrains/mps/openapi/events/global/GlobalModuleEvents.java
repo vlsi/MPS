@@ -18,8 +18,8 @@ package org.jetbrains.mps.openapi.events.global;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.events.SRepositoryAdapter;
-import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.Collection;

@@ -18,19 +18,29 @@ package jetbrains.mps.extapi.model;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelAccessListener;
+import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelStateListener;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
+  private List<SModelAccessListener> myAccessListeners = new CopyOnWriteArrayList<SModelAccessListener>();
+  private List<SModelChangeListener> myChangeListeners = new CopyOnWriteArrayList<SModelChangeListener>();
+  private List<SModelStateListener> myStateListeners = new CopyOnWriteArrayList<SModelStateListener>();
 
   @NotNull
   private final DataSource mySource;
@@ -38,7 +48,10 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   private SModelReference myModelReference;
 
   private ModelRoot myModelRoot;
-  private volatile SModule myModule;
+
+  private final Object REPO_LOCK = new Object();
+  private SModule myModule;
+  private boolean myDisposed = false;
 
   protected SModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
@@ -53,6 +66,20 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public boolean isInRepository() {
     return getRepository() != null;
+  }
+
+  @Override
+  public void attach(SRepository repo) {
+    synchronized (REPO_LOCK) {
+      assert myModule != null && myModule.getRepository() != null;
+    }
+  }
+
+  @Override
+  public void detach() {
+    synchronized (REPO_LOCK) {
+      myDisposed = true;
+    }
   }
 
   @Override
@@ -104,6 +131,18 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   @Override
+  public void addRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    getSModelInternal().addRootNode(node);
+    fireNodeAdded(null, null, node);
+  }
+
+  @Override
+  public void removeRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    getSModelInternal().removeRootNode(node);
+    fireNodeRemoved(null, null, node);
+  }
+
+  @Override
   public boolean isReadOnly() {
     return true;
   }
@@ -134,12 +173,87 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public void unload() {
+
   }
 
   public void attach() {
+
   }
 
   public void dispose() {
     ModelAccess.assertLegalWrite();
+  }
+
+  @Override
+  public void addStateListener(SModelStateListener l) {
+    myStateListeners.add(l);
+  }
+
+  @Override
+  public void removeStateListener(SModelStateListener l) {
+    myStateListeners.remove(l);
+  }
+
+  @Override
+  public void addChangeListener(SModelChangeListener l) {
+    myChangeListeners.add(l);
+  }
+
+  @Override
+  public void removeChangeListener(SModelChangeListener l) {
+    myChangeListeners.remove(l);
+  }
+
+  @Override
+  public void addAccessListener(SModelAccessListener l) {
+    myAccessListeners.add(l);
+  }
+
+  @Override
+  public void removeAccessListener(SModelAccessListener l) {
+    myAccessListeners.remove(l);
+  }
+
+  public void fireNodeRead(SNode node) {
+    for (SModelAccessListener l : myAccessListeners) {
+      l.nodeRead(node);
+    }
+  }
+
+  public void fireReferenceRead(SNode node, String role) {
+    for (SModelAccessListener l : myAccessListeners) {
+      l.referenceRead(node, role);
+    }
+  }
+
+  public void firePropertyRead(SNode node, String propertyName) {
+    for (SModelAccessListener l : myAccessListeners) {
+      l.propertyRead(node, propertyName);
+    }
+  }
+
+  public void fireReferenceChanged(SNode node, String role, SReference oldValue, SReference newValue) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.referenceChanged(node, role, oldValue, newValue);
+    }
+  }
+
+
+  public void firePropertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.propertyChanged(node, propertyName, oldValue, newValue);
+    }
+  }
+
+  public void fireNodeAdded(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.nodeAdded(node, role, child);
+    }
+  }
+
+  public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
+    for (SModelChangeListener l : myChangeListeners) {
+      l.nodeRemoved(node, role, child);
+    }
   }
 }

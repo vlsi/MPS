@@ -17,7 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 public class ModuleRepositoryAdapter implements ModuleRepositoryListener, SRepositoryListener {
   @Override
