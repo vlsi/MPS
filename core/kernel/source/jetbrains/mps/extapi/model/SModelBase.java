@@ -64,11 +64,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   @Override
-  public boolean isInRepository() {
-    return getRepository() != null;
-  }
-
-  @Override
   public void attach(SRepository repo) {
     synchronized (REPO_LOCK) {
       assert myModule != null && myModule.getRepository() != null;

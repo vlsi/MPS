@@ -1169,11 +1169,6 @@ public class SModel implements SModelData {
     }
 
     @Override
-    public boolean isInRepository() {
-      return false;
-    }
-
-    @Override
     public void setModelRoot(ModelRoot mr) {
       throw new UnsupportedOperationException();
     }
