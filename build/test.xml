@@ -46,7 +46,7 @@
     </jar>
     <delete dir="${build.tmp}/buildtests.tmp"/>
 
-    <junit fork="true" dir="${mps_build_home}" haltonfailure="true">
+    <junit fork="true" dir="${mps_build_home}">
       <jvmarg value="-ea"/>
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1200m"/>
