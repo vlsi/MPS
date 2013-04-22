@@ -1073,9 +1073,9 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
         return;
       }
       myRepository.getModelAccess().checkWriteAccess();
-      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
-        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
-      }
+//      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
+//        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
+//      }
     }
   }
 

@@ -334,9 +334,9 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
         return;
       }
       myRepository.getModelAccess().checkWriteAccess();
-      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
-        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
-      }
+//      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
+//        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
+//      }
     }
   }
 
