@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.util;
 
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.ArrayList;
 import java.util.Collection;
