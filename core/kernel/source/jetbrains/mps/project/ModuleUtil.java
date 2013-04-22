@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence;
 import jetbrains.mps.project.structure.modules.Dependency;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
@@ -41,10 +42,10 @@ import java.util.List;
 public class ModuleUtil {
 
   public static Iterable<IModule> getDependencies(IModule module) {
-    Iterable<IModule> dependencies = new TranslatingIterator<Dependency, IModule>(module.getDependencies().iterator()) {
+    Iterable<IModule> dependencies = new TranslatingIterator<SDependency, IModule>(module.getDeclaredDependencies().iterator()) {
       @Override
-      protected IModule translate(Dependency dep) {
-        return MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+      protected IModule translate(SDependency dep) {
+        return (IModule) dep.getTarget();
       }
     };
     Iterable<IModule> solutionsFromDevkits = new TranslatingIterator<SModuleReference, IModule>(
