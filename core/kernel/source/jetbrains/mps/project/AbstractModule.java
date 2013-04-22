@@ -1043,40 +1043,40 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
   }
 
   protected void assertCanRead() {
-    if (myRepository == null) return;
-    if (myRepository instanceof DisposedRepository) {
-      showDisposedMessage();
-      return;
-    }
-
-    synchronized (REPO_LOCK) {
-      if (myRepository == null) return;
-      if (myRepository instanceof DisposedRepository) {
-        showDisposedMessage();
-        return;
-      }
-      myRepository.getModelAccess().checkReadAccess();
-    }
+//    if (myRepository == null) return;
+//    if (myRepository instanceof DisposedRepository) {
+//      showDisposedMessage();
+//      return;
+//    }
+//
+//    synchronized (REPO_LOCK) {
+//      if (myRepository == null) return;
+//      if (myRepository instanceof DisposedRepository) {
+//        showDisposedMessage();
+//        return;
+//      }
+//      myRepository.getModelAccess().checkReadAccess();
+//    }
   }
 
   protected void assertCanChange() {
-    if (myRepository == null) return;
-    if (myRepository instanceof DisposedRepository) {
-      showDisposedMessage();
-      return;
-    }
-
-    synchronized (REPO_LOCK) {
-      if (myRepository == null) return;
-      if (myRepository instanceof DisposedRepository) {
-        showDisposedMessage();
-        return;
-      }
-      myRepository.getModelAccess().checkWriteAccess();
+//    if (myRepository == null) return;
+//    if (myRepository instanceof DisposedRepository) {
+//      showDisposedMessage();
+//      return;
+//    }
+//
+//    synchronized (REPO_LOCK) {
+//      if (myRepository == null) return;
+//      if (myRepository instanceof DisposedRepository) {
+//        showDisposedMessage();
+//        return;
+//      }
+//      myRepository.getModelAccess().checkWriteAccess();
 //      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
 //        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
 //      }
-    }
+//    }
   }
 
   private void showDisposedMessage() {

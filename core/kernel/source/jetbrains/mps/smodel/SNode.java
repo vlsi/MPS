@@ -93,7 +93,9 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public void attach(SRepository repo) {
+    if (myRepository == repo) return;
     synchronized (REPO_LOCK) {
+      if (myRepository == repo) return;
       org.jetbrains.mps.openapi.model.SModel model = getModel();
       //assert model != null && model.getModule() != null && model.getModule().getRepository() != null;
       assert myRepository == null : "Can't register disposed node or node from another repo. Repo:" + myRepository + ", attaching to " + repo;
