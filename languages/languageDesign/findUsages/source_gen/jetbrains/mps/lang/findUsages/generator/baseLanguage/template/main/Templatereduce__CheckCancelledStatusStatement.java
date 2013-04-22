@@ -57,7 +57,7 @@ public class Templatereduce__CheckCancelledStatusStatement implements TemplateDe
             try {
               environment.getTracer().pushTemplateNode(templateNode_iimgyi_a0a0a1a4a1a3a1a2);
               environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142363739");
-              tnode4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode4, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.isCanceled():boolean")));
+              tnode4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode4, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.isCanceled():boolean")));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode4));
