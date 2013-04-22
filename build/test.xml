@@ -71,11 +71,5 @@
     </ant>
   </target>
 
-  <!--target for running module tests from idea-->
-  <target name="build-and-test">
-    <ant antfile="build/build.xml" target="base" inheritAll="true" useNativeBasedir="true"/>
-    <antcall target="module-tests"/>
-  </target>
-
   <target name="default" depends="check-project-structure, module-tests"/>
 </project>
