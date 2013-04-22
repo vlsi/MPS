@@ -159,11 +159,6 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
-  public SearchScope getModuleScope() {
-    return getScope();
-  }
-
-  @Override
   public Iterable<SDependency> getDeclaredDependencies() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return new ArrayList<SDependency>();

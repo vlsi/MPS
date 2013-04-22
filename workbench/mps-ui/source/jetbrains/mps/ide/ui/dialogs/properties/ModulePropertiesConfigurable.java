@@ -366,7 +366,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
-          final IScope scope = (IScope) myModule.getModuleScope();
+          final IScope scope = myModule.getScope();
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {

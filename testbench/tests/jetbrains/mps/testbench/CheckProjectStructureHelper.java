@@ -360,11 +360,10 @@ public class CheckProjectStructureHelper {
   }
 
   private StringBuilder checkModel(final SModel sm) {
-    final IScope scope = (IScope) sm.getModule().getModuleScope();
     StringBuilder errorMessages = new StringBuilder();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return new ModelValidator(sm).validate(scope);
+        return new ModelValidator(sm).validate();
       }
     });
     if (!validationResult.isEmpty()) {
