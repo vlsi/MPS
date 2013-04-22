@@ -115,11 +115,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
 
   //----model creation
 
-  @Override
-  public boolean isInRepository() {
-    return getRepository() != null;
-  }
-
   protected AbstractModule() {
     this(null);
   }
