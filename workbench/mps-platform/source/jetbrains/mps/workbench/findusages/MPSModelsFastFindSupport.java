@@ -22,7 +22,7 @@ import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileBasedIndex;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.findUsages.FindUsagesUtil;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -37,7 +37,6 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -81,7 +80,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
       }
     });
     for (Entry<SModel, Collection<SNode>> candidate : candidates.entrySet()) {
-      FindUsagesManager.collectUsages(candidate.getKey(), candidate.getValue(), consumer);
+      FindUsagesUtil.collectUsages(candidate.getKey(), candidate.getValue(), consumer);
     }
   }
 
@@ -94,7 +93,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
       }
     });
     for (Entry<SModel, Collection<SAbstractConcept>> candidate : candidates.entrySet()) {
-      FindUsagesManager.collectInstances(candidate.getKey(), candidate.getValue(), consumer);
+      FindUsagesUtil.collectInstances(candidate.getKey(), candidate.getValue(), consumer);
     }
   }
 
@@ -107,7 +106,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
       }
     });
     for (Entry<SModel, Collection<SModelReference>> candidate : candidates.entrySet()) {
-      if (FindUsagesManager.hasModelUsages(candidate.getKey(), candidate.getValue())) {
+      if (FindUsagesUtil.hasModelUsages(candidate.getKey(), candidate.getValue())) {
         consumer.consume(candidate.getKey());
       }
     }

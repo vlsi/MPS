@@ -20,10 +20,9 @@ import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelId;
 import java.util.Set;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import java.util.Collections;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class ModelUsagesFinder implements IFinder {
@@ -88,7 +87,7 @@ public class ModelUsagesFinder implements IFinder {
         }
       }
     } else {
-      Set<SModel> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton((SModelReference) modelReference), SearchType.MODEL_USAGES, GlobalScope.getInstance(), new EmptyProgressMonitor());
+      Set<SModel> usages = FindUsagesFacade.getInstance().findModelUsages(GlobalScope.getInstance(), Collections.singleton(modelReference), new EmptyProgressMonitor());
 
       for (SModel modelDescriptor : usages) {
         if (monitor.isCanceled()) {

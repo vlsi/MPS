@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.actions.model;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -26,8 +25,6 @@ import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -49,8 +46,10 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collections;
@@ -95,7 +94,7 @@ public class DeleteModelHelper {
       deleteModelFromGenerator((Generator) contextModule, modelDescriptor);
     } else {
       LOG.warn(
-        "Module type " + contextModule.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
+          "Module type " + contextModule.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
     }
 
     if (deleteFiles && deleteIfAsked) {
@@ -184,12 +183,14 @@ public class DeleteModelHelper {
         deleteModelFromGenerator((Generator) modelOwner, modelDescriptor);
       } else if (modelOwner != null) {
         LOG.warn(
-          "Module type " + modelOwner.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
+            "Module type " + modelOwner.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
       }
 
       // delete imports from available models, helps if there are no references to deleted model
-      Set<SModel> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton((SModelReference) modelDescriptor.getReference()),
-        SearchType.MODEL_USAGES, GlobalScope.getInstance(), new EmptyProgressMonitor());
+      Set<SModel> usages = FindUsagesFacade.getInstance().findModelUsages(
+          GlobalScope.getInstance(),
+          Collections.singleton(modelDescriptor.getReference()),
+          new EmptyProgressMonitor());
       for (SModel md : usages) {
         if (SModelStereotype.isUserModel(md)) {
           ((SModelInternal) md).deleteModelImport(modelDescriptor.getReference());

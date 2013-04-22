@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,26 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.progress;
+package org.jetbrains.mps.openapi.util;
 
 /**
- * Evgeny Gryaznov, 9/30/11
+ * evgeny, 4/22/13
  */
-public interface ProgressMonitor extends org.jetbrains.mps.openapi.util.ProgressMonitor {
-
-  void start(String taskName, int totalWork);
-
-  void advance(int work);
-
-  void step(String title);
-
-  void done();
-
-  ProgressMonitor subTask(int work);
-
-  ProgressMonitor subTask(int work, SubProgressKind kind);
-
-  boolean isCanceled();
-
-  void cancel();
+public interface ProgressMonitor {
 }
