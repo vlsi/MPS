@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.editor.multiple.extension.testLanguage" uuid="2a136e2a-e48f-4b7a-bcbc-7b2a11f3bbeb">
+<language namespace="jetbrains.mps.lang.editor.multiple.extension.testLanguage" uuid="2a136e2a-e48f-4b7a-bcbc-7b2a11f3bbeb" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
@@ -29,6 +29,8 @@
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
-  <extendedLanguages />
+  <extendedLanguages>
+    <extendedLanguage>7a80051c-66e9-4bfc-9698-b12adfed3d9f(jetbrains.mps.lang.editor.multiple.testLanguage)</extendedLanguage>
+  </extendedLanguages>
 </language>
 

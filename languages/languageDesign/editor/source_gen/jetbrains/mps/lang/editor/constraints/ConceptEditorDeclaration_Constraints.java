@@ -15,6 +15,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodePointer;
@@ -52,7 +54,13 @@ public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescrip
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
-        return SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name") + "_Editor";
+        {
+          String editorName = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
+          for (SNode contextHint : ListSequence.fromList(SLinkOperations.getTargets(node, "contextHints", true))) {
+            editorName += "_" + SPropertyOperations.getString(contextHint, "hint");
+          }
+          return editorName + "_Editor";
+        }
       }
     });
     return properties;
