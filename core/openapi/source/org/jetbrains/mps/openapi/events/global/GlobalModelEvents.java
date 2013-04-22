@@ -19,7 +19,7 @@ import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.events.SModuleAdapter;
+import org.jetbrains.mps.openapi.module.SModuleAdapter;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.Collection;

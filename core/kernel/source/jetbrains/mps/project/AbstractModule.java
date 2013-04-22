@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -31,13 +30,10 @@ import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
-import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
@@ -50,6 +46,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
+import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
@@ -60,6 +57,8 @@ import jetbrains.mps.util.iterable.TranslatingIterator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -68,9 +67,10 @@ import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleListener;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.openapi.module.events.SModuleListener;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
@@ -104,7 +104,10 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   private ModuleScope myScope = createScope();
 
   protected boolean myChanged = false;
+
+  private final Object REPO_LOCK = new Object();
   private SRepository myRepo;
+  private boolean myDisposed = false;
 
 
   //----model creation
@@ -134,8 +137,20 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
-  public void setRepository(SRepository repo) {
-    myRepo = repo;
+  public void attach(SRepository repo) {
+    synchronized (REPO_LOCK) {
+      assert myRepo == null;
+      myRepo = repo;
+    }
+  }
+
+  @Override
+  public void detach() {
+    synchronized (REPO_LOCK) {
+      assert myRepo != null;
+      myRepo = null;
+      myDisposed = true;
+    }
   }
 
   @Override

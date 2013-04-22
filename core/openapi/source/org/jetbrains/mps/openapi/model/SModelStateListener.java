@@ -13,22 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model.events;
+package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SModel;
 
-public interface SModelChangeListener{
-  //node is already in model
-  void nodeAdded(SNode node);
-
-  //node is not in model
-  void nodeRemoved(SNodeReference node);
-
-  //new value is already set
-  void propertyChanged(SNode node, String oldValue, String newValue);
-
-  //old ref is already detached,
-  void referenceChanged(SNode node, SReference oldRef, SReference newRef);
+public interface SModelStateListener {
+  void modelProblemsChanged(SModel model);
 }

@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 public interface ModuleRepositoryListener extends SRepositoryListener {
   void moduleAdded(IModule module);

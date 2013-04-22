@@ -154,7 +154,7 @@ class IntelligentNodeMover {
     if (forward()) {
       for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
         node.getParent().removeChild(node);
-        parent.insertChild(current.getRoleInParent(), node, parent.getPrevChild(current));
+        parent.insertChild(current.getRoleInParent(), node, current.getPrevSibling());
       }
     } else {
       List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
@@ -187,9 +187,9 @@ class IntelligentNodeMover {
 
   private SNode siblingWithTheSameRole(SNode node) {
     if (forward()) {
-      return node.getParent().getNextChild(node);
+      return node.getNextSibling();
     } else {
-      return node.getParent().getPrevChild(node);
+      return node.getPrevSibling();
     }
   }
 
@@ -209,7 +209,7 @@ class IntelligentNodeMover {
     if (forward()) {
       parent.insertChild(role, current, prevChild);
     } else {
-      parent.insertChild(role, current, parent.getPrevChild(prevChild));
+      parent.insertChild(role, current, prevChild.getPrevSibling());
     }
   }
 
