@@ -15,121 +15,58 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import jetbrains.mps.MPSCore;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashSet;
-import java.util.Set;
-
-public class SNodeAccessUtil {
-  private static Logger LOG = LogManager.getLogger(SNodeAccessUtil.class);
-
-  private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertySettersInProgress = new InProgressThreadLocal();
-  private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();
-  private static ThreadLocal<Set<Pair<SNode, String>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal();
-
+/**
+ * Access to node "properties" using getters and setters declared in MPS.
+ * This class is in openAPI for MPS to be able to generate openAPI code for smodel language queries.
+ * It's implementation is not in openAPI since we don't want a dependency openAPI->kernel, but still want to access
+ * ConstraintsManager, which is not in openAPI yet. Though the class looks like a util-class for outer user, it
+ * is really contributed by code in MPSCore instantiating it's impl class, which sets myInstance field. This is a
+ * temporary solution - this class should be implemented as a pure util class on the top of openAPI as soon as
+ * LanguageRegistry (or something similar) will be an openAPI class.
+ */
+public abstract class SNodeAccessUtil {
   public static boolean hasProperty(SNode node, String name) {
-    node.hasProperty(name); //todo this is to invoke corresponding read access. try to remove it by merging 2 types of access
-    String property_internal = node.getProperty(name);
-    return !SModelUtil_new.isEmptyPropertyValue(property_internal);
+    return myInstance.hasPropertyImpl(node, name);
   }
 
   public static String getProperty(SNode node, String name) {
-    if (MPSCore.getInstance().isMergeDriverMode()) return node.getProperty(name);
-
-    Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
-    Pair<SNode, String> current = new Pair<SNode, String>(node, name);
-    if (getters.contains(current)) return node.getProperty(name);
-
-    getters.add(current);
-    try {
-      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getId()).getProperty(name);
-      Object getterValue = descriptor.getValue(node, GlobalScope.getInstance());
-      return getterValue == null ? null : String.valueOf(getterValue);
-    } catch (Throwable t) {
-      LOG.error(t);
-      return null;
-    } finally {
-      getters.remove(current);
-    }
+    return myInstance.getPropertyImpl(node, name);
   }
 
   public static void setProperty(SNode node, String propertyName, String propertyValue) {
-    Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
-    Pair<SNode, String> pair = new Pair<SNode, String>(node, propertyName);
-    SModel model = node.getModel();
-
-    //todo try to remove
-    if (threadSet.contains(pair)) {
-      node.setProperty(propertyName, propertyValue);
-      return;
-    }
-
-    PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getId()).getProperty(propertyName);
-    threadSet.add(pair);
-    try {
-      descriptor.setValue(node, propertyValue, GlobalScope.getInstance());
-    } catch (Exception t) {
-      LOG.error(t);
-    } finally {
-      threadSet.remove(pair);
-    }
+    myInstance.setPropertyImpl(node, propertyName, propertyValue);
   }
 
   public static void setReferenceTarget(SNode node, String role, @Nullable SNode target) {
-    SModel model = node.getModel();
-    if (model == null || !((jetbrains.mps.smodel.SModelInternal) model).canFireEvent()) {
-      //todo[Mihail Muhin]: why?
-      node.setReferenceTarget(role, target);
-      return;
-    }
-
-    // invoke custom referent set event handler
-    Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
-    Pair<SNode, String> pair = new Pair<SNode, String>(node, role);
-    if (threadSet.contains(pair)) {
-      node.setReferenceTarget(role, target);
-      return;
-    }
-
-    ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getId()).getReference(role);
-
-    if (descriptor instanceof IllegalReferenceConstraintsDescriptor) {
-      node.setReferenceTarget(role, target);
-      return;
-    }
-
-    threadSet.add(pair);
-
-    try {
-      SNode oldReferent = node.getReferenceTarget(role);
-      if (descriptor.validate(node, oldReferent, target, GlobalScope.getInstance())) {
-        node.setReferenceTarget(role, target);
-        descriptor.onReferenceSet(node, oldReferent, target, GlobalScope.getInstance());
-      }
-    } finally {
-      threadSet.remove(pair);
-    }
+    myInstance.setReferenceTargetImpl(node, role, target);
   }
-
 
   public void setReference(SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
-    //todo for symmetry
+    //todo for symmetry. Not yet used
+    myInstance.setReferenceImpl(node, role, reference);
   }
 
-  private static class InProgressThreadLocal extends ThreadLocal<Set<Pair<SNode, String>>> {
-    @Override
-    protected Set<Pair<SNode, String>> initialValue() {
-      return new HashSet<Pair<SNode, String>>();
-    }
+  //-------impl--------
+
+  //thread-safety is guaranteed because we access nodes holding
+  protected static volatile SNodeAccessUtil myInstance;
+
+  /**
+   * Internal use ony.
+   */
+  public static void setInstance(SNodeAccessUtil instance) {
+    myInstance = instance;
   }
+
+  protected abstract boolean hasPropertyImpl(SNode node, String name);
+
+  protected abstract String getPropertyImpl(SNode node, String name);
+
+  protected abstract void setPropertyImpl(SNode node, String propertyName, String propertyValue);
+
+  protected abstract void setReferenceTargetImpl(SNode node, String role, SNode target);
+
+  protected abstract void setReferenceImpl(SNode node, String role, SReference reference);
 }

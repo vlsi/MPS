@@ -13,25 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module.events;
+package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
-public interface SModuleListener {
-  void modelAdded(SModel model);
+/**
+ * Change listener is always invoked after a real change
+ */
+public interface SModelChangeListener{
+  void nodeAdded(SNode node, String role, SNode child);
 
-  void beforeModelRemoved(SModel model);
+  void nodeRemoved(SNode node, String role, SNode child);
 
-  void modelRemoved(SModelReference ref);
+  void propertyChanged(SNode node, String propertyName, String oldValue, String newValue);
 
-  void dependencyAdded(SDependency dep);
-
-  void dependencyRemoved(SDependency dep);
-
-  void languageAdded(SLanguage lang);
-
-  void languageRemoved(SLanguage lang);
+  void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef);
 }

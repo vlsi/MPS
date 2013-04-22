@@ -53,7 +53,7 @@ public class SNodeUtil {
         replacerParent.removeChild(replacer);
       }
 
-      SNode anchor = nodeParent.getPrevChild(node);
+      SNode anchor = node.getPrevSibling();
       String role = nodeParent.getRoleOf(node);
       assert role != null;
       // old and new child can have the same node Id
