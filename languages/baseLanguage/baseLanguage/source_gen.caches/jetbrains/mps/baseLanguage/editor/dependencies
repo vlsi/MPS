@@ -1735,6 +1735,22 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.DeleteTransient" file="DeleteTransient.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.DeleteVolatile" file="DeleteVolatile.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.DimensionExpression_Editor" file="DimensionExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
@@ -2095,6 +2111,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteFinalInField" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteTransient" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteVolatile" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._Component_Visibility" />

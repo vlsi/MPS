@@ -1114,6 +1114,16 @@
       <property name="name" nameId="tpck.1169194664001" value="DeleteFinalInField" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
     </node>
+    <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1809470990914461071">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
+      <property name="name" nameId="tpck.1169194664001" value="DeleteVolatile" />
+      <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
+    </node>
+    <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1809470990914537546">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
+      <property name="name" nameId="tpck.1169194664001" value="DeleteTransient" />
+      <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
+    </node>
   </roots>
   <root id="1073416106125">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1229447107349">
@@ -2627,6 +2637,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1240250480369">
         <property name="text" nameId="tpc2.1073389577007" value="volatile" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1809470990914461071" resolveInfo="DeleteVolatile" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="1240250493811">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240250493812">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1240250500572">
@@ -2643,6 +2654,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8606350594693654666">
         <property name="text" nameId="tpc2.1073389577007" value="transient" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1809470990914537546" resolveInfo="DeleteTransient" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="8606350594693654667">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8606350594693654668">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8606350594693654669">
@@ -20416,6 +20428,68 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="1809470990910822074" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="1809470990910817672" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1809470990914461071">
+    <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="1809470990914469188">
+      <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
+      <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="1809470990914469189">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1809470990914469190">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1809470990914469199">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1809470990914519287">
+              <node role="rValue" roleId="tpee.1068498886297" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1809470990914519311">
+                <property name="value" nameId="tpee.1068580123138" value="false" />
+              </node>
+              <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1809470990914470435">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1809470990914501774">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpee.1240249534625" resolveInfo="isVolatile" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="1809470990914469198" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1809470990914521109">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1809470990914521904">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1809470990914525146">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="srnh.~EditorContext%dselectWRTFocusPolicy(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="selectWRTFocusPolicy" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="1809470990914525541" />
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="1809470990914521107" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1809470990914537546">
+    <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="1809470990914537589">
+      <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
+      <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="1809470990914537590">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1809470990914537591">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1809470990914537592">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1809470990914537593">
+              <node role="rValue" roleId="tpee.1068498886297" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1809470990914537594">
+                <property name="value" nameId="tpee.1068580123138" value="false" />
+              </node>
+              <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1809470990914537595">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1809470990914555141">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpee.8606350594693632173" resolveInfo="isTransient" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="1809470990914537597" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1809470990914537598">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1809470990914537599">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1809470990914537600">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="srnh.~EditorContext%dselectWRTFocusPolicy(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="selectWRTFocusPolicy" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1402906326895675325" id="1809470990914537601" />
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="1809470990914537602" />
             </node>
           </node>
         </node>

@@ -87,6 +87,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
+    DeleteVolatile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -101,6 +102,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
+    DeleteTransient.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
