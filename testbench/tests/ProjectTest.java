@@ -48,8 +48,6 @@ import java.util.*;
 @RunWith(WatchingParameterized.class)
 public class ProjectTest {
 
-  public static String PROJECT = "/MPS.mpr";
-
   private static ProjectTestHelper HELPER;
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
   private static Project mpsProject;
@@ -102,7 +100,7 @@ public class ProjectTest {
     HELPER = new ProjectTestHelper();
     HELPER.setMacro("samples_home", System.getProperty("user.dir") + "/samples");
     List<Object[]> fixtures = new ArrayList<Object[]>();
-    mpsProject = TestMain.loadProject(new File(System.getProperty("user.dir") + PROJECT));
+    mpsProject = TestMain.loadProject(new File(System.getProperty("user.dir")));
     Set<IModule> allModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
       @Override
       public Set<IModule> compute() {

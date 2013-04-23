@@ -18,7 +18,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MoveMethodWithUssages_Test extends BaseTransformationTest4 {
   @Test
   public void test_check() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
+    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest("jetbrains.mps.refactoringTest.MoveMethodWithUssages_Test$TestBody", "test_check", true);
   }
 

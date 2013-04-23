@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 import jetbrains.mps.testbench.junit.util.ScopesTest;
 
-@MPSProject(value = "./MPS.mpr")
+@MPSProject(value = "./")
 @SuiteClasses(value = ScopesTest.class)
 @RunWith(MPSOpenProjectSuite.class)
 public class ScopesTestSuite {
