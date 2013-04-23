@@ -142,7 +142,7 @@ public class TestMakeOnRealProject {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           @Override
           public void run() {
-            IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getGeneratorOutputPath());
+            IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getOutputPath().getPath());
             IFile javaFile = outputPath.getDescendant(TEST_JAVA_FILE);
             long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
             if (!FileSystem.getInstance().setTimeStamp(javaFile, time)) {
@@ -169,7 +169,7 @@ public class TestMakeOnRealProject {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           @Override
           public void run() {
-            IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getGeneratorOutputPath());
+            IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getOutputPath().getPath());
             outputPath.getDescendant(TEST_JAVA_FILE).delete();
           }
         });
@@ -227,7 +227,7 @@ public class TestMakeOnRealProject {
             myCreatedSolution = createNewSolution();
             createJavaFiles(myCreatedSolution);
 
-            String generatorOutputPath = myCreatedSolution.getGeneratorOutputPath();
+            String generatorOutputPath = myCreatedSolution.getOutputPath().getPath();
             IFile resourceDir = FileSystem.getInstance().getFileByPath(generatorOutputPath).getParent().getDescendant("resources");
             myCreatedSolution.getModuleDescriptor().getSourcePaths().add(resourceDir.getPath());
             createFile(resourceDir, "res.0.1/test.txt", "test");
@@ -237,8 +237,8 @@ public class TestMakeOnRealProject {
     }, ModalityState.NON_MODAL);
   }
 
-  public void createJavaFiles(IModule module) {
-    createFile(FileSystem.getInstance().getFileByPath(module.getGeneratorOutputPath()), TEST_JAVA_FILE, "class Test {}");
+  public void createJavaFiles(AbstractModule module) {
+    createFile(FileSystem.getInstance().getFileByPath(module.getOutputPath().getPath()), TEST_JAVA_FILE, "class Test {}");
   }
 
   private void createFile(IFile dir, String fileName, String text) {

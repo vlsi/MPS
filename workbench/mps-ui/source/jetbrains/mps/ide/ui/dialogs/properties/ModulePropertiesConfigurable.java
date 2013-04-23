@@ -50,6 +50,7 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.IUsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -75,8 +76,10 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
@@ -138,12 +141,12 @@ import java.util.Map;
 
 public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   private ModuleDescriptor myModuleDescriptor;
-  private IModule myModule;
+  private AbstractModule myModule;
 
-  public ModulePropertiesConfigurable(IModule module, Project project) {
+  public ModulePropertiesConfigurable(SModule module, Project project) {
     super(project);
-    myModule = module;
-    myModuleDescriptor = module.getModuleDescriptor();
+    myModule = (AbstractModule) module;
+    myModuleDescriptor = myModule.getModuleDescriptor();
 
     addTab(new ModuleCommonTab());
     if(!(myModule instanceof DevKit)) {
@@ -244,7 +247,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     private String getGenOutPath() {
-      return FileUtil.getCanonicalPath(myModule.getGeneratorOutputPath());
+      IFile outputDir = myModule.getOutputPath();
+      return outputDir != null ? FileUtil.getCanonicalPath(outputDir.getPath()) : "";
     }
 
     @Override
@@ -370,7 +374,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
-              List<IModule> modules = new LinkedList<IModule>();
+              List<SModule> modules = new LinkedList<SModule>();
               for (int i : myTable.getSelectedRows()) {
                 Object value = myDependTableModel.getValueAt(i, myDependTableModel.getItemColumnIndex());
                 if(value instanceof SModuleReference){
@@ -381,7 +385,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 }
               }
 
-              ModulesHolder modulesHolder = new ModulesHolder(modules, null){
+              ModulesHolder modulesHolder = new ModulesHolder((List) modules, null){
                 @Override
                 public void read(Element element, Project project) throws CantLoadSomethingException {}
                 @Override
@@ -393,9 +397,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
                   SearchResults searchResults = new SearchResults();
                   ModulesHolder modulesHolder = (ModulesHolder) query.getObjectHolder();
-                  for (IModule searchedModule : modulesHolder.getObject()) {
+                  for (SModule searchedModule : modulesHolder.getObject()) {
                     searchResults.getSearchedNodes().add(searchedModule);
-                    SearchQuery searchQuery = new SearchQuery(searchedModule, query.getScope());
+                    SearchQuery searchQuery = new SearchQuery((IModule) searchedModule, query.getScope());
                     searchResults.addAll(super.find(searchQuery,monitor));
                   }
 
@@ -659,7 +663,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           if(value instanceof SModelReference) {
             query[0] = new SearchQuery(
               SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getModelId()),
-              new ModulesOnlyScope(Arrays.asList(myModule))
+              new ModulesScope(Arrays.asList(myModule))
             );
             provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
           }
@@ -857,11 +861,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     private boolean dependOnBL(ModuleUsedLangTableModel tableModel) {
-      IModule bl = MPSModuleRepository.getInstance().getModuleByFqName("jetbrains.mps.baseLanguage");
+      SModule bl = MPSModuleRepository.getInstance().getModuleByFqName("jetbrains.mps.baseLanguage");
       if(tableModel.getUsedLanguages().contains(bl.getModuleReference()))
         return true;
       for (SModuleReference reference : tableModel.getUsedDevkits()) {
-        IModule module = MPSModuleRepository.getInstance().getModuleById(reference.getModuleId());
+        SModule module = MPSModuleRepository.getInstance().getModuleById(reference.getModuleId());
         if(module instanceof DevKit && ((DevKit)module).getAllExportedLanguages().contains(bl))
           return true;
       }
