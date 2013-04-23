@@ -88,10 +88,10 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public void detach() {
     synchronized (REPO_LOCK) {
-      myRepository = DisposedRepository.INSTANCE;
       for (org.jetbrains.mps.openapi.model.SNode node : new NodesIterable(this)) {
         node.detach();
       }
+      myRepository = DisposedRepository.INSTANCE;
     }
   }
 
