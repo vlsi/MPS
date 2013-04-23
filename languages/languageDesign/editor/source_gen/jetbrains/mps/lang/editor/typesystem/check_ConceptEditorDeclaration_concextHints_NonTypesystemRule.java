@@ -36,12 +36,12 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_DefaultConceptEditorDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_DefaultConceptEditorDeclaration_NonTypesystemRule() {
+public class check_ConceptEditorDeclaration_concextHints_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_ConceptEditorDeclaration_concextHints_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode editorDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    Language containingLanguage = as_u6oo5t_a0a0a1(SNodeOperations.getModel(editorDeclaration).getModule(), Language.class);
+    Language containingLanguage = as_e1anq9_a0a0a1(SNodeOperations.getModel(editorDeclaration).getModule(), Language.class);
     if (containingLanguage == null) {
       return;
     }
@@ -130,7 +130,7 @@ public class check_DefaultConceptEditorDeclaration_NonTypesystemRule extends Abs
     return false;
   }
 
-  private static <T> T as_u6oo5t_a0a0a1(Object o, Class<T> type) {
+  private static <T> T as_e1anq9_a0a0a1(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

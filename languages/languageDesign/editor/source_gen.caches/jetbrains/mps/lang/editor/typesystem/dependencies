@@ -37,7 +37,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefCell_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefNodeList_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefNode_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_DefaultConceptEditorDeclaration_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHints_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.typeof_AbstractOperationArguments_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.typeof_AbstractOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.typeof_CaretPositionParameter_InferenceRule" />
@@ -133,7 +133,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.typesystem.check_DefaultConceptEditorDeclaration_NonTypesystemRule" file="check_DefaultConceptEditorDeclaration_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHints_NonTypesystemRule" file="check_ConceptEditorDeclaration_concextHints_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
