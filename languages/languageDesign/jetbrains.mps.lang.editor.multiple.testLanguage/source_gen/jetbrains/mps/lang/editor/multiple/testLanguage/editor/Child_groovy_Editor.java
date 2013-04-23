@@ -18,8 +18,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
-public class Child_diagram_Editor extends DefaultNodeEditor {
-  private Collection<String> myContextHints = Arrays.asList(new String[]{"diagram"});
+public class Child_groovy_Editor extends DefaultNodeEditor {
+  private Collection<String> myContextHints = Arrays.asList(new String[]{"groovy"});
 
   @Override
   public Collection<String> getContextHints() {
@@ -27,37 +27,37 @@ public class Child_diagram_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_gq5ery_a(editorContext, node);
+    return this.createCollection_9ofer1_a(editorContext, node);
   }
 
-  private EditorCell createCollection_gq5ery_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9ofer1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_gq5ery_a");
+    editorCell.setCellId("Collection_9ofer1_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_gq5ery_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_gq5ery_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_gq5ery_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_gq5ery_d0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_gq5ery_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_gq5ery_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9ofer1_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9ofer1_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_9ofer1_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9ofer1_d0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_9ofer1_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9ofer1_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_gq5ery_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9ofer1_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child");
-    editorCell.setCellId("Constant_gq5ery_a0");
+    editorCell.setCellId("Constant_9ofer1_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_gq5ery_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "diagram");
-    editorCell.setCellId("Constant_gq5ery_b0");
+  private EditorCell createConstant_9ofer1_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "groovy_ggg");
+    editorCell.setCellId("Constant_9ofer1_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_gq5ery_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9ofer1_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -75,9 +75,9 @@ public class Child_diagram_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_gq5ery_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9ofer1_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_gq5ery_d0");
+    editorCell.setCellId("Constant_9ofer1_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -86,28 +86,28 @@ public class Child_diagram_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_gq5ery_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9ofer1_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_gq5ery_e0");
+    editorCell.setCellId("Collection_9ofer1_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_gq5ery_a4a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_gq5ery_b4a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_gq5ery_c4a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9ofer1_a4a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9ofer1_b4a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_9ofer1_c4a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_gq5ery_a4a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9ofer1_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property2");
-    editorCell.setCellId("Constant_gq5ery_a4a");
+    editorCell.setCellId("Constant_9ofer1_a4a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_gq5ery_b4a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9ofer1_b4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_gq5ery_b4a");
+    editorCell.setCellId("Constant_9ofer1_b4a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -115,7 +115,7 @@ public class Child_diagram_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_gq5ery_c4a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9ofer1_c4a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("property2");
     provider.setNoTargetText("<no property2>");
@@ -136,9 +136,9 @@ public class Child_diagram_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_gq5ery_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9ofer1_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_gq5ery_f0");
+    editorCell.setCellId("Constant_9ofer1_f0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     editorCell.getStyle().putAll(style);

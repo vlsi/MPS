@@ -19,10 +19,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -108,4 +109,16 @@ public interface EditorContext {
   <T> T runWithContextCell(EditorCell contextCell, Computable<T> r);
 
   EditorAspectManager getEditorAspectManager();
+
+  void pushHintsEnvironment();
+
+  void popHintsEnvironment();
+
+  Collection<String> getContextHints();
+
+  boolean hasContextHint(String hint);
+
+  void addContextHint(String hint);
+
+  void removeContextHint(String hint);
 }

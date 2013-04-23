@@ -42,7 +42,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Author: Sergey Dmitriev
@@ -58,6 +62,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   private ReferencedNodeContext myCurrentRefNodeContext;
   private EditorAspectManager myEditorAspectManager;
+  private HintsEnvironment myHintsEnvironment;
 
   public EditorContext(EditorComponent editorComponent, SModel model, IOperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
@@ -471,8 +476,82 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   @Override
   public EditorAspectManager getEditorAspectManager() {
     if (myEditorAspectManager == null) {
-      myEditorAspectManager = new EditorAspectManagerImpl();
+      myEditorAspectManager = new EditorAspectManagerImpl(this);
     }
     return myEditorAspectManager;
+  }
+
+  @Override
+  public void pushHintsEnvironment() {
+    myHintsEnvironment = new HintsEnvironment(myHintsEnvironment);
+  }
+
+  @Override
+  public void popHintsEnvironment() {
+    assert myHintsEnvironment != null;
+    myHintsEnvironment = myHintsEnvironment.pop();
+  }
+
+  @Override
+  public Collection<String> getContextHints() {
+    return myHintsEnvironment == null ? Collections.<String>emptySet() : myHintsEnvironment.getContextHints();
+  }
+
+  @Override
+  public boolean hasContextHint(String hint) {
+    return myHintsEnvironment != null && myHintsEnvironment.has(hint);
+  }
+
+  @Override
+  public void addContextHint(String hint) {
+    assert myHintsEnvironment != null;
+    myHintsEnvironment.add(hint);
+  }
+
+  @Override
+  public void removeContextHint(String hint) {
+    assert myHintsEnvironment != null;
+    myHintsEnvironment.remove(hint);
+  }
+
+  private class HintsEnvironment {
+    private final HintsEnvironment myParentEnvironment;
+    private Set<String> myAddedHints = new HashSet<String>();
+    private Set<String> myRemovedHints = new HashSet<String>();
+
+    private HintsEnvironment(HintsEnvironment parentEnvironment) {
+      myParentEnvironment = parentEnvironment;
+    }
+
+    public void add(String hint) {
+      myAddedHints.add(hint);
+    }
+
+    public void remove(String hint) {
+      myRemovedHints.add(hint);
+    }
+
+    public boolean has(String hint) {
+      return myAddedHints.contains(hint) || (!myRemovedHints.contains(hint) && myParentEnvironment != null && myParentEnvironment.has(hint));
+    }
+
+    public Collection<String> getContextHints() {
+      Collection<String> result = new HashSet<String>();
+      for (String addedHint : myAddedHints) {
+        result.add(addedHint);
+      }
+      if (myParentEnvironment != null) {
+        for (String parentHint : myParentEnvironment.getContextHints()) {
+          if (!myRemovedHints.contains(parentHint)) {
+            result.add(parentHint);
+          }
+        }
+      }
+      return result;
+    }
+
+    public HintsEnvironment pop() {
+      return myParentEnvironment;
+    }
   }
 }

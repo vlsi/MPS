@@ -6,5 +6,8 @@
     </modelRoot>
   </models>
   <sourcePath />
+  <usedLanguages>
+    <usedLanguage>7a80051c-66e9-4bfc-9698-b12adfed3d9f(jetbrains.mps.lang.editor.multiple.testLanguage)</usedLanguage>
+  </usedLanguages>
 </solution>
 

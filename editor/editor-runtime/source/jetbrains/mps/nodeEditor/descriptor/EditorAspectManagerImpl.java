@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.descriptor;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.DefaultEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
@@ -27,15 +29,19 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
@@ -44,6 +50,15 @@ import java.util.Set;
  * Date: 4/18/13
  */
 public class EditorAspectManagerImpl implements EditorAspectManager {
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorAspectManagerImpl.class));
+
+  private final EditorContext myEditorContext;
+  private Comparator<EditorAspect> myEditorAspectComparator;
+
+  public EditorAspectManagerImpl(@NotNull EditorContext editorContext) {
+    myEditorContext = editorContext;
+  }
+
   @Override
   public EditorAspect loadEditorAspect(SNode node) {
     SConcept concept = node.getConcept();
@@ -90,17 +105,52 @@ public class EditorAspectManagerImpl implements EditorAspectManager {
   }
 
   private EditorAspect getEditorAspectOfConcept(ConceptDescriptor conceptDescriptor) {
-    Collection<EditorAspect> editorAspects = collectAllEditorAspects(conceptDescriptor);
-    return editorAspects.isEmpty() ? null : editorAspects.iterator().next();
+    List<EditorAspect> editorAspects = collectApplicableEditorAspects(conceptDescriptor);
+    if (editorAspects.isEmpty()) {
+      return null;
+    }
+    if (editorAspects.size() == 1) {
+      return editorAspects.get(0);
+    }
+    Collections.sort(editorAspects, getEditorAspectComparator());
+    EditorAspect result = null;
+    for (EditorAspect editorAspect : editorAspects) {
+      if (result == null) {
+        result = editorAspect;
+        continue;
+      }
+      if (editorAspect.getContextHints().size() == result.getContextHints().size()) {
+        LOG.error(getErrorMessage(editorAspect, result));
+      } else {
+        break;
+      }
+    }
+    return result;
   }
 
-  private Collection<EditorAspect> collectAllEditorAspects(ConceptDescriptor conceptDescriptor) {
-    Collection<EditorAspect> result = new ArrayList<EditorAspect>();
+  private String getErrorMessage(EditorAspect additionalEditor, EditorAspect mainEditor) {
+    String context = "";
+    for (String contextHint : myEditorContext.getContextHints()) {
+      if (!context.isEmpty()) {
+        context += ", ";
+      }
+      context += contextHint;
+    }
+    return "Additional editor " + additionalEditor.getClass() + " is applicable to the current context (" + context + "). Skipping this editor , using " +
+        mainEditor.getClass() + ".";
+  }
+
+  private List<EditorAspect> collectApplicableEditorAspects(ConceptDescriptor conceptDescriptor) {
+    List<EditorAspect> result = new ArrayList<EditorAspect>();
     LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(conceptDescriptor.getConceptFqName()));
     for (Iterator<LanguageRuntime> extendedLanguagesIterator = null; languageRuntime != null; ) {
       EditorAspectDescriptor aspectDescriptor = languageRuntime.getAspectDescriptor(EditorAspectDescriptor.class);
       if (aspectDescriptor != null) {
-        result.addAll(aspectDescriptor.getEditorAspects(conceptDescriptor));
+        for (EditorAspect editorAspect : aspectDescriptor.getEditorAspects(conceptDescriptor)) {
+          if (isApplicableInCurrentContext(editorAspect)) {
+            result.add(editorAspect);
+          }
+        }
       }
       if (extendedLanguagesIterator == null) {
         // initializing iterator for first language only
@@ -109,6 +159,30 @@ public class EditorAspectManagerImpl implements EditorAspectManager {
       languageRuntime = extendedLanguagesIterator.hasNext() ? extendedLanguagesIterator.next() : null;
     }
     return result;
+  }
+
+  private boolean isApplicableInCurrentContext(EditorAspect editorAspect) {
+    for (String hint : editorAspect.getContextHints()) {
+      if (!myEditorContext.hasContextHint(hint)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private Comparator<EditorAspect> getEditorAspectComparator() {
+    if (myEditorAspectComparator == null) {
+      myEditorAspectComparator = new Comparator<EditorAspect>() {
+        @Override
+        public int compare(EditorAspect aspect1, EditorAspect aspect2) {
+          if (aspect1.getContextHints().size() == aspect2.getContextHints().size()) {
+            return aspect1.getClass().getName().compareTo(aspect2.getClass().getName());
+          }
+          return aspect2.getContextHints().size() - aspect1.getContextHints().size();
+        }
+      };
+    }
+    return myEditorAspectComparator;
   }
 
   public static class DefaultInterfaceEditor implements EditorAspect {
