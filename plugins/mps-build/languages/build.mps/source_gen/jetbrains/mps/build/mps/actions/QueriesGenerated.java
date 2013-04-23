@@ -27,6 +27,9 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_BuildMps_AbstractModule_8369506495128727677(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -164,6 +167,41 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_AbstractModule_1500819558096400259(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "path", true) == null);
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_BuildMps_Solution_269707337718167391(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
+          return Sequence.fromArray(new SNode[]{SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "BuildMps_ModuleSourcesKind"), "tests"), SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "BuildMps_ModuleSourcesKind"), "sources and tests")});
+        }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Solution"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SPropertyOperations.set(_context.getSourceNode(), "sourcesKind", "" + ((item)));
+              return _context.getSourceNode();
+            }
+
+            public String getMatchingText(String pattern) {
+              return "(has " + SEnumOperations.getEnumMemberName((item)) + ")";
+            }
+
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
+          });
+        }
+      }
+    }
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_Solution_269707337717102164(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    String sourcesKind = SPropertyOperations.getString_def(_context.getSourceNode(), "sourcesKind", null);
+    return (sourcesKind == null || sourcesKind.length() == 0) || sourcesKind.equals("sources");
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_BuildMps_IdeaPlugin_1238980147630030569(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {

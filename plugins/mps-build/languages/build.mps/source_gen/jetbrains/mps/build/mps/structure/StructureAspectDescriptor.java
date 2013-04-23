@@ -102,7 +102,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 43:
         return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"folder"}, new boolean[]{false}, false, false, "", "", "");
       case 44:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_Solution", "jetbrains.mps.build.mps.structure.BuildMps_Module", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Module"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "solution", "", "");
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_Solution", "jetbrains.mps.build.mps.structure.BuildMps_Module", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Module"}, new String[]{"sourcesKind"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "solution", "", "");
       case 45:
         return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_TestModuleAnnotation", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
       case 46:
