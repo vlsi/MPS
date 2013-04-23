@@ -756,7 +756,6 @@
       
       <classpath>
         <fileset dir="${artifacts.mps}/lib">
-          <!--this is bold-->
           <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
