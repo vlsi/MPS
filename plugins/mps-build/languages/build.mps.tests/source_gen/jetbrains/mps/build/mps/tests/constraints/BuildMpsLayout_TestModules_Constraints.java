@@ -11,9 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -39,33 +38,26 @@ public class BuildMpsLayout_TestModules_Constraints extends BaseConstraintsDescr
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.structure.BuildProject") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parentNode, "jetbrains.mps.build.structure.BuildProject"), "plugins", true)).any(new IWhereFilter<SNode>() {
+    if (parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator")) {
+      // anything in generator 
+      return true;
+    }
+    if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.structure.BuildProject") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parentNode, "jetbrains.mps.build.structure.BuildProject"), "plugins", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin");
       }
-    }) || parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator");
-    /*
-      Scope scope = Scope.getScope(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.build.structure.BuildProject", true, false), "dependencies", 0, SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildProject"));
-      if (scope == null) {
+    })) {
+      SNode project = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.build.structure.BuildProject", true, false);
+      if (project == null) {
         return false;
       }
-      Iterable<SNode> seq = Sequence.fromIterable(scope.getAvailableElements("mps")).where(new IWhereFilter<SNode>() {
+      return Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(project, false)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return "mps".equals(check_e4054c_a0a0a0a0a2b0a(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProject")));
+          return SPropertyOperations.getString(it, "name").equals("mps");
         }
-      });
-      for (SNode snode : Sequence.fromIterable(seq)) {
-        System.err.println(snode);
-      }
-      Sequence.fromIterable(seq).isNotEmpty();
-    */
-  }
-
-  private static String check_e4054c_a0a0a0a0a2b0a(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return SPropertyOperations.getString(checkedDotOperand, "name");
+      }) != null;
     }
-    return null;
+    return false;
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "3655813416643587820");
