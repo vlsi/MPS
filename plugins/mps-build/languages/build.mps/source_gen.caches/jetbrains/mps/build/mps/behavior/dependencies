@@ -41,7 +41,6 @@
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleSolutionRuntime_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_ModuleTestSource_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_Solution_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_TestModuleAnnotation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.GeneratorInternal_BuildMps_Module_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.GeneratorInternal_BuildSourcePath_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.GeneratorInternal_String_BehaviorDescriptor" />
@@ -564,29 +563,15 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_Solution_Behavior" file="BuildMps_Solution_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_Solution_BehaviorDescriptor" file="BuildMps_Solution_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_Module_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_TestModuleAnnotation_Behavior" file="BuildMps_TestModuleAnnotation_Behavior.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_TestModuleAnnotation_BehaviorDescriptor" file="BuildMps_TestModuleAnnotation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_TestModuleAnnotation_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.behavior.GeneratorInternal_BuildMps_Module_BehaviorDescriptor" file="GeneratorInternal_BuildMps_Module_BehaviorDescriptor.java">

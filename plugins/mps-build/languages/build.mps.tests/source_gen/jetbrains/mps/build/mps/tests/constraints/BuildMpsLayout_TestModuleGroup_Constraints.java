@@ -18,7 +18,11 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.build.mps.behavior.BuildMps_Solution_Behavior;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsDescriptor {
@@ -65,8 +69,11 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
             return new FilteringScope(Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Group"))) {
               @Override
               public boolean isExcluded(SNode node) {
-                // <node> 
-                return false;
+                return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_Group"), "modules", true)).findFirst(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_Solution") && BuildMps_Solution_Behavior.call_hasTestsSources_7354447573575923452(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_Solution"));
+                  }
+                }) == null;
               }
             };
           }

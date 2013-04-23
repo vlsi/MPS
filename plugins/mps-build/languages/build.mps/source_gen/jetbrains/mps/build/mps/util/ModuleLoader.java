@@ -45,11 +45,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.build.mps.behavior.BuildMps_Solution_Behavior;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFileUtils;
@@ -837,7 +836,7 @@ public class ModuleLoader {
       res.add(sp);
     }
     String genPath = null;
-    if (!(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) || hasModels) {
+    if (!(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) || (BuildMps_Solution_Behavior.call_hasSources_7354447573576714831(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) && hasModels)) {
       IFile genPathFile = ProjectPathUtil.getGeneratorOutputPath(myModuleFile.getParent(), myModuleDescriptor);
       if (genPathFile != null) {
         genPath = genPathFile.getPath();
@@ -845,7 +844,7 @@ public class ModuleLoader {
       }
     }
     TestsFacet testsFacet = TestsFacetImpl.fromModuleDescriptor(myModuleDescriptor, myModuleFile);
-    boolean hasTests = (AttributeOperations.getAttribute(myModule, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_TestModuleAnnotation"))) != null);
+    boolean hasTests = SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution") && BuildMps_Solution_Behavior.call_hasTestsSources_7354447573575923452(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution"));
     String testPath = null;
     if (testsFacet != null && hasTests) {
       IFile testsPathFile = testsFacet.getTestsOutputPath();
@@ -854,7 +853,7 @@ public class ModuleLoader {
       }
     }
 
-    boolean doNotCompile = myModuleDescriptor instanceof SolutionDescriptor && (!(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS()) || res.isEmpty());
+    boolean doNotCompile = myModuleDescriptor instanceof SolutionDescriptor && (!(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS()) || (res.isEmpty() && (testPath == null || testPath.length() == 0)));
     if (checkOnly && importOnly) {
       SPropertyOperations.set(module, "doNotCompile", "" + (doNotCompile));
 
@@ -885,6 +884,7 @@ public class ModuleLoader {
         SNode testSource = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource", null);
         SLinkOperations.setTarget(testSource, "folder", SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildInputSingleFolder", null), true);
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(testSource, "folder", true), "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", p, true);
+        SPropertyOperations.set(testSource, "isGenerated", "" + (true));
         ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(testSource);
       }
     }

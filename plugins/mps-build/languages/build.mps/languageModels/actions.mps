@@ -283,7 +283,7 @@
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="269707337716232027">
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="269707337716230944">
-                      <property name="value" nameId="tpee.1070475926801" value="(has " />
+                      <property name="value" nameId="tpee.1070475926801" value="(with " />
                     </node>
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="269707337716233443">
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.EnumMember_NameOperation" typeId="tp25.1240173327827" id="269707337716239674" />

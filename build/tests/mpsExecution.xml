@@ -77,7 +77,6 @@
       <fileset dir="${basedir}/plugins/execution-languages/languages/tests/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.execution.impl.tests-src.jar">
-      <fileset dir="${basedir}/plugins/execution-languages/languages/tests/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/execution-languages/languages/tests/jetbrains.mps.execution.impl.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests-models" prefix="module/models" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests-jetbrains" prefix="module/jetbrains" />
@@ -104,7 +103,6 @@
       <fileset dir="${basedir}/plugins/execution-languages/languages/tests.data/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.execution.impl.tests.sandbox-src.jar">
-      <fileset dir="${basedir}/plugins/execution-languages/languages/tests.data/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/execution-languages/languages/tests.data/jetbrains.mps.execution.impl.tests.sandbox.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-tests.data-jetbrains" prefix="module/jetbrains" />
     </jar>
@@ -228,10 +226,7 @@
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.impl.tests.sandbox" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.execution.impl.tests.sandbox" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/plugins/execution-languages/languages/tests.data/source_gen" />
-        <pathelement path="${basedir}/plugins/execution-languages/languages/tests.data/test_gen/" />
-      </src>
+      <src path="${basedir}/plugins/execution-languages/languages/tests.data/test_gen/" />
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
@@ -248,7 +243,6 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.execution.impl.tests.sandbox">
-      <fileset dir="${basedir}/plugins/execution-languages/languages/tests.data/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${basedir}/plugins/execution-languages/languages/tests.data/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
@@ -257,10 +251,7 @@
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.execution.impl.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.execution.impl.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/plugins/execution-languages/languages/tests/source_gen" />
-        <pathelement path="${basedir}/plugins/execution-languages/languages/tests/test_gen/" />
-      </src>
+      <src path="${basedir}/plugins/execution-languages/languages/tests/test_gen/" />
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
@@ -307,7 +298,6 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.execution.impl.tests">
-      <fileset dir="${basedir}/plugins/execution-languages/languages/tests/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${basedir}/plugins/execution-languages/languages/tests/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
@@ -447,7 +437,7 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/plugins/execution-languages/languages/tests/source_gen" />
-    <delete dir="${basedir}/plugins/execution-languages/languages/tests.data/source_gen" />
+    <delete dir="${basedir}/plugins/execution-languages/languages/tests/test_gen" />
+    <delete dir="${basedir}/plugins/execution-languages/languages/tests.data/test_gen" />
   </target>
 </project>

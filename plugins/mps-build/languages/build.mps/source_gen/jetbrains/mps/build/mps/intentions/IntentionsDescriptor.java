@@ -16,7 +16,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new AddCustomLocationDependency_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddCustomLocationRuntime_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddCustomPackaging_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddTestAnnotationIntention_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ReloadModulesFromDisk_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ToggleCompactMpsModule_Intention());
   }

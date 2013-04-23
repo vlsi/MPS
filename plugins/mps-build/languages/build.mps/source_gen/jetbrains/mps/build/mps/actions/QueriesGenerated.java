@@ -186,7 +186,7 @@ public class QueriesGenerated {
             }
 
             public String getMatchingText(String pattern) {
-              return "(has " + SEnumOperations.getEnumMemberName((item)) + ")";
+              return "(with " + SEnumOperations.getEnumMemberName((item)) + ")";
             }
 
             public String getVisibleMatchingText(String pattern) {

@@ -1128,7 +1128,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5970181360963002103(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(((MPSModulesPartitioner) _context.getVariable("var:closure")).getChunks()).where(new IWhereFilter<MPSModulesPartitioner.Chunk>() {
+    Iterable<SNode> modules = ListSequence.fromList(((MPSModulesPartitioner) _context.getVariable("var:closure")).getChunks()).where(new IWhereFilter<MPSModulesPartitioner.Chunk>() {
       public boolean accept(MPSModulesPartitioner.Chunk it) {
         return !(it.isBootstrap());
       }
@@ -1144,7 +1144,9 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_Module");
       }
-    }).translate(new ITranslator2<SNode, SNode>() {
+    });
+
+    Iterable<SNode> sources = Sequence.fromIterable(modules).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return ListSequence.fromList(SLinkOperations.getTargets(it, "sources", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -1157,6 +1159,21 @@ public class QueriesGenerated {
         return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource"), "folder", true);
       }
     });
+    Iterable<SNode> testSources = Sequence.fromIterable(modules).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return ListSequence.fromList(SLinkOperations.getTargets(it, "sources", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource"), "isGenerated");
+          }
+        });
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource"), "folder", true);
+      }
+    });
+
+    return Sequence.fromIterable(sources).union(Sequence.fromIterable(testSources));
   }
 
   public static Iterable sourceNodesQuery_6354776497113862138(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

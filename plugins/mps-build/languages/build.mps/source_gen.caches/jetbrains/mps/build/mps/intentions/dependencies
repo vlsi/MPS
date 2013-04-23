@@ -42,28 +42,10 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.intentions.AddTestAnnotationIntention_Intention" file="AddTestAnnotationIntention_Intention.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
-  </dependency>
   <dependency className="jetbrains.mps.build.mps.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
     <classNode dependClassName="jetbrains.mps.build.mps.intentions.AddCustomLocationDependency_Intention" />
     <classNode dependClassName="jetbrains.mps.build.mps.intentions.AddCustomLocationRuntime_Intention" />
     <classNode dependClassName="jetbrains.mps.build.mps.intentions.AddCustomPackaging_Intention" />
-    <classNode dependClassName="jetbrains.mps.build.mps.intentions.AddTestAnnotationIntention_Intention" />
     <classNode dependClassName="jetbrains.mps.build.mps.intentions.ReloadModulesFromDisk_Intention" />
     <classNode dependClassName="jetbrains.mps.build.mps.intentions.ToggleCompactMpsModule_Intention" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />

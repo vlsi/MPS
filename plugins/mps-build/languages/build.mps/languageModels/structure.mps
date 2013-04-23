@@ -285,14 +285,10 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="convert *.mps into *.mpb (binary format)" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.1330375798058820290" resolveInfo="BuildLayout_CopyProcessor" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4560297596895912354">
-      <property name="name" nameId="tpck.1169194664001" value="BuildMps_TestModuleAnnotation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Testing" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2389279258782627672">
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleTestSource" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Sources" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="test source" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5253498789149547823" resolveInfo="BuildMps_ModuleSource" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="269707337715631379">
@@ -919,8 +915,11 @@
     </node>
   </root>
   <root id="1330375798066754656" />
-  <root id="4560297596895912354" />
   <root id="2389279258782627672">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7354447573577513025">
+      <property name="name" nameId="tpck.1169194664001" value="isGenerated" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2389279258782628330">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>

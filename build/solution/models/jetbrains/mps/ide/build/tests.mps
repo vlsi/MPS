@@ -65,6 +65,7 @@
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.impl.tests.sandbox" />
         <property name="uuid" nameId="kdzh.322010710375892619" value="6cbb1052-4510-427f-926c-3476bfd7e801" />
         <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        <property name="sourcesKind" nameId="kdzh.269707337715731330" value="tests" />
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="9178146092071416589">
           <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="9178146092071416596">
             <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
@@ -88,13 +89,13 @@
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="ffeo.413682502717652307" resolveInfo="JDK" />
           </node>
         </node>
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="kdzh.BuildMps_TestModuleAnnotation" typeId="kdzh.4560297596895912354" id="3474133302908391428" />
       </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="3474133302908391429">
         <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.execution.impl.tests" />
         <property name="uuid" nameId="kdzh.322010710375892619" value="7b15492d-a198-43e2-91e3-4a7e9116ce2b" />
         <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        <property name="sourcesKind" nameId="kdzh.269707337715731330" value="tests" />
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="9178146092071416985">
           <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="9178146092071416992">
             <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
@@ -172,7 +173,6 @@
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="ffeo.8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
           </node>
         </node>
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="kdzh.BuildMps_TestModuleAnnotation" typeId="kdzh.4560297596895912354" id="3655813416645562929" />
       </node>
     </node>
     <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3474133302908391457">
