@@ -62,7 +62,7 @@ class ModelUsagesSearchType extends SearchType<SModel, SModelReference> {
       subMonitor.start("", current.size());
       for (SModel m : current) {
         subMonitor.step(m.getModelName());
-        if (FindUsagesManager.hasModelUsages(m, models)) {
+        if (FindUsagesUtil.hasModelUsages(m, models)) {
           consumer.consume(m);
         }
         if (monitor.isCanceled()) break;

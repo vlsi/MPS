@@ -43,7 +43,11 @@ public class ScopeResolver implements IResolver {
         SNode result = null;
         String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
         if (resolveInfo != null) {
-          result = refScope.resolve(sourceNode, resolveInfo);
+          try {
+            result = refScope.resolve(sourceNode, resolveInfo);
+          } catch (Throwable t) {
+            LOG.warn("Exception was thrown during reference resolving", t);
+          }
           if (result == null) {
             // for compatibility reasons, was copied from old Resolver implementation 
             for (SNode node : refScope.getAvailableElements(null)) {

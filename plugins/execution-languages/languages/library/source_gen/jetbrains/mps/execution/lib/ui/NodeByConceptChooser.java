@@ -15,13 +15,12 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.progress.ProgressMonitor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import java.util.Collections;
-import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -81,9 +80,9 @@ public class NodeByConceptChooser extends AbstractMainNodeChooser {
   }
 
   @Override
-  protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor) {
+  protected List<SNode> findToChooseFromOnInit(FindUsagesFacade manager, ProgressMonitor monitor) {
     SAbstractConcept concept = SConceptRepository.getInstance().getConcept(myTargetConcept);
-    Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
+    Set<SNode> instances = ((Set) manager.findInstances(myScope, Collections.singleton(concept), false, monitor));
     if (this.myAcceptor == null) {
       return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
     } else {

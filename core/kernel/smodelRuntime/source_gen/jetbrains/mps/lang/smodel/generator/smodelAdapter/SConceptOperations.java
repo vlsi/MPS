@@ -22,8 +22,8 @@ import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public final class SConceptOperations {
@@ -135,7 +135,7 @@ public final class SConceptOperations {
     }
     String cId = NameUtil.nodeFQName(conceptDeclarationNode);
     SAbstractConcept concept = SConceptRepository.getInstance().getConcept(cId);
-    Set<SNode> usages = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, scope, null));
+    Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(scope, Collections.singleton(concept), false, new EmptyProgressMonitor());
     return ListSequence.fromListWithValues(new ArrayList<SNode>(), usages);
   }
 

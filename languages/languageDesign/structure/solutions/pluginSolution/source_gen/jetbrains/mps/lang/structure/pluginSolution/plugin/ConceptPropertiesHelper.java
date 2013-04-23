@@ -13,8 +13,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.Collection;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -89,7 +88,7 @@ public class ConceptPropertiesHelper {
     final Set<SNode> conceptLinkDeclarationUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SNode> linkAccessUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SearchResult<SNode>> allUsages = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
-    Collection<SNode> usages = ((Collection) FindUsagesManager.getInstance().findUsages(nodesToFind(), SearchType.INSTANCES, scope, new EmptyProgressMonitor()));
+    Collection<SNode> usages = ((Collection) FindUsagesFacade.getInstance().findInstances(scope, nodesToFind(), false, new EmptyProgressMonitor()));
 
     boolean usageIsFound;
     for (SNode usage : CollectionSequence.fromCollection(usages)) {

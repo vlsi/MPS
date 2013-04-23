@@ -22,7 +22,6 @@ import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -77,7 +76,7 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
       subMonitor.start("", current.size());
       for (SModel m : current) {
         subMonitor.step(m.getModelName());
-        FindUsagesManager.collectInstances(m, queryConcepts, consumer);
+        FindUsagesUtil.collectInstances(m, queryConcepts, consumer);
         if (monitor.isCanceled()) break;
         subMonitor.advance(1);
       }
