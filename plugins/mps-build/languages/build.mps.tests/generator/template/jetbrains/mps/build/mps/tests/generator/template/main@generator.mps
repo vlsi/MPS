@@ -480,11 +480,6 @@
                   <property name="tagName" nameId="iuxj.6666499814681415862" value="classpath" />
                   <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3944198881067771910">
                     <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
-                    <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlComment" typeId="iuxj.6666499814681299064" id="3944198881067796830">
-                      <node role="lines" roleId="iuxj.1622293396949036151" type="iuxj.XmlCommentLine" typeId="iuxj.1622293396949036126" id="3944198881067796836">
-                        <property name="text" nameId="iuxj.1622293396949036127" value="this is bold" />
-                      </node>
-                    </node>
                     <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3944198881067796113">
                       <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
                       <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
