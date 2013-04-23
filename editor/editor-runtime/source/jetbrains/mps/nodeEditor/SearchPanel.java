@@ -477,12 +477,20 @@ public class SearchPanel extends AbstractSearchPanel {
     public void select() {
       TextRange range = getFirstRange();
       myEditor.changeSelection(range.getLabel());
-      if (range.getLabel().isCaretPositionAllowed(range.getStartPosition())) {
+      boolean canSetCaretStart = range.getLabel().isCaretPositionAllowed(range.getStartPosition());
+      if (canSetCaretStart) {
         range.getLabel().setCaretPosition(range.getStartPosition());
       }
-      if (range.getLabel().isCaretPositionAllowed(range.getEndPosition())) {
-        range.getLabel().setCaretPosition(range.getEndPosition(), true);
+      boolean canSetCaretEnd = range.getLabel().isCaretPositionAllowed(range.getEndPosition());
+      if (canSetCaretEnd) {
+        range.getLabel().setCaretPosition(range.getEndPosition(), canSetCaretStart);
       }
+
+      if (!(canSetCaretStart && canSetCaretEnd)) {
+        range.getLabel().setSelectionStart(range.getStartPosition());
+        range.getLabel().setSelectionEnd(range.getEndPosition());
+      }
+
     }
   }
 
