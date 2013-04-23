@@ -16,7 +16,6 @@
   <import index="to5d" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" version="-1" />
   <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="la4b" modelUID="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)" version="-1" />
   <import index="59et" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -46,6 +45,7 @@
   <import index="e2lc" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(1.6/java.lang@java_stub)" version="-1" />
   <import index="9ql3" modelUID="f:java_stub#~IDEA IC#com.intellij.openapi.project(IDEA IC/com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="wvgn" modelUID="r:e32ada56-1876-4524-85c0-29075cbd8d32(jetbrains.mps.idea.java.psiStubs)" version="-1" />
+  <import index="9614" modelUID="f:java_stub#82c058c0-76db-4a07-8330-9d805cd11426#jetbrains.mps.ide.java.sourceStubs(jetbrains.mps.ide.java.sourceStubs@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -53,6 +53,7 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="ta48" modelUID="f:java_stub#~IDEA IC#com.intellij.navigation(IDEA IC/com.intellij.navigation@java_stub)" version="-1" implicit="yes" />
   <import index="81p4" modelUID="f:java_stub#~IDEA IC#com.intellij.openapi.components(IDEA IC/com.intellij.openapi.components@java_stub)" version="-1" implicit="yes" />
+  <import index="la4b" modelUID="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3118313698925873538">
       <property name="name" nameId="tpck.1169194664001" value="PsiJavaStubModelDescriptor" />
@@ -8238,18 +8239,18 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="8036260399916035401" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5056426112721398758">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5056426112722759347">
-            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5056426112722778497">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
-            </node>
-            <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5056426112721418861">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="la4b.5056426112720875382" resolveInfo="makeModelReference" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="la4b.5056426112720866148" resolveInfo="Util" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5056426112721439952">
+            <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9087207491354046203">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9614.~Util%dmakeModelReference(String,SModule)" resolveInfo="makeModelReference" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9614.~Util" resolveInfo="Util" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9087207491354046204">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1626170360264272148" resolveInfo="packageName" />
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="5056426112721480097">
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="9087207491354046205">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ep0o.~ModelRootBase%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
               </node>
+            </node>
+            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5056426112722778497">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
             </node>
           </node>
         </node>
@@ -10766,8 +10767,8 @@
     </node>
   </root>
   <root id="9079491090144936020">
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7613102324238241907">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="la4b.4423331261408184030" resolveInfo="JavaSourceStubModelRoot" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9087207491354029183">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9614.~JavaSourceStubModelRoot" resolveInfo="JavaSourceStubModelRoot" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9079491090144936021" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="9079491090144936022">
@@ -10807,8 +10808,8 @@
     </node>
   </root>
   <root id="9079491090146104459">
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8209959704690555101">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="la4b.4423331261408331046" resolveInfo="MPSJavaSrcDataSource" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9087207491354034612">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9614.~MPSJavaSrcDataSource" resolveInfo="MPSJavaSrcDataSource" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="9079491090147561251" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="9079491090484345260">
@@ -12207,13 +12208,13 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5056426112720966580">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5056426112720971259">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="la4b.5056426112720875382" resolveInfo="makeModelReference" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="la4b.5056426112720866148" resolveInfo="Util" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5056426112720973372">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9087207491354040067">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9614.~Util%dmakeModelReference(String,SModule)" resolveInfo="makeModelReference" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9614.~Util" resolveInfo="Util" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9087207491354040068">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8036260399911419385" resolveInfo="packageName" />
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5056426112720981621">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9087207491354040069">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7414633741307331087" resolveInfo="mpsModule" />
             </node>
           </node>
