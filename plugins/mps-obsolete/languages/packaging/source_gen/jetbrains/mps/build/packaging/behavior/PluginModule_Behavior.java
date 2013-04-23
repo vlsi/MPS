@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -42,7 +43,7 @@ public class PluginModule_Behavior {
   }
 
   public static String call_getFullPathToPluginXml_989489456094444401(SNode thisNode) {
-    return PluginModule_Behavior.call_getPluginModule_989489456094442313(thisNode).getGeneratorOutputPath() + Util.SEPARATOR + SNodeOperations.getModelLongName(IdeaInitializerReference_Behavior.call_getContainigModel_4015626213813769728(SLinkOperations.getTarget(thisNode, "pluginXmlReference", true))).replace(".", Util.SEPARATOR) + Util.SEPARATOR + IdeaInitializerReference_Behavior.call_getGeneratedFileName_4015626213814034867(SLinkOperations.getTarget(thisNode, "pluginXmlReference", true));
+    return ((AbstractModule) PluginModule_Behavior.call_getPluginModule_989489456094442313(thisNode)).getOutputPath().getPath() + Util.SEPARATOR + SNodeOperations.getModelLongName(IdeaInitializerReference_Behavior.call_getContainigModel_4015626213813769728(SLinkOperations.getTarget(thisNode, "pluginXmlReference", true))).replace(".", Util.SEPARATOR) + Util.SEPARATOR + IdeaInitializerReference_Behavior.call_getGeneratedFileName_4015626213814034867(SLinkOperations.getTarget(thisNode, "pluginXmlReference", true));
   }
 
   public static SNode call_createPluginXmlPathHolder_989489456094459829(SNode thisNode) {
