@@ -26,7 +26,7 @@ public class RefactoringTest extends BaseMPSTest {
     assertTrue(testRefactoringTestEnvironment(new File(TEST_REFACTORING_PATH)));
   }
 
-  public void testRenameConceptRefactoring() {
+  public void  testRenameConceptRefactoring() {
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester"));
   }
 

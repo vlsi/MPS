@@ -33,7 +33,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testIncSolution1() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/languageDesign/generator/generator.mpr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/languageDesign/generator"));
     SModel descr = findModel(p, "test_Closure");
 
     doTestIncrementalGeneration(p, descr,
