@@ -23,7 +23,14 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
+import java.util.Collections;
+
 public class ErrorNodeEditor implements EditorAspect {
+  @Override
+  public Collection<String> getContextHints() {
+    return Collections.emptyList();
+  }
 
   @Override
   public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {

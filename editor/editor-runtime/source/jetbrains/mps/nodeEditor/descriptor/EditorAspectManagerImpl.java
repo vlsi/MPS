@@ -32,6 +32,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -112,6 +113,11 @@ public class EditorAspectManagerImpl implements EditorAspectManager {
 
   public static class DefaultInterfaceEditor implements EditorAspect {
     public DefaultInterfaceEditor() {
+    }
+
+    @Override
+    public Collection<String> getContextHints() {
+      return Collections.emptyList();
     }
 
     @Override

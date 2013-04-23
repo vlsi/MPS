@@ -23,7 +23,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
+import java.util.Collection;
+import java.util.Collections;
+
 public class DefaultNodeEditor implements EditorAspect {
+  @Override
+  public Collection<String> getContextHints() {
+    return Collections.emptyList();
+  }
 
   @Override
   public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
