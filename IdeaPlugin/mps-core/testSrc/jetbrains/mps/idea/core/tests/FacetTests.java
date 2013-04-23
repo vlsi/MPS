@@ -69,7 +69,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 //    assertEquals(1, solution.getDependencies().size());
     assertEmpty(solution.getUsedLanguagesReferences());
 
-    assertEquals(getModuleHome() + "/source_gen", solution.getGeneratorOutputPath());
+    assertEquals(getModuleHome() + "/src_gen", solution.getGeneratorOutputPath());
 
     Solution repositorySolution = ModuleRepositoryFacade.getInstance().getModule(solution.getModuleReference(), Solution.class);
     assertEquals(solution, repositorySolution);

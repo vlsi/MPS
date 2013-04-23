@@ -237,6 +237,13 @@ public class MPSMakeMediator {
       }
     }
     for (String keptFile : makeFacetConfiguration.getKeptFiles()) {
+      try {
+        FSOperations.markDirty(myContext.getCompileContext(), new File(keptFile));
+      } catch (IOException e) {
+        reportError(e);
+        success = false;
+      }
+
       SModel source = makeFacetConfiguration.getSource(keptFile);
       if (source != null && source.getSource() instanceof FileDataSource) {
         try {
