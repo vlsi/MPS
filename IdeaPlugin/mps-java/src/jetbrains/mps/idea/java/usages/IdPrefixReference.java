@@ -50,11 +50,17 @@ public class IdPrefixReference implements PsiReference {
   private SNodeReference myTarget;
   private String myRole;
   private PsiElement myParent;
+  // target node of the underlying SReference
+  private NodePtr myRealTarget;
 
   public IdPrefixReference(SNodeReference target, String role, PsiElement fosterFather) {
     myTarget = target;
     myRole = role;
     myParent = fosterFather;
+
+    SNode source = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance());
+    SReference ref = source.getReference(myRole);
+    myRealTarget = new NodePtr(ref.getTargetSModelReference(), ref.getTargetNodeId());
   }
 
   @Override
@@ -121,17 +127,15 @@ public class IdPrefixReference implements PsiReference {
   private class IdPrefixRenameHandler implements RenameHandler {
     @Override
     public void handleRename(NodePtr oldNode, NodePtr newNode) {
+
+      // let's see if this target is not already handled by normal SReference
+      if (myParent.getProject().getComponent(MoveRenameBatch.class).isHandledAsSReference(myRealTarget)) {
+        return;
+      }
+
       SNode source = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance());
       String oldId = source.getReference(myRole).getTargetNodeId().toString();
       String newId = oldId.replaceFirst(oldNode.getNodeId().toString(), newNode.getNodeId().toString());
-
-      SReference ref = source.getReference(myRole);
-      NodePtr realTarget = new NodePtr(ref.getTargetSModelReference(), ref.getTargetNodeId());
-
-      // let's see if this target is not already handled by normal SReference
-      if (myParent.getProject().getComponent(MoveRenameBatch.class).isHandledAsSReference(realTarget)) {
-        return;
-      }
 
       source.setReference(myRole, StaticReference.create(myRole, source, newNode.getSModelReference(), new Foreign(newId)));
 

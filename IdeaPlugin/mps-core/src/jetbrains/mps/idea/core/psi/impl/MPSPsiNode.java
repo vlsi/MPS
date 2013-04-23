@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -133,7 +132,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     if (role == null) return null;
 
     for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
-      if (child instanceof MPSPsiRef && role.equals(((MPSPsiRef) child).getContainingRole())) {
+      if (child instanceof MPSPsiRef && role.equals(((MPSPsiRef) child).getRole())) {
         PsiElement refTarget = ((MPSPsiRef) child).resolve();
         if (aClass.isInstance(refTarget)) {
           return (T) refTarget;
@@ -148,7 +147,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
 
     List<MPSPsiRef> result = new ArrayList<MPSPsiRef>();
     for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
-      if (child instanceof MPSPsiRef && role.equals(((MPSPsiRef) child).getContainingRole())) {
+      if (child instanceof MPSPsiRef && role.equals(((MPSPsiRef) child).getRole())) {
         result.add((MPSPsiRef) child);
       }
     }

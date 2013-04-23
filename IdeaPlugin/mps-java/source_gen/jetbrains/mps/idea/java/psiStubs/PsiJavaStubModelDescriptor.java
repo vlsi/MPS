@@ -290,6 +290,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
 
     /*package*/ void clearFile(PsiFile file) {
       BiMap<SNode, PsiElement> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(file.getName());
+      if (mapForFile == null) return;
       MapSequence.fromMap(myMps2PsiMappings).removeKey(file.getName());
       for (SNode node : mapForFile.keySet()) {
         MapSequence.fromMap(myGlobalMps2PsiMapping).removeKey(node);

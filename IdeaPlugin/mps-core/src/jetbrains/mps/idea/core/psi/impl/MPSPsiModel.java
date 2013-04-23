@@ -38,6 +38,9 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -284,7 +287,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   }
 
   MPSPsiNode convert(SNode node) {
-    MPSPsiNode psiNode = MPSPsiProvider.getInstance(getProject()).create(node.getNodeId(), node.getConcept().getQualifiedName(), node.getRoleInParent());
+    MPSPsiNode psiNode = MPSPsiProvider.getInstance(getProject()).create(node.getNodeId(), node.getConcept(), node.getRoleInParent());
     myNodes.put(node.getNodeId(), psiNode);
 
     // properties
@@ -294,10 +297,16 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
     // refs
     for (SReference ref : node.getReferences()) {
+      SLink link = ref.getLink();
+      SAbstractConcept linkTargetConcept = link.getTargetConcept();
+      MPSPsiRef psiRef = null;
       if (ref instanceof StaticReference) {
-        psiNode.addChild(null, new MPSPsiRef(ref.getRole(), ref.getTargetSModelReference(), ref.getTargetNodeId()));
+        psiRef = MPSPsiProvider.getInstance(getProject()).createReferenceNode(ref.getRole(), linkTargetConcept, ref.getTargetSModelReference(), ref.getTargetNodeId());
       } else if (ref instanceof DynamicReference) {
-        psiNode.addChild(null, new MPSPsiRef(ref.getRole(), ((DynamicReference) ref).getResolveInfo()));
+        psiRef = MPSPsiProvider.getInstance(getProject()).createReferenceNode(ref.getRole(), linkTargetConcept, ((DynamicReference) ref).getResolveInfo());
+      }
+      if (psiRef != null) {
+        psiNode.addChild(null, psiRef);
       }
     }
 
