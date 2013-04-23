@@ -44,8 +44,6 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.StackFrameContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.VariableDescription" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
-    <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
-    <classNode dependClassName="jetbrains.mps.findUsages.SearchType" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ModelsScope" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -86,6 +84,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.BaseLanguagesImportHelper" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dt36aku9mkqdgrduu58258p2a65nh7r">
+<dependencies version="2" modelHash="-aw9ei2lhuafnfhghbbtcylwmk76sxr4">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="155lb7kedgnejawgw2zx2ilnp2qv34" />
@@ -43,7 +43,7 @@
   <source id="7181125477683264500" name="IDEA" hash="7cwyjo70miogs73sygjvrprnc6mt22s">
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
   </source>
-  <source id="5148601452480491524" name="mpsPlugin" hash="-ddjxb230nt6jzw57bvo936rm2zai1rb">
+  <source id="5148601452480491524" name="mpsPlugin" hash="-x3vkwbcgfl4wliq18wvapio47nsywq">
     <dep root="618786790401812237" />
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />

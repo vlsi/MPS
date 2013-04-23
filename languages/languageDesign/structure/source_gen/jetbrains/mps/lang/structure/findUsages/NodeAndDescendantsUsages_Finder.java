@@ -15,8 +15,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 
 public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
@@ -48,7 +47,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
         SetSequence.fromSet(nodes).addElement(child);
       }
       // 
-      Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, SearchType.USAGES, scope, monitor);
+      Set<SReference> resRefs = FindUsagesFacade.getInstance().findUsages(scope, nodes, monitor);
       for (SReference reference : resRefs) {
         SNode snode = ((SNode) reference.getSourceNode());
         if (!(SetSequence.fromSet(nodes).contains(snode))) {

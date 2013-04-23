@@ -7214,7 +7214,7 @@
     <nodeInfo nodeId="227146524086812215" fileName="HighlightInstances_Action.java" startLine="84" startPosition="140" endLine="85" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="299059313917246840" fileName="HighlightInstances_Action.java" startLine="85" startPosition="140" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3839513696115040160" fileName="HighlightInstances_Action.java" startLine="86" startPosition="0" endLine="87" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1603865323670465831" fileName="HighlightInstances_Action.java" startLine="87" startPosition="157" endLine="88" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1603865323670465831" fileName="HighlightInstances_Action.java" startLine="87" startPosition="157" endLine="88" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="227146524086812463" fileName="HighlightInstances_Action.java" startLine="90" startPosition="158" endLine="91" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1709218712959265252" fileName="HighlightInstances_Action.java" startLine="93" startPosition="7" endLine="94" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="96" startPosition="45" endLine="97" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -7235,7 +7235,7 @@
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="61" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="65" startPosition="5" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HighlightInstances_Action#()V" />
-    <nodeInfo nodeId="227146524086812381" fileName="HighlightInstances_Action.java" startLine="88" startPosition="200" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="227146524086812381" fileName="HighlightInstances_Action.java" startLine="88" startPosition="209" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="69" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="43" startPosition="89" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="69" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -7273,7 +7273,7 @@
       <varInfo nodeId="227146524086812204" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="227146524086812381" fileName="HighlightInstances_Action.java" startLine="88" startPosition="200" endLine="93" endPosition="7">
+    <scopeInfo nodeId="227146524086812381" fileName="HighlightInstances_Action.java" startLine="88" startPosition="209" endLine="93" endPosition="7">
       <varInfo nodeId="227146524086812382" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="43" startPosition="89" endLine="51" endPosition="5" />
@@ -11375,8 +11375,8 @@
     <nodeInfo nodeId="5533671870987099293" fileName="HighlightUsages_Action.java" startLine="83" startPosition="27" endLine="84" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5533671870987099301" fileName="HighlightUsages_Action.java" startLine="84" startPosition="144" endLine="85" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5533671870987099312" fileName="HighlightUsages_Action.java" startLine="85" startPosition="144" endLine="86" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5533671870987100177" fileName="HighlightUsages_Action.java" startLine="86" startPosition="122" endLine="87" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5533671870987100196" fileName="HighlightUsages_Action.java" startLine="87" startPosition="210" endLine="88" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5533671870987100177" fileName="HighlightUsages_Action.java" startLine="86" startPosition="122" endLine="87" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5533671870987100196" fileName="HighlightUsages_Action.java" startLine="87" startPosition="212" endLine="88" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5533671870987185434" fileName="HighlightUsages_Action.java" startLine="90" startPosition="28" endLine="91" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2372163530067851552" fileName="HighlightUsages_Action.java" startLine="93" startPosition="126" endLine="94" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5533671870987188816" fileName="HighlightUsages_Action.java" startLine="100" startPosition="30" endLine="101" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -11919,8 +11919,8 @@
     <unitInfo nodeId="5542140910050886364" fileName="SubmitToTracker_Action.java" startLine="27" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ide.actions.SubmitToTracker_Action" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/5916754392152578755">
-    <nodeInfo nodeId="5916754392152578770" fileName="TodoFinder.java" startLine="23" startPosition="73" endLine="24" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5916754392152578783" fileName="TodoFinder.java" startLine="24" startPosition="242" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5916754392152578770" fileName="TodoFinder.java" startLine="23" startPosition="73" endLine="24" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5916754392152578783" fileName="TodoFinder.java" startLine="24" startPosition="251" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5916754392152578792" fileName="TodoFinder.java" startLine="26" startPosition="30" endLine="27" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5916754392152578800" fileName="TodoFinder.java" startLine="28" startPosition="25" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="5916754392152578806" fileName="TodoFinder.java" startLine="31" startPosition="51" endLine="32" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

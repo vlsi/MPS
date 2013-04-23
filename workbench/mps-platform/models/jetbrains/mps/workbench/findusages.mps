@@ -35,6 +35,7 @@
   <import index="luw9" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.findUsages(jetbrains.mps.findUsages@java_stub)" version="-1" />
   <import index="qx6n" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" version="-1" />
   <import index="r9fo" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(MPS.OpenAPI/org.jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="y3x8" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.find.findUsages(MPS.Platform/com.intellij.find.findUsages@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -4136,8 +4137,8 @@
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="7188925165894741142">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7188925165895173031">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7188925165895188844">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="luw9.~FindUsagesManager" resolveInfo="FindUsagesManager" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="luwa.~FindUsagesManager%dcollectUsages(org%djetbrains%dmps%dopenapi%dmodel%dSModel,java%dutil%dCollection,org%djetbrains%dmps%dutil%dConsumer)%cvoid" resolveInfo="collectUsages" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="luwa.~FindUsagesUtil" resolveInfo="FindUsagesUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="luwa.~FindUsagesUtil%dcollectUsages(org%djetbrains%dmps%dopenapi%dmodel%dSModel,java%dutil%dCollection,org%djetbrains%dmps%dutil%dConsumer)%cvoid" resolveInfo="collectUsages" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7188925165895197420">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7188925165895208190">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Map$Entry%dgetKey()%cjava%dlang%dObject" resolveInfo="getKey" />
@@ -4332,8 +4333,8 @@
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="3839513696112605763">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7188925165896781803">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7188925165896790170">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="luw9.~FindUsagesManager" resolveInfo="FindUsagesManager" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="luwa.~FindUsagesManager%dcollectInstances(org%djetbrains%dmps%dopenapi%dmodel%dSModel,java%dutil%dCollection,org%djetbrains%dmps%dutil%dConsumer)%cvoid" resolveInfo="collectInstances" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="luwa.~FindUsagesUtil" resolveInfo="FindUsagesUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="luwa.~FindUsagesUtil%dcollectInstances(org%djetbrains%dmps%dopenapi%dmodel%dSModel,java%dutil%dCollection,org%djetbrains%dmps%dutil%dConsumer)%cvoid" resolveInfo="collectInstances" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7188925165896790171">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7188925165896790172">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Map$Entry%dgetKey()%cjava%dlang%dObject" resolveInfo="getKey" />
@@ -4575,8 +4576,8 @@
                 </node>
               </node>
               <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1578360511946108436">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="luw9.~FindUsagesManager%dhasModelUsages(org%djetbrains%dmps%dopenapi%dmodel%dSModel,java%dutil%dCollection)%cboolean" resolveInfo="hasModelUsages" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="luw9.~FindUsagesManager" resolveInfo="FindUsagesManager" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="luwa.~FindUsagesUtil" resolveInfo="FindUsagesUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="luwa.~FindUsagesUtil%dhasModelUsages(org%djetbrains%dmps%dopenapi%dmodel%dSModel,java%dutil%dCollection)%cboolean" resolveInfo="hasModelUsages" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1578360511946108437">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1578360511946108438">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Map$Entry%dgetKey()%cjava%dlang%dObject" resolveInfo="getKey" />

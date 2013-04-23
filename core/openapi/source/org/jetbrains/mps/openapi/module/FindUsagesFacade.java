@@ -13,38 +13,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence;
+package org.jetbrains.mps.openapi.module;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import java.util.Collection;
 import java.util.Set;
 
 /**
  * Effective (usually index-based) implementation of find usages routines.
- * Participants are invoked one by one, followed by the default (or dummy) participant.
- * Processed models are reported to the processedConsumer to exclude them from the scope of subsequent participants.
- * The default participant traverses unprocessed models recursively (which forces models to be loaded into memory).
  */
-public interface FindUsagesParticipant {
+public abstract class FindUsagesFacade {
+
+  protected FindUsagesFacade() {
+  }
+
+  protected static FindUsagesFacade INSTANCE;
+
+  public static FindUsagesFacade getInstance() {
+    return INSTANCE;
+  }
 
   /**
    * Finds references to the provided nodes in the scope.
    */
-  void findUsages(Collection<SModel> scope, Set<SNode> nodes, Consumer<SReference> consumer, Consumer<SModel> processedConsumer);
+  public abstract Set<SReference> findUsages(SearchScope scope, Set<SNode> nodes, ProgressMonitor monitor);
 
   /**
    * Finds instances of the provided concepts in the scope.
    */
-  void findInstances(Collection<SModel> scope, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer);
+  public abstract Set<SNode> findInstances(SearchScope scope, Set<SAbstractConcept> concepts, boolean exact, ProgressMonitor monitor);
 
   /**
    * Finds models referencing the provided set of models in the scope.
    */
-  void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer);
+  public abstract Set<SModel> findModelUsages(SearchScope scope, Set<SModelReference> modelReferences, ProgressMonitor monitor);
 }

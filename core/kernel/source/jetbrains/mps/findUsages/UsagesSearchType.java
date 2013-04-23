@@ -61,7 +61,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
       subMonitor.start("", current.size());
       for (SModel m : current) {
         subMonitor.step(m.getModelName());
-        FindUsagesManager.collectUsages(m, nodes, consumer);
+        FindUsagesUtil.collectUsages(m, nodes, consumer);
         if (monitor.isCanceled()) break;
         subMonitor.advance(1);
       }

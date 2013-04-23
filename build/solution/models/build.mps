@@ -11168,12 +11168,9 @@
             <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="882610591735825666">
               <property name="head" nameId="3ior.8618885170173601779" value="IdeaPlugin" />
               <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="882610591735825768">
-                <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
+                <property name="head" nameId="3ior.8618885170173601779" value="mps-java" />
                 <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="882610591735825830">
-                  <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.idea.java.psiStubs" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="882610591735825892">
-                    <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
-                  </node>
+                  <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
                 </node>
               </node>
             </node>

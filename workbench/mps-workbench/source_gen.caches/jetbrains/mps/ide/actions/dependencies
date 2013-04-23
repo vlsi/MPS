@@ -1738,8 +1738,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
-    <classNode dependClassName="jetbrains.mps.findUsages.SearchType" />
     <classNode dependClassName="jetbrains.mps.ide.actions.HighlightConstants" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
@@ -1749,6 +1747,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.NodeHighlightManager" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.message.EditorMessageOwner" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
@@ -1757,6 +1756,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.HighlightUsages_Action" file="HighlightUsages_Action.java">
@@ -1771,8 +1771,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
-    <classNode dependClassName="jetbrains.mps.findUsages.SearchType" />
     <classNode dependClassName="jetbrains.mps.ide.actions.HighlightConstants" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
@@ -1787,6 +1785,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.message.EditorMessageOwner" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.message.SimpleEditorMessage" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
@@ -1795,6 +1794,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" file="Ide_ApplicationPlugin.java">
@@ -3900,15 +3900,15 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
-    <classNode dependClassName="jetbrains.mps.findUsages.SearchType" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.TodoViewer" file="TodoViewer.java">
