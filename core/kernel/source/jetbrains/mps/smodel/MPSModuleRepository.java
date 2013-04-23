@@ -126,6 +126,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     for (SModule module : modulesToDispose) {
       fireModuleRemoved(module);
       module.dispose();
+      module.detach();
       MPSClassesReloadManager.getInstance().requestReload();
     }
     if (repositoryChanged) {
@@ -141,6 +142,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     if (moduleRemoved) {
       fireModuleRemoved(module);
       module.dispose();
+      module.detach();
     } else {
       fireRepositoryChanged();
     }
@@ -167,7 +169,6 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     if (remove) {
       fireBeforeModuleRemoved(module);
       myModules.remove(module);
-      module.detach();
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
       myFqNameToModulesMap.remove(module.getModuleName());
       return true;
