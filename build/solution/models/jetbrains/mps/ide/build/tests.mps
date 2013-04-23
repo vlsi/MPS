@@ -172,7 +172,7 @@
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="ffeo.8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
           </node>
         </node>
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="kdzh.BuildMps_TestModuleAnnotation" typeId="kdzh.4560297596895912354" id="3474133302908391456" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="kdzh.BuildMps_TestModuleAnnotation" typeId="kdzh.4560297596895912354" id="3655813416645562929" />
       </node>
     </node>
     <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3474133302908391457">

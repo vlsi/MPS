@@ -30,11 +30,12 @@ public class BuildMps_TestModuleAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_bxswyp_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Test");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(has tests)");
     editorCell.setCellId("Constant_bxswyp_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    delete_testsAnnotation.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
