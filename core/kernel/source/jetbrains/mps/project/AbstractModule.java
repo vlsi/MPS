@@ -932,8 +932,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   @Deprecated
   @Override
   public final String getOutputFor(SModel model) {
-    IFile outputPath = SModuleOperations.getOutputPathFor(model);
-    return outputPath != null ? outputPath.getPath() : null;
+    return SModuleOperations.getOutputPathFor(model);
   }
 
   @Override

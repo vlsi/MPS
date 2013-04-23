@@ -81,14 +81,16 @@ public class SModuleOperations {
     return result;
   }
 
-  public static IFile getOutputPathFor(SModel model) {
+  public static String getOutputPathFor(SModel model) {
     // todo: move to SModelOperations?
     SModule module = model.getModule();
+    IFile outputDir;
     if (SModelStereotype.isTestModel(model) && module.getFacet(TestsFacet.class) != null) {
-      return module.getFacet(TestsFacet.class).getTestsOutputPath();
+      outputDir = module.getFacet(TestsFacet.class).getTestsOutputPath();
     } else {
-      return ((AbstractModule) module).getOutputPath();
+      outputDir = ((AbstractModule) module).getOutputPath();
     }
+    return outputDir != null ? outputDir.getPath() : null;
   }
 
   @NotNull

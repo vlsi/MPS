@@ -5,14 +5,16 @@ package jetbrains.mps.tool.builder.paths;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.impl.JarEntryFile;
 
@@ -24,35 +26,38 @@ public class ModuleOutputPaths {
   private String[] sortedModelDirs;
 
   public ModuleOutputPaths(Iterable<IModule> modules) {
-    this.sortedOutDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<IModule, String>() {
-      public String select(IModule mod) {
-        return mod.getGeneratorOutputPath();
-      }
-    }));
-    this.sortedOutCacheDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<IModule, String>() {
-      public String select(IModule mod) {
-        return FileGenerationUtil.getCachesPath(mod.getGeneratorOutputPath());
-      }
-    }));
     // todo: use union of output paths for models? 
-    this.sortedTestOutDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<IModule, String>() {
-      public String select(IModule mod) {
-        // todo: tmp hack 
-        String path = mod.getTestsGeneratorOutputPath();
-        return (path != null ?
-          path :
-          mod.getGeneratorOutputPath()
+    this.sortedOutDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).where(new IWhereFilter<IModule>() {
+      public boolean accept(IModule it) {
+        return it instanceof AbstractModule && ((AbstractModule) it).getOutputPath() != null;
+      }
+    }).select(new ISelector<IModule, String>() {
+      public String select(IModule it) {
+        return ((AbstractModule) it).getOutputPath().getPath();
+      }
+    }));
+    this.sortedOutCacheDirs = DirUtil.sortDirs(Sequence.fromIterable(Sequence.fromArray(this.sortedOutDirs)).select(new ISelector<String, String>() {
+      public String select(String outDir) {
+        return FileGenerationUtil.getCachesPath(outDir);
+      }
+    }));
+
+    this.sortedTestOutDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).where(new IWhereFilter<IModule>() {
+      public boolean accept(IModule it) {
+        return it.getFacet(TestsFacet.class) != null;
+      }
+    }).select(new ISelector<IModule, String>() {
+      public String select(IModule it) {
+        IFile dir = it.getFacet(TestsFacet.class).getTestsOutputPath();
+        return (dir != null ?
+          dir.getPath() :
+          null
         );
       }
     }));
-    this.sortedTestOutCacheDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<IModule, String>() {
-      public String select(IModule mod) {
-        // todo: tmp hack 
-        String path = mod.getTestsGeneratorOutputPath();
-        if (path == null) {
-          path = mod.getGeneratorOutputPath();
-        }
-        return FileGenerationUtil.getCachesPath(path);
+    this.sortedTestOutCacheDirs = DirUtil.sortDirs(Sequence.fromIterable(Sequence.fromArray(this.sortedTestOutDirs)).select(new ISelector<String, String>() {
+      public String select(String outDir) {
+        return FileGenerationUtil.getCachesPath(outDir);
       }
     }));
 
