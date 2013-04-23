@@ -246,7 +246,6 @@
       <fileset dir="${basedir}/languages/languageDesign/editor/tests/table/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.table.tests-src.jar">
-      <fileset dir="${basedir}/languages/languageDesign/editor/tests/table/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/languages/languageDesign/editor/tests/table/jetbrains.mps.lang.editor.table.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-editor-tests-table-jetbrains" prefix="module/jetbrains" />
     </jar>
@@ -500,9 +499,7 @@
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/languages/languageDesign/editor/tests/table/source_gen" />
-      </src>
+      <src path="${basedir}/languages/languageDesign/editor/tests/table/test_gen/" />
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
@@ -543,7 +540,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.tests">
-      <fileset dir="${basedir}/languages/languageDesign/editor/tests/table/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/languages/languageDesign/editor/tests/table/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -784,6 +781,6 @@
     <delete dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" />
     <delete dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.test/source_gen" />
-    <delete dir="${basedir}/languages/languageDesign/editor/tests/table/source_gen" />
+    <delete dir="${basedir}/languages/languageDesign/editor/tests/table/test_gen" />
   </target>
 </project>
