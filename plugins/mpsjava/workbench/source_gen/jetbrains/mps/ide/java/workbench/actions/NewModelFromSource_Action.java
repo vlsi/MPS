@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import java.io.File;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.java.actions.ImportSourcesIntoModelUtils;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -146,23 +146,7 @@ public class NewModelFromSource_Action extends BaseAction {
         treeFileChooser.setDirectoriesAreAlwaysVisible(true);
         treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
         final SModel sModel = result;
-        String generatorOutputPath = ((IModule) MapSequence.fromMap(_params).get("module")).getGeneratorOutputPath();
-        File initial = null;
-        File output = new File(generatorOutputPath);
-        if (output.exists()) {
-          initial = output;
-          File sourceRoot = new File(initial.getParentFile(), "source");
-          if (!(sourceRoot.exists())) {
-            sourceRoot = new File(initial.getParentFile(), "src");
-          }
-          initial = sourceRoot;
-          if (sourceRoot.exists()) {
-            File modelSource = new File(sourceRoot, NameUtil.pathFromNamespace(SNodeOperations.getModelLongName(sModel)));
-            if (modelSource.exists()) {
-              initial = modelSource;
-            }
-          }
-        }
+        File initial = ImportSourcesIntoModelUtils.getInitialDirectoryForImport((AbstractModule) ((IModule) MapSequence.fromMap(_params).get("module")), SNodeOperations.getModelLongName(sModel));
         if (initial != null) {
           treeFileChooser.setInitialFile(FileSystem.getInstance().getFileByPath(initial.getAbsolutePath()));
         }

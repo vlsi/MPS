@@ -9,6 +9,12 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.project.IModule;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.SModuleOperations;
 import java.util.Arrays;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -61,12 +67,14 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
     if (!(isValid())) {
       return null;
     }
-    String[] modulePaths = new String[modules.length];
-    for (int i = 0; i < modules.length; i++) {
-      modulePaths[i] = modules[i].getGeneratorOutputPath();
+    Set<String> modulePaths = SetSequence.fromSet(new HashSet<String>());
+    for (IModule module : modules) {
+      for (SModel model : Sequence.fromIterable(module.getModels())) {
+        SetSequence.fromSet(modulePaths).addElement(SModuleOperations.getOutputPathFor(model));
+      }
     }
     try {
-      CompilationResult cr = myIdeaProjectHandler.buildModules(modulePaths);
+      CompilationResult cr = myIdeaProjectHandler.buildModules(SetSequence.fromSet(modulePaths).toGenericArray(String.class));
       if (cr != null) {
         return new MPSCompilationResult(cr.getErrors(), cr.getWarnings(), cr.isAborted(), (cr.isCompiledAnything() ?
           Arrays.asList(modules) :

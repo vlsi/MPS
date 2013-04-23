@@ -14,9 +14,9 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import java.io.File;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -90,34 +90,16 @@ public class GetModelContentsFromSource_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-
-
       // FIXME this action was just switched from old JavaCompiler to new DirParser 
       // Now it ignores model, and does exactly the same as new models from source 
       // It should be either deleted or changed 
 
-      IModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
+      AbstractModule module = (AbstractModule) ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
       TreeFileChooser treeFileChooser = new TreeFileChooser();
       treeFileChooser.setDirectoriesAreAlwaysVisible(true);
       treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
       final SModel sModel = ((SModel) MapSequence.fromMap(_params).get("model"));
-      String generatorOutputPath = module.getGeneratorOutputPath();
-      File initial = null;
-      File output = new File(generatorOutputPath);
-      if (output.exists()) {
-        initial = output;
-        File sourceRoot = new File(initial.getParentFile(), "source");
-        if (!(sourceRoot.exists())) {
-          sourceRoot = new File(initial.getParentFile(), "src");
-        }
-        initial = sourceRoot;
-        if (sourceRoot.exists()) {
-          File modelSource = new File(sourceRoot, NameUtil.pathFromNamespace(SNodeOperations.getModelLongName(sModel)));
-          if (modelSource.exists()) {
-            initial = modelSource;
-          }
-        }
-      }
+      File initial = ImportSourcesIntoModelUtils.getInitialDirectoryForImport(module, SNodeOperations.getModelLongName(sModel));
       if (initial != null) {
         treeFileChooser.setInitialFile(FileSystem.getInstance().getFileByPath(initial.getAbsolutePath()));
       }
