@@ -9,15 +9,15 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class DeleteFinalInField {
+public class DeleteFinalInStaticField {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new DeleteFinalInField.DeleteFinalInField_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new DeleteFinalInStaticField.DeleteFinalInStaticField_DELETE(node));
   }
 
-  public static class DeleteFinalInField_DELETE extends AbstractCellAction {
+  public static class DeleteFinalInStaticField_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
-    public DeleteFinalInField_DELETE(SNode node) {
+    public DeleteFinalInStaticField_DELETE(SNode node) {
       this.myNode = node;
     }
 
