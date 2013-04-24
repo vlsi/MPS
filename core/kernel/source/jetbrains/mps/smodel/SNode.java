@@ -96,7 +96,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     synchronized (REPO_LOCK) {
       org.jetbrains.mps.openapi.model.SModel model = getModel();
       assert model != null && model.getModule() != null && model.getModule().getRepository() != null;
-      assert myRepository == null : "Can't register disposed node or node from another repo. Repo:" + myRepository;
+      assert myRepository == null : "Can't register disposed node or node from another repo. Repo:" + myRepository + ", attaching to " + repo;
       myRepository = repo;
     }
   }
@@ -152,9 +152,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SModelDescriptor model = internal_getModel();
     String modelName = model == null ? "null" : jetbrains.mps.util.SNodeOperations.getModelLongName(model);
     if (ourErroredModels.add(modelName)) {
-      System.err.println("CRITICAL: INVALID OPERATION DETECTED");
-      System.err.println("model: " + modelName);
-      LOG.error(new IllegalModelAccessError("Accessing disposed node"));
+      LOG.error(new IllegalModelAccessError("Accessing disposed node in model " + modelName));
     }
   }
 
