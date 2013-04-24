@@ -8,6 +8,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
+import jetbrains.mps.build.util.DependenciesHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -23,7 +27,21 @@ public class BuildModuleTestsPlugin_Behavior {
   }
 
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    // we need mps here 
+    SNode project = artifacts.getProject();
+
+    // find mps-test.jar 
+    DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), project);
+    SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), "jetbrains.mps.build.structure.BuildProject");
+    SNode mpsTestModule = SNodeOperations.as(BehaviorReflection.invokeVirtual(Scope.class, originalProject, "virtual_getScope_7722139651431880752", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaModule"), "parts", 0}).resolve(originalProject, "mps-test"), "jetbrains.mps.build.structure.BuildSource_JavaModule");
+    if ((mpsTestModule != null)) {
+      SNode mpsTestJar = SNodeOperations.as(artifacts.findArtifact(mpsTestModule), "jetbrains.mps.build.structure.BuildLayout_Node");
+      if ((mpsTestJar != null)) {
+        // specify explicitly what we need maybe? 
+        helper.artifacts().put("mps-test-folder", SNodeOperations.getParent(mpsTestJar));
+        helper.artifacts().put("mps-test", mpsTestJar);
+        builder.add(mpsTestJar, mpsTestModule);
+      }
+    }
   }
 
   private static SNode createBwfTaskLibraryDependency_s7wj2j_a0a0b0a() {

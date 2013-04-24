@@ -7,19 +7,19 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.build.util.DependenciesHelper;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.build.mps.util.ModuleFinder;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
-import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.mps.tests.util.ModulePlugins;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -41,6 +41,21 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4608161086086019487(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "path");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_185990153988622954(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode project = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.build.structure.BuildProject");
+    if (project == null) {
+      _context.showErrorMessage(project, "Context project is null");
+      return _context.getTemplateValue();
+    }
+    DependenciesHelper helper = new DependenciesHelper(_context, project);
+    String artifact = "mps-test-folder";
+    SNode mpsTestJar = helper.artifacts().get(artifact);
+    if ((mpsTestJar != null)) {
+      return BehaviorReflection.invokeVirtual(String.class, mpsTestJar, "virtual_location_7117056644539862594", new Object[]{helper, artifact});
+    }
+    return _context.getTemplateValue();
   }
 
   public static Object propertyMacro_GetPropertyValue_7459197473276946301(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -70,7 +85,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_3944198881066888502(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return createGeneratorInternal_String_x583g4_a0a0a0a0k(it);
+        return createGeneratorInternal_String_x583g4_a0a0a0a0l(it);
       }
     });
   }
@@ -86,7 +101,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_7459197473276626316(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return createGeneratorInternal_String_x583g4_a0a0a0a0m(it);
+        return createGeneratorInternal_String_x583g4_a0a0a0a0n(it);
       }
     });
   }
@@ -141,14 +156,14 @@ public class QueriesGenerated {
     }, true).toGenericArray(String.class);
   }
 
-  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0k(Object p0) {
+  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0l(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, GlobalScope.getInstance(), false);
     n1.setProperty("path", (String) p0);
     return n1;
   }
 
-  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0m(Object p0) {
+  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0n(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, GlobalScope.getInstance(), false);
     n1.setProperty("path", (String) p0);
