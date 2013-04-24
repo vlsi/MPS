@@ -133,10 +133,10 @@ public class CellTraversalUtil {
     assert parent != null;
     assert parent instanceof EditorCell_Collection;
 
-    if (parent == firstCell) {
+    if (parent.equals(firstCell)) {
       return -1;
     }
-    if (parent == secondCell) {
+    if (parent.equals(secondCell)) {
       return 1;
     }
 
@@ -178,7 +178,7 @@ public class CellTraversalUtil {
   public static boolean isAncestor(@NotNull EditorCell ancestor, @NotNull EditorCell child) {
     EditorCell_Collection parent = child.getParent();
     while (parent != null) {
-      if (parent == ancestor) return true;
+      if (parent.equals(ancestor)) return true;
       parent = parent.getParent();
     }
     return false;
