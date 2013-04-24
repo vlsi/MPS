@@ -1397,7 +1397,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a3a1a1a1a3a1a11a1a51a1a3);
                               environment.nodeCopied(context, tnode99, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689530055");
-                              tnode99.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode99, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.start(java.lang.String,int):void")));
+                              tnode99.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode99, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.start(java.lang.String,int):void")));
 
                               {
                                 final SNode tnode100 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall");
@@ -1509,7 +1509,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a3a1a3a1a3a1a4a1a11a1a51a1a3);
                                   environment.nodeCopied(context, tnode108, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689530064");
-                                  tnode108.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode108, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.done():void")));
+                                  tnode108.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode108, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.done():void")));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode108));
