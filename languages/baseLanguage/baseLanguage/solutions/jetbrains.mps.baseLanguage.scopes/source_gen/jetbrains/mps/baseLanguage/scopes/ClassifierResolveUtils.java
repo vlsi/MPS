@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
@@ -76,7 +76,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<SModule> visibleModules = check_8z6r2b_a0a9a2(((IModule) check_8z6r2b_a0a0a0j0c(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<SModule> visibleModules = check_8z6r2b_a0a9a2(((AbstractModule) check_8z6r2b_a0a0a0j0c(SNodeOperations.getModel(contextNode)))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
@@ -97,7 +97,7 @@ public class ClassifierResolveUtils {
       );
     }
 
-    IScope modelScope = check_8z6r2b_a0d0d(((IModule) check_8z6r2b_a0a0a3a3(sourceModel)));
+    IScope modelScope = check_8z6r2b_a0d0d(((AbstractModule) check_8z6r2b_a0a0a3a3(sourceModel)));
 
     if (modelScope != null) {
       Iterable<SNode> result = resolveInScope(targetModelName, classifierFqName, modelScope);
@@ -385,7 +385,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<SModule> visibleModules = check_8z6r2b_a0a06a21(((IModule) check_8z6r2b_a0a0a0ic0m(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<SModule> visibleModules = check_8z6r2b_a0a06a21(((AbstractModule) check_8z6r2b_a0a0a0ic0m(SNodeOperations.getModel(contextNode)))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
@@ -563,7 +563,7 @@ public class ClassifierResolveUtils {
    */
   public static Iterable<SNode> staticImportedThings(final SNode neededConcept, SNode imports) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    IScope moduleScope = ((IModule) SNodeOperations.getModel(imports).getModule()).getScope();
+    IScope moduleScope = ((AbstractModule) SNodeOperations.getModel(imports).getModule()).getScope();
     for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "static");
@@ -631,7 +631,7 @@ public class ClassifierResolveUtils {
     return false;
   }
 
-  private static IScope check_8z6r2b_a0a9a2(IModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a9a2(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
@@ -645,7 +645,7 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IScope check_8z6r2b_a0d0d(IModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0d0d(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
@@ -659,7 +659,7 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IScope check_8z6r2b_a0a06a21(IModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a06a21(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }

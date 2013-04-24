@@ -9,7 +9,7 @@ import jetbrains.mps.make.resources.IResourceWithProperties;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.make.resources.IPropertiesIO;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 
 public class MResource extends MultiTuple._2<SModule, Iterable<SModel>> implements IMResource, IResourceWithProperties {
   public MResource() {
@@ -46,6 +46,6 @@ public class MResource extends MultiTuple._2<SModule, Iterable<SModel>> implemen
   }
 
   public IPropertiesIO getProperties() {
-    return new FlatFilePropertiesIO(((IModule) this.module()).getDescriptorFile());
+    return new FlatFilePropertiesIO(((AbstractModule) this.module()).getDescriptorFile());
   }
 }

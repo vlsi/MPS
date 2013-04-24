@@ -22,7 +22,7 @@ import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -163,7 +163,7 @@ public class LanguageErrorsComponent {
     Set<SNode> frontier = new HashSet<SNode>(1);
     SetSequence.fromSet(frontier).addElement(root);
     Set<SNode> newFrontier = new HashSet<SNode>(1);
-    IScope scope = check_29uvfh_a0h0v(((IModule) check_29uvfh_a0a0a7a12(SNodeOperations.getModel(root))));
+    IScope scope = check_29uvfh_a0h0v(((AbstractModule) check_29uvfh_a0a0a7a12(SNodeOperations.getModel(root))));
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for (SNode node : frontier) {
         if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
@@ -347,7 +347,7 @@ public class LanguageErrorsComponent {
     }
   }
 
-  private static IScope check_29uvfh_a0h0v(IModule checkedDotOperand) {
+  private static IScope check_29uvfh_a0h0v(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }

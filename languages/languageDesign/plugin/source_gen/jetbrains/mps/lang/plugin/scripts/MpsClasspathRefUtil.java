@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import java.util.Collection;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -62,15 +62,15 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
         ((SModelInternal) model).deleteModelImport(oldModelRef);
         SModelRepository.getInstance().markChanged(model);
         // update module dependencies 
-        if (module != null && ((IModule) module).getModuleDescriptor() != null) {
-          Collection<Dependency> dependencies = ((IModule) module).getModuleDescriptor().getDependencies();
+        if (module != null && ((AbstractModule) module).getModuleDescriptor() != null) {
+          Collection<Dependency> dependencies = ((AbstractModule) module).getModuleDescriptor().getDependencies();
           Dependency dep = CollectionSequence.fromCollection(((Collection<Dependency>) dependencies)).findFirst(new IWhereFilter<Dependency>() {
             public boolean accept(Dependency it) {
               return it.getModuleRef().getModuleName().contains("MPS.Classpath");
             }
           });
           // get re-export from MPS.Classpath, then should be checked manually 
-          ((IModule) module).addDependency(newModule.getModuleReference(), dep != null && dep.isReexport());
+          ((AbstractModule) module).addDependency(newModule.getModuleReference(), dep != null && dep.isReexport());
           if (dep != null) {
             dependencies.remove(dep);
           }

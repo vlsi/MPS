@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -42,7 +42,7 @@ public class MethodCallChecker extends SpecificChecker {
     if (model == null || model == null || model.getModule() == null) {
       return results;
     }
-    final IScope scope = ((IModule) model.getModule()).getScope();
+    final IScope scope = ((AbstractModule) model.getModule()).getScope();
     String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references to method declaration...";
     monitor.start(title, 1);
 
@@ -85,7 +85,7 @@ public class MethodCallChecker extends SpecificChecker {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
                 SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
-                check_lz161n_a1a0a5a0a7a1a6a1(((IModule) check_lz161n_a0a0b0a0f0a0h0b0g0b_0(model)), sm);
+                check_lz161n_a1a0a5a0a7a1a6a1(((AbstractModule) check_lz161n_a0a0b0a0f0a0h0b0g0b_0(model)), sm);
                 return true;
               }
               return false;
@@ -98,7 +98,7 @@ public class MethodCallChecker extends SpecificChecker {
     return results;
   }
 
-  private static void check_lz161n_a1a0a5a0a7a1a6a1(IModule checkedDotOperand, SModel sm) {
+  private static void check_lz161n_a1a0a5a0a7a1a6a1(AbstractModule checkedDotOperand, SModel sm) {
     if (null != checkedDotOperand) {
       checkedDotOperand.addDependency(check_lz161n_a0a1a0a5a0a7a1a6a1(check_lz161n_a0a0b0a0f0a0h0b0g0b(sm)), false);
     }

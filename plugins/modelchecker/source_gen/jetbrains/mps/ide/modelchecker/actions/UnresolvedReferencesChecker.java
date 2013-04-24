@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -36,7 +36,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     if (model == null || model == null || model.getModule() == null) {
       return results;
     }
-    final IScope scope = ((IModule) model.getModule()).getScope();
+    final IScope scope = ((AbstractModule) model.getModule()).getScope();
     String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references...";
     monitor.start(title, 1);
 
@@ -74,7 +74,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
                 if (module == null) {
                   return false;
                 }
-                ((IModule) ((IModule) module)).addDependency(moduleReference, false);
+                ((AbstractModule) ((AbstractModule) module)).addDependency(moduleReference, false);
                 return true;
               }
               return false;

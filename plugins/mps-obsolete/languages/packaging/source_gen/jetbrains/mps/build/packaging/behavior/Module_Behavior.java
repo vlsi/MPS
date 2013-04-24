@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -54,11 +53,11 @@ public class Module_Behavior {
   }
 
   public static SNode call_getModuleBaseDirectory_6863060912307757632(SNode thisNode) {
-    return PathHolder_Behavior.createPathHolder_7235580512916878209(FileSystem.getInstance().getBundleHome(((IModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getDescriptorFile()).getPath(), thisNode);
+    return PathHolder_Behavior.createPathHolder_7235580512916878209(FileSystem.getInstance().getBundleHome(((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getDescriptorFile()).getPath(), thisNode);
   }
 
   public static SNode call_getModuleDescriptorFile_6863060912307764362(SNode thisNode) {
-    return PathHolder_Behavior.createPathHolder_7235580512916878209(((IModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getDescriptorFile().getPath(), thisNode);
+    return PathHolder_Behavior.createPathHolder_7235580512916878209(((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getDescriptorFile().getPath(), thisNode);
   }
 
   public static SNode call_getClassesGen_3315989002810564857(SNode thisNode) {
@@ -82,7 +81,7 @@ public class Module_Behavior {
       public boolean accept(String it) {
         return !(it.endsWith(".jar"));
       }
-    }).isNotEmpty() || Sequence.fromIterable(((Iterable<ModelRootDescriptor>) ((IModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getModuleDescriptor().getModelRootDescriptors())).select(new ISelector<ModelRootDescriptor, ModelRoot>() {
+    }).isNotEmpty() || Sequence.fromIterable(((Iterable<ModelRootDescriptor>) ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getModuleDescriptor().getModelRootDescriptors())).select(new ISelector<ModelRootDescriptor, ModelRoot>() {
       public ModelRoot select(ModelRootDescriptor it) {
         return it.getRoot();
       }
@@ -246,7 +245,7 @@ public class Module_Behavior {
   }
 
   public static String call_getModuleDescriptorPath_4777659345280330855(SNode thisNode) {
-    return check_835h7m_a0a91(((IModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
+    return check_835h7m_a0a91(((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
   }
 
   public static String call_getHomeLibPath_4642981534832311125(SNode thisNode) {
@@ -302,7 +301,7 @@ public class Module_Behavior {
     List<SModule> list = ListSequence.fromList(new ArrayList<SModule>());
     for (SModule module : Sequence.fromIterable(GlobalScope.getInstance().getModules())) {
       if (module instanceof SModule) {
-        ListSequence.fromList(list).addElement((IModule) module);
+        ListSequence.fromList(list).addElement((AbstractModule) module);
       }
     }
     return list;

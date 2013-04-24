@@ -42,7 +42,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Logger;
@@ -390,7 +390,7 @@ public class CopyPasteUtil {
         }
 
         for (SModuleReference language : requiredLanguages) {
-          ((IModule) targetModule).addUsedLanguage(language);
+          ((AbstractModule) targetModule).addUsedLanguage(language);
         }
 
         for (SModelReference model : requiredImports) {
@@ -403,7 +403,7 @@ public class CopyPasteUtil {
             continue;
           }
 
-          ((IModule) targetModule).addDependency(module.getModuleReference(), false);
+          ((AbstractModule) targetModule).addDependency(module.getModuleReference(), false);
         }
       }
     };

@@ -54,7 +54,7 @@
     <nodeInfo nodeId="5487985028841968171" fileName="CollectTests_Action.java" startLine="173" startPosition="92" endLine="174" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841968184" fileName="CollectTests_Action.java" startLine="175" startPosition="23" endLine="176" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841968192" fileName="CollectTests_Action.java" startLine="176" startPosition="128" endLine="177" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841968201" fileName="CollectTests_Action.java" startLine="177" startPosition="89" endLine="178" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841968201" fileName="CollectTests_Action.java" startLine="177" startPosition="89" endLine="178" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841968119" fileName="CollectTests_Action.java" startLine="184" startPosition="15" endLine="185" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5487985028841968227" fileName="CollectTests_Action.java" startLine="188" startPosition="7" endLine="189" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841968243" fileName="CollectTests_Action.java" startLine="190" startPosition="5" endLine="191" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -210,7 +210,7 @@
       <varInfo nodeId="5487985028841968286" varName="_params" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841968353" fileName="CollectTests_Action.java" startLine="102" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="5487985028841968140" fileName="CollectTests_Action.java" startLine="168" startPosition="39" endLine="178" endPosition="153" />
+    <scopeInfo nodeId="5487985028841968140" fileName="CollectTests_Action.java" startLine="168" startPosition="39" endLine="178" endPosition="160" />
     <scopeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="68" startPosition="89" endLine="79" endPosition="5" />
     <scopeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="82" startPosition="95" endLine="94" endPosition="16" />
     <scopeInfo nodeId="5487985028841968139" fileName="CollectTests_Action.java" startLine="168" startPosition="0" endLine="180" endPosition="0" />

@@ -15,7 +15,7 @@
     <nodeInfo nodeId="1280144168199518372" fileName="ModuleSuite_Behavior.java" startLine="27" startPosition="0" endLine="28" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1280144168199518389" fileName="ModuleSuite_Behavior.java" startLine="29" startPosition="25" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1280144168199530844" fileName="ModuleSuite_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1280144168199518393" fileName="ModuleSuite_Behavior.java" startLine="32" startPosition="0" endLine="33" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1280144168199518393" fileName="ModuleSuite_Behavior.java" startLine="32" startPosition="0" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1280144168199531874" fileName="ModuleSuite_Behavior.java" startLine="36" startPosition="82" endLine="37" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1280144168199531884" fileName="ModuleSuite_Behavior.java" startLine="38" startPosition="34" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1280144168199531889" fileName="ModuleSuite_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -50,7 +50,7 @@
     <scopeInfo nodeId="1280144168199506814" fileName="ModuleSuite_Behavior.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1280144168199506814" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1280144168199518344" fileName="ModuleSuite_Behavior.java" startLine="22" startPosition="71" endLine="33" endPosition="41">
+    <scopeInfo nodeId="1280144168199518344" fileName="ModuleSuite_Behavior.java" startLine="22" startPosition="71" endLine="33" endPosition="48">
       <varInfo nodeId="1280144168199518373" varName="module" />
       <varInfo nodeId="1280144168199518346" varName="moduleReference" />
     </scopeInfo>

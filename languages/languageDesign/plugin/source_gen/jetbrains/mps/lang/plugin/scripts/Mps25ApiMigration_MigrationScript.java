@@ -18,7 +18,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.ModuleOperationContext;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
@@ -1130,7 +1130,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
         for (org.jetbrains.mps.openapi.model.SModelReference modelRef : modelRefs) {
           ((SModelInternal) SNodeOperations.getModel(node)).addModelImport(modelRef, false);
           SModuleReference moduleReference = SModelRepository.getInstance().getModelDescriptor(modelRef).getModule().getModuleReference();
-          ((IModule) module).addDependency(moduleReference, false);
+          ((AbstractModule) module).addDependency(moduleReference, false);
         }
         for (SReference ref : SNodeOperations.getReferences(node)) {
           if (!(ReferenceUtil.isReferenceToModel(ref, "jetbrains.mps.baseLanguage.plugin"))) {

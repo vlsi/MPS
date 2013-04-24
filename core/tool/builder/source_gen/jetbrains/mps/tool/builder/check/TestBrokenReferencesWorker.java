@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.validation.ModelValidator;
@@ -93,7 +93,7 @@ public class TestBrokenReferencesWorker extends MakeWorker {
   }
 
   private StringBuffer checkModel(final SModel sm) {
-    final IScope scope = ((IModule) ((IModule) sm.getModule())).getScope();
+    final IScope scope = ((AbstractModule) ((AbstractModule) sm.getModule())).getScope();
     StringBuffer errorMessages = new StringBuffer();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       @Override

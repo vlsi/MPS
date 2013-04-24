@@ -18,7 +18,7 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.apache.log4j.Logger;
@@ -93,7 +93,7 @@ public class AddMissingDependency_Action extends BaseAction {
         SModelReference uid = ref.getTargetSModelReference();
         if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
           SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
-          ((IModule) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getModule()).addDependency(sm.getModule().getModuleReference(), false);
+          ((AbstractModule) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getModule()).addDependency(sm.getModule().getModuleReference(), false);
         }
       }
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());

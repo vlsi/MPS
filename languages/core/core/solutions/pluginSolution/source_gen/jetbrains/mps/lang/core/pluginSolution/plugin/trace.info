@@ -26,7 +26,7 @@
     <nodeInfo nodeId="1209385300976" fileName="AddMissingDependency_Action.java" startLine="90" startPosition="9" endLine="91" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209385300990" fileName="AddMissingDependency_Action.java" startLine="92" startPosition="105" endLine="93" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209385301011" fileName="AddMissingDependency_Action.java" startLine="94" startPosition="118" endLine="95" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209385306059" fileName="AddMissingDependency_Action.java" startLine="95" startPosition="77" endLine="96" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209385306059" fileName="AddMissingDependency_Action.java" startLine="95" startPosition="77" endLine="96" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2724756130234264101" fileName="AddMissingDependency_Action.java" startLine="98" startPosition="7" endLine="99" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="101" startPosition="45" endLine="102" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="107" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -67,7 +67,7 @@
     <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="57" startPosition="7" endLine="59" endPosition="63">
       <varInfo nodeId="2222556283720140738" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="1209385301010" fileName="AddMissingDependency_Action.java" startLine="94" startPosition="118" endLine="96" endPosition="182">
+    <scopeInfo nodeId="1209385301010" fileName="AddMissingDependency_Action.java" startLine="94" startPosition="118" endLine="96" endPosition="189">
       <varInfo nodeId="1209385301012" varName="sm" />
     </scopeInfo>
     <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="30" startPosition="40" endLine="33" endPosition="41" />

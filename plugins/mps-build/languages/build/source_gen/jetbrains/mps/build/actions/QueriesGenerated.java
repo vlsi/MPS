@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.action.NodeSetupContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -56,7 +56,7 @@ public class QueriesGenerated {
       return;
     }
     SModule module = modelDescriptor.getModule();
-    if (module == null || ((IModule) module).getDescriptorFile() == null) {
+    if (module == null || ((AbstractModule) module).getDescriptorFile() == null) {
       return;
     }
 

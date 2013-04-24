@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import java.util.Map;
 import jetbrains.mps.make.script.IScriptController;
@@ -81,7 +81,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     final String cachesOutputRoot = myWhatToDo.getProperty("CACHES_OUTPUT_ROOT_DIR");
     final boolean useTransientOutput = Sequence.fromIterable(resources).any(new IWhereFilter<MResource>() {
       public boolean accept(MResource r) {
-        return ((IModule) r.module()).getModuleDescriptor().isUseTransientOutput();
+        return ((AbstractModule) r.module()).getModuleDescriptor().isUseTransientOutput();
       }
     });
     this.myOutputRedirects = new OutputPathRedirects(myOutputPaths, outputRoot, cachesOutputRoot, useTransientOutput);

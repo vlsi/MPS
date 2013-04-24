@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -20,8 +20,8 @@ public class ClassifiersScope extends FilteringScope {
   private SNode myClassifier;
 
   public ClassifiersScope(SModel model, SNode clas, String conceptFqName, boolean includeAncestors) {
-    super(new ModelPlusImportedScope(model, false, ((IModule) model.getModule()).getScope(), conceptFqName));
-    myModuleScope = ((IModule) model.getModule()).getScope();
+    super(new ModelPlusImportedScope(model, false, ((AbstractModule) model.getModule()).getScope(), conceptFqName));
+    myModuleScope = ((AbstractModule) model.getModule()).getScope();
     myInlcudeAncestors = includeAncestors;
     myClassifier = clas;
   }

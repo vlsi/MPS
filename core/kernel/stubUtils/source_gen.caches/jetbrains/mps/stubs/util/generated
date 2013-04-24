@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-azre79qqhumu5ltd6n8erkmjszxrqzn">
+<dependencies version="2" modelHash="2k5ps034id9n5rqt43te8a87y4skcjd">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -36,7 +36,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="PathItemsReloadableCache.java" />
   </source>
-  <source id="740251325273418613" name="StubModelDescriptors" hash="a99fsr0otdkwdi7poxz8um5zbyu0v0s">
+  <source id="740251325273418613" name="StubModelDescriptors" hash="-a653x6b6tsfeck1iuazvwxb84bdt6fh">
     <dep root="740251325273382988" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />

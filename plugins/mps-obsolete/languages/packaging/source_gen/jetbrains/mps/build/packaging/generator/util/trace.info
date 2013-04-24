@@ -60,7 +60,7 @@
     <nodeInfo nodeId="3033860308389926320" fileName="CheckFullDependencyUtil.java" startLine="172" startPosition="69" endLine="173" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3033860308389926330" fileName="CheckFullDependencyUtil.java" startLine="173" startPosition="69" endLine="174" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3033860308389926370" fileName="CheckFullDependencyUtil.java" startLine="175" startPosition="5" endLine="176" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3033860308389926391" fileName="CheckFullDependencyUtil.java" startLine="178" startPosition="41" endLine="179" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3033860308389926391" fileName="CheckFullDependencyUtil.java" startLine="178" startPosition="41" endLine="179" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2200305124974062950" fileName="CheckFullDependencyUtil.java" startLine="34" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckFullDependencyUtil#()V" />
     <nodeInfo nodeId="3033860308389926547" fileName="CheckFullDependencyUtil.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
     <nodeInfo nodeId="3033860308389938098" fileName="CheckFullDependencyUtil.java" startLine="50" startPosition="128" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -122,7 +122,7 @@
     <scopeInfo nodeId="1047721517261571013" fileName="CheckFullDependencyUtil.java" startLine="146" startPosition="100" endLine="147" endPosition="121" />
     <scopeInfo nodeId="1047721517261571024" fileName="CheckFullDependencyUtil.java" startLine="150" startPosition="29" endLine="151" endPosition="121" />
     <scopeInfo nodeId="1047721517261570986" fileName="CheckFullDependencyUtil.java" startLine="162" startPosition="54" endLine="163" endPosition="67" />
-    <scopeInfo nodeId="3033860308389926388" fileName="CheckFullDependencyUtil.java" startLine="178" startPosition="41" endLine="179" endPosition="110" />
+    <scopeInfo nodeId="3033860308389926388" fileName="CheckFullDependencyUtil.java" startLine="178" startPosition="41" endLine="179" endPosition="117" />
     <scopeInfo nodeId="2200305124974062950" fileName="CheckFullDependencyUtil.java" startLine="34" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="3033860308389926547" fileName="CheckFullDependencyUtil.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="3033860308389926547" varName="it" />

@@ -33,7 +33,7 @@ import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import java.util.Collections;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.List;
@@ -163,7 +163,7 @@ __switch__:
   }
 
   public static Iterable<VirtualFile> getUnversionedFilesForModule(@NotNull Project project, @NotNull SModule module) {
-    IFile descriptorFile = ((IModule) module).getDescriptorFile();
+    IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
     if (descriptorFile == null) {
       return Sequence.fromIterable(Collections.<VirtualFile>emptyList());
     }

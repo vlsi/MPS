@@ -28,7 +28,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 
 public class CheckFullDependencyUtil {
   public CheckFullDependencyUtil() {
@@ -176,7 +176,7 @@ public class CheckFullDependencyUtil {
     ListSequence.fromList(dependencyToCheck).addSequence(CollectionSequence.fromCollection(dependency));
     return ListSequence.fromList(dependencyToCheck).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
-        return !(it instanceof Generator) && !(it.isPackaged()) && ((IModule) it).getDescriptorFile() != null;
+        return !(it instanceof Generator) && !(it.isPackaged()) && ((AbstractModule) it).getDescriptorFile() != null;
       }
     }).toListSequence();
   }

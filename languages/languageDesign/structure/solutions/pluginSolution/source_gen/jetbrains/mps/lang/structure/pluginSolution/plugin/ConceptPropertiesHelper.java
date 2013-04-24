@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -156,7 +156,7 @@ public class ConceptPropertiesHelper {
     }
     languages = SetSequence.fromSet(new HashSet<Language>());
     for (SModule module : ListSequence.fromList(project.getModules())) {
-      ModuleDescriptor descriptor = ((IModule) module).getModuleDescriptor();
+      ModuleDescriptor descriptor = ((AbstractModule) module).getModuleDescriptor();
       if (descriptor == null) {
         continue;
       }

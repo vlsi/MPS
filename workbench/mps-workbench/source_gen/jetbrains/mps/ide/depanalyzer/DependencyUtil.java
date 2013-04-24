@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
@@ -30,7 +30,7 @@ public class DependencyUtil {
 
   public static List<DependencyUtil.Link> dependencies(DependencyUtil.Role role, SModule module, boolean trackRuntime) {
     List<DependencyUtil.Link> result = ListSequence.fromList(new ArrayList<DependencyUtil.Link>());
-    ModuleDescriptor descr = ((IModule) module).getModuleDescriptor();
+    ModuleDescriptor descr = ((AbstractModule) module).getModuleDescriptor();
     if (descr == null) {
       return result;
     }

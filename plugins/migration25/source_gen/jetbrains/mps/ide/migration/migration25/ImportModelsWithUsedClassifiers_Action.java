@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -74,7 +74,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
       MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
       List<SModule> allModules = ListSequence.fromListWithValues(new ArrayList<SModule>(), mpsProject.getModulesWithGenerators());
       for (SModule module : ListSequence.fromList(allModules)) {
-        ModuleDescriptor descriptor = ((IModule) module).getModuleDescriptor();
+        ModuleDescriptor descriptor = ((AbstractModule) module).getModuleDescriptor();
         if (descriptor == null) {
           continue;
         }

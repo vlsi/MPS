@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -53,7 +53,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
         for (SNode node : ListSequence.fromList(getManagerNodes())) {
           Language language = Language.getLanguageFor(SNodeOperations.getModel(node));
 
-          ModelRootManager manager = new ModelRootManager(((IModule) SNodeOperations.getModel(node).getModule()).getModuleDescriptor().getId().toString(), jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(node)) + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
+          ModelRootManager manager = new ModelRootManager(((AbstractModule) SNodeOperations.getModel(node).getModule()).getModuleDescriptor().getId().toString(), jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(node)) + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
 
           ListSequence.fromList(result).addElement(manager);
         }

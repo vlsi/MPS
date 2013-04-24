@@ -1014,7 +1014,7 @@
   </root>
   <root nodeRef="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)/978271742633844808">
     <nodeInfo nodeId="978271742633845002" fileName="DependencyUtil.java" startLine="31" startPosition="120" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="978271742633845009" fileName="DependencyUtil.java" startLine="32" startPosition="99" endLine="33" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="978271742633845009" fileName="DependencyUtil.java" startLine="32" startPosition="99" endLine="33" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="111710558725769972" fileName="DependencyUtil.java" startLine="34" startPosition="24" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="978271742633845019" fileName="DependencyUtil.java" startLine="38" startPosition="16" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="978271742633845021" fileName="DependencyUtil.java" startLine="39" startPosition="22" endLine="40" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1135,7 +1135,7 @@
     <nodeInfo nodeId="4541919905353898186" fileName="DependencyUtil.java" startLine="376" startPosition="5" endLine="377" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="978271742633844810" fileName="DependencyUtil.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependencyUtil#()V" />
     <nodeInfo nodeId="7693590883518970030" fileName="DependencyUtil.java" startLine="275" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Role#()V" />
-    <nodeInfo nodeId="111710558725769963" fileName="DependencyUtil.java" startLine="33" startPosition="70" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="111710558725769963" fileName="DependencyUtil.java" startLine="33" startPosition="77" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3816096419965689382" fileName="DependencyUtil.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/structure/modules/GeneratorDescriptor;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
     <nodeInfo nodeId="7848685452513886518" fileName="DependencyUtil.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/structure/modules/GeneratorDescriptor;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
     <nodeInfo nodeId="111710558725769943" fileName="DependencyUtil.java" startLine="71" startPosition="85" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
