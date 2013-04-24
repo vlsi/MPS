@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dtshrb94nbcyjstum7rkabzhm7k3xcf">
+<dependencies version="2" modelHash="-e4izc06q6hj7c2fvba3qh8z0auryn2t">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <common hash="-2mesuvee4st0xvm6na2qzq9r518e390" />
+  <common hash="-brrn0oi206m48qxhuamvt4kb10g0m08" />
   <source id="5755638771828834259" name="PluginNameUtils" hash="50e8ly9va4zckkmsqxvqn9q8jkmrkm4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PluginNameUtils.java" />
