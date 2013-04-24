@@ -122,31 +122,36 @@ public class CellTraversalUtil {
     }
   }
 
-  public static Boolean isLower(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {
-    EditorCell parent = getCommonParent(firstCell, secondCell);
-    if (parent == null) {
-      return null;
+  //first cell and second cell MUST have common parent
+  //check getCommonParent (firstCell, secondCell) != null
+  public static int compare(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {
+    if (firstCell.equals(secondCell)) {
+      return 0;
     }
+    EditorCell parent = getCommonParent(firstCell, secondCell);
+
+    assert parent != null;
     assert parent instanceof EditorCell_Collection;
 
     if (parent == firstCell) {
-      return false;
+      return -1;
     }
     if (parent == secondCell) {
-      return true;
+      return 1;
     }
 
 
     for (EditorCell cell : ((EditorCell_Collection) parent)) {
-      if (isAncestor(cell, firstCell)) {
-        return false;
+      if (isAncestor(cell, firstCell) || firstCell.equals(cell)) {
+        return -1;
       }
 
-      if (isAncestor(cell, secondCell)) {
-        return true;
+      if (isAncestor(cell, secondCell) || secondCell.equals(cell)) {
+        return 1;
       }
     }
-    return null;
+    assert false; //this line should not be reached
+    return 0;
   }
 
   public static EditorCell getCommonParent(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {
