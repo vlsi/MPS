@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -188,7 +188,7 @@ public class OptimizeImportsHelper {
     if (dep.isReexport()) return null;
     if (dep.getModuleRef().equals(current)) return dep;
 
-    IModule module = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+    SModule module = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
     if (module == null) return null;
 
     boolean used = false;

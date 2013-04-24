@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.make.IMakeService;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Generator;
 import java.util.List;
@@ -40,11 +40,11 @@ public class RebuildSelectedModules_Action extends BaseAction {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
     }
-    SModule cmd = ((IModule) MapSequence.fromMap(_params).get("cmodule"));
+    SModule cmd = ((SModule) MapSequence.fromMap(_params).get("cmodule"));
     if (cmd instanceof Generator) {
       cmd = ((Generator) cmd).getSourceLanguage();
     }
-    List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+    List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) ((List<SModule>) MapSequence.fromMap(_params).get("modules")));
     String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, modules, cmd).actionText(true);
     if (text != null) {
       event.getPresentation().setText(text);
@@ -82,11 +82,11 @@ public class RebuildSelectedModules_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SModule cmd = ((IModule) MapSequence.fromMap(_params).get("cmodule"));
+      SModule cmd = ((SModule) MapSequence.fromMap(_params).get("cmodule"));
       if (cmd instanceof Generator) {
         cmd = ((Generator) cmd).getSourceLanguage();
       }
-      List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+      List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) ((List<SModule>) MapSequence.fromMap(_params).get("modules")));
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, modules, cmd), true).executeAction();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

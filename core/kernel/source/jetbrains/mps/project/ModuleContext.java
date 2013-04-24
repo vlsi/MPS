@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -45,10 +45,6 @@ public class ModuleContext extends StandaloneMPSContext {
     myProject = project;
   }
 
-  public ModuleContext(@NotNull final IModule module, @NotNull final Project project) {
-    this((SModule) module, project);
-  }
-
   @Override
   public <T> T getComponent(Class<T> clazz) {
     T component = myProject.getComponent(clazz);
@@ -62,7 +58,7 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   @Override
-  public IModule getModule() {
+  public SModule getModule() {
     return ModuleRepositoryFacade.getInstance().getModule(myModuleReference);
   }
 
@@ -75,10 +71,10 @@ public class ModuleContext extends StandaloneMPSContext {
   @Override
   @NotNull
   public IScope getScope() {
-    IModule module = getModule();
+    SModule module = getModule();
     if (module == null)
       throw new IllegalStateException("Mostly happens when some actions are performed 'later'. Look for 'later' invocations in stacktrace");
-    return module.getScope();
+    return ((AbstractModule) module).getScope();
   }
 
   public String toString() {
@@ -101,9 +97,9 @@ public class ModuleContext extends StandaloneMPSContext {
   @Deprecated
   public static ModuleContext create(@NotNull final SModel model, Project project) {
 
-    IModule owningModule = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+    SModule owningModule = ModelAccess.instance().runReadAction(new Computable<SModule>() {
       @Override
-      public IModule compute() {
+      public SModule compute() {
         return model.getModule();
       }
     });

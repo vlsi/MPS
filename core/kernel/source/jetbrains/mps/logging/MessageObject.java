@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.logging;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -45,8 +45,8 @@ public class MessageObject {
       hint = "[node " + ((SNode) myHintObject).getPresentation() + "]";
     } else if (myHintObject instanceof SModel) {
       hint = "[model " + ((SModel) myHintObject).getReference() + "]";
-    } else if (myHintObject instanceof IModule) {
-      hint = "[module " + ((IModule) myHintObject).getModuleReference() + "]";
+    } else if (myHintObject instanceof SModule) {
+      hint = "[module " + ((SModule) myHintObject).getModuleReference() + "]";
     } else {
       hint = "[hint object " + myHintObject + "]";
     }

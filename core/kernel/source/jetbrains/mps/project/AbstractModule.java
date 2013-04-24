@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesReloadManager;
@@ -90,7 +90,7 @@ import java.util.Set;
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
-public abstract class AbstractModule implements IModule, EditableSModule, FileSystemListener {
+public abstract class AbstractModule implements SModule, EditableSModule, FileSystemListener, /* for compatibility */ IModule {
   private static final Logger LOG = LogManager.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
@@ -850,8 +850,8 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     }
 
     @Override
-    protected Set<IModule> getInitialModules() {
-      Set<IModule> result = new HashSet<IModule>();
+    protected Set<SModule> getInitialModules() {
+      Set<SModule> result = new HashSet<SModule>();
       result.add(AbstractModule.this);
       return result;
     }
@@ -998,7 +998,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Deprecated
-  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
+  public static IClassPathItem getDependenciesClasspath(Set<SModule> modules, boolean includeStubSolutions) {
     return SModuleOperations.getDependenciesClasspath(modules, includeStubSolutions);
   }
 

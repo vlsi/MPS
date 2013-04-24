@@ -9,7 +9,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.IterableUtil;
@@ -32,7 +32,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();
     IHolder holder = query.getObjectHolder();
     assert holder instanceof ModuleHolder;
-    IModule module = ((ModuleHolder) holder).getObject();
+    SModule module = ((ModuleHolder) holder).getObject();
     assert module instanceof Language;
     Language language = (Language) module;
     SModel structureModel = language.getStructureModelDescriptor();

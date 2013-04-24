@@ -991,8 +991,8 @@ public class ApiTransformations {
 
     // ----------------- 
 
-    String cat87 = "IModule: getModuleFqName->getModuleName";
-    SNode md87 = SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~IModule.getModuleFqName():java.lang.String");
+    String cat87 = "SModule: getModuleFqName->getModuleName";
+    SNode md87 = SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~SModule.getModuleFqName():java.lang.String");
     _FunctionTypes._void_P1_E0<? super SNode> transformer87 = new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode usage) {
         if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
@@ -1006,8 +1006,8 @@ public class ApiTransformations {
 
     // ----------------- 
 
-    String cat88 = "IModule: getOwnModelDescriptors->getModels";
-    SNode md88 = SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~IModule.getOwnModelDescriptors():java.util.List");
+    String cat88 = "SModule: getOwnModelDescriptors->getModels";
+    SNode md88 = SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~SModule.getOwnModelDescriptors():java.util.List");
     _FunctionTypes._void_P1_E0<? super SNode> transformer88 = new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode usage) {
         if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
@@ -1021,8 +1021,8 @@ public class ApiTransformations {
 
     // ----------------- 
 
-    String cat89 = "IModule: getOutputFor->SModuleOperations.getOutputFor";
-    SNode md89 = SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~IModule.getOutputFor(org.jetbrains.mps.openapi.model.SModel):java.lang.String");
+    String cat89 = "SModule: getOutputFor->SModuleOperations.getOutputFor";
+    SNode md89 = SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~SModule.getOutputFor(org.jetbrains.mps.openapi.model.SModel):java.lang.String");
     _FunctionTypes._void_P1_E0<? super SNode> transformer89 = new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode usage) {
         if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {

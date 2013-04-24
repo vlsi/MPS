@@ -29,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -126,14 +126,14 @@ public class MoveConcepts extends BaseLoggableRefactoring {
 
     Project project = refactoringContext.getSelectedProject();
     if (((Language) refactoringContext.getParameter("sourceLanguage")) != null) {
-      Map<IModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, ((Language) refactoringContext.getParameter("sourceLanguage")));
+      Map<SModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, ((Language) refactoringContext.getParameter("sourceLanguage")));
       for (List<SModel> list : CollectionSequence.fromCollection(models.values())) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SModel>) list));
       }
     }
     Language targetLanguage = Language.getLanguageFor(SModelRepository.getInstance().getModelDescriptor(((SModelReference) refactoringContext.getParameter("targetModel"))));
     if (targetLanguage != null) {
-      Map<IModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, targetLanguage);
+      Map<SModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, targetLanguage);
       for (List<SModel> list : CollectionSequence.fromCollection(models.values())) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SModel>) list));
       }

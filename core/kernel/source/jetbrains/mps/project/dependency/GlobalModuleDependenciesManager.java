@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.dependency;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
@@ -87,7 +87,7 @@ public class GlobalModuleDependenciesManager {
    * @param depType determines the type of dependecies we want to get
    * @return all modules in scope of given
    */
-  public Collection<IModule> getModules(Deptype depType) {
+  public Collection<SModule> getModules(Deptype depType) {
     Set<SModule> neighbours = collectNeighbours(depType);
 
     Set<SModule> result = new HashSet<SModule>();

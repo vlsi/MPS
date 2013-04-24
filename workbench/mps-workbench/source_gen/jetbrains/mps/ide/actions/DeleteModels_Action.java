@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -85,7 +85,7 @@ public class DeleteModels_Action extends BaseAction {
             if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
               continue;
             }
-            DeleteModelHelper.deleteModel(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("contextModule")), model, safeOption.selected, filesOption.selected);
+            DeleteModelHelper.deleteModel(((Project) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("contextModule")), model, safeOption.selected, filesOption.selected);
           }
         }
       });

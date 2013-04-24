@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
@@ -39,7 +39,7 @@ public class CleanModule_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SModuleOperations.isCompileInMps(((IModule) MapSequence.fromMap(_params).get("module")));
+    return SModuleOperations.isCompileInMps(((SModule) MapSequence.fromMap(_params).get("module")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -79,7 +79,7 @@ public class CleanModule_Action extends BaseAction {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               ModuleMaker maker = new ModuleMaker();
-              maker.clean(CollectionUtil.set(((IModule) MapSequence.fromMap(_params).get("module"))), new ProgressMonitorAdapter(indicator));
+              maker.clean(CollectionUtil.set(((SModule) MapSequence.fromMap(_params).get("module"))), new ProgressMonitorAdapter(indicator));
             }
           });
         }

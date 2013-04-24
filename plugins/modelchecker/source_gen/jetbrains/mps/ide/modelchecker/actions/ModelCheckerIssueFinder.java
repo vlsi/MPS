@@ -10,7 +10,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,7 +28,7 @@ public class ModelCheckerIssueFinder implements IFinder {
     IHolder objectHolder = searchQuery.getObjectHolder();
     IOperationContext operationContext;
     List<SModel> modelDescriptors;
-    List<IModule> modules = null;
+    List<SModule> modules = null;
     if (objectHolder instanceof ModelsHolder) {
       ModelsHolder modelsHolder = (ModelsHolder) objectHolder;
       operationContext = modelsHolder.getOperationContext();
@@ -52,7 +52,7 @@ public class ModelCheckerIssueFinder implements IFinder {
       ModuleChecker moduleChecker = null;
       if (modules != null) {
         moduleChecker = new ModuleChecker();
-        for (IModule module : ListSequence.fromList(modules)) {
+        for (SModule module : ListSequence.fromList(modules)) {
           moduleChecker.checkModule(module, monitor.subTask(1));
           if (monitor.isCanceled()) {
             break;

@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.Nullable;
@@ -56,13 +59,13 @@ public class ModuleFileTracker implements CoreComponent {
     myRepo.removeModuleRepositoryListener(myListener);
   }
 
-  private Map<String, IModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<String, IModule>();
+  private Map<String, SModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<String, SModule>();
 
-  public IModule getModuleByFile(IFile file) {
+  public SModule getModuleByFile(IFile file) {
     return myCanonicalFileToModuleMap.get(IFileUtils.getCanonicalPath(file));
   }
 
-  private void addCanonicalFile(@Nullable IFile file, IModule module) {
+  private void addCanonicalFile(@Nullable IFile file, SModule module) {
     if (file != null) {
       String canonicalDescriptorPath = IFileUtils.getCanonicalPath(file);
       if (canonicalDescriptorPath != null && !myCanonicalFileToModuleMap.containsKey(canonicalDescriptorPath)) {
@@ -80,8 +83,8 @@ public class ModuleFileTracker implements CoreComponent {
     }
   }
 
-  public List<IModule> findModulesUnderDir(String dirPath) {
-    List<IModule> result = new ArrayList<IModule>();
+  public List<SModule> findModulesUnderDir(String dirPath) {
+    List<SModule> result = new ArrayList<SModule>();
     for (String path : myCanonicalFileToModuleMap.keySet()) {
       if (path.startsWith(dirPath)) {
         result.add(myCanonicalFileToModuleMap.get(path));
@@ -92,16 +95,16 @@ public class ModuleFileTracker implements CoreComponent {
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
     @Override
-    public void beforeModuleRemoved(IModule module) {
-      IFile file = module.getDescriptorFile();
+    public void beforeModuleRemoved(SModule module) {
+      IFile file = ((AbstractModule)module).getDescriptorFile();
       if (file == null) return;
       removeModuleFile(file);
       removeModuleFile(ModulesMiner.getRealDescriptorFile(module));
     }
 
     @Override
-    public void moduleAdded(IModule module) {
-      IFile file = module.getDescriptorFile();
+    public void moduleAdded(SModule module) {
+      IFile file = ((AbstractModule)module).getDescriptorFile();
       if (file == null) return;
       addCanonicalFile(file, module);
       addCanonicalFile(ModulesMiner.getRealDescriptorFile(module), module);

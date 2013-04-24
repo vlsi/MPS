@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
@@ -54,11 +54,11 @@ public class Module_Behavior {
   }
 
   public static SNode call_getModuleBaseDirectory_6863060912307757632(SNode thisNode) {
-    return PathHolder_Behavior.createPathHolder_7235580512916878209(FileSystem.getInstance().getBundleHome(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile()).getPath(), thisNode);
+    return PathHolder_Behavior.createPathHolder_7235580512916878209(FileSystem.getInstance().getBundleHome(((AbstractModule)Module_Behavior.call_getModule_1213877515148(thisNode)).getDescriptorFile()).getPath(), thisNode);
   }
 
   public static SNode call_getModuleDescriptorFile_6863060912307764362(SNode thisNode) {
-    return PathHolder_Behavior.createPathHolder_7235580512916878209(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getPath(), thisNode);
+    return PathHolder_Behavior.createPathHolder_7235580512916878209(((AbstractModule)Module_Behavior.call_getModule_1213877515148(thisNode)).getDescriptorFile().getPath(), thisNode);
   }
 
   public static SNode call_getClassesGen_3315989002810564857(SNode thisNode) {
@@ -82,7 +82,7 @@ public class Module_Behavior {
       public boolean accept(String it) {
         return !(it.endsWith(".jar"));
       }
-    }).isNotEmpty() || Sequence.fromIterable(((Iterable<ModelRootDescriptor>) Module_Behavior.call_getModule_1213877515148(thisNode).getModuleDescriptor().getModelRootDescriptors())).select(new ISelector<ModelRootDescriptor, ModelRoot>() {
+    }).isNotEmpty() || Sequence.fromIterable(((Iterable<ModelRootDescriptor>) ((AbstractModule)Module_Behavior.call_getModule_1213877515148(thisNode)).getModuleDescriptor().getModelRootDescriptors())).select(new ISelector<ModelRootDescriptor, ModelRoot>() {
       public ModelRoot select(ModelRootDescriptor it) {
         return it.getRoot();
       }
@@ -167,11 +167,11 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode, boolean includeRuntimeSolutions, boolean includeHomeLib) {
-    IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
+    SModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Language && includeRuntimeSolutions) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
       for (SModuleReference runtimeDependency : CollectionSequence.fromCollection(((Language) module).getRuntimeModulesReferences())) {
-        IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency);
+        SModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency);
         if (runtimeDependencyModule instanceof Solution) {
           // TODO proper module in holder? 
           ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, Module_Behavior.call_getClassPathExcludingIdea_2000252915626233691(thisNode, (Solution) runtimeDependencyModule))).toListSequence(), true)));
@@ -234,7 +234,7 @@ public class Module_Behavior {
     return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + ".jar";
   }
 
-  public static IModule call_getModule_1213877515148(SNode thisNode) {
+  public static SModule call_getModule_1213877515148(SNode thisNode) {
     return MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(SPropertyOperations.getString(thisNode, "id")));
   }
 
@@ -246,7 +246,7 @@ public class Module_Behavior {
   }
 
   public static String call_getModuleDescriptorPath_4777659345280330855(SNode thisNode) {
-    return check_835h7m_a0a91(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
+    return check_835h7m_a0a91(((AbstractModule)Module_Behavior.call_getModule_1213877515148(thisNode)).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
   }
 
   public static String call_getHomeLibPath_4642981534832311125(SNode thisNode) {
@@ -298,17 +298,17 @@ public class Module_Behavior {
     return true;
   }
 
-  public static List<IModule> getAllAvailableModules_1222444746697() {
-    List<IModule> list = ListSequence.fromList(new ArrayList<IModule>());
+  public static List<SModule> getAllAvailableModules_1222444746697() {
+    List<SModule> list = ListSequence.fromList(new ArrayList<SModule>());
     for (SModule module : Sequence.fromIterable(GlobalScope.getInstance().getModules())) {
-      if (module instanceof IModule) {
-        ListSequence.fromList(list).addElement((IModule) module);
+      if (module instanceof SModule) {
+        ListSequence.fromList(list).addElement((SModule) module);
       }
     }
     return list;
   }
 
-  public static String extractModuleProperName_1235487584035(IModule module) {
+  public static String extractModuleProperName_1235487584035(SModule module) {
     return Module_Behavior.replaceBadCharacters_1235487831795(module.getModuleName());
   }
 

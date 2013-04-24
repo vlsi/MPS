@@ -43,7 +43,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.vfs.IFile;
 import javax.swing.ImageIcon;
 import java.io.InputStream;
@@ -264,8 +264,8 @@ public class IconManager {
     if (owner instanceof MPSProject) {
       return IdeIcons.PROJECT_ICON;
     }
-    if (owner instanceof IModule) {
-      return getIconFor((IModule) owner);
+    if (owner instanceof SModule) {
+      return getIconFor((SModule) owner);
     }
     return IdeIcons.DEFAULT_ICON;
   }

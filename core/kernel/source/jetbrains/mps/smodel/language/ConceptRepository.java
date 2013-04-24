@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -64,7 +64,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
 
   private void createConceptAdapter(String id) {
     String langName = NameUtil.namespaceFromConceptFQName(id);
-    IModule module = MPSModuleRepository.getInstance().getModuleByFqName(langName);
+    SModule module = MPSModuleRepository.getInstance().getModuleByFqName(langName);
     if (module instanceof Language) {
       Language lang = (Language) module;
       SModel smd = lang.getStructureModelDescriptor();

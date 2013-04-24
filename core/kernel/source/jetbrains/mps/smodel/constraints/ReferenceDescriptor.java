@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import org.apache.log4j.LogManager;
@@ -174,7 +174,7 @@ public abstract class ReferenceDescriptor {
       return contextNode != null ? contextNode.getModel() : null;
     }
 
-    private IModule getModule() {
+    private SModule getModule() {
       return ModelConstraintsUtils.getModule(getModel());
     }
   }

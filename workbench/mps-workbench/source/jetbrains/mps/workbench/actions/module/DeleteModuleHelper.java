@@ -21,7 +21,7 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -38,7 +38,7 @@ import javax.swing.JOptionPane;
 public class DeleteModuleHelper {
   private static final Logger LOG = LogManager.getLogger(DeleteModuleHelper.class);
 
-  public static void deleteModule(Project project, IModule module, boolean safeDelete, boolean deleteFiles) {
+  public static void deleteModule(Project project, SModule module, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {
       safeDelete(project, module, deleteFiles);
     } else {
@@ -86,7 +86,7 @@ public class DeleteModuleHelper {
         }
       }
 
-      ModuleRepositoryFacade.getInstance().removeModuleForced((IModule) module);
+      ModuleRepositoryFacade.getInstance().removeModuleForced((SModule) module);
     }
   }
 
@@ -96,7 +96,7 @@ public class DeleteModuleHelper {
     file.delete();
   }
 
-  private static void safeDelete(Project project, IModule module, boolean deleteFiles) {
+  private static void safeDelete(Project project, SModule module, boolean deleteFiles) {
     LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED", new Throwable());
   }
 }

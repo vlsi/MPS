@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -41,7 +41,7 @@ public class GetModelContentsFromSource_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
+    SModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
     if (module == null) {
       return false;
     }

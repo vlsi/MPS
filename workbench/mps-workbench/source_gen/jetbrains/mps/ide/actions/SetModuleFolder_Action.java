@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -36,7 +36,7 @@ public class SetModuleFolder_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((MPSProject) MapSequence.fromMap(_params).get("project")).isProjectModule(((IModule) MapSequence.fromMap(_params).get("module")));
+    return ((MPSProject) MapSequence.fromMap(_params).get("project")).isProjectModule(((SModule) MapSequence.fromMap(_params).get("module")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -79,7 +79,7 @@ public class SetModuleFolder_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
-      String oldFolder = ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).getFolderFor(((IModule) MapSequence.fromMap(_params).get("module")));
+      String oldFolder = ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).getFolderFor(((SModule) MapSequence.fromMap(_params).get("module")));
       String newFolder = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter new folder", oldFolder);
       if (newFolder != null) {
         if (newFolder.equals("")) {

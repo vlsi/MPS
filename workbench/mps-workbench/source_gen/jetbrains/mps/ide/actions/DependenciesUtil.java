@@ -9,7 +9,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.dependencyViewer.DependencyViewerScope;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -33,16 +33,16 @@ public class DependenciesUtil {
     return panel.updateReferencesView(toScope);
   }
 
-  public static SearchResults analyzeDependencies(Iterable<IModule> from, Iterable<IModule> to, Project project, MPSProject mpsProject, boolean isMeta) {
+  public static SearchResults analyzeDependencies(Iterable<SModule> from, Iterable<SModule> to, Project project, MPSProject mpsProject, boolean isMeta) {
     final DependencyViewerScope fromScope = new DependencyViewerScope();
     final DependencyViewerScope toScope = new DependencyViewerScope();
-    Sequence.fromIterable(from).visitAll(new IVisitor<IModule>() {
-      public void visit(IModule it) {
+    Sequence.fromIterable(from).visitAll(new IVisitor<SModule>() {
+      public void visit(SModule it) {
         fromScope.add(it);
       }
     });
-    Sequence.fromIterable(to).visitAll(new IVisitor<IModule>() {
-      public void visit(IModule it) {
+    Sequence.fromIterable(to).visitAll(new IVisitor<SModule>() {
+      public void visit(SModule it) {
         toScope.add(it);
       }
     });

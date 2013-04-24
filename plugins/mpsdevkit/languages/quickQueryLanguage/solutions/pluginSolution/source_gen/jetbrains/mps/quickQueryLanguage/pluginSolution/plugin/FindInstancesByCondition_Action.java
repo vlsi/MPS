@@ -13,7 +13,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -71,7 +71,7 @@ public class FindInstancesByCondition_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      FindInstancesDialog testDialog = new FindInstancesDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), ((IModule) MapSequence.fromMap(_params).get("langModule")));
+      FindInstancesDialog testDialog = new FindInstancesDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), ((SModule) MapSequence.fromMap(_params).get("langModule")));
       testDialog.showDialog();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

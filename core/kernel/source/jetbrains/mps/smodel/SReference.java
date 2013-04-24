@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
@@ -214,7 +214,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       return new jetbrains.mps.smodel.SNodePointer(node);
     }
 
-    IModule module = model.getModule();
+    SModule module = model.getModule();
     if (module instanceof TransientModelsModule) {
       if (((TransientModelsModule) module).addModelToKeep(model, false)) {
         return new jetbrains.mps.smodel.SNodePointer(node);

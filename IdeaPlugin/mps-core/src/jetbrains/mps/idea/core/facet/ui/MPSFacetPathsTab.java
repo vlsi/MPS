@@ -37,7 +37,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MPSFacetPathsTab implements IModuleConfigurationTab {
+public class MPSFacetPathsTab implements SModuleConfigurationTab {
     private JPanel myRootPanel;
     private JRadioButton myUseTransientOutputFolder;
     private JRadioButton myUseModuleSourceFolderRadioButton;

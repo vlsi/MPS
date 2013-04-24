@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
@@ -41,7 +43,7 @@ public abstract class DefaultScope extends BaseScope {
   private boolean myInitialized;
   private boolean myInitializationInProgress;
 
-  private Set<IModule> myVisibleModules;
+  private Set<SModule> myVisibleModules;
   private Set<Language> myUsedLanguages;
   private Set<DevKit> myUsedDevkits;
 
@@ -62,7 +64,7 @@ public abstract class DefaultScope extends BaseScope {
     List<SModel> result = new ArrayList<SModel>();
     synchronized (LOCK) {
       initialize();
-      for (IModule module : myVisibleModules) {
+      for (SModule module : myVisibleModules) {
         result.addAll(IterableUtil.asCollection(module.getModels()));
       }
       for (Language language : myUsedLanguages) {
@@ -145,7 +147,7 @@ public abstract class DefaultScope extends BaseScope {
 
       myInitializationInProgress = true;
 
-      Set<IModule> initialModules = getInitialModules();
+      Set<SModule> initialModules = getInitialModules();
       fillInDevkits(initialModules);
       fillInLanguages();
       fillInVisible(initialModules);
@@ -155,8 +157,8 @@ public abstract class DefaultScope extends BaseScope {
     }
   }
 
-  private void fillInVisible(Set<IModule> initialModules) {
-    myVisibleModules = (Set<IModule>) new GlobalModuleDependenciesManager(initialModules).getModules(Deptype.VISIBLE);
+  private void fillInVisible(Set<SModule> initialModules) {
+    myVisibleModules = (Set<SModule>) new GlobalModuleDependenciesManager(initialModules).getModules(Deptype.VISIBLE);
   }
 
   private void fillInLanguages() {
@@ -170,17 +172,18 @@ public abstract class DefaultScope extends BaseScope {
     }
   }
 
-  private void fillInDevkits(Set<IModule> initialModules) {
+  private void fillInDevkits(Set<SModule> initialModules) {
     myUsedDevkits = new HashSet<DevKit>();
-    for (IModule m : initialModules) {
+    for (SModule m : initialModules) {
       if (m instanceof DevKit) {
         DevKit dk = (DevKit) m;
         myUsedDevkits.add(dk);
         myUsedDevkits.addAll(dk.getAllExtendedDevkits());
       }
 
-      if (m.getModuleDescriptor() != null && m.getModuleDescriptor().getUsedDevkits() != null) {
-        for (DevKit dk : ModuleUtil.refsToDevkits(m.getModuleDescriptor().getUsedDevkits())) {
+      ModuleDescriptor moduleDescriptor = ((AbstractModule) m).getModuleDescriptor();
+      if (moduleDescriptor != null && moduleDescriptor.getUsedDevkits() != null) {
+        for (DevKit dk : ModuleUtil.refsToDevkits(moduleDescriptor.getUsedDevkits())) {
           myUsedDevkits.add(dk);
           myUsedDevkits.addAll(dk.getAllExtendedDevkits());
         }
@@ -188,5 +191,5 @@ public abstract class DefaultScope extends BaseScope {
     }
   }
 
-  protected abstract Set<IModule> getInitialModules();
+  protected abstract Set<SModule> getInitialModules();
 }

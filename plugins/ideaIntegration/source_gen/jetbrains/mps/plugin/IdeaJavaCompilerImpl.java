@@ -8,7 +8,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.make.MPSCompilationResult;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -63,12 +63,12 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
   }
 
   @Override
-  public MPSCompilationResult compileModules(IModule[] modules) {
+  public MPSCompilationResult compileModules(SModule[] modules) {
     if (!(isValid())) {
       return null;
     }
     Set<String> modulePaths = SetSequence.fromSet(new HashSet<String>());
-    for (IModule module : modules) {
+    for (SModule module : modules) {
       for (SModel model : Sequence.fromIterable(module.getModels())) {
         SetSequence.fromSet(modulePaths).addElement(SModuleOperations.getOutputPathFor(model));
       }

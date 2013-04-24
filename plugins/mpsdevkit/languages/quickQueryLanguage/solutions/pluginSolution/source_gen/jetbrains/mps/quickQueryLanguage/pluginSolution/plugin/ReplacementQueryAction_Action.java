@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
@@ -33,7 +33,7 @@ public class ReplacementQueryAction_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("langModule")) instanceof Language;
+    return ((SModule) MapSequence.fromMap(_params).get("langModule")) instanceof Language;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -79,7 +79,7 @@ public class ReplacementQueryAction_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ReplaceDialog dialog = new ReplaceDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((IModule) MapSequence.fromMap(_params).get("langModule")));
+      ReplaceDialog dialog = new ReplaceDialog(((SNode) MapSequence.fromMap(_params).get("node")), new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((SModule) MapSequence.fromMap(_params).get("langModule")));
       dialog.showDialog();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

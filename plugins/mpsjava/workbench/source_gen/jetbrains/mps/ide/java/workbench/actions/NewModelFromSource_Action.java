@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -56,7 +56,7 @@ public class NewModelFromSource_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
+    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
       return false;
     }
 
@@ -119,16 +119,16 @@ public class NewModelFromSource_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (!(((IModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
+      if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
         if (code == JOptionPane.YES_OPTION) {
-          MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((IModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
+          MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
           final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
           configurableEditor.show();
         }
         return;
       }
-      if (!(((IModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
+      if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
         return;
       }
@@ -136,7 +136,7 @@ public class NewModelFromSource_Action extends BaseAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           String stereotype = NewModelFromSource_Action.this.getStereotype(_params);
-          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), ((AbstractModule) ((IModule) MapSequence.fromMap(_params).get("module"))), NewModelFromSource_Action.this.getNamespace(_params), ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, NewModelFromSource_Action.this.isStrict(_params));
+          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), NewModelFromSource_Action.this.getNamespace(_params), ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, NewModelFromSource_Action.this.isStrict(_params));
         }
       });
       dialog.value.show();
@@ -146,13 +146,13 @@ public class NewModelFromSource_Action extends BaseAction {
         treeFileChooser.setDirectoriesAreAlwaysVisible(true);
         treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
         final SModel sModel = result;
-        File initial = ImportSourcesIntoModelUtils.getInitialDirectoryForImport((AbstractModule) ((IModule) MapSequence.fromMap(_params).get("module")), SNodeOperations.getModelLongName(sModel));
+        File initial = ImportSourcesIntoModelUtils.getInitialDirectoryForImport((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), SNodeOperations.getModelLongName(sModel));
         if (initial != null) {
           treeFileChooser.setInitialFile(FileSystem.getInstance().getFileByPath(initial.getAbsolutePath()));
         }
         IFile resultFile = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
         if (resultFile != null) {
-          final DirParser dirParser = new DirParser(((IModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")), new File(resultFile.getPath()));
+          final DirParser dirParser = new DirParser(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")), new File(resultFile.getPath()));
           // we cannot take write action inside try, because it's implemented through 
           // ... Runnable() { void run() } 
           // Also I don't want to show error dialog while in write action 

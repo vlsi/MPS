@@ -3,7 +3,7 @@ package jetbrains.mps.plugins.runconfigs;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -126,7 +126,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
       return new MPSPsiElement((SModel) o);
     }
     if (o instanceof SModule) {
-      return new MPSPsiElement((IModule) o);
+      return new MPSPsiElement((SModule) o);
     }
     if (o instanceof MPSProject) {
       return new MPSPsiElement((MPSProject) o);

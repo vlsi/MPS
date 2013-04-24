@@ -17,7 +17,7 @@ package jetbrains.mps;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModelAccess;
@@ -41,7 +41,7 @@ public class VisibleModuleRegistry implements ApplicationComponent {
     Set<MPSModuleOwner> moduleOwners = ModelAccess.instance().runReadAction(new Computable<Set<MPSModuleOwner>>() {
       @Override
       public Set<MPSModuleOwner> compute() {
-        return ModuleRepositoryFacade.getInstance().getModuleOwners((IModule) module);
+        return ModuleRepositoryFacade.getInstance().getModuleOwners((SModule) module);
       }
     });
     for (MPSModuleOwner owner : moduleOwners) {

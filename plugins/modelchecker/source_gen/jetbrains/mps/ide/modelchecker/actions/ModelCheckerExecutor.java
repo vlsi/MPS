@@ -5,7 +5,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.ThreadUtils;
 import java.awt.Frame;
@@ -37,9 +37,9 @@ import jetbrains.mps.project.MPSProject;
 public class ModelCheckerExecutor {
   private Project project;
   private IOperationContext context;
-  private List<IModule> modules;
+  private List<SModule> modules;
 
-  public ModelCheckerExecutor(List<IModule> modules, IOperationContext context, Project project) {
+  public ModelCheckerExecutor(List<SModule> modules, IOperationContext context, Project project) {
     this.project = project;
     this.context = context;
     this.modules = modules;

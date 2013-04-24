@@ -6,6 +6,7 @@ import jetbrains.mps.ide.modelchecker.actions.SpecificChecker;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue;
+import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
@@ -28,7 +29,7 @@ import java.util.Map;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class MethodCallChecker extends SpecificChecker {
@@ -41,7 +42,7 @@ public class MethodCallChecker extends SpecificChecker {
     if (model == null || model == null || model.getModule() == null) {
       return results;
     }
-    final IScope scope = model.getModule().getScope();
+    final IScope scope = ((AbstractModule)model.getModule()).getScope();
     String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references to method declaration...";
     monitor.start(title, 1);
 
@@ -97,28 +98,28 @@ public class MethodCallChecker extends SpecificChecker {
     return results;
   }
 
-  private static void check_lz161n_a1a0a5a0a7a1a6a1(IModule checkedDotOperand, SModel sm) {
+  private static void check_lz161n_a1a0a5a0a7a1a6a1(SModule checkedDotOperand, SModel sm) {
     if (null != checkedDotOperand) {
-      checkedDotOperand.addDependency(check_lz161n_a0a1a0a5a0a7a1a6a1(check_lz161n_a0a0b0a0f0a0h0b0g0b(sm)), false);
+      ((AbstractModule)checkedDotOperand).addDependency(check_lz161n_a0a1a0a5a0a7a1a6a1(check_lz161n_a0a0b0a0f0a0h0b0g0b(sm)), false);
     }
 
   }
 
-  private static SModuleReference check_lz161n_a0a1a0a5a0a7a1a6a1(IModule checkedDotOperand) {
+  private static SModuleReference check_lz161n_a0a1a0a5a0a7a1a6a1(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
 
-  private static IModule check_lz161n_a0a0b0a0f0a0h0b0g0b(SModel checkedDotOperand) {
+  private static SModule check_lz161n_a0a0b0a0f0a0h0b0g0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_lz161n_a0b0a0f0a0h0b0g0b(SModel checkedDotOperand) {
+  private static SModule check_lz161n_a0b0a0f0a0h0b0g0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

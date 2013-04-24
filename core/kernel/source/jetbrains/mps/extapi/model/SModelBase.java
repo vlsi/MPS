@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.extapi.model;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -110,8 +110,8 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   @Nullable
-  public IModule getModule() {
-    return ((IModule) myModule);
+  public SModule getModule() {
+    return ((SModule) myModule);
   }
 
   @Override

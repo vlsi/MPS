@@ -69,7 +69,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -346,7 +346,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected IScope getScope() {
-      return MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId()).getScope();
+      return ((AbstractModule) MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())).getScope();
     }
 
     @Override
@@ -399,7 +399,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                   ModulesHolder modulesHolder = (ModulesHolder) query.getObjectHolder();
                   for (SModule searchedModule : modulesHolder.getObject()) {
                     searchResults.getSearchedNodes().add(searchedModule);
-                    SearchQuery searchQuery = new SearchQuery((IModule) searchedModule, query.getScope());
+                    SearchQuery searchQuery = new SearchQuery((SModule) searchedModule, query.getScope());
                     searchResults.addAll(super.find(searchQuery,monitor));
                   }
 
@@ -571,7 +571,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       accessoriesTable.setModel(myAccessoriesModelsTableModel);
 
       accessoriesTable.setDefaultRenderer(SModelReference.class, new ModelTableCellRender(
-        MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId()).getScope()
+          ((AbstractModule) MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())).getScope()
       ));
 
       ToolbarDecorator decoratorForAccessories = ToolbarDecorator.createDecorator(accessoriesTable);

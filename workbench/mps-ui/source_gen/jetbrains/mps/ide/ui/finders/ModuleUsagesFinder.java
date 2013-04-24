@@ -8,7 +8,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
@@ -46,7 +46,7 @@ public class ModuleUsagesFinder implements IFinder {
       return searchResults;
     }
     ModuleHolder moduleHolder = (ModuleHolder) objectHolder;
-    IModule searchedModule = moduleHolder.getObject();
+    SModule searchedModule = moduleHolder.getObject();
     IScope scope = query.getScope();
     for (SModule module : scope.getModules()) {
       if (monitor.isCanceled()) {
@@ -68,7 +68,7 @@ public class ModuleUsagesFinder implements IFinder {
     return searchResults;
   }
 
-  private void collectUsagesInSolution(IModule searchedModule, Solution solution, SearchResults searchResults) {
+  private void collectUsagesInSolution(SModule searchedModule, Solution solution, SearchResults searchResults) {
     if (getDeclaredDependenciesTargets(solution).contains(searchedModule)) {
       searchResults.getSearchResults().add(new SearchResult<Solution>(solution, ModuleUsagesFinder.DEPENDENT_MODULES));
     }
@@ -78,7 +78,7 @@ public class ModuleUsagesFinder implements IFinder {
     }
   }
 
-  private void collectUsagesInLanguage(IModule searchedModule, Language language, SearchResults searchResults) {
+  private void collectUsagesInLanguage(SModule searchedModule, Language language, SearchResults searchResults) {
     if (language.getExtendedLanguageRefs().contains(searchedModule.getModuleReference())) {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, ModuleUsagesFinder.EXTENDING_LANGUAGES));
     }
@@ -95,7 +95,7 @@ public class ModuleUsagesFinder implements IFinder {
     }
   }
 
-  private void collectUsagesInDevKit(IModule searchedModule, DevKit devKit, SearchResults searchResults) {
+  private void collectUsagesInDevKit(SModule searchedModule, DevKit devKit, SearchResults searchResults) {
     if (devKit.getExportedLanguages().contains(searchedModule)) {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, ModuleUsagesFinder.EXPORTED_BY));
     }
@@ -104,7 +104,7 @@ public class ModuleUsagesFinder implements IFinder {
     }
   }
 
-  private void collectUsagesInGenerator(IModule searchedModule, Generator generator, SearchResults searchResults) {
+  private void collectUsagesInGenerator(SModule searchedModule, Generator generator, SearchResults searchResults) {
     if (generator.getReferencedGenerators().contains(searchedModule)) {
       searchResults.getSearchResults().add(new SearchResult<Generator>(generator, ModuleUsagesFinder.EXTENDING_GENERATORS));
     }
@@ -118,7 +118,7 @@ public class ModuleUsagesFinder implements IFinder {
 
   }
 
-  private void collectUsagesInModels(IModule searchedModule, IModule owner, SearchResults searchResults) {
+  private void collectUsagesInModels(SModule searchedModule, SModule owner, SearchResults searchResults) {
     for (SModel modelDescriptor : owner.getModels()) {
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {
         continue;

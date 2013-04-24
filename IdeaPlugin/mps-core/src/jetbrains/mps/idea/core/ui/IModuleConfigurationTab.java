@@ -20,7 +20,7 @@ import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 
 import javax.swing.JComponent;
 
-public interface IModuleConfigurationTab {
+public interface SModuleConfigurationTab {
   public void reset(MPSConfigurationBean data);
   public void apply(MPSConfigurationBean data);
   public boolean isModified(MPSConfigurationBean data);

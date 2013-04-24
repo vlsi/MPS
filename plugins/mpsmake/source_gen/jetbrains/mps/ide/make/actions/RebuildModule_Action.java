@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
@@ -36,7 +36,7 @@ public class RebuildModule_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SModuleOperations.isCompileInMps(((IModule) MapSequence.fromMap(_params).get("module")));
+    return SModuleOperations.isCompileInMps(((SModule) MapSequence.fromMap(_params).get("module")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -70,7 +70,7 @@ public class RebuildModule_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Set<SModule> modules = Collections.<SModule>singleton(((IModule) MapSequence.fromMap(_params).get("module")));
+      Set<SModule> modules = Collections.<SModule>singleton(((SModule) MapSequence.fromMap(_params).get("module")));
       ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Compiling", modules, true));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

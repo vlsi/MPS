@@ -30,7 +30,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class SafeDeleteModuleDependency_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -129,7 +129,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(SafeDeleteModuleDependency_Action.class);
 
-  private static IModule check_bai5av_a0a0a(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_bai5av_a0a0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
@@ -143,14 +143,14 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     return null;
   }
 
-  private static IModule check_bai5av_a0a0a0(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_bai5av_a0a0a0(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_bai5av_a0b0a(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_bai5av_a0b0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

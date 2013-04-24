@@ -58,7 +58,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-public class MPSFacetSourcesTab implements IModuleConfigurationTab {
+public class MPSFacetSourcesTab implements SModuleConfigurationTab {
   private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 
   private JPanel myRootPanel;

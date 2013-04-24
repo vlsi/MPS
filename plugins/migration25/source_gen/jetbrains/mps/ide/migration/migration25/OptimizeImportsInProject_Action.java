@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.Queue;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import com.intellij.openapi.project.Project;
@@ -73,14 +73,14 @@ public class OptimizeImportsInProject_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Queue<IModule> modules = QueueSequence.fromQueueWithValues(new LinkedList<IModule>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModules());
+      final Queue<SModule> modules = QueueSequence.fromQueueWithValues(new LinkedList<SModule>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModules());
       final List<SModel> modelsToFix = ListSequence.fromList(new ArrayList<SModel>());
       final CountDownLatch latch = new CountDownLatch(1);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           try {
             while (QueueSequence.fromQueue(modules).isNotEmpty()) {
-              IModule module = QueueSequence.fromQueue(modules).removeFirstElement();
+              SModule module = QueueSequence.fromQueue(modules).removeFirstElement();
               if (module.isReadOnly()) {
                 continue;
               }

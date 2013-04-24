@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -158,7 +158,7 @@ public class TestMain {
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        new ModuleMaker().make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
+        new ModuleMaker().make(new LinkedHashSet<SModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
       }
     });
     projectManager.openProject(project[0]);

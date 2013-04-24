@@ -18,7 +18,7 @@ import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.util.*;
@@ -57,13 +57,13 @@ public class ProjectTest {
     Token token;
     List<FrameworkMethod> methods = new ArrayList<FrameworkMethod>();
 
-    Fixture(IModule module, Project project) {
+    Fixture(SModule module, Project project) {
       fixtureId = getFixtureId(module, project);
       this.token = HELPER.getToken(module, project);
       methods.addAll(METHODS);
     }
 
-    private String getFixtureId(IModule module, Project project) {
+    private String getFixtureId(SModule module, Project project) {
       String suffix;
       if (module instanceof Language) {
         suffix = " [lang]";
@@ -101,30 +101,30 @@ public class ProjectTest {
     HELPER.setMacro("samples_home", System.getProperty("user.dir") + "/samples");
     List<Object[]> fixtures = new ArrayList<Object[]>();
     mpsProject = TestMain.loadProject(new File(System.getProperty("user.dir")));
-    Set<IModule> allModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
+    Set<SModule> allModules = ModelAccess.instance().runReadAction(new Computable<Set<SModule>>() {
       @Override
-      public Set<IModule> compute() {
+      public Set<SModule> compute() {
         return MPSModuleRepository.getInstance().getAllModules();
       }
     });
     
-    List<IModule> mlist=new ArrayList<IModule>(allModules);
-    Collections.sort(mlist, new Comparator<IModule>() {
+    List<SModule> mlist=new ArrayList<SModule>(allModules);
+    Collections.sort(mlist, new Comparator<SModule>() {
       @Override
-      public int compare(IModule m1, IModule m2) {
+      public int compare(SModule m1, SModule m2) {
         String fqName1 = m1.getModuleName();
         String fqName2 = m2.getModuleName();
         return fqName1.compareTo(fqName2);
       }
     });
-    for (IModule module : mlist) {
+    for (SModule module : mlist) {
       if (!needsGeneration(module) || module instanceof Generator) continue;
       fixtures.add(new Object[]{new Fixture(module, mpsProject)});
     }
     return fixtures;
   }
 
-  private static boolean needsGeneration(IModule module) {
+  private static boolean needsGeneration(SModule module) {
     for (SModel descriptor : module.getModels()) {
       if (jetbrains.mps.util.SNodeOperations.isGeneratable(descriptor)) return true;
     }

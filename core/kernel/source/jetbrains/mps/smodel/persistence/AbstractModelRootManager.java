@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -28,30 +28,30 @@ import java.util.Collection;
 @Deprecated
 public class AbstractModelRootManager implements IModelRootManager {
 
-  public Collection<SModel> load(@NotNull ModelRoot root, IModule module) {
+  public Collection<SModel> load(@NotNull ModelRoot root, SModule module) {
     throw new RuntimeException("not implemented");
   }
 
-  public boolean canCreateModel(IModule module, @Nullable ModelRoot root, @Nullable SModelFqName fqName) {
+  public boolean canCreateModel(SModule module, @Nullable ModelRoot root, @Nullable SModelFqName fqName) {
     return false;
   }
 
-  public SModel createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
+  public SModel createModel(SModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
   }
 
   @Override
   public Collection<SModel> load(@NotNull SModelRoot root) {
-    return load(root.getModelRoot(), (IModule) root.getModule());
+    return load(root.getModelRoot(), (SModule) root.getModule());
   }
 
   @Override
   public boolean canCreateModel(@Nullable SModelRoot root, @Nullable SModelFqName fqName) {
-    return canCreateModel((IModule) root.getModule(), root.getModelRoot(), fqName);
+    return canCreateModel((SModule) root.getModule(), root.getModelRoot(), fqName);
   }
 
   @Override
   public SModel createModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName) {
-    return createModel((IModule) root.getModule(), root.getModelRoot(), fqName);
+    return createModel((SModule) root.getModule(), root.getModelRoot(), fqName);
   }
 }

@@ -4,6 +4,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class ModelPropertiesChecker extends SpecificChecker {
   public ModelPropertiesChecker() {
@@ -43,14 +44,14 @@ public class ModelPropertiesChecker extends SpecificChecker {
     return results;
   }
 
-  private static IScope check_t4d01o_a0f0b(IModule checkedDotOperand) {
+  private static IScope check_t4d01o_a0f0b(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getScope();
+      return ((AbstractModule)checkedDotOperand).getScope();
     }
     return null;
   }
 
-  private static IModule check_t4d01o_a0a5a1(SModel checkedDotOperand) {
+  private static SModule check_t4d01o_a0a5a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

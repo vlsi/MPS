@@ -28,7 +28,7 @@ import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.project.*;
+import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;

@@ -34,7 +34,7 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -215,7 +215,7 @@ public class NewModelAction extends AnAction {
       return myIcon;
     }
 
-    public void preConfigure(SModel smodel, IModule module) {
+    public void preConfigure(SModel smodel, SModule module) {
       for (SModuleReference languageReference : myLanguagesToImport) {
         if (module.getScope().getLanguage(languageReference) == null) {
           module.addUsedLanguage(languageReference);

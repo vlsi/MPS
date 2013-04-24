@@ -29,7 +29,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -212,7 +212,7 @@ __switch__:
   }
 
   @Nullable
-  public static IModule getModule(@Nls String moduleName) {
+  public static SModule getModule(@Nls String moduleName) {
     if ((moduleName == null || moduleName.length() == 0)) {
       return null;
     }

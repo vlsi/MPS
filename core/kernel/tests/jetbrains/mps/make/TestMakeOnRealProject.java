@@ -28,7 +28,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.*;
+import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
@@ -93,7 +93,7 @@ public class TestMakeOnRealProject {
    * Compiles all solutinos in project and check that it is ok.
    */
   private void doSolutionsCompilation() {
-    final Set<IModule> toCompile = new LinkedHashSet<IModule>();
+    final Set<SModule> toCompile = new LinkedHashSet<SModule>();
     toCompile.add(myCreatedSolution);
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -176,13 +176,13 @@ public class TestMakeOnRealProject {
       }
     }, ModalityState.NON_MODAL);
 
-    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Arrays.asList((IModule) myCreatedSolution)));
+    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Arrays.asList((SModule) myCreatedSolution)));
     Collection<File> filesToDelete = sources.getFilesToDelete();
     Assert.assertEquals(1, filesToDelete.size());
   }
 
 
-  private void checkModuleCompiled(IModule module) {
+  private void checkModuleCompiled(SModule module) {
     IFile classesGen = module.getFacet(JavaModuleFacet.class).getClassesGen();
     List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getPath()), "class");
     List<File> sources = new ArrayList<File>();

@@ -20,7 +20,7 @@ import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.project.SModuleOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;

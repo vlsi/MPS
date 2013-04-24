@@ -38,7 +38,7 @@ import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -248,7 +248,7 @@ public class TestConfigurationDialog extends DialogWrapper {
           final Wrappers._T<List<SModule>> projectModules = new Wrappers._T<List<SModule>>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              modules.value = SetSequence.fromSetWithValues(new HashSet<SModule>(), (Iterable<IModule>) MPSModuleRepository.getInstance().getAllModules());
+              modules.value = SetSequence.fromSetWithValues(new HashSet<SModule>(), (Iterable<SModule>) MPSModuleRepository.getInstance().getAllModules());
               projectModules.value = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) myProject.getModules());
             }
           });

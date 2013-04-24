@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.SModelStereotype;
 
@@ -28,7 +28,7 @@ public class MakeGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public boolean handleOutput(SModule module, SModel descriptor, GenerationStatus status, IOperationContext context, ProgressMonitor helper) {
-    return resourceHandler.invoke(new GResource(((IModule) module), descriptor, null, status));
+    return resourceHandler.invoke(new GResource(((SModule) module), descriptor, null, status));
   }
 
   @Override

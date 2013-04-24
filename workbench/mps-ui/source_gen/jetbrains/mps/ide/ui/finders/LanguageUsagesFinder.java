@@ -8,7 +8,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.IScope;
@@ -48,7 +48,7 @@ public class LanguageUsagesFinder implements IFinder {
       return searchResults;
     }
     ModuleHolder moduleHolder = (ModuleHolder) objectHolder;
-    IModule searchedModule = moduleHolder.getObject();
+    SModule searchedModule = moduleHolder.getObject();
     if (searchedModule instanceof DevKit) {
       for (Language devKiltLanguage : ((DevKit) searchedModule).getAllExportedLanguages()) {
         SearchQuery innerQuery = new SearchQuery(devKiltLanguage, query.getScope());
@@ -61,7 +61,7 @@ public class LanguageUsagesFinder implements IFinder {
     Language language = (Language) searchedModule;
     IScope scope = query.getScope();
     if (scope instanceof GlobalScope) {
-      for (IModule module : (as_m2sz3c_a0a0a0j0i(scope, GlobalScope.class)).getVisibleModules()) {
+      for (SModule module : (as_m2sz3c_a0a0a0j0i(scope, GlobalScope.class)).getVisibleModules()) {
         if (monitor.isCanceled()) {
           return searchResults;
         }
@@ -116,7 +116,7 @@ public class LanguageUsagesFinder implements IFinder {
     }
   }
 
-  private void collectUsagesInModels(Language searchedLanguage, IModule owner, SearchResults searchResults) {
+  private void collectUsagesInModels(Language searchedLanguage, SModule owner, SearchResults searchResults) {
     for (SModel modelDescriptor : owner.getModels()) {
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {
         continue;

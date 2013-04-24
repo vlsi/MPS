@@ -5,6 +5,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.editors;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import javax.swing.DefaultListCellRenderer;
 import java.awt.Component;
@@ -52,7 +53,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
         for (SNode node : ListSequence.fromList(getManagerNodes())) {
           Language language = Language.getLanguageFor(SNodeOperations.getModel(node));
 
-          ModelRootManager manager = new ModelRootManager(SNodeOperations.getModel(node).getModule().getModuleDescriptor().getId().toString(), jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(node)) + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
+          ModelRootManager manager = new ModelRootManager(((AbstractModule)SNodeOperations.getModel(node).getModule()).getModuleDescriptor().getId().toString(), jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(node)) + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
 
           ListSequence.fromList(result).addElement(manager);
         }

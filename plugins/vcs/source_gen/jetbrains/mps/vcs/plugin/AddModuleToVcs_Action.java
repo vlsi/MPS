@@ -10,7 +10,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.actionSystem.Presentation;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
@@ -41,11 +41,11 @@ public class AddModuleToVcs_Action extends BaseAction {
     try {
       {
         Presentation presentation = event.getPresentation();
-        presentation.setText(String.format("Add %s to VCS", (((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ?
+        presentation.setText(String.format("Add %s to VCS", (((List<SModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ?
           "Module" :
           "Modules"
         )));
-        boolean enabled = ListSequence.fromList(VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
+        boolean enabled = ListSequence.fromList(VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
         presentation.setEnabled(enabled);
         presentation.setVisible(enabled);
       }
@@ -74,7 +74,7 @@ public class AddModuleToVcs_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<VirtualFile> unversionedFiles = VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+      List<VirtualFile> unversionedFiles = VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")));
       ChangeListManagerImpl changeListManager = ChangeListManagerImpl.getInstanceImpl(((Project) MapSequence.fromMap(_params).get("project")));
       changeListManager.addUnversionedFiles(changeListManager.getDefaultChangeList(), unversionedFiles);
     } catch (Throwable t) {

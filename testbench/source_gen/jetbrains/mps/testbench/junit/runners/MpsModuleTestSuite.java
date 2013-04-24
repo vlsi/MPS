@@ -19,7 +19,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -65,7 +65,7 @@ public class MpsModuleTestSuite extends MPSProjectITestsSuite {
         List<SModule> modules = new ArrayList<SModule>();
         BaseMPSModuleOwner owner = new BaseMPSModuleOwner() {};
         for (ModulesMiner.ModuleHandle moduleHandle : collectModules) {
-          IModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
+          SModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
           if (module != null) {
             modules.add(module);
           }

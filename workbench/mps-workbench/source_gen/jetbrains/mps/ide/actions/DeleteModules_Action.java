@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -42,10 +42,10 @@ public class DeleteModules_Action extends BaseAction {
     if (((Integer) MapSequence.fromMap(_params).get("selSize")) == 0) {
       return false;
     }
-    if (((Integer) MapSequence.fromMap(_params).get("selSize")) != ((List<IModule>) MapSequence.fromMap(_params).get("modules")).size()) {
+    if (((Integer) MapSequence.fromMap(_params).get("selSize")) != ((List<SModule>) MapSequence.fromMap(_params).get("modules")).size()) {
       return false;
     }
-    for (IModule module : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
+    for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
       if (!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
         return false;
       }
@@ -97,7 +97,7 @@ public class DeleteModules_Action extends BaseAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          for (IModule module : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
+          for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
             DeleteModuleHelper.deleteModule(((Project) MapSequence.fromMap(_params).get("project")), module, false, filesOption.selected);
           }
         }

@@ -24,7 +24,7 @@ import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -56,7 +56,7 @@ public class SearchQuery implements IExternalizeable {
     this(new NodeHolder(node), scope);
   }
 
-  public SearchQuery(IModule module, IScope scope) {
+  public SearchQuery(SModule module, IScope scope) {
     this(new ModuleHolder(module), scope);
   }
 

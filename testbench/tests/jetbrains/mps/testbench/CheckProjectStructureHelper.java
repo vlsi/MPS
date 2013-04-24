@@ -30,7 +30,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSProject;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -103,7 +103,7 @@ public class CheckProjectStructureHelper {
 
   public List<String> check(ModulesMiner.ModuleHandle moduleHandle) {
     SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
     Collection<SModel> models = new ModelsExtractor(module, false).includingGenerators().getModels();
@@ -113,7 +113,7 @@ public class CheckProjectStructureHelper {
 
   public List<String> checkStructure(ModulesMiner.ModuleHandle moduleHandle) {
     SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
     Collection<SModel> models = new ModelsExtractor(module, true).includingGenerators().getModels();
@@ -133,10 +133,10 @@ public class CheckProjectStructureHelper {
 
   public List<String> checkModule(ModulesMiner.ModuleHandle moduleHandle) {
     SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
-    List<IModule> modules = new ArrayList<IModule>();
+    List<SModule> modules = new ArrayList<SModule>();
     modules.add(module);
     if (module instanceof Language) {
       modules.addAll(((Language) module).getGenerators());
@@ -147,7 +147,7 @@ public class CheckProjectStructureHelper {
 
   public List<String> checkTypeSystem(ModulesMiner.ModuleHandle moduleHandle) {
     SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
     Collection<SModel> models = new ModelsExtractor(module, false).getModels();
@@ -156,7 +156,7 @@ public class CheckProjectStructureHelper {
 
   public List<String> checkConstraints(ModulesMiner.ModuleHandle moduleHandle) {
     SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
     Collection<SModel> models = new ModelsExtractor(module, false).getModels();
@@ -278,11 +278,11 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private List<String> checkModules(final Iterable<IModule> modules) {
+  private List<String> checkModules(final Iterable<SModule> modules) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (IModule sm : modules) {
+        for (SModule sm : modules) {
           StringBuilder errorMessages = checkModule(sm);
           if (errorMessages.length() > 0) {
             errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());
@@ -406,7 +406,7 @@ public class CheckProjectStructureHelper {
     return errorMessages;
   }
 
-  private StringBuilder checkModule(final IModule module) {
+  private StringBuilder checkModule(final SModule module) {
     StringBuilder errorMessages = new StringBuilder();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {

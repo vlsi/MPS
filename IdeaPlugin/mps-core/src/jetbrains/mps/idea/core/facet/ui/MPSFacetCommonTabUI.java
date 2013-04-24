@@ -41,7 +41,7 @@ import java.util.Set;
 /**
  * evgeny, 10/26/11
  */
-public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
+public class MPSFacetCommonTabUI implements SModuleConfigurationTab {
 
   private JPanel rootPanel;
   private JComponent myCentralComponent;
@@ -49,7 +49,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
 
   private final Disposable myParentDisposable;
   private final FacetEditorContext myContext;
-  private List<IModuleConfigurationTab> myTabs;
+  private List<SModuleConfigurationTab> myTabs;
 
   public MPSFacetCommonTabUI(FacetEditorContext context, Disposable parentDisposable) {
     myParentDisposable = parentDisposable;
@@ -58,7 +58,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
 
   public void reset(MPSConfigurationBean data) {
     refreshSolutionDescriptorName();
-    for (IModuleConfigurationTab tab : myTabs) {
+    for (SModuleConfigurationTab tab : myTabs) {
       tab.reset(data);
     }
   }
@@ -73,13 +73,13 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
   }
 
   public void apply(MPSConfigurationBean data) {
-    for (IModuleConfigurationTab tab : myTabs) {
+    for (SModuleConfigurationTab tab : myTabs) {
       tab.apply(data);
     }
   }
 
   public boolean isModified(MPSConfigurationBean data) {
-    for (IModuleConfigurationTab tab : myTabs) {
+    for (SModuleConfigurationTab tab : myTabs) {
       if (tab.isModified(data)) {
         return true;
       }
@@ -113,7 +113,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
     };
 
     // can not make it final and init in declaration since idea forms generator does not like it and put $$$setupUI$$$ call before setting the field
-    myTabs = new ArrayList<IModuleConfigurationTab>();
+    myTabs = new ArrayList<SModuleConfigurationTab>();
     myTabs.add(mpsFacetSourcesTab);
     myTabs.add(mpsFacetPathsTab);
     myTabs.add(usedLanguagesTable);
@@ -128,7 +128,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
 
   public void onTabEntering() {
     refreshSolutionDescriptorName();
-    for (IModuleConfigurationTab tab : myTabs) {
+    for (SModuleConfigurationTab tab : myTabs) {
       tab.onTabEntering();
     }
   }

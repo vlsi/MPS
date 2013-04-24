@@ -20,7 +20,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
@@ -106,7 +106,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
 
   public ModelCheckerViewer checkProject(Project project, IOperationContext operationContext, boolean showTab) {
     MPSProject mpsProject = project.getComponent(MPSProject.class);
-    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) mpsProject.getModules()), mpsProject.getName(), IdeIcons.PROJECT_ICON, operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) mpsProject.getModules()), mpsProject.getName(), IdeIcons.PROJECT_ICON, operationContext, showTab);
   }
 
   public boolean checkModelsBeforeGenerationIfNeeded(IOperationContext operationContext, List<SModel> modelDescriptors, Runnable regenerationRunnable) {
