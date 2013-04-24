@@ -46,7 +46,6 @@ public class HandleEnterInTheEnd_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      System.out.println("Insert before new line");
       CommentLineEditingUtil.insertLine(editorContext);
     }
   }
