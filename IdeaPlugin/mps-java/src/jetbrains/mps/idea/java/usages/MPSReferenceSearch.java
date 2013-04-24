@@ -54,6 +54,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.HashSet;
@@ -94,7 +95,7 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
         Set<SNode> targetNodes = new HashSet<SNode>(1);
         targetNodes.add(targetNode);
 
-        Set<SReference> references = FindUsagesManager.getInstance().findUsages(targetNodes, SearchType.USAGES, new IdeaSearchScope(scope), null);
+        Set<SReference> references = FindUsagesFacade.getInstance().findUsages(new IdeaSearchScope(scope), targetNodes, null);
 
         for (SReference sReference : references) {
           SNode source = sReference.getSourceNode();
