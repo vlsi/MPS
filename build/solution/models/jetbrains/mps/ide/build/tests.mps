@@ -444,6 +444,7 @@
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.test" />
         <property name="uuid" nameId="kdzh.322010710375892619" value="9c8b4b95-5d89-4201-ad78-0b2db3a22768" />
         <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        <property name="sourcesKind" nameId="kdzh.269707337715731330" value="sources and tests" />
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="9178146092071420459">
           <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="9178146092071420467">
             <property name="head" nameId="3ior.8618885170173601779" value="languages" />
