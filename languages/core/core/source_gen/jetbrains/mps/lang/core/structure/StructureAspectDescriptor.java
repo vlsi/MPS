@@ -4,7 +4,7 @@ package jetbrains.mps.lang.core.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,57 +14,57 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.Attribute").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.BaseConcept", null, false, new String[]{}, new String[]{"shortDescription", "alias", "virtualPackage"}, new String[]{}, new String[]{"smodelAttribute"}, new boolean[]{true}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.BaseConcept").parents().properties("shortDescription", "alias", "virtualPackage").children(new String[]{"smodelAttribute"}, new boolean[]{true}).abstract_().create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScope", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ExportScope").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").abstract_().create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScope", false, new String[]{"jetbrains.mps.lang.core.structure.ExportScope"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "@export(module)", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ExportScopeModule").super_("jetbrains.mps.lang.core.structure.ExportScope").parents("jetbrains.mps.lang.core.structure.ExportScope").alias("@export(module)", "").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScope", false, new String[]{"jetbrains.mps.lang.core.structure.ExportScope"}, new String[]{"namespace"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "@export(namespace)", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ExportScopeNamespace").super_("jetbrains.mps.lang.core.structure.ExportScope").parents("jetbrains.mps.lang.core.structure.ExportScope").properties("namespace").alias("@export(namespace)", "").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.ExportScope", false, new String[]{"jetbrains.mps.lang.core.structure.ExportScope"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "@export(public)", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ExportScopePublic").super_("jetbrains.mps.lang.core.structure.ExportScope").parents("jetbrains.mps.lang.core.structure.ExportScope").alias("@export(public)", "").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IAntisuppressErrors", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IAntisuppressErrors").interface_().create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ICanSuppressErrors", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ICanSuppressErrors").interface_().create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IContainer", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IContainer").interface_().create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IDeprecatable", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IDeprecatable").interface_().create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").interface_().create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IMetaLevelChanger", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IMetaLevelChanger").interface_().create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.INamedConcept", null, true, new String[]{}, new String[]{"name"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.INamedConcept").interface_().properties("name").create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IResolveInfo", null, true, new String[]{}, new String[]{"resolveInfo"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IResolveInfo").interface_().properties("resolveInfo").create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ISuppressErrors", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ISuppressErrors").interface_().create();
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IType", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IType").interface_().create();
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.IWrapper", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.IWrapper").interface_().create();
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ImplementationContainer", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ImplementationContainer").interface_().create();
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ImplementationPart", null, true, new String[]{"jetbrains.mps.lang.core.structure.ScopeFacade"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ImplementationPart").interface_().parents("jetbrains.mps.lang.core.structure.ScopeFacade").create();
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.InterfacePart", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.InterfacePart").interface_().create();
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.Attribute", false, new String[]{"jetbrains.mps.lang.core.structure.Attribute"}, new String[]{"linkRole"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.LinkAttribute").super_("jetbrains.mps.lang.core.structure.Attribute").parents("jetbrains.mps.lang.core.structure.Attribute").properties("linkRole").create();
       case 21:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.Attribute", false, new String[]{"jetbrains.mps.lang.core.structure.Attribute"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.NodeAttribute").super_("jetbrains.mps.lang.core.structure.Attribute").parents("jetbrains.mps.lang.core.structure.Attribute").create();
       case 22:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.Attribute", false, new String[]{"jetbrains.mps.lang.core.structure.Attribute"}, new String[]{"propertyName"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.PropertyAttribute").super_("jetbrains.mps.lang.core.structure.Attribute").parents("jetbrains.mps.lang.core.structure.Attribute").properties("propertyName").create();
       case 23:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ScopeFacade", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ScopeFacade").interface_().create();
       case 24:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.ScopeProvider", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.ScopeProvider").interface_().create();
       case 25:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.ISuppressErrors"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.ISuppressErrors").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

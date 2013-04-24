@@ -4,7 +4,7 @@ package jetbrains.mps.ide.vcs.modelmetadata.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"longname", "uuid", "version", "donotgenerate"}, new String[]{}, new String[]{"language", "languageEngagedOnGeneration", "devkit", "import"}, new boolean[]{true, true, true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ide.vcs.modelmetadata.structure.Model").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("longname", "uuid", "version", "donotgenerate").children(new String[]{"language", "languageEngagedOnGeneration", "devkit", "import"}, new boolean[]{true, true, true, true}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

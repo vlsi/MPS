@@ -4,7 +4,7 @@ package jetbrains.mps.build.custommps.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,9 +14,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.custommps.structure.LibraryFolder", "jetbrains.mps.build.packaging.structure.Folder", false, new String[]{"jetbrains.mps.build.packaging.structure.Folder"}, new String[]{}, new String[]{}, new String[]{"libraryName"}, new boolean[]{false}, false, false, "library", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.custommps.structure.LibraryFolder").super_("jetbrains.mps.build.packaging.structure.Folder").parents("jetbrains.mps.build.packaging.structure.Folder").children(new String[]{"libraryName"}, new boolean[]{false}).alias("library", "").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.custommps.structure.MPSBuild", "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", false, new String[]{"jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent"}, new String[]{}, new String[]{}, new String[]{"pathToBuildToolsZip", "licencePath"}, new boolean[]{false, false}, false, false, "mps-build", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.custommps.structure.MPSBuild").super_("jetbrains.mps.build.packaging.structure.AbstractProjectComponent").parents("jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "jetbrains.mps.build.packaging.structure.ICompositeComponent", "jetbrains.mps.build.packaging.structure.INotBuildableComponent").children(new String[]{"pathToBuildToolsZip", "licencePath"}, new boolean[]{false, false}).alias("mps-build", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
