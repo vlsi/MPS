@@ -18,7 +18,9 @@ package jetbrains.mps.openapi.editor.cells;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Semen Alperovich
@@ -120,4 +122,60 @@ public class CellTraversalUtil {
     }
   }
 
+  public static Boolean isLower(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {
+    EditorCell parent = getCommonParent(firstCell, secondCell);
+    if (parent == null) {
+      return null;
+    }
+    assert parent instanceof EditorCell_Collection;
+
+    if (parent == firstCell) {
+      return false;
+    }
+    if (parent == secondCell) {
+      return true;
+    }
+
+
+    for (EditorCell cell : ((EditorCell_Collection) parent)) {
+      if (isAncestor(cell, firstCell)) {
+        return false;
+      }
+
+      if (isAncestor(cell, secondCell)) {
+        return true;
+      }
+    }
+    return null;
+  }
+
+  public static EditorCell getCommonParent(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {
+    List<EditorCell> firstParents = getParents(firstCell, true);
+    List<EditorCell> secondParents = getParents(secondCell, true);
+    for (EditorCell cell : firstParents) {
+      if (secondParents.contains(cell)) {
+        return cell;
+      }
+    }
+    return null;
+  }
+
+  public static List<EditorCell> getParents(@NotNull EditorCell cell, boolean includeThis) {
+    List<EditorCell> parents = new ArrayList<EditorCell>();
+    EditorCell tempCell = includeThis ? cell : cell.getParent();
+    while (tempCell != null) {
+      parents.add(tempCell);
+      tempCell = tempCell.getParent();
+    }
+    return parents;
+  }
+
+  public static boolean isAncestor(@NotNull EditorCell ancestor, @NotNull EditorCell child) {
+    EditorCell_Collection parent = child.getParent();
+    while (parent != null) {
+      if (parent == ancestor) return true;
+      parent = parent.getParent();
+    }
+    return false;
+  }
 }
