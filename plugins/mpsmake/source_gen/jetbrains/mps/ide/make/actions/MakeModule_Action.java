@@ -14,7 +14,6 @@ import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.Set;
-import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collections;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;

@@ -24,7 +24,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.Set;
-import org.jetbrains.mps.openapi.module.SModule;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SDependency;
 

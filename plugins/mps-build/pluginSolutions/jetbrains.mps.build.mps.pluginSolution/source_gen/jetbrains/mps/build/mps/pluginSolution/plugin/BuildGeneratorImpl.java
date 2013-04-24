@@ -8,6 +8,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.AbstractModule;
@@ -90,7 +91,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       public void run() {
         SModel descriptor = getSModelDescriptor(new EmptyProgressIndicator());
 
-        addRequiredImports(descriptor, ((AbstractModule)descriptor.getModule()).getModuleDescriptor());
+        addRequiredImports(descriptor, ((IModule) descriptor.getModule()).getModuleDescriptor());
 
         final EditableSModel targetModelDescriptor = ((EditableSModel) descriptor);
 
@@ -393,7 +394,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
     SNode path;
     try {
-      path = createPathFromFullPath(((AbstractModule)module).getDescriptorFile().getPath());
+      path = createPathFromFullPath(((IModule) module).getDescriptorFile().getPath());
     } catch (RelativePathHelper.PathException e) {
       if (LOG.isEnabledFor(Priority.WARN)) {
         LOG.warn("Can't make relative path from build model base directory to module " + module, e);

@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.SModuleOperations;
 import java.util.Arrays;
 import java.util.Collections;
-import org.jetbrains.mps.openapi.module.SModule;
 import java.rmi.RemoteException;
 
 public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler {

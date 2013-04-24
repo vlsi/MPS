@@ -44,6 +44,7 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -606,7 +607,7 @@ public class RefactoringContext {
               setSelectedModule(descriptor.getModule());
               break;
             case MODULE:
-              setSelectedModule((SModule) target);
+              setSelectedModule((IModule) target);
               break;
             default:
               throw new IllegalArgumentException("Wrong refactoring type " + refTarget.getTarget().getClass().getName());

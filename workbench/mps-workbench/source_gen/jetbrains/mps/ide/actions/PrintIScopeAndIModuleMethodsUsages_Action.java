@@ -15,7 +15,6 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -33,7 +32,7 @@ public class PrintIScopeAndIModuleMethodsUsages_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public PrintIScopeAndIModuleMethodsUsages_Action() {
-    super("Print IScope and SModule methods usages", "", ICON);
+    super("Print IScope and IModule methods usages", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -68,7 +67,7 @@ public class PrintIScopeAndIModuleMethodsUsages_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       PrintIScopeAndIModuleMethodsUsages_Action.this.printMethodsUsages(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)", "~IScope"), _params);
-      PrintIScopeAndIModuleMethodsUsages_Action.this.printMethodsUsages(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~SModule"), _params);
+      PrintIScopeAndIModuleMethodsUsages_Action.this.printMethodsUsages(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~IModule"), _params);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "PrintIScopeAndIModuleMethodsUsages", t);

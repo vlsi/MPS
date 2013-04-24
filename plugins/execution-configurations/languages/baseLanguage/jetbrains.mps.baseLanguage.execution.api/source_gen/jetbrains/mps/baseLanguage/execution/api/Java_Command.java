@@ -33,7 +33,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.ModuleId;

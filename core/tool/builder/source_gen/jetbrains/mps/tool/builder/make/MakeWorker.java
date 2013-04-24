@@ -13,7 +13,6 @@ import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.project.SModuleOperations;

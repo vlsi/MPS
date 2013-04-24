@@ -6,13 +6,13 @@ import jetbrains.mps.ide.modelchecker.actions.SpecificChecker;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue;
-import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -29,8 +29,8 @@ import java.util.Map;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class MethodCallChecker extends SpecificChecker {
   public MethodCallChecker() {
@@ -42,7 +42,7 @@ public class MethodCallChecker extends SpecificChecker {
     if (model == null || model == null || model.getModule() == null) {
       return results;
     }
-    final IScope scope = ((AbstractModule)model.getModule()).getScope();
+    final IScope scope = ((IModule) model.getModule()).getScope();
     String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references to method declaration...";
     monitor.start(title, 1);
 
@@ -85,7 +85,7 @@ public class MethodCallChecker extends SpecificChecker {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
                 SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
-                check_lz161n_a1a0a5a0a7a1a6a1(check_lz161n_a0b0a0f0a0h0b0g0b(model), sm);
+                check_lz161n_a1a0a5a0a7a1a6a1(((IModule) check_lz161n_a0a0b0a0f0a0h0b0g0b_0(model)), sm);
                 return true;
               }
               return false;
@@ -98,9 +98,9 @@ public class MethodCallChecker extends SpecificChecker {
     return results;
   }
 
-  private static void check_lz161n_a1a0a5a0a7a1a6a1(SModule checkedDotOperand, SModel sm) {
+  private static void check_lz161n_a1a0a5a0a7a1a6a1(IModule checkedDotOperand, SModel sm) {
     if (null != checkedDotOperand) {
-      ((AbstractModule)checkedDotOperand).addDependency(check_lz161n_a0a1a0a5a0a7a1a6a1(check_lz161n_a0a0b0a0f0a0h0b0g0b(sm)), false);
+      checkedDotOperand.addDependency(check_lz161n_a0a1a0a5a0a7a1a6a1(check_lz161n_a0a0b0a0f0a0h0b0g0b(sm)), false);
     }
 
   }
@@ -119,7 +119,7 @@ public class MethodCallChecker extends SpecificChecker {
     return null;
   }
 
-  private static SModule check_lz161n_a0b0a0f0a0h0b0g0b(SModel checkedDotOperand) {
+  private static SModule check_lz161n_a0a0b0a0f0a0h0b0g0b_0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

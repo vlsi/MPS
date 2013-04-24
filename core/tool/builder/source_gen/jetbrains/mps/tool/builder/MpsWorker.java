@@ -25,7 +25,6 @@ import java.util.Collection;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import java.util.Collections;
 import jetbrains.mps.vfs.IFile;

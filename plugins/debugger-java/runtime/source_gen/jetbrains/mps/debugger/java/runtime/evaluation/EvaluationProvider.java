@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -68,7 +68,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   private synchronized void dispose() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().unregisterModule((SModule) myContainerModule.resolve(MPSModuleRepository.getInstance()), ProjectHelper.toMPSProject(myDebugSession.getProject()));
+        MPSModuleRepository.getInstance().unregisterModule((IModule) myContainerModule.resolve(MPSModuleRepository.getInstance()), ProjectHelper.toMPSProject(myDebugSession.getProject()));
         myContainerModule = null;
       }
     });

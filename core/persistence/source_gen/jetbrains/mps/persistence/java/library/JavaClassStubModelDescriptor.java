@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.IModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -72,7 +72,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
       model.addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = createClassPath();
-    new ASMModelLoader(((SModule) myModelRoot.getModule()), cp, model.getModelDescriptor(), false).updateModel();
+    new ASMModelLoader(((IModule) myModelRoot.getModule()), cp, model.getModelDescriptor(), false).updateModel();
     updateTimestamp();
     return model;
   }

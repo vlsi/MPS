@@ -9,7 +9,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.dependencyViewer.DependencyViewerScope;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 

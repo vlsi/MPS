@@ -6,7 +6,6 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,6 +16,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.project.IModule;
 
 public class Context {
   private Map<String, Object> myProperties = MapSequence.fromMap(new HashMap<String, Object>());
@@ -103,10 +103,10 @@ public class Context {
       return null;
     }
     SModule module = modelDescriptor.getModule();
-    if (module == null || ((AbstractModule) module).getDescriptorFile() == null || module.isPackaged()) {
+    if (module == null || ((IModule) module).getDescriptorFile() == null || module.isPackaged()) {
       return null;
     }
-    String basePath = ((AbstractModule) module).getDescriptorFile().getParent().getPath();
+    String basePath = ((IModule) module).getDescriptorFile().getParent().getPath();
     return new RelativePathHelper(basePath);
   }
 

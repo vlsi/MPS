@@ -15,7 +15,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.IModule;
 
 public class ModelsToResources {
   private Iterable<SModel> models;
@@ -93,11 +93,11 @@ __switch__:
                       break;
                     case 7:
                       this.__CP__ = 1;
-                      this.yield(new MResource((SModule) ListSequence.fromList(models.value).last().getModule(), (Iterable<SModel>) (Iterable) models.value));
+                      this.yield(new MResource((IModule) ListSequence.fromList(models.value).last().getModule(), (Iterable<SModel>) (Iterable) models.value));
                       return true;
                     case 16:
                       this.__CP__ = 17;
-                      this.yield(new MResource((SModule) ListSequence.fromList(models.value).last().getModule(), (Iterable<SModel>) (Iterable) models.value));
+                      this.yield(new MResource((IModule) ListSequence.fromList(models.value).last().getModule(), (Iterable<SModel>) (Iterable) models.value));
                       return true;
                     case 0:
                       this.__CP__ = 2;

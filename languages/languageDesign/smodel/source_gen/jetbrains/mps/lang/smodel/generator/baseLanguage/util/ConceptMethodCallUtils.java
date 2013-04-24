@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.project.SModuleOperations;
-import org.jetbrains.mps.openapi.module.SModule;
 
 public class ConceptMethodCallUtils {
   private ConceptMethodCallUtils() {

@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 

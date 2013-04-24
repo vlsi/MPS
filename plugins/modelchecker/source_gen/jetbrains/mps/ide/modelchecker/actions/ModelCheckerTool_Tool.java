@@ -20,7 +20,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;

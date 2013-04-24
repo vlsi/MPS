@@ -30,7 +30,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModule;
 
 public class SafeDeleteModuleDependency_Action extends BaseAction {
   private static final Icon ICON = null;

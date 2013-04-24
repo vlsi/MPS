@@ -17,7 +17,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 

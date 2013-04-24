@@ -19,7 +19,7 @@
     <nodeInfo nodeId="1209383934311" fileName="AddMissingLanguageImport_Intention.java" startLine="78" startPosition="87" endLine="79" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239134261152" fileName="AddMissingLanguageImport_Intention.java" startLine="82" startPosition="78" endLine="83" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239134266454" fileName="AddMissingLanguageImport_Intention.java" startLine="84" startPosition="30" endLine="85" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209383995632" fileName="AddMissingLanguageImport_Intention.java" startLine="86" startPosition="7" endLine="87" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209383995632" fileName="AddMissingLanguageImport_Intention.java" startLine="86" startPosition="7" endLine="87" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="90" startPosition="48" endLine="91" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMissingLanguageImport_Intention#()V" />
     <nodeInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="75" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
@@ -77,7 +77,7 @@
     <scopeInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="48" startPosition="84" endLine="52" endPosition="16" />
     <scopeInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="67" startPosition="99" endLine="71" endPosition="30" />
-    <scopeInfo nodeId="1209383918933" fileName="AddMissingLanguageImport_Intention.java" startLine="82" startPosition="78" endLine="87" endPosition="81">
+    <scopeInfo nodeId="1209383918933" fileName="AddMissingLanguageImport_Intention.java" startLine="82" startPosition="78" endLine="87" endPosition="93">
       <varInfo nodeId="1239134261153" varName="moduleRef" />
     </scopeInfo>
     <scopeInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="48" startPosition="0" endLine="54" endPosition="0">

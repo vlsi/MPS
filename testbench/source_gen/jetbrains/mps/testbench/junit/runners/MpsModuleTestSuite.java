@@ -19,7 +19,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
