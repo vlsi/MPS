@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.make.script.IFeedback;
@@ -101,7 +102,7 @@ public class Diff_Facet extends IFacet.Stub {
                   });
                   final Differ differ = new Differ(retainedPaths, pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).excludedFiles());
                   final StringBuilder errors = new StringBuilder();
-                  final String origOutRootPath = tgres.module().getOutputFor(tgres.modelDescriptor());
+                  final String origOutRootPath = SModuleOperations.getOutputPathFor(tgres.modelDescriptor());
                   final String outDirPath = FileGenerationUtil.getDefaultOutputDir(tgres.modelDescriptor(), FileSystem.getInstance().getFileByPath(origOutRootPath)).getPath();
 
                   for (String diff : differ.diff(outDirPath, pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile().invoke(outDirPath).getPath())) {

@@ -21,6 +21,7 @@ import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -112,7 +113,7 @@ public class RetainedUtil {
 
     public Iterable<IDelta> deltas(Iterable<SModel> smds) {
       for (SModel smd : smds) {
-        String output = module.getOutputFor(smd);
+        String output = SModuleOperations.getOutputPathFor(smd);
         if (output != null) {
           deltaForDir(output).kept(FileGenerationUtil.getDefaultOutputDir(smd, this.getRootOutputDir(output)));
         }

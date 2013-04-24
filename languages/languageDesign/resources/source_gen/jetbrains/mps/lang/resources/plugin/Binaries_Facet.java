@@ -24,6 +24,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters;
@@ -105,7 +106,7 @@ public class Binaries_Facet extends IFacet.Stub {
                     Iterable<Tuples._2<IFile, IFile>> seq = Sequence.fromIterable(res.models()).translate(new ITranslator2<SModel, Tuples._2<IFile, IFile>>() {
                       public Iterable<Tuples._2<IFile, IFile>> translate(SModel smd) {
                         SModel model = smd;
-                        String output = module.getOutputFor(smd);
+                        String output = SModuleOperations.getOutputPathFor(smd);
                         if (output == null) {
                           monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(smd))));
                           return null;
