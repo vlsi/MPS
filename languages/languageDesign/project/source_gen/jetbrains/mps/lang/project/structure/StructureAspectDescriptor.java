@@ -4,7 +4,7 @@ package jetbrains.mps.lang.project.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,43 +14,43 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.DevKit", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"plugin", "devkitPath"}, new String[]{}, new String[]{"exportedLanguages", "exportedSolutions", "extendedDevkits"}, new boolean[]{true, true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.DevKit").super_("jetbrains.mps.lang.project.structure.Module").parents("jetbrains.mps.lang.project.structure.Module").properties("plugin", "devkitPath").children(new String[]{"exportedLanguages", "exportedSolutions", "extendedDevkits"}, new boolean[]{true, true, true}).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Generator", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"generatorUID", "generateTemplates"}, new String[]{}, new String[]{"priorityRules", "depGenerators"}, new boolean[]{true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.Generator").super_("jetbrains.mps.lang.project.structure.Module").parents("jetbrains.mps.lang.project.structure.Module").properties("generatorUID", "generateTemplates").children(new String[]{"priorityRules", "depGenerators"}, new boolean[]{true, true}).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Language", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"genPath", "languagePath"}, new String[]{}, new String[]{"generator", "accessoryModels", "extendedLanguages", "runtimeModules", "runtimeStubModels", "stubSolutions"}, new boolean[]{true, true, true, true, true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.Language").super_("jetbrains.mps.lang.project.structure.Module").parents("jetbrains.mps.lang.project.structure.Module").properties("genPath", "languagePath").children(new String[]{"generator", "accessoryModels", "extendedLanguages", "runtimeModules", "runtimeStubModels", "stubSolutions"}, new boolean[]{true, true, true, true, true, true}).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigExternalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", false, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{}, new String[]{}, new String[]{"generator", "innerRef"}, new boolean[]{false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.MappingConfigExternalRef").super_("jetbrains.mps.lang.project.structure.MappingConfigRefBase").parents("jetbrains.mps.lang.project.structure.MappingConfigRefBase").children(new String[]{"generator", "innerRef"}, new boolean[]{false, false}).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigNormalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", false, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{"modelUID", "nodeID"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "ref", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.MappingConfigNormalRef").super_("jetbrains.mps.lang.project.structure.MappingConfigRefBase").parents("jetbrains.mps.lang.project.structure.MappingConfigRefBase").properties("modelUID", "nodeID").alias("ref", "").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", false, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "all global", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal").super_("jetbrains.mps.lang.project.structure.MappingConfigRefBase").parents("jetbrains.mps.lang.project.structure.MappingConfigRefBase").alias("all global", "").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", false, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "all local", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal").super_("jetbrains.mps.lang.project.structure.MappingConfigRefBase").parents("jetbrains.mps.lang.project.structure.MappingConfigRefBase").alias("all local", "").create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefBase", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.MappingConfigRefBase").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigRefSet", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", false, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{}, new String[]{}, new String[]{"refs"}, new boolean[]{true}, false, false, "set", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.MappingConfigRefSet").super_("jetbrains.mps.lang.project.structure.MappingConfigRefBase").parents("jetbrains.mps.lang.project.structure.MappingConfigRefBase").children(new String[]{"refs"}, new boolean[]{true}).alias("set", "").create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingPriorityRule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"type"}, new String[]{}, new String[]{"left", "right"}, new boolean[]{false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.MappingPriorityRule").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("type").children(new String[]{"left", "right"}, new boolean[]{false, false}).create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.ModelReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"uuid", "qualifiedName", "stereotype"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.ModelReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("uuid", "qualifiedName", "stereotype").create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.ModelRoot", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"type", "path"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.ModelRoot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("type", "path").create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Module", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"uuid", "namespace", "compileInMPS", "enableJavaStubs"}, new String[]{}, new String[]{"model", "modelRoots", "dependencies", "usedLanguages", "usedDevkits", "stubModels", "sourcePaths"}, new boolean[]{true, true, true, true, true, true, true}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.Module").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("uuid", "namespace", "compileInMPS", "enableJavaStubs").children(new String[]{"model", "modelRoots", "dependencies", "usedLanguages", "usedDevkits", "stubModels", "sourcePaths"}, new boolean[]{true, true, true, true, true, true, true}).abstract_().create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.ModuleDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"reexport"}, new String[]{}, new String[]{"moduleRef"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.ModuleDependency").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("reexport").children(new String[]{"moduleRef"}, new boolean[]{false}).create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.ModuleReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"uuid", "qualifiedName"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.ModuleReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("uuid", "qualifiedName").create();
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Solution", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"outputPath", "dontLoadClasses", "solutionPath"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.Solution").super_("jetbrains.mps.lang.project.structure.Module").parents("jetbrains.mps.lang.project.structure.Module").properties("outputPath", "dontLoadClasses", "solutionPath").create();
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.SourcePath", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.SourcePath").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("value").create();
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.StubEntry", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"path"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.StubEntry").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("path").create();
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.StubSolution", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"uuid", "name"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.StubSolution").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("uuid", "name").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

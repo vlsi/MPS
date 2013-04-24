@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6mwe0ruuglxx221hasy5u6r305s4y6v">
+<dependencies version="2" modelHash="-epvzlaura6gkzxj5otb1i212a37izk4">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -7,8 +7,8 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="aih6mod30hbbl8r1xz9vfu4gypkll6l" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="7zjfqmsfedya07yc88oj5lpk117oeda" />
-  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="73w3ph4ehf9qetton2jukm91nako4x" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-7czzgrwjuz1s4ixrqjpjlzj1vtqq1up" />
+  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="-79ceqocyuuulvuh4u36k093q6s0biig" />
   <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="-2p12x5z49eakvhbru5jurb38hbl7f1g" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
   <common hash="7kty6s87t7ddnjr9jai78vlzbke16zu" />
@@ -370,7 +370,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="RemoveCell_Test.java" />
   </source>
-  <source id="458414629082786298" hash="-eq28y8e0jdtid4etinhu4st701fv74p">
+  <source id="458414629082786298" hash="-dx4vrbtg2qf1v3e43op9j4fibm3fh6i">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="7162597690967657578" hash="afh0msnzjn2364nfqvmzl1zbuob4neb">

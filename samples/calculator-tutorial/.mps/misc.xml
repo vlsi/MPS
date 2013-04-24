@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/calculator/jetbrains.mps.calculator.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.calculator.sandbox/jetbrains.mps.calculator.sandbox.msd" folder="" />
+    </projectModules>
+    <genConfs>
+      <genConfModule name="calculator" moduleRef="jetbrains.mps.calculator" />
+      <genConfModule name="sandbox" moduleRef="jetbrains.mps.calculator.sandbox" />
+    </genConfs>
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="ProjectVersion">
+    <option name="version" value="2.5" />
+  </component>
+</project>
+

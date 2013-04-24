@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
+import com.intellij.openapi.components.StorageScheme;
+
 public class ProjectOptions {
   private String myProjectPath;
   private String myProjectName;
@@ -28,6 +30,8 @@ public class ProjectOptions {
 
   private String mySolutionNamespace;
   private String mySolutionPath;
+
+  private StorageScheme myStorageScheme;
 
   public boolean getCreateNewLanguage() {
     return myCreateNewLanguage;
@@ -99,5 +103,13 @@ public class ProjectOptions {
 
   public void setCreateModel(boolean value) {
     myCreateModel = value;
+  }
+
+  public StorageScheme getStorageScheme() {
+    return myStorageScheme;
+  }
+
+  public void setStorageScheme(boolean isDefault) {
+    myStorageScheme = isDefault ? StorageScheme.DEFAULT : StorageScheme.DIRECTORY_BASED;
   }
 }

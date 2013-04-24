@@ -85,7 +85,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode dependClassName="org.jetbrains.mps.util.Consumer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.FindUsagesParticipant" />
   </dependency>

@@ -45,7 +45,7 @@ import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;

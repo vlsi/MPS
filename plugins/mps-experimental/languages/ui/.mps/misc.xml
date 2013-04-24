@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CodeStyleSettings">
+    <option name="fieldPrefix" value="my" />
+    <option name="fieldSuffix" value="" />
+    <option name="localVariablePrefix" value="" />
+    <option name="localVariableSuffix" value="" />
+    <option name="parameterPrefix" value="" />
+    <option name="parameterSuffix" value="" />
+    <option name="staticFieldPrefix" value="our" />
+    <option name="staticFieldSuffix" value="" />
+  </component>
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/gwt/jetbrains.mps.ui.gwt.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/internal/jetbrains.mps.ui.internal.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/meta/jetbrains.mps.ui.modeling.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/swing/jetbrains.mps.ui.swing.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/swing/runtime/jetbrains.mps.ui.swing.runtime.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/swt/jetbrains.mps.ui.swt.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/swt/runtime/jetbrains.mps.ui.swt.runtime.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/testdata/jetbrains.mps.ui.internal.testdata.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/ui/jetbrains.mps.ui.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.ui.unittest/jetbrains.mps.ui.unittest.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/ui.sandbox/jetbrains.mps.ui.sandbox.msd" folder="" />
+    </projectModules>
+    <genConfs>
+      <genConfModule name="unittest" moduleRef="jetbrains.mps.ui.unittest" />
+    </genConfs>
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="ProjectVersion">
+    <option name="version" value="2.5" />
+  </component>
+</project>
+

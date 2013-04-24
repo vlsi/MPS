@@ -19,4 +19,16 @@ package org.jetbrains.mps.openapi.util;
  * evgeny, 4/22/13
  */
 public interface ProgressMonitor {
+
+  void start(String taskName, int totalWork);
+
+  void advance(int work);
+
+  void step(String title);
+
+  void done();
+
+  boolean isCanceled();
+
+  void cancel();
 }

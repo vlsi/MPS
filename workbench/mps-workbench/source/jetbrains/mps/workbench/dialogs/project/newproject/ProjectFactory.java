@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
+import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -57,7 +58,7 @@ public class ProjectFactory {
         indicator.setIndeterminate(true);
         error[0] = createDirs();
         if (error[0] != null) return;
-        String projectFilePath = myOptions.getProjectPath() + File.separator + myOptions.getProjectName() + MPSExtentions.DOT_MPS_PROJECT;
+        String projectFilePath = myOptions.getProjectPath() + (myOptions.getStorageScheme().equals(StorageScheme.DIRECTORY_BASED) ? "" : File.separator + myOptions.getProjectName() + MPSExtentions.DOT_MPS_PROJECT);
         myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), projectFilePath, true, false);
       }
     });

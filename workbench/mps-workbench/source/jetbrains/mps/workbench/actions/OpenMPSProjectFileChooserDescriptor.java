@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.actions;
 
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileElement;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.icons.MPSIcons;
@@ -69,22 +70,6 @@ public class OpenMPSProjectFileChooserDescriptor extends FileChooserDescriptor{
      * */
     if (!file.isValid() || file.getParent() == null || !file.isDirectory()) return false;
 
-    return getMPSProjectFile(file) != null;
-  }
-
-  public static VirtualFile getMPSProjectFile(VirtualFile file) {
-    if(file == null) return null;
-
-    if(isMpsProjectFile(file)) return file;
-
-    if(!file.isDirectory()) return null;
-
-    for (VirtualFile child : file.getChildren()) {
-      if(child.isDirectory()) continue;
-      if (child.getExtension() != null && child.getExtension().equals(MPSExtentions.MPS_PROJECT))
-        return child;
-    }
-
-    return null;
+    return file.findChild(Project.DIRECTORY_STORE_FOLDER) != null;
   }
 }

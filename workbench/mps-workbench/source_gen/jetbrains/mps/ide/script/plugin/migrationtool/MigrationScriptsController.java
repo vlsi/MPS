@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Collections;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 

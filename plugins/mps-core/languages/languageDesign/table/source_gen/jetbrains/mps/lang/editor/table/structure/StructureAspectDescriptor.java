@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.table.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,11 +14,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", "jetbrains.mps.lang.editor.structure.EditorCellModel", false, new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel"}, new String[]{"myProp"}, new String[]{"headerRowLinkDeclaration", "rowsLinkDeclaration", "cellsInRowLinkDeclaration"}, new String[]{}, new boolean[]{}, false, false, "hierarchycal table", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").properties("myProp").references("headerRowLinkDeclaration", "rowsLinkDeclaration", "cellsInRowLinkDeclaration").alias("hierarchycal table", "").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.editor.table.structure.CellModel_Table", "jetbrains.mps.lang.editor.structure.EditorCellModel", false, new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel"}, new String[]{}, new String[]{}, new String[]{"tableModel"}, new boolean[]{false}, false, false, "table", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.CellModel_Table").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").children(new String[]{"tableModel"}, new boolean[]{false}).alias("table", "").create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "getTableModel", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("getTableModel", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

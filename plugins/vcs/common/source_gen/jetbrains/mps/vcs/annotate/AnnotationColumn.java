@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.annotate;
 
 import jetbrains.mps.nodeEditor.leftHighlighter.AbstractLeftColumn;
 import java.awt.Color;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Font;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import java.util.List;
@@ -41,6 +42,7 @@ import com.intellij.openapi.ui.MessageType;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.actions.AnnotationColors;
+import com.intellij.ui.ColorUtil;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.vcs.changesmanager.CurrentDifference;
 import jetbrains.mps.smodel.ModelAccess;
@@ -103,7 +105,7 @@ import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.vcs.diff.ChangeSet;
 
 public class AnnotationColumn extends AbstractLeftColumn {
-  private static final Color ANNOTATION_COLOR = new Color(0, 0, 128);
+  private static final Color ANNOTATION_COLOR = StyleRegistry.getInstance().getColor("ANNOTATIONS_COLOR");
   private Font myFont = EditorSettings.getInstance().getDefaultEditorFont();
   private List<AnnotationAspectSubcolumn> myAspectSubcolumns = ListSequence.fromList(new ArrayList<AnnotationAspectSubcolumn>());
   private List<Integer> myPseudoLinesY;
@@ -186,7 +188,11 @@ public class AnnotationColumn extends AbstractLeftColumn {
     for (VcsFileRevision revision : ListSequence.fromList(myFileAnnotation.getRevisions())) {
       String author = revision.getAuthor();
       if (!(MapSequence.fromMap(myAuthorsToColors).containsKey(author))) {
-        MapSequence.fromMap(myAuthorsToColors).put(author, AnnotationColors.BG_COLORS[MapSequence.fromMap(myAuthorsToColors).count() % AnnotationColors.BG_COLORS.length]);
+        Color color = AnnotationColors.BG_COLORS[MapSequence.fromMap(myAuthorsToColors).count() % AnnotationColors.BG_COLORS.length];
+        if (StyleRegistry.getInstance().isDarkTheme()) {
+          color = ColorUtil.shift(color, 0.3);
+        }
+        MapSequence.fromMap(myAuthorsToColors).put(author, color);
       }
     }
     myViewActionGroup = new ViewActionGroup(this, myAspectSubcolumns);

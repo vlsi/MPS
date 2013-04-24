@@ -54,7 +54,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -4,7 +4,7 @@ package jetbrains.mps.samples.KajaSceneConstruction.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,15 +14,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{"row", "col"}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").properties("row", "col").abstract_().create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "build wall", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall").super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").alias("build wall", "").create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "destroy wall", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall").super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").alias("destroy wall", "").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "drop mark", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark").super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").alias("drop mark", "").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", false, new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "pick mark", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark").super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").alias("pick mark", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
