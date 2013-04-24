@@ -4349,7 +4349,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6995935425733981956" resolveInfo="model" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8920265417895096940">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
               </node>
             </node>
           </node>
@@ -4388,7 +4388,7 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="itts.~ProjectStructureModule%dgetInstance()%cjetbrains%dmps%dproject%dstructure%dProjectStructureModule" resolveInfo="getInstance" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8920265417895136597">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="itts.~ProjectStructureModule%dgetModelByModule(jetbrains%dmps%dproject%dIModule)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModelByModule" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="itts.~ProjectStructureModule%dgetModelByModule(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModelByModule" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8920265417895136599">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8920265417895136581" resolveInfo="lang" />
                     </node>
@@ -4511,7 +4511,7 @@
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="itts.~ProjectStructureModule" resolveInfo="ProjectStructureModule" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2780279129385110901">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="itts.~ProjectStructureModule%dgetModelByModule(jetbrains%dmps%dproject%dIModule)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModelByModule" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="itts.~ProjectStructureModule%dgetModelByModule(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModelByModule" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8920265417895096941">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8920265417895096934" resolveInfo="module" />
                       </node>

@@ -215,7 +215,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4132059805486521055" resolveInfo="moduleHolder" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4132059805486521065">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n7hd.~ModuleHolder%dgetObject()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getObject" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n7hd.~ModuleHolder%dgetObject()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getObject" />
               </node>
             </node>
           </node>
@@ -2225,7 +2225,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4132059805486521823" resolveInfo="moduleHolder" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4132059805486521833">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n7hd.~ModuleHolder%dgetObject()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getObject" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n7hd.~ModuleHolder%dgetObject()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getObject" />
               </node>
             </node>
           </node>
@@ -2262,7 +2262,7 @@
                     <property name="name" nameId="tpck.1169194664001" value="innerQuery" />
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4132059805486521849">
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4132059805486521850">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5fm0.~SearchQuery%d&lt;init&gt;(jetbrains%dmps%dproject%dIModule,jetbrains%dmps%dsmodel%dIScope)" resolveInfo="SearchQuery" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5fm0.~SearchQuery%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodule%dSModule,jetbrains%dmps%dsmodel%dIScope)" resolveInfo="SearchQuery" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4132059805486521851">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4132059805486521863" resolveInfo="devKiltLanguage" />
                         </node>

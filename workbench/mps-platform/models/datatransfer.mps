@@ -329,7 +329,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6299533519672649860">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6299533519672649861">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="k04z.~PasteNodeData" resolveInfo="PasteNodeData" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%demptyPasteNodeData(jetbrains%dmps%dproject%dIModule)%cjetbrains%dmps%ddatatransfer%dPasteNodeData" resolveInfo="emptyPasteNodeData" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%demptyPasteNodeData(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cjetbrains%dmps%ddatatransfer%dPasteNodeData" resolveInfo="emptyPasteNodeData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6299533519672649862" />
               </node>
             </node>
@@ -367,7 +367,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672649865" resolveInfo="model" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2397734580583074500">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
               </node>
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6299533519672649875">
@@ -679,7 +679,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6299533519672650016">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6299533519672650017">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6299533519672650018">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%d&lt;init&gt;(java%dutil%dList,java%dutil%dSet,jetbrains%dmps%dproject%dIModule,java%dutil%dSet,java%dutil%dSet)" resolveInfo="PasteNodeData" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%d&lt;init&gt;(java%dutil%dList,java%dutil%dSet,org%djetbrains%dmps%dopenapi%dmodule%dSModule,java%dutil%dSet,java%dutil%dSet)" resolveInfo="PasteNodeData" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6299533519672650019">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672649882" resolveInfo="result" />
               </node>
@@ -751,7 +751,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6299533519672650049">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6299533519672650050">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="k04z.~PasteNodeData" resolveInfo="PasteNodeData" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%demptyPasteNodeData(jetbrains%dmps%dproject%dIModule)%cjetbrains%dmps%ddatatransfer%dPasteNodeData" resolveInfo="emptyPasteNodeData" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%demptyPasteNodeData(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cjetbrains%dmps%ddatatransfer%dPasteNodeData" resolveInfo="emptyPasteNodeData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6299533519672650051" />
               </node>
             </node>
@@ -944,7 +944,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6299533519672650174">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6299533519672650175">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6299533519672650176">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%d&lt;init&gt;(java%dutil%dList,java%dutil%dSet,jetbrains%dmps%dproject%dIModule,java%dutil%dSet,java%dutil%dSet)" resolveInfo="PasteNodeData" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%d&lt;init&gt;(java%dutil%dList,java%dutil%dSet,org%djetbrains%dmps%dopenapi%dmodule%dSModule,java%dutil%dSet,java%dutil%dSet)" resolveInfo="PasteNodeData" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6299533519672650177">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672650054" resolveInfo="result" />
               </node>
@@ -2862,7 +2862,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672650770" resolveInfo="model" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2397734580583074736">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
               </node>
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6299533519672650775">
@@ -2944,7 +2944,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6299533519672650812">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6299533519672650813">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="k04z.~PasteNodeData" resolveInfo="PasteNodeData" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%demptyPasteNodeData(jetbrains%dmps%dproject%dIModule)%cjetbrains%dmps%ddatatransfer%dPasteNodeData" resolveInfo="emptyPasteNodeData" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%demptyPasteNodeData(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cjetbrains%dmps%ddatatransfer%dPasteNodeData" resolveInfo="emptyPasteNodeData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6299533519672650814">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672650774" resolveInfo="module" />
                 </node>
@@ -3057,7 +3057,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6299533519672650861">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6299533519672650862">
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="k04z.~PasteNodeData" resolveInfo="PasteNodeData" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%demptyPasteNodeData(jetbrains%dmps%dproject%dIModule)%cjetbrains%dmps%ddatatransfer%dPasteNodeData" resolveInfo="emptyPasteNodeData" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%demptyPasteNodeData(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cjetbrains%dmps%ddatatransfer%dPasteNodeData" resolveInfo="emptyPasteNodeData" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6299533519672650863">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672650774" resolveInfo="module" />
             </node>
@@ -3155,7 +3155,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672650882" resolveInfo="targetModel" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2397734580583074275">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
               </node>
             </node>
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6299533519672650900" />
@@ -3622,7 +3622,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="183739269705851187" resolveInfo="pasteNodeData" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8035150917755152544">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%dgetSourceModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getSourceModule" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%dgetSourceModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getSourceModule" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8035150917755152545">
@@ -3853,7 +3853,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8490755084402469900" resolveInfo="targetModel" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2397734580583073923">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
                           </node>
                         </node>
                         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2199634891381804986">
@@ -3958,7 +3958,7 @@
                             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2397734580583074043">
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2397734580583074044">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
                               </node>
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2397734580583074045">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2199634891381805040" resolveInfo="modelDescriptor" />
@@ -5017,7 +5017,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672652200" resolveInfo="pasteNodeData" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672652217">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%dgetSourceModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getSourceModule" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k04z.~PasteNodeData%dgetSourceModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getSourceModule" />
               </node>
             </node>
           </node>
@@ -5183,7 +5183,7 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dMPSModuleRepository" resolveInfo="getInstance" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6299533519672652295">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%dgetModule(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference)%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~MPSModuleRepository%dgetModule(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference)%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6299533519672652296">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6299533519672651982" resolveInfo="mySourceModule" />
                   </node>
