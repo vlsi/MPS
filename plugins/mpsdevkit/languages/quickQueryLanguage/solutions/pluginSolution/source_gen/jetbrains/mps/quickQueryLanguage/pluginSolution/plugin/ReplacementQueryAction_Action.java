@@ -58,7 +58,7 @@ public class ReplacementQueryAction_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("langModule", event.getData(MPSCommonDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("langModule", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
     if (MapSequence.fromMap(_params).get("langModule") == null) {
       return false;
     }
