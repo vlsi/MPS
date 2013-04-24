@@ -40,34 +40,31 @@ public class ClassStubPsiMapper implements MPS2PsiMapper {
 
   @Override
   public boolean hasCorrespondingPsi(SModel model) {
+    ModelAccess.instance().checkReadAccess();
     return model instanceof JavaClassStubModelDescriptor;
   }
 
   @Nullable
   @Override
   public PsiElement getPsiElement(final SNode node, final Project project) {
+    ModelAccess.instance().checkReadAccess();
 
-    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
-      @Override
-      public PsiElement compute() {
-        if (!hasCorrespondingPsi(node.getModel())) {
-          return null;
-        }
+    if (!hasCorrespondingPsi(node.getModel())) {
+      return null;
+    }
 
-        // for now only classifiers
-        // maybe should be done specifically for a few concepts which correspond to java entities
+    // for now only classifiers
+    // maybe should be done specifically for a few concepts which correspond to java entities
 
-        boolean isClassifier = node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.structure.Classifier"));
-        if (!isClassifier) {
-          return null;
-        }
+    boolean isClassifier = node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.structure.Classifier"));
+    if (!isClassifier) {
+      return null;
+    }
 
-        SModel model = node.getModel();
-        String classFQName = SNodeOperations.getModelLongName(model) + "." + node.getName();
-        return JavaPsiFacade.getInstance(project).findClass(classFQName, GlobalSearchScope.allScope(project));
-      }
-    });
+    SModel model = node.getModel();
+    String classFQName = SNodeOperations.getModelLongName(model) + "." + node.getName();
+    return JavaPsiFacade.getInstance(project).findClass(classFQName, GlobalSearchScope.allScope(project));
   }
-
-
 }
+
+

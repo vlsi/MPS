@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.idea.java.usages;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReference;
@@ -25,10 +26,12 @@ import jetbrains.mps.idea.core.refactoring.MoveRenameBatch;
 import jetbrains.mps.idea.core.refactoring.MoveRenameBatch.RenameHandler;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -76,7 +79,14 @@ public class IdPrefixReference implements PsiReference {
   @Nullable
   @Override
   public PsiElement resolve() {
-    return MPSPsiProvider.getInstance(myParent.getProject()).getPsi(myTarget);
+    ApplicationManager.getApplication().assertReadAccessAllowed();
+
+    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
+      @Override
+      public PsiElement compute() {
+        return MPSPsiProvider.getInstance(myParent.getProject()).getPsi(myTarget);
+      }
+    });
   }
 
   @NotNull
