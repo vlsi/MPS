@@ -29,7 +29,7 @@ import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.InsertPathAction;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
-import jetbrains.mps.idea.core.ui.IModuleConfigurationTab;
+import jetbrains.mps.idea.core.ui.SModuleConfigurationTab;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;

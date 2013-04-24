@@ -282,10 +282,10 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
       @Override
       public void run() {
         for (SModule module : ModuleRepositoryFacade.getInstance().getAllModules(SModule.class)) {
-          if (module instanceof SolutionIdea || module.getDescriptorFile() == null) {
+          if (module instanceof SolutionIdea || ((AbstractModule) module).getDescriptorFile() == null) {
             continue;
           }
-          if (excluded.contains(VirtualFileUtils.getVirtualFile(module.getDescriptorFile()))) {
+          if (excluded.contains(VirtualFileUtils.getVirtualFile(((AbstractModule) module).getDescriptorFile()))) {
             // skip solutions that are already in a lib
             continue;
           }

@@ -34,11 +34,12 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -217,8 +218,8 @@ public class NewModelAction extends AnAction {
 
     public void preConfigure(SModel smodel, SModule module) {
       for (SModuleReference languageReference : myLanguagesToImport) {
-        if (module.getScope().getLanguage(languageReference) == null) {
-          module.addUsedLanguage(languageReference);
+        if (((AbstractModule) module).getScope().getLanguage(languageReference) == null) {
+          ((AbstractModule) module).addUsedLanguage(languageReference);
         }
         ((jetbrains.mps.smodel.SModelInternal) smodel).addLanguage(languageReference);
       }

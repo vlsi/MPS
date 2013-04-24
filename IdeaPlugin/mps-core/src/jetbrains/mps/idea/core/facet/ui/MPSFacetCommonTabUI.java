@@ -26,9 +26,8 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesImporter;
-import jetbrains.mps.idea.core.ui.IModuleConfigurationTab;
+import jetbrains.mps.idea.core.ui.SModuleConfigurationTab;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.JComponent;
