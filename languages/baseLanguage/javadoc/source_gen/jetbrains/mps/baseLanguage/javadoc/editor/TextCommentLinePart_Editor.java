@@ -30,6 +30,7 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
+    HandleEnterInTheEnd_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createModelAccess_x1gmbt_a0(editorContext, node));
     return editorCell;
   }

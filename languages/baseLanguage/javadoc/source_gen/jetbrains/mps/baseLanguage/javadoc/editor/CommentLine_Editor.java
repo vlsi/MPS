@@ -61,7 +61,7 @@ public class CommentLine_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    HandleEnterInTheEnd.setCellActions(editorCell, node, editorContext);
+    HandleEnterInTheEnd_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

@@ -1996,56 +1996,63 @@
     <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="24" startPosition="0" endLine="316" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap" />
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/289993964859883412">
-    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="14" startPosition="95" endLine="15" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="21" startPosition="51" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="25" startPosition="40" endLine="26" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="29" startPosition="54" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="289993964862047626" fileName="HandleEnterInTheEnd.java" startLine="33" startPosition="75" endLine="34" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="289993964862088360" fileName="HandleEnterInTheEnd.java" startLine="34" startPosition="59" endLine="35" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="289993964862120022" fileName="HandleEnterInTheEnd.java" startLine="36" startPosition="36" endLine="37" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="289993964862010165" fileName="HandleEnterInTheEnd.java" startLine="38" startPosition="7" endLine="39" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="289993964862010168" fileName="HandleEnterInTheEnd.java" startLine="39" startPosition="21" endLine="40" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="289993964862010177" fileName="HandleEnterInTheEnd.java" startLine="40" startPosition="89" endLine="41" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="289993964862010183" fileName="HandleEnterInTheEnd.java" startLine="41" startPosition="56" endLine="42" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="289993964862010193" fileName="HandleEnterInTheEnd.java" startLine="42" startPosition="145" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="289993964862010198" fileName="HandleEnterInTheEnd.java" startLine="43" startPosition="51" endLine="44" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HandleEnterInTheEnd_INSERT#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="289993964862105888" fileName="HandleEnterInTheEnd.java" startLine="35" startPosition="131" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="33" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="14" startPosition="95" endLine="15" endPosition="106" />
-    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="21" startPosition="51" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="25" startPosition="40" endLine="26" endPosition="29" />
-    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="29" startPosition="54" endLine="30" endPosition="56" />
-    <scopeInfo nodeId="289993964862105891" fileName="HandleEnterInTheEnd.java" startLine="36" startPosition="36" endLine="37" endPosition="15" />
-    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="12" startPosition="95" endLine="13" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="13" startPosition="122" endLine="14" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="20" startPosition="59" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="24" startPosition="40" endLine="25" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="28" startPosition="54" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6566836696864476971" fileName="HandleEnterInTheEnd_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="40" startPosition="66" endLine="41" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="44" startPosition="54" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6566836696880277887" fileName="HandleEnterInTheEnd_Actions.java" startLine="48" startPosition="75" endLine="49" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6566836696882088337" fileName="HandleEnterInTheEnd_Actions.java" startLine="49" startPosition="51" endLine="50" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HandleEnterInTheEnd_Actions_INSERT#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HandleEnterInTheEnd_Actions_INSERT_BEFORE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="20" startPosition="59" endLine="21" endPosition="25" />
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="24" startPosition="40" endLine="25" endPosition="29" />
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="28" startPosition="54" endLine="29" endPosition="56" />
+    <scopeInfo nodeId="289993964859887509" fileName="HandleEnterInTheEnd_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="55" />
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="40" startPosition="66" endLine="41" endPosition="25" />
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="44" startPosition="54" endLine="45" endPosition="56" />
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="12" startPosition="95" endLine="14" endPosition="136" />
+    <scopeInfo nodeId="6566836696880271315" fileName="HandleEnterInTheEnd_Actions.java" startLine="48" startPosition="75" endLine="50" endPosition="55" />
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="289993964859883412" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="289993964859883412" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="289993964859883412" varName="editorContext" />
+      <varInfo nodeId="289993964859883412" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="289993964859883412" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="289993964859883412" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="289993964859883412" varName="context" />
       <varInfo nodeId="289993964859883412" varName="editorCell" />
       <varInfo nodeId="289993964859883412" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="289993964859883412" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="289993964859883412" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="289993964859887509" fileName="HandleEnterInTheEnd.java" startLine="33" startPosition="75" endLine="44" endPosition="79">
-      <varInfo nodeId="289993964862010178" varName="caretPosition" />
-      <varInfo nodeId="289993964862088361" varName="commentLinePart" />
-      <varInfo nodeId="289993964862010169" varName="editorCell" />
-      <varInfo nodeId="289993964862010166" varName="nextLine" />
-      <varInfo nodeId="289993964862047627" varName="selectedNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="33" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="289993964859883412" varName="editorContext" />
       <varInfo nodeId="289993964859883412" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HandleEnterInTheEnd$HandleEnterInTheEnd_INSERT" />
-    <unitInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HandleEnterInTheEnd" />
+    <unitInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="37" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HandleEnterInTheEnd_Actions$HandleEnterInTheEnd_Actions_INSERT_BEFORE" />
+    <unitInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HandleEnterInTheEnd_Actions$HandleEnterInTheEnd_Actions_INSERT" />
+    <unitInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.HandleEnterInTheEnd_Actions" />
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/289993964865038870">
     <nodeInfo nodeId="289993964865038870" fileName="TextCommentLinePart_ActionMap.java" startLine="21" startPosition="95" endLine="22" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2477,64 +2484,86 @@
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/4831334526938791433">
     <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="14" startPosition="95" endLine="15" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="15" startPosition="100" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="22" startPosition="48" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526940896375" fileName="RemoveDocComment.java" startLine="30" startPosition="75" endLine="31" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4831334526939934595" fileName="RemoveDocComment.java" startLine="31" startPosition="171" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526940901752" fileName="RemoveDocComment.java" startLine="32" startPosition="73" endLine="33" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="40" startPosition="51" endLine="41" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="44" startPosition="54" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526940911025" fileName="RemoveDocComment.java" startLine="48" startPosition="75" endLine="49" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4831334526940911036" fileName="RemoveDocComment.java" startLine="49" startPosition="171" endLine="50" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526940911043" fileName="RemoveDocComment.java" startLine="50" startPosition="73" endLine="51" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveDocComment_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveDocComment_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="22" startPosition="48" endLine="23" endPosition="25" />
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="40" startPosition="51" endLine="41" endPosition="25" />
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="44" startPosition="54" endLine="45" endPosition="56" />
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="14" startPosition="95" endLine="16" endPosition="106" />
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="16" startPosition="106" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="23" startPosition="48" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="27" startPosition="54" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526940896375" fileName="RemoveDocComment.java" startLine="31" startPosition="75" endLine="32" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4831334526939934595" fileName="RemoveDocComment.java" startLine="32" startPosition="171" endLine="33" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526940901752" fileName="RemoveDocComment.java" startLine="33" startPosition="73" endLine="34" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="41" startPosition="51" endLine="42" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="45" startPosition="54" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526940911025" fileName="RemoveDocComment.java" startLine="49" startPosition="75" endLine="50" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4831334526940911036" fileName="RemoveDocComment.java" startLine="50" startPosition="171" endLine="51" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526940911043" fileName="RemoveDocComment.java" startLine="51" startPosition="73" endLine="52" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="59" startPosition="48" endLine="60" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="63" startPosition="54" endLine="64" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6566836696864893626" fileName="RemoveDocComment.java" startLine="67" startPosition="75" endLine="68" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveDocComment_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveDocComment_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveDocComment_INSERT#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="23" startPosition="48" endLine="24" endPosition="25" />
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="27" startPosition="54" endLine="28" endPosition="56" />
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="41" startPosition="51" endLine="42" endPosition="25" />
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="45" startPosition="54" endLine="46" endPosition="56" />
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="59" startPosition="48" endLine="60" endPosition="25" />
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="63" startPosition="54" endLine="64" endPosition="56" />
+    <scopeInfo nodeId="6566836696859694355" fileName="RemoveDocComment.java" startLine="67" startPosition="75" endLine="68" endPosition="55" />
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="14" startPosition="95" endLine="17" endPosition="100" />
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="4831334526938791433" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="4831334526938791433" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4831334526938794299" fileName="RemoveDocComment.java" startLine="30" startPosition="75" endLine="33" endPosition="38">
+    <scopeInfo nodeId="4831334526938794299" fileName="RemoveDocComment.java" startLine="31" startPosition="75" endLine="34" endPosition="38">
       <varInfo nodeId="4831334526940896376" varName="doc" />
     </scopeInfo>
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="4831334526938791433" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="4831334526938791433" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4831334526939934181" fileName="RemoveDocComment.java" startLine="48" startPosition="75" endLine="51" endPosition="38">
+    <scopeInfo nodeId="4831334526939934181" fileName="RemoveDocComment.java" startLine="49" startPosition="75" endLine="52" endPosition="38">
       <varInfo nodeId="4831334526940911026" varName="doc" />
     </scopeInfo>
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="4831334526938791433" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="4831334526938791433" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="4831334526938791433" varName="editorContext" />
+      <varInfo nodeId="4831334526938791433" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4831334526938791433" varName="context" />
       <varInfo nodeId="4831334526938791433" varName="editorCell" />
       <varInfo nodeId="4831334526938791433" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="4831334526938791433" varName="editorContext" />
       <varInfo nodeId="4831334526938791433" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="48" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="49" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="4831334526938791433" varName="editorContext" />
       <varInfo nodeId="4831334526938791433" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="19" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.RemoveDocComment$RemoveDocComment_DELETE" />
-    <unitInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="37" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.RemoveDocComment$RemoveDocComment_BACKSPACE" />
-    <unitInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="13" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.RemoveDocComment" />
+    <unitInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="56" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.RemoveDocComment$RemoveDocComment_INSERT" />
+    <unitInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="20" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.RemoveDocComment$RemoveDocComment_DELETE" />
+    <unitInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="38" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.RemoveDocComment$RemoveDocComment_BACKSPACE" />
+    <unitInfo nodeId="4831334526938791433" fileName="RemoveDocComment.java" startLine="13" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.RemoveDocComment" />
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/4831334526949972752">
     <nodeInfo nodeId="4831334526949972752" fileName="EmptyCommentLine.java" startLine="21" startPosition="29" endLine="22" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3918,6 +3947,31 @@
     <unitInfo nodeId="677166607849581641" fileName="TextCommentPartUtil.java" startLine="41" startPosition="57" endLine="48" endPosition="7" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentPartUtil$1" />
     <unitInfo nodeId="6253469183661714779" fileName="TextCommentPartUtil.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentPartUtil" />
   </root>
+  <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/6566836696864452903">
+    <nodeInfo nodeId="6566836696864453196" fileName="CommentLineEditingUtil.java" startLine="11" startPosition="62" endLine="12" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6566836696864453202" fileName="CommentLineEditingUtil.java" startLine="12" startPosition="57" endLine="13" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6566836696864453212" fileName="CommentLineEditingUtil.java" startLine="14" startPosition="34" endLine="15" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6566836696864453213" fileName="CommentLineEditingUtil.java" startLine="16" startPosition="5" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6566836696864453216" fileName="CommentLineEditingUtil.java" startLine="17" startPosition="19" endLine="18" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6566836696864453225" fileName="CommentLineEditingUtil.java" startLine="18" startPosition="87" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6566836696864453231" fileName="CommentLineEditingUtil.java" startLine="19" startPosition="54" endLine="20" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6566836696864453241" fileName="CommentLineEditingUtil.java" startLine="20" startPosition="143" endLine="21" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6566836696864453246" fileName="CommentLineEditingUtil.java" startLine="21" startPosition="49" endLine="22" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6566836696864453207" fileName="CommentLineEditingUtil.java" startLine="13" startPosition="129" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6566836696864479147" fileName="CommentLineEditingUtil.java" startLine="11" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="insertLine#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="6566836696864453211" fileName="CommentLineEditingUtil.java" startLine="14" startPosition="34" endLine="15" endPosition="13" />
+    <scopeInfo nodeId="6566836696864453002" fileName="CommentLineEditingUtil.java" startLine="11" startPosition="62" endLine="22" endPosition="77">
+      <varInfo nodeId="6566836696864453226" varName="caretPosition" />
+      <varInfo nodeId="6566836696864453203" varName="commentLinePart" />
+      <varInfo nodeId="6566836696864453217" varName="editorCell" />
+      <varInfo nodeId="6566836696864453214" varName="nextLine" />
+      <varInfo nodeId="6566836696864453197" varName="selectedNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6566836696864479147" fileName="CommentLineEditingUtil.java" startLine="11" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="6566836696864455611" varName="editorContext" />
+    </scopeInfo>
+    <unitInfo nodeId="6566836696864452903" fileName="CommentLineEditingUtil.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CommentLineEditingUtil" />
+  </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/6612597108003615645">
     <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="37" startPosition="79" endLine="38" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="41" startPosition="90" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4032,8 +4086,8 @@
     <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="193" startPosition="45" endLine="194" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="194" startPosition="34" endLine="195" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="195" startPosition="49" endLine="196" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="196" startPosition="40" endLine="197" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="197" startPosition="72" endLine="198" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="196" startPosition="40" endLine="197" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="197" startPosition="80" endLine="198" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="198" startPosition="49" endLine="199" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="203" startPosition="97" endLine="204" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6612597108003615645" fileName="HTMLElement_Editor.java" startLine="207" startPosition="66" endLine="208" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -5507,8 +5561,8 @@
     <nodeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="60" startPosition="45" endLine="61" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="61" startPosition="34" endLine="62" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="62" startPosition="49" endLine="63" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="63" startPosition="40" endLine="64" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="64" startPosition="72" endLine="65" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="63" startPosition="40" endLine="64" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="64" startPosition="80" endLine="65" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="65" startPosition="49" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="70" startPosition="95" endLine="71" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8465538089690372264" fileName="CommentLine_Editor.java" startLine="74" startPosition="66" endLine="75" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -5753,60 +5807,61 @@
     <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="29" startPosition="54" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="30" startPosition="55" endLine="31" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="31" startPosition="49" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="32" startPosition="40" endLine="33" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="32" startPosition="40" endLine="33" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="33" startPosition="84" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332135379" fileName="TextCommentLinePart_Editor.java" startLine="39" startPosition="31" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="677166607849245744" fileName="TextCommentLinePart_Editor.java" startLine="43" startPosition="40" endLine="44" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332135389" fileName="TextCommentLinePart_Editor.java" startLine="44" startPosition="52" endLine="45" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332135397" fileName="TextCommentLinePart_Editor.java" startLine="48" startPosition="47" endLine="49" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="51" startPosition="6" endLine="52" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="52" startPosition="100" endLine="53" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="53" startPosition="79" endLine="54" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="54" startPosition="50" endLine="55" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="55" startPosition="82" endLine="56" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="56" startPosition="34" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="32" startPosition="40" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="34" startPosition="84" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332135379" fileName="TextCommentLinePart_Editor.java" startLine="40" startPosition="31" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="677166607849245744" fileName="TextCommentLinePart_Editor.java" startLine="44" startPosition="40" endLine="45" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332135389" fileName="TextCommentLinePart_Editor.java" startLine="45" startPosition="52" endLine="46" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332135397" fileName="TextCommentLinePart_Editor.java" startLine="49" startPosition="47" endLine="50" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="52" startPosition="6" endLine="53" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="53" startPosition="100" endLine="54" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="54" startPosition="79" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="55" startPosition="50" endLine="56" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="56" startPosition="82" endLine="57" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="57" startPosition="34" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="24" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_x1gmbt_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="37" startPosition="103" endLine="51" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="37" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModelAccess_x1gmbt_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_x1gmbt_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="38" startPosition="103" endLine="52" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="38" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModelAccess_x1gmbt_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" />
-    <scopeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="32" startPosition="40" endLine="33" endPosition="84" />
-    <scopeInfo nodeId="2668265993332135374" fileName="TextCommentLinePart_Editor.java" startLine="39" startPosition="31" endLine="40" endPosition="59" />
-    <scopeInfo nodeId="2668265993332135378" fileName="TextCommentLinePart_Editor.java" startLine="48" startPosition="47" endLine="49" endPosition="20" />
-    <scopeInfo nodeId="2668265993332135376" fileName="TextCommentLinePart_Editor.java" startLine="43" startPosition="40" endLine="45" endPosition="71" />
+    <scopeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="84" />
+    <scopeInfo nodeId="2668265993332135374" fileName="TextCommentLinePart_Editor.java" startLine="40" startPosition="31" endLine="41" endPosition="59" />
+    <scopeInfo nodeId="2668265993332135378" fileName="TextCommentLinePart_Editor.java" startLine="49" startPosition="47" endLine="50" endPosition="20" />
+    <scopeInfo nodeId="2668265993332135376" fileName="TextCommentLinePart_Editor.java" startLine="44" startPosition="40" endLine="46" endPosition="71" />
     <scopeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="8970989240999019150" varName="editorContext" />
       <varInfo nodeId="8970989240999019150" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="2668265993332135371" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="2668265993332135371" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="24" startPosition="89" endLine="34" endPosition="22">
+    <scopeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="24" startPosition="89" endLine="35" endPosition="22">
       <varInfo nodeId="8970989240999019150" varName="editorCell" />
       <varInfo nodeId="8970989240999019150" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="24" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="8970989240999019150" varName="editorContext" />
       <varInfo nodeId="8970989240999019150" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="37" startPosition="103" endLine="57" endPosition="22">
+    <scopeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="38" startPosition="103" endLine="58" endPosition="22">
       <varInfo nodeId="2668265993332135371" varName="editorCell" />
       <varInfo nodeId="2668265993332135371" varName="modelAccessor" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="37" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="38" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="2668265993332135371" varName="editorContext" />
       <varInfo nodeId="2668265993332135371" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="38" startPosition="38" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_Editor$1" />
-    <unitInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_Editor" />
+    <unitInfo nodeId="2668265993332135371" fileName="TextCommentLinePart_Editor.java" startLine="39" startPosition="38" endLine="52" endPosition="5" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_Editor$1" />
+    <unitInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_Editor" />
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/8970989240999060766">
     <nodeInfo nodeId="8970989240999060766" fileName="InlineTagCommentLinePart_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
