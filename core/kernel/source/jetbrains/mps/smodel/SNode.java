@@ -354,7 +354,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   @Override
   public void removeChild(org.jetbrains.mps.openapi.model.SNode child) {
-    if (child.getParent() != this) return;
+    assert child.getParent() == this : "Can't remove a node not from it's parent node: removing " + child.getReference().toString() + " from " + getReference().toString();
     final SNode wasChild = (SNode) child;
     final String wasRole = wasChild.getRoleInParent();
     ModelChange.assertLegalNodeChange(getModel(), this);
