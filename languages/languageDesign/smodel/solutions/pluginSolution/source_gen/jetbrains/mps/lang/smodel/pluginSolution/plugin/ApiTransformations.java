@@ -1021,6 +1021,21 @@ public class ApiTransformations {
 
     // ----------------- 
 
+    String cat89 = "IModule: getOutputFor->SModuleOperations.getOutputFor";
+    SNode md89 = SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~IModule.getOutputFor(org.jetbrains.mps.openapi.model.SModel):java.lang.String");
+    _FunctionTypes._void_P1_E0<? super SNode> transformer89 = new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode usage) {
+        if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+          return;
+        }
+        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), _quotation_createNode_f4dkew_a0a1a0a146a1(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).first()));
+      }
+    };
+
+    ListSequence.fromList(transformations).addElement(MultiTuple.<String,SNode,_FunctionTypes._void_P1_E0<? super SNode>>from(cat89, md89, transformer89));
+
+    // ----------------- 
+
     return transformations;
   }
 
@@ -4388,6 +4403,20 @@ public class ApiTransformations {
       quotedNode_3.addChild("operand", HUtil.copyIfNecessary(quotedNode_5));
     }
     quotedNode_2.addChild("actualArgument", quotedNode_3);
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_f4dkew_a0a1a0a146a1(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_2, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)"), facade.createNodeId("~SModuleOperations.getOutputPathFor(org.jetbrains.mps.openapi.model.SModel):java.lang.String")));
+    quotedNode_2.setReference("classConcept", SReference.create("classConcept", quotedNode_2, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)"), facade.createNodeId("~SModuleOperations")));
+    quotedNode_3 = (SNode) parameter_1;
+    if (quotedNode_3 != null) {
+      quotedNode_2.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_3));
+    }
     return quotedNode_2;
   }
 }
