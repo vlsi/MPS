@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.descriptor;
+package jetbrains.mps.openapi.editor.cells;
 
-import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Collection;
 
 /**
  * User: shatalin
- * Date: 4/18/13
+ * Date: 4/24/13
  */
-public interface EditorAspectManager {
-  public EditorAspect loadEditorAspect(SNode node);
+public interface EditorCellContext {
+  Collection<String> getHints();
+
+  boolean hasContextHint(String hint);
 }

@@ -373,14 +373,13 @@ public class EditorManager {
       //reset creating inspected cell : we don't create not-root inspected cells
       myCreatingInspectedCell = false;
 
-      EditorAspect editor = context.getEditorAspectManager().loadEditorAspect(node);
       EditorComponent editorComponent = getEditorComponent(context);
       EditorCell nodeCell = null;
       NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
       try {
         //voodoo for editor incremental rebuild support
         NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
-        nodeCell = isInspectorCell ? editor.createInspectedCell(context, node) : editor.createEditorCell(context, node);
+        nodeCell = context.getCellFactory().createEditorCell(node, isInspectorCell);
         //-voodoo
 
         if (isAttributedCell(nodeCell)) {

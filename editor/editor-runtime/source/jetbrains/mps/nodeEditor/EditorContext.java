@@ -19,14 +19,14 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.descriptor.EditorAspectManagerImpl;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspectManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
@@ -42,11 +42,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Author: Sergey Dmitriev
@@ -61,8 +57,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private IPerformanceTracer myPerformanceTracer = null;
 
   private ReferencedNodeContext myCurrentRefNodeContext;
-  private EditorAspectManager myEditorAspectManager;
-  private HintsEnvironment myHintsEnvironment;
+  private EditorCellFactory myCellFactory;
 
   public EditorContext(EditorComponent editorComponent, SModel model, IOperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
@@ -474,84 +469,10 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   }
 
   @Override
-  public EditorAspectManager getEditorAspectManager() {
-    if (myEditorAspectManager == null) {
-      myEditorAspectManager = new EditorAspectManagerImpl(this);
+  public EditorCellFactory getCellFactory() {
+    if (myCellFactory == null) {
+      myCellFactory = new EditorCellFactoryImpl(this);
     }
-    return myEditorAspectManager;
-  }
-
-  @Override
-  public void pushHintsEnvironment() {
-    myHintsEnvironment = new HintsEnvironment(myHintsEnvironment);
-  }
-
-  @Override
-  public void popHintsEnvironment() {
-    assert myHintsEnvironment != null;
-    myHintsEnvironment = myHintsEnvironment.pop();
-  }
-
-  @Override
-  public Collection<String> getContextHints() {
-    return myHintsEnvironment == null ? Collections.<String>emptySet() : myHintsEnvironment.getContextHints();
-  }
-
-  @Override
-  public boolean hasContextHint(String hint) {
-    return myHintsEnvironment != null && myHintsEnvironment.has(hint);
-  }
-
-  @Override
-  public void addContextHint(String hint) {
-    assert myHintsEnvironment != null;
-    myHintsEnvironment.add(hint);
-  }
-
-  @Override
-  public void removeContextHint(String hint) {
-    assert myHintsEnvironment != null;
-    myHintsEnvironment.remove(hint);
-  }
-
-  private class HintsEnvironment {
-    private final HintsEnvironment myParentEnvironment;
-    private Set<String> myAddedHints = new HashSet<String>();
-    private Set<String> myRemovedHints = new HashSet<String>();
-
-    private HintsEnvironment(HintsEnvironment parentEnvironment) {
-      myParentEnvironment = parentEnvironment;
-    }
-
-    public void add(String hint) {
-      myAddedHints.add(hint);
-    }
-
-    public void remove(String hint) {
-      myRemovedHints.add(hint);
-    }
-
-    public boolean has(String hint) {
-      return myAddedHints.contains(hint) || (!myRemovedHints.contains(hint) && myParentEnvironment != null && myParentEnvironment.has(hint));
-    }
-
-    public Collection<String> getContextHints() {
-      Collection<String> result = new HashSet<String>();
-      for (String addedHint : myAddedHints) {
-        result.add(addedHint);
-      }
-      if (myParentEnvironment != null) {
-        for (String parentHint : myParentEnvironment.getContextHints()) {
-          if (!myRemovedHints.contains(parentHint)) {
-            result.add(parentHint);
-          }
-        }
-      }
-      return result;
-    }
-
-    public HintsEnvironment pop() {
-      return myParentEnvironment;
-    }
+    return myCellFactory;
   }
 }

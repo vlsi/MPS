@@ -13,24 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.descriptor;
+package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.DefaultEditor;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspectManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -38,6 +36,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -47,20 +46,80 @@ import java.util.Set;
 
 /**
  * User: shatalin
- * Date: 4/18/13
+ * Date: 4/24/13
  */
-public class EditorAspectManagerImpl implements EditorAspectManager {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorAspectManagerImpl.class));
+public class EditorCellFactoryImpl implements EditorCellFactory {
+  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorCellFactoryImpl.class));
+  private static final EditorCellContext DEFAULT_CELL_CONTEXT = new EditorCellContext() {
+    @Override
+    public Collection<String> getHints() {
+      return Collections.emptySet();
+    }
+
+    @Override
+    public boolean hasContextHint(String hint) {
+      return false;
+    }
+  };
 
   private final EditorContext myEditorContext;
   private Comparator<EditorAspect> myEditorAspectComparator;
+  private Deque<EditorCellContextImpl> myCellContextStack;
 
-  public EditorAspectManagerImpl(@NotNull EditorContext editorContext) {
+  public EditorCellFactoryImpl(EditorContext editorContext) {
     myEditorContext = editorContext;
   }
 
   @Override
-  public EditorAspect loadEditorAspect(SNode node) {
+  public EditorCell createEditorCell(SNode node, boolean isInspector) {
+    EditorAspect editor = loadEditorAspect(node);
+    EditorCell result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
+    result.setCellContext(getCellContext());
+    return result;
+  }
+
+  @Override
+  public EditorCellContext getCellContext() {
+    return myCellContextStack == null ? DEFAULT_CELL_CONTEXT : myCellContextStack.getLast();
+  }
+
+  @Override
+  public void pushCellContext() {
+    EditorCellContextImpl newCellContext = new EditorCellContextImpl(getCellContext());
+    if (myCellContextStack == null) {
+      myCellContextStack = new LinkedList<EditorCellContextImpl>();
+    }
+    myCellContextStack.addLast(newCellContext);
+  }
+
+  @Override
+  public void popCellContext() {
+    if (myCellContextStack == null || myCellContextStack.isEmpty()) {
+      throw new IllegalStateException("There is no CellContext in the stack");
+    }
+    myCellContextStack.removeLast();
+    if (myCellContextStack.isEmpty()) {
+      myCellContextStack = null;
+    }
+  }
+
+  @Override
+  public void addCellContextHints(String... hints) {
+    if (myCellContextStack == null) {
+      throw new IllegalStateException("There is no CellContext in the stack");
+    }
+    myCellContextStack.getLast().addHints(hints);
+  }
+
+  @Override
+  public void removeCellContextHints(String... hints) {
+    if (myCellContextStack == null) {
+      throw new IllegalStateException("There is no CellContext in the stack");
+    }
+    myCellContextStack.getLast().removeHints(hints);
+  }
+
+  private EditorAspect loadEditorAspect(SNode node) {
     SConcept concept = node.getConcept();
     boolean isInterface = false;
     boolean isAbstract = false;
@@ -117,9 +176,7 @@ public class EditorAspectManagerImpl implements EditorAspectManager {
     for (EditorAspect editorAspect : editorAspects) {
       if (result == null) {
         result = editorAspect;
-        continue;
-      }
-      if (editorAspect.getContextHints().size() == result.getContextHints().size()) {
+      } else if (editorAspect.getContextHints().size() == result.getContextHints().size()) {
         LOG.error(getErrorMessage(editorAspect, result));
       } else {
         break;
@@ -130,7 +187,7 @@ public class EditorAspectManagerImpl implements EditorAspectManager {
 
   private String getErrorMessage(EditorAspect additionalEditor, EditorAspect mainEditor) {
     String context = "";
-    for (String contextHint : myEditorContext.getContextHints()) {
+    for (String contextHint : getCellContext().getHints()) {
       if (!context.isEmpty()) {
         context += ", ";
       }
@@ -163,7 +220,7 @@ public class EditorAspectManagerImpl implements EditorAspectManager {
 
   private boolean isApplicableInCurrentContext(EditorAspect editorAspect) {
     for (String hint : editorAspect.getContextHints()) {
-      if (!myEditorContext.hasContextHint(hint)) {
+      if (!getCellContext().hasContextHint(hint)) {
         return false;
       }
     }
@@ -185,10 +242,7 @@ public class EditorAspectManagerImpl implements EditorAspectManager {
     return myEditorAspectComparator;
   }
 
-  public static class DefaultInterfaceEditor implements EditorAspect {
-    public DefaultInterfaceEditor() {
-    }
-
+  private static class DefaultInterfaceEditor implements EditorAspect {
     @Override
     public Collection<String> getContextHints() {
       return Collections.emptyList();
@@ -204,4 +258,5 @@ public class EditorAspectManagerImpl implements EditorAspectManager {
       return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
   }
+
 }
