@@ -298,7 +298,10 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     // refs
     for (SReference ref : node.getReferences()) {
       SLink link = ref.getLink();
-      SAbstractConcept linkTargetConcept = link.getTargetConcept();
+      SAbstractConcept linkTargetConcept = null;
+      if (link != null) {
+        linkTargetConcept = link.getTargetConcept();
+      }
       MPSPsiRef psiRef = null;
       if (ref instanceof StaticReference) {
         psiRef = MPSPsiProvider.getInstance(getProject()).createReferenceNode(ref.getRole(), linkTargetConcept, ref.getTargetSModelReference(), ref.getTargetNodeId());

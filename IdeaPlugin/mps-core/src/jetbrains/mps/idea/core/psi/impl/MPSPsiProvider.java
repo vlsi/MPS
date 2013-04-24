@@ -158,20 +158,24 @@ public class MPSPsiProvider extends AbstractProjectComponent {
   }
 
   public MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, SModelReference targetModel, SNodeId targetId) {
-    for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
-      final MPSPsiRef psiRefNode = factory.createReferenceNode(role, linkTargetConcept, targetModel, targetId);
-      if (psiRefNode != null) {
-        return psiRefNode;
+    if (linkTargetConcept != null) {
+      for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
+        final MPSPsiRef psiRefNode = factory.createReferenceNode(role, linkTargetConcept, targetModel, targetId);
+        if (psiRefNode != null) {
+          return psiRefNode;
+        }
       }
     }
     return new MPSPsiRef(role, targetModel, targetId);
   }
 
   public MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, String referenceText) {
-    for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
-      final MPSPsiRef psiRefNode = factory.createReferenceNode(role, linkTargetConcept, referenceText);
-      if (psiRefNode != null) {
-        return psiRefNode;
+    if (linkTargetConcept != null) {
+      for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
+        final MPSPsiRef psiRefNode = factory.createReferenceNode(role, linkTargetConcept, referenceText);
+        if (psiRefNode != null) {
+          return psiRefNode;
+        }
       }
     }
     return new MPSPsiRef(role, referenceText);
