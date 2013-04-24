@@ -138,11 +138,13 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
         showDisposedMessage();
         return;
       }
+      myRepository.getModelAccess().checkReadAccess();
+      if (myModel.isUpdateMode()) return;
       myRepository.getModelAccess().checkWriteAccess();
-      if (!UndoHelper.getInstance().isInsideUndoableCommand()){
+      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
         throw new IllegalModelChangeError(
             "registered node can only be modified inside undoable command or in 'loading' model " +
-            org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
+                org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
         );
       }
     }
