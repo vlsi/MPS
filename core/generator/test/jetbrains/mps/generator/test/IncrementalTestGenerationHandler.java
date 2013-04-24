@@ -33,6 +33,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.FileUtil;
@@ -122,7 +123,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
   @Override
   public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor) {
     myLastDependencies = null;
-    IFile targetDir = FileSystem.getInstance().getFileByPath(((IModule) module).getOutputFor(inputModel));
+    IFile targetDir = FileSystem.getInstance().getFileByPath(SModuleOperations.getOutputPathFor(inputModel));
 
     Assert.assertTrue(status.isOk());
     Assert.assertTrue("should be called once", timesCalled++ == 0);

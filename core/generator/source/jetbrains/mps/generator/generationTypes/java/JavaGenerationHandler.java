@@ -30,6 +30,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
@@ -73,7 +74,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     monitor.start("generating files", 1);
     try {
       info("handling output...");
-      IFile targetDir = FileSystem.getInstance().getFileByPath(((IModule) module).getOutputFor(inputModel));
+      IFile targetDir = FileSystem.getInstance().getFileByPath(SModuleOperations.getOutputPathFor(inputModel));
 
       long startJobTime = System.currentTimeMillis();
 
