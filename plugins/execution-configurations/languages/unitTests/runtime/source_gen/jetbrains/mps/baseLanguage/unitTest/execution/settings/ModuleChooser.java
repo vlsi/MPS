@@ -16,9 +16,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -46,7 +46,7 @@ public class ModuleChooser extends BaseChooserComponent {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
-        Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, GlobalScope.getInstance(), null);
+        Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(concept), false, new EmptyProgressMonitor());
         Set<SNode> us = ((Set) usages);
         for (SNode node : us) {
           SModel model = SNodeOperations.getModel(node);

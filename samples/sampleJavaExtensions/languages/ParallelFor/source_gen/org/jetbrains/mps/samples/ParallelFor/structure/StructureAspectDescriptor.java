@@ -4,7 +4,7 @@ package org.jetbrains.mps.samples.ParallelFor.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,15 +14,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").create();
       case 1:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, new String[]{"nowait"}, new String[]{}, new String[]{"loopVariable", "inputSequence", "threadPool"}, new boolean[]{false, false, false}, false, false, "parallelFor", "", "");
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor").super_("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement").parents("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer").properties("nowait").children(new String[]{"loopVariable", "inputSequence", "threadPool"}, new boolean[]{false, false, false}).alias("parallelFor", "").create();
       case 2:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable").super_("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").parents("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").create();
       case 3:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"numberOfThreads"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "thread pool", "", "");
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("numberOfThreads").alias("thread pool", "").create();
       case 4:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

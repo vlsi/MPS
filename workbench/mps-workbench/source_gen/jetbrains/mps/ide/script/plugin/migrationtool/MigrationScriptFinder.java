@@ -22,8 +22,8 @@ import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 
 public class MigrationScriptFinder implements IFinder {
@@ -58,7 +58,7 @@ public class MigrationScriptFinder implements IFinder {
           monitor.step(scriptInstance.getName() + " [" + migrationRefactoring.getAdditionalInfo() + "]");
           String cname = migrationRefactoring.getFqNameOfConceptToSearchInstances();
           SAbstractConcept concept = SConceptRepository.getInstance().getConcept(cname);
-          Set<SNode> instances = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, queryScope, null));
+          Set<SNode> instances = FindUsagesFacade.getInstance().findInstances(queryScope, Collections.singleton(concept), false, new EmptyProgressMonitor());
           for (SNode instance : instances) {
             if (MigrationScriptUtil.isApplicableRefactoring(instance, migrationRefactoring)) {
               String category = TreeTextUtil.toHtml(scriptInstance.getName()) + " </b>[" + TreeTextUtil.toHtml(migrationRefactoring.getAdditionalInfo()) + "]<b>";

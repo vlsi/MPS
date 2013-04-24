@@ -16,23 +16,12 @@
 package jetbrains.mps.progress;
 
 /**
- * Evgeny Gryaznov, 9/30/11
+ * moved to {@link org.jetbrains.mps.openapi.util.ProgressMonitor}
  */
-public interface ProgressMonitor {
-
-  void start(String taskName, int totalWork);
-
-  void advance(int work);
-
-  void step(String title);
-
-  void done();
-
+@Deprecated
+public interface ProgressMonitor extends org.jetbrains.mps.openapi.util.ProgressMonitor {
   ProgressMonitor subTask(int work);
 
   ProgressMonitor subTask(int work, SubProgressKind kind);
 
-  boolean isCanceled();
-
-  void cancel();
 }

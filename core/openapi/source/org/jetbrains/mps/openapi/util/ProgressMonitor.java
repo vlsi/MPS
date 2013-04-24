@@ -13,19 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.util;
+package org.jetbrains.mps.openapi.util;
 
-public interface Consumer<T> {
-  Consumer EMPTY_CONSUMER = new Consumer() {
-    @Override
-    public void consume(final Object t) {
-    }
-  };
+/**
+ * evgeny, 4/22/13
+ */
+public interface ProgressMonitor {
 
-  /**
-   * @param t consequently takes value of each element of the set this processor is passed to for processing.
-   *          t is supposed to be a not-null value.
-   */
-  void consume(T t);
+  void start(String taskName, int totalWork);
 
+  void advance(int work);
+
+  void step(String title);
+
+  void done();
+
+  boolean isCanceled();
+
+  void cancel();
 }

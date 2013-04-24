@@ -11,10 +11,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import java.util.Collections;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Collections;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.Language;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -59,10 +59,10 @@ public class RefactoringUtil {
       @Override
       public void run() {
         SAbstractConcept c1 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.refactoring.structure.Refactoring");
-        Set<SNode> newRefactorings = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(c1), SearchType.INSTANCES, GlobalScope.getInstance(), null));
+        Set<SNode> newRefactorings = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c1), false, new EmptyProgressMonitor());
 
         SAbstractConcept c2 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.refactoring.structure.OldRefactoring");
-        Set<SNode> oldRefactorings = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(c2), SearchType.INSTANCES, GlobalScope.getInstance(), null));
+        Set<SNode> oldRefactorings = ((Set) FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c2), false, new EmptyProgressMonitor()));
         availableRefactorings.addAll(newRefactorings);
         availableRefactorings.addAll(oldRefactorings);
       }

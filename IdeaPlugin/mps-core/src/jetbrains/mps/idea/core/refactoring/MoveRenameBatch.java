@@ -6,6 +6,7 @@ import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -152,7 +153,7 @@ public class MoveRenameBatch implements ProjectComponent {
         }
 
       }
-    }, new MPSProject(myProject));
+    }, ProjectHelper.toMPSProject(myProject));
 
   }
 
@@ -192,11 +193,8 @@ public class MoveRenameBatch implements ProjectComponent {
         assert model instanceof SModelInternal;
         assert newTargetModel instanceof jetbrains.mps.smodel.SModelReference;
 
-        ((SModelInternal) model).addModelImport((jetbrains.mps.smodel.SModelReference) newTargetModel, true);
+        ((SModelInternal) model).addModelImport(newTargetModel, true);
       }
     }
   }
-
-  // ----
-
 }

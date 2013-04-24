@@ -16,6 +16,8 @@
 
 package jetbrains.mps.jps.build;
 
+import com.intellij.openapi.util.io.FileUtil;
+import gnu.trove.THashSet;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationFacade;
@@ -44,13 +46,12 @@ import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.jps.model.module.JpsModuleSourceRoot;
+import org.jetbrains.jps.util.JpsPathUtil;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
@@ -72,7 +73,6 @@ import org.jetbrains.jps.incremental.messages.CustomBuilderMessage;
 import org.jetbrains.jps.incremental.messages.FileGeneratedEvent;
 import org.jetbrains.jps.incremental.storage.BuildDataManager;
 import org.jetbrains.jps.model.module.JpsModule;
-import org.jetbrains.mps.openapi.model.SModel;
 
 import java.io.File;
 import java.io.IOException;
@@ -133,12 +133,15 @@ public class MPSMakeMediator {
       JpsMPSModuleExtension mpsModule = JpsMPSExtensionService.getInstance().getExtension(target.getModule());
       if (mpsModule == null) continue;
 
-      File outputRoot = getOutputRoot(mpsModule.getModule(), myContext.getCompileContext().getProjectDescriptor().dataManager);
+      File outputTmpRoot = getTmpOutputRoot(mpsModule.getModule(), myContext.getCompileContext().getProjectDescriptor().dataManager);
       File cachesOutputRoot = getCachesOutputRoot(mpsModule.getModule(), myContext.getCompileContext().getProjectDescriptor().dataManager);
       boolean useTransientOutputFolder = mpsModule.getConfiguration().isUseTransientOutputFolder();
-      OutputPathRedirects redirects = myRedirects.addRedirects(outputPaths, outputRoot.getAbsolutePath(), cachesOutputRoot.getAbsolutePath(), useTransientOutputFolder);
-      if (useTransientOutputFolder) {
+      File generatorOutputRoot = new File (mpsModule.getConfiguration().getGeneratorOutputPath());
+      myRedirects.addRedirects(outputPaths, outputTmpRoot.getAbsolutePath(), cachesOutputRoot.getAbsolutePath(), useTransientOutputFolder);
+
+      if (useTransientOutputFolder || !isGenOutputUnderSourceRoot(target, mpsModule)) {
         BuildRootIndex buildRootIndex = myContext.getCompileContext().getProjectDescriptor().getBuildRootIndex();
+        File outputRoot = useTransientOutputFolder ? outputTmpRoot : generatorOutputRoot;
         buildRootIndex.associateTempRoot(myContext.getCompileContext(), target,
           new JavaSourceRootDescriptor(outputRoot, target, true, true, "", Collections.<File>emptySet()));
       }
@@ -196,6 +199,16 @@ public class MPSMakeMediator {
     return success;
   }
 
+  private boolean isGenOutputUnderSourceRoot(ModuleBuildTarget target, JpsMPSModuleExtension mpsModule) {
+    boolean isGeneratorOutputPathUnderSourceRoot;
+    THashSet<File> sourceRootFiles = new THashSet<File>(FileUtil.FILE_HASHING_STRATEGY);
+    for (JpsModuleSourceRoot sourceRoot : target.getModule().getSourceRoots()) {
+      sourceRootFiles.add(sourceRoot.getFile());
+    }
+    isGeneratorOutputPathUnderSourceRoot = JpsPathUtil.isUnder(sourceRootFiles, new File(mpsModule.getConfiguration().getGeneratorOutputPath()));
+    return isGeneratorOutputPathUnderSourceRoot;
+  }
+
   private boolean processFiles(boolean success, ReducedMakeFacetConfiguration makeFacetConfiguration) {
     ProjectBuilderLogger logger = myContext.getCompileContext().getLoggingManager().getProjectBuilderLogger();
     if (logger.isEnabled()) {
@@ -224,6 +237,13 @@ public class MPSMakeMediator {
       }
     }
     for (String keptFile : makeFacetConfiguration.getKeptFiles()) {
+      try {
+        FSOperations.markDirty(myContext.getCompileContext(), new File(keptFile));
+      } catch (IOException e) {
+        reportError(e);
+        success = false;
+      }
+
       SModel source = makeFacetConfiguration.getSource(keptFile);
       if (source != null && source.getSource() instanceof FileDataSource) {
         try {
@@ -261,7 +281,7 @@ public class MPSMakeMediator {
         Kind.ERROR, e.getMessage()));
   }
 
-  private File getOutputRoot (JpsModule module, final BuildDataManager buildDataManager) {
+  private File getTmpOutputRoot(JpsModule module, final BuildDataManager buildDataManager) {
     File moduleDataRoot = getModuleDataRoot(module, buildDataManager.getDataPaths());
     return new File(moduleDataRoot, MPSMakePaths.SOURCE_GEN);
   }

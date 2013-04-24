@@ -4,7 +4,7 @@ package org.jetbrains.mps.samples.DecisionTable.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"expectedType", "defaultValue", "colHeaders", "rowHeaders", "resultValues"}, new boolean[]{false, false, true, true, true}, false, false, "dectab", "", "");
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"expectedType", "defaultValue", "colHeaders", "rowHeaders", "resultValues"}, new boolean[]{false, false, true, true, true}).alias("dectab", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

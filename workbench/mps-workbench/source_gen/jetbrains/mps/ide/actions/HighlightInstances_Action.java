@@ -17,11 +17,11 @@ import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import java.util.Collections;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import org.jetbrains.mps.openapi.model.SModel;
+import java.util.Collections;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -85,7 +85,7 @@ public class HighlightInstances_Action extends BaseAction {
       EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
 
       SAbstractConcept concept = SConceptRepository.getInstance().getConcept(((SNode) MapSequence.fromMap(_params).get("node")).getConcept().getConceptId());
-      Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, new ModelsScope(((SModel) MapSequence.fromMap(_params).get("model"))), null);
+      Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(new ModelsScope(((SModel) MapSequence.fromMap(_params).get("model"))), Collections.singleton(concept), false, new EmptyProgressMonitor());
       for (SNode ref : SetSequence.fromSet(usages)) {
         if (ref.getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
           highlightManager.mark(((SNode) ref), HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);

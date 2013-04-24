@@ -36,7 +36,7 @@ import com.intellij.psi.PsiImportStaticStatement;
 import java.util.StringTokenizer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.util.Pair;
 import com.google.common.collect.HashBiMap;
 
@@ -129,14 +129,14 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       public Iterable<PsiFileSystemItem> getCreated() {
         Set<PsiFileSystemItem> result = SetSequence.fromSet(new HashSet<PsiFileSystemItem>());
         SetSequence.fromSet(result).addSequence(Sequence.fromIterable((Iterable<PsiFileSystemItem>) event.getCreated()));
-        SetSequence.fromSet(result).addSequence(SetSequence.fromSet(event.getChanged().keySet()));
+        SetSequence.fromSet(result).addSequence(Sequence.fromIterable((Iterable<PsiFile>) event.getChanged().keySet()));
         return result;
       }
 
       public Iterable<PsiFileSystemItem> getRemoved() {
         Set<PsiFileSystemItem> result = SetSequence.fromSet(new HashSet<PsiFileSystemItem>());
         SetSequence.fromSet(result).addSequence(Sequence.fromIterable((Iterable<PsiFileSystemItem>) event.getRemoved()));
-        SetSequence.fromSet(result).addSequence(SetSequence.fromSet(event.getChanged().keySet()));
+        SetSequence.fromSet(result).addSequence(Sequence.fromIterable((Iterable<PsiFile>) event.getChanged().keySet()));
         return result;
       }
 
@@ -290,6 +290,9 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
 
     /*package*/ void clearFile(PsiFile file) {
       BiMap<SNode, PsiElement> mapForFile = MapSequence.fromMap(myMps2PsiMappings).get(file.getName());
+      if (mapForFile == null) {
+        return;
+      }
       MapSequence.fromMap(myMps2PsiMappings).removeKey(file.getName());
       for (SNode node : mapForFile.keySet()) {
         MapSequence.fromMap(myGlobalMps2PsiMapping).removeKey(node);

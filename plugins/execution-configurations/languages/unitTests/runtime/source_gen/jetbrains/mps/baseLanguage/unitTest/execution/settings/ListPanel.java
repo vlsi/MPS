@@ -39,10 +39,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import java.util.Set;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import java.util.Collections;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Collections;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -173,7 +172,7 @@ public class ListPanel extends JPanel {
             public void run() {
               for (SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
                 SAbstractConcept c = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept));
-                Set<SNode> usages = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(c), SearchType.INSTANCES, GlobalScope.getInstance(), new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator())));
+                Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c), false, new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()));
                 ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(usages));
               }
             }
