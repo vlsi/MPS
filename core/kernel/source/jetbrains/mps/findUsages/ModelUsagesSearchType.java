@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -62,7 +62,7 @@ class ModelUsagesSearchType extends SearchType<SModel, SModelReference> {
       subMonitor.start("", current.size());
       for (SModel m : current) {
         subMonitor.step(m.getModelName());
-        if (FindUsagesManager.hasModelUsages(m, models)) {
+        if (FindUsagesUtil.hasModelUsages(m, models)) {
           consumer.consume(m);
         }
         if (monitor.isCanceled()) break;

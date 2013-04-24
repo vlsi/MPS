@@ -11,9 +11,8 @@ import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.Collections;
-import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class NodeUsages_Finder extends GeneratedFinder {
@@ -45,7 +44,7 @@ public class NodeUsages_Finder extends GeneratedFinder {
   @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
-      Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(Collections.<SNode>singleton(node), SearchType.USAGES, scope, monitor);
+      Set<SReference> resRefs = FindUsagesFacade.getInstance().findUsages(scope, Collections.<SNode>singleton(node), monitor);
       for (SReference reference : resRefs) {
         ListSequence.fromList(_results).addElement(((SNode) reference.getSourceNode()));
       }

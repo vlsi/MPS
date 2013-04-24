@@ -25,7 +25,7 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xnhqer_a");
     editorCell.setBig(true);
-    IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
+    InlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_xnhqer_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xnhqer_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_xnhqer_c0(editorContext, node));
@@ -42,7 +42,7 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.MATCHING_LABEL, "brace");
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
-    IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
+    InlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -56,7 +56,7 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
-    IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
+    InlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -87,7 +87,7 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "brace");
     editorCell.getStyle().putAll(style);
-    IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
+    InlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

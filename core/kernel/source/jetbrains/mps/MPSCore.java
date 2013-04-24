@@ -17,12 +17,14 @@ package jetbrains.mps;
 
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.checkers.CheckersComponent;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.extapi.module.FacetsRegistry;
+import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
@@ -32,7 +34,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ImmatureReferences;
@@ -43,6 +44,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodeAccessUtilImpl;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
@@ -51,6 +53,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * Evgeny Gryaznov, Sep 1, 2010
@@ -78,9 +81,11 @@ public class MPSCore extends ComponentPlugin {
   public void init() {
     super.init();
 
+    SNodeAccessUtil.setInstance(new SNodeAccessUtilImpl());
     init(new PersistenceRegistry());
     init(new FacetsRegistry());
     init(new ConceptRepository());
+    init(new FindUsagesManager());
 
     // repositories
     myModelRepository = init(new SModelRepository());

@@ -29,7 +29,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -92,7 +91,10 @@ public class TestMain {
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
           try {
-            project[0] = loadProject(new File(destinationDir, projectName));
+            project[0] = loadProject(((projectName != null && projectName.length() > 0) ?
+              new File(destinationDir, projectName) :
+              destinationDir
+            ));
             VirtualFile projectVirtualDir = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(destinationDir);
             assert projectVirtualDir != null;
             projectVirtualDir.refresh(false, true);
@@ -177,14 +179,13 @@ public class TestMain {
     l.setLanguageDescriptor(languageDescriptor, false);
   }
 
-  private static final String REFACTORING_PROJECT = "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT;
   private static final String[] REFACTORING_SANDBOX = new String[]{"testRefactoring.sandbox", "testRefactoring.sandbox2"};
   private static final String[] REFACTORING_LANGUAGE = new String[]{"testRefactoring", "testRefactoringTargetLang"};
 
   public static boolean testRefactoringTestEnvironment(File projectDirectory) {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
-    final Project project = loadProject(new File(projectDirectory, REFACTORING_PROJECT));
+    final Project project = loadProject(projectDirectory);
     final boolean[] b = new boolean[]{true};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -201,7 +202,7 @@ public class TestMain {
 
   public static boolean testRefactoringOnProject(File sourceProjectDir, final IRefactoringTester refactoringTester) {
     final File destinationProjectDir = new File(PathManager.getHomePath(), "TEST_REFACTORING");
-    return testOnProjectCopy(sourceProjectDir, destinationProjectDir, REFACTORING_PROJECT, new TestMain.ProjectRunnable() {
+    return testOnProjectCopy(sourceProjectDir, destinationProjectDir, null, new TestMain.ProjectRunnable() {
       public boolean execute(final Project project) {
         final SModel[] sandbox = new SModel[]{null, null};
         final Language[] testLanguage = new Language[]{null, null};

@@ -130,7 +130,7 @@
       <macro name="samples_home" path="${mps.home}/samples"/>
       <perfomancereport file="${mps.home}/generation.perfomance"/>
 
-      <project file="${mps.home}/MPS.mpr"/>
+      <project file="${mps.home}"/>
     </mps.test.generation>
   </target>
 

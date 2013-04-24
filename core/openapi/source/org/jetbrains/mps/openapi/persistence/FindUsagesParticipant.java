@@ -16,21 +16,20 @@
 package org.jetbrains.mps.openapi.persistence;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Collection;
 import java.util.Set;
 
 /**
- *  Effective (usually index-based) implementation of find usages routines.
- *  Participants are invoked one by one, followed by the default (or dummy) participant.
- *  Processed models are reported to the processedConsumer to exclude them from the scope of subsequent participants.
- *  The default participant traverses unprocessed models recursively (which forces models to be loaded into memory).
+ * Effective (usually index-based) implementation of find usages routines.
+ * Participants are invoked one by one, followed by the default (or dummy) participant.
+ * Processed models are reported to the processedConsumer to exclude them from the scope of subsequent participants.
+ * The default participant traverses unprocessed models recursively (which forces models to be loaded into memory).
  */
 public interface FindUsagesParticipant {
 

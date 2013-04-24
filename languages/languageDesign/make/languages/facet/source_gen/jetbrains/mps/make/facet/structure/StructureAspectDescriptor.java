@@ -4,7 +4,7 @@ package jetbrains.mps.make.facet.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,45 +14,45 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ExtendsFacetReference", "jetbrains.mps.make.facet.structure.FacetReference", false, new String[]{"jetbrains.mps.make.facet.structure.FacetReference"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ExtendsFacetReference").super_("jetbrains.mps.make.facet.structure.FacetReference").parents("jetbrains.mps.make.facet.structure.FacetReference").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"}, new String[]{}, new String[]{}, new String[]{"extended", "required", "optional", "targetDeclaration"}, new boolean[]{true, true, true, true}, false, false, "Facet", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.FacetDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier").children(new String[]{"extended", "required", "optional", "targetDeclaration"}, new boolean[]{true, true, true, true}).alias("Facet", "").create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetJavaClassExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"facet"}, new String[]{}, new boolean[]{}, false, false, "facet class/", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.FacetJavaClassExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("facet").alias("facet class/", "").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"facet"}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.FacetReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("facet").abstract_().create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.FacetReferenceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"reference"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.FacetReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"reference"}, new boolean[]{false}).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression").super_("jetbrains.mps.baseLanguage.structure.DotExpression").parents("jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression").children(new String[]{"expression"}, new boolean[]{false}).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"target"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ForeignParametersExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("target").create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.IFacet", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.IFacet").interface_().create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.IPropertyExpression", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{"resource"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.IPropertyExpression").interface_().children(new String[]{"resource"}, new boolean[]{false}).create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{"jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression").super_("jetbrains.mps.baseLanguage.structure.DotExpression").parents("jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression").children(new String[]{"expression"}, new boolean[]{false}).create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.LocalParametersExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.LocalParametersExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.NamedFacetReference", "jetbrains.mps.make.facet.structure.FacetReference", false, new String[]{"jetbrains.mps.make.facet.structure.FacetReference"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.NamedFacetReference").super_("jetbrains.mps.make.facet.structure.FacetReference").parents("jetbrains.mps.make.facet.structure.FacetReference").create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ParametersDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ParametersDeclaration").super_("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration").parents("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration").create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.RelatedFacetReference", "jetbrains.mps.make.facet.structure.FacetReference", false, new String[]{"jetbrains.mps.make.facet.structure.FacetReference"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.RelatedFacetReference").super_("jetbrains.mps.make.facet.structure.FacetReference").parents("jetbrains.mps.make.facet.structure.FacetReference").create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ResourceClassifierType", "jetbrains.mps.baseLanguage.structure.ClassifierType", false, new String[]{"jetbrains.mps.baseLanguage.structure.ClassifierType"}, new String[]{}, new String[]{"resource"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ResourceClassifierType").super_("jetbrains.mps.baseLanguage.structure.ClassifierType").parents("jetbrains.mps.baseLanguage.structure.ClassifierType").references("resource").create();
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"properties", "resource"}, new boolean[]{false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"properties", "resource"}, new boolean[]{false, false}).create();
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"resourceType"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ResourceTypeDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"resourceType"}, new boolean[]{true}).create();
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"}, new String[]{"resourcesPolicy", "optional", "weight"}, new String[]{"overrides"}, new String[]{"parameters", "dependency", "job", "input", "output"}, new boolean[]{false, true, false, false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.TargetDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier").properties("resourcesPolicy", "optional", "weight").references("overrides").children(new String[]{"parameters", "dependency", "job", "input", "output"}, new boolean[]{false, true, false, false, false}).create();
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.TargetDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"qualifier"}, new String[]{"dependsOn"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.TargetDependency").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("qualifier").references("dependsOn").create();
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.make.facet.structure.TargetReferenceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"target"}, new String[]{"facetRef"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.TargetReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("target").children(new String[]{"facetRef"}, new boolean[]{false}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

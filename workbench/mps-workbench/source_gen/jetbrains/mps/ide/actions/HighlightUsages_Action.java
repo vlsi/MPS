@@ -20,11 +20,11 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import java.util.Collections;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import org.jetbrains.mps.openapi.model.SModel;
+import java.util.Collections;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -84,7 +84,7 @@ public class HighlightUsages_Action extends BaseAction {
           NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
           EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
           SNode node = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
-          Set<SReference> usages = FindUsagesManager.getInstance().findUsages(Collections.<SNode>singleton(node), SearchType.USAGES, new ModelsScope(((SModel) MapSequence.fromMap(_params).get("model"))), null);
+          Set<SReference> usages = FindUsagesFacade.getInstance().findUsages(new ModelsScope(((SModel) MapSequence.fromMap(_params).get("model"))), Collections.<SNode>singleton(node), new EmptyProgressMonitor());
           boolean highlight = highlightManager.getMessagesFor(node, messageOwner).isEmpty();
           if (SNodeOperations.getContainingRoot(node) == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
             if (highlight) {

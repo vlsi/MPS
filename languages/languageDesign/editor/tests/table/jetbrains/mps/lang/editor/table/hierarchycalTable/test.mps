@@ -60,7 +60,7 @@
       <property name="name" nameId="tpck.1169194664001" value="RemoveCell" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="458414629082786298">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690967657578" />
   </roots>

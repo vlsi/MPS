@@ -26,17 +26,14 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.*;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -102,7 +99,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
 
-    module.setRepository(this);
+    module.attach(this);
     ((AbstractModule) module).attach();
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
@@ -169,7 +166,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     if (remove) {
       fireBeforeModuleRemoved(module);
       myModules.remove(module);
-      module.setRepository(null);
+      module.detach();
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
       myFqNameToModulesMap.remove(module.getModuleName());
       return true;

@@ -46,7 +46,7 @@ import javax.swing.JComponent;
 public class MPSFacetConfiguration implements FacetConfiguration, PersistentStateComponent<State> {
   private static final String FILE_SEPARATOR = "/";
   @NonNls
-  private static final String SOURCE_GEN = "source_gen";
+  private static final String SOURCE_GEN = "src_gen";
   private MPSConfigurationBean myConfigurationBean = new MPSConfigurationBean();
   private MPSFacet myMpsFacet;
 

@@ -39,7 +39,7 @@ public class OpenSampleProjectAction extends AnAction {
   }
 
   public void actionPerformed(AnActionEvent e) {
-    String projectFile = SamplesExtractor.getInstance().getSamplesPath() + File.separator + "complexLanguage" + File.separator + "Complex.mpr";
+    String projectFile = SamplesExtractor.getInstance().getSamplesPath() + File.separator + "complexLanguage";
     if (!new File(projectFile).exists()) {
       SamplesExtractor.getInstance().extractSamples();
     }
@@ -58,8 +58,7 @@ public class OpenSampleProjectAction extends AnAction {
 
     descriptor.putUserData(FileChooserDialogImpl.PREFER_LAST_OVER_TO_SELECT, Boolean.TRUE);
 
-    VirtualFile result = OpenMPSProjectFileChooserDescriptor.getMPSProjectFile(
-        FileChooser.chooseFile(descriptor, currentProject, userHomeDir));
+    VirtualFile result = FileChooser.chooseFile(descriptor, currentProject, userHomeDir);
     if(result == null) return;
 
     String filePath = result.getPath();

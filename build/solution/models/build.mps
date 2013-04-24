@@ -11168,12 +11168,9 @@
             <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="882610591735825666">
               <property name="head" nameId="3ior.8618885170173601779" value="IdeaPlugin" />
               <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="882610591735825768">
-                <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
+                <property name="head" nameId="3ior.8618885170173601779" value="mps-java" />
                 <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="882610591735825830">
-                  <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.idea.java.psiStubs" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="882610591735825892">
-                    <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
-                  </node>
+                  <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
                 </node>
               </node>
             </node>
@@ -22255,7 +22252,7 @@
       <property name="path" nameId="s7om.3885435385580582154" value="lib/trove4j.jar" />
     </node>
     <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="716066598061903723">
-      <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=256m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS3x" />
+      <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=256m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS30" />
     </node>
     <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="716066598061903724">
       <property name="commented" nameId="s7om.5842819808956906658" value="true" />

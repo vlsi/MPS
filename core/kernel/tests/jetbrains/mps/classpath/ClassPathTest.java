@@ -55,7 +55,7 @@ public class ClassPathTest extends BaseMPSTest {
   private static final Logger LOG = LogManager.getLogger(ClassPathTest.class);
 
   // TODO fixme!
-  private static final String MPS_CORE_PROJECT = PathManager.getHomePath() + File.separator + "MPS.mpr";
+  private static final String MPS_CORE_PROJECT = PathManager.getHomePath();
 
   protected void setUp() throws Exception {
     super.setUp();

@@ -137,7 +137,7 @@ public class InternalActionsUtils {
     IResultProvider provider = FindUtils.makeProvider(new IFinder() {
       @Override
       public SearchResults find(SearchQuery query, ProgressMonitor progress) {
-        SearchResults results = new SearchResults<SNode>();
+        SearchResults<SNode> results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodeReference, SNode>() {
           public SNode select(SNodeReference it) {
             return ((SNodePointer) it).resolve(MPSModuleRepository.getInstance());
