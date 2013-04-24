@@ -4,7 +4,7 @@ package testDefaultEditor.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,15 +14,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("testDefaultEditor.structure.Company", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"team"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("testDefaultEditor.structure.Company").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"team"}, new boolean[]{true}).create();
       case 1:
-        return new CompiledConceptDescriptor("testDefaultEditor.structure.Developer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"age", "sex", "lastName", "politicWing"}, new String[]{"bestFriend", "teamHeWants"}, new String[]{"friend", "someChild"}, new boolean[]{true, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("testDefaultEditor.structure.Developer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("age", "sex", "lastName", "politicWing").references("bestFriend", "teamHeWants").children(new String[]{"friend", "someChild"}, new boolean[]{true, false}).create();
       case 2:
-        return new CompiledConceptDescriptor("testDefaultEditor.structure.DummyMethod", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"statements"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("testDefaultEditor.structure.DummyMethod").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"statements"}, new boolean[]{true}).create();
       case 3:
-        return new CompiledConceptDescriptor("testDefaultEditor.structure.Friend", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"friend"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("testDefaultEditor.structure.Friend").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("friend").create();
       case 4:
-        return new CompiledConceptDescriptor("testDefaultEditor.structure.Team", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"isOpenSource"}, new String[]{}, new String[]{"developer"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("testDefaultEditor.structure.Team").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("isOpenSource").children(new String[]{"developer"}, new boolean[]{true}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

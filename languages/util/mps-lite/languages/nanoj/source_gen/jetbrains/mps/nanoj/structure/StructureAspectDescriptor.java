@@ -4,7 +4,7 @@ package jetbrains.mps.nanoj.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,19 +14,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.nanoj.structure.MinusExpression", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"expr"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.nanoj.structure.MinusExpression").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"expr"}, new boolean[]{false}).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.nanoj.structure.NanoClass", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"statement"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.nanoj.structure.NanoClass").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"statement"}, new boolean[]{false}).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.nanoj.structure.NanoExpression", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.nanoj.structure.NanoExpression").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.nanoj.structure.NanoStatement", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.nanoj.structure.NanoStatement").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.nanoj.structure.NanoStatementList", "jetbrains.mps.nanoj.structure.NanoStatement", false, new String[]{"jetbrains.mps.nanoj.structure.NanoStatement"}, new String[]{}, new String[]{}, new String[]{"body"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.nanoj.structure.NanoStatementList").super_("jetbrains.mps.nanoj.structure.NanoStatement").parents("jetbrains.mps.nanoj.structure.NanoStatement").children(new String[]{"body"}, new boolean[]{true}).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.nanoj.structure.VarDecl", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"varName"}, new String[]{}, new String[]{"varType"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.nanoj.structure.VarDecl").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("varName").children(new String[]{"varType"}, new boolean[]{false}).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.nanoj.structure.VarDeclReference", "jetbrains.mps.nanoj.structure.NanoExpression", false, new String[]{"jetbrains.mps.nanoj.structure.NanoExpression"}, new String[]{}, new String[]{"declaration"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.nanoj.structure.VarDeclReference").super_("jetbrains.mps.nanoj.structure.NanoExpression").parents("jetbrains.mps.nanoj.structure.NanoExpression").references("declaration").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

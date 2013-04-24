@@ -4,7 +4,7 @@ package jetbrains.mps.samples.Kaja.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,63 +14,63 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.AbstractCommand", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.AbstractCommand").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.CommandList", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"commands"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.CommandList").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"commands"}, new boolean[]{true}).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.CommentLine", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{"text"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "#", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.CommentLine").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").properties("text").alias("#", "").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.Direction", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.Direction").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.Drop", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "drop", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.Drop").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").alias("drop", "").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.East", "jetbrains.mps.samples.Kaja.structure.Direction", false, new String[]{"jetbrains.mps.samples.Kaja.structure.Direction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "east", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.East").super_("jetbrains.mps.samples.Kaja.structure.Direction").parents("jetbrains.mps.samples.Kaja.structure.Direction").alias("east", "").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.EmptyLine", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, true, "<empty>", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.EmptyLine").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").final_().alias("<empty>", "").create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.Heading", "jetbrains.mps.samples.Kaja.structure.LogicalExpression", false, new String[]{"jetbrains.mps.samples.Kaja.structure.LogicalExpression"}, new String[]{}, new String[]{}, new String[]{"direction"}, new boolean[]{false}, false, false, "heading", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.Heading").super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression").parents("jetbrains.mps.samples.Kaja.structure.LogicalExpression").children(new String[]{"direction"}, new boolean[]{false}).alias("heading", "").create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.IfStatement", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{}, new String[]{}, new String[]{"condition", "trueBranch", "falseBranch"}, new boolean[]{false, false, false}, false, false, "if", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.IfStatement").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").children(new String[]{"condition", "trueBranch", "falseBranch"}, new boolean[]{false, false, false}).alias("if", "").create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.IsFull", "jetbrains.mps.samples.Kaja.structure.LogicalExpression", false, new String[]{"jetbrains.mps.samples.Kaja.structure.LogicalExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "full", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.IsFull").super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression").parents("jetbrains.mps.samples.Kaja.structure.LogicalExpression").alias("full", "").create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.IsMark", "jetbrains.mps.samples.Kaja.structure.LogicalExpression", false, new String[]{"jetbrains.mps.samples.Kaja.structure.LogicalExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "mark", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.IsMark").super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression").parents("jetbrains.mps.samples.Kaja.structure.LogicalExpression").alias("mark", "").create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.IsWall", "jetbrains.mps.samples.Kaja.structure.LogicalExpression", false, new String[]{"jetbrains.mps.samples.Kaja.structure.LogicalExpression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "wall ahead", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.IsWall").super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression").parents("jetbrains.mps.samples.Kaja.structure.LogicalExpression").alias("wall ahead", "").create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.LeftTurn", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "turnLeft", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.LeftTurn").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").alias("turnLeft", "").create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.Library", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"definitions"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.Library").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"definitions"}, new boolean[]{true}).create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.LogicalExpression", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.LogicalExpression").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.Looking", "jetbrains.mps.samples.Kaja.structure.LogicalExpression", false, new String[]{"jetbrains.mps.samples.Kaja.structure.LogicalExpression"}, new String[]{"direction"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "looking", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.Looking").super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression").parents("jetbrains.mps.samples.Kaja.structure.LogicalExpression").properties("direction").alias("looking", "").create();
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.North", "jetbrains.mps.samples.Kaja.structure.Direction", false, new String[]{"jetbrains.mps.samples.Kaja.structure.Direction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "north", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.North").super_("jetbrains.mps.samples.Kaja.structure.Direction").parents("jetbrains.mps.samples.Kaja.structure.Direction").alias("north", "").create();
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.Not", "jetbrains.mps.samples.Kaja.structure.LogicalExpression", false, new String[]{"jetbrains.mps.samples.Kaja.structure.LogicalExpression"}, new String[]{}, new String[]{}, new String[]{"original"}, new boolean[]{false}, false, false, "not", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.Not").super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression").parents("jetbrains.mps.samples.Kaja.structure.LogicalExpression").children(new String[]{"original"}, new boolean[]{false}).alias("not", "").create();
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.Pick", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "pick", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.Pick").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").alias("pick", "").create();
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.Repeat", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{"count"}, new String[]{}, new String[]{"body"}, new boolean[]{false}, false, false, "repeat", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.Repeat").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").properties("count").children(new String[]{"body"}, new boolean[]{false}).alias("repeat", "").create();
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.Require", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{}, new String[]{"library"}, new String[]{}, new boolean[]{}, false, false, "require", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.Require").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").references("library").alias("require", "").create();
       case 21:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.RoutineCall", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{}, new String[]{"definition"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.RoutineCall").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").references("definition").create();
       case 22:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.RoutineDefinition", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"body"}, new boolean[]{false}, false, false, "routine", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.RoutineDefinition").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"body"}, new boolean[]{false}).alias("routine", "").create();
       case 23:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.Script", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass"}, new String[]{}, new String[]{}, new String[]{"body", "definitions"}, new boolean[]{false, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.Script").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass").children(new String[]{"body", "definitions"}, new boolean[]{false, true}).create();
       case 24:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.South", "jetbrains.mps.samples.Kaja.structure.Direction", false, new String[]{"jetbrains.mps.samples.Kaja.structure.Direction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "south", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.South").super_("jetbrains.mps.samples.Kaja.structure.Direction").parents("jetbrains.mps.samples.Kaja.structure.Direction").alias("south", "").create();
       case 25:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.Step", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "step", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.Step").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").alias("step", "").create();
       case 26:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.TraceMessage", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{"message"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "trace", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.TraceMessage").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").properties("message").alias("trace", "").create();
       case 27:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.West", "jetbrains.mps.samples.Kaja.structure.Direction", false, new String[]{"jetbrains.mps.samples.Kaja.structure.Direction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "west", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.West").super_("jetbrains.mps.samples.Kaja.structure.Direction").parents("jetbrains.mps.samples.Kaja.structure.Direction").alias("west", "").create();
       case 28:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.Kaja.structure.While", "jetbrains.mps.samples.Kaja.structure.AbstractCommand", false, new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand"}, new String[]{}, new String[]{}, new String[]{"condition", "body"}, new boolean[]{false, false}, false, false, "while", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.Kaja.structure.While").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").children(new String[]{"condition", "body"}, new boolean[]{false, false}).alias("while", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

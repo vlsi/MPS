@@ -4,7 +4,7 @@ package jetbrains.mps.lang.scopes.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,13 +14,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.scopes.structure.ComeFromExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"link"}, new String[]{}, new boolean[]{}, false, false, "come from", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.scopes.structure.ComeFromExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("link").alias("come from", "").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.scopes.structure.CompositeWithParentScopeExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"expr"}, new boolean[]{false}, false, false, "composite with", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.scopes.structure.CompositeWithParentScopeExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"expr"}, new boolean[]{false}).alias("composite with", "").create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.scopes.structure.ParentScope", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "parent scope", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.scopes.structure.ParentScope").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("parent scope", "").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.scopes.structure.UniformScopeProvider", null, true, new String[]{"jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.scopes.structure.UniformScopeProvider").interface_().parents("jetbrains.mps.lang.core.structure.ScopeProvider").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
