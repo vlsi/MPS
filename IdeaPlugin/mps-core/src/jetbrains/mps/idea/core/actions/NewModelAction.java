@@ -26,6 +26,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -35,6 +36,8 @@ import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
@@ -135,7 +138,7 @@ public class NewModelAction extends AnAction {
           @Override
           public SModel compute() {
             // TODO create model in mySourceRoot
-            EditableSModelDescriptor descriptor = (EditableSModelDescriptor) SModuleOperations.createModelWithAdjustments(modelFqName.toString(), myModelRoot);
+            EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(modelFqName.toString(), myModelRoot);
             template.preConfigure(descriptor, mySolution);
             descriptor.save();
             return descriptor;
