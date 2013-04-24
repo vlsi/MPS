@@ -53,7 +53,7 @@
       </node>
     </node>
     <node role="aspects" roleId="3ior.3542413272732620719" type="5tjl.BuildMpsLayout_TestModules" typeId="5tjl.4560297596904469357" id="3474133302908391416">
-      <property name="name" nameId="tpck.1169194664001" value="main" />
+      <property name="name" nameId="tpck.1169194664001" value="execution" />
       <node role="modules" roleId="5tjl.4560297596904469360" type="5tjl.BuildMpsLayout_TestModule" typeId="5tjl.4560297596904469362" id="3474133302908391417">
         <link role="module" roleId="5tjl.4560297596904469363" targetNodeId="3474133302908391429" resolveInfo="jetbrains.mps.execution.impl.tests" />
       </node>
@@ -360,7 +360,7 @@
       </node>
     </node>
     <node role="aspects" roleId="3ior.3542413272732620719" type="5tjl.BuildMpsLayout_TestModules" typeId="5tjl.4560297596904469357" id="5833628797344916233">
-      <property name="name" nameId="tpck.1169194664001" value="main" />
+      <property name="name" nameId="tpck.1169194664001" value="editor" />
       <node role="modules" roleId="5tjl.4560297596904469360" type="5tjl.BuildMpsLayout_TestModuleGroup" typeId="5tjl.4560297596904469355" id="5833628797344921764">
         <link role="group" roleId="5tjl.4560297596904469356" targetNodeId="5833628797344916235" resolveInfo="editor-tests" />
       </node>

@@ -365,7 +365,7 @@
   
   <target name="makeDependents" />
   
-  <target name="module-tests" depends="assemble, test.main" />
+  <target name="module-tests" depends="assemble, test.editor" />
   
   <target name="java.compile.jetbrains.mps.lang.actions.testLanguage" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.actions.testLanguage" />
@@ -656,7 +656,7 @@
     </copy>
   </target>
   
-  <target name="test.main" depends="assemble">
+  <target name="test.editor" depends="assemble">
     <path id="mps.libraries.path">
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
