@@ -38,7 +38,7 @@ import java.util.Set;
  */
 public class FindUsagesUtil {
 
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(FindUsagesUtil.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(FindUsagesUtil.class));
 
   public static boolean hasModelUsages(SModel m, Collection<SModelReference> models) {
     if (m == null) return false;

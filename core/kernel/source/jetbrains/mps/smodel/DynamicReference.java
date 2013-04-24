@@ -40,7 +40,7 @@ import java.util.Set;
  * Dec 10, 2007
  */
 public class DynamicReference extends SReferenceBase {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(DynamicReference.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(DynamicReference.class));
 
   private DynamicReferenceOrigin myOrigin;
 

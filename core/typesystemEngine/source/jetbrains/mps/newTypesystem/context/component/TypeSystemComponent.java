@@ -24,7 +24,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
@@ -36,7 +37,7 @@ import java.util.*;
  *   Non-reenterable.
  */
 /*package*/ public class TypeSystemComponent extends IncrementalTypecheckingComponent<State> implements ITypeErrorComponent {
-  protected static final Logger LOG = Logger.getLogger(LogManager.getLogger(TypeSystemComponent.class));
+  protected static final Logger LOG = Logger.wrap(LogManager.getLogger(TypeSystemComponent.class));
 
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_A;
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_B;

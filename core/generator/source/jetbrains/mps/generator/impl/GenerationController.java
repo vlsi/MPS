@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerationController implements ITaskPoolProvider {
-  protected static Logger LOG = Logger.getLogger(LogManager.getLogger(GenerationController.class));
+  protected static Logger LOG = Logger.wrap(LogManager.getLogger(GenerationController.class));
 
   private final TransientModelsProvider myTransientModelsProvider;
   private List<? extends SModel> myInputModels;

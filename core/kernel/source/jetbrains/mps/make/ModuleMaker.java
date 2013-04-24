@@ -56,7 +56,7 @@ import java.util.*;
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
 public class ModuleMaker {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ModuleMaker.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ModuleMaker.class));
 
   private final static int MAX_ERRORS = 100;
 

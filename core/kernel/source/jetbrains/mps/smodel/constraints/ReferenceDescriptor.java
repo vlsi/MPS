@@ -41,7 +41,7 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModuleSc
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
 
 public abstract class ReferenceDescriptor {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ReferenceDescriptor.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReferenceDescriptor.class));
   private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
 
   // can be ErrorScope

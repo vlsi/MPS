@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.*;
 
 public class MatchingUtil {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(MatchingUtil.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(MatchingUtil.class));
 
   public static boolean matchNodes(SNode node1, SNode node2) {
     return matchNodes(node1, node2, IMatchModifier.DEFAULT, true);
