@@ -20,12 +20,12 @@
   </target>
   
   <target name="fetchDependencies">
-    <mkdir dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
-    <unzip src="${artifacts.buildA}/result/A-${buildA.aver}.zip" dest="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
+    <mkdir dir="${build.tmp}/deps/buildA/A-_dl__lbrace_aver_rbrace_.zip" />
+    <unzip src="${artifacts.buildA}/result/A-${buildA.aver}.zip" dest="${build.tmp}/deps/buildA/A-_dl__lbrace_aver_rbrace_.zip" />
     <mkdir dir="${build.tmp}/deps/buildA/abcde.zip" />
-    <unzip src="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/abcde.zip" dest="${build.tmp}/deps/buildA/abcde.zip" />
+    <unzip src="${build.tmp}/deps/buildA/A-_dl__lbrace_aver_rbrace_.zip/abcde.zip" dest="${build.tmp}/deps/buildA/abcde.zip" />
     <mkdir dir="${build.tmp}/deps/buildA/withX.zip" />
-    <unzip src="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/withX.zip" dest="${build.tmp}/deps/buildA/withX.zip" />
+    <unzip src="${build.tmp}/deps/buildA/A-_dl__lbrace_aver_rbrace_.zip/withX.zip" dest="${build.tmp}/deps/buildA/withX.zip" />
   </target>
   
   <target name="build" depends="assemble, check" />
