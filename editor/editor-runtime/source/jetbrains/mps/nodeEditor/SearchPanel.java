@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.util.Pair;
@@ -105,7 +106,7 @@ public class SearchPanel extends AbstractSearchPanel {
     SearchEntry entryToSelect = null;
     for (ListIterator<SearchEntry> it = mySearchEntries.listIterator(mySearchEntries.size()); it.hasPrevious() && entryToSelect == null; ) {
       SearchEntry currentEntry = it.previous();
-      if (currentEntry.getStartLabel().equals(selectedCell)) {
+      if (CellTraversalUtil.compare(selectedCell, currentEntry.getStartLabel()) >= 0) {
         while (entryToSelect == null) {
           if (!currentEntry.getStartLabel().equals(selectedCell) || selectionStart >= currentEntry.getFirstRange().getEndPosition()) {
             entryToSelect = currentEntry;
@@ -137,7 +138,7 @@ public class SearchPanel extends AbstractSearchPanel {
     SearchEntry entryToSelect = null;
     for (ListIterator<SearchEntry> it = mySearchEntries.listIterator(); it.hasNext() && entryToSelect == null; ) {
       SearchEntry currentEntry = it.next();
-      if (currentEntry.getStartLabel().equals(selectedCell)) {
+      if (CellTraversalUtil.compare(selectedCell, currentEntry.getStartLabel()) <= 0) {
         while (entryToSelect == null) {
           if (!currentEntry.getStartLabel().equals(selectedCell) || selectionEnd <= currentEntry.getFirstRange().getStartPosition()) {
             entryToSelect = currentEntry;
