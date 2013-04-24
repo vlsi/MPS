@@ -20,6 +20,7 @@ import com.intellij.openapi.application.QueryExecutorBase;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReference;
@@ -27,11 +28,14 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.searches.ReferencesSearch;
 import com.intellij.psi.search.searches.ReferencesSearch.SearchParameters;
 import com.intellij.util.Processor;
+import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
+import jetbrains.mps.idea.java.index.ForeignIdReferenceIndex;
 import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -40,7 +44,9 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
+import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,6 +55,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayDeque;
+import java.util.Collection;
 import java.util.Deque;
 
 /**
@@ -74,54 +81,38 @@ public class IdPrefixSearch extends QueryExecutorBase<PsiReference, SearchParame
       @Override
       public void run() {
 
-        NodePtr nodePtr = JavaForeignIdBuilder.computeNodePtr(target);
+        final NodePtr nodePtr = JavaForeignIdBuilder.computeNodePtr(target);
         if (nodePtr == null) return;
         // do we have this node?
         if (new SNodePointer(nodePtr.getSModelReference(), nodePtr.getNodeId()).resolve(MPSModuleRepository.getInstance()) == null)
           return;
 
-        final String prefixToSearch = nodePtr.getNodeId().toString();
+        String prefix = nodePtr.getNodeId().toString();
+        final String prefixToSearch = (prefix.startsWith("~") ? prefix.substring(1) : prefix) + ".";
         final Project project = target.getProject();
 
-        for (Module module : ModuleManager.getInstance(project).getModules()) {
-          if (!scope.isSearchInModuleContent(module)) continue;
-          MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-          if (facet == null) continue;
+        ValueProcessor<Collection<Pair<SNodeDescriptor, String>>> sReferenceProcessor = new ValueProcessor<Collection<Pair<SNodeDescriptor, String>>>() {
+          @Override
+          public boolean process(VirtualFile file, Collection<Pair<SNodeDescriptor, String>> refs) {
+            for (Pair<SNodeDescriptor, String> ref : refs) {
+              SNodeReference nodeRef = ref.o1.getNodeReference();
+              String role = ref.o2;
+              PsiElement psiNode = MPSPsiProvider.getInstance(project).getPsi(nodeRef);
 
-          final Solution facetSolution = facet.getSolution();
+              // original node came from MPS index, it must be converted to our PSI element
+              assert psiNode instanceof MPSPsiNode;
 
-          for (SModel model : SModelRepository.getInstance().getModelDescriptors(facetSolution)) {
-            Deque<SNode> stack = new ArrayDeque<SNode>();
-            for (SNode node : model.getRootNodes()) {
-              stack.addLast(node);
+              SNode source = nodeRef.resolve(MPSModuleRepository.getInstance());
+              SReference sRef = source.getReference(role);
+              // not target of this SReference, but something this search was invoked for
+              SNodeReference mpsTarget = new SNodePointer(nodePtr.getSModelReference(), nodePtr.getNodeId());
+              consumer.process(new IdPrefixReference(mpsTarget, role, psiNode));
             }
-            while (!stack.isEmpty()) {
-              SNode node = stack.pop();
-              for (SNode child : node.getChildren()) {
-                stack.push(child);
-              }
-              for (SReference ref : node.getReferences()) {
-                if (!(ref instanceof StaticReference)) continue;
-
-                SNodeId targetNodeId = ref.getTargetNodeId();
-                if (!(targetNodeId instanceof Foreign)) continue;
-                String targetIdString = targetNodeId.toString();
-
-                if (targetIdString.startsWith(prefixToSearch) && targetIdString.length() > prefixToSearch.length()) {
-                  // there it is
-                  SNode source = ref.getSourceNode();
-                  PsiElement psiSource = MPSPsiProvider.getInstance(project).getPsi(source);
-                  assert psiSource instanceof MPSPsiNode;
-
-                  // not target of this SReference, but this search was invoked for
-                  SNodeReference mpsTarget = new SNodePointer(nodePtr.getSModelReference(), nodePtr.getNodeId());
-                  consumer.process(new IdPrefixReference(mpsTarget, ref.getRole(), psiSource));
-
-                }
-              }
-            }
+            return true;
           }
-        }
+        };
+
+        FileBasedIndex.getInstance().processValues(ForeignIdReferenceIndex.ID, prefixToSearch, null, sReferenceProcessor, scope);
       }
     });
   }
