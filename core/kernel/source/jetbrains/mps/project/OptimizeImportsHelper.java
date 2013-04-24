@@ -164,7 +164,7 @@ public class OptimizeImportsHelper {
 
   private String optimizeModuleImports(AbstractModule module, Result result) {
     List<Dependency> unusedDeps = new ArrayList<Dependency>();
-    for (Dependency d : module.getDependencies()) {
+    for (Dependency d : module.getModuleDescriptor().getDependencies()) {
       Dependency dep = getUnusedDependency(result, d, module.getModuleReference());
       if (dep != null) unusedDeps.add(dep);
     }

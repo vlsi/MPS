@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ui.pluginSolution.plugin.Variants;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.ModuleUtil;
+import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -126,8 +126,8 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
       IModule langToDep = Variants.moduleToGenerate(myParameter);
       SModuleReference langRefToEng = langToDep.getModuleReference();
       IModule module = SNodeOperations.getModel(node).getModule();
-      for (IModule depOn : ModuleUtil.depsToModules(module.getDependencies())) {
-        if (depOn.equals(langToDep)) {
+      for (SDependency depOn : module.getDeclaredDependencies()) {
+        if (depOn.getTarget().equals(langToDep)) {
           langToDep = null;
           break;
         }
