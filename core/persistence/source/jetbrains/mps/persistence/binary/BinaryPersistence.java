@@ -50,7 +50,7 @@ import static jetbrains.mps.smodel.SModel.ImportElement;
  */
 public class BinaryPersistence {
 
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(BinaryPersistence.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(BinaryPersistence.class));
 
   public static BinaryModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;

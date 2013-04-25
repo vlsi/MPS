@@ -22,21 +22,21 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.project.GlobalScope;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(DefaultChildSubstituteInfo.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultChildSubstituteInfo.class));
 
   private SNode myParentNode;
   private SNode myCurrentChild;

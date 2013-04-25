@@ -36,7 +36,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -546,7 +546,7 @@ public class UsagesTree extends MPSTree {
             navigateInTree(model, focus);
           }
         } else if (data instanceof ModuleNodeData) {
-          IModule module = ((ModuleNodeData) data).getModule();
+          SModule module = ((ModuleNodeData) data).getModule();
           if (module != null) {
             navigateInTree(module, focus);
           }
@@ -694,7 +694,7 @@ public class UsagesTree extends MPSTree {
     SModel modelDescriptor = node.getModel();
     if (modelDescriptor == null) return;
 
-    IModule module = modelDescriptor.getModule();
+    SModule module = modelDescriptor.getModule();
     if (module == null) return;
 
     ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(myProject));
@@ -707,8 +707,8 @@ public class UsagesTree extends MPSTree {
       NavigationSupport.getInstance().selectInTree(context, (SNode) o, focus);
     } else if (o instanceof SModel) {
       NavigationSupport.getInstance().selectInTree(context, ((SModel) o), focus);
-    } else if (o instanceof IModule) {
-      NavigationSupport.getInstance().selectInTree(context, (IModule) o, focus);
+    } else if (o instanceof SModule) {
+      NavigationSupport.getInstance().selectInTree(context, (SModule) o, focus);
     } else {
       throw new IllegalArgumentException();
     }

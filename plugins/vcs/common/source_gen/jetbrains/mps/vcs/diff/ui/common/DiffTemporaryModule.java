@@ -18,7 +18,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelFqName;
@@ -100,7 +100,7 @@ public class DiffTemporaryModule extends AbstractModule {
     if (!(md instanceof SModel.FakeModelDescriptor)) {
       return;
     }
-    IModule module = null;
+    SModule module = null;
     if (mergeResultModel) {
       org.jetbrains.mps.openapi.model.SModel mdInRepo = SModelRepository.getInstance().getModelDescriptor(model.getReference());
       if (mdInRepo != null) {
@@ -126,13 +126,13 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   public static void registerModel(org.jetbrains.mps.openapi.model.SModel model, MPSModuleOwner owner) {
-    IModule module = model.getModule();
+    SModule module = model.getModule();
     MPSModuleRepository.getInstance().registerModule(module, owner);
     SModelRepository.getInstance().registerModelDescriptor(model, module);
   }
 
   public static void unregisterModel(org.jetbrains.mps.openapi.model.SModel model, MPSModuleOwner owner) {
-    IModule module = model.getModule();
+    SModule module = model.getModule();
     MPSModuleRepository.getInstance().registerModule(module, owner);
     SModelRepository.getInstance().unRegisterModelDescriptor(model, module);
 
@@ -141,7 +141,7 @@ public class DiffTemporaryModule extends AbstractModule {
   public static IOperationContext getOperationContext(com.intellij.openapi.project.Project project, SModel model) {
     org.jetbrains.mps.openapi.model.SModel md = model.getModelDescriptor();
     assert md != null;
-    IModule module = md.getModule();
+    SModule module = md.getModule();
     if (module instanceof DiffTemporaryModule) {
       return ((DiffTemporaryModule) module).createContext();
     } else {
@@ -163,8 +163,8 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    protected Set<IModule> getInitialModules() {
-      Set<IModule> result = SetSequence.fromSet(new HashSet<IModule>());
+    protected Set<SModule> getInitialModules() {
+      Set<SModule> result = SetSequence.fromSet(new HashSet<SModule>());
       SetSequence.fromSet(result).addElement(DiffTemporaryModule.this);
       SetSequence.fromSet(result).addSequence(Sequence.fromIterable(GlobalScope.getInstance().getVisibleModules()));
       return result;
@@ -182,10 +182,10 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   public static class DiffSModelDescriptor extends BaseSpecialModelDescriptor implements EditableSModelDescriptor {
-    private IModule myModule;
+    private SModule myModule;
     private boolean myEditable;
 
-    private DiffSModelDescriptor(IModule module, SModel model, boolean editable) {
+    private DiffSModelDescriptor(SModule module, SModel model, boolean editable) {
       super(model.getReference());
       myModule = module;
       mySModel = model;
@@ -193,7 +193,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    public IModule getModule() {
+    public SModule getModule() {
       return myModule;
     }
 
@@ -254,7 +254,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    public IModule getModule() {
+    public SModule getModule() {
       return DiffTemporaryModule.this;
     }
   }

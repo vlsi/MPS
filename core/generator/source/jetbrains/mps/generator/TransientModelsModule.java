@@ -19,7 +19,7 @@ import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
@@ -210,8 +210,8 @@ public class TransientModelsModule extends AbstractModule {
 
   public class TransientModuleScope extends ModuleScope {
     @Override
-    protected Set<IModule> getInitialModules() {
-      Set<IModule> result = new HashSet<IModule>();
+    protected Set<SModule> getInitialModules() {
+      Set<SModule> result = new HashSet<SModule>();
       result.add(TransientModelsModule.this);
       result.addAll(new GlobalModuleDependenciesManager(myOriginalModule).getModules(Deptype.COMPILE));
       return result;
@@ -274,7 +274,7 @@ public class TransientModelsModule extends AbstractModule {
     }
 
     @Override
-    public IModule getModule() {
+    public SModule getModule() {
       return TransientModelsModule.this;
     }
 

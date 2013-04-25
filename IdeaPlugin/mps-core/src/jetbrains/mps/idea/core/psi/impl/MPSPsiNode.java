@@ -21,7 +21,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -182,7 +182,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
         SModel modelDescriptor = node.getModel();
         if (modelDescriptor == null) return;
 
-        IModule module = modelDescriptor.getModule();
+        SModule module = modelDescriptor.getModule();
         if (module == null) return;
 
         jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());

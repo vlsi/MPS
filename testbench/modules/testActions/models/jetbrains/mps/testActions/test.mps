@@ -20,7 +20,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ActionsTest" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="4484885613884465103">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
       <property name="uiTest" nameId="tp5g.4484885613884808424" value="true" />
       <property name="reOpenProject" nameId="tp5g.1031873601093404121" value="true" />
     </node>

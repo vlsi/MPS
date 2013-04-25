@@ -9,7 +9,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -46,7 +46,7 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
   }
 
   @Override
-  public SModel loadSModel(IModule module, org.jetbrains.mps.openapi.model.SModel descriptor) {
+  public SModel loadSModel(SModule module, org.jetbrains.mps.openapi.model.SModel descriptor) {
     SModel model = new SModel(descriptor.getReference(), new ForeignNodeIdMap());
     SModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("32d0a39c-772f-4490-8142-e50f9a9f19d4")).getModuleReference();
     model.addLanguage(lang);

@@ -92,6 +92,8 @@ public class AddClassifierDocComment_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
+      DocCommentHelper.addJavadocLangIfMissing(node);
+
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))) != null)) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), null);
         if (editorContext.getSelectedNode() != node) {
@@ -107,7 +109,7 @@ public class AddClassifierDocComment_Intention implements IntentionFactory {
       //  Type variables 
       for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
         SNode paramTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-        SLinkOperations.setTarget(paramTag, "parameter", _quotation_createNode_peeqac_a0b0h0a(typeVariableDeclaration), true);
+        SLinkOperations.setTarget(paramTag, "parameter", _quotation_createNode_peeqac_a0b0j0a(typeVariableDeclaration), true);
         ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), "param", true)).addElement(paramTag);
       }
 
@@ -119,7 +121,7 @@ public class AddClassifierDocComment_Intention implements IntentionFactory {
     }
   }
 
-  private static SNode _quotation_createNode_peeqac_a0b0h0a(Object parameter_1) {
+  private static SNode _quotation_createNode_peeqac_a0b0j0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", null, null, GlobalScope.getInstance(), false);

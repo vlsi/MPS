@@ -36,7 +36,6 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.openapi.editor.TextBuilder;
-import jetbrains.mps.openapi.editor.cells.DfsTraverser;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -79,7 +78,7 @@ import java.util.Set;
  * Created Sep 14, 2003
  */
 public abstract class EditorCell_Basic implements EditorCell {
-  public static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorCell_Basic.class));
+  public static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorCell_Basic.class));
 
   public static final int BRACKET_WIDTH = 7;
 

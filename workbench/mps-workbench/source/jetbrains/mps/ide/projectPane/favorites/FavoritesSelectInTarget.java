@@ -23,7 +23,7 @@ import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -94,7 +94,7 @@ public class FavoritesSelectInTarget extends AbstractProjectViewSelectInTarget {
         return nodeToSelect.getModel();
       }
     });
-    IModule module = model.getModule();
+    SModule module = model.getModule();
     FavoritesProjectPane pane = (FavoritesProjectPane) ProjectView.getInstance(project).getCurrentProjectViewPane();
     MPSTree tree = pane.getTree();
     MPSTreeNode mainRoot = tree.getRootNode();

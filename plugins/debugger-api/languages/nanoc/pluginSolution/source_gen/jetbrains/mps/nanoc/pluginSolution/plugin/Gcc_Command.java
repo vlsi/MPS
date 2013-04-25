@@ -11,12 +11,12 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.traceInfo.TraceDown;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.AbstractModule;
 
 public class Gcc_Command {
   private String myGccLocation_String = ProgramsLocationUtil.getGccLocation();
@@ -78,7 +78,7 @@ public class Gcc_Command {
   }
 
   public static IFile getExecutableFile(final SNode file) {
-    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
+    final Wrappers._T<SModule> module = new Wrappers._T<SModule>();
     final Wrappers._T<String> sourceName = new Wrappers._T<String>();
     final Wrappers._T<String> packageName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -92,7 +92,7 @@ public class Gcc_Command {
   }
 
   public static IFile getSourceFile(final SNode file) {
-    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
+    final Wrappers._T<SModule> module = new Wrappers._T<SModule>();
     final Wrappers._T<String> sourceName = new Wrappers._T<String>();
     final Wrappers._T<String> packageName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -102,6 +102,6 @@ public class Gcc_Command {
         packageName.value = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(file)).replace(".", "/");
       }
     });
-    return FileSystem.getInstance().getFileByPath(module.value.getGeneratorOutputPath()).getDescendant(packageName.value).getDescendant(sourceName.value + Gcc_Command.getSourceExtension());
+    return ((AbstractModule) module.value).getOutputPath().getDescendant(sourceName.value + Gcc_Command.getSourceExtension());
   }
 }

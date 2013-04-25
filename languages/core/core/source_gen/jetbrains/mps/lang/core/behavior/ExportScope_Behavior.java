@@ -8,8 +8,9 @@ import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -34,11 +35,11 @@ public class ExportScope_Behavior {
   }
 
   public static String getNamespace_2565736246230026649(SNode node) {
-    IModule module = check_ogf5a0_a0a0a(SNodeOperations.getModel(node));
+    SModule module = check_ogf5a0_a0a0a(SNodeOperations.getModel(node));
     if (module instanceof Generator) {
       module = ((Generator) module).getSourceLanguage();
     }
-    return check_ogf5a0_a2a0(check_ogf5a0_a0c0a(module));
+    return check_ogf5a0_a2a0(check_ogf5a0_a0c0a(((AbstractModule) module)));
   }
 
   public static SNode getExportScope_4075196924244445285(SNode node) {
@@ -90,7 +91,7 @@ public class ExportScope_Behavior {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), callerConceptFqName, "virtual_checkExport_2565736246230026584", new Class[]{SNode.class, String.class, SNode.class}, new Object[]{sourceNamespace, targetNode});
   }
 
-  private static IModule check_ogf5a0_a0a0a(SModel checkedDotOperand) {
+  private static SModule check_ogf5a0_a0a0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
@@ -104,7 +105,7 @@ public class ExportScope_Behavior {
     return null;
   }
 
-  private static ModuleDescriptor check_ogf5a0_a0c0a(IModule checkedDotOperand) {
+  private static ModuleDescriptor check_ogf5a0_a0c0a(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleDescriptor();
     }

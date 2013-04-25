@@ -26,7 +26,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItem;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
@@ -203,11 +203,11 @@ public class DataTree implements IExternalizeable, IChangeListener {
       BaseNodeData data = null;
 
       boolean isResult = index == path.size() - 1;
-      if (o instanceof IModule) {
+      if (o instanceof SModule) {
         if (result != null && isResult) {
           data = new ModuleNodeData(creator, result, isResult, nodeRepresentator, results);
         } else {
-          data = new ModuleNodeData(creator, (IModule) o, isResult, results);
+          data = new ModuleNodeData(creator, (SModule) o, isResult, results);
         }
       } else if (o instanceof SModel) {
         if (result != null && isResult) {

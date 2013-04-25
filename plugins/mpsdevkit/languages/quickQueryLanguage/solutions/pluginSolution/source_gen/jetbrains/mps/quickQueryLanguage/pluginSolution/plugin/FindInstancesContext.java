@@ -4,7 +4,7 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
@@ -13,7 +13,7 @@ import jetbrains.mps.project.MPSProject;
 
 public class FindInstancesContext extends StandaloneMPSContext {
   private Project myProject;
-  private IModule myModule;
+  private SModule myModule;
 
   public FindInstancesContext(IOperationContext oldContext) {
     this.myProject = oldContext.getProject();
@@ -21,7 +21,7 @@ public class FindInstancesContext extends StandaloneMPSContext {
   }
 
   @Override
-  public IModule getModule() {
+  public SModule getModule() {
     return this.myModule;
   }
 

@@ -9,7 +9,7 @@ import jetbrains.mps.ide.depanalyzer.ModuleDependenciesView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
 import javax.swing.JComponent;
 
@@ -26,7 +26,7 @@ public class ModuleDependenies_Tool extends GeneratedTool {
     ModuleDependenies_Tool.this.myComponent = new ModuleDependenciesView(ModuleDependenies_Tool.this, project);
   }
 
-  /*package*/ void setModules(List<IModule> modules) {
+  /*package*/ void setModules(List<SModule> modules) {
     ModuleDependenies_Tool.this.myComponent.setModules(modules);
   }
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -34,11 +34,11 @@ import java.util.Set;
  */
 @Deprecated
 public class ClasspathCollector {
-  private Set<IModule> myStart;
+  private Set<SModule> myStart;
   private List<IClassPathItem> myResult;
 
-  public ClasspathCollector(Set<IModule> start) {
-    myStart = new HashSet<IModule>(start);
+  public ClasspathCollector(Set<SModule> start) {
+    myStart = new HashSet<SModule>(start);
   }
 
   public IClassPathItem collect(boolean includeStubSolutions) {
@@ -67,7 +67,7 @@ public class ClasspathCollector {
    * Doesn't work
    */
   @Deprecated
-  public List<IModule> getPathFor(IClassPathItem item) {
+  public List<SModule> getPathFor(IClassPathItem item) {
     return Collections.emptyList();
   }
 }                                             

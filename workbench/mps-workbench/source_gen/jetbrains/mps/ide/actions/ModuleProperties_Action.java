@@ -12,7 +12,7 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -70,7 +70,7 @@ public class ModuleProperties_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
+      MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
       final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
       configurable.setParentForCallBack(configurableEditor);
       SwingUtilities.invokeLater(new Runnable() {
@@ -85,16 +85,16 @@ public class ModuleProperties_Action extends BaseAction {
         final Wrappers._T<BasePropertiesDialog> dialog = new Wrappers._T<BasePropertiesDialog>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
-              dialog.value = StandardDialogs.createLanguagePropertiesDialog((Language) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-            } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Solution) {
-              dialog.value = StandardDialogs.createSolutionPropertiesDialog((Solution) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-            } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof DevKit) {
-              dialog.value = StandardDialogs.createDevKitPropertiesDialog((DevKit) ((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-            } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
-              dialog.value = StandardDialogs.createGeneratorPropertiesDialog(((Generator) ((IModule) MapSequence.fromMap(_params).get("module"))), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+            if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
+              dialog.value = StandardDialogs.createLanguagePropertiesDialog((Language) ((SModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+            } else if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Solution) {
+              dialog.value = StandardDialogs.createSolutionPropertiesDialog((Solution) ((SModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+            } else if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof DevKit) {
+              dialog.value = StandardDialogs.createDevKitPropertiesDialog((DevKit) ((SModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+            } else if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
+              dialog.value = StandardDialogs.createGeneratorPropertiesDialog(((Generator) ((SModule) MapSequence.fromMap(_params).get("module"))), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
             } else {
-              throw new IllegalArgumentException("Unknown module type: " + ((IModule) MapSequence.fromMap(_params).get("module")).getClass().getName());
+              throw new IllegalArgumentException("Unknown module type: " + ((SModule) MapSequence.fromMap(_params).get("module")).getClass().getName());
             }
           }
         });

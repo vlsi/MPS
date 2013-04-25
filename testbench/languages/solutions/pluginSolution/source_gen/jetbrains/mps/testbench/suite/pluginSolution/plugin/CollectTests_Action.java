@@ -26,7 +26,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -34,6 +34,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
@@ -137,7 +138,7 @@ public class CollectTests_Action extends BaseAction {
         return false;
       }
       proInd.setText("Processing " + mref.getModuleName());
-      final IModule module = MPSModuleRepository.getInstance().getModule(mref);
+      final SModule module = MPSModuleRepository.getInstance().getModule(mref);
       if (module != null) {
         final Wrappers._T<SNode> suite = new Wrappers._T<SNode>(null);
         for (final SModel smd : module.getModels()) {
@@ -174,7 +175,7 @@ public class CollectTests_Action extends BaseAction {
                       }
                       ListSequence.fromList(SLinkOperations.getTargets(suite.value, "testRef", true)).addElement(tref.invoke());
                       ((SModelInternal) model).addModelImport(smd.getReference(), false);
-                      ((SModel) MapSequence.fromMap(_params).get("modelDesc")).getModule().addDependency(module.getModuleReference(), false);
+                      ((AbstractModule) ((SModel) MapSequence.fromMap(_params).get("modelDesc")).getModule()).addDependency(module.getModuleReference(), false);
                     }
                   }, ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class));
                 }

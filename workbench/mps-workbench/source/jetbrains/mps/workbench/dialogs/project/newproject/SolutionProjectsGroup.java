@@ -9,6 +9,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -16,12 +17,6 @@ import java.util.Arrays;
 import java.util.Collection;
 
 class SolutionProjectsGroup implements ProjectTemplatesGroup {
-
-  private String myProjectPath;
-
-  SolutionProjectsGroup(String projectPath) {
-    myProjectPath = projectPath;
-  }
 
   @Override
   public String getName() {
@@ -35,7 +30,7 @@ class SolutionProjectsGroup implements ProjectTemplatesGroup {
 
   class SolutionProjectTemplate implements MPSProjectTemplate {
 
-    private final NewSolutionSettings myNewSolutionSettings = new NewSolutionSettings(myProjectPath);
+    private final NewSolutionSettings myNewSolutionSettings = new NewSolutionSettings();
 
     @Nullable
     @Override
@@ -84,6 +79,11 @@ class SolutionProjectsGroup implements ProjectTemplatesGroup {
           });
         }
       };
+    }
+
+    @Override
+    public void setProjectPath(String projectPath) {
+      myNewSolutionSettings.setProjectPath(projectPath);
     }
   }
 }

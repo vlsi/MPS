@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.Set;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -29,9 +29,9 @@ public class ModuleCycle_Behavior {
 
   public static List<SNode> call_getClassPath_1218646038565(SNode thisNode) {
     // collecting modules 
-    Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
+    Set<SModule> modules = SetSequence.fromSet(new HashSet<SModule>());
     for (SNode moduleRef : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "moduleReference", true))) {
-      IModule module = Module_Behavior.call_getModule_1213877515148(SLinkOperations.getTarget(moduleRef, "module", false));
+      SModule module = Module_Behavior.call_getModule_1213877515148(SLinkOperations.getTarget(moduleRef, "module", false));
       SetSequence.fromSet(modules).addElement(module);
     }
     // getting classpath 

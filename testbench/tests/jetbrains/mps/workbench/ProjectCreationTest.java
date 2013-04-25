@@ -23,6 +23,7 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory;
@@ -44,14 +45,18 @@ public class ProjectCreationTest {
   private static final String PROJECT_NAME = "CreatedTestProject";
   private static final String LANGUAGE_NAMESPACE = "CreatedLanguage";
   private static final String SOLUTION_NAMESPACE = "CreatedSandbox";
-  private static final List<String> EMPTY_PROJECT_PATH_LIST = Arrays.asList(
-    PROJECT_NAME + "/" + PROJECT_NAME + ".iws",
-    PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT
-  );
-  private static final List<String> PROJECT_WITH_MODULES_PATH_LIST = Arrays.asList(
-    PROJECT_NAME + "/" + PROJECT_NAME + ".iws",
-    PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT,
+  private static final String PROJECT_PROPERTIES_DIR = PROJECT_NAME + "/.mps";
+  private static final List<String> PROJECT_PROPERTIES_DIR_CONTENT = Arrays.asList(
+      PROJECT_PROPERTIES_DIR + "/encodings.xml",
+      PROJECT_PROPERTIES_DIR + "/misc.xml",
+      PROJECT_PROPERTIES_DIR + "/vcs.xml",
+      PROJECT_PROPERTIES_DIR + "/workspace.xml");
 
+  private static final List<String> EMPTY_PROJECT_PATH_LIST_FB = Arrays.asList(
+      PROJECT_NAME + "/" + PROJECT_NAME + ".iws", PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT);
+  private static final List<String> EMPTY_PROJECT_PATH_LIST_DB = PROJECT_PROPERTIES_DIR_CONTENT;
+
+  private static final List<String> PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE = Arrays.asList(
     PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/" + LANGUAGE_NAMESPACE + MPSExtentions.DOT_LANGUAGE,
     PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/languageModels/structure" + MPSExtentions.DOT_MODEL,
     PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/languageModels/constraints" + MPSExtentions.DOT_MODEL,
@@ -63,6 +68,10 @@ public class ProjectCreationTest {
     PROJECT_NAME + "/solutions/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + MPSExtentions.DOT_SOLUTION,
     PROJECT_NAME + "/solutions/" + SOLUTION_NAMESPACE + "/" + "models/CreatedSandbox/sandbox" + MPSExtentions.DOT_MODEL
   );
+  private static final List<String> PROJECT_WITH_MODULES_PATH_LIST_FB = CollectionUtil.union(
+      Arrays.asList(PROJECT_NAME + "/" + PROJECT_NAME + ".iws", PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT),
+      PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
+  private static final List<String> PROJECT_WITH_MODULES_PATH_LIST_DB = CollectionUtil.union(PROJECT_PROPERTIES_DIR_CONTENT, PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
 
   private IFile myTmpDir;
   private Project myProject;
@@ -78,18 +87,29 @@ public class ProjectCreationTest {
   public void tearDown() {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       @Override
-      public void run() {}
+      public void run() {
+      }
     }, ModalityState.defaultModalityState());
   }
 
   @Test
-  public void emptyProject() {
-    invokeTest(new EmptyProjectProvider(), EMPTY_PROJECT_PATH_LIST);
+  public void emptyProjectFileBased() {
+    invokeTest(new EmptyProjectProvider(true), EMPTY_PROJECT_PATH_LIST_FB);
   }
 
   @Test
-  public void projectWithModules() {
-    invokeTest(new ProjectWithModulesProvider(), PROJECT_WITH_MODULES_PATH_LIST);
+  public void emptyProjectDirectoryBased() {
+    invokeTest(new EmptyProjectProvider(false), EMPTY_PROJECT_PATH_LIST_DB);
+  }
+
+  @Test
+  public void projectWithModulesFileBased() {
+    invokeTest(new ProjectWithModulesProvider(true), PROJECT_WITH_MODULES_PATH_LIST_FB);
+  }
+
+  @Test
+  public void projectWithModulesDirectoryBased() {
+    invokeTest(new ProjectWithModulesProvider(false), PROJECT_WITH_MODULES_PATH_LIST_DB);
   }
 
   private void invokeTest(final ProjectOptionsProvider projectOptionsProvider, List<String> expectedPathList) {
@@ -132,7 +152,7 @@ public class ProjectCreationTest {
     unexpected.removeAll(expectedList);
 
     Assert.assertTrue("Missing files: " + missing + ", unexpected files: " + unexpected,
-      missing.isEmpty() && unexpected.isEmpty());
+        missing.isEmpty() && unexpected.isEmpty());
   }
 
   private static List<String> collectFilePathList(IFile rootDir) {
@@ -160,12 +180,19 @@ public class ProjectCreationTest {
   }
 
   private static class EmptyProjectProvider implements ProjectOptionsProvider {
+    private boolean myDefaultScheme;
+
+    public EmptyProjectProvider(boolean defaultScheme) {
+      myDefaultScheme = defaultScheme;
+    }
+
     @Override
     public ProjectOptions getProjectOptions(IFile containingDir) {
       ProjectOptions options = new ProjectOptions();
 
       options.setProjectName(PROJECT_NAME);
       options.setProjectPath(containingDir.getDescendant(PROJECT_NAME).getPath());
+      options.setStorageScheme(myDefaultScheme);
 
       options.setCreateNewLanguage(false);
       options.setCreateNewSolution(false);
@@ -176,6 +203,12 @@ public class ProjectCreationTest {
   }
 
   private static class ProjectWithModulesProvider implements ProjectOptionsProvider {
+    private boolean myDefaultScheme;
+
+    public ProjectWithModulesProvider(boolean defaultScheme) {
+      myDefaultScheme = defaultScheme;
+    }
+
     @Override
     public ProjectOptions getProjectOptions(IFile containingFile) {
       IFile projectDir = containingFile.getDescendant(PROJECT_NAME);
@@ -183,6 +216,7 @@ public class ProjectCreationTest {
       ProjectOptions options = new ProjectOptions();
       options.setProjectName(PROJECT_NAME);
       options.setProjectPath(projectDir.getPath());
+      options.setStorageScheme(myDefaultScheme);
 
       options.setCreateNewLanguage(true);
       options.setLanguageNamespace(LANGUAGE_NAMESPACE);

@@ -9,6 +9,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -30,7 +31,7 @@ public class FacetsScope extends SimpleScope {
     SModule contextModule = contextNode.getModel().getModule();
 
     Set<SModule> contextModules = SetSequence.fromSet(new HashSet<SModule>());
-    for (SModule module : Sequence.fromIterable(contextModule.getModuleScope().getModules())) {
+    for (SModule module : Sequence.fromIterable(((AbstractModule) contextModule).getScope().getModules())) {
       if (ClassLoaderManager.getInstance().canLoad(module)) {
         SetSequence.fromSet(contextModules).addElement(module);
       }

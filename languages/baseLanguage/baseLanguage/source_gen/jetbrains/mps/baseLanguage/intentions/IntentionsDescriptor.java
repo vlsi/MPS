@@ -24,6 +24,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new AddOverrideAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveStaticMethodModifier_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddRuntimeExceptionToMethodSignature_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddStaticFieldModifier_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddThrows_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddTypeParameters_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AlterStatementListContainer_Intention());
@@ -66,6 +67,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new MigrateString_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MoveInitializerToConstructor_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new RemoveArrayType_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new RemoveStaticFieldModifier_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new RemoveTVDInAnonymousClass_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ReplaceAssertWithIf_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ReplaceBlockWithItsContent_Intention());

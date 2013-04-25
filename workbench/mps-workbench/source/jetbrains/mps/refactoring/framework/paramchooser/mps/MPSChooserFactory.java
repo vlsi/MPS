@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.refactoring.framework.paramchooser.mps;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
@@ -50,7 +50,7 @@ public class MPSChooserFactory {
     });
   }
 
-  public static IChooser createModuleChooser(final RefactoringContext context, final String paramName, final IChooserSettings<IModule> settings) {
+  public static IChooser createModuleChooser(final RefactoringContext context, final String paramName, final IChooserSettings<SModule> settings) {
     return ModelAccess.instance().runReadAction(new Computable<IChooser>() {
       @Override
       public IChooser compute() {

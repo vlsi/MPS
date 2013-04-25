@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c8ax6s48q8x2y3lxxy26lrprxkvu227">
+<dependencies version="2" modelHash="-dpcd9s3e9gsw1u8u6b963tljndfdwaf">
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-ctxvs1rpiiexlq8dltxstwmrdnqkuz7" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b7efqpp988394i1ffiwgj2bp6kuza4w" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="5dkchx6vs8ggugooqdxkrkmeks99uon" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-5auy0xpl1dm7qzjzw5e4phcgoh3am31" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="aih6mod30hbbl8r1xz9vfu4gypkll6l" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-93gbc26dfs1v8gk2kqfbr5vn9tuq1s9" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-7czzgrwjuz1s4ixrqjpjlzj1vtqq1up" />
   <dep model="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)" hash="-7yofbml2lleuckvuqvyvlwyiwbyr87k" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="3csay3axi9ddb28cb7m3ytmnlr8cj0x" />
@@ -40,7 +40,7 @@
     <dep model="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)" />
     <file name="TransformationUtil_Complex_Test.java" />
   </source>
-  <source id="7744266994038462827" hash="-4uwsbahgiyphrtlio4fx5kswvhaephx">
+  <source id="7744266994038462827" hash="4xt74j9o847m6ede5u9iyiw1yd546rd">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="3102837338445023976" name="DebuggerInitializer" hash="bq5lc41na14hg3h714k3nb4m4lwcs1a">

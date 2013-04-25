@@ -23,6 +23,7 @@ public class TextCommentPartUtil {
       divideLineBetweenCaret(node, index.value, index.value + 2, newText);
       tagPart = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", null);
       SNodeOperations.insertNextSiblingChild(node, tagPart);
+      editorContext.selectWRTFocusPolicy(tagPart);
       return;
     }
     index.value = newText.indexOf("{{");

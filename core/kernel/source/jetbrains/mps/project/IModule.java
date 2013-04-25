@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -26,7 +27,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collection;
@@ -39,6 +39,7 @@ public interface IModule extends SModule {
 
   /**
    * Remove all usages of this method?
+   *
    * @see org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()
    * @see jetbrains.mps.project.dependency.GlobalModuleDependenciesManager
    * @see SModule#resolveInDependencies(org.jetbrains.mps.openapi.model.SModelId)

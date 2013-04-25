@@ -23,7 +23,7 @@ import jetbrains.mps.ide.depanalyzer.DependencyPathTree;
 import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.project.*;
+import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
@@ -61,7 +61,7 @@ public class ModuleDependenciesTest {
 
   //------------module depends on solution------------
 
-  private int findPaths(DependencyTreeNode root, IModule target) {
+  private int findPaths(DependencyTreeNode root, SModule target) {
     int num = 0;
     Queue<DependencyTreeNode> queue = new LinkedList<DependencyTreeNode>();
     if (root == null) {
@@ -80,13 +80,13 @@ public class ModuleDependenciesTest {
     return num;
   }
 
-  private void testDependency(DependencyPathTree testTree, IModule source, IModule target, boolean showRumtime, int numPaths) {
+  private void testDependency(DependencyPathTree testTree, SModule source, SModule target, boolean showRumtime, int numPaths) {
     assertEquals(numPaths, findPaths((DependencyTreeNode) testTree.testBuildTree(source, target, null, showRumtime), target));
     // check consistency with GlobalDependenciesManager:
     assertEquals(numPaths != 0, new GlobalModuleDependenciesManager(source).getModules(showRumtime ? Deptype.EXECUTE : Deptype.VISIBLE).contains(target));
   }
 
-  private void testUsedLanguage(DependencyPathTree testTree, IModule source, Language target, boolean showRuntime, int numPaths) {
+  private void testUsedLanguage(DependencyPathTree testTree, SModule source, Language target, boolean showRuntime, int numPaths) {
     assertEquals(numPaths, findPaths((DependencyTreeNode) testTree.testBuildTree(source, null, target, showRuntime), target));
     assertEquals(numPaths != 0, new GlobalModuleDependenciesManager(source).getUsedLanguages().contains(target));
   }

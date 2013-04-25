@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public abstract class Expression_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Expression_BehaviorDescriptor() {
@@ -15,11 +15,11 @@ public abstract class Expression_BehaviorDescriptor extends BaseConcept_Behavior
     return Expression_Behavior.virtual_constant_1262430001741498050(thisConcept);
   }
 
-  public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
+  public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return Expression_Behavior.virtual_eval_1213877519769(thisNode, module);
   }
 
-  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
+  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return Expression_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
 

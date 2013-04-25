@@ -50,7 +50,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
@@ -64,6 +63,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.BehaviorCodeOverrideImplementMenuGroup_ActionGroup" file="BehaviorCodeOverrideImplementMenuGroup_ActionGroup.java">
@@ -163,7 +163,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
@@ -171,6 +170,7 @@
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Constraints_Order" file="Constraints_Order.java">
     <classNode dependClassName="java.lang.String" />
@@ -279,7 +279,6 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.util.DeleteGeneratorHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
@@ -289,6 +288,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.DevKitTools_ActionGroup" file="DevKitTools_ActionGroup.java">
@@ -348,7 +348,6 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesViewTool" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
@@ -359,6 +358,7 @@
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.FindLanguageUsages_Action" file="FindLanguageUsages_Action.java">
@@ -379,7 +379,6 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.finders.LanguageUsagesFinder" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
@@ -388,6 +387,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.FindLanguageUsages_ActionGroup" file="FindLanguageUsages_ActionGroup.java">
@@ -635,7 +635,6 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesViewTool" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
@@ -643,6 +642,7 @@
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.GotoConceptAspect_ActionGroup" file="GotoConceptAspect_ActionGroup.java">
@@ -789,7 +789,6 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.workbench.editors.MPSLanguageEditor" />
     <classNode dependClassName="jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile" />
@@ -798,6 +797,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.LanguageNewActionsEx_ActionGroup" file="LanguageNewActionsEx_ActionGroup.java">
@@ -1024,7 +1024,6 @@
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
@@ -1036,6 +1035,7 @@
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.NewAspectModel_Action" file="NewAspectModel_Action.java">
@@ -1055,7 +1055,6 @@
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
@@ -1064,6 +1063,7 @@
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.NewDevKit_Action" file="NewDevKit_Action.java">
@@ -1110,7 +1110,6 @@
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -1118,6 +1117,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.NewLanguage_Action" file="NewLanguage_Action.java">
@@ -1272,12 +1272,12 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.RenameLanguageDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.RepositoryToolsGroup_ActionGroup" file="RepositoryToolsGroup_ActionGroup.java">

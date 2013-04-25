@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
@@ -15,7 +15,7 @@ public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
     return DotExpression_Behavior.virtual_allowsNullOperand_4585239809762176541(thisNode);
   }
 
-  public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
+  public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return DotExpression_Behavior.virtual_eval_1213877519769(thisNode, module);
   }
 

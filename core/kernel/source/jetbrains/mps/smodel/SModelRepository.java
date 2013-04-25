@@ -47,7 +47,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SModelRepository implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SModelRepository.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelRepository.class));
 
   public static SModelRepository getInstance() {
     return MPSCore.getInstance().getModelRepository();

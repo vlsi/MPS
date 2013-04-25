@@ -21,7 +21,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.actions.ModuleActions_ActionGroup;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public class ModuleTreeNode extends AbstractFileTreeNode {
@@ -45,7 +45,7 @@ public class ModuleTreeNode extends AbstractFileTreeNode {
     }
   }
 
-  public IModule getModule() {
+  public SModule getModule() {
     return myModule;
   }
 

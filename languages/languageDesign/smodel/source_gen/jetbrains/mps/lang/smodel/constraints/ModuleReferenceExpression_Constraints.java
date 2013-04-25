@@ -9,7 +9,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_Behavior;
 
 public class ModuleReferenceExpression_Constraints extends BaseConstraintsDescriptor {
@@ -30,7 +30,7 @@ public class ModuleReferenceExpression_Constraints extends BaseConstraintsDescri
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
         {
-          IModule module = ModuleReferenceExpression_Behavior.call_getModule_4040588429969043137(node);
+          SModule module = ModuleReferenceExpression_Behavior.call_getModule_4040588429969043137(node);
           if (module == null) {
             return null;
           }

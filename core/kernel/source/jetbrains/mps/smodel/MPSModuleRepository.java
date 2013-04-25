@@ -22,7 +22,7 @@ import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
 import org.apache.log4j.LogManager;
@@ -46,13 +46,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MPSModuleRepository implements CoreComponent, SRepository {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(MPSModuleRepository.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSModuleRepository.class));
   private List<SRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<SRepositoryListener>();
 
-  private Set<IModule> myModules = new LinkedHashSet<IModule>();
-  private Map<String, IModule> myFqNameToModulesMap = new ConcurrentHashMap<String, IModule>();
-  private Map<SModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<SModuleId, IModule>();
-  private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
+  private Set<SModule> myModules = new LinkedHashSet<SModule>();
+  private Map<String, SModule> myFqNameToModulesMap = new ConcurrentHashMap<String, SModule>();
+  private Map<SModuleId, SModule> myIdToModuleMap = new ConcurrentHashMap<SModuleId, SModule>();
+  private ManyToManyMap<SModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<SModule, MPSModuleOwner>();
 
   public static MPSModuleRepository getInstance() {
     return MPSCore.getInstance().getModuleRepository();
@@ -71,15 +71,15 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
 
   //-----------------register/unregister-merge-----------
 
-  public <T extends IModule> T registerModule(T module, MPSModuleOwner owner) {
+  public <T extends SModule> T registerModule(T module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
     SModuleId moduleId = module.getModuleReference().getModuleId();
     String moduleFqName = module.getModuleName();
 
-    assert moduleId != null : "module with null id is added to repository: fqName=" + moduleFqName + "; file=" + module.getDescriptorFile();
+    assert moduleId != null : "module with null id is added to repository: fqName=" + moduleFqName + "; file=" + ((AbstractModule) module).getDescriptorFile();
 
-    IModule existing = getModuleById(moduleId);
+    SModule existing = getModuleById(moduleId);
     if (existing != null) {
       myModuleToOwners.addLink(existing, owner);
       return (T) existing;
@@ -87,9 +87,9 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
 
     if (moduleFqName != null) {
       if (myFqNameToModulesMap.containsKey(moduleFqName)) {
-        IModule m = myFqNameToModulesMap.get(moduleFqName);
+        SModule m = myFqNameToModulesMap.get(moduleFqName);
         LOG.warning(
-            "duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(),
+            "duplicate module name " + moduleFqName + " : module with the same UID exists at " + ((AbstractModule)m).getDescriptorFile() + " and " + ((AbstractModule)module).getDescriptorFile(),
             m);
       }
 
@@ -108,10 +108,10 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     return module;
   }
 
-  public void unregisterModules(Collection<IModule> modules, MPSModuleOwner owner) {
-    Collection<IModule> modulesToDispose = new ArrayList<IModule>();
+  public void unregisterModules(Collection<SModule> modules, MPSModuleOwner owner) {
+    Collection<SModule> modulesToDispose = new ArrayList<SModule>();
     boolean repositoryChanged = false;
-    for (IModule module : modules) {
+    for (SModule module : modules) {
       if (doUnregisterModule(module, owner)) {
         modulesToDispose.add(module);
       } else {
@@ -122,7 +122,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
       return;
     }
     invalidateCaches();
-    for (IModule module : modulesToDispose) {
+    for (SModule module : modulesToDispose) {
       fireModuleRemoved(module);
       ((AbstractModule) module).dispose();
       MPSClassesReloadManager.getInstance().requestReload();
@@ -132,7 +132,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     }
   }
 
-  public void unregisterModule(IModule module, MPSModuleOwner owner) {
+  public void unregisterModule(SModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
     boolean moduleRemoved = doUnregisterModule(module, owner);
@@ -156,10 +156,10 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
    *
    * @return true if module was removed from ModuleRepository
    */
-  private boolean doUnregisterModule(IModule module, MPSModuleOwner owner) {
+  private boolean doUnregisterModule(SModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
     assert myModules.contains(
-        module) : "trying to unregister non-registered module: fqName=" + module.getModuleName() + "; file=" + module.getDescriptorFile();
+        module) : "trying to unregister non-registered module: fqName=" + module.getModuleName() + "; file=" + ((AbstractModule)module).getDescriptorFile();
 
     myModuleToOwners.removeLink(module, owner);
     boolean remove = myModuleToOwners.getByFirst(module).isEmpty();
@@ -182,24 +182,24 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   }
 
   @Deprecated  //3.0, use getModules
-  public Set<IModule> getAllModules() {
+  public Set<SModule> getAllModules() {
     ModelAccess.assertLegalRead();
     return Collections.unmodifiableSet(myModules);
   }
 
-  public Set<IModule> getModules(MPSModuleOwner moduleOwner) {
+  public Set<SModule> getModules(MPSModuleOwner moduleOwner) {
     //todo assertCanRead();
 
     return Collections.unmodifiableSet(myModuleToOwners.getBySecond(moduleOwner));
   }
 
-  public Set<MPSModuleOwner> getOwners(IModule module) {
+  public Set<MPSModuleOwner> getOwners(SModule module) {
     assertCanRead();
 
     return Collections.unmodifiableSet(myModuleToOwners.getByFirst(module));
   }
 
-  public IModule getModuleByFqName(String fqName) {
+  public SModule getModuleByFqName(String fqName) {
     //todo assertCanRead();
 
     return myFqNameToModulesMap.get(fqName);
@@ -236,7 +236,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
 
   @Deprecated //in 3.0
   //use getModule()
-  public IModule getModuleById(SModuleId moduleId) {
+  public SModule getModuleById(SModuleId moduleId) {
     //todo assertCanRead();
 
     if (moduleId == null) return null;
@@ -364,7 +364,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
 
   }
 
-  public void moduleFqNameChanged(IModule module, String oldName) {
+  public void moduleFqNameChanged(SModule module, String oldName) {
     ModelAccess.assertLegalWrite();
 
     if (myFqNameToModulesMap.get(oldName) != module || myFqNameToModulesMap.containsKey(module.getModuleName())) {
@@ -377,7 +377,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   //-------------------DEPRECATED
 
   @Deprecated //use ModuleRepositoryFacade instead
-  public IModule getModule(@NotNull SModuleReference ref) {
+  public SModule getModule(@NotNull SModuleReference ref) {
     return ModuleRepositoryFacade.getInstance().getModule(ref);
   }
 }

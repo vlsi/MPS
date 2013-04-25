@@ -21,9 +21,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ui.pluginSolution.plugin.Variants;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.ModuleUtil;
+import org.jetbrains.mps.openapi.module.SDependency;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -123,17 +124,17 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
         ann = ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).addElement(_quotation_createNode_3484lm_a0a0a0c0a());
       }
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).addElement(_quotation_createNode_3484lm_a0a3a0(myParameter));
-      IModule langToDep = Variants.moduleToGenerate(myParameter);
+      SModule langToDep = Variants.moduleToGenerate(myParameter);
       SModuleReference langRefToEng = langToDep.getModuleReference();
-      IModule module = SNodeOperations.getModel(node).getModule();
-      for (IModule depOn : ModuleUtil.depsToModules(module.getDependencies())) {
-        if (depOn.equals(langToDep)) {
+      SModule module = SNodeOperations.getModel(node).getModule();
+      for (SDependency depOn : module.getDeclaredDependencies()) {
+        if (depOn.getTarget().equals(langToDep)) {
           langToDep = null;
           break;
         }
       }
       if (langToDep != null) {
-        SNodeOperations.getModel(node).getModule().addDependency(langToDep.getModuleReference(), false);
+        ((AbstractModule) SNodeOperations.getModel(node).getModule()).addDependency(langToDep.getModuleReference(), false);
       }
       for (SModuleReference eng : ((SModelInternal) SNodeOperations.getModel(node)).engagedOnGenerationLanguages()) {
         if (eng.equals(langRefToEng)) {

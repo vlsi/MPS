@@ -18,7 +18,7 @@ package jetbrains.mps.project.dependency;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
@@ -163,24 +163,24 @@ public class ModelDependenciesManager {
 
   private class MyModuleWatcher extends ModuleRepositoryAdapter {
 
-    private ConcurrentHashSet<IModule> myWatchedModules = new ConcurrentHashSet<IModule>(4);
+    private ConcurrentHashSet<SModule> myWatchedModules = new ConcurrentHashSet<SModule>(4);
 
     private MyModuleWatcher() {
       registerSelf();
     }
 
     @Override
-    public void moduleRemoved(IModule module) {
+    public void moduleRemoved(SModule module) {
       invalidateIfWatching(module);
     }
 
     @Override
-    public void moduleInitialized(IModule module) {
+    public void moduleInitialized(SModule module) {
       invalidateIfWatching(module);
     }
 
     @Override
-    public void moduleChanged(IModule module) {
+    public void moduleChanged(SModule module) {
       invalidateIfWatching(module);
     }
 
@@ -198,7 +198,7 @@ public class ModelDependenciesManager {
       myWatchedModules.add(language);
     }
 
-    private void invalidateIfWatching(IModule module) {
+    private void invalidateIfWatching(SModule module) {
       if (myWatchedModules.contains(module)) {
         invalidate();
         unregisterSelf();

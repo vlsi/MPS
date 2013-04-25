@@ -22,7 +22,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
@@ -88,7 +88,7 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     if (!(SModelStereotype.isUserModel(model))) {
       return false;
     }
-    IModule module = model.getModule();
+    SModule module = model.getModule();
     if (module instanceof Language) {
       return true;
     } else if (module instanceof Solution) {

@@ -58,6 +58,10 @@ public class CommentLine_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new CommentLine_Editor.partListHandler_dzsxo_b0(node, "part", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    HandleEnterInTheEnd_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

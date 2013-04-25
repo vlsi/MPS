@@ -39,91 +39,91 @@
     <unitInfo nodeId="1390934629233975240" fileName="IDeltaResource.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.smodel.resources.IDeltaResource" />
   </root>
   <root nodeRef="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)/2257725414731981663">
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="tuple" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="16" startPosition="22" endLine="17" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="20" startPosition="84" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="21" startPosition="17" endLine="22" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="25" startPosition="40" endLine="26" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="29" startPosition="47" endLine="30" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="33" startPosition="27" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="37" startPosition="35" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="41" startPosition="37" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="45" startPosition="44" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="49" startPosition="23" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="53" startPosition="22" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="57" startPosition="117" endLine="58" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="58" startPosition="23" endLine="59" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="59" startPosition="28" endLine="60" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="63" startPosition="143" endLine="64" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="64" startPosition="23" endLine="65" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="65" startPosition="39" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="70" startPosition="64" endLine="71" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2708838034905939907" fileName="TResource.java" startLine="74" startPosition="28" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="834312300517864805" fileName="TResource.java" startLine="78" startPosition="40" endLine="79" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TResource#()V" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelDescriptor#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelDescriptor#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_1#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_2#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_1#()Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_2#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="2708838034905939903" fileName="TResource.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="describe#()Ljava/lang/String;" />
-    <nodeInfo nodeId="834312300517864801" fileName="TResource.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperties#()Ljetbrains/mps/make/resources/IPropertiesIO;" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TResource#(Ljava/lang/Iterable;Ljetbrains/mps/project/IModule;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/smodel/resources/TResource;" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assign#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="63" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assign#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="16" startPosition="22" endLine="17" endPosition="12" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="25" startPosition="40" endLine="26" endPosition="26" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="29" startPosition="47" endLine="30" endPosition="26" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="33" startPosition="27" endLine="34" endPosition="21" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="37" startPosition="35" endLine="38" endPosition="21" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="41" startPosition="37" endLine="42" endPosition="22" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="45" startPosition="44" endLine="46" endPosition="22" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="49" startPosition="23" endLine="50" endPosition="22" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="53" startPosition="22" endLine="54" endPosition="22" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="70" startPosition="64" endLine="71" endPosition="42" />
-    <scopeInfo nodeId="2708838034905939906" fileName="TResource.java" startLine="74" startPosition="28" endLine="75" endPosition="16" />
-    <scopeInfo nodeId="834312300517864804" fileName="TResource.java" startLine="78" startPosition="40" endLine="79" endPosition="71" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="20" startPosition="84" endLine="22" endPosition="77" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="tuple" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="17" startPosition="22" endLine="18" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="21" startPosition="84" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="22" startPosition="17" endLine="23" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="26" startPosition="40" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="30" startPosition="47" endLine="31" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="34" startPosition="27" endLine="35" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="38" startPosition="35" endLine="39" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="42" startPosition="37" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="46" startPosition="44" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="50" startPosition="23" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="54" startPosition="22" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="58" startPosition="117" endLine="59" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="59" startPosition="23" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="60" startPosition="28" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="64" startPosition="143" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="65" startPosition="23" endLine="66" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="66" startPosition="39" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="71" startPosition="64" endLine="72" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2708838034905939907" fileName="TResource.java" startLine="75" startPosition="28" endLine="76" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="834312300517864805" fileName="TResource.java" startLine="79" startPosition="40" endLine="80" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TResource#()V" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelDescriptor#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Lorg/jetbrains/mps/openapi/module/SModule;" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelDescriptor#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_1#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_2#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_1#()Lorg/jetbrains/mps/openapi/module/SModule;" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_2#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="2708838034905939903" fileName="TResource.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="describe#()Ljava/lang/String;" />
+    <nodeInfo nodeId="834312300517864801" fileName="TResource.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperties#()Ljetbrains/mps/make/resources/IPropertiesIO;" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TResource#(Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/smodel/resources/TResource;" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assign#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="64" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assign#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="17" startPosition="22" endLine="18" endPosition="12" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="26" startPosition="40" endLine="27" endPosition="26" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="30" startPosition="47" endLine="31" endPosition="26" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="34" startPosition="27" endLine="35" endPosition="21" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="38" startPosition="35" endLine="39" endPosition="21" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="42" startPosition="37" endLine="43" endPosition="22" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="46" startPosition="44" endLine="47" endPosition="22" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="50" startPosition="23" endLine="51" endPosition="22" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="54" startPosition="22" endLine="55" endPosition="22" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="71" startPosition="64" endLine="72" endPosition="42" />
+    <scopeInfo nodeId="2708838034905939906" fileName="TResource.java" startLine="75" startPosition="28" endLine="76" endPosition="16" />
+    <scopeInfo nodeId="834312300517864804" fileName="TResource.java" startLine="79" startPosition="40" endLine="80" endPosition="90" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="21" startPosition="84" endLine="23" endPosition="77" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="2257725414731981663" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="2257725414731981663" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="2257725414731981663" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="2257725414731981663" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="57" startPosition="117" endLine="60" endPosition="16" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="63" startPosition="143" endLine="66" endPosition="16" />
-    <scopeInfo nodeId="2708838034905939903" fileName="TResource.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="834312300517864801" fileName="TResource.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="58" startPosition="117" endLine="61" endPosition="16" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="64" startPosition="143" endLine="67" endPosition="16" />
+    <scopeInfo nodeId="2708838034905939903" fileName="TResource.java" startLine="75" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="834312300517864801" fileName="TResource.java" startLine="79" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="2257725414731981663" varName="delta" />
       <varInfo nodeId="2257725414731981663" varName="modelDescriptor" />
       <varInfo nodeId="2257725414731981663" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="2257725414731981663" varName="from" />
     </scopeInfo>
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="57" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="2257725414731981663" varName="from" />
     </scopeInfo>
-    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="63" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="64" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="2257725414731981663" varName="from" />
     </scopeInfo>
-    <unitInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.smodel.resources.TResource" />
+    <unitInfo nodeId="2257725414731981663" fileName="TResource.java" startLine="14" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.smodel.resources.TResource" />
   </root>
   <root nodeRef="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)/2257725414731981668">
     <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="12" startPosition="22" endLine="13" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -139,12 +139,12 @@
     <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="53" startPosition="100" endLine="54" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2708838034905939913" fileName="GResource.java" startLine="57" startPosition="28" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GResource#()V" />
-    <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GResource#(Ljetbrains/mps/project/IModule;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/Iterable;Ljetbrains/mps/generator/GenerationStatus;)V" />
-    <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GResource#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/Iterable;Ljetbrains/mps/generator/GenerationStatus;)V" />
+    <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModule;" />
     <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="model#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
     <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="retainedModels#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="status#(Ljetbrains/mps/generator/GenerationStatus;)Ljetbrains/mps/generator/GenerationStatus;" />
-    <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Lorg/jetbrains/mps/openapi/module/SModule;" />
     <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="model#()Lorg/jetbrains/mps/openapi/model/SModel;" />
     <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="retainedModels#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="status#()Ljetbrains/mps/generator/GenerationStatus;" />
@@ -192,52 +192,52 @@
     <unitInfo nodeId="2257725414731981668" fileName="GResource.java" startLine="11" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.smodel.resources.GResource" />
   </root>
   <root nodeRef="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)/2257725414731981680">
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="14" startPosition="22" endLine="15" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="18" startPosition="61" endLine="19" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="22" startPosition="40" endLine="23" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="26" startPosition="58" endLine="27" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="30" startPosition="27" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="34" startPosition="36" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="39" startPosition="74" endLine="40" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6461635923454395984" fileName="MResource.java" startLine="43" startPosition="28" endLine="44" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2418544542776709223" fileName="MResource.java" startLine="47" startPosition="40" endLine="48" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MResource#()V" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MResource#(Ljetbrains/mps/project/IModule;Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="models#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="models#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2708838034905920968" fileName="MResource.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="describe#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5555789605584709644" fileName="MResource.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperties#()Ljetbrains/mps/make/resources/IPropertiesIO;" />
-    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/smodel/resources/MResource;" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="14" startPosition="22" endLine="15" endPosition="12" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="18" startPosition="61" endLine="19" endPosition="26" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="22" startPosition="40" endLine="23" endPosition="27" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="26" startPosition="58" endLine="27" endPosition="27" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="30" startPosition="27" endLine="31" endPosition="22" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="34" startPosition="36" endLine="35" endPosition="22" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="39" startPosition="74" endLine="40" endPosition="42" />
-    <scopeInfo nodeId="2708838034905920971" fileName="MResource.java" startLine="43" startPosition="28" endLine="44" endPosition="89" />
-    <scopeInfo nodeId="5555789605584709647" fileName="MResource.java" startLine="47" startPosition="40" endLine="48" endPosition="71" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="15" startPosition="22" endLine="16" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="19" startPosition="61" endLine="20" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="23" startPosition="40" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="27" startPosition="58" endLine="28" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="31" startPosition="27" endLine="32" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="35" startPosition="36" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="40" startPosition="74" endLine="41" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6461635923454395984" fileName="MResource.java" startLine="44" startPosition="28" endLine="45" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2418544542776709223" fileName="MResource.java" startLine="48" startPosition="40" endLine="49" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MResource#()V" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MResource#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="models#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Lorg/jetbrains/mps/openapi/module/SModule;" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="models#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2708838034905920968" fileName="MResource.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="describe#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5555789605584709644" fileName="MResource.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperties#()Ljetbrains/mps/make/resources/IPropertiesIO;" />
+    <nodeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/smodel/resources/MResource;" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="15" startPosition="22" endLine="16" endPosition="12" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="19" startPosition="61" endLine="20" endPosition="26" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="23" startPosition="40" endLine="24" endPosition="27" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="27" startPosition="58" endLine="28" endPosition="27" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="31" startPosition="27" endLine="32" endPosition="22" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="35" startPosition="36" endLine="36" endPosition="22" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="40" startPosition="74" endLine="41" endPosition="42" />
+    <scopeInfo nodeId="2708838034905920971" fileName="MResource.java" startLine="44" startPosition="28" endLine="45" endPosition="89" />
+    <scopeInfo nodeId="5555789605584709647" fileName="MResource.java" startLine="48" startPosition="40" endLine="49" endPosition="90" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="2257725414731981680" varName="models" />
       <varInfo nodeId="2257725414731981680" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="2257725414731981680" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="2257725414731981680" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="2708838034905920968" fileName="MResource.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="5555789605584709644" fileName="MResource.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2708838034905920968" fileName="MResource.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="5555789605584709644" fileName="MResource.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="2257725414731981680" varName="from" />
     </scopeInfo>
-    <unitInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.smodel.resources.MResource" />
+    <unitInfo nodeId="2257725414731981680" fileName="MResource.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.smodel.resources.MResource" />
   </root>
   <root nodeRef="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)/5555789605584709649">
     <nodeInfo nodeId="5555789605584709836" fileName="FlatFilePropertiesIO.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="descFile" />
@@ -307,7 +307,7 @@
     <nodeInfo nodeId="5822172888873692302" fileName="IFResource.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="packageName#()Ljava/lang/String;" />
     <nodeInfo nodeId="5822172888873692307" fileName="IFResource.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contents#()Ljava/util/Map;" />
     <nodeInfo nodeId="6670106196906050749" fileName="IFResource.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootNodeNames#()Ljava/util/Map;" />
-    <nodeInfo nodeId="5822172888873692316" fileName="IFResource.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="5822172888873692316" fileName="IFResource.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Lorg/jetbrains/mps/openapi/module/SModule;" />
     <nodeInfo nodeId="5822172888873692321" fileName="IFResource.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="model#()Lorg/jetbrains/mps/openapi/model/SModel;" />
     <scopeInfo nodeId="5822172888873692302" fileName="IFResource.java" startLine="13" startPosition="0" endLine="14" endPosition="0" />
     <scopeInfo nodeId="5822172888873692307" fileName="IFResource.java" startLine="14" startPosition="0" endLine="15" endPosition="0" />
@@ -332,16 +332,16 @@
     <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="62" startPosition="122" endLine="63" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2708838034905939919" fileName="FResource.java" startLine="66" startPosition="28" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FResource#()V" />
-    <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FResource#(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Ljetbrains/mps/project/IModule;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FResource#(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
     <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="packageName#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contents#(Ljava/util/Map;)Ljava/util/Map;" />
     <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootNodeNames#(Ljava/util/Map;)Ljava/util/Map;" />
-    <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModule;" />
     <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="model#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
     <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="packageName#()Ljava/lang/String;" />
     <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contents#()Ljava/util/Map;" />
     <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootNodeNames#()Ljava/util/Map;" />
-    <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Lorg/jetbrains/mps/openapi/module/SModule;" />
     <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="model#()Lorg/jetbrains/mps/openapi/model/SModel;" />
     <nodeInfo nodeId="2708838034905939915" fileName="FResource.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="describe#()Ljava/lang/String;" />
     <nodeInfo nodeId="695262645445904871" fileName="FResource.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_5;)Ljetbrains/mps/smodel/resources/FResource;" />
@@ -465,11 +465,11 @@
     <nodeInfo nodeId="3608835296802640790" fileName="ModelsToResources.java" startLine="91" startPosition="23" endLine="92" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3608835296802640790" fileName="ModelsToResources.java" startLine="92" startPosition="38" endLine="93" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="3608835296802640735" fileName="ModelsToResources.java" startLine="94" startPosition="27" endLine="95" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640735" fileName="ModelsToResources.java" startLine="95" startPosition="38" endLine="96" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640735" fileName="ModelsToResources.java" startLine="96" startPosition="158" endLine="97" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802640735" fileName="ModelsToResources.java" startLine="95" startPosition="38" endLine="96" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640735" fileName="ModelsToResources.java" startLine="96" startPosition="165" endLine="97" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3608835296802640773" fileName="ModelsToResources.java" startLine="98" startPosition="28" endLine="99" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640773" fileName="ModelsToResources.java" startLine="99" startPosition="39" endLine="100" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802640773" fileName="ModelsToResources.java" startLine="100" startPosition="158" endLine="101" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802640773" fileName="ModelsToResources.java" startLine="99" startPosition="39" endLine="100" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802640773" fileName="ModelsToResources.java" startLine="100" startPosition="165" endLine="101" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3608835296802640728" fileName="ModelsToResources.java" startLine="102" startPosition="27" endLine="103" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3608835296802640728" fileName="ModelsToResources.java" startLine="103" startPosition="38" endLine="104" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="3608835296802640730" fileName="ModelsToResources.java" startLine="105" startPosition="27" endLine="106" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -599,14 +599,14 @@
     <unitInfo nodeId="7544464876070881646" fileName="ICResouce.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.smodel.resources.ICResouce" />
   </root>
   <root nodeRef="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)/7544464876070905006">
-    <nodeInfo nodeId="7544464876071181368" fileName="ITResource.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="7544464876071181368" fileName="ITResource.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Lorg/jetbrains/mps/openapi/module/SModule;" />
     <nodeInfo nodeId="4693363489974976494" fileName="ITResource.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelDescriptor#()Lorg/jetbrains/mps/openapi/model/SModel;" />
     <scopeInfo nodeId="7544464876071181368" fileName="ITResource.java" startLine="11" startPosition="0" endLine="12" endPosition="0" />
     <scopeInfo nodeId="4693363489974976494" fileName="ITResource.java" startLine="12" startPosition="0" endLine="13" endPosition="0" />
     <unitInfo nodeId="7544464876070905006" fileName="ITResource.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.smodel.resources.ITResource" />
   </root>
   <root nodeRef="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)/7544464876071189843">
-    <nodeInfo nodeId="7544464876071189846" fileName="IGResource.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="7544464876071189846" fileName="IGResource.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Lorg/jetbrains/mps/openapi/module/SModule;" />
     <nodeInfo nodeId="7544464876071189854" fileName="IGResource.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="model#()Lorg/jetbrains/mps/openapi/model/SModel;" />
     <nodeInfo nodeId="7544464876071189859" fileName="IGResource.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="retainedModels#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="7544464876071189868" fileName="IGResource.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="status#()Ljetbrains/mps/generator/GenerationStatus;" />
@@ -617,7 +617,7 @@
     <unitInfo nodeId="7544464876071189843" fileName="IGResource.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.smodel.resources.IGResource" />
   </root>
   <root nodeRef="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)/7544464876071207476">
-    <nodeInfo nodeId="5822172888873692283" fileName="IMResource.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="5822172888873692283" fileName="IMResource.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="module#()Lorg/jetbrains/mps/openapi/module/SModule;" />
     <nodeInfo nodeId="5822172888873692290" fileName="IMResource.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="models#()Ljava/lang/Iterable;" />
     <scopeInfo nodeId="5822172888873692283" fileName="IMResource.java" startLine="11" startPosition="0" endLine="12" endPosition="0" />
     <scopeInfo nodeId="5822172888873692290" fileName="IMResource.java" startLine="12" startPosition="0" endLine="13" endPosition="0" />

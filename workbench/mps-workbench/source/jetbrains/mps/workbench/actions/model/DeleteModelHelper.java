@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.actions.model;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -31,7 +30,9 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
@@ -75,13 +76,26 @@ public class DeleteModelHelper {
   }
 
   public static void deleteGeneratedFiles(SModel modelDescriptor) {
-    String moduleOutputPath = modelDescriptor.getModule().getOutputFor(modelDescriptor);
+    String moduleOutputPath = SModuleOperations.getOutputPathFor(modelDescriptor);
+    IFile classesGenDir = null;
+    if (modelDescriptor.getModule().getFacet(JavaModuleFacet.class) != null)
+      classesGenDir = modelDescriptor.getModule().getFacet(JavaModuleFacet.class).getClassesGen();
+
     if (moduleOutputPath == null) {
       return;
     }
     IFile moduleOutput = FileSystem.getInstance().getFileByPath(moduleOutputPath);
     FileGenerationUtil.getDefaultOutputDir(modelDescriptor, moduleOutput).delete();
     FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileGenerationUtil.getCachesDir(moduleOutput)).delete();
+    FileGenerationUtil.getDefaultOutputDir(modelDescriptor, classesGenDir).delete();
+
+    if(moduleOutput.getChildren().isEmpty())
+      moduleOutput.delete();
+    final IFile sourceGenCaches = FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(moduleOutputPath));
+    if(sourceGenCaches.getChildren().isEmpty())
+      sourceGenCaches.delete();
+    if(classesGenDir != null && classesGenDir.getChildren().isEmpty())
+      classesGenDir.delete();
   }
 
   public static void delete(SModule contextModule, SModel modelDescriptor, boolean deleteFiles) {
@@ -198,6 +212,7 @@ public class DeleteModelHelper {
       }
 
       if (myDeleteFiles) {
+        deleteGeneratedFiles(modelDescriptor);
         SModelRepository.getInstance().deleteModel(modelDescriptor);
       }
 

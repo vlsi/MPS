@@ -19,7 +19,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SModelsSubtree;
-import jetbrains.mps.project.*;
+import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.action.ActionUtils;

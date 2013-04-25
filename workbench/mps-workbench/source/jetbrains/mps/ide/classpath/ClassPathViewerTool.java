@@ -27,7 +27,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.ClasspathCollector;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
@@ -46,7 +46,7 @@ import java.util.List;
 public class ClassPathViewerTool extends BaseProjectTool {
   private MyClassPathTree myTree;
   private JPanel myComponent;
-  private IModule myInspectedModule;
+  private SModule myInspectedModule;
 
   public ClassPathViewerTool(Project project) {
     super(project, "Classpath Explorer", -1, IdeIcons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
@@ -75,7 +75,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
     return myComponent;
   }
 
-  public void analyzeModule(IModule m) {
+  public void analyzeModule(SModule m) {
     myInspectedModule = m;
     myTree.rebuildLater();
   }

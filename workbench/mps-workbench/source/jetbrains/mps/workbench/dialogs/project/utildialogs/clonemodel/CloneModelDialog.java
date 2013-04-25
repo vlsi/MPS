@@ -20,7 +20,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.RootReference;
@@ -160,7 +160,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     RootReference reference = myModelProperties.getRoot();
 
     IOperationContext operationContext = getOperationContext();
-    final IModule module = operationContext.getModule();
+    final SModule module = operationContext.getModule();
     assert module != null;
 
     Project project = getOperationContext().getProject();

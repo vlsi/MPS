@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.smodel.Language;
@@ -36,11 +36,11 @@ public class MPSProject extends Project implements ProjectComponent {
 
   @Override
   @NotNull
-  public List<IModule> getModules() {
-    // TODO remove after 3.0, this method is a copy of Project.getModules() returning List<IModule>
-    List<IModule> result = new ArrayList<IModule>();
+  public List<SModule> getModules() {
+    // TODO remove after 3.0, this method is a copy of Project.getModules() returning List<SModule>
+    List<SModule> result = new ArrayList<SModule>();
     for (SModuleReference ref : myModules) {
-      IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+      SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
       if (module != null) {
         result.add(module);
       }
@@ -49,11 +49,11 @@ public class MPSProject extends Project implements ProjectComponent {
   }
 
   @Override
-  public List<IModule> getModulesWithGenerators() {
-    // TODO remove after 3.0, this method is a copy of Project.getModulesWithGenerators() returning List<IModule>
-    List<IModule> modules = getModules();
-    List<IModule> generators = new ArrayList<IModule>();
-    for (IModule m : modules) {
+  public List<SModule> getModulesWithGenerators() {
+    // TODO remove after 3.0, this method is a copy of Project.getModulesWithGenerators() returning List<SModule>
+    List<SModule> modules = getModules();
+    List<SModule> generators = new ArrayList<SModule>();
+    for (SModule m : modules) {
       if (m instanceof Language) {
         generators.addAll(((Language) m).getGenerators());
       }

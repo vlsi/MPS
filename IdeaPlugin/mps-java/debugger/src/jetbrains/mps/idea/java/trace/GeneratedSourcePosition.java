@@ -25,7 +25,8 @@ import com.intellij.psi.PsiManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
@@ -117,8 +118,8 @@ public class GeneratedSourcePosition {
       @Override
       public String compute() {
         SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-        IModule module = modelDescriptor.getModule();
-        IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getInstance().getFileByPath(module.getGeneratorOutputPath()));
+        SModule module = modelDescriptor.getModule();
+        IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, ((AbstractModule) module).getOutputPath());
         IFile file = defaultOutputDir.getDescendant(generatedFileName);
         if (!file.exists()) {
           return null;

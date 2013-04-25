@@ -41,7 +41,7 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.EditorSettingsListener;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -212,7 +212,7 @@ public class TabbedEditor extends BaseNodeEditor {
       }
 
       SModel md = containingRoot.getModel();
-      IModule module = md.getModule();
+      SModule module = md.getModule();
       assert module != null : md.getReference().toString() + "; node is disposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(node);
       editNode(new SNodePointer(containingRoot), new ModuleContext(module, myContext.getProject()), select);
 

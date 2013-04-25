@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.projectPane.favorites.root;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -41,8 +41,8 @@ public abstract class FavoritesRoot<T> {
       o = new jetbrains.mps.smodel.SNodePointer((SNode) userObject);
     } else if (userObject instanceof SModel) {
       o = ((SModel) userObject).getReference();
-    } else if (userObject instanceof IModule) {
-      o = ((IModule) userObject).getModuleReference();
+    } else if (userObject instanceof SModule) {
+      o = ((SModule) userObject).getModuleReference();
     }
     if (o != null) return createForValue(o);
     return null;

@@ -3,25 +3,23 @@ package jetbrains.mps.plugins.runconfigs;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Mapper;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MPSPsiElement<T> extends FakePsiElement {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(MPSPsiElement.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSPsiElement.class));
 
   private Object myItem;
 
@@ -126,7 +124,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
       return new MPSPsiElement((SModel) o);
     }
     if (o instanceof SModule) {
-      return new MPSPsiElement((IModule) o);
+      return new MPSPsiElement((SModule) o);
     }
     if (o instanceof MPSProject) {
       return new MPSPsiElement((MPSProject) o);

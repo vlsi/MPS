@@ -19,7 +19,7 @@ import jetbrains.mps.ide.dependencyViewer.DependencyViewerScope;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
@@ -81,8 +81,8 @@ public class AnalyzeDependencies_Action extends BaseAction {
               scope.add(model);
             }
           }
-          if (((List<IModule>) MapSequence.fromMap(_params).get("myModules")) != null) {
-            for (IModule module : ((List<IModule>) MapSequence.fromMap(_params).get("myModules"))) {
+          if (((List<SModule>) MapSequence.fromMap(_params).get("myModules")) != null) {
+            for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("myModules"))) {
               scope.add(module);
             }
           }

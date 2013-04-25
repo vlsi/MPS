@@ -5,7 +5,7 @@ package jetbrains.mps.lang.smodel.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 
@@ -14,7 +14,7 @@ public class ModuleReferenceExpression_BehaviorDescriptor extends Expression_Beh
   }
 
   @NotNull
-  public List<IModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
+  public List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
     return ModuleReferenceExpression_Behavior.virtual_getVisibleModules_4040588429969394404(thisNode, scope);
   }
 

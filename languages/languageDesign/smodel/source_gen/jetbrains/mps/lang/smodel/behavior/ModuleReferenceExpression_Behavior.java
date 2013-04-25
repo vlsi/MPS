@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
@@ -23,7 +23,7 @@ public class ModuleReferenceExpression_Behavior {
   }
 
   @Nullable
-  public static IModule call_getModule_4040588429969043137(SNode thisNode) {
+  public static SModule call_getModule_4040588429969043137(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "moduleId") == null) {
       return null;
     }
@@ -31,24 +31,24 @@ public class ModuleReferenceExpression_Behavior {
   }
 
   @NotNull
-  public static List<IModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
+  public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
     return ModuleReferenceExpression_Behavior.getVisibleModules_4040588429969394431(scope);
   }
 
   @NotNull
-  public static List<IModule> getVisibleModules_4040588429969394431(IScope scope) {
-    List<IModule> result = ListSequence.fromList(new ArrayList<IModule>());
+  public static List<SModule> getVisibleModules_4040588429969394431(IScope scope) {
+    List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());
     ListSequence.fromList(result).addSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getAllModules()));
     return result;
   }
 
   @Deprecated
-  public static List<IModule> call_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
-    return BehaviorReflection.invokeVirtual((Class<List<IModule>>) ((Class) Object.class), thisNode, "virtual_getVisibleModules_4040588429969394404", new Object[]{scope});
+  public static List<SModule> call_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
+    return BehaviorReflection.invokeVirtual((Class<List<SModule>>) ((Class) Object.class), thisNode, "virtual_getVisibleModules_4040588429969394404", new Object[]{scope});
   }
 
   @Deprecated
-  public static List<IModule> callSuper_getVisibleModules_4040588429969394404(SNode thisNode, String callerConceptFqName, IScope scope) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<IModule>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), callerConceptFqName, "virtual_getVisibleModules_4040588429969394404", new Class[]{SNode.class, IScope.class}, new Object[]{scope});
+  public static List<SModule> callSuper_getVisibleModules_4040588429969394404(SNode thisNode, String callerConceptFqName, IScope scope) {
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SModule>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), callerConceptFqName, "virtual_getVisibleModules_4040588429969394404", new Class[]{SNode.class, IScope.class}, new Object[]{scope});
   }
 }

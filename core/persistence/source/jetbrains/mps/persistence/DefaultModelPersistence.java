@@ -18,7 +18,6 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -32,7 +31,6 @@ import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.xml.sax.InputSource;
@@ -48,7 +46,7 @@ import java.util.Map;
  */
 public class DefaultModelPersistence implements CoreComponent, ModelFactory {
 
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(DefaultModelPersistence.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
 
   @Override
   public void init() {
