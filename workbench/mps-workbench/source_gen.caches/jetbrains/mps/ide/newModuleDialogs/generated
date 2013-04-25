@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bentw389drvz466rrbahj59qh2nmzqm">
+<dependencies version="2" modelHash="c9w7em2ymkbsmfm4h89i2gsfmdhzcx8">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
@@ -21,9 +21,9 @@
   <dep model="r:00000000-0000-4000-0000-011c895904ab(jetbrains.mps.ide.newSolutionDialog)" hash="6ljvkfgh3a2z510kr30gg3nx8g2iq7g" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="7hndjrlln3nwjwuqph2f216c17q4zd6" />
   <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-58ocwuod1hpr2tjsask05cw1cxy8jv8" />
-  <dep model="r:47803144-d0ed-4800-ae84-e83a292e3adb(jetbrains.mps.ide.ui.dialogs.modules)" hash="87d54vgq9469qq5vr2ex7nen0otuaoh" />
-  <common hash="-4tf3fbdf2nwfpolm3l2h96zmf16fnin" />
-  <source id="3926595287074919987" name="NewSolutionDialog" hash="-5mxhm0lbavy03opoddeud0j99dx6ykf">
+  <dep model="r:47803144-d0ed-4800-ae84-e83a292e3adb(jetbrains.mps.ide.ui.dialogs.modules)" hash="88lhwan7xbodkvau05bsacpj49hb5yf" />
+  <common hash="624lmc3v293rswzv041undzhrbdd8ew" />
+  <source id="3926595287074919987" name="NewSolutionDialog" hash="-9bqq82eg2hrjvrf1bo3nymalpk65cou">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
@@ -44,7 +44,7 @@
     <dep model="r:47803144-d0ed-4800-ae84-e83a292e3adb(jetbrains.mps.ide.ui.dialogs.modules)" />
     <file name="NewSolutionDialog.java" />
   </source>
-  <source id="8412685000766424914" name="NewLanguageDialog" hash="-25j33ai3ns63z38nakxw8j9qjjk105e">
+  <source id="8412685000766424914" name="NewLanguageDialog" hash="-8rsh69fvs2lx81h1w0k7l855qzhoplt">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
