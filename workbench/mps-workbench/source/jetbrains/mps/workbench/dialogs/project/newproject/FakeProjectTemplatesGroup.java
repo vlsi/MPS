@@ -81,5 +81,10 @@ class FakeProjectTemplatesGroup implements ProjectTemplatesGroup {
         }
       };
     }
+
+    @Override
+    public void setProjectPath(String projectPath) {
+      //To change body of implemented methods use File | Settings | File Templates.
+    }
   }
 }

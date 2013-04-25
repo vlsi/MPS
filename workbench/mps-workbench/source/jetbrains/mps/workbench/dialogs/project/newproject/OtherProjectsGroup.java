@@ -50,5 +50,9 @@ public class OtherProjectsGroup implements ProjectTemplatesGroup {
       @Override
       public void fillProjectWithModules(MPSProject project) {}
     }; }
+
+    @Override
+    public void setProjectPath(String projectPath) {
+    }
   }
 }

@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -17,12 +18,6 @@ import java.util.Arrays;
 import java.util.Collection;
 
 class LanguageProjectsGroup implements ProjectTemplatesGroup {
-
-  private String myProjectPath;
-
-  LanguageProjectsGroup(String projectPath) {
-    myProjectPath = projectPath;
-  }
 
   @Override
   public String getName() {
@@ -36,7 +31,7 @@ class LanguageProjectsGroup implements ProjectTemplatesGroup {
 
   class LanguageProjectTemplate implements MPSProjectTemplate {
 
-    private NewLanguageSettings myLanguageSettings = new NewLanguageSettings(myProjectPath);
+    private NewLanguageSettings myLanguageSettings = new NewLanguageSettings();
 
     @Nullable
     @Override
@@ -97,6 +92,11 @@ class LanguageProjectsGroup implements ProjectTemplatesGroup {
           });
         }
       };
+    }
+
+    @Override
+    public void setProjectPath(String projectPath) {
+      myLanguageSettings.setProjectPath(projectPath);
     }
   }
 }
