@@ -16,9 +16,15 @@
 package jetbrains.mps.extapi.model;
 
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.DisposedRepository;
+import jetbrains.mps.smodel.IllegalModelAccessError;
+import jetbrains.mps.smodel.IllegalModelChangeError;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -35,12 +41,15 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
-  private List<SModelAccessListener> myAccessListeners = new CopyOnWriteArrayList<SModelAccessListener>();
-  private List<SModelChangeListener> myChangeListeners = new CopyOnWriteArrayList<SModelChangeListener>();
-  private List<SModelStateListener> myStateListeners = new CopyOnWriteArrayList<SModelStateListener>();
+  private static Logger LOG = Logger.getLogger(SModelBase.class);
+
+  private final List<SModelAccessListener> myAccessListeners = new CopyOnWriteArrayList<SModelAccessListener>();
+  private final List<SModelChangeListener> myChangeListeners = new CopyOnWriteArrayList<SModelChangeListener>();
+  private final List<SModelStateListener> myStateListeners = new CopyOnWriteArrayList<SModelStateListener>();
 
   @NotNull
   private final DataSource mySource;
@@ -51,7 +60,9 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   private final Object REPO_LOCK = new Object();
   private SModule myModule;
-  private boolean myDisposed = false;
+  private volatile SRepository myRepository = null;
+
+  private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
 
   protected SModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
@@ -60,6 +71,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public SRepository getRepository() {
+    assertCanRead();
     return myModule == null ? null : myModule.getRepository();
   }
 
@@ -67,50 +79,58 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   public void attach(SRepository repo) {
     synchronized (REPO_LOCK) {
       assert myModule != null && myModule.getRepository() != null;
+      myRepository = repo;
     }
   }
 
   @Override
   public void detach() {
     synchronized (REPO_LOCK) {
-      myDisposed = true;
+      myRepository = DisposedRepository.INSTANCE;
     }
   }
 
   @Override
   @NotNull
   public SModelReference getReference() {
+    assertCanRead();
     return myModelReference;
   }
 
   @Override
   public SModelId getModelId() {
+    assertCanRead();
     return myModelReference.getModelId();
   }
 
   @Override
   public String getModelName() {
+    assertCanRead();
     return myModelReference.getModelName();
   }
 
   @Override
   @NotNull
   public DataSource getSource() {
+    assertCanRead();
     return mySource;
   }
 
   public void setModule(SModule module) {
+    assertCanRead();
     myModule = module;
   }
 
   @Override
   @Nullable
   public SModule getModule() {
-    return ((SModule) myModule);
+    assertCanRead();
+    return myModule;
   }
 
   @Override
   public void setModelRoot(ModelRoot modelRoot) {
+    assertCanChange();
 //    if (myModelRoot != null && modelRoot != null) {
 //      LOG.error("Duplicate model roots for model " + getLongName() + " in module " + modelRoot.getModule() + ": \n" +
 //        "1. " + myModelRoot.getPresentation() + "\n" +
@@ -122,23 +142,27 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public ModelRoot getModelRoot() {
+    assertCanRead();
     return myModelRoot;
   }
 
   @Override
   public void addRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    assertCanChange();
     getSModelInternal().addRootNode(node);
     fireNodeAdded(null, null, node);
   }
 
   @Override
   public void removeRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    assertCanChange();
     getSModelInternal().removeRootNode(node);
     fireNodeRemoved(null, null, node);
   }
 
   @Override
   public boolean isReadOnly() {
+    assertCanRead();
     return true;
   }
 
@@ -154,6 +178,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @NotNull
   @Override
   public Iterable<Problem> getProblems() {
+    assertCanRead();
     jetbrains.mps.smodel.SModel sModelInternal = getSModelInternal();
     if (sModelInternal instanceof InvalidSModel) {
       return ((InvalidSModel) sModelInternal).getProblems();
@@ -249,6 +274,50 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     for (SModelChangeListener l : myChangeListeners) {
       l.nodeRemoved(node, role, child);
+    }
+  }
+
+  protected void assertCanRead() {
+    if (myRepository == null) return;
+    if (myRepository instanceof DisposedRepository) {
+      showDisposedMessage();
+      return;
+    }
+
+    synchronized (REPO_LOCK) {
+      if (myRepository == null) return;
+      if (myRepository instanceof DisposedRepository) {
+        showDisposedMessage();
+        return;
+      }
+      myRepository.getModelAccess().checkReadAccess();
+    }
+  }
+
+  protected void assertCanChange() {
+    if (myRepository == null) return;
+    if (myRepository instanceof DisposedRepository) {
+      showDisposedMessage();
+      return;
+    }
+
+    synchronized (REPO_LOCK) {
+      if (myRepository == null) return;
+      if (myRepository instanceof DisposedRepository) {
+        showDisposedMessage();
+        return;
+      }
+      myRepository.getModelAccess().checkWriteAccess();
+      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
+        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
+      }
+    }
+  }
+
+  private void showDisposedMessage() {
+    String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(this);
+    if (ourErroredModels.add(modelName)) {
+      LOG.error(new IllegalModelAccessError("Accessing disposed model " + modelName));
     }
   }
 }
