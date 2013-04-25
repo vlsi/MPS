@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.Language;
 
 public class DocCommentHelper {
   public static void addJavadocLangIfMissing(SNode node) {
-    IModule module = SNodeOperations.getModel(node).getModule();
+    IModule module = (IModule) SNodeOperations.getModel(node).getModule();
     SModelInternal model = as_zf4tay_a0a1a0(SNodeOperations.getModel(node), SModelInternal.class);
     SModuleReference javadocLangReference = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage.javadoc", Language.class).getModuleReference();
     if (!(model.importedLanguages().contains(javadocLangReference))) {

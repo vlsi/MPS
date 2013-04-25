@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.actions;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
@@ -49,10 +49,17 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
-import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
-import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -62,19 +69,42 @@ import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
+  public static void nodeFactory_NodeSetup_IfStatement_4920206213435985511(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
+    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+  }
+
+  public static void nodeFactory_NodeSetup_WhileStatement_4920206213425901381(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
+      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
+      AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_DoWhileStatement_4920206213435982911(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
+    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+  }
+
+  public static void nodeFactory_NodeSetup_ForStatement_4920206213436039859(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+  }
+
+  public static void nodeFactory_NodeSetup_ForeachStatement_4920206213436049782(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
+  }
+
   public static void nodeFactory_NodeSetup_ClassConcept_1213605907037(final IOperationContext operationContext, final NodeSetupContext _context) {
     if ((_context.getEnclosingNode() != null) && !(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface"))) {
       SPropertyOperations.set(_context.getNewNode(), "nonStatic", "" + (true));
@@ -264,36 +294,6 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_AdditionalForLoopVariable_2256531611052034562(final IOperationContext operationContext, final NodeSetupContext _context) {
     SLinkOperations.setTarget(_context.getNewNode(), "type", _quotation_createNode_ns07og_a0a0a0y(), true);
-  }
-
-  public static void nodeFactory_NodeSetup_IfStatement_4920206213435985511(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
-    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
-    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
-  }
-
-  public static void nodeFactory_NodeSetup_WhileStatement_4920206213425901381(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
-      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
-      AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
-    }
-  }
-
-  public static void nodeFactory_NodeSetup_DoWhileStatement_4920206213435982911(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "condition", "jetbrains.mps.baseLanguage.structure.Expression");
-    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
-  }
-
-  public static void nodeFactory_NodeSetup_ForStatement_4920206213436039859(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
-  }
-
-  public static void nodeFactory_NodeSetup_ForeachStatement_4920206213436049782(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-    AlterStatementListContainerFactoryUtils.buildContainer(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), _context.getNewNode());
   }
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -2307,6 +2307,69 @@ public class QueriesGenerated {
     }
 
     return SPropertyOperations.getBoolean(target, "static");
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_PlaceholderMember_2390338962983402761(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        IModule module = (IModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
+        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a97(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
+        SModuleReference javadocLangReference = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage.javadoc", Language.class).getModuleReference();
+        if (!(model.importedLanguages().contains(javadocLangReference))) {
+          module.addUsedLanguage(javadocLangReference);
+          model.addLanguage(javadocLangReference);
+        }
+
+        SNode nextSibling = SNodeOperations.getNextSibling(_context.getSourceNode());
+        while (nextSibling != null && SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.PlaceholderMember")) {
+          SNode toBeRemoved = nextSibling;
+          nextSibling = SNodeOperations.getNextSibling(nextSibling);
+          SNodeOperations.deleteNode(toBeRemoved);
+        }
+
+        if (SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+          SNode fieldDeclaration = SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+          SNodeFactoryOperations.setNewAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
+          SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))), "body", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+          SNodeFactoryOperations.addNewChild(line, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
+          return AttributeOperations.getAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")));
+        } else if (SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+          SNode fieldDeclaration = SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+          SNodeFactoryOperations.setNewAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
+          SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))), "body", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+          SNodeFactoryOperations.addNewChild(line, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
+          return AttributeOperations.getAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")));
+        } else {
+          SNode methodDeclaration = SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+          SNodeFactoryOperations.setNewAttribute(methodDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment");
+          SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(methodDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "body", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+          SNodeFactoryOperations.addNewChild(line, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
+          return AttributeOperations.getAttribute(methodDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")));
+        }
+      }
+
+      public String getMatchingText(String pattern) {
+        return "/**";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      public String getDescriptionText(String pattern) {
+        return "Add Documentation Comment";
+      }
+    });
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_PlaceholderMember_2390338962984522534(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    SNode nextSibling = SNodeOperations.getNextSibling(_context.getSourceNode());
+    while (nextSibling != null && SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.PlaceholderMember")) {
+      nextSibling = SNodeOperations.getNextSibling(nextSibling);
+    }
+    return nextSibling != null && ((SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))) == null)) || (SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))) == null)) || (SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))) == null)));
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1138168906052(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -5007,69 +5070,6 @@ __switch__:
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "throwsItem", true)).isEmpty();
   }
 
-  public static List<SubstituteAction> sideTransform_ActionsFactory_PlaceholderMember_2390338962983402761(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        IModule module = SNodeOperations.getModel(_context.getSourceNode()).getModule();
-        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a732(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
-        SModuleReference javadocLangReference = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage.javadoc", Language.class).getModuleReference();
-        if (!(model.importedLanguages().contains(javadocLangReference))) {
-          module.addUsedLanguage(javadocLangReference);
-          model.addLanguage(javadocLangReference);
-        }
-
-        SNode nextSibling = SNodeOperations.getNextSibling(_context.getSourceNode());
-        while (nextSibling != null && SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.PlaceholderMember")) {
-          SNode toBeRemoved = nextSibling;
-          nextSibling = SNodeOperations.getNextSibling(nextSibling);
-          SNodeOperations.deleteNode(toBeRemoved);
-        }
-
-        if (SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
-          SNode fieldDeclaration = SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-          SNodeFactoryOperations.setNewAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
-          SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))), "body", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-          SNodeFactoryOperations.addNewChild(line, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
-          return AttributeOperations.getAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")));
-        } else if (SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-          SNode fieldDeclaration = SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-          SNodeFactoryOperations.setNewAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
-          SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))), "body", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-          SNodeFactoryOperations.addNewChild(line, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
-          return AttributeOperations.getAttribute(fieldDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")));
-        } else {
-          SNode methodDeclaration = SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-          SNodeFactoryOperations.setNewAttribute(methodDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment");
-          SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(methodDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "body", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-          SNodeFactoryOperations.addNewChild(line, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
-          return AttributeOperations.getAttribute(methodDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")));
-        }
-      }
-
-      public String getMatchingText(String pattern) {
-        return "/**";
-      }
-
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-
-      public String getDescriptionText(String pattern) {
-        return "Add Documentation Comment";
-      }
-    });
-    return result;
-  }
-
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_PlaceholderMember_2390338962984522534(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    SNode nextSibling = SNodeOperations.getNextSibling(_context.getSourceNode());
-    while (nextSibling != null && SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.PlaceholderMember")) {
-      nextSibling = SNodeOperations.getNextSibling(nextSibling);
-    }
-    return nextSibling != null && ((SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))) == null)) || (SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))) == null)) || (SNodeOperations.isInstanceOf(nextSibling, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(nextSibling, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))) == null)));
-  }
-
   private static SNode _quotation_createNode_ns07og_a0a0a0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -5266,7 +5266,7 @@ __switch__:
     return str == null || str.length() == 0;
   }
 
-  private static <T> T as_x583g4_a0a1a0a0a0a0a1a732(Object o, Class<T> type) {
+  private static <T> T as_x583g4_a0a1a0a0a0a0a1a97(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
