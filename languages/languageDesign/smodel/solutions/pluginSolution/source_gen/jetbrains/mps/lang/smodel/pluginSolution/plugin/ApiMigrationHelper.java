@@ -12,8 +12,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.SModelOperations;
@@ -122,6 +121,12 @@ public class ApiMigrationHelper {
     migrate(oldNode, newNode);
   }
 
+  public void migrateSModule() {
+    SNode oldNode = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0o(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
+    SNode newNode = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0b0o(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
+    migrate(oldNode, newNode);
+  }
+
   private void migrate(final SNode oldNode, final SNode newNode) {
     Set<SNode> unknownUsages = SetSequence.fromSet(new HashSet<SNode>());
 
@@ -129,7 +134,7 @@ public class ApiMigrationHelper {
     Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(nodes).addElement(oldNode);
 
-    Set<SReference> usages = FindUsagesManager.getInstance().findUsages(nodes, SearchType.USAGES, scope, new EmptyProgressMonitor());
+    Set<SReference> usages = FindUsagesFacade.getInstance().findUsages(scope, nodes, new EmptyProgressMonitor());
 
     final Set<SNode> changedClassUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<Tuples._2<SNode, SReference>> changedClassUsagesInTemplates = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
@@ -163,7 +168,7 @@ public class ApiMigrationHelper {
     Set<SNode> methods = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(methods).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(oldNode)));
 
-    Set<SReference> musages = ((Set) FindUsagesManager.getInstance().findUsages(((Set) methods), SearchType.USAGES, scope, new EmptyProgressMonitor()));
+    Set<SReference> musages = FindUsagesFacade.getInstance().findUsages(scope, ((Set) methods), new EmptyProgressMonitor());
 
     final Set<Tuples._2<SNode, SReference>> changedMethodCalls = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
     final Set<SNode> castedMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
@@ -196,9 +201,9 @@ public class ApiMigrationHelper {
       Set<SNode> smethods = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(smethods).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(SNodeOperations.cast(oldNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
 
-      Set<jetbrains.mps.smodel.SReference> smusages = ((Set) FindUsagesManager.getInstance().findUsages(((Set) smethods), SearchType.USAGES, scope, new EmptyProgressMonitor()));
+      Set<SReference> smusages = FindUsagesFacade.getInstance().findUsages(scope, ((Set) smethods), new EmptyProgressMonitor());
 
-      for (jetbrains.mps.smodel.SReference ref : SetSequence.fromSet(smusages)) {
+      for (SReference ref : SetSequence.fromSet(smusages)) {
         SNode rNode = ref.getSourceNode();
         if (SModelOperations.isReadOnly(rNode.getModel())) {
           continue;
@@ -257,7 +262,7 @@ public class ApiMigrationHelper {
               if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), newNode)) {
                 continue;
               }
-              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0db0o(oldNode, operand));
+              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0db0p(oldNode, operand));
             }
           }
         });
@@ -273,10 +278,10 @@ public class ApiMigrationHelper {
     if (SModelOperations.isReadOnly(n.getModel())) {
       return false;
     }
-    if (eq_yke5lt_a0b0p(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", ""))))) {
+    if (eq_yke5lt_a0b0q(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", ""))))) {
       return false;
     }
-    if (eq_yke5lt_a0c0p(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.generator.smodelAdapter", ""))))) {
+    if (eq_yke5lt_a0c0q(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.generator.smodelAdapter", ""))))) {
       return false;
     }
     SNode root = SNodeOperations.getContainingRoot(n);
@@ -292,7 +297,7 @@ public class ApiMigrationHelper {
     for (Tuples._3<String, SNode, _FunctionTypes._void_P1_E0<? super SNode>> transformation : ListSequence.fromList(transformations)) {
       Set<SNode> method = SetSequence.fromSetAndArray(new HashSet<SNode>(), transformation._1());
 
-      Set<SReference> musages = ((Set) FindUsagesManager.getInstance().findUsages(((Set) method), SearchType.USAGES, scope, new EmptyProgressMonitor()));
+      Set<SReference> musages = FindUsagesFacade.getInstance().findUsages(scope, ((Set) method), new EmptyProgressMonitor());
 
       Set<SNode> unknown = SetSequence.fromSet(new HashSet<SNode>());
       Set<SNode> known = SetSequence.fromSet(new HashSet<SNode>());
@@ -362,7 +367,7 @@ public class ApiMigrationHelper {
   }
 
   private SNode getNewMethod(SNode old, SNode newClass) {
-    for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(newClass)).union(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0a71(), "classifier", false))))) {
+    for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(newClass)).union(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0a81(), "classifier", false))))) {
       if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(method, old)) {
         return method;
       }
@@ -530,7 +535,23 @@ public class ApiMigrationHelper {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0db0o(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_yke5lt_a0a0a0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), facade.createNodeId("~SModule")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_yke5lt_a0a0b0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), facade.createNodeId("~SModule")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0db0p(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -549,7 +570,7 @@ public class ApiMigrationHelper {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_yke5lt_a0a0a0a71() {
+  private static SNode _quotation_createNode_yke5lt_a0a0a0a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -557,14 +578,14 @@ public class ApiMigrationHelper {
     return quotedNode_1;
   }
 
-  private static boolean eq_yke5lt_a0b0p(Object a, Object b) {
+  private static boolean eq_yke5lt_a0b0q(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_yke5lt_a0c0p(Object a, Object b) {
+  private static boolean eq_yke5lt_a0c0q(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

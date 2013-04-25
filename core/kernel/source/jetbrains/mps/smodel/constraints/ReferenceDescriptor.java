@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import org.apache.log4j.LogManager;
@@ -41,7 +41,7 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModuleSc
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
 
 public abstract class ReferenceDescriptor {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ReferenceDescriptor.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReferenceDescriptor.class));
   private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
 
   // can be ErrorScope
@@ -174,7 +174,7 @@ public abstract class ReferenceDescriptor {
       return contextNode != null ? contextNode.getModel() : null;
     }
 
-    private IModule getModule() {
+    private SModule getModule() {
       return ModelConstraintsUtils.getModule(getModel());
     }
   }

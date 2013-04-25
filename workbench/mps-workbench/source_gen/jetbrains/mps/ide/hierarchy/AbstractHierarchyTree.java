@@ -4,7 +4,7 @@ package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 
 public abstract class AbstractHierarchyTree extends MPSTree {
   protected IOperationContext myOperationContext;
-  protected FindUsagesManager myUsagesManager;
+  protected FindUsagesFacade myFindUsages;
   protected AbstractHierarchyView myHierarchyView;
   protected SNode myHierarchyNode;
   protected String myConceptFqName;
@@ -84,7 +84,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
   public void setOperationContext(IOperationContext operationContext) {
     if (operationContext != null) {
       myOperationContext = operationContext;
-      myUsagesManager = FindUsagesManager.getInstance();
+      myFindUsages = FindUsagesFacade.getInstance();
     }
   }
 

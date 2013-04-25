@@ -12,7 +12,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import javax.swing.SwingUtilities;
@@ -37,7 +37,7 @@ public class Testbench {
       public void run() {
         ProgressMonitor monitor = new EmptyProgressMonitor();
         ModuleMaker maker = new ModuleMaker();
-        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), monitor);
+        maker.make(new LinkedHashSet<SModule>(MPSModuleRepository.getInstance().getAllModules()), monitor);
         ClassLoaderManager.getInstance().reloadAll(monitor);
       }
     });

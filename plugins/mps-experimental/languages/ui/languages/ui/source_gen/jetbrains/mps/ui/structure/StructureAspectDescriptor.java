@@ -4,7 +4,7 @@ package jetbrains.mps.ui.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,79 +14,79 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.AccessUIPropertyOperation", "jetbrains.mps.baseLanguage.structure.AbstractOperation", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractOperation"}, new String[]{}, new String[]{"property"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.AccessUIPropertyOperation").super_("jetbrains.mps.baseLanguage.structure.AbstractOperation").parents("jetbrains.mps.baseLanguage.structure.AbstractOperation").references("property").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.AppendUIObjectStatement", "jetbrains.mps.ui.structure.UIObjectStatement", false, new String[]{"jetbrains.mps.ui.structure.UIObjectStatement"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "append", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.AppendUIObjectStatement").super_("jetbrains.mps.ui.structure.UIObjectStatement").parents("jetbrains.mps.ui.structure.UIObjectStatement").alias("append", "").create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.BeanPropertyView", "jetbrains.mps.ui.structure.View", false, new String[]{"jetbrains.mps.ui.structure.View"}, new String[]{"propertyName", "canRead", "canWrite"}, new String[]{"getter"}, new String[]{"bean"}, new boolean[]{false}, false, false, "view bean property", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.BeanPropertyView").super_("jetbrains.mps.ui.structure.View").parents("jetbrains.mps.ui.structure.View").properties("propertyName", "canRead", "canWrite").references("getter").children(new String[]{"bean"}, new boolean[]{false}).alias("view bean property", "").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.CallUIActionOperation", "jetbrains.mps.baseLanguage.structure.AbstractOperation", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractOperation"}, new String[]{}, new String[]{"action"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.CallUIActionOperation").super_("jetbrains.mps.baseLanguage.structure.AbstractOperation").parents("jetbrains.mps.baseLanguage.structure.AbstractOperation").references("action").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.ChildAspect", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"definition"}, new String[]{"value"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.ChildAspect").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("definition").children(new String[]{"value"}, new boolean[]{false}).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.ClearCompartmentStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "clear", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.ClearCompartmentStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").alias("clear", "").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.CompartmentProviderStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.structure.IUIObjectContextProvider"}, new String[]{}, new String[]{}, new String[]{"context", "body"}, new boolean[]{false, false}, false, false, "in compartment", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.CompartmentProviderStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.structure.IUIObjectContextProvider").children(new String[]{"context", "body"}, new boolean[]{false, false}).alias("in compartment", "").create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.CompartmentReferenceExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"container"}, new String[]{"uiObject"}, new boolean[]{false}, false, false, "compartment specification", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.CompartmentReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("container").children(new String[]{"uiObject"}, new boolean[]{false}).alias("compartment specification", "").create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.ContainerCompartment", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.ui.structure.IUIObjectContextProvider"}, new String[]{}, new String[]{"container"}, new String[]{"body"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.ContainerCompartment").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.ui.structure.IUIObjectContextProvider").references("container").children(new String[]{"body"}, new boolean[]{false}).create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.ContainerType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"container", "uiObject"}, new String[]{}, new boolean[]{}, false, false, "container", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.ContainerType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").references("container", "uiObject").alias("container", "").create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.Controller", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.Controller").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.ControllerBinding", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"event"}, new String[]{"controller"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.ControllerBinding").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("event").children(new String[]{"controller"}, new boolean[]{false}).create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.CreateUIObjectStatement", "jetbrains.mps.ui.structure.UIObjectStatement", false, new String[]{"jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.ui.structure.IUIObjectDeclaration"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "create", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.CreateUIObjectStatement").super_("jetbrains.mps.ui.structure.UIObjectStatement").parents("jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.ui.structure.IUIObjectDeclaration").alias("create", "").create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "enclosing", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("enclosing", "").create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.EventHandingBlock", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.EventHandingBlock").super_("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").parents("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").create();
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.EventPropertyAccessOp", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{"property"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.EventPropertyAccessOp").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").references("property").create();
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.EventType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"event"}, new String[]{}, new boolean[]{}, false, false, "event", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.EventType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").references("event").alias("event", "").create();
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.ExpressionView", "jetbrains.mps.ui.structure.View", false, new String[]{"jetbrains.mps.ui.structure.View"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "expression", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.ExpressionView").super_("jetbrains.mps.ui.structure.View").parents("jetbrains.mps.ui.structure.View").children(new String[]{"expression"}, new boolean[]{false}).alias("expression", "").create();
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.ForceLayoutStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "force layout", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.ForceLayoutStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").alias("force layout", "").create();
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.FunctionParameterDeclaration", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.FunctionParameterDeclaration").super_("jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration").parents("jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration").create();
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.IUIObjectContextProvider", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.IUIObjectContextProvider").interface_().create();
       case 21:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.IUIObjectDeclaration", null, true, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.IUIObjectDeclaration").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.ILocalDeclaration").create();
       case 22:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.InlineController", "jetbrains.mps.ui.structure.Controller", false, new String[]{"jetbrains.mps.ui.structure.Controller", "jetbrains.mps.baseLanguage.structure.TypeDerivable"}, new String[]{}, new String[]{}, new String[]{"eventHandlingBlock"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.InlineController").super_("jetbrains.mps.ui.structure.Controller").parents("jetbrains.mps.ui.structure.Controller", "jetbrains.mps.baseLanguage.structure.TypeDerivable").children(new String[]{"eventHandlingBlock"}, new boolean[]{false}).create();
       case 23:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.InsertUIObjectStatement", "jetbrains.mps.ui.structure.UIObjectStatement", false, new String[]{"jetbrains.mps.ui.structure.UIObjectStatement"}, new String[]{}, new String[]{}, new String[]{"before"}, new boolean[]{false}, false, false, "insert before", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.InsertUIObjectStatement").super_("jetbrains.mps.ui.structure.UIObjectStatement").parents("jetbrains.mps.ui.structure.UIObjectStatement").children(new String[]{"before"}, new boolean[]{false}).alias("insert before", "").create();
       case 24:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.IterateContentsStatement", "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, new String[]{}, new String[]{}, new String[]{"variable"}, new boolean[]{false}, false, false, "foreach in contents", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.IterateContentsStatement").super_("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement").parents("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement").children(new String[]{"variable"}, new boolean[]{false}).alias("foreach in contents", "").create();
       case 25:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.IterateContentsVariable", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.IterateContentsVariable").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 26:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.IterateContentsVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"variable"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.IterateContentsVariableReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("variable").create();
       case 27:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.RemoveUIObjectStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"argument"}, new boolean[]{false}, false, false, "remove", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.RemoveUIObjectStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"argument"}, new boolean[]{false}).alias("remove", "").create();
       case 28:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.UIObjectProviderStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.structure.IUIObjectContextProvider"}, new String[]{}, new String[]{}, new String[]{"context", "body"}, new boolean[]{false, false}, false, false, "in context", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.UIObjectProviderStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.ui.structure.IUIObjectContextProvider").children(new String[]{"context", "body"}, new boolean[]{false, false}).alias("in context", "").create();
       case 29:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.UIObjectReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalReference"}, new String[]{}, new String[]{"declaration"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.UIObjectReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ILocalReference").references("declaration").create();
       case 30:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.UIObjectStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{"uiObject"}, new String[]{"viewBinding", "controllerBinding", "compartment", "aspect"}, new boolean[]{true, true, true, true}, true, false, "create", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.UIObjectStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("uiObject").children(new String[]{"viewBinding", "controllerBinding", "compartment", "aspect"}, new boolean[]{true, true, true, true}).abstract_().alias("create", "").create();
       case 31:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.UIObjectType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{"uiObject"}, new String[]{}, new boolean[]{}, false, false, "uiObject", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.UIObjectType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").references("uiObject").alias("uiObject", "").create();
       case 32:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.ValidateBlock", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.ValidateBlock").super_("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").parents("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").create();
       case 33:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.ValidatingView", "jetbrains.mps.ui.structure.View", false, new String[]{"jetbrains.mps.ui.structure.View"}, new String[]{}, new String[]{}, new String[]{"view", "validator"}, new boolean[]{false, false}, false, false, "validating view", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.ValidatingView").super_("jetbrains.mps.ui.structure.View").parents("jetbrains.mps.ui.structure.View").children(new String[]{"view", "validator"}, new boolean[]{false, false}).alias("validating view", "").create();
       case 34:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.Validator", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.TypeDerivable"}, new String[]{}, new String[]{}, new String[]{"validateBlock"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.Validator").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.TypeDerivable").children(new String[]{"validateBlock"}, new boolean[]{false}).create();
       case 35:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.View", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.View").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 36:
-        return new CompiledConceptDescriptor("jetbrains.mps.ui.structure.ViewBinding", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"property"}, new String[]{"view"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ui.structure.ViewBinding").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("property").children(new String[]{"view"}, new boolean[]{false}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.Copy_Behavior;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
@@ -211,7 +211,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1986682148700631550(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule module = Module_Behavior.call_getModule_1213877515148(_context.getNode());
+    SModule module = Module_Behavior.call_getModule_1213877515148(_context.getNode());
     if (module instanceof Solution) {
       return "solution";
     }
@@ -1331,7 +1331,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_5640794902512565310(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final String MREF = "mref";
     List<SNode> res = new ArrayList<SNode>();
-    for (IModule m : new GlobalModuleDependenciesManager(Module_Behavior.call_getModule_1213877515148(_context.getNode())).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE)) {
+    for (SModule m : new GlobalModuleDependenciesManager(Module_Behavior.call_getModule_1213877515148(_context.getNode())).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE)) {
       SNode propertyNode = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
       propertyNode.setProperty(MREF, m.getModuleReference().toString());
       ListSequence.fromList(res).addElement(propertyNode);
@@ -1646,10 +1646,10 @@ __switch__:
         continue;
       }
       List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{});
-      Map<IModule, List<SNode>> map = MapSequence.fromMap(new LinkedHashMap<IModule, List<SNode>>(16, (float) 0.75, false));
+      Map<SModule, List<SNode>> map = MapSequence.fromMap(new LinkedHashMap<SModule, List<SNode>>(16, (float) 0.75, false));
       // fill map 
       for (SNode module : ListSequence.fromList(modules)) {
-        IModule imodule = Module_Behavior.call_getModule_1213877515148(module);
+        SModule imodule = Module_Behavior.call_getModule_1213877515148(module);
         if (imodule == null) {
           _context.showErrorMessage(module, "Missing module " + SPropertyOperations.getString(module, "name") + ".");
           continue;
@@ -1665,18 +1665,18 @@ __switch__:
         ListSequence.fromList(modulesForIModule).addElement(module);
       }
       // calculate module cycles 
-      Set<IModule> modulesToProcess = MapSequence.fromMap(map).keySet();
-      Set<IModule> modulesCopy = SetSequence.fromSet(new LinkedHashSet<IModule>());
-      SetSequence.fromSet(modulesCopy).addSequence(SetSequence.fromSet(modulesToProcess).sort(new ISelector<IModule, String>() {
-        public String select(IModule it) {
+      Set<SModule> modulesToProcess = MapSequence.fromMap(map).keySet();
+      Set<SModule> modulesCopy = SetSequence.fromSet(new LinkedHashSet<SModule>());
+      SetSequence.fromSet(modulesCopy).addSequence(SetSequence.fromSet(modulesToProcess).sort(new ISelector<SModule, String>() {
+        public String select(SModule it) {
           return it.getModuleName();
         }
       }, true));
-      List<Set<IModule>> sm = (List<Set<IModule>>) StronglyConnectedModules.getInstance().getStronglyConnectedComponents(modulesCopy);
+      List<Set<SModule>> sm = (List<Set<SModule>>) StronglyConnectedModules.getInstance().getStronglyConnectedComponents(modulesCopy);
       // say to all modules it's cycle 
       SNode lastCycle = null;
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>(ListSequence.fromList(sm).count()));
-      for (Set<IModule> moduleSet : ListSequence.fromList(sm)) {
+      for (Set<SModule> moduleSet : ListSequence.fromList(sm)) {
         SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
         ListSequence.fromList(result).addElement(cycle);
         // add dependency to the previous cycle so that compilation order would be preserved 
@@ -1686,13 +1686,13 @@ __switch__:
           ListSequence.fromList(SLinkOperations.getTargets(cycle, "dependency", true)).addElement(ref);
         }
         lastCycle = cycle;
-        Iterable<IModule> sortedModuleSet = SetSequence.fromSet(moduleSet).sort(new ISelector<IModule, String>() {
-          public String select(IModule it) {
+        Iterable<SModule> sortedModuleSet = SetSequence.fromSet(moduleSet).sort(new ISelector<SModule, String>() {
+          public String select(SModule it) {
             return it.getModuleName();
           }
         }, true);
         SPropertyOperations.set(cycle, "name", _context.createUniqueName("cycle." + Sequence.fromIterable(sortedModuleSet).first().getModuleName(), layout));
-        for (IModule imodule : Sequence.fromIterable(sortedModuleSet)) {
+        for (SModule imodule : Sequence.fromIterable(sortedModuleSet)) {
           List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
           for (SNode module : ListSequence.fromList(modulesForIModule)) {
             SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.NewModuleReference", null);
@@ -1721,13 +1721,13 @@ __switch__:
     // <node> 
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.Layout");
     for (SNode layout : ListSequence.fromList(layouts)) {
-      Map<IModule, SNode> modules = MapSequence.fromMap(new HashMap<IModule, SNode>());
+      Map<SModule, SNode> modules = MapSequence.fromMap(new HashMap<SModule, SNode>());
       for (SNode m : ListSequence.fromList(Layout_Behavior.call_getModules_1213877228340(layout)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.PluginModule"));
         }
       })) {
-        IModule module = Module_Behavior.call_getModule_1213877515148(m);
+        SModule module = Module_Behavior.call_getModule_1213877515148(m);
         if (module == null) {
           _context.showErrorMessage(m, "module is not found: " + SPropertyOperations.getString(m, "name") + "(" + SPropertyOperations.getString(m, "id") + ")");
           continue;
@@ -1735,11 +1735,11 @@ __switch__:
         MapSequence.fromMap(modules).put(module, m);
       }
 
-      Map<IModule, Iterable<IModule>> missing = CheckFullDependencyUtil.checkFullDependency(modules);
+      Map<SModule, Iterable<SModule>> missing = CheckFullDependencyUtil.checkFullDependency(modules);
 
-      for (IModule module : SetSequence.fromSet(MapSequence.fromMap(missing).keySet())) {
+      for (SModule module : SetSequence.fromSet(MapSequence.fromMap(missing).keySet())) {
         String moduleFqName = module.getModuleName();
-        for (IModule dependent : Sequence.fromIterable(MapSequence.fromMap(missing).get(module))) {
+        for (SModule dependent : Sequence.fromIterable(MapSequence.fromMap(missing).get(module))) {
           String errorText = "Required module " + dependent.getModuleName() + " is absent in packaging script model " + _context.getOriginalInputModel() + ". Used by module " + moduleFqName + ".";
           System.err.println(errorText);
           if (moduleFqName.startsWith("jetbrains.mps")) {

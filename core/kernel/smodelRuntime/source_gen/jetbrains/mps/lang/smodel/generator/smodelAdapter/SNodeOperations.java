@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class SNodeOperations {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SNodeOperations.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNodeOperations.class));
   private static boolean ourCastsEnabled = !(("true".equals(System.getProperty("mps.disableNodeCastExceptions"))));
 
   public SNodeOperations() {
@@ -439,7 +439,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    parent.insertChild(role, newChild, parent.getPrevChild(node));
+    parent.insertChild(role, newChild, node.getPrevSibling());
     return newChild;
   }
 
@@ -475,7 +475,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    nodeParent.insertChild(role, siblingNode, nodeParent.getPrevChild(node));
+    nodeParent.insertChild(role, siblingNode, node.getPrevSibling());
     return siblingNode;
   }
 

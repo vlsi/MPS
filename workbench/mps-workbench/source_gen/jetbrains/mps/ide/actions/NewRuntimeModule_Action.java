@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +52,7 @@ public class NewRuntimeModule_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("contextModule")) instanceof Language;
+    return ((SModule) MapSequence.fromMap(_params).get("contextModule")) instanceof Language;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -94,7 +94,7 @@ public class NewRuntimeModule_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final List<IModule> modules = ListSequence.fromList(new ArrayList<IModule>());
+      final List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           ListSequence.fromList(modules).addSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getAllModules()));
@@ -103,8 +103,8 @@ public class NewRuntimeModule_Action extends BaseAction {
       BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.fromMap(_params).get("project")), "runtime module") {
         @Override
         public SModuleReference[] find(IScope p0) {
-          return ListSequence.fromList(modules).select(new ISelector<IModule, SModuleReference>() {
-            public SModuleReference select(IModule it) {
+          return ListSequence.fromList(modules).select(new ISelector<SModule, SModuleReference>() {
+            public SModuleReference select(SModule it) {
               return it.getModuleReference();
             }
           }).toGenericArray(SModuleReference.class);
@@ -118,7 +118,7 @@ public class NewRuntimeModule_Action extends BaseAction {
               if (module == null) {
                 return;
               }
-              final Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("contextModule"));
+              final Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("contextModule"));
               language.getModuleDescriptor().getRuntimeModules().add((ModuleReference) module);
               final MPSTree mpsTree = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getTree();
               ModelAccess.instance().runWriteInEDT(new Runnable() {

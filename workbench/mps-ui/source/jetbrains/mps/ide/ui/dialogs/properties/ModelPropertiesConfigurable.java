@@ -50,7 +50,8 @@ import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -165,7 +166,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     protected IScope getScope() {
-      return myModelDescriptor.getModule().getScope();
+      return ((AbstractModule)myModelDescriptor.getModule()).getScope();
     }
 
     protected boolean confirmRemove(final Object value) {
@@ -408,7 +409,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
-              List<IModule> modules = new LinkedList<IModule>();
+              List<SModule> modules = new LinkedList<SModule>();
               for (int i : myTable.getSelectedRows()) {
                 Object value = myUsedLangsTableModel.getValueAt(i, UsedLangsTableModel.ITEM_COLUMN);
                 if(value instanceof SModuleReference){
@@ -434,7 +435,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
                   SearchResults searchResults = new SearchResults();
                   ModulesHolder modulesHolder = (ModulesHolder) query.getObjectHolder();
-                  for (IModule searchedModule : modulesHolder.getObject()) {
+                  for (SModule searchedModule : modulesHolder.getObject()) {
                     SearchQuery searchQuery = new SearchQuery(searchedModule, query.getScope());
                     searchResults.addAll(super.find(searchQuery,monitor));
                   }

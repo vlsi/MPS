@@ -18,7 +18,7 @@ package jetbrains.mps.ide.messages.navigation;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -37,7 +37,7 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodeReference>
 
   @Override
   public void navigate(SNodeReference node, Project project, boolean focus, boolean select) {
-    IModule module = node.resolve(MPSModuleRepository.getInstance()).getModel().getModule();
+    SModule module = node.resolve(MPSModuleRepository.getInstance()).getModel().getModule();
     ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(project));
 
     NavigationSupport.getInstance().openNode(context, node.resolve(MPSModuleRepository.getInstance()), focus, select);

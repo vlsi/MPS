@@ -36,7 +36,7 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;

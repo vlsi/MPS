@@ -8,7 +8,7 @@ import jetbrains.mps.project.Project;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -61,8 +61,8 @@ public class GenModuleXmlWorker extends MpsWorker {
     ModuleXml params = GenModuleXmlTask.decode(parameter);
 
     final SModuleReference moduleRef = ModuleReference.fromString(params.getRef());
-    IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
-      public IModule compute() {
+    SModule module = ModelAccess.instance().runReadAction(new Computable<SModule>() {
+      public SModule compute() {
         return MPSModuleRepository.getInstance().getModule(moduleRef);
       }
     });
@@ -71,7 +71,7 @@ public class GenModuleXmlWorker extends MpsWorker {
     writeFile(xmlfile, moduleRef, module, params.getInnerText(INDENT_INNER_XML, INDENT_WITH));
   }
 
-  public void writeFile(IFile file, SModuleReference moduleRef, IModule module, String extraText) {
+  public void writeFile(IFile file, SModuleReference moduleRef, SModule module, String extraText) {
 
     try {
       PrintWriter wr = new PrintWriter(new PrintStream(file.openOutputStream()));
@@ -84,13 +84,13 @@ public class GenModuleXmlWorker extends MpsWorker {
       )) + "\">");
 
       wr.println(INDENT_WITH + "<dependencies>");
-      Collection<IModule> dependencies = getDepenencies(module);
+      Collection<SModule> dependencies = getDepenencies(module);
       if (dependencies == null) {
         // <node> 
         error("module " + moduleRef + " was not found in repository");
         return;
       }
-      for (IModule m : dependencies) {
+      for (SModule m : dependencies) {
         wr.println(INDENT_WITH + INDENT_WITH + "<module ref=\"" + m.getModuleReference().toString() + "\" />");
       }
       wr.println(INDENT_WITH + "</dependencies>");
@@ -104,11 +104,11 @@ public class GenModuleXmlWorker extends MpsWorker {
     }
   }
 
-  private Collection<IModule> getDepenencies(final IModule module) {
+  private Collection<SModule> getDepenencies(final SModule module) {
     if (module == null) {
       return null;
     }
-    final Wrappers._T<Collection<IModule>> res = new Wrappers._T<Collection<IModule>>();
+    final Wrappers._T<Collection<SModule>> res = new Wrappers._T<Collection<SModule>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         res.value = new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE);

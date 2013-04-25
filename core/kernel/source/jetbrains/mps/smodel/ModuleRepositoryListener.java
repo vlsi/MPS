@@ -15,19 +15,19 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 public interface ModuleRepositoryListener extends SRepositoryListener {
-  void moduleAdded(IModule module);
+  void moduleAdded(SModule module);
 
-  void beforeModuleRemoved(IModule module);
+  void beforeModuleRemoved(SModule module);
 
-  void moduleRemoved(IModule module);
+  void moduleRemoved(SModule module);
 
-  void moduleInitialized(IModule module);
+  void moduleInitialized(SModule module);
 
-  void moduleChanged(IModule module);
+  void moduleChanged(SModule module);
 
   @Override
   void repositoryChanged();

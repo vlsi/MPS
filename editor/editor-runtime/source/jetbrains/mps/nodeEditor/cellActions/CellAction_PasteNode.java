@@ -53,7 +53,7 @@ import java.util.Set;
  * Time: Nov 26, 2003 2:06:41 PM
  */
 public class CellAction_PasteNode extends AbstractCellAction {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(CellAction_PasteNode.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(CellAction_PasteNode.class));
 
   @Override
   public boolean canExecute(EditorContext context) {

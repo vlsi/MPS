@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -40,7 +40,7 @@ public class SNodeOperations {
   }
 
   public static boolean isUnknown(SNode sNode) {
-    IModule language = MPSModuleRepository.getInstance().getModuleByFqName(NameUtil.namespaceFromConceptFQName(sNode.getConcept().getId()));
+    SModule language = MPSModuleRepository.getInstance().getModuleByFqName(NameUtil.namespaceFromConceptFQName(sNode.getConcept().getId()));
     return !(language instanceof Language) || ((Language) language).findConceptDeclaration(NameUtil.shortNameFromLongName(sNode.getConcept().getId())) == null;
   }
 

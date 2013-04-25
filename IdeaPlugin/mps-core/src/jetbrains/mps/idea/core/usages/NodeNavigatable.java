@@ -23,7 +23,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -79,7 +79,7 @@ public abstract class NodeNavigatable implements Navigatable {
     SModel modelDescriptor = node.getModel();
     if (modelDescriptor == null) return;
 
-    IModule module = modelDescriptor.getModule();
+    SModule module = modelDescriptor.getModule();
     if (module == null) return;
 
     jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);

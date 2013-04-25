@@ -16,7 +16,7 @@ import com.intellij.navigation.NavigationItem;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
@@ -76,7 +76,7 @@ public class GoToModule_Action extends BaseAction {
             @Override
             public void navigate(boolean requestFocus) {
               ProjectPane projectPane = ProjectPane.getInstance(project);
-              IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+              SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
               projectPane.selectModule(module, true);
             }
           };
@@ -85,7 +85,7 @@ public class GoToModule_Action extends BaseAction {
         @Override
         public SModuleReference[] find(IScope scope) {
           List<SModuleReference> modules = new ArrayList<SModuleReference>();
-          for (IModule module : scope.getVisibleModules()) {
+          for (SModule module : scope.getVisibleModules()) {
             if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit))) {
               continue;
             }

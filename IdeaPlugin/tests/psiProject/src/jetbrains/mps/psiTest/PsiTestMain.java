@@ -1,6 +1,6 @@
 package jetbrains.mps.psiTest;
 
-import jetbrains.mps.psiTest2.ClassInPsiTest2;
+import jetbrains.mps.psiTest2.ClassInPsiTest2Wwwwwww;
 
 import java.io.IOException;
 
@@ -51,7 +51,7 @@ public class PsiTestMain {
         container.add("item");
 
 
-        ClassInPsiTest2 c = new ClassInPsiTest2(1);
+        ClassInPsiTest2Wwwwwww c = new ClassInPsiTest2Wwwwwww(1);
     }
 
 }

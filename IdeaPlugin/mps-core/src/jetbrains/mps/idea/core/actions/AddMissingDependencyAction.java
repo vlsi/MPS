@@ -29,7 +29,7 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.apache.commons.logging.Log;
@@ -67,7 +67,7 @@ public class AddMissingDependencyAction extends BaseAction {
         return;
       }
 
-      IModule dependentModule = context.getModule();
+      SModule dependentModule = context.getModule();
       if (!(dependentModule instanceof SolutionIdea)) {
         return;
       }
@@ -81,7 +81,7 @@ public class AddMissingDependencyAction extends BaseAction {
         if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
           SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
 
-          IModule moduleToDependOn = sm.getModule();
+          SModule moduleToDependOn = sm.getModule();
           if (!(moduleToDependOn instanceof SolutionIdea)) {
             continue;
           }

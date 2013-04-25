@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -43,7 +43,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
       @Override
       public void actionPerformed(ActionEvent p0) {
 
-        final FindUsagesManager findUsegesManager = FindUsagesManager.getInstance();
+        final FindUsagesFacade findUsegesManager = FindUsagesFacade.getInstance();
         final ProgressMonitor progressAdapter = new EmptyProgressMonitor();
 
         final Wrappers._T<List<SNodeReference>> toChooseFrom = new Wrappers._T<List<SNodeReference>>();
@@ -103,7 +103,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
 
   protected abstract Iterable<SModel> getModels(String model);
 
-  protected abstract List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor);
+  protected abstract List<SNode> findToChooseFromOnInit(FindUsagesFacade manager, ProgressMonitor monitor);
 
   public SNode getNode() {
     return check_wlpn4v_a0a7(((SNodePointer) this.myNodePointer), this);

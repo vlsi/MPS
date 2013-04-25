@@ -28,6 +28,7 @@ import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.nanoc.debug.GdbDebuggerSettings;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
 import com.intellij.execution.executors.DefaultRunExecutor;
@@ -89,7 +90,7 @@ public class NanoCFile_Configuration_RunProfileState extends DebuggerRunProfileS
         final Wrappers._T<GdbDebuggerSettings> settings = new Wrappers._T<GdbDebuggerSettings>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            settings.value = new GdbDebuggerSettings(SNodeOperations.getModel(myRunConfiguration.getNode().getNode()).getModule().getGeneratorOutputPath());
+            settings.value = new GdbDebuggerSettings(((AbstractModule) SNodeOperations.getModel(myRunConfiguration.getNode().getNode()).getModule()).getOutputPath().getPath());
           }
         });
         return settings.value;

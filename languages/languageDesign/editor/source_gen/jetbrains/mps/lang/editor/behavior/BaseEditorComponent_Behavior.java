@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -31,7 +32,7 @@ public class BaseEditorComponent_Behavior {
     SModule contextModule = SNodeOperations.getModel(thisNode).getModule();
 
     Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
-    for (SModule module : Sequence.fromIterable(contextModule.getModuleScope().getModules())) {
+    for (SModule module : Sequence.fromIterable(((AbstractModule) contextModule).getScope().getModules())) {
       if (module instanceof Language) {
         SetSequence.fromSet(contextLanguages).addElement((Language) module);
       }

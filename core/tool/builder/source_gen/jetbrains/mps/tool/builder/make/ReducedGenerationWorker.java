@@ -19,8 +19,9 @@ import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import java.util.Map;
 import jetbrains.mps.make.script.IScriptController;
@@ -70,8 +71,8 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     };
 
     final Iterable<MResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
-    this.myOutputPaths = new ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<MResource, IModule>() {
-      public IModule select(MResource r) {
+    this.myOutputPaths = new ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<MResource, SModule>() {
+      public SModule select(MResource r) {
         return r.module();
       }
     }));
@@ -80,7 +81,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     final String cachesOutputRoot = myWhatToDo.getProperty("CACHES_OUTPUT_ROOT_DIR");
     final boolean useTransientOutput = Sequence.fromIterable(resources).any(new IWhereFilter<MResource>() {
       public boolean accept(MResource r) {
-        return r.module().getModuleDescriptor().isUseTransientOutput();
+        return ((AbstractModule) r.module()).getModuleDescriptor().isUseTransientOutput();
       }
     });
     this.myOutputRedirects = new OutputPathRedirects(myOutputPaths, outputRoot, cachesOutputRoot, useTransientOutput);

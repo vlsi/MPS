@@ -41,7 +41,7 @@
       <property name="testCaseName" nameId="tpe3.1171931851045" value="TestRelativePathHelper" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="2815613330938347407">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
     </node>
   </roots>
   <root id="4045247515868358877">

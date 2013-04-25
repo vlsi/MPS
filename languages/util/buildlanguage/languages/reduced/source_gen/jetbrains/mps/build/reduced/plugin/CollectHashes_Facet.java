@@ -19,6 +19,7 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
@@ -81,7 +82,7 @@ public class CollectHashes_Facet extends IFacet.Stub {
               for (GResource gres : Sequence.fromIterable(input)) {
                 GenerationStatus status = (gres).status();
                 if (status.isOk()) {
-                  String outputRoot = gres.module().getOutputFor(gres.model());
+                  String outputRoot = SModuleOperations.getOutputPathFor(gres.model());
                   String outputDir = FileGenerationUtil.getDefaultOutputDir(gres.model(), FileSystem.getInstance().getFileByPath(outputRoot)).getPath();
                   for (GenerationRootDependencies grd : status.getDependencies().getRootDependencies()) {
                     for (String file : grd.getFiles()) {

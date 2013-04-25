@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -81,14 +81,16 @@ public class SModuleOperations {
     return result;
   }
 
-  public static IFile getOutputPathFor(SModel model) {
+  public static String getOutputPathFor(SModel model) {
     // todo: move to SModelOperations?
     SModule module = model.getModule();
+    IFile outputDir;
     if (SModelStereotype.isTestModel(model) && module.getFacet(TestsFacet.class) != null) {
-      return module.getFacet(TestsFacet.class).getTestsOutputPath();
+      outputDir = module.getFacet(TestsFacet.class).getTestsOutputPath();
     } else {
-      return ((AbstractModule) module).getOutputPath();
+      outputDir = ((AbstractModule) module).getOutputPath();
     }
+    return outputDir != null ? outputDir.getPath() : null;
   }
 
   @NotNull
@@ -205,12 +207,12 @@ public class SModuleOperations {
   }
 
   @Deprecated
-  public static IClassPathItem getModuleWithDependenciesClassPathItem(IModule module) {
+  public static IClassPathItem getModuleWithDependenciesClassPathItem(SModule module) {
     return getDependenciesClasspath(Collections.singleton(module), false);
   }
 
   @Deprecated
-  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
+  public static IClassPathItem getDependenciesClasspath(Set<SModule> modules, boolean includeStubSolutions) {
     Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
 
     CompositeClassPathItem result = new CompositeClassPathItem();

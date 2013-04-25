@@ -34,109 +34,97 @@ import java.util.HashSet;
 public class SNodeReadAccess_Test extends BaseTransformationTest4 {
   @Test
   public void test_checkContract() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_checkContract", true);
   }
 
   @Test
   public void test_addChild() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_addChild", true);
   }
 
   @Test
   public void test_getChildren() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getChildren", true);
   }
 
   @Test
-  public void test_getNextChild() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
-    this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getNextChild", true);
-  }
-
-  @Test
-  public void test_getPrevChild() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
-    this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getPrevChild", true);
-  }
-
-  @Test
   public void test_getProperty() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getProperty", true);
   }
 
   @Test
   public void test_getReference() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getReference", true);
   }
 
   @Test
   public void test_getReferenceTarget() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getReferenceTarget", true);
   }
 
   @Test
   public void test_getRoleOf() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getRoleOf", true);
   }
 
   @Test
   public void test_getUserObject() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getUserObject", true);
   }
 
   @Test
   public void test_hasProperty() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_hasProperty", true);
   }
 
   @Test
   public void test_insertChild() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_insertChild", true);
   }
 
   @Test
   public void test_putUserObject() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_putUserObject", true);
   }
 
   @Test
   public void test_removeChild() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_removeChild", true);
   }
 
   @Test
   public void test_setProperty() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_setProperty", true);
   }
 
   @Test
   public void test_setReference() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_setReference", true);
   }
 
   @Test
   public void test_setReferenceTarget() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_setReferenceTarget", true);
   }
 
   @Test
   public void test_parameterLessMethods() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
+    this.initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)");
     this.runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_parameterLessMethods", true);
   }
 
@@ -200,34 +188,6 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       sNode.getChildren("");
 
       this.assertMethod("public java.util.List<jetbrains.mps.smodel.SNode> jetbrains.mps.smodel.SNode.getChildren(java.lang.String)", listener.getResults().o1);
-    }
-
-    public void test_getNextChild() throws Exception {
-      this.addNodeById("8150353254540236423");
-      this.addNodeById("8150353254540236549");
-      this.addNodeById("4195712261513743410");
-      SNode sNode = SNodeOperations.cast(this.getNodeById("8150353254540236424"), "jetbrains.mps.baseLanguage.structure.BlockStatement");
-
-      StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
-      NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
-
-      sNode.getNextChild(sNode);
-
-      this.assertMethod("public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getNextChild(org.jetbrains.mps.openapi.model.SNode)", listener.getResults().o1);
-    }
-
-    public void test_getPrevChild() throws Exception {
-      this.addNodeById("8150353254540236423");
-      this.addNodeById("8150353254540236549");
-      this.addNodeById("4195712261513743410");
-      SNode sNode = SNodeOperations.cast(this.getNodeById("8150353254540236424"), "jetbrains.mps.baseLanguage.structure.BlockStatement");
-
-      StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
-      NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
-
-      sNode.getPrevChild(sNode);
-
-      this.assertMethod("public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getPrevChild(jetbrains.mps.smodel.SNode)", listener.getResults().o1);
     }
 
     public void test_getProperty() throws Exception {

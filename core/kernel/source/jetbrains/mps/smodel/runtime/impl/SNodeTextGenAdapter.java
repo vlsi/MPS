@@ -25,7 +25,7 @@ import jetbrains.mps.textGen.TextGenBuffer;
 
 public class SNodeTextGenAdapter implements TextGenDescriptor {
   // main difference between SNodeTextGen and TextGenDescriptor is: descriptor should be thread-safe and without any state
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SNodeTextGenAdapter.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNodeTextGenAdapter.class));
 
   private final Class<SNodeTextGen> textGenClass;
 

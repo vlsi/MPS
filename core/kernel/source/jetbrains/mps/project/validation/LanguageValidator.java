@@ -16,7 +16,7 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
@@ -79,7 +79,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     }
     checkBehaviorAspectPresence(myModule, errors);
     for (SModuleReference mr : myModule.getRuntimeModulesReferences()) {
-      IModule runtimeModule = MPSModuleRepository.getInstance().getModule(mr);
+      SModule runtimeModule = MPSModuleRepository.getInstance().getModule(mr);
       if (runtimeModule == null) continue;
       if (!(runtimeModule instanceof Solution)) {
         errors.add("Runtime module " + runtimeModule + " is not a solution");

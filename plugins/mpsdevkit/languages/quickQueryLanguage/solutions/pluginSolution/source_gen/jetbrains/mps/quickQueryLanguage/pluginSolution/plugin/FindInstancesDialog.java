@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.Dimension;
 import jetbrains.mps.smodel.ModelAccess;
@@ -60,7 +60,7 @@ public class FindInstancesDialog extends BaseDialog {
   private SNode myNode;
   private boolean myDisposed = false;
 
-  public FindInstancesDialog(final SNode concept, final IOperationContext context, final IModule module) {
+  public FindInstancesDialog(final SNode concept, final IOperationContext context, final SModule module) {
     super(ProjectHelper.toMainFrame(context.getProject()), "Find Instances by condition");
     this.myContext = context;
     this.setSize(new Dimension(500, 500));

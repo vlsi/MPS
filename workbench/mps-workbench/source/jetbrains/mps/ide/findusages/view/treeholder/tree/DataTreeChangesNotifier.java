@@ -18,7 +18,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.tree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
@@ -128,7 +128,7 @@ public class DataTreeChangesNotifier {
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
     @Override
-    public void moduleRemoved(IModule module) {
+    public void moduleRemoved(SModule module) {
       if (!myModules.contains(module.getModuleReference())) return;
       myChanged = true;
     }

@@ -4,7 +4,7 @@ package jetbrains.mps.samples.formulaLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,49 +14,49 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.AndOperation", "jetbrains.mps.samples.formulaLanguage.structure.Operation", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Operation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "&&", "and operation", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.AndOperation").super_("jetbrains.mps.samples.formulaLanguage.structure.Operation").parents("jetbrains.mps.samples.formulaLanguage.structure.Operation").alias("&&", "and operation").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.Constant").super_("jetbrains.mps.samples.formulaLanguage.structure.Expression").parents("jetbrains.mps.samples.formulaLanguage.structure.Expression").abstract_().create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation", "jetbrains.mps.samples.formulaLanguage.structure.Operation", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Operation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "==", "equals operation", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation").super_("jetbrains.mps.samples.formulaLanguage.structure.Operation").parents("jetbrains.mps.samples.formulaLanguage.structure.Operation").alias("==", "equals operation").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.Expression").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "floating point constant", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant").super_("jetbrains.mps.samples.formulaLanguage.structure.Constant").parents("jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("value").alias("", "floating point constant").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.Formula", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.Formula").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"expression"}, new boolean[]{false}).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.Function", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.Function").super_("jetbrains.mps.samples.formulaLanguage.structure.Expression").parents("jetbrains.mps.samples.formulaLanguage.structure.Expression").abstract_().create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation", "jetbrains.mps.samples.formulaLanguage.structure.Operation", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Operation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, ">", "greater than operation", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation").super_("jetbrains.mps.samples.formulaLanguage.structure.Operation").parents("jetbrains.mps.samples.formulaLanguage.structure.Operation").alias(">", "greater than operation").create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.IfFunction", "jetbrains.mps.samples.formulaLanguage.structure.Function", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Function"}, new String[]{}, new String[]{}, new String[]{"logicalTest", "valueIfTrue", "valueIfFalse"}, new boolean[]{false, false, false}, false, false, "IF(,,)", "if-function", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.IfFunction").super_("jetbrains.mps.samples.formulaLanguage.structure.Function").parents("jetbrains.mps.samples.formulaLanguage.structure.Function").children(new String[]{"logicalTest", "valueIfTrue", "valueIfFalse"}, new boolean[]{false, false, false}).alias("IF(,,)", "if-function").create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "integer constant", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant").super_("jetbrains.mps.samples.formulaLanguage.structure.Constant").parents("jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("value").alias("", "integer constant").create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation", "jetbrains.mps.samples.formulaLanguage.structure.Operation", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Operation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, ".isNull", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation").super_("jetbrains.mps.samples.formulaLanguage.structure.Operation").parents("jetbrains.mps.samples.formulaLanguage.structure.Operation").alias(".isNull", "").create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation", "jetbrains.mps.samples.formulaLanguage.structure.Operation", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Operation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "<", "less than operation", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation").super_("jetbrains.mps.samples.formulaLanguage.structure.Operation").parents("jetbrains.mps.samples.formulaLanguage.structure.Operation").alias("<", "less than operation").create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.MinusOperation", "jetbrains.mps.samples.formulaLanguage.structure.Operation", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Operation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "-", "minus operation", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.MinusOperation").super_("jetbrains.mps.samples.formulaLanguage.structure.Operation").parents("jetbrains.mps.samples.formulaLanguage.structure.Operation").alias("-", "minus operation").create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.MultOperation", "jetbrains.mps.samples.formulaLanguage.structure.Operation", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Operation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "*", "multiply operation", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.MultOperation").super_("jetbrains.mps.samples.formulaLanguage.structure.Operation").parents("jetbrains.mps.samples.formulaLanguage.structure.Operation").alias("*", "multiply operation").create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.NotOperation", "jetbrains.mps.samples.formulaLanguage.structure.Operation", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Operation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "!", "not operation (formula language)", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.NotOperation").super_("jetbrains.mps.samples.formulaLanguage.structure.Operation").parents("jetbrains.mps.samples.formulaLanguage.structure.Operation").alias("!", "not operation (formula language)").create();
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.NullConstant", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "null", "null expression", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.NullConstant").super_("jetbrains.mps.samples.formulaLanguage.structure.Expression").parents("jetbrains.mps.samples.formulaLanguage.structure.Expression").alias("null", "null expression").create();
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.Operation", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"leftOperand", "rightOperand"}, new boolean[]{false, false}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.Operation").super_("jetbrains.mps.samples.formulaLanguage.structure.Expression").parents("jetbrains.mps.samples.formulaLanguage.structure.Expression").children(new String[]{"leftOperand", "rightOperand"}, new boolean[]{false, false}).abstract_().create();
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.OrOperation", "jetbrains.mps.samples.formulaLanguage.structure.Operation", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Operation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "||", "or operation", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.OrOperation").super_("jetbrains.mps.samples.formulaLanguage.structure.Operation").parents("jetbrains.mps.samples.formulaLanguage.structure.Operation").alias("||", "or operation").create();
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "(", "(expr)", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression").super_("jetbrains.mps.samples.formulaLanguage.structure.Expression").parents("jetbrains.mps.samples.formulaLanguage.structure.Expression").children(new String[]{"expression"}, new boolean[]{false}).alias("(", "(expr)").create();
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.PlusOperation", "jetbrains.mps.samples.formulaLanguage.structure.Operation", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Operation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "+", "plus operation", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.PlusOperation").super_("jetbrains.mps.samples.formulaLanguage.structure.Operation").parents("jetbrains.mps.samples.formulaLanguage.structure.Operation").alias("+", "plus operation").create();
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.Reference", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.Reference").super_("jetbrains.mps.samples.formulaLanguage.structure.Expression").parents("jetbrains.mps.samples.formulaLanguage.structure.Expression").abstract_().create();
       case 21:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.formulaLanguage.structure.StringConstant", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant"}, new String[]{"value"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "\"", "string constant", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.formulaLanguage.structure.StringConstant").super_("jetbrains.mps.samples.formulaLanguage.structure.Constant").parents("jetbrains.mps.samples.formulaLanguage.structure.Constant").properties("value").alias("\"", "string constant").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

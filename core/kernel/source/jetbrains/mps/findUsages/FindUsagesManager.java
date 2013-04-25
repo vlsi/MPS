@@ -15,129 +15,58 @@
  */
 package jetbrains.mps.findUsages;
 
-import gnu.trove.THashSet;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelOperations;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.util.Consumer;
 
-import java.util.Collection;
 import java.util.Set;
 
-public class FindUsagesManager {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(FindUsagesManager.class));
+public class FindUsagesManager extends FindUsagesFacade implements CoreComponent {
 
   public static FindUsagesManager getInstance() {
-    return new FindUsagesManager();
+    return (FindUsagesManager) INSTANCE;
   }
 
+  @Override
+  public Set<SReference> findUsages(SearchScope scope, Set<SNode> nodes, org.jetbrains.mps.openapi.util.ProgressMonitor monitor) {
+    return findUsages(nodes, SearchType.USAGES, scope, (ProgressMonitor) monitor);
+  }
+
+  @Override
+  public Set<SNode> findInstances(SearchScope scope, Set<SAbstractConcept> concepts, boolean exact, org.jetbrains.mps.openapi.util.ProgressMonitor monitor) {
+    return findUsages(concepts, exact ? SearchType.EXACT_INSTANCES : SearchType.INSTANCES, scope, (ProgressMonitor) monitor);
+  }
+
+  @Override
+  public Set<SModel> findModelUsages(SearchScope scope, Set<SModelReference> modelReferences, org.jetbrains.mps.openapi.util.ProgressMonitor monitor) {
+    return findUsages(modelReferences, SearchType.MODEL_USAGES, scope, (ProgressMonitor) monitor);
+  }
+
+  @Deprecated
   public <T, R> Set<T> findUsages(Set<R> elements, SearchType<T, R> type, SearchScope scope, @Nullable ProgressMonitor monitor) {
     if (monitor == null) monitor = new EmptyProgressMonitor();
 
     return type.search(elements, scope, monitor);
   }
 
-  /**
-   * Finds references to the provided nodes in the model.
-   */
-  public static void collectUsages(SModel model, Collection<SNode> nodes, Consumer<SReference> consumer) {
-    Set<StaticReferenceInfo> srefs = new THashSet<StaticReferenceInfo>();
-    for (SNode n : nodes) {
-      SModelReference mr = n.getModel().getReference();
-      srefs.add(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), n.getNodeId()));
+  @Override
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
     }
-
-    for (SNode root : model.getRootNodes()) {
-      collectUsages(root, nodes, srefs, consumer);
-    }
+    INSTANCE = this;
   }
 
-  /**
-   * Finds exact instances of the provided concepts in the model.
-   */
-  public static void collectInstances(SModel model, Collection<SAbstractConcept> concepts, Consumer<SNode> consumer) {
-    for (SAbstractConcept concept : concepts) {
-      for (SNode instance : ((jetbrains.mps.smodel.SModelInternal) model).getFastNodeFinder().getNodes(concept.getId(), false)) {
-        consumer.consume(instance);
-      }
-    }
-  }
-
-  private static void collectUsages(SNode current, Collection<SNode> nodes, Set<StaticReferenceInfo> srefs, Consumer<SReference> consumer) {
-    for (SReference ref : current.getReferences()) {
-      if (ref instanceof StaticReference) {
-        SModelReference mr = ref.getTargetSModelReference();
-        if (mr == null) {
-          // todo: review with MihMuh?
-          LOG.warning(
-              "StaticReference with null target smodel reference; model: " + current.getModel().getModelName() + "; root node: " + current.getContainingRoot() + "; node: " + current);
-          continue;
-        }
-        if (srefs.contains(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), ref.getTargetNodeId()))) {
-          consumer.consume(ref);
-        }
-      } else {
-        if (nodes.contains(ref.getTargetNode())) {
-          consumer.consume(ref);
-        }
-      }
-    }
-    for (SNode child : current.getChildren()) {
-      collectUsages(child, nodes, srefs, consumer);
-    }
-  }
-
-  public static boolean hasModelUsages(SModel m, Collection<org.jetbrains.mps.openapi.model.SModelReference> models) {
-    SModel model = m;
-    if (model == null) return false;
-
-    for (SModel modelDescriptor : SModelOperations.allImportedModels(model, GlobalScope.getInstance())) {
-      if (models.contains(modelDescriptor.getReference())) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  private static class StaticReferenceInfo {
-    private SModel myModelRef;
-    private SNodeId myNodeId;
-
-    public StaticReferenceInfo(SModel modelRef, SNodeId nodeId) {
-      myModelRef = modelRef;
-      myNodeId = nodeId;
-    }
-
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-
-      StaticReferenceInfo that = (StaticReferenceInfo) o;
-
-      if (myModelRef != null ? !myModelRef.equals(that.myModelRef) : that.myModelRef != null) return false;
-      if (myNodeId != null ? !myNodeId.equals(that.myNodeId) : that.myNodeId != null) return false;
-
-      return true;
-    }
-
-    public int hashCode() {
-      int result = myModelRef != null ? myModelRef.hashCode() : 0;
-      result = 31 * result + (myNodeId != null ? myNodeId.hashCode() : 0);
-      return result;
-    }
+  @Override
+  public void dispose() {
+    INSTANCE = null;
   }
 }

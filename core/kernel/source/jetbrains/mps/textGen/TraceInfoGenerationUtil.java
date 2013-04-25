@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TraceInfoGenerationUtil {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(TraceInfoGenerationUtil.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(TraceInfoGenerationUtil.class));
   public static final String POSITION_INFO = "POSITION_INFO";
   public static final String SCOPE_INFO = "SCOPE_INFO";
   public static final String UNIT_INFO = "UNIT_INFO";

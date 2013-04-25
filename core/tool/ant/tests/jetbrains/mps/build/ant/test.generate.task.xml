@@ -31,7 +31,7 @@
             <jvmarg value="-XX:MaxPermSize=92m"/>
             <jvmarg value="-Xdebug"/>
             <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"/>
-            <project file="${module.home}/../../../samples/complexLanguage/Complex.mpr"/>
+            <project file="${module.home}/../../../samples/complexLanguage"/>
         </mps.test.generation>
     </target>
 
@@ -62,7 +62,7 @@
     <target name="testFailOnGenerationError">
         <unzip src="${test.projects.home}/failedProject.zip" dest="${test.projects.home}"/>
         <mps.generate mpshome="${module.home}/../../.." failonerror="true" loglevel="info">
-            <project file="${test.projects.home}/failedProject/FailedProject.mpr"/>
+            <project file="${test.projects.home}/failedProject"/>
         </mps.generate>
         <delete dir="${test.projects.home}/failedProject"/>
     </target>
@@ -70,24 +70,24 @@
     <target name="testSuccess">
         <unzip src="${test.projects.home}/successfulProject.zip" dest="${test.projects.home}"/>
         <mps.test.generation mpshome="${module.home}/../../.." failonerror="true" loglevel="debug" showdiff="true">
-            <project file="${test.projects.home}/SuccessfulProject/SuccessfulProject.mpr"/>
+            <project file="${test.projects.home}/SuccessfulProject"/>
         </mps.test.generation>
         <delete dir="${test.projects.home}/SuccessfulProject"/>
     </target>
 
     <target name="testSamplesProjects">
         <mps.generate mpshome="${module.home}/../../.." loglevel="info">
-            <project file="${module.home}/../../../samples/agreement/agreement.mpr"/>
-            <project file="${module.home}/../../../samples/calculator/calculator.mpr"/>
-            <project file="${module.home}/../../../samples/calculator-tutorial/calculator-tutorial.mpr"/>
-            <project file="${module.home}/../../../samples/dslbook_example/dslbook_example.mpr"/>
-            <project file="${module.home}/../../../samples/fixedLengthReader/fixedLengthReader.mpr"/>
-            <project file="${module.home}/../../../samples/formulaLanguage/formulaLanguage.mpr"/>
-            <project file="${module.home}/../../../samples/generator_demo/generator_demo.mpr"/>
+            <project file="${module.home}/../../../samples/agreement"/>
+            <project file="${module.home}/../../../samples/calculator"/>
+            <project file="${module.home}/../../../samples/calculator-tutorial"/>
+            <project file="${module.home}/../../../samples/dslbook_example"/>
+            <project file="${module.home}/../../../samples/fixedLengthReader"/>
+            <project file="${module.home}/../../../samples/formulaLanguage"/>
+            <project file="${module.home}/../../../samples/generator_demo"/>
             <module dir="${module.home}/../../../samples/genericLanguage/"/>
-            <project file="${module.home}/../../../samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"/>
-            <project file="${module.home}/../../../samples/sampleXML/sampleXML.mpr"/>
-            <project file="${module.home}/../../../samples/theSimplestLanguage/theSimplestLanguage.mpr"/>
+            <project file="${module.home}/../../../samples/matrixLanguage"/>
+            <project file="${module.home}/../../../samples/sampleXML"/>
+            <project file="${module.home}/../../../samples/theSimplestLanguage"/>
         </mps.generate>
     </target>
 

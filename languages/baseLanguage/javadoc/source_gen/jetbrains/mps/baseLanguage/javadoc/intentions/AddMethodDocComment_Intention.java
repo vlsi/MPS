@@ -85,6 +85,8 @@ public class AddMethodDocComment_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
+      DocCommentHelper.addJavadocLangIfMissing(node);
+
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))) != null)) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), null);
         if (editorContext.getSelectedNode() != node) {
@@ -95,17 +97,20 @@ public class AddMethodDocComment_Intention implements IntentionFactory {
       }
 
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", null));
+      SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "body", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+      SNodeFactoryOperations.addNewChild(line, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
+
       //  Method parameters 
       for (SNode parameterDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
         SNode paramTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-        SLinkOperations.setTarget(paramTag, "parameter", _quotation_createNode_i2k1f8_a0b0e0a(parameterDeclaration), true);
+        SLinkOperations.setTarget(paramTag, "parameter", _quotation_createNode_i2k1f8_a0b0j0a(parameterDeclaration), true);
         ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "param", true)).addElement(paramTag);
       }
 
       //  Type variables 
       for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
         SNode paramTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-        SLinkOperations.setTarget(paramTag, "parameter", _quotation_createNode_i2k1f8_a0b0h0a(typeVariableDeclaration), true);
+        SLinkOperations.setTarget(paramTag, "parameter", _quotation_createNode_i2k1f8_a0b0m0a(typeVariableDeclaration), true);
         ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), "param", true)).addElement(paramTag);
       }
 
@@ -129,7 +134,7 @@ public class AddMethodDocComment_Intention implements IntentionFactory {
     }
   }
 
-  private static SNode _quotation_createNode_i2k1f8_a0b0e0a(Object parameter_1) {
+  private static SNode _quotation_createNode_i2k1f8_a0b0j0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", null, null, GlobalScope.getInstance(), false);
@@ -137,7 +142,7 @@ public class AddMethodDocComment_Intention implements IntentionFactory {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_i2k1f8_a0b0h0a(Object parameter_1) {
+  private static SNode _quotation_createNode_i2k1f8_a0b0m0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", null, null, GlobalScope.getInstance(), false);

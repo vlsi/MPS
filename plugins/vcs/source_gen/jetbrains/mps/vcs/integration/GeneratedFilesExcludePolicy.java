@@ -32,7 +32,7 @@ public class GeneratedFilesExcludePolicy extends BaseDirectoryIndexExcludePolicy
     for (SModel modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       SModule module = modelDescriptor.getModule();
       if (module != null) {
-        String outputPath = SModuleOperations.getOutputPathFor(modelDescriptor).getPath();
+        String outputPath = SModuleOperations.getOutputPathFor(modelDescriptor);
         if (outputPath != null) {
           VirtualFile outputDir = LocalFileSystem.getInstance().findFileByPath(outputPath);
           VirtualFile cachesDir = LocalFileSystem.getInstance().findFileByPath(FileGenerationUtil.getCachesPath(outputPath));

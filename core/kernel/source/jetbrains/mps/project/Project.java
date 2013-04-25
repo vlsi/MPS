@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
@@ -60,7 +60,7 @@ public abstract class Project implements MPSModuleOwner {
   public Iterable<? extends SModule> getModules() {
     List<SModule> result = new ArrayList<SModule>();
     for (SModuleReference ref : myModules) {
-      IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+      SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
       if (module != null) {
         result.add(module);
       }
@@ -100,7 +100,7 @@ public abstract class Project implements MPSModuleOwner {
   public <T extends SModule> List<T> getProjectModules(Class<T> moduleClass) {
     List<T> result = new ArrayList<T>();
     for (SModuleReference mr : myModules) {
-      IModule module = ModuleRepositoryFacade.getInstance().getModule(mr);
+      SModule module = ModuleRepositoryFacade.getInstance().getModule(mr);
       if (module == null) continue;
       if (!moduleClass.isInstance(module)) continue;
 
@@ -146,12 +146,12 @@ public abstract class Project implements MPSModuleOwner {
 
   public class ProjectScope extends DefaultScope {
     @Override
-    protected Set<IModule> getInitialModules() {
+    protected Set<SModule> getInitialModules() {
       Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
       assert Arrays.asList(openProjects).contains(Project.this) : "trying to get scope on a not-yet-loaded project";
 
-      Set<IModule> result = new HashSet<IModule>();
-      result.addAll(getProjectModules(IModule.class));
+      Set<SModule> result = new HashSet<SModule>();
+      result.addAll(getProjectModules(SModule.class));
 
       for (Language l : getProjectModules(Language.class)) {
         result.addAll(l.getGenerators());

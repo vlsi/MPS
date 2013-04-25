@@ -30,7 +30,7 @@ import com.intellij.openapi.vfs.VirtualFileAdapter;
 import com.intellij.openapi.vfs.VirtualFileEvent;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.util.messages.MessageBus;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 
@@ -121,12 +121,12 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
     @Override
-    public void moduleAdded(IModule module) {
+    public void moduleAdded(SModule module) {
       notifyRootsChanged(true);
     }
 
     @Override
-    public void moduleChanged(IModule module) {
+    public void moduleChanged(SModule module) {
       notifyRootsChanged(true);
     }
   }

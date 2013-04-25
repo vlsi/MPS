@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.navigation;
 
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -39,7 +39,7 @@ public class ModelNavigatable extends BaseNavigatable {
     SModel descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (descriptor == null) return;
 
-    IModule module = descriptor.getModule();
+    SModule module = descriptor.getModule();
     if (module == null) return;
 
     ModuleContext context = new ModuleContext(module, project);

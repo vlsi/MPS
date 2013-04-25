@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -40,7 +40,7 @@ import java.util.Set;
  * Dec 10, 2007
  */
 public class DynamicReference extends SReferenceBase {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(DynamicReference.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(DynamicReference.class));
 
   private DynamicReferenceOrigin myOrigin;
 
@@ -147,7 +147,7 @@ public class DynamicReference extends SReferenceBase {
     error(message);
   }
 
-  private IModule getModule() {
+  private SModule getModule() {
     SModel model = getSourceNode().getModel();
     if (model != null) {
       SModel descr = model;

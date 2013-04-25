@@ -11,10 +11,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import java.util.Collections;
-import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Collections;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.Language;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -27,7 +27,7 @@ import java.lang.reflect.Constructor;
 import java.util.Collection;
 import java.util.Arrays;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.LinkedHashMap;
@@ -59,10 +59,10 @@ public class RefactoringUtil {
       @Override
       public void run() {
         SAbstractConcept c1 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.refactoring.structure.Refactoring");
-        Set<SNode> newRefactorings = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(c1), SearchType.INSTANCES, GlobalScope.getInstance(), null));
+        Set<SNode> newRefactorings = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c1), false, new EmptyProgressMonitor());
 
         SAbstractConcept c2 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.refactoring.structure.OldRefactoring");
-        Set<SNode> oldRefactorings = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(c2), SearchType.INSTANCES, GlobalScope.getInstance(), null));
+        Set<SNode> oldRefactorings = ((Set) FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c2), false, new EmptyProgressMonitor()));
         availableRefactorings.addAll(newRefactorings);
         availableRefactorings.addAll(oldRefactorings);
       }
@@ -192,9 +192,9 @@ public class RefactoringUtil {
     return !(disabled);
   }
 
-  public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
+  public static Map<SModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
     Collection<Language> extendingLangs = ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(language);
-    Map<IModule, List<SModel>> result = new LinkedHashMap<IModule, List<SModel>>(extendingLangs.size() + 1);
+    Map<SModule, List<SModel>> result = new LinkedHashMap<SModule, List<SModel>>(extendingLangs.size() + 1);
     result.put(language, RefactoringUtil.getLanguageModelsList(project, language));
     for (Language l : extendingLangs) {
       if (!(l.equals(language))) {
@@ -214,8 +214,8 @@ public class RefactoringUtil {
     }
   }
 
-  public static Map<IModule, List<SModel>> getLanguageModels(Project project, Language language) {
-    return Collections.<IModule,List<SModel>>singletonMap(language, RefactoringUtil.getLanguageModelsList(project, language));
+  public static Map<SModule, List<SModel>> getLanguageModels(Project project, Language language) {
+    return Collections.<SModule,List<SModel>>singletonMap(language, RefactoringUtil.getLanguageModelsList(project, language));
 
   }
 

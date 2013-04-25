@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.Set;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -73,8 +73,8 @@ public class CleanProject_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Set<IModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<IModule>());
-      SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(IModule.class)));
+      final Set<SModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<SModule>());
+      SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(SModule.class)));
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Cleaning", true) {
         @Override
         public void run(@NotNull final ProgressIndicator indicator) {

@@ -9,6 +9,8 @@ import jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import com.intellij.openapi.project.ex.ProjectEx;
+import com.intellij.openapi.components.StorageScheme;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.MPSProject;
@@ -39,7 +41,10 @@ public class NewSolutionDialog extends DialogWrapper {
   public JComponent createCenterPanel() {
     if (mySolutionSettings == null) {
       mySolutionSettings = new NewSolutionSettings((myProject != null ?
-        myProject.getProjectFile().getParentFile().getAbsolutePath() :
+        ((((ProjectEx) ProjectHelper.toIdeaProject(myProject)).getStateStore().getStorageScheme() != StorageScheme.DIRECTORY_BASED ?
+          myProject.getProjectFile().getParentFile().getAbsolutePath() :
+          myProject.getProjectFile().getAbsolutePath()
+        )) :
         null
       )) {
         @Override

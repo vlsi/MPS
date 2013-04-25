@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -50,7 +50,7 @@ public class NewModel_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
+    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
       return false;
     }
 
@@ -109,24 +109,24 @@ public class NewModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (!(((IModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
+      if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
         if (code == JOptionPane.YES_OPTION) {
-          MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
+          MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
           final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
           configurableEditor.show();
         }
         return;
       }
-      if (!(((IModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
+      if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
         return;
       }
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
       final IOperationContext localContext = ((IOperationContext) MapSequence.fromMap(_params).get("context"));
-      final IModule localModule = (localContext.getModule() != null ?
+      final SModule localModule = (localContext.getModule() != null ?
         localContext.getModule() :
-        ((IModule) MapSequence.fromMap(_params).get("module"))
+        ((SModule) MapSequence.fromMap(_params).get("module"))
       );
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -183,8 +183,8 @@ public class NewModel_Action extends BaseAction {
   }
 
   protected String getNamespace(final Map<String, Object> _params) {
-    if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
-      Generator gen = (Generator) ((IModule) MapSequence.fromMap(_params).get("module"));
+    if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
+      Generator gen = (Generator) ((SModule) MapSequence.fromMap(_params).get("module"));
       String name = gen.getName();
       String genNamespace = gen.getSourceLanguage().getModuleName() + ".generator";
 
@@ -193,7 +193,7 @@ public class NewModel_Action extends BaseAction {
       }
       return genNamespace + "." + name;
     }
-    return ((IModule) MapSequence.fromMap(_params).get("module")).getModuleName();
+    return ((SModule) MapSequence.fromMap(_params).get("module")).getModuleName();
   }
 
   protected static Logger LOG = LogManager.getLogger(NewModel_Action.class);

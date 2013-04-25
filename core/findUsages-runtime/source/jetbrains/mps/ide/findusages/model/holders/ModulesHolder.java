@@ -17,7 +17,7 @@ package jetbrains.mps.ide.findusages.model.holders;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.NameUtil;
@@ -27,17 +27,17 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModulesHolder implements IHolder<List<IModule>> {
-  private List<IModule> myModules = new ArrayList<IModule>();
+public class ModulesHolder implements IHolder<List<SModule>> {
+  private List<SModule> myModules = new ArrayList<SModule>();
   private IOperationContext myOperationContext = null;
 
-  public ModulesHolder(List<IModule> modules, IOperationContext operationContext) {
+  public ModulesHolder(List<SModule> modules, IOperationContext operationContext) {
     myModules = modules;
     myOperationContext = operationContext;
   }
 
   @Override
-  public List<IModule> getObject() {
+  public List<SModule> getObject() {
     return myModules;
   }
 

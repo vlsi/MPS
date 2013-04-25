@@ -18,7 +18,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -64,12 +64,12 @@ public class InternalActionsUtils {
     final Wrappers._T<Iterable<SModelReference>> modelReferences = new Wrappers._T<Iterable<SModelReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Iterable<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
+        Iterable<SModule> modules = MPSModuleRepository.getInstance().getAllModules();
         if (LOG.isEnabledFor(Priority.WARN)) {
           LOG.warn("Modules: " + Sequence.fromIterable(modules).count());
         }
-        modelReferences.value = Sequence.fromIterable(modules).translate(new ITranslator2<IModule, SModel>() {
-          public Iterable<SModel> translate(IModule it) {
+        modelReferences.value = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+          public Iterable<SModel> translate(SModule it) {
             return it.getModels();
           }
         }).select(new ISelector<SModel, SModelReference>() {
@@ -137,7 +137,7 @@ public class InternalActionsUtils {
     IResultProvider provider = FindUtils.makeProvider(new IFinder() {
       @Override
       public SearchResults find(SearchQuery query, ProgressMonitor progress) {
-        SearchResults results = new SearchResults<SNode>();
+        SearchResults<SNode> results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodeReference, SNode>() {
           public SNode select(SNodeReference it) {
             return ((SNodePointer) it).resolve(MPSModuleRepository.getInstance());

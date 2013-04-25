@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
@@ -120,7 +120,7 @@ public class StubResolver {
   }
 
   public void resolveInProject(MPSProject project, IOperationContext context) {
-    for (IModule module : ListSequence.fromList(project.getModulesWithGenerators())) {
+    for (SModule module : ListSequence.fromList(project.getModulesWithGenerators())) {
       if (module.isReadOnly()) {
         continue;
       }

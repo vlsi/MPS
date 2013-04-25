@@ -4,7 +4,7 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,61 +14,61 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.AbstractConceptReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"conceptDeclaration"}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.AbstractConceptReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("conceptDeclaration").abstract_().create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.BinaryOperationConcept", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"leftTargetRole", "rightTargetRole", "sign"}, new String[]{}, new String[]{"leftTarget", "rightTarget", "expressionConcept"}, new boolean[]{false, false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.BinaryOperationConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept").properties("leftTargetRole", "rightTargetRole", "sign").children(new String[]{"leftTarget", "rightTarget", "expressionConcept"}, new boolean[]{false, false, false}).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.BlockBodyPart", "jetbrains.mpslite.structure.ChildPart", false, new String[]{"jetbrains.mpslite.structure.ChildPart"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "[BODY]", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.BlockBodyPart").super_("jetbrains.mpslite.structure.ChildPart").parents("jetbrains.mpslite.structure.ChildPart").alias("[BODY]", "").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.BlockConcept", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{}, new String[]{}, new String[]{"concreteSyntax"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.BlockConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept").children(new String[]{"concreteSyntax"}, new boolean[]{false}).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.BlockReference", "jetbrains.mpslite.structure.MPSLiteConceptReference", false, new String[]{"jetbrains.mpslite.structure.MPSLiteConceptReference"}, new String[]{}, new String[]{"blockConcept"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.BlockReference").super_("jetbrains.mpslite.structure.MPSLiteConceptReference").parents("jetbrains.mpslite.structure.MPSLiteConceptReference").references("blockConcept").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.ChildPart", "jetbrains.mpslite.structure.LinePart", false, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"separator", "multiple", "vertical"}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.ChildPart").super_("jetbrains.mpslite.structure.LinePart").parents("jetbrains.mpslite.structure.LinePart").properties("separator", "multiple", "vertical").abstract_().create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.ConceptContainer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"statementConcept", "expressionConcept", "mpsLiteConcept"}, new boolean[]{false, false, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.ConceptContainer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"statementConcept", "expressionConcept", "mpsLiteConcept"}, new boolean[]{false, false, true}).create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.ConcreteChildPart", "jetbrains.mpslite.structure.ChildPart", false, new String[]{"jetbrains.mpslite.structure.ChildPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"conceptReference"}, new boolean[]{false}, false, false, "[ Child.. ]", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.ConcreteChildPart").super_("jetbrains.mpslite.structure.ChildPart").parents("jetbrains.mpslite.structure.ChildPart", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"conceptReference"}, new boolean[]{false}).alias("[ Child.. ]", "").create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.ConcretePropertyPart", "jetbrains.mpslite.structure.PropertyPart", false, new String[]{"jetbrains.mpslite.structure.PropertyPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"propertyType"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "{ property.. }", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.ConcretePropertyPart").super_("jetbrains.mpslite.structure.PropertyPart").parents("jetbrains.mpslite.structure.PropertyPart", "jetbrains.mps.lang.core.structure.INamedConcept").properties("propertyType").alias("{ property.. }", "").create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.ConcreteReferencePart", "jetbrains.mpslite.structure.ReferencePart", false, new String[]{"jetbrains.mpslite.structure.ReferencePart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"conceptReference"}, new boolean[]{false}, false, false, "< Referent.. >", "reference declaration", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.ConcreteReferencePart").super_("jetbrains.mpslite.structure.ReferencePart").parents("jetbrains.mpslite.structure.ReferencePart", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"conceptReference"}, new boolean[]{false}).alias("< Referent.. >", "reference declaration").create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.ConstantLinePart", "jetbrains.mpslite.structure.LinePart", false, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"text"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "constant text", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.ConstantLinePart").super_("jetbrains.mpslite.structure.LinePart").parents("jetbrains.mpslite.structure.LinePart").properties("text").alias("constant text", "").create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.ExpressionConcept", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.ExpressionConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept").create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.FeatureAccessConcept", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.FeatureAccessConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept").create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.IMPSLiteConcept", null, true, new String[]{"jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"root", "abstract"}, new String[]{}, new String[]{"extends"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.IMPSLiteConcept").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("root", "abstract").children(new String[]{"extends"}, new boolean[]{false}).create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.IndentLinePart", "jetbrains.mpslite.structure.LinePart", false, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "--->", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.IndentLinePart").super_("jetbrains.mpslite.structure.LinePart").parents("jetbrains.mpslite.structure.LinePart").alias("--->", "").create();
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.Line", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"linePart"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.Line").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"linePart"}, new boolean[]{true}).create();
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.LineList", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"line"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.LineList").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"line"}, new boolean[]{true}).create();
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.LinePart", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.LinePart").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.MPSLiteConceptDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{}, new String[]{}, new String[]{"lineList"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.MPSLiteConceptDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept").children(new String[]{"lineList"}, new boolean[]{false}).create();
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.MPSLiteConceptReference", "jetbrains.mpslite.structure.AbstractConceptReference", false, new String[]{"jetbrains.mpslite.structure.AbstractConceptReference"}, new String[]{}, new String[]{"mpsLiteConceptDeclaration"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.MPSLiteConceptReference").super_("jetbrains.mpslite.structure.AbstractConceptReference").parents("jetbrains.mpslite.structure.AbstractConceptReference").references("mpsLiteConceptDeclaration").create();
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.NamePropertyNamePart", "jetbrains.mpslite.structure.PropertyPart", false, new String[]{"jetbrains.mpslite.structure.PropertyPart"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "{NAME}", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.NamePropertyNamePart").super_("jetbrains.mpslite.structure.PropertyPart").parents("jetbrains.mpslite.structure.PropertyPart").alias("{NAME}", "").create();
       case 21:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.OptionalPart", "jetbrains.mpslite.structure.LinePart", false, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{}, new String[]{}, new String[]{"part"}, new boolean[]{true}, false, false, "optional", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.OptionalPart").super_("jetbrains.mpslite.structure.LinePart").parents("jetbrains.mpslite.structure.LinePart").children(new String[]{"part"}, new boolean[]{true}).alias("optional", "").create();
       case 22:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.PropertyPart", "jetbrains.mpslite.structure.LinePart", false, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.PropertyPart").super_("jetbrains.mpslite.structure.LinePart").parents("jetbrains.mpslite.structure.LinePart").abstract_().create();
       case 23:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.ReferencePart", "jetbrains.mpslite.structure.LinePart", false, new String[]{"jetbrains.mpslite.structure.LinePart"}, new String[]{"optional"}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.ReferencePart").super_("jetbrains.mpslite.structure.LinePart").parents("jetbrains.mpslite.structure.LinePart").properties("optional").abstract_().create();
       case 24:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.RegularConceptReference", "jetbrains.mpslite.structure.AbstractConceptReference", false, new String[]{"jetbrains.mpslite.structure.AbstractConceptReference"}, new String[]{}, new String[]{"regularConceptDeclaration"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.RegularConceptReference").super_("jetbrains.mpslite.structure.AbstractConceptReference").parents("jetbrains.mpslite.structure.AbstractConceptReference").references("regularConceptDeclaration").create();
       case 25:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.StatementConcept", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.StatementConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept").create();
       case 26:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.TypePart", "jetbrains.mpslite.structure.ChildPart", false, new String[]{"jetbrains.mpslite.structure.ChildPart"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "[TYPE]", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.TypePart").super_("jetbrains.mpslite.structure.ChildPart").parents("jetbrains.mpslite.structure.ChildPart").alias("[TYPE]", "").create();
       case 27:
-        return new CompiledConceptDescriptor("jetbrains.mpslite.structure.VariableConcept", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept"}, new String[]{"namePropertyName", "typeRole"}, new String[]{}, new String[]{"typeConcept", "reference", "concreteSyntax", "scopeBlock"}, new boolean[]{false, false, false, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mpslite.structure.VariableConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mpslite.structure.IMPSLiteConcept").properties("namePropertyName", "typeRole").children(new String[]{"typeConcept", "reference", "concreteSyntax", "scopeBlock"}, new boolean[]{false, false, false, true}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

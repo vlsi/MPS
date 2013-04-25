@@ -15,76 +15,33 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.events.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 public class ModuleRepositoryAdapter implements ModuleRepositoryListener, SRepositoryListener {
   @Override
-  public void moduleAdded(IModule module) {
-    repositoryChanged();
-  }
-
-  @Override
-  public void beforeModuleRemoved(IModule module) {
-  }
-
-  @Override
-  public void moduleRemoved(IModule module) {
-    repositoryChanged();
-  }
-
-  @Override
-  public void moduleInitialized(IModule module) {
-    repositoryChanged();
-  }
-
-  @Override
-  public void moduleChanged(IModule module) {
-    repositoryChanged();
-  }
-
-  @Override
   public void moduleAdded(SModule module) {
-    if (module instanceof IModule) {
-      moduleAdded((IModule) module);
-    } else {
-      repositoryChanged();
-    }
+    repositoryChanged();
   }
 
   @Override
   public void beforeModuleRemoved(SModule module) {
-    if (module instanceof IModule) {
-      beforeModuleRemoved((IModule) module);
-    }
   }
 
   @Override
   public void moduleRemoved(SModule module) {
-    if (module instanceof IModule) {
-      moduleRemoved((IModule) module);
-    } else {
-      repositoryChanged();
-    }
+    repositoryChanged();
   }
 
   @Override
   public void moduleInitialized(SModule module) {
-    if (module instanceof IModule) {
-      moduleInitialized((IModule) module);
-    } else {
-      repositoryChanged();
-    }
+    repositoryChanged();
   }
 
   @Override
   public void moduleChanged(SModule module) {
-    if (module instanceof IModule) {
-      moduleChanged((IModule) module);
-    } else {
-      repositoryChanged();
-    }
+    repositoryChanged();
   }
 
   @Override

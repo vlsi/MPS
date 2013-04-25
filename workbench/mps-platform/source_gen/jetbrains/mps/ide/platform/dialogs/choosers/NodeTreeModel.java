@@ -22,7 +22,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -119,7 +119,7 @@ public abstract class NodeTreeModel implements TreeModel {
               if (model == null) {
                 return;
               }
-              IModule module = model.getModule();
+              SModule module = model.getModule();
               if (module == null) {
                 return;
               }

@@ -41,7 +41,7 @@ import java.util.*;
  * Detects modules in a folder. Loads them into MPSModuleRepository
  */
 public class ModulesMiner {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ModulesMiner.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ModulesMiner.class));
   private static final ModulesMiner INSTANCE = new ModulesMiner();
   public static final String META_INF = "META-INF";
   public static final String MODULE_XML = "module.xml";

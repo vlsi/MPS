@@ -4,7 +4,7 @@ package jetbrains.mps.samples.KajaAndOr.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,11 +14,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaAndOr.structure.And", "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", false, new String[]{"jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "and", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.And").super_("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").parents("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").alias("and", "").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", "jetbrains.mps.samples.Kaja.structure.LogicalExpression", false, new String[]{"jetbrains.mps.samples.Kaja.structure.LogicalExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"left", "right"}, new boolean[]{false, false}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression").parents("jetbrains.mps.samples.Kaja.structure.LogicalExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"left", "right"}, new boolean[]{false, false}).abstract_().create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaAndOr.structure.Or", "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", false, new String[]{"jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "or", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.Or").super_("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").parents("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").alias("or", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

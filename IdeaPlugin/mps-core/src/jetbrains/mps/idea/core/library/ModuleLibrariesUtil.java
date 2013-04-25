@@ -30,7 +30,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -64,11 +64,11 @@ public class ModuleLibrariesUtil {
   }
 
   private static boolean hasModule(Library library, SModuleReference reference) {
-    IModule module = ModuleRepositoryFacade.getInstance().getModule(reference);
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(reference);
     return hasModule(library, module);
   }
 
-  private static boolean hasModule(Library library, IModule module) {
+  private static boolean hasModule(Library library, SModule module) {
     if (!isSuitableModule(module) || !ModuleLibraryType.isModuleLibrary(library)) {
       return false;
     }
@@ -76,7 +76,7 @@ public class ModuleLibrariesUtil {
     return Arrays.asList(library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)).contains(VirtualFileUtils.getVirtualFile(solution.getDescriptorFile()));
   }
 
-  private static boolean isSuitableModule(IModule module) {
+  private static boolean isSuitableModule(SModule module) {
     return (module instanceof Solution) && !(module instanceof SolutionIdea) && !(module instanceof StubSolution);
   }
 
@@ -94,7 +94,7 @@ public class ModuleLibrariesUtil {
       @Override
       public void run() {
         for (IFile moduleDescriptor : moduleXmls) {
-          IModule moduleByFile = ModuleFileTracker.getInstance().getModuleByFile(moduleDescriptor);
+          SModule moduleByFile = ModuleFileTracker.getInstance().getModuleByFile(moduleDescriptor);
           if (moduleByFile != null) {
             modules.add(moduleByFile.getModuleReference());
           }
@@ -119,7 +119,7 @@ public class ModuleLibrariesUtil {
     if (library != null) {
       return library;
     }
-    Set<VirtualFile> stubFiles = ModuleLibraryType.getModuleJars((Solution) usedModule);
+    Set<VirtualFile> stubFiles = ModuleLibraryType.getModuleJars(usedModule);
     IFile descriptorFile = usedModule.getDescriptorFile();
     VirtualFile descriptorVirtualFile = null;
     if (descriptorFile != null) {

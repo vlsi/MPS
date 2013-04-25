@@ -52,7 +52,7 @@ import java.io.IOException;
 
     if (!(dryRun)) {
       // copy driver files to the proper place 
-      MergeDriverPacker.getInstance().pack();
+      MergeDriverPacker.getInstance().pack(myProject);
     }
     if (!(myConfigFile.exists())) {
       if (!(dryRun)) {

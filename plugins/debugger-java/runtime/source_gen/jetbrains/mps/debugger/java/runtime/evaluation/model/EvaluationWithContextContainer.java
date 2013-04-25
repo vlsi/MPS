@@ -42,12 +42,11 @@ import com.sun.jdi.InvalidStackFrameException;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import java.util.Collections;
-import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
+import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.SModelFqName;
 import java.util.ArrayList;
@@ -229,10 +228,10 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
     }
 
-    FindUsagesManager manager = FindUsagesManager.getInstance();
+    FindUsagesFacade findUsages = FindUsagesFacade.getInstance();
     SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.traceable.structure.UnitConcept");
 
-    Set<SNode> instances = manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, new ModelsScope(getCandidateNonStubModels(unitName)), new EmptyProgressMonitor());
+    Set<SNode> instances = findUsages.findInstances(new ModelsScope(getCandidateNonStubModels(unitName)), Collections.singleton(concept), false, new EmptyProgressMonitor());
     return SNodeOperations.cast(SetSequence.fromSet(instances).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(((SNode) it), "jetbrains.mps.baseLanguage.structure.Classifier") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(it, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Object[]{}).equals(unitName);

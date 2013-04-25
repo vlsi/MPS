@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import java.util.HashMap;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -77,7 +77,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     return results;
   }
 
-  /*package*/ SearchResults getUsagesSearchResults(List<SNode> references, final DependencyViewerScope sourceScope, final DependencyViewerScope targetScope, ProgressMonitor monitor) {
+  /*package*/ SearchResults getUsagesSearchResults(List<SNode> references, final DependencyViewerScope sourceScope, final DependencyViewerScope targetScope, jetbrains.mps.progress.ProgressMonitor monitor) {
     final SearchResults<SNode> results = new SearchResults<SNode>();
     try {
       monitor.start("filtering references", ListSequence.fromList(references).count());

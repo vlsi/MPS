@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.smodel.constraints;
 
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -29,28 +30,28 @@ import org.jetbrains.annotations.Nullable;
   // helper class
 
   @NotNull
-  public static IOperationContext getOperationContext(@Nullable IModule module) {
+  public static IOperationContext getOperationContext(@Nullable SModule module) {
     // TODO: remove usages of this method as much as can!
     return module != null ? new ConstraintsOperationContext(module) : new GlobalOperationContext();
   }
 
   @NotNull
-  public static IScope getModuleScope(@Nullable IModule module) {
-    return module != null ? module.getScope() : GlobalScope.getInstance();
+  public static IScope getModuleScope(@Nullable SModule module) {
+    return module != null ? ((AbstractModule)module).getScope() : GlobalScope.getInstance();
   }
 
   @Nullable
-  public static IModule getModule(@Nullable SReference reference) {
+  public static SModule getModule(@Nullable SReference reference) {
     return reference != null ? getModule(reference.getSourceNode()) : null;
   }
 
   @Nullable
-  public static IModule getModule(@Nullable SNode node) {
+  public static SModule getModule(@Nullable SNode node) {
     return node != null ? getModule(node.getModel()) : null;
   }
 
   @Nullable
-  public static IModule getModule(@Nullable SModel model) {
+  public static SModule getModule(@Nullable SModel model) {
     if (model == null) {
       return null;
     }

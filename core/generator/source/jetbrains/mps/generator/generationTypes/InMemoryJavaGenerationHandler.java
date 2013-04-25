@@ -23,7 +23,7 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
@@ -215,10 +215,10 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   protected CompositeClassPathItem getClassPath(Set<SModule> contextModules) {
-    Set<IModule> notNullModules = new HashSet<IModule>();
+    Set<SModule> notNullModules = new HashSet<SModule>();
     for (SModule m : contextModules) {
-      if (m instanceof IModule) {
-        notNullModules.add((IModule) m);
+      if (m instanceof SModule) {
+        notNullModules.add((SModule) m);
       }
     }
     Set<String> classpath = JavaModuleOperations.collectCompileClasspath(contextModules, true);

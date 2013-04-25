@@ -45,7 +45,7 @@ import java.util.Map;
 import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 
 public class DefaultSModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(DefaultSModelDescriptor.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultSModelDescriptor.class));
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override
@@ -92,6 +92,8 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
       return myModel.getModel(ModelLoadingState.ROOTS_LOADED);
     }
     synchronized (myModel) {
+      if (myModel instanceof InvalidSModel) return myModel.getModel(null);
+
       oldState = myModel.getState();
       DefaultSModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion

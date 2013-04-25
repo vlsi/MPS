@@ -21,7 +21,7 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.TransientModelsModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
@@ -984,7 +984,7 @@ public class SModel implements SModelData {
     boolean changed = false;
     for (int i = 0; i < refs.size(); i++) {
       SModuleReference ref = refs.get(i);
-      IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+      SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
       if (module != null) {
         SModuleReference newRef = module.getModuleReference();
         refs.set(i, newRef);
@@ -1218,6 +1218,11 @@ public class SModel implements SModelData {
 
     @Override
     public void setModelRoot(ModelRoot mr) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void attach(SRepository repo) {
       throw new UnsupportedOperationException();
     }
 

@@ -23,7 +23,7 @@ import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacrosFactory;
@@ -255,7 +255,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_fl5ndt_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
     String path = null;
-    IModule module = SNodeOperations.getModel(node).getModule();
+    SModule module = SNodeOperations.getModel(node).getModule();
     if (module instanceof AbstractModule) {
       path = MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(node, "icon"));
     }

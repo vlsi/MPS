@@ -8,7 +8,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.IScope;
@@ -16,7 +16,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelsOnlyScope;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -24,6 +23,9 @@ import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import org.jetbrains.mps.openapi.module.SDependency;
 
 public class LanguageUsagesFinder implements IFinder {
   private static final String USED_BY = "used by";
@@ -45,7 +47,7 @@ public class LanguageUsagesFinder implements IFinder {
       return searchResults;
     }
     ModuleHolder moduleHolder = (ModuleHolder) objectHolder;
-    IModule searchedModule = moduleHolder.getObject();
+    SModule searchedModule = moduleHolder.getObject();
     if (searchedModule instanceof DevKit) {
       for (Language devKiltLanguage : ((DevKit) searchedModule).getAllExportedLanguages()) {
         SearchQuery innerQuery = new SearchQuery(devKiltLanguage, query.getScope());
@@ -58,7 +60,7 @@ public class LanguageUsagesFinder implements IFinder {
     Language language = (Language) searchedModule;
     IScope scope = query.getScope();
     if (scope instanceof GlobalScope) {
-      for (IModule module : (as_m2sz3c_a0a0a0j0i(scope, GlobalScope.class)).getVisibleModules()) {
+      for (SModule module : (as_m2sz3c_a0a0a0j0i(scope, GlobalScope.class)).getVisibleModules()) {
         if (monitor.isCanceled()) {
           return searchResults;
         }
@@ -82,7 +84,7 @@ public class LanguageUsagesFinder implements IFinder {
   }
 
   private void collectUsagesInSolution(Language searchedLanguage, Solution solution, SearchResults searchResults) {
-    if (ModuleUtil.depsToModules(solution.getDependencies()).contains(searchedLanguage)) {
+    if (getDeclaredDependenciesTargets(solution).contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Solution>(solution, DEPENDENT_MODULES));
     }
     if (new GlobalModuleDependenciesManager(solution).getUsedLanguages().contains(searchedLanguage)) {
@@ -99,7 +101,7 @@ public class LanguageUsagesFinder implements IFinder {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, USED_BY));
       collectUsagesInModels(searchedLanguage, language, searchResults);
     }
-    if (ModuleUtil.depsToModules(language.getDependencies()).contains(searchedLanguage)) {
+    if (getDeclaredDependenciesTargets(language).contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, DEPENDENT_MODULES));
     }
   }
@@ -108,12 +110,12 @@ public class LanguageUsagesFinder implements IFinder {
     if (devKit.getExportedLanguages().contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, EXPORTED_BY));
     }
-    if (ModuleUtil.depsToModules(devKit.getDependencies()).contains(searchedLanguage)) {
+    if (getDeclaredDependenciesTargets(devKit).contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, DEPENDENT_MODULES));
     }
   }
 
-  private void collectUsagesInModels(Language searchedLanguage, IModule owner, SearchResults searchResults) {
+  private void collectUsagesInModels(Language searchedLanguage, SModule owner, SearchResults searchResults) {
     for (SModel modelDescriptor : owner.getModels()) {
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {
         continue;
@@ -134,6 +136,14 @@ public class LanguageUsagesFinder implements IFinder {
         searchResults.getSearchResults().add(new SearchResult<SNode>(node, NODES_IN_LANGUAGE));
       }
     }
+  }
+
+  private static Set<SModule> getDeclaredDependenciesTargets(SModule module) {
+    Set<SModule> result = new HashSet<SModule>();
+    for (SDependency dep : module.getDeclaredDependencies()) {
+      result.add(dep.getTarget());
+    }
+    return result;
   }
 
   private static <T> T as_m2sz3c_a0a0a0j0i(Object o, Class<T> type) {

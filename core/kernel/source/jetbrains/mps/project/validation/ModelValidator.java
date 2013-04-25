@@ -16,10 +16,13 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.generator.TransientModelsModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +34,11 @@ public class ModelValidator {
     myModel = model;
   }
 
-  public List<String> validate(IScope scope) {
+  public List<String> validate() {
     ModelAccess.assertLegalRead();
 
     List<String> errors = new ArrayList<String>();
-    if (myModel .getModule() instanceof TransientModelsModule) {
+    if (myModel.getModule() instanceof TransientModelsModule || myModel.getModule() == null) {
       return errors;
     }
     if (jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) {
@@ -54,8 +57,11 @@ public class ModelValidator {
       return errors;
     }
 
+    SModule module = myModel.getModule();
+    SRepository repository = module.getRepository();
+
     for (SModelReference reference : SModelOperations.getImportedModelUIDs(myModel)) {
-      if (scope.getModelDescriptor(reference) == null) {
+      if (module.resolveInDependencies(reference.getModelId()) == null) {
         errors.add("Can't find model: " + SModelStereotype.withoutStereotype(reference.getModelName()));
       }
     }
@@ -64,17 +70,22 @@ public class ModelValidator {
     langsToCheck.addAll(IterableUtil.asCollection(((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages()));
     langsToCheck.addAll(((jetbrains.mps.smodel.SModelInternal) myModel).engagedOnGenerationLanguages());
     for (SModuleReference lang : langsToCheck) {
-      if (scope.getLanguage(lang) == null) {
+      if (repository.getModule(lang.getModuleId()) == null) {
         errors.add("Can't find language: " + lang.getModuleName());
       }
     }
 
     for (SModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) myModel).importedDevkits()) {
-      if (scope.getDevKit(devKit) == null) {
+      if (repository.getModule(devKit.getModuleId()) == null) {
         errors.add("Can't find devkit: " + devKit.getModuleName());
       }
     }
 
     return errors;
+  }
+
+  @Deprecated
+  public List<String> validate(IScope scope) {
+    return validate();
   }
 }

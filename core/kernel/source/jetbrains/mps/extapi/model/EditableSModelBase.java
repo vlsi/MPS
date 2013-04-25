@@ -43,7 +43,7 @@ import java.io.IOException;
  */
 public abstract class EditableSModelBase extends ReloadableSModelBase implements EditableSModel, EditableSModelDescriptor {
 
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditableSModelBase.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditableSModelBase.class));
 
   private boolean myChanged = false;
 

@@ -35,6 +35,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.project.ReferenceUpdater;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -139,7 +140,7 @@ public class ModelRenameHandler implements RenameHandler {
   private void deleteGeneratedFiles(SModel modelDescriptor) {
     // TODO: find a way to safely delete generated files. Until then, let's not make a mess
     if (true) return;
-    String moduleOutputPath = modelDescriptor.getModule().getOutputFor(modelDescriptor);
+    String moduleOutputPath = SModuleOperations.getOutputPathFor(modelDescriptor);
     if (moduleOutputPath == null) {
       return;
     }

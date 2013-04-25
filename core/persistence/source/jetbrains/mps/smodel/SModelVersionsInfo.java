@@ -23,7 +23,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 
 public class SModelVersionsInfo {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SModelVersionsInfo.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelVersionsInfo.class));
 
   private boolean myIsDisposed = false;
   private final TObjectIntHashMap<SNode> myNodeConceptVersions = new TObjectIntHashMap<SNode>();

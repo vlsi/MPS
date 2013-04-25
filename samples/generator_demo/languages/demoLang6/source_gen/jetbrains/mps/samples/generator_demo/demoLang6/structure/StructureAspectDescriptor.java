@@ -4,7 +4,7 @@ package jetbrains.mps.samples.generator_demo.demoLang6.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,9 +14,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", "jetbrains.mps.sampleXML.structure.ElementPart", false, new String[]{"jetbrains.mps.sampleXML.structure.ElementPart"}, new String[]{"text"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "button", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Button").super_("jetbrains.mps.sampleXML.structure.ElementPart").parents("jetbrains.mps.sampleXML.structure.ElementPart").properties("text").alias("button", "").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.generator_demo.demoLang6.structure.Label", "jetbrains.mps.sampleXML.structure.ElementPart", false, new String[]{"jetbrains.mps.sampleXML.structure.ElementPart"}, new String[]{"text"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "label", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Label").super_("jetbrains.mps.sampleXML.structure.ElementPart").parents("jetbrains.mps.sampleXML.structure.ElementPart").properties("text").alias("label", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

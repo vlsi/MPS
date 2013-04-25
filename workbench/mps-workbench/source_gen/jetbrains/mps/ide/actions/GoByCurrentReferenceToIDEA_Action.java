@@ -18,7 +18,7 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.ModelAccess;
@@ -100,7 +100,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
       SNode node = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
       SModel model = node.getModel();
-      IModule module = model.getModule();
+      SModule module = model.getModule();
       assert module != null;
       if (module instanceof Generator) {
         module = ((Generator) module).getSourceLanguage();

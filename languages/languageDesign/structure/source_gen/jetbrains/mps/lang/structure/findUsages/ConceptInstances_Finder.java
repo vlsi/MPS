@@ -14,9 +14,8 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.Collections;
-import jetbrains.mps.findUsages.SearchType;
 
 public class ConceptInstances_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
@@ -43,7 +42,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
       SAbstractConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(node));
-      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, scope, monitor));
+      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesFacade.getInstance().findInstances(scope, Collections.singleton(concept), false, monitor));
       for (SNode resNode : resNodes) {
         ListSequence.fromList(_results).addElement(((SNode) resNode));
       }

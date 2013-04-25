@@ -71,11 +71,15 @@ public class NewLanguageSettings extends JPanel {
 
 
   protected void updateLanguageLocation() {
+    updateLanguageLocation(false);
+  }
+
+  protected void updateLanguageLocation(boolean force) {
     if (myProjectPath == null) {
       return;
     }
     String prefix = myProjectPath + File.separator + "languages" + File.separator;
-    if (isEmpty_so2aal_a0a0c0l(myLanguageName.getText()) || isEmpty_so2aal_a0a0c0l_0(myLanguageLocation.getText()) || myLanguageLocation.getText().startsWith(prefix)) {
+    if (isEmpty_so2aal_a0a0a2a21(myLanguageName.getText()) || isEmpty_so2aal_a0a0a2a21_0(myLanguageLocation.getText()) || myLanguageLocation.getText().startsWith(prefix) || force) {
       myLanguageLocation.setText(prefix + myLanguageName.getText());
     }
   }
@@ -116,17 +120,22 @@ public class NewLanguageSettings extends JPanel {
     mySandboxSolution.setSelected(needed);
   }
 
+  public void setProjectPath(String projectPath) {
+    myProjectPath = projectPath;
+    updateLanguageLocation(true);
+  }
+
 
 
   public JComponent getPreferredFocusedComponent() {
     return myLanguageName;
   }
 
-  public static boolean isEmpty_so2aal_a0a0c0l(String str) {
+  public static boolean isEmpty_so2aal_a0a0a2a21(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_so2aal_a0a0c0l_0(String str) {
+  public static boolean isEmpty_so2aal_a0a0a2a21_0(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -23,7 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.AsyncResult.Handler;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -82,7 +82,7 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
             if (node == null) return;
             SModel model = node.getModel();
             if (model == null) return;
-            IModule module = model.getModule();
+            SModule module = model.getModule();
             if (module == null) return;
             NavigationSupport.getInstance().openNode(new ModuleContext(module, ProjectHelper.toMPSProject(p)), node, true, true);
           }
