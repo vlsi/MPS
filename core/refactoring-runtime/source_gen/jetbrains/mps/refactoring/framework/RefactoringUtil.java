@@ -27,7 +27,7 @@ import java.lang.reflect.Constructor;
 import java.util.Collection;
 import java.util.Arrays;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.LinkedHashMap;
@@ -192,9 +192,9 @@ public class RefactoringUtil {
     return !(disabled);
   }
 
-  public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
+  public static Map<SModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
     Collection<Language> extendingLangs = ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(language);
-    Map<IModule, List<SModel>> result = new LinkedHashMap<IModule, List<SModel>>(extendingLangs.size() + 1);
+    Map<SModule, List<SModel>> result = new LinkedHashMap<SModule, List<SModel>>(extendingLangs.size() + 1);
     result.put(language, RefactoringUtil.getLanguageModelsList(project, language));
     for (Language l : extendingLangs) {
       if (!(l.equals(language))) {
@@ -214,8 +214,8 @@ public class RefactoringUtil {
     }
   }
 
-  public static Map<IModule, List<SModel>> getLanguageModels(Project project, Language language) {
-    return Collections.<IModule,List<SModel>>singletonMap(language, RefactoringUtil.getLanguageModelsList(project, language));
+  public static Map<SModule, List<SModel>> getLanguageModels(Project project, Language language) {
+    return Collections.<SModule,List<SModel>>singletonMap(language, RefactoringUtil.getLanguageModelsList(project, language));
 
   }
 

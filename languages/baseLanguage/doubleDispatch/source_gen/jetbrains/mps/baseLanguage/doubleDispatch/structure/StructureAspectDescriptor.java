@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.doubleDispatch.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier", "jetbrains.mps.baseLanguage.structure.Modifier", false, new String[]{"jetbrains.mps.baseLanguage.structure.Modifier"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "dispatch", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier").super_("jetbrains.mps.baseLanguage.structure.Modifier").parents("jetbrains.mps.baseLanguage.structure.Modifier").alias("dispatch", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.components.PersistentStateComponent;
@@ -160,10 +160,10 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void addModule(SModuleReference ref) {
-    IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
     if (module != null) {
       super.addModule(ref);
-      IFile descriptorFile = module.getDescriptorFile();
+      IFile descriptorFile = ((AbstractModule)module).getDescriptorFile();
       assert descriptorFile != null;
       myProjectDescriptor.addModule(descriptorFile.getPath());
     }
@@ -171,10 +171,10 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void removeModule(SModuleReference ref) {
-    IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
     if (module != null) {
       super.removeModule(ref);
-      IFile descriptorFile = module.getDescriptorFile();
+      IFile descriptorFile = ((AbstractModule)module).getDescriptorFile();
       assert descriptorFile != null;
       myProjectDescriptor.removeModule(descriptorFile.getPath());
     }
@@ -194,7 +194,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
         ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
         if (descriptor != null) {
           ModuleHandle handle = new ModuleHandle(descriptorFile, descriptor);
-          IModule module = ModuleRepositoryFacade.createModule(handle, this);
+          SModule module = ModuleRepositoryFacade.createModule(handle, this);
           SModuleReference moduleReference = module.getModuleReference();
           if (!existingModules.remove(moduleReference)) {
             super.addModule(moduleReference);

@@ -67,7 +67,7 @@ public class MissingDependenciesFixer {
 
         Set<SModule> unloadedModules = ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(module), new EmptyProgressMonitor());
 
-        SearchScope moduleScope = module.getModuleScope();
+        SearchScope moduleScope = module.getScope();
         for (SModelReference modelImport : SModelOperations.getImportedModelUIDs(model)) {
           if (moduleScope.resolve(modelImport) != null) {
             continue;

@@ -10,8 +10,9 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -26,10 +27,10 @@ public class check_ClassCreator_NonTypesystemRule extends AbstractNonTypesystemR
   public void applyRule(final SNode classCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SLinkOperations.getTarget(classCreator, "baseMethodDeclaration", false) == null && ListSequence.fromList(SLinkOperations.getTargets(classCreator, "actualArgument", true)).isEmpty()) {
       String refText = SLinkOperations.getResolveInfo(SNodeOperations.getReference(classCreator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")));
-      IModule module = check_gfouwf_a0b0a0b(check_gfouwf_a0a1a0a1(classCreator));
+      SModule module = check_gfouwf_a0b0a0b(check_gfouwf_a0a1a0a1(classCreator));
 
       if ((refText != null && refText.length() > 0) && module != null) {
-        SNode clazz = SNodeOperations.cast(ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(classCreator, module.getScope()).resolve(classCreator, refText), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        SNode clazz = SNodeOperations.cast(ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(classCreator, ((AbstractModule) module).getScope()).resolve(classCreator, refText), "jetbrains.mps.baseLanguage.structure.ClassConcept");
         if ((clazz != null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
@@ -59,7 +60,7 @@ public class check_ClassCreator_NonTypesystemRule extends AbstractNonTypesystemR
     return false;
   }
 
-  private static IModule check_gfouwf_a0b0a0b(SModel checkedDotOperand) {
+  private static SModule check_gfouwf_a0b0a0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

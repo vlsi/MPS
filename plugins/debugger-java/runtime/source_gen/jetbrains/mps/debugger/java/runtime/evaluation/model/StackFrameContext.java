@@ -10,7 +10,7 @@ import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import java.util.Collections;
@@ -75,7 +75,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   @NotNull
   @Override
   public List<String> getClassPath() {
-    IModule locationModule = getLocationModule();
+    SModule locationModule = getLocationModule();
     if (locationModule == null) {
       return super.getClassPath();
     }

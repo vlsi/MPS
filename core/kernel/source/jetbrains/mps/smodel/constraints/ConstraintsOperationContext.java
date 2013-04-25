@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.smodel.constraints;
 
+import jetbrains.mps.project.AbstractModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.IScope;
@@ -28,9 +29,9 @@ public class ConstraintsOperationContext extends StandaloneMPSContext {
   protected static Logger LOG = LogManager.getLogger(ConstraintsOperationContext.class);
 
   // TODO: use module reference instead
-  private final IModule module;
+  private final SModule module;
 
-  public ConstraintsOperationContext(IModule module) {
+  public ConstraintsOperationContext(SModule module) {
     assert module != null;
     this.module = module;
   }
@@ -42,13 +43,13 @@ public class ConstraintsOperationContext extends StandaloneMPSContext {
   }
 
   @Override
-  public IModule getModule() {
+  public SModule getModule() {
     return module;
   }
 
   @NotNull
   @Override
   public IScope getScope() {
-    return module != null ? module.getScope() : GlobalScope.getInstance() /* FIXME */;
+    return module != null ? ((AbstractModule) module).getScope() : GlobalScope.getInstance() /* FIXME */;
   }
 }

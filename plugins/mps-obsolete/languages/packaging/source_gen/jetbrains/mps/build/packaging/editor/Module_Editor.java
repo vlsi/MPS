@@ -22,7 +22,7 @@ import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -90,10 +90,10 @@ public class Module_Editor extends DefaultNodeEditor {
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((IModule) parameterObject, node, model, scope, operationContext, editorContext);
+      this.handleAction_impl((SModule) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(IModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "id", parameterObject.getModuleReference().getModuleId().toString());
       SPropertyOperations.set(node, "name", parameterObject.getModuleReference().getModuleName());
     }
@@ -103,10 +103,10 @@ public class Module_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((IModule) parameterObject);
+      return this.getMatchingText_internal((SModule) parameterObject);
     }
 
-    public String getMatchingText_internal(IModule parameterObject) {
+    public String getMatchingText_internal(SModule parameterObject) {
       return parameterObject.getModuleReference().getModuleName();
     }
   }

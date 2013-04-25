@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import com.intellij.openapi.actionSystem.Presentation;
 
@@ -42,9 +42,9 @@ public class ShowInLogicalView extends AbstractVcsAction {
       }
     } else
     if (MPSFileTypesManager.instance().isModuleFile(selectedFile)) {
-      IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+      SModule module = ModelAccess.instance().runReadAction(new Computable<SModule>() {
         @Override
-        public IModule compute() {
+        public SModule compute() {
           return ModuleFileTracker.getInstance().getModuleByFile(VirtualFileUtils.toIFile(selectedFile));
         }
       });

@@ -5,7 +5,7 @@ package jetbrains.mps.ide.depanalyzer;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 
@@ -29,7 +29,7 @@ public class DependencyTreeNode extends MPSTreeNode {
     return myLink;
   }
 
-  public IModule getModule() {
+  public SModule getModule() {
     return check_akkfj9_a0a4(myLink);
   }
 
@@ -64,7 +64,7 @@ public class DependencyTreeNode extends MPSTreeNode {
     }
   }
 
-  private static IModule check_akkfj9_a0a4(DependencyUtil.Link checkedDotOperand) {
+  private static SModule check_akkfj9_a0a4(DependencyUtil.Link checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.module;
     }

@@ -25,7 +25,6 @@ import java.util.Collection;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import java.util.Collections;
 import jetbrains.mps.vfs.IFile;
@@ -228,8 +227,8 @@ public abstract class MpsWorker {
       return;
     }
     List<SModule> tmpmodules;
-    SModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<IModule>() {
-      public IModule compute() {
+    SModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<SModule>() {
+      public SModule compute() {
         return ModuleFileTracker.getInstance().getModuleByFile(FileSystem.getInstance().getFileByPath(moduleFile.getAbsolutePath()));
       }
     });
@@ -242,7 +241,7 @@ public abstract class MpsWorker {
           BaseMPSModuleOwner owner = new BaseMPSModuleOwner() {};
           List<SModule> modules = new ArrayList<SModule>();
           for (ModulesMiner.ModuleHandle moduleHandle : ModulesMiner.getInstance().collectModules(file, false)) {
-            IModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
+            SModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
             if (module != null) {
               modules.add(module);
             }

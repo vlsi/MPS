@@ -18,7 +18,7 @@ package jetbrains.mps.ide.projectPane.logicalview.nodes;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.projectPane.*;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.project.*;
+import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;

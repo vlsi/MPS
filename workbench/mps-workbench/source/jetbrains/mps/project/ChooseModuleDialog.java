@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.dialogs.BaseDialog;
@@ -40,11 +40,11 @@ public class ChooseModuleDialog extends BaseDialog {
       return ChooseModuleDialog.this.rebuild();
     }
   };
-  private Set<IModule> myModules = new HashSet<IModule>();
-  private IModule myResult;
+  private Set<SModule> myModules = new HashSet<SModule>();
+  private SModule myResult;
   private JComponent myComponent = ScrollPaneFactory.createScrollPane(myTree);
 
-  public ChooseModuleDialog(String text, Frame mainFrame, Collection<IModule> modules) throws HeadlessException {
+  public ChooseModuleDialog(String text, Frame mainFrame, Collection<SModule> modules) throws HeadlessException {
     super(mainFrame, text);
     myModules.addAll(modules);
     myTree.setRootVisible(false);
@@ -58,7 +58,7 @@ public class ChooseModuleDialog extends BaseDialog {
 
   private MPSTreeNode rebuild() {
     TextTreeNode root = new TextTreeNode("Root");
-    for (IModule m : myModules) {
+    for (SModule m : myModules) {
       root.add(new ModuleTreeNode(m));
     }
 
@@ -70,7 +70,7 @@ public class ChooseModuleDialog extends BaseDialog {
     return myComponent;
   }
 
-  public IModule getResult() {
+  public SModule getResult() {
     return myResult;
   }
 
@@ -92,9 +92,9 @@ public class ChooseModuleDialog extends BaseDialog {
   }
 
   public class ModuleTreeNode extends MPSTreeNode {
-    private IModule myModule;
+    private SModule myModule;
 
-    public ModuleTreeNode(IModule module) {
+    public ModuleTreeNode(SModule module) {
       super(module, null);
       myModule = module;
 
@@ -107,7 +107,7 @@ public class ChooseModuleDialog extends BaseDialog {
       okButton();
     }
 
-    public IModule getModule() {
+    public SModule getModule() {
       return myModule;
     }
 

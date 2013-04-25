@@ -18,7 +18,7 @@ package jetbrains.mps.project.structure.project.testconfigurations;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
@@ -46,7 +46,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
 
   @Override
   public GenParameters getGenParams(Project project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
-    IModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
+    SModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
 
     if (module == null) {
       throw new IllegalGeneratorConfigurationException("Can't find module " + myModuleRef.getModuleName());

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.overloadedOperators.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,23 +14,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator", false, new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator"}, new String[]{}, new String[]{"binaryOperation"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference").super_("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").parents("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").references("binaryOperation").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator", false, new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator"}, new String[]{}, new String[]{"declaration"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator").super_("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").parents("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").references("declaration").create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", "jetbrains.mps.baseLanguage.structure.BinaryOperation", false, new String[]{"jetbrains.mps.baseLanguage.structure.BinaryOperation"}, new String[]{}, new String[]{"operator"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage").super_("jetbrains.mps.baseLanguage.structure.BinaryOperation").parents("jetbrains.mps.baseLanguage.structure.BinaryOperation").references("operator").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "left", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.INamedConcept").alias("left", "").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{"commutative"}, new String[]{}, new String[]{"returnType", "leftType", "rightType", "operator"}, new boolean[]{false, false, false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").properties("commutative").children(new String[]{"returnType", "leftType", "rightType", "operator"}, new boolean[]{false, false, false, false}).create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"operators", "customOperators"}, new boolean[]{true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"operators", "customOperators"}, new boolean[]{true, true}).create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "right", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("right", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

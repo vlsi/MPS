@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
@@ -132,7 +132,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
   }
 
-  public SModel getModelByModule(IModule module) {
+  public SModel getModelByModule(SModule module) {
     ModelAccess.assertLegalRead();
 
     if (module == null) return null;
@@ -146,7 +146,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     ModelAccess.assertLegalWrite();
 
     Set<SModelReference> old = new HashSet<SModelReference>(myModels.keySet());
-    for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
+    for (SModule module : MPSModuleRepository.getInstance().getAllModules()) {
       if (!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
         continue;
       }
@@ -271,8 +271,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   public class ProjectStructureModuleScope extends ModuleScope {
     @Override
-    protected Set<IModule> getInitialModules() {
-      Set<IModule> result = new HashSet<IModule>();
+    protected Set<SModule> getInitialModules() {
+      Set<SModule> result = new HashSet<SModule>();
       result.add(ProjectStructureModule.this);
       return result;
     }
@@ -291,8 +291,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     @Override
     protected ProjectStructureSModel createModel() {
       final ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
-      final ModuleDescriptor moduleDescriptor = ((IModule) myModule).getModuleDescriptor();
-      final IFile file = ((IModule) myModule).getDescriptorFile();
+      final ModuleDescriptor moduleDescriptor = ((AbstractModule) myModule).getModuleDescriptor();
+      final IFile file = ((AbstractModule) myModule).getDescriptorFile();
 
       if (file != null && moduleDescriptor != null) {
         NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
@@ -346,7 +346,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
 
     @Override
-    public IModule getModule() {
+    public SModule getModule() {
       return myProjectStructureModule;
     }
 

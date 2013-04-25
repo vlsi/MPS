@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -36,9 +36,9 @@ public class NodePresentationUtil {
     SModel fromModel = referentNode.getModel();
     if (fromModel == null) return false;
 
-    IModule referenceModule = toLanguage(toModel.getModule());
+    SModule referenceModule = toLanguage(toModel.getModule());
     if (referenceModule instanceof Language) {
-      IModule referentModule = toLanguage(fromModel.getModule());
+      SModule referentModule = toLanguage(fromModel.getModule());
       return referentModule == referenceModule;
     }
 
@@ -60,7 +60,7 @@ public class NodePresentationUtil {
     return 0;
   }
 
-  private static IModule toLanguage(IModule m) {
+  private static SModule toLanguage(SModule m) {
     if (m instanceof Generator) {
       return ((Generator) m).getSourceLanguage();
     }

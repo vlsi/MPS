@@ -155,7 +155,7 @@
     <nodeInfo nodeId="6526493364578755942" fileName="NewModuleUtil.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8784082215664551577" fileName="NewModuleUtil.java" startLine="153" startPosition="0" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8084576643565880455" fileName="NewModuleUtil.java" startLine="171" startPosition="129" endLine="175" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1613125646032873275" fileName="NewModuleUtil.java" startLine="195" startPosition="74" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1613125646032873275" fileName="NewModuleUtil.java" startLine="195" startPosition="61" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2273513587775220564" fileName="NewModuleUtil.java" startLine="241" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createNewLanguage#(Ljava/lang/String;Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/MPSModuleOwner;)Ljetbrains/mps/smodel/Language;" />
     <nodeInfo nodeId="6456559845239236618" fileName="NewModuleUtil.java" startLine="256" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModuleFile#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
     <nodeInfo nodeId="7078490058112055384" fileName="NewModuleUtil.java" startLine="273" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -243,7 +243,7 @@
       <varInfo nodeId="1052960076632931827" varName="extendedLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="6526493364578755942" fileName="NewModuleUtil.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="1613125646032873274" fileName="NewModuleUtil.java" startLine="195" startPosition="74" endLine="199" endPosition="7" />
+    <scopeInfo nodeId="1613125646032873274" fileName="NewModuleUtil.java" startLine="195" startPosition="61" endLine="199" endPosition="7" />
     <scopeInfo nodeId="2273513587775220459" fileName="NewModuleUtil.java" startLine="213" startPosition="112" endLine="217" endPosition="132">
       <varInfo nodeId="2273513587775220466" varName="descriptor" />
     </scopeInfo>

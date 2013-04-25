@@ -14,7 +14,7 @@ import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
 import java.util.Arrays;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
@@ -66,7 +66,7 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
   }
 
   @Nullable
-  private static String getModuleType(@NotNull IModule module) {
+  private static String getModuleType(@NotNull SModule module) {
     if (module instanceof Language) {
       return "language";
     } else if (module instanceof Solution) {
@@ -77,7 +77,7 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
     return null;
   }
 
-  private static IModule check_bmsafs_a0a2a1(SModel checkedDotOperand) {
+  private static SModule check_bmsafs_a0a2a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

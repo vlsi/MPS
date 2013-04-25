@@ -4,7 +4,7 @@ package testRefactoring.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,9 +14,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("testRefactoring.structure.MyVeryGoodConcept1", "testRefactoringTargetLang.structure.AbstractGoodConcept", false, new String[]{"testRefactoringTargetLang.structure.AbstractGoodConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"brother"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("testRefactoring.structure.MyVeryGoodConcept1").super_("testRefactoringTargetLang.structure.AbstractGoodConcept").parents("testRefactoringTargetLang.structure.AbstractGoodConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("brother").create();
       case 1:
-        return new CompiledConceptDescriptor("testRefactoring.structure.YetAnotherGoodConcept", "testRefactoringTargetLang.structure.AnsotherGoodConcept", false, new String[]{"testRefactoringTargetLang.structure.AnsotherGoodConcept"}, new String[]{"niceProperty"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("testRefactoring.structure.YetAnotherGoodConcept").super_("testRefactoringTargetLang.structure.AnsotherGoodConcept").parents("testRefactoringTargetLang.structure.AnsotherGoodConcept").properties("niceProperty").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

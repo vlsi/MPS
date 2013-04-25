@@ -4,7 +4,7 @@ package jetbrains.mps.lang.quotation.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,33 +14,33 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", null, true, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.IAntisuppressErrors", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{"label"}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation").interface_().parents("jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.IAntisuppressErrors", "jetbrains.mps.lang.core.structure.ScopeProvider").properties("label").children(new String[]{"expression"}, new boolean[]{false}).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.Antiquotation").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation").create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.ListAntiquotation").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.NodeBuilder", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"quotedNode", "modelToCreate"}, new boolean[]{false, false}, false, false, "<light quotation>", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.NodeBuilder").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"quotedNode", "modelToCreate"}, new boolean[]{false, false}).alias("<light quotation>", "").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "#", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.NodeBuilderExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"expression"}, new boolean[]{false}).alias("#", "").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart", false, new String[]{"jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart"}, new String[]{}, new String[]{"link"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink").super_("jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart").parents("jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart").references("link").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"expression"}, new boolean[]{false}).abstract_().create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart", false, new String[]{"jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart"}, new String[]{}, new String[]{"property"}, new String[]{}, new boolean[]{}, false, false, "<{property}>", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty").super_("jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart").parents("jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart").references("property").alias("<{property}>", "").create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.NodeBuilderList", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"nodes"}, new boolean[]{true}, false, false, "[list]", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.NodeBuilderList").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"nodes"}, new boolean[]{true}).alias("[list]", "").create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.NodeBuilderNode", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{"concept"}, new String[]{"values"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.NodeBuilderNode").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.ScopeProvider").references("concept").children(new String[]{"values"}, new boolean[]{true}).create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.NodeBuilderRef", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"target"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.NodeBuilderRef").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("target").create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.core.structure.PropertyAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation").super_("jetbrains.mps.lang.core.structure.PropertyAttribute").parents("jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation").create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.ISuppressErrors"}, new String[]{}, new String[]{}, new String[]{"quotedNode", "modelToCreate", "nodeId"}, new boolean[]{false, false, false}, false, false, "<quotation>", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.Quotation").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.ISuppressErrors").children(new String[]{"quotedNode", "modelToCreate", "nodeId"}, new boolean[]{false, false, false}).alias("<quotation>", "").create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", "jetbrains.mps.lang.core.structure.LinkAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation").super_("jetbrains.mps.lang.core.structure.LinkAttribute").parents("jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

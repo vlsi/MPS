@@ -28,7 +28,9 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
@@ -72,7 +74,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     monitor.start("generating files", 1);
     try {
       info("handling output...");
-      IFile targetDir = FileSystem.getInstance().getFileByPath(((IModule) module).getOutputFor(inputModel));
+      IFile targetDir = FileSystem.getInstance().getFileByPath(SModuleOperations.getOutputPathFor(inputModel));
 
       long startJobTime = System.currentTimeMillis();
 
@@ -81,9 +83,9 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
         JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, targetDir, myProcessor);
         try {
           result = new TextGenerator(javaStreamHandler,
-            BLDependenciesCache.getInstance().getGenerator(),
-            TraceInfoCache.getInstance().getGenerator(),
-            GenerationDependenciesCache.getInstance().getGenerator()
+              BLDependenciesCache.getInstance().getGenerator(),
+              TraceInfoCache.getInstance().getGenerator(),
+              GenerationDependenciesCache.getInstance().getGenerator()
           ).handleOutput(invocationContext, status);
         } finally {
           javaStreamHandler.dispose();
@@ -105,15 +107,16 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public void startModule(SModule module, List<SModel> inputModels, IOperationContext operationContext) {
-    String outputFolder = module != null ? ((IModule) module).getGeneratorOutputPath() : null;
+    IFile outputFolder = module instanceof AbstractModule ? ((AbstractModule) module).getOutputPath() : null;
 
     if (myLogger.needsInfo()) {
-      myLogger.info("module " + module + "; folder = " + outputFolder + "");
+      myLogger.info("module " + module + "; folder = " + (outputFolder != null ? outputFolder.getPath() : "[null]") + "");
     }
   }
 
   @Override
-  public boolean compile(IOperationContext operationContext, List<Pair<SModule, List<SModel>>> input, boolean generationOK, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
+  public boolean compile(IOperationContext operationContext, List<Pair<SModule, List<SModel>>> input, boolean generationOK, ProgressMonitor monitor) throws
+      IOException, GenerationCanceledException {
     boolean compiledSuccessfully = generationOK;
 
     monitor.start("", 3 + (generationOK ? input.size() * 4 : 0));

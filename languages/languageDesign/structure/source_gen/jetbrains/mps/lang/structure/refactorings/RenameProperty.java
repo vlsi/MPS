@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -52,7 +52,7 @@ public class RenameProperty extends BaseLoggableRefactoring {
       return result;
     }
 
-    Map<IModule, List<SModel>> modelsMap = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedProject(), sourceLanguage);
+    Map<SModule, List<SModel>> modelsMap = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedProject(), sourceLanguage);
     for (List<SModel> modelList : modelsMap.values()) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(modelList));
     }

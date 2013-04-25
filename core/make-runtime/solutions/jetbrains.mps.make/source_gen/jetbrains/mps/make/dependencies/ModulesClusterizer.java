@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -49,16 +49,16 @@ public class ModulesClusterizer {
         return ((MResource) r);
       }
     }).toListSequence();
-    Iterable<IModule> mods = Sequence.fromIterable(mres).select(new ISelector<MResource, IModule>() {
-      public IModule select(MResource r) {
+    Iterable<SModule> mods = Sequence.fromIterable(mres).select(new ISelector<MResource, SModule>() {
+      public SModule select(MResource r) {
         return r.module();
       }
     });
     List<IResource> rest = Sequence.fromIterable(res).subtract(Sequence.fromIterable(mres)).toListSequence();
     ModulesCluster clst = new ModulesCluster(mods);
     clst.collectRequired(mods);
-    Iterable<? extends Iterable<? extends IResource>> toBuild = Sequence.fromIterable(clst.buildOrder()).select(new ISelector<Iterable<IModule>, IListSequence<MResource>>() {
-      public IListSequence<MResource> select(final Iterable<IModule> cl) {
+    Iterable<? extends Iterable<? extends IResource>> toBuild = Sequence.fromIterable(clst.buildOrder()).select(new ISelector<Iterable<SModule>, IListSequence<MResource>>() {
+      public IListSequence<MResource> select(final Iterable<SModule> cl) {
         return Sequence.fromIterable(mres).where(new IWhereFilter<MResource>() {
           public boolean accept(MResource r) {
             return Sequence.fromIterable(cl).contains(r.module());
@@ -89,19 +89,19 @@ public class ModulesClusterizer {
         return ((MResource) r);
       }
     }).toListSequence();
-    Iterable<IModule> mods = Sequence.fromIterable(mres).select(new ISelector<MResource, IModule>() {
-      public IModule select(MResource r) {
+    Iterable<SModule> mods = Sequence.fromIterable(mres).select(new ISelector<MResource, SModule>() {
+      public SModule select(MResource r) {
         return r.module();
       }
     });
     return allNamespaces(mods);
   }
 
-  private Iterable<String> allNamespaces(Iterable<IModule> modules) {
+  private Iterable<String> allNamespaces(Iterable<SModule> modules) {
     final Set<String> namespaces = SetSequence.fromSet(new HashSet<String>());
     Set<TemplateModule> seen = SetSequence.fromSet(new HashSet<TemplateModule>());
     Queue<String> nsq = QueueSequence.fromQueue(new LinkedList<String>());
-    for (IModule mod : modules) {
+    for (SModule mod : modules) {
       if (mod instanceof Generator) {
         Iterable<SModel> genModels = mod.getModels();
         QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(genModels).translate(new ITranslator2<SModel, String>() {

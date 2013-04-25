@@ -4,7 +4,7 @@ package jetbrains.mps.make.dependencies;
 
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Set;
@@ -30,35 +30,35 @@ import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ModulesCluster {
-  private Map<SModuleReference, IModule> modulesView = MapSequence.fromMap(new HashMap<SModuleReference, IModule>());
+  private Map<SModuleReference, SModule> modulesView = MapSequence.fromMap(new HashMap<SModuleReference, SModule>());
   private Map<SModuleReference, ModulesCluster.ModuleDeps> allDeps = MapSequence.fromMap(new HashMap<SModuleReference, ModulesCluster.ModuleDeps>());
 
-  public ModulesCluster(Iterable<IModule> mods) {
+  public ModulesCluster(Iterable<SModule> mods) {
     addAll(mods);
   }
 
-  public void add(IModule mod) {
+  public void add(SModule mod) {
     this.primAdd(mod);
   }
 
-  public void addAll(Iterable<IModule> mods) {
-    for (IModule mod : mods) {
+  public void addAll(Iterable<SModule> mods) {
+    for (SModule mod : mods) {
       primAdd(mod);
     }
   }
 
-  public void collectRequired(Iterable<IModule> pool) {
+  public void collectRequired(Iterable<SModule> pool) {
     Set<SModuleReference> allRequired = SetSequence.fromSetWithValues(new HashSet<SModuleReference>(), Sequence.fromIterable(MapSequence.fromMap(allDeps).values()).translate(new ITranslator2<ModulesCluster.ModuleDeps, SModuleReference>() {
       public Iterable<SModuleReference> translate(ModulesCluster.ModuleDeps dep) {
         return dep.required;
       }
     }));
-    List<IModule> available = Sequence.fromIterable(pool).toListSequence();
+    List<SModule> available = Sequence.fromIterable(pool).toListSequence();
     int atSize;
     do {
       atSize = MapSequence.fromMap(allDeps).count();
-      for (Iterator<IModule> it = ListSequence.fromList(available).iterator(); it.hasNext();) {
-        IModule mod = it.next();
+      for (Iterator<SModule> it = ListSequence.fromList(available).iterator(); it.hasNext();) {
+        SModule mod = it.next();
         SModuleReference mr = mod.getModuleReference();
         if (SetSequence.fromSet(allRequired).contains(mr)) {
           primAdd(mod);
@@ -76,13 +76,13 @@ public class ModulesCluster {
     return ListSequence.fromList(new ModulesCluster.ModulesGraph().findCycles()).isNotEmpty();
   }
 
-  public Iterable<? extends Iterable<IModule>> buildOrder() {
+  public Iterable<? extends Iterable<SModule>> buildOrder() {
     List<List<SModuleReference>> order = new ModulesCluster.ModulesGraph().totalOrder();
     Iterable<? extends Iterable<SModuleReference>> compacted = Sequence.fromIterable(this.compact(order)).toListSequence();
-    return Sequence.fromIterable(compacted).select(new ISelector<Iterable<SModuleReference>, IListSequence<IModule>>() {
-      public IListSequence<IModule> select(Iterable<SModuleReference> cycle) {
-        return Sequence.fromIterable(cycle).select(new ISelector<SModuleReference, IModule>() {
-          public IModule select(SModuleReference mr) {
+    return Sequence.fromIterable(compacted).select(new ISelector<Iterable<SModuleReference>, IListSequence<SModule>>() {
+      public IListSequence<SModule> select(Iterable<SModuleReference> cycle) {
+        return Sequence.fromIterable(cycle).select(new ISelector<SModuleReference, SModule>() {
+          public SModule select(SModuleReference mr) {
             return MapSequence.fromMap(modulesView).get(mr);
           }
         }).toListSequence();
@@ -181,11 +181,11 @@ __switch__:
     });
   }
 
-  private boolean isDirty(IModule mod) {
+  private boolean isDirty(SModule mod) {
     return false;
   }
 
-  private void primAdd(IModule mod) {
+  private void primAdd(SModule mod) {
     SModuleReference mr = mod.getModuleReference();
     if (!(MapSequence.fromMap(modulesView).containsKey(mr))) {
       MapSequence.fromMap(modulesView).put(mr, mod);
@@ -193,7 +193,7 @@ __switch__:
     }
   }
 
-  public void updateDeps(IModule mod) {
+  public void updateDeps(SModule mod) {
     SModuleReference mr = mod.getModuleReference();
     ModulesCluster.ModuleDeps deps = MapSequence.fromMap(allDeps).get(mr);
     if (deps == null) {
@@ -213,17 +213,17 @@ __switch__:
     }
   }
 
-  private Iterable<SModuleReference> required(IModule mod) {
+  private Iterable<SModuleReference> required(SModule mod) {
     GlobalModuleDependenciesManager depman = new GlobalModuleDependenciesManager(mod);
-    Set<IModule> reqmods = SetSequence.fromSetWithValues(new HashSet<IModule>(), Sequence.fromIterable(((Iterable<Language>) depman.getUsedLanguages())).translate(new ITranslator2<Language, Generator>() {
+    Set<SModule> reqmods = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(((Iterable<Language>) depman.getUsedLanguages())).translate(new ITranslator2<Language, Generator>() {
       public Iterable<Generator> translate(Language lang) {
         return lang.getGenerators();
       }
     }));
     SetSequence.fromSet(reqmods).addSequence(CollectionSequence.fromCollection(depman.getModules(GlobalModuleDependenciesManager.Deptype.COMPILE)));
     SetSequence.fromSet(reqmods).addSequence(CollectionSequence.fromCollection(depman.getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE)));
-    Iterable<SModuleReference> reqs = SetSequence.fromSet(reqmods).select(new ISelector<IModule, SModuleReference>() {
-      public SModuleReference select(IModule m) {
+    Iterable<SModuleReference> reqs = SetSequence.fromSet(reqmods).select(new ISelector<SModule, SModuleReference>() {
+      public SModuleReference select(SModule m) {
         return m.getModuleReference();
       }
     });

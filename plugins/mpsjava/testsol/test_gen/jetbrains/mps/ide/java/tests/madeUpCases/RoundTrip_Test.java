@@ -13,25 +13,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class RoundTrip_Test extends BaseTransformationTest4 {
   @Test
   public void test_Simple() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_Simple", true);
   }
 
   @Test
   public void test_Methods() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_Methods", true);
   }
 
   @Test
   public void test_Fields() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_Fields", true);
   }
 
   @Test
   public void test_TypeVars() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_TypeVars", true);
   }
 

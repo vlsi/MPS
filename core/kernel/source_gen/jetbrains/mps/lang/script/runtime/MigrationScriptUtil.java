@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.script.util.ScriptNameUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
@@ -62,7 +62,7 @@ public class MigrationScriptUtil {
     Class<BaseMigrationScript> aClass;
     String languageNamespace = NameUtil.namespaceFromLongName(fqClassName);
     languageNamespace = languageNamespace.substring(0, languageNamespace.length() - ".scripts".length());
-    IModule mod = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
+    SModule mod = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
     if (mod == null) {
       Solution sol = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Solution.class);
       if (sol != null && sol.getKind() != SolutionKind.NONE) {

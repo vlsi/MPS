@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -41,14 +41,14 @@ public class CustomContainersRegistry {
 
   public List<SNode> accessibleCustomContainerDeclarations(SModel fromModel) {
     List<SNode> res = new ArrayList<SNode>();
-    IModule om = this.getOwningModule(fromModel);
+    SModule om = this.getOwningModule(fromModel);
     if (om != null) {
-      final Iterable<IModule> allVisibleModules = new GlobalModuleDependenciesManager(om).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
+      final Iterable<SModule> allVisibleModules = new GlobalModuleDependenciesManager(om).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
       final Iterable<Language> allUsedLanguages = new GlobalModuleDependenciesManager(om).getUsedLanguages();
       Iterable<SNode> allCustomContainers = this.primAllCustomContainers();
       ListSequence.fromList(res).addSequence(Sequence.fromIterable(allCustomContainers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode cc) {
-          IModule owner = CustomContainersRegistry.this.getOwningModule(SNodeOperations.getModel(cc));
+          SModule owner = CustomContainersRegistry.this.getOwningModule(SNodeOperations.getModel(cc));
           return Sequence.fromIterable(allVisibleModules).contains(owner) || (owner instanceof Language && Sequence.fromIterable(allUsedLanguages).contains((Language) owner));
         }
       }).translate(new ITranslator2<SNode, SNode>() {
@@ -60,7 +60,7 @@ public class CustomContainersRegistry {
     return res;
   }
 
-  public IModule getOwningModule(SModel model) {
+  public SModule getOwningModule(SModel model) {
     SModel fmdesc = model;
     return (fmdesc != null ?
       fmdesc.getModule() :

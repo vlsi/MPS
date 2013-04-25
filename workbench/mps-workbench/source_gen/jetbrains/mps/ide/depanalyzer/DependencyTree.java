@@ -6,7 +6,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -32,11 +32,11 @@ import jetbrains.mps.smodel.IOperationContext;
 
 public class DependencyTree extends MPSTree implements DataProvider {
   private Project myProject;
-  private List<IModule> myModules;
+  private List<SModule> myModules;
   private boolean myShowRuntime;
   private boolean myShowUsedLanguage = true;
   private boolean myHideSourceModules;
-  private Set<IModule> myCycles = SetSequence.fromSet(new HashSet<IModule>());
+  private Set<SModule> myCycles = SetSequence.fromSet(new HashSet<SModule>());
 
   public DependencyTree(Project project) {
     myProject = project;
@@ -46,7 +46,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     return myProject;
   }
 
-  public void setModules(List<IModule> modules) {
+  public void setModules(List<SModule> modules) {
     myModules = modules;
     MPSTreeNode root = getRootNode();
     if (root != null) {
@@ -55,7 +55,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     }
   }
 
-  public List<IModule> getModules() {
+  public List<SModule> getModules() {
     return myModules;
   }
 
@@ -83,7 +83,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     myHideSourceModules = hideSourceModules;
   }
 
-  public Set<IModule> getLoops() {
+  public Set<SModule> getLoops() {
     return myCycles;
   }
 
@@ -93,16 +93,16 @@ public class DependencyTree extends MPSTree implements DataProvider {
     if (myModules == null || ListSequence.fromList(myModules).isEmpty()) {
       return new TextMPSTreeNode("No Content", null);
     }
-    SetSequence.fromSet(myCycles).addSequence(ListSequence.fromList(myModules).translate(new ITranslator2<IModule, Tuples._2<DependencyUtil.Role, IModule>>() {
-      public Iterable<Tuples._2<DependencyUtil.Role, IModule>> translate(IModule m) {
+    SetSequence.fromSet(myCycles).addSequence(ListSequence.fromList(myModules).translate(new ITranslator2<SModule, Tuples._2<DependencyUtil.Role, SModule>>() {
+      public Iterable<Tuples._2<DependencyUtil.Role, SModule>> translate(SModule m) {
         return DependencyUtil.getLoops(DependencyUtil.Role.None, m, isShowRuntime());
       }
-    }).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, IModule>>() {
-      public boolean accept(Tuples._2<DependencyUtil.Role, IModule> dep) {
+    }).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, SModule>>() {
+      public boolean accept(Tuples._2<DependencyUtil.Role, SModule> dep) {
         return dep._0().isDependency();
       }
-    }).select(new ISelector<Tuples._2<DependencyUtil.Role, IModule>, IModule>() {
-      public IModule select(Tuples._2<DependencyUtil.Role, IModule> dep) {
+    }).select(new ISelector<Tuples._2<DependencyUtil.Role, SModule>, SModule>() {
+      public SModule select(Tuples._2<DependencyUtil.Role, SModule> dep) {
         return dep._1();
       }
     }));
@@ -128,7 +128,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
       return check_he3vmc_a0a2a91(current);
     }
     if (id.equals(MPSCommonDataKeys.MODULE.getName())) {
-      List<IModule> modules = check_he3vmc_a0a0d0t(current);
+      List<SModule> modules = check_he3vmc_a0a0d0t(current);
       TreePath[] selection = getSelectionPaths();
       if (ListSequence.fromList(modules).count() != 1 || (selection != null && selection.length > 1)) {
         return null;
@@ -145,7 +145,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     return null;
   }
 
-  private static List<IModule> check_he3vmc_a0a0d0t(ModuleDependencyNode checkedDotOperand) {
+  private static List<SModule> check_he3vmc_a0a0d0t(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModules();
     }

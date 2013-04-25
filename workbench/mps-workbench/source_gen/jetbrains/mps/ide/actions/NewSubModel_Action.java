@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -40,7 +40,7 @@ public class NewSubModel_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
+    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
       return false;
     }
 
@@ -99,7 +99,7 @@ public class NewSubModel_Action extends BaseAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           String stereotype = SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model")));
-          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), ((AbstractModule) ((IModule) MapSequence.fromMap(_params).get("module"))), namespace, ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, true);
+          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), namespace, ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, true);
         }
       });
       dialog.value.show();

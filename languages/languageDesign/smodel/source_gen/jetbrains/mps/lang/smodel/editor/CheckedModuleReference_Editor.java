@@ -23,7 +23,7 @@ import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -89,7 +89,7 @@ public class CheckedModuleReference_Editor extends DefaultNodeEditor {
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> res = ListSequence.fromList(new ArrayList<String>());
-      for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+      for (SModule m : MPSModuleRepository.getInstance().getAllModules()) {
         ListSequence.fromList(res).addElement(m.getModuleName());
       }
       return res;

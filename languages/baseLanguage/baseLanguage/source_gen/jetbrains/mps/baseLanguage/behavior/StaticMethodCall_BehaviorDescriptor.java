@@ -4,13 +4,13 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class StaticMethodCall_BehaviorDescriptor extends BaseMethodCall_BehaviorDescriptor {
   public StaticMethodCall_BehaviorDescriptor() {
   }
 
-  public Object virtual_eval_1213877519769(SNode thisNode, @NotNull IModule module) {
+  public Object virtual_eval_1213877519769(SNode thisNode, @NotNull SModule module) {
     return StaticMethodCall_Behavior.virtual_eval_1213877519769(thisNode, module);
   }
 

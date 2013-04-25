@@ -11,9 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class ModelPropertiesChecker extends SpecificChecker {
   public ModelPropertiesChecker() {
@@ -26,7 +27,7 @@ public class ModelPropertiesChecker extends SpecificChecker {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     SModel modelDescriptor = model;
-    IScope scope = check_t4d01o_a0f0b(check_t4d01o_a0a5a1(modelDescriptor));
+    IScope scope = check_t4d01o_a0f0b(((AbstractModule) check_t4d01o_a0a0a5a1(modelDescriptor)));
     if (false) {
       List<String> errors = new ModelValidator(modelDescriptor).validate(scope);
       if (!(ListSequence.fromList(errors).isEmpty())) {
@@ -43,14 +44,14 @@ public class ModelPropertiesChecker extends SpecificChecker {
     return results;
   }
 
-  private static IScope check_t4d01o_a0f0b(IModule checkedDotOperand) {
+  private static IScope check_t4d01o_a0f0b(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static IModule check_t4d01o_a0a5a1(SModel checkedDotOperand) {
+  private static SModule check_t4d01o_a0a0a5a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

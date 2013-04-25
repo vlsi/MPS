@@ -16,17 +16,17 @@
 
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 
 public class ModuleChangingOperationContext implements IOperationContext {
-  private final IModule myModule;
+  private final SModule myModule;
   private IOperationContext myOperationContext;
 
-  public ModuleChangingOperationContext(IModule module, IOperationContext operationContext) {
+  public ModuleChangingOperationContext(SModule module, IOperationContext operationContext) {
     myModule = module;
     myOperationContext = operationContext;
   }
@@ -42,7 +42,7 @@ public class ModuleChangingOperationContext implements IOperationContext {
   }
 
   @Override
-  public IModule getModule() {
+  public SModule getModule() {
     return myModule;
   }
 

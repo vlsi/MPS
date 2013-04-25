@@ -6,9 +6,10 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.project.AbstractModule;
 
 @Deprecated
 public class OldRefactoringAdapter implements IRefactoring {
@@ -52,7 +53,7 @@ public class OldRefactoringAdapter implements IRefactoring {
 
   @Override
   public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext) {
-    Map<IModule, List<SModel>> modelsToGenerate = myOldRefactoring.getModelsToGenerate(refactoringContext);
+    Map<SModule, List<SModel>> modelsToGenerate = myOldRefactoring.getModelsToGenerate(refactoringContext);
     if (modelsToGenerate == null) {
       return new ArrayList<SModel>();
     }
@@ -119,7 +120,7 @@ public class OldRefactoringAdapter implements IRefactoring {
       if (myTarget == RefactoringTarget.MODEL) {
         return myOldRefactoring.isApplicableToModel((SModel) o);
       } else {
-        return myOldRefactoring.isApplicableToModule((IModule) o);
+        return myOldRefactoring.isApplicableToModule((AbstractModule) o);
       }
     }
   }

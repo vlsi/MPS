@@ -19,7 +19,7 @@ import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
@@ -59,11 +59,11 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class TestModule extends AbstractModule {
 
-  private IModule myPeer;
+  private SModule myPeer;
   private Map<String, SModel> myModels = new ConcurrentHashMap<String, SModel>();
   private Map<SModel, SModel> myOriginalModels = new HashMap<SModel, SModel>();
 
-  public TestModule(String namespace, String moduleId, IModule peer) {
+  public TestModule(String namespace, String moduleId, SModule peer) {
     myPeer = peer;
     SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(namespace, moduleId);
     setModuleReference(reference);
@@ -127,7 +127,7 @@ public class TestModule extends AbstractModule {
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     // todo: is it ok?
-    return myPeer.getModuleDescriptor();
+    return ((AbstractModule)myPeer).getModuleDescriptor();
   }
 
   public SModule getPeer() {
@@ -136,10 +136,10 @@ public class TestModule extends AbstractModule {
 
   public class TestModuleScope extends ModuleScope {
     @Override
-    protected Set<IModule> getInitialModules() {
-      Set<IModule> result = new HashSet<IModule>();
+    protected Set<SModule> getInitialModules() {
+      Set<SModule> result = new HashSet<SModule>();
       result.add(TestModule.this);
-      for (IModule m : GlobalScope.getInstance().getVisibleModules()) {
+      for (SModule m : GlobalScope.getInstance().getVisibleModules()) {
         result.add(m);
       }
       return result;
@@ -162,7 +162,7 @@ public class TestModule extends AbstractModule {
     }
 
     @Override
-    public IModule getModule() {
+    public SModule getModule() {
       return TestModule.this;
     }
 

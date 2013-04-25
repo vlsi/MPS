@@ -11,11 +11,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.project.AbstractModule;
 
 public class Context {
   private Map<String, Object> myProperties = MapSequence.fromMap(new HashMap<String, Object>());
@@ -61,7 +62,7 @@ public class Context {
   }
 
   @NotNull
-  public IModule getModule(SModel model) {
+  public SModule getModule(SModel model) {
     if (myGenerationContext != null) {
       return myGenerationContext.getOriginalInputModel().getModule();
     }
@@ -101,11 +102,11 @@ public class Context {
     if (model.getModule() instanceof TransientModelsModule || modelDescriptor == null) {
       return null;
     }
-    IModule module = modelDescriptor.getModule();
-    if (module == null || module.getDescriptorFile() == null || module.isPackaged()) {
+    SModule module = modelDescriptor.getModule();
+    if (module == null || ((AbstractModule) module).getDescriptorFile() == null || module.isPackaged()) {
       return null;
     }
-    String basePath = module.getDescriptorFile().getParent().getPath();
+    String basePath = ((AbstractModule) module).getDescriptorFile().getParent().getPath();
     return new RelativePathHelper(basePath);
   }
 

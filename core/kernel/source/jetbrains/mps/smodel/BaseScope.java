@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -115,8 +115,8 @@ public abstract class BaseScope implements IScope {
 
   @Deprecated
   @Override
-  public final Iterable<IModule> getVisibleModules() {
-    return ScopeOperations.getModules(this, IModule.class);
+  public final Iterable<SModule> getVisibleModules() {
+    return ScopeOperations.getModules(this, SModule.class);
   }
 
   @Deprecated

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class FloatingPointFloatConstant_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public FloatingPointFloatConstant_BehaviorDescriptor() {
@@ -15,7 +15,7 @@ public class FloatingPointFloatConstant_BehaviorDescriptor extends Expression_Be
     return FloatingPointFloatConstant_Behavior.virtual_constant_1262430001741498050(thisConcept);
   }
 
-  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
+  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return FloatingPointFloatConstant_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
 

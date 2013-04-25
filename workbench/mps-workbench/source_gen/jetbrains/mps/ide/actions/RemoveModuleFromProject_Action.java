@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
@@ -41,7 +41,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
+    SModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
     if (module == null) {
       return false;
     }
@@ -83,7 +83,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
+      SModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
       final String message = "Are you sure you want to remove selected module from a project? This operation is not undoable.";
       DialogWrapper dialogWrapper = new DialogWrapper(((Project) MapSequence.fromMap(_params).get("project")), true) {
         {

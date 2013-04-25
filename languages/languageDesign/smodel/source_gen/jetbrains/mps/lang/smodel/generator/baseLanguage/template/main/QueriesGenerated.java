@@ -29,7 +29,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames;
 import jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_Behavior;
 import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -772,7 +772,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4357968816427531029(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String moduleFqName = SPropertyOperations.getString(_context.getNode(), "moduleId");
-    IModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleFqName);
+    SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleFqName);
     if (module == null) {
       _context.showErrorMessage(_context.getNode(), "module `" + moduleFqName + "` is not found");
       return "";

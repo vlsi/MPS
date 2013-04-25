@@ -20,7 +20,7 @@ import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions.ScopeType;
 import jetbrains.mps.ide.ui.DefaultCompletionTextField;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -106,10 +106,10 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
       myButtonGroup.add(myBootstrapScopeButton);
     }
 
-    Set<IModule> moduleList = MPSModuleRepository.getInstance().getAllModules();
+    Set<SModule> moduleList = MPSModuleRepository.getInstance().getAllModules();
     List<String> moduleNameList = new ArrayList<String>();
 
-    for (IModule iModule : moduleList) {
+    for (SModule iModule : moduleList) {
       String namespace = iModule.getModuleName();
       if (namespace != null) {
         moduleNameList.add(namespace);

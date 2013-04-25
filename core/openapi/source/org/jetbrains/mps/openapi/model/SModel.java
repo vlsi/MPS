@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -55,9 +55,9 @@ public interface SModel {
 
   /**
    * Retrieves the owning module
-   * TODO: fix remove IModule!
+   * TODO: fix remove SModule!
    */
-  IModule getModule();
+  SModule getModule();
 
   void attach(SRepository repo);
 

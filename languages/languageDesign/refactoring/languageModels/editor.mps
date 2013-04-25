@@ -1593,13 +1593,13 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6274191862073683034">
                   <node role="rValue" roleId="tpee.1068498886297" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="6274191862073689362">
                     <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6274191862073689367">
-                      <property name="value" nameId="tpee.1070475926801" value="IModule" />
+                      <property name="value" nameId="tpee.1070475926801" value="SModule" />
                     </node>
                     <node role="condition" roleId="tpee.1163668914799" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6274191862073689361">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6274191862073689323" resolveInfo="isList" />
                     </node>
                     <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6274191862073689366">
-                      <property name="value" nameId="tpee.1070475926801" value="list&lt;IModule&gt;" />
+                      <property name="value" nameId="tpee.1070475926801" value="list&lt;SModule&gt;" />
                     </node>
                   </node>
                   <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6274191862073683036">

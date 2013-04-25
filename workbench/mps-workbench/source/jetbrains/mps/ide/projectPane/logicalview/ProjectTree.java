@@ -30,7 +30,7 @@ import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeNotification;
-import jetbrains.mps.project.*;
+import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
 
 import javax.swing.tree.TreePath;
@@ -65,8 +65,8 @@ public class ProjectTree extends MPSTree {
     setRootVisible(false);
     List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
 
-    for (Class<? extends IModule> cl: new Class[]{Solution.class,Language.class,DevKit.class}){
-      for (IModule module : project.getProjectModules(cl)) {
+    for (Class<? extends SModule> cl: new Class[]{Solution.class,Language.class,DevKit.class}){
+      for (SModule module : project.getProjectModules(cl)) {
         moduleNodes.add(ProjectModuleTreeNode.createFor(project,module,false));
       }
     }

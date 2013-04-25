@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
@@ -36,7 +36,7 @@ public class Module_Constraints extends BaseConstraintsDescriptor {
           if (SPropertyOperations.getString(node, "id") == null) {
             return "";
           }
-          IModule module = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(SPropertyOperations.getString(node, "id")));
+          SModule module = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(SPropertyOperations.getString(node, "id")));
           if (module == null) {
             return null;
           }

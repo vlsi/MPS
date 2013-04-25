@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +35,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
 
   @Override
   @Nullable
-  public IModule getModule() {
+  public SModule getModule() {
     return null;
   }
 

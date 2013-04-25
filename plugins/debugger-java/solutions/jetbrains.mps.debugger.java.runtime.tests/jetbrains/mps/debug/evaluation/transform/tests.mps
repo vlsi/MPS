@@ -39,7 +39,7 @@
       <property name="name" nameId="tpck.1169194664001" value="TransformationUtil_Complex" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="7744266994038462827">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3102837338445023976">
       <property name="name" nameId="tpck.1169194664001" value="DebuggerInitializer" />

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -39,7 +39,7 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * Replace with implemented in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  IModule getModule();
+  SModule getModule();
 
   @Deprecated
   /**

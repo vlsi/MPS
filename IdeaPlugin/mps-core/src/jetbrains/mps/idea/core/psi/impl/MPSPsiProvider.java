@@ -45,6 +45,8 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -58,7 +60,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * evgeny, 1/25/13
  */
-public class MPSPsiProvider extends AbstractProjectComponent  {
+public class MPSPsiProvider extends AbstractProjectComponent {
 
   // TODO softReference..
   ConcurrentMap<SModelReference, MPSPsiModel> models = new ConcurrentHashMap<SModelReference, MPSPsiModel>();
@@ -79,7 +81,6 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
       // TODO notify ANY_PSI_CHANGE_TOPIC
     }
   };
-
 
 
   protected MPSPsiProvider(Project project) {
@@ -146,14 +147,38 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
     return getMPSPsiModel(model, modelRef);
   }
 
-  public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+  public MPSPsiNode create(SNodeId id, SConcept concept, String containingRole) {
     for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
       final MPSPsiNode psiNode = factory.create(id, concept, containingRole);
       if (psiNode != null) {
         return psiNode;
       }
     }
-    return new MPSPsiNode(id, concept, containingRole);
+    return new MPSPsiNode(id, concept.getQualifiedName(), containingRole);
+  }
+
+  public MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, SModelReference targetModel, SNodeId targetId) {
+    if (linkTargetConcept != null) {
+      for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
+        final MPSPsiRef psiRefNode = factory.createReferenceNode(role, linkTargetConcept, targetModel, targetId);
+        if (psiRefNode != null) {
+          return psiRefNode;
+        }
+      }
+    }
+    return new MPSPsiRef(role, targetModel, targetId);
+  }
+
+  public MPSPsiRef createReferenceNode(String role, SAbstractConcept linkTargetConcept, String referenceText) {
+    if (linkTargetConcept != null) {
+      for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
+        final MPSPsiRef psiRefNode = factory.createReferenceNode(role, linkTargetConcept, referenceText);
+        if (psiRefNode != null) {
+          return psiRefNode;
+        }
+      }
+    }
+    return new MPSPsiRef(role, referenceText);
   }
 
   private MPSPsiModel getMPSPsiModel(SModel model, SModelReference modelRef) {
@@ -207,7 +232,7 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
     event.setParent(node != null ? node : model);
     event.setGeneric(false);
 
-    ((PsiManagerImpl)manager).childrenChanged(event);
+    ((PsiManagerImpl) manager).childrenChanged(event);
   }
 
   private class PsiFileEditorDataProvider implements FileEditorDataProvider {
