@@ -17,7 +17,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper;
 import jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog;
 import java.awt.Frame;
@@ -78,7 +78,7 @@ public class RunMigrationScripts_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IScope scope = AbstractMigrationScriptHelper.createMigrationScope(((List<SModel>) MapSequence.fromMap(_params).get("models")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")), RunMigrationScripts_Action.this.selectionOnly);
+      IScope scope = AbstractMigrationScriptHelper.createMigrationScope(((List<SModel>) MapSequence.fromMap(_params).get("models")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")), RunMigrationScripts_Action.this.selectionOnly);
       if (!(scope.getModelDescriptors().iterator().hasNext())) {
         return;
       }

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project;
 
+import org.jetbrains.mps.openapi.module.SModule;
+
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -63,20 +65,24 @@ public class ModelsAutoImportsManager {
     return result;
   }
 
-  public static void doAutoImport(SModule module, SModel model) {
+  public static void doAutoImport(SModule _module, SModel model) {
+    if (!(_module instanceof AbstractModule)) {
+      return;
+    }
+    AbstractModule module = (AbstractModule) _module;
     for (SModel modelToImport : getAutoImportedModels(module, model)) {
       // todo: ! what's up with module? add model module to module dependencies?
       ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(modelToImport.getReference(), false);
     }
     for (Language language : getAutoImportedLanguages(module, model)) {
       if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(language)) {
-        model.getModule().addUsedLanguage(language.getModuleReference());
+        module.addUsedLanguage(language.getModuleReference());
       }
       ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(language.getModuleReference());
     }
     for (DevKit devKit : getAutoImportedDevKits(module, model)) {
-      if (!model.getModule().getModuleDescriptor().getUsedDevkits().contains(devKit.getModuleReference())) {
-        model.getModule().addUsedDevkit(devKit.getModuleReference());
+      if (!module.getModuleDescriptor().getUsedDevkits().contains(devKit.getModuleReference())) {
+        module.addUsedDevkit(devKit.getModuleReference());
       }
       ((jetbrains.mps.smodel.SModelInternal) model).addDevKit(devKit.getModuleReference());
     }

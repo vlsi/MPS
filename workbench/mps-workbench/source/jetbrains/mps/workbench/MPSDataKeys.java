@@ -18,7 +18,7 @@ package jetbrains.mps.workbench;
 import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys.Description;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 
@@ -28,7 +28,7 @@ import java.util.List;
 public class MPSDataKeys extends MPSEditorDataKeys {
 
   @Description(description = "selected modules")
-  public static final DataKey<List<IModule>> MODULES = DataKey.create("MPS_IModule_List");
+  public static final DataKey<List<SModule>> MODULES = DataKey.create("MPS_SModule_List");
 
   @Description(description = "selected package")
   public static final DataKey<String> VIRTUAL_PACKAGE = DataKey.create("MPS_VirtualPackage");

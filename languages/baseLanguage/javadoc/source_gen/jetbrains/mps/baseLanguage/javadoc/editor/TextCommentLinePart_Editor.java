@@ -28,7 +28,9 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
+    HandleEnterInTheEnd_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createModelAccess_x1gmbt_a0(editorContext, node));
     return editorCell;
   }
@@ -51,7 +53,7 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ModelAccess_x1gmbt_a0");
-    editorCell.addKeyMap(new TextCommentLinePart_KeyMap());
+    TextCommentLinePart_ActionMap.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

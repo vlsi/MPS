@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
@@ -40,7 +40,7 @@ public class FindLanguageUsages_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
+    return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -80,7 +80,7 @@ public class FindLanguageUsages_Action extends BaseAction {
     try {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
-      final IModule module = ((IModule) MapSequence.fromMap(_params).get("module"));
+      final SModule module = ((SModule) MapSequence.fromMap(_params).get("module"));
       final IScope scope = GlobalScope.getInstance();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

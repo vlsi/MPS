@@ -46,7 +46,7 @@ import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -498,12 +498,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
     @Override
-    public void moduleAdded(IModule module) {
+    public void moduleAdded(SModule module) {
       myNeedRebuild = true;
     }
 
     @Override
-    public void moduleRemoved(IModule module) {
+    public void moduleRemoved(SModule module) {
       myNeedRebuild = true;
     }
   }

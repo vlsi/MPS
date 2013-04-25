@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.components.CoreComponent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -196,12 +196,12 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
 
   private class MyModuleRepositoryAdapter extends ModuleRepositoryAdapter {
     @Override
-    public void moduleAdded(IModule module) {
+    public void moduleAdded(SModule module) {
       // awaiting next classes reload?
     }
 
     @Override
-    public void moduleRemoved(IModule module) {
+    public void moduleRemoved(SModule module) {
       String namespace = myModuleToNamespace.get(module);
       if (namespace == null) return;
 

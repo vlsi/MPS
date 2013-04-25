@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -25,7 +25,7 @@ public class VariableReference_Behavior {
     return SLinkOperations.getTarget(thisNode, "variableDeclaration", false);
   }
 
-  public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
+  public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       // todo 
       SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
@@ -53,13 +53,13 @@ public class VariableReference_Behavior {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.Expression", "virtual_isCompileTimeConstant_1238860258777", new Object[]{});
   }
 
-  public static Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
+  public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       // todo 
       SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
       SNode classifier = SNodeOperations.as(SNodeOperations.getParent(declaration), "jetbrains.mps.baseLanguage.structure.Classifier");
 
-      IModule m = check_gidzrl_a0e0a0e(SNodeOperations.getModel(declaration));
+      SModule m = check_gidzrl_a0e0a0e(SNodeOperations.getModel(declaration));
       if (m != null) {
         Object c = null;
         try {
@@ -120,7 +120,7 @@ public class VariableReference_Behavior {
     return true;
   }
 
-  private static IModule check_gidzrl_a0e0a0e(SModel checkedDotOperand) {
+  private static SModule check_gidzrl_a0e0a0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

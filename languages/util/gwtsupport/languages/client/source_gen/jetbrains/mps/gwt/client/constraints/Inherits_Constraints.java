@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -46,8 +46,8 @@ public class Inherits_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).translate(new ITranslator2<IModule, SModel>() {
-              public Iterable<SModel> translate(IModule m) {
+            return Sequence.fromIterable(((Iterable<SModule>) operationContext.getScope().getVisibleModules())).translate(new ITranslator2<SModule, SModel>() {
+              public Iterable<SModel> translate(SModule m) {
                 return m.getModels();
               }
             }).where(new IWhereFilter<SModel>() {

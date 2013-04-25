@@ -192,7 +192,7 @@ public class NewModuleUtil {
     final Generator newGenerator = (Generator) MPSModuleRepository.getInstance().getModuleById(generatorDescriptor.getId());
 
     boolean alreadyOwnsTemplateModel = false;
-    for (SModel modelDescriptor : newGenerator.getOwnModelDescriptors()) {
+    for (SModel modelDescriptor : newGenerator.getModels()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
         alreadyOwnsTemplateModel = true;
         break;

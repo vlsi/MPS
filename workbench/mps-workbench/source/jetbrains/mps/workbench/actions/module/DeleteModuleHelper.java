@@ -21,7 +21,7 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -34,13 +34,11 @@ import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JOptionPane;
-import java.util.LinkedList;
-import java.util.List;
 
 public class DeleteModuleHelper {
   private static final Logger LOG = LogManager.getLogger(DeleteModuleHelper.class);
 
-  public static void deleteModule(Project project, IModule module, boolean safeDelete, boolean deleteFiles) {
+  public static void deleteModule(Project project, SModule module, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {
       safeDelete(project, module, deleteFiles);
     } else {
@@ -53,6 +51,13 @@ public class DeleteModuleHelper {
     if (!mpsProject.isProjectModule(module) && !deleteFiles) {
       JOptionPane.showMessageDialog(WindowManager.getInstance().getFrame(project), "Non-project modules can only be deleted with files deletion enabled",
           "Can't delete module", JOptionPane.WARNING_MESSAGE);
+    }
+
+    //remove from project
+    if (mpsProject.isProjectModule(module)) {
+      mpsProject.removeModule(module.getModuleReference());
+      ((StandaloneMPSProject) mpsProject).update();
+      project.save();
     }
 
     if (deleteFiles) {
@@ -94,7 +99,7 @@ public class DeleteModuleHelper {
     }
 
     if(deleteFiles)
-      ModuleRepositoryFacade.getInstance().removeModuleForced((IModule) module);
+      ModuleRepositoryFacade.getInstance().removeModuleForced(module);
   }
 
   private static void deleteFile(String path) {
@@ -121,7 +126,7 @@ public class DeleteModuleHelper {
     return true;
   }
 
-  private static void safeDelete(Project project, IModule module, boolean deleteFiles) {
+  private static void safeDelete(Project project, SModule module, boolean deleteFiles) {
     LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED", new Throwable());
   }
 }

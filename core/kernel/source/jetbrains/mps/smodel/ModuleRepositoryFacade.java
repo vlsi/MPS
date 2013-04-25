@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
@@ -59,36 +59,36 @@ public class ModuleRepositoryFacade implements CoreComponent {
     return INSTANCE;
   }
 
-  public IModule getModule(@NotNull SModuleReference ref) {
+  public SModule getModule(@NotNull SModuleReference ref) {
     return ref.getModuleId() != null ? REPO.getModuleById(ref.getModuleId()) : REPO.getModuleByFqName(ref.getModuleName());
   }
 
-  public <T extends IModule> T getModule(SModuleReference ref, Class<T> cls) {
-    IModule m = getModule(ref);
+  public <T extends SModule> T getModule(SModuleReference ref, Class<T> cls) {
+    SModule m = getModule(ref);
     if (!cls.isInstance(m)) return null;
     return (T) m;
   }
 
-  public <T extends IModule> T getModule(String fqName, Class<T> cls) {
-    IModule m = REPO.getModuleByFqName(fqName);
+  public <T extends SModule> T getModule(String fqName, Class<T> cls) {
+    SModule m = REPO.getModuleByFqName(fqName);
     if (!cls.isInstance(m)) return null;
     return (T) m;
   }
 
-  public <T extends IModule> Collection<T> getAllModules(Class<T> cls) {
+  public <T extends SModule> Collection<T> getAllModules(Class<T> cls) {
     List<T> result = new ArrayList<T>();
-    for (IModule module : REPO.getAllModules()) {
+    for (SModule module : REPO.getAllModules()) {
       if (cls.isInstance(module)) result.add((T) module);
     }
     return result;
   }
 
   public <T extends SModule> Collection<T> getModules(MPSModuleOwner moduleOwner, @Nullable Class<T> cls) {
-    Set<IModule> modules = REPO.getModules(moduleOwner);
+    Set<SModule> modules = REPO.getModules(moduleOwner);
     if (modules == null) return Collections.emptyList();
 
     List<T> list = new LinkedList<T>();
-    for (IModule m : modules) {
+    for (SModule m : modules) {
       if (cls == null || cls.isInstance(m)) {
         list.add((T) m);
       }
@@ -107,9 +107,9 @@ public class ModuleRepositoryFacade implements CoreComponent {
     return result;
   }
 
-  public void unregisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
-    Collection<IModule> modulesToRemove = new ArrayList<IModule>();
-    for (IModule module : REPO.getModules(owner)) {
+  public void unregisterModules(MPSModuleOwner owner, Condition<SModule> condition) {
+    Collection<SModule> modulesToRemove = new ArrayList<SModule>();
+    for (SModule module : REPO.getModules(owner)) {
       if (condition.met(module)) {
         modulesToRemove.add(module);
       }
@@ -118,22 +118,22 @@ public class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public void unregisterModules(MPSModuleOwner owner) {
-    REPO.unregisterModules(new HashSet<IModule>(REPO.getModules(owner)), owner);
+    REPO.unregisterModules(new HashSet<SModule>(REPO.getModules(owner)), owner);
   }
 
   //intended to use only when module is removed physically
-  public void removeModuleForced(IModule module) {
+  public void removeModuleForced(SModule module) {
     Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(REPO.getOwners(module));
     for (MPSModuleOwner owner : owners) {
       REPO.unregisterModule(module, owner);
     }
   }
 
-  public Set<MPSModuleOwner> getModuleOwners(IModule module) {
+  public Set<MPSModuleOwner> getModuleOwners(SModule module) {
     return new HashSet<MPSModuleOwner>(REPO.getOwners(module));
   }
 
-  public static IModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
+  public static SModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
     if (handle.getDescriptor() instanceof LanguageDescriptor) {
       return newLanguageInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof SolutionDescriptor) {

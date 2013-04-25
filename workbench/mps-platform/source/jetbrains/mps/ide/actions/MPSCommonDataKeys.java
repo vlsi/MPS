@@ -18,7 +18,7 @@ package jetbrains.mps.ide.actions;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
@@ -51,9 +51,9 @@ public class MPSCommonDataKeys extends PlatformDataKeys {
   @Description(description = "context model")
   public static final DataKey<SModel> CONTEXT_MODEL = DataKey.create("MPS_Context_SModel");
   @Description(description = "context module")
-  public static final DataKey<IModule> CONTEXT_MODULE = DataKey.create("MPS_Context_IModule");
+  public static final DataKey<SModule> CONTEXT_MODULE = DataKey.create("MPS_Context_SModule");
   @Description(description = "selected module")
-  public static final DataKey<IModule> MODULE = DataKey.create("MPS_IModule");
+  public static final DataKey<SModule> MODULE = DataKey.create("MPS_SModule");
 
   @Description(description = "selected model")
   public static final DataKey<SModel> MODEL = DataKey.create("MPS_SModel");

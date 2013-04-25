@@ -18,7 +18,8 @@ package jetbrains.mps.generator.generationTypes;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,7 +50,7 @@ public class TextGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext ocontext, ProgressMonitor progressMonitor) {
-    String targetDir = ((IModule) module).getOutputFor(inputModel);
+    String targetDir = SModuleOperations.getOutputPathFor(inputModel);
     SModel outputModel = status.getOutputModel();
     if (outputModel == null) return true;
     boolean generatedOk = true;

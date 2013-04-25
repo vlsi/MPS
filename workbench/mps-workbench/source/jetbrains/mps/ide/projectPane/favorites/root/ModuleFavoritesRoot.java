@@ -17,7 +17,7 @@ package jetbrains.mps.ide.projectPane.favorites.root;
 
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -35,7 +35,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<SModuleReference> {
 
   @Override
   public MPSTreeNode getTreeNode(IOperationContext context) {
-    IModule module = MPSModuleRepository.getInstance().getModule(getValue());
+    SModule module = MPSModuleRepository.getInstance().getModule(getValue());
     if (module == null) return null;
     Project mpsProject = context.getProject();
     if (mpsProject == null) return null;
@@ -46,7 +46,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<SModuleReference> {
   @Override
   public List<SNode> getAvaliableNodes() {
     List<SNode> result = new ArrayList<SNode>();
-    IModule module = MPSModuleRepository.getInstance().getModule(getValue());
+    SModule module = MPSModuleRepository.getInstance().getModule(getValue());
     if (module == null) return result;
     for (final SModel md : module.getModels()) {
       SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {

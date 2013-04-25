@@ -4,13 +4,13 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class StringLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public StringLiteral_BehaviorDescriptor() {
   }
 
-  public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
+  public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return StringLiteral_Behavior.virtual_eval_1213877519769(thisNode, module);
   }
 

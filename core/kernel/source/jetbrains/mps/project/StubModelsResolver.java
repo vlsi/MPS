@@ -13,10 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IterableUtil;
@@ -70,8 +76,12 @@ public class StubModelsResolver {
   private void ensureInitialized(Pair<SModuleReference, String> key) {
     if (myStubModulesCache.containsKey(key)) return;
 
-    IModule module = ModuleRepositoryFacade.getInstance().getModule(key.o1);
-    Set<SModel> visibleModels = new HashSet<SModel>(IterableUtil.asCollection(module.getModuleScope().getModels()));
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(key.o1);
+
+    Set<SModel> visibleModels = new HashSet<SModel>();
+    for (SModule visibleModule : new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE)) {
+      visibleModels.addAll(IterableUtil.asCollection(visibleModule.getModels()));
+    }
 
     fillCacheWithModels(key, visibleModels);
   }

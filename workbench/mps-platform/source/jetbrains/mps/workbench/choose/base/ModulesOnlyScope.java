@@ -16,13 +16,13 @@
 package jetbrains.mps.workbench.choose.base;
 
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
 
 @Deprecated
 public class ModulesOnlyScope extends ModulesScope {
-  public ModulesOnlyScope(Collection<IModule> modules) {
+  public ModulesOnlyScope(Collection<SModule> modules) {
     super(modules);
   }
 }

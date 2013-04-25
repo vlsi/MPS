@@ -23,7 +23,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
@@ -48,8 +48,8 @@ public class PluginUtil {
   public static final String IDE_MODULE_PROJECTPLUGIN = "jetbrains.mps.ide.actions.Ide_ProjectPlugin"; // FIXME Ide_ProjectPlugin.class.getName();
   public static final String IDE_MODULE_APPPLUGIN = "jetbrains.mps.ide.actions.Ide_ApplicationPlugin";// FIXME  Ide_ApplicationPlugin.class.getName();
 
-  public static Set<IModule> collectPluginModules() {
-    Set<IModule> modules = new HashSet<IModule>();
+  public static Set<SModule> collectPluginModules() {
+    Set<SModule> modules = new HashSet<SModule>();
 
     //todo this line should be removed as long as we move plugins out from languages
     modules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
@@ -64,8 +64,8 @@ public class PluginUtil {
     return modules;
   }
 
-  public static <T> List<T> createPlugins(Collection<IModule> modules, PluginCreator<T> creator) {
-    List<IModule> sortedModules = PluginSorter.sortByDependencies(modules);
+  public static <T> List<T> createPlugins(Collection<SModule> modules, PluginCreator<T> creator) {
+    List<SModule> sortedModules = PluginSorter.sortByDependencies(modules);
 
     final ArrayList<T> plugins = new ArrayList<T>();
     for (SModule module : sortedModules) {

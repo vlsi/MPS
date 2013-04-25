@@ -19,7 +19,7 @@ import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
@@ -57,8 +57,8 @@ public class PathProvider {
       o = model.getModule();
     }
 
-    if (o instanceof IModule) {
-      IModule module = (IModule) o;
+    if (o instanceof SModule) {
+      SModule module = (SModule) o;
       res.add(new PathItem(PathItemRole.ROLE_MODULE, module));
     }
 

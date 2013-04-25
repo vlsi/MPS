@@ -7,7 +7,7 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Set;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
@@ -37,7 +37,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class DependencyPathTree extends MPSTree implements DataProvider {
-  private List<Tuples._4<Set<IModule>, Set<IModule>, Set<IModule>, Boolean>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._4<Set<IModule>, Set<IModule>, Set<IModule>, Boolean>>());
+  private List<Tuples._4<Set<SModule>, Set<SModule>, Set<SModule>, Boolean>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._4<Set<SModule>, Set<SModule>, Set<SModule>, Boolean>>());
   private Project myProject;
   private boolean myShowAllPaths;
 
@@ -62,12 +62,12 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     ListSequence.fromList(myAllDependencies).clear();
   }
 
-  public void addDependency(Iterable<IModule> from, Iterable<IModule> to, Iterable<IModule> usedLanguage, boolean showRuntime) {
-    ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<IModule>,Set<IModule>,Set<IModule>,Boolean>from(SetSequence.fromSetWithValues(new HashSet<IModule>(), from), SetSequence.fromSetWithValues(new HashSet<IModule>(), to), SetSequence.fromSetWithValues(new HashSet<IModule>(), usedLanguage), showRuntime));
+  public void addDependency(Iterable<SModule> from, Iterable<SModule> to, Iterable<SModule> usedLanguage, boolean showRuntime) {
+    ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<SModule>,Set<SModule>,Set<SModule>,Boolean>from(SetSequence.fromSetWithValues(new HashSet<SModule>(), from), SetSequence.fromSetWithValues(new HashSet<SModule>(), to), SetSequence.fromSetWithValues(new HashSet<SModule>(), usedLanguage), showRuntime));
   }
 
-  private MPSTreeNode buildTree(IModule from, Set<IModule> dependency, Set<IModule> usedlanguage, boolean showRuntime) {
-    Map<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom> visited = MapSequence.fromMap(new HashMap<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom>());
+  private MPSTreeNode buildTree(SModule from, Set<SModule> dependency, Set<SModule> usedlanguage, boolean showRuntime) {
+    Map<Tuples._2<SModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom> visited = MapSequence.fromMap(new HashMap<Tuples._2<SModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom>());
     Queue<DependencyPathTree.LinkFrom> unprocessed = QueueSequence.fromQueue(new LinkedList<DependencyPathTree.LinkFrom>());
 
     DependencyPathTree.LinkFrom root = new DependencyPathTree.LinkFrom(new DependencyUtil.Link(from, DependencyUtil.Role.None, null), null);
@@ -78,18 +78,18 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       if (node.link.role.isUsedLanguage() && SetSequence.fromSet(usedlanguage).contains(node.link.module) || node.link.role.isDependency() && SetSequence.fromSet(dependency).contains(node.link.module)) {
         // copy path to real tree 
         node.setDepUsed();
-      } else if (MapSequence.fromMap(visited).containsKey(MultiTuple.<IModule,DependencyUtil.Role>from(node.link.module, node.link.role))) {
+      } else if (MapSequence.fromMap(visited).containsKey(MultiTuple.<SModule,DependencyUtil.Role>from(node.link.module, node.link.role))) {
         if (!(isShowAll())) {
           continue;
         }
-        DependencyPathTree.LinkFrom n = MapSequence.fromMap(visited).get(MultiTuple.<IModule,DependencyUtil.Role>from(node.link.module, node.link.role));
+        DependencyPathTree.LinkFrom n = MapSequence.fromMap(visited).get(MultiTuple.<SModule,DependencyUtil.Role>from(node.link.module, node.link.role));
         n.addBackDep(node);
         // if we came to dependency, copy path to real tree 
         if (n.isUsed()) {
           node.setLinkUsed(n);
         }
       } else {
-        MapSequence.fromMap(visited).put(MultiTuple.<IModule,DependencyUtil.Role>from(node.link.module, node.link.role), node);
+        MapSequence.fromMap(visited).put(MultiTuple.<SModule,DependencyUtil.Role>from(node.link.module, node.link.role), node);
         DependencyUtil.dependencies(node.link.role, node.link.module, showRuntime);
         for (DependencyUtil.Link link : ListSequence.fromList(DependencyUtil.dependencies(node.link.role, node.link.module, showRuntime))) {
           DependencyPathTree.LinkFrom n = new DependencyPathTree.LinkFrom(link, node);
@@ -101,12 +101,12 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     return root.node;
   }
 
-  public MPSTreeNode testBuildTree(IModule from, IModule dependency, IModule used, boolean showRuntime) {
-    HashSet<IModule> dependencies = new HashSet<IModule>();
+  public MPSTreeNode testBuildTree(SModule from, SModule dependency, SModule used, boolean showRuntime) {
+    HashSet<SModule> dependencies = new HashSet<SModule>();
     if (dependency != null) {
       dependencies.add(dependency);
     }
-    HashSet<IModule> usedLanguages = new HashSet<IModule>();
+    HashSet<SModule> usedLanguages = new HashSet<SModule>();
     if (used != null) {
       usedLanguages.add(used);
     }
@@ -119,8 +119,8 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       "No Dependencies Selected" :
       "Found Dependencies:"
     ), null);
-    for (Tuples._4<Set<IModule>, Set<IModule>, Set<IModule>, Boolean> dep : ListSequence.fromList(myAllDependencies)) {
-      for (IModule m : SetSequence.fromSet(dep._0())) {
+    for (Tuples._4<Set<SModule>, Set<SModule>, Set<SModule>, Boolean> dep : ListSequence.fromList(myAllDependencies)) {
+      for (SModule m : SetSequence.fromSet(dep._0())) {
         MPSTreeNode node = buildTree(m, dep._1(), dep._2(), (boolean) dep._3());
         if (node != null) {
           result.add(node);
@@ -207,7 +207,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     return null;
   }
 
-  private static IModule check_9bg0dz_a0a3a31(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_9bg0dz_a0a3a31(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

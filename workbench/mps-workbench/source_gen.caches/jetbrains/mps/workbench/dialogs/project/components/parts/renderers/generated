@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="417csnaioth95c9dr3wsbj1utw7um18">
+<dependencies version="2" modelHash="-3aoxa1rr8bezmiye83ftwof5193wqb6">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -55,7 +55,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ListRendererAdapter.java" />
   </source>
-  <source id="1560298786499494573" name="ModuleRenderer" hash="-d564wg0duyrgxqzc714gewq02zyxwy0">
+  <source id="1560298786499494573" name="ModuleRenderer" hash="d5itnw1w18er9tq4zlfrv595gz2sqfz">
     <dep root="1560298786499492721" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
@@ -81,7 +81,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelRootRenderer.java" />
   </source>
-  <source id="7093733149214777406" name="RuleOperandRenderer" hash="-7isch00yzaa5pb72w408lopp3o4nui5">
+  <source id="7093733149214777406" name="RuleOperandRenderer" hash="-9gm2q3wemhsgv5fuzdjwr9akafl70dh">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />

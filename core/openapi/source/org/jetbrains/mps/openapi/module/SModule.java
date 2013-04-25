@@ -67,11 +67,6 @@ public interface SModule {
   void detach();
 
   /**
-   * Wraps and returns an optimized directory of all modules visible from the current module
-   */
-  SearchScope getModuleScope();
-
-  /**
    * All dependencies on modules of all kinds.
    * Includes only dependencies declared in this model. See also GlobalModuleDependenciesManager [not yet in API]
    */

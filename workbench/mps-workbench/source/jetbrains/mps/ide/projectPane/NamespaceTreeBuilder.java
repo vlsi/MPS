@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.ToStringComparator;
 
@@ -133,7 +133,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
       }
     }
 
-    IModule module = (context != null) ? context.getModule() : null;
+    SModule module = (context != null) ? context.getModule() : null;
     T newChild = myBuilder.createNamespaceNode(first, new ModuleChangingOperationContext(module, context));
 
     sourceNode.add(newChild);

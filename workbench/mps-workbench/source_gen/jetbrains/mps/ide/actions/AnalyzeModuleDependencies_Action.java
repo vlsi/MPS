@@ -8,7 +8,7 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
@@ -34,7 +34,7 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return !(((List<IModule>) MapSequence.fromMap(_params).get("modules")).isEmpty());
+    return !(((List<SModule>) MapSequence.fromMap(_params).get("modules")).isEmpty());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -69,7 +69,7 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModuleDependenies_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class);
-      tool.setModules(((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+      tool.setModules(((List<SModule>) MapSequence.fromMap(_params).get("modules")));
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

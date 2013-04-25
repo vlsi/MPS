@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -24,7 +25,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.IModule;
 
 public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
@@ -36,7 +36,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     if (model == null || model == null || model.getModule() == null) {
       return results;
     }
-    final IScope scope = model.getModule().getScope();
+    final IScope scope = ((AbstractModule) model.getModule()).getScope();
     String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references...";
     monitor.start(title, 1);
 
@@ -74,7 +74,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
                 if (module == null) {
                   return false;
                 }
-                ((IModule) module).addDependency(moduleReference, false);
+                ((AbstractModule) ((AbstractModule) module)).addDependency(moduleReference, false);
                 return true;
               }
               return false;
@@ -87,21 +87,21 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     return results;
   }
 
-  private static SModuleReference check_xiru3y_a0b0a0f0a0f0c0g0b(IModule checkedDotOperand) {
+  private static SModuleReference check_xiru3y_a0b0a0f0a0f0c0g0b(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
 
-  private static IModule check_xiru3y_a0a1a0a5a0a5a2a6a1(SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0a1a0a5a0a5a2a6a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

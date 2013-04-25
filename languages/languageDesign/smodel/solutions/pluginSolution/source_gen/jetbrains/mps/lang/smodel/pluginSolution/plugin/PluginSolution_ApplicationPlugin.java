@@ -29,6 +29,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MigrateToSModelOpenAPI_Action());
     addAction(new MigrateToSModelReferenceOpenAPI_Action());
     addAction(new MigrateToSModuleIdOpenAPI_Action());
+    addAction(new MigrateToSModuleOpenAPI_Action());
     addAction(new MigrateToSModuleReferenceOpenAPI_Action());
     addAction(new MigrateToSNodeIdOpenAPI_Action());
     addAction(new MigrateToSNodeOpenAPI_Action());

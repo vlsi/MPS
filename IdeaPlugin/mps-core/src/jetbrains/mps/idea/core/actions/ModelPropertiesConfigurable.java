@@ -28,7 +28,8 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.ImportedModelsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -75,9 +76,9 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     myUsedLanguages = SNodeOperations.getUsedLanguages(sModel);
     myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
     myModelLongName = SNodeOperations.getModelLongName(myDescriptor);
-    IModule module = myDescriptor.getModule();
+    SModule module = myDescriptor.getModule();
     myVisibleLanguages = new HashSet<SModuleReference>();
-    for (Language visibleLanguage : module.getScope().getVisibleLanguages()) {
+    for (Language visibleLanguage : ((AbstractModule) module).getScope().getVisibleLanguages()) {
       myVisibleLanguages.add(visibleLanguage.getModuleReference());
     }
     myModelPathsTab.initState(sModel);
@@ -158,7 +159,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
       @Override
       public void run() {
         SModel sModel = myDescriptor;
-        IModule module = myDescriptor.getModule();
+        SModule module = myDescriptor.getModule();
 
         saveImportedModels(sModel);
         saveUsedLanguages(sModel, module);
@@ -187,7 +188,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     myDescriptor.rename(newName, true);
   }
 
-  private void saveUsedLanguages(SModel sModel, IModule module) {
+  private void saveUsedLanguages(SModel sModel, SModule module) {
     List<SModuleReference> currentlyUsedLanguages = SNodeOperations.getUsedLanguages(sModel);
     List<SModuleReference> usedLanguages = myUsedLanguagesTable.getElements();
 
@@ -205,8 +206,8 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
 
     Collection<SModuleReference> addedLanguages = new ArrayList<SModuleReference>();
     for (SModuleReference language : usedLanguages) {
-      if (module.getScope().getLanguage(language) == null) {
-        module.addUsedLanguage(language);
+      if (((AbstractModule) module).getScope().getLanguage(language) == null) {
+        ((AbstractModule) module).addUsedLanguage(language);
         addedLanguages.add(language);
       }
     }

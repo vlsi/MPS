@@ -20,7 +20,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
@@ -97,12 +97,12 @@ public abstract class ChooserType<T> {
   }
 
 
-  public static class ModuleChooserType extends ChooserType<IModule> {
+  public static class ModuleChooserType extends ChooserType<SModule> {
     public ModuleChooserType() {
     }
 
     @Override
-    public ChooseByNameModel createChooserModel(final IChooserSettings<IModule> settings, final RefactoringContext context, final String paramName) {
+    public ChooseByNameModel createChooserModel(final IChooserSettings<SModule> settings, final RefactoringContext context, final String paramName) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -38,13 +38,13 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.packaging.structure.Module");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Iterable<IModule> queryResult = new Computable<Iterable<IModule>>() {
-          public Iterable<IModule> compute() {
+        Iterable<SModule> queryResult = new Computable<Iterable<SModule>>() {
+          public Iterable<SModule> compute() {
             return Module_Behavior.getAllAvailableModules_1222444746697();
           }
         }.compute();
         if (queryResult != null) {
-          for (final IModule item : queryResult) {
+          for (final SModule item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.build.packaging.structure.Module", null);

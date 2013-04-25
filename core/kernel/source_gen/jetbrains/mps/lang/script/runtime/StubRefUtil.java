@@ -17,9 +17,10 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.StaticReference;
 
@@ -117,11 +118,11 @@ public class StubRefUtil {
       SModelReference targetModelRef = ref.getTargetSModelReference();
       ((SModelInternal) model).addModelImport(targetModelRef, false);
 
-      IModule sourceModule = check_4tnolf_a0d0a0o(model);
-      IModule targetModule = check_4tnolf_a0e0a0o(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
+      SModule sourceModule = check_4tnolf_a0d0a0o(model);
+      SModule targetModule = check_4tnolf_a0e0a0o(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
       if (sourceModule != null && targetModule != null) {
         if (!(new GlobalModuleDependenciesManager(sourceModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(targetModule))) {
-          sourceModule.addDependency(targetModule.getModuleReference(), false);
+          ((AbstractModule) sourceModule).addDependency(targetModule.getModuleReference(), false);
         }
       }
     }
@@ -160,14 +161,14 @@ public class StubRefUtil {
     return null;
   }
 
-  private static IModule check_4tnolf_a0d0a0o(SModel checkedDotOperand) {
+  private static SModule check_4tnolf_a0d0a0o(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_4tnolf_a0e0a0o(SModel checkedDotOperand) {
+  private static SModule check_4tnolf_a0e0a0o(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

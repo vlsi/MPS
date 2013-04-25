@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.lang.reflect.Method;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.Nullable;
@@ -120,8 +120,8 @@ public class BaseMethodDeclaration_Behavior {
     return result.toString();
   }
 
-  public static Method call_getMethod_1213877350393(SNode thisNode, IModule module) {
-    IModule m = check_tq0gdw_a0a0k(SNodeOperations.getModel(thisNode));
+  public static Method call_getMethod_1213877350393(SNode thisNode, SModule module) {
+    SModule m = check_tq0gdw_a0a0k(SNodeOperations.getModel(thisNode));
     if (m != null) {
       Method method = null;
       try {
@@ -136,7 +136,7 @@ public class BaseMethodDeclaration_Behavior {
     return ReflectionUtil.getMethod(module, SNodeOperations.getParent(thisNode), SPropertyOperations.getString(thisNode, "name"), BaseMethodDeclaration_Behavior.call_getParameterTypes_1213877350411(thisNode, module));
   }
 
-  public static Class[] call_getParameterTypes_1213877350411(SNode thisNode, final IModule module) {
+  public static Class[] call_getParameterTypes_1213877350411(SNode thisNode, final SModule module) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector<SNode, Class>() {
       public Class select(SNode it) {
         return Type_Behavior.call_getClass_1213877337327(SLinkOperations.getTarget(it, "type", true), module);
@@ -401,7 +401,7 @@ public class BaseMethodDeclaration_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
   }
 
-  private static IModule check_tq0gdw_a0a0k(SModel checkedDotOperand) {
+  private static SModule check_tq0gdw_a0a0k(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

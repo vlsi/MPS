@@ -19,7 +19,7 @@ import jetbrains.mps.library.ModulesMiner;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.samples.SamplesManager;
@@ -67,8 +67,8 @@ public class MacrosFactory {
    * @deprecated use forModuleFile
    */
   @Deprecated
-  public static OldMacros moduleDescriptor(IModule module) {
-    IFile descriptorFile = module.getDescriptorFile();
+  public static OldMacros moduleDescriptor(SModule module) {
+    IFile descriptorFile = ((AbstractModule)module).getDescriptorFile();
     MacroHelper macroHelper = forModuleFile(descriptorFile);
     Macros macros = macroHelper instanceof MacroHelperImpl
       ? ((MacroHelperImpl) macroHelper).macros

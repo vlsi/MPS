@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class UsedLanguagesTable extends MpsElementsTable<SModuleReference> implements IModuleConfigurationTab {
+public class UsedLanguagesTable extends MpsElementsTable<SModuleReference> implements SModuleConfigurationTab {
   public static Comparator<SModuleReference> MODULE_REFERENCE_COMPARATOR = new SModuleReferenceComparator();
 
   // TODO: create additional MPSConfigurationBean.get/setUsedLanguageReferences() methods and use it here

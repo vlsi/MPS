@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
@@ -38,7 +38,7 @@ public class CloneModel_Action extends BaseAction {
     if (((Integer) MapSequence.fromMap(_params).get("selSize")) != 1) {
       return false;
     }
-    IModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
+    SModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
     if (module instanceof Language) {
       Language language = (Language) module;
       return language.getAspectForModel(((SModel) MapSequence.fromMap(_params).get("model"))) == null;

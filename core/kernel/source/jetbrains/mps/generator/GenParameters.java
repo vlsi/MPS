@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
@@ -24,9 +24,9 @@ import java.util.List;
 
 public class GenParameters {
   private List<SModel> myModels = new ArrayList<SModel>();
-  private IModule myModule;
+  private SModule myModule;
 
-  public GenParameters(List<? extends SModel> models, IModule module) {
+  public GenParameters(List<? extends SModel> models, SModule module) {
     myModels.addAll(models);
     myModule = module;
   }
@@ -54,7 +54,7 @@ public class GenParameters {
     return result;
   }
 
-  public IModule getModule() {
+  public SModule getModule() {
     return myModule;
   }
 }
