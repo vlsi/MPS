@@ -8,16 +8,16 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
@@ -66,6 +66,40 @@ public class ModuleChecker {
 
     if (!(checkModuleReference(type))) {
       return;
+    }
+
+    if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
+      List<SNode> previous = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency");
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency");
+        }
+      }).toListSequence();
+
+      if (type.doCheck) {
+        collectDependencies(true);
+      }
+      if (type.doPartialImport) {
+        importDependencies(previous);
+      }
+
+      if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language") && myModuleDescriptor instanceof LanguageDescriptor) {
+        checkLanguage(type, previous);
+      }
+
+      if (type.doPartialImport) {
+        collectSources(true, true);
+      }
+      if (type.doCheck) {
+        collectSources(true, false);
+      }
+
+      if (type.doPartialImport) {
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).removeSequence(ListSequence.fromList(previous));
+      }
     }
 
     if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
@@ -210,38 +244,19 @@ public class ModuleChecker {
 
 
 
-  public void importRequired() {
-    if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
-      List<SNode> previous = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency");
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency");
-        }
-      }).toListSequence();
+  private void checkLanguage(ModuleChecker.CheckType type, List<SNode> previous) {
+    if (type.doCheck) {
+      checkRuntime();
+      loadLanguageDeps(true);
+    }
 
-      importDependencies(previous);
-      if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language") && myModuleDescriptor instanceof LanguageDescriptor) {
-        importRuntime();
-        importLanguageDeps(previous);
-      }
-      collectSources(true, true);
-      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).removeSequence(ListSequence.fromList(previous));
+    if (type.doPartialImport) {
+      importRuntime();
+      importLanguageDeps(previous);
     }
   }
 
-  public void checkModule() {
-    if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
-      collectDependencies(true);
-      collectSources(true, false);
-      if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language") && myModuleDescriptor instanceof LanguageDescriptor) {
-        checkRuntime();
-        loadLanguageDeps(true);
-      }
-    }
-  }
+
 
   private void importLanguageDeps(List<SNode> previous) {
     LanguageDescriptor descriptor = ((LanguageDescriptor) myModuleDescriptor);
