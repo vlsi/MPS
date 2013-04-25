@@ -37,7 +37,7 @@ import java.util.Set;
 
 
 public class CellAction_PasteNodeRelative extends AbstractCellAction {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(CellAction_PasteNodeRelative.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(CellAction_PasteNodeRelative.class));
 
   PastePlaceHint myPastePlaceHint;
 

@@ -49,7 +49,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 public class ReferencesTest extends BaseMPSTest {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ReferencesTest.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReferencesTest.class));
 
   public void testBrokenReferences() {
     IdeMain.setTestMode(TestMode.CORE_TEST);

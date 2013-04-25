@@ -27,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -189,7 +188,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       if (ourErrorReportedRefs.contains(this)) return;
       ourErrorReportedRefs.add(this);
 
-      Logger log = Logger.getLogger(LogManager.getLogger(this.getClass()));
+      Logger log = Logger.wrap(LogManager.getLogger(this.getClass()));
       log.error("\ncouldn't resolve reference '" + getRole() + "' from " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getSourceNode()),
           validNode(getSourceNode()));
       if (message != null) log.error(" -- " + message);

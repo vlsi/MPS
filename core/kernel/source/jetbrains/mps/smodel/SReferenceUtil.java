@@ -28,7 +28,7 @@ import jetbrains.mps.util.NameUtil;
  * Dec 18, 2007
  */
 public class SReferenceUtil {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SReferenceUtil.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SReferenceUtil.class));
 
   /**
    * @param role - genuine role

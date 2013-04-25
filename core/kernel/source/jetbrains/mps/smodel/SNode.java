@@ -58,7 +58,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class SNode implements org.jetbrains.mps.openapi.model.SNode {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SNode.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNode.class));
   private static final String[] EMPTY_ARRAY = new String[0];
 
   private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();

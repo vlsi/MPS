@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class SNodeOperations {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SNodeOperations.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNodeOperations.class));
   private static boolean ourCastsEnabled = !(("true".equals(System.getProperty("mps.disableNodeCastExceptions"))));
 
   public SNodeOperations() {

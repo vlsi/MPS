@@ -22,7 +22,7 @@ import jetbrains.mps.plugin.icons.Icons;
 import javax.swing.Timer;
 
 public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconPresentation {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(PluginStateWidget.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(PluginStateWidget.class));
   private static final int INITIAL_DELAY = 4000;
   private static final int CRITICAL_DELAY = 16000;
   private static final double DELAY_MUL = 2.0;

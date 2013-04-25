@@ -55,7 +55,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 // Main paint: modules && modules repository knows nothing about classloading
 // Maybe add invalidation listener or module dependencies change AND show warning if we change module dependencies while module loaded here?
 public class ClassLoaderManager implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ClassLoaderManager.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ClassLoaderManager.class));
 
   private static ClassLoaderManager INSTANCE;
 

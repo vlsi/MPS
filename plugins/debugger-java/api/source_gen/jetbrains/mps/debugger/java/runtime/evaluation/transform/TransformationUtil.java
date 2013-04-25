@@ -30,7 +30,7 @@ import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TransformationUtil {
-  private static Logger LOG = Logger.getLogger(LogManager.getLogger(TransformationUtil.class));
+  private static Logger LOG = Logger.wrap(LogManager.getLogger(TransformationUtil.class));
 
   public TransformationUtil() {
   }

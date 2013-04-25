@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class GeneratorUtilEx {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(GeneratorUtilEx.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(GeneratorUtilEx.class));
   public static final String link_BaseConcept_attrs = "smodelAttribute";
 
   public GeneratorUtilEx() {

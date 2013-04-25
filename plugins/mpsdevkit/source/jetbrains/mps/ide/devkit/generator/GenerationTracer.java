@@ -43,7 +43,7 @@ import java.util.Map;
 
 
 public class GenerationTracer implements IGenerationTracer {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(GenerationTracer.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(GenerationTracer.class));
 
   private Project myProject;
   private boolean myActive = false;

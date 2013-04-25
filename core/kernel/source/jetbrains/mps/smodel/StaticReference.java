@@ -25,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 
 //final used by find usages
 public final class StaticReference extends SReferenceBase {
@@ -88,7 +87,7 @@ public final class StaticReference extends SReferenceBase {
     if (targetModel == null) return null;
 
     if (jetbrains.mps.util.SNodeOperations.isModelDisposed(targetModel)) {
-      Logger log = Logger.getLogger(LogManager.getLogger(this.getClass()));
+      Logger log = Logger.wrap(LogManager.getLogger(this.getClass()));
       StringBuilder sb = new StringBuilder();
       sb.append("target model ");
       sb.append(targetModel.toString());
