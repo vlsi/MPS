@@ -7,17 +7,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.DevkitDescriptor;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
@@ -67,6 +67,10 @@ public class ModuleChecker {
     if (!(checkModuleReference(type))) {
       return;
     }
+
+    if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
+      checkDevkit(type);
+    }
   }
 
 
@@ -97,6 +101,115 @@ public class ModuleChecker {
 
 
 
+  private void checkDevkit(ModuleChecker.CheckType type) {
+    DevkitDescriptor descriptor = (DevkitDescriptor) myModuleDescriptor;
+    SNode devKit = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
+
+    List<SNode> prevExt = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(devKit, "extends", true));
+    List<SNode> prevExp = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(devKit, "exports", true));
+
+    for (SModuleReference module : descriptor.getExtendedDevkits()) {
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
+      if (resolved == null) {
+        report("cannot find devkit in dependencies: " + module.getModuleName(), myModule);
+        continue;
+      }
+
+      if (type.doCheck && !(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "extends", true)).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return asOriginal(SLinkOperations.getTarget(it, "devkit", false)) == resolved;
+        }
+      }))) {
+        report("extends devkit dependency should be extracted into build script: " + module.toString(), myOriginalModule);
+      }
+
+      if (type.doPartialImport) {
+        SNode ul = ListSequence.fromList(prevExt).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SLinkOperations.getTarget(it, "devkit", false) == resolved;
+          }
+        });
+        if (ul == null) {
+          ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", null);
+          SLinkOperations.setTarget(ul, "devkit", resolved, false);
+          ListSequence.fromList(SLinkOperations.getTargets(devKit, "extends", true)).addElement(ul);
+        } else {
+          ListSequence.fromList(prevExt).removeElement(ul);
+        }
+      }
+    }
+
+    for (SModuleReference module : descriptor.getExportedLanguages()) {
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      if (resolved == null) {
+        report("cannot find exported languages in dependencies: " + module.getModuleName(), myModule);
+        continue;
+      }
+
+      if (type.doCheck && !(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "exports", true)).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage") && asOriginal(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage"), "language", false)) == resolved;
+        }
+      }))) {
+        report("export language dependency should be extracted into build script: " + module.toString(), myOriginalModule);
+      }
+
+      if (type.doPartialImport) {
+        SNode ul = SNodeOperations.as(ListSequence.fromList(prevExp).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage"), "language", false) == resolved;
+          }
+        }), "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage");
+        if (ul == null) {
+          ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", null);
+          SLinkOperations.setTarget(ul, "language", resolved, false);
+          ListSequence.fromList(SLinkOperations.getTargets(devKit, "exports", true)).addElement(ul);
+        } else {
+          ListSequence.fromList(prevExp).removeElement(ul);
+        }
+      }
+    }
+
+    // import devkit 
+    for (SModuleReference module : descriptor.getExportedSolutions()) {
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+      if (resolved == null) {
+        report("cannot find exported solution in dependencies: " + module.getModuleName(), myModule);
+        continue;
+      }
+
+      if (type.doCheck && !(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "exports", true)).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution") && asOriginal(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution"), "solution", false)) == resolved;
+        }
+      }))) {
+        report("export solution dependency should be extracted into build script: " + module.toString(), myOriginalModule);
+      }
+
+      if (type.doPartialImport) {
+        SNode ul = SNodeOperations.as(ListSequence.fromList(prevExp).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution"), "solution", false) == resolved;
+          }
+        }), "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution");
+        if (ul == null) {
+          ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", null);
+          SLinkOperations.setTarget(ul, "solution", resolved, false);
+          ListSequence.fromList(SLinkOperations.getTargets(devKit, "exports", true)).addElement(ul);
+        } else {
+          ListSequence.fromList(prevExp).removeElement(ul);
+        }
+      }
+    }
+
+    if (type.doPartialImport) {
+      ListSequence.fromList(SLinkOperations.getTargets(devKit, "extends", true)).removeSequence(ListSequence.fromList(prevExt));
+      ListSequence.fromList(SLinkOperations.getTargets(devKit, "exports", true)).removeSequence(ListSequence.fromList(prevExp));
+    }
+  }
+
+
+
   public void importRequired() {
     if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
       List<SNode> previous = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).where(new IWhereFilter<SNode>() {
@@ -117,10 +230,6 @@ public class ModuleChecker {
       collectSources(true, true);
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).removeSequence(ListSequence.fromList(previous));
     }
-
-    if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
-      importDevkit();
-    }
   }
 
   public void checkModule() {
@@ -132,132 +241,6 @@ public class ModuleChecker {
         loadLanguageDeps(true);
       }
     }
-
-    if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
-      checkDevkit();
-    }
-  }
-
-  private void checkDevkit() {
-    DevkitDescriptor descriptor = ((DevkitDescriptor) myModuleDescriptor);
-    SNode devkit = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
-
-    for (SModuleReference module : descriptor.getExtendedDevkits()) {
-      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
-      if (resolved == null) {
-        report("cannot find devkit in dependencies: " + module.getModuleName(), myModule);
-        continue;
-      }
-      if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "extends", true)).any(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return asOriginal(SLinkOperations.getTarget(it, "devkit", false)) == resolved;
-        }
-      }))) {
-
-        report("extends devkit dependency should be extracted into build script: " + module.toString(), myOriginalModule);
-      }
-
-    }
-    for (SModuleReference module : descriptor.getExportedLanguages()) {
-      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
-      if (resolved == null) {
-        report("cannot find exported languages in dependencies: " + module.getModuleName(), myModule);
-        continue;
-      }
-      if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "exports", true)).any(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage") && asOriginal(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage"), "language", false)) == resolved;
-        }
-      }))) {
-
-        report("export language dependency should be extracted into build script: " + module.toString(), myOriginalModule);
-      }
-
-    }
-    for (SModuleReference module : descriptor.getExportedSolutions()) {
-      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
-      if (resolved == null) {
-        report("cannot find exported solution in dependencies: " + module.getModuleName(), myModule);
-        continue;
-      }
-      if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "exports", true)).any(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution") && asOriginal(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution"), "solution", false)) == resolved;
-        }
-      }))) {
-
-        report("export solution dependency should be extracted into build script: " + module.toString(), myOriginalModule);
-      }
-    }
-  }
-
-  private void importDevkit() {
-    DevkitDescriptor descriptor = ((DevkitDescriptor) myModuleDescriptor);
-    SNode devkit = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
-
-    List<SNode> prevExt = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(devkit, "extends", true));
-    List<SNode> prevExp = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(devkit, "exports", true));
-
-    for (SModuleReference module : descriptor.getExtendedDevkits()) {
-      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
-      if (resolved == null) {
-        report("cannot find devkit in dependencies: " + module.getModuleName(), myModule);
-        continue;
-      }
-
-      SNode ul = ListSequence.fromList(prevExt).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SLinkOperations.getTarget(it, "devkit", false) == resolved;
-        }
-      });
-      if (ul == null) {
-        ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", null);
-        SLinkOperations.setTarget(ul, "devkit", resolved, false);
-        ListSequence.fromList(SLinkOperations.getTargets(devkit, "extends", true)).addElement(ul);
-      } else {
-        ListSequence.fromList(prevExt).removeElement(ul);
-      }
-    }
-    for (SModuleReference module : descriptor.getExportedLanguages()) {
-      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
-      if (resolved == null) {
-        report("cannot find exported languages in dependencies: " + module.getModuleName(), myModule);
-        continue;
-      }
-      SNode ul = SNodeOperations.as(ListSequence.fromList(prevExp).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage"), "language", false) == resolved;
-        }
-      }), "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage");
-      if (ul == null) {
-        ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", null);
-        SLinkOperations.setTarget(ul, "language", resolved, false);
-        ListSequence.fromList(SLinkOperations.getTargets(devkit, "exports", true)).addElement(ul);
-      } else {
-        ListSequence.fromList(prevExp).removeElement(ul);
-      }
-    }
-    for (SModuleReference module : descriptor.getExportedSolutions()) {
-      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
-      if (resolved == null) {
-        report("cannot find exported solution in dependencies: " + module.getModuleName(), myModule);
-        continue;
-      }
-      SNode ul = SNodeOperations.as(ListSequence.fromList(prevExp).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution"), "solution", false) == resolved;
-        }
-      }), "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution");
-      if (ul == null) {
-        ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", null);
-        SLinkOperations.setTarget(ul, "solution", resolved, false);
-        ListSequence.fromList(SLinkOperations.getTargets(devkit, "exports", true)).addElement(ul);
-      } else {
-        ListSequence.fromList(prevExp).removeElement(ul);
-      }
-    }
-    ListSequence.fromList(SLinkOperations.getTargets(devkit, "extends", true)).removeSequence(ListSequence.fromList(prevExt));
-    ListSequence.fromList(SLinkOperations.getTargets(devkit, "exports", true)).removeSequence(ListSequence.fromList(prevExp));
   }
 
   private void importLanguageDeps(List<SNode> previous) {
