@@ -117,11 +117,11 @@ public class MultipleEditorsTestChild_groovy_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_ymavop_c4a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("diagramProperty");
-    provider.setNoTargetText("<no diagramProperty>");
+    provider.setRole("groovyProperty");
+    provider.setNoTargetText("<no groovyProperty>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_diagramProperty");
+    editorCell.setCellId("property_groovyProperty");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

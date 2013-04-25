@@ -8,16 +8,16 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6655351613569903030">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="Child" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="MultipleEditorsTestChild" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6655351613569925151">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569888021" resolveInfo="Root" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569888021" resolveInfo="MultipleEditorsTestRoot" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="379263600995426991">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="Child" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="MultipleEditorsTestChild" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="472381747515631686">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="Child" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="MultipleEditorsTestChild" />
     </node>
   </roots>
   <root id="6655351613569903030">
@@ -297,7 +297,7 @@
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="472381747515631700">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="jap4.6655351613569904551" resolveInfo="diagramProperty" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="jap4.5950344441601550575" resolveInfo="groovyProperty" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="472381747515631701">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
