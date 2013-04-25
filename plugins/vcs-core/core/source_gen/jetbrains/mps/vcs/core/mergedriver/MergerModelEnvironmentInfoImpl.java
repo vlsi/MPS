@@ -42,7 +42,7 @@ public class MergerModelEnvironmentInfoImpl implements LightModelEnvironmentInfo
 
   @Override
   public void nodeRoleRead(SNode node, SNodeReference linkPointer) {
-    storeAndCheckConsistency(myNodeRolesToPointers, MultiTuple.<String,String>from(node.getConcept().getId(), node.getRoleInParent()), linkPointer);
+    storeAndCheckConsistency(myNodeRolesToPointers, MultiTuple.<String,String>from(node.getParent().getConcept().getId(), node.getRoleInParent()), linkPointer);
   }
 
   @Override
@@ -71,7 +71,7 @@ public class MergerModelEnvironmentInfoImpl implements LightModelEnvironmentInfo
     if (roleInParent == null) {
       return null;
     }
-    return MapSequence.fromMap(myNodeRolesToPointers).get(MultiTuple.<String,String>from(node.getConcept().getId(), roleInParent));
+    return MapSequence.fromMap(myNodeRolesToPointers).get(MultiTuple.<String,String>from(node.getParent().getConcept().getId(), roleInParent));
   }
 
   @Override

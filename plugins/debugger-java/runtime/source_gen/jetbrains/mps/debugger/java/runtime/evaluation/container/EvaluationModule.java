@@ -13,6 +13,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
@@ -43,7 +44,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
   protected Iterable<ModelRoot> loadRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
     for (String stub : SetSequence.fromSet(myClassPaths)) {
-      FolderModelRootBase modelRoot = (FolderModelRootBase) PersistenceRegistry.getInstance().getModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT).create();
+      FolderModelRootBase modelRoot = (FolderModelRootBase) PersistenceFacade.getInstance().getModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT).create();
       modelRoot.setPath(stub);
       result.add(modelRoot);
     }
