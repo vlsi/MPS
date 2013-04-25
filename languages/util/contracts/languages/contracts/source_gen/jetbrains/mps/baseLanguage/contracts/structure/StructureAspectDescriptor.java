@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.contracts.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -16,7 +17,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.Condition").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"expression"}, new boolean[]{false}).abstract_().create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("this", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.ContractThisExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("this", "").staticScope(StaticScope.NONE).create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").children(new String[]{"condition"}, new boolean[]{true}).create();
       case 3:
@@ -24,7 +25,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.Precondition").super_("jetbrains.mps.baseLanguage.contracts.structure.Condition").parents("jetbrains.mps.baseLanguage.contracts.structure.Condition").alias("precondition", "").create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.ResultExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("!result", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.contracts.structure.ResultExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("!result", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

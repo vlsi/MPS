@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.tableTests.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -26,7 +27,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable").super_("jetbrains.mps.lang.editor.tableTests.structure.Table").parents("jetbrains.mps.lang.editor.tableTests.structure.Table").children(new String[]{"headers"}, new boolean[]{true}).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"column", "row", "body"}, new boolean[]{true, true, true}).alias("decTable", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"column", "row", "body"}, new boolean[]{true, true, true}).alias("decTable", "").staticScope(StaticScope.NONE).create();
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.tableTests.structure.Matrix").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"xs", "ys", "contents"}, new boolean[]{true, true, true}).create();
       case 8:

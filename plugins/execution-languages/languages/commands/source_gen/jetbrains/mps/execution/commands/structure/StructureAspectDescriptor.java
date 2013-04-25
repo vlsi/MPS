@@ -5,6 +5,7 @@ package jetbrains.mps.execution.commands.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -18,9 +19,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.BuilderParameter").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandBuilderExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("commandPart").children(new String[]{"argument"}, new boolean[]{true}).alias("build command", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandBuilderExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("commandPart").children(new String[]{"argument"}, new boolean[]{true}).alias("build command", "").staticScope(StaticScope.NONE).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandDebuggerOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("debugger", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandDebuggerOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("debugger", "").staticScope(StaticScope.NONE).create();
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.execution.common.structure.IGeneratedToClass").children(new String[]{"debuggerConfiguration", "debuggerParameter", "method", "executePart"}, new boolean[]{false, false, true, true}).create();
       case 5:
@@ -30,17 +31,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").super_("jetbrains.mps.baseLanguage.structure.VariableDeclaration").parents("jetbrains.mps.baseLanguage.structure.VariableDeclaration").abstract_().create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandParameterReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("resolveInfo").references("parameter").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandParameterReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("resolveInfo").references("parameter").staticScope(StaticScope.NONE).create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandPartLengthOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("length", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandPartLengthOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("length", "").staticScope(StaticScope.NONE).create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandPartToListOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("toList", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandPartToListOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("toList", "").staticScope(StaticScope.NONE).create();
       case 11:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandProcessType").super_("jetbrains.mps.execution.commands.structure.ProcessType").parents("jetbrains.mps.execution.commands.structure.ProcessType").references("commandDeclaration").alias("command process", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandProcessType").super_("jetbrains.mps.execution.commands.structure.ProcessType").parents("jetbrains.mps.execution.commands.structure.ProcessType").references("commandDeclaration").alias("command process", "").staticScope(StaticScope.NONE).create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("command").alias("command reference", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("command").alias("command reference", "").staticScope(StaticScope.NONE).create();
       case 13:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandType").super_("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType").parents("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType").references("command").alias("command", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.CommandType").super_("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType").parents("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType").references("command").alias("command", "").staticScope(StaticScope.NONE).create();
       case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration").super_("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").parents("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").alias("debuggerSettings", "").create();
       case 15:
@@ -48,27 +49,27 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration").super_("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").parents("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration").properties("isRequired").create();
       case 17:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.KeyValueCommandPart").super_("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").parents("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").properties("dash").children(new String[]{"key", "value"}, new boolean[]{false, false}).alias("[key value]", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.KeyValueCommandPart").super_("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").parents("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").properties("dash").children(new String[]{"key", "value"}, new boolean[]{false, false}).alias("[key value]", "").staticScope(StaticScope.NONE).create();
       case 18:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ListCommandPart").super_("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").parents("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").children(new String[]{"list", "items", "separator"}, new boolean[]{false, true, false}).alias("list command part", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ListCommandPart").super_("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").parents("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").children(new String[]{"list", "items", "separator"}, new boolean[]{false, true, false}).alias("list command part", "").staticScope(StaticScope.NONE).create();
       case 19:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"commandPart", "workingDirectory"}, new boolean[]{true, false}).alias("process builder", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"commandPart", "workingDirectory"}, new boolean[]{true, false}).alias("process builder", "").staticScope(StaticScope.NONE).create();
       case 20:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").abstract_().staticScope(StaticScope.NONE).create();
       case 21:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPartType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("process builder command part", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPartType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("process builder command part", "").staticScope(StaticScope.NONE).create();
       case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ProcessType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("process", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ProcessType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("process", "").staticScope(StaticScope.NONE).create();
       case 23:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.PropertyCommandPart").super_("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").parents("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").children(new String[]{"key", "value"}, new boolean[]{false, false}).alias("-Dkey=value", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.PropertyCommandPart").super_("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").parents("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart").children(new String[]{"key", "value"}, new boolean[]{false, false}).alias("-Dkey=value", "").staticScope(StaticScope.NONE).create();
       case 24:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.RedirectOutputExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"processHandler", "listener"}, new boolean[]{false, false}).alias("output redirect", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.RedirectOutputExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"processHandler", "listener"}, new boolean[]{false, false}).alias("output redirect", "").staticScope(StaticScope.NONE).create();
       case 25:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ReportErrorStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"message", "exception"}, new boolean[]{false, false}).abstract_().alias("report", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ReportErrorStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"message", "exception"}, new boolean[]{false, false}).abstract_().alias("report", "").staticScope(StaticScope.NONE).create();
       case 26:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ReportExecutionError").super_("jetbrains.mps.execution.commands.structure.ReportErrorStatement").parents("jetbrains.mps.execution.commands.structure.ReportErrorStatement").alias("execution error", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.ReportExecutionError").super_("jetbrains.mps.execution.commands.structure.ReportErrorStatement").parents("jetbrains.mps.execution.commands.structure.ReportErrorStatement").alias("execution error", "").staticScope(StaticScope.NONE).create();
       case 27:
-        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.StartAndWaitOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").children(new String[]{"timeout"}, new boolean[]{false}).alias("startAndWait", "start process and wait while it is finished").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.execution.commands.structure.StartAndWaitOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").children(new String[]{"timeout"}, new boolean[]{false}).alias("startAndWait", "start process and wait while it is finished").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

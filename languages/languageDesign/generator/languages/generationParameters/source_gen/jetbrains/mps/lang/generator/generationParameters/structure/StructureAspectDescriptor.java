@@ -5,6 +5,7 @@ package jetbrains.mps.lang.generator.generationParameters.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,7 +15,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationParameters.structure.DefaultGenerationParameterId").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("container", "parameter").alias("genParameter<..>", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationParameters.structure.DefaultGenerationParameterId").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("container", "parameter").alias("genParameter<..>", "").staticScope(StaticScope.NONE).create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.generator.structure.IGeneratorParameter", "jetbrains.mps.lang.core.structure.INamedConcept").alias("", "generation parameter").create();
       case 2:

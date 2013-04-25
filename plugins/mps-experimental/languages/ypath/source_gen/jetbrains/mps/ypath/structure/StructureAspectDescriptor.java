@@ -5,6 +5,7 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,27 +15,27 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ChildrenBlock").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ChildrenBlock").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").staticScope(StaticScope.NONE).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ExpressionFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("expression", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ExpressionFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("expression", "").staticScope(StaticScope.NONE).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.FeatureGetFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("get", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.FeatureGetFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("get", "").staticScope(StaticScope.NONE).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.FeatureSequenceFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("sequence", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.FeatureSequenceFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("sequence", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.FeatureSizeFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("size", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.FeatureSizeFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("size", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.FromOperation").super_("jetbrains.mps.ypath.structure.TreePathOperation").parents("jetbrains.mps.ypath.structure.TreePathOperation").children(new String[]{"fromExpression"}, new boolean[]{false}).alias("from", "start tree traversal").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.FromOperation").super_("jetbrains.mps.ypath.structure.TreePathOperation").parents("jetbrains.mps.ypath.structure.TreePathOperation").children(new String[]{"fromExpression"}, new boolean[]{false}).alias("from", "start tree traversal").staticScope(StaticScope.NONE).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.GFCardinalFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.GFCardinalFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction").abstract_().staticScope(StaticScope.NONE).create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.GFCardinalParamFun").super_("jetbrains.mps.ypath.structure.GFCardinalFun").parents("jetbrains.mps.ypath.structure.GFCardinalFun", "jetbrains.mps.ypath.structure.IParamFeatureFun", "jetbrains.mps.ypath.structure.IDesignFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.GFCardinalParamFun").super_("jetbrains.mps.ypath.structure.GFCardinalFun").parents("jetbrains.mps.ypath.structure.GFCardinalFun", "jetbrains.mps.ypath.structure.IParamFeatureFun", "jetbrains.mps.ypath.structure.IDesignFunction").staticScope(StaticScope.NONE).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.GFGetterFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.GFGetterFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction").staticScope(StaticScope.NONE).create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.GFGetterParamFun").super_("jetbrains.mps.ypath.structure.GFGetterFun").parents("jetbrains.mps.ypath.structure.GFGetterFun", "jetbrains.mps.ypath.structure.IParamFeatureFun", "jetbrains.mps.ypath.structure.IDesignFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.GFGetterParamFun").super_("jetbrains.mps.ypath.structure.GFGetterFun").parents("jetbrains.mps.ypath.structure.GFGetterFun", "jetbrains.mps.ypath.structure.IParamFeatureFun", "jetbrains.mps.ypath.structure.IDesignFunction").staticScope(StaticScope.NONE).create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.GeneratorFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("generator", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.GeneratorFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("generator", "").staticScope(StaticScope.NONE).create();
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.GenericFeature").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.ypath.structure.IGenericFeature", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature").create();
       case 12:
@@ -54,25 +55,25 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 19:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ITreePathExpression").interface_().create();
       case 20:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.IndexFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("index", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.IndexFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("index", "").staticScope(StaticScope.NONE).create();
       case 21:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.IterateOperation").super_("jetbrains.mps.ypath.structure.TreePathOperation").parents("jetbrains.mps.ypath.structure.TreePathOperation").properties("axis", "useDefault").references("usedFeature").children(new String[]{"paramObject"}, new boolean[]{false}).alias("find", "traverse the tree").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.IterateOperation").super_("jetbrains.mps.ypath.structure.TreePathOperation").parents("jetbrains.mps.ypath.structure.TreePathOperation").properties("axis", "useDefault").references("usedFeature").children(new String[]{"paramObject"}, new boolean[]{false}).alias("find", "traverse the tree").staticScope(StaticScope.NONE).create();
       case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.KindBlock").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.KindBlock").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").staticScope(StaticScope.NONE).create();
       case 23:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.LambdaMethod").super_("jetbrains.mps.baseLanguage.structure.Closure").parents("jetbrains.mps.baseLanguage.structure.Closure").children(new String[]{"parameter"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.LambdaMethod").super_("jetbrains.mps.baseLanguage.structure.Closure").parents("jetbrains.mps.baseLanguage.structure.Closure").children(new String[]{"parameter"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 24:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.LambdaMethodParameter").super_("jetbrains.mps.baseLanguage.structure.ClosureParameter").parents("jetbrains.mps.baseLanguage.structure.ClosureParameter").create();
       case 25:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ListFeature").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"getFunction", "sizeFunction"}, new boolean[]{false, false}).alias("list feature", "").create();
       case 26:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation").super_("jetbrains.mps.ypath.structure.TreePathOperation").parents("jetbrains.mps.ypath.structure.TreePathOperation").children(new String[]{"matchExpression"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation").super_("jetbrains.mps.ypath.structure.TreePathOperation").parents("jetbrains.mps.ypath.structure.TreePathOperation").children(new String[]{"matchExpression"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 27:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.MatchKindOperation").super_("jetbrains.mps.ypath.structure.TreePathOperation").parents("jetbrains.mps.ypath.structure.TreePathOperation").references("nodeKind").children(new String[]{"nodeKindOccurrence"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.MatchKindOperation").super_("jetbrains.mps.ypath.structure.TreePathOperation").parents("jetbrains.mps.ypath.structure.TreePathOperation").references("nodeKind").children(new String[]{"nodeKindOccurrence"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 28:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.MatchPropertyOperation").super_("jetbrains.mps.ypath.structure.MatchKindOperation").parents("jetbrains.mps.ypath.structure.MatchKindOperation").references("property").children(new String[]{"matchExpression"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.MatchPropertyOperation").super_("jetbrains.mps.ypath.structure.MatchKindOperation").parents("jetbrains.mps.ypath.structure.MatchKindOperation").references("property").children(new String[]{"matchExpression"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 29:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.NodeFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.NodeFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "").staticScope(StaticScope.NONE).create();
       case 30:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.NodeKindCase").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"statementList"}, new boolean[]{false}).abstract_().create();
       case 31:
@@ -80,35 +81,35 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 32:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.NodeKindSpecificCase").super_("jetbrains.mps.ypath.structure.NodeKindCase").parents("jetbrains.mps.ypath.structure.NodeKindCase").references("treeNodeKind").alias("case <{treeNodeKind}>:", "").create();
       case 33:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.NodeTypeFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("nodeType", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.NodeTypeFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("nodeType", "").staticScope(StaticScope.NONE).create();
       case 34:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParamFeatureGetFun").super_("jetbrains.mps.ypath.structure.FeatureGetFun").parents("jetbrains.mps.ypath.structure.FeatureGetFun", "jetbrains.mps.ypath.structure.IParamFeatureFun").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParamFeatureGetFun").super_("jetbrains.mps.ypath.structure.FeatureGetFun").parents("jetbrains.mps.ypath.structure.FeatureGetFun", "jetbrains.mps.ypath.structure.IParamFeatureFun").staticScope(StaticScope.NONE).create();
       case 35:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun").super_("jetbrains.mps.ypath.structure.FeatureSequenceFun").parents("jetbrains.mps.ypath.structure.FeatureSequenceFun", "jetbrains.mps.ypath.structure.IParamFeatureFun").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun").super_("jetbrains.mps.ypath.structure.FeatureSequenceFun").parents("jetbrains.mps.ypath.structure.FeatureSequenceFun", "jetbrains.mps.ypath.structure.IParamFeatureFun").staticScope(StaticScope.NONE).create();
       case 36:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParamFeatureSizeFun").super_("jetbrains.mps.ypath.structure.FeatureSizeFun").parents("jetbrains.mps.ypath.structure.FeatureSizeFun", "jetbrains.mps.ypath.structure.IParamFeatureFun").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParamFeatureSizeFun").super_("jetbrains.mps.ypath.structure.FeatureSizeFun").parents("jetbrains.mps.ypath.structure.FeatureSizeFun", "jetbrains.mps.ypath.structure.IParamFeatureFun").staticScope(StaticScope.NONE).create();
       case 37:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParamFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("param", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParamFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.ypath.structure.IFunctionParam", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("param", "").staticScope(StaticScope.NONE).create();
       case 38:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParamListFeature").super_("jetbrains.mps.ypath.structure.ListFeature").parents("jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.IParamFeature", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"getFunction", "sizeFunction"}, new boolean[]{false, false}).alias("parameterized list feature", "").create();
       case 39:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParamSequenceFeature").super_("jetbrains.mps.ypath.structure.SequenceFeature").parents("jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IParamFeature", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"paramSequenceFunction", "paramSizeFunction"}, new boolean[]{false, false}).alias("parameterized sequence feature", "").create();
       case 40:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParameterQueryFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction").alias("getParameters", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParameterQueryFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction").alias("getParameters", "").staticScope(StaticScope.NONE).create();
       case 41:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParameterWrapper").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("paramValue").references("paramRef").create();
       case 42:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParentBlock").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ParentBlock").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").staticScope(StaticScope.NONE).create();
       case 43:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.PropertyGetter").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.PropertyGetter").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").staticScope(StaticScope.NONE).create();
       case 44:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.SequenceFeature").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"sequenceFunction", "sizeFunction"}, new boolean[]{false, false}).alias("sequence feature", "").create();
       case 45:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.SwitchNodeKindStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"nodeExpression", "nodeKindCase"}, new boolean[]{false, true}).alias("switch node kind", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.SwitchNodeKindStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"nodeExpression", "nodeKindCase"}, new boolean[]{false, true}).alias("switch node kind", "").staticScope(StaticScope.NONE).create();
       case 46:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TargetTypeFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction").alias("getTargetType", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TargetTypeFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction").alias("getTargetType", "").staticScope(StaticScope.NONE).create();
       case 47:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ToStringFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ToStringFun").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.ypath.structure.IDesignFunction").staticScope(StaticScope.NONE).create();
       case 48:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreeNodeKind").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"trigger", "properties"}, new boolean[]{false, true}).create();
       case 49:
@@ -116,39 +117,39 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 50:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreeNodeKindProperty").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("default").children(new String[]{"getter"}, new boolean[]{false}).create();
       case 51:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreeNodeKindReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("treePathAspect", "treeNodeKind").alias("treeNodeKindFilter", "reference to tree node kind").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreeNodeKindReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("treePathAspect", "treeNodeKind").alias("treeNodeKindFilter", "reference to tree node kind").staticScope(StaticScope.NONE).create();
       case 52:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePath").interface_().references("defaultFeature").children(new String[]{"treePathType", "parentBlock", "childrenBlock", "features"}, new boolean[]{false, false, false, true}).create();
       case 53:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePathAdapterExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("treepathAspect").children(new String[]{"expression"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePathAdapterExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("treepathAspect").children(new String[]{"expression"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 54:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePathAspect").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.ypath.structure.TreePath").children(new String[]{"nodeKinds"}, new boolean[]{true}).create();
       case 55:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePathCreator").super_("jetbrains.mps.baseLanguage.structure.AbstractCreator").parents("jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.ypath.structure.TreePath").alias("treepath initializer", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePathCreator").super_("jetbrains.mps.baseLanguage.structure.AbstractCreator").parents("jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.ypath.structure.TreePath").alias("treepath initializer", "").staticScope(StaticScope.NONE).create();
       case 56:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePathOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePathOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").abstract_().staticScope(StaticScope.NONE).create();
       case 57:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePathOperationExpression").super_("jetbrains.mps.baseLanguage.structure.DotExpression").parents("jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.ypath.structure.ITreePathExpression").children(new String[]{"operand", "operation"}, new boolean[]{false, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePathOperationExpression").super_("jetbrains.mps.baseLanguage.structure.DotExpression").parents("jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.ypath.structure.ITreePathExpression").children(new String[]{"operand", "operation"}, new boolean[]{false, false}).staticScope(StaticScope.NONE).create();
       case 58:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePathType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"nodeType"}, new boolean[]{false}).alias("treepath", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.TreePathType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"nodeType"}, new boolean[]{false}).alias("treepath", "").staticScope(StaticScope.NONE).create();
       case 59:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ValueFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("value", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.ValueFunctionParam").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("value", "").staticScope(StaticScope.NONE).create();
       case 60:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.VisitBlock").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").children(new String[]{"expression", "visitParameterDeclarationList"}, new boolean[]{false, false}).alias("visit", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.VisitBlock").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").children(new String[]{"expression", "visitParameterDeclarationList"}, new boolean[]{false, false}).alias("visit", "").staticScope(StaticScope.NONE).create();
       case 61:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.VisitChildrenExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"actualArgument"}, new boolean[]{true}).alias("visit children", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.VisitChildrenExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"actualArgument"}, new boolean[]{true}).alias("visit children", "").staticScope(StaticScope.NONE).create();
       case 62:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.VisitNodesStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"visitBlock"}, new boolean[]{false}).alias("visit", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.VisitNodesStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"visitBlock"}, new boolean[]{false}).alias("visit", "").staticScope(StaticScope.NONE).create();
       case 63:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.VisitParameterDeclaration").super_("jetbrains.mps.baseLanguage.structure.VariableDeclaration").parents("jetbrains.mps.baseLanguage.structure.VariableDeclaration").create();
       case 64:
         return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.VisitParameterDeclarationList").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"visitParameterDeclaration"}, new boolean[]{true}).create();
       case 65:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.VisitParameterReference").super_("jetbrains.mps.baseLanguage.structure.VariableReference").parents("jetbrains.mps.baseLanguage.structure.VariableReference").references("visitParameterDeclaration").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.VisitParameterReference").super_("jetbrains.mps.baseLanguage.structure.VariableReference").parents("jetbrains.mps.baseLanguage.structure.VariableReference").references("visitParameterDeclaration").staticScope(StaticScope.NONE).create();
       case 66:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.WhereBlock").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.WhereBlock").super_("jetbrains.mps.ypath.structure.LambdaMethod").parents("jetbrains.mps.ypath.structure.LambdaMethod").staticScope(StaticScope.NONE).create();
       case 67:
-        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.WhereOperation").super_("jetbrains.mps.ypath.structure.TreePathOperation").parents("jetbrains.mps.ypath.structure.TreePathOperation").children(new String[]{"whereBlock", "filter"}, new boolean[]{false, false}).alias("where", "filter the tree").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.ypath.structure.WhereOperation").super_("jetbrains.mps.ypath.structure.TreePathOperation").parents("jetbrains.mps.ypath.structure.TreePathOperation").children(new String[]{"whereBlock", "filter"}, new boolean[]{false, false}).alias("where", "filter the tree").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

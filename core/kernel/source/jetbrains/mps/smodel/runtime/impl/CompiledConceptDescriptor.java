@@ -17,10 +17,17 @@ package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String conceptFqName;
@@ -37,8 +44,13 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String conceptAlias;
   private final String conceptShortDescription;
   private final String helpUrl;
+  private final StaticScope staticScope;
 
 
+  /**
+   * @deprecated in 3.0
+   */
+  @Deprecated
   public CompiledConceptDescriptor(String conceptFqName,
       @Nullable String superConcept,
       boolean isInterfaceConcept,
@@ -52,6 +64,24 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       String conceptAlias,
       String shortDescription,
       String helpUrl) {
+    this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, ownChildNames, isMultiple, isAbstract, isFinal,
+        conceptAlias, shortDescription, helpUrl, StaticScope.GLOBAL);
+  }
+
+  CompiledConceptDescriptor(String conceptFqName,
+      @Nullable String superConcept,
+      boolean isInterfaceConcept,
+      String[] parents,
+      String[] ownPropertyNames,
+      String[] ownReferenceNames,
+      String[] ownChildNames,
+      boolean[] isMultiple,
+      boolean isAbstract,
+      boolean isFinal,
+      String conceptAlias,
+      String shortDescription,
+      String helpUrl,
+      StaticScope staticScope) {
     this.conceptFqName = conceptFqName;
     this.superConcept = superConcept;
     this.isInterfaceConcept = isInterfaceConcept;
@@ -61,11 +91,12 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     this.conceptAlias = conceptAlias;
     this.conceptShortDescription = shortDescription;
     this.helpUrl = helpUrl;
+    this.staticScope = staticScope;
 
     // hierarchy
     // todo: common with StructureAspectInterpreted to new class!
     // get parent descriptors
-    ConceptRegistry registry = ConceptRegistry.getInstance();
+        ConceptRegistry registry = ConceptRegistry.getInstance();
 
     List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(parents.length);
     for (String parent : parents) {
@@ -144,6 +175,11 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public Set<String> getChildrenNames() {
     return childNames;
+  }
+
+  @Override
+  public StaticScope getStaticScope() {
+    return staticScope;
   }
 
   @Override

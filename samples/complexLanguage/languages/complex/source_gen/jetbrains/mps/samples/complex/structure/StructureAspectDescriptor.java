@@ -5,6 +5,7 @@ package jetbrains.mps.samples.complex.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,23 +15,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.AbsExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").alias("abs", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.AbsExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").alias("abs", "").staticScope(StaticScope.NONE).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ArgExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").alias("arg", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ArgExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").alias("arg", "").staticScope(StaticScope.NONE).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ComplexType").super_("jetbrains.mps.baseLanguage.structure.PrimitiveType").parents("jetbrains.mps.baseLanguage.structure.PrimitiveType").alias("complex", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ComplexType").super_("jetbrains.mps.baseLanguage.structure.PrimitiveType").parents("jetbrains.mps.baseLanguage.structure.PrimitiveType").alias("complex", "").staticScope(StaticScope.NONE).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ConjugateComplexExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").alias("conj", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ConjugateComplexExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").alias("conj", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.DegreeComplexExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").children(new String[]{"degree"}, new boolean[]{false}).alias("deg", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.DegreeComplexExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").children(new String[]{"degree"}, new boolean[]{false}).alias("deg", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ImExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").alias("im", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ImExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").alias("im", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ImaginaryUnit").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("i", "complex imaginary unit").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ImaginaryUnit").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("i", "complex imaginary unit").staticScope(StaticScope.NONE).create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ReExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").alias("re", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.ReExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").alias("re", "").staticScope(StaticScope.NONE).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.SingleComplexExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"complexExpression"}, new boolean[]{false}).abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.SingleComplexExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"complexExpression"}, new boolean[]{false}).abstract_().staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

@@ -5,6 +5,7 @@ package jetbrains.mps.make.facet.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -22,19 +23,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.FacetReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("facet").abstract_().create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.FacetReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"reference"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.FacetReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"reference"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression").super_("jetbrains.mps.baseLanguage.structure.DotExpression").parents("jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression").children(new String[]{"expression"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression").super_("jetbrains.mps.baseLanguage.structure.DotExpression").parents("jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression").children(new String[]{"expression"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ForeignParametersExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("target").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ForeignParametersExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("target").staticScope(StaticScope.NONE).create();
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.IFacet").interface_().create();
       case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.IPropertyExpression").interface_().children(new String[]{"resource"}, new boolean[]{false}).create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression").super_("jetbrains.mps.baseLanguage.structure.DotExpression").parents("jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression").children(new String[]{"expression"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression").super_("jetbrains.mps.baseLanguage.structure.DotExpression").parents("jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.make.facet.structure.IPropertyExpression").children(new String[]{"expression"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.LocalParametersExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.LocalParametersExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").staticScope(StaticScope.NONE).create();
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.NamedFacetReference").super_("jetbrains.mps.make.facet.structure.FacetReference").parents("jetbrains.mps.make.facet.structure.FacetReference").create();
       case 12:
@@ -42,9 +43,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.RelatedFacetReference").super_("jetbrains.mps.make.facet.structure.FacetReference").parents("jetbrains.mps.make.facet.structure.FacetReference").create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ResourceClassifierType").super_("jetbrains.mps.baseLanguage.structure.ClassifierType").parents("jetbrains.mps.baseLanguage.structure.ClassifierType").references("resource").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ResourceClassifierType").super_("jetbrains.mps.baseLanguage.structure.ClassifierType").parents("jetbrains.mps.baseLanguage.structure.ClassifierType").references("resource").staticScope(StaticScope.NONE).create();
       case 15:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"properties", "resource"}, new boolean[]{false, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"properties", "resource"}, new boolean[]{false, false}).staticScope(StaticScope.NONE).create();
       case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.ResourceTypeDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"resourceType"}, new boolean[]{true}).create();
       case 17:
@@ -52,7 +53,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.TargetDependency").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("qualifier").references("dependsOn").create();
       case 19:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.TargetReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("target").children(new String[]{"facetRef"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.facet.structure.TargetReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("target").children(new String[]{"facetRef"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

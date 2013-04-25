@@ -5,6 +5,7 @@ package jetbrains.mps.lang.findUsages.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -16,35 +17,35 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("forConcept").children(new String[]{"isApplicableFunction", "findFunction", "searchedNodesBlock", "categorizeBlock"}, new boolean[]{false, false, false, false}).abstract_().create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.CategorizeBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("getCategory", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.CategorizeBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("getCategory", "").staticScope(StaticScope.NONE).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").alias("check cancelled status", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").alias("check cancelled status", "").staticScope(StaticScope.NONE).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "function parameter").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "function parameter").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("finder").children(new String[]{"queryNode", "queryScope", "monitor"}, new boolean[]{false, false, false}).alias("execute", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("finder").children(new String[]{"queryNode", "queryScope", "monitor"}, new boolean[]{false, false, false}).alias("execute", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"queryNode", "scope", "progress", "finder"}, new boolean[]{false, false, false, true}).alias("execute finders", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"queryNode", "scope", "progress", "finder"}, new boolean[]{false, false, false, true}).alias("execute finders", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.FindBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("find", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.FindBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("find", "").staticScope(StaticScope.NONE).create();
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.FinderDeclaration").super_("jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration").parents("jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect").properties("description", "longDescription").children(new String[]{"isVisibleBlock", "isUsedByDefault"}, new boolean[]{false, false}).create();
       case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.FinderReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("finder").create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.IsApplicableBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isApplicable", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.IsApplicableBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isApplicable", "").staticScope(StaticScope.NONE).create();
       case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.IsUsedByDefault").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isUsedByDefault", "").create();
       case 11:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.IsVisibleBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isVisible", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.IsVisibleBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isVisible", "").staticScope(StaticScope.NONE).create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.MakeResultProvider").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"finder"}, new boolean[]{true}).alias("make result provider", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.MakeResultProvider").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"finder"}, new boolean[]{true}).alias("make result provider", "").staticScope(StaticScope.NONE).create();
       case 13:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.NodeStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"foundNode"}, new boolean[]{false}).alias("add node", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.NodeStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"foundNode"}, new boolean[]{false}).alias("add node", "").staticScope(StaticScope.NONE).create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.ResultStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"foundNode"}, new boolean[]{false}).alias("add result", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.ResultStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"foundNode"}, new boolean[]{false}).alias("add result", "").staticScope(StaticScope.NONE).create();
       case 15:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("getSearchedNodes", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("getSearchedNodes", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

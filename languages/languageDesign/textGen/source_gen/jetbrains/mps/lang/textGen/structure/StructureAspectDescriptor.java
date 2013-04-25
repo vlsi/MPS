@@ -5,6 +5,7 @@ package jetbrains.mps.lang.textGen.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -18,11 +19,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier").abstract_().create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").abstract_().staticScope(StaticScope.NONE).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.AppendOperation").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"part"}, new boolean[]{true}).alias("append", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.AppendOperation").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"part"}, new boolean[]{true}).alias("append", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.BufferParameter").super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").alias("buffer", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.BufferParameter").super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").alias("buffer", "").staticScope(StaticScope.NONE).create();
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.CollectionAppendPart").super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").properties("separator", "withSeparator").children(new String[]{"list"}, new boolean[]{false}).alias("$list{", "collection").create();
       case 6:
@@ -30,25 +31,25 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart").super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").properties("value", "withIndent").alias("constant", "constant string").create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ContextParameter").super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").alias("context", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ContextParameter").super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").alias("context", "").staticScope(StaticScope.NONE).create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation").super_("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").parents("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").alias("decrease depth", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation").super_("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").parents("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").alias("decrease depth", "").staticScope(StaticScope.NONE).create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.EncodingDeclaration").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase").alias("encoding", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.EncodingDeclaration").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase").alias("encoding", "").staticScope(StaticScope.NONE).create();
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase").interface_().create();
       case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.EncodingLiteral").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase").properties("encoding").alias("encoding literal", "").create();
       case 13:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ExtensionDeclaration").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("extension", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ExtensionDeclaration").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("extension", "").staticScope(StaticScope.NONE).create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.FoundErrorOperation").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"text"}, new boolean[]{false}).alias("found error", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.FoundErrorOperation").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"text"}, new boolean[]{false}).alias("found error", "").staticScope(StaticScope.NONE).create();
       case 15:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("do generate text", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("do generate text", "").staticScope(StaticScope.NONE).create();
       case 16:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation").super_("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").parents("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").alias("increase depth", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation").super_("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").parents("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").alias("increase depth", "").staticScope(StaticScope.NONE).create();
       case 17:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.IndentBufferOperation").super_("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").parents("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").alias("indent buffer", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.IndentBufferOperation").super_("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").parents("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").alias("indent buffer", "").staticScope(StaticScope.NONE).create();
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.InfoAppendPart").super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").children(new String[]{"value"}, new boolean[]{false}).alias("$resolve{", "resolve info").create();
       case 19:
@@ -58,7 +59,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 21:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.NodeAppendPart").super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").properties("withIndent").children(new String[]{"value"}, new boolean[]{false}).alias("${", "node or property").create();
       case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.NodeParameter").super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").alias("node", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.NodeParameter").super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter").alias("node", "").staticScope(StaticScope.NONE).create();
       case 23:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.OperationCall").super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").references("function").children(new String[]{"parameter"}, new boolean[]{true}).create();
       case 24:
@@ -66,13 +67,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 25:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.ReferenceAppendPart").super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").properties("uniqNameInFile").children(new String[]{"reference"}, new boolean[]{false}).alias("$ref{", "reference").create();
       case 26:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").abstract_().staticScope(StaticScope.NONE).create();
       case 27:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.UtilityMethodCall").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("function").children(new String[]{"parameter"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.UtilityMethodCall").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("function").children(new String[]{"parameter"}, new boolean[]{true}).staticScope(StaticScope.NONE).create();
       case 28:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration").super_("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration").alias("new private function", "").create();
       case 29:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.WithIndentOperation").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"list"}, new boolean[]{false}).alias("with indent {", "code block").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.WithIndentOperation").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"list"}, new boolean[]{false}).alias("with indent {", "code block").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

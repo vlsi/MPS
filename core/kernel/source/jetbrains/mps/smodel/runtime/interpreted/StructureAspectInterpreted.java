@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
@@ -131,12 +132,13 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     private Set<String> propertyNames;
     private Set<String> referenceNames;
     private Set<String> childrenNames;
-    private HashMap<String, Boolean> childrenMap= new HashMap<String, Boolean>();
+    private HashMap<String, Boolean> childrenMap = new HashMap<String, Boolean>();
     private boolean isAbstract;
     private boolean isFinal;
     private String conceptAlias;
     private String shortDescription;
     private String helpURL;
+    private StaticScope staticScope;
 
     InterpretedConceptDescriptor(final String fqName) {
       this.fqName = fqName;
@@ -166,6 +168,9 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
           conceptAlias = SNodeUtil.getConceptAlias(declaration);
           shortDescription = SNodeUtil.getConceptShortDescription(declaration);
 
+          // scope
+          String scopeVal = SPropertyOperations.getString(declaration, "staticScope");
+          staticScope = "none".equals(scopeVal) ? StaticScope.NONE : ("root".equals(scopeVal) ? StaticScope.ROOT : StaticScope.GLOBAL);
 
           // superconcept
           if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
@@ -263,7 +268,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
 
 
         for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-          for (String child : parentDescriptor.getChildrenNames()){
+          for (String child : parentDescriptor.getChildrenNames()) {
             childrenMap.put(child, parentDescriptor.isMultipleChild(child));
           }
         }
@@ -300,6 +305,11 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     @Override
     public Set<String> getChildrenNames() {
       return childrenNames;
+    }
+
+    @Override
+    public StaticScope getStaticScope() {
+      return staticScope;
     }
 
     @Override

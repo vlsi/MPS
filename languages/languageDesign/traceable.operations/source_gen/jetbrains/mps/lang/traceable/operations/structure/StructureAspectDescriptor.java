@@ -5,6 +5,7 @@ package jetbrains.mps.lang.traceable.operations.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,9 +15,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"argument"}, new boolean[]{false}).alias("copy list with trace", "copies a list of nodes with trace").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"argument"}, new boolean[]{false}).alias("copy list with trace", "copies a list of nodes with trace").staticScope(StaticScope.NONE).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").alias("copy with trace", "copy a node with trace").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").alias("copy with trace", "copy a node with trace").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

@@ -5,6 +5,7 @@ package jetbrains.mps.lang.extension.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -18,19 +19,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"fieldType"}, new boolean[]{false}).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionFieldReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionFieldReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").staticScope(StaticScope.NONE).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionObjectGetter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionObjectGetter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("extensionName").children(new String[]{"objectType"}, new boolean[]{false}).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionPointExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("extensionPoint").alias("extensionPoint", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionPointExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("extensionPoint").alias("extensionPoint", "").staticScope(StaticScope.NONE).create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionPointType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").references("extensionPoint").alias("extensionPoint", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionPointType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").references("extensionPoint").alias("extensionPoint", "").staticScope(StaticScope.NONE).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation").super_("jetbrains.mps.baseLanguage.structure.AbstractOperation").parents("jetbrains.mps.baseLanguage.structure.AbstractOperation").alias("objects", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation").super_("jetbrains.mps.baseLanguage.structure.AbstractOperation").parents("jetbrains.mps.baseLanguage.structure.AbstractOperation").alias("objects", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

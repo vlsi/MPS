@@ -5,6 +5,7 @@ package jetbrains.mps.build.mps.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -52,7 +53,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_DevKitRef").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("devkit").create();
       case 19:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency").super_("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency").parents("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency").children(new String[]{"dependency"}, new boolean[]{false}).alias("(extracted)", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency").super_("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency").parents("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency").children(new String[]{"dependency"}, new boolean[]{false}).alias("(extracted)", "").staticScope(StaticScope.NONE).create();
       case 20:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_Group").super_("jetbrains.mps.build.structure.BuildProjectPart").parents("jetbrains.mps.build.structure.BuildProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"modules"}, new boolean[]{true}).alias("mps group", "").create();
       case 21:

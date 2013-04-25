@@ -5,6 +5,7 @@ package jetbrains.mps.quickQueryLanguage.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,17 +15,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").abstract_().staticScope(StaticScope.NONE).create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.quickQueryLanguage.structure.BaseQuery").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("conceptDeclaration").children(new String[]{"condition"}, new boolean[]{false}).abstract_().create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.quickQueryLanguage.structure.ModelQuery").super_("jetbrains.mps.quickQueryLanguage.structure.BaseQuery").parents("jetbrains.mps.quickQueryLanguage.structure.BaseQuery").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.quickQueryLanguage.structure.QueryCondition").super_("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction").parents("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.quickQueryLanguage.structure.QueryCondition").super_("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction").parents("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.quickQueryLanguage.structure.QueryReplace").super_("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction").parents("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.quickQueryLanguage.structure.QueryReplace").super_("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction").parents("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction").staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "").staticScope(StaticScope.NONE).create();
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery").super_("jetbrains.mps.quickQueryLanguage.structure.BaseQuery").parents("jetbrains.mps.quickQueryLanguage.structure.BaseQuery").children(new String[]{"replace"}, new boolean[]{false}).create();
       default:
