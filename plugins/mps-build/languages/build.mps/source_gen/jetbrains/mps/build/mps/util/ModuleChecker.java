@@ -245,14 +245,53 @@ public class ModuleChecker {
 
 
   private void checkLanguage(ModuleChecker.CheckType type, List<SNode> previous) {
+    checkRuntime(type);
+
     if (type.doCheck) {
-      checkRuntime();
       loadLanguageDeps(true);
     }
-
     if (type.doPartialImport) {
-      importRuntime();
       importLanguageDeps(previous);
+    }
+  }
+
+
+
+  private void checkRuntime(ModuleChecker.CheckType type) {
+    LanguageDescriptor descriptor = (LanguageDescriptor) myModuleDescriptor;
+    SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language");
+
+    List<SNode> previous = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(module, "runtime", true));
+
+    for (SModuleReference runtimeModule : descriptor.getRuntimeModules()) {
+      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(runtimeModule.getModuleName(), runtimeModule.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+      if (resolved == null) {
+        report("cannot find runtime solution in dependencies: " + runtimeModule.getModuleName(), myModule);
+        continue;
+      }
+
+      if (type.doCheck && !(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true)).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime") && asOriginal(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), "solution", false)) == resolved;
+        }
+      }))) {
+        report("runtime solution should be extracted into build script: " + runtimeModule.toString(), myOriginalModule);
+      }
+
+      if (type.doPartialImport) {
+        SNode ul = SNodeOperations.as(ListSequence.fromList(previous).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), "solution", false) == resolved;
+          }
+        }), "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime");
+        if (ul == null) {
+          ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", null);
+          SLinkOperations.setTarget(ul, "solution", resolved, false);
+          ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true)).addElement(ul);
+        } else {
+          ListSequence.fromList(previous).removeElement(ul);
+        }
+      }
     }
   }
 
@@ -339,51 +378,6 @@ public class ModuleChecker {
       myGenContext.getOriginalCopiedInputNode(node) :
       node
     );
-  }
-
-  private void importRuntime() {
-    LanguageDescriptor descriptor = ((LanguageDescriptor) myModuleDescriptor);
-    List<SNode> previous = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true));
-
-    for (SModuleReference module : descriptor.getRuntimeModules()) {
-      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
-      if (resolved == null) {
-        report("cannot find runtime solution in dependencies: " + module.getModuleName(), myModule);
-        continue;
-      }
-
-      SNode ul = SNodeOperations.as(ListSequence.fromList(previous).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), "solution", false) == resolved;
-        }
-      }), "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime");
-      if (ul == null) {
-        ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", null);
-        SLinkOperations.setTarget(ul, "solution", resolved, false);
-        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true)).addElement(ul);
-      } else {
-        ListSequence.fromList(previous).removeElement(ul);
-      }
-    }
-  }
-
-  private void checkRuntime() {
-    LanguageDescriptor descriptor = ((LanguageDescriptor) myModuleDescriptor);
-    for (SModuleReference module : descriptor.getRuntimeModules()) {
-      final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
-      if (resolved == null) {
-        report("cannot find runtime solution in dependencies: " + module.getModuleName(), myModule);
-        continue;
-      }
-      if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true)).any(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime") && asOriginal(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), "solution", false)) == resolved;
-        }
-      }))) {
-
-        report("runtime solution should be extracted into build script: " + module.toString(), myOriginalModule);
-      }
-    }
   }
 
   private void collectDependencies(boolean checkOnly) {
