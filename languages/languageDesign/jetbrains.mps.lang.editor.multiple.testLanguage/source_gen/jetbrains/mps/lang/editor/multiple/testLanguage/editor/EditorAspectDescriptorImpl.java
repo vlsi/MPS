@@ -13,13 +13,13 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Arrays.asList(new EditorAspect[]{new Child_Editor(), new Child_diagram_Editor(), new Child_groovy_Editor()});
+        return Arrays.asList(new EditorAspect[]{new MultipleEditorsTestChild_Editor(), new MultipleEditorsTestChild_diagram_Editor(), new MultipleEditorsTestChild_groovy_Editor()});
       case 1:
-        return Collections.<EditorAspect>singletonList(new Root_Editor());
+        return Collections.<EditorAspect>singletonList(new MultipleEditorsTestRoot_Editor());
       default:
     }
     return Collections.emptyList();
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.structure.Child", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.Root"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot"};
 }

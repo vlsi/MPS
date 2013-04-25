@@ -26,7 +26,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="-9ycm6u6sfopw2db5cjnetu8hedy3t4f" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8iq1c63z020s2os52d6vke4fdjpb056" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="64m9jh4k7rrxeiep4hkez4p5lq8drzr" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="2nw7y76peh08kwmcaxtj55t61elgv6t" />
   <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-81huy0fmdhno9qzkzxs51jufv86r4d6" />
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="1e8cnlhpib0c8y2ae75eqzl6puhmyf5" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-2pfgs5l9xgdeg3nuvw9wsk21zkjyohc" />
@@ -297,6 +297,7 @@
     <file name="ConceptFunctionParameter_prevNode_BehaviorDescriptor.java" />
     <file name="ConceptFunctionParameter_selectedNode_BehaviorDescriptor.java" />
     <file name="ConceptFunctionParameter_text_BehaviorDescriptor.java" />
+    <file name="ContextHintsSpecification_BehaviorDescriptor.java" />
     <file name="DefaultBaseLine_BehaviorDescriptor.java" />
     <file name="DefaultCaretPositionStyleClassItem_BehaviorDescriptor.java" />
     <file name="DrawBorderStyleClassItem_BehaviorDescriptor.java" />
@@ -304,6 +305,7 @@
     <file name="EditableStyleClassItem_BehaviorDescriptor.java" />
     <file name="EditorCellModel_BehaviorDescriptor.java" />
     <file name="EditorComponentDeclaration_BehaviorDescriptor.java" />
+    <file name="ExplicitHintsSpecification_BehaviorDescriptor.java" />
     <file name="FirstPositionAllowedStyleClassItem_BehaviorDescriptor.java" />
     <file name="FloatStyleClassItem_BehaviorDescriptor.java" />
     <file name="FontSizeStyleClassItem_BehaviorDescriptor.java" />

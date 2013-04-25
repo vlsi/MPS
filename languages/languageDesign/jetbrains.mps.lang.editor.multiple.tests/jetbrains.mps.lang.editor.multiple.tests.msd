@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.lang.editor.multiple.tests" uuid="3c41aa01-5120-470c-8122-06f284bc0419" compileInMPS="true">
+<solution name="jetbrains.mps.lang.editor.multiple.tests" uuid="3c41aa01-5120-470c-8122-06f284bc0419" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -8,6 +8,7 @@
   <sourcePath />
   <usedLanguages>
     <usedLanguage>7a80051c-66e9-4bfc-9698-b12adfed3d9f(jetbrains.mps.lang.editor.multiple.testLanguage)</usedLanguage>
+    <usedLanguage>8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)</usedLanguage>
   </usedLanguages>
 </solution>
 

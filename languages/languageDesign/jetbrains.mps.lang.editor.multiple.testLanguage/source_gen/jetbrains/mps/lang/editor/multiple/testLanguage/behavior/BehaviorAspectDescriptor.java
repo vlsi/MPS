@@ -13,13 +13,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 1:
-        return new Root_BehaviorDescriptor();
+        return new MultipleEditorsTestRoot_BehaviorDescriptor();
       case 0:
-        return new Child_BehaviorDescriptor();
+        return new MultipleEditorsTestChild_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.structure.Child", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.Root"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot"};
 }

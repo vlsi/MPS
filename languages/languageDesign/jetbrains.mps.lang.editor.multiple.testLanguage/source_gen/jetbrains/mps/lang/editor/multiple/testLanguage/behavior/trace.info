@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="Child_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.Child_BehaviorDescriptor" />
-  <unitInfo fileName="Root_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.Root_BehaviorDescriptor" />
+  <unitInfo fileName="MultipleEditorsTestChild_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestChild_BehaviorDescriptor" />
+  <unitInfo fileName="MultipleEditorsTestRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestRoot_BehaviorDescriptor" />
 </debugInfo>
 

@@ -102,6 +102,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.1186402373407" resolveInfo="StyleSheetClass" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="8245950666359973661">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="hints" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.6822301196700715228" resolveInfo="ConceptEditorHint" />
     </node>
   </roots>

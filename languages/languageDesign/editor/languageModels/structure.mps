@@ -1793,7 +1793,20 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6822301196700715228">
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorHint" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="hints" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4242538589859133463">
+      <property name="name" nameId="tpck.1169194664001" value="ContextHintsSpecification" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="hints" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4242538589859161874">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="hints" />
+      <property name="name" nameId="tpck.1169194664001" value="ExplicitHintsSpecification" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="4242538589859133463" resolveInfo="ContextHintsSpecification" />
     </node>
   </roots>
   <root id="1071666914219">
@@ -1876,6 +1889,16 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="usesFoldingCondition" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4242538589862653897">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="addHints" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4242538589859133463" resolveInfo="ContextHintsSpecification" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4242538589862654489">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="removeHints" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4242538589859133463" resolveInfo="ContextHintsSpecification" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1073389446425">
       <property name="name" nameId="tpck.1169194664001" value="vertical" />
@@ -3666,6 +3689,15 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6822301196700716967">
       <property name="name" nameId="tpck.1169194664001" value="hint" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
+  <root id="4242538589859133463" />
+  <root id="4242538589859161874">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4242538589859162459">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="hints" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6822301196700715228" resolveInfo="ConceptEditorHint" />
     </node>
   </root>
 </model>
