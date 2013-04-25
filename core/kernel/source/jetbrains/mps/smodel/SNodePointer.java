@@ -72,7 +72,7 @@ public class SNodePointer implements SNodeReference {
   }
 
   public String toString() {
-    return myModelReference.toString() + "/" + StringUtil.escapeRefChars(myNodeId.toString());
+    return myModelReference + "/" + StringUtil.escapeRefChars("" + myNodeId);
   }
 
   public boolean equals(Object o) {
