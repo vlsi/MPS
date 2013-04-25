@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -91,7 +92,7 @@ public class TypeContextManager implements CoreComponent {
     }
   };
 
-  private SModelRepositoryAdapter mySModelRepositoryListener = new SModelRepositoryAdapter() {
+  private SModelRepositoryAdapter mySModelRepositoryListener = new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
     public void modelDeleted(SModel modelDescriptor) {
       myListeningForModels.remove(modelDescriptor);
     }

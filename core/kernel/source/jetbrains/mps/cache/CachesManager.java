@@ -16,6 +16,7 @@
 package jetbrains.mps.cache;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -39,7 +40,7 @@ public class CachesManager implements CoreComponent {
   private ConcurrentMap<Object, AbstractCache> myCaches = new ConcurrentHashMap<Object, AbstractCache>();
   private ConcurrentMap<AbstractCache, ModelEventRouter> myModelEventRouters = new ConcurrentHashMap<AbstractCache, ModelEventRouter>();
   private ConcurrentMap<Object, List<SModel>> myDependsOnModels = new ConcurrentHashMap<Object, List<SModel>>();
-  private SModelRepositoryAdapter myModelRepoListener = new SModelRepositoryAdapter() {
+  private SModelRepositoryAdapter myModelRepoListener = new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
     @Override
     public void modelRemoved(SModel modelDescriptor) {
       onModelRemoved(modelDescriptor);

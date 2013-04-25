@@ -79,6 +79,6 @@ public interface SModelListener {
 
   public enum SModelListenerPriority {
     PLATFORM,
-    CLIENT;
+    CLIENT
   }
 }
