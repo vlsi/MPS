@@ -23,7 +23,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AbstractModule;
 import javax.swing.ImageIcon;
@@ -126,7 +126,7 @@ public class PluginMoveHelper {
   }
 
   private boolean isValid(SNode icon) {
-    IModule module = SNodeOperations.getModel(icon).getModule();
+    SModule module = SNodeOperations.getModel(icon).getModule();
     if (!(module instanceof AbstractModule)) {
       return false;
     }

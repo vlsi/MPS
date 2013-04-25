@@ -28,7 +28,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.Solution;
@@ -91,8 +91,8 @@ public abstract class StubSolutionIdea extends StubSolution {
     ModuleId jdkId = ModuleId.regular(UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
     MPSModuleRepository repo = MPSModuleRepository.getInstance();
     SModule jdkMod = repo.getModule(jdkId);
-    if (jdkMod != null && jdkMod instanceof IModule) {
-      IModule imod = (IModule) jdkMod;
+    if (jdkMod != null && jdkMod instanceof SModule) {
+      SModule imod = (SModule) jdkMod;
       Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(repo.getOwners(imod));
       for (MPSModuleOwner owner : owners) {
         repo.unregisterModule(imod, owner);
@@ -172,8 +172,8 @@ public abstract class StubSolutionIdea extends StubSolution {
 
   private class StubSolutionScope extends ModuleScope {
     @Override
-    protected Set<IModule> getInitialModules() {
-      Set<IModule> modules = new HashSet<IModule>();
+    protected Set<SModule> getInitialModules() {
+      Set<SModule> modules = new HashSet<SModule>();
 
       // explicitly add jdk
       // todo: remove when sdk are loaded correctly

@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class LanguageRef_Constraints extends BaseConstraintsDescriptor {
@@ -42,7 +42,7 @@ public class LanguageRef_Constraints extends BaseConstraintsDescriptor {
             return null;
           }
 
-          IModule module = MPSModuleRepository.getInstance().getModuleById(moduleId);
+          SModule module = MPSModuleRepository.getInstance().getModuleById(moduleId);
           if (module == null) {
             return moduleId.toString();
           }

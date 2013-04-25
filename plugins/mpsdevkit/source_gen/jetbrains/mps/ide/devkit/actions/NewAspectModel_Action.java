@@ -10,7 +10,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.apache.log4j.Priority;
@@ -43,8 +43,8 @@ public class NewAspectModel_Action extends BaseAction {
     try {
       event.getPresentation().setText(NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
       event.getPresentation().setIcon(IconManager.getIconForAspect(NewAspectModel_Action.this.aspect));
-      if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
-        NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language) ((IModule) MapSequence.fromMap(_params).get("module")))) == null);
+      if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
+        NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language) ((SModule) MapSequence.fromMap(_params).get("module")))) == null);
       } else {
         NewAspectModel_Action.this.setEnabledState(event.getPresentation(), false);
       }
@@ -73,7 +73,7 @@ public class NewAspectModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SModel modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((IModule) MapSequence.fromMap(_params).get("module"))));
+      final SModel modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
       // we need it since tree is updated later 
       SwingUtilities.invokeLater(new Runnable() {
         @Override

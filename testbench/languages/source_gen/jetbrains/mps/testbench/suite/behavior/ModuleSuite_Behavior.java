@@ -7,8 +7,9 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -24,12 +25,12 @@ public class ModuleSuite_Behavior {
       return null;
     }
 
-    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     if (module == null) {
       return null;
     }
 
-    return module.getScope();
+    return ((AbstractModule) module).getScope();
   }
 
   public static Iterable<SModel> call_models_1280144168199531863(SNode thisNode) {
@@ -38,7 +39,7 @@ public class ModuleSuite_Behavior {
       return null;
     }
 
-    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     if (module == null) {
       return null;
     }

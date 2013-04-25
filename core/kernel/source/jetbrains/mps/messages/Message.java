@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.messages;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -111,8 +111,8 @@ public class Message implements IMessage {
       myHintObject = ((SNode) obj).getReference();
     } else if (obj instanceof SModel) {
       myHintObject = ((SModel) obj).getReference();
-    } else if (obj instanceof IModule) {
-      myHintObject = ((IModule) obj).getModuleReference();
+    } else if (obj instanceof SModule) {
+      myHintObject = ((SModule) obj).getModuleReference();
     } else {
       myHintObject = obj;
       error = false;

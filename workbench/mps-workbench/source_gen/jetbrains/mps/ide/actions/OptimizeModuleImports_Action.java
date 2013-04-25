@@ -15,7 +15,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -78,7 +78,7 @@ public class OptimizeModuleImports_Action extends BaseAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           OptimizeImportsHelper helper = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          for (IModule module : ((List<IModule>) MapSequence.fromMap(_params).get("modules"))) {
+          for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
             if (module instanceof Solution) {
               report.value += helper.optimizeSolutionImports(((Solution) module));
             } else if (module instanceof Language) {

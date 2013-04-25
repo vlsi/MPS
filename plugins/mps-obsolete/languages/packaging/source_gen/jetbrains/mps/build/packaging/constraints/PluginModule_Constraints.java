@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.build.packaging.behavior.PluginModule_Behavior;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -57,7 +57,7 @@ public class PluginModule_Constraints extends BaseConstraintsDescriptor {
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
         {
-          IModule module = PluginModule_Behavior.call_getPluginModule_989489456094442313(node);
+          SModule module = PluginModule_Behavior.call_getPluginModule_989489456094442313(node);
           if (module == null) {
             return null;
           }
@@ -82,7 +82,7 @@ public class PluginModule_Constraints extends BaseConstraintsDescriptor {
     return null;
   }
 
-  private static SModuleReference check_icnu7v_a0a0a0b(IModule checkedDotOperand) {
+  private static SModuleReference check_icnu7v_a0a0a0b(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }

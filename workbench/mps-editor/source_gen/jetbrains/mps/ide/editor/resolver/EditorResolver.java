@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -59,7 +59,7 @@ public class EditorResolver implements IResolver {
     if (result != null) {
       return result;
     }
-    IModule module = check_jllgm1_a0c0c(SNodeOperations.getModel(sourceNode));
+    SModule module = check_jllgm1_a0c0c(SNodeOperations.getModel(sourceNode));
     SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
     if (target != null && module != null) {
       Scope scope = ModelConstraints.getScope(reference);
@@ -94,7 +94,7 @@ public class EditorResolver implements IResolver {
     }
   }
 
-  private static IModule check_jllgm1_a0c0c(SModel checkedDotOperand) {
+  private static SModule check_jllgm1_a0c0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

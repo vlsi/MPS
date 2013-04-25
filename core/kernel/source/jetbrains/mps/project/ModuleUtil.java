@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
 
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._return_P1_E0;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence;
 import jetbrains.mps.project.structure.modules.Dependency;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
@@ -40,14 +41,14 @@ import java.util.List;
 // todo: review this class and remove
 public class ModuleUtil {
 
-  public static Iterable<IModule> getDependencies(IModule module) {
-    Iterable<IModule> dependencies = new TranslatingIterator<Dependency, IModule>(module.getDependencies().iterator()) {
+  public static Iterable<SModule> getDependencies(SModule module) {
+    Iterable<SModule> dependencies = new TranslatingIterator<SDependency, SModule>(module.getDeclaredDependencies().iterator()) {
       @Override
-      protected IModule translate(Dependency dep) {
-        return MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+      protected SModule translate(SDependency dep) {
+        return (SModule) dep.getTarget();
       }
     };
-    Iterable<IModule> solutionsFromDevkits = new TranslatingIterator<SModuleReference, IModule>(
+    Iterable<SModule> solutionsFromDevkits = new TranslatingIterator<SModuleReference, SModule>(
       new CollectingManyIterator<DevKit, SModuleReference>(includingExtended(usedDevkits(module)).iterator()) {
         @Override
         protected Iterator<SModuleReference> translate(DevKit devkit) {
@@ -56,18 +57,18 @@ public class ModuleUtil {
       }) {
 
       @Override
-      protected IModule translate(SModuleReference node) {
+      protected SModule translate(SModuleReference node) {
         return ModuleRepositoryFacade.getInstance().getModule(node, Solution.class);
       }
     };
     if (module instanceof Language) {
       Language core = BootstrapLanguages.coreLanguage();
-      return IterableUtil.distinct(IterableUtil.merge(dependencies, solutionsFromDevkits, Collections.<IModule>singleton(core)));
+      return IterableUtil.distinct(IterableUtil.merge(dependencies, solutionsFromDevkits, Collections.<SModule>singleton(core)));
     }
     return IterableUtil.distinct(IterableUtil.merge(dependencies, solutionsFromDevkits));
   }
 
-  public static Iterable<Language> getUsedLanguages(IModule module) {
+  public static Iterable<Language> getUsedLanguages(SModule module) {
     return new TranslatingSequence<SLanguage, Language>(module.getUsedLanguages(), new _return_P1_E0<Iterable<Language>, SLanguage>() {
       @Override
       public Iterable<Language> invoke(SLanguage language) {
@@ -76,8 +77,8 @@ public class ModuleUtil {
     });
   }
 
-  private static Iterable<DevKit> usedDevkits(IModule module) {
-    return new TranslatingIterator<SModuleReference, DevKit>(module.getModuleDescriptor().getUsedDevkits().iterator()) {
+  private static Iterable<DevKit> usedDevkits(SModule module) {
+    return new TranslatingIterator<SModuleReference, DevKit>(((AbstractModule)module).getModuleDescriptor().getUsedDevkits().iterator()) {
       @Override
       protected DevKit translate(SModuleReference node) {
         return ModuleRepositoryFacade.getInstance().getModule(node, DevKit.class);
@@ -142,10 +143,10 @@ public class ModuleUtil {
   }
 
   @Deprecated
-  public static List<IModule> depsToModules(Iterable<Dependency> deps) {
-    List<IModule> result = new ArrayList<IModule>();
+  public static List<SModule> depsToModules(Iterable<Dependency> deps) {
+    List<SModule> result = new ArrayList<SModule>();
     for (Dependency dep : deps) {
-      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+      SModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
       if (m == null) continue;
       result.add(m);
     }
@@ -160,11 +161,11 @@ public class ModuleUtil {
   }
 
   @Deprecated
-  public static List<IModule> refsToModules(Iterable<SModuleReference> refs) {
-    List<IModule> result = new ArrayList<IModule>();
+  public static List<SModule> refsToModules(Iterable<SModuleReference> refs) {
+    List<SModule> result = new ArrayList<SModule>();
 
     for (SModuleReference ref : refs) {
-      IModule dk = ModuleRepositoryFacade.getInstance().getModule(ref, IModule.class);
+      SModule dk = ModuleRepositoryFacade.getInstance().getModule(ref, SModule.class);
       if (dk == null) continue;
       result.add(dk);
     }

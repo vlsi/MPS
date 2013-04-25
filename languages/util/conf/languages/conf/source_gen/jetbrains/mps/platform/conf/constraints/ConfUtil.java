@@ -7,7 +7,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -21,8 +21,8 @@ public class ConfUtil {
   }
 
   public static Iterable<SModel> visibleConfModels(IScope scope) {
-    return Sequence.fromIterable(((Iterable<IModule>) scope.getVisibleModules())).translate(new ITranslator2<IModule, SModel>() {
-      public Iterable<SModel> translate(IModule m) {
+    return Sequence.fromIterable(((Iterable<SModule>) scope.getVisibleModules())).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule m) {
         return m.getModels();
       }
     }).where(new IWhereFilter<SModel>() {

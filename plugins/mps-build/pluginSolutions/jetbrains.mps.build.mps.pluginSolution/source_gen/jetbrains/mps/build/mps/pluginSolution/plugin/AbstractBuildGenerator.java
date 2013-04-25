@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public abstract class AbstractBuildGenerator {
@@ -114,7 +114,7 @@ public abstract class AbstractBuildGenerator {
     if (text.equals("")) {
       return false;
     }
-    IModule moduleWithSelectedName = MPSModuleRepository.getInstance().getModuleByFqName(text);
+    SModule moduleWithSelectedName = MPSModuleRepository.getInstance().getModuleByFqName(text);
     return moduleWithSelectedName == null;
   }
 

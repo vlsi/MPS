@@ -17,7 +17,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.IModule;
 
 public class RunMigrationScriptAction extends BaseAction implements DumbAware {
   private SNode myScript;
@@ -64,7 +63,7 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
     }
     myModules = new ArrayList<SModule>();
     if (e.getData(MPSDataKeys.MODULES) != null) {
-      for (IModule module : ListSequence.fromList(e.getData(MPSDataKeys.MODULES))) {
+      for (SModule module : ListSequence.fromList(e.getData(MPSDataKeys.MODULES))) {
         myModules.add(module);
       }
     }

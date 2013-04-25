@@ -4,7 +4,7 @@ package jetbrains.mps.lang.intentions.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,35 +14,35 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect"}, new String[]{"isErrorIntention", "isAvailableInChildNodes"}, new String[]{"forConcept"}, new String[]{"descriptionFunction", "childFilterFunction", "isApplicableFunction", "executeFunction"}, new boolean[]{false, false, false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect").properties("isErrorIntention", "isAvailableInChildNodes").references("forConcept").children(new String[]{"descriptionFunction", "childFilterFunction", "isApplicableFunction", "executeFunction"}, new boolean[]{false, false, false, false}).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.ChildFilterBlock", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ChildFilterBlock").interface_().create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "child filter function", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ChildFilterFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock").alias("child filter function", "").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "childNode", "function parameter", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("childNode", "function parameter").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "node", "function parameter", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "function parameter").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "description", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.DescriptionBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("description", "").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "execute", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ExecuteBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("execute", "").create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", false, new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "Intention", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.IntentionDeclaration").super_("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration").parents("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration").alias("Intention", "").create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "parameter", "intention parameter", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.IntentionParameter").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("parameter", "intention parameter").create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "isApplicable", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.IsApplicableBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isApplicable", "").create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", false, new String[]{"jetbrains.mps.lang.intentions.structure.DescriptionBlock"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "description", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock").super_("jetbrains.mps.lang.intentions.structure.DescriptionBlock").parents("jetbrains.mps.lang.intentions.structure.DescriptionBlock").alias("description", "").create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", false, new String[]{"jetbrains.mps.lang.intentions.structure.ExecuteBlock"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "execute", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock").super_("jetbrains.mps.lang.intentions.structure.ExecuteBlock").parents("jetbrains.mps.lang.intentions.structure.ExecuteBlock").alias("execute", "").create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", false, new String[]{"jetbrains.mps.lang.intentions.structure.IntentionDeclaration"}, new String[]{}, new String[]{}, new String[]{"queryBlock", "descriptionBlock", "executeBlock"}, new boolean[]{false, false, false}, false, false, "Parameterized Intention", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration").super_("jetbrains.mps.lang.intentions.structure.IntentionDeclaration").parents("jetbrains.mps.lang.intentions.structure.IntentionDeclaration").children(new String[]{"queryBlock", "descriptionBlock", "executeBlock"}, new boolean[]{false, false, false}).alias("Parameterized Intention", "").create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{"paramType"}, new boolean[]{false}, false, false, "parameter", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.QueryBlock").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").children(new String[]{"paramType"}, new boolean[]{false}).alias("parameter", "").create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", false, new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "Surround-With Intention", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration").super_("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration").parents("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration").alias("Surround-With Intention", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

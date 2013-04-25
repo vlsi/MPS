@@ -46,7 +46,7 @@ import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.jps.model.module.JpsModuleSourceRoot;
@@ -116,8 +116,8 @@ public class MPSMakeMediator {
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
 
     final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(context, myToMake.keySet())).toListSequence();
-    ISequence<IModule> mpsModules = Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
-      public IModule select(IMResource r) {
+    ISequence<SModule> mpsModules = Sequence.fromIterable(resources).select(new ISelector<IMResource, SModule>() {
+      public SModule select(IMResource r) {
         return r.module();
       }
     });
@@ -237,6 +237,13 @@ public class MPSMakeMediator {
       }
     }
     for (String keptFile : makeFacetConfiguration.getKeptFiles()) {
+      try {
+        FSOperations.markDirty(myContext.getCompileContext(), new File(keptFile));
+      } catch (IOException e) {
+        reportError(e);
+        success = false;
+      }
+
       SModel source = makeFacetConfiguration.getSource(keptFile);
       if (source != null && source.getSource() instanceof FileDataSource) {
         try {

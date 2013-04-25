@@ -26,7 +26,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -94,14 +94,14 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return BehaviorReflection.invokeVirtual((Class<List<IModule>>) ((Class) Object.class), node, "virtual_getVisibleModules_4040588429969394404", new Object[]{scope});
+      return BehaviorReflection.invokeVirtual((Class<List<SModule>>) ((Class) Object.class), node, "virtual_getVisibleModules_4040588429969394404", new Object[]{scope});
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((IModule) parameterObject, node, model, scope, operationContext, editorContext);
+      this.handleAction_impl((SModule) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(IModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "moduleId", parameterObject.getModuleReference().getModuleId().toString());
     }
 
@@ -110,10 +110,10 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((IModule) parameterObject);
+      return this.getMatchingText_internal((SModule) parameterObject);
     }
 
-    public String getMatchingText_internal(IModule parameterObject) {
+    public String getMatchingText_internal(SModule parameterObject) {
       return parameterObject.getModuleName();
     }
   }

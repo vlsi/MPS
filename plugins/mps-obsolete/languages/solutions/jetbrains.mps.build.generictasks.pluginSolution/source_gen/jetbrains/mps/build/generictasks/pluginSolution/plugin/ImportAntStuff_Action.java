@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +35,7 @@ public class ImportAntStuff_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) && (((IModule) MapSequence.fromMap(_params).get("module")).getModuleName().contains("jetbrains.mps.build.generictasks"));
+    return (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language) && (((SModule) MapSequence.fromMap(_params).get("module")).getModuleName().contains("jetbrains.mps.build.generictasks"));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

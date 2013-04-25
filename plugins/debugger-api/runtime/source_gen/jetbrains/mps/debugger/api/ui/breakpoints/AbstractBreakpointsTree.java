@@ -16,7 +16,7 @@ import jetbrains.mps.util.Computable;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -175,12 +175,12 @@ import javax.swing.UIManager;
     }
   }
 
-  private class ModuleGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, IModule> {
+  private class ModuleGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, SModule> {
     private ModuleGroupKind() {
     }
 
     @Override
-    public IModule getGroup(AbstractBreakpointsTree.BreakpointNodeData breakpointData) {
+    public SModule getGroup(AbstractBreakpointsTree.BreakpointNodeData breakpointData) {
       IBreakpoint breakpoint = breakpointData.getBreakpoint();
       if (breakpoint instanceof ILocationBreakpoint) {
         SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(((ILocationBreakpoint) breakpoint).getLocation().getModelReference());
@@ -197,7 +197,7 @@ import javax.swing.UIManager;
     }
 
     @Override
-    public Icon getIcon(IModule m) {
+    public Icon getIcon(SModule m) {
       return IconManager.getIconFor(m);
     }
   }

@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -131,7 +131,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1250389701475344482(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule m = MPSModuleRepository.getInstance().getModule(ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getModuleReference_1250389701475344624", new Object[]{})));
+    SModule m = MPSModuleRepository.getInstance().getModule(ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getModuleReference_1250389701475344624", new Object[]{})));
     if (m instanceof Generator) {
       Generator g = (Generator) m;
       return g.getSourceLanguage().getModuleName() + "/" + g.getModuleName();

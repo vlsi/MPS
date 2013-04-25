@@ -4,7 +4,7 @@ package jetbrains.mps.lang.pattern.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,45 +14,45 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.ActionAsPattern", "jetbrains.mps.lang.pattern.structure.AsPattern", false, new String[]{"jetbrains.mps.lang.pattern.structure.AsPattern"}, new String[]{}, new String[]{}, new String[]{"position", "action"}, new boolean[]{false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.ActionAsPattern").super_("jetbrains.mps.lang.pattern.structure.AsPattern").parents("jetbrains.mps.lang.pattern.structure.AsPattern").children(new String[]{"position", "action"}, new boolean[]{false, false}).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.ActionStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.ActionStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").abstract_().create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.AsPattern", "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{"jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "@", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.AsPattern").super_("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration").parents("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration").alias("@", "").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"role"}, new String[]{"childLinkDeclaration", "mainNode"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("role").references("childLinkDeclaration", "mainNode").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"name", "value"}, new String[]{"mainNode"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("name", "value").references("mainNode").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"role", "id", "model"}, new String[]{"mainNode"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("role", "id", "model").references("mainNode").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.InsertAfterPosition", "jetbrains.mps.lang.pattern.structure.InsertPosition", false, new String[]{"jetbrains.mps.lang.pattern.structure.InsertPosition"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "after", "after", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.InsertAfterPosition").super_("jetbrains.mps.lang.pattern.structure.InsertPosition").parents("jetbrains.mps.lang.pattern.structure.InsertPosition").alias("after", "after").create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.InsertBeforePosition", "jetbrains.mps.lang.pattern.structure.InsertPosition", false, new String[]{"jetbrains.mps.lang.pattern.structure.InsertPosition"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "before", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.InsertBeforePosition").super_("jetbrains.mps.lang.pattern.structure.InsertPosition").parents("jetbrains.mps.lang.pattern.structure.InsertPosition").alias("before", "").create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.InsertPosition", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.InsertPosition").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", "jetbrains.mps.lang.core.structure.LinkAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"varName"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration").super_("jetbrains.mps.lang.core.structure.LinkAttribute").parents("jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.INamedConcept").properties("varName").create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.ListPattern", "jetbrains.mps.lang.pattern.structure.AsPattern", false, new String[]{"jetbrains.mps.lang.pattern.structure.AsPattern"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "*", "list pattern", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.ListPattern").super_("jetbrains.mps.lang.pattern.structure.AsPattern").parents("jetbrains.mps.lang.pattern.structure.AsPattern").alias("*", "list pattern").create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.OrPattern", "jetbrains.mps.lang.pattern.structure.Pattern", false, new String[]{"jetbrains.mps.lang.pattern.structure.Pattern"}, new String[]{}, new String[]{}, new String[]{"clause", "variable"}, new boolean[]{true, true}, false, false, "[|]", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.OrPattern").super_("jetbrains.mps.lang.pattern.structure.Pattern").parents("jetbrains.mps.lang.pattern.structure.Pattern").children(new String[]{"clause", "variable"}, new boolean[]{true, true}).alias("[|]", "").create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.OrPatternClause", "jetbrains.mps.lang.pattern.structure.PatternExpression", false, new String[]{"jetbrains.mps.lang.pattern.structure.PatternExpression"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.OrPatternClause").super_("jetbrains.mps.lang.pattern.structure.PatternExpression").parents("jetbrains.mps.lang.pattern.structure.PatternExpression").children(new String[]{"expression"}, new boolean[]{false}).create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.OrPatternVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"declaration"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.OrPatternVariableReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.Pattern").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").abstract_().create();
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.PatternExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.ISuppressErrors"}, new String[]{}, new String[]{}, new String[]{"patternNode"}, new boolean[]{false}, false, false, ">pattern<", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.PatternExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.ISuppressErrors").children(new String[]{"patternNode"}, new boolean[]{false}).alias(">pattern<", "").create();
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.Pattern", false, new String[]{"jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"varName"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration").super_("jetbrains.mps.lang.pattern.structure.Pattern").parents("jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.core.structure.INamedConcept").properties("varName").create();
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.PatternVariableReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"variable"}, new String[]{}, new boolean[]{}, false, false, "", "pattern variable reference", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.PatternVariableReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("variable").alias("", "pattern variable reference").create();
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", "jetbrains.mps.lang.core.structure.PropertyAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"varName"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration").super_("jetbrains.mps.lang.core.structure.PropertyAttribute").parents("jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.INamedConcept").properties("varName").create();
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.pattern.structure.WildcardPattern", "jetbrains.mps.lang.pattern.structure.Pattern", false, new String[]{"jetbrains.mps.lang.pattern.structure.Pattern"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "_", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.WildcardPattern").super_("jetbrains.mps.lang.pattern.structure.Pattern").parents("jetbrains.mps.lang.pattern.structure.Pattern").alias("_", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

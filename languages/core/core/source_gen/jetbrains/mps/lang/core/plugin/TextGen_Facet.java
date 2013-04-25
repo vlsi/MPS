@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.concurrent.atomic.AtomicLong;
@@ -124,13 +125,13 @@ public class TextGen_Facet extends IFacet.Stub {
               }
 
               for (GResource resource : Sequence.fromIterable(input)) {
-                if (resource.module().getOutputFor(resource.model()) == null) {
+                if (SModuleOperations.getOutputPathFor(resource.model()) == null) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(resource.model()))));
                 }
               }
               Iterable<GResource> resourcesWithOutput = Sequence.fromIterable(input).where(new IWhereFilter<GResource>() {
                 public boolean accept(GResource it) {
-                  return it.module().getOutputFor(it.model()) != null;
+                  return SModuleOperations.getOutputPathFor(it.model()) != null;
                 }
               });
 
@@ -193,7 +194,7 @@ public class TextGen_Facet extends IFacet.Stub {
                           }
                         }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile()));
 
-                        String output = resource.module().getOutputFor(resource.model());
+                        String output = SModuleOperations.getOutputPathFor(resource.model());
                         MapSequence.fromMap(streamHandlers).put(resource, new JavaStreamHandler(resource.model(), pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile().invoke(output), pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile().invoke(FileGenerationUtil.getCachesPath(output))));
                       }
                     }

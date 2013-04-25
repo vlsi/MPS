@@ -31,6 +31,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
@@ -75,7 +76,7 @@ public class DeleteModelHelper {
   }
 
   public static void deleteGeneratedFiles(SModel modelDescriptor) {
-    String moduleOutputPath = modelDescriptor.getModule().getOutputFor(modelDescriptor);
+    String moduleOutputPath = SModuleOperations.getOutputPathFor(modelDescriptor);
     if (moduleOutputPath == null) {
       return;
     }

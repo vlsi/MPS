@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.StructureModificationData;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.Collection;
@@ -44,6 +44,7 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -68,9 +69,9 @@ public class RefactoringContext {
   private IOperationContext myCurrentOperationContext;
   private IScope myCurrentScope;
   private Project mySelectedProject;
-  private IModule mySelectedModule;
+  private SModule mySelectedModule;
   private List<SModel> mySelectedModels;
-  private List<IModule> mySelectedModules;
+  private List<SModule> mySelectedModules;
   private Map<StructureModificationData.ConceptFeature, StructureModificationData.ConceptFeature> myConceptFeatureMap = new HashMap<StructureModificationData.ConceptFeature, StructureModificationData.ConceptFeature>();
   private Map<StructureModificationData.FullNodeId, StructureModificationData.FullNodeId> myMoveMap = new HashMap<StructureModificationData.FullNodeId, StructureModificationData.FullNodeId>();
   private Map<String, Set<StructureModificationData.ConceptFeature>> myFQNamesToConceptFeaturesCache = new HashMap<String, Set<StructureModificationData.ConceptFeature>>();
@@ -539,19 +540,19 @@ public class RefactoringContext {
     mySelectedModels = selectedModels;
   }
 
-  public IModule getSelectedModule() {
+  public SModule getSelectedModule() {
     return mySelectedModule;
   }
 
-  public void setSelectedModule(IModule selectedModule) {
+  public void setSelectedModule(SModule selectedModule) {
     mySelectedModule = selectedModule;
   }
 
-  public List<IModule> getSelectedModules() {
+  public List<SModule> getSelectedModules() {
     return mySelectedModules;
   }
 
-  public void setSelectedModules(List<IModule> modules) {
+  public void setSelectedModules(List<SModule> modules) {
     mySelectedModules = modules;
   }
 
@@ -606,7 +607,7 @@ public class RefactoringContext {
               setSelectedModule(descriptor.getModule());
               break;
             case MODULE:
-              setSelectedModule((IModule) target);
+              setSelectedModule((AbstractModule) target);
               break;
             default:
               throw new IllegalArgumentException("Wrong refactoring type " + refTarget.getTarget().getClass().getName());

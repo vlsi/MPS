@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
@@ -31,7 +31,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     if (operationContext == null || node == null || SNodeOperations.getModel(node) == null) {
       return;
     }
-    IModule module = check_bt3k2y_a0b0b(SNodeOperations.getModel(node));
+    SModule module = check_bt3k2y_a0b0b(SNodeOperations.getModel(node));
     if (module == null) {
       return;
     }
@@ -112,7 +112,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     }
   }
 
-  private static IModule check_bt3k2y_a0b0b(SModel checkedDotOperand) {
+  private static SModule check_bt3k2y_a0b0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

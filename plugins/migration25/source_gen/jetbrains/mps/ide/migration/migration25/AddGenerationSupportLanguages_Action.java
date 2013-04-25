@@ -14,7 +14,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -71,13 +71,13 @@ public class AddGenerationSupportLanguages_Action extends BaseAction {
       final SModuleReference generator = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("b401a680-8325-4110-8fd3-84331ff25bef")).getModuleReference();
       final SModuleReference genContext = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5")).getModuleReference();
 
-      List<IModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
-      Iterable<Generator> generators = ListSequence.fromList(modules).where(new IWhereFilter<IModule>() {
-        public boolean accept(IModule it) {
+      List<SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
+      Iterable<Generator> generators = ListSequence.fromList(modules).where(new IWhereFilter<SModule>() {
+        public boolean accept(SModule it) {
           return it instanceof Generator;
         }
-      }).select(new ISelector<IModule, Generator>() {
-        public Generator select(IModule it) {
+      }).select(new ISelector<SModule, Generator>() {
+        public Generator select(SModule it) {
           return ((Generator) it);
         }
       });

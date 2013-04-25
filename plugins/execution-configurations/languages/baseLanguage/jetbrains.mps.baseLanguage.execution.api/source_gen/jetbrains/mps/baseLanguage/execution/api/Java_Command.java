@@ -16,7 +16,7 @@ import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import java.io.FileNotFoundException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -33,7 +33,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.ModuleId;
@@ -162,7 +161,7 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(final SNodeReference nodePointer) throws ExecutionException {
-    IModule module = check_yvpt_a0a0a3(check_yvpt_a0a0a0a3(((SNodePointer) nodePointer)).resolve(MPSModuleRepository.getInstance()));
+    SModule module = check_yvpt_a0a0a3(check_yvpt_a0a0a0a3(((SNodePointer) nodePointer)).resolve(MPSModuleRepository.getInstance()));
     if (module == null) {
       final Wrappers._T<String> text = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -255,7 +254,7 @@ public class Java_Command {
     return new ArrayList<String>(classpath.value);
   }
 
-  public static List<String> getClasspath(IModule module, boolean withDependencies) {
+  public static List<String> getClasspath(SModule module, boolean withDependencies) {
     if (withDependencies) {
       return Java_Command.getClasspath(module);
     } else {
@@ -360,7 +359,7 @@ public class Java_Command {
     return 0;
   }
 
-  private static IModule check_yvpt_a0a0a3(SModel checkedDotOperand) {
+  private static SModule check_yvpt_a0a0a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

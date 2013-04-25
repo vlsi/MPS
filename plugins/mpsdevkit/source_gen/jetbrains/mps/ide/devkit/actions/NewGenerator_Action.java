@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
@@ -37,7 +37,7 @@ public class NewGenerator_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("module")) != null && ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language && ((Language) ((IModule) MapSequence.fromMap(_params).get("module"))).getGenerators().isEmpty();
+    return ((SModule) MapSequence.fromMap(_params).get("module")) != null && ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language && ((Language) ((SModule) MapSequence.fromMap(_params).get("module"))).getGenerators().isEmpty();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -74,7 +74,7 @@ public class NewGenerator_Action extends BaseAction {
       final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog[0] = new NewGeneratorDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Language) ((IModule) MapSequence.fromMap(_params).get("module"))));
+          dialog[0] = new NewGeneratorDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
         }
       });
       dialog[0].show();

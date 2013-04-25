@@ -4,7 +4,7 @@ package jetbrains.mps.lang.script.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,39 +14,39 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.AbstractClassifierSpecification", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.AbstractClassifierSpecification").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.AbstractMethodSpecification", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.AbstractMethodSpecification").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.CommentMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScriptPart", false, new String[]{"jetbrains.mps.lang.script.structure.MigrationScriptPart"}, new String[]{"text"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "//", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.CommentMigrationScriptPart").super_("jetbrains.mps.lang.script.structure.MigrationScriptPart").parents("jetbrains.mps.lang.script.structure.MigrationScriptPart").properties("text").alias("//", "").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.DirectClassifierSpecification", "jetbrains.mps.lang.script.structure.AbstractClassifierSpecification", false, new String[]{"jetbrains.mps.lang.script.structure.AbstractClassifierSpecification"}, new String[]{}, new String[]{"classifier"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.DirectClassifierSpecification").super_("jetbrains.mps.lang.script.structure.AbstractClassifierSpecification").parents("jetbrains.mps.lang.script.structure.AbstractClassifierSpecification").references("classifier").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.DirectMethodSpecification", "jetbrains.mps.lang.script.structure.AbstractMethodSpecification", false, new String[]{"jetbrains.mps.lang.script.structure.AbstractMethodSpecification"}, new String[]{}, new String[]{"methodDeclaration"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.DirectMethodSpecification").super_("jetbrains.mps.lang.script.structure.AbstractMethodSpecification").parents("jetbrains.mps.lang.script.structure.AbstractMethodSpecification").references("methodDeclaration").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", "jetbrains.mps.lang.script.structure.MigrationScriptPart", false, new String[]{"jetbrains.mps.lang.script.structure.MigrationScriptPart"}, new String[]{"updateClassifierTypes"}, new String[]{"newClassifier"}, new String[]{"oldClassifier", "pullUpMethods"}, new boolean[]{false, true}, false, false, "extract interface", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.ExtractInterfaceMigration").super_("jetbrains.mps.lang.script.structure.MigrationScriptPart").parents("jetbrains.mps.lang.script.structure.MigrationScriptPart").properties("updateClassifierTypes").references("newClassifier").children(new String[]{"oldClassifier", "pullUpMethods"}, new boolean[]{false, true}).alias("extract interface", "").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.FQNameClassifierSpecification", "jetbrains.mps.lang.script.structure.AbstractClassifierSpecification", false, new String[]{"jetbrains.mps.lang.script.structure.AbstractClassifierSpecification"}, new String[]{"classifierFQName", "smodelReference", "snodeId"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.FQNameClassifierSpecification").super_("jetbrains.mps.lang.script.structure.AbstractClassifierSpecification").parents("jetbrains.mps.lang.script.structure.AbstractClassifierSpecification").properties("classifierFQName", "smodelReference", "snodeId").create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.FQNameMethodSpecification", "jetbrains.mps.lang.script.structure.AbstractMethodSpecification", false, new String[]{"jetbrains.mps.lang.script.structure.AbstractMethodSpecification"}, new String[]{"snodeId"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.FQNameMethodSpecification").super_("jetbrains.mps.lang.script.structure.AbstractMethodSpecification").parents("jetbrains.mps.lang.script.structure.AbstractMethodSpecification").properties("snodeId").create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScriptPart", false, new String[]{"jetbrains.mps.lang.script.structure.MigrationScriptPart"}, new String[]{}, new String[]{}, new String[]{"factoryMethod"}, new boolean[]{false}, false, false, "factory migration script part", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart").super_("jetbrains.mps.lang.script.structure.MigrationScriptPart").parents("jetbrains.mps.lang.script.structure.MigrationScriptPart").children(new String[]{"factoryMethod"}, new boolean[]{false}).alias("factory migration script part", "").create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{"title", "migrationFromBuild", "category", "type", "toBuild"}, new String[]{}, new String[]{"part"}, new boolean[]{true}, false, false, "Language Migration Script", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScript").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier").properties("title", "migrationFromBuild", "category", "type", "toBuild").children(new String[]{"part"}, new boolean[]{true}).alias("Language Migration Script", "").create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.MigrationScriptPart", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.script.structure.MigrationScriptPart", false, new String[]{"jetbrains.mps.lang.script.structure.MigrationScriptPart"}, new String[]{"description", "showAsIntention"}, new String[]{"affectedInstanceConcept"}, new String[]{"affectedInstancePredicate", "affectedInstanceUpdater"}, new boolean[]{false, false}, false, false, "concept instances updater", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance").super_("jetbrains.mps.lang.script.structure.MigrationScriptPart").parents("jetbrains.mps.lang.script.structure.MigrationScriptPart").properties("description", "showAsIntention").references("affectedInstanceConcept").children(new String[]{"affectedInstancePredicate", "affectedInstanceUpdater"}, new boolean[]{false, false}).alias("concept instances updater", "").create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "instance predicate", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("instance predicate", "").create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "instance predicate", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("instance predicate", "").create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.MigrationScriptPart_node", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "node", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart_node").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "").create();
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.PullUpMethod", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"newMethodDeclaration"}, new String[]{"oldMethodSpecification"}, new boolean[]{false}, false, false, "pull up method", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.PullUpMethod").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("newMethodDeclaration").children(new String[]{"oldMethodSpecification"}, new boolean[]{false}).alias("pull up method", "").create();
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScriptPart", false, new String[]{"jetbrains.mps.lang.script.structure.MigrationScriptPart"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "whitespace", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart").super_("jetbrains.mps.lang.script.structure.MigrationScriptPart").parents("jetbrains.mps.lang.script.structure.MigrationScriptPart").alias("whitespace", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

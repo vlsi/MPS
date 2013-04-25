@@ -7,20 +7,21 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.AbstractModule;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -39,26 +40,26 @@ public class StyleSheetClass_Constraints extends BaseConstraintsDescriptor {
     return new BaseReferenceScopeProvider() {
       @Override
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        SModule contextModule = _context.getModel().getModule();
+        AbstractModule contextModule = (AbstractModule) _context.getModel().getModule();
 
         Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
-        for (SModule module : Sequence.fromIterable(contextModule.getModuleScope().getModules())) {
+        for (SModule module : Sequence.fromIterable(contextModule.getScope().getModules())) {
           if (module instanceof Language) {
             SetSequence.fromSet(contextLanguages).addElement((Language) module);
           }
         }
 
-        Iterable<SNode> styleSheets = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModel>() {
-          public SModel select(Language it) {
-            return (SModel) LanguageAspect.EDITOR.get(it);
+        Iterable<SNode> styleSheets = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, EditableSModelDescriptor>() {
+          public EditableSModelDescriptor select(Language it) {
+            return LanguageAspect.EDITOR.get(it);
           }
-        }).where(new IWhereFilter<SModel>() {
-          public boolean accept(SModel it) {
+        }).where(new IWhereFilter<EditableSModelDescriptor>() {
+          public boolean accept(EditableSModelDescriptor it) {
             return it != null;
           }
-        }).translate(new ITranslator2<SModel, SNode>() {
-          public Iterable<SNode> translate(SModel it) {
-            return SModelOperations.getNodes(((SModel) ((SModelInternal) it)), "jetbrains.mps.lang.editor.structure.StyleSheetClass");
+        }).translate(new ITranslator2<EditableSModelDescriptor, SNode>() {
+          public Iterable<SNode> translate(EditableSModelDescriptor it) {
+            return SModelOperations.getNodes(((SModel) it), "jetbrains.mps.lang.editor.structure.StyleSheetClass");
           }
         });
 

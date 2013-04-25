@@ -23,7 +23,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -63,7 +63,7 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
     return SModelFileTracker.getInstance().findModel(modelFile);
   }
 
-  private IModule getModule(SelectInContext context) {
+  private SModule getModule(SelectInContext context) {
     VirtualFile virtualFile = context.getVirtualFile();
     if (!MPSFileTypesManager.instance().isModuleFile(virtualFile)) return null;
 

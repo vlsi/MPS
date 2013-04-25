@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
@@ -78,8 +78,8 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       DependencyTreeNode treeNode = (DependencyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
-      IModule from = check_hezs1a_a0b0a(as_nkoo1o_a0a0b0a0g(treeNode.getParent(), DependencyTreeNode.class));
-      IModule to = treeNode.getModule();
+      SModule from = check_hezs1a_a0b0a(as_nkoo1o_a0a0b0a0g(treeNode.getParent(), DependencyTreeNode.class));
+      SModule to = treeNode.getModule();
       DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.getLink().linktype == DependencyUtil.LinkType.UsesLanguage, true);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
@@ -90,7 +90,7 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(ShowInDependenciesViewer_Action.class);
 
-  private static IModule check_hezs1a_a0b0a(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_hezs1a_a0b0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

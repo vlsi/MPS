@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodelTests.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,19 +14,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodelTests.structure.Child", "jetbrains.mps.lang.smodelTests.structure.NamedConcept", false, new String[]{"jetbrains.mps.lang.smodelTests.structure.NamedConcept"}, new String[]{}, new String[]{}, new String[]{"grandChild_0_1", "grandChild_1", "grandChild_0_n", "grandChild_1_n"}, new boolean[]{false, false, true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodelTests.structure.Child").super_("jetbrains.mps.lang.smodelTests.structure.NamedConcept").parents("jetbrains.mps.lang.smodelTests.structure.NamedConcept").children(new String[]{"grandChild_0_1", "grandChild_1", "grandChild_0_n", "grandChild_1_n"}, new boolean[]{false, false, true, true}).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodelTests.structure.ChildSubConcept", "jetbrains.mps.lang.smodelTests.structure.Child", false, new String[]{"jetbrains.mps.lang.smodelTests.structure.Child"}, new String[]{}, new String[]{}, new String[]{"specializedGranChild_0_1"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodelTests.structure.ChildSubConcept").super_("jetbrains.mps.lang.smodelTests.structure.Child").parents("jetbrains.mps.lang.smodelTests.structure.Child").children(new String[]{"specializedGranChild_0_1"}, new boolean[]{false}).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodelTests.structure.GrandChild", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodelTests.structure.GrandChild").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodelTests.structure.NamedConcept", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"name"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodelTests.structure.NamedConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("name").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"root", "leftChild", "rightChild"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("root", "leftChild", "rightChild").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", false, new String[]{"jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"}, new String[]{}, new String[]{"specializedRightChild"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept").super_("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer").parents("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer").references("specializedRightChild").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.smodelTests.structure.Root", "jetbrains.mps.lang.smodelTests.structure.NamedConcept", false, new String[]{"jetbrains.mps.lang.smodelTests.structure.NamedConcept"}, new String[]{}, new String[]{}, new String[]{"child_0_n", "child_1_n", "childSubConcept_0_n"}, new boolean[]{true, true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodelTests.structure.Root").super_("jetbrains.mps.lang.smodelTests.structure.NamedConcept").parents("jetbrains.mps.lang.smodelTests.structure.NamedConcept").children(new String[]{"child_0_n", "child_1_n", "childSubConcept_0_n"}, new boolean[]{true, true, true}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -24,7 +25,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -65,8 +66,8 @@ public class SModelOperations {
 
     GlobalScope scope = GlobalScope.getInstance();
     SModel modelDescriptor = model;
-    final IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
-    final Collection<IModule> declaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
+    final SModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
+    final Collection<SModule> declaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
     final Collection<Language> declaredUsedLanguages = module != null ? new GlobalModuleDependenciesManager(module).getUsedLanguages() : null;
     Set<SModuleReference> usedLanguages = getAllImportedLanguages(model);
 
@@ -85,7 +86,7 @@ public class SModelOperations {
       if (!usedLanguages.contains(ref)) {
         if (module != null) {
           if (respectModulesScopes && !declaredUsedLanguages.contains(lang)) {
-            module.addUsedLanguage(ref);
+            ((AbstractModule)module).addUsedLanguage(ref);
           }
         }
 
@@ -101,9 +102,9 @@ public class SModelOperations {
         if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
           if (respectModulesScopes && module != null) {
             SModel targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
-            IModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
+            SModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
             if (targetModule != null && !declaredDependencies.contains(targetModule)) {
-              module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
+              ((AbstractModule) module).addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
             }
           }
           ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(targetModelReference, firstVersion);

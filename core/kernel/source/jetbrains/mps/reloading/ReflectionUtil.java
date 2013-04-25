@@ -16,7 +16,7 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.JavaNameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -48,7 +48,7 @@ public final class ReflectionUtil {
     }
   }
 
-  public static Method getMethod(IModule module, SNode classNode, String methodName, Class[] parameterTypes) {
+  public static Method getMethod(SModule module, SNode classNode, String methodName, Class[] parameterTypes) {
     Class aClass = forName(module, classNode);
     try {
       return aClass.getMethod(methodName, parameterTypes);
@@ -71,7 +71,7 @@ public final class ReflectionUtil {
     }
   }
 
-  public static Enum getEnum(IModule module, SNode classNode, String enumConstantName) {
+  public static Enum getEnum(SModule module, SNode classNode, String enumConstantName) {
     Enum result = null;
     Class aClass = forName(module, classNode);
     Enum[] enumConstants = (Enum[]) aClass.getEnumConstants();
@@ -85,7 +85,7 @@ public final class ReflectionUtil {
     return result;
   }
 
-  public static Object getConstant(IModule module, SNode classNode, String constantName) {
+  public static Object getConstant(SModule module, SNode classNode, String constantName) {
     Class aClass = forName(module, classNode);
     Field field;
     try {

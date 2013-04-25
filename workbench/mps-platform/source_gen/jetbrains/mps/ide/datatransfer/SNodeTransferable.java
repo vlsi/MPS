@@ -18,7 +18,7 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.io.StringReader;
 import jetbrains.mps.datatransfer.PasteNodeData;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class SNodeTransferable implements Transferable {
@@ -94,7 +94,7 @@ public class SNodeTransferable implements Transferable {
     mySNodes.clear();
     PasteNodeData pasteNodeData = CopyPasteUtil.createNodeDataIn(nodes, nodesAndAttributes);
     mySNodes.addAll(pasteNodeData.getNodes());
-    IModule module = pasteNodeData.getSourceModule();
+    SModule module = pasteNodeData.getSourceModule();
     mySourceModule = (module == null ?
       null :
       module.getModuleReference()
@@ -112,7 +112,7 @@ public class SNodeTransferable implements Transferable {
     if (necessaryLanguages == null) {
       necessaryLanguages = new HashSet<SModuleReference>();
     }
-    IModule module = (mySourceModule == null ?
+    SModule module = (mySourceModule == null ?
       null :
       MPSModuleRepository.getInstance().getModule(mySourceModule)
     );

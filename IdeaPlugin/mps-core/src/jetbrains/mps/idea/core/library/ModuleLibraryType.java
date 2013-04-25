@@ -50,7 +50,7 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
@@ -281,11 +281,11 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (IModule module : ModuleRepositoryFacade.getInstance().getAllModules(IModule.class)) {
-          if (module instanceof SolutionIdea || module.getDescriptorFile() == null) {
+        for (SModule module : ModuleRepositoryFacade.getInstance().getAllModules(SModule.class)) {
+          if (module instanceof SolutionIdea || ((AbstractModule) module).getDescriptorFile() == null) {
             continue;
           }
-          if (excluded.contains(VirtualFileUtils.getVirtualFile(module.getDescriptorFile()))) {
+          if (excluded.contains(VirtualFileUtils.getVirtualFile(((AbstractModule) module).getDescriptorFile()))) {
             // skip solutions that are already in a lib
             continue;
           }

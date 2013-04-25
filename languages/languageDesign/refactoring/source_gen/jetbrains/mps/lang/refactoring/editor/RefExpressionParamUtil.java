@@ -30,8 +30,8 @@ public class RefExpressionParamUtil {
       );
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ref, "target", true), "jetbrains.mps.lang.refactoring.structure.ModuleTarget")) {
       target = (isList ?
-        "list<IModule>" :
-        "IModule"
+        "list<SModule>" :
+        "SModule"
       );
     }
     styledText.append(target).append(" target");

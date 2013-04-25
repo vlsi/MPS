@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.choose.models;
 
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -50,7 +50,7 @@ public class ModelPresentation extends BasePresentation {
 
   private String getModuleUID() {
     SModel descriptor = getModelDescriptor();
-    IModule module;
+    SModule module;
     if (descriptor == null || (module = descriptor.getModule()) == null) return "no module";
     return module.getModuleName();
   }
