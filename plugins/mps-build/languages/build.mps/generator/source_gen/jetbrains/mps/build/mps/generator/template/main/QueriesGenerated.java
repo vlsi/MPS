@@ -40,6 +40,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
+import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.build.util.LocalSourcePathArtifact;
@@ -1201,7 +1202,7 @@ public class QueriesGenerated {
       VisibleModules visibleModules = new VisibleModules(project, _context);
       visibleModules.collect();
 
-      ModuleLoader.Reporter reporter = new ModuleLoader.Reporter(_context);
+      ModuleChecker.Reporter reporter = new ModuleChecker.Reporter(_context);
 
       Iterable<SNode> parts = SLinkOperations.getTargets(project, "parts", true);
       parts = Sequence.fromIterable(parts).where(new IWhereFilter<SNode>() {
@@ -1224,7 +1225,7 @@ public class QueriesGenerated {
           continue;
         }
 
-        ModuleLoader.createModuleLoader(module, visibleModules, pathConverter, _context, reporter).loadAndCheck();
+        ModuleLoader.createModuleChecker(module, visibleModules, pathConverter, _context, reporter).check(ModuleChecker.CheckType.LOAD_ALL);
       }
     }
   }

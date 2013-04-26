@@ -17,6 +17,7 @@ import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.PathConverter;
 import java.util.Iterator;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.build.mps.util.ModuleLoaderException;
 import org.apache.log4j.Priority;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -99,7 +100,7 @@ public class ReloadModulesFromDisk_Intention implements IntentionFactory {
         while (module_it.hasNext()) {
           module_var = module_it.next();
           try {
-            ModuleLoader.createModuleLoader(module_var, visible, pathConverter).importRequired();
+            ModuleLoader.createModuleChecker(module_var, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
           } catch (ModuleLoaderException ex) {
             if (LOG.isEnabledFor(Priority.ERROR)) {
               LOG.error(ex.getMessage(), ex);

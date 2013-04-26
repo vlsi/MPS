@@ -45,10 +45,10 @@ public class ModuleChecker {
   private final IFile myModuleSourceDir;
   private final VisibleModules myVisibleModules;
   private final PathConverter myPathConverter;
-  private final ModuleLoader.Reporter myReporter;
+  private final ModuleChecker.Reporter myReporter;
 
 
-  public ModuleChecker(SNode module, SNode originalModule, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, IFile moduleSourceDir, ModuleDescriptor moduleDescriptor, ModuleLoader.Reporter reporter) {
+  public ModuleChecker(SNode module, SNode originalModule, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, IFile moduleSourceDir, ModuleDescriptor moduleDescriptor, ModuleChecker.Reporter reporter) {
     myGenContext = genContext;
     myModule = module;
     myOriginalModule = originalModule;
@@ -652,9 +652,9 @@ public class ModuleChecker {
 
     // <node> 
 
-    // <node> 
-    // <node> 
-    // <node> 
+    ModuleChecker moduleCheckerForGenerator = new ModuleChecker(generator, generator, myVisibleModules, myPathConverter, myGenContext, myModuleSourceDir.getDescendant("generator"), generatorDescriptor, myReporter);
+    moduleCheckerForGenerator.check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
+    moduleCheckerForGenerator.check(ModuleChecker.CheckType.LOAD_ALL);
   }
 
   private void optimizeDeps() {
@@ -773,6 +773,22 @@ public class ModuleChecker {
       this.doCheck = doCheck;
       this.doPartialImport = doPartialImport;
       this.doFullImport = doFullImport;
+    }
+  }
+
+  public static class Reporter {
+    private final TemplateQueryContext myGenContext;
+
+    public Reporter(TemplateQueryContext genContext) {
+      myGenContext = genContext;
+    }
+
+    public void report(String message, SNode node, Exception cause) {
+      if (myGenContext == null) {
+        throw new ModuleLoaderException(message, node, cause);
+      }
+
+      myGenContext.showErrorMessage(node, message);
     }
   }
 

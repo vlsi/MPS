@@ -4,27 +4,18 @@ package jetbrains.mps.build.mps.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.Context;
 import java.io.File;
 import java.io.IOException;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class ModuleLoader {
-  private final ModuleChecker myChecker;
-
-
-  public ModuleLoader(SNode module, SNode originalModule, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, IFile moduleSourceDir, ModuleDescriptor moduleDescriptor, ModuleLoader.Reporter reporter) {
-    myChecker = new ModuleChecker(module, originalModule, visible, pathConverter, genContext, moduleSourceDir, moduleDescriptor, reporter);
-  }
-
-
-
-  public static ModuleLoader createModuleLoader(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, ModuleLoader.Reporter reporter) {
+  public static ModuleChecker createModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, ModuleChecker.Reporter reporter) {
     SNode originalModule = ModuleLoaderUtils.getOriginalModule(module, genContext);
 
     String moduleFilePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(module, "path", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ?
@@ -40,11 +31,11 @@ public class ModuleLoader {
     IFile file = FileSystem.getInstance().getFileByPath(moduleFilePath);
     if (!(file.exists())) {
       reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": file doesn't exist (" + moduleFilePath + ")", originalModule, null);
-      return new ModuleLoader(module, originalModule, visible, pathConverter, genContext, null, null, reporter);
+      return new ModuleChecker(module, originalModule, visible, pathConverter, genContext, null, null, reporter);
     }
     if (file.isDirectory()) {
       reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": file is a directory (" + moduleFilePath + ")", originalModule, null);
-      return new ModuleLoader(module, originalModule, visible, pathConverter, genContext, null, null, reporter);
+      return new ModuleChecker(module, originalModule, visible, pathConverter, genContext, null, null, reporter);
     }
 
     ModuleDescriptor md = null;
@@ -58,42 +49,10 @@ public class ModuleLoader {
       ex.printStackTrace(System.err);
     }
 
-    return new ModuleLoader(module, originalModule, visible, pathConverter, genContext, file.getParent(), md, reporter);
+    return new ModuleChecker(module, originalModule, visible, pathConverter, genContext, file.getParent(), md, reporter);
   }
 
-  public static ModuleLoader createModuleLoader(SNode module, VisibleModules visible, PathConverter pathConverter) {
-    return createModuleLoader(module, visible, pathConverter, null, new ModuleLoader.Reporter(null));
-  }
-
-
-
-  public void importRequired() {
-    myChecker.check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
-  }
-
-  public void checkModule() {
-    myChecker.check(ModuleChecker.CheckType.CHECK);
-  }
-
-  public void loadAndCheck() {
-    myChecker.check(ModuleChecker.CheckType.LOAD_ALL);
-  }
-
-
-
-  public static class Reporter {
-    private final TemplateQueryContext myGenContext;
-
-    public Reporter(TemplateQueryContext genContext) {
-      myGenContext = genContext;
-    }
-
-    public void report(String message, SNode node, Exception cause) {
-      if (myGenContext == null) {
-        throw new ModuleLoaderException(message, node, cause);
-      }
-
-      myGenContext.showErrorMessage(node, message);
-    }
+  public static ModuleChecker createModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter) {
+    return createModuleChecker(module, visible, pathConverter, null, new ModuleChecker.Reporter(null));
   }
 }

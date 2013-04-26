@@ -1220,10 +1220,14 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7444640161801169053">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7444640161801173947">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7444640161801178230">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.4278635856200774633" resolveInfo="importRequired" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.7316240245140094601" resolveInfo="check" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7316240245175921525">
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="tken.7316240245140010253" resolveInfo="LOAD_IMPORTANT_PART" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="tken.7316240245139988047" resolveInfo="ModuleChecker.CheckType" />
+                  </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7444640161801171186">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.7444640161798163517" resolveInfo="createModuleLoader" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.7444640161798163517" resolveInfo="createModuleChecker" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tken.4278635856200768111" resolveInfo="ModuleLoader" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7444640161801171204">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2617896750899029643" resolveInfo="created" />
@@ -13179,10 +13183,14 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7444640161800510488">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7444640161800530074">
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7444640161800541634">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.4278635856200774633" resolveInfo="importRequired" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.7316240245140094601" resolveInfo="check" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7316240245175901446">
+                        <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="tken.7316240245140010253" resolveInfo="LOAD_IMPORTANT_PART" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="tken.7316240245139988047" resolveInfo="ModuleChecker.CheckType" />
+                      </node>
                     </node>
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7444640161800519550">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.7444640161798163517" resolveInfo="createModuleLoader" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.7444640161798163517" resolveInfo="createModuleChecker" />
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tken.4278635856200768111" resolveInfo="ModuleLoader" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="7444640161800519776">
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="8722937377469659173" resolveInfo="module" />

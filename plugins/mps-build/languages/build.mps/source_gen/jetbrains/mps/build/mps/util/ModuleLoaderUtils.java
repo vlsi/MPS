@@ -33,7 +33,7 @@ public class ModuleLoaderUtils {
 
 
 
-  public static ModuleDescriptor loadModuleDescriptor(IFile moduleDescriptorFile, TemplateQueryContext genContext, SNode originalModule, ModuleLoader.Reporter reporter) {
+  public static ModuleDescriptor loadModuleDescriptor(IFile moduleDescriptorFile, TemplateQueryContext genContext, SNode originalModule, ModuleChecker.Reporter reporter) {
     MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(moduleDescriptorFile.getParent(), genContext, originalModule, reporter);
     String path = moduleDescriptorFile.getPath();
     if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
@@ -52,9 +52,9 @@ public class ModuleLoaderUtils {
     private final IFile moduleSourceDir;
     private final TemplateQueryContext genContext;
     private final SNode originalModule;
-    private final ModuleLoader.Reporter reporter;
+    private final ModuleChecker.Reporter reporter;
 
-    public ModuleMacroHelper(IFile moduleSourceDir, TemplateQueryContext genContext, SNode originalModule, ModuleLoader.Reporter reporter) {
+    public ModuleMacroHelper(IFile moduleSourceDir, TemplateQueryContext genContext, SNode originalModule, ModuleChecker.Reporter reporter) {
       this.moduleSourceDir = moduleSourceDir;
       this.genContext = genContext;
       this.originalModule = originalModule;

@@ -20,6 +20,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -54,7 +55,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
       }
     })) {
       final StringBuilder messages = new StringBuilder();
-      ModuleLoader.Reporter reporter = new ModuleLoader.Reporter(null) {
+      ModuleChecker.Reporter reporter = new ModuleChecker.Reporter(null) {
         @Override
         public void report(String message, SNode node, Exception cause) {
           if (messages.length() > 0) {
@@ -64,7 +65,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
         }
       };
 
-      ModuleLoader.createModuleLoader(module, visible, pathConverter, null, reporter).checkModule();
+      ModuleLoader.createModuleChecker(module, visible, pathConverter, null, reporter).check(ModuleChecker.CheckType.CHECK);
       if (messages.length() > 0) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.build.mps.util.ModuleLoaderException;
 import org.apache.log4j.Priority;
 import org.apache.log4j.Logger;
@@ -37,7 +38,7 @@ public class ReloadRequired_QuickFix extends QuickFix_Runtime {
     try {
       VisibleModules visible = new VisibleModules(project, null);
       visible.collect();
-      ModuleLoader.createModuleLoader(module, visible, pathConverter).importRequired();
+      ModuleLoader.createModuleChecker(module, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
     } catch (ModuleLoaderException ex) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error(ex.getMessage(), ex);
