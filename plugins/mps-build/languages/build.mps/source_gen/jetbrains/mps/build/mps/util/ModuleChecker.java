@@ -107,7 +107,7 @@ public class ModuleChecker {
 
 
 
-  private boolean checkModuleReference(ModuleChecker.CheckType type) {
+  public boolean checkModuleReference(ModuleChecker.CheckType type) {
     SModuleReference moduleReference = myModuleDescriptor.getModuleReference();
 
     String expectedModuleName = moduleReference.getModuleName();
@@ -133,7 +133,7 @@ public class ModuleChecker {
 
 
 
-  private void checkDevkit(ModuleChecker.CheckType type) {
+  public void checkDevkit(ModuleChecker.CheckType type) {
     DevkitDescriptor descriptor = (DevkitDescriptor) myModuleDescriptor;
     SNode devKit = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
 
@@ -242,14 +242,14 @@ public class ModuleChecker {
 
 
 
-  private void checkLanguage(ModuleChecker.CheckType type, List<SNode> previous) {
+  public void checkLanguage(ModuleChecker.CheckType type, List<SNode> previous) {
     checkRuntime(type);
     checkLanguageDeps(type, previous);
   }
 
 
 
-  private void checkRuntime(ModuleChecker.CheckType type) {
+  public void checkRuntime(ModuleChecker.CheckType type) {
     LanguageDescriptor descriptor = (LanguageDescriptor) myModuleDescriptor;
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language");
 
@@ -289,7 +289,7 @@ public class ModuleChecker {
 
 
 
-  private void checkLanguageDeps(ModuleChecker.CheckType type, List<SNode> previous) {
+  public void checkLanguageDeps(ModuleChecker.CheckType type, List<SNode> previous) {
     LanguageDescriptor descriptor = (LanguageDescriptor) myModuleDescriptor;
     SNode language = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language");
 
@@ -360,7 +360,7 @@ public class ModuleChecker {
 
 
 
-  private void collectSources(ModuleChecker.CheckType type) {
+  public void collectSources(ModuleChecker.CheckType type) {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
     Iterable<ModelRootDescriptor> modelRoots = myModuleDescriptor.getModelRootDescriptors();
     boolean hasModels = false;
@@ -427,7 +427,7 @@ public class ModuleChecker {
 
 
 
-  private void collectDependencies(ModuleChecker.CheckType type, List<SNode> previous) {
+  public void collectDependencies(ModuleChecker.CheckType type, List<SNode> previous) {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
 
     Map<String, Boolean> usedModuleIds = new HashMap<String, Boolean>();
