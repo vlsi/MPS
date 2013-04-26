@@ -99,21 +99,23 @@ public class NodeNodeData extends BaseNodeData {
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
-    Element nodeXML = new Element(NODE);
     if (myNodePointer.resolve(MPSModuleRepository.getInstance()) != null) {
+      Element nodeXML = new Element(NODE);
       nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.resolve(MPSModuleRepository.getInstance())));
+      element.addContent(nodeXML);
+    } else {
+      throw new CantSaveSomethingException();
     }
-    element.addContent(nodeXML);
   }
 
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     List children = element.getChild(NODE).getChildren();
-    myNodePointer = new jetbrains.mps.smodel.SNodePointer(null);
-    if (!children.isEmpty()) {
-      myNodePointer = ComponentsUtil.nodePointerFromElement((Element) children.get(0));
+    if (children == null || children.size() == 1) {
+      throw new CantLoadSomethingException();
     }
+    myNodePointer = ComponentsUtil.nodePointerFromElement((Element) children.get(0));
   }
 
   public static String snodeRepresentation(final SNode node) {

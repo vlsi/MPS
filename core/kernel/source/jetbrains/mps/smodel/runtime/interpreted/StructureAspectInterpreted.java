@@ -35,6 +35,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -127,9 +128,9 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     private List<String> parents;
 
     private Set<String> ancestors;
-    private List<String> propertyNames;
-    private List<String> referenceNames;
-    private List<String> childrenNames;
+    private Set<String> propertyNames;
+    private Set<String> referenceNames;
+    private Set<String> childrenNames;
     private HashMap<String, Boolean> childrenMap= new HashMap<String, Boolean>();
     private boolean isAbstract;
     private boolean isFinal;
@@ -246,7 +247,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
           properties.addAll(parentDescriptor.getPropertyNames());
         }
 
-        propertyNames = new ArrayList<String>(properties);
+        propertyNames = Collections.unmodifiableSet(properties);
 
         // references
         LinkedHashSet<String> references = new LinkedHashSet<String>();
@@ -256,7 +257,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
           references.addAll(parentDescriptor.getReferenceNames());
         }
 
-        referenceNames = new ArrayList<String>(references);
+        referenceNames = Collections.unmodifiableSet(references);
 
         // children
 
@@ -267,7 +268,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
           }
         }
 
-        childrenNames = new ArrayList<String>(childrenMap.keySet());
+        childrenNames = Collections.unmodifiableSet(childrenMap.keySet());
       }
     }
 
@@ -287,17 +288,17 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     }
 
     @Override
-    public List<String> getPropertyNames() {
+    public Set<String> getPropertyNames() {
       return propertyNames;
     }
 
     @Override
-    public List<String> getReferenceNames() {
+    public Set<String> getReferenceNames() {
       return referenceNames;
     }
 
     @Override
-    public List<String> getChildrenNames() {
+    public Set<String> getChildrenNames() {
       return childrenNames;
     }
 

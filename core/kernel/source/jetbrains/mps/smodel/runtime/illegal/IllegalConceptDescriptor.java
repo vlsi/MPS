@@ -44,8 +44,8 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public List<String> getPropertyNames() {
-    return Collections.emptyList();
+  public Set<String> getPropertyNames() {
+    return Collections.emptySet();
   }
 
   @Override
@@ -54,8 +54,8 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public List<String> getReferenceNames() {
-    return Collections.emptyList();
+  public Set<String> getReferenceNames() {
+    return Collections.emptySet();
   }
 
   @Override
@@ -64,8 +64,8 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public List<String> getChildrenNames() {
-    return Collections.emptyList();
+  public Set<String> getChildrenNames() {
+    return Collections.emptySet();
   }
 
   @Override

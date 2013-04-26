@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
@@ -63,7 +64,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
+        mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
           @Override
           public void modelAdded(SModel modelDescriptor) {
             addListeners(modelDescriptor);

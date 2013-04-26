@@ -252,7 +252,6 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
         for (Project p : ProjectManager.getInstance().getOpenProjects()) {
           p.getScope().invalidateCaches();
         }
-
         SModelUtil.clearCaches();
       }
     });

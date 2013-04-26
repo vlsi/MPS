@@ -86,6 +86,11 @@ public class SModelFileTracker implements CoreComponent {
   }
 
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
+
+    public MySModelRepositoryAdapter() {
+      super(SModelRepositoryListenerPriority.PLATFORM);
+    }
+
     @Override
     public void modelRemoved(SModel modelDescriptor) {
       removeModelFromFileCache(modelDescriptor);

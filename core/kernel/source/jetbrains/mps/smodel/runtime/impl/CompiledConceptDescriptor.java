@@ -28,10 +28,10 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final boolean isInterfaceConcept;
   private final List<String> parents;
   private final Set<String> ancestors;
-  private final List<String> propertyNames;
-  private final List<String> referenceNames;
+  private final Set<String> propertyNames;
+  private final Set<String> referenceNames;
   private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
-  private final List<String> childNames;
+  private final Set<String> childNames;
   private final boolean isAbstract;
   private final boolean isFinal;
   private final String conceptAlias;
@@ -88,7 +88,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       properties.addAll(parentDescriptor.getPropertyNames());
     }
 
-    propertyNames = new ArrayList<String>(properties);
+    propertyNames = Collections.unmodifiableSet(properties);
 
     // references
     LinkedHashSet<String> references = new LinkedHashSet<String>();
@@ -98,7 +98,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       references.addAll(parentDescriptor.getReferenceNames());
     }
 
-    referenceNames = new ArrayList<String>(references);
+    referenceNames = Collections.unmodifiableSet(references);
 
     //children
     assert ownChildNames.length == isMultiple.length;
@@ -112,7 +112,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       }
     }
 
-    childNames = new ArrayList<String>(childMap.keySet());
+    childNames = Collections.unmodifiableSet(childMap.keySet());
 
   }
 
@@ -132,17 +132,17 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
-  public List<String> getPropertyNames() {
+  public Set<String> getPropertyNames() {
     return propertyNames;
   }
 
   @Override
-  public List<String> getReferenceNames() {
+  public Set<String> getReferenceNames() {
     return referenceNames;
   }
 
   @Override
-  public List<String> getChildrenNames() {
+  public Set<String> getChildrenNames() {
     return childNames;
   }
 

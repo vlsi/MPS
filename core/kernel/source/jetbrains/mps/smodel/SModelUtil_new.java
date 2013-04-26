@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -84,7 +85,7 @@ public class SModelUtil_new implements CoreComponent {
     }
   };
 
-  private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
+  private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
     @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
       for (SModel descriptor : replacedModels) {

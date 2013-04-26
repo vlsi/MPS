@@ -22599,36 +22599,36 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2557058267217516298">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2557058267217516299">
-            <property name="name" nameId="tpck.1169194664001" value="dialog" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2557058267217516300">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6hd7.~FindUsagesDialog" resolveInfo="FindUsagesDialog" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2557058267217516301">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2557058267217516302">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6hd7.~FindUsagesDialog%d&lt;init&gt;(jetbrains%dmps%dide%dfindusages%dview%doptionseditor%dFindUsagesOptions,org%djetbrains%dmps%dopenapi%dmodel%dSNode,com%dintellij%dopenapi%dproject%dProject,boolean)" resolveInfo="FindUsagesDialog" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2557058267217516303">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2557058267217516291" resolveInfo="options" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2557058267217516304">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2557058267217516266" resolveInfo="operationNode" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2557058267217525638">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2557058267217525595" resolveInfo="myProject" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1263701800993186110">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2557058267217525624" resolveInfo="myWithDialog" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="2557058267217516311">
           <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2557058267217565861">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2557058267217525624" resolveInfo="myWithDialog" />
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="2557058267217516312">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2557058267217516298">
+              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2557058267217516299">
+                <property name="name" nameId="tpck.1169194664001" value="dialog" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2557058267217516300">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6hd7.~FindUsagesDialog" resolveInfo="FindUsagesDialog" />
+                </node>
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2557058267217516301">
+                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2557058267217516302">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6hd7.~FindUsagesDialog%d&lt;init&gt;(jetbrains%dmps%dide%dfindusages%dview%doptionseditor%dFindUsagesOptions,org%djetbrains%dmps%dopenapi%dmodel%dSNode,com%dintellij%dopenapi%dproject%dProject,boolean)" resolveInfo="FindUsagesDialog" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2557058267217516303">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2557058267217516291" resolveInfo="options" />
+                    </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2557058267217516304">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2557058267217516266" resolveInfo="operationNode" />
+                    </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2557058267217525638">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2557058267217525595" resolveInfo="myProject" />
+                    </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1263701800993186110">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2557058267217525624" resolveInfo="myWithDialog" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2557058267217516313">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2557058267217516314">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2557058267217516315">
@@ -23179,7 +23179,7 @@
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="738639550409927664">
       <property name="name" nameId="tpck.1169194664001" value="module" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xha.~MPSCommonDataKeys%dMODULE" resolveInfo="MODULE" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xha.~MPSCommonDataKeys%dCONTEXT_MODULE" resolveInfo="CONTEXT_MODULE" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="738639550409927665" />
     </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="738639550409927666">
