@@ -96,9 +96,9 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public void attach(@NotNull SRepository repo) {
     assert !(myRepository instanceof DisposedRepository) : "Not supposed to do this, just detach the node";
     repo.getModelAccess().checkReadAccess();
-    if (!myModel.isUpdateMode()) {
-      repo.getModelAccess().checkWriteAccess();
-    }
+//    if (!myModel.isUpdateMode()) {
+//      repo.getModelAccess().checkWriteAccess();
+//    }
     if (myRepository == repo) return;
     synchronized (REPO_LOCK) {
       if (myRepository == repo) return;
