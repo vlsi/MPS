@@ -75,6 +75,7 @@ public class ModelPersistence {
   public static final String NODE = "node";
   public static final String TYPE = "type";
   public static final String TYPE_ID = "typeId";
+  public static final String TYPE_INFO = "typeInfo";
   public static final String ID = "id";
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String MODEL = "model";

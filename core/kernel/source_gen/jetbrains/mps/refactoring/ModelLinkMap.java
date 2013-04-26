@@ -14,6 +14,10 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -37,6 +41,7 @@ public class ModelLinkMap {
   private Map<SNodeReference, List<SReference>> myRefRoleMap = MapSequence.fromMap(new HashMap<SNodeReference, List<SReference>>());
   private Map<SNodeReference, List<Pair<SNode, String>>> myPropNameMap = MapSequence.fromMap(new HashMap<SNodeReference, List<Pair<SNode, String>>>());
   private Map<SModelReference, List<DynamicReference>> myDynRefMap = MapSequence.fromMap(new HashMap<SModelReference, List<DynamicReference>>());
+  private Map<SNode, Tuples._2<ConceptKind, StaticScope>> myMetainfo = MapSequence.fromMap(new HashMap<SNode, Tuples._2<ConceptKind, StaticScope>>());
 
   public ModelLinkMap(SModel model) {
     myModel = model;
@@ -48,6 +53,10 @@ public class ModelLinkMap {
 
   public void addTypeLocation(SNodeReference ptr, SNode node) {
     addValue(myNodeTypeMap, ptr, node);
+  }
+
+  public void addTypeMetainfo(ConceptKind kind, StaticScope scope, SNode node) {
+    MapSequence.fromMap(myMetainfo).put(node, MultiTuple.<ConceptKind,StaticScope>from(kind, scope));
   }
 
   public void addRoleLocation(SNodeReference ptr, SNode node) {
@@ -217,7 +226,7 @@ public class ModelLinkMap {
   }
 
   public void fillRoleIdsComponent() {
-    final LightModelEnvironmentInfo info = as_1o71zw_a0a0a91(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), LightModelEnvironmentInfo.class);
+    final LightModelEnvironmentInfo info = as_1o71zw_a0a0a12(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), LightModelEnvironmentInfo.class);
     if (info == null) {
       return;
     }
@@ -230,14 +239,21 @@ public class ModelLinkMap {
         for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {
           ListSequence.fromList(MapSequence.fromMap(myNodeRoleMap).get(ptr)).visitAll(new IVisitor<SNode>() {
             public void visit(SNode n) {
-              info.nodeRoleRead(n, ptr);
+              info.nodeRoleRead(n, ptr, false);
             }
           });
         }
         for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeTypeMap).keySet())) {
           ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
             public void visit(SNode n) {
-              info.conceptRead(n, ptr);
+              Tuples._2<ConceptKind, StaticScope> pair = MapSequence.fromMap(myMetainfo).get(n);
+              info.conceptRead(n, ptr, (pair == null ?
+                StaticScope.GLOBAL :
+                pair._1()
+              ), (pair == null ?
+                ConceptKind.NORMAL :
+                pair._0()
+              ));
             }
           });
         }
@@ -329,7 +345,7 @@ public class ModelLinkMap {
     );
   }
 
-  private static <T> T as_1o71zw_a0a0a91(Object o, Class<T> type) {
+  private static <T> T as_1o71zw_a0a0a12(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

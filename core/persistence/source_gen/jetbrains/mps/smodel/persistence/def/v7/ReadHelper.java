@@ -14,6 +14,8 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -82,6 +84,41 @@ public class ReadHelper {
   public SNodeReference readLinkId(String src) {
     // [modelID.]nodeID[:version] | [modelID.]^[:version] 
     return readLink_internal(src).o2;
+  }
+
+  public Pair<ConceptKind, StaticScope> readTypeInfo(String s) {
+    ConceptKind kind;
+    StaticScope scope;
+    if (s.length() != 2) {
+      return null;
+    }
+    switch (s.charAt(0)) {
+      case 'n':
+        kind = ConceptKind.NORMAL;
+        break;
+      case 'i':
+        kind = ConceptKind.INTERFACE;
+        break;
+      case 'l':
+        kind = ConceptKind.IMPLEMENTATION;
+        break;
+      default:
+        return null;
+    }
+    switch (s.charAt(1)) {
+      case 'g':
+        scope = StaticScope.GLOBAL;
+        break;
+      case 'r':
+        scope = StaticScope.ROOT;
+        break;
+      case 'n':
+        scope = StaticScope.NONE;
+        break;
+      default:
+        return null;
+    }
+    return new Pair(kind, scope);
   }
 
   public String readType(String s) {

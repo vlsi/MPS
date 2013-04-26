@@ -682,6 +682,24 @@
         <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
       </node>
     </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7810181121127037633">
+      <property name="name" nameId="tpck.1169194664001" value="concept_InterfacePart" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7810181121127037634" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="7810181121127037635" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="7810181121127037636">
+        <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+      </node>
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7810181121127117104">
+      <property name="name" nameId="tpck.1169194664001" value="concept_ImplementationPart" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7810181121127117105" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="7810181121127117106" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="7810181121127117107">
+        <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpck.1319728274783077719" resolveInfo="ImplementationPart" />
+      </node>
+    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="7897202388613788596" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5253134957341832993">
       <property name="name" nameId="tpck.1169194664001" value="link_ConceptDeclaration_extends" />

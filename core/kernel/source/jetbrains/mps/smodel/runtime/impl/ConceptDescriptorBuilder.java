@@ -40,6 +40,7 @@ public class ConceptDescriptorBuilder {
   private String shortDescription;
   private String helpUrl;
   private StaticScope staticScope;
+  private String[] unorderedChildren;
 
   public ConceptDescriptorBuilder(String conceptFqName) {
     this.conceptFqName = conceptFqName;
@@ -72,7 +73,7 @@ public class ConceptDescriptorBuilder {
   }
 
   public ConceptDescriptorBuilder unordered(String ...names) {
-    // TODO
+    this.unorderedChildren = names;
     return this;
   }
 
@@ -114,6 +115,7 @@ public class ConceptDescriptorBuilder {
         ownReferenceNames == null ? EMPTY_STRINGS : ownReferenceNames,
         ownChildNames == null ? EMPTY_STRINGS : ownChildNames,
         isMultiple == null ? EMPTY_BOOLS : isMultiple,
+        unorderedChildren == null ? EMPTY_STRINGS : unorderedChildren,
         isAbstract, isFinal,
         conceptAlias == null ? "" : conceptAlias, shortDescription == null ? "" : shortDescription,
         helpUrl == null ? "" : helpUrl,

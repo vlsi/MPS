@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -30,9 +33,15 @@ public interface ModelEnvironmentInfo {
 
   SNodeReference getConceptId(SNode node);
 
+  StaticScope getConceptScope(SNode node);
+
+  ConceptKind getConceptKind(SNode node);
+
   SNodeReference getNodeRoleId(SNode node);
 
   SNodeReference getReferenceRoleId(SReference reference);
+
+  boolean isUnordered(SReference reference);
 
   SNodeReference getPropertyId(SNode containingNode, String propertyName);
 
