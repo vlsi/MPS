@@ -71,6 +71,11 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
+  public ConceptDescriptorBuilder unordered(String ...names) {
+    // TODO
+    return this;
+  }
+
   public ConceptDescriptorBuilder abstract_() {
     isAbstract = true;
     return this;
