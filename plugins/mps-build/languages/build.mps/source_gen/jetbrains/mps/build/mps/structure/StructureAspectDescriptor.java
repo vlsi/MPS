@@ -72,7 +72,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 28:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("url", "name").children(new String[]{"icon16"}, new boolean[]{false}).create();
       case 29:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_Language").super_("jetbrains.mps.build.mps.structure.BuildMps_Module").parents("jetbrains.mps.build.mps.structure.BuildMps_Module").children(new String[]{"runtime"}, new boolean[]{true}).alias("language", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_Language").super_("jetbrains.mps.build.mps.structure.BuildMps_Module").parents("jetbrains.mps.build.mps.structure.BuildMps_Module").children(new String[]{"runtime", "generator"}, new boolean[]{true, false}).alias("language", "").create();
       case 30:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_Module").super_("jetbrains.mps.build.mps.structure.BuildMps_AbstractModule").parents("jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", "jetbrains.mps.build.structure.BuildSource_CompilablePart", "jetbrains.mps.build.structure.BuildExternalDependency").properties("doNotCompile").children(new String[]{"sources", "dependencies"}, new boolean[]{true, true}).abstract_().alias("module", "").create();
       case 31:

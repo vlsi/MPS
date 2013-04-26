@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet;
@@ -55,7 +56,9 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     if (renderingCondition_leuqor_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_leuqor_c0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createCollection_leuqor_d0(editorContext, node));
+    if (renderingCondition_leuqor_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_leuqor_d0(editorContext, node));
+    }
     if (renderingCondition_leuqor_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_leuqor_e0(editorContext, node));
     }
@@ -168,6 +171,10 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_leuqor_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_leuqor_b3a(editorContext, node));
     return editorCell;
+  }
+
+  private static boolean renderingCondition_leuqor_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.mps.structure.BuildMps_Language"));
   }
 
   private EditorCell createConstant_leuqor_a3a(EditorContext editorContext, SNode node) {
