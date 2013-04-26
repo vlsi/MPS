@@ -1227,6 +1227,19 @@ public class QueriesGenerated {
 
         ModuleLoader.createModuleChecker(module, visibleModules, pathConverter, _context, reporter).check(ModuleChecker.CheckType.LOAD_ALL);
       }
+
+      // move generators outside language 
+      List<SNode> generators = Sequence.fromIterable(parts).translate(new ITranslator2<SNode, SNode>() {
+        public Iterable<SNode> translate(SNode it) {
+          return SNodeOperations.getDescendants(it, "jetbrains.mps.build.mps.structure.BuildMps_Generator", false, new String[]{});
+        }
+      }).toListSequence();
+      for (SNode generator : generators) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(generator), "jetbrains.mps.build.mps.structure.BuildMps_Language")) {
+          SLinkOperations.setTarget(generator, "sourceLanguage", SNodeOperations.cast(SNodeOperations.getParent(generator), "jetbrains.mps.build.mps.structure.BuildMps_Language"), false);
+          SNodeOperations.insertNextSiblingChild(SNodeOperations.getParent(generator), generator);
+        }
+      }
     }
   }
 
