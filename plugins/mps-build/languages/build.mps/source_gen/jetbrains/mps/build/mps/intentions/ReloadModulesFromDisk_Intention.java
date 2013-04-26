@@ -99,6 +99,9 @@ public class ReloadModulesFromDisk_Intention implements IntentionFactory {
         SNode module_var;
         while (module_it.hasNext()) {
           module_var = module_it.next();
+          if (SNodeOperations.isInstanceOf(module_var, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
+            continue;
+          }
           try {
             ModuleLoader.createModuleChecker(module_var, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
           } catch (ModuleLoaderException ex) {

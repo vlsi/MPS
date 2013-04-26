@@ -33,6 +33,10 @@ public class ReloadRequired_QuickFix extends QuickFix_Runtime {
       return;
     }
 
+    if (SNodeOperations.isInstanceOf(module, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
+      return;
+    }
+
     PathConverter pathConverter = new PathConverter(project);
 
     try {

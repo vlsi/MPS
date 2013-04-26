@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -31,7 +32,6 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.LinkedHashMap;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
@@ -143,7 +143,10 @@ public class ModuleChecker {
     SModuleReference moduleReference = myModuleDescriptor.getModuleReference();
 
     String expectedModuleName = moduleReference.getModuleName();
-    if (type.doCheck && (neq_yr5c5g_a0a0d0r(SPropertyOperations.getString(myModule, "name"), expectedModuleName))) {
+    if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
+      expectedModuleName = ((GeneratorDescriptor) myModuleDescriptor).getGeneratorUID();
+    }
+    if (type.doCheck && (neq_yr5c5g_a0a0e0r(SPropertyOperations.getString(myModule, "name"), expectedModuleName))) {
       report("name in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + expectedModuleName, myOriginalModule);
       return false;
     }
@@ -152,7 +155,7 @@ public class ModuleChecker {
     }
 
     String expectedModuleUUID = moduleReference.getModuleId().toString();
-    if (type.doCheck && neq_yr5c5g_a0a7a71(SPropertyOperations.getString(myModule, "uuid"), expectedModuleUUID)) {
+    if (type.doCheck && neq_yr5c5g_a0a8a71(SPropertyOperations.getString(myModule, "uuid"), expectedModuleUUID)) {
       report("module id in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleId().toString(), myOriginalModule);
       return false;
     }
@@ -277,6 +280,7 @@ public class ModuleChecker {
   public void checkLanguage(ModuleChecker.CheckType type, List<SNode> previous) {
     checkRuntime(type);
     checkLanguageDeps(type, previous);
+    checkGenerators(type);
   }
 
 
@@ -488,8 +492,8 @@ public class ModuleChecker {
     Iterable<Dependency> dependencies = myModuleDescriptor.getDependencies();
     for (Dependency dependency : dependencies) {
       SModuleReference moduleRef = dependency.getModuleRef();
-      if (moduleRef.getModuleName().contains("#")) {
-        report("module cannot depend on generator: `" + moduleRef.getModuleName() + "'", myOriginalModule);
+      if (moduleRef.getModuleName().contains("#") && !(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
+        report("modules except generators cannot depend on generator: `" + moduleRef.getModuleName() + "'", myOriginalModule);
       }
     }
 
@@ -500,19 +504,10 @@ public class ModuleChecker {
       SModuleReference moduleRef = dep.getModuleRef();
       final Wrappers._T<SNode> resolved = new Wrappers._T<SNode>();
       String targetName = moduleRef.getModuleName();
-      int sharpIndex = targetName.indexOf("#");
-      if (sharpIndex >= 0) {
-        resolved.value = SNodeOperations.as(myVisibleModules.resolve(targetName.substring(0, sharpIndex), null), "jetbrains.mps.build.mps.structure.BuildMps_Module");
-        if (resolved.value == null) {
-          report("cannot resolve reference on generator's containing language by module name: " + targetName, myOriginalModule);
-          continue;
-        }
-      } else {
-        resolved.value = SNodeOperations.as(myVisibleModules.resolve(targetName, moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
-        if (resolved.value == null) {
-          report("unsatisfied dependency: " + dep.getModuleRef().toString(), myOriginalModule);
-          continue;
-        }
+      resolved.value = SNodeOperations.as(myVisibleModules.resolve(targetName, moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
+      if (resolved.value == null) {
+        report("unsatisfied dependency: " + dep.getModuleRef().toString(), myOriginalModule);
+        continue;
       }
 
       Boolean alreadyReexport = depsToReexport.get(resolved.value);
@@ -628,14 +623,22 @@ public class ModuleChecker {
 
 
 
-  private void loadGenerators() {
-    LanguageDescriptor languageDescriptor = ((LanguageDescriptor) myModuleDescriptor);
+  private void checkGenerators(ModuleChecker.CheckType type) {
+    SNode language = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language");
+    LanguageDescriptor languageDescriptor = (LanguageDescriptor) myModuleDescriptor;
     String langName = languageDescriptor.getModuleReference().getModuleName();
 
     if (languageDescriptor.getGenerators().size() > 1) {
       report("more than one generator for language `" + langName + "'", myOriginalModule);
+      return;
     }
     if (languageDescriptor.getGenerators().isEmpty()) {
+      if (type.doCheck && (SLinkOperations.getTarget(language, "generator", true) != null)) {
+        report("no generators in module descriptor for `" + langName + "'", myOriginalModule);
+      }
+      if (type.doPartialImport) {
+        SLinkOperations.setTarget(language, "generator", null, true);
+      }
       return;
     }
 
@@ -643,18 +646,19 @@ public class ModuleChecker {
     String generatorName = generatorDescriptor.getGeneratorUID();
     if (generatorName != null && !(generatorName.startsWith(langName + "#"))) {
       report("wrong generator name `" + generatorName + "', should start with `" + langName + "#'", myOriginalModule);
+      return;
     }
 
-    SNode generator = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Generator", null);
-    SPropertyOperations.set(generator, "name", generatorDescriptor.getNamespace());
-    SPropertyOperations.set(generator, "uuid", generatorDescriptor.getId().toString());
-    SLinkOperations.setTarget(generator, "sourceLanguage", SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), false);
+    if (type.doCheck && (SLinkOperations.getTarget(language, "generator", true) == null)) {
+      report("language generator should be extracted for `" + langName + "'", myOriginalModule);
+      return;
+    }
+    if (type.doPartialImport & (SLinkOperations.getTarget(language, "generator", true) == null)) {
+      SLinkOperations.setTarget(language, "generator", SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Generator", null), true);
+    }
 
-    // <node> 
-
-    ModuleChecker moduleCheckerForGenerator = new ModuleChecker(generator, generator, myVisibleModules, myPathConverter, myGenContext, myModuleSourceDir.getDescendant("generator"), generatorDescriptor, myReporter);
-    moduleCheckerForGenerator.check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
-    moduleCheckerForGenerator.check(ModuleChecker.CheckType.LOAD_ALL);
+    ModuleChecker moduleCheckerForGenerator = new ModuleChecker(SLinkOperations.getTarget(language, "generator", true), SLinkOperations.getTarget(language, "generator", true), myVisibleModules, myPathConverter, myGenContext, myModuleSourceDir.getDescendant("generator"), generatorDescriptor, myReporter);
+    moduleCheckerForGenerator.check(type);
   }
 
   private void optimizeDeps() {
@@ -760,6 +764,16 @@ public class ModuleChecker {
 
 
 
+  private SNode getSourceLanguage(SNode generator) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(generator), "jetbrains.mps.build.mps.structure.BuildMps_Language")) {
+      return SNodeOperations.cast(SNodeOperations.getParent(generator), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+    } else {
+      return SLinkOperations.getTarget(generator, "sourceLanguage", false);
+    }
+  }
+
+
+
   public static   enum CheckType {
     CHECK(true, false, false),
     LOAD_IMPORTANT_PART(false, true, false),
@@ -792,14 +806,14 @@ public class ModuleChecker {
     }
   }
 
-  private static boolean neq_yr5c5g_a0a0d0r(Object a, Object b) {
+  private static boolean neq_yr5c5g_a0a0e0r(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean neq_yr5c5g_a0a7a71(Object a, Object b) {
+  private static boolean neq_yr5c5g_a0a8a71(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

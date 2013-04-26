@@ -39,11 +39,11 @@ public class BuildMps_Generator_Constraints extends BaseConstraintsDescriptor {
       SNodeOperations.getParent(parentNode) :
       parentNode
     );
-    return SNodeOperations.isInstanceOf(pnode, "jetbrains.mps.build.structure.BuildProject") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(pnode, "jetbrains.mps.build.structure.BuildProject"), "plugins", true)).any(new IWhereFilter<SNode>() {
+    return SNodeOperations.isInstanceOf(pnode, "jetbrains.mps.build.mps.structure.BuildMps_Language") || (SNodeOperations.isInstanceOf(pnode, "jetbrains.mps.build.structure.BuildProject") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(pnode, "jetbrains.mps.build.structure.BuildProject"), "plugins", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMPSPlugin");
       }
-    }) || pnode.getConcept().getConceptId().startsWith("jetbrains.mps.lang.generator");
+    }) || pnode.getConcept().getConceptId().startsWith("jetbrains.mps.lang.generator"));
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "5507251971038967783");
