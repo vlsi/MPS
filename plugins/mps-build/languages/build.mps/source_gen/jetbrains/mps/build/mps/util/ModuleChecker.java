@@ -18,6 +18,11 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.ProjectPathUtil;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
@@ -26,11 +31,6 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.LinkedHashMap;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.ProjectPathUtil;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 
 public class ModuleChecker {
   private static final String CORE_LANGUAGE_UID = "ceab5195-25ea-4f22-9b92-103b95ca8c0c";
@@ -90,12 +90,7 @@ public class ModuleChecker {
         checkLanguage(type, previous);
       }
 
-      if (type.doPartialImport) {
-        collectSources(true, true);
-      }
-      if (type.doCheck) {
-        collectSources(true, false);
-      }
+      collectSources(type);
 
       if (type.doPartialImport) {
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).removeSequence(ListSequence.fromList(previous));
@@ -362,15 +357,72 @@ public class ModuleChecker {
 
 
 
-  private SNode asOriginal(SNode node) {
-    if (SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(myModule)) {
-      return node;
+  private void collectSources(ModuleChecker.CheckType type) {
+    SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
+    Iterable<ModelRootDescriptor> modelRoots = myModuleDescriptor.getModelRootDescriptors();
+    boolean hasModels = false;
+    for (ModelRootDescriptor modelRootDescriptor : modelRoots) {
+      if (!(PersistenceRegistry.DEFAULT_MODEL_ROOT.equals(modelRootDescriptor.getType()))) {
+        continue;
+      }
+
+      DefaultModelRoot mr = new DefaultModelRoot();
+      mr.load(modelRootDescriptor.getMemento());
+      for (String path : mr.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+        if (path == null) {
+          continue;
+        }
+        SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
+        if (p == null) {
+          continue;
+        }
+
+        if (type.doPartialImport) {
+          SNode mroot = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", null);
+          SLinkOperations.setTarget(mroot, "folder", p, true);
+          ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(mroot);
+        }
+        hasModels = true;
+      }
     }
-    return (myGenContext != null ?
-      myGenContext.getOriginalCopiedInputNode(node) :
-      node
-    );
+
+    List<String> res = new ArrayList<String>();
+    for (String sp : myModuleDescriptor.getSourcePaths()) {
+      res.add(sp);
+    }
+    String genPath = null;
+    if (!(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) || hasModels) {
+      IFile genPathFile = ProjectPathUtil.getGeneratorOutputPath(myModuleSourceDir, myModuleDescriptor);
+      if (genPathFile != null) {
+        genPath = genPathFile.getPath();
+        res.add(genPath);
+      }
+    }
+
+    boolean doNotCompile = myModuleDescriptor instanceof SolutionDescriptor && (!(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS()) || res.isEmpty());
+    if (type.doCheck && SPropertyOperations.getBoolean(module, "doNotCompile") != doNotCompile) {
+      report("compile in MPS flag doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + doNotCompile, myOriginalModule);
+    }
+    if (type.doPartialImport) {
+      SPropertyOperations.set(module, "doNotCompile", "" + (doNotCompile));
+    }
+
+    if (type.doPartialImport) {
+      for (String path : res) {
+        SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
+        if (p == null) {
+          continue;
+        }
+        SNode javaSource = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", null);
+        SLinkOperations.setTarget(javaSource, "folder", SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildInputSingleFolder", null), true);
+        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(javaSource, "folder", true), "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", p, true);
+        SPropertyOperations.set(javaSource, "isGenerated", "" + (path.equals(genPath)));
+        ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(javaSource);
+      }
+    }
   }
+
+
 
   private void collectDependencies(boolean checkOnly) {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
@@ -476,7 +528,7 @@ public class ModuleChecker {
               SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
               it
             );
-            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_yr5c5g_a0a1a0a0a0a0b0d0q0ab(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
+            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_yr5c5g_a0a1a0a0a0a0b0d0q0bb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
           }
         }))) {
           report("jar stub library should be extracted into build script: " + relPath, myOriginalModule);
@@ -552,7 +604,7 @@ public class ModuleChecker {
       if (path.endsWith(".jar")) {
         SNode extr = ListSequence.fromList(previous).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_yr5c5g_a0a0a0a0a0a0a0d0i0bb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_yr5c5g_a0a0a0a0a0a0a0d0i0cb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
           }
         });
 
@@ -568,74 +620,6 @@ public class ModuleChecker {
       } else {
         report("only jar stub libraries are supported, found: " + path, myOriginalModule);
       }
-    }
-  }
-
-  private void collectSources(boolean checkOnly, boolean importOnly) {
-    SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
-    Iterable<ModelRootDescriptor> modelRoots = myModuleDescriptor.getModelRootDescriptors();
-    boolean hasModels = false;
-    for (ModelRootDescriptor modelRootDescriptor : modelRoots) {
-      if (!(PersistenceRegistry.DEFAULT_MODEL_ROOT.equals(modelRootDescriptor.getType()))) {
-        continue;
-      }
-
-      DefaultModelRoot mr = new DefaultModelRoot();
-      mr.load(modelRootDescriptor.getMemento());
-      for (String path : mr.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
-        if (path == null) {
-          continue;
-        }
-        SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
-        if (p == null) {
-          continue;
-        }
-
-        if (!(checkOnly)) {
-          SNode mroot = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", null);
-          SLinkOperations.setTarget(mroot, "folder", p, true);
-          ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(mroot);
-        }
-        hasModels = true;
-
-      }
-    }
-    List<String> res = new ArrayList<String>();
-    for (String sp : myModuleDescriptor.getSourcePaths()) {
-      res.add(sp);
-    }
-    String genPath = null;
-    if (!(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) || hasModels) {
-      IFile genPathFile = ProjectPathUtil.getGeneratorOutputPath(myModuleSourceDir, myModuleDescriptor);
-      if (genPathFile != null) {
-        genPath = genPathFile.getPath();
-        res.add(genPath);
-      }
-    }
-
-    boolean doNotCompile = myModuleDescriptor instanceof SolutionDescriptor && (!(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS()) || res.isEmpty());
-    if (checkOnly && importOnly) {
-      SPropertyOperations.set(module, "doNotCompile", "" + (doNotCompile));
-
-    } else if (SPropertyOperations.getBoolean(module, "doNotCompile") != doNotCompile) {
-      report("compile in MPS flag doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + doNotCompile, myOriginalModule);
-    }
-
-
-    if (checkOnly) {
-      return;
-    }
-
-    for (String path : res) {
-      SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
-      if (p == null) {
-        continue;
-      }
-      SNode javaSource = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", null);
-      SLinkOperations.setTarget(javaSource, "folder", SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildInputSingleFolder", null), true);
-      SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(javaSource, "folder", true), "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", p, true);
-      SPropertyOperations.set(javaSource, "isGenerated", "" + (path.equals(genPath)));
-      ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(javaSource);
     }
   }
 
@@ -656,6 +640,16 @@ public class ModuleChecker {
 
   private void report(String message, SNode node, Exception cause) {
     myReporter.report(message, node, cause);
+  }
+
+  private SNode asOriginal(SNode node) {
+    if (SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(myModule)) {
+      return node;
+    }
+    return (myGenContext != null ?
+      myGenContext.getOriginalCopiedInputNode(node) :
+      node
+    );
   }
 
 
@@ -690,14 +684,14 @@ public class ModuleChecker {
     ));
   }
 
-  private static boolean eq_yr5c5g_a0a1a0a0a0a0b0d0q0ab(Object a, Object b) {
+  private static boolean eq_yr5c5g_a0a1a0a0a0a0b0d0q0bb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_yr5c5g_a0a0a0a0a0a0a0d0i0bb(Object a, Object b) {
+  private static boolean eq_yr5c5g_a0a0a0a0a0a0a0d0i0cb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
