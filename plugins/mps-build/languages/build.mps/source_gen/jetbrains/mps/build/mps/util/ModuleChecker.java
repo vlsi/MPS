@@ -764,16 +764,6 @@ public class ModuleChecker {
 
 
 
-  private SNode getSourceLanguage(SNode generator) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(generator), "jetbrains.mps.build.mps.structure.BuildMps_Language")) {
-      return SNodeOperations.cast(SNodeOperations.getParent(generator), "jetbrains.mps.build.mps.structure.BuildMps_Language");
-    } else {
-      return SLinkOperations.getTarget(generator, "sourceLanguage", false);
-    }
-  }
-
-
-
   public static   enum CheckType {
     CHECK(true, false, false),
     LOAD_IMPORTANT_PART(false, true, false),
