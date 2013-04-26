@@ -65,7 +65,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
