@@ -13,9 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.references;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessAdapter;
+import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.SReferenceBase;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -36,13 +42,11 @@ public class ImmatureReferences implements CoreComponent {
   private static ImmatureReferences INSTANCE;
   private final SModelReference myVirtualRef;
 
-  static ImmatureReferences getInstance() {
+  public static ImmatureReferences getInstance() {
     return INSTANCE;
   }
 
   private SModelRepositoryAdapter myReposListener = new MySModelRepositoryAdapter();
-
-  private ModelAccessAdapter myModelAccessListener = new MyModelAccessAdapter();
 
   private SModelRepository mySModelRepository;
 
@@ -60,11 +64,11 @@ public class ImmatureReferences implements CoreComponent {
     myVirtualRef = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), "$ImmatureRefsModelRef$");
   }
 
-  void enable() {
+  public void enable() {
     myDisabled = false;
   }
 
-  void disable() {
+  public void disable() {
     myDisabled = true;
     cleanup();
   }
@@ -77,13 +81,11 @@ public class ImmatureReferences implements CoreComponent {
 
     INSTANCE = this;
     mySModelRepository.addModelRepositoryListener(myReposListener);
-    ModelAccess.instance().addCommandListener(myModelAccessListener);
   }
 
   @Override
   public void dispose() {
     mySModelRepository.removeModelRepositoryListener(myReposListener);
-    ModelAccess.instance().removeCommandListener(myModelAccessListener);
 
     INSTANCE = null;
   }
@@ -97,7 +99,7 @@ public class ImmatureReferences implements CoreComponent {
     myReferences.clear();
   }
 
-  void add(SReferenceBase ref) {
+  public void add(SReferenceBase ref) {
     if (myDisabled) return;
     SModel model = ref.getSourceNode().getModel();
     SModelReference modelRef = model == null ? myVirtualRef : model.getReference();
@@ -105,7 +107,7 @@ public class ImmatureReferences implements CoreComponent {
     refSet.put(ref, PRESENT);
   }
 
-  void remove(SReferenceBase ref) {
+  public void remove(SReferenceBase ref) {
     if (myDisabled) return;
     SModelReference modelRef = ref.getSourceNode().getModel().getReference();
     ConcurrentMap<SReferenceBase, Object> refSet = myReferences.get(modelRef);
@@ -128,13 +130,6 @@ public class ImmatureReferences implements CoreComponent {
     }
     myReferencesSetPool.add(pooledSet);
     return usedSet;
-  }
-
-  private class MyModelAccessAdapter extends ModelAccessAdapter {
-    @Override
-    public void commandFinished() {
-      cleanup();
-    }
   }
 
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {

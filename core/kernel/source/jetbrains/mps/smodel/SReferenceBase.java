@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,7 +30,7 @@ import java.io.StringWriter;
  * Igor Alshannikov
  * Sep 28, 2007
  */
-abstract class SReferenceBase extends SReference {
+public abstract class SReferenceBase extends SReference {
 
   protected volatile SNode myImmatureTargetNode;            // young
   private volatile SModelReference myTargetModelReference;  // mature
@@ -89,7 +90,7 @@ abstract class SReferenceBase extends SReference {
     }
   }
 
-  protected synchronized final boolean makeIndirect(boolean force) {
+  public synchronized final boolean makeIndirect(boolean force) {
     if (myImmatureTargetNode != null) {
       if (getSourceNode().getModel() != null && myImmatureTargetNode.getModel() != null &&
           !(jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode()) || jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode))) {

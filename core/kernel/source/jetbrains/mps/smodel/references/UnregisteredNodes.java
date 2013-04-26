@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.references;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.util.PairMap;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -38,45 +38,40 @@ public class UnregisteredNodes {
     return ourInstance;
   }
 
-  void enable() {
+  public void enable() {
     myDisabled = false;
   }
 
-  void disable() {
+  public void disable() {
     myDisabled = true;
   }
 
   private UnregisteredNodes() {
-    ModelAccess.instance().addCommandListener(new ModelAccessAdapter() {
-      @Override
-      public void commandFinished() {
-        clear();
-      }
-    });
+
   }
 
   public void clear() {
     synchronized (myLock) {
-      for (SNode node:myMap.values()){
+      for (SNode node : myMap.values()) {
         node.detach();
       }
       myMap.clear();
     }
   }
 
-  void put(SNode node) {
+  public void put(SNode node) {
     if (myDisabled || node.getNodeId() == null) return;
     add(node.getModel().getReference(), node.getNodeId(), node);
   }
 
-  void remove(SNode node) {
+  public void remove(SNode node) {
     if (myDisabled) return;
     synchronized (myLock) {
       myMap.remove(node);
     }
   }
 
-  SNode get(SModelReference modelReference, SNodeId nodeId) {
+  public SNode get(SModelReference modelReference, SNodeId nodeId) {
     if (myDisabled) return null;
     synchronized (myLock) {
       return myMap.get(modelReference, nodeId);

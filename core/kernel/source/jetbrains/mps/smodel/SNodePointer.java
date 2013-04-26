@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jetbrains.mps.openapi.model.SModel;

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.references.UnregisteredNodes;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
