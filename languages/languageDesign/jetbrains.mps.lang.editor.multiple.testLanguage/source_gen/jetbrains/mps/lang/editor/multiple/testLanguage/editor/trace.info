@@ -677,9 +677,9 @@
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="74" startPosition="34" endLine="75" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="75" startPosition="49" endLine="76" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="77" startPosition="9" endLine="78" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="78" startPosition="55" endLine="79" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="79" startPosition="82" endLine="80" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="79" startPosition="82" endLine="80" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="78" startPosition="55" endLine="79" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="79" startPosition="161" endLine="80" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="79" startPosition="161" endLine="80" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="80" startPosition="85" endLine="81" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="80" startPosition="85" endLine="81" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="81" startPosition="85" endLine="82" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -738,10 +738,10 @@
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="171" startPosition="34" endLine="172" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="172" startPosition="49" endLine="173" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="174" startPosition="9" endLine="175" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="175" startPosition="55" endLine="176" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="176" startPosition="81" endLine="177" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="177" startPosition="85" endLine="178" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="177" startPosition="85" endLine="178" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="175" startPosition="55" endLine="176" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="176" startPosition="160" endLine="177" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="177" startPosition="164" endLine="178" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="177" startPosition="164" endLine="178" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="178" startPosition="86" endLine="179" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="178" startPosition="86" endLine="179" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="179" startPosition="86" endLine="180" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -887,7 +887,7 @@
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="64" startPosition="82" endLine="65" endPosition="82" />
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="65" startPosition="82" endLine="66" endPosition="82" />
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="66" startPosition="82" endLine="67" endPosition="85" />
-    <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="79" startPosition="82" endLine="80" endPosition="85" />
+    <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="79" startPosition="161" endLine="80" endPosition="85" />
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="80" startPosition="85" endLine="81" endPosition="85" />
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="81" startPosition="85" endLine="82" endPosition="88" />
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="82" startPosition="88" endLine="83" endPosition="85" />
@@ -896,7 +896,7 @@
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="123" startPosition="106" endLine="124" endPosition="50" />
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="148" startPosition="34" endLine="149" endPosition="95" />
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="151" startPosition="131" endLine="152" endPosition="139" />
-    <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="177" startPosition="85" endLine="178" endPosition="86" />
+    <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="177" startPosition="164" endLine="178" endPosition="86" />
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="178" startPosition="86" endLine="179" endPosition="86" />
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="179" startPosition="86" endLine="180" endPosition="89" />
     <scopeInfo nodeId="6655351613569925151" fileName="MultipleEditorsTestRoot_Editor.java" startLine="181" startPosition="15" endLine="182" endPosition="54" />

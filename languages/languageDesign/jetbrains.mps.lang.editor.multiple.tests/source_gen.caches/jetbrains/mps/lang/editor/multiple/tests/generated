@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9v7ucouaxgex58602kt3v225gb5n03v">
+<dependencies version="2" modelHash="btd1x88zxmlqqbpgdks1lcd3d2793pm">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="aih6mod30hbbl8r1xz9vfu4gypkll6l" />
@@ -13,7 +13,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="EditorSpecifiedBy_add_context_hints_Test.java" />
   </source>
-  <source id="5950344441601613251" hash="-4y6u49ruh85eopehxiflppwzbpf2mvk">
+  <source id="5950344441601613251" hash="-7zw4sid1f1nac5tientkpp2iseu0n6c">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="5950344441601668447" name="DefaultEditor" hash="-5qcfptucke3t9dxzvta1xo0frpzeplx" dependsOnNodes="true">

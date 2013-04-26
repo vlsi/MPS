@@ -19,6 +19,9 @@
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="472381747515631686">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="MultipleEditorsTestChild" />
     </node>
+    <node type="tpc2.ConceptEditorContextHints" typeId="tpc2.5944657839000868711" id="5944657839008259594">
+      <property name="name" nameId="tpck.1169194664001" value="MultipleEditorTestHints" />
+    </node>
   </roots>
   <root id="6655351613569903030">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6822301196698238130">
@@ -84,9 +87,9 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5950344441601491687">
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5950344441601491820">
-          <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5950344441601492412">
-            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHint" typeId="tpc2.6822301196700715228" id="5950344441601492421">
-              <property name="hint" nameId="tpc2.6822301196700716967" value="diagram" />
+          <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5944657839036525605">
+            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525609">
+              <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="diagram" />
             </node>
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5950344441601491690">
@@ -124,6 +127,11 @@
             </node>
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5950344441601492557">
+            <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5944657839036525849">
+              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525853">
+                <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576567" resolveInfo="groovy" />
+              </node>
+            </node>
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5950344441601491701">
               <property name="text" nameId="tpc2.1073389577007" value="groovy child" />
             </node>
@@ -153,14 +161,9 @@
                 <property name="flag" nameId="tpc2.1186414551515" value="true" />
               </node>
             </node>
-            <node role="removeHints" roleId="tpc2.4242538589862654489" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5950344441601493008">
-              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHint" typeId="tpc2.6822301196700715228" id="5950344441601493011">
-                <property name="hint" nameId="tpc2.6822301196700716967" value="diagram" />
-              </node>
-            </node>
-            <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5950344441601493013">
-              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHint" typeId="tpc2.6822301196700715228" id="5950344441601493016">
-                <property name="hint" nameId="tpc2.6822301196700716967" value="groovy" />
+            <node role="removeHints" roleId="tpc2.4242538589862654489" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5944657839036525727">
+              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525730">
+                <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="diagram" />
               </node>
             </node>
           </node>
@@ -209,6 +212,9 @@
     </node>
   </root>
   <root id="379263600995426991">
+    <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036524877">
+      <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="diagram" />
+    </node>
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="379263600995427107">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="379263600995427108" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="379263600995427109">
@@ -257,11 +263,11 @@
         </node>
       </node>
     </node>
-    <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHint" typeId="tpc2.6822301196700715228" id="472381747515620487">
-      <property name="hint" nameId="tpc2.6822301196700716967" value="diagram" />
-    </node>
   </root>
   <root id="472381747515631686">
+    <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525184">
+      <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576567" resolveInfo="groovy" />
+    </node>
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="472381747515631687">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="472381747515631688" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="472381747515631689">
@@ -310,8 +316,15 @@
         </node>
       </node>
     </node>
-    <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHint" typeId="tpc2.6822301196700715228" id="472381747515631704">
-      <property name="hint" nameId="tpc2.6822301196700716967" value="groovy" />
+  </root>
+  <root id="5944657839008259594">
+    <node role="hints" roleId="tpc2.5944657839000877563" type="tpc2.ConceptEditorHintDeclaration" typeId="tpc2.5944657839003601246" id="5944657839017576565">
+      <property name="name" nameId="tpck.1169194664001" value="diagram" />
+      <property name="presentation" nameId="tpc2.5944657839012629576" value="Use diagram notation" />
+    </node>
+    <node role="hints" roleId="tpc2.5944657839000877563" type="tpc2.ConceptEditorHintDeclaration" typeId="tpc2.5944657839003601246" id="5944657839017576567">
+      <property name="name" nameId="tpck.1169194664001" value="groovy" />
+      <property name="presentation" nameId="tpc2.5944657839012629576" value="Use groovy-style view for BaseLanguage" />
     </node>
   </root>
 </model>

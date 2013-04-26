@@ -57,7 +57,7 @@ public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescrip
         {
           String editorName = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
           for (SNode contextHint : ListSequence.fromList(SLinkOperations.getTargets(node, "contextHints", true))) {
-            editorName += "_" + SPropertyOperations.getString(contextHint, "hint");
+            editorName += "_" + SPropertyOperations.getString(SLinkOperations.getTarget(contextHint, "hint", false), "name");
           }
           return editorName + "_Editor";
         }

@@ -63,8 +63,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
 
   @Override
-  public void
-  setRole(Object role) {
+  public void setRole(Object role) {
     myLinkDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role.toString());
     if (myLinkDeclaration == null) {
       myErrorText = "?" + role.toString() + "?";

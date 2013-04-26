@@ -27,6 +27,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ConceptEditorHintDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.SelectOperation_Behavior" />

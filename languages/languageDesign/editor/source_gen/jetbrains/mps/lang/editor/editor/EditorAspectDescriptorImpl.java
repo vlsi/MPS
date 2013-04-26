@@ -123,85 +123,91 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 54:
         return Collections.<EditorAspect>singletonList(new ColorStyleClassItem_Editor());
       case 55:
-        return Collections.<EditorAspect>singletonList(new ConceptEditorDeclaration_Editor());
+        return Collections.<EditorAspect>singletonList(new ConceptEditorContextHints_Editor());
       case 56:
-        return Collections.<EditorAspect>singletonList(new ConceptEditorHint_Editor());
+        return Collections.<EditorAspect>singletonList(new ConceptEditorDeclaration_Editor());
       case 57:
-        return Collections.<EditorAspect>singletonList(new DefaultBaseLine_Editor());
+        return Collections.<EditorAspect>singletonList(new ConceptEditorHintDeclaration_Editor());
       case 58:
-        return Collections.<EditorAspect>singletonList(new DefaultCaretPositionStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new ConceptEditorHintDeclarationReference_Editor());
       case 59:
-        return Collections.<EditorAspect>singletonList(new EditorCellModel_Editor());
+        return Collections.<EditorAspect>singletonList(new DefaultBaseLine_Editor());
       case 60:
-        return Collections.<EditorAspect>singletonList(new EditorComponentDeclaration_Editor());
+        return Collections.<EditorAspect>singletonList(new DefaultCaretPositionStyleClassItem_Editor());
       case 61:
-        return Collections.<EditorAspect>singletonList(new ExplicitHintsSpecification_Editor());
+        return Collections.<EditorAspect>singletonList(new EditorCellModel_Editor());
       case 62:
-        return Collections.<EditorAspect>singletonList(new FloatStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new EditorComponentDeclaration_Editor());
       case 63:
-        return Collections.<EditorAspect>singletonList(new FontSizeStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new ExplicitHintsSpecification_Editor());
       case 64:
-        return Collections.<EditorAspect>singletonList(new FontStyleStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new FloatStyleClassItem_Editor());
       case 65:
-        return Collections.<EditorAspect>singletonList(new HorizontalAlign_Editor());
+        return Collections.<EditorAspect>singletonList(new FontSizeStyleClassItem_Editor());
       case 66:
-        return Collections.<EditorAspect>singletonList(new InlineEditorComponent_Editor());
+        return Collections.<EditorAspect>singletonList(new FontStyleStyleClassItem_Editor());
       case 67:
-        return Collections.<EditorAspect>singletonList(new InlineStyleDeclaration_Editor());
+        return Collections.<EditorAspect>singletonList(new HorizontalAlign_Editor());
       case 68:
-        return Collections.<EditorAspect>singletonList(new LayoutConstraintStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new InlineEditorComponent_Editor());
       case 69:
-        return Collections.<EditorAspect>singletonList(new MatchingLabelStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new InlineStyleDeclaration_Editor());
       case 70:
-        return Collections.<EditorAspect>singletonList(new MaxWidthStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new LayoutConstraintStyleClassItem_Editor());
       case 71:
-        return Collections.<EditorAspect>singletonList(new ModelAccessor_Editor());
+        return Collections.<EditorAspect>singletonList(new MatchingLabelStyleClassItem_Editor());
       case 72:
-        return Collections.<EditorAspect>singletonList(new NavigatableNodeStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new MaxWidthStyleClassItem_Editor());
       case 73:
-        return Collections.<EditorAspect>singletonList(new NavigatableReferenceStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new ModelAccessor_Editor());
       case 74:
-        return Collections.<EditorAspect>singletonList(new ParametersInformationQuery_Editor());
+        return Collections.<EditorAspect>singletonList(new NavigatableNodeStyleClassItem_Editor());
       case 75:
-        return Collections.<EditorAspect>singletonList(new ParametersInformationStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new NavigatableReferenceStyleClassItem_Editor());
       case 76:
-        return Collections.<EditorAspect>singletonList(new PositionChildrenStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new ParametersInformationQuery_Editor());
       case 77:
-        return Collections.<EditorAspect>singletonList(new PositionStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new ParametersInformationStyleClassItem_Editor());
       case 78:
-        return Collections.<EditorAspect>singletonList(new PreDefinedStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new PositionChildrenStyleClassItem_Editor());
       case 79:
-        return Collections.<EditorAspect>singletonList(new RGBColor_Editor());
+        return Collections.<EditorAspect>singletonList(new PositionStyleClassItem_Editor());
       case 80:
-        return Collections.<EditorAspect>singletonList(new ReadOnlyModelAccessor_Editor());
+        return Collections.<EditorAspect>singletonList(new PreDefinedStyleClassItem_Editor());
       case 81:
-        return Collections.<EditorAspect>singletonList(new RightTransformAnchorTagWrapper_Editor());
+        return Collections.<EditorAspect>singletonList(new QueryHintsSpecification_Editor());
       case 82:
-        return Collections.<EditorAspect>singletonList(new ScriptKindClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new RGBColor_Editor());
       case 83:
-        return Collections.<EditorAspect>singletonList(new SelectOperation_Editor());
+        return Collections.<EditorAspect>singletonList(new ReadOnlyModelAccessor_Editor());
       case 84:
-        return Collections.<EditorAspect>singletonList(new SelectPositionParameter_Editor());
+        return Collections.<EditorAspect>singletonList(new RightTransformAnchorTagWrapper_Editor());
       case 85:
-        return Collections.<EditorAspect>singletonList(new SideTransformAnchorTagStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new ScriptKindClassItem_Editor());
       case 86:
-        return Collections.<EditorAspect>singletonList(new StyleKey_Editor());
+        return Collections.<EditorAspect>singletonList(new SelectOperation_Editor());
       case 87:
-        return Collections.<EditorAspect>singletonList(new StyleKeyPack_Editor());
+        return Collections.<EditorAspect>singletonList(new SelectPositionParameter_Editor());
       case 88:
-        return Collections.<EditorAspect>singletonList(new StyleSheet_Editor());
+        return Collections.<EditorAspect>singletonList(new SideTransformAnchorTagStyleClassItem_Editor());
       case 89:
-        return Collections.<EditorAspect>singletonList(new StyleSheetClass_Editor());
+        return Collections.<EditorAspect>singletonList(new StyleKey_Editor());
       case 90:
-        return Collections.<EditorAspect>singletonList(new StyleSheetClassReference_Editor());
+        return Collections.<EditorAspect>singletonList(new StyleKeyPack_Editor());
       case 91:
-        return Collections.<EditorAspect>singletonList(new TableComponentStyleClassItem_Editor());
+        return Collections.<EditorAspect>singletonList(new StyleSheet_Editor());
       case 92:
+        return Collections.<EditorAspect>singletonList(new StyleSheetClass_Editor());
+      case 93:
+        return Collections.<EditorAspect>singletonList(new StyleSheetClassReference_Editor());
+      case 94:
+        return Collections.<EditorAspect>singletonList(new TableComponentStyleClassItem_Editor());
+      case 95:
         return Collections.<EditorAspect>singletonList(new UnderlinedStyleClassItem_Editor());
       default:
     }
     return Collections.emptyList();
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem", "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem", "jetbrains.mps.lang.editor.structure.CaretPositionParameter", "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", "jetbrains.mps.lang.editor.structure.CellActionMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", "jetbrains.mps.lang.editor.structure.CellKeyMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", "jetbrains.mps.lang.editor.structure.CellLayout", "jetbrains.mps.lang.editor.structure.CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", "jetbrains.mps.lang.editor.structure.CellMenuDescriptor", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms", "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group", "jetbrains.mps.lang.editor.structure.CellModel_Alternation", "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", "jetbrains.mps.lang.editor.structure.CellModel_Block", "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", "jetbrains.mps.lang.editor.structure.CellModel_BlockStart", "jetbrains.mps.lang.editor.structure.CellModel_Collection", "jetbrains.mps.lang.editor.structure.CellModel_Component", "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty", "jetbrains.mps.lang.editor.structure.CellModel_Constant", "jetbrains.mps.lang.editor.structure.CellModel_Custom", "jetbrains.mps.lang.editor.structure.CellModel_Empty", "jetbrains.mps.lang.editor.structure.CellModel_Error", "jetbrains.mps.lang.editor.structure.CellModel_Image", "jetbrains.mps.lang.editor.structure.CellModel_Indent", "jetbrains.mps.lang.editor.structure.CellModel_JComponent", "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.CellModel_RefCell", "jetbrains.mps.lang.editor.structure.CellModel_RefNode", "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.CellModel_URL", "jetbrains.mps.lang.editor.structure.ColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHint", "jetbrains.mps.lang.editor.structure.DefaultBaseLine", "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", "jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", "jetbrains.mps.lang.editor.structure.FloatStyleClassItem", "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", "jetbrains.mps.lang.editor.structure.HorizontalAlign", "jetbrains.mps.lang.editor.structure.InlineEditorComponent", "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem", "jetbrains.mps.lang.editor.structure.ModelAccessor", "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionStyleClassItem", "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem", "jetbrains.mps.lang.editor.structure.RGBColor", "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", "jetbrains.mps.lang.editor.structure.ScriptKindClassItem", "jetbrains.mps.lang.editor.structure.SelectOperation", "jetbrains.mps.lang.editor.structure.SelectPositionParameter", "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", "jetbrains.mps.lang.editor.structure.StyleKey", "jetbrains.mps.lang.editor.structure.StyleKeyPack", "jetbrains.mps.lang.editor.structure.StyleSheet", "jetbrains.mps.lang.editor.structure.StyleSheetClass", "jetbrains.mps.lang.editor.structure.StyleSheetClassReference", "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem", "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem", "jetbrains.mps.lang.editor.structure.CaretPositionParameter", "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", "jetbrains.mps.lang.editor.structure.CellActionMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", "jetbrains.mps.lang.editor.structure.CellKeyMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", "jetbrains.mps.lang.editor.structure.CellLayout", "jetbrains.mps.lang.editor.structure.CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", "jetbrains.mps.lang.editor.structure.CellMenuDescriptor", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms", "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group", "jetbrains.mps.lang.editor.structure.CellModel_Alternation", "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", "jetbrains.mps.lang.editor.structure.CellModel_Block", "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", "jetbrains.mps.lang.editor.structure.CellModel_BlockStart", "jetbrains.mps.lang.editor.structure.CellModel_Collection", "jetbrains.mps.lang.editor.structure.CellModel_Component", "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty", "jetbrains.mps.lang.editor.structure.CellModel_Constant", "jetbrains.mps.lang.editor.structure.CellModel_Custom", "jetbrains.mps.lang.editor.structure.CellModel_Empty", "jetbrains.mps.lang.editor.structure.CellModel_Error", "jetbrains.mps.lang.editor.structure.CellModel_Image", "jetbrains.mps.lang.editor.structure.CellModel_Indent", "jetbrains.mps.lang.editor.structure.CellModel_JComponent", "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.CellModel_RefCell", "jetbrains.mps.lang.editor.structure.CellModel_RefNode", "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.CellModel_URL", "jetbrains.mps.lang.editor.structure.ColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints", "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference", "jetbrains.mps.lang.editor.structure.DefaultBaseLine", "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", "jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", "jetbrains.mps.lang.editor.structure.FloatStyleClassItem", "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", "jetbrains.mps.lang.editor.structure.HorizontalAlign", "jetbrains.mps.lang.editor.structure.InlineEditorComponent", "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem", "jetbrains.mps.lang.editor.structure.ModelAccessor", "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionStyleClassItem", "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem", "jetbrains.mps.lang.editor.structure.QueryHintsSpecification", "jetbrains.mps.lang.editor.structure.RGBColor", "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", "jetbrains.mps.lang.editor.structure.ScriptKindClassItem", "jetbrains.mps.lang.editor.structure.SelectOperation", "jetbrains.mps.lang.editor.structure.SelectPositionParameter", "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", "jetbrains.mps.lang.editor.structure.StyleKey", "jetbrains.mps.lang.editor.structure.StyleKeyPack", "jetbrains.mps.lang.editor.structure.StyleSheet", "jetbrains.mps.lang.editor.structure.StyleSheetClass", "jetbrains.mps.lang.editor.structure.StyleSheetClassReference", "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"};
 }

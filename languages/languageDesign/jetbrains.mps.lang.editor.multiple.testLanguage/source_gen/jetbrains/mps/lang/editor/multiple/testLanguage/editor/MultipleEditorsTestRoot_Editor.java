@@ -76,7 +76,7 @@ public class MultipleEditorsTestRoot_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     try {
       editorContext.getCellFactory().pushCellContext();
-      editorContext.getCellFactory().addCellContextHints(new String[]{"diagram"});
+      editorContext.getCellFactory().addCellContextHints(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.diagram"});
       editorCell.addEditorCell(this.createConstant_zejl81_a0c0(editorContext, node));
       editorCell.addEditorCell(this.createConstant_zejl81_b0c0(editorContext, node));
       editorCell.addEditorCell(this.createRefNodeList_zejl81_c0c0(editorContext, node));
@@ -173,8 +173,8 @@ public class MultipleEditorsTestRoot_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     try {
       editorContext.getCellFactory().pushCellContext();
-      editorContext.getCellFactory().addCellContextHints(new String[]{"groovy"});
-      editorContext.getCellFactory().removeCellContextHints(new String[]{"diagram"});
+      editorContext.getCellFactory().addCellContextHints(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.groovy"});
+      editorContext.getCellFactory().removeCellContextHints(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.diagram"});
       editorCell.addEditorCell(this.createConstant_zejl81_a4a2a(editorContext, node));
       editorCell.addEditorCell(this.createConstant_zejl81_b4a2a(editorContext, node));
       editorCell.addEditorCell(this.createRefNodeList_zejl81_c4a2a(editorContext, node));

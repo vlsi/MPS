@@ -131,7 +131,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.FIRST);
       editorCell.getStyle().putAll(style);
-      editorCell.addKeyMap(new ConceptEditor_DefaultContextHint());
+      editorCell.addKeyMap(new ConceptEditor_DefaultContextHintLabel());
       editorCell.setDefaultText("");
       return editorCell;
     }

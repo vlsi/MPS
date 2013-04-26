@@ -13,7 +13,7 @@
       <property name="description" nameId="tp5g.1883175908513350760" value="Editing MultipleEditorsTestChild child concept instance using diagram editor (diagram context hint was pushed into context by parent collection)" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="5950344441601613251">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5950344441601668447">
       <property name="name" nameId="tpck.1169194664001" value="DefaultEditor" />
