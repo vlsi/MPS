@@ -412,7 +412,7 @@ public class ModuleChecker {
           continue;
         }
 
-        if (type.doPartialImport) {
+        if (type.doFullImport) {
           SNode mroot = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", null);
           SLinkOperations.setTarget(mroot, "folder", p, true);
           ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(mroot);
@@ -442,7 +442,7 @@ public class ModuleChecker {
       SPropertyOperations.set(module, "doNotCompile", "" + (doNotCompile));
     }
 
-    if (type.doPartialImport) {
+    if (type.doFullImport) {
       for (String path : res) {
         SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
         if (p == null) {
