@@ -101,7 +101,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
 
-    module.attach();
+    ((AbstractModule)module).attach();
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);
@@ -125,7 +125,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     invalidateCaches();
     for (SModule module : modulesToDispose) {
       fireModuleRemoved(module);
-      module.dispose();
+      ((AbstractModule) module).dispose();
       module.detach();
       MPSClassesReloadManager.getInstance().requestReload();
     }
@@ -141,7 +141,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     invalidateCaches();
     if (moduleRemoved) {
       fireModuleRemoved(module);
-      module.dispose();
+      ((AbstractModule) module).dispose();
       module.detach();
     } else {
       fireRepositoryChanged();

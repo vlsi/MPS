@@ -659,7 +659,6 @@ public abstract class AbstractModule implements SModule, EditableSModule, FileSy
     return myScope;
   }
 
-  @Override
   public void attach() {
     if (myDescriptorFile != null) {
       FileSystem.getInstance().addListener(this);
