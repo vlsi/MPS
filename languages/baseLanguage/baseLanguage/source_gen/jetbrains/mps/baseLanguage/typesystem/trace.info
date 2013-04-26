@@ -455,7 +455,7 @@
     <nodeInfo nodeId="5380162141338626155" fileName="subtyping_classifier_SubtypingRule.java" startLine="54" startPosition="102" endLine="55" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1898928462087099117" fileName="subtyping_classifier_SubtypingRule.java" startLine="55" startPosition="86" endLine="56" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5380162141338705033" fileName="subtyping_classifier_SubtypingRule.java" startLine="57" startPosition="18" endLine="58" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5380162141338705117" fileName="subtyping_classifier_SubtypingRule.java" startLine="58" startPosition="47" endLine="59" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8761950466705445998" fileName="subtyping_classifier_SubtypingRule.java" startLine="58" startPosition="47" endLine="59" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1175526792116" fileName="subtyping_classifier_SubtypingRule.java" startLine="62" startPosition="7" endLine="63" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1176727703257" fileName="subtyping_classifier_SubtypingRule.java" startLine="64" startPosition="5" endLine="65" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2676832813611739279" fileName="subtyping_classifier_SubtypingRule.java" startLine="67" startPosition="183" endLine="68" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -515,7 +515,7 @@
       <varInfo nodeId="1175524245720" varName="interfaceConcept" />
     </scopeInfo>
     <scopeInfo nodeId="5380162141338626161" fileName="subtyping_classifier_SubtypingRule.java" startLine="54" startPosition="102" endLine="56" endPosition="171" />
-    <scopeInfo nodeId="8761950466703002777" fileName="subtyping_classifier_SubtypingRule.java" startLine="57" startPosition="18" endLine="59" endPosition="49" />
+    <scopeInfo nodeId="8761950466703002777" fileName="subtyping_classifier_SubtypingRule.java" startLine="57" startPosition="18" endLine="59" endPosition="31" />
     <scopeInfo nodeId="1175523864032" fileName="subtyping_classifier_SubtypingRule.java" startLine="83" startPosition="5" endLine="85" endPosition="45">
       <varInfo nodeId="1175523864032" varName="b" />
     </scopeInfo>
