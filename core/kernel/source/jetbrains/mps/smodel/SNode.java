@@ -93,7 +93,12 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
 
   @Override
-  public void attach(SRepository repo) {
+  public void attach(@NotNull SRepository repo) {
+    assert !(myRepository instanceof DisposedRepository) : "Not supposed to do this, just detach the node";
+    repo.getModelAccess().checkReadAccess();
+    if (!myModel.isUpdateMode()) {
+      repo.getModelAccess().checkWriteAccess();
+    }
     if (myRepository == repo) return;
     synchronized (REPO_LOCK) {
       if (myRepository == repo) return;
@@ -106,6 +111,12 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public void detach() {
+    if (myRepository != null) {
+      myRepository.getModelAccess().checkWriteAccess();
+    }
+    for (SNode c : getChildren()) {
+      c.detach();
+    }
     synchronized (REPO_LOCK) {
       myRepository = DisposedRepository.INSTANCE;
     }
@@ -802,6 +813,13 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     fireNodeReadAccess();
 
     return internal_getModel();
+  }
+
+  //this method is for internal checks in SReferenceBase only
+  //note it does not have a read action as it doesn't add a result dependency when called
+  //it also does not check model access as it's already "synchronized" by volatile modifier of myRepo
+  public boolean wasDetached() {
+    return myRepository instanceof DisposedRepository;
   }
 
   private SModelBase getRealModel() {
