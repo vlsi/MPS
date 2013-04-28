@@ -63,18 +63,18 @@
     <jar destfile="${build.layout}/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest-generator.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest#1171932017138" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-baseLanguage-unitTest-generator-baseLanguage-template">
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-baseLanguage-unitTest-languageModels">
       <fileset dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-baseLanguage-unitTest-generator-baseLanguage-template">
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest-src.jar">
       <fileset dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/source_gen" includes="**/*.java" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/generator/generator/source_gen" includes="**/*.java" />
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/generator/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/jetbrains.mps.baseLanguage.unitTest.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-baseLanguage-unitTest-generator-baseLanguage-template" prefix="module/generator/baseLanguage/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-baseLanguage-unitTest-languageModels" prefix="module/languageModels" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-baseLanguage-unitTest-generator-baseLanguage-template" prefix="module/generator/baseLanguage/template" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest#1171932017138.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest#1171932017138.jar/META-INF" />
@@ -136,7 +136,7 @@
       <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test-src.jar">
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/generator/generator/source_gen" includes="**/*.java" />
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/generator/source_gen" includes="**/*.java" />
       <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mps-testing/languages/languageDesign/test/jetbrains.mps.lang.test.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-test-generator-baseLanguage-template" prefix="module/generator/baseLanguage/template" />
@@ -328,8 +328,8 @@
       <fileset dir="${mps_home}/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/mps-testing/languages/xml/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest-src.jar">
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/source_gen" includes="**/*.java" />
       <fileset dir="${mps_home}/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" includes="**/*.java" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/generator/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/jetbrains.mps.xmlUnitTest.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-util-xmlUnitTest-languages-xmlUnitTest-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-util-xmlUnitTest-languages-xmlUnitTest-languageModels" prefix="module/languageModels" />
@@ -528,7 +528,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest#1171932017138" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/generator/generator/source_gen" />
+        <path location="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -715,7 +715,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.test#1210261198005" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/generator/generator/source_gen" />
+        <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -980,7 +980,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.xmlUnitTest#5211164146776564145" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/generator/source_gen" />
+        <path location="${mps_home}/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -1025,11 +1025,11 @@
   
   <target name="cleanSources">
     <delete dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/generator/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-testing/languages/languageDesign/smodelTests/source_gen" />
     <delete dir="${mps_home}/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-testing/languages/languageDesign/editorTest/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/generator/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/generator/source_gen" />
   </target>
 </project>

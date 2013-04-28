@@ -15386,16 +15386,8 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="432909593272589929">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7316240245138667084" resolveInfo="myGenContext" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="432909593272589930">
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="432909593272589931">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="59et.~IFile%dgetDescendant(java%dlang%dString)%cjetbrains%dmps%dvfs%dIFile" resolveInfo="getDescendant" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="432909593272589932">
-                      <property name="value" nameId="tpee.1070475926801" value="generator" />
-                    </node>
-                  </node>
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="432909593272589933">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7316240245138667096" resolveInfo="myModuleSourceDir" />
-                  </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="432909593272589933">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7316240245138667096" resolveInfo="myModuleSourceDir" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="432909593272589934">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7444640161774488622" resolveInfo="generatorDescriptor" />

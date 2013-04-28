@@ -669,7 +669,7 @@ public class ModuleChecker {
       SLinkOperations.setTarget(language, "generator", SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Generator", null), true);
     }
 
-    ModuleChecker moduleCheckerForGenerator = new ModuleChecker(SLinkOperations.getTarget(language, "generator", true), SLinkOperations.getTarget(language, "generator", true), myVisibleModules, myPathConverter, myGenContext, myModuleSourceDir.getDescendant("generator"), generatorDescriptor, myReporter);
+    ModuleChecker moduleCheckerForGenerator = new ModuleChecker(SLinkOperations.getTarget(language, "generator", true), SLinkOperations.getTarget(language, "generator", true), myVisibleModules, myPathConverter, myGenContext, myModuleSourceDir, generatorDescriptor, myReporter);
     moduleCheckerForGenerator.check(type);
   }
 
