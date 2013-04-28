@@ -91,7 +91,7 @@
     </copyModels>
     <jar destfile="${build.layout}/mps-trove/languages/jetbrains.mps.baseLanguage.collections.trove-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/source_gen" includes="**/*.java" />
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/source_gen" includes="**/*.java" />
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/generator/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/baseLanguage/collections/languages/trove/jetbrains.mps.baseLanguage.collections.trove.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-collections-languages-trove-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-collections-languages-trove-languageModels" prefix="module/languageModels" />
@@ -291,7 +291,7 @@
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove#5499565529811308574" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/source_gen" />
+        <path location="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -325,7 +325,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.collections.trove#5499565529811308574">
-      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -349,6 +349,6 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/source_gen" />
+    <delete dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/generator/source_gen" />
   </target>
 </project>

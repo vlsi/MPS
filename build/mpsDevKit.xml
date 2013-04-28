@@ -350,22 +350,22 @@
     <jar destfile="${build.layout}/mps-devkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage-generator.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage#1218799731940" />
     </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsdevkit-languages-quickQueryLanguage-languageAccessories">
+      <fileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsdevkit-languages-quickQueryLanguage-generator-template">
       <fileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsdevkit-languages-quickQueryLanguage-languageModels">
       <fileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsdevkit-languages-quickQueryLanguage-languageAccessories">
-      <fileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copyModels>
     <jar destfile="${build.layout}/mps-devkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage-src.jar">
       <fileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/source_gen" includes="**/*.java" />
-      <fileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/generator/source_gen" includes="**/*.java" />
+      <fileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/generator/generator/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsdevkit-languages-quickQueryLanguage-languageAccessories" prefix="module/languageAccessories" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsdevkit-languages-quickQueryLanguage-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsdevkit-languages-quickQueryLanguage-languageModels" prefix="module/languageModels" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsdevkit-languages-quickQueryLanguage-languageAccessories" prefix="module/languageAccessories" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQuery.runtime.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQuery.runtime.jar/META-INF" />
@@ -695,7 +695,7 @@
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage#1218799731940" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/generator/source_gen" />
+        <path location="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/generator/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -735,7 +735,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.quickQueryLanguage#1218799731940">
-      <fileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/generator/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1296,7 +1296,7 @@
     <delete dir="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/source_gen" />
     <delete dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" />
     <delete dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/source_gen" />
-    <delete dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/generator/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/source_gen" />
   </target>
 </project>

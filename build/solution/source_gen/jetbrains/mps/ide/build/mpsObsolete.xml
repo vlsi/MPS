@@ -115,19 +115,19 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-mps-lite-languages-mpslite-languageAccessories">
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-mps-lite-languages-mpslite-generator-template">
-      <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-mps-lite-languages-mpslite-languageModels">
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-mps-lite-languages-mpslite-generator-template">
+      <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-obsolete/languages/mpslite/jetbrains.mpslite-src.jar">
-      <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/generator/source_gen" includes="**/*.java" />
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/source_gen" includes="**/*.java" />
+      <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/generator/generator/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/util/mps-lite/languages/mpslite/jetbrains.mpslite.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-mps-lite-languages-mpslite-languageAccessories" prefix="module/languageAccessories" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-mps-lite-languages-mpslite-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-mps-lite-languages-mpslite-languageModels" prefix="module/languageModels" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-mps-lite-languages-mpslite-generator-template" prefix="module/generator/template" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mpslite#1237409422567.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mpslite#1237409422567.jar/META-INF" />
@@ -206,21 +206,21 @@
     <jar destfile="${build.layout}/mps-obsolete/languages/build/jetbrains.mps.build.custommps-generator.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.custommps#1233155119006" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-custommps-generator-template">
-      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/custommps/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-custommps-languageModels">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/custommps/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-custommps-generator-template">
+      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/custommps/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-custommps-languageAccessories">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/custommps/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/mps-obsolete/languages/build/jetbrains.mps.build.custommps-src.jar">
-      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/custommps/generator/source_gen" includes="**/*.java" />
+      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/custommps/generator/generator/source_gen" includes="**/*.java" />
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/custommps/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mps-obsolete/languages/custommps/jetbrains.mps.build.custommps.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-custommps-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-custommps-languageModels" prefix="module/languageModels" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-custommps-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-custommps-languageAccessories" prefix="module/languageAccessories" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.custommps#1233155119006.jar" />
@@ -277,18 +277,18 @@
     <jar destfile="${build.layout}/mps-obsolete/languages/build/jetbrains.mps.build.dependency-generator.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.dependency#1216906826567" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-dependency-generator-buildlanguage-template">
-      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/dependency/generator/buildlanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-dependency-languageModels">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/dependency/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-dependency-generator-buildlanguage-template">
+      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/dependency/generator/buildlanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-obsolete/languages/build/jetbrains.mps.build.dependency-src.jar">
+      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/dependency/generator/generator/source_gen" includes="**/*.java" />
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/dependency/source_gen" includes="**/*.java" />
-      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/dependency/generator/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mps-obsolete/languages/dependency/jetbrains.mps.build.dependency.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-dependency-generator-buildlanguage-template" prefix="module/generator/buildlanguage/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-dependency-languageModels" prefix="module/languageModels" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-dependency-generator-buildlanguage-template" prefix="module/generator/buildlanguage/template" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.dependency#1216906826567.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.dependency#1216906826567.jar/META-INF" />
@@ -410,8 +410,8 @@
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/packaging/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/mps-obsolete/languages/build/jetbrains.mps.build.packaging-src.jar">
+      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/packaging/generator/generator/source_gen" includes="**/*.java" />
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/packaging/source_gen" includes="**/*.java" />
-      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/packaging/generator/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mps-obsolete/languages/packaging/jetbrains.mps.build.packaging.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-packaging-languageModels" prefix="module/languageModels" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-obsolete-languages-packaging-generator-buildlanguage-template" prefix="module/generator/buildlanguage/template" />
@@ -799,7 +799,7 @@
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mpslite#1237409422567" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/languages/util/mps-lite/languages/mpslite/generator/source_gen" />
+        <path location="${mps_home}/languages/util/mps-lite/languages/mpslite/generator/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -845,7 +845,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mpslite#1237409422567">
-      <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/generator/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -930,7 +930,7 @@
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.custommps#1233155119006" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mps-obsolete/languages/custommps/generator/source_gen" />
+        <path location="${mps_home}/plugins/mps-obsolete/languages/custommps/generator/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -985,7 +985,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.custommps#1233155119006">
-      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/custommps/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/custommps/generator/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1039,7 +1039,7 @@
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.dependency#1216906826567" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mps-obsolete/languages/dependency/generator/source_gen" />
+        <path location="${mps_home}/plugins/mps-obsolete/languages/dependency/generator/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -1076,7 +1076,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.dependency#1216906826567">
-      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/dependency/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/dependency/generator/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1222,7 +1222,7 @@
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.packaging###1203014923802" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mps-obsolete/languages/packaging/generator/source_gen" />
+        <path location="${mps_home}/plugins/mps-obsolete/languages/packaging/generator/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -1272,7 +1272,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.packaging###1203014923802">
-      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/packaging/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-obsolete/languages/packaging/generator/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1354,18 +1354,18 @@
   
   <target name="cleanSources">
     <delete dir="${mps_home}/plugins/mps-obsolete/languages/dependency/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-obsolete/languages/dependency/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-obsolete/languages/dependency/generator/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.build.generictasks.pluginSolution/source_gen" />
     <delete dir="${mps_home}/languages/util/mps-lite/languages/nanoj/source_gen" />
     <delete dir="${mps_home}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.xml.deprecated.pluginSolution/source_gen" />
     <delete dir="${mps_home}/languages/util/mps-lite/languages/mpslite/source_gen" />
-    <delete dir="${mps_home}/languages/util/mps-lite/languages/mpslite/generator/source_gen" />
+    <delete dir="${mps_home}/languages/util/mps-lite/languages/mpslite/generator/generator/source_gen" />
     <delete dir="${mps_home}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/source_gen" />
     <delete dir="${mps_home}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.buildlanguage.execution/source_gen" />
     <delete dir="${mps_home}/plugins/mps-obsolete/languages/packaging/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-obsolete/languages/packaging/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-obsolete/languages/packaging/generator/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-obsolete/languages/custommps/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-obsolete/languages/custommps/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-obsolete/languages/custommps/generator/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.build.mpsdist/source_gen" />
   </target>
 </project>
