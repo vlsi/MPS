@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -30,7 +29,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
@@ -104,7 +102,6 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);
-    MPSClassesReloadManager.getInstance().requestReload();
     return module;
   }
 
@@ -125,7 +122,6 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     for (SModule module : modulesToDispose) {
       fireModuleRemoved(module);
       ((AbstractModule) module).dispose();
-      MPSClassesReloadManager.getInstance().requestReload();
     }
     if (repositoryChanged) {
       fireRepositoryChanged();

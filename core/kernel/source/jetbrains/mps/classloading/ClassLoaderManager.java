@@ -77,6 +77,11 @@ public class ClassLoaderManager implements CoreComponent {
     public void beforeModuleRemoved(SModule module) {
       unloadClasses(Collections.singleton(module), new EmptyProgressMonitor());
     }
+
+
+
+    // todo: add listener on module added!
+    // todo: add listener on module reloaded! (?)
   };
 
   // temporary stuff for profiling
