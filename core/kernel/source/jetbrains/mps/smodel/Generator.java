@@ -113,8 +113,7 @@ public class Generator extends AbstractModule {
 
   @Override
   public IFile getModuleSourceDir() {
-    // todo: !
-    return mySourceLanguage.getModuleSourceDir().getDescendant("generator");
+    return mySourceLanguage.getModuleSourceDir();
   }
 
   @Override

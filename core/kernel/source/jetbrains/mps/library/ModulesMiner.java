@@ -223,7 +223,7 @@ public class ModulesMiner {
 
     IFile testsGenPath = ProjectPathUtil.getGeneratorTestsOutputPath(descriptorFile, descriptor);
     if (testsGenPath != null) {
-      excludes.add(genPath);
+      excludes.add(testsGenPath);
       if (!descriptorFile.isReadOnly()) {
         FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(testsGenPath.getPath()));
       }
@@ -238,10 +238,17 @@ public class ModulesMiner {
       excludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
     }
 
-    // todo: exclude generator classes gen too!
-    IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile.getParent());
+    IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile.getParent(), false);
     if (classesGen != null) {
       excludes.add(classesGen);
+    }
+
+    // todo: specify what kind of descriptor can be input for this method
+    if (descriptor instanceof LanguageDescriptor) {
+      IFile generatorClassesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile.getParent(), true);
+      if (generatorClassesGen != null) {
+        excludes.add(generatorClassesGen);
+      }
     }
 
     for (String entry : descriptor.getAdditionalJavaStubPaths()) {

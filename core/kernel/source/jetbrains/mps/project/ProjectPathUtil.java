@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
+
+import org.jetbrains.mps.openapi.module.SModule;
 
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
@@ -27,20 +29,27 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 
+// todo: rewrite this. all methods should have same signature!
 public class ProjectPathUtil {
-  public static IFile getClassesGenFolder(IFile moduleSourceDir) {
-    if (moduleSourceDir == null) {
-      return null;
-    }
+  public static IFile getClassesGenFolder(IFile moduleSourceDir, boolean isGenerator) {
+    if (moduleSourceDir == null) return null;
+
     if (moduleSourceDir.isReadOnly()) {
       // packaged
       IFile bundleHome = FileSystem.getInstance().getBundleHome(moduleSourceDir);
-      return bundleHome != null ? FileSystem.getInstance().getFileByPath(bundleHome.getPath() + "!") : null;
+      if (bundleHome == null) return null;
+
+      String mainPath = bundleHome.getPath().substring(0, bundleHome.getPath().length() - ".jar".length());
+      String jarPath = isGenerator ? (mainPath + "-generator.jar") : (mainPath + ".jar");
+
+      return FileSystem.getInstance().getFileByPath(jarPath);
+    } else {
+      return isGenerator ? moduleSourceDir.getDescendant("generator").getDescendant("classes_gen") : moduleSourceDir.getDescendant("classes_gen");
     }
-    return moduleSourceDir.getDescendant("classes_gen");
   }
 
   public static IFile getClassesFolder(IFile moduleDescriptor) {
+    // generator doesn't contain classes folder because generators compiled in mps
     if (moduleDescriptor == null) {
       return null;
     }
@@ -61,7 +70,7 @@ public class ProjectPathUtil {
     } else if (descriptor instanceof LanguageDescriptor) {
       generatorOutputPath = ((LanguageDescriptor) descriptor).getGenPath();
     } else if (descriptor instanceof GeneratorDescriptor) {
-      generatorOutputPath = null;
+      return moduleSourceDir.getDescendant("generator").getDescendant("source_gen");
     } else {
       return null;
     }
@@ -82,18 +91,9 @@ public class ProjectPathUtil {
   }
 
   public static IFile getGeneratorOutputPath(SModule module) {
-    // todo: remove
-    if (module instanceof TestLanguage || module instanceof StubSolution) {
+    if (!(module instanceof AbstractModule)) {
       return null;
     }
-    if (module instanceof Generator) {
-      return getGeneratorOutputPath(((Generator) module).getSourceLanguage());
-    }
-    // todo: instance of Language | Solution?
-    if (module instanceof AbstractModule) {
-      return getGeneratorOutputPath(((AbstractModule) module).getModuleSourceDir(), ((AbstractModule) module).getModuleDescriptor());
-    } else {
-      return null;
-    }
+    return getGeneratorOutputPath(((AbstractModule) module).getModuleSourceDir(), ((AbstractModule) module).getModuleDescriptor());
   }
 }
