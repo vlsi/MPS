@@ -4,7 +4,7 @@ package jetbrains.mps.workbench.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
-import jetbrains.mps.persistence.PersistenceRegistry;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -51,12 +51,12 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
 
   @Override
   public void initComponent() {
-    PersistenceRegistry.getInstance().addFindUsagesParticipant(this);
+    PersistenceFacade.getInstance().addFindUsagesParticipant(this);
   }
 
   @Override
   public void disposeComponent() {
-    PersistenceRegistry.getInstance().removeFindUsagesParticipant(this);
+    PersistenceFacade.getInstance().removeFindUsagesParticipant(this);
   }
 
   @NotNull

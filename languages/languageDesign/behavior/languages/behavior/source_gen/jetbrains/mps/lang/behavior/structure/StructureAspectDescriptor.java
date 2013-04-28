@@ -5,6 +5,7 @@ package jetbrains.mps.lang.behavior.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -16,7 +17,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.ConceptBehavior").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IMemberContainer", "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable", "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods", "jetbrains.mps.lang.structure.structure.IConceptAspect").references("concept").children(new String[]{"constructor", "method", "staticMethod"}, new boolean[]{false, true, true}).alias("Concept Behavior", "").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration").super_("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible").properties("isVirtual", "isPrivate", "isAbstract", "isStatic").references("overriddenMethod").create();
       case 3:
@@ -24,13 +25,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"concept"}, new boolean[]{true}).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall").super_("jetbrains.mps.baseLanguage.structure.BaseMethodCall").parents("jetbrains.mps.baseLanguage.structure.BaseMethodCall").references("declaration").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall").super_("jetbrains.mps.baseLanguage.structure.BaseMethodCall").parents("jetbrains.mps.baseLanguage.structure.BaseMethodCall").references("declaration").staticScope(StaticScope.NONE).create();
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration").super_("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible").properties("isPrivate").create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.SuperNodeExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("superConcept").alias("super", "super node").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.SuperNodeExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("superConcept").alias("super", "super node").staticScope(StaticScope.NONE).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.ThisNodeExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IThisExpression").alias("this", "this node").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.structure.ThisNodeExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IThisExpression").alias("this", "this node").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

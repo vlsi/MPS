@@ -5,6 +5,7 @@ package jetbrains.mps.lang.resources.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -20,9 +21,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconResourceDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"iconExpression"}, new boolean[]{false}).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconResourceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"icon"}, new boolean[]{false}).alias("icon", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconResourceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"icon"}, new boolean[]{false}).alias("icon", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconResourceReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").alias("icon", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconResourceReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").alias("icon", "").staticScope(StaticScope.NONE).create();
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.Resource").interface_().properties("path").create();
       default:

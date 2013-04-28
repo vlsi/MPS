@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.tuples.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,13 +15,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"component"}, new boolean[]{true}).alias("[", "indexed tuple").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"component"}, new boolean[]{true}).alias("[", "indexed tuple").staticScope(StaticScope.NONE).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"tuple", "index"}, new boolean[]{false, false}).alias("[", "access tuple member by index").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"tuple", "index"}, new boolean[]{false, false}).alias("[", "access tuple member by index").staticScope(StaticScope.NONE).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.IGenericType").children(new String[]{"componentType"}, new boolean[]{true}).alias("[", "indexed tuple type").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.IGenericType").children(new String[]{"componentType"}, new boolean[]{true}).alias("[", "indexed tuple type").staticScope(StaticScope.NONE).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").references("component").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").references("component").staticScope(StaticScope.NONE).create();
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.HasAnnotation", "jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.baseLanguage.structure.TypeAnnotable", "jetbrains.mps.lang.core.structure.IResolveInfo").properties("final").children(new String[]{"type"}, new boolean[]{false}).create();
       case 5:
@@ -28,9 +29,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration").super_("jetbrains.mps.baseLanguage.structure.Classifier").parents("jetbrains.mps.baseLanguage.structure.Classifier").children(new String[]{"component", "extended", "implements", "method"}, new boolean[]{true, false, true, true}).alias("Tuple", "Named tuple declaration").create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("tupleDeclaration").children(new String[]{"componentRef"}, new boolean[]{true}).alias("<{tupleDeclaration}> literal", "tuple literal").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("tupleDeclaration").children(new String[]{"componentRef"}, new boolean[]{true}).alias("<{tupleDeclaration}> literal", "tuple literal").staticScope(StaticScope.NONE).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType").super_("jetbrains.mps.baseLanguage.structure.ClassifierType").parents("jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.IGenericType", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("tupleDeclaration").children(new String[]{"parameterType"}, new boolean[]{true}).alias("<{tupleDeclaration}> type", "reference to named tuple declaration").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType").super_("jetbrains.mps.baseLanguage.structure.ClassifierType").parents("jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.IGenericType", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("tupleDeclaration").children(new String[]{"parameterType"}, new boolean[]{true}).alias("<{tupleDeclaration}> type", "reference to named tuple declaration").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

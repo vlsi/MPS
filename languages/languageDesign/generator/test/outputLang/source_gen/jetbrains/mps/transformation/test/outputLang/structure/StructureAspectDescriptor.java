@@ -5,6 +5,7 @@ package jetbrains.mps.transformation.test.outputLang.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -18,7 +19,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.CustomStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"inner"}, new boolean[]{false}).alias("work: ", "").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("ii").references("myStatement").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("ii").references("myStatement").staticScope(StaticScope.NONE).create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.OutputNode").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("text").children(new String[]{"outputChild"}, new boolean[]{true}).create();
       case 4:
@@ -26,7 +27,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("text").children(new String[]{"outputChild", "specialChild"}, new boolean[]{true, false}).alias("output root concept", "").create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").properties("name1", "name2").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").properties("name1", "name2").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

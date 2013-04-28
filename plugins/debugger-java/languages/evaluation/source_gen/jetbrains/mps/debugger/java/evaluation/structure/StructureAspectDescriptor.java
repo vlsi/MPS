@@ -5,6 +5,7 @@ package jetbrains.mps.debugger.java.evaluation.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,19 +15,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.DebuggedType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").properties("isHigh").children(new String[]{"lowType", "highType"}, new boolean[]{false, false}).alias("debugged type", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.DebuggedType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").properties("isHigh").children(new String[]{"lowType", "highType"}, new boolean[]{false, false}).alias("debugged type", "").staticScope(StaticScope.NONE).create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation").super_("jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation").parents("jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation").alias("do not transform", "").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"expression"}, new boolean[]{false}).alias("downcast", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"expression"}, new boolean[]{false}).alias("downcast", "").staticScope(StaticScope.NONE).create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.Evaluator").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ScopeProvider", "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept").children(new String[]{"code"}, new boolean[]{false}).create();
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept").properties("isShowContext").children(new String[]{"variables", "thisNode", "contextNode", "evaluatedStatements"}, new boolean[]{true, false, false, false}).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall").super_("jetbrains.mps.baseLanguage.structure.BaseMethodCall").parents("jetbrains.mps.baseLanguage.structure.BaseMethodCall").references("instanceMethodDeclaration").alias("super", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall").super_("jetbrains.mps.baseLanguage.structure.BaseMethodCall").parents("jetbrains.mps.baseLanguage.structure.BaseMethodCall").references("instanceMethodDeclaration").alias("super", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("this", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("this", "").staticScope(StaticScope.NONE).create();
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").create();
       case 8:
@@ -34,7 +35,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable").super_("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration").parents("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration").properties("isOutOfScope", "highLevelNodeId", "lowLevelName").children(new String[]{"debuggedType"}, new boolean[]{false}).create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference").super_("jetbrains.mps.baseLanguage.structure.BaseVariableReference").parents("jetbrains.mps.baseLanguage.structure.BaseVariableReference").references("variableDeclaration").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference").super_("jetbrains.mps.baseLanguage.structure.BaseVariableReference").parents("jetbrains.mps.baseLanguage.structure.BaseVariableReference").references("variableDeclaration").staticScope(StaticScope.NONE).create();
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation").super_("jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation").parents("jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation").create();
       case 12:

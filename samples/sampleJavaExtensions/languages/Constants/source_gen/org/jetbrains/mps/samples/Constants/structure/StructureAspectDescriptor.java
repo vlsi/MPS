@@ -5,6 +5,7 @@ package org.jetbrains.mps.samples.Constants.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -16,7 +17,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.Constant").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"initializer"}, new boolean[]{false}).create();
       case 1:
-        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.ConstantReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("original").create();
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.ConstantReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("original").staticScope(StaticScope.NONE).create();
       case 2:
         return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.Constants").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"constants"}, new boolean[]{true}).create();
       default:

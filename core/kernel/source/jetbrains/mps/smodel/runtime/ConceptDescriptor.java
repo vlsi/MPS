@@ -40,6 +40,8 @@ public interface ConceptDescriptor {
 
   boolean hasChild(String name);
 
+  StaticScope getStaticScope();
+
   //true if true, false if false or !hasChild(name);
   boolean isMultipleChild(String name);
 

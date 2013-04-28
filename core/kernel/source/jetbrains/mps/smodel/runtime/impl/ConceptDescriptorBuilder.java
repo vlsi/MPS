@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -38,6 +39,7 @@ public class ConceptDescriptorBuilder {
   private String conceptAlias;
   private String shortDescription;
   private String helpUrl;
+  private StaticScope staticScope;
 
   public ConceptDescriptorBuilder(String conceptFqName) {
     this.conceptFqName = conceptFqName;
@@ -95,6 +97,11 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
+  public ConceptDescriptorBuilder staticScope(StaticScope value) {
+    this.staticScope = value;
+    return this;
+  }
+
   public ConceptDescriptor create() {
     return new CompiledConceptDescriptor(conceptFqName, superConcept, isInterfaceConcept,
         parents == null ? EMPTY_STRINGS : parents,
@@ -104,6 +111,7 @@ public class ConceptDescriptorBuilder {
         isMultiple == null ? EMPTY_BOOLS : isMultiple,
         isAbstract, isFinal,
         conceptAlias == null ? "" : conceptAlias, shortDescription == null ? "" : shortDescription,
-        helpUrl == null ? "" : helpUrl);
+        helpUrl == null ? "" : helpUrl,
+        staticScope == null ? StaticScope.GLOBAL : staticScope);
   }
 }

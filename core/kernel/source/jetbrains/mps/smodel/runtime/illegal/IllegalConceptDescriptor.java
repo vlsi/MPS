@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.runtime.illegal;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.StaticScope;
 
 import java.util.Collections;
 import java.util.List;
@@ -71,6 +72,11 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @Override
   public boolean hasChild(String name) {
     return false;
+  }
+
+  @Override
+  public StaticScope getStaticScope() {
+    return StaticScope.GLOBAL;
   }
 
   @Override

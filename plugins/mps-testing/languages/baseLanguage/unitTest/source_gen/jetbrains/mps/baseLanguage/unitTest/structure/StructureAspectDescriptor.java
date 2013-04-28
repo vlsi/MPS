@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,29 +15,29 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AfterTest").super_("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").parents("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").alias("afterTest", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AfterTest").super_("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").parents("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").alias("afterTest", "").staticScope(StaticScope.NONE).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals").super_("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert").parents("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert").alias("assert equals", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals").super_("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert").parents("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert").alias("assert equals", "").staticScope(StaticScope.NONE).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"condition"}, new boolean[]{false}).alias("assert false", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"condition"}, new boolean[]{false}).alias("assert false", "").staticScope(StaticScope.NONE).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"expression"}, new boolean[]{false}).alias("assert is not null", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"expression"}, new boolean[]{false}).alias("assert is not null", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"expression"}, new boolean[]{false}).alias("assert is null", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"expression"}, new boolean[]{false}).alias("assert is null", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame").super_("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert").parents("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert").alias("assert same (\"==\")", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame").super_("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert").parents("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert").alias("assert same (\"==\")", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"statement", "exceptionType"}, new boolean[]{false, false}).alias("assert throws", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"statement", "exceptionType"}, new boolean[]{false, false}).alias("assert throws", "").staticScope(StaticScope.NONE).create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"condition"}, new boolean[]{false}).alias("assert true", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"condition"}, new boolean[]{false}).alias("assert true", "").staticScope(StaticScope.NONE).create();
       case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase").super_("jetbrains.mps.baseLanguage.structure.ClassConcept").parents("jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase").properties("testCaseName").children(new String[]{"testMethodList", "beforeTest", "afterTest"}, new boolean[]{false, false, false}).create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest").super_("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").parents("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").alias("beforeTest", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest").super_("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").parents("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").alias("beforeTest", "").staticScope(StaticScope.NONE).create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"expected", "actual"}, new boolean[]{false, false}).abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").children(new String[]{"expected", "actual"}, new boolean[]{false, false}).abstract_().staticScope(StaticScope.NONE).create();
       case 11:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.Fail").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").alias("fail", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.Fail").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").alias("fail", "").staticScope(StaticScope.NONE).create();
       case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase").interface_().parents("jetbrains.mps.baseLanguage.unitTest.structure.ITestable", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 13:
@@ -48,7 +49,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").interface_().children(new String[]{"message"}, new boolean[]{false}).create();
       case 17:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").abstract_().staticScope(StaticScope.NONE).create();
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.TestMethod").super_("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod").properties("methodName").create();
       case 19:
