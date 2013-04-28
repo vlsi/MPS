@@ -20527,6 +20527,12 @@
               <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2075442863766408921" resolveInfo="jetbrains.mps.ui.modeling" />
             </node>
           </node>
+          <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="1517654889518938070">
+            <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="1517654889518938071">
+              <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
+              <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="9200313594506435738" resolveInfo="jetbrains.mps.ui#5725024602606565468" />
+            </node>
+          </node>
         </node>
       </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="2075442863766408957">
