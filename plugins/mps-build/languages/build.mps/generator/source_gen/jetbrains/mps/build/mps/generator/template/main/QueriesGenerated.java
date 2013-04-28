@@ -35,7 +35,10 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Collections;
+import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.build.mps.behavior.BuildMps_Language_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.mps.util.PathConverter;
@@ -470,11 +473,10 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_9200313594511245341(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode lang = SLinkOperations.getTarget(_context.getNode(), "module", false);
-    return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getNextSibling(lang));
+    return SNodeOperations.cast(SNodeOperations.getNextSibling(SLinkOperations.getTarget(_context.getNode(), "module", false)), "jetbrains.mps.build.mps.structure.BuildMps_Generator");
   }
 
-  public static Object referenceMacro_GetReferent_4643216374596212875(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1517654889523632483(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "module", false);
   }
 
@@ -1006,7 +1008,8 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_8654221991637263183(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "module", false), "sources", true)).where(new IWhereFilter<SNode>() {
+    Set<SNode> modelRoots = SetSequence.fromSet(new HashSet<SNode>());
+    SetSequence.fromSet(modelRoots).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "module", false), "sources", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot");
       }
@@ -1014,7 +1017,21 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot");
       }
-    });
+    }));
+
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Language")) {
+      SetSequence.fromSet(modelRoots).addSequence(ListSequence.fromList(SLinkOperations.getTargets(BuildMps_Language_Behavior.call_getGenerator_1517654889524434844(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Language")), "sources", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot");
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot");
+        }
+      }));
+    }
+
+    return modelRoots;
   }
 
   public static Iterable sourceNodesQuery_4356762679305730694(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1022,7 +1039,8 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_2540145662854694642(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "module", false), "sources", true)).where(new IWhereFilter<SNode>() {
+    Set<SNode> sources = SetSequence.fromSet(new HashSet<SNode>());
+    SetSequence.fromSet(sources).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "module", false), "sources", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");
       }
@@ -1030,7 +1048,21 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");
       }
-    });
+    }));
+
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Language")) {
+      SetSequence.fromSet(sources).addSequence(ListSequence.fromList(SLinkOperations.getTargets(BuildMps_Language_Behavior.call_getGenerator_1517654889524434844(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Language")), "sources", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");
+        }
+      }));
+    }
+
+    return sources;
   }
 
   public static Iterable sourceNodesQuery_6592112598314985925(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

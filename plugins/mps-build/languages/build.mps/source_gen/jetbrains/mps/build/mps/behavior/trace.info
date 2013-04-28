@@ -262,6 +262,26 @@
     </scopeInfo>
     <unitInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildLayout_ToBinaryCopyProcessor_Behavior" />
   </root>
+  <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1517654889524432594">
+    <nodeInfo nodeId="1517654889524473988" fileName="BuildMps_Language_Behavior.java" startLine="14" startPosition="75" endLine="15" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1517654889524508422" fileName="BuildMps_Language_Behavior.java" startLine="17" startPosition="137" endLine="18" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1517654889524531645" fileName="BuildMps_Language_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1517654889524432594" fileName="BuildMps_Language_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1517654889524439215" fileName="BuildMps_Language_Behavior.java" startLine="13" startPosition="77" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1517654889524482082" fileName="BuildMps_Language_Behavior.java" startLine="16" startPosition="5" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1517654889524432594" fileName="BuildMps_Language_Behavior.java" startLine="13" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGenerator_1517654889524434844#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="1517654889524432815" fileName="BuildMps_Language_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1517654889524439218" fileName="BuildMps_Language_Behavior.java" startLine="14" startPosition="75" endLine="15" endPosition="68" />
+    <scopeInfo nodeId="1517654889524482085" fileName="BuildMps_Language_Behavior.java" startLine="17" startPosition="137" endLine="18" endPosition="132" />
+    <scopeInfo nodeId="1517654889524432594" fileName="BuildMps_Language_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="1517654889524432594" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1517654889524434847" fileName="BuildMps_Language_Behavior.java" startLine="13" startPosition="77" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="1517654889524432594" fileName="BuildMps_Language_Behavior.java" startLine="13" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="1517654889524432594" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1517654889524432594" fileName="BuildMps_Language_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Language_Behavior" />
+  </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1957532277556926137">
     <nodeInfo nodeId="6547494638219603464" fileName="BuildMps_IdeaPluginContent_Behavior.java" startLine="14" startPosition="92" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1957532277556926137" fileName="BuildMps_IdeaPluginContent_Behavior.java" startLine="19" startPosition="89" endLine="20" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
