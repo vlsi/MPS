@@ -29,11 +29,15 @@ import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.build.mps.behavior.BuildMps_Generator_Behavior;
 import java.util.LinkedHashMap;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class ModuleChecker {
   private static final String CORE_LANGUAGE_UID = "ceab5195-25ea-4f22-9b92-103b95ca8c0c";
@@ -489,7 +493,15 @@ public class ModuleChecker {
 
     Map<SNode, SNode> seen = new HashMap<SNode, SNode>();
 
-    Iterable<Dependency> dependencies = myModuleDescriptor.getDependencies();
+    Set<Dependency> dependencies = SetSequence.fromSetWithValues(new HashSet<Dependency>(), myModuleDescriptor.getDependencies());
+
+    // todo: hack 
+    if (type.doFullImport) {
+      if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Generator"), "dependencies", true)).addElement(createBuildMps_ModuleDependencyOnModule_yr5c5g_a0a0a0a11a92(BuildMps_Generator_Behavior.call_getSourceLanguage_9200313594510517119(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))));
+      }
+    }
+
     for (Dependency dependency : dependencies) {
       SModuleReference moduleRef = dependency.getModuleRef();
       if (moduleRef.getModuleName().contains("#") && !(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
@@ -591,7 +603,7 @@ public class ModuleChecker {
                 SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
                 it
               );
-              return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_yr5c5g_a0a1a0a0a0a0b0a0d0t0db(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
+              return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_yr5c5g_a0a1a0a0a0a0b0a0d0x0db(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
             }
           }))) {
             report("jar stub library should be extracted into build script: " + relPath, myOriginalModule);
@@ -601,7 +613,7 @@ public class ModuleChecker {
         if (type.doPartialImport) {
           SNode extr = ListSequence.fromList(previous).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_yr5c5g_a0a0a0a0a0a0a0c0d0t0db(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+              return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_yr5c5g_a0a0a0a0a0a0a0c0d0x0db(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
             }
           });
 
@@ -796,6 +808,14 @@ public class ModuleChecker {
     }
   }
 
+  private static SNode createBuildMps_ModuleDependencyOnModule_yr5c5g_a0a0a0a11a92(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null, GlobalScope.getInstance(), false);
+    n1.setProperty("reexport", "" + false);
+    n1.setReferenceTarget("module", (SNode) p0);
+    return n1;
+  }
+
   private static boolean neq_yr5c5g_a0a0e0r(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
@@ -810,14 +830,14 @@ public class ModuleChecker {
     ));
   }
 
-  private static boolean eq_yr5c5g_a0a1a0a0a0a0b0a0d0t0db(Object a, Object b) {
+  private static boolean eq_yr5c5g_a0a1a0a0a0a0b0a0d0x0db(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_yr5c5g_a0a0a0a0a0a0a0c0d0t0db(Object a, Object b) {
+  private static boolean eq_yr5c5g_a0a0a0a0a0a0a0c0d0x0db(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
