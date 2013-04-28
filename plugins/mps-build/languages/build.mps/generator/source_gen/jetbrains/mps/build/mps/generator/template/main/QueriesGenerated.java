@@ -1031,7 +1031,11 @@ public class QueriesGenerated {
       }));
     }
 
-    return modelRoots;
+    return SetSequence.fromSet(modelRoots).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(it, "folder", true), "virtual_getRelativePath_5481553824944787371", new Object[]{});
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_4356762679305730694(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1062,7 +1066,11 @@ public class QueriesGenerated {
       }));
     }
 
-    return sources;
+    return SetSequence.fromSet(sources).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(it, "folder", true), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{});
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_6592112598314985925(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

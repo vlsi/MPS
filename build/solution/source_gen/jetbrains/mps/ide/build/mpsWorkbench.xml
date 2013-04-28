@@ -278,18 +278,18 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.ide.uiLanguage-generator.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.uiLanguage#1203519930689" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-ideUiLanguage-languageModels">
-      <fileset dir="${mps_home}/languages/util/ideUiLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-ideUiLanguage-generator-baseLanguage-template">
       <fileset dir="${mps_home}/languages/util/ideUiLanguage/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-ideUiLanguage-languageModels">
+      <fileset dir="${mps_home}/languages/util/ideUiLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.ide.uiLanguage-src.jar">
       <fileset dir="${mps_home}/languages/util/ideUiLanguage/generator/source_gen" includes="**/*.java" />
       <fileset dir="${mps_home}/languages/util/ideUiLanguage/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/util/ideUiLanguage/jetbrains.mps.ide.uiLanguage.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-ideUiLanguage-languageModels" prefix="module/languageModels" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-ideUiLanguage-generator-baseLanguage-template" prefix="module/generator/baseLanguage/template" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-ideUiLanguage-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.layout}/lib" />
     <copy todir="${build.layout}/lib">
