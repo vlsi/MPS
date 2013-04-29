@@ -92,16 +92,17 @@ public abstract class SReferenceBase extends SReference {
 
   public synchronized final boolean makeIndirect(boolean force) {
     if (myImmatureTargetNode != null) {
+      SNode sourceNode = getSourceNode();
       if (
-          !jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode()) &&
+          !jetbrains.mps.util.SNodeOperations.isDisposed(sourceNode) &&
               !jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode) &&
-              getSourceNode().getModel() != null &&
+              sourceNode.getModel() != null &&
               myImmatureTargetNode.getModel() != null) {
         // convert 'young' reference to 'mature'
         makeMature();
       }
       if (force && myImmatureTargetNode != null) {
-        if (getSourceNode().getModel() != null && !jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode())) {
+        if (!jetbrains.mps.util.SNodeOperations.isDisposed(sourceNode) && sourceNode.getModel() != null) {
           error("Impossible to resolve immature reference",
               new ProblemDescription(myImmatureTargetNode.getReference(),
                   "ImmatureTargetNode(modelID: " +
