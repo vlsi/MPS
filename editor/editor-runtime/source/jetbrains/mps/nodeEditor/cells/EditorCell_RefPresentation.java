@@ -43,6 +43,12 @@ public class EditorCell_RefPresentation {
     return result;
   }
 
+  public static EditorCell_Property create(EditorContext context, SNode node, SNode refNode, String role) {
+    MyAccessor accessor = new MyAccessor(node, refNode, role);
+    EditorCell_Property result = EditorCell_Property.create(context, accessor, node);
+    return result;
+  }
+
   public static EditorCell_Property create(EditorContext context, SNode node, SNode refNode, SNode linkDeclaration) {
     MyAccessor accessor = new MyAccessor(node, refNode, linkDeclaration);
     EditorCell_Property result = EditorCell_Property.create(context, accessor, node);
@@ -54,8 +60,15 @@ public class EditorCell_RefPresentation {
     private SNode myNode;
     private SNode myRefNode;
     private SNode myLinkDeclaration;
+    private String myRole;
 
     public MyAccessor() {
+    }
+
+    public MyAccessor(SNode node, SNode refNode, String role) {
+      myNode = node;
+      myRefNode = refNode;
+      myRole = role;
     }
 
     public MyAccessor(SNode node, SNode refNode, SNode linkDeclaration) {
@@ -76,7 +89,7 @@ public class EditorCell_RefPresentation {
     @Override
     public String getText() {
       if (myRefNode != null) {
-        SReference ref = myRefNode.getReference(SModelUtil.getLinkDeclarationRole(myLinkDeclaration));
+        SReference ref = myRefNode.getReference(myRole);
         if(ref == null) {
           // FIXME throw exception if reference is null
           return myNode.getPresentation();
