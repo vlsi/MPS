@@ -69,9 +69,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   void synchronizeViewWithModel();
 
-  SNode getSNodeWRTReference();
-  String getCellRole();
-
   // TODO: move this group of methods to open API
   NodeSubstitutePatternEditor createSubstitutePatternEditor();
 

@@ -246,31 +246,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myNode;
   }
 
-  @Override
-  public SNode getSNodeWRTReference() {
-    SNode target = getStyle().get(StyleAttributes.NAVIGATABLE_NODE);
-    if (target != null) {
-      return target;
-    }
-    SNode node = getSNode();
-    SNode operationNode = null;
-    SNode linkDeclaration = SModelUtil.getGenuineLinkDeclaration(getLinkDeclaration());
-    if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
-      SNode referentNode = node.getReferenceTarget(SModelUtil.getLinkDeclarationRole(linkDeclaration));
-      if (referentNode != null) {
-        operationNode = referentNode;
-      }
-    }
-
-    if (operationNode == null) operationNode = node;
-    return operationNode;
-  }
-
-  @Override
-  public String getCellRole() {
-    return getRole();
-  }
-
   public final void setSNode(SNode node) {
     myNode = node;
   }
