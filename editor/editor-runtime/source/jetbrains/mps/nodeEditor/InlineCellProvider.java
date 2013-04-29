@@ -19,8 +19,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 
 public abstract class InlineCellProvider extends AbstractCellProvider {
+
   private SNode myRefNode;
   private SNode myLinkDeclaration;
+  private String myRole;
+
+
+  public InlineCellProvider(){}
+
+  public InlineCellProvider(String role){
+    myRole = role;
+  }
 
   public void setRefNode(SNode refNode) {
     myRefNode = refNode;
@@ -36,5 +45,9 @@ public abstract class InlineCellProvider extends AbstractCellProvider {
 
   public SNode getLinkDeclaration() {
     return myLinkDeclaration;
+  }
+
+  public String getRole() {
+    return myRole;
   }
 }
