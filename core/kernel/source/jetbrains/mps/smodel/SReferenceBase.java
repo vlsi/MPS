@@ -92,8 +92,11 @@ public abstract class SReferenceBase extends SReference {
 
   public synchronized final boolean makeIndirect(boolean force) {
     if (myImmatureTargetNode != null) {
-      if (getSourceNode().getModel() != null && myImmatureTargetNode.getModel() != null &&
-          !(jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode()) || jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode))) {
+      if (
+          !jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode()) &&
+              !jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode) &&
+              getSourceNode().getModel() != null &&
+              myImmatureTargetNode.getModel() != null) {
         // convert 'young' reference to 'mature'
         makeMature();
       }
