@@ -5,6 +5,7 @@ package jetbrains.mps.make.script.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,15 +15,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.AdvanceWorkStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("workStatement").children(new String[]{"amount", "comment"}, new boolean[]{false, false}).alias("advance", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.AdvanceWorkStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("workStatement").children(new String[]{"amount", "comment"}, new boolean[]{false, false}).alias("advance", "").staticScope(StaticScope.NONE).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.AllWorkLeftExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("ALL", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.AllWorkLeftExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("ALL", "").staticScope(StaticScope.NONE).create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.BeginWorkStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").properties("workName").children(new String[]{"expected", "ofTotal"}, new boolean[]{false, false}).alias("begin work", "").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.ConceptFunctionParameter_progressMonitor").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("progressMonitor", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.ConceptFunctionParameter_progressMonitor").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("progressMonitor", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.ConfigDefinition").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.ConfigDefinition").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.Expected").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 6:
@@ -30,37 +31,37 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.ExpectedOption").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.make.script.structure.IExpected", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier").properties("defaultOption").children(new String[]{"option"}, new boolean[]{true}).alias("Option", "").create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.FinishWorkStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("workStatement").alias("finish", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.FinishWorkStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("workStatement").alias("finish", "").staticScope(StaticScope.NONE).create();
       case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.IExpected").interface_().create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.InputResourcesParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("input", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.InputResourcesParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("input", "").staticScope(StaticScope.NONE).create();
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.JobDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"config", "job", "query"}, new boolean[]{false, false, true}).create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.JobDefinition").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.JobDefinition").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.Option").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"presentation"}, new boolean[]{false}).create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.OptionExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("option").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.OptionExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("option").staticScope(StaticScope.NONE).create();
       case 15:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.OptionType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier").references("expectedOption").alias("option", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.OptionType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier").references("expectedOption").alias("option", "").staticScope(StaticScope.NONE).create();
       case 16:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.OutputResources").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"resource"}, new boolean[]{false}).alias("output", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.OutputResources").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"resource"}, new boolean[]{false}).alias("output", "").staticScope(StaticScope.NONE).create();
       case 17:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.PropertiesAccessorParameter").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("__pa__", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.PropertiesAccessorParameter").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("__pa__", "").staticScope(StaticScope.NONE).create();
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.QueryDefinition").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier").children(new String[]{"expected", "presentation", "title"}, new boolean[]{false, false, false}).alias("Query", "").create();
       case 19:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.QueryParameterDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"parameterType"}, new boolean[]{false}).create();
       case 20:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.RelayQueryExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("query").children(new String[]{"parameter"}, new boolean[]{true}).alias("relay query", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.RelayQueryExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("query").children(new String[]{"parameter"}, new boolean[]{true}).alias("relay query", "").staticScope(StaticScope.NONE).create();
       case 21:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.ReportFeedbackStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("feedback").children(new String[]{"message"}, new boolean[]{false}).alias("report", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.ReportFeedbackStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("feedback").children(new String[]{"message"}, new boolean[]{false}).alias("report", "").staticScope(StaticScope.NONE).create();
       case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.ResourceType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").children(new String[]{"classifierType"}, new boolean[]{false}).alias("resource", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.ResourceType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").children(new String[]{"classifierType"}, new boolean[]{false}).alias("resource", "").staticScope(StaticScope.NONE).create();
       case 23:
-        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.ResultStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("result").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.ResultStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("result").staticScope(StaticScope.NONE).create();
       case 24:
         return new ConceptDescriptorBuilder("jetbrains.mps.make.script.structure.Text").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("text").create();
       default:

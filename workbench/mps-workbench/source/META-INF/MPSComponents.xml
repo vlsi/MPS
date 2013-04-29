@@ -107,9 +107,6 @@
       <implementation-class>jetbrains.mps.ide.generator.PluginsTraceInfoResourceProvider</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.plugins.projectplugins.EditorOpenHandlerImpl</implementation-class>
     </component>
     <component>

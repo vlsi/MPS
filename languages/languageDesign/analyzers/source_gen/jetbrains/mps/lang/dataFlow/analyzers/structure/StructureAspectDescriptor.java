@@ -5,6 +5,7 @@ package jetbrains.mps.lang.dataFlow.analyzers.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -18,37 +19,37 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"initialFunction", "mergeFunction", "funFunction", "direction", "latticeElementType", "instruction"}, new boolean[]{false, false, false, false, false, true}).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("fun", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("fun", "").staticScope(StaticScope.NONE).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("input", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("input", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("state", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("state", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("lattice element type", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("lattice element type", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("initial", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("initial", "").staticScope(StaticScope.NONE).create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("merge", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("merge", "").staticScope(StaticScope.NONE).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("input", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("input", "").staticScope(StaticScope.NONE).create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("program", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("program", "").staticScope(StaticScope.NONE).create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("analyze", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").alias("analyze", "").staticScope(StaticScope.NONE).create();
       case 11:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("analyzer").children(new String[]{"nodeToCheck"}, new boolean[]{false}).alias("runner", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("analyzer").children(new String[]{"nodeToCheck"}, new boolean[]{false}).alias("runner", "").staticScope(StaticScope.NONE).create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("analyzerRunner", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("analyzerRunner", "").staticScope(StaticScope.NONE).create();
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").abstract_().create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("applicableNode").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("applicableNode").staticScope(StaticScope.NONE).create();
       case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.BackwardDirection").super_("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection").parents("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection").alias("backward", "").create();
       case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition").super_("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition").parents("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition", "jetbrains.mps.lang.core.structure.INamedConcept").references("concept").alias("concept =", "").create();
       case 17:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction").super_("jetbrains.mps.lang.pattern.structure.ActionStatement").parents("jetbrains.mps.lang.pattern.structure.ActionStatement").children(new String[]{"instructionRef", "target", "position"}, new boolean[]{false, false, false}).alias("insert", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction").super_("jetbrains.mps.lang.pattern.structure.ActionStatement").parents("jetbrains.mps.lang.pattern.structure.ActionStatement").children(new String[]{"instructionRef", "target", "position"}, new boolean[]{false, false, false}).alias("insert", "").staticScope(StaticScope.NONE).create();
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.ForwardDirection").super_("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection").parents("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection").alias("forward", "").create();
       case 19:
@@ -64,7 +65,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 24:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("instruction").children(new String[]{"argument"}, new boolean[]{true}).create();
       case 25:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("instruction").children(new String[]{"left"}, new boolean[]{false}).alias("is", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("instruction").children(new String[]{"left"}, new boolean[]{false}).alias("is", "").staticScope(StaticScope.NONE).create();
       case 26:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition").super_("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition").parents("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition").children(new String[]{"pattern"}, new boolean[]{false}).create();
       case 27:

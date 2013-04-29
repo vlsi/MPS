@@ -56,6 +56,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.build.mps.util.ModuleChecker;
+import jetbrains.mps.build.mps.util.ModuleLoaderException;
 import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -312,8 +314,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     visible.collect();
     for (SNode module : ListSequence.fromList(SNodeOperations.getDescendants(buildProject, "jetbrains.mps.build.mps.structure.BuildMps_Module", false, new String[]{}))) {
       try {
-        new ModuleLoader(module, visible, pathConverter, null).importRequired();
-      } catch (ModuleLoader.ModuleLoaderException ex) {
+        ModuleLoader.createModuleChecker(module, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
+      } catch (ModuleLoaderException ex) {
         if (LOG.isEnabledFor(Priority.ERROR)) {
           LOG.error(ex.getMessage());
         }

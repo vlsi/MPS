@@ -5,6 +5,7 @@ package jetbrains.mps.core.xml.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -24,13 +25,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlCDATA").super_("jetbrains.mps.core.xml.structure.XmlContent").parents("jetbrains.mps.core.xml.structure.XmlContent").properties("content").alias("<![CDATA", "").create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlCharRef").super_("jetbrains.mps.core.xml.structure.XmlContent").parents("jetbrains.mps.core.xml.structure.XmlContent").properties("charCode").alias("&#", "single character").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlCharRef").super_("jetbrains.mps.core.xml.structure.XmlContent").parents("jetbrains.mps.core.xml.structure.XmlContent").properties("charCode").alias("&#", "single character").staticScope(StaticScope.NONE).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlCharRefValue").super_("jetbrains.mps.core.xml.structure.XmlValuePart").parents("jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("charCode").alias("&#", "single character").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlCharRefValue").super_("jetbrains.mps.core.xml.structure.XmlValuePart").parents("jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("charCode").alias("&#", "single character").staticScope(StaticScope.NONE).create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlComment").super_("jetbrains.mps.core.xml.structure.XmlContent").parents("jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.core.xml.structure.XmlPrologElement").children(new String[]{"lines"}, new boolean[]{true}).alias("<!--", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlComment").super_("jetbrains.mps.core.xml.structure.XmlContent").parents("jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.core.xml.structure.XmlPrologElement").children(new String[]{"lines"}, new boolean[]{true}).alias("<!--", "").staticScope(StaticScope.NONE).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlCommentLine").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("text").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlCommentLine").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("text").staticScope(StaticScope.NONE).create();
       case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlContent").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.core.xml.structure.XmlPart").abstract_().create();
       case 10:
@@ -60,13 +61,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 22:
         return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlPrologElement").interface_().parents("jetbrains.mps.core.xml.structure.XmlPart").create();
       case 23:
-        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlText").super_("jetbrains.mps.core.xml.structure.XmlContent").parents("jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("value").alias("text", "plain text").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlText").super_("jetbrains.mps.core.xml.structure.XmlContent").parents("jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("value").alias("text", "plain text").staticScope(StaticScope.NONE).create();
       case 24:
         return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlTextValue").super_("jetbrains.mps.core.xml.structure.XmlValuePart").parents("jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("text").alias("text", "attribute value contains of text and entity references").create();
       case 25:
         return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlValuePart").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().alias("", "attribute value").create();
       case 26:
-        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlWhitespace").super_("jetbrains.mps.core.xml.structure.XmlBasePrologElement").parents("jetbrains.mps.core.xml.structure.XmlBasePrologElement", "jetbrains.mps.core.xml.structure.XmlPrologElement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("value").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.structure.XmlWhitespace").super_("jetbrains.mps.core.xml.structure.XmlBasePrologElement").parents("jetbrains.mps.core.xml.structure.XmlBasePrologElement", "jetbrains.mps.core.xml.structure.XmlPrologElement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("value").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

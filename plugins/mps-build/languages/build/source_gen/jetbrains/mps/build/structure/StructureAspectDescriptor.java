@@ -5,6 +5,7 @@ package jetbrains.mps.build.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -16,7 +17,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.structure.BuildAspect").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.structure.BuildCompositePath").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("head").children(new String[]{"tail"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.structure.BuildCompositePath").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("head").children(new String[]{"tail"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.structure.BuildCustomWorkflow").super_("jetbrains.mps.build.structure.BuildAspect").parents("jetbrains.mps.build.structure.BuildAspect").children(new String[]{"parts"}, new boolean[]{true}).alias("workflow", "").create();
       case 3:

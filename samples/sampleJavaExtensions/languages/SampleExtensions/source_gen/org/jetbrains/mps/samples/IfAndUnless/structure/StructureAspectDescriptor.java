@@ -5,6 +5,7 @@ package org.jetbrains.mps.samples.IfAndUnless.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -18,11 +19,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").super_("jetbrains.mps.baseLanguage.structure.StatementList").parents("jetbrains.mps.baseLanguage.structure.StatementList").abstract_().create();
       case 2:
-        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"condition", "body", "alternative"}, new boolean[]{false, false, false}).alias("my_if", "").create();
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"condition", "body", "alternative"}, new boolean[]{false, false, false}).alias("my_if", "").staticScope(StaticScope.NONE).create();
       case 3:
         return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow").super_("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").parents("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").create();
       case 4:
-        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"condition", "body"}, new boolean[]{false, false}).alias("unless", "").create();
+        return new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"condition", "body"}, new boolean[]{false, false}).alias("unless", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

@@ -21,6 +21,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.MacroHelper;
@@ -123,6 +124,10 @@ public class Utils {
         LanguageDescriptor ld = LanguageDescriptorPersistence.loadLanguageDescriptor(moduleIFile, expander);
         String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, ld).getPath();
         result.putValue(moduleDir.getPath(), srcPath);
+        for (GeneratorDescriptor generator : ld.getGenerators()) {
+          String generatorSrcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, generator).getPath();
+          result.putValue(moduleDir.getPath() + "/generator", generatorSrcPath);
+        }
       }
     }
   }

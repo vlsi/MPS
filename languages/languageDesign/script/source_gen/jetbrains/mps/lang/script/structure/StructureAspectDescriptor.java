@@ -5,6 +5,7 @@ package jetbrains.mps.lang.script.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -38,11 +39,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance").super_("jetbrains.mps.lang.script.structure.MigrationScriptPart").parents("jetbrains.mps.lang.script.structure.MigrationScriptPart").properties("description", "showAsIntention").references("affectedInstanceConcept").children(new String[]{"affectedInstancePredicate", "affectedInstanceUpdater"}, new boolean[]{false, false}).alias("concept instances updater", "").create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("instance predicate", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("instance predicate", "").staticScope(StaticScope.NONE).create();
       case 13:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("instance predicate", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("instance predicate", "").staticScope(StaticScope.NONE).create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart_node").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.MigrationScriptPart_node").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "").staticScope(StaticScope.NONE).create();
       case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.PullUpMethod").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("newMethodDeclaration").children(new String[]{"oldMethodSpecification"}, new boolean[]{false}).alias("pull up method", "").create();
       case 16:

@@ -28,6 +28,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.util.NameUtil;
+import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -70,12 +72,30 @@ public class TextPreviewUtil {
               MapSequence.fromMap(fres.rootNodeNames()).get(contextRootNode) :
               null
             );
-            final TextPreviewFile tfile = new TextPreviewFile(NameUtil.compactNamespace(md.getModelName()) + "/text", "Generated text for " + md.getModelName(), fres.contents(), fileToOpen);
+            final TextPreviewFile[] previewFiles = new TextPreviewFile[(fileToOpen != null ?
+              1 :
+              MapSequence.fromMap(fres.contents()).count()
+            )];
+            if (fileToOpen != null) {
+              previewFiles[0] = new TextPreviewFile(fileToOpen, MapSequence.fromMap(fres.contents()).get(fileToOpen), NameUtil.compactNamespace(md.getModelName()));
+            } else {
+              int counter = 0;
+              {
+                Iterator<String> key_it = SetSequence.fromSet(MapSequence.fromMap(fres.contents()).keySet()).iterator();
+                String key_var;
+                while (key_it.hasNext()) {
+                  key_var = key_it.next();
+                  previewFiles[counter++] = new TextPreviewFile(key_var, MapSequence.fromMap(fres.contents()).get(key_var), NameUtil.compactNamespace(md.getModelName()));
+                }
+              }
+            }
 
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 Project p = ProjectHelper.toIdeaProject(context.getProject());
-                FileEditorManager.getInstance(p).openTextEditor(new OpenFileDescriptor(p, tfile), true);
+                for (TextPreviewFile previewFile : previewFiles) {
+                  FileEditorManager.getInstance(p).openTextEditor(new OpenFileDescriptor(p, previewFile), true);
+                }
               }
             });
             ProjectPane.getInstance(context.getProject()).rebuild();
