@@ -42,6 +42,7 @@ public class ModelLinkMap {
   private Map<SNodeReference, List<Pair<SNode, String>>> myPropNameMap = MapSequence.fromMap(new HashMap<SNodeReference, List<Pair<SNode, String>>>());
   private Map<SModelReference, List<DynamicReference>> myDynRefMap = MapSequence.fromMap(new HashMap<SModelReference, List<DynamicReference>>());
   private Map<SNode, Tuples._2<ConceptKind, StaticScope>> myMetainfo = MapSequence.fromMap(new HashMap<SNode, Tuples._2<ConceptKind, StaticScope>>());
+  private Map<SNode, Boolean> myRoleMetainfo = MapSequence.fromMap(new HashMap<SNode, Boolean>());
 
   public ModelLinkMap(SModel model) {
     myModel = model;
@@ -55,8 +56,9 @@ public class ModelLinkMap {
     addValue(myNodeTypeMap, ptr, node);
   }
 
-  public void addTypeMetainfo(ConceptKind kind, StaticScope scope, SNode node) {
+  public void addNodeMetainfo(ConceptKind kind, StaticScope scope, boolean isUnordered, SNode node) {
     MapSequence.fromMap(myMetainfo).put(node, MultiTuple.<ConceptKind,StaticScope>from(kind, scope));
+    MapSequence.fromMap(myRoleMetainfo).put(node, isUnordered);
   }
 
   public void addRoleLocation(SNodeReference ptr, SNode node) {
@@ -225,8 +227,8 @@ public class ModelLinkMap {
     return res;
   }
 
-  public void fillRoleIdsComponent() {
-    final LightModelEnvironmentInfo info = as_1o71zw_a0a0a12(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), LightModelEnvironmentInfo.class);
+  public void fillModelEnvironmentInfo() {
+    final LightModelEnvironmentInfo info = as_1o71zw_a0a0a22(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), LightModelEnvironmentInfo.class);
     if (info == null) {
       return;
     }
@@ -239,7 +241,11 @@ public class ModelLinkMap {
         for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {
           ListSequence.fromList(MapSequence.fromMap(myNodeRoleMap).get(ptr)).visitAll(new IVisitor<SNode>() {
             public void visit(SNode n) {
-              info.nodeRoleRead(n, ptr, false);
+              boolean unordered = (MapSequence.fromMap(myRoleMetainfo).containsKey(n) ?
+                MapSequence.fromMap(myRoleMetainfo).get(n) :
+                false
+              );
+              info.nodeRoleRead(n, ptr, unordered);
             }
           });
         }
@@ -345,7 +351,7 @@ public class ModelLinkMap {
     );
   }
 
-  private static <T> T as_1o71zw_a0a0a12(Object o, Class<T> type) {
+  private static <T> T as_1o71zw_a0a0a22(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

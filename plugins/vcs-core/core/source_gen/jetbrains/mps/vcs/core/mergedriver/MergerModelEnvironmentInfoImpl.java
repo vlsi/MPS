@@ -84,6 +84,7 @@ public class MergerModelEnvironmentInfoImpl implements LightModelEnvironmentInfo
     return MapSequence.fromMap(myNodeRolesToPointers).get(MultiTuple.<String,String>from(node.getParent().getConcept().getId(), roleInParent));
   }
 
+  @Override
   public ConceptKind getConceptKind(SNode node) {
     String conceptName = node.getConcept().getQualifiedName();
     ConceptKind kind = MapSequence.fromMap(myConceptKind).get(conceptName);
@@ -93,10 +94,17 @@ public class MergerModelEnvironmentInfoImpl implements LightModelEnvironmentInfo
     );
   }
 
-  public boolean isUnordered(SReference reference) {
-    Boolean b = MapSequence.fromMap(myChildLinkToUnordered).get(MultiTuple.<String,String>from(reference.getSourceNode().getConcept().getId(), reference.getRole()));
+  @Override
+  public boolean isInUnorderedRole(SNode node) {
+    SNode parent = node.getParent();
+    if (parent == null) {
+      return false;
+    }
+    Boolean b = MapSequence.fromMap(myChildLinkToUnordered).get(MultiTuple.<String,String>from(parent.getConcept().getQualifiedName(), node.getRoleInParent()));
     return b != null && b.booleanValue();
   }
+
+
 
   @Override
   public StaticScope getConceptScope(SNode node) {

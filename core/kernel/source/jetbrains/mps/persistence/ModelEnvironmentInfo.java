@@ -17,7 +17,6 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -41,7 +40,7 @@ public interface ModelEnvironmentInfo {
 
   SNodeReference getReferenceRoleId(SReference reference);
 
-  boolean isUnordered(SReference reference);
+  boolean isInUnorderedRole(SNode node);
 
   SNodeReference getPropertyId(SNode containingNode, String propertyName);
 

@@ -105,7 +105,11 @@ public class WriteHelper {
   public String genTypeInfo(@NotNull SNode node) {
     ConceptKind conceptKind = myEnv.getConceptKind(node);
     StaticScope conceptScope = myEnv.getConceptScope(node);
-    char[] res = new char[]{'n', 'g'};
+    boolean unordered = myEnv.isInUnorderedRole(node);
+    char[] res = (unordered ?
+      new char[]{'n', 'g', 'u'} :
+      new char[]{'n', 'g'}
+    );
     if (conceptKind == ConceptKind.INTERFACE) {
       res[0] = 'i';
     } else if (conceptKind == ConceptKind.IMPLEMENTATION) {

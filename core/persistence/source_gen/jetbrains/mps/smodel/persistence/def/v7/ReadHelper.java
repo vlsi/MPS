@@ -14,8 +14,10 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -86,10 +88,10 @@ public class ReadHelper {
     return readLink_internal(src).o2;
   }
 
-  public Pair<ConceptKind, StaticScope> readTypeInfo(String s) {
+  /*package*/ Tuples._3<ConceptKind, StaticScope, Boolean> readTypeInfo(String s) {
     ConceptKind kind;
     StaticScope scope;
-    if (s.length() != 2) {
+    if (s.length() != 3 && s.length() != 2) {
       return null;
     }
     switch (s.charAt(0)) {
@@ -118,7 +120,15 @@ public class ReadHelper {
       default:
         return null;
     }
-    return new Pair(kind, scope);
+    boolean unordered = false;
+    if (s.length() == 3) {
+      if (s.charAt(2) == 'u') {
+        unordered = true;
+      } else {
+        return null;
+      }
+    }
+    return MultiTuple.<ConceptKind,StaticScope,Boolean>from(kind, scope, unordered);
   }
 
   public String readType(String s) {

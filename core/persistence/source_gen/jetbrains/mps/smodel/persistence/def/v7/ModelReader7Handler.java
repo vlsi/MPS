@@ -21,9 +21,10 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.LazySNode;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.apache.log4j.Priority;
 import jetbrains.mps.smodel.StaticReference;
@@ -282,7 +283,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     private boolean validateInternal(ModelLoadResult result) throws SAXException {
       new StructureModificationProcessor(fieldlinkMap, fieldmodel).updateModelOnLoad();
-      fieldlinkMap.fillRoleIdsComponent();
+      fieldlinkMap.fillModelEnvironmentInfo();
       result.setState(ModelLoadingState.FULLY_LOADED);
       return true;
     }
@@ -482,12 +483,12 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         fieldlinkMap.addTypeLocation(fieldhelper.readLinkId(value), result);
         return;
       }
-      if ("typeInfo".equals(name)) {
-        Pair<ConceptKind, StaticScope> parsed = fieldhelper.readTypeInfo(value);
+      if ("nodeInfo".equals(name)) {
+        Tuples._3<ConceptKind, StaticScope, Boolean> parsed = fieldhelper.readTypeInfo(value);
         if (parsed == null) {
           throw new SAXParseException("bad typeInfo attribute", null);
         }
-        fieldlinkMap.addTypeMetainfo(parsed.o1, parsed.o2, result);
+        fieldlinkMap.addNodeMetainfo(parsed._0(), parsed._1(), (boolean) parsed._2(), result);
         return;
       }
       if ("role".equals(name)) {

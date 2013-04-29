@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v7;
 
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.ModelLinkMap;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
@@ -153,11 +154,12 @@ public class ModelReader7 implements IModelReader {
 
     String typeInfo = nodeElement.getAttributeValue(ModelPersistence.TYPE_INFO);
     if (typeInfo != null) {
-      Pair<ConceptKind, StaticScope> parsed = myHelper.readTypeInfo(typeInfo);
+      Tuples._3<ConceptKind, StaticScope, Boolean> parsed = myHelper.readTypeInfo(typeInfo);
       if (parsed == null) {
         LOG.error("bad typeInfo attribute");
       } else {
-        myLinkMap.addTypeMetainfo(parsed.o1, parsed.o2, node);
+        myLinkMap.addNodeMetainfo(parsed._0(), parsed._1(),
+            parsed._2(), node);
       }
     }
 

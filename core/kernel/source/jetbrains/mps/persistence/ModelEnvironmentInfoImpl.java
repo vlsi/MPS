@@ -63,9 +63,12 @@ public class ModelEnvironmentInfoImpl implements ModelEnvironmentInfo {
   }
 
   @Override
-  public boolean isUnordered(SReference reference) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(reference.getSourceNode().getConcept().getQualifiedName()).isUnorderedChild(
-        reference.getRole());
+  public boolean isInUnorderedRole(SNode node) {
+    SNode parent = node.getParent();
+    if (parent == null) return false;
+    String roleInParent = node.getRoleInParent();
+    return ConceptRegistry.getInstance().getConceptDescriptor(parent.getConcept().getQualifiedName()).isUnorderedChild(
+        roleInParent);
   }
 
   @Override
