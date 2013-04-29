@@ -33,7 +33,7 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
     provider.setRole("folder");
     provider.setNoTargetText("<no folder>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildSource_JavaExternalJarFolderRef_Editor._Inline_cqnk8f_a0a());
+    provider.setAuxiliaryCellProvider(new BuildSource_JavaExternalJarFolderRef_Editor._Inline_cqnk8f_a0a("folder"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -47,8 +47,8 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_cqnk8f_a0a extends InlineCellProvider {
-    public _Inline_cqnk8f_a0a() {
-      super();
+    public _Inline_cqnk8f_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -60,7 +60,7 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
     }
 
     private EditorCell createReferencePresentation_cqnk8f_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_cqnk8f_a0a0");
       return editorCell;
     }

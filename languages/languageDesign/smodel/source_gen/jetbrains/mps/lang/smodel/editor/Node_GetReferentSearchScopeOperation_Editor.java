@@ -60,7 +60,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     provider.setRole("referenceLink");
     provider.setNoTargetText("<no reference role>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Node_GetReferentSearchScopeOperation_Editor._Inline_8agmue_a2a());
+    provider.setAuxiliaryCellProvider(new Node_GetReferentSearchScopeOperation_Editor._Inline_8agmue_a2a("referenceLink"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     SharedStyles_StyleSheet.applyReferenceOnConceptualFeature(style, editorCell);
@@ -77,8 +77,8 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_8agmue_a2a extends InlineCellProvider {
-    public _Inline_8agmue_a2a() {
-      super();
+    public _Inline_8agmue_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

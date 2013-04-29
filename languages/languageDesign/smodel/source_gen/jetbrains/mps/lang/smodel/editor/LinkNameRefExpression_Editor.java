@@ -68,7 +68,7 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("concept");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LinkNameRefExpression_Editor._Inline_vnocnn_a2a());
+    provider.setAuxiliaryCellProvider(new LinkNameRefExpression_Editor._Inline_vnocnn_a2a("conceptDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -85,8 +85,8 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_vnocnn_a2a extends InlineCellProvider {
-    public _Inline_vnocnn_a2a() {
-      super();
+    public _Inline_vnocnn_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -137,7 +137,7 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("link");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LinkNameRefExpression_Editor._Inline_vnocnn_a4a());
+    provider.setAuxiliaryCellProvider(new LinkNameRefExpression_Editor._Inline_vnocnn_a4a("linkDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -154,8 +154,8 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_vnocnn_a4a extends InlineCellProvider {
-    public _Inline_vnocnn_a4a() {
-      super();
+    public _Inline_vnocnn_a4a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

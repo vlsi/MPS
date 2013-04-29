@@ -94,7 +94,7 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
     provider.setRole("uiObject");
     provider.setNoTargetText("<no uiObject>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InsertUIObjectStatement_Editor._Inline_g3syp0_a3a0a());
+    provider.setAuxiliaryCellProvider(new InsertUIObjectStatement_Editor._Inline_g3syp0_a3a0a("uiObject"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     UI_StyleSheet.applyUIObject(style, editorCell);
@@ -111,8 +111,8 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_g3syp0_a3a0a extends InlineCellProvider {
-    public _Inline_g3syp0_a3a0a() {
-      super();
+    public _Inline_g3syp0_a3a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

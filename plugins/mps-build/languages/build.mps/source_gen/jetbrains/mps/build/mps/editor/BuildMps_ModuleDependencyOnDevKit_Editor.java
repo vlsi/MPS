@@ -32,7 +32,7 @@ public class BuildMps_ModuleDependencyOnDevKit_Editor extends DefaultNodeEditor 
     provider.setRole("devkit");
     provider.setNoTargetText("<no devkit>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMps_ModuleDependencyOnDevKit_Editor._Inline_4gwe58_a0a());
+    provider.setAuxiliaryCellProvider(new BuildMps_ModuleDependencyOnDevKit_Editor._Inline_4gwe58_a0a("devkit"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,8 +46,8 @@ public class BuildMps_ModuleDependencyOnDevKit_Editor extends DefaultNodeEditor 
   }
 
   public static class _Inline_4gwe58_a0a extends InlineCellProvider {
-    public _Inline_4gwe58_a0a() {
-      super();
+    public _Inline_4gwe58_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

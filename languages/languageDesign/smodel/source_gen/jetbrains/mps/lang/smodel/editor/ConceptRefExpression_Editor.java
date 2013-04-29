@@ -64,7 +64,7 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptRefExpression_Editor._Inline_l2wej8_a2a());
+    provider.setAuxiliaryCellProvider(new ConceptRefExpression_Editor._Inline_l2wej8_a2a("conceptDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -81,8 +81,8 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_l2wej8_a2a extends InlineCellProvider {
-    public _Inline_l2wej8_a2a() {
-      super();
+    public _Inline_l2wej8_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

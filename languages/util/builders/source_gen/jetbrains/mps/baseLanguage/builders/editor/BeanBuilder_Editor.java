@@ -57,7 +57,7 @@ public class BeanBuilder_Editor extends DefaultNodeEditor {
     provider.setRole("constructor");
     provider.setNoTargetText("<no constructor>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BeanBuilder_Editor._Inline_2z05lc_a1a());
+    provider.setAuxiliaryCellProvider(new BeanBuilder_Editor._Inline_2z05lc_a1a("constructor"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -71,8 +71,8 @@ public class BeanBuilder_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2z05lc_a1a extends InlineCellProvider {
-    public _Inline_2z05lc_a1a() {
-      super();
+    public _Inline_2z05lc_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

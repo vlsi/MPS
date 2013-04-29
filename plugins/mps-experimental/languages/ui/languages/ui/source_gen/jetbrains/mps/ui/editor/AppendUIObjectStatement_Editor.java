@@ -66,7 +66,7 @@ public class AppendUIObjectStatement_Editor extends DefaultNodeEditor {
     provider.setRole("uiObject");
     provider.setNoTargetText("<no uiObject>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AppendUIObjectStatement_Editor._Inline_mtcoyd_a1a0a());
+    provider.setAuxiliaryCellProvider(new AppendUIObjectStatement_Editor._Inline_mtcoyd_a1a0a("uiObject"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     UI_StyleSheet.applyUIObject(style, editorCell);
@@ -83,8 +83,8 @@ public class AppendUIObjectStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_mtcoyd_a1a0a extends InlineCellProvider {
-    public _Inline_mtcoyd_a1a0a() {
-      super();
+    public _Inline_mtcoyd_a1a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

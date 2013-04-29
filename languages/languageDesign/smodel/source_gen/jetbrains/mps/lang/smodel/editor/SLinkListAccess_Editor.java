@@ -40,7 +40,7 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SLinkListAccess_Editor._Inline_xjomum_a0a());
+    provider.setAuxiliaryCellProvider(new SLinkListAccess_Editor._Inline_xjomum_a0a("link"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -54,8 +54,8 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xjomum_a0a extends InlineCellProvider {
-    public _Inline_xjomum_a0a() {
-      super();
+    public _Inline_xjomum_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

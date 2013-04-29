@@ -32,7 +32,7 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("typeVariableDeclaration");
     provider.setNoTargetText("<no type variable>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TypeVariableReference_Editor._Inline_iw4mtn_a0a());
+    provider.setAuxiliaryCellProvider(new TypeVariableReference_Editor._Inline_iw4mtn_a0a("typeVariableDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,8 +46,8 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_iw4mtn_a0a extends InlineCellProvider {
-    public _Inline_iw4mtn_a0a() {
-      super();
+    public _Inline_iw4mtn_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

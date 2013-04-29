@@ -86,7 +86,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("instanceMethodDeclaration");
     provider.setNoTargetText("<no instanceMethodDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SuperMethodCall_Editor._Inline_jug38p_a3a());
+    provider.setAuxiliaryCellProvider(new SuperMethodCall_Editor._Inline_jug38p_a3a("instanceMethodDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
@@ -103,8 +103,8 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_jug38p_a3a extends InlineCellProvider {
-    public _Inline_jug38p_a3a() {
-      super();
+    public _Inline_jug38p_a3a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

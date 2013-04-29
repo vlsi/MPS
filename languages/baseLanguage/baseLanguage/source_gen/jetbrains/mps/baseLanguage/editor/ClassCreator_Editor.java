@@ -67,7 +67,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     provider.setRole("constructorDeclaration");
     provider.setNoTargetText("<no constructorDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClassCreator_Editor._Inline_53xyyk_a1a());
+    provider.setAuxiliaryCellProvider(new ClassCreator_Editor._Inline_53xyyk_a1a("constructorDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
@@ -84,8 +84,8 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_53xyyk_a1a extends InlineCellProvider {
-    public _Inline_53xyyk_a1a() {
-      super();
+    public _Inline_53xyyk_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -97,7 +97,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_53xyyk_a0b0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_53xyyk_a0b0");
       return editorCell;
     }

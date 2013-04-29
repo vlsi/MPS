@@ -44,7 +44,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("conceptMethodDeclaration");
     provider.setNoTargetText("<no conceptMethodDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Node_ConceptMethodCall_Editor._Inline_kosqrl_a0a());
+    provider.setAuxiliaryCellProvider(new Node_ConceptMethodCall_Editor._Inline_kosqrl_a0a("conceptMethodDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -58,8 +58,8 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_kosqrl_a0a extends InlineCellProvider {
-    public _Inline_kosqrl_a0a() {
-      super();
+    public _Inline_kosqrl_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

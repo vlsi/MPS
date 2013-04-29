@@ -59,7 +59,7 @@ public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LinkList_AddNewChildOperation_Editor._Inline_hr3hhp_a2a());
+    provider.setAuxiliaryCellProvider(new LinkList_AddNewChildOperation_Editor._Inline_hr3hhp_a2a("concept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -73,8 +73,8 @@ public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hr3hhp_a2a extends InlineCellProvider {
-    public _Inline_hr3hhp_a2a() {
-      super();
+    public _Inline_hr3hhp_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

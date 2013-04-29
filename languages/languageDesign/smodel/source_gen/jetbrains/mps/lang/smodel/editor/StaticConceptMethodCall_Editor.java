@@ -55,7 +55,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StaticConceptMethodCall_Editor._Inline_fn54i1_a0a());
+    provider.setAuxiliaryCellProvider(new StaticConceptMethodCall_Editor._Inline_fn54i1_a0a("concept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -69,8 +69,8 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_fn54i1_a0a extends InlineCellProvider {
-    public _Inline_fn54i1_a0a() {
-      super();
+    public _Inline_fn54i1_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -120,7 +120,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("methodDeclaration");
     provider.setNoTargetText("<no methodDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StaticConceptMethodCall_Editor._Inline_fn54i1_a2a());
+    provider.setAuxiliaryCellProvider(new StaticConceptMethodCall_Editor._Inline_fn54i1_a2a("methodDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticConceptMethodCall_Editor.StaticConceptMethodCall_customReplace_cellMenu_fn54i1_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -134,8 +134,8 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_fn54i1_a2a extends InlineCellProvider {
-    public _Inline_fn54i1_a2a() {
-      super();
+    public _Inline_fn54i1_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

@@ -61,7 +61,7 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
     provider.setRole("extended");
     provider.setNoTargetText("<no extended>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleBuilderExtensionDeclaration_Editor._Inline_lhunxw_a1a());
+    provider.setAuxiliaryCellProvider(new SimpleBuilderExtensionDeclaration_Editor._Inline_lhunxw_a1a("extended"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -75,8 +75,8 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   public static class _Inline_lhunxw_a1a extends InlineCellProvider {
-    public _Inline_lhunxw_a1a() {
-      super();
+    public _Inline_lhunxw_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

@@ -63,7 +63,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     provider.setRole("annotation");
     provider.setNoTargetText("<no annotation>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AnnotationInstance_Editor._Inline_d5p1uc_a1a());
+    provider.setAuxiliaryCellProvider(new AnnotationInstance_Editor._Inline_d5p1uc_a1a("annotation"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
@@ -80,8 +80,8 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_d5p1uc_a1a extends InlineCellProvider {
-    public _Inline_d5p1uc_a1a() {
-      super();
+    public _Inline_d5p1uc_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

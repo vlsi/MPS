@@ -97,7 +97,7 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     provider.setRole("checkingReference");
     provider.setNoTargetText("<no checkingReference>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ScopesTest_Editor._Inline_qc0q19_a1a());
+    provider.setAuxiliaryCellProvider(new ScopesTest_Editor._Inline_qc0q19_a1a("checkingReference"));
     editorCell = provider.createEditorCell(editorContext);
     ScopeTest_DeleteExpectedNodes.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -112,8 +112,8 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_qc0q19_a1a extends InlineCellProvider {
-    public _Inline_qc0q19_a1a() {
-      super();
+    public _Inline_qc0q19_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -125,7 +125,7 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_qc0q19_a0b0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_qc0q19_a0b0");
       return editorCell;
     }

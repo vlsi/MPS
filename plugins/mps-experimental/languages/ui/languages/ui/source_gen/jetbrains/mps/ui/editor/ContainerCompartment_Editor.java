@@ -63,7 +63,7 @@ public class ContainerCompartment_Editor extends DefaultNodeEditor {
     provider.setRole("container");
     provider.setNoTargetText("<no container>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ContainerCompartment_Editor._Inline_6q4kdp_a0a0a());
+    provider.setAuxiliaryCellProvider(new ContainerCompartment_Editor._Inline_6q4kdp_a0a0a("container"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     UI_StyleSheet.applyUIObjectPart(style, editorCell);
@@ -80,8 +80,8 @@ public class ContainerCompartment_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_6q4kdp_a0a0a extends InlineCellProvider {
-    public _Inline_6q4kdp_a0a0a() {
-      super();
+    public _Inline_6q4kdp_a0a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

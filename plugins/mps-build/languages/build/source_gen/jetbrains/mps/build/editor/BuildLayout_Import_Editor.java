@@ -63,7 +63,7 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildLayout_Import_Editor._Inline_4dmy40_a1a());
+    provider.setAuxiliaryCellProvider(new BuildLayout_Import_Editor._Inline_4dmy40_a1a("target"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -77,8 +77,8 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_4dmy40_a1a extends InlineCellProvider {
-    public _Inline_4dmy40_a1a() {
-      super();
+    public _Inline_4dmy40_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -90,7 +90,7 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_4dmy40_a0b0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_4dmy40_a0b0");
       return editorCell;
     }

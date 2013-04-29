@@ -32,7 +32,7 @@ public class BuildMps_IdeaPluginGroupCustomModule_Editor extends DefaultNodeEdit
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMps_IdeaPluginGroupCustomModule_Editor._Inline_djd3jv_a0a());
+    provider.setAuxiliaryCellProvider(new BuildMps_IdeaPluginGroupCustomModule_Editor._Inline_djd3jv_a0a("target"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,8 +46,8 @@ public class BuildMps_IdeaPluginGroupCustomModule_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_djd3jv_a0a extends InlineCellProvider {
-    public _Inline_djd3jv_a0a() {
-      super();
+    public _Inline_djd3jv_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

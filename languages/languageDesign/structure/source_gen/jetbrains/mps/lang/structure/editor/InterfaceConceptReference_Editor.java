@@ -32,7 +32,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
     provider.setRole("intfc");
     provider.setNoTargetText("<no intfc>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InterfaceConceptReference_Editor._Inline_j6mzh4_a0a());
+    provider.setAuxiliaryCellProvider(new InterfaceConceptReference_Editor._Inline_j6mzh4_a0a("intfc"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,8 +46,8 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_j6mzh4_a0a extends InlineCellProvider {
-    public _Inline_j6mzh4_a0a() {
-      super();
+    public _Inline_j6mzh4_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

@@ -42,7 +42,7 @@ public class BuildMps_ModuleDependencyOnModule_Editor extends DefaultNodeEditor 
     provider.setRole("module");
     provider.setNoTargetText("<no module>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMps_ModuleDependencyOnModule_Editor._Inline_2jl94m_a0a());
+    provider.setAuxiliaryCellProvider(new BuildMps_ModuleDependencyOnModule_Editor._Inline_2jl94m_a0a("module"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
@@ -59,8 +59,8 @@ public class BuildMps_ModuleDependencyOnModule_Editor extends DefaultNodeEditor 
   }
 
   public static class _Inline_2jl94m_a0a extends InlineCellProvider {
-    public _Inline_2jl94m_a0a() {
-      super();
+    public _Inline_2jl94m_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

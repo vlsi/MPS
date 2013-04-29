@@ -38,7 +38,7 @@ public class GeneratorInternal_BuildSource_JavaModule_Editor extends DefaultNode
     provider.setRole("targetModule");
     provider.setNoTargetText("<no targetModule>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GeneratorInternal_BuildSource_JavaModule_Editor._Inline_zc1akc_a0a());
+    provider.setAuxiliaryCellProvider(new GeneratorInternal_BuildSource_JavaModule_Editor._Inline_zc1akc_a0a("targetModule"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -52,8 +52,8 @@ public class GeneratorInternal_BuildSource_JavaModule_Editor extends DefaultNode
   }
 
   public static class _Inline_zc1akc_a0a extends InlineCellProvider {
-    public _Inline_zc1akc_a0a() {
-      super();
+    public _Inline_zc1akc_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

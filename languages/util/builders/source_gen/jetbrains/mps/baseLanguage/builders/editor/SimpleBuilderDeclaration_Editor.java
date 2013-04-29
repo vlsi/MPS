@@ -251,7 +251,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("extends");
     provider.setNoTargetText("<no extends>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleBuilderDeclaration_Editor._Inline_ths2vx_a9a());
+    provider.setAuxiliaryCellProvider(new SimpleBuilderDeclaration_Editor._Inline_ths2vx_a9a("extends"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -265,8 +265,8 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ths2vx_a9a extends InlineCellProvider {
-    public _Inline_ths2vx_a9a() {
-      super();
+    public _Inline_ths2vx_a9a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

@@ -36,7 +36,7 @@ public class ChildAspect_Editor extends DefaultNodeEditor {
     provider.setRole("definition");
     provider.setNoTargetText("<no definition>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ChildAspect_Editor._Inline_wz4x5o_a0a());
+    provider.setAuxiliaryCellProvider(new ChildAspect_Editor._Inline_wz4x5o_a0a("definition"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -50,8 +50,8 @@ public class ChildAspect_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wz4x5o_a0a extends InlineCellProvider {
-    public _Inline_wz4x5o_a0a() {
-      super();
+    public _Inline_wz4x5o_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

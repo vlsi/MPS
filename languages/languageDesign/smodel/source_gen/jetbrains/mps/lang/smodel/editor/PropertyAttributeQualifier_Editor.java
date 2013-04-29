@@ -44,7 +44,7 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
     provider.setRole("attributeConcept");
     provider.setNoTargetText("<no attributeConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyAttributeQualifier_Editor._Inline_wc9pc4_a0a());
+    provider.setAuxiliaryCellProvider(new PropertyAttributeQualifier_Editor._Inline_wc9pc4_a0a("attributeConcept"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -61,8 +61,8 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wc9pc4_a0a extends InlineCellProvider {
-    public _Inline_wc9pc4_a0a() {
-      super();
+    public _Inline_wc9pc4_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -74,7 +74,7 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_wc9pc4_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_wc9pc4_a0a0");
       return editorCell;
     }

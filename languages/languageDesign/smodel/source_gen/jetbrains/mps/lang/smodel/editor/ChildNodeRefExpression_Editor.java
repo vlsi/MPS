@@ -61,7 +61,7 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("targetNode");
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ChildNodeRefExpression_Editor._Inline_qcpp4v_a1a());
+    provider.setAuxiliaryCellProvider(new ChildNodeRefExpression_Editor._Inline_qcpp4v_a1a("targetNode"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -75,8 +75,8 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_qcpp4v_a1a extends InlineCellProvider {
-    public _Inline_qcpp4v_a1a() {
-      super();
+    public _Inline_qcpp4v_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

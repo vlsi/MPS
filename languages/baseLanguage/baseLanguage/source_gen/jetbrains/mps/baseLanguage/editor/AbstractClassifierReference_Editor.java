@@ -32,7 +32,7 @@ public class AbstractClassifierReference_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AbstractClassifierReference_Editor._Inline_jmj636_a0a());
+    provider.setAuxiliaryCellProvider(new AbstractClassifierReference_Editor._Inline_jmj636_a0a("classifier"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.addKeyMap(new AbstractClassifierReference_KeyMap());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -47,8 +47,8 @@ public class AbstractClassifierReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_jmj636_a0a extends InlineCellProvider {
-    public _Inline_jmj636_a0a() {
-      super();
+    public _Inline_jmj636_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

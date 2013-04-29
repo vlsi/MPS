@@ -58,7 +58,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
     provider.setRole("enumMember");
     provider.setNoTargetText("<no enumMember>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumMemberReference_Editor._Inline_omfy8u_a1a());
+    provider.setAuxiliaryCellProvider(new EnumMemberReference_Editor._Inline_omfy8u_a1a("enumMember"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
@@ -75,8 +75,8 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_omfy8u_a1a extends InlineCellProvider {
-    public _Inline_omfy8u_a1a() {
-      super();
+    public _Inline_omfy8u_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

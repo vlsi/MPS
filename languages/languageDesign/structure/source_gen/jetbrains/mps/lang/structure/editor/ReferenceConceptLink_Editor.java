@@ -40,7 +40,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     provider.setRole("referenceConceptLinkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline_3r32uy_a0a());
+    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline_3r32uy_a0a("referenceConceptLinkDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -54,8 +54,8 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_3r32uy_a0a extends InlineCellProvider {
-    public _Inline_3r32uy_a0a() {
-      super();
+    public _Inline_3r32uy_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -101,7 +101,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline_3r32uy_a2a());
+    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline_3r32uy_a2a("target"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -115,8 +115,8 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_3r32uy_a2a extends InlineCellProvider {
-    public _Inline_3r32uy_a2a() {
-      super();
+    public _Inline_3r32uy_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -128,7 +128,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_3r32uy_a0c0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_3r32uy_a0c0");
       return editorCell;
     }

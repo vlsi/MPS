@@ -50,7 +50,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     provider.setRole("instanceMethodDeclaration");
     provider.setNoTargetText("<no method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InstanceMethodCallOperation_Editor._Inline_jyer24_a1a());
+    provider.setAuxiliaryCellProvider(new InstanceMethodCallOperation_Editor._Inline_jyer24_a1a("instanceMethodDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform|default_RTransform");
@@ -67,8 +67,8 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_jyer24_a1a extends InlineCellProvider {
-    public _Inline_jyer24_a1a() {
-      super();
+    public _Inline_jyer24_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

@@ -62,7 +62,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     provider.setRole("classConcept");
     provider.setNoTargetText("<no classConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline_xaaxob_a0a0());
+    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline_xaaxob_a0a0("classConcept"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
@@ -80,8 +80,8 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xaaxob_a0a0 extends InlineCellProvider {
-    public _Inline_xaaxob_a0a0() {
-      super();
+    public _Inline_xaaxob_a0a0(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -174,7 +174,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     provider.setRole("classConcept");
     provider.setNoTargetText("<no classConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline_xaaxob_a1a());
+    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline_xaaxob_a1a("classConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -188,8 +188,8 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xaaxob_a1a extends InlineCellProvider {
-    public _Inline_xaaxob_a1a() {
-      super();
+    public _Inline_xaaxob_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

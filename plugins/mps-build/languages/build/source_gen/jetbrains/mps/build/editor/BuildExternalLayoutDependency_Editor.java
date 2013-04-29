@@ -44,7 +44,7 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
     provider.setRole("layout");
     provider.setNoTargetText("<no layout>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildExternalLayoutDependency_Editor._Inline_rscqin_a0a());
+    provider.setAuxiliaryCellProvider(new BuildExternalLayoutDependency_Editor._Inline_rscqin_a0a("layout"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
@@ -61,8 +61,8 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_rscqin_a0a extends InlineCellProvider {
-    public _Inline_rscqin_a0a() {
-      super();
+    public _Inline_rscqin_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

@@ -81,7 +81,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor._Inline_6h6dhy_a0a());
+    provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor._Inline_6h6dhy_a0a("target"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
@@ -98,8 +98,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_6h6dhy_a0a extends InlineCellProvider {
-    public _Inline_6h6dhy_a0a() {
-      super();
+    public _Inline_6h6dhy_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -291,7 +291,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("specializedLink");
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor._Inline_6h6dhy_a1e0());
+    provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor._Inline_6h6dhy_a1e0("specializedLink"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
@@ -308,8 +308,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_6h6dhy_a1e0 extends InlineCellProvider {
-    public _Inline_6h6dhy_a1e0() {
-      super();
+    public _Inline_6h6dhy_a1e0(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

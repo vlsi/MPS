@@ -49,7 +49,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     provider.setRole("enumClass");
     provider.setNoTargetText("<no enum>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline_igv5hf_a0a());
+    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline_igv5hf_a0a("enumClass"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -63,8 +63,8 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_igv5hf_a0a extends InlineCellProvider {
-    public _Inline_igv5hf_a0a() {
-      super();
+    public _Inline_igv5hf_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -110,7 +110,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     provider.setRole("enumConstantDeclaration");
     provider.setNoTargetText("<no enumConstantDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline_igv5hf_a2a());
+    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline_igv5hf_a2a("enumConstantDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
@@ -127,8 +127,8 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_igv5hf_a2a extends InlineCellProvider {
-    public _Inline_igv5hf_a2a() {
-      super();
+    public _Inline_igv5hf_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

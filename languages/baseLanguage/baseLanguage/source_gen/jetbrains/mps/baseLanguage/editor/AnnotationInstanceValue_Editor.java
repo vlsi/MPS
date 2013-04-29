@@ -38,7 +38,7 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
     provider.setRole("key");
     provider.setNoTargetText("<no key>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AnnotationInstanceValue_Editor._Inline_99x6e7_a0a());
+    provider.setAuxiliaryCellProvider(new AnnotationInstanceValue_Editor._Inline_99x6e7_a0a("key"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -52,8 +52,8 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_99x6e7_a0a extends InlineCellProvider {
-    public _Inline_99x6e7_a0a() {
-      super();
+    public _Inline_99x6e7_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

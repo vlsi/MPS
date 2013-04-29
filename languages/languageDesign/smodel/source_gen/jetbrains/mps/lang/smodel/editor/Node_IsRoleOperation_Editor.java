@@ -64,7 +64,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     provider.setRole("conceptOfParent");
     provider.setNoTargetText("<concept of parent>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Node_IsRoleOperation_Editor._Inline_ujlgup_a2a());
+    provider.setAuxiliaryCellProvider(new Node_IsRoleOperation_Editor._Inline_ujlgup_a2a("conceptOfParent"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -78,8 +78,8 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ujlgup_a2a extends InlineCellProvider {
-    public _Inline_ujlgup_a2a() {
-      super();
+    public _Inline_ujlgup_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -128,7 +128,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     provider.setRole("linkInParent");
     provider.setNoTargetText("<role>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Node_IsRoleOperation_Editor._Inline_ujlgup_a4a());
+    provider.setAuxiliaryCellProvider(new Node_IsRoleOperation_Editor._Inline_ujlgup_a4a("linkInParent"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -145,8 +145,8 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ujlgup_a4a extends InlineCellProvider {
-    public _Inline_ujlgup_a4a() {
-      super();
+    public _Inline_ujlgup_a4a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

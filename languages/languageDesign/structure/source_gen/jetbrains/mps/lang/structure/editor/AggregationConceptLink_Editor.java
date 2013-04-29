@@ -44,7 +44,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     provider.setRole("aggregationConceptLinkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AggregationConceptLink_Editor._Inline_ivlr8m_a0a());
+    provider.setAuxiliaryCellProvider(new AggregationConceptLink_Editor._Inline_ivlr8m_a0a("aggregationConceptLinkDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -58,8 +58,8 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ivlr8m_a0a extends InlineCellProvider {
-    public _Inline_ivlr8m_a0a() {
-      super();
+    public _Inline_ivlr8m_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

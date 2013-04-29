@@ -76,7 +76,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SNodeType_Editor._Inline_x5m1a6_a2a());
+    provider.setAuxiliaryCellProvider(new SNodeType_Editor._Inline_x5m1a6_a2a("concept"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
@@ -97,8 +97,8 @@ public class SNodeType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_x5m1a6_a2a extends InlineCellProvider {
-    public _Inline_x5m1a6_a2a() {
-      super();
+    public _Inline_x5m1a6_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

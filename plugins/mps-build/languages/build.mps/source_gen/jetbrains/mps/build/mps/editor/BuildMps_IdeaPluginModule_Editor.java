@@ -47,7 +47,7 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMps_IdeaPluginModule_Editor._Inline_37ht8c_a0a());
+    provider.setAuxiliaryCellProvider(new BuildMps_IdeaPluginModule_Editor._Inline_37ht8c_a0a("target"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -61,8 +61,8 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_37ht8c_a0a extends InlineCellProvider {
-    public _Inline_37ht8c_a0a() {
-      super();
+    public _Inline_37ht8c_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -74,7 +74,7 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_37ht8c_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_37ht8c_a0a0");
       return editorCell;
     }

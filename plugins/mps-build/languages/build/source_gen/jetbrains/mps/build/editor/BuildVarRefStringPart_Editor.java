@@ -67,7 +67,7 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
     provider.setRole("macro");
     provider.setNoTargetText("<no macro>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildVarRefStringPart_Editor._Inline_ayjduv_a1a());
+    provider.setAuxiliaryCellProvider(new BuildVarRefStringPart_Editor._Inline_ayjduv_a1a("macro"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -81,8 +81,8 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ayjduv_a1a extends InlineCellProvider {
-    public _Inline_ayjduv_a1a() {
-      super();
+    public _Inline_ayjduv_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

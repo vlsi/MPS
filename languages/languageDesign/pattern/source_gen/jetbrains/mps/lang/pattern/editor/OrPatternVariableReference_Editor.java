@@ -52,7 +52,7 @@ public class OrPatternVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OrPatternVariableReference_Editor._Inline_souhyd_a1a());
+    provider.setAuxiliaryCellProvider(new OrPatternVariableReference_Editor._Inline_souhyd_a1a("declaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -70,8 +70,8 @@ public class OrPatternVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_souhyd_a1a extends InlineCellProvider {
-    public _Inline_souhyd_a1a() {
-      super();
+    public _Inline_souhyd_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

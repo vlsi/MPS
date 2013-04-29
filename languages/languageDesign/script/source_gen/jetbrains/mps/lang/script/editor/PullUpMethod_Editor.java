@@ -79,7 +79,7 @@ public class PullUpMethod_Editor extends DefaultNodeEditor {
     provider.setRole("newMethodDeclaration");
     provider.setNoTargetText("");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PullUpMethod_Editor._Inline_errt5h_a3a());
+    provider.setAuxiliaryCellProvider(new PullUpMethod_Editor._Inline_errt5h_a3a("newMethodDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -93,8 +93,8 @@ public class PullUpMethod_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_errt5h_a3a extends InlineCellProvider {
-    public _Inline_errt5h_a3a() {
-      super();
+    public _Inline_errt5h_a3a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -106,7 +106,7 @@ public class PullUpMethod_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_errt5h_a0d0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_errt5h_a0d0");
       return editorCell;
     }

@@ -47,7 +47,7 @@ public class BuildLayout_FilesOf_Editor extends DefaultNodeEditor {
     provider.setRole("element");
     provider.setNoTargetText("<no entity>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildLayout_FilesOf_Editor._Inline_1i5f76_a1a());
+    provider.setAuxiliaryCellProvider(new BuildLayout_FilesOf_Editor._Inline_1i5f76_a1a("element"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -61,8 +61,8 @@ public class BuildLayout_FilesOf_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_1i5f76_a1a extends InlineCellProvider {
-    public _Inline_1i5f76_a1a() {
-      super();
+    public _Inline_1i5f76_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -74,7 +74,7 @@ public class BuildLayout_FilesOf_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_1i5f76_a0b0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_1i5f76_a0b0");
       return editorCell;
     }

@@ -96,7 +96,7 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     provider.setRole("newClassifier");
     provider.setNoTargetText("<no newClassifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtractInterfaceMigration_Editor._Inline_7cysuj_a3a());
+    provider.setAuxiliaryCellProvider(new ExtractInterfaceMigration_Editor._Inline_7cysuj_a3a("newClassifier"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -110,8 +110,8 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7cysuj_a3a extends InlineCellProvider {
-    public _Inline_7cysuj_a3a() {
-      super();
+    public _Inline_7cysuj_a3a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -123,7 +123,7 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_7cysuj_a0d0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_7cysuj_a0d0");
       return editorCell;
     }

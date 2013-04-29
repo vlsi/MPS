@@ -63,7 +63,7 @@ public class ContainerType_Editor extends DefaultNodeEditor {
     provider.setRole("container");
     provider.setNoTargetText("<any>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ContainerType_Editor._Inline_zgvqtk_a2a());
+    provider.setAuxiliaryCellProvider(new ContainerType_Editor._Inline_zgvqtk_a2a("container"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -77,8 +77,8 @@ public class ContainerType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_zgvqtk_a2a extends InlineCellProvider {
-    public _Inline_zgvqtk_a2a() {
-      super();
+    public _Inline_zgvqtk_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -125,7 +125,7 @@ public class ContainerType_Editor extends DefaultNodeEditor {
     provider.setRole("uiObject");
     provider.setNoTargetText("<no uiObject>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ContainerType_Editor._Inline_zgvqtk_a4a());
+    provider.setAuxiliaryCellProvider(new ContainerType_Editor._Inline_zgvqtk_a4a("uiObject"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -139,8 +139,8 @@ public class ContainerType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_zgvqtk_a4a extends InlineCellProvider {
-    public _Inline_zgvqtk_a4a() {
-      super();
+    public _Inline_zgvqtk_a4a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

@@ -36,6 +36,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.editor.BeanBuilder_Editor" file="BeanBuilder_Editor.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -61,6 +62,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.editor.BeanPropertyBuilder_Editor" file="BeanPropertyBuilder_Editor.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -140,6 +142,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderChild_Editor" file="SimpleBuilderChild_Editor.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -233,6 +236,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderParameterReference_Editor" file="SimpleBuilderParameterReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.editor.StyleSheet_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -263,6 +267,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderPropertyBuilder_Editor" file="SimpleBuilderPropertyBuilder_Editor.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />

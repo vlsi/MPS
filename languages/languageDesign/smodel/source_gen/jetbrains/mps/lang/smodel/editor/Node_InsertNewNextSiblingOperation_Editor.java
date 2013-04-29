@@ -61,7 +61,7 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Node_InsertNewNextSiblingOperation_Editor._Inline_3ehzmt_a2a());
+    provider.setAuxiliaryCellProvider(new Node_InsertNewNextSiblingOperation_Editor._Inline_3ehzmt_a2a("concept"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -78,8 +78,8 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
   }
 
   public static class _Inline_3ehzmt_a2a extends InlineCellProvider {
-    public _Inline_3ehzmt_a2a() {
-      super();
+    public _Inline_3ehzmt_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

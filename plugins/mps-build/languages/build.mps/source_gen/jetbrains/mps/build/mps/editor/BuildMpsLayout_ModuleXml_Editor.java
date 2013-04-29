@@ -60,7 +60,7 @@ public class BuildMpsLayout_ModuleXml_Editor extends DefaultNodeEditor {
     provider.setRole("module");
     provider.setNoTargetText("<no module>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMpsLayout_ModuleXml_Editor._Inline_o7xb22_a1a());
+    provider.setAuxiliaryCellProvider(new BuildMpsLayout_ModuleXml_Editor._Inline_o7xb22_a1a("module"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -74,8 +74,8 @@ public class BuildMpsLayout_ModuleXml_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_o7xb22_a1a extends InlineCellProvider {
-    public _Inline_o7xb22_a1a() {
-      super();
+    public _Inline_o7xb22_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

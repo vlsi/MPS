@@ -62,7 +62,7 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<all>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Model_RootsOperation_Editor._Inline_4rfqrk_a2a());
+    provider.setAuxiliaryCellProvider(new Model_RootsOperation_Editor._Inline_4rfqrk_a2a("concept"));
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -79,8 +79,8 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_4rfqrk_a2a extends InlineCellProvider {
-    public _Inline_4rfqrk_a2a() {
-      super();
+    public _Inline_4rfqrk_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

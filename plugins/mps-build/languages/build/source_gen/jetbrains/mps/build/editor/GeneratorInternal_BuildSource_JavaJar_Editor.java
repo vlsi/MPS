@@ -41,7 +41,7 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
     provider.setRole("targetJar");
     provider.setNoTargetText("<no targetJar>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GeneratorInternal_BuildSource_JavaJar_Editor._Inline_g0zw24_a1a());
+    provider.setAuxiliaryCellProvider(new GeneratorInternal_BuildSource_JavaJar_Editor._Inline_g0zw24_a1a("targetJar"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -55,8 +55,8 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
   }
 
   public static class _Inline_g0zw24_a1a extends InlineCellProvider {
-    public _Inline_g0zw24_a1a() {
-      super();
+    public _Inline_g0zw24_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

@@ -33,7 +33,7 @@ public class BuildSource_JavaExternalJarRef_Editor extends DefaultNodeEditor {
     provider.setRole("jar");
     provider.setNoTargetText("<no jar>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildSource_JavaExternalJarRef_Editor._Inline_uanmw8_a0a());
+    provider.setAuxiliaryCellProvider(new BuildSource_JavaExternalJarRef_Editor._Inline_uanmw8_a0a("jar"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -47,8 +47,8 @@ public class BuildSource_JavaExternalJarRef_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_uanmw8_a0a extends InlineCellProvider {
-    public _Inline_uanmw8_a0a() {
-      super();
+    public _Inline_uanmw8_a0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -60,7 +60,7 @@ public class BuildSource_JavaExternalJarRef_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_uanmw8_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_uanmw8_a0a0");
       return editorCell;
     }

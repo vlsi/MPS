@@ -51,7 +51,7 @@ public class EventType_Editor extends DefaultNodeEditor {
     provider.setRole("event");
     provider.setNoTargetText("<no event>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EventType_Editor._Inline_koyvu4_a2a());
+    provider.setAuxiliaryCellProvider(new EventType_Editor._Inline_koyvu4_a2a("event"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -65,8 +65,8 @@ public class EventType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_koyvu4_a2a extends InlineCellProvider {
-    public _Inline_koyvu4_a2a() {
-      super();
+    public _Inline_koyvu4_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

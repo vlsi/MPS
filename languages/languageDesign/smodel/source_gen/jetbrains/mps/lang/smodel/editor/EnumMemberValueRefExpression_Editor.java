@@ -69,7 +69,7 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("enum");
     provider.setNoTargetText("<no enum>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumMemberValueRefExpression_Editor._Inline_ldpt2z_a2a());
+    provider.setAuxiliaryCellProvider(new EnumMemberValueRefExpression_Editor._Inline_ldpt2z_a2a("enum"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -83,8 +83,8 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ldpt2z_a2a extends InlineCellProvider {
-    public _Inline_ldpt2z_a2a() {
-      super();
+    public _Inline_ldpt2z_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -131,7 +131,7 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("member");
     provider.setNoTargetText("<no member>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumMemberValueRefExpression_Editor._Inline_ldpt2z_a4a());
+    provider.setAuxiliaryCellProvider(new EnumMemberValueRefExpression_Editor._Inline_ldpt2z_a4a("member"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -145,8 +145,8 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ldpt2z_a4a extends InlineCellProvider {
-    public _Inline_ldpt2z_a4a() {
-      super();
+    public _Inline_ldpt2z_a4a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -158,7 +158,7 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_ldpt2z_a0e0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_ldpt2z_a0e0");
       return editorCell;
     }

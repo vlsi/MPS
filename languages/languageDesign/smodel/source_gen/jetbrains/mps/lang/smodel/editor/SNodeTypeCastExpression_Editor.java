@@ -95,7 +95,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SNodeTypeCastExpression_Editor._Inline_x0l1fn_a3a());
+    provider.setAuxiliaryCellProvider(new SNodeTypeCastExpression_Editor._Inline_x0l1fn_a3a("concept"));
     editorCell = provider.createEditorCell(editorContext);
     SNodeTypeCastExpression_Concept_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -110,8 +110,8 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_x0l1fn_a3a extends InlineCellProvider {
-    public _Inline_x0l1fn_a3a() {
-      super();
+    public _Inline_x0l1fn_a3a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

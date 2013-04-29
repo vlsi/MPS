@@ -197,7 +197,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     provider.setRole("affectedInstanceConcept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MigrationScriptPart_Instance_Editor._Inline_nl0fz6_a2c0a());
+    provider.setAuxiliaryCellProvider(new MigrationScriptPart_Instance_Editor._Inline_nl0fz6_a2c0a("affectedInstanceConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -211,8 +211,8 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_nl0fz6_a2c0a extends InlineCellProvider {
-    public _Inline_nl0fz6_a2c0a() {
-      super();
+    public _Inline_nl0fz6_a2c0a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

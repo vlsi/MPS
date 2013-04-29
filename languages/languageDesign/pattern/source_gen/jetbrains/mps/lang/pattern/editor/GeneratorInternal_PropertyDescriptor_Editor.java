@@ -78,7 +78,7 @@ public class GeneratorInternal_PropertyDescriptor_Editor extends DefaultNodeEdit
     provider.setRole("mainNode");
     provider.setNoTargetText("<no mainNode>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GeneratorInternal_PropertyDescriptor_Editor._Inline_6n82d8_a3a());
+    provider.setAuxiliaryCellProvider(new GeneratorInternal_PropertyDescriptor_Editor._Inline_6n82d8_a3a("mainNode"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -92,8 +92,8 @@ public class GeneratorInternal_PropertyDescriptor_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_6n82d8_a3a extends InlineCellProvider {
-    public _Inline_6n82d8_a3a() {
-      super();
+    public _Inline_6n82d8_a3a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
@@ -105,7 +105,7 @@ public class GeneratorInternal_PropertyDescriptor_Editor extends DefaultNodeEdit
     }
 
     private EditorCell createReferencePresentation_6n82d8_a0d0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
       editorCell.setCellId("ReferencePresentation_6n82d8_a0d0");
       return editorCell;
     }

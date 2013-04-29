@@ -65,7 +65,7 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
     provider.setRole("enum");
     provider.setNoTargetText("");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SEnumMemberType_Editor._Inline_qf1ea_a2a());
+    provider.setAuxiliaryCellProvider(new SEnumMemberType_Editor._Inline_qf1ea_a2a("enum"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
@@ -86,8 +86,8 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_qf1ea_a2a extends InlineCellProvider {
-    public _Inline_qf1ea_a2a() {
-      super();
+    public _Inline_qf1ea_a2a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {

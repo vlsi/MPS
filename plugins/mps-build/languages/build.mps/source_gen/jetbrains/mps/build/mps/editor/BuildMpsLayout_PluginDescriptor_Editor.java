@@ -47,7 +47,7 @@ public class BuildMpsLayout_PluginDescriptor_Editor extends DefaultNodeEditor {
     provider.setRole("plugin");
     provider.setNoTargetText("<no plugin>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMpsLayout_PluginDescriptor_Editor._Inline_bzzv1n_a1a());
+    provider.setAuxiliaryCellProvider(new BuildMpsLayout_PluginDescriptor_Editor._Inline_bzzv1n_a1a("plugin"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -61,8 +61,8 @@ public class BuildMpsLayout_PluginDescriptor_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_bzzv1n_a1a extends InlineCellProvider {
-    public _Inline_bzzv1n_a1a() {
-      super();
+    public _Inline_bzzv1n_a1a(String role) {
+      super(role);
     }
 
     public EditorCell createEditorCell(EditorContext editorContext) {
