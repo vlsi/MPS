@@ -49,7 +49,7 @@ import java.util.Set;
  * Date: 4/24/13
  */
 public class EditorCellFactoryImpl implements EditorCellFactory {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorCellFactoryImpl.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorCellFactoryImpl.class));
   private static final EditorCellContext DEFAULT_CELL_CONTEXT = new EditorCellContext() {
     @Override
     public Collection<String> getHints() {

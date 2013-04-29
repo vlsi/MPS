@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class CloneUtil {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(CloneUtil.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(CloneUtil.class));
 
   /**
    * Creates cloned model, each node in target model has the same nodeId that corresponding node in source model

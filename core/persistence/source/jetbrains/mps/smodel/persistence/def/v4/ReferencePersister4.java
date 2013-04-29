@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class ReferencePersister4 implements IReferencePersister {
 
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ReferencePersister4.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReferencePersister4.class));
 
   protected SNode mySourceNode;
   protected String myRole;

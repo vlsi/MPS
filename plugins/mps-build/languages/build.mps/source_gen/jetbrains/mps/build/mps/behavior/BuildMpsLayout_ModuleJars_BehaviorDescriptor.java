@@ -4,6 +4,7 @@ package jetbrains.mps.build.mps.behavior;
 
 import jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.util.UnpackHelper;
 
 public class BuildMpsLayout_ModuleJars_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor {
@@ -12,6 +13,10 @@ public class BuildMpsLayout_ModuleJars_BehaviorDescriptor extends BuildLayout_No
 
   public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     return BuildMpsLayout_ModuleJars_Behavior.virtual_exports_6547494638219603457(thisNode, object);
+  }
+
+  public String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
+    return BuildMpsLayout_ModuleJars_Behavior.virtual_location_7117056644539862594(thisNode, helper, artifactId);
   }
 
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {

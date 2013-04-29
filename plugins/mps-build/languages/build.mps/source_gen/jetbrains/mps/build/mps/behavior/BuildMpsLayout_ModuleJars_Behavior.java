@@ -6,7 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BuildMpsLayout_ModuleJars_Behavior {
   public static void init(SNode thisNode) {
@@ -19,9 +21,27 @@ public class BuildMpsLayout_ModuleJars_Behavior {
     helper.locations().put(thisNode, languageLocation);
   }
 
+  public static String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
+    if (artifactId instanceof SNode) {
+      SNode node = (SNode) artifactId;
+      String languageLocation = helper.locations().get(thisNode);
+
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
+        return languageLocation.substring(0, languageLocation.length() - ".jar".length()) + "-generator.jar";
+      }
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
+        return languageLocation;
+      }
+    }
+    return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.build.structure.BuildLayout_Node", "virtual_location_7117056644539862594", new Object[]{helper, artifactId});
+  }
+
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     if (object instanceof SNode) {
       SNode node = (SNode) object;
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
+        return SLinkOperations.getTarget(thisNode, "module", false) == BuildMps_Generator_Behavior.call_getSourceLanguage_9200313594510517119(SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
+      }
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
         return SLinkOperations.getTarget(thisNode, "module", false) == node;
       }

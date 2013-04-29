@@ -7,10 +7,10 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.SModelRoot;
@@ -31,7 +31,7 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
 
   @Override
   public ModelRootDescriptor compute() {
-    PersistenceFacade pReg = PersistenceRegistry.getInstance();
+    PersistenceFacade pReg = PersistenceFacade.getInstance();
     Iterable<String> ti = pReg.getTypeIds();
     int index = Messages.showChooseDialog("select", "type", Sequence.fromIterable(ti).toGenericArray(String.class), Sequence.fromIterable(ti).first(), null);
     if (index == -1) {

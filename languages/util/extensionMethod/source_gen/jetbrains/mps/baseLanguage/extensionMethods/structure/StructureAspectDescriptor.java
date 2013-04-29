@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.extensionMethods.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -16,19 +17,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer").super_("jetbrains.mps.baseLanguage.structure.GenericDeclaration").parents("jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.baseLanguage.structure.IMemberContainer").children(new String[]{"methods", "staticFields"}, new boolean[]{true, true}).abstract_().create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.structure.IMethodCall").references("extension").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.structure.IMethodCall").references("extension").staticScope(StaticScope.NONE).create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration").super_("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.ClassifierMember").children(new String[]{"extendedType"}, new boolean[]{false}).create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration").super_("jetbrains.mps.baseLanguage.structure.VariableDeclaration").parents("jetbrains.mps.baseLanguage.structure.VariableDeclaration").create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference").super_("jetbrains.mps.baseLanguage.structure.VariableReference").parents("jetbrains.mps.baseLanguage.structure.VariableReference").references("staticFieldDeclaration").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference").super_("jetbrains.mps.baseLanguage.structure.VariableReference").parents("jetbrains.mps.baseLanguage.structure.VariableReference").references("staticFieldDeclaration").staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall").super_("jetbrains.mps.baseLanguage.structure.BaseMethodCall").parents("jetbrains.mps.baseLanguage.structure.BaseMethodCall").references("instanceMethodDeclaration").alias("", "local extended method call").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall").super_("jetbrains.mps.baseLanguage.structure.BaseMethodCall").parents("jetbrains.mps.baseLanguage.structure.BaseMethodCall").references("instanceMethodDeclaration").alias("", "local extended method call").staticScope(StaticScope.NONE).create();
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer").super_("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer").parents("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer").alias("Simple Extension Method Container", "").create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("this", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("this", "").staticScope(StaticScope.NONE).create();
       case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension").super_("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer").parents("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer").children(new String[]{"type"}, new boolean[]{false}).alias("type extension", "").create();
       default:

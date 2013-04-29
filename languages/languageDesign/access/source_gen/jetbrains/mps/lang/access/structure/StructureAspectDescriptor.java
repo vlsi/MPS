@@ -5,6 +5,7 @@ package jetbrains.mps.lang.access.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,23 +15,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"commandClosureLiteral"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"commandClosureLiteral"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").staticScope(StaticScope.NONE).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.CommandClosureLiteral").super_("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").parents("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.CommandClosureLiteral").super_("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").parents("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").staticScope(StaticScope.NONE).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").children(new String[]{"project"}, new boolean[]{false}).alias("execute command in EDT", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").children(new String[]{"project"}, new boolean[]{false}).alias("execute command in EDT", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("command", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("command", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").alias("execute in EDT", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").alias("execute in EDT", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("read action", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("read action", "").staticScope(StaticScope.NONE).create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("undo-transparent command", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("undo-transparent command", "").staticScope(StaticScope.NONE).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("write action", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("write action", "").staticScope(StaticScope.NONE).create();
       case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync").interface_().create();
       default:

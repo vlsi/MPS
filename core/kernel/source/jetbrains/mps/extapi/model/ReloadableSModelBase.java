@@ -93,17 +93,19 @@ public abstract class ReloadableSModelBase extends SModelBase {
     final jetbrains.mps.smodel.SModel oldSModel = getCurrentModelInternal();
 
     if (oldSModel != null) {
-      (oldSModel).setModelDescriptor(null);
+      oldSModel.setModelDescriptor(null);
     }
 
     replacer.run();
 
     jetbrains.mps.smodel.SModel newModel = getCurrentModelInternal();
     if (newModel != null) {
-      (newModel).setModelDescriptor(this);
+      newModel.setModelDescriptor(this);
     }
 
-    notifyModelReplaced(oldSModel.getModelDescriptor());
+    if (oldSModel != null) {
+      notifyModelReplaced(oldSModel.getModelDescriptor());
+    }
 
     MPSModuleRepository.getInstance().invalidateCaches();
   }

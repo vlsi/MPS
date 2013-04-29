@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
@@ -35,6 +36,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -127,15 +129,16 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     private List<String> parents;
 
     private Set<String> ancestors;
-    private List<String> propertyNames;
-    private List<String> referenceNames;
-    private List<String> childrenNames;
-    private HashMap<String, Boolean> childrenMap= new HashMap<String, Boolean>();
+    private Set<String> propertyNames;
+    private Set<String> referenceNames;
+    private Set<String> childrenNames;
+    private HashMap<String, Boolean> childrenMap = new HashMap<String, Boolean>();
     private boolean isAbstract;
     private boolean isFinal;
     private String conceptAlias;
     private String shortDescription;
     private String helpURL;
+    private StaticScope staticScope;
 
     InterpretedConceptDescriptor(final String fqName) {
       this.fqName = fqName;
@@ -165,6 +168,9 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
           conceptAlias = SNodeUtil.getConceptAlias(declaration);
           shortDescription = SNodeUtil.getConceptShortDescription(declaration);
 
+          // scope
+          String scopeVal = SPropertyOperations.getString(declaration, "staticScope");
+          staticScope = "none".equals(scopeVal) ? StaticScope.NONE : ("root".equals(scopeVal) ? StaticScope.ROOT : StaticScope.GLOBAL);
 
           // superconcept
           if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
@@ -246,7 +252,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
           properties.addAll(parentDescriptor.getPropertyNames());
         }
 
-        propertyNames = new ArrayList<String>(properties);
+        propertyNames = Collections.unmodifiableSet(properties);
 
         // references
         LinkedHashSet<String> references = new LinkedHashSet<String>();
@@ -256,18 +262,18 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
           references.addAll(parentDescriptor.getReferenceNames());
         }
 
-        referenceNames = new ArrayList<String>(references);
+        referenceNames = Collections.unmodifiableSet(references);
 
         // children
 
 
         for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-          for (String child : parentDescriptor.getChildrenNames()){
+          for (String child : parentDescriptor.getChildrenNames()) {
             childrenMap.put(child, parentDescriptor.isMultipleChild(child));
           }
         }
 
-        childrenNames = new ArrayList<String>(childrenMap.keySet());
+        childrenNames = Collections.unmodifiableSet(childrenMap.keySet());
       }
     }
 
@@ -287,18 +293,23 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     }
 
     @Override
-    public List<String> getPropertyNames() {
+    public Set<String> getPropertyNames() {
       return propertyNames;
     }
 
     @Override
-    public List<String> getReferenceNames() {
+    public Set<String> getReferenceNames() {
       return referenceNames;
     }
 
     @Override
-    public List<String> getChildrenNames() {
+    public Set<String> getChildrenNames() {
       return childrenNames;
+    }
+
+    @Override
+    public StaticScope getStaticScope() {
+      return staticScope;
     }
 
     @Override

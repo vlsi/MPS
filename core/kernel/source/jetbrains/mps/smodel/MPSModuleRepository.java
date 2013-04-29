@@ -46,7 +46,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MPSModuleRepository implements CoreComponent, SRepository {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(MPSModuleRepository.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSModuleRepository.class));
   private List<SRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<SRepositoryListener>();
 
   private Set<SModule> myModules = new LinkedHashSet<SModule>();
@@ -252,7 +252,6 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
         for (Project p : ProjectManager.getInstance().getOpenProjects()) {
           p.getScope().invalidateCaches();
         }
-
         SModelUtil.clearCaches();
       }
     });

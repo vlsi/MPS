@@ -188,6 +188,10 @@ public class CheckProjectStructureHelper {
       Testbench.setMacro(macro[0], macro[1]);
     }
     Testbench.initLibs();
+    // we do not make anything here
+    // we have a special test (Making) that does make
+    // and more importantly checks that make is ok and fails if not
+    // that should be enough
 
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();

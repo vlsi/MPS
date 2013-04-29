@@ -11,6 +11,10 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -41,7 +45,17 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
     DocumentationCommentStyleSheet_StyleSheet.applyCommentTag(style, editorCell);
     editorCell.getStyle().putAll(style);
     ValueInlineDocTag_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ValueInlineDocTag_Editor.ReplaceWith_BaseInlineDocTag_cellMenu_jy8kcg_a0a0()}));
     return editorCell;
+  }
+
+  public static class ReplaceWith_BaseInlineDocTag_cellMenu_jy8kcg_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BaseInlineDocTag_cellMenu_jy8kcg_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag";
+    }
   }
 
   private EditorCell createRefNode_jy8kcg_b0(EditorContext editorContext, SNode node) {

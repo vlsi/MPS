@@ -27,6 +27,7 @@ public class DeleteFinalInField {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "isFinal", "" + (false));
+      editorContext.selectWRTFocusPolicy(node);
     }
   }
 }

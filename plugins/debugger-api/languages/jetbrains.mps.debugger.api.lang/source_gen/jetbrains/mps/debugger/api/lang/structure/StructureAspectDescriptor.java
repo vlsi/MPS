@@ -5,6 +5,7 @@ package jetbrains.mps.debugger.api.lang.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -20,25 +21,25 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("conceptDeclaration").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Concept").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("concept", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Concept").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("concept", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Debug_Project").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("project", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Debug_Project").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("project", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_DebuggableNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("debuggableNode", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_DebuggableNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("debuggableNode", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableToConcept").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isApplicable", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableToConcept").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("isApplicable", "").staticScope(StaticScope.NONE).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").properties("kindName", "kindPresentation").children(new String[]{"nodeExpression", "projectExpression"}, new boolean[]{false, false}).alias("create breakpoint", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").properties("kindName", "kindPresentation").children(new String[]{"nodeExpression", "projectExpression"}, new boolean[]{false, false}).alias("create breakpoint", "").staticScope(StaticScope.NONE).create();
       case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"debugger", "getSettings"}, new boolean[]{false, false}).create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.DebuggerReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("debuggerName").alias("debugger", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.DebuggerReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("debuggerName").alias("debugger", "").staticScope(StaticScope.NONE).create();
       case 11:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.DebuggerType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").properties("name").alias("debugger type", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.DebuggerType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").properties("name").alias("debugger type", "").staticScope(StaticScope.NONE).create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.GetDebuggerSettings_Function").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("get debugger settings", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.api.lang.structure.GetDebuggerSettings_Function").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("get debugger settings", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

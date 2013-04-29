@@ -55,7 +55,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class RefactoringContext {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(RefactoringContext.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(RefactoringContext.class));
   private IRefactoring myRefactoring;
   private StructureModification myLoggedData = new StructureModification();
   private Map<String, Object> myParametersMap = new HashMap<String, Object>();

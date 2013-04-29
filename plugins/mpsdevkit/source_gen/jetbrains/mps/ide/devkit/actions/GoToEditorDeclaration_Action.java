@@ -90,10 +90,6 @@ public class GoToEditorDeclaration_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("scope") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
-      return false;
-    }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {

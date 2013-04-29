@@ -30,7 +30,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.persistence.PersistenceRegistry;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.io.File;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -164,7 +164,7 @@ public class NewModelDialog extends DialogWrapper {
 
       final ModelRootDescriptor oldModelRootDescriptor = new ModelRootDescriptor(selectedModelRoot.getType(), memento);
 
-      final FileBasedModelRoot newModelRoot = (FileBasedModelRoot) PersistenceRegistry.getInstance().getModelRootFactory(selectedModelRoot.getType()).create();
+      final FileBasedModelRoot newModelRoot = (FileBasedModelRoot) PersistenceFacade.getInstance().getModelRootFactory(selectedModelRoot.getType()).create();
       newModelRoot.load(memento);
       newModelRoot.addFile(FileBasedModelRoot.SOURCE_ROOTS, newModelRoot.getContentRoot() + File.separator + "languageAccessories");
 

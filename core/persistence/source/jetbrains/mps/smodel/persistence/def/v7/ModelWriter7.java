@@ -34,7 +34,6 @@ import java.util.Map;
 
 public class ModelWriter7 implements IModelWriter {
   private WriteHelper myHelper;
-  private SModel myModel;
 
   protected int getModelPersistenceVersion() {
     return 7;
@@ -42,18 +41,18 @@ public class ModelWriter7 implements IModelWriter {
 
   @Override
   public Document saveModel(SModel sourceModel) {
-    myModel = sourceModel;
+    SModel model = sourceModel;
     myHelper = new WriteHelper(sourceModel.getReference());
 
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
 
-    int version = (myModel).getVersion();
+    int version = (model).getVersion();
     if (version >= 0) {
       rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
     }
-    if (myModel instanceof DefaultSModel) {
-      SModelHeader header = ((DefaultSModel) myModel).getSModelHeader();
+    if (model instanceof DefaultSModel) {
+      SModelHeader header = ((DefaultSModel) model).getSModelHeader();
       if (header.isDoNotGenerate()) {
         rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, "true");
       }

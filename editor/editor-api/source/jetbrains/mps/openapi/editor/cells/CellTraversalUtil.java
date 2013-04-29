@@ -18,7 +18,9 @@ package jetbrains.mps.openapi.editor.cells;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Semen Alperovich
@@ -120,4 +122,65 @@ public class CellTraversalUtil {
     }
   }
 
+  //first cell and second cell MUST have common parent
+  //check getCommonParent (firstCell, secondCell) != null
+  public static int compare(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {
+    if (firstCell.equals(secondCell)) {
+      return 0;
+    }
+    EditorCell parent = getCommonParent(firstCell, secondCell);
+
+    assert parent != null;
+    assert parent instanceof EditorCell_Collection;
+
+    if (parent.equals(firstCell)) {
+      return -1;
+    }
+    if (parent.equals(secondCell)) {
+      return 1;
+    }
+
+
+    for (EditorCell cell : ((EditorCell_Collection) parent)) {
+      if (isAncestor(cell, firstCell) || firstCell.equals(cell)) {
+        return -1;
+      }
+
+      if (isAncestor(cell, secondCell) || secondCell.equals(cell)) {
+        return 1;
+      }
+    }
+    assert false; //this line should not be reached
+    return 0;
+  }
+
+  public static EditorCell getCommonParent(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {
+    List<EditorCell> firstParents = getParents(firstCell, true);
+    List<EditorCell> secondParents = getParents(secondCell, true);
+    for (EditorCell cell : firstParents) {
+      if (secondParents.contains(cell)) {
+        return cell;
+      }
+    }
+    return null;
+  }
+
+  public static List<EditorCell> getParents(@NotNull EditorCell cell, boolean includeThis) {
+    List<EditorCell> parents = new ArrayList<EditorCell>();
+    EditorCell tempCell = includeThis ? cell : cell.getParent();
+    while (tempCell != null) {
+      parents.add(tempCell);
+      tempCell = tempCell.getParent();
+    }
+    return parents;
+  }
+
+  public static boolean isAncestor(@NotNull EditorCell ancestor, @NotNull EditorCell child) {
+    EditorCell_Collection parent = child.getParent();
+    while (parent != null) {
+      if (parent.equals(ancestor)) return true;
+      parent = parent.getParent();
+    }
+    return false;
+  }
 }

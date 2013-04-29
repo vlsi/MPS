@@ -79,7 +79,7 @@ import java.util.Set;
  * Created Sep 14, 2003
  */
 public abstract class EditorCell_Basic implements EditorCell {
-  public static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorCell_Basic.class));
+  public static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorCell_Basic.class));
 
   public static final int BRACKET_WIDTH = 7;
 

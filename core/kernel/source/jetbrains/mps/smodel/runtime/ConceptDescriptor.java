@@ -28,17 +28,19 @@ public interface ConceptDescriptor {
 
   boolean isInterfaceConcept();
 
-  List<String> getPropertyNames();
+  Set<String> getPropertyNames();
 
   boolean hasProperty(String name);
 
-  List<String> getReferenceNames();
+  Set<String> getReferenceNames();
 
   boolean hasReference(String name);
 
-  List<String> getChildrenNames();
+  Set<String> getChildrenNames();
 
   boolean hasChild(String name);
+
+  StaticScope getStaticScope();
 
   //true if true, false if false or !hasChild(name);
   boolean isMultipleChild(String name);

@@ -33,4 +33,5 @@ public interface MPSProjectTemplate {
   public JComponent getSettings();
   @NotNull
   public TemplateFiller getTemplateFiller();
+  public void setProjectPath(String projectPath);
 }

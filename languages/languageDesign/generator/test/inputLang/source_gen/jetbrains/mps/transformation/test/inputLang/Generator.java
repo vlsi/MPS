@@ -8,9 +8,10 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateModelImpl;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class Generator implements TemplateModule {
   public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("45250695-332a-4a0e-94bc-014e09fa751d(jetbrains.mps.transformation.test.inputLang#1195164860857)");
@@ -20,7 +21,7 @@ public class Generator implements TemplateModule {
 
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
-    models = TemplateUtil.<TemplateModel>asCollection(new TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl(this));
+    models = TemplateUtil.<TemplateModel>asCollection(getTemplateModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateModelImpl"), getTemplateModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl"), getTemplateModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl"), getTemplateModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl"), getTemplateModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.TemplateModelImpl"), getTemplateModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl"), getTemplateModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl"));
     usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.transformation.test.outputLang");
   }
 
@@ -50,5 +51,14 @@ public class Generator implements TemplateModule {
 
   public Collection<String> getReferencedModules() {
     return null;
+  }
+
+  private TemplateModel getTemplateModel(String modelName) {
+    Class<TemplateModel> clazz = ClassLoaderManager.getInstance().getClass(MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE.getModuleId()), modelName);
+    try {
+      return clazz.getConstructor(TemplateModule.class).newInstance(this);
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
   }
 }

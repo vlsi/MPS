@@ -89,7 +89,7 @@ public class DeleteModules_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       String message = "Are you sure you want to delete selected modules? This operation is not undoable.";
-      final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", true, false);
+      final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, true);
       DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Modules", message, filesOption);
       dialog.show();
       if (!(dialog.isOK())) {

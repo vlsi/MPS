@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.core.mergedriver;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.smodel.persistence.RoleIdsComponent;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
@@ -35,8 +35,8 @@ import org.apache.log4j.LogManager;
   public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
     System.setProperty("mps.playRefactorings", "false");
     MPSCore.getInstance().setMergeDriverMode(true);
-    MergerRoleIdsHandler roleIdsHandler = new MergerRoleIdsHandler();
-    RoleIdsComponent.setHandler(roleIdsHandler);
+    MergerModelEnvironmentInfoImpl persistenceEnv = new MergerModelEnvironmentInfoImpl();
+    PersistenceRegistry.getInstance().setModelEnvironmentInfo(persistenceEnv);
 
     DefaultSModel baseModel;
     DefaultSModel localModel;
@@ -67,7 +67,7 @@ import org.apache.log4j.LogManager;
       }
       return backup(baseContent, localContent, latestContent);
     }
-    if (!(roleIdsHandler.isConsistent())) {
+    if (!(persistenceEnv.isConsistent())) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error(String.format("%s: Inconsistent structure ids or import versions", myModelName));
       }

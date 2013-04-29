@@ -36,7 +36,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implements MultiStreamDataSourceListener {
 
-  private static Logger LOG = Logger.getLogger(LogManager.getLogger(JavaSourceStubModelDescriptor.class));
+  private static Logger LOG = Logger.wrap(LogManager.getLogger(JavaSourceStubModelDescriptor.class));
 
   private SModelReference myModelRef;
   private SModel myModel;

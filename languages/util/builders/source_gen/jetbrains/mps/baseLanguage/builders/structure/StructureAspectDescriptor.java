@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.builders.structure;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,7 +15,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.IContainsStatementList", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer").children(new String[]{"expression"}, new boolean[]{false}).alias("as builder", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.IContainsStatementList", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer").children(new String[]{"expression"}, new boolean[]{false}).alias("as builder", "").staticScope(StaticScope.NONE).create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder").super_("jetbrains.mps.baseLanguage.builders.structure.Builder").parents("jetbrains.mps.baseLanguage.builders.structure.Builder", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"type"}, new boolean[]{false}).create();
       case 2:
@@ -28,39 +29,39 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.BuilderContainer").interface_().children(new String[]{"builder", "body"}, new boolean[]{false, false}).create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator").super_("jetbrains.mps.baseLanguage.structure.AbstractCreator").parents("jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator").super_("jetbrains.mps.baseLanguage.structure.AbstractCreator").parents("jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter").staticScope(StaticScope.NONE).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer").staticScope(StaticScope.NONE).create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.ResultExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("result", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.ResultExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("result", "").staticScope(StaticScope.NONE).create();
       case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder").super_("jetbrains.mps.baseLanguage.builders.structure.Builder").parents("jetbrains.mps.baseLanguage.builders.structure.Builder").references("declaration").children(new String[]{"argument"}, new boolean[]{true}).create();
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("child").children(new String[]{"attachStatement"}, new boolean[]{false}).create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression").super_("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression").parents("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression").alias("child", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression").super_("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression").parents("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression").alias("child", "").staticScope(StaticScope.NONE).create();
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration").super_("jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration").parents("jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept").properties("root", "leaf", "isAbstract").references("extends").children(new String[]{"parameter", "type", "creator", "child", "property"}, new boolean[]{true, false, false, true, true}).create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").abstract_().staticScope(StaticScope.NONE).create();
       case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration").super_("jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration").parents("jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration").references("extended").children(new String[]{"child", "property"}, new boolean[]{true, true}).create();
       case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"type"}, new boolean[]{false}).create();
       case 17:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("parameter").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("parameter").staticScope(StaticScope.NONE).create();
       case 18:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression").super_("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression").parents("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression").alias("parent", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression").super_("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression").parents("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression").alias("parent", "").staticScope(StaticScope.NONE).create();
       case 19:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"type", "set"}, new boolean[]{false, false}).create();
       case 20:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder").super_("jetbrains.mps.baseLanguage.builders.structure.Builder").parents("jetbrains.mps.baseLanguage.builders.structure.Builder").references("declaration").children(new String[]{"value"}, new boolean[]{false}).create();
       case 21:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").abstract_().staticScope(StaticScope.NONE).create();
       case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent").super_("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression").parents("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression").alias("parent", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent").super_("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression").parents("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression").alias("parent", "").staticScope(StaticScope.NONE).create();
       case 23:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue").super_("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression").parents("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression").alias("value", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue").super_("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression").parents("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression").alias("value", "").staticScope(StaticScope.NONE).create();
       case 24:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("extendsBuilder").children(new String[]{"builder"}, new boolean[]{true}).create();
       default:

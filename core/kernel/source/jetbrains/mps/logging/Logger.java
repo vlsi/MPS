@@ -37,10 +37,10 @@ public abstract class Logger {
   @Deprecated
   @ToRemove(version = 3.0)
   public static synchronized Logger getLogger(String name) {
-    return getLogger(LogManager.getLogger(name));
+    return wrap(LogManager.getLogger(name));
   }
 
-  public static synchronized Logger getLogger(org.apache.log4j.Logger logger) {
+  public static synchronized Logger wrap(org.apache.log4j.Logger logger) {
     return new Log4jLogger(logger);
   }
 

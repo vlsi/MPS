@@ -34,7 +34,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -65,7 +64,7 @@ import java.util.Set;
 import java.util.Stack;
 
 public class EditorManager {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorManager.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorManager.class));
 
   public static final String BIG_CELL_CONTEXT = "big-cell-context";
 

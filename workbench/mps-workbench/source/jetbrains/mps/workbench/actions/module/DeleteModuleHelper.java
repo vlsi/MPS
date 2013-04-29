@@ -84,16 +84,46 @@ public class DeleteModuleHelper {
         if (curModule.getModuleSourceDir().getChildren().isEmpty()) {
           deleteFile(curModule.getModuleSourceDir().getPath());
         }
-      }
 
-      ModuleRepositoryFacade.getInstance().removeModuleForced((SModule) module);
+        IFile moduleFolder = curModule.getDescriptorFile().getParent();
+        if(deleteDirIfEmpty(moduleFolder))
+          moduleFolder.delete();
+      }
     }
+
+    //remove from project
+    if (mpsProject.isProjectModule(module)) {
+      mpsProject.removeModule(module.getModuleReference());
+      ((StandaloneMPSProject) mpsProject).update();
+      project.save();
+    }
+
+    if(deleteFiles)
+      ModuleRepositoryFacade.getInstance().removeModuleForced(module);
   }
 
   private static void deleteFile(String path) {
     IFile file = FileSystem.getInstance().getFileByPath(path);
     if (!file.exists()) return;
     file.delete();
+  }
+
+  private static boolean deleteDirIfEmpty(IFile file) {
+    if(!file.exists())
+      return true;
+
+    if(!file.isDirectory())
+      return false;
+
+    if(file.isDirectory() && file.getChildren().isEmpty())
+      return true;
+
+    boolean checkChild = true;
+    for (IFile child : file.getChildren())
+      if(!deleteDirIfEmpty(child))
+        return false;
+
+    return true;
   }
 
   private static void safeDelete(Project project, SModule module, boolean deleteFiles) {
