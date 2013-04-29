@@ -2444,6 +2444,9 @@
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1169127546356" />
             <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1215628279925">
               <property name="nullText" nameId="tpc2.1082639509531" value="&lt;none&gt;" />
+              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="4653693564097984761">
+                <property name="flag" nameId="tpc2.1186414551515" value="true" />
+              </node>
             </node>
             <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="1239877876893" />
           </node>

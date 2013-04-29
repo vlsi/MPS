@@ -1464,6 +1464,24 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editor.ConceptEditorHintDeclarationReferenceExpression_Editor" file="ConceptEditorHintDeclarationReferenceExpression_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.editor.ConceptEditorHintDeclarationReference_Editor" file="ConceptEditorHintDeclarationReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -1614,6 +1632,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ConceptEditorContextHints_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ConceptEditorDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.ConceptEditorHintDeclarationReferenceExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ConceptEditorHintDeclarationReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ConceptEditorHintDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.DefaultBaseLine_Editor" />
@@ -1638,7 +1657,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.PositionChildrenStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.PositionStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.PreDefinedStyleClassItem_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.editor.QueryHintsSpecification_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.RGBColor_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ReadOnlyModelAccessor_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.RightTransformAnchorTagWrapper_Editor" />
@@ -2149,13 +2167,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editor.QueryHintsSpecification_Editor" file="QueryHintsSpecification_Editor.java">
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editor.RGBColor_Editor" file="RGBColor_Editor.java">
     <classNode dependClassName="java.lang.Class" />

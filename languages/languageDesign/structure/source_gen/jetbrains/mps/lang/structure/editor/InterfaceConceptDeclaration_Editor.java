@@ -201,6 +201,9 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_7v1nzk_a1c0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_7v1nzk_a1c0a");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.EDITABLE, true);
+      editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<none>");
       return editorCell;
     }
