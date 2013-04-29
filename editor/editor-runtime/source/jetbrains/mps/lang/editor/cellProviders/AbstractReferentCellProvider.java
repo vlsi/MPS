@@ -48,10 +48,10 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   protected SNode myLinkDeclaration;
   protected String myGenuineRole;
+  protected String myRole;
   protected SNode myGenuineLinkDeclaration;
 
   protected boolean myIsAggregation;
-  protected boolean myIsCardinality0;
   protected boolean myIsCardinality1;
 
   private String myErrorText = null;
@@ -60,6 +60,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   public AbstractReferentCellProvider(SNode node, EditorContext context) {
     super(node, context);
   }
+
 
 
   @Override
@@ -71,6 +72,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       LOG.error("can't find a link declaration '" + role.toString() + "' in " + getSNode(), getSNode());
       return;
     }
+    myRole = role.toString();
 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
@@ -79,7 +81,6 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
         myGenuineRole = SModelUtil.getLinkDeclarationRole(myGenuineLinkDeclaration);
         myIsAggregation = !SNodeUtil.getLinkDeclaration_IsReference(myGenuineLinkDeclaration);
         myIsCardinality1 = SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(myGenuineLinkDeclaration);
-        myIsCardinality0 = !myIsCardinality1;
       }
     });
   }
@@ -100,8 +101,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   public EditorCell createEditorCell(EditorContext context) {
     EditorCell result = createCell_internal(myEditorContext);
     // do not override role/link-declaration if they are already set
-    if (result.getRole() == null &&
-        ((jetbrains.mps.nodeEditor.cells.EditorCell) result).getLinkDeclaration() == null) {
+    if (result.getRole() == null) {
       result.setRole(myGenuineRole);
       if (myGenuineLinkDeclaration != null) {
         ((jetbrains.mps.nodeEditor.cells.EditorCell) result).setLinkDeclaration(myGenuineLinkDeclaration);
@@ -127,7 +127,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
         referentNode = reference.getTargetNode();
         if (referentNode == null || referentNode.getModel() == null || context.getScope().getModelDescriptor(referentNode.getModel().getReference()) == null) {
           String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
-          myErrorText = rinfo != null ? rinfo : "?" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "?";
+          myErrorText = rinfo != null ? rinfo : "?" + myRole + "?";
           return createErrorCell(myErrorText, node, context);
         }
       }
@@ -148,7 +148,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
         noRefCell.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(getSNode(), myGenuineRole));
       }
 
-      noRefCell.setCellId("empty_" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration));
+      noRefCell.setCellId("empty_" + myRole);
       return noRefCell;
     }
 

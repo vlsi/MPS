@@ -268,12 +268,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public String getCellRole() {
-    SNode linkDeclaration = getLinkDeclaration();
-    if (linkDeclaration != null) {
-      return SModelUtil.getGenuineLinkRole(linkDeclaration);
-    } else {//try legacy technique
-      return getRole();
-    }
+    return getRole();
   }
 
   public final void setSNode(SNode node) {

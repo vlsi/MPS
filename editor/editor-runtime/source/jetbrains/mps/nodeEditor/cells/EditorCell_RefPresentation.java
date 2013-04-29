@@ -90,7 +90,7 @@ public class EditorCell_RefPresentation {
       if (myContextCell == null || myContextCell.getParent() == null) return null;
 
       EditorCell refNodeCell = findCellWithLinkDeclaration();
-      SNode referenceTarget = refNodeCell.getSNodeWRTReference();
+      SNode referenceTarget = APICellAdapter.getSNodeWRTReference(refNodeCell);
 
 
       SNode node = refNodeCell.getSNode();
