@@ -49,17 +49,10 @@ public class EditorCell_RefPresentation {
     return result;
   }
 
-  public static EditorCell_Property create(EditorContext context, SNode node, SNode refNode, SNode linkDeclaration) {
-    MyAccessor accessor = new MyAccessor(node, refNode, linkDeclaration);
-    EditorCell_Property result = EditorCell_Property.create(context, accessor, node);
-    return result;
-  }
-
   private static class MyAccessor implements ModelAccessor {
     private EditorCell myContextCell;
     private SNode myNode;
     private SNode myRefNode;
-    private SNode myLinkDeclaration;
     private String myRole;
 
     public MyAccessor() {
@@ -69,12 +62,6 @@ public class EditorCell_RefPresentation {
       myNode = node;
       myRefNode = refNode;
       myRole = role;
-    }
-
-    public MyAccessor(SNode node, SNode refNode, SNode linkDeclaration) {
-      myNode = node;
-      myRefNode = refNode;
-      myLinkDeclaration = linkDeclaration;
     }
 
     private EditorCell findCellWithLinkDeclaration() {

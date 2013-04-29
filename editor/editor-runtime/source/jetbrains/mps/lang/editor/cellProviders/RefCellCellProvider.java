@@ -52,7 +52,6 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     if (inlineComponent instanceof InlineCellProvider) {
       InlineCellProvider inlineComponentProvider = (InlineCellProvider) inlineComponent;
       inlineComponentProvider.setRefNode(node);
-      inlineComponentProvider.setLinkDeclaration(myGenuineLinkDeclaration);
     }
     EditorCell editorCell;
     if (myIsAggregation) {
