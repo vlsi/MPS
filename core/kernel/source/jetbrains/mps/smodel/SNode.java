@@ -1134,7 +1134,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   protected SNode firstChild() {
     if (first == null) return null;
-    if (myRepository != null) {
+    if (myRepository != null && first.myRepository == null) {
       first.attach(myRepository);
     }
     return first;
@@ -1142,7 +1142,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   protected SNode treePrevious() {
     if (prev == null) return null;
-    if (myRepository != null) {
+    if (myRepository != null && prev.myRepository == null) {
       prev.attach(myRepository);
     }
     return prev;
@@ -1150,7 +1150,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   protected SNode treeNext() {
     if (next == null) return null;
-    if (myRepository != null) {
+    if (myRepository != null && next.myRepository == null) {
       next.attach(myRepository);
     }
     return next;
