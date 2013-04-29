@@ -41,4 +41,8 @@ public abstract class InlineCellProvider extends AbstractCellProvider {
   public String getRole() {
     return myRole;
   }
+
+  public void setRole(String role) {
+    myRole = role;
+  }
 }
