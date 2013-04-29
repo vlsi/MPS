@@ -152,9 +152,9 @@ public class ModelReader7 implements IModelReader {
     }
     myLinkMap.addTypeLocation(myHelper.readLinkId(nodeElement.getAttributeValue(ModelPersistence.TYPE_ID)), node);
 
-    String typeInfo = nodeElement.getAttributeValue(ModelPersistence.TYPE_INFO);
+    String typeInfo = nodeElement.getAttributeValue(ModelPersistence.NODE_INFO);
     if (typeInfo != null) {
-      Tuples._3<ConceptKind, StaticScope, Boolean> parsed = myHelper.readTypeInfo(typeInfo);
+      Tuples._3<ConceptKind, StaticScope, Boolean> parsed = myHelper.readNodeInfo(typeInfo);
       if (parsed == null) {
         LOG.error("bad typeInfo attribute");
       } else {

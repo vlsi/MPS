@@ -102,7 +102,7 @@ public class WriteHelper {
     return genReferenceId(myEnv.getConceptId(node));
   }
 
-  public String genTypeInfo(@NotNull SNode node) {
+  public String genNodeInfo(@NotNull SNode node) {
     ConceptKind conceptKind = myEnv.getConceptKind(node);
     StaticScope conceptScope = myEnv.getConceptScope(node);
     boolean unordered = myEnv.isInUnorderedRole(node);

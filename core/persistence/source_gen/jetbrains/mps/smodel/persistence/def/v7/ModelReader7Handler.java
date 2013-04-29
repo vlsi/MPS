@@ -484,7 +484,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       if ("nodeInfo".equals(name)) {
-        Tuples._3<ConceptKind, StaticScope, Boolean> parsed = fieldhelper.readTypeInfo(value);
+        Tuples._3<ConceptKind, StaticScope, Boolean> parsed = fieldhelper.readNodeInfo(value);
         if (parsed == null) {
           throw new SAXParseException("bad typeInfo attribute", null);
         }

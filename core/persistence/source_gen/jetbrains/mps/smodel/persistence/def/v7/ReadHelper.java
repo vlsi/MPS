@@ -88,7 +88,7 @@ public class ReadHelper {
     return readLink_internal(src).o2;
   }
 
-  /*package*/ Tuples._3<ConceptKind, StaticScope, Boolean> readTypeInfo(String s) {
+  /*package*/ Tuples._3<ConceptKind, StaticScope, Boolean> readNodeInfo(String s) {
     ConceptKind kind;
     StaticScope scope;
     if (s.length() != 3 && s.length() != 2) {
