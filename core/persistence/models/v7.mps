@@ -4082,6 +4082,7 @@
         <property name="name" nameId="tpck.1169194664001" value="s" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5351433512193308878" />
       </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2142718590661950231" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4362914091961475946">
       <property name="name" nameId="tpck.1169194664001" value="readType" />

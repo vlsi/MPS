@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.smodel.persistence.def.v8.ModelPersistence8;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
@@ -112,7 +113,8 @@ public class ModelPersistence {
       new ModelPersistence4(),
       new ModelPersistence5(),
       new ModelPersistence6(),
-      new ModelPersistence7()
+      new ModelPersistence7(),
+//      new ModelPersistence8()
   };
 
   @NotNull

@@ -954,7 +954,7 @@
     <nodeInfo nodeId="1121566508702404791" fileName="ReadHelper.java" startLine="82" startPosition="51" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4362914091961475765" fileName="ReadHelper.java" startLine="86" startPosition="48" endLine="87" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4703487121563610229" fileName="ReadHelper.java" startLine="87" startPosition="58" endLine="88" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5351433512193878758" fileName="ReadHelper.java" startLine="91" startPosition="83" endLine="92" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5351433512193878758" fileName="ReadHelper.java" startLine="91" startPosition="78" endLine="92" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5351433512194074026" fileName="ReadHelper.java" startLine="92" startPosition="21" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5351433512194698139" fileName="ReadHelper.java" startLine="94" startPosition="45" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5351433512195031585" fileName="ReadHelper.java" startLine="98" startPosition="15" endLine="99" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1096,7 +1096,7 @@
     <scopeInfo nodeId="1121566508702404714" fileName="ReadHelper.java" startLine="63" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="1121566508702404723" varName="src" />
     </scopeInfo>
-    <scopeInfo nodeId="5351433512193252762" fileName="ReadHelper.java" startLine="91" startPosition="83" endLine="131" endPosition="84">
+    <scopeInfo nodeId="5351433512193252762" fileName="ReadHelper.java" startLine="91" startPosition="78" endLine="131" endPosition="84">
       <varInfo nodeId="5351433512193878759" varName="kind" />
       <varInfo nodeId="5351433512194074027" varName="scope" />
       <varInfo nodeId="9105127192428818018" varName="unordered" />

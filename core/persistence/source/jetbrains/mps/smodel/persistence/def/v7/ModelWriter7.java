@@ -41,18 +41,17 @@ public class ModelWriter7 implements IModelWriter {
 
   @Override
   public Document saveModel(SModel sourceModel) {
-    SModel model = sourceModel;
     myHelper = new WriteHelper(sourceModel.getReference());
 
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
 
-    int version = (model).getVersion();
+    int version = (sourceModel).getVersion();
     if (version >= 0) {
       rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
     }
-    if (model instanceof DefaultSModel) {
-      SModelHeader header = ((DefaultSModel) model).getSModelHeader();
+    if (sourceModel instanceof DefaultSModel) {
+      SModelHeader header = ((DefaultSModel) sourceModel).getSModelHeader();
       if (header.isDoNotGenerate()) {
         rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, "true");
       }
