@@ -111,10 +111,11 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public void detach() {
+    if (myRepository == DisposedRepository.INSTANCE) return;
     if (myRepository != null) {
       myRepository.getModelAccess().checkWriteAccess();
     }
-    for (SNode c : getChildren()) {
+    for (SNode c = firstChild(); c != null; c = c.next) {
       c.detach();
     }
     synchronized (REPO_LOCK) {
