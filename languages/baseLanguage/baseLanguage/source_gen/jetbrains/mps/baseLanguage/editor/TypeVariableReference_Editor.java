@@ -50,6 +50,12 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_iw4mtn_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

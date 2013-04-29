@@ -50,6 +50,12 @@ public class BuildMps_IdeaPluginGroupCustomModule_Editor extends DefaultNodeEdit
       super(role);
     }
 
+    public _Inline_djd3jv_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -82,6 +82,12 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_jpekck_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

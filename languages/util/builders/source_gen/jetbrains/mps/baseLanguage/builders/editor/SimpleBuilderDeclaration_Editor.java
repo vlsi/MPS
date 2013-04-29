@@ -269,6 +269,12 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_ths2vx_a9a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

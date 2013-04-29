@@ -61,7 +61,7 @@ public class SettingsEditorType_Editor extends DefaultNodeEditor {
     provider.setRole("configuration");
     provider.setNoTargetText("<no configuration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SettingsEditorType_Editor._Inline_rxc56p_a2a());
+    provider.setAuxiliaryCellProvider(new SettingsEditorType_Editor._Inline_rxc56p_a2a("configuration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -75,9 +75,15 @@ public class SettingsEditorType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_rxc56p_a2a extends InlineCellProvider {
+    public _Inline_rxc56p_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_rxc56p_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -158,7 +158,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeMacro_Editor._Inline_e7cx8x_a2a2a());
+    provider.setAuxiliaryCellProvider(new NodeMacro_Editor._Inline_e7cx8x_a2a2a("mappingLabel"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -172,9 +172,15 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_e7cx8x_a2a2a extends InlineCellProvider {
+    public _Inline_e7cx8x_a2a2a(String role) {
+      super(role);
+    }
+
     public _Inline_e7cx8x_a2a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

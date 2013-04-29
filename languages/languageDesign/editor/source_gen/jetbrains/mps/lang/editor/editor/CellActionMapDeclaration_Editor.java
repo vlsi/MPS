@@ -140,7 +140,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<any>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellActionMapDeclaration_Editor._Inline_dnk0aj_a1c0());
+    provider.setAuxiliaryCellProvider(new CellActionMapDeclaration_Editor._Inline_dnk0aj_a1c0("applicableConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -154,9 +154,15 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_dnk0aj_a1c0 extends InlineCellProvider {
+    public _Inline_dnk0aj_a1c0(String role) {
+      super(role);
+    }
+
     public _Inline_dnk0aj_a1c0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

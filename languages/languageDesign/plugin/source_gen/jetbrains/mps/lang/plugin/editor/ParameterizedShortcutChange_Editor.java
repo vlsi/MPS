@@ -52,7 +52,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ParameterizedShortcutChange_Editor._Inline_ecw4ny_a0a());
+    provider.setAuxiliaryCellProvider(new ParameterizedShortcutChange_Editor._Inline_ecw4ny_a0a("action"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
@@ -69,9 +69,15 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ecw4ny_a0a extends InlineCellProvider {
+    public _Inline_ecw4ny_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_ecw4ny_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

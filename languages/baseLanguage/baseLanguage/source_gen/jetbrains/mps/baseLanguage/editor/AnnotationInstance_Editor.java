@@ -84,6 +84,12 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_d5p1uc_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

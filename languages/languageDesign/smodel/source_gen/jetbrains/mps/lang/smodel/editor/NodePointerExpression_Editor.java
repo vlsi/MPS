@@ -85,6 +85,12 @@ public class NodePointerExpression_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_abtqvg_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -56,7 +56,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     provider.setRole("controlMethod");
     provider.setNoTargetText("<no controlMethod>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClosureControlStatement_Editor._Inline_2saq3j_a0a());
+    provider.setAuxiliaryCellProvider(new ClosureControlStatement_Editor._Inline_2saq3j_a0a("controlMethod"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
@@ -73,9 +73,15 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2saq3j_a0a extends InlineCellProvider {
+    public _Inline_2saq3j_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_2saq3j_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -145,7 +151,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     provider.setRole("controlClosure");
     provider.setNoTargetText("<no controlClosure>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClosureControlStatement_Editor._Inline_2saq3j_a1b0());
+    provider.setAuxiliaryCellProvider(new ClosureControlStatement_Editor._Inline_2saq3j_a1b0("controlClosure"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -159,9 +165,15 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2saq3j_a1b0 extends InlineCellProvider {
+    public _Inline_2saq3j_a1b0(String role) {
+      super(role);
+    }
+
     public _Inline_2saq3j_a1b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -85,6 +85,12 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_l2wej8_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

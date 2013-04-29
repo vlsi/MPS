@@ -81,7 +81,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     provider.setRole("headerRowLinkDeclaration");
     provider.setNoTargetText("<no headerRowLinkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_HierarchycalTable_Editor._Inline_cqolwn_a1b0a());
+    provider.setAuxiliaryCellProvider(new CellModel_HierarchycalTable_Editor._Inline_cqolwn_a1b0a("headerRowLinkDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -95,9 +95,15 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_cqolwn_a1b0a extends InlineCellProvider {
+    public _Inline_cqolwn_a1b0a(String role) {
+      super(role);
+    }
+
     public _Inline_cqolwn_a1b0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -177,7 +183,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     provider.setRole("rowsLinkDeclaration");
     provider.setNoTargetText("<no rowsLinkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_HierarchycalTable_Editor._Inline_cqolwn_a1a1a());
+    provider.setAuxiliaryCellProvider(new CellModel_HierarchycalTable_Editor._Inline_cqolwn_a1a1a("rowsLinkDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -191,9 +197,15 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_cqolwn_a1a1a extends InlineCellProvider {
+    public _Inline_cqolwn_a1a1a(String role) {
+      super(role);
+    }
+
     public _Inline_cqolwn_a1a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -261,7 +273,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     provider.setRole("cellsInRowLinkDeclaration");
     provider.setNoTargetText("<no cellsInRowLinkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_HierarchycalTable_Editor._Inline_cqolwn_a1b1a());
+    provider.setAuxiliaryCellProvider(new CellModel_HierarchycalTable_Editor._Inline_cqolwn_a1b1a("cellsInRowLinkDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -275,9 +287,15 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_cqolwn_a1b1a extends InlineCellProvider {
+    public _Inline_cqolwn_a1b1a(String role) {
+      super(role);
+    }
+
     public _Inline_cqolwn_a1b1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

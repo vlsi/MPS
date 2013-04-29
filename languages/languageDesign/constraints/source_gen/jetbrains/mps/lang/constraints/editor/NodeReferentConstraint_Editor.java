@@ -71,7 +71,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     provider.setRole("applicableLink");
     provider.setNoTargetText("<choose reference>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeReferentConstraint_Editor._Inline_y1wtxd_a2a());
+    provider.setAuxiliaryCellProvider(new NodeReferentConstraint_Editor._Inline_y1wtxd_a2a("applicableLink"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -85,9 +85,15 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_y1wtxd_a2a extends InlineCellProvider {
+    public _Inline_y1wtxd_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_y1wtxd_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

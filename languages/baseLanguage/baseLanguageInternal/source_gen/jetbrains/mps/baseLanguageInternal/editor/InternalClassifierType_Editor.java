@@ -110,7 +110,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0());
+    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0("classifier"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -124,9 +124,15 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7zoim2_a3a0 extends InlineCellProvider {
+    public _Inline_7zoim2_a3a0(String role) {
+      super(role);
+    }
+
     public _Inline_7zoim2_a3a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -296,7 +302,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0_0());
+    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0_0("classifier"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -310,9 +316,15 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7zoim2_a3a0_0 extends InlineCellProvider {
+    public _Inline_7zoim2_a3a0_0(String role) {
+      super(role);
+    }
+
     public _Inline_7zoim2_a3a0_0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

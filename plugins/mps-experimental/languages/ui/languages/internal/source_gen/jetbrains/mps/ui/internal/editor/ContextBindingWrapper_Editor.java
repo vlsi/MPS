@@ -141,7 +141,7 @@ public class ContextBindingWrapper_Editor extends DefaultNodeEditor {
     provider.setRole("container");
     provider.setNoTargetText("<no container>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ContextBindingWrapper_Editor._Inline_2kuzvr_a6a0());
+    provider.setAuxiliaryCellProvider(new ContextBindingWrapper_Editor._Inline_2kuzvr_a6a0("container"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -155,9 +155,15 @@ public class ContextBindingWrapper_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2kuzvr_a6a0 extends InlineCellProvider {
+    public _Inline_2kuzvr_a6a0(String role) {
+      super(role);
+    }
+
     public _Inline_2kuzvr_a6a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

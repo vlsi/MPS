@@ -41,7 +41,7 @@ public class AnalyzerRunnerCreator_Editor extends DefaultNodeEditor {
     provider.setRole("analyzer");
     provider.setNoTargetText("<no analyzer>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AnalyzerRunnerCreator_Editor._Inline_u2jyfv_a0a());
+    provider.setAuxiliaryCellProvider(new AnalyzerRunnerCreator_Editor._Inline_u2jyfv_a0a("analyzer"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -55,9 +55,15 @@ public class AnalyzerRunnerCreator_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_u2jyfv_a0a extends InlineCellProvider {
+    public _Inline_u2jyfv_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_u2jyfv_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

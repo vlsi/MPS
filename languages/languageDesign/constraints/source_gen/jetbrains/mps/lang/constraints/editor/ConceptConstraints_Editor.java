@@ -63,7 +63,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptConstraints_Editor._Inline_g00aa7_a1a());
+    provider.setAuxiliaryCellProvider(new ConceptConstraints_Editor._Inline_g00aa7_a1a("concept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -77,9 +77,15 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_g00aa7_a1a extends InlineCellProvider {
+    public _Inline_g00aa7_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_g00aa7_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -195,7 +201,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     provider.setRole("defaultConcreteConcept");
     provider.setNoTargetText("<no defaultConcreteConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptConstraints_Editor._Inline_g00aa7_a1a3a());
+    provider.setAuxiliaryCellProvider(new ConceptConstraints_Editor._Inline_g00aa7_a1a3a("defaultConcreteConcept"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -212,9 +218,15 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_g00aa7_a1a3a extends InlineCellProvider {
+    public _Inline_g00aa7_a1a3a(String role) {
+      super(role);
+    }
+
     public _Inline_g00aa7_a1a3a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

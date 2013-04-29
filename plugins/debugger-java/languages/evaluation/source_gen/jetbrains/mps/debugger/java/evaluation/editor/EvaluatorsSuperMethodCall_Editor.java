@@ -88,7 +88,7 @@ public class EvaluatorsSuperMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("instanceMethodDeclaration");
     provider.setNoTargetText("<no instanceMethodDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EvaluatorsSuperMethodCall_Editor._Inline_2iixvv_a3a());
+    provider.setAuxiliaryCellProvider(new EvaluatorsSuperMethodCall_Editor._Inline_2iixvv_a3a("instanceMethodDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
@@ -105,9 +105,15 @@ public class EvaluatorsSuperMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2iixvv_a3a extends InlineCellProvider {
+    public _Inline_2iixvv_a3a(String role) {
+      super(role);
+    }
+
     public _Inline_2iixvv_a3a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

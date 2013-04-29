@@ -314,7 +314,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     provider.setRole("baseNodeConcept");
     provider.setNoTargetText("<no baseNodeConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EditorTab_Editor._Inline_gp0hv6_a1e1b0());
+    provider.setAuxiliaryCellProvider(new EditorTab_Editor._Inline_gp0hv6_a1e1b0("baseNodeConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -328,9 +328,15 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_gp0hv6_a1e1b0 extends InlineCellProvider {
+    public _Inline_gp0hv6_a1e1b0(String role) {
+      super(role);
+    }
+
     public _Inline_gp0hv6_a1e1b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

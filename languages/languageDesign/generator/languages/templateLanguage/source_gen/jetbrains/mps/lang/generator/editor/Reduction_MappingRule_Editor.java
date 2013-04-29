@@ -103,7 +103,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Reduction_MappingRule_Editor._Inline_c84kqv_a0b1a());
+    provider.setAuxiliaryCellProvider(new Reduction_MappingRule_Editor._Inline_c84kqv_a0b1a("labelDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -117,9 +117,15 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_c84kqv_a0b1a extends InlineCellProvider {
+    public _Inline_c84kqv_a0b1a(String role) {
+      super(role);
+    }
+
     public _Inline_c84kqv_a0b1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -245,7 +251,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Reduction_MappingRule_Editor._Inline_c84kqv_a1c0());
+    provider.setAuxiliaryCellProvider(new Reduction_MappingRule_Editor._Inline_c84kqv_a1c0("labelDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -259,9 +265,15 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_c84kqv_a1c0 extends InlineCellProvider {
+    public _Inline_c84kqv_a1c0(String role) {
+      super(role);
+    }
+
     public _Inline_c84kqv_a1c0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

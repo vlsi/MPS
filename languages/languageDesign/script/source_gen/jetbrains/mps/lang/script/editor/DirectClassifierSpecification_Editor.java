@@ -51,6 +51,12 @@ public class DirectClassifierSpecification_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_v9q52x_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

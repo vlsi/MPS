@@ -41,7 +41,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
     provider.setRole("applicableNode");
     provider.setNoTargetText("<no applicableNode>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ApplicableNodeReference_Editor._Inline_13d8h_a0a());
+    provider.setAuxiliaryCellProvider(new ApplicableNodeReference_Editor._Inline_13d8h_a0a("applicableNode"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
@@ -61,9 +61,15 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_13d8h_a0a extends InlineCellProvider {
+    public _Inline_13d8h_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_13d8h_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

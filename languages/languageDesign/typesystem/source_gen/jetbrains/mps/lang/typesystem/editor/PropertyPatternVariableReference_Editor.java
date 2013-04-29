@@ -38,7 +38,7 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("patternVarDecl");
     provider.setNoTargetText("<no patternVarDecl>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyPatternVariableReference_Editor._Inline_1qbsjw_a0a());
+    provider.setAuxiliaryCellProvider(new PropertyPatternVariableReference_Editor._Inline_1qbsjw_a0a("patternVarDecl"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -52,9 +52,15 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_1qbsjw_a0a extends InlineCellProvider {
+    public _Inline_1qbsjw_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_1qbsjw_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

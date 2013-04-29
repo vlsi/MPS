@@ -38,7 +38,7 @@ public class GenerationContextOp_LinkPatternRef_Editor extends DefaultNodeEditor
     provider.setRole("linkPatternVar");
     provider.setNoTargetText("<no linkPatternVar>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_LinkPatternRef_Editor._Inline_m3gdfo_a0a());
+    provider.setAuxiliaryCellProvider(new GenerationContextOp_LinkPatternRef_Editor._Inline_m3gdfo_a0a("linkPatternVar"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -52,9 +52,15 @@ public class GenerationContextOp_LinkPatternRef_Editor extends DefaultNodeEditor
   }
 
   public static class _Inline_m3gdfo_a0a extends InlineCellProvider {
+    public _Inline_m3gdfo_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_m3gdfo_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

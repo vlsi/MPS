@@ -48,7 +48,7 @@ public class UIPropertyAccessCode_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new UIPropertyAccessCode_Editor._Inline_ek8095_a0a0());
+    provider.setAuxiliaryCellProvider(new UIPropertyAccessCode_Editor._Inline_ek8095_a0a0("property"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -62,9 +62,15 @@ public class UIPropertyAccessCode_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ek8095_a0a0 extends InlineCellProvider {
+    public _Inline_ek8095_a0a0(String role) {
+      super(role);
+    }
+
     public _Inline_ek8095_a0a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

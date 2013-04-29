@@ -87,6 +87,12 @@ public class SConceptType_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_6of1q_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

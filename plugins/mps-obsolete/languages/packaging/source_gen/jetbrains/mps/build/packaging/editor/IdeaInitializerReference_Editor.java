@@ -32,7 +32,7 @@ public class IdeaInitializerReference_Editor extends DefaultNodeEditor {
     provider.setRole("ideaInitializer");
     provider.setNoTargetText("<no ideaInitializer>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IdeaInitializerReference_Editor._Inline_vt9o3a_a0a());
+    provider.setAuxiliaryCellProvider(new IdeaInitializerReference_Editor._Inline_vt9o3a_a0a("ideaInitializer"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,9 +46,15 @@ public class IdeaInitializerReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_vt9o3a_a0a extends InlineCellProvider {
+    public _Inline_vt9o3a_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_vt9o3a_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

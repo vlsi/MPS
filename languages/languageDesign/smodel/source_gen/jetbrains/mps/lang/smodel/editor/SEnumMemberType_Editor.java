@@ -90,6 +90,12 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_qf1ea_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

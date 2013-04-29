@@ -46,7 +46,7 @@ public class BlockReference_Editor extends DefaultNodeEditor {
     provider.setRole("block");
     provider.setNoTargetText("<no block>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BlockReference_Editor._Inline_8nsg5j_a1a());
+    provider.setAuxiliaryCellProvider(new BlockReference_Editor._Inline_8nsg5j_a1a("block"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -60,9 +60,15 @@ public class BlockReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_8nsg5j_a1a extends InlineCellProvider {
+    public _Inline_8nsg5j_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_8nsg5j_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

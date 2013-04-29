@@ -71,7 +71,7 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptCondition_Editor._Inline_hrb2do_a2a());
+    provider.setAuxiliaryCellProvider(new ConceptCondition_Editor._Inline_hrb2do_a2a("concept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -85,9 +85,15 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hrb2do_a2a extends InlineCellProvider {
+    public _Inline_hrb2do_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_hrb2do_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

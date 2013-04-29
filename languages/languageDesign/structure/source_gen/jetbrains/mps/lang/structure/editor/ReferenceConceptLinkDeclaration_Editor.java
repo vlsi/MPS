@@ -98,6 +98,12 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_c1olec_a3a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

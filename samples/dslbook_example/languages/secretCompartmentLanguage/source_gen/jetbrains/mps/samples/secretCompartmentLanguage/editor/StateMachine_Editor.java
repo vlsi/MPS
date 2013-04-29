@@ -191,7 +191,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
     provider.setRole("startState");
     provider.setNoTargetText("<no startState>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StateMachine_Editor._Inline_qpt50r_a1f0());
+    provider.setAuxiliaryCellProvider(new StateMachine_Editor._Inline_qpt50r_a1f0("startState"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -205,9 +205,15 @@ public class StateMachine_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_qpt50r_a1f0 extends InlineCellProvider {
+    public _Inline_qpt50r_a1f0(String role) {
+      super(role);
+    }
+
     public _Inline_qpt50r_a1f0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

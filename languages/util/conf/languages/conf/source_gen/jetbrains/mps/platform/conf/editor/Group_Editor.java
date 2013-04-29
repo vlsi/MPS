@@ -111,7 +111,7 @@ public class Group_Editor extends DefaultNodeEditor {
     provider.setRole("groupClass");
     provider.setNoTargetText("<no groupClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Group_Editor._Inline_o84zp2_a2b0a());
+    provider.setAuxiliaryCellProvider(new Group_Editor._Inline_o84zp2_a2b0a("groupClass"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -125,9 +125,15 @@ public class Group_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_o84zp2_a2b0a extends InlineCellProvider {
+    public _Inline_o84zp2_a2b0a(String role) {
+      super(role);
+    }
+
     public _Inline_o84zp2_a2b0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -32,7 +32,7 @@ public class FinderReference_Editor extends DefaultNodeEditor {
     provider.setRole("finder");
     provider.setNoTargetText("<no finder>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FinderReference_Editor._Inline_ng67cj_a0a());
+    provider.setAuxiliaryCellProvider(new FinderReference_Editor._Inline_ng67cj_a0a("finder"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,9 +46,15 @@ public class FinderReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ng67cj_a0a extends InlineCellProvider {
+    public _Inline_ng67cj_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_ng67cj_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

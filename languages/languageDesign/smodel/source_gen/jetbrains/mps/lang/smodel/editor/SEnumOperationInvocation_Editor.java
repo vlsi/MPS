@@ -88,6 +88,12 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_hplu10_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

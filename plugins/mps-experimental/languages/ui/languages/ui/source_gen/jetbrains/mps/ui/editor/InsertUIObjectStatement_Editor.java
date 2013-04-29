@@ -115,6 +115,12 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_g3syp0_a3a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

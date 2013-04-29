@@ -114,6 +114,12 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_x0l1fn_a3a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

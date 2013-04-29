@@ -69,7 +69,7 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     provider.setRole("refactoring");
     provider.setNoTargetText("<no refactoring>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IsRefactoringApplicable_Editor._Inline_xt8j9n_a2a());
+    provider.setAuxiliaryCellProvider(new IsRefactoringApplicable_Editor._Inline_xt8j9n_a2a("refactoring"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -83,9 +83,15 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xt8j9n_a2a extends InlineCellProvider {
+    public _Inline_xt8j9n_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_xt8j9n_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -87,7 +87,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
     provider.setRole("superConcept");
     provider.setNoTargetText("<no superConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SuperNodeExpression_Editor._Inline_n52m2z_a1b0());
+    provider.setAuxiliaryCellProvider(new SuperNodeExpression_Editor._Inline_n52m2z_a1b0("superConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -101,9 +101,15 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_n52m2z_a1b0 extends InlineCellProvider {
+    public _Inline_n52m2z_a1b0(String role) {
+      super(role);
+    }
+
     public _Inline_n52m2z_a1b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -164,7 +170,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
     provider.setRole("superConcept");
     provider.setNoTargetText("<no superConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SuperNodeExpression_Editor._Inline_n52m2z_a1a());
+    provider.setAuxiliaryCellProvider(new SuperNodeExpression_Editor._Inline_n52m2z_a1a("superConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -178,9 +184,15 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_n52m2z_a1a extends InlineCellProvider {
+    public _Inline_n52m2z_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_n52m2z_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

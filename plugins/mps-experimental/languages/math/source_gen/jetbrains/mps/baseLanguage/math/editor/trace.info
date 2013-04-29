@@ -1243,8 +1243,8 @@
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="32" startPosition="33" endLine="33" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="33" startPosition="46" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="34" startPosition="26" endLine="35" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="35" startPosition="96" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="34" startPosition="26" endLine="35" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="35" startPosition="106" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="36" startPosition="58" endLine="37" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="37" startPosition="73" endLine="38" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="38" startPosition="57" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1252,37 +1252,40 @@
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="41" startPosition="72" endLine="42" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="42" startPosition="78" endLine="43" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="44" startPosition="10" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="49" startPosition="33" endLine="50" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="53" startPosition="69" endLine="54" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="57" startPosition="81" endLine="58" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="61" startPosition="92" endLine="62" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="62" startPosition="84" endLine="63" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="63" startPosition="31" endLine="64" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="64" startPosition="44" endLine="65" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="65" startPosition="33" endLine="66" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="66" startPosition="28" endLine="67" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="67" startPosition="60" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="68" startPosition="44" endLine="69" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="69" startPosition="75" endLine="70" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="70" startPosition="59" endLine="71" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="72" startPosition="37" endLine="73" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="73" startPosition="74" endLine="74" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="74" startPosition="80" endLine="75" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="76" startPosition="12" endLine="77" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="49" startPosition="44" endLine="50" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="53" startPosition="33" endLine="54" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="59" startPosition="69" endLine="60" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="67" startPosition="92" endLine="68" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="68" startPosition="84" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="69" startPosition="31" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="70" startPosition="44" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="71" startPosition="33" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="72" startPosition="28" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="73" startPosition="60" endLine="74" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="74" startPosition="44" endLine="75" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="75" startPosition="75" endLine="76" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="76" startPosition="59" endLine="77" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="78" startPosition="37" endLine="79" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="79" startPosition="74" endLine="80" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="80" startPosition="80" endLine="81" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="82" startPosition="12" endLine="83" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_ez8int_a0a#()V" />
-    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_ez8int_a0a#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_ez8int_a0a#()V" />
+    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="39" startPosition="59" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="71" startPosition="61" endLine="77" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="77" startPosition="61" endLine="83" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_ez8int_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="30" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_ez8int_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="61" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_ez8int_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="67" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_ez8int_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" />
     <scopeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="25" startPosition="28" endLine="26" endPosition="80" />
-    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="49" startPosition="33" endLine="50" endPosition="14" />
-    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="53" startPosition="69" endLine="54" endPosition="67" />
-    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="57" startPosition="81" endLine="58" endPosition="66" />
+    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="49" startPosition="44" endLine="50" endPosition="18" />
+    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="53" startPosition="33" endLine="54" endPosition="14" />
+    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="59" startPosition="69" endLine="60" endPosition="67" />
+    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="66" />
     <scopeInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1236427946821" varName="editorContext" />
       <varInfo nodeId="1236427946821" varName="node" />
@@ -1291,15 +1294,18 @@
       <varInfo nodeId="1236427946821" varName="manager" />
       <varInfo nodeId="1236427946821" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1236427972701" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1236427972701" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1236427972701" varName="editorContext" />
       <varInfo nodeId="1236427972701" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="72" startPosition="37" endLine="75" endPosition="107">
+    <scopeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="78" startPosition="37" endLine="81" endPosition="107">
       <varInfo nodeId="1236427978281" varName="manager" />
       <varInfo nodeId="1236427978281" varName="opContext" />
     </scopeInfo>
@@ -1316,7 +1322,7 @@
       <varInfo nodeId="1236427946821" varName="editorCell" />
       <varInfo nodeId="1236427946821" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="61" startPosition="92" endLine="77" endPosition="24">
+    <scopeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="67" startPosition="92" endLine="83" endPosition="24">
       <varInfo nodeId="1236427978281" varName="attributeConcept" />
       <varInfo nodeId="1236427978281" varName="attributeKind" />
       <varInfo nodeId="1236427978281" varName="editorCell" />
@@ -1326,12 +1332,12 @@
       <varInfo nodeId="1236427946821" varName="editorContext" />
       <varInfo nodeId="1236427946821" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="61" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="1236427978281" fileName="MathSymbolIndexReference_Editor.java" startLine="67" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="1236427978281" varName="editorContext" />
       <varInfo nodeId="1236427978281" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="48" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_Editor$_Inline_ez8int_a0a" />
-    <unitInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_Editor" />
+    <unitInfo nodeId="1236427972701" fileName="MathSymbolIndexReference_Editor.java" startLine="48" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_Editor$_Inline_ez8int_a0a" />
+    <unitInfo nodeId="1236427946821" fileName="MathSymbolIndexReference_Editor.java" startLine="17" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_Editor" />
   </root>
   <root nodeRef="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)/1236589729677">
     <nodeInfo nodeId="1236589729677" fileName="MathSymbolFromToIndex_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2250,8 +2256,8 @@
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="110" startPosition="81" endLine="111" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="111" startPosition="32" endLine="112" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="112" startPosition="45" endLine="113" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="113" startPosition="26" endLine="114" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="114" startPosition="94" endLine="115" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="113" startPosition="26" endLine="114" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="114" startPosition="103" endLine="115" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="115" startPosition="58" endLine="116" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="116" startPosition="73" endLine="117" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="117" startPosition="57" endLine="118" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2259,20 +2265,22 @@
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="120" startPosition="72" endLine="121" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="121" startPosition="78" endLine="122" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="123" startPosition="10" endLine="124" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="128" startPosition="33" endLine="129" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="132" startPosition="69" endLine="133" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="136" startPosition="81" endLine="137" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="140" startPosition="93" endLine="141" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="141" startPosition="70" endLine="142" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="142" startPosition="71" endLine="143" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="128" startPosition="44" endLine="129" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="132" startPosition="33" endLine="133" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="138" startPosition="69" endLine="139" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="142" startPosition="81" endLine="143" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="146" startPosition="93" endLine="147" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="147" startPosition="70" endLine="148" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="148" startPosition="71" endLine="149" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2886182022232400532" fileName="DecimalBinaryOperation_Editor.java" startLine="76" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_BinaryOperation_cellMenu_sl2ryj_a0b0#()V" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2886182022232400532" fileName="DecimalBinaryOperation_Editor.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="128" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_sl2ryj_a0a#()V" />
-    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="136" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="140" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_sl2ryj_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="128" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_sl2ryj_a0a#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_sl2ryj_a0a#()V" />
+    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="138" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="142" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="146" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_sl2ryj_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1238940062903" fileName="DecimalBinaryOperation_Editor.java" startLine="54" startPosition="59" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238940065310" fileName="DecimalBinaryOperation_Editor.java" startLine="92" startPosition="59" endLine="98" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="118" startPosition="59" endLine="124" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2290,9 +2298,10 @@
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="41" startPosition="82" endLine="42" endPosition="80" />
     <scopeInfo nodeId="2886182022232400532" fileName="DecimalBinaryOperation_Editor.java" startLine="79" startPosition="47" endLine="80" endPosition="68" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="104" startPosition="28" endLine="105" endPosition="80" />
-    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="128" startPosition="33" endLine="129" endPosition="14" />
-    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="132" startPosition="69" endLine="133" endPosition="67" />
-    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="136" startPosition="81" endLine="137" endPosition="67" />
+    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="128" startPosition="44" endLine="129" endPosition="18" />
+    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="132" startPosition="33" endLine="133" endPosition="14" />
+    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="138" startPosition="69" endLine="139" endPosition="67" />
+    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="142" startPosition="81" endLine="143" endPosition="67" />
     <scopeInfo nodeId="2886182022232400532" fileName="DecimalBinaryOperation_Editor.java" startLine="76" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1238403050830" varName="editorContext" />
@@ -2315,22 +2324,25 @@
       <varInfo nodeId="1238403050830" varName="manager" />
       <varInfo nodeId="1238403050830" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="128" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="132" startPosition="0" endLine="135" endPosition="0">
+    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="128" startPosition="0" endLine="131" endPosition="0">
+      <varInfo nodeId="1904947163751462531" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="132" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="138" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="1904947163751462531" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="136" startPosition="0" endLine="139" endPosition="0">
+    <scopeInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="142" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="1904947163751462531" varName="editorContext" />
       <varInfo nodeId="1904947163751462531" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="140" startPosition="93" endLine="143" endPosition="24">
+    <scopeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="146" startPosition="93" endLine="149" endPosition="24">
       <varInfo nodeId="1904947163751462533" varName="editorCell" />
       <varInfo nodeId="1904947163751462533" varName="provider" />
     </scopeInfo>
     <scopeInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="101" startPosition="91" endLine="106" endPosition="22">
       <varInfo nodeId="1238403050830" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="140" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="1904947163751462533" fileName="DecimalBinaryOperation_Editor.java" startLine="146" startPosition="0" endLine="151" endPosition="0">
       <varInfo nodeId="1904947163751462533" varName="editorContext" />
       <varInfo nodeId="1904947163751462533" varName="node" />
     </scopeInfo>
@@ -2385,8 +2397,8 @@
       <varInfo nodeId="1238403050830" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="2886182022232400532" fileName="DecimalBinaryOperation_Editor.java" startLine="75" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor$ReplaceWith_BinaryOperation_cellMenu_sl2ryj_a0b0" />
-    <unitInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="127" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor$_Inline_sl2ryj_a0a" />
-    <unitInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="27" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor" />
+    <unitInfo nodeId="1904947163751462531" fileName="DecimalBinaryOperation_Editor.java" startLine="127" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor$_Inline_sl2ryj_a0a" />
+    <unitInfo nodeId="1238403050830" fileName="DecimalBinaryOperation_Editor.java" startLine="27" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.DecimalBinaryOperation_Editor" />
   </root>
   <root nodeRef="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)/1418611629041138657">
     <nodeInfo nodeId="1418611629041138657" fileName="MatrixUnit_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2602,8 +2614,8 @@
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="249" startPosition="81" endLine="250" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="250" startPosition="32" endLine="251" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="251" startPosition="45" endLine="252" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="252" startPosition="26" endLine="253" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="253" startPosition="92" endLine="254" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="252" startPosition="26" endLine="253" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="253" startPosition="101" endLine="254" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="254" startPosition="58" endLine="255" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="255" startPosition="73" endLine="256" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="256" startPosition="57" endLine="257" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2611,12 +2623,13 @@
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="259" startPosition="72" endLine="260" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="260" startPosition="78" endLine="261" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="262" startPosition="10" endLine="263" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="267" startPosition="33" endLine="268" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="271" startPosition="69" endLine="272" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="275" startPosition="81" endLine="276" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="279" startPosition="93" endLine="280" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="280" startPosition="70" endLine="281" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="281" startPosition="71" endLine="282" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="267" startPosition="44" endLine="268" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="271" startPosition="33" endLine="272" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="277" startPosition="69" endLine="278" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="281" startPosition="81" endLine="282" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="285" startPosition="93" endLine="286" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="286" startPosition="70" endLine="287" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="287" startPosition="71" endLine="288" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="50" startPosition="28" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2628,13 +2641,14 @@
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="118" startPosition="134" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="121" startPosition="9" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1418611629042457304" fileName="LinearSolveOperation_Editor.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_kydwvz_a1a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="267" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_kydwvz_a0a#()V" />
-    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="271" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="275" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="267" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_kydwvz_a0a#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="271" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_kydwvz_a0a#()V" />
+    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="277" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="281" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="103" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1418611629042457311" fileName="LinearSolveOperation_Editor.java" startLine="161" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_kydwvz_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="279" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_kydwvz_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="285" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_kydwvz_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="109" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1418611629042457310" fileName="LinearSolveOperation_Editor.java" startLine="152" startPosition="59" endLine="158" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1418611629042470810" fileName="LinearSolveOperation_Editor.java" startLine="167" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_kydwvz_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -2675,9 +2689,10 @@
     <scopeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="122" startPosition="131" endLine="123" endPosition="139" />
     <scopeInfo nodeId="1418611629042457305" fileName="LinearSolveOperation_Editor.java" startLine="140" startPosition="111" endLine="141" endPosition="59" />
     <scopeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="243" startPosition="28" endLine="244" endPosition="80" />
-    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="267" startPosition="33" endLine="268" endPosition="14" />
-    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="271" startPosition="69" endLine="272" endPosition="67" />
-    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="275" startPosition="81" endLine="276" endPosition="67" />
+    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="267" startPosition="44" endLine="268" endPosition="18" />
+    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="271" startPosition="33" endLine="272" endPosition="14" />
+    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="277" startPosition="69" endLine="278" endPosition="67" />
+    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="281" startPosition="81" endLine="282" endPosition="67" />
     <scopeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="98" startPosition="66" endLine="100" endPosition="93">
       <varInfo nodeId="1418611629042457284" varName="listOwner" />
     </scopeInfo>
@@ -2733,15 +2748,18 @@
       <varInfo nodeId="1418611629042457284" varName="manager" />
       <varInfo nodeId="1418611629042457284" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="267" startPosition="0" endLine="270" endPosition="0" />
-    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="271" startPosition="0" endLine="274" endPosition="0">
+    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="267" startPosition="0" endLine="270" endPosition="0">
+      <varInfo nodeId="1904947163751468047" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="271" startPosition="0" endLine="274" endPosition="0" />
+    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="277" startPosition="0" endLine="280" endPosition="0">
       <varInfo nodeId="1904947163751468047" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="275" startPosition="0" endLine="278" endPosition="0">
+    <scopeInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="281" startPosition="0" endLine="284" endPosition="0">
       <varInfo nodeId="1904947163751468047" varName="editorContext" />
       <varInfo nodeId="1904947163751468047" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="279" startPosition="93" endLine="282" endPosition="24">
+    <scopeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="285" startPosition="93" endLine="288" endPosition="24">
       <varInfo nodeId="1904947163751468049" varName="editorCell" />
       <varInfo nodeId="1904947163751468049" varName="provider" />
     </scopeInfo>
@@ -2771,7 +2789,7 @@
     <scopeInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="240" startPosition="91" endLine="245" endPosition="22">
       <varInfo nodeId="1418611629042457284" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="279" startPosition="0" endLine="284" endPosition="0">
+    <scopeInfo nodeId="1904947163751468049" fileName="LinearSolveOperation_Editor.java" startLine="285" startPosition="0" endLine="290" endPosition="0">
       <varInfo nodeId="1904947163751468049" varName="editorContext" />
       <varInfo nodeId="1904947163751468049" varName="node" />
     </scopeInfo>
@@ -2884,9 +2902,9 @@
       <varInfo nodeId="1418611629042457284" varName="editorContext" />
       <varInfo nodeId="1418611629042457284" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="266" startPosition="0" endLine="285" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor$_Inline_kydwvz_a0a" />
+    <unitInfo nodeId="1904947163751468047" fileName="LinearSolveOperation_Editor.java" startLine="266" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor$_Inline_kydwvz_a0a" />
     <unitInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="93" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor$annotationListHandler_kydwvz_a0a" />
-    <unitInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="38" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor" />
+    <unitInfo nodeId="1418611629042457284" fileName="LinearSolveOperation_Editor.java" startLine="38" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.LinearSolveOperation_Editor" />
   </root>
   <root nodeRef="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)/1418611629042580034">
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2911,8 +2929,8 @@
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="51" startPosition="81" endLine="52" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="52" startPosition="32" endLine="53" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="53" startPosition="45" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="54" startPosition="26" endLine="55" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="55" startPosition="94" endLine="56" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="54" startPosition="26" endLine="55" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="55" startPosition="103" endLine="56" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="56" startPosition="58" endLine="57" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="57" startPosition="73" endLine="58" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="58" startPosition="57" endLine="59" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2920,18 +2938,20 @@
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="61" startPosition="72" endLine="62" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="62" startPosition="78" endLine="63" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="64" startPosition="10" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="69" startPosition="33" endLine="70" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="73" startPosition="69" endLine="74" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="77" startPosition="81" endLine="78" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="81" startPosition="93" endLine="82" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="82" startPosition="70" endLine="83" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="83" startPosition="71" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="69" startPosition="44" endLine="70" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="73" startPosition="33" endLine="74" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="79" startPosition="69" endLine="80" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="83" startPosition="81" endLine="84" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="87" startPosition="93" endLine="88" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="88" startPosition="70" endLine="89" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="89" startPosition="71" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_j4oyiy_a1a#()V" />
-    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_j4oyiy_a0b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_j4oyiy_a1a#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_j4oyiy_a1a#()V" />
+    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_j4oyiy_a0b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="7255837154369796307" fileName="MatrixInverseOperation_Editor.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_j4oyiy_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1904947163751464666" fileName="MatrixInverseOperation_Editor.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_j4oyiy_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="59" startPosition="59" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2941,9 +2961,10 @@
     <scopeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="23" startPosition="82" endLine="24" endPosition="63" />
     <scopeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="37" startPosition="28" endLine="38" endPosition="81" />
     <scopeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="80" />
-    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="69" startPosition="33" endLine="70" endPosition="14" />
-    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="73" startPosition="69" endLine="74" endPosition="67" />
-    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="77" startPosition="81" endLine="78" endPosition="67" />
+    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="69" startPosition="44" endLine="70" endPosition="18" />
+    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="73" startPosition="33" endLine="74" endPosition="14" />
+    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="79" startPosition="69" endLine="80" endPosition="67" />
+    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="83" startPosition="81" endLine="84" endPosition="67" />
     <scopeInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1418611629042580034" varName="editorContext" />
       <varInfo nodeId="1418611629042580034" varName="node" />
@@ -2956,15 +2977,18 @@
       <varInfo nodeId="1418611629042580034" varName="manager" />
       <varInfo nodeId="1418611629042580034" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="1904947163751464669" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="1904947163751464669" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="1904947163751464669" varName="editorContext" />
       <varInfo nodeId="1904947163751464669" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="81" startPosition="93" endLine="84" endPosition="24">
+    <scopeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="87" startPosition="93" endLine="90" endPosition="24">
       <varInfo nodeId="1904947163751464671" varName="editorCell" />
       <varInfo nodeId="1904947163751464671" varName="provider" />
     </scopeInfo>
@@ -2975,7 +2999,7 @@
     <scopeInfo nodeId="1904947163751464666" fileName="MatrixInverseOperation_Editor.java" startLine="43" startPosition="88" endLine="47" endPosition="22">
       <varInfo nodeId="1904947163751464666" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1904947163751464671" fileName="MatrixInverseOperation_Editor.java" startLine="87" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1904947163751464671" varName="editorContext" />
       <varInfo nodeId="1904947163751464671" varName="node" />
     </scopeInfo>
@@ -3004,8 +3028,8 @@
       <varInfo nodeId="1418611629042580034" varName="editorContext" />
       <varInfo nodeId="1418611629042580034" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="68" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInverseOperation_Editor$_Inline_j4oyiy_a1a" />
-    <unitInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="18" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInverseOperation_Editor" />
+    <unitInfo nodeId="1904947163751464669" fileName="MatrixInverseOperation_Editor.java" startLine="68" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInverseOperation_Editor$_Inline_j4oyiy_a1a" />
+    <unitInfo nodeId="1418611629042580034" fileName="MatrixInverseOperation_Editor.java" startLine="18" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInverseOperation_Editor" />
   </root>
   <root nodeRef="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)/1418611629042593538">
     <nodeInfo nodeId="1418611629042593538" fileName="deleteUpperIndex.java" startLine="14" startPosition="95" endLine="15" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5159,8 +5183,8 @@
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="32" startPosition="30" endLine="33" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="33" startPosition="43" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="34" startPosition="26" endLine="35" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="35" startPosition="102" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="34" startPosition="26" endLine="35" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="35" startPosition="109" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="36" startPosition="58" endLine="37" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="37" startPosition="73" endLine="38" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="38" startPosition="57" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -5168,37 +5192,40 @@
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="41" startPosition="72" endLine="42" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="42" startPosition="78" endLine="43" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="44" startPosition="10" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="49" startPosition="32" endLine="50" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="53" startPosition="69" endLine="54" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="57" startPosition="81" endLine="58" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="61" startPosition="91" endLine="62" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="62" startPosition="84" endLine="63" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="63" startPosition="31" endLine="64" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="64" startPosition="44" endLine="65" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="65" startPosition="33" endLine="66" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="66" startPosition="28" endLine="67" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="67" startPosition="60" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="68" startPosition="44" endLine="69" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="69" startPosition="75" endLine="70" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="70" startPosition="59" endLine="71" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="72" startPosition="37" endLine="73" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="73" startPosition="74" endLine="74" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="74" startPosition="80" endLine="75" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="76" startPosition="12" endLine="77" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="49" startPosition="43" endLine="50" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="53" startPosition="32" endLine="54" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="59" startPosition="69" endLine="60" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="67" startPosition="91" endLine="68" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="68" startPosition="84" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="69" startPosition="31" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="70" startPosition="44" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="71" startPosition="33" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="72" startPosition="28" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="73" startPosition="60" endLine="74" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="74" startPosition="44" endLine="75" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="75" startPosition="75" endLine="76" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="76" startPosition="59" endLine="77" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="78" startPosition="37" endLine="79" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="79" startPosition="74" endLine="80" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="80" startPosition="80" endLine="81" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="82" startPosition="12" endLine="83" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_sfo61_a0a#()V" />
-    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_sfo61_a0a#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_sfo61_a0a#()V" />
+    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="39" startPosition="59" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="71" startPosition="61" endLine="77" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="77" startPosition="61" endLine="83" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_sfo61_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="30" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_sfo61_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="61" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_sfo61_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="67" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_sfo61_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="62" />
     <scopeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="25" startPosition="28" endLine="26" endPosition="79" />
-    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="49" startPosition="32" endLine="50" endPosition="14" />
-    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="53" startPosition="69" endLine="54" endPosition="67" />
-    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="57" startPosition="81" endLine="58" endPosition="65" />
+    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="49" startPosition="43" endLine="50" endPosition="18" />
+    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="53" startPosition="32" endLine="54" endPosition="14" />
+    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="59" startPosition="69" endLine="60" endPosition="67" />
+    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="65" />
     <scopeInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="6219660258344759891" varName="editorContext" />
       <varInfo nodeId="6219660258344759891" varName="node" />
@@ -5207,15 +5234,18 @@
       <varInfo nodeId="6219660258344759891" varName="manager" />
       <varInfo nodeId="6219660258344759891" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="6219660258344759927" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="6219660258344759927" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="6219660258344759927" varName="editorContext" />
       <varInfo nodeId="6219660258344759927" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="72" startPosition="37" endLine="75" endPosition="107">
+    <scopeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="78" startPosition="37" endLine="81" endPosition="107">
       <varInfo nodeId="6219660258344759929" varName="manager" />
       <varInfo nodeId="6219660258344759929" varName="opContext" />
     </scopeInfo>
@@ -5232,7 +5262,7 @@
       <varInfo nodeId="6219660258344759891" varName="editorCell" />
       <varInfo nodeId="6219660258344759891" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="61" startPosition="91" endLine="77" endPosition="24">
+    <scopeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="67" startPosition="91" endLine="83" endPosition="24">
       <varInfo nodeId="6219660258344759929" varName="attributeConcept" />
       <varInfo nodeId="6219660258344759929" varName="attributeKind" />
       <varInfo nodeId="6219660258344759929" varName="editorCell" />
@@ -5242,12 +5272,12 @@
       <varInfo nodeId="6219660258344759891" varName="editorContext" />
       <varInfo nodeId="6219660258344759891" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="61" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="6219660258344759929" fileName="MatrixInitializerIndexReference_Editor.java" startLine="67" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="6219660258344759929" varName="editorContext" />
       <varInfo nodeId="6219660258344759929" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="48" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_Editor$_Inline_sfo61_a0a" />
-    <unitInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_Editor" />
+    <unitInfo nodeId="6219660258344759927" fileName="MatrixInitializerIndexReference_Editor.java" startLine="48" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_Editor$_Inline_sfo61_a0a" />
+    <unitInfo nodeId="6219660258344759891" fileName="MatrixInitializerIndexReference_Editor.java" startLine="17" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_Editor" />
   </root>
   <root nodeRef="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)/6219660258344759895">
     <nodeInfo nodeId="6219660258344759895" fileName="MatrixInitializerIndex_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

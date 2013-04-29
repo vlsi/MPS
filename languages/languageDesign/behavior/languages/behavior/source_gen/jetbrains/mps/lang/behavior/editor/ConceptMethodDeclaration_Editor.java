@@ -373,7 +373,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("overriddenMethod");
     provider.setNoTargetText("<no overriddenMethod>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline_gmtuod_a4j2a());
+    provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline_gmtuod_a4j2a("overriddenMethod"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -387,9 +387,15 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_gmtuod_a4j2a extends InlineCellProvider {
+    public _Inline_gmtuod_a4j2a(String role) {
+      super(role);
+    }
+
     public _Inline_gmtuod_a4j2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -671,7 +677,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("overriddenMethod");
     provider.setNoTargetText("<no overriden method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline_gmtuod_a1e0());
+    provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline_gmtuod_a1e0("overriddenMethod"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -685,9 +691,15 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_gmtuod_a1e0 extends InlineCellProvider {
+    public _Inline_gmtuod_a1e0(String role) {
+      super(role);
+    }
+
     public _Inline_gmtuod_a1e0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

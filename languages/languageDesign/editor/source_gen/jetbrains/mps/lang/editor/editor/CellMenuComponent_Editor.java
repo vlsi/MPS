@@ -129,7 +129,7 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellMenuComponent_Editor._Inline_iz7kpk_a1a1b0());
+    provider.setAuxiliaryCellProvider(new CellMenuComponent_Editor._Inline_iz7kpk_a1a1b0("conceptDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -143,9 +143,15 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_iz7kpk_a1a1b0 extends InlineCellProvider {
+    public _Inline_iz7kpk_a1a1b0(String role) {
+      super(role);
+    }
+
     public _Inline_iz7kpk_a1a1b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

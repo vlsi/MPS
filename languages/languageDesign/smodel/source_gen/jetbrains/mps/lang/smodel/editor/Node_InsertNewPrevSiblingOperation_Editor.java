@@ -77,6 +77,12 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
       super(role);
     }
 
+    public _Inline_s8z18l_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

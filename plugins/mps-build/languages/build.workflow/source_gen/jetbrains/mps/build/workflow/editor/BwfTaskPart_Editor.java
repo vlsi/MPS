@@ -67,7 +67,7 @@ public class BwfTaskPart_Editor extends DefaultNodeEditor {
     provider.setRole("task");
     provider.setNoTargetText("<no task>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BwfTaskPart_Editor._Inline_rjgbfl_a1a());
+    provider.setAuxiliaryCellProvider(new BwfTaskPart_Editor._Inline_rjgbfl_a1a("task"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
@@ -84,9 +84,15 @@ public class BwfTaskPart_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_rjgbfl_a1a extends InlineCellProvider {
+    public _Inline_rjgbfl_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_rjgbfl_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

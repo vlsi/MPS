@@ -52,6 +52,12 @@ public class TestNodeReference_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_tf79mi_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

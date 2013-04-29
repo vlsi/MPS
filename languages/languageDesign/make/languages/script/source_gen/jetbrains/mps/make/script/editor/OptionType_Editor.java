@@ -62,7 +62,7 @@ public class OptionType_Editor extends DefaultNodeEditor {
     provider.setRole("expectedOption");
     provider.setNoTargetText("<no expectedOption>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OptionType_Editor._Inline_xgjw32_a2a());
+    provider.setAuxiliaryCellProvider(new OptionType_Editor._Inline_xgjw32_a2a("expectedOption"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -76,9 +76,15 @@ public class OptionType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xgjw32_a2a extends InlineCellProvider {
+    public _Inline_xgjw32_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_xgjw32_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

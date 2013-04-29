@@ -51,6 +51,12 @@ public class NodeAttributeQualifier_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_b8v8vy_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -81,7 +81,7 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("sourceConcept");
     provider.setNoTargetText("<no input concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline_sexq64_a3a());
+    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline_sexq64_a3a("sourceConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -95,9 +95,15 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_sexq64_a3a extends InlineCellProvider {
+    public _Inline_sexq64_a3a(String role) {
+      super(role);
+    }
+
     public _Inline_sexq64_a3a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -142,7 +148,7 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("targetConcept");
     provider.setNoTargetText("<no output concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline_sexq64_a5a());
+    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline_sexq64_a5a("targetConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -156,9 +162,15 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_sexq64_a5a extends InlineCellProvider {
+    public _Inline_sexq64_a5a(String role) {
+      super(role);
+    }
+
     public _Inline_sexq64_a5a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -35,7 +35,7 @@ public class MultiForEachVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MultiForEachVariableReference_Editor._Inline_jf489z_a0a());
+    provider.setAuxiliaryCellProvider(new MultiForEachVariableReference_Editor._Inline_jf489z_a0a("variable"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
@@ -52,9 +52,15 @@ public class MultiForEachVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_jf489z_a0a extends InlineCellProvider {
+    public _Inline_jf489z_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_jf489z_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -65,7 +65,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DefaultClassifierType_Editor._Inline_35pyag_a2a());
+    provider.setAuxiliaryCellProvider(new DefaultClassifierType_Editor._Inline_35pyag_a2a("classifier"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -79,9 +79,15 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_35pyag_a2a extends InlineCellProvider {
+    public _Inline_35pyag_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_35pyag_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

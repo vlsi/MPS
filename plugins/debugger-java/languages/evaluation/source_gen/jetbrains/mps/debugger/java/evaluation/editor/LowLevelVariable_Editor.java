@@ -50,7 +50,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     provider.setRole("debuggedType");
     provider.setNoTargetText("<no debuggedType>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LowLevelVariable_Editor._Inline_f5bzsg_a0a());
+    provider.setAuxiliaryCellProvider(new LowLevelVariable_Editor._Inline_f5bzsg_a0a("debuggedType"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -64,9 +64,15 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_f5bzsg_a0a extends InlineCellProvider {
+    public _Inline_f5bzsg_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_f5bzsg_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -148,7 +154,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     provider.setRole("debuggedType");
     provider.setNoTargetText("<no debuggedType>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LowLevelVariable_Editor._Inline_f5bzsg_a1c0());
+    provider.setAuxiliaryCellProvider(new LowLevelVariable_Editor._Inline_f5bzsg_a1c0("debuggedType"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -162,9 +168,15 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_f5bzsg_a1c0 extends InlineCellProvider {
+    public _Inline_f5bzsg_a1c0(String role) {
+      super(role);
+    }
+
     public _Inline_f5bzsg_a1c0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

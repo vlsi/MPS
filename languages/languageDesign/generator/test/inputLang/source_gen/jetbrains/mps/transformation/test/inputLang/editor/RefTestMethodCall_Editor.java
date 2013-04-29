@@ -37,7 +37,7 @@ public class RefTestMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("method");
     provider.setNoTargetText("<no method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RefTestMethodCall_Editor._Inline_qc2qxw_a0a());
+    provider.setAuxiliaryCellProvider(new RefTestMethodCall_Editor._Inline_qc2qxw_a0a("method"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -51,9 +51,15 @@ public class RefTestMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_qc2qxw_a0a extends InlineCellProvider {
+    public _Inline_qc2qxw_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_qc2qxw_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

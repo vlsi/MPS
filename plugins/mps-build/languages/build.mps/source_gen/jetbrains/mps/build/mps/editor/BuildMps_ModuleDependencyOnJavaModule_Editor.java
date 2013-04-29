@@ -60,6 +60,12 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
       super(role);
     }
 
+    public _Inline_1yxynp_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

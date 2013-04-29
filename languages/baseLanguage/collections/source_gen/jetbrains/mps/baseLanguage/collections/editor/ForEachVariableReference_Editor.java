@@ -37,7 +37,7 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ForEachVariableReference_Editor._Inline_wbhc03_a0a());
+    provider.setAuxiliaryCellProvider(new ForEachVariableReference_Editor._Inline_wbhc03_a0a("variable"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -51,9 +51,15 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wbhc03_a0a extends InlineCellProvider {
+    public _Inline_wbhc03_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_wbhc03_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

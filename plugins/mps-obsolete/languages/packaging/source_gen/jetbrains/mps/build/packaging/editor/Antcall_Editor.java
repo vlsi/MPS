@@ -73,7 +73,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
     provider.setRole("targetDeclaration");
     provider.setNoTargetText("<no targetDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Antcall_Editor._Inline_xq8xtf_a1a0());
+    provider.setAuxiliaryCellProvider(new Antcall_Editor._Inline_xq8xtf_a1a0("targetDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -87,9 +87,15 @@ public class Antcall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xq8xtf_a1a0 extends InlineCellProvider {
+    public _Inline_xq8xtf_a1a0(String role) {
+      super(role);
+    }
+
     public _Inline_xq8xtf_a1a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -131,7 +137,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
     provider.setRole("project");
     provider.setNoTargetText("<no project>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Antcall_Editor._Inline_xq8xtf_a3a0());
+    provider.setAuxiliaryCellProvider(new Antcall_Editor._Inline_xq8xtf_a3a0("project"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -145,9 +151,15 @@ public class Antcall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xq8xtf_a3a0 extends InlineCellProvider {
+    public _Inline_xq8xtf_a3a0(String role) {
+      super(role);
+    }
+
     public _Inline_xq8xtf_a3a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

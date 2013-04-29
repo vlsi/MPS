@@ -388,7 +388,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     provider.setRole("opposite");
     provider.setNoTargetText("<no opposite>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ParamSequenceFeature_Editor._Inline_a6whyq_a2a0f0a());
+    provider.setAuxiliaryCellProvider(new ParamSequenceFeature_Editor._Inline_a6whyq_a2a0f0a("opposite"));
     editorCell = provider.createEditorCell(editorContext);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -403,9 +403,15 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_a6whyq_a2a0f0a extends InlineCellProvider {
+    public _Inline_a6whyq_a2a0f0a(String role) {
+      super(role);
+    }
+
     public _Inline_a6whyq_a2a0f0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

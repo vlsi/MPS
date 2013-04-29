@@ -71,6 +71,12 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_ulfewq_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

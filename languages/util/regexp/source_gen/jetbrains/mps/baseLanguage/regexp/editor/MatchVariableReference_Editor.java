@@ -40,7 +40,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("match");
     provider.setNoTargetText("<no match>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatchVariableReference_Editor._Inline_ik3m7l_a0a());
+    provider.setAuxiliaryCellProvider(new MatchVariableReference_Editor._Inline_ik3m7l_a0a("match"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -54,9 +54,15 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ik3m7l_a0a extends InlineCellProvider {
+    public _Inline_ik3m7l_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_ik3m7l_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

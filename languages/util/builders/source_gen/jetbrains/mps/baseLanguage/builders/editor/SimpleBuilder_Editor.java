@@ -71,6 +71,12 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_jpvk41_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

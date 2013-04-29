@@ -86,6 +86,12 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_pv0rjz_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

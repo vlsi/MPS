@@ -62,7 +62,7 @@ public class GetToolInProjectOperation_Editor extends DefaultNodeEditor {
     provider.setRole("tool");
     provider.setNoTargetText("<no tool>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GetToolInProjectOperation_Editor._Inline_xenzxx_a2a());
+    provider.setAuxiliaryCellProvider(new GetToolInProjectOperation_Editor._Inline_xenzxx_a2a("tool"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -76,9 +76,15 @@ public class GetToolInProjectOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xenzxx_a2a extends InlineCellProvider {
+    public _Inline_xenzxx_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_xenzxx_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

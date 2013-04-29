@@ -110,7 +110,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     provider.setRole("rule");
     provider.setNoTargetText("<no rule>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new XMLSAXChildRule_Editor._Inline_wbyfib_a2a());
+    provider.setAuxiliaryCellProvider(new XMLSAXChildRule_Editor._Inline_wbyfib_a2a("rule"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -127,9 +127,15 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wbyfib_a2a extends InlineCellProvider {
+    public _Inline_wbyfib_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_wbyfib_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

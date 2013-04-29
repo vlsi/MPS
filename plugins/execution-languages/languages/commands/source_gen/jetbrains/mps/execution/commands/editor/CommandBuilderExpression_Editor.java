@@ -47,7 +47,7 @@ public class CommandBuilderExpression_Editor extends DefaultNodeEditor {
     provider.setRole("commandPart");
     provider.setNoTargetText("<no commandPart>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CommandBuilderExpression_Editor._Inline_lo57cy_a0a());
+    provider.setAuxiliaryCellProvider(new CommandBuilderExpression_Editor._Inline_lo57cy_a0a("commandPart"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -61,9 +61,15 @@ public class CommandBuilderExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_lo57cy_a0a extends InlineCellProvider {
+    public _Inline_lo57cy_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_lo57cy_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -84,7 +84,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("property?");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatchPropertyOperation_Editor._Inline_pl7j0v_a3a());
+    provider.setAuxiliaryCellProvider(new MatchPropertyOperation_Editor._Inline_pl7j0v_a3a("property"));
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -101,9 +101,15 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pl7j0v_a3a extends InlineCellProvider {
+    public _Inline_pl7j0v_a3a(String role) {
+      super(role);
+    }
+
     public _Inline_pl7j0v_a3a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

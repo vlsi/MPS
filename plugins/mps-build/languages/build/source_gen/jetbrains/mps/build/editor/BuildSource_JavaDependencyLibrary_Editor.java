@@ -73,6 +73,12 @@ public class BuildSource_JavaDependencyLibrary_Editor extends DefaultNodeEditor 
       super(role);
     }
 
+    public _Inline_n4mr7u_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

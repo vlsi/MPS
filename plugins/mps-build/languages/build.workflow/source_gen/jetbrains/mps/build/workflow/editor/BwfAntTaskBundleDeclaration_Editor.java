@@ -87,7 +87,7 @@ public class BwfAntTaskBundleDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("classpath");
     provider.setNoTargetText("<default classpath>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BwfAntTaskBundleDeclaration_Editor._Inline_p1xf3r_a4a());
+    provider.setAuxiliaryCellProvider(new BwfAntTaskBundleDeclaration_Editor._Inline_p1xf3r_a4a("classpath"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -101,9 +101,15 @@ public class BwfAntTaskBundleDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_p1xf3r_a4a extends InlineCellProvider {
+    public _Inline_p1xf3r_a4a(String role) {
+      super(role);
+    }
+
     public _Inline_p1xf3r_a4a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

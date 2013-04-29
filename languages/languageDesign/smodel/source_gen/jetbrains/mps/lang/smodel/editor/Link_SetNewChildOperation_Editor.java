@@ -82,6 +82,12 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_rl6lhr_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

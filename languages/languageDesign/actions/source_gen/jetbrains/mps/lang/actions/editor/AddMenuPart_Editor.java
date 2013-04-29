@@ -93,7 +93,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AddMenuPart_Editor._Inline_yjtbks_a1b0a());
+    provider.setAuxiliaryCellProvider(new AddMenuPart_Editor._Inline_yjtbks_a1b0a("concept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -107,9 +107,15 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_yjtbks_a1b0a extends InlineCellProvider {
+    public _Inline_yjtbks_a1b0a(String role) {
+      super(role);
+    }
+
     public _Inline_yjtbks_a1b0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

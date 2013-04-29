@@ -80,6 +80,12 @@ public class ReadConceptReferenceExpression_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_tbzx31_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

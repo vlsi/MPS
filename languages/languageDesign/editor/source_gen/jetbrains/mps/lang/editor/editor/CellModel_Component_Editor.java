@@ -52,7 +52,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     provider.setRole("editorComponent");
     provider.setNoTargetText("<no component>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_Component_Editor._Inline_r0l70z_a1a());
+    provider.setAuxiliaryCellProvider(new CellModel_Component_Editor._Inline_r0l70z_a1a("editorComponent"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBordered(style, editorCell);
@@ -69,9 +69,15 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_r0l70z_a1a extends InlineCellProvider {
+    public _Inline_r0l70z_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_r0l70z_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

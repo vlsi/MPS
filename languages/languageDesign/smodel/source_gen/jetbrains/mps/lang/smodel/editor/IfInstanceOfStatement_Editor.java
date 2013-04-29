@@ -114,6 +114,12 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_ret20j_a4a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

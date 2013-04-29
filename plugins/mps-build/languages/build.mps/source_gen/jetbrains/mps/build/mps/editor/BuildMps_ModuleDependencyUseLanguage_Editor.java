@@ -65,6 +65,12 @@ public class BuildMps_ModuleDependencyUseLanguage_Editor extends DefaultNodeEdit
       super(role);
     }
 
+    public _Inline_qvq9fk_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

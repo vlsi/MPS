@@ -56,6 +56,12 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_daqvaj_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -50,6 +50,12 @@ public class IterateContentsVariableReference_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_aazd0o_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

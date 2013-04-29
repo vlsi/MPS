@@ -54,6 +54,12 @@ public class SimpleBuilderPropertyBuilder_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_h7sg9j_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

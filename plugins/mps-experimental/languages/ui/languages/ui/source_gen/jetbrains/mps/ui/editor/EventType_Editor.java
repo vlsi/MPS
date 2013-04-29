@@ -69,6 +69,12 @@ public class EventType_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_koyvu4_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

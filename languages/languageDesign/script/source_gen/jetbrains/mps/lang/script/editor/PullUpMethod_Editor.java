@@ -97,6 +97,12 @@ public class PullUpMethod_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_errt5h_a3a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

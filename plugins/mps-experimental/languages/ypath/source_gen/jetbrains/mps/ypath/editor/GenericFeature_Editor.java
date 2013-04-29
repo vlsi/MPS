@@ -346,7 +346,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     provider.setRole("opposite");
     provider.setNoTargetText("<no opposite>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenericFeature_Editor._Inline_6zhae_a2a0c0a());
+    provider.setAuxiliaryCellProvider(new GenericFeature_Editor._Inline_6zhae_a2a0c0a("opposite"));
     editorCell = provider.createEditorCell(editorContext);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -361,9 +361,15 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_6zhae_a2a0c0a extends InlineCellProvider {
+    public _Inline_6zhae_a2a0c0a(String role) {
+      super(role);
+    }
+
     public _Inline_6zhae_a2a0c0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

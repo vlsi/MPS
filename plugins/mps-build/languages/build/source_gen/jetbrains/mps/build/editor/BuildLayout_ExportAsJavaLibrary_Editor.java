@@ -85,6 +85,12 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_ge4r0w_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

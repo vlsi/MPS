@@ -82,6 +82,12 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_kohub4_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

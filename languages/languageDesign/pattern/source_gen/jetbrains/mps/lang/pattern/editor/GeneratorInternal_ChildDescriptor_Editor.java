@@ -95,6 +95,12 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
       super(role);
     }
 
+    public _Inline_s0kiw8_a3a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -151,6 +157,12 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     public _Inline_s0kiw8_a5a(String role) {
       super(role);
     }
+
+    public _Inline_s0kiw8_a5a() {
+      super();
+    }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

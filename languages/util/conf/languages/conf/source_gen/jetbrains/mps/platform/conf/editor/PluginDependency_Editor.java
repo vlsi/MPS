@@ -45,7 +45,7 @@ public class PluginDependency_Editor extends DefaultNodeEditor {
     provider.setRole("plugin");
     provider.setNoTargetText("<no plugin>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PluginDependency_Editor._Inline_at6inr_a1a());
+    provider.setAuxiliaryCellProvider(new PluginDependency_Editor._Inline_at6inr_a1a("plugin"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -59,9 +59,15 @@ public class PluginDependency_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_at6inr_a1a extends InlineCellProvider {
+    public _Inline_at6inr_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_at6inr_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

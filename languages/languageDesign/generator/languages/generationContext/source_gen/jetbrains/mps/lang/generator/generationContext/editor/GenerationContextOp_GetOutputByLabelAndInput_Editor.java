@@ -53,7 +53,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
     provider.setRole("label");
     provider.setNoTargetText("<choose mapping label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabelAndInput_Editor._Inline_k5omkm_a1a());
+    provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabelAndInput_Editor._Inline_k5omkm_a1a("label"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     jetbrains.mps.lang.generator.editor.Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
@@ -70,9 +70,15 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   }
 
   public static class _Inline_k5omkm_a1a extends InlineCellProvider {
+    public _Inline_k5omkm_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_k5omkm_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

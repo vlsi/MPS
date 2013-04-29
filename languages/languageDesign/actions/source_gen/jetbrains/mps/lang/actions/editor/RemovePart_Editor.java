@@ -50,7 +50,7 @@ public class RemovePart_Editor extends DefaultNodeEditor {
     provider.setRole("conceptToRemove");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RemovePart_Editor._Inline_an4g7e_a1a());
+    provider.setAuxiliaryCellProvider(new RemovePart_Editor._Inline_an4g7e_a1a("conceptToRemove"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -64,9 +64,15 @@ public class RemovePart_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_an4g7e_a1a extends InlineCellProvider {
+    public _Inline_an4g7e_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_an4g7e_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

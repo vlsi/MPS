@@ -114,6 +114,12 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_7cysuj_a3a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

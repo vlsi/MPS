@@ -89,6 +89,12 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_jsiyl_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -157,6 +163,12 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
     public _Inline_jsiyl_a4a(String role) {
       super(role);
     }
+
+    public _Inline_jsiyl_a4a() {
+      super();
+    }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

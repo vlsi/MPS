@@ -165,7 +165,7 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<any>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ParametersInformationQuery_Editor._Inline_p9c0o3_a4d0());
+    provider.setAuxiliaryCellProvider(new ParametersInformationQuery_Editor._Inline_p9c0o3_a4d0("applicableConcept"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -182,9 +182,15 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_p9c0o3_a4d0 extends InlineCellProvider {
+    public _Inline_p9c0o3_a4d0(String role) {
+      super(role);
+    }
+
     public _Inline_p9c0o3_a4d0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

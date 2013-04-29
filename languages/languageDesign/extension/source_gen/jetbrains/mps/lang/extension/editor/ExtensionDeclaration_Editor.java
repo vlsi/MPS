@@ -77,7 +77,7 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("extensionPoint");
     provider.setNoTargetText("<no extensionPoint>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtensionDeclaration_Editor._Inline_i2dquw_a1a0());
+    provider.setAuxiliaryCellProvider(new ExtensionDeclaration_Editor._Inline_i2dquw_a1a0("extensionPoint"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -91,9 +91,15 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_i2dquw_a1a0 extends InlineCellProvider {
+    public _Inline_i2dquw_a1a0(String role) {
+      super(role);
+    }
+
     public _Inline_i2dquw_a1a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

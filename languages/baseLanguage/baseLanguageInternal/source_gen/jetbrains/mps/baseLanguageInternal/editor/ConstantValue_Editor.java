@@ -94,7 +94,7 @@ public class ConstantValue_Editor extends DefaultNodeEditor {
     provider.setRole("constant");
     provider.setNoTargetText("<no constant>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConstantValue_Editor._Inline_si17nj_a4a());
+    provider.setAuxiliaryCellProvider(new ConstantValue_Editor._Inline_si17nj_a4a("constant"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -108,9 +108,15 @@ public class ConstantValue_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_si17nj_a4a extends InlineCellProvider {
+    public _Inline_si17nj_a4a(String role) {
+      super(role);
+    }
+
     public _Inline_si17nj_a4a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

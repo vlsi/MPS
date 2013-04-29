@@ -84,6 +84,12 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_xaaxob_a0a0() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -191,6 +197,12 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     public _Inline_xaaxob_a1a(String role) {
       super(role);
     }
+
+    public _Inline_xaaxob_a1a() {
+      super();
+    }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

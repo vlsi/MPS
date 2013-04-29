@@ -32,7 +32,7 @@ public class VarDeclReference_Editor extends DefaultNodeEditor {
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new VarDeclReference_Editor._Inline_kyygu1_a0a());
+    provider.setAuxiliaryCellProvider(new VarDeclReference_Editor._Inline_kyygu1_a0a("declaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,9 +46,15 @@ public class VarDeclReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_kyygu1_a0a extends InlineCellProvider {
+    public _Inline_kyygu1_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_kyygu1_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

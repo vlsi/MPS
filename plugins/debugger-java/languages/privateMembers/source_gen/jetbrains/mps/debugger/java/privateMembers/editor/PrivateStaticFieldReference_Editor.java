@@ -57,7 +57,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PrivateStaticFieldReference_Editor._Inline_62ivzp_a0a());
+    provider.setAuxiliaryCellProvider(new PrivateStaticFieldReference_Editor._Inline_62ivzp_a0a("classifier"));
     editorCell = provider.createEditorCell(editorContext);
     StaticFieldReference_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -72,9 +72,15 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_62ivzp_a0a extends InlineCellProvider {
+    public _Inline_62ivzp_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_62ivzp_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -120,7 +126,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
     provider.setRole("staticFieldDeclaration");
     provider.setNoTargetText("<no static member>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PrivateStaticFieldReference_Editor._Inline_62ivzp_a2a());
+    provider.setAuxiliaryCellProvider(new PrivateStaticFieldReference_Editor._Inline_62ivzp_a2a("staticFieldDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
@@ -138,9 +144,15 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_62ivzp_a2a extends InlineCellProvider {
+    public _Inline_62ivzp_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_62ivzp_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

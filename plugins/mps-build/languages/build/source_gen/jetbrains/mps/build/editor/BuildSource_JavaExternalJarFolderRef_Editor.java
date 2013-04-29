@@ -51,6 +51,12 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
       super(role);
     }
 
+    public _Inline_cqnk8f_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

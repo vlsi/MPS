@@ -89,6 +89,12 @@ public class CreateUIObjectStatement_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_a6wfgm_a1a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

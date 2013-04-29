@@ -58,6 +58,12 @@ public class SConceptPropertyAccess_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_wa3gkv_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

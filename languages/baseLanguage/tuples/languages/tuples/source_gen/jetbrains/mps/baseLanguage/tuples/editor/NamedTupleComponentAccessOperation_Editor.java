@@ -35,7 +35,7 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
     provider.setRole("component");
     provider.setNoTargetText("<no component>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleComponentAccessOperation_Editor._Inline_rt0op7_a0a());
+    provider.setAuxiliaryCellProvider(new NamedTupleComponentAccessOperation_Editor._Inline_rt0op7_a0a("component"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
@@ -52,9 +52,15 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
   }
 
   public static class _Inline_rt0op7_a0a extends InlineCellProvider {
+    public _Inline_rt0op7_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_rt0op7_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

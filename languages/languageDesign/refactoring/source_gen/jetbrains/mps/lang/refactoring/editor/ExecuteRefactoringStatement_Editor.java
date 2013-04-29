@@ -80,7 +80,7 @@ public class ExecuteRefactoringStatement_Editor extends DefaultNodeEditor {
     provider.setRole("refactoring");
     provider.setNoTargetText("<no refactoring>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExecuteRefactoringStatement_Editor._Inline_aspgo4_a2a());
+    provider.setAuxiliaryCellProvider(new ExecuteRefactoringStatement_Editor._Inline_aspgo4_a2a("refactoring"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -94,9 +94,15 @@ public class ExecuteRefactoringStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_aspgo4_a2a extends InlineCellProvider {
+    public _Inline_aspgo4_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_aspgo4_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

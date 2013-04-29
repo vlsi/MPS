@@ -60,6 +60,12 @@ public class PatternVariableReference_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_bm8m1i_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

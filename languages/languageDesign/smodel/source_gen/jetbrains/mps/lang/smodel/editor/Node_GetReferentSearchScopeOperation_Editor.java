@@ -81,6 +81,12 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
       super(role);
     }
 
+    public _Inline_8agmue_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -37,7 +37,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<choose property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Link_Editor._Inline_5mhiie_a0a());
+    provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Link_Editor._Inline_5mhiie_a0a("linkDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -51,9 +51,15 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_5mhiie_a0a extends InlineCellProvider {
+    public _Inline_5mhiie_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_5mhiie_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -50,6 +50,12 @@ public class GeneratorInternal_IWorkflowParticipantReference_Editor extends Defa
       super(role);
     }
 
+    public _Inline_n7w759_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

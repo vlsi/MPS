@@ -97,7 +97,7 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("link");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyRefExpression_Editor._Inline_hd00ff_a4a());
+    provider.setAuxiliaryCellProvider(new PropertyRefExpression_Editor._Inline_hd00ff_a4a("propertyDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -114,9 +114,15 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hd00ff_a4a extends InlineCellProvider {
+    public _Inline_hd00ff_a4a(String role) {
+      super(role);
+    }
+
     public _Inline_hd00ff_a4a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

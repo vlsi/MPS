@@ -117,7 +117,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no mappingLabel>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeMacro_postfix._Inline_crgygw_a1a());
+    provider.setAuxiliaryCellProvider(new NodeMacro_postfix._Inline_crgygw_a1a("mappingLabel"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -131,9 +131,15 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   public static class _Inline_crgygw_a1a extends InlineCellProvider {
+    public _Inline_crgygw_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_crgygw_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -102,6 +102,12 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
       super(role);
     }
 
+    public _Inline_llx455_a4a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

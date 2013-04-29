@@ -38,7 +38,7 @@ public class FunctionCallCommand_Editor extends DefaultNodeEditor {
     provider.setRole("function");
     provider.setNoTargetText("<no function>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FunctionCallCommand_Editor._Inline_2g6d8r_a0a());
+    provider.setAuxiliaryCellProvider(new FunctionCallCommand_Editor._Inline_2g6d8r_a0a("function"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -52,9 +52,15 @@ public class FunctionCallCommand_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2g6d8r_a0a extends InlineCellProvider {
+    public _Inline_2g6d8r_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_2g6d8r_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

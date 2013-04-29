@@ -63,7 +63,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_Property_Editor._Inline_adk1cf_a1a());
+    provider.setAuxiliaryCellProvider(new CellModel_Property_Editor._Inline_adk1cf_a1a("propertyDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBordered(style, editorCell);
@@ -122,9 +122,15 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_adk1cf_a1a extends InlineCellProvider {
+    public _Inline_adk1cf_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_adk1cf_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -279,7 +285,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_Property_Editor._Inline_adk1cf_a1a3a());
+    provider.setAuxiliaryCellProvider(new CellModel_Property_Editor._Inline_adk1cf_a1a3a("propertyDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
@@ -296,9 +302,15 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_adk1cf_a1a3a extends InlineCellProvider {
+    public _Inline_adk1cf_a1a3a(String role) {
+      super(role);
+    }
+
     public _Inline_adk1cf_a1a3a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

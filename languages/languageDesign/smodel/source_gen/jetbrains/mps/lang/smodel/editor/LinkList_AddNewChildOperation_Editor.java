@@ -77,6 +77,12 @@ public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_hr3hhp_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

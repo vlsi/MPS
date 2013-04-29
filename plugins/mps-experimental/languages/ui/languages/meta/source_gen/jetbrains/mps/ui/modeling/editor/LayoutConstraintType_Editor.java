@@ -50,7 +50,7 @@ public class LayoutConstraintType_Editor extends DefaultNodeEditor {
     provider.setRole("constraintConcept");
     provider.setNoTargetText("?");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LayoutConstraintType_Editor._Inline_o1ved1_a2a());
+    provider.setAuxiliaryCellProvider(new LayoutConstraintType_Editor._Inline_o1ved1_a2a("constraintConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -64,9 +64,15 @@ public class LayoutConstraintType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_o1ved1_a2a extends InlineCellProvider {
+    public _Inline_o1ved1_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_o1ved1_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

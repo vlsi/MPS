@@ -43,7 +43,7 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
     provider.setRole("definition");
     provider.setNoTargetText("<no definition>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RoutineCall_Editor._Inline_wwx4md_a0a());
+    provider.setAuxiliaryCellProvider(new RoutineCall_Editor._Inline_wwx4md_a0a("definition"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -57,9 +57,15 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wwx4md_a0a extends InlineCellProvider {
+    public _Inline_wwx4md_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_wwx4md_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

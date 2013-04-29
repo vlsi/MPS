@@ -92,6 +92,12 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_tsmvai_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

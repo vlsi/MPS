@@ -64,6 +64,12 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_36vx3e_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

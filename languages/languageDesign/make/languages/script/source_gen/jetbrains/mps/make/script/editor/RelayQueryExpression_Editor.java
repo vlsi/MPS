@@ -72,7 +72,7 @@ public class RelayQueryExpression_Editor extends DefaultNodeEditor {
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RelayQueryExpression_Editor._Inline_ne0cce_a2a());
+    provider.setAuxiliaryCellProvider(new RelayQueryExpression_Editor._Inline_ne0cce_a2a("query"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -86,9 +86,15 @@ public class RelayQueryExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ne0cce_a2a extends InlineCellProvider {
+    public _Inline_ne0cce_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_ne0cce_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

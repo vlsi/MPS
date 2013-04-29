@@ -62,6 +62,12 @@ public class LinkAttributeQualifier_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_mg3hvm_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

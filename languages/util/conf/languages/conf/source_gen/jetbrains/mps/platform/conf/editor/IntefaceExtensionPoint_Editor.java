@@ -65,7 +65,7 @@ public class IntefaceExtensionPoint_Editor extends DefaultNodeEditor {
     provider.setRole("iface");
     provider.setNoTargetText("<no iface>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IntefaceExtensionPoint_Editor._Inline_wfmmwk_a2a());
+    provider.setAuxiliaryCellProvider(new IntefaceExtensionPoint_Editor._Inline_wfmmwk_a2a("iface"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -79,9 +79,15 @@ public class IntefaceExtensionPoint_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wfmmwk_a2a extends InlineCellProvider {
+    public _Inline_wfmmwk_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_wfmmwk_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

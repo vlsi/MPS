@@ -65,6 +65,12 @@ public class BuildMps_ModuleSolutionRuntime_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_z6427v_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

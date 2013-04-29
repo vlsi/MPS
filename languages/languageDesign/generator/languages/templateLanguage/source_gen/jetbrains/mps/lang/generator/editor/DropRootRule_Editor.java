@@ -46,7 +46,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DropRootRule_Editor._Inline_fdnaen_a0a());
+    provider.setAuxiliaryCellProvider(new DropRootRule_Editor._Inline_fdnaen_a0a("applicableConcept"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
@@ -66,9 +66,15 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_fdnaen_a0a extends InlineCellProvider {
+    public _Inline_fdnaen_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_fdnaen_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -53,7 +53,7 @@ public class GroupReference_Editor extends DefaultNodeEditor {
     provider.setRole("group");
     provider.setNoTargetText("<no group>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GroupReference_Editor._Inline_b7gqtc_a1a());
+    provider.setAuxiliaryCellProvider(new GroupReference_Editor._Inline_b7gqtc_a1a("group"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -67,9 +67,15 @@ public class GroupReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_b7gqtc_a1a extends InlineCellProvider {
+    public _Inline_b7gqtc_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_b7gqtc_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -193,7 +199,7 @@ public class GroupReference_Editor extends DefaultNodeEditor {
     provider.setRole("anchor");
     provider.setNoTargetText("<no anchor>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GroupReference_Editor._Inline_b7gqtc_a1a2a());
+    provider.setAuxiliaryCellProvider(new GroupReference_Editor._Inline_b7gqtc_a1a2a("anchor"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -207,9 +213,15 @@ public class GroupReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_b7gqtc_a1a2a extends InlineCellProvider {
+    public _Inline_b7gqtc_a1a2a(String role) {
+      super(role);
+    }
+
     public _Inline_b7gqtc_a1a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

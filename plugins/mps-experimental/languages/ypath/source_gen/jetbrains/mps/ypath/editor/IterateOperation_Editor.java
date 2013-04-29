@@ -151,7 +151,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     provider.setRole("usedFeature");
     provider.setNoTargetText("<no usedFeature>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IterateOperation_Editor._Inline_wgzfn3_a2b0());
+    provider.setAuxiliaryCellProvider(new IterateOperation_Editor._Inline_wgzfn3_a2b0("usedFeature"));
     editorCell = provider.createEditorCell(editorContext);
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_wgzfn3_a0c1a()}));
@@ -166,9 +166,15 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wgzfn3_a2b0 extends InlineCellProvider {
+    public _Inline_wgzfn3_a2b0(String role) {
+      super(role);
+    }
+
     public _Inline_wgzfn3_a2b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -327,7 +333,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     provider.setRole("usedFeature");
     provider.setNoTargetText("<no usedFeature>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IterateOperation_Editor._Inline_wgzfn3_a1b0());
+    provider.setAuxiliaryCellProvider(new IterateOperation_Editor._Inline_wgzfn3_a1b0("usedFeature"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -341,9 +347,15 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wgzfn3_a1b0 extends InlineCellProvider {
+    public _Inline_wgzfn3_a1b0(String role) {
+      super(role);
+    }
+
     public _Inline_wgzfn3_a1b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

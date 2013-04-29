@@ -79,6 +79,12 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_omfy8u_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

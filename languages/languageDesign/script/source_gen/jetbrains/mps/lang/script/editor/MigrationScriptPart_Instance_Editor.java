@@ -215,6 +215,12 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_nl0fz6_a2c0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

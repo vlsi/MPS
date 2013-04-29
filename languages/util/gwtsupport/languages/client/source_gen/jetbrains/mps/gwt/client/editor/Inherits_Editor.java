@@ -46,7 +46,7 @@ public class Inherits_Editor extends DefaultNodeEditor {
     provider.setRole("module");
     provider.setNoTargetText("<no module>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Inherits_Editor._Inline_2duhcq_a1a());
+    provider.setAuxiliaryCellProvider(new Inherits_Editor._Inline_2duhcq_a1a("module"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -60,9 +60,15 @@ public class Inherits_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2duhcq_a1a extends InlineCellProvider {
+    public _Inline_2duhcq_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_2duhcq_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -96,7 +96,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     provider.setRole("modifiedSwitch");
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateSwitch_Editor._Inline_q42gqn_a3a0());
+    provider.setAuxiliaryCellProvider(new TemplateSwitch_Editor._Inline_q42gqn_a3a0("modifiedSwitch"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -110,9 +110,15 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_q42gqn_a3a0 extends InlineCellProvider {
+    public _Inline_q42gqn_a3a0(String role) {
+      super(role);
+    }
+
     public _Inline_q42gqn_a3a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

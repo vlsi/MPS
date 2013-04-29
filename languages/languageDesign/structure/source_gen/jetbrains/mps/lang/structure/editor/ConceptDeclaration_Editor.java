@@ -247,6 +247,12 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_ueqr71_a1a4a0() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

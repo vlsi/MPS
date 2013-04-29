@@ -59,6 +59,12 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_r244s6_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

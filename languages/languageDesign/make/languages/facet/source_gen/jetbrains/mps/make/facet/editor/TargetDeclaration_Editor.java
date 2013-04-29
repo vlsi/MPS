@@ -122,7 +122,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("overrides");
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TargetDeclaration_Editor._Inline_xfdsch_a4a());
+    provider.setAuxiliaryCellProvider(new TargetDeclaration_Editor._Inline_xfdsch_a4a("overrides"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -136,9 +136,15 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xfdsch_a4a extends InlineCellProvider {
+    public _Inline_xfdsch_a4a(String role) {
+      super(role);
+    }
+
     public _Inline_xfdsch_a4a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

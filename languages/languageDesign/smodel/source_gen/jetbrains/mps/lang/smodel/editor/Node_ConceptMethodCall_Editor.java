@@ -62,6 +62,12 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_kosqrl_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

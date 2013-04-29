@@ -53,7 +53,7 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
     provider.setRole("unit");
     provider.setNoTargetText("<no unit>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MoneyLiteral_Editor._Inline_84i1v2_a1a());
+    provider.setAuxiliaryCellProvider(new MoneyLiteral_Editor._Inline_84i1v2_a1a("unit"));
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -70,9 +70,15 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_84i1v2_a1a extends InlineCellProvider {
+    public _Inline_84i1v2_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_84i1v2_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

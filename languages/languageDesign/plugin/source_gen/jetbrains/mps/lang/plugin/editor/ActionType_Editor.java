@@ -65,7 +65,7 @@ public class ActionType_Editor extends DefaultNodeEditor {
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionType_Editor._Inline_2pbgfy_a2a());
+    provider.setAuxiliaryCellProvider(new ActionType_Editor._Inline_2pbgfy_a2a("action"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -79,9 +79,15 @@ public class ActionType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2pbgfy_a2a extends InlineCellProvider {
+    public _Inline_2pbgfy_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_2pbgfy_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -65,6 +65,12 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_wc9pc4_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

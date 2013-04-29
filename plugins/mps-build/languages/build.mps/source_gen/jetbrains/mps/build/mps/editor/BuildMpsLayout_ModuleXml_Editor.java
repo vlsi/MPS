@@ -78,6 +78,12 @@ public class BuildMpsLayout_ModuleXml_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_o7xb22_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

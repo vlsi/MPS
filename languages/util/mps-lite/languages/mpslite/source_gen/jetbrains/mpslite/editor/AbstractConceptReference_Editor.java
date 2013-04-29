@@ -32,7 +32,7 @@ public class AbstractConceptReference_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no conceptDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AbstractConceptReference_Editor._Inline_kfynw3_a0a());
+    provider.setAuxiliaryCellProvider(new AbstractConceptReference_Editor._Inline_kfynw3_a0a("conceptDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,9 +46,15 @@ public class AbstractConceptReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_kfynw3_a0a extends InlineCellProvider {
+    public _Inline_kfynw3_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_kfynw3_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

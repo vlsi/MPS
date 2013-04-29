@@ -152,7 +152,7 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<any node>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateDeclaration_Editor._Inline_pyph5i_a1b0a());
+    provider.setAuxiliaryCellProvider(new TemplateDeclaration_Editor._Inline_pyph5i_a1b0a("applicableConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -166,9 +166,15 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pyph5i_a1b0a extends InlineCellProvider {
+    public _Inline_pyph5i_a1b0a(String role) {
+      super(role);
+    }
+
     public _Inline_pyph5i_a1b0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

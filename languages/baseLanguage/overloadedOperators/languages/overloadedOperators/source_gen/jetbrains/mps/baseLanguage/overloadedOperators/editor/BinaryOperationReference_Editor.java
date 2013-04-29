@@ -33,7 +33,7 @@ public class BinaryOperationReference_Editor extends DefaultNodeEditor {
     provider.setRole("binaryOperation");
     provider.setNoTargetText("<no binaryOperation>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BinaryOperationReference_Editor._Inline_mfrs1f_a0a());
+    provider.setAuxiliaryCellProvider(new BinaryOperationReference_Editor._Inline_mfrs1f_a0a("binaryOperation"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -47,9 +47,15 @@ public class BinaryOperationReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_mfrs1f_a0a extends InlineCellProvider {
+    public _Inline_mfrs1f_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_mfrs1f_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

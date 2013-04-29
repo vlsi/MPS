@@ -32,7 +32,7 @@ public class CycleReference_Editor extends DefaultNodeEditor {
     provider.setRole("cycle");
     provider.setNoTargetText("<no cycle>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CycleReference_Editor._Inline_fgeak3_a0a());
+    provider.setAuxiliaryCellProvider(new CycleReference_Editor._Inline_fgeak3_a0a("cycle"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,9 +46,15 @@ public class CycleReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_fgeak3_a0a extends InlineCellProvider {
+    public _Inline_fgeak3_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_fgeak3_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

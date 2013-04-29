@@ -50,6 +50,12 @@ public class PropertyQualifier_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_z1k7sb_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

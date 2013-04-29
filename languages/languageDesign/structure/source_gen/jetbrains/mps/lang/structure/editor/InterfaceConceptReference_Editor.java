@@ -50,6 +50,12 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_j6mzh4_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

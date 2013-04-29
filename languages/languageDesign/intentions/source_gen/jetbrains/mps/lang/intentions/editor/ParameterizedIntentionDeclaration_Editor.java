@@ -117,7 +117,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     provider.setRole("forConcept");
     provider.setNoTargetText("<no forConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ParameterizedIntentionDeclaration_Editor._Inline_crf3gy_a4a0a());
+    provider.setAuxiliaryCellProvider(new ParameterizedIntentionDeclaration_Editor._Inline_crf3gy_a4a0a("forConcept"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -134,9 +134,15 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   public static class _Inline_crf3gy_a4a0a extends InlineCellProvider {
+    public _Inline_crf3gy_a4a0a(String role) {
+      super(role);
+    }
+
     public _Inline_crf3gy_a4a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

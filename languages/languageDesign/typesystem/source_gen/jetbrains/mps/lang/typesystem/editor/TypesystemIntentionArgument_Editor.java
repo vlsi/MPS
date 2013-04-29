@@ -39,7 +39,7 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
     provider.setRole("quickFixArgument");
     provider.setNoTargetText("<no quickFixArgument>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TypesystemIntentionArgument_Editor._Inline_t15it2_a0a());
+    provider.setAuxiliaryCellProvider(new TypesystemIntentionArgument_Editor._Inline_t15it2_a0a("quickFixArgument"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
@@ -56,9 +56,15 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_t15it2_a0a extends InlineCellProvider {
+    public _Inline_t15it2_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_t15it2_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

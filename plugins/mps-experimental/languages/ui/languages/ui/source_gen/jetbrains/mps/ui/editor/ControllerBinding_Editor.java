@@ -69,6 +69,12 @@ public class ControllerBinding_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_9e1twx_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -102,6 +102,12 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
       super(role);
     }
 
+    public _Inline_5c49m1_a4a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

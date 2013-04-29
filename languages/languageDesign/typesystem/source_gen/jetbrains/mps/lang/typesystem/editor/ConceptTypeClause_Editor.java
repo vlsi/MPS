@@ -72,7 +72,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
     provider.setRole("matchingConcept");
     provider.setNoTargetText("<no matchingConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptTypeClause_Editor._Inline_69byel_a2a());
+    provider.setAuxiliaryCellProvider(new ConceptTypeClause_Editor._Inline_69byel_a2a("matchingConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -86,9 +86,15 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_69byel_a2a extends InlineCellProvider {
+    public _Inline_69byel_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_69byel_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

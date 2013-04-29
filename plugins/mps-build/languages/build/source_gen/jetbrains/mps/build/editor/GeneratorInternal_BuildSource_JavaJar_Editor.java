@@ -59,6 +59,12 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
       super(role);
     }
 
+    public _Inline_g0zw24_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

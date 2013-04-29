@@ -58,7 +58,7 @@ public class JUnit3TestCaseRef_Editor extends DefaultNodeEditor {
     provider.setRole("klass");
     provider.setNoTargetText("<no klass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new JUnit3TestCaseRef_Editor._Inline_oadaxc_a1a());
+    provider.setAuxiliaryCellProvider(new JUnit3TestCaseRef_Editor._Inline_oadaxc_a1a("klass"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -72,9 +72,15 @@ public class JUnit3TestCaseRef_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_oadaxc_a1a extends InlineCellProvider {
+    public _Inline_oadaxc_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_oadaxc_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

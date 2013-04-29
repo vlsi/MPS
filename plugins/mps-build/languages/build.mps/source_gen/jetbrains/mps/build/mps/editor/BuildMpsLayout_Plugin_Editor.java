@@ -85,6 +85,12 @@ public class BuildMpsLayout_Plugin_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_y1xun7_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

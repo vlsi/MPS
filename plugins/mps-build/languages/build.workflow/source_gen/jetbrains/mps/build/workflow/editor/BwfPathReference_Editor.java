@@ -66,7 +66,7 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BwfPathReference_Editor._Inline_75jjqz_a2a());
+    provider.setAuxiliaryCellProvider(new BwfPathReference_Editor._Inline_75jjqz_a2a("target"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -80,9 +80,15 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_75jjqz_a2a extends InlineCellProvider {
+    public _Inline_75jjqz_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_75jjqz_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -200,7 +200,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     provider.setRole("tupleDeclaration");
     provider.setNoTargetText("<no tupleDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleLiteral_Editor._Inline_ulpguu_a1a0());
+    provider.setAuxiliaryCellProvider(new NamedTupleLiteral_Editor._Inline_ulpguu_a1a0("tupleDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -214,9 +214,15 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ulpguu_a1a0 extends InlineCellProvider {
+    public _Inline_ulpguu_a1a0(String role) {
+      super(role);
+    }
+
     public _Inline_ulpguu_a1a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -269,7 +275,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     provider.setRole("tupleDeclaration");
     provider.setNoTargetText("<no tupleDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleLiteral_Editor._Inline_ulpguu_a1b0());
+    provider.setAuxiliaryCellProvider(new NamedTupleLiteral_Editor._Inline_ulpguu_a1b0("tupleDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -286,9 +292,15 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ulpguu_a1b0 extends InlineCellProvider {
+    public _Inline_ulpguu_a1b0(String role) {
+      super(role);
+    }
+
     public _Inline_ulpguu_a1b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

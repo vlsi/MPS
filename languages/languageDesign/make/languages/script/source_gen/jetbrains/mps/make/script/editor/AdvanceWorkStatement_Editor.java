@@ -81,7 +81,7 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     provider.setRole("workStatement");
     provider.setNoTargetText("<no workStatement>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AdvanceWorkStatement_Editor._Inline_wnrqtk_a3a());
+    provider.setAuxiliaryCellProvider(new AdvanceWorkStatement_Editor._Inline_wnrqtk_a3a("workStatement"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -95,9 +95,15 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wnrqtk_a3a extends InlineCellProvider {
+    public _Inline_wnrqtk_a3a(String role) {
+      super(role);
+    }
+
     public _Inline_wnrqtk_a3a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

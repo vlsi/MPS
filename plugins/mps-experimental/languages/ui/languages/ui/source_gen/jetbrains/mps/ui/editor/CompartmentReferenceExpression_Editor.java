@@ -85,6 +85,12 @@ public class CompartmentReferenceExpression_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_v8f2p9_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

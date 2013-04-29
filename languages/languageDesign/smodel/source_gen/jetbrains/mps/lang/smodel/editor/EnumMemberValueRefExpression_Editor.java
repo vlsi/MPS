@@ -87,6 +87,12 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_ldpt2z_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -148,6 +154,12 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     public _Inline_ldpt2z_a4a(String role) {
       super(role);
     }
+
+    public _Inline_ldpt2z_a4a() {
+      super();
+    }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

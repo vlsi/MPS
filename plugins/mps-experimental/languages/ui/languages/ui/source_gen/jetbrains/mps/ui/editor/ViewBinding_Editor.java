@@ -54,6 +54,12 @@ public class ViewBinding_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_7vr6mu_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

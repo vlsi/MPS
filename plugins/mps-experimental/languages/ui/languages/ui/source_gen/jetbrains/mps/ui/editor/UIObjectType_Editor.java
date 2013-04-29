@@ -81,6 +81,12 @@ public class UIObjectType_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_w8i2sf_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

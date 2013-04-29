@@ -170,7 +170,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CopyScrNodeMacro_inspector._Inline_m1raju_a2b2a());
+    provider.setAuxiliaryCellProvider(new CopyScrNodeMacro_inspector._Inline_m1raju_a2b2a("mappingLabel"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -184,9 +184,15 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   public static class _Inline_m1raju_a2b2a extends InlineCellProvider {
+    public _Inline_m1raju_a2b2a(String role) {
+      super(role);
+    }
+
     public _Inline_m1raju_a2b2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

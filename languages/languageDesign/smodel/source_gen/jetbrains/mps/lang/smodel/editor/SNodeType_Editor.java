@@ -101,6 +101,12 @@ public class SNodeType_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_x5m1a6_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

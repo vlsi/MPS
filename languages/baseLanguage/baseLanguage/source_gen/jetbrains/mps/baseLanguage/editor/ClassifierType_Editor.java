@@ -81,6 +81,12 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_91bvrs_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -52,6 +52,12 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_5yutfv_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

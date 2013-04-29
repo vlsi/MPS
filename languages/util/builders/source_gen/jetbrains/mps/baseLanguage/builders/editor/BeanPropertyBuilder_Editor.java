@@ -55,6 +55,12 @@ public class BeanPropertyBuilder_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_pd8zqj_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -96,6 +96,12 @@ public class GeneratorInternal_PropertyDescriptor_Editor extends DefaultNodeEdit
       super(role);
     }
 
+    public _Inline_6n82d8_a3a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

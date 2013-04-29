@@ -50,6 +50,12 @@ public class EventPropertyAccessOp_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_5i2syk_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

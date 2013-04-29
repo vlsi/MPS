@@ -107,6 +107,12 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_jug38p_a3a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

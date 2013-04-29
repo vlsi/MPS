@@ -102,6 +102,12 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_6h6dhy_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -311,6 +317,12 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     public _Inline_6h6dhy_a1e0(String role) {
       super(role);
     }
+
+    public _Inline_6h6dhy_a1e0() {
+      super();
+    }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

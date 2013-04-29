@@ -37,7 +37,7 @@ public class ActionDataParameterReferenceOperation_Editor extends DefaultNodeEdi
     provider.setRole("parameterDeclaration");
     provider.setNoTargetText("<no parameterDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionDataParameterReferenceOperation_Editor._Inline_867j1v_a0a());
+    provider.setAuxiliaryCellProvider(new ActionDataParameterReferenceOperation_Editor._Inline_867j1v_a0a("parameterDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -51,9 +51,15 @@ public class ActionDataParameterReferenceOperation_Editor extends DefaultNodeEdi
   }
 
   public static class _Inline_867j1v_a0a extends InlineCellProvider {
+    public _Inline_867j1v_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_867j1v_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

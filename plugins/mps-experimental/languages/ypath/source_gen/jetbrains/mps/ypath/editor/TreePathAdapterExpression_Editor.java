@@ -96,7 +96,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     provider.setRole("treepathAspect");
     provider.setNoTargetText("<no treepathAspect>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TreePathAdapterExpression_Editor._Inline_7bcc0k_a1a());
+    provider.setAuxiliaryCellProvider(new TreePathAdapterExpression_Editor._Inline_7bcc0k_a1a("treepathAspect"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -113,9 +113,15 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7bcc0k_a1a extends InlineCellProvider {
+    public _Inline_7bcc0k_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_7bcc0k_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

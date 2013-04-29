@@ -212,7 +212,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateCallMacro_Editor._Inline_nnob7w_a2b2a());
+    provider.setAuxiliaryCellProvider(new TemplateCallMacro_Editor._Inline_nnob7w_a2b2a("mappingLabel"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -226,9 +226,15 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_nnob7w_a2b2a extends InlineCellProvider {
+    public _Inline_nnob7w_a2b2a(String role) {
+      super(role);
+    }
+
     public _Inline_nnob7w_a2b2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -365,7 +371,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     provider.setRole("template");
     provider.setNoTargetText("<choose template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateCallMacro_Editor._Inline_nnob7w_a0c4c0());
+    provider.setAuxiliaryCellProvider(new TemplateCallMacro_Editor._Inline_nnob7w_a0c4c0("template"));
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
@@ -382,9 +388,15 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_nnob7w_a0c4c0 extends InlineCellProvider {
+    public _Inline_nnob7w_a0c4c0(String role) {
+      super(role);
+    }
+
     public _Inline_nnob7w_a0c4c0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

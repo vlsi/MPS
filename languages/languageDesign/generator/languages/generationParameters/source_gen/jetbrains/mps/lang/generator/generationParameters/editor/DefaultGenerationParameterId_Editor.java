@@ -53,7 +53,7 @@ public class DefaultGenerationParameterId_Editor extends DefaultNodeEditor {
     provider.setRole("container");
     provider.setNoTargetText("<no container>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DefaultGenerationParameterId_Editor._Inline_38ix8g_a1a());
+    provider.setAuxiliaryCellProvider(new DefaultGenerationParameterId_Editor._Inline_38ix8g_a1a("container"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -67,9 +67,15 @@ public class DefaultGenerationParameterId_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_38ix8g_a1a extends InlineCellProvider {
+    public _Inline_38ix8g_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_38ix8g_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -119,7 +125,7 @@ public class DefaultGenerationParameterId_Editor extends DefaultNodeEditor {
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DefaultGenerationParameterId_Editor._Inline_38ix8g_a3a());
+    provider.setAuxiliaryCellProvider(new DefaultGenerationParameterId_Editor._Inline_38ix8g_a3a("parameter"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -133,9 +139,15 @@ public class DefaultGenerationParameterId_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_38ix8g_a3a extends InlineCellProvider {
+    public _Inline_38ix8g_a3a(String role) {
+      super(role);
+    }
+
     public _Inline_38ix8g_a3a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

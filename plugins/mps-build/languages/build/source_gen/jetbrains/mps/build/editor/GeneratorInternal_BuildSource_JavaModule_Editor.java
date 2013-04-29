@@ -56,6 +56,12 @@ public class GeneratorInternal_BuildSource_JavaModule_Editor extends DefaultNode
       super(role);
     }
 
+    public _Inline_zc1akc_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

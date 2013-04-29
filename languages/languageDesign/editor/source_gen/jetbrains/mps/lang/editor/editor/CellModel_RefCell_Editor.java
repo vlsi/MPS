@@ -75,7 +75,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a2a());
+    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a2a("linkDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBordered(style, editorCell);
@@ -92,9 +92,15 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_lfsepz_a2a extends InlineCellProvider {
+    public _Inline_lfsepz_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_lfsepz_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -251,7 +257,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1a3a());
+    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1a3a("linkDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     SharedStyles_StyleSheet.applyReferenceDecorated(style, editorCell);
@@ -269,9 +275,15 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_lfsepz_a1a3a extends InlineCellProvider {
+    public _Inline_lfsepz_a1a3a(String role) {
+      super(role);
+    }
+
     public _Inline_lfsepz_a1a3a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -337,7 +349,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     provider.setRole("editorComponent");
     provider.setNoTargetText("error! no editor component");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1b3a());
+    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1b3a("editorComponent"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -351,9 +363,15 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_lfsepz_a1b3a extends InlineCellProvider {
+    public _Inline_lfsepz_a1b3a(String role) {
+      super(role);
+    }
+
     public _Inline_lfsepz_a1b3a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -375,7 +393,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       provider.setRole("conceptDeclaration");
       provider.setNoTargetText("error! no associated concept");
       EditorCell editorCell;
-      provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1b3a._Inline_lfsepz_a0a0b1d0());
+      provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1b3a._Inline_lfsepz_a0a0b1d0("conceptDeclaration"));
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -389,9 +407,15 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     }
 
     public static class _Inline_lfsepz_a0a0b1d0 extends InlineCellProvider {
+      public _Inline_lfsepz_a0a0b1d0(String role) {
+        super(role);
+      }
+
       public _Inline_lfsepz_a0a0b1d0() {
         super();
       }
+
+
 
       public EditorCell createEditorCell(EditorContext editorContext) {
         return this.createEditorCell(editorContext, this.getSNode());

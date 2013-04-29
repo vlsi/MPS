@@ -83,6 +83,12 @@ public class MigratedToMethodAnnotation_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_ykmn9g_a1a0() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

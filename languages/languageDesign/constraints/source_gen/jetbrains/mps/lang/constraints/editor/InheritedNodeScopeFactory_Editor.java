@@ -49,7 +49,7 @@ public class InheritedNodeScopeFactory_Editor extends DefaultNodeEditor {
     provider.setRole("kind");
     provider.setNoTargetText("<no kind>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InheritedNodeScopeFactory_Editor._Inline_cp9vsd_a1a());
+    provider.setAuxiliaryCellProvider(new InheritedNodeScopeFactory_Editor._Inline_cp9vsd_a1a("kind"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -63,9 +63,15 @@ public class InheritedNodeScopeFactory_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_cp9vsd_a1a extends InlineCellProvider {
+    public _Inline_cp9vsd_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_cp9vsd_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

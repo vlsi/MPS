@@ -111,6 +111,12 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_msf9u8_a0a0() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

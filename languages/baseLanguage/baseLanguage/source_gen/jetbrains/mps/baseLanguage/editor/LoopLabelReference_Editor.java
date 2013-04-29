@@ -52,6 +52,12 @@ public class LoopLabelReference_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_pr39i0_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

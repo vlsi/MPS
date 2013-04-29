@@ -32,7 +32,7 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
     provider.setRole("styleSheetClass");
     provider.setNoTargetText("<no styleSheetClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StyleSheetClassReference_Editor._Inline_m5ahkl_a0a());
+    provider.setAuxiliaryCellProvider(new StyleSheetClassReference_Editor._Inline_m5ahkl_a0a("styleSheetClass"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,9 +46,15 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_m5ahkl_a0a extends InlineCellProvider {
+    public _Inline_m5ahkl_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_m5ahkl_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

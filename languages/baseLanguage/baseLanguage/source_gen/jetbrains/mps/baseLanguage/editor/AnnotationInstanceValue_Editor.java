@@ -56,6 +56,12 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_99x6e7_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

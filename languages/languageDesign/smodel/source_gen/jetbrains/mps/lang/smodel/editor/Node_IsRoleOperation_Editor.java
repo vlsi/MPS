@@ -82,6 +82,12 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_ujlgup_a2a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -148,6 +154,12 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     public _Inline_ujlgup_a4a(String role) {
       super(role);
     }
+
+    public _Inline_ujlgup_a4a() {
+      super();
+    }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -173,7 +173,7 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
     provider.setRole("overrides");
     provider.setNoTargetText("<nothing>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OldRefactoring_Editor._Inline_ivh5g9_a6a0());
+    provider.setAuxiliaryCellProvider(new OldRefactoring_Editor._Inline_ivh5g9_a6a0("overrides"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -187,9 +187,15 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ivh5g9_a6a0 extends InlineCellProvider {
+    public _Inline_ivh5g9_a6a0(String role) {
+      super(role);
+    }
+
     public _Inline_ivh5g9_a6a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -330,7 +336,7 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OldRefactoring_Editor._Inline_ivh5g9_a2b1b0());
+    provider.setAuxiliaryCellProvider(new OldRefactoring_Editor._Inline_ivh5g9_a2b1b0("applicableConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -344,9 +350,15 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ivh5g9_a2b1b0 extends InlineCellProvider {
+    public _Inline_ivh5g9_a2b1b0(String role) {
+      super(role);
+    }
+
     public _Inline_ivh5g9_a2b1b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

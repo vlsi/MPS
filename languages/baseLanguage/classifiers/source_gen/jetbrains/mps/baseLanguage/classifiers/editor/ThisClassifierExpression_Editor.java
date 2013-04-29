@@ -59,7 +59,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ThisClassifierExpression_Editor._Inline_kpqhey_a0a0());
+    provider.setAuxiliaryCellProvider(new ThisClassifierExpression_Editor._Inline_kpqhey_a0a0("classifier"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -73,9 +73,15 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_kpqhey_a0a0 extends InlineCellProvider {
+    public _Inline_kpqhey_a0a0(String role) {
+      super(role);
+    }
+
     public _Inline_kpqhey_a0a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

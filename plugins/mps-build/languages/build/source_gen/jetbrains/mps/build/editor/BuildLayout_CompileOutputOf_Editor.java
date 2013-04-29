@@ -80,6 +80,12 @@ public class BuildLayout_CompileOutputOf_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_2ot4tw_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

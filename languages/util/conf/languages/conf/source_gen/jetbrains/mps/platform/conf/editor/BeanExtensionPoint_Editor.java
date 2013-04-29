@@ -65,7 +65,7 @@ public class BeanExtensionPoint_Editor extends DefaultNodeEditor {
     provider.setRole("beanClass");
     provider.setNoTargetText("<no beanClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BeanExtensionPoint_Editor._Inline_g4nm2t_a2a());
+    provider.setAuxiliaryCellProvider(new BeanExtensionPoint_Editor._Inline_g4nm2t_a2a("beanClass"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -79,9 +79,15 @@ public class BeanExtensionPoint_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_g4nm2t_a2a extends InlineCellProvider {
+    public _Inline_g4nm2t_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_g4nm2t_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

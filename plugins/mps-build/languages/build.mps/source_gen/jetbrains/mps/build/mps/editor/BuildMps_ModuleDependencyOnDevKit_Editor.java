@@ -50,6 +50,12 @@ public class BuildMps_ModuleDependencyOnDevKit_Editor extends DefaultNodeEditor 
       super(role);
     }
 
+    public _Inline_4gwe58_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

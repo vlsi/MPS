@@ -70,6 +70,12 @@ public class SimpleBuilderChild_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_tobbik_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

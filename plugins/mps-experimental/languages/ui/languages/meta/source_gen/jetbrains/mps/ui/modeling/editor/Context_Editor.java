@@ -32,7 +32,7 @@ public class Context_Editor extends DefaultNodeEditor {
     provider.setRole("uiObject");
     provider.setNoTargetText("<no uiObject>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Context_Editor._Inline_d0e2am_a0a());
+    provider.setAuxiliaryCellProvider(new Context_Editor._Inline_d0e2am_a0a("uiObject"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,9 +46,15 @@ public class Context_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_d0e2am_a0a extends InlineCellProvider {
+    public _Inline_d0e2am_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_d0e2am_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

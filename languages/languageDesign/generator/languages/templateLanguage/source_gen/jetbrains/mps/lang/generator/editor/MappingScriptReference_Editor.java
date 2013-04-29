@@ -34,7 +34,7 @@ public class MappingScriptReference_Editor extends DefaultNodeEditor {
     provider.setRole("mappingScript");
     provider.setNoTargetText("choose script");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingScriptReference_Editor._Inline_t4awil_a0a());
+    provider.setAuxiliaryCellProvider(new MappingScriptReference_Editor._Inline_t4awil_a0a("mappingScript"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -48,9 +48,15 @@ public class MappingScriptReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_t4awil_a0a extends InlineCellProvider {
+    public _Inline_t4awil_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_t4awil_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

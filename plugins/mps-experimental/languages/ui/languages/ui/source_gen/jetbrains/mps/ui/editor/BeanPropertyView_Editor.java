@@ -88,6 +88,12 @@ public class BeanPropertyView_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_te95m9_a3a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

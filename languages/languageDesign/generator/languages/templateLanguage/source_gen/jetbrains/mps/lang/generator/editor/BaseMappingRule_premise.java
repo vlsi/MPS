@@ -83,7 +83,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose applicable concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BaseMappingRule_premise._Inline_v63wqt_a1a0());
+    provider.setAuxiliaryCellProvider(new BaseMappingRule_premise._Inline_v63wqt_a1a0("applicableConcept"));
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
@@ -100,9 +100,15 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   public static class _Inline_v63wqt_a1a0 extends InlineCellProvider {
+    public _Inline_v63wqt_a1a0(String role) {
+      super(role);
+    }
+
     public _Inline_v63wqt_a1a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

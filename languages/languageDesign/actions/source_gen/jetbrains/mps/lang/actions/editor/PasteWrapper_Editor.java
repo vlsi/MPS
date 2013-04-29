@@ -61,7 +61,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     provider.setRole("sourceConcept");
     provider.setNoTargetText("<no sourceConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline_eyosg6_a1a0());
+    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline_eyosg6_a1a0("sourceConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -75,9 +75,15 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_eyosg6_a1a0 extends InlineCellProvider {
+    public _Inline_eyosg6_a1a0(String role) {
+      super(role);
+    }
+
     public _Inline_eyosg6_a1a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -119,7 +125,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     provider.setRole("targetConcept");
     provider.setNoTargetText("<no targetConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline_eyosg6_a3a0());
+    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline_eyosg6_a3a0("targetConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -133,9 +139,15 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_eyosg6_a3a0 extends InlineCellProvider {
+    public _Inline_eyosg6_a3a0(String role) {
+      super(role);
+    }
+
     public _Inline_eyosg6_a3a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

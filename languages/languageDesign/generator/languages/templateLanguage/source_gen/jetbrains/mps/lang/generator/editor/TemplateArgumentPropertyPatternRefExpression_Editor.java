@@ -38,7 +38,7 @@ public class TemplateArgumentPropertyPatternRefExpression_Editor extends Default
     provider.setRole("propertyPattern");
     provider.setNoTargetText("<no propertyPattern>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateArgumentPropertyPatternRefExpression_Editor._Inline_z0z5f6_a0a());
+    provider.setAuxiliaryCellProvider(new TemplateArgumentPropertyPatternRefExpression_Editor._Inline_z0z5f6_a0a("propertyPattern"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -52,9 +52,15 @@ public class TemplateArgumentPropertyPatternRefExpression_Editor extends Default
   }
 
   public static class _Inline_z0z5f6_a0a extends InlineCellProvider {
+    public _Inline_z0z5f6_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_z0z5f6_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

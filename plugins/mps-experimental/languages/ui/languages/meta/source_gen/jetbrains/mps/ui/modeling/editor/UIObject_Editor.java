@@ -118,7 +118,7 @@ public class UIObject_Editor extends DefaultNodeEditor {
     provider.setRole("extends");
     provider.setNoTargetText("<nothing>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new UIObject_Editor._Inline_c5f0a4_a2a0());
+    provider.setAuxiliaryCellProvider(new UIObject_Editor._Inline_c5f0a4_a2a0("extends"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
@@ -135,9 +135,15 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_c5f0a4_a2a0 extends InlineCellProvider {
+    public _Inline_c5f0a4_a2a0(String role) {
+      super(role);
+    }
+
     public _Inline_c5f0a4_a2a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -275,7 +281,7 @@ public class UIObject_Editor extends DefaultNodeEditor {
     provider.setRole("belongsTo");
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new UIObject_Editor._Inline_c5f0a4_a2e0());
+    provider.setAuxiliaryCellProvider(new UIObject_Editor._Inline_c5f0a4_a2e0("belongsTo"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -289,9 +295,15 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_c5f0a4_a2e0 extends InlineCellProvider {
+    public _Inline_c5f0a4_a2e0(String role) {
+      super(role);
+    }
+
     public _Inline_c5f0a4_a2e0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

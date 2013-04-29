@@ -45,7 +45,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     provider.setRole("macro");
     provider.setNoTargetText("<no macro>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PathHolder_Editor._Inline_o0ejdp_a0a());
+    provider.setAuxiliaryCellProvider(new PathHolder_Editor._Inline_o0ejdp_a0a("macro"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -59,9 +59,15 @@ public class PathHolder_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_o0ejdp_a0a extends InlineCellProvider {
+    public _Inline_o0ejdp_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_o0ejdp_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -137,7 +143,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     provider.setRole("macro");
     provider.setNoTargetText("<no macro>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PathHolder_Editor._Inline_o0ejdp_a0a_0());
+    provider.setAuxiliaryCellProvider(new PathHolder_Editor._Inline_o0ejdp_a0a_0("macro"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -151,9 +157,15 @@ public class PathHolder_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_o0ejdp_a0a_0 extends InlineCellProvider {
+    public _Inline_o0ejdp_a0a_0(String role) {
+      super(role);
+    }
+
     public _Inline_o0ejdp_a0a_0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

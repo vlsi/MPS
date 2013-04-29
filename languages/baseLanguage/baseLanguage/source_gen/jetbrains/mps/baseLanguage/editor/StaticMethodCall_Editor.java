@@ -70,6 +70,12 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_a4wjjz_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -155,6 +161,12 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     public _Inline_a4wjjz_a0d0(String role) {
       super(role);
     }
+
+    public _Inline_a4wjjz_a0d0() {
+      super();
+    }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

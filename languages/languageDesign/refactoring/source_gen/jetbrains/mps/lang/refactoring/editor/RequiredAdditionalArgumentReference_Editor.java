@@ -37,7 +37,7 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
     provider.setRole("argument");
     provider.setNoTargetText("<no argument>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RequiredAdditionalArgumentReference_Editor._Inline_58laxu_a0a());
+    provider.setAuxiliaryCellProvider(new RequiredAdditionalArgumentReference_Editor._Inline_58laxu_a0a("argument"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -51,9 +51,15 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
   }
 
   public static class _Inline_58laxu_a0a extends InlineCellProvider {
+    public _Inline_58laxu_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_58laxu_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

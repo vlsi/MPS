@@ -90,7 +90,7 @@ public class Style_Component extends AbstractCellProvider {
     provider.setRole("styleClass");
     provider.setNoTargetText("<no base style>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Style_Component._Inline_zdjsuv_a0a1a());
+    provider.setAuxiliaryCellProvider(new Style_Component._Inline_zdjsuv_a0a1a("styleClass"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -104,9 +104,15 @@ public class Style_Component extends AbstractCellProvider {
   }
 
   public static class _Inline_zdjsuv_a0a1a extends InlineCellProvider {
+    public _Inline_zdjsuv_a0a1a(String role) {
+      super(role);
+    }
+
     public _Inline_zdjsuv_a0a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

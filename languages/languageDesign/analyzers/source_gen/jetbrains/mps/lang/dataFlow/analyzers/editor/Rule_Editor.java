@@ -84,7 +84,7 @@ public class Rule_Editor extends DefaultNodeEditor {
     provider.setRole("analyzer");
     provider.setNoTargetText("<no analyzer>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Rule_Editor._Inline_z0m96w_a3a());
+    provider.setAuxiliaryCellProvider(new Rule_Editor._Inline_z0m96w_a3a("analyzer"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -98,9 +98,15 @@ public class Rule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_z0m96w_a3a extends InlineCellProvider {
+    public _Inline_z0m96w_a3a(String role) {
+      super(role);
+    }
+
     public _Inline_z0m96w_a3a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

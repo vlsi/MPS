@@ -50,6 +50,12 @@ public class BaseVariableReference_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_8ssbmf_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

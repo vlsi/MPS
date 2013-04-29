@@ -66,7 +66,7 @@ public class Event_Editor extends DefaultNodeEditor {
     provider.setRole("type");
     provider.setNoTargetText("<choose type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Event_Editor._Inline_ymj9mh_a1a0());
+    provider.setAuxiliaryCellProvider(new Event_Editor._Inline_ymj9mh_a1a0("type"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -80,9 +80,15 @@ public class Event_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ymj9mh_a1a0 extends InlineCellProvider {
+    public _Inline_ymj9mh_a1a0(String role) {
+      super(role);
+    }
+
     public _Inline_ymj9mh_a1a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -89,7 +89,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     provider.setRole("nodeKind");
     provider.setNoTargetText("<no nodeKind>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatchKindOperation_Editor._Inline_1xyskv_a1a1a());
+    provider.setAuxiliaryCellProvider(new MatchKindOperation_Editor._Inline_1xyskv_a1a1a("nodeKind"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -103,9 +103,15 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_1xyskv_a1a1a extends InlineCellProvider {
+    public _Inline_1xyskv_a1a1a(String role) {
+      super(role);
+    }
+
     public _Inline_1xyskv_a1a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

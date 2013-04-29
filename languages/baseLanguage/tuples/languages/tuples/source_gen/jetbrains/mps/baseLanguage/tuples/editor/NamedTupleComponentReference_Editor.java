@@ -39,7 +39,7 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
     provider.setRole("componentDeclaration");
     provider.setNoTargetText("<no componentDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleComponentReference_Editor._Inline_61lahj_a0a());
+    provider.setAuxiliaryCellProvider(new NamedTupleComponentReference_Editor._Inline_61lahj_a0a("componentDeclaration"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -53,9 +53,15 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_61lahj_a0a extends InlineCellProvider {
+    public _Inline_61lahj_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_61lahj_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

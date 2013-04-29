@@ -55,7 +55,7 @@ public class NodeFactory_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeFactory_Editor._Inline_5y8bki_a1a0());
+    provider.setAuxiliaryCellProvider(new NodeFactory_Editor._Inline_5y8bki_a1a0("applicableConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -69,9 +69,15 @@ public class NodeFactory_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_5y8bki_a1a0 extends InlineCellProvider {
+    public _Inline_5y8bki_a1a0(String role) {
+      super(role);
+    }
+
     public _Inline_5y8bki_a1a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

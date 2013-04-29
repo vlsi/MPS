@@ -38,7 +38,7 @@ public class TemplateArgumentLinkPatternRefExpression_Editor extends DefaultNode
     provider.setRole("patternVar");
     provider.setNoTargetText("<no patternVar>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateArgumentLinkPatternRefExpression_Editor._Inline_f8ef2o_a0a());
+    provider.setAuxiliaryCellProvider(new TemplateArgumentLinkPatternRefExpression_Editor._Inline_f8ef2o_a0a("patternVar"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -52,9 +52,15 @@ public class TemplateArgumentLinkPatternRefExpression_Editor extends DefaultNode
   }
 
   public static class _Inline_f8ef2o_a0a extends InlineCellProvider {
+    public _Inline_f8ef2o_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_f8ef2o_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

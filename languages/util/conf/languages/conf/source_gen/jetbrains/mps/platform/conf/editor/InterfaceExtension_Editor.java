@@ -45,7 +45,7 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
     provider.setRole("intefaceExtensionPoint");
     provider.setNoTargetText("<no intefaceExtensionPoint>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InterfaceExtension_Editor._Inline_4lf1wj_a0a());
+    provider.setAuxiliaryCellProvider(new InterfaceExtension_Editor._Inline_4lf1wj_a0a("intefaceExtensionPoint"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -59,9 +59,15 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_4lf1wj_a0a extends InlineCellProvider {
+    public _Inline_4lf1wj_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_4lf1wj_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -114,7 +120,7 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
     provider.setRole("impl");
     provider.setNoTargetText("<no impl>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InterfaceExtension_Editor._Inline_4lf1wj_a1b0());
+    provider.setAuxiliaryCellProvider(new InterfaceExtension_Editor._Inline_4lf1wj_a1b0("impl"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -128,9 +134,15 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_4lf1wj_a1b0 extends InlineCellProvider {
+    public _Inline_4lf1wj_a1b0(String role) {
+      super(role);
+    }
+
     public _Inline_4lf1wj_a1b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

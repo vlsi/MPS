@@ -89,7 +89,7 @@ public class Service_Editor extends DefaultNodeEditor {
     provider.setRole("serviceIface");
     provider.setNoTargetText("<no serviceIface>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Service_Editor._Inline_m4h17_a1b0());
+    provider.setAuxiliaryCellProvider(new Service_Editor._Inline_m4h17_a1b0("serviceIface"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -103,9 +103,15 @@ public class Service_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_m4h17_a1b0 extends InlineCellProvider {
+    public _Inline_m4h17_a1b0(String role) {
+      super(role);
+    }
+
     public _Inline_m4h17_a1b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -147,7 +153,7 @@ public class Service_Editor extends DefaultNodeEditor {
     provider.setRole("serviceImpl");
     provider.setNoTargetText("<no serviceImpl>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Service_Editor._Inline_m4h17_a3b0());
+    provider.setAuxiliaryCellProvider(new Service_Editor._Inline_m4h17_a3b0("serviceImpl"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -161,9 +167,15 @@ public class Service_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_m4h17_a3b0 extends InlineCellProvider {
+    public _Inline_m4h17_a3b0(String role) {
+      super(role);
+    }
+
     public _Inline_m4h17_a3b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -50,6 +50,12 @@ public class AccessUIPropertyOperation_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_48ztqh_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

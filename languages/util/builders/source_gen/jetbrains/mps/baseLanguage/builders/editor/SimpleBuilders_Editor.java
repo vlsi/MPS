@@ -107,6 +107,12 @@ public class SimpleBuilders_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_hh7u75_a3a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

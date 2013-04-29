@@ -50,6 +50,12 @@ public class UIObjectReference_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_5hf6ru_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -313,7 +313,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     provider.setRole("runtimeIface");
     provider.setNoTargetText("<no runtimeIface>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FunctionType_Editor._Inline_bqk3nx_a1a0());
+    provider.setAuxiliaryCellProvider(new FunctionType_Editor._Inline_bqk3nx_a1a0("runtimeIface"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -327,9 +327,15 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_bqk3nx_a1a0 extends InlineCellProvider {
+    public _Inline_bqk3nx_a1a0(String role) {
+      super(role);
+    }
+
     public _Inline_bqk3nx_a1a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

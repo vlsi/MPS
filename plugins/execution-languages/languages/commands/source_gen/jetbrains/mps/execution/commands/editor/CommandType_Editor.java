@@ -61,7 +61,7 @@ public class CommandType_Editor extends DefaultNodeEditor {
     provider.setRole("command");
     provider.setNoTargetText("<no command>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CommandType_Editor._Inline_2uesqr_a2a());
+    provider.setAuxiliaryCellProvider(new CommandType_Editor._Inline_2uesqr_a2a("command"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -75,9 +75,15 @@ public class CommandType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2uesqr_a2a extends InlineCellProvider {
+    public _Inline_2uesqr_a2a(String role) {
+      super(role);
+    }
+
     public _Inline_2uesqr_a2a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

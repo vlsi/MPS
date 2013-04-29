@@ -98,7 +98,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SideTransformHintSubstituteActionsBuilder_Editor._Inline_185r4c_a2a0());
+    provider.setAuxiliaryCellProvider(new SideTransformHintSubstituteActionsBuilder_Editor._Inline_185r4c_a2a0("applicableConcept"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -112,9 +112,15 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
   }
 
   public static class _Inline_185r4c_a2a0 extends InlineCellProvider {
+    public _Inline_185r4c_a2a0(String role) {
+      super(role);
+    }
+
     public _Inline_185r4c_a2a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

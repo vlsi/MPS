@@ -199,6 +199,12 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_tm8wum_a2a1b1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
@@ -393,6 +399,12 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     public _Inline_tm8wum_a2d1b1a(String role) {
       super(role);
     }
+
+    public _Inline_tm8wum_a2d1b1a() {
+      super();
+    }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

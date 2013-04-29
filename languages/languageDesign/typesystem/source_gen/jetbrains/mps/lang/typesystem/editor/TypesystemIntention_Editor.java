@@ -62,7 +62,7 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     provider.setRole("quickFix");
     provider.setNoTargetText("<no quickFix>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TypesystemIntention_Editor._Inline_il97sk_a0a0());
+    provider.setAuxiliaryCellProvider(new TypesystemIntention_Editor._Inline_il97sk_a0a0("quickFix"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -76,9 +76,15 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_il97sk_a0a0 extends InlineCellProvider {
+    public _Inline_il97sk_a0a0(String role) {
+      super(role);
+    }
+
     public _Inline_il97sk_a0a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

@@ -103,7 +103,7 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
     provider.setRole("configurationKind");
     provider.setNoTargetText("<no configurationKind>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RunConfiguration_Editor._Inline_ryg3k0_a3a0());
+    provider.setAuxiliaryCellProvider(new RunConfiguration_Editor._Inline_ryg3k0_a3a0("configurationKind"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
@@ -120,9 +120,15 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ryg3k0_a3a0 extends InlineCellProvider {
+    public _Inline_ryg3k0_a3a0(String role) {
+      super(role);
+    }
+
     public _Inline_ryg3k0_a3a0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

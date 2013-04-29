@@ -100,7 +100,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
     provider.setRole("account");
     provider.setNoTargetText("<choose account type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PostingRule_Editor._Inline_ncr7br_a1b0());
+    provider.setAuxiliaryCellProvider(new PostingRule_Editor._Inline_ncr7br_a1b0("account"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -114,9 +114,15 @@ public class PostingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ncr7br_a1b0 extends InlineCellProvider {
+    public _Inline_ncr7br_a1b0(String role) {
+      super(role);
+    }
+
     public _Inline_ncr7br_a1b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

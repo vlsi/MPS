@@ -71,6 +71,12 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_jyer24_a1a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

@@ -111,7 +111,7 @@ public class Action_Editor extends DefaultNodeEditor {
     provider.setRole("actionClass");
     provider.setNoTargetText("<no actionClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Action_Editor._Inline_8bscln_a2b0());
+    provider.setAuxiliaryCellProvider(new Action_Editor._Inline_8bscln_a2b0("actionClass"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -125,9 +125,15 @@ public class Action_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_8bscln_a2b0 extends InlineCellProvider {
+    public _Inline_8bscln_a2b0(String role) {
+      super(role);
+    }
+
     public _Inline_8bscln_a2b0() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

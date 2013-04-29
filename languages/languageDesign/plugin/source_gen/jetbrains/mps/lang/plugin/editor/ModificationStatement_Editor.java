@@ -43,7 +43,7 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
     provider.setRole("modifiedGroup");
     provider.setNoTargetText("<no modifiedGroup>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ModificationStatement_Editor._Inline_9t39jw_a1a());
+    provider.setAuxiliaryCellProvider(new ModificationStatement_Editor._Inline_9t39jw_a1a("modifiedGroup"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -57,9 +57,15 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_9t39jw_a1a extends InlineCellProvider {
+    public _Inline_9t39jw_a1a(String role) {
+      super(role);
+    }
+
     public _Inline_9t39jw_a1a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
@@ -101,7 +107,7 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
     provider.setRole("point");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ModificationStatement_Editor._Inline_9t39jw_a3a());
+    provider.setAuxiliaryCellProvider(new ModificationStatement_Editor._Inline_9t39jw_a3a("point"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -115,9 +121,15 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_9t39jw_a3a extends InlineCellProvider {
+    public _Inline_9t39jw_a3a(String role) {
+      super(role);
+    }
+
     public _Inline_9t39jw_a3a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

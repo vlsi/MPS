@@ -54,6 +54,12 @@ public class ChildAspect_Editor extends DefaultNodeEditor {
       super(role);
     }
 
+    public _Inline_wz4x5o_a0a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

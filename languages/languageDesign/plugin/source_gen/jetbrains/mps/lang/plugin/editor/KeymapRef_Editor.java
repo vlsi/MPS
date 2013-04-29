@@ -32,7 +32,7 @@ public class KeymapRef_Editor extends DefaultNodeEditor {
     provider.setRole("keymap");
     provider.setNoTargetText("<no keymap>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new KeymapRef_Editor._Inline_5bt6sr_a0a());
+    provider.setAuxiliaryCellProvider(new KeymapRef_Editor._Inline_5bt6sr_a0a("keymap"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,9 +46,15 @@ public class KeymapRef_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_5bt6sr_a0a extends InlineCellProvider {
+    public _Inline_5bt6sr_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_5bt6sr_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

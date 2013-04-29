@@ -100,6 +100,12 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
       super(role);
     }
 
+    public _Inline_vh2hfk_a3a() {
+      super();
+    }
+
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

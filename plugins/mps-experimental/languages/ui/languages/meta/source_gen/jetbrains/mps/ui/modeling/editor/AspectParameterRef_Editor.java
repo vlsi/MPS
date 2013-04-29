@@ -32,7 +32,7 @@ public class AspectParameterRef_Editor extends DefaultNodeEditor {
     provider.setRole("parameterDecl");
     provider.setNoTargetText("<no parameterDecl>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AspectParameterRef_Editor._Inline_awzw7p_a0a());
+    provider.setAuxiliaryCellProvider(new AspectParameterRef_Editor._Inline_awzw7p_a0a("parameterDecl"));
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,9 +46,15 @@ public class AspectParameterRef_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_awzw7p_a0a extends InlineCellProvider {
+    public _Inline_awzw7p_a0a(String role) {
+      super(role);
+    }
+
     public _Inline_awzw7p_a0a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());

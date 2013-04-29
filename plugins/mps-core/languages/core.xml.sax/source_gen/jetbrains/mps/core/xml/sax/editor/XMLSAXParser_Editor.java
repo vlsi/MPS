@@ -240,7 +240,7 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     provider.setRole("root");
     provider.setNoTargetText("<no root>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new XMLSAXParser_Editor._Inline_pkrqbh_a9a());
+    provider.setAuxiliaryCellProvider(new XMLSAXParser_Editor._Inline_pkrqbh_a9a("root"));
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -257,9 +257,15 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pkrqbh_a9a extends InlineCellProvider {
+    public _Inline_pkrqbh_a9a(String role) {
+      super(role);
+    }
+
     public _Inline_pkrqbh_a9a() {
       super();
     }
+
+
 
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
