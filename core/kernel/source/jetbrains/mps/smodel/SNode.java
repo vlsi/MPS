@@ -169,7 +169,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SModelDescriptor model = internal_getModel();
     String modelName = model == null ? "null" : jetbrains.mps.util.SNodeOperations.getModelLongName(model);
     if (ourErroredModels.add(modelName)) {
-      LOG.error(new IllegalModelAccessError("Accessing disposed node in model " + modelName));
+//      LOG.error(new IllegalModelAccessError("Accessing disposed node in model " + modelName));
     }
   }
 
