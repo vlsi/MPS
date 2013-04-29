@@ -21,23 +21,24 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.model.SReference;
+import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.GlobalOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.resolve.ResolverComponent;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class FixBrokenReferences_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -102,6 +103,10 @@ public class FixBrokenReferences_Action extends BaseAction {
         ((List<SModel>) MapSequence.fromMap(_params).get("models"))
       ));
 
+      // reporting: 
+      Map<SNodePointer, Tuples._2<SReference, SReference>> resolvedR = MapSequence.fromMap(new HashMap<SNodePointer, Tuples._2<SReference, SReference>>());
+      Map<SNodePointer, SReference> unresolvedR = MapSequence.fromMap(new HashMap<SNodePointer, SReference>());
+      final Map<SNodePointer, Integer> counterR = MapSequence.fromMap(new HashMap<SNodePointer, Integer>());
       for (SModel model : ListSequence.fromList(modellist)) {
         if (LOG.isEnabledFor(Priority.WARN)) {
           LOG.warn("processing model " + SModelOperations.getModelName(model));
@@ -109,25 +114,89 @@ public class FixBrokenReferences_Action extends BaseAction {
         for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
           for (final SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
             if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
-              if (LOG.isEnabledFor(Priority.ERROR)) {
-                LOG.error(" reference =" + ref.getTargetSModelReference() + " :#: " + ref.getTargetNodeId() + " -- resolveInfo=" + SLinkOperations.getResolveInfo(ref) + "; role=" + SLinkOperations.getRole(ref));
+              SNodePointer nptr = new SNodePointer(ref.getTargetSModelReference(), ref.getTargetNodeId());
+              MapSequence.fromMap(counterR).put(nptr, (MapSequence.fromMap(counterR).get(nptr) == null ?
+                1 :
+                MapSequence.fromMap(counterR).get(nptr) + 1
+              ));
+              if (LOG.isEnabledFor(Priority.WARN)) {
+                LOG.warn(" reference =" + FixBrokenReferences_Action.this.refInfo(ref, _params));
               }
               boolean r = resolver.resolve(ref, node, new GlobalOperationContext());
-              SReference rr = Sequence.fromIterable(SNodeOperations.getReferences(node)).findFirst(new IWhereFilter<SReference>() {
+              SReference rref = Sequence.fromIterable(SNodeOperations.getReferences(node)).findFirst(new IWhereFilter<SReference>() {
                 public boolean accept(SReference r) {
-                  return eq_g50bqp_a0a0a0a0a0a2a0a0a1a5a0a5(SLinkOperations.getRole(r), SLinkOperations.getRole(ref));
+                  return eq_g50bqp_a0a0a0a0a0a4a0a0a1a9a0a5(SLinkOperations.getRole(r), SLinkOperations.getRole(ref));
                 }
               });
-              if (LOG.isEnabledFor(Priority.WARN)) {
-                LOG.warn(((r ?
-                  "resolved to=" :
-                  "unresolved ="
-                )) + rr.getTargetSModelReference() + " :#: " + rr.getTargetNodeId() + " -- resolveInfo=" + SLinkOperations.getResolveInfo(rr) + "; role=" + SLinkOperations.getRole(rr));
+              if (r) {
+                Tuples._2<SReference, SReference> result = MultiTuple.<SReference,SReference>from(ref, rref);
+                if (MapSequence.fromMap(resolvedR).get(nptr) == null || eq_g50bqp_a0a1a5a0a0a1a9a0a5(MapSequence.fromMap(resolvedR).get(nptr), MultiTuple.<SReference,SReference>from(ref, rref))) {
+                  MapSequence.fromMap(resolvedR).put(nptr, result);
+                  if (LOG.isEnabledFor(Priority.WARN)) {
+                    LOG.warn("resolved to=" + FixBrokenReferences_Action.this.refInfo(rref, _params));
+                  }
+                } else {
+                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                    LOG.error("resolving differently: " + FixBrokenReferences_Action.this.refInfo(rref, _params));
+                  }
+                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                    LOG.error("  before was resolved: " + FixBrokenReferences_Action.this.refInfo(MapSequence.fromMap(resolvedR).get(nptr)._1(), _params));
+                  }
+                }
+              } else {
+                MapSequence.fromMap(unresolvedR).put(nptr, ref);
+                if (LOG.isEnabledFor(Priority.ERROR)) {
+                  LOG.error("unresolved =" + FixBrokenReferences_Action.this.refInfo(rref, _params));
+                }
               }
             }
           }
         }
       }
+
+      // reporting: 
+      if (MapSequence.fromMap(unresolvedR).count() > 0) {
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error(MapSequence.fromMap(unresolvedR).count() + " distinct references were not resolved:");
+        }
+        for (SReference ref : MapSequence.fromMap(unresolvedR).sort(new ISelector<IMapping<SNodePointer, SReference>, String>() {
+          public String select(IMapping<SNodePointer, SReference> it) {
+            return it.key().toString();
+          }
+        }, true).select(new ISelector<IMapping<SNodePointer, SReference>, SReference>() {
+          public SReference select(IMapping<SNodePointer, SReference> it) {
+            return it.value();
+          }
+        })) {
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error(" reference =" + FixBrokenReferences_Action.this.refInfo(ref, _params) + "; source=" + ref.getSourceNode().getReference());
+          }
+        }
+      }
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn(MapSequence.fromMap(resolvedR).count() + " distinct references were resolved (total " + MapSequence.fromMap(resolvedR).select(new ISelector<IMapping<SNodePointer, Tuples._2<SReference, SReference>>, Integer>() {
+          public Integer select(IMapping<SNodePointer, Tuples._2<SReference, SReference>> it) {
+            return (MapSequence.fromMap(counterR).get(it.key()) == null ?
+              0 :
+              MapSequence.fromMap(counterR).get(it.key())
+            );
+          }
+        }).foldLeft(0, new ILeftCombinator<Integer, Integer>() {
+          public Integer combine(Integer s, Integer ri) {
+            return s + ri;
+          }
+        }) + ")");
+      }
+      for (IMapping<SNodePointer, Tuples._2<SReference, SReference>> it : MapSequence.fromMap(resolvedR)) {
+        if (LOG.isEnabledFor(Priority.WARN)) {
+          LOG.warn(" ref (" + MapSequence.fromMap(counterR).get(it.key()) + ")=" + FixBrokenReferences_Action.this.refInfo(it.value()._0(), _params));
+        }
+        if (LOG.isEnabledFor(Priority.WARN)) {
+          LOG.warn(" resolved to=" + FixBrokenReferences_Action.this.refInfo(it.value()._1(), _params));
+        }
+      }
+
+      SModelRepository.getInstance().saveAll();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FixBrokenReferences", t);
@@ -135,74 +204,27 @@ public class FixBrokenReferences_Action extends BaseAction {
     }
   }
 
-  /*package*/ void checkModel(SModel model, IOperationContext operationContext, ProgressMonitor monitor, final Map<String, Object> _params) {
-    if (model == null || model.getModule() == null) {
-      return;
-    }
-    IScope scope = model.getModule().getScope();
-    String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references...";
-    monitor.start(title, 1);
-
-    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-      if (monitor.isCanceled()) {
-        break;
-      }
-      // Check for unresolved references 
-      for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
-        // do not fix generator macros ?? 
-        // <node> 
-
-        if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
-          ResolverComponent.getInstance().resolve(ref, operationContext);
-        }
-        SModelReference uid = ref.getTargetSModelReference();
-        if (uid == null) {
-          continue;
-        }
-        SModel descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
-        if (scope.getModelDescriptor(uid) == null && descriptor != null) {
-          if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
-            SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
-            SModuleReference moduleReference = check_9fpjqh_a0b0a0h0c0f0a(check_9fpjqh_a0a1a0a7a2a5a0(sm));
-            if (moduleReference == null) {
-              continue;
-            }
-            SModule module = check_9fpjqh_a0d0a0h0c0f0a(model);
-            if (module == null) {
-              continue;
-            }
-            ((IModule) module).addDependency(moduleReference, false);
-          }
-        }
-      }
-    }
-    monitor.done();
+  /*package*/ String refInfo(SReference ref, final Map<String, Object> _params) {
+    return check_9fpjqh_a0a0a0a0(ref) + " -- resolveInfo=" + SLinkOperations.getResolveInfo(ref) + "; role=" + SLinkOperations.getRole(ref);
   }
 
   protected static Logger LOG = LogManager.getLogger(FixBrokenReferences_Action.class);
 
-  private static SModuleReference check_9fpjqh_a0b0a0h0c0f0a(IModule checkedDotOperand) {
+  private static SNodeReference check_9fpjqh_a0a0a0a0(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getModuleReference();
+      return checkedDotOperand.toNodePointer();
     }
     return null;
   }
 
-  private static IModule check_9fpjqh_a0a1a0a7a2a5a0(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
+  private static boolean eq_g50bqp_a0a0a0a0a0a4a0a0a1a9a0a5(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
-  private static IModule check_9fpjqh_a0d0a0h0c0f0a(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static boolean eq_g50bqp_a0a0a0a0a0a2a0a0a1a5a0a5(Object a, Object b) {
+  private static boolean eq_g50bqp_a0a1a5a0a0a1a9a0a5(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
