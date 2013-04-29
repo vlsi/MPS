@@ -8,9 +8,10 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class Generator implements TemplateModule {
   public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("de2f9603-575d-4d84-b063-776b6d27a0b9(jetbrains.mps.transformation.test.outputLang#1209603905948)");
@@ -20,7 +21,7 @@ public class Generator implements TemplateModule {
 
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
-    models = TemplateUtil.<TemplateModel>asCollection(new TemplateModelImpl(this));
+    models = TemplateUtil.<TemplateModel>asCollection(getTemplateModel("jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl"));
     usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.transformation.test.outputLang");
   }
 
@@ -50,5 +51,14 @@ public class Generator implements TemplateModule {
 
   public Collection<String> getReferencedModules() {
     return null;
+  }
+
+  private TemplateModel getTemplateModel(String modelName) {
+    Class<TemplateModel> clazz = ClassLoaderManager.getInstance().getClass(MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE.getModuleId()), modelName);
+    try {
+      return clazz.getConstructor(TemplateModule.class).newInstance(this);
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
   }
 }

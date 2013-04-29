@@ -20,21 +20,25 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.ProjectManagerListener;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.tempmodel.TempModule;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class PluginReloader implements ApplicationComponent {
-  private ReloadAdapter myReloadListener = new MyReloadAdapter();
+  private MPSClassesListener myReloadListener = new MyReloadAdapter();
   private ProjectManagerListener myProjectListener = new MyProjectManagerAdapter();
 
   private final List<PluginReloadingListener> myListeners = new ArrayList<PluginReloadingListener>();
@@ -112,14 +116,14 @@ public class PluginReloader implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(myReloadListener);
+    myClassLoaderManager.addClassesHandler(myReloadListener);
     ProjectManager.getInstance().addProjectManagerListener(myProjectListener);
   }
 
   @Override
   public void disposeComponent() {
     ProjectManager.getInstance().removeProjectManagerListener(myProjectListener);
-    myClassLoaderManager.removeReloadHandler(myReloadListener);
+    myClassLoaderManager.removeClassesHandler(myReloadListener);
 
     myClassLoaderManager = null;
     myProjectManager = null;
@@ -147,9 +151,35 @@ public class PluginReloader implements ApplicationComponent {
     }
   }
 
-  private class MyReloadAdapter extends ReloadAdapter {
+  private class MyReloadAdapter extends MPSClassesListenerAdapter {
+    private boolean classesUnloaded = false;
+
     @Override
-    public void unload() {
+    public void onClassesUnload(Set<SModule> unloadedModules) {
+      if (hasSignificantModule(unloadedModules)) {
+        unloadAll();
+        classesUnloaded = true;
+      }
+    }
+
+    @Override
+    public void onClassesLoad(Set<SModule> loadedModules) {
+      if (classesUnloaded) {
+        onAfterReloadAll();
+        classesUnloaded = false;
+      }
+    }
+
+    private boolean hasSignificantModule(Set<SModule> modules) {
+      for (SModule module : modules) {
+        if (!(module instanceof TempModule)) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    private void unloadAll() {
       //write action is needed the because user can acquire write action inside of this [see MPS-9139]
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
@@ -159,8 +189,7 @@ public class PluginReloader implements ApplicationComponent {
       });
     }
 
-    @Override
-    public void onAfterReload() {
+    private void onAfterReloadAll() {
       Runnable runnable = new Runnable() {
         @Override
         public void run() {

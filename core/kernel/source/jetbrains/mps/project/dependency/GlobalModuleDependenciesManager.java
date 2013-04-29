@@ -40,23 +40,11 @@ public class GlobalModuleDependenciesManager {
 
   public GlobalModuleDependenciesManager(Collection<? extends SModule> modules) {
     myModules = new HashSet<SModule>(modules);
-    addGenerators();
   }
 
   public GlobalModuleDependenciesManager(@NotNull SModule module) {
     myModules = new HashSet<SModule>();
     myModules.add(module);
-    addGenerators();
-  }
-
-  // this is a temporary fix for MPS-15883, should be removed when generators are compiled with their own classpath
-  private void addGenerators() {
-    Set<SModule> addModules = new HashSet<SModule>();
-    for (SModule m : myModules) {
-      if (!(m instanceof Language)) continue;
-      addModules.addAll(((Language) m).getGenerators());
-    }
-    myModules.addAll(addModules);
   }
 
   /**

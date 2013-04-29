@@ -13,10 +13,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import java.util.Iterator;
-import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
+import jetbrains.mps.build.mps.util.PathConverter;
+import java.util.Iterator;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.build.mps.util.ModuleChecker;
+import jetbrains.mps.build.mps.util.ModuleLoaderException;
 import org.apache.log4j.Priority;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.apache.log4j.Logger;
@@ -87,18 +89,22 @@ public class ReloadModulesFromDisk_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
+      VisibleModules visible = new VisibleModules(node, null);
+      visible.collect();
+
+      PathConverter pathConverter = new PathConverter(node);
+
       {
         Iterator<SNode> module_it = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{})).iterator();
         SNode module_var;
         while (module_it.hasNext()) {
           module_var = module_it.next();
-          PathConverter pathConverter = new PathConverter(node);
-
+          if (SNodeOperations.isInstanceOf(module_var, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
+            continue;
+          }
           try {
-            VisibleModules visible = new VisibleModules(node, null);
-            visible.collect();
-            new ModuleLoader(module_var, visible, pathConverter, null).importRequired();
-          } catch (ModuleLoader.ModuleLoaderException ex) {
+            ModuleLoader.createModuleChecker(module_var, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
+          } catch (ModuleLoaderException ex) {
             if (LOG.isEnabledFor(Priority.ERROR)) {
               LOG.error(ex.getMessage(), ex);
             }
