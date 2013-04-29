@@ -20,22 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class ReadUtil {
-
-  public static void read(byte[] bytes, InputStream stream) throws IOException {
-    int offset = 0;
-    int len = bytes.length;
-
-    while (true) {
-      int number = stream.read(bytes, offset, len - offset);
-      if (number == -1 || len == offset) break;
-      offset += number;
-    }
-
-    if (offset != len) {
-      throw new RuntimeException("This can't happen");
-    }
-  }
-
   public static byte[] read(InputStream is) throws IOException {
     return read(is, 4096);
   }
