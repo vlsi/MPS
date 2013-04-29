@@ -111,7 +111,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.actions.test/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/generator/source_gen" isTestSource="false" />
