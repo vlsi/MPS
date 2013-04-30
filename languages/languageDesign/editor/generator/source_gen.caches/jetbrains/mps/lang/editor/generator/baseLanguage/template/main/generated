@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-99nlo853b3gu1c890jnmyxwzv9ydvsx">
+<dependencies version="2" modelHash="up9sf7fdq20adjogos345rpf249r6w">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -230,7 +230,7 @@
   <source id="1176886006175" name="reduce_QueryFunction_StyleParameter" hash="-754sqft7lkzoh4tdwr42p6c28g0dyap">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1184139379136" name="reduce_InlineEditorComponent" hash="-5vg2dumew7d7j160n4qmzitjnd9fm09">
+  <source id="1184139379136" name="reduce_InlineEditorComponent" hash="5hykjz8ssdkkfb1ivsjz3xkeu5u2eq4">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1184142154197" name="reduce_RefNodeList_ListHandler" hash="d6yl3iy8gs6lxjy3pf3mv0cq9h362ms">

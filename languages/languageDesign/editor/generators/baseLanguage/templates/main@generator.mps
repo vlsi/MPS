@@ -7183,23 +7183,6 @@
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1184139510101">
           <link role="labelDeclaration" roleId="tpf8.1200916687663" targetNodeId="1215475930256" resolveInfo="generatedClass" />
         </node>
-        <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1184139503868">
-          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1184139503872" />
-          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184139503870">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="1184139503871">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~InlineCellProvider%d&lt;init&gt;(java%dlang%dString)" resolveInfo="InlineCellProvider" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5589876823670095690">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5589876823670091348" resolveInfo="role" />
-              </node>
-            </node>
-          </node>
-          <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5589876823670091348">
-            <property name="name" nameId="tpck.1169194664001" value="role" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5589876823670091347">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
-            </node>
-          </node>
-        </node>
         <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="738758355375215112">
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="738758355375215113" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="738758355375215114">
