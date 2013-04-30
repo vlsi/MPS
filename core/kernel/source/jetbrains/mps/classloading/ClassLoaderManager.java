@@ -203,7 +203,7 @@ public class ClassLoaderManager implements CoreComponent {
     try {
       monitor.step("Invalidate classloaders...");
       toUnload = collectBackReferences(toUnload);
-      System.out.println("To unload on " + modules + " -> " + toUnload.size() + " " + toUnload);
+//      System.out.println("To unload on " + modules + " -> " + toUnload.size() + " " + toUnload);
       // update back refs
       for (Set<SModule> backRefs : myBackRefs.values()) {
         backRefs.removeAll(toUnload);
