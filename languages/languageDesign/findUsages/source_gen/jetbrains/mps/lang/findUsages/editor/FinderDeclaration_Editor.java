@@ -108,7 +108,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("forConcept");
     provider.setNoTargetText("<no forConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FinderDeclaration_Editor._Inline_m33ofg_a3a0a("forConcept"));
+    provider.setAuxiliaryCellProvider(new FinderDeclaration_Editor._Inline_m33ofg_a3a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

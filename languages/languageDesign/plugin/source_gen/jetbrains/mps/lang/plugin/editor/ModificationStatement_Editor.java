@@ -43,7 +43,7 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
     provider.setRole("modifiedGroup");
     provider.setNoTargetText("<no modifiedGroup>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ModificationStatement_Editor._Inline_9t39jw_a1a("modifiedGroup"));
+    provider.setAuxiliaryCellProvider(new ModificationStatement_Editor._Inline_9t39jw_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -107,7 +107,7 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
     provider.setRole("point");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ModificationStatement_Editor._Inline_9t39jw_a3a("point"));
+    provider.setAuxiliaryCellProvider(new ModificationStatement_Editor._Inline_9t39jw_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

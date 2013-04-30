@@ -74,7 +74,7 @@ public class NodeTarget_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("any");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeTarget_Editor._Inline_1i1fuk_a2a0("concept"));
+    provider.setAuxiliaryCellProvider(new NodeTarget_Editor._Inline_1i1fuk_a2a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

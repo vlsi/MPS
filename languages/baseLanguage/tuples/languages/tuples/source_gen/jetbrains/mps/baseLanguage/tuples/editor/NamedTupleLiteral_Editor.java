@@ -200,7 +200,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     provider.setRole("tupleDeclaration");
     provider.setNoTargetText("<no tupleDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleLiteral_Editor._Inline_ulpguu_a1a0("tupleDeclaration"));
+    provider.setAuxiliaryCellProvider(new NamedTupleLiteral_Editor._Inline_ulpguu_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -275,7 +275,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     provider.setRole("tupleDeclaration");
     provider.setNoTargetText("<no tupleDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleLiteral_Editor._Inline_ulpguu_a1b0("tupleDeclaration"));
+    provider.setAuxiliaryCellProvider(new NamedTupleLiteral_Editor._Inline_ulpguu_a1b0());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

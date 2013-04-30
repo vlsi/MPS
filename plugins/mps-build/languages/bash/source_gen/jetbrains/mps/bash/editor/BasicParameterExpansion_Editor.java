@@ -62,7 +62,7 @@ public class BasicParameterExpansion_Editor extends DefaultNodeEditor {
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BasicParameterExpansion_Editor._Inline_yzb0ok_a2a("variable"));
+    provider.setAuxiliaryCellProvider(new BasicParameterExpansion_Editor._Inline_yzb0ok_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

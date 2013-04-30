@@ -52,7 +52,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     provider.setRole("editorComponent");
     provider.setNoTargetText("<no component>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_Component_Editor._Inline_r0l70z_a1a("editorComponent"));
+    provider.setAuxiliaryCellProvider(new CellModel_Component_Editor._Inline_r0l70z_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBordered(style, editorCell);

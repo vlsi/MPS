@@ -90,7 +90,7 @@ public class Style_Component extends AbstractCellProvider {
     provider.setRole("styleClass");
     provider.setNoTargetText("<no base style>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Style_Component._Inline_zdjsuv_a0a1a("styleClass"));
+    provider.setAuxiliaryCellProvider(new Style_Component._Inline_zdjsuv_a0a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

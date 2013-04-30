@@ -57,7 +57,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PrivateStaticFieldReference_Editor._Inline_62ivzp_a0a("classifier"));
+    provider.setAuxiliaryCellProvider(new PrivateStaticFieldReference_Editor._Inline_62ivzp_a0a());
     editorCell = provider.createEditorCell(editorContext);
     StaticFieldReference_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -126,7 +126,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
     provider.setRole("staticFieldDeclaration");
     provider.setNoTargetText("<no static member>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PrivateStaticFieldReference_Editor._Inline_62ivzp_a2a("staticFieldDeclaration"));
+    provider.setAuxiliaryCellProvider(new PrivateStaticFieldReference_Editor._Inline_62ivzp_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");

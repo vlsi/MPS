@@ -42,7 +42,7 @@ public class InequationReference_Editor extends DefaultNodeEditor {
     provider.setRole("inequation");
     provider.setNoTargetText("<no inequation>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InequationReference_Editor._Inline_boi5ax_a0a("inequation"));
+    provider.setAuxiliaryCellProvider(new InequationReference_Editor._Inline_boi5ax_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

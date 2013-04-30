@@ -120,7 +120,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     provider.setRole("template");
     provider.setNoTargetText("<choose template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new WeaveEach_RuleConsequence_Editor._Inline_hfot0g_a2b0("template"));
+    provider.setAuxiliaryCellProvider(new WeaveEach_RuleConsequence_Editor._Inline_hfot0g_a2b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -47,7 +47,7 @@ public class PropertyMessageTarget_Editor extends DefaultNodeEditor {
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<no propertyDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyMessageTarget_Editor._Inline_bceyxw_a1a("propertyDeclaration"));
+    provider.setAuxiliaryCellProvider(new PropertyMessageTarget_Editor._Inline_bceyxw_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

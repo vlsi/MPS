@@ -88,7 +88,7 @@ public class EvaluatorsSuperMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("instanceMethodDeclaration");
     provider.setNoTargetText("<no instanceMethodDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EvaluatorsSuperMethodCall_Editor._Inline_2iixvv_a3a("instanceMethodDeclaration"));
+    provider.setAuxiliaryCellProvider(new EvaluatorsSuperMethodCall_Editor._Inline_2iixvv_a3a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");

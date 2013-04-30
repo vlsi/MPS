@@ -48,7 +48,7 @@ public class UIPropertyAccessCode_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new UIPropertyAccessCode_Editor._Inline_ek8095_a0a0("property"));
+    provider.setAuxiliaryCellProvider(new UIPropertyAccessCode_Editor._Inline_ek8095_a0a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

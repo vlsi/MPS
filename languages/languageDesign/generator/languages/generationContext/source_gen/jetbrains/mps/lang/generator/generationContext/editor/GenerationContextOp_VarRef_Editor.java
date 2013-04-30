@@ -38,7 +38,7 @@ public class GenerationContextOp_VarRef_Editor extends DefaultNodeEditor {
     provider.setRole("varmacro");
     provider.setNoTargetText("<no varmacro>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_VarRef_Editor._Inline_4x6n30_a0a("varmacro"));
+    provider.setAuxiliaryCellProvider(new GenerationContextOp_VarRef_Editor._Inline_4x6n30_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

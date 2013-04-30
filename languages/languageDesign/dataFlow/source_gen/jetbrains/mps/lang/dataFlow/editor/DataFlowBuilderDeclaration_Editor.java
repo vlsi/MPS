@@ -49,7 +49,7 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no conceptDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DataFlowBuilderDeclaration_Editor._Inline_9xj3dm_a1a("conceptDeclaration"));
+    provider.setAuxiliaryCellProvider(new DataFlowBuilderDeclaration_Editor._Inline_9xj3dm_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

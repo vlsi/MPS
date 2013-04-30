@@ -212,7 +212,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateCallMacro_Editor._Inline_nnob7w_a2b2a("mappingLabel"));
+    provider.setAuxiliaryCellProvider(new TemplateCallMacro_Editor._Inline_nnob7w_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -371,7 +371,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     provider.setRole("template");
     provider.setNoTargetText("<choose template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateCallMacro_Editor._Inline_nnob7w_a0c4c0("template"));
+    provider.setAuxiliaryCellProvider(new TemplateCallMacro_Editor._Inline_nnob7w_a0c4c0());
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);

@@ -32,7 +32,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new VariableReference_Editor._Inline_ge17fi_a0a("variable"));
+    provider.setAuxiliaryCellProvider(new VariableReference_Editor._Inline_ge17fi_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

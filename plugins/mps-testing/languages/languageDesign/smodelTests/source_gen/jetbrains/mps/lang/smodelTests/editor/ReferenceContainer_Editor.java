@@ -126,7 +126,7 @@ public class ReferenceContainer_Editor extends DefaultNodeEditor {
     provider.setRole("root");
     provider.setNoTargetText("<no root>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReferenceContainer_Editor._Inline_jpb8dn_a1a1b0("root"));
+    provider.setAuxiliaryCellProvider(new ReferenceContainer_Editor._Inline_jpb8dn_a1a1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -201,7 +201,7 @@ public class ReferenceContainer_Editor extends DefaultNodeEditor {
     provider.setRole("leftChild");
     provider.setNoTargetText("<no leftChild>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReferenceContainer_Editor._Inline_jpb8dn_a1b1b0("leftChild"));
+    provider.setAuxiliaryCellProvider(new ReferenceContainer_Editor._Inline_jpb8dn_a1b1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -276,7 +276,7 @@ public class ReferenceContainer_Editor extends DefaultNodeEditor {
     provider.setRole("rightChild");
     provider.setNoTargetText("<no rightChild>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReferenceContainer_Editor._Inline_jpb8dn_a1c1b0("rightChild"));
+    provider.setAuxiliaryCellProvider(new ReferenceContainer_Editor._Inline_jpb8dn_a1c1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

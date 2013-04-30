@@ -46,7 +46,7 @@ public class BwfJavaLibraryReference_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BwfJavaLibraryReference_Editor._Inline_54tsec_a1a("target"));
+    provider.setAuxiliaryCellProvider(new BwfJavaLibraryReference_Editor._Inline_54tsec_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

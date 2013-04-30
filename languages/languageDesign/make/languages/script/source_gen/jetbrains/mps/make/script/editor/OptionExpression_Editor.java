@@ -35,7 +35,7 @@ public class OptionExpression_Editor extends DefaultNodeEditor {
     provider.setRole("option");
     provider.setNoTargetText("<no option>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OptionExpression_Editor._Inline_57zibj_a0a("option"));
+    provider.setAuxiliaryCellProvider(new OptionExpression_Editor._Inline_57zibj_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);

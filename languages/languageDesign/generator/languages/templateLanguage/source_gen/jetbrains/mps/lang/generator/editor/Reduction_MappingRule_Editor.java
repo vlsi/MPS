@@ -103,7 +103,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Reduction_MappingRule_Editor._Inline_c84kqv_a0b1a("labelDeclaration"));
+    provider.setAuxiliaryCellProvider(new Reduction_MappingRule_Editor._Inline_c84kqv_a0b1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -251,7 +251,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Reduction_MappingRule_Editor._Inline_c84kqv_a1c0("labelDeclaration"));
+    provider.setAuxiliaryCellProvider(new Reduction_MappingRule_Editor._Inline_c84kqv_a1c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

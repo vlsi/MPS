@@ -98,7 +98,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SideTransformHintSubstituteActionsBuilder_Editor._Inline_185r4c_a2a0("applicableConcept"));
+    provider.setAuxiliaryCellProvider(new SideTransformHintSubstituteActionsBuilder_Editor._Inline_185r4c_a2a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

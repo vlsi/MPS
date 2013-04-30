@@ -32,7 +32,7 @@ public class TestVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TestVariableReference_Editor._Inline_t5xgl3_a0a("declaration"));
+    provider.setAuxiliaryCellProvider(new TestVariableReference_Editor._Inline_t5xgl3_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

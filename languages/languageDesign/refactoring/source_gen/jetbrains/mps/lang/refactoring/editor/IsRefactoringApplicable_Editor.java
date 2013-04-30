@@ -69,7 +69,7 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     provider.setRole("refactoring");
     provider.setNoTargetText("<no refactoring>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IsRefactoringApplicable_Editor._Inline_xt8j9n_a2a("refactoring"));
+    provider.setAuxiliaryCellProvider(new IsRefactoringApplicable_Editor._Inline_xt8j9n_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

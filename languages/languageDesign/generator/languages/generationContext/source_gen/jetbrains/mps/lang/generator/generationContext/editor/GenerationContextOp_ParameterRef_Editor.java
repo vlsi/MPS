@@ -38,7 +38,7 @@ public class GenerationContextOp_ParameterRef_Editor extends DefaultNodeEditor {
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_ParameterRef_Editor._Inline_e6tvy5_a0a("parameter"));
+    provider.setAuxiliaryCellProvider(new GenerationContextOp_ParameterRef_Editor._Inline_e6tvy5_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -65,7 +65,7 @@ public class NF_Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NF_Model_CreateNewNodeOperation_Editor._Inline_6g21z_a2a("concept"));
+    provider.setAuxiliaryCellProvider(new NF_Model_CreateNewNodeOperation_Editor._Inline_6g21z_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

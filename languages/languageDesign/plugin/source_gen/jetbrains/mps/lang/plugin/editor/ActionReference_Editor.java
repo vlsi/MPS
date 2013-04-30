@@ -32,7 +32,7 @@ public class ActionReference_Editor extends DefaultNodeEditor {
     provider.setRole("actionDeclaration");
     provider.setNoTargetText("<no actionDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionReference_Editor._Inline_ld3k57_a0a("actionDeclaration"));
+    provider.setAuxiliaryCellProvider(new ActionReference_Editor._Inline_ld3k57_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

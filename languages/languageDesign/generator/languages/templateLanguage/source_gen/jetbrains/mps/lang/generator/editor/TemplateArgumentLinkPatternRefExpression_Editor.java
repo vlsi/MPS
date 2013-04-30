@@ -38,7 +38,7 @@ public class TemplateArgumentLinkPatternRefExpression_Editor extends DefaultNode
     provider.setRole("patternVar");
     provider.setNoTargetText("<no patternVar>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateArgumentLinkPatternRefExpression_Editor._Inline_f8ef2o_a0a("patternVar"));
+    provider.setAuxiliaryCellProvider(new TemplateArgumentLinkPatternRefExpression_Editor._Inline_f8ef2o_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

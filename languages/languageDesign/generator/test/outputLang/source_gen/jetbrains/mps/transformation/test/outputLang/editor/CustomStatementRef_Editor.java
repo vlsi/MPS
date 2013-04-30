@@ -43,7 +43,7 @@ public class CustomStatementRef_Editor extends DefaultNodeEditor {
     provider.setRole("myStatement");
     provider.setNoTargetText("<no myStatement>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CustomStatementRef_Editor._Inline_eklijf_a1a("myStatement"));
+    provider.setAuxiliaryCellProvider(new CustomStatementRef_Editor._Inline_eklijf_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

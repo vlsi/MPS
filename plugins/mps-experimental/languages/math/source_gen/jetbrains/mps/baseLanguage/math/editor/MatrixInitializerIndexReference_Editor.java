@@ -32,7 +32,7 @@ public class MatrixInitializerIndexReference_Editor extends DefaultNodeEditor {
     provider.setRole("index");
     provider.setNoTargetText("<no index>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatrixInitializerIndexReference_Editor._Inline_sfo61_a0a("index"));
+    provider.setAuxiliaryCellProvider(new MatrixInitializerIndexReference_Editor._Inline_sfo61_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -289,7 +289,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IfMacro_Editor._Inline_t4g6n2_a2b2a("mappingLabel"));
+    provider.setAuxiliaryCellProvider(new IfMacro_Editor._Inline_t4g6n2_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

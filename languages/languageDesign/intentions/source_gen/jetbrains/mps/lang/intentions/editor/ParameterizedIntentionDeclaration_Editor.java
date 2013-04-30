@@ -117,7 +117,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     provider.setRole("forConcept");
     provider.setNoTargetText("<no forConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ParameterizedIntentionDeclaration_Editor._Inline_crf3gy_a4a0a("forConcept"));
+    provider.setAuxiliaryCellProvider(new ParameterizedIntentionDeclaration_Editor._Inline_crf3gy_a4a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

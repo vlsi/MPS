@@ -32,7 +32,7 @@ public class ClassifierDocReference_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClassifierDocReference_Editor._Inline_yqqfxo_a0a("classifier"));
+    provider.setAuxiliaryCellProvider(new ClassifierDocReference_Editor._Inline_yqqfxo_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

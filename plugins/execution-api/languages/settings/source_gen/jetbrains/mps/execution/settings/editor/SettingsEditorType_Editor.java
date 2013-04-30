@@ -61,7 +61,7 @@ public class SettingsEditorType_Editor extends DefaultNodeEditor {
     provider.setRole("configuration");
     provider.setNoTargetText("<no configuration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SettingsEditorType_Editor._Inline_rxc56p_a2a("configuration"));
+    provider.setAuxiliaryCellProvider(new SettingsEditorType_Editor._Inline_rxc56p_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

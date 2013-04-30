@@ -141,7 +141,7 @@ public class ContextBindingWrapper_Editor extends DefaultNodeEditor {
     provider.setRole("container");
     provider.setNoTargetText("<no container>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ContextBindingWrapper_Editor._Inline_2kuzvr_a6a0("container"));
+    provider.setAuxiliaryCellProvider(new ContextBindingWrapper_Editor._Inline_2kuzvr_a6a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

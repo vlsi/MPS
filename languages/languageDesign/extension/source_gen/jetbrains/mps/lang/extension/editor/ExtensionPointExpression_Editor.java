@@ -73,7 +73,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     provider.setRole("extensionPoint");
     provider.setNoTargetText("<no extensionPoint>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtensionPointExpression_Editor._Inline_hr8njl_a2a("extensionPoint"));
+    provider.setAuxiliaryCellProvider(new ExtensionPointExpression_Editor._Inline_hr8njl_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
@@ -163,7 +163,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     provider.setRole("extensionPoint");
     provider.setNoTargetText("<no extensionPoint>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtensionPointExpression_Editor._Inline_hr8njl_a1a("extensionPoint"));
+    provider.setAuxiliaryCellProvider(new ExtensionPointExpression_Editor._Inline_hr8njl_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

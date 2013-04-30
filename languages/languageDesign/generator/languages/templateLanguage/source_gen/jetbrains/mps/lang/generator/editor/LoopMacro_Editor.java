@@ -211,7 +211,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LoopMacro_Editor._Inline_l06mua_a2b2a("mappingLabel"));
+    provider.setAuxiliaryCellProvider(new LoopMacro_Editor._Inline_l06mua_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

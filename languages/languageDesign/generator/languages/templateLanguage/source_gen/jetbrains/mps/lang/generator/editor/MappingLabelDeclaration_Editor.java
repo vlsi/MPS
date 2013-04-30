@@ -81,7 +81,7 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("sourceConcept");
     provider.setNoTargetText("<no input concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline_sexq64_a3a("sourceConcept"));
+    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline_sexq64_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -148,7 +148,7 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("targetConcept");
     provider.setNoTargetText("<no output concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline_sexq64_a5a("targetConcept"));
+    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline_sexq64_a5a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

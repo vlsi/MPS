@@ -100,7 +100,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
     provider.setRole("account");
     provider.setNoTargetText("<choose account type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PostingRule_Editor._Inline_ncr7br_a1b0("account"));
+    provider.setAuxiliaryCellProvider(new PostingRule_Editor._Inline_ncr7br_a1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

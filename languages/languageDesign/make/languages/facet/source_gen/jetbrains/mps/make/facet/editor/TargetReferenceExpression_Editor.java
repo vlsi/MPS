@@ -70,7 +70,7 @@ public class TargetReferenceExpression_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TargetReferenceExpression_Editor._Inline_gv9ozx_a2a("target"));
+    provider.setAuxiliaryCellProvider(new TargetReferenceExpression_Editor._Inline_gv9ozx_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));

@@ -93,7 +93,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Weaving_MappingRule_Editor._Inline_gkr2rl_a0c0("labelDeclaration"));
+    provider.setAuxiliaryCellProvider(new Weaving_MappingRule_Editor._Inline_gkr2rl_a0c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -305,7 +305,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Weaving_MappingRule_Editor._Inline_gkr2rl_a1c0("labelDeclaration"));
+    provider.setAuxiliaryCellProvider(new Weaving_MappingRule_Editor._Inline_gkr2rl_a1c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

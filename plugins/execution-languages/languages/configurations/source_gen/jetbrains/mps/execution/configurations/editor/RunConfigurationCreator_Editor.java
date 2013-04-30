@@ -51,7 +51,7 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     provider.setRole("configuration");
     provider.setNoTargetText("<no configuration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RunConfigurationCreator_Editor._Inline_nyg1sl_a0a("configuration"));
+    provider.setAuxiliaryCellProvider(new RunConfigurationCreator_Editor._Inline_nyg1sl_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -115,7 +115,7 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     provider.setRole("configuration");
     provider.setNoTargetText("<no configuration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RunConfigurationCreator_Editor._Inline_nyg1sl_a1a("configuration"));
+    provider.setAuxiliaryCellProvider(new RunConfigurationCreator_Editor._Inline_nyg1sl_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

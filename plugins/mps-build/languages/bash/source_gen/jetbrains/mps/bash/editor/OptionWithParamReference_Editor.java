@@ -49,7 +49,7 @@ public class OptionWithParamReference_Editor extends DefaultNodeEditor {
     provider.setRole("optionWithParam");
     provider.setNoTargetText("<no optionWithParam>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OptionWithParamReference_Editor._Inline_wuachl_a1a("optionWithParam"));
+    provider.setAuxiliaryCellProvider(new OptionWithParamReference_Editor._Inline_wuachl_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

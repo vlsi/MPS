@@ -62,7 +62,7 @@ public class ArgumentReference_Editor extends DefaultNodeEditor {
     provider.setRole("arg");
     provider.setNoTargetText("<no arg>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ArgumentReference_Editor._Inline_1zy0ov_a0a("arg"));
+    provider.setAuxiliaryCellProvider(new ArgumentReference_Editor._Inline_1zy0ov_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

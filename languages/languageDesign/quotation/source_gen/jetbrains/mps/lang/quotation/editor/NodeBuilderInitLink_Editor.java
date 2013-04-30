@@ -42,7 +42,7 @@ public class NodeBuilderInitLink_Editor extends DefaultNodeEditor {
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeBuilderInitLink_Editor._Inline_h9lh4k_a0a("link"));
+    provider.setAuxiliaryCellProvider(new NodeBuilderInitLink_Editor._Inline_h9lh4k_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);

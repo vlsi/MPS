@@ -50,7 +50,7 @@ public class RemovePart_Editor extends DefaultNodeEditor {
     provider.setRole("conceptToRemove");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RemovePart_Editor._Inline_an4g7e_a1a("conceptToRemove"));
+    provider.setAuxiliaryCellProvider(new RemovePart_Editor._Inline_an4g7e_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

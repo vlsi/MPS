@@ -32,7 +32,7 @@ public class FacetReference_Editor extends DefaultNodeEditor {
     provider.setRole("facet");
     provider.setNoTargetText("<no facet>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FacetReference_Editor._Inline_7rmqfw_a0a("facet"));
+    provider.setAuxiliaryCellProvider(new FacetReference_Editor._Inline_7rmqfw_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

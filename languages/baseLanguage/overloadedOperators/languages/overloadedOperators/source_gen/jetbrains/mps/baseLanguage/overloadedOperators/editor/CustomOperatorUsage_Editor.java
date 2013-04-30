@@ -55,7 +55,7 @@ public class CustomOperatorUsage_Editor extends DefaultNodeEditor {
     provider.setRole("operator");
     provider.setNoTargetText("<no operator>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CustomOperatorUsage_Editor._Inline_fe04xc_a1a("operator"));
+    provider.setAuxiliaryCellProvider(new CustomOperatorUsage_Editor._Inline_fe04xc_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

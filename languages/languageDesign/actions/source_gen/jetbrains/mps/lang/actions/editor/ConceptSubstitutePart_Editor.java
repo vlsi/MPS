@@ -51,7 +51,7 @@ public class ConceptSubstitutePart_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptSubstitutePart_Editor._Inline_1d9zej_a1a("concept"));
+    provider.setAuxiliaryCellProvider(new ConceptSubstitutePart_Editor._Inline_1d9zej_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

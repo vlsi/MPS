@@ -373,7 +373,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("overriddenMethod");
     provider.setNoTargetText("<no overriddenMethod>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline_gmtuod_a4j2a("overriddenMethod"));
+    provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline_gmtuod_a4j2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -677,7 +677,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("overriddenMethod");
     provider.setNoTargetText("<no overriden method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline_gmtuod_a1e0("overriddenMethod"));
+    provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_Editor._Inline_gmtuod_a1e0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

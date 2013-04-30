@@ -32,7 +32,7 @@ public class CycleReference_Editor extends DefaultNodeEditor {
     provider.setRole("cycle");
     provider.setNoTargetText("<no cycle>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CycleReference_Editor._Inline_fgeak3_a0a("cycle"));
+    provider.setAuxiliaryCellProvider(new CycleReference_Editor._Inline_fgeak3_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

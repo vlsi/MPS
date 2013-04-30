@@ -45,7 +45,7 @@ public class RefTestParamRef_Editor extends DefaultNodeEditor {
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RefTestParamRef_Editor._Inline_9h21cw_a1a("declaration"));
+    provider.setAuxiliaryCellProvider(new RefTestParamRef_Editor._Inline_9h21cw_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

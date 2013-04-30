@@ -34,7 +34,7 @@ public class MappingScriptReference_Editor extends DefaultNodeEditor {
     provider.setRole("mappingScript");
     provider.setNoTargetText("choose script");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingScriptReference_Editor._Inline_t4awil_a0a("mappingScript"));
+    provider.setAuxiliaryCellProvider(new MappingScriptReference_Editor._Inline_t4awil_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

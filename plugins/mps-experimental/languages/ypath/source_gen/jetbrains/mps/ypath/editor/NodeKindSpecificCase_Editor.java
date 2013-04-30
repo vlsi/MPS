@@ -59,7 +59,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
     provider.setRole("treeNodeKind");
     provider.setNoTargetText("<no treeNodeKind>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeKindSpecificCase_Editor._Inline_qnryu2_a1a0("treeNodeKind"));
+    provider.setAuxiliaryCellProvider(new NodeKindSpecificCase_Editor._Inline_qnryu2_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

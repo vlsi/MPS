@@ -32,7 +32,7 @@ public class WhenConcreteVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("whenConcreteVar");
     provider.setNoTargetText("<no whenConcreteVar>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new WhenConcreteVariableReference_Editor._Inline_qspcv2_a0a("whenConcreteVar"));
+    provider.setAuxiliaryCellProvider(new WhenConcreteVariableReference_Editor._Inline_qspcv2_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

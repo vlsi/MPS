@@ -32,7 +32,7 @@ public class RefactoringParameterReference_Editor extends DefaultNodeEditor {
     provider.setRole("refactoringParameter");
     provider.setNoTargetText("<no refactoringParameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RefactoringParameterReference_Editor._Inline_epfet1_a0a("refactoringParameter"));
+    provider.setAuxiliaryCellProvider(new RefactoringParameterReference_Editor._Inline_epfet1_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

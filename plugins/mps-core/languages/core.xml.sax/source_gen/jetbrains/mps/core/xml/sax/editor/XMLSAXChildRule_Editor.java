@@ -110,7 +110,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     provider.setRole("rule");
     provider.setNoTargetText("<no rule>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new XMLSAXChildRule_Editor._Inline_wbyfib_a2a("rule"));
+    provider.setAuxiliaryCellProvider(new XMLSAXChildRule_Editor._Inline_wbyfib_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

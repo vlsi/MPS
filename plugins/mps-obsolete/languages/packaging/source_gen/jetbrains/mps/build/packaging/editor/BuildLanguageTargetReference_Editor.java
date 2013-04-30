@@ -32,7 +32,7 @@ public class BuildLanguageTargetReference_Editor extends DefaultNodeEditor {
     provider.setRole("targetDeclaration");
     provider.setNoTargetText("<no targetDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildLanguageTargetReference_Editor._Inline_y1gcgc_a0a("targetDeclaration"));
+    provider.setAuxiliaryCellProvider(new BuildLanguageTargetReference_Editor._Inline_y1gcgc_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

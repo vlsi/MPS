@@ -52,7 +52,7 @@ public class MatrixInverseOperation_Editor extends DefaultNodeEditor {
     provider.setRole("context");
     provider.setNoTargetText("<no context>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatrixInverseOperation_Editor._Inline_j4oyiy_a1a("context"));
+    provider.setAuxiliaryCellProvider(new MatrixInverseOperation_Editor._Inline_j4oyiy_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

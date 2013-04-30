@@ -118,7 +118,7 @@ public class UIObject_Editor extends DefaultNodeEditor {
     provider.setRole("extends");
     provider.setNoTargetText("<nothing>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new UIObject_Editor._Inline_c5f0a4_a2a0("extends"));
+    provider.setAuxiliaryCellProvider(new UIObject_Editor._Inline_c5f0a4_a2a0());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
@@ -281,7 +281,7 @@ public class UIObject_Editor extends DefaultNodeEditor {
     provider.setRole("belongsTo");
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new UIObject_Editor._Inline_c5f0a4_a2e0("belongsTo"));
+    provider.setAuxiliaryCellProvider(new UIObject_Editor._Inline_c5f0a4_a2e0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

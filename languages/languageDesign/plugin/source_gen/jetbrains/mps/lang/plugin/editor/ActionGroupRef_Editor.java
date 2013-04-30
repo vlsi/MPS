@@ -32,7 +32,7 @@ public class ActionGroupRef_Editor extends DefaultNodeEditor {
     provider.setRole("group");
     provider.setNoTargetText("<no group>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionGroupRef_Editor._Inline_b6hl0x_a0a("group"));
+    provider.setAuxiliaryCellProvider(new ActionGroupRef_Editor._Inline_b6hl0x_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

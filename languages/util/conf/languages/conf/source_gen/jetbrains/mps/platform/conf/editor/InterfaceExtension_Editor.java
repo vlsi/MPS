@@ -45,7 +45,7 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
     provider.setRole("intefaceExtensionPoint");
     provider.setNoTargetText("<no intefaceExtensionPoint>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InterfaceExtension_Editor._Inline_4lf1wj_a0a("intefaceExtensionPoint"));
+    provider.setAuxiliaryCellProvider(new InterfaceExtension_Editor._Inline_4lf1wj_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -120,7 +120,7 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
     provider.setRole("impl");
     provider.setNoTargetText("<no impl>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InterfaceExtension_Editor._Inline_4lf1wj_a1b0("impl"));
+    provider.setAuxiliaryCellProvider(new InterfaceExtension_Editor._Inline_4lf1wj_a1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

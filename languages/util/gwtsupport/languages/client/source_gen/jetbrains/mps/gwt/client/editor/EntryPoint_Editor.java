@@ -41,7 +41,7 @@ public class EntryPoint_Editor extends DefaultNodeEditor {
     provider.setRole("entryPoint");
     provider.setNoTargetText("<no entryPoint>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EntryPoint_Editor._Inline_qle4av_a1a("entryPoint"));
+    provider.setAuxiliaryCellProvider(new EntryPoint_Editor._Inline_qle4av_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

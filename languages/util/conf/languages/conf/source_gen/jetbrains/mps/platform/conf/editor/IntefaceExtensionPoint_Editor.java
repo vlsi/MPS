@@ -65,7 +65,7 @@ public class IntefaceExtensionPoint_Editor extends DefaultNodeEditor {
     provider.setRole("iface");
     provider.setNoTargetText("<no iface>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IntefaceExtensionPoint_Editor._Inline_wfmmwk_a2a("iface"));
+    provider.setAuxiliaryCellProvider(new IntefaceExtensionPoint_Editor._Inline_wfmmwk_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

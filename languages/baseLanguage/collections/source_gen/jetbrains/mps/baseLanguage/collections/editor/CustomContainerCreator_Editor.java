@@ -66,7 +66,7 @@ public class CustomContainerCreator_Editor extends DefaultNodeEditor {
     provider.setRole("containerDeclaration");
     provider.setNoTargetText("<no containerDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CustomContainerCreator_Editor._Inline_j9f7go_a1a0("containerDeclaration"));
+    provider.setAuxiliaryCellProvider(new CustomContainerCreator_Editor._Inline_j9f7go_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

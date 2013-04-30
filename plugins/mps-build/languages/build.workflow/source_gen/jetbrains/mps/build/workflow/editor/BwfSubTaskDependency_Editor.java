@@ -32,7 +32,7 @@ public class BwfSubTaskDependency_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BwfSubTaskDependency_Editor._Inline_gd7r1i_a0a("target"));
+    provider.setAuxiliaryCellProvider(new BwfSubTaskDependency_Editor._Inline_gd7r1i_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

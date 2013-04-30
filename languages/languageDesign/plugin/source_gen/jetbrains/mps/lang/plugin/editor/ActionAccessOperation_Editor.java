@@ -56,7 +56,7 @@ public class ActionAccessOperation_Editor extends DefaultNodeEditor {
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionAccessOperation_Editor._Inline_nefofj_a2a("action"));
+    provider.setAuxiliaryCellProvider(new ActionAccessOperation_Editor._Inline_nefofj_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

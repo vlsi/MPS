@@ -32,7 +32,7 @@ public class EventReference_Editor extends DefaultNodeEditor {
     provider.setRole("event");
     provider.setNoTargetText("<no event>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EventReference_Editor._Inline_ofn6x9_a0a("event"));
+    provider.setAuxiliaryCellProvider(new EventReference_Editor._Inline_ofn6x9_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -39,7 +39,7 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
     provider.setRole("componentType");
     provider.setNoTargetText("<no componentType>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BLArrayType_Editor._Inline_ryq81t_a0a("componentType"));
+    provider.setAuxiliaryCellProvider(new BLArrayType_Editor._Inline_ryq81t_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

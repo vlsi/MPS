@@ -38,7 +38,7 @@ public class XMLSAXAttributeReference_Editor extends DefaultNodeEditor {
     provider.setRole("attribute");
     provider.setNoTargetText("<no attribute>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new XMLSAXAttributeReference_Editor._Inline_air6th_a0a("attribute"));
+    provider.setAuxiliaryCellProvider(new XMLSAXAttributeReference_Editor._Inline_air6th_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

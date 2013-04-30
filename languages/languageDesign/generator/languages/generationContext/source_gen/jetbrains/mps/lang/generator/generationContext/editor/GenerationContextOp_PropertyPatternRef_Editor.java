@@ -38,7 +38,7 @@ public class GenerationContextOp_PropertyPatternRef_Editor extends DefaultNodeEd
     provider.setRole("propertyPatternVar");
     provider.setNoTargetText("<no propertyPatternVar>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_PropertyPatternRef_Editor._Inline_56eyyu_a0a("propertyPatternVar"));
+    provider.setAuxiliaryCellProvider(new GenerationContextOp_PropertyPatternRef_Editor._Inline_56eyyu_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

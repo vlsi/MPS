@@ -72,7 +72,7 @@ public class RelayQueryExpression_Editor extends DefaultNodeEditor {
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RelayQueryExpression_Editor._Inline_ne0cce_a2a("query"));
+    provider.setAuxiliaryCellProvider(new RelayQueryExpression_Editor._Inline_ne0cce_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

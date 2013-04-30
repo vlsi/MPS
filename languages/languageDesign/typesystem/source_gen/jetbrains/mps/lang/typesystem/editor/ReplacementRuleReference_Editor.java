@@ -42,7 +42,7 @@ public class ReplacementRuleReference_Editor extends DefaultNodeEditor {
     provider.setRole("replacementRule");
     provider.setNoTargetText("<no replacementRule>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReplacementRuleReference_Editor._Inline_lotkev_a0a("replacementRule"));
+    provider.setAuxiliaryCellProvider(new ReplacementRuleReference_Editor._Inline_lotkev_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

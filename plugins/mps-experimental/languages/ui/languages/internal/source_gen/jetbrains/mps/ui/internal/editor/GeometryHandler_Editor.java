@@ -75,7 +75,7 @@ public class GeometryHandler_Editor extends DefaultNodeEditor {
     provider.setRole("geometry");
     provider.setNoTargetText("<no geometry>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GeometryHandler_Editor._Inline_l8zkiy_a2a0("geometry"));
+    provider.setAuxiliaryCellProvider(new GeometryHandler_Editor._Inline_l8zkiy_a2a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

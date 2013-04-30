@@ -173,7 +173,7 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
     provider.setRole("overrides");
     provider.setNoTargetText("<nothing>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OldRefactoring_Editor._Inline_ivh5g9_a6a0("overrides"));
+    provider.setAuxiliaryCellProvider(new OldRefactoring_Editor._Inline_ivh5g9_a6a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -336,7 +336,7 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OldRefactoring_Editor._Inline_ivh5g9_a2b1b0("applicableConcept"));
+    provider.setAuxiliaryCellProvider(new OldRefactoring_Editor._Inline_ivh5g9_a2b1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

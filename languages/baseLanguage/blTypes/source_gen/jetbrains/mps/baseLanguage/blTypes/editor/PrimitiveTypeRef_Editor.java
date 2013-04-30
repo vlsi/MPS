@@ -38,7 +38,7 @@ public class PrimitiveTypeRef_Editor extends DefaultNodeEditor {
     provider.setRole("descriptor");
     provider.setNoTargetText("<no descriptor>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PrimitiveTypeRef_Editor._Inline_om7tp_a0a("descriptor"));
+    provider.setAuxiliaryCellProvider(new PrimitiveTypeRef_Editor._Inline_om7tp_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -43,7 +43,7 @@ public class ExternalCommandCall_Editor extends DefaultNodeEditor {
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExternalCommandCall_Editor._Inline_kvlfwn_a0a("declaration"));
+    provider.setAuxiliaryCellProvider(new ExternalCommandCall_Editor._Inline_kvlfwn_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

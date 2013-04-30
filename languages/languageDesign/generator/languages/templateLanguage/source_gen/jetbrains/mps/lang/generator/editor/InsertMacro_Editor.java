@@ -211,7 +211,7 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InsertMacro_Editor._Inline_iwpawc_a2b2a("mappingLabel"));
+    provider.setAuxiliaryCellProvider(new InsertMacro_Editor._Inline_iwpawc_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

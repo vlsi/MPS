@@ -103,7 +103,7 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
     provider.setRole("configurationKind");
     provider.setNoTargetText("<no configurationKind>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RunConfiguration_Editor._Inline_ryg3k0_a3a0("configurationKind"));
+    provider.setAuxiliaryCellProvider(new RunConfiguration_Editor._Inline_ryg3k0_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);

@@ -55,7 +55,7 @@ public class UIActionCode_Editor extends DefaultNodeEditor {
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new UIActionCode_Editor._Inline_1awxyi_a0a0("action"));
+    provider.setAuxiliaryCellProvider(new UIActionCode_Editor._Inline_1awxyi_a0a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

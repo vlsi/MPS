@@ -32,7 +32,7 @@ public class IdeaInitializerReference_Editor extends DefaultNodeEditor {
     provider.setRole("ideaInitializer");
     provider.setNoTargetText("<no ideaInitializer>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IdeaInitializerReference_Editor._Inline_vt9o3a_a0a("ideaInitializer"));
+    provider.setAuxiliaryCellProvider(new IdeaInitializerReference_Editor._Inline_vt9o3a_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

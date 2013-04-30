@@ -57,7 +57,7 @@ public class FooConcept_Editor extends DefaultNodeEditor {
     provider.setRole("bar");
     provider.setNoTargetText("<no bar>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FooConcept_Editor._Inline_nrhhad_a1a("bar"));
+    provider.setAuxiliaryCellProvider(new FooConcept_Editor._Inline_nrhhad_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);

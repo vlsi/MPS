@@ -46,7 +46,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no linkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptClauseLinkInfo_Editor._Inline_bap4zq_a0a("linkDeclaration"));
+    provider.setAuxiliaryCellProvider(new ConceptClauseLinkInfo_Editor._Inline_bap4zq_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

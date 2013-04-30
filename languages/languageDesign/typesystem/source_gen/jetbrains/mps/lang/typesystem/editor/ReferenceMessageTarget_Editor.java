@@ -47,7 +47,7 @@ public class ReferenceMessageTarget_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no linkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReferenceMessageTarget_Editor._Inline_hw91fj_a1a("linkDeclaration"));
+    provider.setAuxiliaryCellProvider(new ReferenceMessageTarget_Editor._Inline_hw91fj_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

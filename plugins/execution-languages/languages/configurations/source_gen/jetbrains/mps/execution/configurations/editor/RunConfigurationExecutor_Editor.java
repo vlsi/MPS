@@ -98,7 +98,7 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     provider.setRole("runConfiguration");
     provider.setNoTargetText("<no runConfiguration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RunConfigurationExecutor_Editor._Inline_g7zihj_a2b0("runConfiguration"));
+    provider.setAuxiliaryCellProvider(new RunConfigurationExecutor_Editor._Inline_g7zihj_a2b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

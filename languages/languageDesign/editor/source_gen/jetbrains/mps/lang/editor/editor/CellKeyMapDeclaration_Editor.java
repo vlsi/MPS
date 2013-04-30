@@ -190,7 +190,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<any>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellKeyMapDeclaration_Editor._Inline_zabbeg_a1e0("applicableConcept"));
+    provider.setAuxiliaryCellProvider(new CellKeyMapDeclaration_Editor._Inline_zabbeg_a1e0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

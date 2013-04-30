@@ -34,7 +34,7 @@ public class ConfigurationReference_Editor extends DefaultNodeEditor {
     provider.setRole("configuration");
     provider.setNoTargetText("<no configuration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConfigurationReference_Editor._Inline_cyt33v_a0a("configuration"));
+    provider.setAuxiliaryCellProvider(new ConfigurationReference_Editor._Inline_cyt33v_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

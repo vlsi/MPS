@@ -35,7 +35,7 @@ public class Transition_Editor extends DefaultNodeEditor {
     provider.setRole("trigger");
     provider.setNoTargetText("<no trigger>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Transition_Editor._Inline_jj4qz_a0a("trigger"));
+    provider.setAuxiliaryCellProvider(new Transition_Editor._Inline_jj4qz_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -99,7 +99,7 @@ public class Transition_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Transition_Editor._Inline_jj4qz_a2a("target"));
+    provider.setAuxiliaryCellProvider(new Transition_Editor._Inline_jj4qz_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

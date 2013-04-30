@@ -69,7 +69,7 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeSubstituteActionsBuilder_Editor._Inline_nhjrih_a1a0("applicableConcept"));
+    provider.setAuxiliaryCellProvider(new NodeSubstituteActionsBuilder_Editor._Inline_nhjrih_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

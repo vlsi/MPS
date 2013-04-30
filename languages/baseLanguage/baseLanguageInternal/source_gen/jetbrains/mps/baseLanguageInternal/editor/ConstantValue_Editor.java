@@ -94,7 +94,7 @@ public class ConstantValue_Editor extends DefaultNodeEditor {
     provider.setRole("constant");
     provider.setNoTargetText("<no constant>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConstantValue_Editor._Inline_si17nj_a4a("constant"));
+    provider.setAuxiliaryCellProvider(new ConstantValue_Editor._Inline_si17nj_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

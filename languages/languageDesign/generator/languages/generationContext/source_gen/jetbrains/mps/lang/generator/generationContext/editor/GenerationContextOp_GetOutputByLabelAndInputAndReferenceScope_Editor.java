@@ -53,7 +53,7 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     provider.setRole("label");
     provider.setNoTargetText("<choose mapping label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor._Inline_m29bq_a1a("label"));
+    provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor._Inline_m29bq_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     jetbrains.mps.lang.generator.editor.Styles_StyleSheet.applyMappingLabelReference(style, editorCell);

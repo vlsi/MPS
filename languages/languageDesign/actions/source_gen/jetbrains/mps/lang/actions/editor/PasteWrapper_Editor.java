@@ -61,7 +61,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     provider.setRole("sourceConcept");
     provider.setNoTargetText("<no sourceConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline_eyosg6_a1a0("sourceConcept"));
+    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline_eyosg6_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -125,7 +125,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     provider.setRole("targetConcept");
     provider.setNoTargetText("<no targetConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline_eyosg6_a3a0("targetConcept"));
+    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline_eyosg6_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

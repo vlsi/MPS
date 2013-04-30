@@ -32,7 +32,7 @@ public class TemplateSwitchReference_Editor extends DefaultNodeEditor {
     provider.setRole("templateSwitch");
     provider.setNoTargetText("<choose switch>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateSwitchReference_Editor._Inline_a3kslj_a0a("templateSwitch"));
+    provider.setAuxiliaryCellProvider(new TemplateSwitchReference_Editor._Inline_a3kslj_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

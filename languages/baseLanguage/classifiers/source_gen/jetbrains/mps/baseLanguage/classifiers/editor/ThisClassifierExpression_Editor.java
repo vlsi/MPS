@@ -59,7 +59,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ThisClassifierExpression_Editor._Inline_kpqhey_a0a0("classifier"));
+    provider.setAuxiliaryCellProvider(new ThisClassifierExpression_Editor._Inline_kpqhey_a0a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

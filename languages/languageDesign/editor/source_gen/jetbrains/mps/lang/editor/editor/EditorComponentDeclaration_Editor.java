@@ -136,7 +136,7 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EditorComponentDeclaration_Editor._Inline_qbcy69_a1b1b0("conceptDeclaration"));
+    provider.setAuxiliaryCellProvider(new EditorComponentDeclaration_Editor._Inline_qbcy69_a1b1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

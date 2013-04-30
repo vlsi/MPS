@@ -73,7 +73,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
     provider.setRole("targetDeclaration");
     provider.setNoTargetText("<no targetDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Antcall_Editor._Inline_xq8xtf_a1a0("targetDeclaration"));
+    provider.setAuxiliaryCellProvider(new Antcall_Editor._Inline_xq8xtf_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -137,7 +137,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
     provider.setRole("project");
     provider.setNoTargetText("<no project>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Antcall_Editor._Inline_xq8xtf_a3a0("project"));
+    provider.setAuxiliaryCellProvider(new Antcall_Editor._Inline_xq8xtf_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

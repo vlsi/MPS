@@ -37,7 +37,7 @@ public class RefTestMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("method");
     provider.setNoTargetText("<no method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RefTestMethodCall_Editor._Inline_qc2qxw_a0a("method"));
+    provider.setAuxiliaryCellProvider(new RefTestMethodCall_Editor._Inline_qc2qxw_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

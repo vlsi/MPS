@@ -53,7 +53,7 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
     provider.setRole("finder");
     provider.setNoTargetText("<no finder>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExecuteFinderExpression_Editor._Inline_ydcqpo_a1a("finder"));
+    provider.setAuxiliaryCellProvider(new ExecuteFinderExpression_Editor._Inline_ydcqpo_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyMethodName(style, editorCell);

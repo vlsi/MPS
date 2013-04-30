@@ -111,7 +111,7 @@ public class Group_Editor extends DefaultNodeEditor {
     provider.setRole("groupClass");
     provider.setNoTargetText("<no groupClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Group_Editor._Inline_o84zp2_a2b0a("groupClass"));
+    provider.setAuxiliaryCellProvider(new Group_Editor._Inline_o84zp2_a2b0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

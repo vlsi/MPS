@@ -62,7 +62,7 @@ public class GetToolInProjectOperation_Editor extends DefaultNodeEditor {
     provider.setRole("tool");
     provider.setNoTargetText("<no tool>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GetToolInProjectOperation_Editor._Inline_xenzxx_a2a("tool"));
+    provider.setAuxiliaryCellProvider(new GetToolInProjectOperation_Editor._Inline_xenzxx_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

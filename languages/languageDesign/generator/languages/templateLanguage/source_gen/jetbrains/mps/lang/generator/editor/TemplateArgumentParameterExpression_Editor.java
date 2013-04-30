@@ -32,7 +32,7 @@ public class TemplateArgumentParameterExpression_Editor extends DefaultNodeEdito
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateArgumentParameterExpression_Editor._Inline_k33vz5_a0a("parameter"));
+    provider.setAuxiliaryCellProvider(new TemplateArgumentParameterExpression_Editor._Inline_k33vz5_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

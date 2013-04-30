@@ -48,7 +48,7 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleShortcutChange_Editor._Inline_x0wya_a0a("action"));
+    provider.setAuxiliaryCellProvider(new SimpleShortcutChange_Editor._Inline_x0wya_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));

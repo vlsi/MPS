@@ -36,7 +36,7 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
     provider.setRole("nodeKind");
     provider.setNoTargetText("kind?");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TreeNodeKindOccurrence_Editor._Inline_guc81v_a0a("nodeKind"));
+    provider.setAuxiliaryCellProvider(new TreeNodeKindOccurrence_Editor._Inline_guc81v_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");

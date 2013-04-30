@@ -41,7 +41,7 @@ public class MPSPluginDependency_Editor extends DefaultNodeEditor {
     provider.setRole("plugin");
     provider.setNoTargetText("<no plugin>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MPSPluginDependency_Editor._Inline_v26ttb_a1a("plugin"));
+    provider.setAuxiliaryCellProvider(new MPSPluginDependency_Editor._Inline_v26ttb_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

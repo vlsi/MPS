@@ -32,7 +32,7 @@ public class DocTypeParameterReference_Editor extends DefaultNodeEditor {
     provider.setRole("typeVariableDeclaration");
     provider.setNoTargetText("<no typeVariableDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DocTypeParameterReference_Editor._Inline_9ukojg_a0a("typeVariableDeclaration"));
+    provider.setAuxiliaryCellProvider(new DocTypeParameterReference_Editor._Inline_9ukojg_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

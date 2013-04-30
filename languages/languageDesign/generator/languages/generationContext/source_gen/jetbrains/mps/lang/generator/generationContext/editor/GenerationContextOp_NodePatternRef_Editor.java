@@ -38,7 +38,7 @@ public class GenerationContextOp_NodePatternRef_Editor extends DefaultNodeEditor
     provider.setRole("patternVarDecl");
     provider.setNoTargetText("<no patternVarDecl>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_NodePatternRef_Editor._Inline_i26oow_a0a("patternVarDecl"));
+    provider.setAuxiliaryCellProvider(new GenerationContextOp_NodePatternRef_Editor._Inline_i26oow_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

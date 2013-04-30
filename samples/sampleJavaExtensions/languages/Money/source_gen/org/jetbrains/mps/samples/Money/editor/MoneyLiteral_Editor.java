@@ -53,7 +53,7 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
     provider.setRole("unit");
     provider.setNoTargetText("<no unit>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MoneyLiteral_Editor._Inline_84i1v2_a1a("unit"));
+    provider.setAuxiliaryCellProvider(new MoneyLiteral_Editor._Inline_84i1v2_a1a());
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);

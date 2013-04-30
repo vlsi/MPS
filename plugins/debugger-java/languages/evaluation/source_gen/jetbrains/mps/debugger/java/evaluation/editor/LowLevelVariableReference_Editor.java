@@ -32,7 +32,7 @@ public class LowLevelVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("variableDeclaration");
     provider.setNoTargetText("<no variableDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LowLevelVariableReference_Editor._Inline_gezuba_a0a("variableDeclaration"));
+    provider.setAuxiliaryCellProvider(new LowLevelVariableReference_Editor._Inline_gezuba_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

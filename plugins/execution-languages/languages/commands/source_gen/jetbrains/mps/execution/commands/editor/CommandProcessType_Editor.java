@@ -61,7 +61,7 @@ public class CommandProcessType_Editor extends DefaultNodeEditor {
     provider.setRole("commandDeclaration");
     provider.setNoTargetText("<no commandDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CommandProcessType_Editor._Inline_9m9s9z_a2a("commandDeclaration"));
+    provider.setAuxiliaryCellProvider(new CommandProcessType_Editor._Inline_9m9s9z_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

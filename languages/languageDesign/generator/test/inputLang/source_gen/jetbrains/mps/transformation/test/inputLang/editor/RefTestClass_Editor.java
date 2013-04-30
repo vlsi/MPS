@@ -82,7 +82,7 @@ public class RefTestClass_Editor extends DefaultNodeEditor {
     provider.setRole("extends");
     provider.setNoTargetText("<no extends>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RefTestClass_Editor._Inline_cblid8_a3a("extends"));
+    provider.setAuxiliaryCellProvider(new RefTestClass_Editor._Inline_cblid8_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

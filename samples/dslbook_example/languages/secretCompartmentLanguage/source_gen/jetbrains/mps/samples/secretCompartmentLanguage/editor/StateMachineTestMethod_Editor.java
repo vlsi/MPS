@@ -175,7 +175,7 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     provider.setRole("finalState");
     provider.setNoTargetText("<no finalState>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StateMachineTestMethod_Editor._Inline_ttjdsx_a1b1b0("finalState"));
+    provider.setAuxiliaryCellProvider(new StateMachineTestMethod_Editor._Inline_ttjdsx_a1b1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

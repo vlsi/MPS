@@ -32,7 +32,7 @@ public class StaticFieldDocReference_Editor extends DefaultNodeEditor {
     provider.setRole("staticFieldDeclaration");
     provider.setNoTargetText("<no staticFieldDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StaticFieldDocReference_Editor._Inline_np8u6u_a0a("staticFieldDeclaration"));
+    provider.setAuxiliaryCellProvider(new StaticFieldDocReference_Editor._Inline_np8u6u_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

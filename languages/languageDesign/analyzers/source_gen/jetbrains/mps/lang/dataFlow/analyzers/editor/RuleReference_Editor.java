@@ -32,7 +32,7 @@ public class RuleReference_Editor extends DefaultNodeEditor {
     provider.setRole("rule");
     provider.setNoTargetText("<no rule>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RuleReference_Editor._Inline_b21fry_a0a("rule"));
+    provider.setAuxiliaryCellProvider(new RuleReference_Editor._Inline_b21fry_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

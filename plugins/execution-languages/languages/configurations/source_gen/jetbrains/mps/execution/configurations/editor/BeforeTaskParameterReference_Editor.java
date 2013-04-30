@@ -35,7 +35,7 @@ public class BeforeTaskParameterReference_Editor extends DefaultNodeEditor {
     provider.setRole("parameterDeclaration");
     provider.setNoTargetText("<no parameterDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BeforeTaskParameterReference_Editor._Inline_b3ikdv_a0a("parameterDeclaration"));
+    provider.setAuxiliaryCellProvider(new BeforeTaskParameterReference_Editor._Inline_b3ikdv_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

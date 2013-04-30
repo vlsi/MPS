@@ -75,7 +75,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a2a("linkDeclaration"));
+    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBordered(style, editorCell);
@@ -257,7 +257,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1a3a("linkDeclaration"));
+    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1a3a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     SharedStyles_StyleSheet.applyReferenceDecorated(style, editorCell);
@@ -349,7 +349,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     provider.setRole("editorComponent");
     provider.setNoTargetText("error! no editor component");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1b3a("editorComponent"));
+    provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1b3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -393,7 +393,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       provider.setRole("conceptDeclaration");
       provider.setNoTargetText("error! no associated concept");
       EditorCell editorCell;
-      provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1b3a._Inline_lfsepz_a0a0b1d0("conceptDeclaration"));
+      provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline_lfsepz_a1b3a._Inline_lfsepz_a0a0b1d0());
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

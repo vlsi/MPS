@@ -43,7 +43,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PredefinedSymbolClassSymbolClassPart_Editor._Inline_u0vlk9_a0a("declaration"));
+    provider.setAuxiliaryCellProvider(new PredefinedSymbolClassSymbolClassPart_Editor._Inline_u0vlk9_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -130,7 +130,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PredefinedSymbolClassSymbolClassPart_Editor._Inline_u0vlk9_a1a0("declaration"));
+    provider.setAuxiliaryCellProvider(new PredefinedSymbolClassSymbolClassPart_Editor._Inline_u0vlk9_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

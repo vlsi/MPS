@@ -62,7 +62,7 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     provider.setRole("quickFix");
     provider.setNoTargetText("<no quickFix>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TypesystemIntention_Editor._Inline_il97sk_a0a0("quickFix"));
+    provider.setAuxiliaryCellProvider(new TypesystemIntention_Editor._Inline_il97sk_a0a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -152,7 +152,7 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<any node>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateDeclaration_Editor._Inline_pyph5i_a1b0a("applicableConcept"));
+    provider.setAuxiliaryCellProvider(new TemplateDeclaration_Editor._Inline_pyph5i_a1b0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

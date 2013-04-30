@@ -61,7 +61,7 @@ public class CommandType_Editor extends DefaultNodeEditor {
     provider.setRole("command");
     provider.setNoTargetText("<no command>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CommandType_Editor._Inline_2uesqr_a2a("command"));
+    provider.setAuxiliaryCellProvider(new CommandType_Editor._Inline_2uesqr_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

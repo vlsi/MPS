@@ -32,7 +32,7 @@ public class InputFieldReference_Editor extends DefaultNodeEditor {
     provider.setRole("field");
     provider.setNoTargetText("<no field>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InputFieldReference_Editor._Inline_tvw6ko_a0a("field"));
+    provider.setAuxiliaryCellProvider(new InputFieldReference_Editor._Inline_tvw6ko_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

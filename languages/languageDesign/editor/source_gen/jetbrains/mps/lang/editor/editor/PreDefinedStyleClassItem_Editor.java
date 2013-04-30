@@ -73,7 +73,7 @@ public class PreDefinedStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setRole("key");
     provider.setNoTargetText("<no key>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PreDefinedStyleClassItem_Editor._Inline_vnxsp2_a2a("key"));
+    provider.setAuxiliaryCellProvider(new PreDefinedStyleClassItem_Editor._Inline_vnxsp2_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -46,7 +46,7 @@ public class HighLevelWatchableCreator_Editor extends DefaultNodeEditor {
     provider.setRole("watchable");
     provider.setNoTargetText("<no watchable>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new HighLevelWatchableCreator_Editor._Inline_h88a5f_a1a("watchable"));
+    provider.setAuxiliaryCellProvider(new HighLevelWatchableCreator_Editor._Inline_h88a5f_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

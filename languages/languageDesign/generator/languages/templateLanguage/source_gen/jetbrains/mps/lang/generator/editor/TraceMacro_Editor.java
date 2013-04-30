@@ -210,7 +210,7 @@ public class TraceMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TraceMacro_Editor._Inline_s4priq_a2b2a("mappingLabel"));
+    provider.setAuxiliaryCellProvider(new TraceMacro_Editor._Inline_s4priq_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

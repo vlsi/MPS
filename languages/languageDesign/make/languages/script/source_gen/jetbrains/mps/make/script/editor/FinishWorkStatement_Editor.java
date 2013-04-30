@@ -49,7 +49,7 @@ public class FinishWorkStatement_Editor extends DefaultNodeEditor {
     provider.setRole("workStatement");
     provider.setNoTargetText("<no workStatement>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FinishWorkStatement_Editor._Inline_c3e6b4_a1a("workStatement"));
+    provider.setAuxiliaryCellProvider(new FinishWorkStatement_Editor._Inline_c3e6b4_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

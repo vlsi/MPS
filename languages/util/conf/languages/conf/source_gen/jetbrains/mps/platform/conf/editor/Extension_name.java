@@ -45,7 +45,7 @@ public class Extension_name extends AbstractCellProvider {
     provider.setRole("extensionPoint");
     provider.setNoTargetText("<no extensionPoint>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Extension_name._Inline_rol0et_a0a("extensionPoint"));
+    provider.setAuxiliaryCellProvider(new Extension_name._Inline_rol0et_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

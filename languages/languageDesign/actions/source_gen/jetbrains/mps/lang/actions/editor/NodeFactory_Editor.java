@@ -55,7 +55,7 @@ public class NodeFactory_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeFactory_Editor._Inline_5y8bki_a1a0("applicableConcept"));
+    provider.setAuxiliaryCellProvider(new NodeFactory_Editor._Inline_5y8bki_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

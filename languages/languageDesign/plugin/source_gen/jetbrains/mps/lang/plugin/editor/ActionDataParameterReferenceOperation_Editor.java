@@ -37,7 +37,7 @@ public class ActionDataParameterReferenceOperation_Editor extends DefaultNodeEdi
     provider.setRole("parameterDeclaration");
     provider.setNoTargetText("<no parameterDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionDataParameterReferenceOperation_Editor._Inline_867j1v_a0a("parameterDeclaration"));
+    provider.setAuxiliaryCellProvider(new ActionDataParameterReferenceOperation_Editor._Inline_867j1v_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

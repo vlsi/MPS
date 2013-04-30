@@ -72,7 +72,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
     provider.setRole("matchingConcept");
     provider.setNoTargetText("<no matchingConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptTypeClause_Editor._Inline_69byel_a2a("matchingConcept"));
+    provider.setAuxiliaryCellProvider(new ConceptTypeClause_Editor._Inline_69byel_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

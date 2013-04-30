@@ -91,7 +91,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose applicable concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Root_MappingRule_Editor._Inline_pxqe0v_a1a0a("applicableConcept"));
+    provider.setAuxiliaryCellProvider(new Root_MappingRule_Editor._Inline_pxqe0v_a1a0a());
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
@@ -298,7 +298,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Root_MappingRule_Editor._Inline_pxqe0v_a0c0("labelDeclaration"));
+    provider.setAuxiliaryCellProvider(new Root_MappingRule_Editor._Inline_pxqe0v_a0c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -365,7 +365,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("template");
     provider.setNoTargetText("<no template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Root_MappingRule_Editor._Inline_pxqe0v_a3a("template"));
+    provider.setAuxiliaryCellProvider(new Root_MappingRule_Editor._Inline_pxqe0v_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -490,7 +490,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Root_MappingRule_Editor._Inline_pxqe0v_a1c0("labelDeclaration"));
+    provider.setAuxiliaryCellProvider(new Root_MappingRule_Editor._Inline_pxqe0v_a1c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

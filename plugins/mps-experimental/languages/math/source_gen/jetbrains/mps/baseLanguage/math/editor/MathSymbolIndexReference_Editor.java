@@ -32,7 +32,7 @@ public class MathSymbolIndexReference_Editor extends DefaultNodeEditor {
     provider.setRole("indexRef");
     provider.setNoTargetText("<no indexRef>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MathSymbolIndexReference_Editor._Inline_ez8int_a0a("indexRef"));
+    provider.setAuxiliaryCellProvider(new MathSymbolIndexReference_Editor._Inline_ez8int_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

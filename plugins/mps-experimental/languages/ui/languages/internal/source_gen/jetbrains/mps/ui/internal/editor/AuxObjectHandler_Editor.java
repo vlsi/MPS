@@ -57,7 +57,7 @@ public class AuxObjectHandler_Editor extends DefaultNodeEditor {
     provider.setRole("auxObjectTemplate");
     provider.setNoTargetText("<no auxObjectTemplate>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AuxObjectHandler_Editor._Inline_vq04xu_a1a0("auxObjectTemplate"));
+    provider.setAuxiliaryCellProvider(new AuxObjectHandler_Editor._Inline_vq04xu_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

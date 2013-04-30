@@ -46,7 +46,7 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LabelPosition_Editor._Inline_xi88on_a1a("label"));
+    provider.setAuxiliaryCellProvider(new LabelPosition_Editor._Inline_xi88on_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -66,7 +66,7 @@ public class CustomMapCreator_Editor extends DefaultNodeEditor {
     provider.setRole("containerDeclaration");
     provider.setNoTargetText("<no containerDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CustomMapCreator_Editor._Inline_jxu7lh_a1a0("containerDeclaration"));
+    provider.setAuxiliaryCellProvider(new CustomMapCreator_Editor._Inline_jxu7lh_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

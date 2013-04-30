@@ -38,7 +38,7 @@ public class PatternVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("patternVarDecl");
     provider.setNoTargetText("<no patternVarDecl>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PatternVariableReference_Editor._Inline_bm8m1i_a0a("patternVarDecl"));
+    provider.setAuxiliaryCellProvider(new PatternVariableReference_Editor._Inline_bm8m1i_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

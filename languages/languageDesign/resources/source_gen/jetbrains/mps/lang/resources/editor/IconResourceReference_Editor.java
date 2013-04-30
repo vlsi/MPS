@@ -62,7 +62,7 @@ public class IconResourceReference_Editor extends DefaultNodeEditor {
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IconResourceReference_Editor._Inline_yu3d6c_a2a("declaration"));
+    provider.setAuxiliaryCellProvider(new IconResourceReference_Editor._Inline_yu3d6c_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

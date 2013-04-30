@@ -47,7 +47,7 @@ public class ProjectDescriptionReference_Editor extends DefaultNodeEditor {
     provider.setRole("description");
     provider.setNoTargetText("<no description>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ProjectDescriptionReference_Editor._Inline_aqci7m_a1a("description"));
+    provider.setAuxiliaryCellProvider(new ProjectDescriptionReference_Editor._Inline_aqci7m_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

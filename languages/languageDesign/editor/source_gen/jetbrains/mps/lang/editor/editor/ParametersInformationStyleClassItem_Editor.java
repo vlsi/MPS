@@ -55,7 +55,7 @@ public class ParametersInformationStyleClassItem_Editor extends DefaultNodeEdito
     provider.setRole("parametersInformation");
     provider.setNoTargetText("<no parametersInformation>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ParametersInformationStyleClassItem_Editor._Inline_foagvc_a2a("parametersInformation"));
+    provider.setAuxiliaryCellProvider(new ParametersInformationStyleClassItem_Editor._Inline_foagvc_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

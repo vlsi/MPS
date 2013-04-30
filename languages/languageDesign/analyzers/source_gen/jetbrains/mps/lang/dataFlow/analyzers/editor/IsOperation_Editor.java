@@ -60,7 +60,7 @@ public class IsOperation_Editor extends DefaultNodeEditor {
     provider.setRole("instruction");
     provider.setNoTargetText("<no instruction>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IsOperation_Editor._Inline_5ag8rr_a2a("instruction"));
+    provider.setAuxiliaryCellProvider(new IsOperation_Editor._Inline_5ag8rr_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -32,7 +32,7 @@ public class FieldDocReference_Editor extends DefaultNodeEditor {
     provider.setRole("fieldDeclaration");
     provider.setNoTargetText("<no fieldDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FieldDocReference_Editor._Inline_mgmaof_a0a("fieldDeclaration"));
+    provider.setAuxiliaryCellProvider(new FieldDocReference_Editor._Inline_mgmaof_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

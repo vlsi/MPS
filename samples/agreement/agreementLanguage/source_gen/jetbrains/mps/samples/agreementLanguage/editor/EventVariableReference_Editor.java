@@ -38,7 +38,7 @@ public class EventVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("eventVariable");
     provider.setNoTargetText("<no variable>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EventVariableReference_Editor._Inline_w32ae3_a0a("eventVariable"));
+    provider.setAuxiliaryCellProvider(new EventVariableReference_Editor._Inline_w32ae3_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

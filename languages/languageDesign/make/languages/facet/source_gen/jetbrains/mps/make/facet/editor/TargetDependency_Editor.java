@@ -69,7 +69,7 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
     provider.setRole("dependsOn");
     provider.setNoTargetText("<no dependsOn>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TargetDependency_Editor._Inline_x08tk8_a1a("dependsOn"));
+    provider.setAuxiliaryCellProvider(new TargetDependency_Editor._Inline_x08tk8_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

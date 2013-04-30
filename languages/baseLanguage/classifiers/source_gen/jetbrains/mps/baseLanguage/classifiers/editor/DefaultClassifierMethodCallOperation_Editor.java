@@ -58,7 +58,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     provider.setRole("method");
     provider.setNoTargetText("<no method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DefaultClassifierMethodCallOperation_Editor._Inline_c9gv4j_a0a("method"));
+    provider.setAuxiliaryCellProvider(new DefaultClassifierMethodCallOperation_Editor._Inline_c9gv4j_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

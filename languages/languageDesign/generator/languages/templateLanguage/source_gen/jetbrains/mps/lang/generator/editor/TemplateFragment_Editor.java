@@ -64,7 +64,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateFragment_Editor._Inline_73o0fl_a1a("labelDeclaration"));
+    provider.setAuxiliaryCellProvider(new TemplateFragment_Editor._Inline_73o0fl_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -228,7 +228,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateFragment_Editor._Inline_73o0fl_a2a2a("labelDeclaration"));
+    provider.setAuxiliaryCellProvider(new TemplateFragment_Editor._Inline_73o0fl_a2a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

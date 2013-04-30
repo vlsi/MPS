@@ -211,7 +211,7 @@ public class CopySrcListMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CopySrcListMacro_Editor._Inline_vmyx7q_a2b2a("mappingLabel"));
+    provider.setAuxiliaryCellProvider(new CopySrcListMacro_Editor._Inline_vmyx7q_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

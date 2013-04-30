@@ -32,7 +32,7 @@ public class OrderReference_Editor extends DefaultNodeEditor {
     provider.setRole("order");
     provider.setNoTargetText("<no order>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OrderReference_Editor._Inline_7oy693_a0a("order"));
+    provider.setAuxiliaryCellProvider(new OrderReference_Editor._Inline_7oy693_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

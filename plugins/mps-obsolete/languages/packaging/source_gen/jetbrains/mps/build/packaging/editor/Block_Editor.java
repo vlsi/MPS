@@ -92,7 +92,7 @@ public class Block_Editor extends DefaultNodeEditor {
     provider.setRole("layout");
     provider.setNoTargetText("everywhere");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Block_Editor._Inline_kw2rpr_a3a0("layout"));
+    provider.setAuxiliaryCellProvider(new Block_Editor._Inline_kw2rpr_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

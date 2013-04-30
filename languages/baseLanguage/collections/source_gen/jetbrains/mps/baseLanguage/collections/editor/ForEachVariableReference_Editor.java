@@ -37,7 +37,7 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ForEachVariableReference_Editor._Inline_wbhc03_a0a("variable"));
+    provider.setAuxiliaryCellProvider(new ForEachVariableReference_Editor._Inline_wbhc03_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

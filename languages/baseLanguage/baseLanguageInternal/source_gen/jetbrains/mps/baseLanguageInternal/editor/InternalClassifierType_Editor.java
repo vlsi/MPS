@@ -110,7 +110,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0("classifier"));
+    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -302,7 +302,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0_0("classifier"));
+    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

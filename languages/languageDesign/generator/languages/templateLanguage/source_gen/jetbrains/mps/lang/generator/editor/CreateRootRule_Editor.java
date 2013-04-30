@@ -102,7 +102,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CreateRootRule_Editor._Inline_7t32xl_a0d0("label"));
+    provider.setAuxiliaryCellProvider(new CreateRootRule_Editor._Inline_7t32xl_a0d0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -173,7 +173,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     provider.setRole("templateNode");
     provider.setNoTargetText("<no template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CreateRootRule_Editor._Inline_7t32xl_a4a("templateNode"));
+    provider.setAuxiliaryCellProvider(new CreateRootRule_Editor._Inline_7t32xl_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -311,7 +311,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CreateRootRule_Editor._Inline_7t32xl_a2c0("label"));
+    provider.setAuxiliaryCellProvider(new CreateRootRule_Editor._Inline_7t32xl_a2c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

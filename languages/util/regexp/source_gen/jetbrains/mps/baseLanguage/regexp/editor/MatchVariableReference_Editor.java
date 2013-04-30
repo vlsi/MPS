@@ -40,7 +40,7 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("match");
     provider.setNoTargetText("<no match>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatchVariableReference_Editor._Inline_ik3m7l_a0a("match"));
+    provider.setAuxiliaryCellProvider(new MatchVariableReference_Editor._Inline_ik3m7l_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

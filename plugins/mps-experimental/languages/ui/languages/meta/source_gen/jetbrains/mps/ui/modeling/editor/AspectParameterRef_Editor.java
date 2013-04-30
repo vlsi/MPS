@@ -32,7 +32,7 @@ public class AspectParameterRef_Editor extends DefaultNodeEditor {
     provider.setRole("parameterDecl");
     provider.setNoTargetText("<no parameterDecl>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AspectParameterRef_Editor._Inline_awzw7p_a0a("parameterDecl"));
+    provider.setAuxiliaryCellProvider(new AspectParameterRef_Editor._Inline_awzw7p_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

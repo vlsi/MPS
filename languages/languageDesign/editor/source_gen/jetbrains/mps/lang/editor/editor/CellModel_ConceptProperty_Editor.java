@@ -59,7 +59,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<choose property declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_ConceptProperty_Editor._Inline_rbbf37_a1a("propertyDeclaration"));
+    provider.setAuxiliaryCellProvider(new CellModel_ConceptProperty_Editor._Inline_rbbf37_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
@@ -276,7 +276,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<choose property declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_ConceptProperty_Editor._Inline_rbbf37_a1a3a("propertyDeclaration"));
+    provider.setAuxiliaryCellProvider(new CellModel_ConceptProperty_Editor._Inline_rbbf37_a1a3a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);

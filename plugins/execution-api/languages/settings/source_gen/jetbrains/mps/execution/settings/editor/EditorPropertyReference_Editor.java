@@ -35,7 +35,7 @@ public class EditorPropertyReference_Editor extends DefaultNodeEditor {
     provider.setRole("editorPropertyDeclaration");
     provider.setNoTargetText("<no editorPropertyDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EditorPropertyReference_Editor._Inline_vwkr0x_a0a("editorPropertyDeclaration"));
+    provider.setAuxiliaryCellProvider(new EditorPropertyReference_Editor._Inline_vwkr0x_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

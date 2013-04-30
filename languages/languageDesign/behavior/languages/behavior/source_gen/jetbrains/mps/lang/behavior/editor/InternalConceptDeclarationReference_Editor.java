@@ -41,7 +41,7 @@ public class InternalConceptDeclarationReference_Editor extends DefaultNodeEdito
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InternalConceptDeclarationReference_Editor._Inline_wcbhig_a1a("concept"));
+    provider.setAuxiliaryCellProvider(new InternalConceptDeclarationReference_Editor._Inline_wcbhig_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

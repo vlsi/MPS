@@ -48,7 +48,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     provider.setRole("keyMap");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new _CellKeyMapLnk_Component._Inline_teu4t0_a0a("keyMap"));
+    provider.setAuxiliaryCellProvider(new _CellKeyMapLnk_Component._Inline_teu4t0_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);

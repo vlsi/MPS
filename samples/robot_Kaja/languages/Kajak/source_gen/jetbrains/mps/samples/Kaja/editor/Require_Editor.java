@@ -48,7 +48,7 @@ public class Require_Editor extends DefaultNodeEditor {
     provider.setRole("library");
     provider.setNoTargetText("<no library>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Require_Editor._Inline_7hmin7_a1a("library"));
+    provider.setAuxiliaryCellProvider(new Require_Editor._Inline_7hmin7_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

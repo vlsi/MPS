@@ -38,7 +38,7 @@ public class LinkPatternVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("patternVarDecl");
     provider.setNoTargetText("<no patternVarDecl>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LinkPatternVariableReference_Editor._Inline_wvkzjd_a0a("patternVarDecl"));
+    provider.setAuxiliaryCellProvider(new LinkPatternVariableReference_Editor._Inline_wvkzjd_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

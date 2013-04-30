@@ -87,7 +87,7 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<no applicableConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DependentComputationItem_Editor._Inline_i53w7s_a3a("applicableConcept"));
+    provider.setAuxiliaryCellProvider(new DependentComputationItem_Editor._Inline_i53w7s_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -202,7 +202,7 @@ public class DependentComputationItem_Editor extends DefaultNodeEditor {
     provider.setRole("blockingNodeConcept");
     provider.setNoTargetText("<no blockingNodeConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DependentComputationItem_Editor._Inline_i53w7s_a9a("blockingNodeConcept"));
+    provider.setAuxiliaryCellProvider(new DependentComputationItem_Editor._Inline_i53w7s_a9a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

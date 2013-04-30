@@ -119,7 +119,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no conceptDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptTextGenDeclaration_Editor._Inline_9mcqjq_a5a("conceptDeclaration"));
+    provider.setAuxiliaryCellProvider(new ConceptTextGenDeclaration_Editor._Inline_9mcqjq_a5a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -313,7 +313,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     provider.setRole("runtimeIface");
     provider.setNoTargetText("<no runtimeIface>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FunctionType_Editor._Inline_bqk3nx_a1a0("runtimeIface"));
+    provider.setAuxiliaryCellProvider(new FunctionType_Editor._Inline_bqk3nx_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

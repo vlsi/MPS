@@ -52,7 +52,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionInstance_Editor._Inline_lu5mzk_a0a("action"));
+    provider.setAuxiliaryCellProvider(new ActionInstance_Editor._Inline_lu5mzk_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

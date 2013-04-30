@@ -43,7 +43,7 @@ public class XInclude_Editor extends DefaultNodeEditor {
     provider.setRole("document");
     provider.setNoTargetText("<no document>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new XInclude_Editor._Inline_87hi9q_a1a("document"));
+    provider.setAuxiliaryCellProvider(new XInclude_Editor._Inline_87hi9q_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -52,7 +52,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ParameterizedShortcutChange_Editor._Inline_ecw4ny_a0a("action"));
+    provider.setAuxiliaryCellProvider(new ParameterizedShortcutChange_Editor._Inline_ecw4ny_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));

@@ -178,7 +178,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PatternReduction_MappingRule_Editor._Inline_o2w2pr_a0b1a("labelDeclaration"));
+    provider.setAuxiliaryCellProvider(new PatternReduction_MappingRule_Editor._Inline_o2w2pr_a0b1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -326,7 +326,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PatternReduction_MappingRule_Editor._Inline_o2w2pr_a1c0("labelDeclaration"));
+    provider.setAuxiliaryCellProvider(new PatternReduction_MappingRule_Editor._Inline_o2w2pr_a1c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -93,7 +93,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AddMenuPart_Editor._Inline_yjtbks_a1b0a("concept"));
+    provider.setAuxiliaryCellProvider(new AddMenuPart_Editor._Inline_yjtbks_a1b0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

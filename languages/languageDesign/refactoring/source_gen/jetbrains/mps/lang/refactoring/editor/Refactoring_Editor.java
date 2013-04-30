@@ -160,7 +160,7 @@ public class Refactoring_Editor extends DefaultNodeEditor {
     provider.setRole("overrides");
     provider.setNoTargetText("<nothing>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Refactoring_Editor._Inline_kt8f5i_a6a0("overrides"));
+    provider.setAuxiliaryCellProvider(new Refactoring_Editor._Inline_kt8f5i_a6a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

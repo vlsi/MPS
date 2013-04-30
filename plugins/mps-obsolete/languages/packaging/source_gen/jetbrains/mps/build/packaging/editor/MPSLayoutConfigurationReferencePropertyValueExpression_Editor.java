@@ -34,7 +34,7 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
     provider.setRole("configuration");
     provider.setNoTargetText("<no configuration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MPSLayoutConfigurationReferencePropertyValueExpression_Editor._Inline_71sslv_a0a("configuration"));
+    provider.setAuxiliaryCellProvider(new MPSLayoutConfigurationReferencePropertyValueExpression_Editor._Inline_71sslv_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

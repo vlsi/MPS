@@ -37,7 +37,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<choose property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Property_Editor._Inline_4l3rbt_a0a("propertyDeclaration"));
+    provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Property_Editor._Inline_4l3rbt_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

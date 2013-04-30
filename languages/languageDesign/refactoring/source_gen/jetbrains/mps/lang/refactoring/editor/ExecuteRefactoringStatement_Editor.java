@@ -80,7 +80,7 @@ public class ExecuteRefactoringStatement_Editor extends DefaultNodeEditor {
     provider.setRole("refactoring");
     provider.setNoTargetText("<no refactoring>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExecuteRefactoringStatement_Editor._Inline_aspgo4_a2a("refactoring"));
+    provider.setAuxiliaryCellProvider(new ExecuteRefactoringStatement_Editor._Inline_aspgo4_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

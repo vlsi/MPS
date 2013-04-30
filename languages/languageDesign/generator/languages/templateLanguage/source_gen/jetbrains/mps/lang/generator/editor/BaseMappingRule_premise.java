@@ -83,7 +83,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose applicable concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BaseMappingRule_premise._Inline_v63wqt_a1a0("applicableConcept"));
+    provider.setAuxiliaryCellProvider(new BaseMappingRule_premise._Inline_v63wqt_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);

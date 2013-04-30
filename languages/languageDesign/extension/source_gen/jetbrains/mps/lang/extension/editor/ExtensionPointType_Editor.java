@@ -62,7 +62,7 @@ public class ExtensionPointType_Editor extends DefaultNodeEditor {
     provider.setRole("extensionPoint");
     provider.setNoTargetText("<no extensionPoint>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtensionPointType_Editor._Inline_i3f4o0_a2a("extensionPoint"));
+    provider.setAuxiliaryCellProvider(new ExtensionPointType_Editor._Inline_i3f4o0_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

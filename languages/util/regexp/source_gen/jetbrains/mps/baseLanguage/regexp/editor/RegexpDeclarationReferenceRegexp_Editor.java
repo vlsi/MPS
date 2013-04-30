@@ -39,7 +39,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RegexpDeclarationReferenceRegexp_Editor._Inline_99sp2s_a0a("regexp"));
+    provider.setAuxiliaryCellProvider(new RegexpDeclarationReferenceRegexp_Editor._Inline_99sp2s_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -96,7 +96,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     provider.setRole("modifiedSwitch");
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateSwitch_Editor._Inline_q42gqn_a3a0("modifiedSwitch"));
+    provider.setAuxiliaryCellProvider(new TemplateSwitch_Editor._Inline_q42gqn_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -52,7 +52,7 @@ public class Container_Editor extends DefaultNodeEditor {
     provider.setRole("allows");
     provider.setNoTargetText("<no allows>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Container_Editor._Inline_xjnu6t_a0a("allows"));
+    provider.setAuxiliaryCellProvider(new Container_Editor._Inline_xjnu6t_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -141,7 +141,7 @@ public class Container_Editor extends DefaultNodeEditor {
     provider.setRole("specializes");
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Container_Editor._Inline_xjnu6t_a4a("specializes"));
+    provider.setAuxiliaryCellProvider(new Container_Editor._Inline_xjnu6t_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

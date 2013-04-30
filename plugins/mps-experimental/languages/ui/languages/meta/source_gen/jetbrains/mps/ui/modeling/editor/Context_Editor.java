@@ -32,7 +32,7 @@ public class Context_Editor extends DefaultNodeEditor {
     provider.setRole("uiObject");
     provider.setNoTargetText("<no uiObject>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Context_Editor._Inline_d0e2am_a0a("uiObject"));
+    provider.setAuxiliaryCellProvider(new Context_Editor._Inline_d0e2am_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

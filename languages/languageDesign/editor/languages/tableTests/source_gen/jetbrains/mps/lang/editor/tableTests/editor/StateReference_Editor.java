@@ -32,7 +32,7 @@ public class StateReference_Editor extends DefaultNodeEditor {
     provider.setRole("state");
     provider.setNoTargetText("<no state>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StateReference_Editor._Inline_8btjnt_a0a("state"));
+    provider.setAuxiliaryCellProvider(new StateReference_Editor._Inline_8btjnt_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

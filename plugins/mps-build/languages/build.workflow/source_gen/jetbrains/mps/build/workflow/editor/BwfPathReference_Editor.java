@@ -66,7 +66,7 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BwfPathReference_Editor._Inline_75jjqz_a2a("target"));
+    provider.setAuxiliaryCellProvider(new BwfPathReference_Editor._Inline_75jjqz_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

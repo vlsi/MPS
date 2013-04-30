@@ -58,7 +58,7 @@ public class TestCaseRef_Editor extends DefaultNodeEditor {
     provider.setRole("testCase");
     provider.setNoTargetText("<no testCase>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TestCaseRef_Editor._Inline_aryab1_a1a("testCase"));
+    provider.setAuxiliaryCellProvider(new TestCaseRef_Editor._Inline_aryab1_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -38,7 +38,7 @@ public class ValueReference_Editor extends DefaultNodeEditor {
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ValueReference_Editor._Inline_s9dcmx_a0a("value"));
+    provider.setAuxiliaryCellProvider(new ValueReference_Editor._Inline_s9dcmx_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

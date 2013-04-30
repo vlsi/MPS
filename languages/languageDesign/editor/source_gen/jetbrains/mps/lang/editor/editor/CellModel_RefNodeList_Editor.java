@@ -153,7 +153,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefNodeList_Editor._Inline_2v2794_a1a0c0("linkDeclaration"));
+    provider.setAuxiliaryCellProvider(new CellModel_RefNodeList_Editor._Inline_2v2794_a1a0c0());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
@@ -332,7 +332,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefNodeList_Editor._Inline_2v2794_a1a1c0("linkDeclaration"));
+    provider.setAuxiliaryCellProvider(new CellModel_RefNodeList_Editor._Inline_2v2794_a1a1c0());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
@@ -539,7 +539,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefNodeList_Editor._Inline_2v2794_a1a3a("linkDeclaration"));
+    provider.setAuxiliaryCellProvider(new CellModel_RefNodeList_Editor._Inline_2v2794_a1a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -1154,7 +1154,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     provider.setRole("elementActionMap");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefNodeList_Editor._Inline_2v2794_a1l3a("elementActionMap"));
+    provider.setAuxiliaryCellProvider(new CellModel_RefNodeList_Editor._Inline_2v2794_a1l3a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);

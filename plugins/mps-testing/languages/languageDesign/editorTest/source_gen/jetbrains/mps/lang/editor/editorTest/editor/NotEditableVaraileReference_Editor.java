@@ -37,7 +37,7 @@ public class NotEditableVaraileReference_Editor extends DefaultNodeEditor {
     provider.setRole("variableDeclaration");
     provider.setNoTargetText("<no variableDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NotEditableVaraileReference_Editor._Inline_836mu1_a0a("variableDeclaration"));
+    provider.setAuxiliaryCellProvider(new NotEditableVaraileReference_Editor._Inline_836mu1_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -60,7 +60,7 @@ public class WeakClassReference_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new WeakClassReference_Editor._Inline_j4ha0g_a2a("classifier"));
+    provider.setAuxiliaryCellProvider(new WeakClassReference_Editor._Inline_j4ha0g_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

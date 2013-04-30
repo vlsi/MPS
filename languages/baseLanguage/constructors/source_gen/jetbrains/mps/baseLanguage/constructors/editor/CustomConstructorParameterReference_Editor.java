@@ -32,7 +32,7 @@ public class CustomConstructorParameterReference_Editor extends DefaultNodeEdito
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CustomConstructorParameterReference_Editor._Inline_hi58r4_a0a("parameter"));
+    provider.setAuxiliaryCellProvider(new CustomConstructorParameterReference_Editor._Inline_hi58r4_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

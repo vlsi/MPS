@@ -71,7 +71,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     provider.setRole("applicableLink");
     provider.setNoTargetText("<choose reference>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeReferentConstraint_Editor._Inline_y1wtxd_a2a("applicableLink"));
+    provider.setAuxiliaryCellProvider(new NodeReferentConstraint_Editor._Inline_y1wtxd_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

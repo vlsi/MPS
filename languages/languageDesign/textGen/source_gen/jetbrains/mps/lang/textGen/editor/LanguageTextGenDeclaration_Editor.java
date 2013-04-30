@@ -126,7 +126,7 @@ public class LanguageTextGenDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("baseTextGen");
     provider.setNoTargetText("<no baseTextGen>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LanguageTextGenDeclaration_Editor._Inline_i272ry_a6a("baseTextGen"));
+    provider.setAuxiliaryCellProvider(new LanguageTextGenDeclaration_Editor._Inline_i272ry_a6a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

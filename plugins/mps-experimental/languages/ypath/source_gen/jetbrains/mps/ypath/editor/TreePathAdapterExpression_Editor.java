@@ -96,7 +96,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     provider.setRole("treepathAspect");
     provider.setNoTargetText("<no treepathAspect>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TreePathAdapterExpression_Editor._Inline_7bcc0k_a1a("treepathAspect"));
+    provider.setAuxiliaryCellProvider(new TreePathAdapterExpression_Editor._Inline_7bcc0k_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

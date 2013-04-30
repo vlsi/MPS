@@ -36,7 +36,7 @@ public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
     provider.setRole("template");
     provider.setNoTargetText("<choose template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateDeclarationReference_Editor._Inline_krqspc_a0a("template"));
+    provider.setAuxiliaryCellProvider(new TemplateDeclarationReference_Editor._Inline_krqspc_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

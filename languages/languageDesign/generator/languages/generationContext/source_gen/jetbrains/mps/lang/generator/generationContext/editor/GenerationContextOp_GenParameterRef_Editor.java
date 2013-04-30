@@ -44,7 +44,7 @@ public class GenerationContextOp_GenParameterRef_Editor extends DefaultNodeEdito
     provider.setRole("importClause");
     provider.setNoTargetText("<no importClause>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_GenParameterRef_Editor._Inline_h52dks_a0a("importClause"));
+    provider.setAuxiliaryCellProvider(new GenerationContextOp_GenParameterRef_Editor._Inline_h52dks_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);

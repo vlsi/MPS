@@ -91,7 +91,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<unspecified>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RootTemplateAnnotation_Editor._Inline_1qmre8_a1b0a("applicableConcept"));
+    provider.setAuxiliaryCellProvider(new RootTemplateAnnotation_Editor._Inline_1qmre8_a1b0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

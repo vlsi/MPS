@@ -49,7 +49,7 @@ public class InheritedNodeScopeFactory_Editor extends DefaultNodeEditor {
     provider.setRole("kind");
     provider.setNoTargetText("<no kind>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InheritedNodeScopeFactory_Editor._Inline_cp9vsd_a1a("kind"));
+    provider.setAuxiliaryCellProvider(new InheritedNodeScopeFactory_Editor._Inline_cp9vsd_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

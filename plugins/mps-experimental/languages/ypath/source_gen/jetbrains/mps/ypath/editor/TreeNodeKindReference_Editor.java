@@ -62,7 +62,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
     provider.setRole("treePathAspect");
     provider.setNoTargetText("<no treePathAspect>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TreeNodeKindReference_Editor._Inline_g2eo62_a2a("treePathAspect"));
+    provider.setAuxiliaryCellProvider(new TreeNodeKindReference_Editor._Inline_g2eo62_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -128,7 +128,7 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
     provider.setRole("treeNodeKind");
     provider.setNoTargetText("<no treeNodeKind>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TreeNodeKindReference_Editor._Inline_g2eo62_a4a("treeNodeKind"));
+    provider.setAuxiliaryCellProvider(new TreeNodeKindReference_Editor._Inline_g2eo62_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

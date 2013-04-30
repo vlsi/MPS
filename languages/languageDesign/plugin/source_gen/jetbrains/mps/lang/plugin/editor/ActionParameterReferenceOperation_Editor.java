@@ -37,7 +37,7 @@ public class ActionParameterReferenceOperation_Editor extends DefaultNodeEditor 
     provider.setRole("parameterDeclaration");
     provider.setNoTargetText("<no parameterDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionParameterReferenceOperation_Editor._Inline_keprta_a0a("parameterDeclaration"));
+    provider.setAuxiliaryCellProvider(new ActionParameterReferenceOperation_Editor._Inline_keprta_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

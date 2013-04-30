@@ -140,7 +140,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<any>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellActionMapDeclaration_Editor._Inline_dnk0aj_a1c0("applicableConcept"));
+    provider.setAuxiliaryCellProvider(new CellActionMapDeclaration_Editor._Inline_dnk0aj_a1c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

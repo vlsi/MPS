@@ -237,7 +237,7 @@ public class VarMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new VarMacro_Editor._Inline_cubyf7_a2b2a("mappingLabel"));
+    provider.setAuxiliaryCellProvider(new VarMacro_Editor._Inline_cubyf7_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

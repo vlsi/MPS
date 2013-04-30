@@ -52,7 +52,7 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
     provider.setRole("match");
     provider.setNoTargetText("<no match>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatchVariableReferenceRegexp_Editor._Inline_7j6yq4_a1a("match"));
+    provider.setAuxiliaryCellProvider(new MatchVariableReferenceRegexp_Editor._Inline_7j6yq4_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -63,7 +63,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptConstraints_Editor._Inline_g00aa7_a1a("concept"));
+    provider.setAuxiliaryCellProvider(new ConceptConstraints_Editor._Inline_g00aa7_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -201,7 +201,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     provider.setRole("defaultConcreteConcept");
     provider.setNoTargetText("<no defaultConcreteConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptConstraints_Editor._Inline_g00aa7_a1a3a("defaultConcreteConcept"));
+    provider.setAuxiliaryCellProvider(new ConceptConstraints_Editor._Inline_g00aa7_a1a3a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

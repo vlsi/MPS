@@ -49,7 +49,7 @@ public class BeforeTaskCall_Editor extends DefaultNodeEditor {
     provider.setRole("beforeTask");
     provider.setNoTargetText("<no beforeTask>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BeforeTaskCall_Editor._Inline_5zozkl_a0a("beforeTask"));
+    provider.setAuxiliaryCellProvider(new BeforeTaskCall_Editor._Inline_5zozkl_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

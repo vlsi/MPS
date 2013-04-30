@@ -38,7 +38,7 @@ public class PersistentPropertyReference_Editor extends DefaultNodeEditor {
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<no propertyDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PersistentPropertyReference_Editor._Inline_7qnrl2_a0a("propertyDeclaration"));
+    provider.setAuxiliaryCellProvider(new PersistentPropertyReference_Editor._Inline_7qnrl2_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

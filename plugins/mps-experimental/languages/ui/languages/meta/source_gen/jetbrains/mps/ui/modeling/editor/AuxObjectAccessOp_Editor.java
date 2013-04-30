@@ -32,7 +32,7 @@ public class AuxObjectAccessOp_Editor extends DefaultNodeEditor {
     provider.setRole("template");
     provider.setNoTargetText("<no template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AuxObjectAccessOp_Editor._Inline_1cryq_a0a("template"));
+    provider.setAuxiliaryCellProvider(new AuxObjectAccessOp_Editor._Inline_1cryq_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

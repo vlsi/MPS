@@ -35,7 +35,7 @@ public class SmartActionParameterReference_Editor extends DefaultNodeEditor {
     provider.setRole("smartActionParameter");
     provider.setNoTargetText("<no smartActionParameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SmartActionParameterReference_Editor._Inline_ogr7l1_a0a("smartActionParameter"));
+    provider.setAuxiliaryCellProvider(new SmartActionParameterReference_Editor._Inline_ogr7l1_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

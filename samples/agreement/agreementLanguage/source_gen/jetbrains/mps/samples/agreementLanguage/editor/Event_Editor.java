@@ -66,7 +66,7 @@ public class Event_Editor extends DefaultNodeEditor {
     provider.setRole("type");
     provider.setNoTargetText("<choose type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Event_Editor._Inline_ymj9mh_a1a0("type"));
+    provider.setAuxiliaryCellProvider(new Event_Editor._Inline_ymj9mh_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

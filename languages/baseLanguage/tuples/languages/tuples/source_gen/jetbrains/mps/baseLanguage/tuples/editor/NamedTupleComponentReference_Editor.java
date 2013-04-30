@@ -39,7 +39,7 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
     provider.setRole("componentDeclaration");
     provider.setNoTargetText("<no componentDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleComponentReference_Editor._Inline_61lahj_a0a("componentDeclaration"));
+    provider.setAuxiliaryCellProvider(new NamedTupleComponentReference_Editor._Inline_61lahj_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

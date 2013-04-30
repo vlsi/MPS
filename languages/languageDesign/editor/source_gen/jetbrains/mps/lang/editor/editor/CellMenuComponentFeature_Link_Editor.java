@@ -37,7 +37,7 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<choose property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Link_Editor._Inline_5mhiie_a0a("linkDeclaration"));
+    provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Link_Editor._Inline_5mhiie_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

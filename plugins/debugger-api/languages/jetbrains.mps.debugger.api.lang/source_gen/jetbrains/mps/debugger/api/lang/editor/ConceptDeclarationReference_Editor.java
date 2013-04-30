@@ -32,7 +32,7 @@ public class ConceptDeclarationReference_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no conceptDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptDeclarationReference_Editor._Inline_dhgas9_a0a("conceptDeclaration"));
+    provider.setAuxiliaryCellProvider(new ConceptDeclarationReference_Editor._Inline_dhgas9_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

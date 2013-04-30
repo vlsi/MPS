@@ -56,7 +56,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     provider.setRole("controlMethod");
     provider.setNoTargetText("<no controlMethod>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClosureControlStatement_Editor._Inline_2saq3j_a0a("controlMethod"));
+    provider.setAuxiliaryCellProvider(new ClosureControlStatement_Editor._Inline_2saq3j_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
@@ -151,7 +151,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     provider.setRole("controlClosure");
     provider.setNoTargetText("<no controlClosure>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClosureControlStatement_Editor._Inline_2saq3j_a1b0("controlClosure"));
+    provider.setAuxiliaryCellProvider(new ClosureControlStatement_Editor._Inline_2saq3j_a1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

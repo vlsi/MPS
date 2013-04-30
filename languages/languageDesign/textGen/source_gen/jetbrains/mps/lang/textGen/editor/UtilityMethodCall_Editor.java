@@ -55,7 +55,7 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("function");
     provider.setNoTargetText("<no function>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new UtilityMethodCall_Editor._Inline_26flog_a0a("function"));
+    provider.setAuxiliaryCellProvider(new UtilityMethodCall_Editor._Inline_26flog_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

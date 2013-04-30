@@ -103,7 +103,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     provider.setRole("replacementConcept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline_ourakl_a3b0("replacementConcept"));
+    provider.setAuxiliaryCellProvider(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline_ourakl_a3b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

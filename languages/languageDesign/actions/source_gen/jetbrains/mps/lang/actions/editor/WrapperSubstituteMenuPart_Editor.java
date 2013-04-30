@@ -64,7 +64,7 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
     provider.setRole("wrappedConcept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new WrapperSubstituteMenuPart_Editor._Inline_b2q5d2_a1a0("wrappedConcept"));
+    provider.setAuxiliaryCellProvider(new WrapperSubstituteMenuPart_Editor._Inline_b2q5d2_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

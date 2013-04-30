@@ -84,7 +84,7 @@ public class Rule_Editor extends DefaultNodeEditor {
     provider.setRole("analyzer");
     provider.setNoTargetText("<no analyzer>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Rule_Editor._Inline_z0m96w_a3a("analyzer"));
+    provider.setAuxiliaryCellProvider(new Rule_Editor._Inline_z0m96w_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

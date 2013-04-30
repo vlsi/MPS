@@ -35,7 +35,7 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
     provider.setRole("component");
     provider.setNoTargetText("<no component>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleComponentAccessOperation_Editor._Inline_rt0op7_a0a("component"));
+    provider.setAuxiliaryCellProvider(new NamedTupleComponentAccessOperation_Editor._Inline_rt0op7_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyField(style, editorCell);

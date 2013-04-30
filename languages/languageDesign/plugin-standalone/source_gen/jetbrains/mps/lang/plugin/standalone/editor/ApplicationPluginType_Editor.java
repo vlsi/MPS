@@ -63,7 +63,7 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
     provider.setRole("plugin");
     provider.setNoTargetText("<no plugin>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ApplicationPluginType_Editor._Inline_w3h4nr_a2a("plugin"));
+    provider.setAuxiliaryCellProvider(new ApplicationPluginType_Editor._Inline_w3h4nr_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

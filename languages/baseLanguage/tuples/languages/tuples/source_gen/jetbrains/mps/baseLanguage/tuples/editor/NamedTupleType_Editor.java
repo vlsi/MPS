@@ -117,7 +117,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     provider.setRole("tupleDeclaration");
     provider.setNoTargetText("<no tupleDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleType_Editor._Inline_2ojjgh_a1a0("tupleDeclaration"));
+    provider.setAuxiliaryCellProvider(new NamedTupleType_Editor._Inline_2ojjgh_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -377,7 +377,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     provider.setRole("tupleDeclaration");
     provider.setNoTargetText("<no tupleDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleType_Editor._Inline_2ojjgh_a1a0_0("tupleDeclaration"));
+    provider.setAuxiliaryCellProvider(new NamedTupleType_Editor._Inline_2ojjgh_a1a0_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -434,7 +434,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     provider.setRole("tupleDeclaration");
     provider.setNoTargetText("<no tupleDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleType_Editor._Inline_2ojjgh_a2a0("tupleDeclaration"));
+    provider.setAuxiliaryCellProvider(new NamedTupleType_Editor._Inline_2ojjgh_a2a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -512,7 +512,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     provider.setRole("tupleDeclaration");
     provider.setNoTargetText("<no tupleDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleType_Editor._Inline_2ojjgh_a1b0("tupleDeclaration"));
+    provider.setAuxiliaryCellProvider(new NamedTupleType_Editor._Inline_2ojjgh_a1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

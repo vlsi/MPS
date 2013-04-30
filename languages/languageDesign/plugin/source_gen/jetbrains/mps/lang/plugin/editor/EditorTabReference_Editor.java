@@ -32,7 +32,7 @@ public class EditorTabReference_Editor extends DefaultNodeEditor {
     provider.setRole("editorTab");
     provider.setNoTargetText("<no editorTab>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EditorTabReference_Editor._Inline_9xkbg4_a0a("editorTab"));
+    provider.setAuxiliaryCellProvider(new EditorTabReference_Editor._Inline_9xkbg4_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

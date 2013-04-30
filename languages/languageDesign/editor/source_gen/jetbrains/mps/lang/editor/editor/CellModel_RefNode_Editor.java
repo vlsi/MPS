@@ -56,7 +56,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefNode_Editor._Inline_2hk56f_a1a("linkDeclaration"));
+    provider.setAuxiliaryCellProvider(new CellModel_RefNode_Editor._Inline_2hk56f_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBordered(style, editorCell);
@@ -199,7 +199,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefNode_Editor._Inline_2hk56f_a1a3a("linkDeclaration"));
+    provider.setAuxiliaryCellProvider(new CellModel_RefNode_Editor._Inline_2hk56f_a1a3a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);

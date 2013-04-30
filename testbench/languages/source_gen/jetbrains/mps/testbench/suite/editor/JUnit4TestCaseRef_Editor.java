@@ -58,7 +58,7 @@ public class JUnit4TestCaseRef_Editor extends DefaultNodeEditor {
     provider.setRole("klass");
     provider.setNoTargetText("<no klass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new JUnit4TestCaseRef_Editor._Inline_hazblc_a1a("klass"));
+    provider.setAuxiliaryCellProvider(new JUnit4TestCaseRef_Editor._Inline_hazblc_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

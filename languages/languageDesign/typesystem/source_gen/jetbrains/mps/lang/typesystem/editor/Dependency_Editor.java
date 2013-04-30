@@ -58,7 +58,7 @@ public class Dependency_Editor extends DefaultNodeEditor {
     provider.setRole("targetConcept");
     provider.setNoTargetText("<no targetConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Dependency_Editor._Inline_l58ghc_a1a0("targetConcept"));
+    provider.setAuxiliaryCellProvider(new Dependency_Editor._Inline_l58ghc_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -157,7 +157,7 @@ public class Dependency_Editor extends DefaultNodeEditor {
     provider.setRole("sourceConcept");
     provider.setNoTargetText("<auto>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Dependency_Editor._Inline_l58ghc_a1b0("sourceConcept"));
+    provider.setAuxiliaryCellProvider(new Dependency_Editor._Inline_l58ghc_a1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

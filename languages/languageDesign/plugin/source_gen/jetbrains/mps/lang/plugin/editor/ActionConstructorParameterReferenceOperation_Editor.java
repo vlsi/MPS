@@ -32,7 +32,7 @@ public class ActionConstructorParameterReferenceOperation_Editor extends Default
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionConstructorParameterReferenceOperation_Editor._Inline_mohbt1_a0a("declaration"));
+    provider.setAuxiliaryCellProvider(new ActionConstructorParameterReferenceOperation_Editor._Inline_mohbt1_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -60,7 +60,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline_hop3er_a1a("property"));
+    provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline_hop3er_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
@@ -286,7 +286,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline_hop3er_a1a3a("property"));
+    provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline_hop3er_a1a3a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);

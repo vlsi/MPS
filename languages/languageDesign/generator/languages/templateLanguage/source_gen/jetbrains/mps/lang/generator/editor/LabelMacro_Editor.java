@@ -208,7 +208,7 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LabelMacro_Editor._Inline_x0em22_a2b2a("mappingLabel"));
+    provider.setAuxiliaryCellProvider(new LabelMacro_Editor._Inline_x0em22_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -212,7 +212,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SwitchMacro_Editor._Inline_31t0mi_a2b2a("mappingLabel"));
+    provider.setAuxiliaryCellProvider(new SwitchMacro_Editor._Inline_31t0mi_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -363,7 +363,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     provider.setRole("templateSwitch");
     provider.setNoTargetText("<choose template switch>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SwitchMacro_Editor._Inline_31t0mi_a2e2a("templateSwitch"));
+    provider.setAuxiliaryCellProvider(new SwitchMacro_Editor._Inline_31t0mi_a2e2a());
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);

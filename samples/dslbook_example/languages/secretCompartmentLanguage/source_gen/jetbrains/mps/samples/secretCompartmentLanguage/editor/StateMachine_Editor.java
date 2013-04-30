@@ -191,7 +191,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
     provider.setRole("startState");
     provider.setNoTargetText("<no startState>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StateMachine_Editor._Inline_qpt50r_a1f0("startState"));
+    provider.setAuxiliaryCellProvider(new StateMachine_Editor._Inline_qpt50r_a1f0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

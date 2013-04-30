@@ -46,7 +46,7 @@ public class PropertyNodeImport_Editor extends DefaultNodeEditor {
     provider.setRole("propertyNode");
     provider.setNoTargetText("<no propertyNode>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyNodeImport_Editor._Inline_x00uq0_a1a("propertyNode"));
+    provider.setAuxiliaryCellProvider(new PropertyNodeImport_Editor._Inline_x00uq0_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

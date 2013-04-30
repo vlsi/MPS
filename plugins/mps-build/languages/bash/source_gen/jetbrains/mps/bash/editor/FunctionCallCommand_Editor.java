@@ -38,7 +38,7 @@ public class FunctionCallCommand_Editor extends DefaultNodeEditor {
     provider.setRole("function");
     provider.setNoTargetText("<no function>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FunctionCallCommand_Editor._Inline_2g6d8r_a0a("function"));
+    provider.setAuxiliaryCellProvider(new FunctionCallCommand_Editor._Inline_2g6d8r_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

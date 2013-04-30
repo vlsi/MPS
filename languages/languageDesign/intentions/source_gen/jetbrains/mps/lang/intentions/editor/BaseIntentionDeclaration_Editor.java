@@ -114,7 +114,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("forConcept");
     provider.setNoTargetText("<no forConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BaseIntentionDeclaration_Editor._Inline_2ji0fa_a3a0a("forConcept"));
+    provider.setAuxiliaryCellProvider(new BaseIntentionDeclaration_Editor._Inline_2ji0fa_a3a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

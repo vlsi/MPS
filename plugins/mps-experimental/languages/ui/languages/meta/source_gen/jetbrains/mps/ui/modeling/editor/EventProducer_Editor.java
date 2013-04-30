@@ -32,7 +32,7 @@ public class EventProducer_Editor extends DefaultNodeEditor {
     provider.setRole("event");
     provider.setNoTargetText("<no event>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EventProducer_Editor._Inline_4huzy8_a0a("event"));
+    provider.setAuxiliaryCellProvider(new EventProducer_Editor._Inline_4huzy8_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

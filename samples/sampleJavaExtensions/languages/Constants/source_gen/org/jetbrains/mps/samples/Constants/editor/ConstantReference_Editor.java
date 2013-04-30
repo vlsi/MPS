@@ -32,7 +32,7 @@ public class ConstantReference_Editor extends DefaultNodeEditor {
     provider.setRole("original");
     provider.setNoTargetText("<no original>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConstantReference_Editor._Inline_ue2hde_a0a("original"));
+    provider.setAuxiliaryCellProvider(new ConstantReference_Editor._Inline_ue2hde_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -35,7 +35,7 @@ public class QuickFixFieldReference_Editor extends DefaultNodeEditor {
     provider.setRole("quickFixField");
     provider.setNoTargetText("<no quickFixField>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new QuickFixFieldReference_Editor._Inline_e7wq9l_a0a("quickFixField"));
+    provider.setAuxiliaryCellProvider(new QuickFixFieldReference_Editor._Inline_e7wq9l_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

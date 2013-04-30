@@ -55,7 +55,7 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NavigatableReferenceStyleClassItem_Editor._Inline_8msx3u_a2a("link"));
+    provider.setAuxiliaryCellProvider(new NavigatableReferenceStyleClassItem_Editor._Inline_8msx3u_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

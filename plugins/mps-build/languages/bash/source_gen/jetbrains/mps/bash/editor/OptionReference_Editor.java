@@ -35,7 +35,7 @@ public class OptionReference_Editor extends DefaultNodeEditor {
     provider.setRole("option");
     provider.setNoTargetText("<no option>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OptionReference_Editor._Inline_l8ia57_a0a("option"));
+    provider.setAuxiliaryCellProvider(new OptionReference_Editor._Inline_l8ia57_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

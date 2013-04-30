@@ -111,7 +111,7 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     provider.setRole("context");
     provider.setNoTargetText("<no context>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DecimalBinaryOperation_Editor._Inline_sl2ryj_a0a("context"));
+    provider.setAuxiliaryCellProvider(new DecimalBinaryOperation_Editor._Inline_sl2ryj_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

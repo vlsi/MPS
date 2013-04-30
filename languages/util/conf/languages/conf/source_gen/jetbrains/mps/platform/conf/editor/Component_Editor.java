@@ -79,7 +79,7 @@ public class Component_Editor extends DefaultNodeEditor {
     provider.setRole("ifaceClass");
     provider.setNoTargetText("<no ifaceClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Component_Editor._Inline_3k4y3b_a2a("ifaceClass"));
+    provider.setAuxiliaryCellProvider(new Component_Editor._Inline_3k4y3b_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -143,7 +143,7 @@ public class Component_Editor extends DefaultNodeEditor {
     provider.setRole("implClass");
     provider.setNoTargetText("<no implClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Component_Editor._Inline_3k4y3b_a4a("implClass"));
+    provider.setAuxiliaryCellProvider(new Component_Editor._Inline_3k4y3b_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

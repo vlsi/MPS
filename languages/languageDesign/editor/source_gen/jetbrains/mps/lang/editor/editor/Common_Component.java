@@ -100,7 +100,7 @@ public class Common_Component extends AbstractCellProvider {
     provider.setRole("actionMap");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Common_Component._Inline_tf8r10_a1a1a("actionMap"));
+    provider.setAuxiliaryCellProvider(new Common_Component._Inline_tf8r10_a1a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
@@ -185,7 +185,7 @@ public class Common_Component extends AbstractCellProvider {
     provider.setRole("keyMap");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Common_Component._Inline_tf8r10_a1b1a("keyMap"));
+    provider.setAuxiliaryCellProvider(new Common_Component._Inline_tf8r10_a1b1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);

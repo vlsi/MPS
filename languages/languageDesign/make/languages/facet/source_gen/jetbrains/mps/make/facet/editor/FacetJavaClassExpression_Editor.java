@@ -46,7 +46,7 @@ public class FacetJavaClassExpression_Editor extends DefaultNodeEditor {
     provider.setRole("facet");
     provider.setNoTargetText("<no facet>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FacetJavaClassExpression_Editor._Inline_u5bg2i_a1a("facet"));
+    provider.setAuxiliaryCellProvider(new FacetJavaClassExpression_Editor._Inline_u5bg2i_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);

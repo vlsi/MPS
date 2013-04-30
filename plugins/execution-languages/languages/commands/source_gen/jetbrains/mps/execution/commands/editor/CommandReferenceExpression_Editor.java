@@ -32,7 +32,7 @@ public class CommandReferenceExpression_Editor extends DefaultNodeEditor {
     provider.setRole("command");
     provider.setNoTargetText("<no command>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CommandReferenceExpression_Editor._Inline_nbi4wa_a0a("command"));
+    provider.setAuxiliaryCellProvider(new CommandReferenceExpression_Editor._Inline_nbi4wa_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

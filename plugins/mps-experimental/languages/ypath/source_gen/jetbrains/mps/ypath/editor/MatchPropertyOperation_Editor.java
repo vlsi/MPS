@@ -84,7 +84,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("property?");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatchPropertyOperation_Editor._Inline_pl7j0v_a3a("property"));
+    provider.setAuxiliaryCellProvider(new MatchPropertyOperation_Editor._Inline_pl7j0v_a3a());
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);

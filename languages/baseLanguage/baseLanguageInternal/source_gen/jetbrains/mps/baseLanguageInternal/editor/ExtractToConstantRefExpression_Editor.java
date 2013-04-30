@@ -32,7 +32,7 @@ public class ExtractToConstantRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("original");
     provider.setNoTargetText("<no original>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtractToConstantRefExpression_Editor._Inline_4woyb4_a0a("original"));
+    provider.setAuxiliaryCellProvider(new ExtractToConstantRefExpression_Editor._Inline_4woyb4_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

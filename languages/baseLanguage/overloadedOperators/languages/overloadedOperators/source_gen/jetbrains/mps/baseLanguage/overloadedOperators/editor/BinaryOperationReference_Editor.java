@@ -33,7 +33,7 @@ public class BinaryOperationReference_Editor extends DefaultNodeEditor {
     provider.setRole("binaryOperation");
     provider.setNoTargetText("<no binaryOperation>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BinaryOperationReference_Editor._Inline_mfrs1f_a0a("binaryOperation"));
+    provider.setAuxiliaryCellProvider(new BinaryOperationReference_Editor._Inline_mfrs1f_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

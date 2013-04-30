@@ -35,7 +35,7 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
     provider.setRole("quickFixArgument");
     provider.setNoTargetText("<no quickFixArgument>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new QuickFixArgumentReference_Editor._Inline_5g0ar_a0a("quickFixArgument"));
+    provider.setAuxiliaryCellProvider(new QuickFixArgumentReference_Editor._Inline_5g0ar_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

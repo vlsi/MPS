@@ -47,7 +47,7 @@ public class ComeFromExpression_Editor extends DefaultNodeEditor {
     provider.setRole("link");
     provider.setNoTargetText("link");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ComeFromExpression_Editor._Inline_1c8esj_a1a("link"));
+    provider.setAuxiliaryCellProvider(new ComeFromExpression_Editor._Inline_1c8esj_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

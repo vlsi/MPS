@@ -56,7 +56,7 @@ public class ExtensionMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("extension");
     provider.setNoTargetText("<no extension>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtensionMethodCall_Editor._Inline_74pwef_a1a("extension"));
+    provider.setAuxiliaryCellProvider(new ExtensionMethodCall_Editor._Inline_74pwef_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

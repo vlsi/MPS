@@ -87,7 +87,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
     provider.setRole("superConcept");
     provider.setNoTargetText("<no superConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SuperNodeExpression_Editor._Inline_n52m2z_a1b0("superConcept"));
+    provider.setAuxiliaryCellProvider(new SuperNodeExpression_Editor._Inline_n52m2z_a1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -170,7 +170,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
     provider.setRole("superConcept");
     provider.setNoTargetText("<no superConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SuperNodeExpression_Editor._Inline_n52m2z_a1a("superConcept"));
+    provider.setAuxiliaryCellProvider(new SuperNodeExpression_Editor._Inline_n52m2z_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

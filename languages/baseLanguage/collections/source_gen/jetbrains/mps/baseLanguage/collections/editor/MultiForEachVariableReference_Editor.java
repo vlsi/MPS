@@ -35,7 +35,7 @@ public class MultiForEachVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MultiForEachVariableReference_Editor._Inline_jf489z_a0a("variable"));
+    provider.setAuxiliaryCellProvider(new MultiForEachVariableReference_Editor._Inline_jf489z_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);

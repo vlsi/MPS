@@ -40,7 +40,7 @@ public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
     provider.setRole("checkProperties");
     provider.setNoTargetText("<no checkProperties>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CheckProperitesOperation_Editor._Inline_ti2jjv_a0a("checkProperties"));
+    provider.setAuxiliaryCellProvider(new CheckProperitesOperation_Editor._Inline_ti2jjv_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -67,7 +67,7 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
     provider.setRole("applicableProperty");
     provider.setNoTargetText("<choose property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodePropertyConstraint_Editor._Inline_vrfi3w_a2a("applicableProperty"));
+    provider.setAuxiliaryCellProvider(new NodePropertyConstraint_Editor._Inline_vrfi3w_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

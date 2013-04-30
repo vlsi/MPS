@@ -53,7 +53,7 @@ public class DefaultGenerationParameterId_Editor extends DefaultNodeEditor {
     provider.setRole("container");
     provider.setNoTargetText("<no container>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DefaultGenerationParameterId_Editor._Inline_38ix8g_a1a("container"));
+    provider.setAuxiliaryCellProvider(new DefaultGenerationParameterId_Editor._Inline_38ix8g_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -125,7 +125,7 @@ public class DefaultGenerationParameterId_Editor extends DefaultNodeEditor {
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DefaultGenerationParameterId_Editor._Inline_38ix8g_a3a("parameter"));
+    provider.setAuxiliaryCellProvider(new DefaultGenerationParameterId_Editor._Inline_38ix8g_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

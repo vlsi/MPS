@@ -81,7 +81,7 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     provider.setRole("workStatement");
     provider.setNoTargetText("<no workStatement>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AdvanceWorkStatement_Editor._Inline_wnrqtk_a3a("workStatement"));
+    provider.setAuxiliaryCellProvider(new AdvanceWorkStatement_Editor._Inline_wnrqtk_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

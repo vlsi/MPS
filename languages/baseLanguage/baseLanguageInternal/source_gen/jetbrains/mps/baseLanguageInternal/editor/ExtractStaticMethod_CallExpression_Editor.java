@@ -44,7 +44,7 @@ public class ExtractStaticMethod_CallExpression_Editor extends DefaultNodeEditor
     provider.setRole("staticMethodDeclaration");
     provider.setNoTargetText("<no staticMethodDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtractStaticMethod_CallExpression_Editor._Inline_vnpzmb_a0a("staticMethodDeclaration"));
+    provider.setAuxiliaryCellProvider(new ExtractStaticMethod_CallExpression_Editor._Inline_vnpzmb_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

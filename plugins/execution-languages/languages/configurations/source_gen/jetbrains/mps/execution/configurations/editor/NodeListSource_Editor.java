@@ -63,7 +63,7 @@ public class NodeListSource_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeListSource_Editor._Inline_9q81zs_a2a("concept"));
+    provider.setAuxiliaryCellProvider(new NodeListSource_Editor._Inline_9q81zs_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

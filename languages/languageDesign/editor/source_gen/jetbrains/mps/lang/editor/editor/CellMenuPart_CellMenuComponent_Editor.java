@@ -103,7 +103,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     provider.setRole("cellMenuComponent");
     provider.setNoTargetText("<choose menu component>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellMenuPart_CellMenuComponent_Editor._Inline_5txygt_a3b0("cellMenuComponent"));
+    provider.setAuxiliaryCellProvider(new CellMenuPart_CellMenuComponent_Editor._Inline_5txygt_a3b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

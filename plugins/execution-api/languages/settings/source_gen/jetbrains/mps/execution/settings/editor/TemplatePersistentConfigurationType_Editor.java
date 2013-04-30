@@ -44,7 +44,7 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
     provider.setRole("template");
     provider.setNoTargetText(" ");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplatePersistentConfigurationType_Editor._Inline_1clvom_a0a("template"));
+    provider.setAuxiliaryCellProvider(new TemplatePersistentConfigurationType_Editor._Inline_1clvom_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -108,7 +108,7 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
     provider.setRole("template");
     provider.setNoTargetText(" ");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplatePersistentConfigurationType_Editor._Inline_1clvom_a1a("template"));
+    provider.setAuxiliaryCellProvider(new TemplatePersistentConfigurationType_Editor._Inline_1clvom_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

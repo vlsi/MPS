@@ -213,7 +213,7 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MapSrcNodeMacro_Editor._Inline_dms3bp_a2b2a("mappingLabel"));
+    provider.setAuxiliaryCellProvider(new MapSrcNodeMacro_Editor._Inline_dms3bp_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

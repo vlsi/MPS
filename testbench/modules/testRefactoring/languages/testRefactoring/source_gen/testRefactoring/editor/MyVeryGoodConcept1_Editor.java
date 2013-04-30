@@ -87,7 +87,7 @@ public class MyVeryGoodConcept1_Editor extends DefaultNodeEditor {
     provider.setRole("brother");
     provider.setNoTargetText("<no brother>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MyVeryGoodConcept1_Editor._Inline_15tf1e_a3a0("brother"));
+    provider.setAuxiliaryCellProvider(new MyVeryGoodConcept1_Editor._Inline_15tf1e_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

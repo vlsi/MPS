@@ -106,7 +106,7 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("classpath");
     provider.setNoTargetText("<default classpath>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BwfAntTaskDeclaration_Editor._Inline_fxg4hy_a5a("classpath"));
+    provider.setAuxiliaryCellProvider(new BwfAntTaskDeclaration_Editor._Inline_fxg4hy_a5a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

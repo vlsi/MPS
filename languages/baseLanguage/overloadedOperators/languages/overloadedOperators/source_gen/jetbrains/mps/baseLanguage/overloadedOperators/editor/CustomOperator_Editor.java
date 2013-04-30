@@ -32,7 +32,7 @@ public class CustomOperator_Editor extends DefaultNodeEditor {
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CustomOperator_Editor._Inline_h0tfbv_a0a("declaration"));
+    provider.setAuxiliaryCellProvider(new CustomOperator_Editor._Inline_h0tfbv_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

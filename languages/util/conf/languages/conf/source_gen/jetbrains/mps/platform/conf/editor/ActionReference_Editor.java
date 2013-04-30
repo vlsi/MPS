@@ -39,7 +39,7 @@ public class ActionReference_Editor extends DefaultNodeEditor {
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionReference_Editor._Inline_ld3k57_a0a("action"));
+    provider.setAuxiliaryCellProvider(new ActionReference_Editor._Inline_ld3k57_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -83,7 +83,7 @@ public class ActionReference_Editor extends DefaultNodeEditor {
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionReference_Editor._Inline_ld3k57_a1a("action"));
+    provider.setAuxiliaryCellProvider(new ActionReference_Editor._Inline_ld3k57_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -65,7 +65,7 @@ public class BeanExtensionPoint_Editor extends DefaultNodeEditor {
     provider.setRole("beanClass");
     provider.setNoTargetText("<no beanClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BeanExtensionPoint_Editor._Inline_g4nm2t_a2a("beanClass"));
+    provider.setAuxiliaryCellProvider(new BeanExtensionPoint_Editor._Inline_g4nm2t_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

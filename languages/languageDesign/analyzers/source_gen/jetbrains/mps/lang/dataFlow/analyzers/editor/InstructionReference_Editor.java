@@ -48,7 +48,7 @@ public class InstructionReference_Editor extends DefaultNodeEditor {
     provider.setRole("instruction");
     provider.setNoTargetText("<no instruction>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InstructionReference_Editor._Inline_o0r2rr_a0a("instruction"));
+    provider.setAuxiliaryCellProvider(new InstructionReference_Editor._Inline_o0r2rr_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

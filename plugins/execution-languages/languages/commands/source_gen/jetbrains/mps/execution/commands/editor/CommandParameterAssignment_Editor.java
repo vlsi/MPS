@@ -40,7 +40,7 @@ public class CommandParameterAssignment_Editor extends DefaultNodeEditor {
     provider.setRole("parameterDeclaration");
     provider.setNoTargetText("<no parameterDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CommandParameterAssignment_Editor._Inline_bofzf4_a0a("parameterDeclaration"));
+    provider.setAuxiliaryCellProvider(new CommandParameterAssignment_Editor._Inline_bofzf4_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

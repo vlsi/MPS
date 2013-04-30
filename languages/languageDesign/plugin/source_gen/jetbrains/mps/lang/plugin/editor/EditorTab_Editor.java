@@ -314,7 +314,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     provider.setRole("baseNodeConcept");
     provider.setNoTargetText("<no baseNodeConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EditorTab_Editor._Inline_gp0hv6_a1e1b0("baseNodeConcept"));
+    provider.setAuxiliaryCellProvider(new EditorTab_Editor._Inline_gp0hv6_a1e1b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

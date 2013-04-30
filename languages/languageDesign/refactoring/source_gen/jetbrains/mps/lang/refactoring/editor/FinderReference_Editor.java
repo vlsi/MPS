@@ -32,7 +32,7 @@ public class FinderReference_Editor extends DefaultNodeEditor {
     provider.setRole("finderDeclaration");
     provider.setNoTargetText("<no finderDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FinderReference_Editor._Inline_ng67cj_a0a("finderDeclaration"));
+    provider.setAuxiliaryCellProvider(new FinderReference_Editor._Inline_ng67cj_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -158,7 +158,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setRole("initialFunction");
     provider.setNoTargetText("<no initialFunction>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Analyzer_Editor._Inline_590xoz_a7a("initialFunction"));
+    provider.setAuxiliaryCellProvider(new Analyzer_Editor._Inline_590xoz_a7a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -233,7 +233,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setRole("mergeFunction");
     provider.setNoTargetText("<no mergeFunction>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Analyzer_Editor._Inline_590xoz_a01a("mergeFunction"));
+    provider.setAuxiliaryCellProvider(new Analyzer_Editor._Inline_590xoz_a01a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -308,7 +308,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
     provider.setRole("funFunction");
     provider.setNoTargetText("<no funFunction>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Analyzer_Editor._Inline_590xoz_a31a("funFunction"));
+    provider.setAuxiliaryCellProvider(new Analyzer_Editor._Inline_590xoz_a31a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

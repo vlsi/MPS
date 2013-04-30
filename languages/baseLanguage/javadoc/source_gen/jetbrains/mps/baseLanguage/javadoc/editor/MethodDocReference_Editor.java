@@ -32,7 +32,7 @@ public class MethodDocReference_Editor extends DefaultNodeEditor {
     provider.setRole("methodDeclaration");
     provider.setNoTargetText("<no methodDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MethodDocReference_Editor._Inline_t5duq4_a0a("methodDeclaration"));
+    provider.setAuxiliaryCellProvider(new MethodDocReference_Editor._Inline_t5duq4_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

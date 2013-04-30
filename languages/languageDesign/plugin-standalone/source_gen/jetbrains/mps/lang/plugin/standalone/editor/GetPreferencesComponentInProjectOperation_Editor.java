@@ -62,7 +62,7 @@ public class GetPreferencesComponentInProjectOperation_Editor extends DefaultNod
     provider.setRole("componentDeclaration");
     provider.setNoTargetText("<no componentDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GetPreferencesComponentInProjectOperation_Editor._Inline_7v7srj_a2a("componentDeclaration"));
+    provider.setAuxiliaryCellProvider(new GetPreferencesComponentInProjectOperation_Editor._Inline_7v7srj_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

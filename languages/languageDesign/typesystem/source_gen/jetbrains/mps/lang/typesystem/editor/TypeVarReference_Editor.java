@@ -37,7 +37,7 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
     provider.setRole("typeVarDeclaration");
     provider.setNoTargetText("<no typeVarDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TypeVarReference_Editor._Inline_oe6wjr_a0a("typeVarDeclaration"));
+    provider.setAuxiliaryCellProvider(new TypeVarReference_Editor._Inline_oe6wjr_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

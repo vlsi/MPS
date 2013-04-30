@@ -32,7 +32,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
     provider.setRole("applicableNode");
     provider.setNoTargetText("<no applicableNode>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ApplicableNodeReference_Editor._Inline_13d8h_a0a("applicableNode"));
+    provider.setAuxiliaryCellProvider(new ApplicableNodeReference_Editor._Inline_13d8h_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

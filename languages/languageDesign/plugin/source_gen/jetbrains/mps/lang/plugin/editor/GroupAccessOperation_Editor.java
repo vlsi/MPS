@@ -56,7 +56,7 @@ public class GroupAccessOperation_Editor extends DefaultNodeEditor {
     provider.setRole("group");
     provider.setNoTargetText("<no group>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GroupAccessOperation_Editor._Inline_sxst1w_a2a("group"));
+    provider.setAuxiliaryCellProvider(new GroupAccessOperation_Editor._Inline_sxst1w_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

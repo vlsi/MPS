@@ -108,7 +108,7 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
     provider.setRole("uiObject");
     provider.setNoTargetText("<no uiObject>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new UIObjectTemplate_Editor._Inline_tx8k3j_a3a0("uiObject"));
+    provider.setAuxiliaryCellProvider(new UIObjectTemplate_Editor._Inline_tx8k3j_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -240,7 +240,7 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     provider.setRole("root");
     provider.setNoTargetText("<no root>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new XMLSAXParser_Editor._Inline_pkrqbh_a9a("root"));
+    provider.setAuxiliaryCellProvider(new XMLSAXParser_Editor._Inline_pkrqbh_a9a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

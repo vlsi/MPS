@@ -40,7 +40,7 @@ public class NodeBuilderInitProperty_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeBuilderInitProperty_Editor._Inline_s7nj87_a0a("property"));
+    provider.setAuxiliaryCellProvider(new NodeBuilderInitProperty_Editor._Inline_s7nj87_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);

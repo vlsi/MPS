@@ -346,7 +346,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     provider.setRole("opposite");
     provider.setNoTargetText("<no opposite>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ListFeature_Editor._Inline_hr3usq_a2a0c0a("opposite"));
+    provider.setAuxiliaryCellProvider(new ListFeature_Editor._Inline_hr3usq_a2a0c0a());
     editorCell = provider.createEditorCell(editorContext);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

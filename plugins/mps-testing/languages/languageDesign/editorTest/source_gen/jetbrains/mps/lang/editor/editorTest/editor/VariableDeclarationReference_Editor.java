@@ -32,7 +32,7 @@ public class VariableDeclarationReference_Editor extends DefaultNodeEditor {
     provider.setRole("var");
     provider.setNoTargetText("<no var>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new VariableDeclarationReference_Editor._Inline_yti90v_a0a("var"));
+    provider.setAuxiliaryCellProvider(new VariableDeclarationReference_Editor._Inline_yti90v_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

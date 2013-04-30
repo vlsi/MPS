@@ -86,7 +86,7 @@ public class ContextCompartmentWrapper_Editor extends DefaultNodeEditor {
     provider.setRole("container");
     provider.setNoTargetText("<no container>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ContextCompartmentWrapper_Editor._Inline_rz7z3i_a3a0("container"));
+    provider.setAuxiliaryCellProvider(new ContextCompartmentWrapper_Editor._Inline_rz7z3i_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

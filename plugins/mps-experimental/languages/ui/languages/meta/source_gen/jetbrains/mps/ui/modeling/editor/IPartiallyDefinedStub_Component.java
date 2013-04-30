@@ -55,7 +55,7 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
     provider.setRole("hasTemplate");
     provider.setNoTargetText("<no hasTemplate>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IPartiallyDefinedStub_Component._Inline_qot6m0_a0a("hasTemplate"));
+    provider.setAuxiliaryCellProvider(new IPartiallyDefinedStub_Component._Inline_qot6m0_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -112,7 +112,7 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
     provider.setRole("selector");
     provider.setNoTargetText("<no selector>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IPartiallyDefinedStub_Component._Inline_qot6m0_a1a("selector"));
+    provider.setAuxiliaryCellProvider(new IPartiallyDefinedStub_Component._Inline_qot6m0_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -168,7 +168,7 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
     provider.setRole("role");
     provider.setNoTargetText("<no role>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IPartiallyDefinedStub_Component._Inline_qot6m0_a2a("role"));
+    provider.setAuxiliaryCellProvider(new IPartiallyDefinedStub_Component._Inline_qot6m0_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -224,7 +224,7 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
     provider.setRole("template");
     provider.setNoTargetText("<no template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IPartiallyDefinedStub_Component._Inline_qot6m0_a3a("template"));
+    provider.setAuxiliaryCellProvider(new IPartiallyDefinedStub_Component._Inline_qot6m0_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

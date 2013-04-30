@@ -48,7 +48,7 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeBuilderRef_Editor._Inline_xqbs61_a0a("target"));
+    provider.setAuxiliaryCellProvider(new NodeBuilderRef_Editor._Inline_xqbs61_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

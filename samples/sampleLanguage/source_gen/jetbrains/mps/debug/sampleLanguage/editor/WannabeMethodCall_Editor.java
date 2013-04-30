@@ -35,7 +35,7 @@ public class WannabeMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("method");
     provider.setNoTargetText("<no method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new WannabeMethodCall_Editor._Inline_6urdah_a0a("method"));
+    provider.setAuxiliaryCellProvider(new WannabeMethodCall_Editor._Inline_6urdah_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

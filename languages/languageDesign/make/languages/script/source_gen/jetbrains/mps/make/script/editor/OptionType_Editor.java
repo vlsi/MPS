@@ -62,7 +62,7 @@ public class OptionType_Editor extends DefaultNodeEditor {
     provider.setRole("expectedOption");
     provider.setNoTargetText("<no expectedOption>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OptionType_Editor._Inline_xgjw32_a2a("expectedOption"));
+    provider.setAuxiliaryCellProvider(new OptionType_Editor._Inline_xgjw32_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

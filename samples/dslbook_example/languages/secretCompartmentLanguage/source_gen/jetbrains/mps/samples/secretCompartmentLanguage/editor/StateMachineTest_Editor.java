@@ -57,7 +57,7 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
     provider.setRole("stateMachine");
     provider.setNoTargetText("<no stateMachine>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StateMachineTest_Editor._Inline_hhanjm_a0a0("stateMachine"));
+    provider.setAuxiliaryCellProvider(new StateMachineTest_Editor._Inline_hhanjm_a0a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

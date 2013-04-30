@@ -388,7 +388,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     provider.setRole("opposite");
     provider.setNoTargetText("<no opposite>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenericParamFeature_Editor._Inline_a19ihi_a2a0f0a("opposite"));
+    provider.setAuxiliaryCellProvider(new GenericParamFeature_Editor._Inline_a19ihi_a2a0f0a());
     editorCell = provider.createEditorCell(editorContext);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

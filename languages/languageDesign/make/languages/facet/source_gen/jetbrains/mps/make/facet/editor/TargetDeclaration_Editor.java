@@ -122,7 +122,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("overrides");
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TargetDeclaration_Editor._Inline_xfdsch_a4a("overrides"));
+    provider.setAuxiliaryCellProvider(new TargetDeclaration_Editor._Inline_xfdsch_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

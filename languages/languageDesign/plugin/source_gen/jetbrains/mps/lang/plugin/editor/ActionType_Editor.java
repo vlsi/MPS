@@ -65,7 +65,7 @@ public class ActionType_Editor extends DefaultNodeEditor {
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionType_Editor._Inline_2pbgfy_a2a("action"));
+    provider.setAuxiliaryCellProvider(new ActionType_Editor._Inline_2pbgfy_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

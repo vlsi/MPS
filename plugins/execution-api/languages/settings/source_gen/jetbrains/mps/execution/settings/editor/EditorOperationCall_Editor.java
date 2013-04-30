@@ -51,7 +51,7 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
     provider.setRole("editorOperationDeclaration");
     provider.setNoTargetText("<no editorOperationDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EditorOperationCall_Editor._Inline_jn1wx6_a0a("editorOperationDeclaration"));
+    provider.setAuxiliaryCellProvider(new EditorOperationCall_Editor._Inline_jn1wx6_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

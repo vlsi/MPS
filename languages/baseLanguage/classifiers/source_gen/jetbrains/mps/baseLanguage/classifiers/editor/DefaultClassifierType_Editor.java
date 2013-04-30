@@ -65,7 +65,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DefaultClassifierType_Editor._Inline_35pyag_a2a("classifier"));
+    provider.setAuxiliaryCellProvider(new DefaultClassifierType_Editor._Inline_35pyag_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

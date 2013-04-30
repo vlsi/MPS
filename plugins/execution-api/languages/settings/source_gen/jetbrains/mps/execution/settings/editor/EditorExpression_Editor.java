@@ -61,7 +61,7 @@ public class EditorExpression_Editor extends DefaultNodeEditor {
     provider.setRole("persistentPropertyDeclaration");
     provider.setNoTargetText("<no persistentPropertyDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EditorExpression_Editor._Inline_f4uw03_a2a("persistentPropertyDeclaration"));
+    provider.setAuxiliaryCellProvider(new EditorExpression_Editor._Inline_f4uw03_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

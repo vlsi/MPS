@@ -35,7 +35,7 @@ public class CommandParameterReference_Editor extends DefaultNodeEditor {
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CommandParameterReference_Editor._Inline_ri978v_a0a("parameter"));
+    provider.setAuxiliaryCellProvider(new CommandParameterReference_Editor._Inline_ri978v_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
