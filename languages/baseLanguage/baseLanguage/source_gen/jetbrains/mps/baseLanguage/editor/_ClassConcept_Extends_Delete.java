@@ -27,6 +27,7 @@ public class _ClassConcept_Extends_Delete {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setTarget(node, "superclass", null, true);
+      editorContext.selectWRTFocusPolicy(node);
     }
   }
 }
