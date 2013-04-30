@@ -249,6 +249,8 @@
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1330375798066759587">
     <nodeInfo nodeId="1330375798078621268" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1330375798078621268" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1330375798066759651" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="12" startPosition="55" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1330375798066759651" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="12" startPosition="55" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1330375798066759587" fileName="BuildLayout_ToBinaryCopyProcessor_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTaskName_1330375798060763184#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />

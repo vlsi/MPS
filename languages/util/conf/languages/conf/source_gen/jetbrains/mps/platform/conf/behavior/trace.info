@@ -64,6 +64,7 @@
   </root>
   <root nodeRef="r:8f4e8d01-a81e-409b-a7a6-092ad440588f(jetbrains.mps.platform.conf.behavior)/1829899669318982165">
     <nodeInfo nodeId="1829899669319019850" fileName="XInclude_Behavior.java" startLine="11" startPosition="87" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1829899669319019850" fileName="XInclude_Behavior.java" startLine="11" startPosition="87" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1829899669318982165" fileName="XInclude_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1829899669318982165" fileName="XInclude_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_includedNode_1829899669318982168#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="1829899669318982167" fileName="XInclude_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

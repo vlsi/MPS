@@ -388,6 +388,7 @@
   </root>
   <root nodeRef="r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)/4314451697272940926">
     <nodeInfo nodeId="4314451697272940926" fileName="ConfigurationXmlDocument_Constraints.java" startLine="8" startPosition="49" endLine="9" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4314451697272940926" fileName="ConfigurationXmlDocument_Constraints.java" startLine="8" startPosition="49" endLine="9" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4314451697272940926" fileName="ConfigurationXmlDocument_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConfigurationXmlDocument_Constraints#()V" />
     <scopeInfo nodeId="4314451697272940926" fileName="ConfigurationXmlDocument_Constraints.java" startLine="8" startPosition="49" endLine="9" endPosition="76" />
     <scopeInfo nodeId="4314451697272940926" fileName="ConfigurationXmlDocument_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
@@ -439,11 +440,17 @@
   </root>
   <root nodeRef="r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)/5246455451713054146">
     <nodeInfo nodeId="5246455451713054173" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="14" startPosition="128" endLine="15" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5246455451713054173" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="14" startPosition="128" endLine="15" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5246455451713054188" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="15" startPosition="141" endLine="16" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5246455451713054188" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="15" startPosition="141" endLine="16" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5246455451713054202" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="16" startPosition="127" endLine="17" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5246455451713054202" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="16" startPosition="127" endLine="17" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5246455451713054216" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="17" startPosition="140" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5246455451713054216" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="17" startPosition="140" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5246455451713054226" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5246455451713054226" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5246455451713054148" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConfigurationXmlRootNode_constraintsUtil#()V" />
+    <nodeInfo nodeId="5246455451713054164" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="13" startPosition="69" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5246455451713054164" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="13" startPosition="69" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5246455451713054152" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="13" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="5246455451713054151" fileName="ConfigurationXmlRootNode_constraintsUtil.java" startLine="10" startPosition="53" endLine="10" endPosition="53" />
@@ -584,6 +591,7 @@
     <unitInfo nodeId="5246455451713054267" fileName="RootRoot_Constraints.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.RootRoot_Constraints" />
   </root>
   <root nodeRef="r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)/6183559520328404669">
+    <nodeInfo nodeId="6183559520328404669" fileName="BeanExtensionPoint_Constraints.java" startLine="8" startPosition="43" endLine="9" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6183559520328404669" fileName="BeanExtensionPoint_Constraints.java" startLine="8" startPosition="43" endLine="9" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6183559520328404669" fileName="BeanExtensionPoint_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BeanExtensionPoint_Constraints#()V" />
     <scopeInfo nodeId="6183559520328404669" fileName="BeanExtensionPoint_Constraints.java" startLine="8" startPosition="43" endLine="9" endPosition="70" />

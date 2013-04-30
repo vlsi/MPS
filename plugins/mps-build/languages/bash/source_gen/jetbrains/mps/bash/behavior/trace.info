@@ -203,6 +203,8 @@
   <unitInfo fileName="ZeroStringConditionalExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.bash.behavior.ZeroStringConditionalExpression_BehaviorDescriptor" />
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741497786">
     <nodeInfo nodeId="1262430001741497782" fileName="GroupingCommand_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741497782" fileName="GroupingCommand_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741497965" fileName="GroupingCommand_Behavior.java" startLine="16" startPosition="97" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497965" fileName="GroupingCommand_Behavior.java" startLine="16" startPosition="97" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497786" fileName="GroupingCommand_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741497786" fileName="GroupingCommand_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRigthBracket_1262430001741497783#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -223,6 +225,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741497825">
     <nodeInfo nodeId="1262430001741497821" fileName="CommandTerminator_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741497821" fileName="CommandTerminator_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497825" fileName="CommandTerminator_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741497825" fileName="CommandTerminator_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTerminator_1262430001741497822#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741497827" fileName="CommandTerminator_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -237,6 +240,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741497870">
     <nodeInfo nodeId="1262430001741497866" fileName="BaseCommandSubstitution_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741497866" fileName="BaseCommandSubstitution_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741497959" fileName="BaseCommandSubstitution_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497959" fileName="BaseCommandSubstitution_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497870" fileName="BaseCommandSubstitution_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741497870" fileName="BaseCommandSubstitution_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRight_1262430001741497867#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -257,6 +262,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741497879">
     <nodeInfo nodeId="1262430001741497875" fileName="IPriorityExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741497875" fileName="IPriorityExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497879" fileName="IPriorityExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741497879" fileName="IPriorityExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497876#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
     <scopeInfo nodeId="1262430001741497881" fileName="IPriorityExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -270,6 +276,7 @@
     <unitInfo nodeId="1262430001741497879" fileName="IPriorityExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.IPriorityExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741497888">
+    <nodeInfo nodeId="1262430001741497884" fileName="FollowingPipeline_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497884" fileName="FollowingPipeline_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497888" fileName="FollowingPipeline_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741497888" fileName="FollowingPipeline_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPypetype_1262430001741497885#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -285,6 +292,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741497912">
     <nodeInfo nodeId="1262430001741497908" fileName="BaseVariableAssingment_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741497908" fileName="BaseVariableAssingment_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497912" fileName="BaseVariableAssingment_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741497912" fileName="BaseVariableAssingment_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAssingmentSign_1262430001741497909#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741497914" fileName="BaseVariableAssingment_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -298,6 +306,7 @@
     <unitInfo nodeId="1262430001741497912" fileName="BaseVariableAssingment_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.BaseVariableAssingment_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741497927">
+    <nodeInfo nodeId="1262430001741497923" fileName="QuotedWord_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497923" fileName="QuotedWord_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497927" fileName="QuotedWord_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741497927" fileName="QuotedWord_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getQuotetype_1262430001741497924#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -313,6 +322,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741497954">
     <nodeInfo nodeId="1262430001741497950" fileName="UnaryConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741497950" fileName="UnaryConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497954" fileName="UnaryConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741497954" fileName="UnaryConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741497956" fileName="UnaryConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -326,6 +336,7 @@
     <unitInfo nodeId="1262430001741497954" fileName="UnaryConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.UnaryConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741498109">
+    <nodeInfo nodeId="1262430001741498105" fileName="FollowingCommandList_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498105" fileName="FollowingCommandList_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498109" fileName="FollowingCommandList_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741498109" fileName="FollowingCommandList_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperator_1262430001741498106#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -341,6 +352,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741498133">
     <nodeInfo nodeId="1262430001741498129" fileName="BaseAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741498129" fileName="BaseAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498133" fileName="BaseAssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741498133" fileName="BaseAssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741498135" fileName="BaseAssingmentExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -354,6 +366,7 @@
     <unitInfo nodeId="1262430001741498133" fileName="BaseAssingmentExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.BaseAssingmentExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741498157">
+    <nodeInfo nodeId="1262430001741498153" fileName="CaseTerminator_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498153" fileName="CaseTerminator_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498157" fileName="CaseTerminator_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741498157" fileName="CaseTerminator_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTerminator_1262430001741498154#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -369,6 +382,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741498166">
     <nodeInfo nodeId="1262430001741498162" fileName="UnaryArithmeticExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741498162" fileName="UnaryArithmeticExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498166" fileName="UnaryArithmeticExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741498166" fileName="UnaryArithmeticExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498163#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741498168" fileName="UnaryArithmeticExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -382,6 +396,7 @@
     <unitInfo nodeId="1262430001741498166" fileName="UnaryArithmeticExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.UnaryArithmeticExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741498232">
+    <nodeInfo nodeId="1262430001741498228" fileName="WordExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498228" fileName="WordExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498232" fileName="WordExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741498232" fileName="WordExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498229#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -397,6 +412,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741498247">
     <nodeInfo nodeId="1262430001741498243" fileName="BinaryArithmeticExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741498243" fileName="BinaryArithmeticExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498247" fileName="BinaryArithmeticExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741498247" fileName="BinaryArithmeticExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741498249" fileName="BinaryArithmeticExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -410,6 +426,7 @@
     <unitInfo nodeId="1262430001741498247" fileName="BinaryArithmeticExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.BinaryArithmeticExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741498334">
+    <nodeInfo nodeId="1262430001741498330" fileName="CombiningConditionalExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498330" fileName="CombiningConditionalExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498334" fileName="CombiningConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741498334" fileName="CombiningConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498331#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -425,6 +442,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741498391">
     <nodeInfo nodeId="1262430001741498387" fileName="BinaryConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741498387" fileName="BinaryConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498391" fileName="BinaryConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741498391" fileName="BinaryConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741498393" fileName="BinaryConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -438,6 +456,7 @@
     <unitInfo nodeId="1262430001741498391" fileName="BinaryConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.BinaryConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741498788">
+    <nodeInfo nodeId="1262430001741498787" fileName="EffectiveGroupIdConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498787" fileName="EffectiveGroupIdConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498788" fileName="EffectiveGroupIdConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741498788" fileName="EffectiveGroupIdConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -453,6 +472,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741498876">
     <nodeInfo nodeId="1262430001741498875" fileName="RightBitwiseShiftExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741498875" fileName="RightBitwiseShiftExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741520129" fileName="RightBitwiseShiftExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741520129" fileName="RightBitwiseShiftExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498876" fileName="RightBitwiseShiftExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741498876" fileName="RightBitwiseShiftExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -473,6 +494,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741520010">
     <nodeInfo nodeId="1262430001741520009" fileName="SemicolonTerminator_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741520009" fileName="SemicolonTerminator_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741520010" fileName="SemicolonTerminator_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741520010" fileName="SemicolonTerminator_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTerminator_1262430001741497822#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741520012" fileName="SemicolonTerminator_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -487,6 +509,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741520038">
     <nodeInfo nodeId="1262430001741520037" fileName="EqualityExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741520037" fileName="EqualityExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741720061" fileName="EqualityExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741720061" fileName="EqualityExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741520038" fileName="EqualityExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741520038" fileName="EqualityExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -507,6 +531,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741520149">
     <nodeInfo nodeId="1262430001741520148" fileName="GreaterThanExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741520148" fileName="GreaterThanExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741717530" fileName="GreaterThanExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717530" fileName="GreaterThanExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741520149" fileName="GreaterThanExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741520149" fileName="GreaterThanExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -527,6 +553,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741520166">
     <nodeInfo nodeId="1262430001741520165" fileName="VariableAddAssingment_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741520165" fileName="VariableAddAssingment_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741520166" fileName="VariableAddAssingment_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741520166" fileName="VariableAddAssingment_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAssingmentSign_1262430001741497909#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741520168" fileName="VariableAddAssingment_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -540,6 +567,7 @@
     <unitInfo nodeId="1262430001741520166" fileName="VariableAddAssingment_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.VariableAddAssingment_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741521992">
+    <nodeInfo nodeId="1262430001741521991" fileName="OptnameStringConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741521991" fileName="OptnameStringConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741521992" fileName="OptnameStringConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741521992" fileName="OptnameStringConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -555,6 +583,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741522238">
     <nodeInfo nodeId="1262430001741522237" fileName="PipelineOperatorErrorConnection_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741522237" fileName="PipelineOperatorErrorConnection_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741522238" fileName="PipelineOperatorErrorConnection_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741522238" fileName="PipelineOperatorErrorConnection_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPypetype_1262430001741497885#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741522240" fileName="PipelineOperatorErrorConnection_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -568,6 +597,7 @@
     <unitInfo nodeId="1262430001741522238" fileName="PipelineOperatorErrorConnection_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.PipelineOperatorErrorConnection_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741522253">
+    <nodeInfo nodeId="1262430001741522252" fileName="PipelineOperatorConnection_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741522252" fileName="PipelineOperatorConnection_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741522253" fileName="PipelineOperatorConnection_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741522253" fileName="PipelineOperatorConnection_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPypetype_1262430001741497885#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -583,6 +613,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741522631">
     <nodeInfo nodeId="1262430001741522630" fileName="EqualityStrings_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741522630" fileName="EqualityStrings_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741522631" fileName="EqualityStrings_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741522631" fileName="EqualityStrings_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741522633" fileName="EqualityStrings_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -596,6 +627,7 @@
     <unitInfo nodeId="1262430001741522631" fileName="EqualityStrings_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.EqualityStrings_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741522640">
+    <nodeInfo nodeId="1262430001741522639" fileName="SemicolonEt_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741522639" fileName="SemicolonEt_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741522640" fileName="SemicolonEt_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741522640" fileName="SemicolonEt_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTerminator_1262430001741498154#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -611,6 +643,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741522665">
     <nodeInfo nodeId="1262430001741522664" fileName="UnaryMinusExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741522664" fileName="UnaryMinusExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741522665" fileName="UnaryMinusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741522665" fileName="UnaryMinusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498163#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741522667" fileName="UnaryMinusExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -624,6 +657,7 @@
     <unitInfo nodeId="1262430001741522665" fileName="UnaryMinusExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.UnaryMinusExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741523291">
+    <nodeInfo nodeId="1262430001741523290" fileName="BitwiseNegationExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741523290" fileName="BitwiseNegationExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741523291" fileName="BitwiseNegationExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741523291" fileName="BitwiseNegationExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498163#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -639,6 +673,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741523318">
     <nodeInfo nodeId="1262430001741523317" fileName="StickyBitConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741523317" fileName="StickyBitConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741523318" fileName="StickyBitConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741523318" fileName="StickyBitConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741523320" fileName="StickyBitConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -652,6 +687,7 @@
     <unitInfo nodeId="1262430001741523318" fileName="StickyBitConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.StickyBitConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741523356">
+    <nodeInfo nodeId="1262430001741523355" fileName="BlockFileConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741523355" fileName="BlockFileConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741523356" fileName="BlockFileConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741523356" fileName="BlockFileConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -667,6 +703,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741523470">
     <nodeInfo nodeId="1262430001741523469" fileName="LessThanOrEqualExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741523469" fileName="LessThanOrEqualExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718267" fileName="LessThanOrEqualExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718267" fileName="LessThanOrEqualExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741523470" fileName="LessThanOrEqualExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741523470" fileName="LessThanOrEqualExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497876#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
@@ -687,6 +725,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741523479">
     <nodeInfo nodeId="1262430001741523478" fileName="AddExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741523478" fileName="AddExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703404" fileName="AddExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703404" fileName="AddExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741523479" fileName="AddExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741523479" fileName="AddExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -707,6 +747,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741638236">
     <nodeInfo nodeId="1262430001741638235" fileName="BraceGrouping_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741638235" fileName="BraceGrouping_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741719821" fileName="BraceGrouping_Behavior.java" startLine="16" startPosition="97" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741719821" fileName="BraceGrouping_Behavior.java" startLine="16" startPosition="97" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741638236" fileName="BraceGrouping_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741638236" fileName="BraceGrouping_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRigthBracket_1262430001741497783#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -727,6 +769,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741638255">
     <nodeInfo nodeId="1262430001741638254" fileName="BuckCommandSubstitution_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741638254" fileName="BuckCommandSubstitution_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703351" fileName="BuckCommandSubstitution_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703351" fileName="BuckCommandSubstitution_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741638255" fileName="BuckCommandSubstitution_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741638255" fileName="BuckCommandSubstitution_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRight_1262430001741497867#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -747,6 +791,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741638321">
     <nodeInfo nodeId="1262430001741638320" fileName="OrCombiningConditionalExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741638320" fileName="OrCombiningConditionalExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741638321" fileName="OrCombiningConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741638321" fileName="OrCombiningConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498331#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741638323" fileName="OrCombiningConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -761,6 +806,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741639222">
     <nodeInfo nodeId="1262430001741639221" fileName="InequalityExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741639221" fileName="InequalityExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703157" fileName="InequalityExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703157" fileName="InequalityExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741639222" fileName="InequalityExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741639222" fileName="InequalityExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -781,6 +828,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741639233">
     <nodeInfo nodeId="1262430001741639232" fileName="SubExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741639232" fileName="SubExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741717524" fileName="SubExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717524" fileName="SubExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741639233" fileName="SubExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741639233" fileName="SubExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -801,6 +850,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741639251">
     <nodeInfo nodeId="1262430001741639250" fileName="BitwiseXorExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741639250" fileName="BitwiseXorExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741643068" fileName="BitwiseXorExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741643068" fileName="BitwiseXorExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741639251" fileName="BitwiseXorExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741639251" fileName="BitwiseXorExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497876#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
@@ -821,6 +872,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741639291">
     <nodeInfo nodeId="1262430001741639290" fileName="LogicalNegationExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741639290" fileName="LogicalNegationExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741639291" fileName="LogicalNegationExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741639291" fileName="LogicalNegationExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498163#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741639293" fileName="LogicalNegationExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -835,6 +887,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741641619">
     <nodeInfo nodeId="1262430001741641618" fileName="DivExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741641618" fileName="DivExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642171" fileName="DivExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642171" fileName="DivExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741641619" fileName="DivExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741641619" fileName="DivExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497876#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
@@ -855,6 +909,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741641677">
     <nodeInfo nodeId="1262430001741641676" fileName="BitwiseOrExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741641676" fileName="BitwiseOrExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703931" fileName="BitwiseOrExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703931" fileName="BitwiseOrExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741641677" fileName="BitwiseOrExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741641677" fileName="BitwiseOrExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -875,6 +931,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741642222">
     <nodeInfo nodeId="1262430001741642221" fileName="RegularFileConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642221" fileName="RegularFileConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642222" fileName="RegularFileConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741642222" fileName="RegularFileConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741642224" fileName="RegularFileConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -888,6 +945,7 @@
     <unitInfo nodeId="1262430001741642222" fileName="RegularFileConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.RegularFileConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741642231">
+    <nodeInfo nodeId="1262430001741642230" fileName="ModAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642230" fileName="ModAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642231" fileName="ModAssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741642231" fileName="ModAssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -903,6 +961,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741642249">
     <nodeInfo nodeId="1262430001741642248" fileName="LogicalAndExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642248" fileName="LogicalAndExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741720069" fileName="LogicalAndExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741720069" fileName="LogicalAndExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642249" fileName="LogicalAndExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741642249" fileName="LogicalAndExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -923,6 +983,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741642749">
     <nodeInfo nodeId="1262430001741642748" fileName="DoubleSemicolonEt_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642748" fileName="DoubleSemicolonEt_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642749" fileName="DoubleSemicolonEt_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741642749" fileName="DoubleSemicolonEt_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTerminator_1262430001741498154#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741642751" fileName="DoubleSemicolonEt_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -936,6 +997,7 @@
     <unitInfo nodeId="1262430001741642749" fileName="DoubleSemicolonEt_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.DoubleSemicolonEt_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741642758">
+    <nodeInfo nodeId="1262430001741642757" fileName="LastReadConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642757" fileName="LastReadConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642758" fileName="LastReadConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741642758" fileName="LastReadConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -951,6 +1013,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741642776">
     <nodeInfo nodeId="1262430001741642775" fileName="MulExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642775" fileName="MulExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741704741" fileName="MulExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704741" fileName="MulExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642776" fileName="MulExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741642776" fileName="MulExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497876#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
@@ -971,6 +1035,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741642786">
     <nodeInfo nodeId="1262430001741642785" fileName="ExecTestConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642785" fileName="ExecTestConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642786" fileName="ExecTestConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741642786" fileName="ExecTestConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741642788" fileName="ExecTestConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -984,6 +1049,7 @@
     <unitInfo nodeId="1262430001741642786" fileName="ExecTestConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.ExecTestConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741642987">
+    <nodeInfo nodeId="1262430001741642986" fileName="SymlinkConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642986" fileName="SymlinkConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642987" fileName="SymlinkConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741642987" fileName="SymlinkConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -999,6 +1065,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741643022">
     <nodeInfo nodeId="1262430001741643021" fileName="NewerThan_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741643021" fileName="NewerThan_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741643022" fileName="NewerThan_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741643022" fileName="NewerThan_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741643024" fileName="NewerThan_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1013,6 +1080,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741643041">
     <nodeInfo nodeId="1262430001741643040" fileName="LogicalOrExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741643040" fileName="LogicalOrExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646684" fileName="LogicalOrExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646684" fileName="LogicalOrExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741643041" fileName="LogicalOrExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741643041" fileName="LogicalOrExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497876#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
@@ -1033,6 +1102,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741643059">
     <nodeInfo nodeId="1262430001741643058" fileName="OrAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741643058" fileName="OrAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741643059" fileName="OrAssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741643059" fileName="OrAssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741643061" fileName="OrAssingmentExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1046,6 +1116,7 @@
     <unitInfo nodeId="1262430001741643059" fileName="OrAssingmentExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.OrAssingmentExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741643095">
+    <nodeInfo nodeId="1262430001741643094" fileName="TerminalConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741643094" fileName="TerminalConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741643095" fileName="TerminalConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741643095" fileName="TerminalConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1061,6 +1132,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741646621">
     <nodeInfo nodeId="1262430001741646620" fileName="BitwiseAndExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646620" fileName="BitwiseAndExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741702995" fileName="BitwiseAndExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741702995" fileName="BitwiseAndExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646621" fileName="BitwiseAndExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741646621" fileName="BitwiseAndExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497876#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
@@ -1081,6 +1154,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741646648">
     <nodeInfo nodeId="1262430001741646647" fileName="DoubleSemicolon_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646647" fileName="DoubleSemicolon_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646648" fileName="DoubleSemicolon_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741646648" fileName="DoubleSemicolon_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTerminator_1262430001741498154#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741646650" fileName="DoubleSemicolon_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1094,6 +1168,7 @@
     <unitInfo nodeId="1262430001741646648" fileName="DoubleSemicolon_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.DoubleSemicolon_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741646669">
+    <nodeInfo nodeId="1262430001741646668" fileName="ExistConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646668" fileName="ExistConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646669" fileName="ExistConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741646669" fileName="ExistConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1109,6 +1184,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741646726">
     <nodeInfo nodeId="1262430001741646725" fileName="SocketConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646725" fileName="SocketConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646726" fileName="SocketConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741646726" fileName="SocketConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741646728" fileName="SocketConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1122,6 +1198,7 @@
     <unitInfo nodeId="1262430001741646726" fileName="SocketConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.SocketConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741646763">
+    <nodeInfo nodeId="1262430001741646762" fileName="SizeConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646762" fileName="SizeConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646763" fileName="SizeConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741646763" fileName="SizeConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1151,6 +1228,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741646792">
     <nodeInfo nodeId="1262430001741646791" fileName="ExpExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646791" fileName="ExpExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703838" fileName="ExpExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703838" fileName="ExpExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646792" fileName="ExpExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741646792" fileName="ExpExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497876#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
@@ -1171,6 +1250,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741646965">
     <nodeInfo nodeId="1262430001741646964" fileName="PreIncExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646964" fileName="PreIncExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646965" fileName="PreIncExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741646965" fileName="PreIncExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498229#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741646967" fileName="PreIncExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1185,6 +1265,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741647007">
     <nodeInfo nodeId="1262430001741647006" fileName="BracketGrouping_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647006" fileName="BracketGrouping_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647609" fileName="BracketGrouping_Behavior.java" startLine="16" startPosition="97" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647609" fileName="BracketGrouping_Behavior.java" startLine="16" startPosition="97" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647007" fileName="BracketGrouping_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647007" fileName="BracketGrouping_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRigthBracket_1262430001741497783#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1205,6 +1287,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741647018">
     <nodeInfo nodeId="1262430001741647017" fileName="GreaterThanOrEqualExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647017" fileName="GreaterThanOrEqualExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718715" fileName="GreaterThanOrEqualExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718715" fileName="GreaterThanOrEqualExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647018" fileName="GreaterThanOrEqualExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647018" fileName="GreaterThanOrEqualExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1225,6 +1309,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741647049">
     <nodeInfo nodeId="1262430001741647048" fileName="GroupIdConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647048" fileName="GroupIdConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647049" fileName="GroupIdConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647049" fileName="GroupIdConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741647051" fileName="GroupIdConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1238,6 +1323,7 @@
     <unitInfo nodeId="1262430001741647049" fileName="GroupIdConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.GroupIdConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741647114">
+    <nodeInfo nodeId="1262430001741647113" fileName="RightShiftAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647113" fileName="RightShiftAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647114" fileName="RightShiftAssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647114" fileName="RightShiftAssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1253,6 +1339,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741647130">
     <nodeInfo nodeId="1262430001741647129" fileName="LeftShiftAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647129" fileName="LeftShiftAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647130" fileName="LeftShiftAssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647130" fileName="LeftShiftAssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741647132" fileName="LeftShiftAssingmentExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1266,6 +1353,7 @@
     <unitInfo nodeId="1262430001741647130" fileName="LeftShiftAssingmentExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.LeftShiftAssingmentExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741647225">
+    <nodeInfo nodeId="1262430001741647224" fileName="DirectoryConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647224" fileName="DirectoryConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647225" fileName="DirectoryConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647225" fileName="DirectoryConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1327,6 +1415,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741647281">
     <nodeInfo nodeId="1262430001741647280" fileName="PostIncExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647280" fileName="PostIncExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647281" fileName="PostIncExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647281" fileName="PostIncExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498229#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741647283" fileName="PostIncExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1340,6 +1429,7 @@
     <unitInfo nodeId="1262430001741647281" fileName="PostIncExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.PostIncExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741647389">
+    <nodeInfo nodeId="1262430001741647388" fileName="GreaterThanString_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647388" fileName="GreaterThanString_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647389" fileName="GreaterThanString_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647389" fileName="GreaterThanString_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1355,6 +1445,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741647667">
     <nodeInfo nodeId="1262430001741647666" fileName="InequalityStrings_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647666" fileName="InequalityStrings_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647667" fileName="InequalityStrings_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647667" fileName="InequalityStrings_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741647669" fileName="InequalityStrings_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1368,6 +1459,7 @@
     <unitInfo nodeId="1262430001741647667" fileName="InequalityStrings_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.InequalityStrings_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741702873">
+    <nodeInfo nodeId="1262430001741702872" fileName="PipeConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741702872" fileName="PipeConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741702873" fileName="PipeConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741702873" fileName="PipeConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1383,6 +1475,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741702903">
     <nodeInfo nodeId="1262430001741702902" fileName="AndOperator_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741702902" fileName="AndOperator_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741702903" fileName="AndOperator_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741702903" fileName="AndOperator_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperator_1262430001741498106#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741702905" fileName="AndOperator_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1396,6 +1489,7 @@
     <unitInfo nodeId="1262430001741702903" fileName="AndOperator_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.AndOperator_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741702941">
+    <nodeInfo nodeId="1262430001741702940" fileName="LessThanOrEqualNumber_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741702940" fileName="LessThanOrEqualNumber_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741702941" fileName="LessThanOrEqualNumber_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741702941" fileName="LessThanOrEqualNumber_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1411,6 +1505,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703073">
     <nodeInfo nodeId="1262430001741703072" fileName="LeftBitwiseShiftExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703072" fileName="LeftBitwiseShiftExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741719827" fileName="LeftBitwiseShiftExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741719827" fileName="LeftBitwiseShiftExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703073" fileName="LeftBitwiseShiftExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703073" fileName="LeftBitwiseShiftExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497876#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
@@ -1431,6 +1527,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703104">
     <nodeInfo nodeId="1262430001741703103" fileName="InequalityNumber_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703103" fileName="InequalityNumber_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703104" fileName="InequalityNumber_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703104" fileName="InequalityNumber_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741703106" fileName="InequalityNumber_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1444,6 +1541,7 @@
     <unitInfo nodeId="1262430001741703104" fileName="InequalityNumber_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.InequalityNumber_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703115">
+    <nodeInfo nodeId="1262430001741703114" fileName="UnaryPlusExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703114" fileName="UnaryPlusExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703115" fileName="UnaryPlusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703115" fileName="UnaryPlusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498163#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1473,6 +1571,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703180">
     <nodeInfo nodeId="1262430001741703179" fileName="AsyncTerminator_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703179" fileName="AsyncTerminator_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703180" fileName="AsyncTerminator_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703180" fileName="AsyncTerminator_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTerminator_1262430001741497822#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741703182" fileName="AsyncTerminator_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1486,6 +1585,7 @@
     <unitInfo nodeId="1262430001741703180" fileName="AsyncTerminator_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.AsyncTerminator_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703195">
+    <nodeInfo nodeId="1262430001741703194" fileName="LessThanNumber_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703194" fileName="LessThanNumber_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703195" fileName="LessThanNumber_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703195" fileName="LessThanNumber_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1501,6 +1601,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703204">
     <nodeInfo nodeId="1262430001741703203" fileName="UserIdConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703203" fileName="UserIdConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703204" fileName="UserIdConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703204" fileName="UserIdConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741703206" fileName="UserIdConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1514,6 +1615,7 @@
     <unitInfo nodeId="1262430001741703204" fileName="UserIdConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.UserIdConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703213">
+    <nodeInfo nodeId="1262430001741703212" fileName="CommaExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703212" fileName="CommaExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703213" fileName="CommaExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703213" fileName="CommaExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1529,6 +1631,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703222">
     <nodeInfo nodeId="1262430001741703221" fileName="AsyncOperator_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703221" fileName="AsyncOperator_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703222" fileName="AsyncOperator_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703222" fileName="AsyncOperator_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperator_1262430001741498106#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741703224" fileName="AsyncOperator_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1542,6 +1645,7 @@
     <unitInfo nodeId="1262430001741703222" fileName="AsyncOperator_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.AsyncOperator_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703330">
+    <nodeInfo nodeId="1262430001741703329" fileName="OlderThan_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703329" fileName="OlderThan_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703330" fileName="OlderThan_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703330" fileName="OlderThan_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1557,6 +1661,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703411">
     <nodeInfo nodeId="1262430001741703410" fileName="LessThanExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703410" fileName="LessThanExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741717305" fileName="LessThanExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717305" fileName="LessThanExpression_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703411" fileName="LessThanExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703411" fileName="LessThanExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497876#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
@@ -1577,6 +1683,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703455">
     <nodeInfo nodeId="1262430001741703454" fileName="OtherExistConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703454" fileName="OtherExistConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703455" fileName="OtherExistConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703455" fileName="OtherExistConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741703457" fileName="OtherExistConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1590,6 +1697,7 @@
     <unitInfo nodeId="1262430001741703455" fileName="OtherExistConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.OtherExistConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703483">
+    <nodeInfo nodeId="1262430001741703482" fileName="MusAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703482" fileName="MusAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703483" fileName="MusAssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703483" fileName="MusAssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1605,6 +1713,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703492">
     <nodeInfo nodeId="1262430001741703491" fileName="PlusAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703491" fileName="PlusAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703492" fileName="PlusAssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703492" fileName="PlusAssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741703494" fileName="PlusAssingmentExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1618,6 +1727,7 @@
     <unitInfo nodeId="1262430001741703492" fileName="PlusAssingmentExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.PlusAssingmentExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703554">
+    <nodeInfo nodeId="1262430001741703553" fileName="EffectiveUserIdConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703553" fileName="EffectiveUserIdConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703554" fileName="EffectiveUserIdConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703554" fileName="EffectiveUserIdConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1633,6 +1743,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703564">
     <nodeInfo nodeId="1262430001741703563" fileName="PreDecExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703563" fileName="PreDecExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703564" fileName="PreDecExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703564" fileName="PreDecExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498229#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741703566" fileName="PreDecExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1646,6 +1757,7 @@
     <unitInfo nodeId="1262430001741703564" fileName="PreDecExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.PreDecExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703619">
+    <nodeInfo nodeId="1262430001741703618" fileName="XorAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703618" fileName="XorAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703619" fileName="XorAssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703619" fileName="XorAssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1661,6 +1773,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703803">
     <nodeInfo nodeId="1262430001741703802" fileName="GreaterThanOrEqual_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703802" fileName="GreaterThanOrEqual_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703803" fileName="GreaterThanOrEqual_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703803" fileName="GreaterThanOrEqual_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741703805" fileName="GreaterThanOrEqual_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1674,6 +1787,7 @@
     <unitInfo nodeId="1262430001741703803" fileName="GreaterThanOrEqual_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.GreaterThanOrEqual_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703862">
+    <nodeInfo nodeId="1262430001741703861" fileName="LessThanString_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703861" fileName="LessThanString_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703862" fileName="LessThanString_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703862" fileName="LessThanString_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1689,6 +1803,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741703938">
     <nodeInfo nodeId="1262430001741703937" fileName="ZeroStringConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703937" fileName="ZeroStringConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703938" fileName="ZeroStringConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703938" fileName="ZeroStringConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741703940" fileName="ZeroStringConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1702,6 +1817,7 @@
     <unitInfo nodeId="1262430001741703938" fileName="ZeroStringConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.ZeroStringConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741704547">
+    <nodeInfo nodeId="1262430001741704546" fileName="EqualityStrings2_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704546" fileName="EqualityStrings2_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704547" fileName="EqualityStrings2_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741704547" fileName="EqualityStrings2_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1717,6 +1833,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741704559">
     <nodeInfo nodeId="1262430001741704558" fileName="SameReference_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741704558" fileName="SameReference_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704559" fileName="SameReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741704559" fileName="SameReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741704561" fileName="SameReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1730,6 +1847,7 @@
     <unitInfo nodeId="1262430001741704559" fileName="SameReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.SameReference_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741704677">
+    <nodeInfo nodeId="1262430001741704676" fileName="AssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704676" fileName="AssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704677" fileName="AssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741704677" fileName="AssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1745,6 +1863,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741704787">
     <nodeInfo nodeId="1262430001741704786" fileName="EqualityNumber_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741704786" fileName="EqualityNumber_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704787" fileName="EqualityNumber_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741704787" fileName="EqualityNumber_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741704789" fileName="EqualityNumber_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1758,6 +1877,7 @@
     <unitInfo nodeId="1262430001741704787" fileName="EqualityNumber_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.EqualityNumber_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741704960">
+    <nodeInfo nodeId="1262430001741704959" fileName="NonZeroStringConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704959" fileName="NonZeroStringConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704960" fileName="NonZeroStringConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741704960" fileName="NonZeroStringConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1773,6 +1893,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741717402">
     <nodeInfo nodeId="1262430001741717401" fileName="CharFileConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741717401" fileName="CharFileConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717402" fileName="CharFileConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741717402" fileName="CharFileConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741717404" fileName="CharFileConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1786,6 +1907,7 @@
     <unitInfo nodeId="1262430001741717402" fileName="CharFileConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.CharFileConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741717412">
+    <nodeInfo nodeId="1262430001741717411" fileName="SemicolonOperator_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717411" fileName="SemicolonOperator_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717412" fileName="SemicolonOperator_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741717412" fileName="SemicolonOperator_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperator_1262430001741498106#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1821,6 +1943,8 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741717475">
     <nodeInfo nodeId="1262430001741717474" fileName="ModExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741717474" fileName="ModExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741720103" fileName="ModExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741720103" fileName="ModExpression_Behavior.java" startLine="16" startPosition="91" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717475" fileName="ModExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741717475" fileName="ModExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498244#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1841,6 +1965,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741717510">
     <nodeInfo nodeId="1262430001741717509" fileName="MinusAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741717509" fileName="MinusAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717510" fileName="MinusAssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741717510" fileName="MinusAssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741717512" fileName="MinusAssingmentExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1854,6 +1979,7 @@
     <unitInfo nodeId="1262430001741717510" fileName="MinusAssingmentExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.MinusAssingmentExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741718344">
+    <nodeInfo nodeId="1262430001741718343" fileName="AndAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718343" fileName="AndAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718344" fileName="AndAssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741718344" fileName="AndAssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1869,6 +1995,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741718516">
     <nodeInfo nodeId="1262430001741718515" fileName="OtherSymlinkConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718515" fileName="OtherSymlinkConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718516" fileName="OtherSymlinkConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741718516" fileName="OtherSymlinkConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741718518" fileName="OtherSymlinkConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1882,6 +2009,7 @@
     <unitInfo nodeId="1262430001741718516" fileName="OtherSymlinkConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.OtherSymlinkConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741718532">
+    <nodeInfo nodeId="1262430001741718531" fileName="AndCombiningComditionalExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718531" fileName="AndCombiningComditionalExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718532" fileName="AndCombiningComditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741718532" fileName="AndCombiningComditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498331#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1897,6 +2025,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741718552">
     <nodeInfo nodeId="1262430001741718551" fileName="PostDecExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718551" fileName="PostDecExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718552" fileName="PostDecExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741718552" fileName="PostDecExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498229#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741718554" fileName="PostDecExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1910,6 +2039,7 @@
     <unitInfo nodeId="1262430001741718552" fileName="PostDecExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.PostDecExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741718872">
+    <nodeInfo nodeId="1262430001741718871" fileName="GreaterThanNumber_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718871" fileName="GreaterThanNumber_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718872" fileName="GreaterThanNumber_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741718872" fileName="GreaterThanNumber_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741498388#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1925,6 +2055,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741718917">
     <nodeInfo nodeId="1262430001741718916" fileName="WriteTestConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718916" fileName="WriteTestConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718917" fileName="WriteTestConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741718917" fileName="WriteTestConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741718919" fileName="WriteTestConditionalExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1938,6 +2069,7 @@
     <unitInfo nodeId="1262430001741718917" fileName="WriteTestConditionalExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.WriteTestConditionalExpression_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741718950">
+    <nodeInfo nodeId="1262430001741718949" fileName="OrOperator_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718949" fileName="OrOperator_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718950" fileName="OrOperator_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741718950" fileName="OrOperator_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperator_1262430001741498106#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -1967,6 +2099,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741719840">
     <nodeInfo nodeId="1262430001741719839" fileName="DivAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741719839" fileName="DivAssingmentExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741719840" fileName="DivAssingmentExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741719840" fileName="DivAssingmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSign_1262430001741498130#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741719842" fileName="DivAssingmentExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1981,6 +2114,7 @@
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741720125">
     <nodeInfo nodeId="1262430001741720124" fileName="VariableAssingment_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741720124" fileName="VariableAssingment_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741720125" fileName="VariableAssingment_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741720125" fileName="VariableAssingment_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAssingmentSign_1262430001741497909#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="1262430001741720127" fileName="VariableAssingment_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1994,6 +2128,7 @@
     <unitInfo nodeId="1262430001741720125" fileName="VariableAssingment_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.VariableAssingment_Behavior" />
   </root>
   <root nodeRef="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)/1262430001741720188">
+    <nodeInfo nodeId="1262430001741720187" fileName="ReadTestConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741720187" fileName="ReadTestConditionalExpression_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741720188" fileName="ReadTestConditionalExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741720188" fileName="ReadTestConditionalExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOp_1262430001741497951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />

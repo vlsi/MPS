@@ -84,6 +84,7 @@
   </root>
   <root nodeRef="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)/1642651187739181637">
     <nodeInfo nodeId="1642651187739181637" fileName="Context_Constraints.java" startLine="8" startPosition="32" endLine="9" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1642651187739181637" fileName="Context_Constraints.java" startLine="8" startPosition="32" endLine="9" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1642651187739181637" fileName="Context_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Context_Constraints#()V" />
     <scopeInfo nodeId="1642651187739181637" fileName="Context_Constraints.java" startLine="8" startPosition="32" endLine="9" endPosition="57" />
     <scopeInfo nodeId="1642651187739181637" fileName="Context_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
@@ -538,6 +539,7 @@
   </root>
   <root nodeRef="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)/7655275107718250850">
     <nodeInfo nodeId="7655275107718250850" fileName="ContextUIObjectParam_Constraints.java" startLine="8" startPosition="45" endLine="9" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7655275107718250850" fileName="ContextUIObjectParam_Constraints.java" startLine="8" startPosition="45" endLine="9" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7655275107718250850" fileName="ContextUIObjectParam_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextUIObjectParam_Constraints#()V" />
     <scopeInfo nodeId="7655275107718250850" fileName="ContextUIObjectParam_Constraints.java" startLine="8" startPosition="45" endLine="9" endPosition="70" />
     <scopeInfo nodeId="7655275107718250850" fileName="ContextUIObjectParam_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
@@ -599,6 +601,7 @@
     <unitInfo nodeId="7930737280446914700" fileName="LayoutConstraintType_Constraints.java" startLine="24" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.LayoutConstraintType_Constraints" />
   </root>
   <root nodeRef="r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)/8115675450775148416">
+    <nodeInfo nodeId="8115675450775148416" fileName="EventHandlerTemplate_Constraints.java" startLine="8" startPosition="45" endLine="9" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8115675450775148416" fileName="EventHandlerTemplate_Constraints.java" startLine="8" startPosition="45" endLine="9" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8115675450775148416" fileName="EventHandlerTemplate_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EventHandlerTemplate_Constraints#()V" />
     <scopeInfo nodeId="8115675450775148416" fileName="EventHandlerTemplate_Constraints.java" startLine="8" startPosition="45" endLine="9" endPosition="70" />

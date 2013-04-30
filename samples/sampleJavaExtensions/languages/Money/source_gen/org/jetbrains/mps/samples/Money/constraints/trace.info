@@ -85,6 +85,7 @@
   </root>
   <root nodeRef="r:287f3730-82f2-4e81-b8c8-89838004f6d4(org.jetbrains.mps.samples.Money.constraints)/3607579524910558859">
     <nodeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyLiteral_Constraints#()V" />
     <scopeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="68" />
     <scopeInfo nodeId="3607579524910558859" fileName="MoneyLiteral_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
