@@ -66,6 +66,58 @@
     </scopeInfo>
     <unitInfo nodeId="1264383190525067829" fileName="ClassStubPsiMapper.java" startLine="20" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.idea.java.fastFind.ClassStubPsiMapper" />
   </root>
+  <root nodeRef="r:714e1a8b-f5ef-43ca-864f-d3aa5fa2e53e(jetbrains.mps.idea.java.fastFind)/2601455755478036261">
+    <nodeInfo nodeId="2601455755478083387" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="21" startPosition="136" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2601455755478083397" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="22" startPosition="0" endLine="23" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2601455755478083441" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="23" startPosition="59" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2601455755478064491" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="26" startPosition="56" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2601455755478072728" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="32" startPosition="141" endLine="33" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2601455755478083385" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="36" startPosition="143" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2601455755478095189" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="40" startPosition="31" endLine="41" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2601455755478097210" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="44" startPosition="34" endLine="45" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2601455755478093260" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="50" startPosition="36" endLine="51" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2601455755478062245" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="25" startPosition="33" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2601455755478061240" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findInstances#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+    <nodeInfo nodeId="2601455755478061257" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModelUsages#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+    <nodeInfo nodeId="2601455755478093238" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="2601455755478093244" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="2601455755478084847" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="24" startPosition="63" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2601455755478093250" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2601455755478061223" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findUsages#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+    <scopeInfo nodeId="2601455755478062246" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="26" startPosition="56" endLine="27" endPosition="41" />
+    <scopeInfo nodeId="2601455755478061256" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="32" startPosition="141" endLine="33" endPosition="65" />
+    <scopeInfo nodeId="2601455755478061273" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="36" startPosition="143" endLine="37" endPosition="65" />
+    <scopeInfo nodeId="2601455755478093243" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="40" startPosition="31" endLine="41" endPosition="67" />
+    <scopeInfo nodeId="2601455755478093249" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="44" startPosition="34" endLine="45" endPosition="70" />
+    <scopeInfo nodeId="2601455755478093258" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="50" startPosition="36" endLine="51" endPosition="57" />
+    <scopeInfo nodeId="2601455755478084850" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="25" startPosition="33" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="2601455755478061240" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="2601455755478061244" varName="collection" />
+      <varInfo nodeId="2601455755478061250" varName="consumer" />
+      <varInfo nodeId="2601455755478061253" varName="consumer1" />
+      <varInfo nodeId="2601455755478061247" varName="set" />
+    </scopeInfo>
+    <scopeInfo nodeId="2601455755478061257" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2601455755478061261" varName="collection" />
+      <varInfo nodeId="2601455755478061267" varName="consumer" />
+      <varInfo nodeId="2601455755478061270" varName="consumer1" />
+      <varInfo nodeId="2601455755478061264" varName="set" />
+    </scopeInfo>
+    <scopeInfo nodeId="2601455755478093238" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2601455755478093244" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="2601455755478084847" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="24" startPosition="63" endLine="29" endPosition="5">
+      <varInfo nodeId="2601455755478084853" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="2601455755478093250" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="48" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="2601455755478061239" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="21" startPosition="136" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="2601455755478061223" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2601455755478061233" varName="consumer" />
+      <varInfo nodeId="2601455755478061227" varName="models" />
+      <varInfo nodeId="2601455755478061236" varName="processedConsumer" />
+      <varInfo nodeId="2601455755478061230" varName="set" />
+    </scopeInfo>
+    <unitInfo nodeId="2601455755478036261" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="20" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.idea.java.fastFind.EmptyJavaPsiStubsFindUsages" />
+  </root>
   <root nodeRef="r:714e1a8b-f5ef-43ca-864f-d3aa5fa2e53e(jetbrains.mps.idea.java.fastFind)/3335509261457006477">
     <nodeInfo nodeId="5895509475574052967" fileName="JavaPsiStubsNavigationContributor.java" startLine="28" startPosition="59" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="7414633741220296162" fileName="JavaPsiStubsNavigationContributor.java" startLine="30" startPosition="7" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

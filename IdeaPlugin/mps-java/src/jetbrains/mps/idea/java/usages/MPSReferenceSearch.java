@@ -73,7 +73,6 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
   public void processQuery(@NotNull SearchParameters queryParameters, final @NotNull Processor<PsiReference> consumer) {
 
     if (!(queryParameters.getEffectiveSearchScope() instanceof GlobalSearchScope)) {
-      // ??
       return;
     }
 

@@ -36,6 +36,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.java.fastFind.JavaPsiStubsNavigationContributor</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.java.fastFind.EmptyJavaPsiStubsFindUsages</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -85,7 +88,7 @@
     <java.elementFinder implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaClassFinder"/>
     <java.shortNamesCache implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaShortNamesCache"/>
     <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.usages.MPSJavaDirectInheritorsSearcher"/>
-    <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
+     <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaPackageIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSShortNameJavaClassIndex"/>
