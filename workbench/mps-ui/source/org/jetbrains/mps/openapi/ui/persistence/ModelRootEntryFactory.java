@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,8 @@
  */
 package org.jetbrains.mps.openapi.ui.persistence;
 
-import com.intellij.openapi.Disposable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.EventListener;
-
-public interface ModelRootEntry extends Disposable {
-  public ModelRoot getModelRoot();
-
-  public String getDetailsText();
-
-  public boolean isValid();
-
-  public ModelRootEntryEditor getEditor();
-
-  public void addModelRootEntryListener(ModelRootEntryListener listener);
-
-  public interface ModelRootEntryListener extends EventListener {
-    public void fireDataChanged();
-  }
+public interface ModelRootEntryFactory {
+  public ModelRootEntry getModelRootEntry(ModelRoot modelRoot);
 }

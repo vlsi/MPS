@@ -16,11 +16,11 @@
 package jetbrains.mps.ide.java.ui;
 
 import com.intellij.ide.util.treeView.AbstractTreeUi;
-import com.intellij.openapi.Disposable;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileChooser.FileSystemTree.Listener;
 import com.intellij.openapi.fileChooser.ex.FileSystemTreeImpl;
 import com.intellij.openapi.fileTypes.FileTypeRegistry;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.ui.ScrollPaneFactory;
@@ -48,15 +48,15 @@ public class JavaSourceStubsModelRootEntry implements ModelRootEntry {
   private JavaSourceStubModelRoot myModelRoot;
   private EventDispatcher<ModelRootEntryListener> myEventDispatcher = EventDispatcher.create(ModelRootEntryListener.class);
 
-  public ModelRoot getModelRoot() {
-    return myModelRoot;
-  }
-
-  public void setModelRoot(ModelRoot root) {
+  public JavaSourceStubsModelRootEntry(ModelRoot root) {
     if (!(root instanceof JavaSourceStubModelRoot)) {
       throw new ClassCastException();
     }
     myModelRoot = (JavaSourceStubModelRoot) root;
+  }
+
+  public ModelRoot getModelRoot() {
+    return myModelRoot;
   }
 
   public String getDetailsText() {
@@ -86,8 +86,13 @@ public class JavaSourceStubsModelRootEntry implements ModelRootEntry {
     myEventDispatcher.addListener(listener);
   }
 
+  @Override
+  public void dispose() {
+  }
+
   public class JavaSourceStubsModelRootEntryEditor implements ModelRootEntryEditor {
     private JBPanel myTreePanel;
+    private FileSystemTreeImpl myFileSystemTree;
 
     public JComponent createComponent() {
       JBPanel panel = new JBPanel(new GridLayoutManager(1, 1));
@@ -104,11 +109,16 @@ public class JavaSourceStubsModelRootEntry implements ModelRootEntry {
     }
 
     private void updateTree() {
-      FileSystemTreeImpl fileSystemTree = new FileSystemTreeImpl(
+      if(myFileSystemTree != null) {
+        Disposer.dispose(myFileSystemTree);
+        myFileSystemTree = null;
+      }
+
+      myFileSystemTree = new FileSystemTreeImpl(
           null,
           FileChooserDescriptorFactory.createSingleFileDescriptor(FileTypeRegistry.getInstance().getFileTypeByFileName("*.jar"))
       );
-      AbstractTreeUi ui = fileSystemTree.getTreeBuilder().getUi();
+      AbstractTreeUi ui = myFileSystemTree.getTreeBuilder().getUi();
 
       String path = myModelRoot.getPath() == null ? "" : myModelRoot.getPath();
       VirtualFile virtualFile = VirtualFileManager.getInstance().findFileByUrl(
@@ -126,9 +136,9 @@ public class JavaSourceStubsModelRootEntry implements ModelRootEntry {
       }
 
       if (virtualFile != null)
-        fileSystemTree.select(virtualFile, null);
+        myFileSystemTree.select(virtualFile, null);
 
-      fileSystemTree.addListener(
+      myFileSystemTree.addListener(
           new Listener() {
             @Override
             public void selectionChanged(List<VirtualFile> selection) {
@@ -137,12 +147,10 @@ public class JavaSourceStubsModelRootEntry implements ModelRootEntry {
                 myEventDispatcher.getMulticaster().fireDataChanged();
               }
             }
-          }, new Disposable() {
-            @Override
-            public void dispose() {
-            }
-          }
+          }, JavaSourceStubsModelRootEntry.this
       );
+
+      Disposer.register(JavaSourceStubsModelRootEntry.this, myFileSystemTree);
 
       myTreePanel.removeAll();
       myTreePanel.add(ui.getTree(), BorderLayout.CENTER);

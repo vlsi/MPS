@@ -13,7 +13,7 @@
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
-    <mps.modelRootEntry rootType="java_classes" className="jetbrains.mps.ide.java.ui.JavaClassStubsModelRootEntry"/>
+    <mps.modelRootEntry rootType="java_classes" className="jetbrains.mps.ide.java.ui.JavaClassStubsModelRootEntryFactory"/>
     <mps.facetTabFactory facetType="java" className="jetbrains.mps.ide.java.ui.JavaModuleFacetTabFactory"/>
   </extensions>
 </components>
