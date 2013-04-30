@@ -49,7 +49,7 @@ public class NonJavaMPSType extends PsiType {
 
   @Override
   public boolean isValid() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return true;
   }
 
   @Override

@@ -133,42 +133,36 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
       }
     });
 
-    refFactories.put("jetbrains.mps.baseLanguage.structure.Classifier", new RefCreator() {
+    RefCreator dotBasedRefCreator = new RefCreator() {
       @Override
       public MPSPsiRef createReferenceNode(String role, SModelReference targetModel, SNodeId targetId) {
-        return new MPSPsiClassRef(role, targetModel, targetId);
+        return new MPSDotBasedPsiRef(role, targetModel, targetId);
       }
 
       @Override
       public MPSPsiRef createReferenceNode(String role, String referenceText) {
-        return new MPSPsiClassRef(role, referenceText);
+        return new MPSDotBasedPsiRef(role, referenceText);
       }
-    });
+    };
 
+    RefCreator methodRefCreator = new RefCreator() {
+      @Override
+      public MPSPsiRef createReferenceNode(String role, SModelReference targetModel, SNodeId targetId) {
+        return new MPSPsiMethodRef(role, targetModel, targetId);
+      }
+
+      @Override
+      public MPSPsiRef createReferenceNode(String role, String referenceText) {
+        return new MPSPsiMethodRef(role, referenceText);
+      }
+    };
+
+    refFactories.put("jetbrains.mps.baseLanguage.structure.Classifier", dotBasedRefCreator);
+    refFactories.put("jetbrains.mps.baseLanguage.structure.FieldDeclaration", dotBasedRefCreator);
     // this is really for constructors (not all BaseMethodDeclarations)
-    refFactories.put("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new RefCreator() {
-      @Override
-      public MPSPsiRef createReferenceNode(String role, SModelReference targetModel, SNodeId targetId) {
-        return new MPSPsiClassRef(role, targetModel, targetId);
-      }
-
-      @Override
-      public MPSPsiRef createReferenceNode(String role, String referenceText) {
-        return new MPSPsiClassRef(role, referenceText);
-      }
-    });
-
-    refFactories.put("jetbrains.mps.baseLanguage.structure.MethodDeclaration", new RefCreator() {
-      @Override
-      public MPSPsiRef createReferenceNode(String role, SModelReference targetModel, SNodeId targetId) {
-        return new MPSPsiClassRef(role, targetModel, targetId);
-      }
-
-      @Override
-      public MPSPsiRef createReferenceNode(String role, String referenceText) {
-        return new MPSPsiClassRef(role, referenceText);
-      }
-    });
+    // it's done this way because currently Creators have link to ConstructorDeclaration
+    // in a form of specialized link to BaseMethodDeclaration
+    refFactories.put("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", methodRefCreator);
 
   }
 

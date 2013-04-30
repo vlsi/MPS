@@ -97,9 +97,6 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.psi.impl.MPSPsiProvider</implementation-class>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.idea.core.refactoring.MoveRenameBatch</implementation-class>
-    </component>
   </project-components>
 
   <extensionPoints>

@@ -19,6 +19,7 @@ import com.intellij.icons.AllIcons.Modules;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.Gray;
 import com.intellij.ui.HoverHyperlinkLabel;
+import com.intellij.ui.JBColor;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.roots.FilePathClipper;
 import com.intellij.ui.roots.IconActionComponent;
@@ -66,16 +67,15 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
 
   private final Map<JComponent, Color> myComponentToForegroundMap = new HashMap<JComponent, Color>();
 
-  @Override
-  public ModelRoot getModelRoot() {
-    return myFileBasedModelRoot;
-  }
-
-  @Override
-  public void setModelRoot(ModelRoot modelRoot) {
+  public FileBasedModelRootEntry(ModelRoot modelRoot) {
     if(!(modelRoot instanceof FileBasedModelRoot))
       throw new ClassCastException("Can't convert " + modelRoot.getClass().getCanonicalName() + " to " + FileBasedModelRoot.class.getCanonicalName());
     myFileBasedModelRoot = (FileBasedModelRoot)modelRoot;
+  }
+
+  @Override
+  public ModelRoot getModelRoot() {
+    return myFileBasedModelRoot;
   }
 
   @Override
@@ -231,10 +231,14 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
     myEventDispatcher.getMulticaster().fireDataChanged();
   }
 
+  @Override
+  public void dispose() {
+  }
+
 
   private static class UnderlinedPathLabel extends ResizingWrapper {
     private static final float[] DASH = {0, 2, 0, 2};
-    private static final Color DASH_LINE_COLOR = UIUtil.isUnderDarcula() ? Gray._100 : new Color(0xC9C9C9);
+    private static final Color DASH_LINE_COLOR = new JBColor(Gray._201, Gray._100);
 
     public UnderlinedPathLabel(JLabel wrappedComponent) {
       super(wrappedComponent);

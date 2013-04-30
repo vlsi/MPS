@@ -7,10 +7,10 @@ package jetbrains.mps.psiTest;
  * Time: 8:53 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Parametric<T extends Number> {
+public class ParametricHhhhh<T extends Number> {
     private T value;
 
-    public Parametric(T value) {
+    public ParametricHhhhh(T value) {
         this.value = value;
     }
 

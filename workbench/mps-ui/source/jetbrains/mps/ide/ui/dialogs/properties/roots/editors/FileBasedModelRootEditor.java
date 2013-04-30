@@ -64,7 +64,6 @@ import java.util.Collection;
 import java.util.Comparator;
 
 public class FileBasedModelRootEditor implements ModelRootEntryEditor {
-//  private final Project myProject;
   protected Tree myTree;
   private FileSystemTreeImpl myFileSystemTree;
   private final JPanel myTreePanel;
@@ -167,10 +166,7 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
       }
     };
     myFileSystemTree.showHiddens(true);
-    Disposer.register(new Disposable() {
-      @Override
-      public void dispose() {}
-    }, myFileSystemTree);
+    Disposer.register(myFileBasedModelRootEntry, myFileSystemTree);
 
     final NewFolderAction newFolderAction = new MyNewFolderAction();
     final DefaultActionGroup mousePopupGroup = new DefaultActionGroup();

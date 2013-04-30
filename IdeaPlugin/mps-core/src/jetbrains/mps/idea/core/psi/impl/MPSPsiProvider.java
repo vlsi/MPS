@@ -104,7 +104,7 @@ public class MPSPsiProvider extends AbstractProjectComponent {
 
     final SNode node = nodeRef.resolve(MPSModuleRepository.getInstance());
     if (node == null) return null;
-
+    ModelAccess.assertLegalRead();
     return getPsi(node);
   }
 

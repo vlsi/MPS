@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
 import com.intellij.icons.AllIcons.Modules;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -30,6 +31,7 @@ import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.ui.ScrollPaneFactory;
@@ -43,11 +45,9 @@ import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -72,7 +72,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class ContentEntriesEditor {
+public class ContentEntriesEditor implements Disposable {
 
   private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 
@@ -89,6 +89,7 @@ public class ContentEntriesEditor {
     myModuleDescriptor = moduleDescriptor;
     for (ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(descriptor);
+      Disposer.register(this, entry);
       ModelRootEntryContainer container = new ModelRootEntryContainer(entry);
       container.addContentEntryEditorListener(myEditorListener);
       myModelRootEntries.add(container);
@@ -249,6 +250,10 @@ public class ContentEntriesEditor {
     return myMainPanel;
   }
 
+  @Override
+  public void dispose() {
+  }
+
   private class AddContentEntryAction extends IconWithTextAction implements DumbAware {
     private String myType;
 
@@ -261,6 +266,7 @@ public class ContentEntriesEditor {
     public void actionPerformed(AnActionEvent e) {
       ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(modelRoot);
+      Disposer.register(ContentEntriesEditor.this, entry);
       if (entry instanceof FileBasedModelRootEntry) {
         if (!checkAndAddFBModelRoot(entry)) {
           return;

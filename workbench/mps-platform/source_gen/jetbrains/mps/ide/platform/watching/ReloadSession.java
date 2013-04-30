@@ -14,8 +14,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.SubProgressKind;
-import jetbrains.mps.classloading.MPSClassesReloadManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -81,11 +79,6 @@ public class ReloadSession {
           int work = 1;
           for (ReloadParticipant rp : getParticipants()) {
             rp.update(monitor.subTask(work++, SubProgressKind.REPLACING));
-          }
-
-          if (MPSClassesReloadManager.getInstance().isReloadRequested()) {
-            monitor.subTask(1, SubProgressKind.REPLACING).start("Reloading classes... Please wait.", 1);
-            MPSClassesReloadManager.getInstance().reloadMPSClasses(new EmptyProgressMonitor());
           }
         }
       });

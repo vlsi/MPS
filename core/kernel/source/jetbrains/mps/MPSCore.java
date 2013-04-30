@@ -18,7 +18,6 @@ package jetbrains.mps;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.checkers.CheckersComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.datatransfer.CopyPasteManager;
@@ -92,7 +91,6 @@ public class MPSCore extends ComponentPlugin {
     myModuleRepository = init(new MPSModuleRepository());
     myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
     ClassLoaderManager classLoaderManager = init(new ClassLoaderManager());
-    init(new MPSClassesReloadManager());
 
     init(new SModelFileTracker(myModelRepository, myGlobalSModelEventsManager));
     init(new ModuleRepositoryFacade(myModuleRepository));
