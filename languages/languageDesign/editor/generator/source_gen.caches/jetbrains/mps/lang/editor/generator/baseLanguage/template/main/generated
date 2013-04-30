@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-89v2e7xqp7c54y56j00sszj25gtzxrp">
+<dependencies version="2" modelHash="1m1smuh8v8iyn2tpoh00o9au5gf26ln">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -188,7 +188,7 @@
   <source id="1139748492512" name="reduce_CellModel_Image" hash="-8yp8ai97fas61eg66r4u62a9gtg919k">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1139852871567" name="reduce_CellModel_WithRole" hash="-53fdnb8yw7hcu68w9c6hdmd8hxgznel">
+  <source id="1139852871567" name="reduce_CellModel_WithRole" hash="-nfox3bf3k9org4sgrg5m47ugjfsxnp">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1139959997313" name="MAPPING_ActionMap" hash="-2cn6312mz91fya7emwao8lgumiqdm7h">
