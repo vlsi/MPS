@@ -39,11 +39,14 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -77,6 +80,10 @@ public class ClassLoaderManager implements CoreComponent {
     public void beforeModuleRemoved(SModule module) {
       unloadClasses(Collections.singleton(module), new EmptyProgressMonitor());
     }
+
+
+    // todo: add listener on module added!
+    // todo: add listener on module reloaded! (?)
   };
 
   // temporary stuff for profiling
@@ -108,6 +115,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   // main api
   public boolean canLoad(SModule module) {
+    // todo: should be just MPS_FACET
     if (module instanceof Language || module instanceof Generator) {
       return true;
     }
@@ -159,9 +167,6 @@ public class ClassLoaderManager implements CoreComponent {
   // main internal method. use getClass instead
   @Nullable
   public synchronized ModuleClassLoader getClassLoader(SModule module) {
-    if (module instanceof Generator) {
-      return getClassLoader(((Generator) module).getSourceLanguage());
-    }
     if (!ModuleClassLoaderSupport.canCreate(module)) {
       throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
     }
@@ -198,6 +203,7 @@ public class ClassLoaderManager implements CoreComponent {
     try {
       monitor.step("Invalidate classloaders...");
       toUnload = collectBackReferences(toUnload);
+//      System.out.println("To unload on " + modules + " -> " + toUnload.size() + " " + toUnload);
       // update back refs
       for (Set<SModule> backRefs : myBackRefs.values()) {
         backRefs.removeAll(toUnload);
@@ -353,6 +359,18 @@ public class ClassLoaderManager implements CoreComponent {
       actionToTime.put(name, time);
     }
     actionToTime.put(name, time + actionToTime.get(name));
+  }
+
+  // for debug purposes
+  private List<Entry<String, Long>> getStat() {
+    List<Entry<String, Long>> entries = new ArrayList<Entry<String, Long>>(actionToTime.entrySet());
+    Collections.sort(entries, new Comparator<Entry<String, Long>>() {
+      @Override
+      public int compare(Entry<String, Long> arg0, Entry<String, Long> arg1) {
+        return Long.signum(arg1.getValue() - arg0.getValue());
+      }
+    });
+    return entries;
   }
 
   //---------------deprecated part------------------

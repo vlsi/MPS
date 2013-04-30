@@ -15,13 +15,13 @@
  */
 package org.jetbrains.mps.openapi.ui.persistence;
 
+import com.intellij.openapi.Disposable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.EventListener;
 
-public interface ModelRootEntry {
+public interface ModelRootEntry extends Disposable {
   public ModelRoot getModelRoot();
-  public void setModelRoot(ModelRoot modelRoot);
 
   public String getDetailsText();
 

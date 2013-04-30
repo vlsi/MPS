@@ -17,6 +17,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -98,6 +100,27 @@ public class WriteHelper {
   @Nullable
   public String genTypeId(@NotNull SNode node) {
     return genReferenceId(myEnv.getConceptId(node));
+  }
+
+  public String genNodeInfo(@NotNull SNode node) {
+    ConceptKind conceptKind = myEnv.getConceptKind(node);
+    StaticScope conceptScope = myEnv.getConceptScope(node);
+    boolean unordered = myEnv.isInUnorderedRole(node);
+    char[] res = (unordered ?
+      new char[]{'n', 'g', 'u'} :
+      new char[]{'n', 'g'}
+    );
+    if (conceptKind == ConceptKind.INTERFACE) {
+      res[0] = 'i';
+    } else if (conceptKind == ConceptKind.IMPLEMENTATION) {
+      res[0] = 'l';
+    }
+    if (conceptScope == StaticScope.ROOT) {
+      res[1] = 'r';
+    } else if (conceptScope == StaticScope.NONE) {
+      res[1] = 'n';
+    }
+    return new String(res);
   }
 
   public String genRole(@NotNull SNode node) {

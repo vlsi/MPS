@@ -35,8 +35,8 @@ public class ModuleClassLoaderSupport {
   private final Set<SModule> compileDependencies;
 
   private ModuleClassLoaderSupport(SModule module) {
-    // ModuleClassLoaders should be created only from Language / Solution modules, not Generator!
-    assert !(module instanceof Generator);
+    // ModuleClassLoaders should be created all canCreate()-able modules!
+    assert canCreate(module);
 
     this.module = module;
 
@@ -60,8 +60,8 @@ public class ModuleClassLoaderSupport {
 
   // ext point possible here
   public static boolean canCreate(SModule module) {
-    // + check is module compiled?
-    return !(module instanceof Generator) && module.getFacet(JavaModuleFacet.class) != null;
+    // todo: + check is module compiled?
+    return module.getFacet(JavaModuleFacet.class) != null;
   }
 
   public static ModuleClassLoaderSupport create(SModule module) {

@@ -134,7 +134,11 @@ public class JavaForeignIdBuilder {
       if (name == null) {
         return null;
       }
-      sb.append(name);
+      if (((PsiMethod) element).isConstructor()) {
+        sb.deleteCharAt(sb.length() - 1);
+      } else {
+        sb.append(name);
+      }
       sb.append('(');
 
       for (PsiParameter param : method.getParameterList().getParameters()) {

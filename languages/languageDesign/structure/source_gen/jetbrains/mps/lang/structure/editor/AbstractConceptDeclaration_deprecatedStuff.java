@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -98,7 +97,7 @@ public class AbstractConceptDeclaration_deprecatedStuff extends AbstractCellProv
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept properties:");
     editorCell.setCellId("Constant_za92a3_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    structure_StyleSheet.applyKeyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -171,7 +170,7 @@ public class AbstractConceptDeclaration_deprecatedStuff extends AbstractCellProv
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept links:");
     editorCell.setCellId("Constant_za92a3_d0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    structure_StyleSheet.applyKeyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -263,7 +262,7 @@ public class AbstractConceptDeclaration_deprecatedStuff extends AbstractCellProv
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept property declarations:");
     editorCell.setCellId("Constant_za92a3_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    structure_StyleSheet.applyKeyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -336,7 +335,7 @@ public class AbstractConceptDeclaration_deprecatedStuff extends AbstractCellProv
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept link declarations:");
     editorCell.setCellId("Constant_za92a3_d1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    structure_StyleSheet.applyKeyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

@@ -543,9 +543,9 @@ public class ASTConverter {
 
     if (!(x instanceof ConstructorDeclaration)) {
       SPropertyOperations.set(result, "name", new String(x.selector));
+      check_rbndtb_a1a5a61(idBuilder, result);
     }
-    // using eclipse selector because result.name is not set for constructors 
-    check_rbndtb_a7a61(idBuilder, x);
+    check_rbndtb_a6a61(idBuilder);
 
     {
       SNode imd = result;
@@ -567,15 +567,15 @@ public class ASTConverter {
         ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(par);
 
         // <node> 
-        check_rbndtb_a7a0a31a61(idBuilder, arg, this);
-        check_rbndtb_a8a0a31a61(idBuilder);
+        check_rbndtb_a7a0a21a61(idBuilder, arg, this);
+        check_rbndtb_a8a0a21a61(idBuilder);
       }
       // delete the last comma 
       if (x.arguments.length > 0) {
-        check_rbndtb_a0a2a31a61(idBuilder, idBuilder);
+        check_rbndtb_a0a2a21a61(idBuilder, idBuilder);
       }
     }
-    check_rbndtb_a41a61(idBuilder);
+    check_rbndtb_a31a61(idBuilder);
 
     if (x.thrownExceptions != null) {
       for (TypeReference exc : x.thrownExceptions) {
@@ -589,7 +589,7 @@ public class ASTConverter {
 
     } else {
       // make a different stub statement list 'source code' ? 
-      SLinkOperations.setTarget(result, "body", _quotation_createNode_rbndtb_a0b0a81a61(), true);
+      SLinkOperations.setTarget(result, "body", _quotation_createNode_rbndtb_a0b0a71a61(), true);
     }
 
     {
@@ -1191,56 +1191,63 @@ public class ASTConverter {
     return quotedNode_1;
   }
 
-  private static StringBuilder check_rbndtb_a7a61(StringBuilder checkedDotOperand, AbstractMethodDeclaration x) {
+  private static StringBuilder check_rbndtb_a1a5a61(StringBuilder checkedDotOperand, SNode result) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.append("." + new String(x.selector) + "(");
+      return checkedDotOperand.append("." + new String(SPropertyOperations.getString(result, "name")));
     }
     return null;
   }
 
-  private static StringBuilder check_rbndtb_a0a6a0a31a61(StringBuilder checkedDotOperand, SNode par, ASTConverter checkedDotThisExpression) {
+  private static StringBuilder check_rbndtb_a6a61(StringBuilder checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.append("(");
+    }
+    return null;
+  }
+
+  private static StringBuilder check_rbndtb_a0a6a0a21a61(StringBuilder checkedDotOperand, SNode par, ASTConverter checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(checkedDotThisExpression.getTypeName(SLinkOperations.getTarget(par, "type", true)));
     }
     return null;
   }
 
-  private static StringBuilder check_rbndtb_a7a0a31a61(StringBuilder checkedDotOperand, Argument arg, ASTConverter checkedDotThisExpression) {
+  private static StringBuilder check_rbndtb_a7a0a21a61(StringBuilder checkedDotOperand, Argument arg, ASTConverter checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(checkedDotThisExpression.typeReferenceId(arg.type));
     }
     return null;
   }
 
-  private static StringBuilder check_rbndtb_a8a0a31a61(StringBuilder checkedDotOperand) {
+  private static StringBuilder check_rbndtb_a8a0a21a61(StringBuilder checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(",");
     }
     return null;
   }
 
-  private static StringBuilder check_rbndtb_a0a2a31a61(StringBuilder checkedDotOperand, StringBuilder idBuilder) {
+  private static StringBuilder check_rbndtb_a0a2a21a61(StringBuilder checkedDotOperand, StringBuilder idBuilder) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.deleteCharAt(check_rbndtb_a0a0a0c0n0q(idBuilder) - 1);
+      return checkedDotOperand.deleteCharAt(check_rbndtb_a0a0a0c0m0q(idBuilder) - 1);
     }
     return null;
   }
 
-  private static int check_rbndtb_a0a0a0c0n0q(StringBuilder checkedDotOperand) {
+  private static int check_rbndtb_a0a0a0c0m0q(StringBuilder checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.length();
     }
     return 0;
   }
 
-  private static StringBuilder check_rbndtb_a41a61(StringBuilder checkedDotOperand) {
+  private static StringBuilder check_rbndtb_a31a61(StringBuilder checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(")");
     }
     return null;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0b0a81a61() {
+  private static SNode _quotation_createNode_rbndtb_a0b0a71a61() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StubStatementList", null, null, GlobalScope.getInstance(), false);

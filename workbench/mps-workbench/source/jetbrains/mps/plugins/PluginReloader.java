@@ -190,14 +190,13 @@ public class PluginReloader implements ApplicationComponent {
     }
 
     private void onAfterReloadAll() {
-      Runnable runnable = new Runnable() {
+      //write action is needed the because user can acquire write action inside of this [see MPS-9139]
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
-          //write action is needed the because user can acquire write action inside of this [see MPS-9139]
           if (!isDisposed()) loadPlugins();
         }
-      };
-      ModelAccess.instance().runWriteInEDT(runnable);
+      });
     }
   }
 }

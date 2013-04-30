@@ -234,11 +234,6 @@ public class Generator extends AbstractModule {
     return result;
   }
 
-  @Override
-  public IFile getOutputPath() {
-    return mySourceLanguage.getOutputPath();
-  }
-
   private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {
     @Override
     public Class<Generator> getApplicableSModuleClass() {
