@@ -50,7 +50,7 @@ public class LocalMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("method");
     provider.setNoTargetText("<no method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LocalMethodCall_Editor._Inline_2jlgx_a1a("method"));
+    provider.setAuxiliaryCellProvider(new LocalMethodCall_Editor._Inline_2jlgx_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

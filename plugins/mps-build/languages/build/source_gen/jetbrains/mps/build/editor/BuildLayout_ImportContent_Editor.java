@@ -75,7 +75,7 @@ public class BuildLayout_ImportContent_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildLayout_ImportContent_Editor._Inline_roxgcf_a1a("target"));
+    provider.setAuxiliaryCellProvider(new BuildLayout_ImportContent_Editor._Inline_roxgcf_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -111,7 +111,7 @@ public class BuildLayout_ImportContent_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_roxgcf_a0b0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
       editorCell.setCellId("ReferencePresentation_roxgcf_a0b0");
       return editorCell;
     }

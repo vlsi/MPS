@@ -62,7 +62,7 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<all>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Model_RootsOperation_Editor._Inline_4rfqrk_a2a("concept"));
+    provider.setAuxiliaryCellProvider(new Model_RootsOperation_Editor._Inline_4rfqrk_a2a());
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);

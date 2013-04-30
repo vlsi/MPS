@@ -34,7 +34,7 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
     provider.setRole("fieldDeclaration");
     provider.setNoTargetText("<no fieldDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FieldReferenceOperation_Editor._Inline_i6724r_a0a("fieldDeclaration"));
+    provider.setAuxiliaryCellProvider(new FieldReferenceOperation_Editor._Inline_i6724r_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

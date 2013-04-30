@@ -44,7 +44,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("conceptMethodDeclaration");
     provider.setNoTargetText("<no conceptMethodDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Node_ConceptMethodCall_Editor._Inline_kosqrl_a0a("conceptMethodDeclaration"));
+    provider.setAuxiliaryCellProvider(new Node_ConceptMethodCall_Editor._Inline_kosqrl_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

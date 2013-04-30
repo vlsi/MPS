@@ -59,7 +59,7 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Node_InsertNewPrevSiblingOperation_Editor._Inline_s8z18l_a2a("concept"));
+    provider.setAuxiliaryCellProvider(new Node_InsertNewPrevSiblingOperation_Editor._Inline_s8z18l_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

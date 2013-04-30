@@ -33,7 +33,7 @@ public class DirectClassifierSpecification_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DirectClassifierSpecification_Editor._Inline_v9q52x_a0a("classifier"));
+    provider.setAuxiliaryCellProvider(new DirectClassifierSpecification_Editor._Inline_v9q52x_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -66,7 +66,7 @@ public class DirectClassifierSpecification_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_v9q52x_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "classifier");
       editorCell.setCellId("ReferencePresentation_v9q52x_a0a0");
       return editorCell;
     }

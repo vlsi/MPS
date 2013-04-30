@@ -32,7 +32,7 @@ public class PropertyQualifier_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyQualifier_Editor._Inline_z1k7sb_a0a("property"));
+    provider.setAuxiliaryCellProvider(new PropertyQualifier_Editor._Inline_z1k7sb_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

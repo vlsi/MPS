@@ -36,7 +36,7 @@ public class SLinkImplicitSelect_Editor extends DefaultNodeEditor {
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SLinkImplicitSelect_Editor._Inline_153ycv_a0a("link"));
+    provider.setAuxiliaryCellProvider(new SLinkImplicitSelect_Editor._Inline_153ycv_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

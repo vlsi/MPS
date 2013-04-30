@@ -89,7 +89,7 @@ public class SimpleBuilders_Editor extends DefaultNodeEditor {
     provider.setRole("extendsBuilder");
     provider.setNoTargetText("<no extendsBuilder>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleBuilders_Editor._Inline_hh7u75_a3a("extendsBuilder"));
+    provider.setAuxiliaryCellProvider(new SimpleBuilders_Editor._Inline_hh7u75_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -61,7 +61,7 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<all>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Model_NodesOperation_Editor._Inline_kohub4_a2a("concept"));
+    provider.setAuxiliaryCellProvider(new Model_NodesOperation_Editor._Inline_kohub4_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

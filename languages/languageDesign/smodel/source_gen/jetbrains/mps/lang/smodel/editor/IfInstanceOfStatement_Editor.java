@@ -96,7 +96,7 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
     provider.setRole("nodeConcept");
     provider.setNoTargetText("<no nodeConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IfInstanceOfStatement_Editor._Inline_ret20j_a4a("nodeConcept"));
+    provider.setAuxiliaryCellProvider(new IfInstanceOfStatement_Editor._Inline_ret20j_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -67,7 +67,7 @@ public class CompartmentReferenceExpression_Editor extends DefaultNodeEditor {
     provider.setRole("container");
     provider.setNoTargetText("<any>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CompartmentReferenceExpression_Editor._Inline_v8f2p9_a2a("container"));
+    provider.setAuxiliaryCellProvider(new CompartmentReferenceExpression_Editor._Inline_v8f2p9_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

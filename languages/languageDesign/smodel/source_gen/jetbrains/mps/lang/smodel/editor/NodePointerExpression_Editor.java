@@ -64,7 +64,7 @@ public class NodePointerExpression_Editor extends DefaultNodeEditor {
     provider.setRole("referentNode");
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodePointerExpression_Editor._Inline_abtqvg_a2a("referentNode"));
+    provider.setAuxiliaryCellProvider(new NodePointerExpression_Editor._Inline_abtqvg_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

@@ -69,7 +69,7 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("enum");
     provider.setNoTargetText("<no enum>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumMemberValueRefExpression_Editor._Inline_ldpt2z_a2a("enum"));
+    provider.setAuxiliaryCellProvider(new EnumMemberValueRefExpression_Editor._Inline_ldpt2z_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -137,7 +137,7 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("member");
     provider.setNoTargetText("<no member>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumMemberValueRefExpression_Editor._Inline_ldpt2z_a4a("member"));
+    provider.setAuxiliaryCellProvider(new EnumMemberValueRefExpression_Editor._Inline_ldpt2z_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -170,7 +170,7 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_ldpt2z_a0e0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "member");
       editorCell.setCellId("ReferencePresentation_ldpt2z_a0e0");
       return editorCell;
     }

@@ -49,7 +49,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     provider.setRole("enumClass");
     provider.setNoTargetText("<no enumClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumValueOfExpression_Editor._Inline_5sxwue_a0a("enumClass"));
+    provider.setAuxiliaryCellProvider(new EnumValueOfExpression_Editor._Inline_5sxwue_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

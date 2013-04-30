@@ -66,7 +66,7 @@ public class AppendUIObjectStatement_Editor extends DefaultNodeEditor {
     provider.setRole("uiObject");
     provider.setNoTargetText("<no uiObject>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AppendUIObjectStatement_Editor._Inline_mtcoyd_a1a0a("uiObject"));
+    provider.setAuxiliaryCellProvider(new AppendUIObjectStatement_Editor._Inline_mtcoyd_a1a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     UI_StyleSheet.applyUIObject(style, editorCell);

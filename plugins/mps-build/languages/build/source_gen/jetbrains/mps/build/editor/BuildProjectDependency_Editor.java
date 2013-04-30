@@ -46,7 +46,7 @@ public class BuildProjectDependency_Editor extends DefaultNodeEditor {
     provider.setRole("script");
     provider.setNoTargetText("<no script>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildProjectDependency_Editor._Inline_jumb3f_a0a("script"));
+    provider.setAuxiliaryCellProvider(new BuildProjectDependency_Editor._Inline_jumb3f_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");

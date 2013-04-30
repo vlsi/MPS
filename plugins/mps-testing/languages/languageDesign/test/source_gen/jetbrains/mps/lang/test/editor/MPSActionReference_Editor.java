@@ -48,7 +48,7 @@ public class MPSActionReference_Editor extends DefaultNodeEditor {
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MPSActionReference_Editor._Inline_5z7arn_a1a("action"));
+    provider.setAuxiliaryCellProvider(new MPSActionReference_Editor._Inline_5z7arn_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

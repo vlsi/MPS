@@ -32,7 +32,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
     provider.setRole("intfc");
     provider.setNoTargetText("<no intfc>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InterfaceConceptReference_Editor._Inline_j6mzh4_a0a("intfc"));
+    provider.setAuxiliaryCellProvider(new InterfaceConceptReference_Editor._Inline_j6mzh4_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

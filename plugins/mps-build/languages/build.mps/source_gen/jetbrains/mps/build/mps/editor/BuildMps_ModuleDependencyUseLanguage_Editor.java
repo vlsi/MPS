@@ -47,7 +47,7 @@ public class BuildMps_ModuleDependencyUseLanguage_Editor extends DefaultNodeEdit
     provider.setRole("language");
     provider.setNoTargetText("<no language>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMps_ModuleDependencyUseLanguage_Editor._Inline_qvq9fk_a1a("language"));
+    provider.setAuxiliaryCellProvider(new BuildMps_ModuleDependencyUseLanguage_Editor._Inline_qvq9fk_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -62,7 +62,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     provider.setRole("classConcept");
     provider.setNoTargetText("<no classConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline_xaaxob_a0a0("classConcept"));
+    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline_xaaxob_a0a0());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
@@ -180,7 +180,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     provider.setRole("classConcept");
     provider.setNoTargetText("<no classConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline_xaaxob_a1a("classConcept"));
+    provider.setAuxiliaryCellProvider(new ThisExpression_Editor._Inline_xaaxob_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

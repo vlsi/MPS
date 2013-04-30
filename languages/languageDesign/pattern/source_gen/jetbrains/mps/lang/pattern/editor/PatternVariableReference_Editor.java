@@ -38,7 +38,7 @@ public class PatternVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PatternVariableReference_Editor._Inline_bm8m1i_a0a("variable"));
+    provider.setAuxiliaryCellProvider(new PatternVariableReference_Editor._Inline_bm8m1i_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);

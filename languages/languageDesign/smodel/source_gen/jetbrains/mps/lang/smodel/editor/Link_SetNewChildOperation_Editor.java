@@ -61,7 +61,7 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Link_SetNewChildOperation_Editor._Inline_rl6lhr_a2a("concept"));
+    provider.setAuxiliaryCellProvider(new Link_SetNewChildOperation_Editor._Inline_rl6lhr_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

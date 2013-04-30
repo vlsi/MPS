@@ -40,7 +40,7 @@ public class SPropertyAccess_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SPropertyAccess_Editor._Inline_hntvsg_a0a("property"));
+    provider.setAuxiliaryCellProvider(new SPropertyAccess_Editor._Inline_hntvsg_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

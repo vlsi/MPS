@@ -40,7 +40,7 @@ public class SConceptPropertyAccess_Editor extends DefaultNodeEditor {
     provider.setRole("conceptProperty");
     provider.setNoTargetText("<no concept property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SConceptPropertyAccess_Editor._Inline_wa3gkv_a0a("conceptProperty"));
+    provider.setAuxiliaryCellProvider(new SConceptPropertyAccess_Editor._Inline_wa3gkv_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

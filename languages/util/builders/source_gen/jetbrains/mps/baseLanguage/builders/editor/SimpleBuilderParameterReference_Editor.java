@@ -34,7 +34,7 @@ public class SimpleBuilderParameterReference_Editor extends DefaultNodeEditor {
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleBuilderParameterReference_Editor._Inline_egu5s_a0a("parameter"));
+    provider.setAuxiliaryCellProvider(new SimpleBuilderParameterReference_Editor._Inline_egu5s_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

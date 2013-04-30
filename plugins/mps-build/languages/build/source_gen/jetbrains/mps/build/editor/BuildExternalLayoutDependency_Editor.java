@@ -44,7 +44,7 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
     provider.setRole("layout");
     provider.setNoTargetText("<no layout>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildExternalLayoutDependency_Editor._Inline_rscqin_a0a("layout"));
+    provider.setAuxiliaryCellProvider(new BuildExternalLayoutDependency_Editor._Inline_rscqin_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");

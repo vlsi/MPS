@@ -62,7 +62,7 @@ public class ReadConceptReferenceExpression_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no conceptDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReadConceptReferenceExpression_Editor._Inline_tbzx31_a2a("conceptDeclaration"));
+    provider.setAuxiliaryCellProvider(new ReadConceptReferenceExpression_Editor._Inline_tbzx31_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

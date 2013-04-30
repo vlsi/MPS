@@ -84,7 +84,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Model_NodesIncludingImportedOperation_Editor._Inline_llx455_a4a("concept"));
+    provider.setAuxiliaryCellProvider(new Model_NodesIncludingImportedOperation_Editor._Inline_llx455_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

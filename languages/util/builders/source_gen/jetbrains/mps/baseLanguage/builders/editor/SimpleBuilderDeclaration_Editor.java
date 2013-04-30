@@ -251,7 +251,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("extends");
     provider.setNoTargetText("<no extends>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleBuilderDeclaration_Editor._Inline_ths2vx_a9a("extends"));
+    provider.setAuxiliaryCellProvider(new SimpleBuilderDeclaration_Editor._Inline_ths2vx_a9a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

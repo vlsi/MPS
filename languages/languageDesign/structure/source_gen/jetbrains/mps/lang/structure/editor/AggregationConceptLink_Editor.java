@@ -44,7 +44,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     provider.setRole("aggregationConceptLinkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AggregationConceptLink_Editor._Inline_ivlr8m_a0a("aggregationConceptLinkDeclaration"));
+    provider.setAuxiliaryCellProvider(new AggregationConceptLink_Editor._Inline_ivlr8m_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

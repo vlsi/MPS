@@ -41,7 +41,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     provider.setRole("stringConceptPropertyDeclaration");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StringConceptProperty_Editor._Inline_dj7k4g_a0a("stringConceptPropertyDeclaration"));
+    provider.setAuxiliaryCellProvider(new StringConceptProperty_Editor._Inline_dj7k4g_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -47,7 +47,7 @@ public class BuildMps_DevKitExportLanguage_Editor extends DefaultNodeEditor {
     provider.setRole("language");
     provider.setNoTargetText("<no language>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMps_DevKitExportLanguage_Editor._Inline_ga85n5_a1a("language"));
+    provider.setAuxiliaryCellProvider(new BuildMps_DevKitExportLanguage_Editor._Inline_ga85n5_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -80,7 +80,7 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("targetType");
     provider.setNoTargetText("<no target type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReferenceConceptLinkDeclaration_Editor._Inline_c1olec_a3a("targetType"));
+    provider.setAuxiliaryCellProvider(new ReferenceConceptLinkDeclaration_Editor._Inline_c1olec_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

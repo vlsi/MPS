@@ -40,7 +40,7 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SLinkListAccess_Editor._Inline_xjomum_a0a("link"));
+    provider.setAuxiliaryCellProvider(new SLinkListAccess_Editor._Inline_xjomum_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

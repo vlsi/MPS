@@ -67,7 +67,7 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     provider.setRole("enumDeclaration");
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SEnumOperationInvocation_Editor._Inline_hplu10_a2a("enumDeclaration"));
+    provider.setAuxiliaryCellProvider(new SEnumOperationInvocation_Editor._Inline_hplu10_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

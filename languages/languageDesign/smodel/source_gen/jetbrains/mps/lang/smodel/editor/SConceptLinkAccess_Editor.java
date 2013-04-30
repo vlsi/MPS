@@ -40,7 +40,7 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     provider.setRole("conceptLinkDeclaration");
     provider.setNoTargetText("<no conceptLinkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SConceptLinkAccess_Editor._Inline_fyqp9o_a0a("conceptLinkDeclaration"));
+    provider.setAuxiliaryCellProvider(new SConceptLinkAccess_Editor._Inline_fyqp9o_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

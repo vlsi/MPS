@@ -57,7 +57,7 @@ public class DefaultClassCreator_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DefaultClassCreator_Editor._Inline_27y5p7_a0a("classifier"));
+    provider.setAuxiliaryCellProvider(new DefaultClassCreator_Editor._Inline_27y5p7_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");

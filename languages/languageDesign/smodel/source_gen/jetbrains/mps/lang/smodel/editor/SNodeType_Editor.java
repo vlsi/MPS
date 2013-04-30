@@ -76,7 +76,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SNodeType_Editor._Inline_x5m1a6_a2a("concept"));
+    provider.setAuxiliaryCellProvider(new SNodeType_Editor._Inline_x5m1a6_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);

@@ -40,7 +40,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     provider.setRole("referenceConceptLinkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline_3r32uy_a0a("referenceConceptLinkDeclaration"));
+    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline_3r32uy_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -107,7 +107,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline_3r32uy_a2a("target"));
+    provider.setAuxiliaryCellProvider(new ReferenceConceptLink_Editor._Inline_3r32uy_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -140,7 +140,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_3r32uy_a0c0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
       editorCell.setCellId("ReferencePresentation_3r32uy_a0c0");
       return editorCell;
     }

@@ -63,7 +63,7 @@ public class ContainerCompartment_Editor extends DefaultNodeEditor {
     provider.setRole("container");
     provider.setNoTargetText("<no container>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ContainerCompartment_Editor._Inline_6q4kdp_a0a0a("container"));
+    provider.setAuxiliaryCellProvider(new ContainerCompartment_Editor._Inline_6q4kdp_a0a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     UI_StyleSheet.applyUIObjectPart(style, editorCell);

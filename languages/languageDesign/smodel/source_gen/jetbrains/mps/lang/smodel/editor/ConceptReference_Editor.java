@@ -39,7 +39,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     provider.setRole("concept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptReference_Editor._Inline_s9fwl0_a0a("concept"));
+    provider.setAuxiliaryCellProvider(new ConceptReference_Editor._Inline_s9fwl0_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

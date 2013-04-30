@@ -37,7 +37,7 @@ public class RefConcept_Reference_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RefConcept_Reference_Editor._Inline_agro45_a0a("conceptDeclaration"));
+    provider.setAuxiliaryCellProvider(new RefConcept_Reference_Editor._Inline_agro45_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

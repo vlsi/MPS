@@ -80,7 +80,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     provider.setRole("targetType");
     provider.setNoTargetText("<no target type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AggregationConceptLinkDeclaration_Editor._Inline_be8v21_a3a("targetType"));
+    provider.setAuxiliaryCellProvider(new AggregationConceptLinkDeclaration_Editor._Inline_be8v21_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

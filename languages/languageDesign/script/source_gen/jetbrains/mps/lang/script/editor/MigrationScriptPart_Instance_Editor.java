@@ -197,7 +197,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     provider.setRole("affectedInstanceConcept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MigrationScriptPart_Instance_Editor._Inline_nl0fz6_a2c0a("affectedInstanceConcept"));
+    provider.setAuxiliaryCellProvider(new MigrationScriptPart_Instance_Editor._Inline_nl0fz6_a2c0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -45,7 +45,7 @@ public class EnumValuesExpression_Editor extends DefaultNodeEditor {
     provider.setRole("enumClass");
     provider.setNoTargetText("<no enumClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumValuesExpression_Editor._Inline_igwct4_a0a("enumClass"));
+    provider.setAuxiliaryCellProvider(new EnumValuesExpression_Editor._Inline_igwct4_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

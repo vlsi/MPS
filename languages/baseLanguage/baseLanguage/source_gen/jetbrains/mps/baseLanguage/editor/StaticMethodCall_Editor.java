@@ -51,7 +51,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("classConcept");
     provider.setNoTargetText("<no class>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline_a4wjjz_a0a("classConcept"));
+    provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline_a4wjjz_a0a());
     editorCell = provider.createEditorCell(editorContext);
     StaticMethodCall_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -141,7 +141,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     provider.setRole("staticMethodDeclaration");
     provider.setNoTargetText("<no method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline_a4wjjz_a0d0("staticMethodDeclaration"));
+    provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline_a4wjjz_a0d0());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");

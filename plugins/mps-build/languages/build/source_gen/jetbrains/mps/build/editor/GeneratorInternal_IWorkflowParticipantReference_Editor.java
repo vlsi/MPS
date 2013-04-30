@@ -32,7 +32,7 @@ public class GeneratorInternal_IWorkflowParticipantReference_Editor extends Defa
     provider.setRole("participant");
     provider.setNoTargetText("<no participant>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GeneratorInternal_IWorkflowParticipantReference_Editor._Inline_n7w759_a0a("participant"));
+    provider.setAuxiliaryCellProvider(new GeneratorInternal_IWorkflowParticipantReference_Editor._Inline_n7w759_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

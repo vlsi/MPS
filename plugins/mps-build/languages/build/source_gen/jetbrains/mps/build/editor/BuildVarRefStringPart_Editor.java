@@ -67,7 +67,7 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
     provider.setRole("macro");
     provider.setNoTargetText("<no macro>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildVarRefStringPart_Editor._Inline_ayjduv_a1a("macro"));
+    provider.setAuxiliaryCellProvider(new BuildVarRefStringPart_Editor._Inline_ayjduv_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

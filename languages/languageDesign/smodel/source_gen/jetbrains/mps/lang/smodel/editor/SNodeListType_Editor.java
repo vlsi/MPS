@@ -65,7 +65,7 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
     provider.setRole("elementConcept");
     provider.setNoTargetText("");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SNodeListType_Editor._Inline_pv0rjz_a2a("elementConcept"));
+    provider.setAuxiliaryCellProvider(new SNodeListType_Editor._Inline_pv0rjz_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

@@ -63,7 +63,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     provider.setRole("annotation");
     provider.setNoTargetText("<no annotation>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AnnotationInstance_Editor._Inline_d5p1uc_a1a("annotation"));
+    provider.setAuxiliaryCellProvider(new AnnotationInstance_Editor._Inline_d5p1uc_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");

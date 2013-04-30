@@ -181,7 +181,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("memberDataType");
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline_tm8wum_a2a1b1a("memberDataType"));
+    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline_tm8wum_a2a1b1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -382,7 +382,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("defaultMember");
     provider.setNoTargetText("<1-st member>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline_tm8wum_a2d1b1a("defaultMember"));
+    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_Editor._Inline_tm8wum_a2d1b1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

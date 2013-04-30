@@ -32,7 +32,7 @@ public class BuildMps_IdeaPluginGroupCustomModule_Editor extends DefaultNodeEdit
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMps_IdeaPluginGroupCustomModule_Editor._Inline_djd3jv_a0a("target"));
+    provider.setAuxiliaryCellProvider(new BuildMps_IdeaPluginGroupCustomModule_Editor._Inline_djd3jv_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

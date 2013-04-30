@@ -32,7 +32,7 @@ public class BuildMps_DevKitRef_Editor extends DefaultNodeEditor {
     provider.setRole("devkit");
     provider.setNoTargetText("<no devkit>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMps_DevKitRef_Editor._Inline_gnck8b_a0a("devkit"));
+    provider.setAuxiliaryCellProvider(new BuildMps_DevKitRef_Editor._Inline_gnck8b_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -211,7 +211,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("source");
     provider.setNoTargetText("<no source>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline_z637q5_a1c1c0("source"));
+    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline_z637q5_a1c1c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -289,7 +289,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline_z637q5_a1d1c0("target"));
+    provider.setAuxiliaryCellProvider(new AnnotationLinkDeclaration_Editor._Inline_z637q5_a1d1c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

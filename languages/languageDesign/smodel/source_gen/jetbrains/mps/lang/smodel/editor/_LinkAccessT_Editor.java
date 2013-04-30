@@ -46,7 +46,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     provider.setRole("targetConcept");
     provider.setNoTargetText("<no targetConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new _LinkAccessT_Editor._Inline_36vx3e_a1a("targetConcept"));
+    provider.setAuxiliaryCellProvider(new _LinkAccessT_Editor._Inline_36vx3e_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

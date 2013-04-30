@@ -32,7 +32,7 @@ public class BaseVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("baseVariableDeclaration");
     provider.setNoTargetText("<no baseVariableDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BaseVariableReference_Editor._Inline_8ssbmf_a0a("baseVariableDeclaration"));
+    provider.setAuxiliaryCellProvider(new BaseVariableReference_Editor._Inline_8ssbmf_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -34,7 +34,7 @@ public class LoopLabelReference_Editor extends DefaultNodeEditor {
     provider.setRole("loopLabel");
     provider.setNoTargetText("<no loopLabel>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LoopLabelReference_Editor._Inline_pr39i0_a0a("loopLabel"));
+    provider.setAuxiliaryCellProvider(new LoopLabelReference_Editor._Inline_pr39i0_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

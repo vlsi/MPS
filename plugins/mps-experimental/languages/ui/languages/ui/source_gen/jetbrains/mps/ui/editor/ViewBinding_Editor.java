@@ -36,7 +36,7 @@ public class ViewBinding_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ViewBinding_Editor._Inline_7vr6mu_a0a("property"));
+    provider.setAuxiliaryCellProvider(new ViewBinding_Editor._Inline_7vr6mu_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

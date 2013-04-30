@@ -34,7 +34,7 @@ public class LinkRefQualifier_Editor extends DefaultNodeEditor {
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LinkRefQualifier_Editor._Inline_6miwl9_a0a("link"));
+    provider.setAuxiliaryCellProvider(new LinkRefQualifier_Editor._Inline_6miwl9_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

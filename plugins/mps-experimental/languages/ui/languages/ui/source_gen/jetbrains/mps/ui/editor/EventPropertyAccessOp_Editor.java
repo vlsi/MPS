@@ -32,7 +32,7 @@ public class EventPropertyAccessOp_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EventPropertyAccessOp_Editor._Inline_5i2syk_a0a("property"));
+    provider.setAuxiliaryCellProvider(new EventPropertyAccessOp_Editor._Inline_5i2syk_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

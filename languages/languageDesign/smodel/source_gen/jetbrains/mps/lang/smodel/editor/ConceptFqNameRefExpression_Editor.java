@@ -64,7 +64,7 @@ public class ConceptFqNameRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptFqNameRefExpression_Editor._Inline_jtxdzz_a2a("conceptDeclaration"));
+    provider.setAuxiliaryCellProvider(new ConceptFqNameRefExpression_Editor._Inline_jtxdzz_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

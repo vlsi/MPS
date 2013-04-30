@@ -65,7 +65,7 @@ public class MigratedToMethodAnnotation_Editor extends DefaultNodeEditor {
     provider.setRole("method");
     provider.setNoTargetText("<no method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MigratedToMethodAnnotation_Editor._Inline_ykmn9g_a1a0("method"));
+    provider.setAuxiliaryCellProvider(new MigratedToMethodAnnotation_Editor._Inline_ykmn9g_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

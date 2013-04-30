@@ -64,7 +64,7 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
     provider.setRole("library");
     provider.setNoTargetText("<no library>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildLayout_ExportAsJavaLibrary_Editor._Inline_ge4r0w_a1a("library"));
+    provider.setAuxiliaryCellProvider(new BuildLayout_ExportAsJavaLibrary_Editor._Inline_ge4r0w_a1a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

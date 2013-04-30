@@ -60,7 +60,7 @@ public class UIObjectType_Editor extends DefaultNodeEditor {
     provider.setRole("uiObject");
     provider.setNoTargetText("<no uiObject>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new UIObjectType_Editor._Inline_w8i2sf_a2a("uiObject"));
+    provider.setAuxiliaryCellProvider(new UIObjectType_Editor._Inline_w8i2sf_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);

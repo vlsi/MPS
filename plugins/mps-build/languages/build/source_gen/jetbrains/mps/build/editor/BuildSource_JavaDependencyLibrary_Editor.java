@@ -55,7 +55,7 @@ public class BuildSource_JavaDependencyLibrary_Editor extends DefaultNodeEditor 
     provider.setRole("library");
     provider.setNoTargetText("<no library>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildSource_JavaDependencyLibrary_Editor._Inline_n4mr7u_a1a("library"));
+    provider.setAuxiliaryCellProvider(new BuildSource_JavaDependencyLibrary_Editor._Inline_n4mr7u_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

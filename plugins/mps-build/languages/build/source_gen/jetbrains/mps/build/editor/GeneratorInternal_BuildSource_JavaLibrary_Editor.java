@@ -41,7 +41,7 @@ public class GeneratorInternal_BuildSource_JavaLibrary_Editor extends DefaultNod
     provider.setRole("targetLibrary");
     provider.setNoTargetText("<no targetLibrary>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GeneratorInternal_BuildSource_JavaLibrary_Editor._Inline_b31w58_a1a("targetLibrary"));
+    provider.setAuxiliaryCellProvider(new GeneratorInternal_BuildSource_JavaLibrary_Editor._Inline_b31w58_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -41,7 +41,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     provider.setRole("integerConceptPropertyDeclaration");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IntegerConceptProperty_Editor._Inline_r244s6_a0a("integerConceptPropertyDeclaration"));
+    provider.setAuxiliaryCellProvider(new IntegerConceptProperty_Editor._Inline_r244s6_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

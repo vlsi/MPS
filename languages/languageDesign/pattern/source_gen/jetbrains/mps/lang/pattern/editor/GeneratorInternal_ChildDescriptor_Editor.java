@@ -77,7 +77,7 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     provider.setRole("childLinkDeclaration");
     provider.setNoTargetText("<no childLinkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GeneratorInternal_ChildDescriptor_Editor._Inline_s0kiw8_a3a("childLinkDeclaration"));
+    provider.setAuxiliaryCellProvider(new GeneratorInternal_ChildDescriptor_Editor._Inline_s0kiw8_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -140,7 +140,7 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     provider.setRole("mainNode");
     provider.setNoTargetText("<no mainNode>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GeneratorInternal_ChildDescriptor_Editor._Inline_s0kiw8_a5a("mainNode"));
+    provider.setAuxiliaryCellProvider(new GeneratorInternal_ChildDescriptor_Editor._Inline_s0kiw8_a5a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -173,7 +173,7 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     }
 
     private EditorCell createReferencePresentation_s0kiw8_a0f0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "mainNode");
       editorCell.setCellId("ReferencePresentation_s0kiw8_a0f0");
       return editorCell;
     }

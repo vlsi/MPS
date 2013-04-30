@@ -33,7 +33,7 @@ public class DirectMethodSpecification_Editor extends DefaultNodeEditor {
     provider.setRole("methodDeclaration");
     provider.setNoTargetText("<no methodDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DirectMethodSpecification_Editor._Inline_dfgzix_a0a("methodDeclaration"));
+    provider.setAuxiliaryCellProvider(new DirectMethodSpecification_Editor._Inline_dfgzix_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -66,7 +66,7 @@ public class DirectMethodSpecification_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_dfgzix_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "methodDeclaration");
       editorCell.setCellId("ReferencePresentation_dfgzix_a0a0");
       return editorCell;
     }

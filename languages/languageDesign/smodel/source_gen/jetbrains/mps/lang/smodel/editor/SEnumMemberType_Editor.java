@@ -65,7 +65,7 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
     provider.setRole("enum");
     provider.setNoTargetText("");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SEnumMemberType_Editor._Inline_qf1ea_a2a("enum"));
+    provider.setAuxiliaryCellProvider(new SEnumMemberType_Editor._Inline_qf1ea_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);

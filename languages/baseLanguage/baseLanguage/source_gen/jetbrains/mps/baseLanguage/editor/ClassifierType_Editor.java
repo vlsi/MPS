@@ -60,7 +60,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClassifierType_Editor._Inline_91bvrs_a0a("classifier"));
+    provider.setAuxiliaryCellProvider(new ClassifierType_Editor._Inline_91bvrs_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.AUTO_DELETABLE, false);
@@ -96,7 +96,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_91bvrs_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getRole());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "classifier");
       editorCell.setCellId("ReferencePresentation_91bvrs_a0a0");
       return editorCell;
     }

@@ -38,7 +38,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
     provider.setRole("booleanConceptPropertyDeclaration");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BooleanConceptProperty_Editor._Inline_daqvaj_a0a("booleanConceptPropertyDeclaration"));
+    provider.setAuxiliaryCellProvider(new BooleanConceptProperty_Editor._Inline_daqvaj_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

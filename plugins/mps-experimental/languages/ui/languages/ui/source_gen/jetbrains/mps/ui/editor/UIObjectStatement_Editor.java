@@ -66,7 +66,7 @@ public class UIObjectStatement_Editor extends DefaultNodeEditor {
     provider.setRole("uiObject");
     provider.setNoTargetText("<no uiObject>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new UIObjectStatement_Editor._Inline_zdgerc_a1a0a("uiObject"));
+    provider.setAuxiliaryCellProvider(new UIObjectStatement_Editor._Inline_zdgerc_a1a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     UI_StyleSheet.applyUIObject(style, editorCell);

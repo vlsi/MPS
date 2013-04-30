@@ -47,7 +47,7 @@ public class BuildMps_ModuleSolutionRuntime_Editor extends DefaultNodeEditor {
     provider.setRole("solution");
     provider.setNoTargetText("<no solution>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMps_ModuleSolutionRuntime_Editor._Inline_z6427v_a1a("solution"));
+    provider.setAuxiliaryCellProvider(new BuildMps_ModuleSolutionRuntime_Editor._Inline_z6427v_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

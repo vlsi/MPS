@@ -68,7 +68,7 @@ public class PropertyNameRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("concept");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyNameRefExpression_Editor._Inline_x4eqv4_a2a("conceptDeclaration"));
+    provider.setAuxiliaryCellProvider(new PropertyNameRefExpression_Editor._Inline_x4eqv4_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -143,7 +143,7 @@ public class PropertyNameRefExpression_Editor extends DefaultNodeEditor {
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("link");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyNameRefExpression_Editor._Inline_x4eqv4_a4a("propertyDeclaration"));
+    provider.setAuxiliaryCellProvider(new PropertyNameRefExpression_Editor._Inline_x4eqv4_a4a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

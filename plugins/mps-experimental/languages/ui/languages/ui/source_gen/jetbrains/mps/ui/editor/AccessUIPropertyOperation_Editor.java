@@ -32,7 +32,7 @@ public class AccessUIPropertyOperation_Editor extends DefaultNodeEditor {
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AccessUIPropertyOperation_Editor._Inline_48ztqh_a0a("property"));
+    provider.setAuxiliaryCellProvider(new AccessUIPropertyOperation_Editor._Inline_48ztqh_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

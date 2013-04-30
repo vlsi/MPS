@@ -41,7 +41,7 @@ public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
     provider.setRole("intention");
     provider.setNoTargetText("<no intention>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InvokeIntentionStatement_Editor._Inline_vtollk_a1a("intention"));
+    provider.setAuxiliaryCellProvider(new InvokeIntentionStatement_Editor._Inline_vtollk_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

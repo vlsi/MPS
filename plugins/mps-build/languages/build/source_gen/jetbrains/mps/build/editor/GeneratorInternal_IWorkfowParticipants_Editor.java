@@ -50,7 +50,7 @@ public class GeneratorInternal_IWorkfowParticipants_Editor extends DefaultNodeEd
     provider.setRole("for");
     provider.setNoTargetText("<no for>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GeneratorInternal_IWorkfowParticipants_Editor._Inline_4clv4k_a1a("for"));
+    provider.setAuxiliaryCellProvider(new GeneratorInternal_IWorkfowParticipants_Editor._Inline_4clv4k_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

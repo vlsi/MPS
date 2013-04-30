@@ -32,7 +32,7 @@ public class IterateContentsVariableReference_Editor extends DefaultNodeEditor {
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IterateContentsVariableReference_Editor._Inline_aazd0o_a0a("variable"));
+    provider.setAuxiliaryCellProvider(new IterateContentsVariableReference_Editor._Inline_aazd0o_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -66,7 +66,7 @@ public class SConceptType_Editor extends DefaultNodeEditor {
     provider.setRole("conceptDeclaraton");
     provider.setNoTargetText("");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SConceptType_Editor._Inline_6of1q_a2a("conceptDeclaraton"));
+    provider.setAuxiliaryCellProvider(new SConceptType_Editor._Inline_6of1q_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

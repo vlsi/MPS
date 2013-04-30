@@ -32,7 +32,7 @@ public class BuildMps_DevKitExportSolution_Editor extends DefaultNodeEditor {
     provider.setRole("solution");
     provider.setNoTargetText("<no solution>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMps_DevKitExportSolution_Editor._Inline_5s1be8_a0a("solution"));
+    provider.setAuxiliaryCellProvider(new BuildMps_DevKitExportSolution_Editor._Inline_5s1be8_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

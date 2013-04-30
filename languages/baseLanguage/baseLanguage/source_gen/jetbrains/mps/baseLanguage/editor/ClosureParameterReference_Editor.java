@@ -38,7 +38,7 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
     provider.setRole("closureParameter");
     provider.setNoTargetText("<no closureParameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClosureParameterReference_Editor._Inline_7sr5h3_a0a("closureParameter"));
+    provider.setAuxiliaryCellProvider(new ClosureParameterReference_Editor._Inline_7sr5h3_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

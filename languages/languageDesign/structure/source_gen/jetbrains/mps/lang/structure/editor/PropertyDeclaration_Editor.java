@@ -113,7 +113,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("dataType");
     provider.setNoTargetText("<no data type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyDeclaration_Editor._Inline_lnae77_a2a("dataType"));
+    provider.setAuxiliaryCellProvider(new PropertyDeclaration_Editor._Inline_lnae77_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
