@@ -2130,6 +2130,21 @@
     </node>
   </root>
   <root id="4201170947328891620">
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391583">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390392321" resolveInfo="ConditionalPresentation_addQuery_default" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391598">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390401481" resolveInfo="ConditionalPresentation_addQuery_rich" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391615">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390416608" resolveInfo="ConditionalPresentation_addQuery_switch" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391634">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390410965" resolveInfo="ConditionalPresentation_removeQuery_compact" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391655">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212393364917" resolveInfo="ConditionalPresentation_removeQuery_switch" />
+    </node>
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="4201170947328893267">
       <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.lang.editor.multiple.tests" />
       <property name="moduleID" nameId="pop3.1280144168199506910" value="3c41aa01-5120-470c-8122-06f284bc0419" />

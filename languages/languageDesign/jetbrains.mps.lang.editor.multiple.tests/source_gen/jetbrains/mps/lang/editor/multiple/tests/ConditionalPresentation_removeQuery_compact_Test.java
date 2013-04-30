@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class EditorSpecifiedBy_add_context_hints_Test extends BaseTransformationTest4 {
-  public EditorSpecifiedBy_add_context_hints_Test() {
+public class ConditionalPresentation_removeQuery_compact_Test extends BaseTransformationTest4 {
+  public ConditionalPresentation_removeQuery_compact_Test() {
   }
 
   @Test
-  public void test_EditorSpecifiedBy_add_context_hints() throws Throwable {
+  public void test_ConditionalPresentation_removeQuery_compact() throws Throwable {
     this.initTest("${mps_home}", "r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)");
-    this.runTest("jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_compact_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -27,9 +27,9 @@ public class EditorSpecifiedBy_add_context_hints_Test extends BaseTransformation
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7636045212390385561", "7636045212390385580");
+      final Editor editor = TestBody.this.initEditor("7636045212393354549", "7636045212393354567");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "ial");
+      BaseEditorTestBody.typeString(editorComponent, "propValue");
     }
   }
 }

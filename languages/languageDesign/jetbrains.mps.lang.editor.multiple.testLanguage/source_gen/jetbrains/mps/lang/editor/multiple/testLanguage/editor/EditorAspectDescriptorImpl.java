@@ -13,7 +13,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<EditorAspect> getEditorAspects(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Arrays.asList(new EditorAspect[]{new MultipleEditorsTestChild_Editor(), new MultipleEditorsTestChild_diagram_Editor(), new MultipleEditorsTestChild_groovy_Editor()});
+        return Arrays.asList(new EditorAspect[]{new MultipleEditorsTestChild_Editor(), new MultipleEditorsTestChild_compact_Editor(), new MultipleEditorsTestChild_rich_Editor()});
       case 1:
         return Collections.<EditorAspect>singletonList(new MultipleEditorsTestRoot_Editor());
       default:

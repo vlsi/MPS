@@ -27,7 +27,7 @@ public class EditorSpecifiedBy_add_remove_context_hints_Test extends BaseTransfo
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("5950344441601676488", "5950344441601676726");
+      final Editor editor = TestBody.this.initEditor("7636045212390307723", "7636045212390317719");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "newValue");
     }

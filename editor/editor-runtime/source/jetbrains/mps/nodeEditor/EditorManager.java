@@ -32,6 +32,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
@@ -304,7 +305,7 @@ public class EditorManager {
       Map<ReferencedNodeContext, EditorCell> childContextToCellMap = null;
       if (modifications != null) {
         EditorCell oldCell = myContextToOldCellMap.peek().get(refContext);
-        boolean nodeChanged = isNodeChanged(modifications, nodeEditorComponent, oldCell);
+        boolean nodeChanged = isNodeChanged(modifications, nodeEditorComponent, oldCell, context.getCellFactory().getCellContext());
 
         if (!nodeChanged) {
           if (oldCell != null) {
@@ -350,7 +351,12 @@ public class EditorManager {
     }
   }
 
-  private boolean isNodeChanged(List<Pair<SNode, SNodeReference>> modifications, EditorComponent nodeEditorComponent, EditorCell oldCell) {
+  private boolean isNodeChanged(List<Pair<SNode, SNodeReference>> modifications, EditorComponent nodeEditorComponent, EditorCell oldCell,
+      EditorCellContext cellContext) {
+    if (oldCell == null || oldCell.getCellContext() == null || cellContext.getHints().size() != oldCell.getCellContext().getHints().size() ||
+        !cellContext.getHints().containsAll(oldCell.getCellContext().getHints())) {
+      return true;
+    }
     for (Pair<SNode, SNodeReference> modification : modifications) {
       if (nodeEditorComponent.doesCellDependOnNode(oldCell, modification.o1, modification.o2)) {
         return true;
@@ -358,7 +364,6 @@ public class EditorManager {
     }
     return false;
   }
-
 
   public boolean isCreatingInspectedCell() {
     return myCreatingInspectedCell;

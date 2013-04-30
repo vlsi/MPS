@@ -258,5 +258,4 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
   }
-
 }
