@@ -19,6 +19,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -38,6 +41,16 @@ public class ModelEnvironmentInfoImpl implements ModelEnvironmentInfo {
   }
 
   @Override
+  public StaticScope getConceptScope(SNode node) {
+    return ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getStaticScope();
+  }
+
+  @Override
+  public ConceptKind getConceptKind(SNode node) {
+    return ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getConceptKind();
+  }
+
+  @Override
   public SNodeReference getNodeRoleId(SNode node) {
     SNode linkDeclaration = SNodeOperations.getContainingLinkDeclaration(node);
     return linkDeclaration == null ? null : linkDeclaration.getReference();
@@ -47,6 +60,15 @@ public class ModelEnvironmentInfoImpl implements ModelEnvironmentInfo {
   public SNodeReference getReferenceRoleId(SReference reference) {
     SNode linkDeclaration = SLinkOperations.findLinkDeclaration(reference);
     return linkDeclaration == null ? null : linkDeclaration.getReference();
+  }
+
+  @Override
+  public boolean isInUnorderedRole(SNode node) {
+    SNode parent = node.getParent();
+    if (parent == null) return false;
+    String roleInParent = node.getRoleInParent();
+    return ConceptRegistry.getInstance().getConceptDescriptor(parent.getConcept().getQualifiedName()).isUnorderedChild(
+        roleInParent);
   }
 
   @Override

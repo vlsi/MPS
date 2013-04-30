@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def.v7;
 
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.logging.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.refactoring.ModelLinkMap;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -27,9 +27,12 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.StringUtil;
+import org.apache.log4j.LogManager;
 import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -148,6 +151,17 @@ public class ModelReader7 implements IModelReader {
       node.setId(id);
     }
     myLinkMap.addTypeLocation(myHelper.readLinkId(nodeElement.getAttributeValue(ModelPersistence.TYPE_ID)), node);
+
+    String typeInfo = nodeElement.getAttributeValue(ModelPersistence.NODE_INFO);
+    if (typeInfo != null) {
+      Tuples._3<ConceptKind, StaticScope, Boolean> parsed = myHelper.readNodeInfo(typeInfo);
+      if (parsed == null) {
+        LOG.error("bad typeInfo attribute");
+      } else {
+        myLinkMap.addNodeMetainfo(parsed._0(), parsed._1(),
+            parsed._2(), node);
+      }
+    }
 
     for (Element element : (List<Element>) nodeElement.getChildren(ModelPersistence.PROPERTY)) {
       String propertyName = myHelper.readName(element.getAttributeValue(ModelPersistence.NAME));

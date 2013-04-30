@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -21,13 +23,16 @@ public class MergerModelEnvironmentInfoImpl implements LightModelEnvironmentInfo
   private Map<Tuples._2<String, String>, SNodeReference> myReferenceRolesToPointers = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodeReference>());
   private Map<Tuples._2<String, String>, SNodeReference> myPropertyNamesToPointers = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodeReference>());
   private Map<SModelReference, Integer> myModelVersions = MapSequence.fromMap(new HashMap<SModelReference, Integer>());
+  private Map<String, StaticScope> myConceptScope = MapSequence.fromMap(new HashMap<String, StaticScope>());
+  private Map<String, ConceptKind> myConceptKind = MapSequence.fromMap(new HashMap<String, ConceptKind>());
+  private Map<Tuples._2<String, String>, Boolean> myChildLinkToUnordered = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, Boolean>());
 
   public MergerModelEnvironmentInfoImpl() {
   }
 
   private <K, V> void storeAndCheckConsistency(Map<K, V> theMap, K key, V value) {
     if (MapSequence.fromMap(theMap).containsKey(key)) {
-      myConsistent = myConsistent && eq_uiv2ah_a0a0a0a0h(MapSequence.fromMap(theMap).get(key), value);
+      myConsistent = myConsistent && eq_uiv2ah_a0a0a0a0k(MapSequence.fromMap(theMap).get(key), value);
     } else {
       MapSequence.fromMap(theMap).put(key, value);
     }
@@ -36,13 +41,18 @@ public class MergerModelEnvironmentInfoImpl implements LightModelEnvironmentInfo
 
 
   @Override
-  public void conceptRead(SNode node, SNodeReference conceptPointer) {
-    storeAndCheckConsistency(myConceptsToPointers, node.getConcept().getId(), conceptPointer);
+  public void conceptRead(SNode node, SNodeReference conceptPointer, StaticScope conceptScope, ConceptKind conceptKind) {
+    String name = node.getConcept().getId();
+    storeAndCheckConsistency(myConceptsToPointers, name, conceptPointer);
+    storeAndCheckConsistency(myConceptScope, name, conceptScope);
+    storeAndCheckConsistency(myConceptKind, name, conceptKind);
   }
 
   @Override
-  public void nodeRoleRead(SNode node, SNodeReference linkPointer) {
-    storeAndCheckConsistency(myNodeRolesToPointers, MultiTuple.<String,String>from(node.getParent().getConcept().getId(), node.getRoleInParent()), linkPointer);
+  public void nodeRoleRead(SNode node, SNodeReference linkPointer, boolean unorderedRole) {
+    Tuples._2<String, String> key = MultiTuple.<String,String>from(node.getParent().getConcept().getId(), node.getRoleInParent());
+    storeAndCheckConsistency(myNodeRolesToPointers, key, linkPointer);
+    storeAndCheckConsistency(myChildLinkToUnordered, key, unorderedRole);
   }
 
   @Override
@@ -75,6 +85,38 @@ public class MergerModelEnvironmentInfoImpl implements LightModelEnvironmentInfo
   }
 
   @Override
+  public ConceptKind getConceptKind(SNode node) {
+    String conceptName = node.getConcept().getQualifiedName();
+    ConceptKind kind = MapSequence.fromMap(myConceptKind).get(conceptName);
+    return (kind != null ?
+      kind :
+      ConceptKind.NORMAL
+    );
+  }
+
+  @Override
+  public boolean isInUnorderedRole(SNode node) {
+    SNode parent = node.getParent();
+    if (parent == null) {
+      return false;
+    }
+    Boolean b = MapSequence.fromMap(myChildLinkToUnordered).get(MultiTuple.<String,String>from(parent.getConcept().getQualifiedName(), node.getRoleInParent()));
+    return b != null && b.booleanValue();
+  }
+
+
+
+  @Override
+  public StaticScope getConceptScope(SNode node) {
+    String conceptName = node.getConcept().getQualifiedName();
+    StaticScope scope = MapSequence.fromMap(myConceptScope).get(conceptName);
+    return (scope != null ?
+      scope :
+      StaticScope.GLOBAL
+    );
+  }
+
+  @Override
   public SNodeReference getReferenceRoleId(SReference reference) {
     return MapSequence.fromMap(myReferenceRolesToPointers).get(MultiTuple.<String,String>from(reference.getSourceNode().getConcept().getId(), reference.getRole()));
   }
@@ -93,7 +135,7 @@ public class MergerModelEnvironmentInfoImpl implements LightModelEnvironmentInfo
     return myConsistent;
   }
 
-  private static boolean eq_uiv2ah_a0a0a0a0h(Object a, Object b) {
+  private static boolean eq_uiv2ah_a0a0a0a0k(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

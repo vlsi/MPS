@@ -16,6 +16,8 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -26,9 +28,9 @@ import org.jetbrains.mps.openapi.model.SReference;
  */
 public interface LightModelEnvironmentInfo extends ModelEnvironmentInfo {
 
-  void conceptRead(SNode node, SNodeReference conceptPointer);
+  void conceptRead(SNode node, SNodeReference conceptPointer, StaticScope scope, ConceptKind kind);
 
-  void nodeRoleRead(SNode node, SNodeReference linkPointer);
+  void nodeRoleRead(SNode node, SNodeReference linkPointer, boolean unordered);
 
   void referenceRoleRead(SReference reference, SNodeReference linkPointer);
 

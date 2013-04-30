@@ -38,12 +38,16 @@ public interface ConceptDescriptor {
 
   Set<String> getChildrenNames();
 
+  Set<String> getUnorderedChildrenNames();
+
   boolean hasChild(String name);
 
   StaticScope getStaticScope();
 
   //true if true, false if false or !hasChild(name);
   boolean isMultipleChild(String name);
+
+  boolean isUnorderedChild(String name);
 
   boolean isAbstract();
 
@@ -61,6 +65,8 @@ public interface ConceptDescriptor {
   boolean isAssignableTo(String toConceptFqName);
 
   Set<String> getAncestorsNames();
+
+  ConceptKind getConceptKind();
 
 //  Set<String> getDescendantsOfConcept(String conceptFQName);
 //  Set<String> getAllDescendantsOfConcept(String conceptFqName);
