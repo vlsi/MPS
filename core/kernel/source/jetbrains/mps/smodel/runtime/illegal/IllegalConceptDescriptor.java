@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.runtime.illegal;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 import java.util.Collections;
@@ -70,6 +71,16 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
+  public boolean isUnorderedChild(String name) {
+    return false;
+  }
+
+  @Override
+  public Set<String> getUnorderedChildrenNames() {
+    return Collections.emptySet();
+  }
+
+  @Override
   public boolean hasChild(String name) {
     return false;
   }
@@ -97,6 +108,11 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @Override
   public Set<String> getAncestorsNames() {
     return Collections.emptySet();
+  }
+
+  @Override
+  public ConceptKind getConceptKind() {
+    return ConceptKind.NORMAL;
   }
 
   @Override

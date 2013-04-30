@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.core.refactoring;
+package jetbrains.mps.idea.java.refactoring;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -30,6 +30,18 @@ public class SReferencePtr {
   @NotNull
   public String getRole() {
     return role;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof SReferencePtr)) return false;
+    SReferencePtr other = (SReferencePtr) o;
+    return source.equals(other.source) && role.equals(other.role);
+  }
+
+  @Override
+  public int hashCode() {
+    return source.hashCode()*31 + role.hashCode();
   }
 
 //  public SReference resolve(SRepository repo) {
