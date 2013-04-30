@@ -113,10 +113,6 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7bcc0k_a1a extends InlineCellProvider {
-    public _Inline_7bcc0k_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_7bcc0k_a1a() {
       super();
     }

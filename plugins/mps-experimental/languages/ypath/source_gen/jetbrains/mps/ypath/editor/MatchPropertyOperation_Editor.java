@@ -101,10 +101,6 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pl7j0v_a3a extends InlineCellProvider {
-    public _Inline_pl7j0v_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_pl7j0v_a3a() {
       super();
     }

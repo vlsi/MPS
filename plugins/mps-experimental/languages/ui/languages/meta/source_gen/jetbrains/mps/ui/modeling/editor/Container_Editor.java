@@ -66,10 +66,6 @@ public class Container_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xjnu6t_a0a extends InlineCellProvider {
-    public _Inline_xjnu6t_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_xjnu6t_a0a() {
       super();
     }
@@ -155,10 +151,6 @@ public class Container_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xjnu6t_a4a extends InlineCellProvider {
-    public _Inline_xjnu6t_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_xjnu6t_a4a() {
       super();
     }

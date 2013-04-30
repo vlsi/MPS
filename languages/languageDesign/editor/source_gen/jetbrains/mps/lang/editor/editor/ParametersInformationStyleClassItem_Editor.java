@@ -69,10 +69,6 @@ public class ParametersInformationStyleClassItem_Editor extends DefaultNodeEdito
   }
 
   public static class _Inline_foagvc_a2a extends InlineCellProvider {
-    public _Inline_foagvc_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_foagvc_a2a() {
       super();
     }

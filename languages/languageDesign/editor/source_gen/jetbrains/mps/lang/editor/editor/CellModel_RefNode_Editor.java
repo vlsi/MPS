@@ -73,10 +73,6 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2hk56f_a1a extends InlineCellProvider {
-    public _Inline_2hk56f_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_2hk56f_a1a() {
       super();
     }
@@ -216,10 +212,6 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2hk56f_a1a3a extends InlineCellProvider {
-    public _Inline_2hk56f_a1a3a(String role) {
-      super(role);
-    }
-
     public _Inline_2hk56f_a1a3a() {
       super();
     }

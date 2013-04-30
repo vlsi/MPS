@@ -19,7 +19,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.editor.AnalyzerRunnerCreator_Editor" file="AnalyzerRunnerCreator_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -69,7 +68,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.editor.ApplicableNodeReference_Editor" file="ApplicableNodeReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -211,7 +209,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.editor.IsOperation_Editor" file="IsOperation_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
@@ -240,7 +237,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.editor.RuleReference_Editor" file="RuleReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -255,7 +251,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.editor.Rule_Editor" file="Rule_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />

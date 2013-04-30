@@ -73,10 +73,6 @@ public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hr3hhp_a2a extends InlineCellProvider {
-    public _Inline_hr3hhp_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_hr3hhp_a2a() {
       super();
     }

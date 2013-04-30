@@ -96,10 +96,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
   }
 
   public static class _Inline_vh2hfk_a3a extends InlineCellProvider {
-    public _Inline_vh2hfk_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_vh2hfk_a3a() {
       super();
     }

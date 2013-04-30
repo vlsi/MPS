@@ -61,10 +61,6 @@ public class ReferenceMessageTarget_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hw91fj_a1a extends InlineCellProvider {
-    public _Inline_hw91fj_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_hw91fj_a1a() {
       super();
     }

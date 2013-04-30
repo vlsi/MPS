@@ -90,10 +90,6 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hr8njl_a2a extends InlineCellProvider {
-    public _Inline_hr8njl_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_hr8njl_a2a() {
       super();
     }
@@ -177,10 +173,6 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hr8njl_a1a extends InlineCellProvider {
-    public _Inline_hr8njl_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_hr8njl_a1a() {
       super();
     }

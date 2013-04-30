@@ -195,10 +195,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_tm8wum_a2a1b1a extends InlineCellProvider {
-    public _Inline_tm8wum_a2a1b1a(String role) {
-      super(role);
-    }
-
     public _Inline_tm8wum_a2a1b1a() {
       super();
     }
@@ -396,10 +392,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_tm8wum_a2d1b1a extends InlineCellProvider {
-    public _Inline_tm8wum_a2d1b1a(String role) {
-      super(role);
-    }
-
     public _Inline_tm8wum_a2d1b1a() {
       super();
     }

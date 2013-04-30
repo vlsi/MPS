@@ -134,10 +134,6 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   public static class _Inline_crf3gy_a4a0a extends InlineCellProvider {
-    public _Inline_crf3gy_a4a0a(String role) {
-      super(role);
-    }
-
     public _Inline_crf3gy_a4a0a() {
       super();
     }

@@ -93,10 +93,6 @@ public class PullUpMethod_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_errt5h_a3a extends InlineCellProvider {
-    public _Inline_errt5h_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_errt5h_a3a() {
       super();
     }

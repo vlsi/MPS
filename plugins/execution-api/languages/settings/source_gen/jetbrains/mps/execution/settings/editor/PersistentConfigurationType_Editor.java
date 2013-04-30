@@ -59,10 +59,6 @@ public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_c5arh5_a0a extends InlineCellProvider {
-    public _Inline_c5arh5_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_c5arh5_a0a() {
       super();
     }
@@ -126,10 +122,6 @@ public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_c5arh5_a1a extends InlineCellProvider {
-    public _Inline_c5arh5_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_c5arh5_a1a() {
       super();
     }

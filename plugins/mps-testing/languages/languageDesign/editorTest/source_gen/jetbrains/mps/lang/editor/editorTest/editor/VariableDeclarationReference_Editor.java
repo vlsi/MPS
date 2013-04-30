@@ -46,10 +46,6 @@ public class VariableDeclarationReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_yti90v_a0a extends InlineCellProvider {
-    public _Inline_yti90v_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_yti90v_a0a() {
       super();
     }

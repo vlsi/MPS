@@ -88,10 +88,6 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_tsmvai_a2a extends InlineCellProvider {
-    public _Inline_tsmvai_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_tsmvai_a2a() {
       super();
     }

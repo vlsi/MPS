@@ -92,10 +92,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_lfsepz_a2a extends InlineCellProvider {
-    public _Inline_lfsepz_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_lfsepz_a2a() {
       super();
     }
@@ -275,10 +271,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_lfsepz_a1a3a extends InlineCellProvider {
-    public _Inline_lfsepz_a1a3a(String role) {
-      super(role);
-    }
-
     public _Inline_lfsepz_a1a3a() {
       super();
     }
@@ -363,10 +355,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_lfsepz_a1b3a extends InlineCellProvider {
-    public _Inline_lfsepz_a1b3a(String role) {
-      super(role);
-    }
-
     public _Inline_lfsepz_a1b3a() {
       super();
     }
@@ -407,10 +395,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     }
 
     public static class _Inline_lfsepz_a0a0b1d0 extends InlineCellProvider {
-      public _Inline_lfsepz_a0a0b1d0(String role) {
-        super(role);
-      }
-
       public _Inline_lfsepz_a0a0b1d0() {
         super();
       }

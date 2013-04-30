@@ -72,10 +72,6 @@ public class Dependency_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_l58ghc_a1a0 extends InlineCellProvider {
-    public _Inline_l58ghc_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_l58ghc_a1a0() {
       super();
     }
@@ -171,10 +167,6 @@ public class Dependency_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_l58ghc_a1b0 extends InlineCellProvider {
-    public _Inline_l58ghc_a1b0(String role) {
-      super(role);
-    }
-
     public _Inline_l58ghc_a1b0() {
       super();
     }

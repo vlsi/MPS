@@ -501,7 +501,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceRegexp_Editor" file="MatchVariableReferenceRegexp_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -525,7 +524,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReferenceReplacement_Editor" file="MatchVariableReferenceReplacement_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -548,7 +546,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.editor.MatchVariableReference_Editor" file="MatchVariableReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -747,7 +744,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassRegexp_Editor" file="PredefinedSymbolClassRegexp_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -770,7 +766,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.editor.PredefinedSymbolClassSymbolClassPart_Editor" file="PredefinedSymbolClassSymbolClassPart_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -815,7 +810,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclarationReferenceRegexp_Editor" file="RegexpDeclarationReferenceRegexp_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

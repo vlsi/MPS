@@ -91,10 +91,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
   }
 
   public static class _Inline_s0kiw8_a3a extends InlineCellProvider {
-    public _Inline_s0kiw8_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_s0kiw8_a3a() {
       super();
     }
@@ -154,10 +150,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
   }
 
   public static class _Inline_s0kiw8_a5a extends InlineCellProvider {
-    public _Inline_s0kiw8_a5a(String role) {
-      super(role);
-    }
-
     public _Inline_s0kiw8_a5a() {
       super();
     }

@@ -120,10 +120,6 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ryg3k0_a3a0 extends InlineCellProvider {
-    public _Inline_ryg3k0_a3a0(String role) {
-      super(role);
-    }
-
     public _Inline_ryg3k0_a3a0() {
       super();
     }

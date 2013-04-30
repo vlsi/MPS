@@ -122,10 +122,6 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_tx8k3j_a3a0 extends InlineCellProvider {
-    public _Inline_tx8k3j_a3a0(String role) {
-      super(role);
-    }
-
     public _Inline_tx8k3j_a3a0() {
       super();
     }

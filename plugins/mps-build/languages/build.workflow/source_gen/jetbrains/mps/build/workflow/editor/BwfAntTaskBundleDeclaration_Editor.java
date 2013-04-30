@@ -101,10 +101,6 @@ public class BwfAntTaskBundleDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_p1xf3r_a4a extends InlineCellProvider {
-    public _Inline_p1xf3r_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_p1xf3r_a4a() {
       super();
     }

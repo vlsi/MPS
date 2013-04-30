@@ -225,10 +225,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_iwpawc_a2b2a extends InlineCellProvider {
-    public _Inline_iwpawc_a2b2a(String role) {
-      super(role);
-    }
-
     public _Inline_iwpawc_a2b2a() {
       super();
     }

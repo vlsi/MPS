@@ -116,10 +116,6 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7t32xl_a0d0 extends InlineCellProvider {
-    public _Inline_7t32xl_a0d0(String role) {
-      super(role);
-    }
-
     public _Inline_7t32xl_a0d0() {
       super();
     }
@@ -187,10 +183,6 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7t32xl_a4a extends InlineCellProvider {
-    public _Inline_7t32xl_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_7t32xl_a4a() {
       super();
     }
@@ -325,10 +317,6 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7t32xl_a2c0 extends InlineCellProvider {
-    public _Inline_7t32xl_a2c0(String role) {
-      super(role);
-    }
-
     public _Inline_7t32xl_a2c0() {
       super();
     }

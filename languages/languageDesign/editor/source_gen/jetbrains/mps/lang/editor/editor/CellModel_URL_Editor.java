@@ -132,10 +132,6 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wgj6gq_a2a extends InlineCellProvider {
-    public _Inline_wgj6gq_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_wgj6gq_a2a() {
       super();
     }
@@ -309,10 +305,6 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wgj6gq_a1a3a extends InlineCellProvider {
-    public _Inline_wgj6gq_a1a3a(String role) {
-      super(role);
-    }
-
     public _Inline_wgj6gq_a1a3a() {
       super();
     }

@@ -53,10 +53,6 @@ public class ActionReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ld3k57_a0a extends InlineCellProvider {
-    public _Inline_ld3k57_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_ld3k57_a0a() {
       super();
     }
@@ -97,10 +93,6 @@ public class ActionReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ld3k57_a1a extends InlineCellProvider {
-    public _Inline_ld3k57_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_ld3k57_a1a() {
       super();
     }

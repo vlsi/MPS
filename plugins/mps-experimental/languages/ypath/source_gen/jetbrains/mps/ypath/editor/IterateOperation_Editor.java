@@ -166,10 +166,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wgzfn3_a2b0 extends InlineCellProvider {
-    public _Inline_wgzfn3_a2b0(String role) {
-      super(role);
-    }
-
     public _Inline_wgzfn3_a2b0() {
       super();
     }
@@ -347,10 +343,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wgzfn3_a1b0 extends InlineCellProvider {
-    public _Inline_wgzfn3_a1b0(String role) {
-      super(role);
-    }
-
     public _Inline_wgzfn3_a1b0() {
       super();
     }

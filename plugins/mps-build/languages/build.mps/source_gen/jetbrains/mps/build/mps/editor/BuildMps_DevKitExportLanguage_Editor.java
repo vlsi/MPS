@@ -61,10 +61,6 @@ public class BuildMps_DevKitExportLanguage_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ga85n5_a1a extends InlineCellProvider {
-    public _Inline_ga85n5_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_ga85n5_a1a() {
       super();
     }

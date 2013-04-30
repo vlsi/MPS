@@ -65,10 +65,6 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ji2wba_a0a extends InlineCellProvider {
-    public _Inline_ji2wba_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_ji2wba_a0a() {
       super();
     }
@@ -137,10 +133,6 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ji2wba_a2a extends InlineCellProvider {
-    public _Inline_ji2wba_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_ji2wba_a2a() {
       super();
     }

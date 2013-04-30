@@ -46,10 +46,6 @@ public class DocTypeParameterReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_9ukojg_a0a extends InlineCellProvider {
-    public _Inline_9ukojg_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_9ukojg_a0a() {
       super();
     }

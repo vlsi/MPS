@@ -182,10 +182,6 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_p9c0o3_a4d0 extends InlineCellProvider {
-    public _Inline_p9c0o3_a4d0(String role) {
-      super(role);
-    }
-
     public _Inline_p9c0o3_a4d0() {
       super();
     }

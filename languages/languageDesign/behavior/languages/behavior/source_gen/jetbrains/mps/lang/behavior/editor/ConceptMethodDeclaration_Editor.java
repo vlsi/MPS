@@ -387,10 +387,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_gmtuod_a4j2a extends InlineCellProvider {
-    public _Inline_gmtuod_a4j2a(String role) {
-      super(role);
-    }
-
     public _Inline_gmtuod_a4j2a() {
       super();
     }
@@ -691,10 +687,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_gmtuod_a1e0 extends InlineCellProvider {
-    public _Inline_gmtuod_a1e0(String role) {
-      super(role);
-    }
-
     public _Inline_gmtuod_a1e0() {
       super();
     }

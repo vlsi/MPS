@@ -86,10 +86,6 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_qf1ea_a2a extends InlineCellProvider {
-    public _Inline_qf1ea_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_qf1ea_a2a() {
       super();
     }

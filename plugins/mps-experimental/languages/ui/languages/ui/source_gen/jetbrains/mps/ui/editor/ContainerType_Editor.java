@@ -77,10 +77,6 @@ public class ContainerType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_zgvqtk_a2a extends InlineCellProvider {
-    public _Inline_zgvqtk_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_zgvqtk_a2a() {
       super();
     }
@@ -145,10 +141,6 @@ public class ContainerType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_zgvqtk_a4a extends InlineCellProvider {
-    public _Inline_zgvqtk_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_zgvqtk_a4a() {
       super();
     }

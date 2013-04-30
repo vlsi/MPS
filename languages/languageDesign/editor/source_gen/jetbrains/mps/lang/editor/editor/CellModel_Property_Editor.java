@@ -122,10 +122,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_adk1cf_a1a extends InlineCellProvider {
-    public _Inline_adk1cf_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_adk1cf_a1a() {
       super();
     }
@@ -302,10 +298,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_adk1cf_a1a3a extends InlineCellProvider {
-    public _Inline_adk1cf_a1a3a(String role) {
-      super(role);
-    }
-
     public _Inline_adk1cf_a1a3a() {
       super();
     }

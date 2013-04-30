@@ -55,10 +55,6 @@ public class InternalConceptDeclarationReference_Editor extends DefaultNodeEdito
   }
 
   public static class _Inline_wcbhig_a1a extends InlineCellProvider {
-    public _Inline_wcbhig_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_wcbhig_a1a() {
       super();
     }

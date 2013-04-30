@@ -75,10 +75,6 @@ public class CommandProcessType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_9m9s9z_a2a extends InlineCellProvider {
-    public _Inline_9m9s9z_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_9m9s9z_a2a() {
       super();
     }

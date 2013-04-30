@@ -52,10 +52,6 @@ public class ValueReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_s9dcmx_a0a extends InlineCellProvider {
-    public _Inline_s9dcmx_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_s9dcmx_a0a() {
       super();
     }

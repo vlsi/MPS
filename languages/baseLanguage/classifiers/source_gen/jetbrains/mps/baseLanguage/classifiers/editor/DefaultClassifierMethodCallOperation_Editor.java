@@ -75,10 +75,6 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_c9gv4j_a0a extends InlineCellProvider {
-    public _Inline_c9gv4j_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_c9gv4j_a0a() {
       super();
     }

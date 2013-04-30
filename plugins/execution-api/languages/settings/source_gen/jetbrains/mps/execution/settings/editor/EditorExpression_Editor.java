@@ -75,10 +75,6 @@ public class EditorExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_f4uw03_a2a extends InlineCellProvider {
-    public _Inline_f4uw03_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_f4uw03_a2a() {
       super();
     }

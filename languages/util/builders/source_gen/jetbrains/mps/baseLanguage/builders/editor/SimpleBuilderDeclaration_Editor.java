@@ -265,10 +265,6 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ths2vx_a9a extends InlineCellProvider {
-    public _Inline_ths2vx_a9a(String role) {
-      super(role);
-    }
-
     public _Inline_ths2vx_a9a() {
       super();
     }

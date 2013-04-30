@@ -63,10 +63,6 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
   }
 
   public static class _Inline_swjj57_a1a extends InlineCellProvider {
-    public _Inline_swjj57_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_swjj57_a1a() {
       super();
     }

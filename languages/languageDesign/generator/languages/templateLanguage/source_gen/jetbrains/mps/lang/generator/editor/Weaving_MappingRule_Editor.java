@@ -107,10 +107,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_gkr2rl_a0c0 extends InlineCellProvider {
-    public _Inline_gkr2rl_a0c0(String role) {
-      super(role);
-    }
-
     public _Inline_gkr2rl_a0c0() {
       super();
     }
@@ -319,10 +315,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_gkr2rl_a1c0 extends InlineCellProvider {
-    public _Inline_gkr2rl_a1c0(String role) {
-      super(role);
-    }
-
     public _Inline_gkr2rl_a1c0() {
       super();
     }

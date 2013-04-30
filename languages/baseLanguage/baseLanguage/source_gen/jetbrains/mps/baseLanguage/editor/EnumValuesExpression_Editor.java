@@ -59,10 +59,6 @@ public class EnumValuesExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_igwct4_a0a extends InlineCellProvider {
-    public _Inline_igwct4_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_igwct4_a0a() {
       super();
     }

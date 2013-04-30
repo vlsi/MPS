@@ -71,10 +71,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hhanjm_a0a0 extends InlineCellProvider {
-    public _Inline_hhanjm_a0a0(String role) {
-      super(role);
-    }
-
     public _Inline_hhanjm_a0a0() {
       super();
     }

@@ -88,10 +88,6 @@ public class NodeTarget_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_1i1fuk_a2a0 extends InlineCellProvider {
-    public _Inline_1i1fuk_a2a0(String role) {
-      super(role);
-    }
-
     public _Inline_1i1fuk_a2a0() {
       super();
     }

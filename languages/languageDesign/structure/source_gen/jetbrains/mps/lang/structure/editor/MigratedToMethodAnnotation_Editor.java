@@ -79,10 +79,6 @@ public class MigratedToMethodAnnotation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ykmn9g_a1a0 extends InlineCellProvider {
-    public _Inline_ykmn9g_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_ykmn9g_a1a0() {
       super();
     }

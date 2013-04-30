@@ -49,10 +49,6 @@ public class Transition_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_jj4qz_a0a extends InlineCellProvider {
-    public _Inline_jj4qz_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_jj4qz_a0a() {
       super();
     }
@@ -113,10 +109,6 @@ public class Transition_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_jj4qz_a2a extends InlineCellProvider {
-    public _Inline_jj4qz_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_jj4qz_a2a() {
       super();
     }

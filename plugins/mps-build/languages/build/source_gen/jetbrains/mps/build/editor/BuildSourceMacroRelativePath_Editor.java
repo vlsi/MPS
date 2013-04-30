@@ -86,10 +86,6 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_3is4rg_a1a extends InlineCellProvider {
-    public _Inline_3is4rg_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_3is4rg_a1a() {
       super();
     }

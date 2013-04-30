@@ -78,10 +78,6 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_cth9w3_a1a0 extends InlineCellProvider {
-    public _Inline_cth9w3_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_cth9w3_a1a0() {
       super();
     }

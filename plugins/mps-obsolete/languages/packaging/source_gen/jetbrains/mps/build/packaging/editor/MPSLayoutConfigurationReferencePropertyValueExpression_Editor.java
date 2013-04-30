@@ -48,10 +48,6 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
   }
 
   public static class _Inline_71sslv_a0a extends InlineCellProvider {
-    public _Inline_71sslv_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_71sslv_a0a() {
       super();
     }

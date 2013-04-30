@@ -61,10 +61,6 @@ public class BuildMps_ModuleDependencyUseLanguage_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_qvq9fk_a1a extends InlineCellProvider {
-    public _Inline_qvq9fk_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_qvq9fk_a1a() {
       super();
     }

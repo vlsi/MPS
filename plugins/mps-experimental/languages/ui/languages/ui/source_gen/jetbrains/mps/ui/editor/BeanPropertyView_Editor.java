@@ -84,10 +84,6 @@ public class BeanPropertyView_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_te95m9_a3a extends InlineCellProvider {
-    public _Inline_te95m9_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_te95m9_a3a() {
       super();
     }

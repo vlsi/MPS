@@ -124,10 +124,6 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7zoim2_a3a0 extends InlineCellProvider {
-    public _Inline_7zoim2_a3a0(String role) {
-      super(role);
-    }
-
     public _Inline_7zoim2_a3a0() {
       super();
     }
@@ -316,10 +312,6 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7zoim2_a3a0_0 extends InlineCellProvider {
-    public _Inline_7zoim2_a3a0_0(String role) {
-      super(role);
-    }
-
     public _Inline_7zoim2_a3a0_0() {
       super();
     }

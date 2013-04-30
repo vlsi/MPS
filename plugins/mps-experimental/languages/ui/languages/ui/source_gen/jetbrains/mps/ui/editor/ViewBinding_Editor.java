@@ -50,10 +50,6 @@ public class ViewBinding_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7vr6mu_a0a extends InlineCellProvider {
-    public _Inline_7vr6mu_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_7vr6mu_a0a() {
       super();
     }

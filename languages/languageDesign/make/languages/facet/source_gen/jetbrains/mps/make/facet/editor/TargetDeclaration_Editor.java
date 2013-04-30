@@ -136,10 +136,6 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xfdsch_a4a extends InlineCellProvider {
-    public _Inline_xfdsch_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_xfdsch_a4a() {
       super();
     }

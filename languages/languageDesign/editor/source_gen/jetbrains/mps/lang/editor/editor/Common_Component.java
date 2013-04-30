@@ -117,10 +117,6 @@ public class Common_Component extends AbstractCellProvider {
   }
 
   public static class _Inline_tf8r10_a1a1a extends InlineCellProvider {
-    public _Inline_tf8r10_a1a1a(String role) {
-      super(role);
-    }
-
     public _Inline_tf8r10_a1a1a() {
       super();
     }
@@ -202,10 +198,6 @@ public class Common_Component extends AbstractCellProvider {
   }
 
   public static class _Inline_tf8r10_a1b1a extends InlineCellProvider {
-    public _Inline_tf8r10_a1b1a(String role) {
-      super(role);
-    }
-
     public _Inline_tf8r10_a1b1a() {
       super();
     }

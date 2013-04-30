@@ -78,10 +78,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_73o0fl_a1a extends InlineCellProvider {
-    public _Inline_73o0fl_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_73o0fl_a1a() {
       super();
     }
@@ -242,10 +238,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_73o0fl_a2a2a extends InlineCellProvider {
-    public _Inline_73o0fl_a2a2a(String role) {
-      super(role);
-    }
-
     public _Inline_73o0fl_a2a2a() {
       super();
     }

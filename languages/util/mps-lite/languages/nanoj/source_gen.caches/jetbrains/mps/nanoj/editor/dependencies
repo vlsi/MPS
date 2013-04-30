@@ -60,7 +60,6 @@
   </dependency>
   <dependency className="jetbrains.mps.nanoj.editor.VarDeclReference_Editor" file="VarDeclReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />

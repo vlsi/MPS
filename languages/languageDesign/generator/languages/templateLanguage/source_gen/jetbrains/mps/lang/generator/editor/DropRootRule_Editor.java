@@ -66,10 +66,6 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_fdnaen_a0a extends InlineCellProvider {
-    public _Inline_fdnaen_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_fdnaen_a0a() {
       super();
     }

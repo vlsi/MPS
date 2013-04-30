@@ -64,10 +64,6 @@ public class LocalMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2jlgx_a1a extends InlineCellProvider {
-    public _Inline_2jlgx_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_2jlgx_a1a() {
       super();
     }

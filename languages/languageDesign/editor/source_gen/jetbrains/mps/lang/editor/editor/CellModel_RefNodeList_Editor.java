@@ -170,10 +170,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2v2794_a1a0c0 extends InlineCellProvider {
-    public _Inline_2v2794_a1a0c0(String role) {
-      super(role);
-    }
-
     public _Inline_2v2794_a1a0c0() {
       super();
     }
@@ -349,10 +345,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2v2794_a1a1c0 extends InlineCellProvider {
-    public _Inline_2v2794_a1a1c0(String role) {
-      super(role);
-    }
-
     public _Inline_2v2794_a1a1c0() {
       super();
     }
@@ -553,10 +545,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2v2794_a1a3a extends InlineCellProvider {
-    public _Inline_2v2794_a1a3a(String role) {
-      super(role);
-    }
-
     public _Inline_2v2794_a1a3a() {
       super();
     }
@@ -1171,10 +1159,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2v2794_a1l3a extends InlineCellProvider {
-    public _Inline_2v2794_a1l3a(String role) {
-      super(role);
-    }
-
     public _Inline_2v2794_a1l3a() {
       super();
     }

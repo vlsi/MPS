@@ -78,10 +78,6 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_jpekck_a2a extends InlineCellProvider {
-    public _Inline_jpekck_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_jpekck_a2a() {
       super();
     }

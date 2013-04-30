@@ -99,10 +99,6 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_1kyme_a1b0 extends InlineCellProvider {
-    public _Inline_1kyme_a1b0(String role) {
-      super(role);
-    }
-
     public _Inline_1kyme_a1b0() {
       super();
     }

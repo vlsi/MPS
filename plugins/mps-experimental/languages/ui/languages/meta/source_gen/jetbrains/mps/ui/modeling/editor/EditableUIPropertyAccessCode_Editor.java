@@ -62,10 +62,6 @@ public class EditableUIPropertyAccessCode_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xspfwn_a0a0 extends InlineCellProvider {
-    public _Inline_xspfwn_a0a0(String role) {
-      super(role);
-    }
-
     public _Inline_xspfwn_a0a0() {
       super();
     }

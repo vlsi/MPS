@@ -85,10 +85,6 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_vnocnn_a2a extends InlineCellProvider {
-    public _Inline_vnocnn_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_vnocnn_a2a() {
       super();
     }
@@ -160,10 +156,6 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_vnocnn_a4a extends InlineCellProvider {
-    public _Inline_vnocnn_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_vnocnn_a4a() {
       super();
     }

@@ -53,10 +53,6 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_99sp2s_a0a extends InlineCellProvider {
-    public _Inline_99sp2s_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_99sp2s_a0a() {
       super();
     }

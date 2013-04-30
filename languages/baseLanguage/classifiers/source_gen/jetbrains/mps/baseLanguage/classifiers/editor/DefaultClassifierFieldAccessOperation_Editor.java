@@ -52,10 +52,6 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
   }
 
   public static class _Inline_c4gh6o_a0a extends InlineCellProvider {
-    public _Inline_c4gh6o_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_c4gh6o_a0a() {
       super();
     }

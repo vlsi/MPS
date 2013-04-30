@@ -98,10 +98,6 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
   }
 
   public static class _Inline_llx455_a4a extends InlineCellProvider {
-    public _Inline_llx455_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_llx455_a4a() {
       super();
     }

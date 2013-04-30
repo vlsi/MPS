@@ -69,10 +69,6 @@ public class CustomOperatorUsage_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_fe04xc_a1a extends InlineCellProvider {
-    public _Inline_fe04xc_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_fe04xc_a1a() {
       super();
     }

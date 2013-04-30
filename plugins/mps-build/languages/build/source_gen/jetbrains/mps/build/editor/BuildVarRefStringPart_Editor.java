@@ -81,10 +81,6 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ayjduv_a1a extends InlineCellProvider {
-    public _Inline_ayjduv_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_ayjduv_a1a() {
       super();
     }

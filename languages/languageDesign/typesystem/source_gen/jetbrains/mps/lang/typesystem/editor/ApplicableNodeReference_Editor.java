@@ -61,10 +61,6 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_13d8h_a0a extends InlineCellProvider {
-    public _Inline_13d8h_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_13d8h_a0a() {
       super();
     }

@@ -70,10 +70,6 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_84i1v2_a1a extends InlineCellProvider {
-    public _Inline_84i1v2_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_84i1v2_a1a() {
       super();
     }

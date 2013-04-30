@@ -46,10 +46,6 @@ public class CustomConstructorParameterReference_Editor extends DefaultNodeEdito
   }
 
   public static class _Inline_hi58r4_a0a extends InlineCellProvider {
-    public _Inline_hi58r4_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_hi58r4_a0a() {
       super();
     }

@@ -60,10 +60,6 @@ public class BlockReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_8nsg5j_a1a extends InlineCellProvider {
-    public _Inline_8nsg5j_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_8nsg5j_a1a() {
       super();
     }

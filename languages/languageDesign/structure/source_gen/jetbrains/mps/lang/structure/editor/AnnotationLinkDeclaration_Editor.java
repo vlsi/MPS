@@ -225,10 +225,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_z637q5_a1c1c0 extends InlineCellProvider {
-    public _Inline_z637q5_a1c1c0(String role) {
-      super(role);
-    }
-
     public _Inline_z637q5_a1c1c0() {
       super();
     }
@@ -303,10 +299,6 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_z637q5_a1d1c0 extends InlineCellProvider {
-    public _Inline_z637q5_a1d1c0(String role) {
-      super(role);
-    }
-
     public _Inline_z637q5_a1d1c0() {
       super();
     }

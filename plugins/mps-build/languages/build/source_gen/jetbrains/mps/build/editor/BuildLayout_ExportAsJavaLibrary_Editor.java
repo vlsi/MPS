@@ -81,10 +81,6 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ge4r0w_a1a extends InlineCellProvider {
-    public _Inline_ge4r0w_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_ge4r0w_a1a() {
       super();
     }

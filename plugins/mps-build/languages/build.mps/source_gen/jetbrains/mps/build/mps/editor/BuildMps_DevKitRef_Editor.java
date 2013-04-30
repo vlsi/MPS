@@ -46,10 +46,6 @@ public class BuildMps_DevKitRef_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_gnck8b_a0a extends InlineCellProvider {
-    public _Inline_gnck8b_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_gnck8b_a0a() {
       super();
     }

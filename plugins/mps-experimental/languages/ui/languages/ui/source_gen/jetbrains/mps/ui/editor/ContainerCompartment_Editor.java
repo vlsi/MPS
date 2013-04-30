@@ -80,10 +80,6 @@ public class ContainerCompartment_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_6q4kdp_a0a0a extends InlineCellProvider {
-    public _Inline_6q4kdp_a0a0a(String role) {
-      super(role);
-    }
-
     public _Inline_6q4kdp_a0a0a() {
       super();
     }

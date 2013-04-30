@@ -150,10 +150,6 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_qbcy69_a1b1b0 extends InlineCellProvider {
-    public _Inline_qbcy69_a1b1b0(String role) {
-      super(role);
-    }
-
     public _Inline_qbcy69_a1b1b0() {
       super();
     }

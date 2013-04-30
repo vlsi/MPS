@@ -83,10 +83,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_nhjrih_a1a0 extends InlineCellProvider {
-    public _Inline_nhjrih_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_nhjrih_a1a0() {
       super();
     }

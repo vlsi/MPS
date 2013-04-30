@@ -131,10 +131,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   public static class _Inline_crgygw_a1a extends InlineCellProvider {
-    public _Inline_crgygw_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_crgygw_a1a() {
       super();
     }

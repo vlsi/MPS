@@ -117,10 +117,6 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
   }
 
   public static class _Inline_ourakl_a3b0 extends InlineCellProvider {
-    public _Inline_ourakl_a3b0(String role) {
-      super(role);
-    }
-
     public _Inline_ourakl_a3b0() {
       super();
     }

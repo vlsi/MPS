@@ -51,10 +51,6 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_oe6wjr_a0a extends InlineCellProvider {
-    public _Inline_oe6wjr_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_oe6wjr_a0a() {
       super();
     }

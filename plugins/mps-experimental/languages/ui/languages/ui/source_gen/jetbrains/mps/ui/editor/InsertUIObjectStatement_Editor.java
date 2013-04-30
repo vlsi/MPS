@@ -111,10 +111,6 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_g3syp0_a3a0a extends InlineCellProvider {
-    public _Inline_g3syp0_a3a0a(String role) {
-      super(role);
-    }
-
     public _Inline_g3syp0_a3a0a() {
       super();
     }

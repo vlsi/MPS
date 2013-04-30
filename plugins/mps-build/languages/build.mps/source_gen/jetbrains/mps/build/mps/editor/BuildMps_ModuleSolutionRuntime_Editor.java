@@ -61,10 +61,6 @@ public class BuildMps_ModuleSolutionRuntime_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_z6427v_a1a extends InlineCellProvider {
-    public _Inline_z6427v_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_z6427v_a1a() {
       super();
     }

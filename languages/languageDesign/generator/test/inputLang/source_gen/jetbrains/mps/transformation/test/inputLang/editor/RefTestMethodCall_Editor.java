@@ -51,10 +51,6 @@ public class RefTestMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_qc2qxw_a0a extends InlineCellProvider {
-    public _Inline_qc2qxw_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_qc2qxw_a0a() {
       super();
     }

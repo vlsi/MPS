@@ -51,10 +51,6 @@ public class CellMenuComponentFeature_Link_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_5mhiie_a0a extends InlineCellProvider {
-    public _Inline_5mhiie_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_5mhiie_a0a() {
       super();
     }

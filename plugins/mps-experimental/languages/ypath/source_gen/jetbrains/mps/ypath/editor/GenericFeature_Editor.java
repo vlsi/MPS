@@ -361,10 +361,6 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_6zhae_a2a0c0a extends InlineCellProvider {
-    public _Inline_6zhae_a2a0c0a(String role) {
-      super(role);
-    }
-
     public _Inline_6zhae_a2a0c0a() {
       super();
     }

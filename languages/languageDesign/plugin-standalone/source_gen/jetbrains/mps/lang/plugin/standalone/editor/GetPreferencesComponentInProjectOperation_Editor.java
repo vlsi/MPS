@@ -76,10 +76,6 @@ public class GetPreferencesComponentInProjectOperation_Editor extends DefaultNod
   }
 
   public static class _Inline_7v7srj_a2a extends InlineCellProvider {
-    public _Inline_7v7srj_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_7v7srj_a2a() {
       super();
     }

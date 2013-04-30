@@ -46,10 +46,6 @@ public class IdeaInitializerReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_vt9o3a_a0a extends InlineCellProvider {
-    public _Inline_vt9o3a_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_vt9o3a_a0a() {
       super();
     }

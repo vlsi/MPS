@@ -257,10 +257,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pkrqbh_a9a extends InlineCellProvider {
-    public _Inline_pkrqbh_a9a(String role) {
-      super(role);
-    }
-
     public _Inline_pkrqbh_a9a() {
       super();
     }

@@ -55,10 +55,6 @@ public class GeneratorInternal_BuildSource_JavaLibrary_Editor extends DefaultNod
   }
 
   public static class _Inline_b31w58_a1a extends InlineCellProvider {
-    public _Inline_b31w58_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_b31w58_a1a() {
       super();
     }

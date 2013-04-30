@@ -140,10 +140,6 @@ public class ReferenceContainer_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_jpb8dn_a1a1b0 extends InlineCellProvider {
-    public _Inline_jpb8dn_a1a1b0(String role) {
-      super(role);
-    }
-
     public _Inline_jpb8dn_a1a1b0() {
       super();
     }
@@ -215,10 +211,6 @@ public class ReferenceContainer_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_jpb8dn_a1b1b0 extends InlineCellProvider {
-    public _Inline_jpb8dn_a1b1b0(String role) {
-      super(role);
-    }
-
     public _Inline_jpb8dn_a1b1b0() {
       super();
     }
@@ -290,10 +282,6 @@ public class ReferenceContainer_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_jpb8dn_a1c1b0 extends InlineCellProvider {
-    public _Inline_jpb8dn_a1c1b0(String role) {
-      super(role);
-    }
-
     public _Inline_jpb8dn_a1c1b0() {
       super();
     }

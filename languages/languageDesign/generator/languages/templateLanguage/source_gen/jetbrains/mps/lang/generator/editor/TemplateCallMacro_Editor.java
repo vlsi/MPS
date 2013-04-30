@@ -226,10 +226,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_nnob7w_a2b2a extends InlineCellProvider {
-    public _Inline_nnob7w_a2b2a(String role) {
-      super(role);
-    }
-
     public _Inline_nnob7w_a2b2a() {
       super();
     }
@@ -388,10 +384,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_nnob7w_a0c4c0 extends InlineCellProvider {
-    public _Inline_nnob7w_a0c4c0(String role) {
-      super(role);
-    }
-
     public _Inline_nnob7w_a0c4c0() {
       super();
     }

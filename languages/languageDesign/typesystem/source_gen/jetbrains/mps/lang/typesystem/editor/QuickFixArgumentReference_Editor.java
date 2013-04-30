@@ -49,10 +49,6 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_5g0ar_a0a extends InlineCellProvider {
-    public _Inline_5g0ar_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_5g0ar_a0a() {
       super();
     }

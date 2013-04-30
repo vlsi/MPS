@@ -81,10 +81,6 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_vrfi3w_a2a extends InlineCellProvider {
-    public _Inline_vrfi3w_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_vrfi3w_a2a() {
       super();
     }

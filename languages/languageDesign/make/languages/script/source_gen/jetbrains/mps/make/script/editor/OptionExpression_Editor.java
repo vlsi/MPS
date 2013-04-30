@@ -52,10 +52,6 @@ public class OptionExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_57zibj_a0a extends InlineCellProvider {
-    public _Inline_57zibj_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_57zibj_a0a() {
       super();
     }

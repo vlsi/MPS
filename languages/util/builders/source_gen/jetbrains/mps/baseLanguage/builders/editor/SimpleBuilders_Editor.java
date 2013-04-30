@@ -103,10 +103,6 @@ public class SimpleBuilders_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hh7u75_a3a extends InlineCellProvider {
-    public _Inline_hh7u75_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_hh7u75_a3a() {
       super();
     }

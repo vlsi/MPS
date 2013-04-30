@@ -35,7 +35,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.BlockReference_Editor" file="BlockReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -107,7 +106,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.BuildLanguageTargetReference_Editor" file="BuildLanguageTargetReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -239,7 +237,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.ConfigurationReference_Editor" file="ConfigurationReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -439,7 +436,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.IdeaInitializerReference_Editor" file="IdeaInitializerReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -587,7 +583,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.MPSLayoutConfigurationReferencePropertyValueExpression_Editor" file="MPSLayoutConfigurationReferencePropertyValueExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -843,7 +838,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.PathHolder_Editor" file="PathHolder_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
@@ -958,7 +952,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.PropertyNodeImport_Editor" file="PropertyNodeImport_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.AliasEditorComponent" />
@@ -1059,7 +1052,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.VariableReference_Editor" file="VariableReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.CompositeString_RT" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />

@@ -52,10 +52,6 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_daqvaj_a0a extends InlineCellProvider {
-    public _Inline_daqvaj_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_daqvaj_a0a() {
       super();
     }

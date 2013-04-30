@@ -75,10 +75,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
   }
 
   public static class _Inline_e5b6m9_a0a extends InlineCellProvider {
-    public _Inline_e5b6m9_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_e5b6m9_a0a() {
       super();
     }
@@ -139,10 +135,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
   }
 
   public static class _Inline_e5b6m9_a1a extends InlineCellProvider {
-    public _Inline_e5b6m9_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_e5b6m9_a1a() {
       super();
     }

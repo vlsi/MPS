@@ -62,10 +62,6 @@ public class MPSActionReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_5z7arn_a1a extends InlineCellProvider {
-    public _Inline_5z7arn_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_5z7arn_a1a() {
       super();
     }

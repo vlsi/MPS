@@ -81,10 +81,6 @@ public class BuildMpsLayout_Plugin_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_y1xun7_a1a extends InlineCellProvider {
-    public _Inline_y1xun7_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_y1xun7_a1a() {
       super();
     }

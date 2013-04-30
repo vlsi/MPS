@@ -98,10 +98,6 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
   }
 
   public static class _Inline_5c49m1_a4a extends InlineCellProvider {
-    public _Inline_5c49m1_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_5c49m1_a4a() {
       super();
     }

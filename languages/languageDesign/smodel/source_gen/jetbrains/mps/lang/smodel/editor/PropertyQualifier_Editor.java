@@ -46,10 +46,6 @@ public class PropertyQualifier_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_z1k7sb_a0a extends InlineCellProvider {
-    public _Inline_z1k7sb_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_z1k7sb_a0a() {
       super();
     }

@@ -205,10 +205,6 @@ public class StateMachine_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_qpt50r_a1f0 extends InlineCellProvider {
-    public _Inline_qpt50r_a1f0(String role) {
-      super(role);
-    }
-
     public _Inline_qpt50r_a1f0() {
       super();
     }

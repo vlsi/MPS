@@ -69,10 +69,6 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_r0l70z_a1a extends InlineCellProvider {
-    public _Inline_r0l70z_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_r0l70z_a1a() {
       super();
     }

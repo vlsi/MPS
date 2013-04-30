@@ -131,10 +131,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2ojjgh_a1a0 extends InlineCellProvider {
-    public _Inline_2ojjgh_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_2ojjgh_a1a0() {
       super();
     }
@@ -391,10 +387,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2ojjgh_a1a0_0 extends InlineCellProvider {
-    public _Inline_2ojjgh_a1a0_0(String role) {
-      super(role);
-    }
-
     public _Inline_2ojjgh_a1a0_0() {
       super();
     }
@@ -448,10 +440,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2ojjgh_a2a0 extends InlineCellProvider {
-    public _Inline_2ojjgh_a2a0(String role) {
-      super(role);
-    }
-
     public _Inline_2ojjgh_a2a0() {
       super();
     }
@@ -526,10 +514,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2ojjgh_a1b0 extends InlineCellProvider {
-    public _Inline_2ojjgh_a1b0(String role) {
-      super(role);
-    }
-
     public _Inline_2ojjgh_a1b0() {
       super();
     }

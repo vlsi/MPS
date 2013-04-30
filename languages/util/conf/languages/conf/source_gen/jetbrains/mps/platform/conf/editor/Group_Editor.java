@@ -125,10 +125,6 @@ public class Group_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_o84zp2_a2b0a extends InlineCellProvider {
-    public _Inline_o84zp2_a2b0a(String role) {
-      super(role);
-    }
-
     public _Inline_o84zp2_a2b0a() {
       super();
     }

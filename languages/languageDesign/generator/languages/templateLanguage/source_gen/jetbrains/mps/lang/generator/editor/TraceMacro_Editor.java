@@ -224,10 +224,6 @@ public class TraceMacro_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_s4priq_a2b2a extends InlineCellProvider {
-    public _Inline_s4priq_a2b2a(String role) {
-      super(role);
-    }
-
     public _Inline_s4priq_a2b2a() {
       super();
     }

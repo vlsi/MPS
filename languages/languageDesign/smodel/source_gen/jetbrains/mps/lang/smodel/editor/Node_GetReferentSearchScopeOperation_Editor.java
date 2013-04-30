@@ -77,10 +77,6 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_8agmue_a2a extends InlineCellProvider {
-    public _Inline_8agmue_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_8agmue_a2a() {
       super();
     }

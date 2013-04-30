@@ -48,10 +48,6 @@ public class LoopLabelReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pr39i0_a0a extends InlineCellProvider {
-    public _Inline_pr39i0_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_pr39i0_a0a() {
       super();
     }

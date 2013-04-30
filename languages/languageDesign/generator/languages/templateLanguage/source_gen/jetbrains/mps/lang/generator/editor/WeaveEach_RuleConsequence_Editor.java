@@ -134,10 +134,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hfot0g_a2b0 extends InlineCellProvider {
-    public _Inline_hfot0g_a2b0(String role) {
-      super(role);
-    }
-
     public _Inline_hfot0g_a2b0() {
       super();
     }

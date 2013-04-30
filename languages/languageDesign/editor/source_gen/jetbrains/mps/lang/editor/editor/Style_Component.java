@@ -104,10 +104,6 @@ public class Style_Component extends AbstractCellProvider {
   }
 
   public static class _Inline_zdjsuv_a0a1a extends InlineCellProvider {
-    public _Inline_zdjsuv_a0a1a(String role) {
-      super(role);
-    }
-
     public _Inline_zdjsuv_a0a1a() {
       super();
     }

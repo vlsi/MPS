@@ -64,10 +64,6 @@ public class GeneratorInternal_IWorkfowParticipants_Editor extends DefaultNodeEd
   }
 
   public static class _Inline_4clv4k_a1a extends InlineCellProvider {
-    public _Inline_4clv4k_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_4clv4k_a1a() {
       super();
     }

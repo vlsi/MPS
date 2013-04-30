@@ -96,10 +96,6 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_drsbu8_a2a extends InlineCellProvider {
-    public _Inline_drsbu8_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_drsbu8_a2a() {
       super();
     }

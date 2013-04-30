@@ -67,10 +67,6 @@ public class GroupReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_b7gqtc_a1a extends InlineCellProvider {
-    public _Inline_b7gqtc_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_b7gqtc_a1a() {
       super();
     }
@@ -213,10 +209,6 @@ public class GroupReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_b7gqtc_a1a2a extends InlineCellProvider {
-    public _Inline_b7gqtc_a1a2a(String role) {
-      super(role);
-    }
-
     public _Inline_b7gqtc_a1a2a() {
       super();
     }

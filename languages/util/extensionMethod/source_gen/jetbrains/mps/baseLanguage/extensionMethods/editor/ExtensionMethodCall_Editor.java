@@ -70,10 +70,6 @@ public class ExtensionMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_74pwef_a1a extends InlineCellProvider {
-    public _Inline_74pwef_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_74pwef_a1a() {
       super();
     }

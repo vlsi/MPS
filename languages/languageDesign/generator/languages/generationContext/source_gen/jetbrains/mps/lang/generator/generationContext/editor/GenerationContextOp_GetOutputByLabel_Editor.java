@@ -63,10 +63,6 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_3dlbxb_a1a extends InlineCellProvider {
-    public _Inline_3dlbxb_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_3dlbxb_a1a() {
       super();
     }

@@ -73,10 +73,6 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_tl5ft1_a0a0 extends InlineCellProvider {
-    public _Inline_tl5ft1_a0a0(String role) {
-      super(role);
-    }
-
     public _Inline_tl5ft1_a0a0() {
       super();
     }

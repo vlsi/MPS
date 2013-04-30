@@ -69,10 +69,6 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
   }
 
   public static class _Inline_8msx3u_a2a extends InlineCellProvider {
-    public _Inline_8msx3u_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_8msx3u_a2a() {
       super();
     }

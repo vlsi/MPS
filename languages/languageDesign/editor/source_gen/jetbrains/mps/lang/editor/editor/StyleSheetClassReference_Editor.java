@@ -46,10 +46,6 @@ public class StyleSheetClassReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_m5ahkl_a0a extends InlineCellProvider {
-    public _Inline_m5ahkl_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_m5ahkl_a0a() {
       super();
     }

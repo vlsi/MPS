@@ -69,10 +69,6 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
   }
 
   public static class _Inline_qot6m0_a0a extends InlineCellProvider {
-    public _Inline_qot6m0_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_qot6m0_a0a() {
       super();
     }
@@ -126,10 +122,6 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
   }
 
   public static class _Inline_qot6m0_a1a extends InlineCellProvider {
-    public _Inline_qot6m0_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_qot6m0_a1a() {
       super();
     }
@@ -182,10 +174,6 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
   }
 
   public static class _Inline_qot6m0_a2a extends InlineCellProvider {
-    public _Inline_qot6m0_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_qot6m0_a2a() {
       super();
     }
@@ -238,10 +226,6 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
   }
 
   public static class _Inline_qot6m0_a3a extends InlineCellProvider {
-    public _Inline_qot6m0_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_qot6m0_a3a() {
       super();
     }

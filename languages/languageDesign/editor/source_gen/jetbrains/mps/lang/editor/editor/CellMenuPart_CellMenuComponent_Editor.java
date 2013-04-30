@@ -117,10 +117,6 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_5txygt_a3b0 extends InlineCellProvider {
-    public _Inline_5txygt_a3b0(String role) {
-      super(role);
-    }
-
     public _Inline_5txygt_a3b0() {
       super();
     }

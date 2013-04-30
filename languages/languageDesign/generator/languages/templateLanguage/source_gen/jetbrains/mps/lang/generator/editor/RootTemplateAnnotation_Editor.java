@@ -105,10 +105,6 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_1qmre8_a1b0a extends InlineCellProvider {
-    public _Inline_1qmre8_a1b0a(String role) {
-      super(role);
-    }
-
     public _Inline_1qmre8_a1b0a() {
       super();
     }

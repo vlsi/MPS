@@ -52,10 +52,6 @@ public class TemplateArgumentPatternVarRefExpression_Editor extends DefaultNodeE
   }
 
   public static class _Inline_a5awwn_a0a extends InlineCellProvider {
-    public _Inline_a5awwn_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_a5awwn_a0a() {
       super();
     }

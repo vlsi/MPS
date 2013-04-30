@@ -59,10 +59,6 @@ public class PathHolder_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_o0ejdp_a0a extends InlineCellProvider {
-    public _Inline_o0ejdp_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_o0ejdp_a0a() {
       super();
     }
@@ -157,10 +153,6 @@ public class PathHolder_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_o0ejdp_a0a_0 extends InlineCellProvider {
-    public _Inline_o0ejdp_a0a_0(String role) {
-      super(role);
-    }
-
     public _Inline_o0ejdp_a0a_0() {
       super();
     }

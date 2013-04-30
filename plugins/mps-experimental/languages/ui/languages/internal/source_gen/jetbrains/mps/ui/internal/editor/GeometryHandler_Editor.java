@@ -89,10 +89,6 @@ public class GeometryHandler_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_l8zkiy_a2a0 extends InlineCellProvider {
-    public _Inline_l8zkiy_a2a0(String role) {
-      super(role);
-    }
-
     public _Inline_l8zkiy_a2a0() {
       super();
     }

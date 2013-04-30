@@ -71,10 +71,6 @@ public class AuxObjectHandler_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_vq04xu_a1a0 extends InlineCellProvider {
-    public _Inline_vq04xu_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_vq04xu_a1a0() {
       super();
     }

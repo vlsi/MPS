@@ -70,10 +70,6 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
   }
 
   public static class _Inline_m29bq_a1a extends InlineCellProvider {
-    public _Inline_m29bq_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_m29bq_a1a() {
       super();
     }

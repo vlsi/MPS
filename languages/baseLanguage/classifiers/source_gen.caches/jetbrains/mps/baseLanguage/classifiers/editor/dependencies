@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.classifiers.editor.DefaultClassifierFieldAccessOperation_Editor" file="DefaultClassifierFieldAccessOperation_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -118,7 +117,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.classifiers.editor.DefaultClassifierType_Editor" file="DefaultClassifierType_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -153,7 +151,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.classifiers.editor.ThisClassifierExpression_Editor" file="ThisClassifierExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />

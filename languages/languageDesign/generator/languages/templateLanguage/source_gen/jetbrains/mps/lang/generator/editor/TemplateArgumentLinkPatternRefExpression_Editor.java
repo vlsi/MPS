@@ -52,10 +52,6 @@ public class TemplateArgumentLinkPatternRefExpression_Editor extends DefaultNode
   }
 
   public static class _Inline_f8ef2o_a0a extends InlineCellProvider {
-    public _Inline_f8ef2o_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_f8ef2o_a0a() {
       super();
     }

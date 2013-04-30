@@ -62,10 +62,6 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xqbs61_a0a extends InlineCellProvider {
-    public _Inline_xqbs61_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_xqbs61_a0a() {
       super();
     }

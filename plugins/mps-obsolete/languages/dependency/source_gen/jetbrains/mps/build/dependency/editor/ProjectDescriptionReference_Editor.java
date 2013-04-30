@@ -61,10 +61,6 @@ public class ProjectDescriptionReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_aqci7m_a1a extends InlineCellProvider {
-    public _Inline_aqci7m_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_aqci7m_a1a() {
       super();
     }

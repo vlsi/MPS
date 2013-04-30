@@ -55,10 +55,6 @@ public class AnalyzerRunnerCreator_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_u2jyfv_a0a extends InlineCellProvider {
-    public _Inline_u2jyfv_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_u2jyfv_a0a() {
       super();
     }

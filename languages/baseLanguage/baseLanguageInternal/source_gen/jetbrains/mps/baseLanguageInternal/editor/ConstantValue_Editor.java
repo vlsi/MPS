@@ -108,10 +108,6 @@ public class ConstantValue_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_si17nj_a4a extends InlineCellProvider {
-    public _Inline_si17nj_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_si17nj_a4a() {
       super();
     }

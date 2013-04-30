@@ -59,10 +59,6 @@ public class Extension_name extends AbstractCellProvider {
   }
 
   public static class _Inline_rol0et_a0a extends InlineCellProvider {
-    public _Inline_rol0et_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_rol0et_a0a() {
       super();
     }

@@ -101,10 +101,6 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_n52m2z_a1b0 extends InlineCellProvider {
-    public _Inline_n52m2z_a1b0(String role) {
-      super(role);
-    }
-
     public _Inline_n52m2z_a1b0() {
       super();
     }
@@ -184,10 +180,6 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_n52m2z_a1a extends InlineCellProvider {
-    public _Inline_n52m2z_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_n52m2z_a1a() {
       super();
     }

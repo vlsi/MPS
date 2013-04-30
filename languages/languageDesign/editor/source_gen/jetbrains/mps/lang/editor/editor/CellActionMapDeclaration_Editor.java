@@ -154,10 +154,6 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_dnk0aj_a1c0 extends InlineCellProvider {
-    public _Inline_dnk0aj_a1c0(String role) {
-      super(role);
-    }
-
     public _Inline_dnk0aj_a1c0() {
       super();
     }

@@ -56,10 +56,6 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
   }
 
   public static class _Inline_1yxynp_a0a extends InlineCellProvider {
-    public _Inline_1yxynp_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_1yxynp_a0a() {
       super();
     }

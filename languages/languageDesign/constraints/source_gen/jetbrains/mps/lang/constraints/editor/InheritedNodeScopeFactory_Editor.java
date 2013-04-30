@@ -63,10 +63,6 @@ public class InheritedNodeScopeFactory_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_cp9vsd_a1a extends InlineCellProvider {
-    public _Inline_cp9vsd_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_cp9vsd_a1a() {
       super();
     }

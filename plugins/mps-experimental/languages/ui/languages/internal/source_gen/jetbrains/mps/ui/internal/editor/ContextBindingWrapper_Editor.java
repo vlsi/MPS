@@ -155,10 +155,6 @@ public class ContextBindingWrapper_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2kuzvr_a6a0 extends InlineCellProvider {
-    public _Inline_2kuzvr_a6a0(String role) {
-      super(role);
-    }
-
     public _Inline_2kuzvr_a6a0() {
       super();
     }

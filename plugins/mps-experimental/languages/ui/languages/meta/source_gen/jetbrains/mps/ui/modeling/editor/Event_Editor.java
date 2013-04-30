@@ -104,10 +104,6 @@ public class Event_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ymj9mh_a2a0 extends InlineCellProvider {
-    public _Inline_ymj9mh_a2a0(String role) {
-      super(role);
-    }
-
     public _Inline_ymj9mh_a2a0() {
       super();
     }

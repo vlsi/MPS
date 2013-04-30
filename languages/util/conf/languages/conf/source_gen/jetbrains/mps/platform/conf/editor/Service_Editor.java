@@ -103,10 +103,6 @@ public class Service_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_m4h17_a1b0 extends InlineCellProvider {
-    public _Inline_m4h17_a1b0(String role) {
-      super(role);
-    }
-
     public _Inline_m4h17_a1b0() {
       super();
     }
@@ -167,10 +163,6 @@ public class Service_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_m4h17_a3b0 extends InlineCellProvider {
-    public _Inline_m4h17_a3b0(String role) {
-      super(role);
-    }
-
     public _Inline_m4h17_a3b0() {
       super();
     }

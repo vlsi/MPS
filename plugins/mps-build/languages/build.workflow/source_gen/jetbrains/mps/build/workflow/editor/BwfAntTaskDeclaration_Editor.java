@@ -120,10 +120,6 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_fxg4hy_a5a extends InlineCellProvider {
-    public _Inline_fxg4hy_a5a(String role) {
-      super(role);
-    }
-
     public _Inline_fxg4hy_a5a() {
       super();
     }

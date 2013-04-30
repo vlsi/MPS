@@ -58,10 +58,6 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_5lunhw_a0a extends InlineCellProvider {
-    public _Inline_5lunhw_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_5lunhw_a0a() {
       super();
     }
@@ -145,10 +141,6 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_5lunhw_a1a0 extends InlineCellProvider {
-    public _Inline_5lunhw_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_5lunhw_a1a0() {
       super();
     }

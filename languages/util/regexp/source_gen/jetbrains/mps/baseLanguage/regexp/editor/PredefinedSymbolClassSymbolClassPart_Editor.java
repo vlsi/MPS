@@ -57,10 +57,6 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_u0vlk9_a0a extends InlineCellProvider {
-    public _Inline_u0vlk9_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_u0vlk9_a0a() {
       super();
     }
@@ -144,10 +140,6 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_u0vlk9_a1a0 extends InlineCellProvider {
-    public _Inline_u0vlk9_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_u0vlk9_a1a0() {
       super();
     }

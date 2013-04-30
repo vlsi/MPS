@@ -166,10 +166,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pyph5i_a1b0a extends InlineCellProvider {
-    public _Inline_pyph5i_a1b0a(String role) {
-      super(role);
-    }
-
     public _Inline_pyph5i_a1b0a() {
       super();
     }

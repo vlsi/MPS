@@ -61,10 +61,6 @@ public class BuildSource_JavaModuleOptions_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_bvukwp_a1a extends InlineCellProvider {
-    public _Inline_bvukwp_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_bvukwp_a1a() {
       super();
     }

@@ -82,10 +82,6 @@ public class SNodeListType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pv0rjz_a2a extends InlineCellProvider {
-    public _Inline_pv0rjz_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_pv0rjz_a2a() {
       super();
     }

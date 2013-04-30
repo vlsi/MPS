@@ -112,10 +112,6 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_g7zihj_a2b0 extends InlineCellProvider {
-    public _Inline_g7zihj_a2b0(String role) {
-      super(role);
-    }
-
     public _Inline_g7zihj_a2b0() {
       super();
     }

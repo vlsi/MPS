@@ -77,10 +77,6 @@ public class NodeSource_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_iqw32v_a2a extends InlineCellProvider {
-    public _Inline_iqw32v_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_iqw32v_a2a() {
       super();
     }

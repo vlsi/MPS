@@ -54,10 +54,6 @@ public class SConceptPropertyAccess_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wa3gkv_a0a extends InlineCellProvider {
-    public _Inline_wa3gkv_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_wa3gkv_a0a() {
       super();
     }

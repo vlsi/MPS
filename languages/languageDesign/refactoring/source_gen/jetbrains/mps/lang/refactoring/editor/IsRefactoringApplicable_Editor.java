@@ -83,10 +83,6 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xt8j9n_a2a extends InlineCellProvider {
-    public _Inline_xt8j9n_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_xt8j9n_a2a() {
       super();
     }

@@ -60,10 +60,6 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_36vx3e_a1a extends InlineCellProvider {
-    public _Inline_36vx3e_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_36vx3e_a1a() {
       super();
     }

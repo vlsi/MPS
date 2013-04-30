@@ -74,10 +74,6 @@ public class IsOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_5ag8rr_a2a extends InlineCellProvider {
-    public _Inline_5ag8rr_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_5ag8rr_a2a() {
       super();
     }

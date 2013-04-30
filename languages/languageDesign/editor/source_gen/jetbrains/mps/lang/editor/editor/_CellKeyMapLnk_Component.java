@@ -65,10 +65,6 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
   }
 
   public static class _Inline_teu4t0_a0a extends InlineCellProvider {
-    public _Inline_teu4t0_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_teu4t0_a0a() {
       super();
     }

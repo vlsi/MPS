@@ -57,10 +57,6 @@ public class NodeBuilderInitProperty_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_s7nj87_a0a extends InlineCellProvider {
-    public _Inline_s7nj87_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_s7nj87_a0a() {
       super();
     }

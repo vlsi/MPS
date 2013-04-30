@@ -79,10 +79,6 @@ public class ToolType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_cy4bsd_a2a extends InlineCellProvider {
-    public _Inline_cy4bsd_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_cy4bsd_a2a() {
       super();
     }

@@ -46,10 +46,6 @@ public class EventReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ofn6x9_a0a extends InlineCellProvider {
-    public _Inline_ofn6x9_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_ofn6x9_a0a() {
       super();
     }

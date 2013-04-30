@@ -243,10 +243,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ueqr71_a1a4a0 extends InlineCellProvider {
-    public _Inline_ueqr71_a1a4a0(String role) {
-      super(role);
-    }
-
     public _Inline_ueqr71_a1a4a0() {
       super();
     }

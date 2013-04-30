@@ -103,10 +103,6 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_1xyskv_a1a1a extends InlineCellProvider {
-    public _Inline_1xyskv_a1a1a(String role) {
-      super(role);
-    }
-
     public _Inline_1xyskv_a1a1a() {
       super();
     }

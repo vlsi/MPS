@@ -57,10 +57,6 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_9t39jw_a1a extends InlineCellProvider {
-    public _Inline_9t39jw_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_9t39jw_a1a() {
       super();
     }
@@ -121,10 +117,6 @@ public class ModificationStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_9t39jw_a3a extends InlineCellProvider {
-    public _Inline_9t39jw_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_9t39jw_a3a() {
       super();
     }

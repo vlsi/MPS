@@ -65,10 +65,6 @@ public class ControllerBinding_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_9e1twx_a1a extends InlineCellProvider {
-    public _Inline_9e1twx_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_9e1twx_a1a() {
       super();
     }

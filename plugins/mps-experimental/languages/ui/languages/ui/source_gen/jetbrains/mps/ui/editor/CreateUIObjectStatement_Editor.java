@@ -85,10 +85,6 @@ public class CreateUIObjectStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_a6wfgm_a1a0a extends InlineCellProvider {
-    public _Inline_a6wfgm_a1a0a(String role) {
-      super(role);
-    }
-
     public _Inline_a6wfgm_a1a0a() {
       super();
     }

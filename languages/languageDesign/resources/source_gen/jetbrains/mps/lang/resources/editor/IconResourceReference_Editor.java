@@ -76,10 +76,6 @@ public class IconResourceReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_yu3d6c_a2a extends InlineCellProvider {
-    public _Inline_yu3d6c_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_yu3d6c_a2a() {
       super();
     }

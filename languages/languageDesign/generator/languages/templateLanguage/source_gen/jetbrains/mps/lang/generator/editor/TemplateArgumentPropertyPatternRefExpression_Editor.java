@@ -52,10 +52,6 @@ public class TemplateArgumentPropertyPatternRefExpression_Editor extends Default
   }
 
   public static class _Inline_z0z5f6_a0a extends InlineCellProvider {
-    public _Inline_z0z5f6_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_z0z5f6_a0a() {
       super();
     }

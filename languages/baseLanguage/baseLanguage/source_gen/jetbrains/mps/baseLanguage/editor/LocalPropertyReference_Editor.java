@@ -48,10 +48,6 @@ public class LocalPropertyReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_h4irw0_a0a extends InlineCellProvider {
-    public _Inline_h4irw0_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_h4irw0_a0a() {
       super();
     }

@@ -404,10 +404,6 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ldpt8g_a2a0f0a extends InlineCellProvider {
-    public _Inline_ldpt8g_a2a0f0a(String role) {
-      super(role);
-    }
-
     public _Inline_ldpt8g_a2a0f0a() {
       super();
     }

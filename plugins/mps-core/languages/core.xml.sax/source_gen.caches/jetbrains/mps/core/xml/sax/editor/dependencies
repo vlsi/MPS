@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.core.xml.sax.editor.XMLSAXAttributeReference_Editor" file="XMLSAXAttributeReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -127,7 +126,6 @@
   </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.editor.XMLSAXFieldReference_Editor" file="XMLSAXFieldReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />

@@ -125,10 +125,6 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_m33ofg_a3a0a extends InlineCellProvider {
-    public _Inline_m33ofg_a3a0a(String role) {
-      super(role);
-    }
-
     public _Inline_m33ofg_a3a0a() {
       super();
     }

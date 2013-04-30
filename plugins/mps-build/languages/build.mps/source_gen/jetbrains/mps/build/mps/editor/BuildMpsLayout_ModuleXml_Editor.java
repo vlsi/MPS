@@ -74,10 +74,6 @@ public class BuildMpsLayout_ModuleXml_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_o7xb22_a1a extends InlineCellProvider {
-    public _Inline_o7xb22_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_o7xb22_a1a() {
       super();
     }

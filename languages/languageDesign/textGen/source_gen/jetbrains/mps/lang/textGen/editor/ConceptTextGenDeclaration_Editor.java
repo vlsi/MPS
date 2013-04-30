@@ -133,10 +133,6 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_9mcqjq_a5a extends InlineCellProvider {
-    public _Inline_9mcqjq_a5a(String role) {
-      super(role);
-    }
-
     public _Inline_9mcqjq_a5a() {
       super();
     }

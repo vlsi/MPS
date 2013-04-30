@@ -80,10 +80,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xaaxob_a0a0 extends InlineCellProvider {
-    public _Inline_xaaxob_a0a0(String role) {
-      super(role);
-    }
-
     public _Inline_xaaxob_a0a0() {
       super();
     }
@@ -194,10 +190,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xaaxob_a1a extends InlineCellProvider {
-    public _Inline_xaaxob_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_xaaxob_a1a() {
       super();
     }

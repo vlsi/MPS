@@ -46,10 +46,6 @@ public class BuildMps_IdeaPluginGroupCustomModule_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_djd3jv_a0a extends InlineCellProvider {
-    public _Inline_djd3jv_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_djd3jv_a0a() {
       super();
     }

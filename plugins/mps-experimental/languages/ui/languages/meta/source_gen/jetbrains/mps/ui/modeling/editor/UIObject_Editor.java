@@ -135,10 +135,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_c5f0a4_a2a0 extends InlineCellProvider {
-    public _Inline_c5f0a4_a2a0(String role) {
-      super(role);
-    }
-
     public _Inline_c5f0a4_a2a0() {
       super();
     }
@@ -295,10 +291,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_c5f0a4_a2e0 extends InlineCellProvider {
-    public _Inline_c5f0a4_a2e0(String role) {
-      super(role);
-    }
-
     public _Inline_c5f0a4_a2e0() {
       super();
     }

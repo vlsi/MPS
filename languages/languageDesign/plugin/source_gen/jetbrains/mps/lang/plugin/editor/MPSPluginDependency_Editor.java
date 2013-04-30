@@ -55,10 +55,6 @@ public class MPSPluginDependency_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_v26ttb_a1a extends InlineCellProvider {
-    public _Inline_v26ttb_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_v26ttb_a1a() {
       super();
     }

@@ -47,10 +47,6 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_cqnk8f_a0a extends InlineCellProvider {
-    public _Inline_cqnk8f_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_cqnk8f_a0a() {
       super();
     }

@@ -73,10 +73,6 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_kpqhey_a0a0 extends InlineCellProvider {
-    public _Inline_kpqhey_a0a0(String role) {
-      super(role);
-    }
-
     public _Inline_kpqhey_a0a0() {
       super();
     }

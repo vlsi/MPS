@@ -56,10 +56,6 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_t15it2_a0a extends InlineCellProvider {
-    public _Inline_t15it2_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_t15it2_a0a() {
       super();
     }

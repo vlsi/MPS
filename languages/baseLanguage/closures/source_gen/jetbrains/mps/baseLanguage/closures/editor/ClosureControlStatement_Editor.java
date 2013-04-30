@@ -73,10 +73,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2saq3j_a0a extends InlineCellProvider {
-    public _Inline_2saq3j_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_2saq3j_a0a() {
       super();
     }
@@ -165,10 +161,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2saq3j_a1b0 extends InlineCellProvider {
-    public _Inline_2saq3j_a1b0(String role) {
-      super(role);
-    }
-
     public _Inline_2saq3j_a1b0() {
       super();
     }

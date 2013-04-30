@@ -204,10 +204,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_zabbeg_a1e0 extends InlineCellProvider {
-    public _Inline_zabbeg_a1e0(String role) {
-      super(role);
-    }
-
     public _Inline_zabbeg_a1e0() {
       super();
     }

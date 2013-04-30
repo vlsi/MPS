@@ -114,10 +114,6 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hd00ff_a4a extends InlineCellProvider {
-    public _Inline_hd00ff_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_hd00ff_a4a() {
       super();
     }

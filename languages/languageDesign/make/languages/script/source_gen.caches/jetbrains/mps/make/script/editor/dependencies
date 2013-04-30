@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.make.script.editor.AdvanceWorkStatement_Editor" file="AdvanceWorkStatement_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.AliasEditorComponent" />
@@ -82,7 +81,6 @@
   </dependency>
   <dependency className="jetbrains.mps.make.script.editor.FinishWorkStatement_Editor" file="FinishWorkStatement_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.AliasEditorComponent" />
@@ -134,7 +132,6 @@
   </dependency>
   <dependency className="jetbrains.mps.make.script.editor.OptionExpression_Editor" file="OptionExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -152,7 +149,6 @@
   </dependency>
   <dependency className="jetbrains.mps.make.script.editor.OptionType_Editor" file="OptionType_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

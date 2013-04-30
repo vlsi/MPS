@@ -76,10 +76,6 @@ public class OptionType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xgjw32_a2a extends InlineCellProvider {
-    public _Inline_xgjw32_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_xgjw32_a2a() {
       super();
     }

@@ -403,10 +403,6 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_a19ihi_a2a0f0a extends InlineCellProvider {
-    public _Inline_a19ihi_a2a0f0a(String role) {
-      super(role);
-    }
-
     public _Inline_a19ihi_a2a0f0a() {
       super();
     }

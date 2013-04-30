@@ -71,10 +71,6 @@ public class PastePostProcessor_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_gbheja_a1a0 extends InlineCellProvider {
-    public _Inline_gbheja_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_gbheja_a1a0() {
       super();
     }

@@ -77,10 +77,6 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_1zp5kz_a2a extends InlineCellProvider {
-    public _Inline_1zp5kz_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_1zp5kz_a2a() {
       super();
     }

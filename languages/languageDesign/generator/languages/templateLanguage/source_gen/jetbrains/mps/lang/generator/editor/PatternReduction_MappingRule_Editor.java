@@ -192,10 +192,6 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_o2w2pr_a0b1a extends InlineCellProvider {
-    public _Inline_o2w2pr_a0b1a(String role) {
-      super(role);
-    }
-
     public _Inline_o2w2pr_a0b1a() {
       super();
     }
@@ -340,10 +336,6 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_o2w2pr_a1c0 extends InlineCellProvider {
-    public _Inline_o2w2pr_a1c0(String role) {
-      super(role);
-    }
-
     public _Inline_o2w2pr_a1c0() {
       super();
     }

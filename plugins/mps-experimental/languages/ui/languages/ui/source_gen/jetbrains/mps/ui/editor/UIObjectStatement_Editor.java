@@ -83,10 +83,6 @@ public class UIObjectStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_zdgerc_a1a0a extends InlineCellProvider {
-    public _Inline_zdgerc_a1a0a(String role) {
-      super(role);
-    }
-
     public _Inline_zdgerc_a1a0a() {
       super();
     }

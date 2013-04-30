@@ -363,10 +363,6 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_q0s13v_a2a0c0a extends InlineCellProvider {
-    public _Inline_q0s13v_a2a0c0a(String role) {
-      super(role);
-    }
-
     public _Inline_q0s13v_a2a0c0a() {
       super();
     }

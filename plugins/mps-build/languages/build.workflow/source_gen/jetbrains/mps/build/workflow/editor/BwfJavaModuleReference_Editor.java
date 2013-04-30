@@ -46,10 +46,6 @@ public class BwfJavaModuleReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_u0dcrk_a0a extends InlineCellProvider {
-    public _Inline_u0dcrk_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_u0dcrk_a0a() {
       super();
     }

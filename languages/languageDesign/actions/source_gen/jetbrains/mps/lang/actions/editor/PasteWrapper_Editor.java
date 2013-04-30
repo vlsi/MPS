@@ -75,10 +75,6 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_eyosg6_a1a0 extends InlineCellProvider {
-    public _Inline_eyosg6_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_eyosg6_a1a0() {
       super();
     }
@@ -139,10 +135,6 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_eyosg6_a3a0 extends InlineCellProvider {
-    public _Inline_eyosg6_a3a0(String role) {
-      super(role);
-    }
-
     public _Inline_eyosg6_a3a0() {
       super();
     }

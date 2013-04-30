@@ -70,10 +70,6 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
   }
 
   public static class _Inline_5qqvz9_a1a extends InlineCellProvider {
-    public _Inline_5qqvz9_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_5qqvz9_a1a() {
       super();
     }

@@ -52,10 +52,6 @@ public class GenerationContextOp_PropertyPatternRef_Editor extends DefaultNodeEd
   }
 
   public static class _Inline_56eyyu_a0a extends InlineCellProvider {
-    public _Inline_56eyyu_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_56eyyu_a0a() {
       super();
     }

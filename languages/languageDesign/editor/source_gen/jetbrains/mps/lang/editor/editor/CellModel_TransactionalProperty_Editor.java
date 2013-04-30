@@ -126,10 +126,6 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hop3er_a1a extends InlineCellProvider {
-    public _Inline_hop3er_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_hop3er_a1a() {
       super();
     }
@@ -303,10 +299,6 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hop3er_a1a3a extends InlineCellProvider {
-    public _Inline_hop3er_a1a3a(String role) {
-      super(role);
-    }
-
     public _Inline_hop3er_a1a3a() {
       super();
     }

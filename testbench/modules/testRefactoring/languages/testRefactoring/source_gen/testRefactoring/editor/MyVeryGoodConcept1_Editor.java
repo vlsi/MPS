@@ -101,10 +101,6 @@ public class MyVeryGoodConcept1_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_15tf1e_a3a0 extends InlineCellProvider {
-    public _Inline_15tf1e_a3a0(String role) {
-      super(role);
-    }
-
     public _Inline_15tf1e_a3a0() {
       super();
     }

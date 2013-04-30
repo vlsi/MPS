@@ -112,10 +112,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
   }
 
   public static class _Inline_185r4c_a2a0 extends InlineCellProvider {
-    public _Inline_185r4c_a2a0(String role) {
-      super(role);
-    }
-
     public _Inline_185r4c_a2a0() {
       super();
     }

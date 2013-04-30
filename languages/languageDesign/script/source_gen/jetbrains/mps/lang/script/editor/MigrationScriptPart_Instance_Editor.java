@@ -211,10 +211,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_nl0fz6_a2c0a extends InlineCellProvider {
-    public _Inline_nl0fz6_a2c0a(String role) {
-      super(role);
-    }
-
     public _Inline_nl0fz6_a2c0a() {
       super();
     }

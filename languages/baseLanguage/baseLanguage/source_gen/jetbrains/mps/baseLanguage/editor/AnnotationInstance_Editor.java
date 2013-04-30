@@ -80,10 +80,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_d5p1uc_a1a extends InlineCellProvider {
-    public _Inline_d5p1uc_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_d5p1uc_a1a() {
       super();
     }

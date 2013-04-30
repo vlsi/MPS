@@ -59,10 +59,6 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_4lf1wj_a0a extends InlineCellProvider {
-    public _Inline_4lf1wj_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_4lf1wj_a0a() {
       super();
     }
@@ -134,10 +130,6 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_4lf1wj_a1b0 extends InlineCellProvider {
-    public _Inline_4lf1wj_a1b0(String role) {
-      super(role);
-    }
-
     public _Inline_4lf1wj_a1b0() {
       super();
     }

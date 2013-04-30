@@ -82,10 +82,6 @@ public class NF_Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEdito
   }
 
   public static class _Inline_w725d4_a2a extends InlineCellProvider {
-    public _Inline_w725d4_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_w725d4_a2a() {
       super();
     }

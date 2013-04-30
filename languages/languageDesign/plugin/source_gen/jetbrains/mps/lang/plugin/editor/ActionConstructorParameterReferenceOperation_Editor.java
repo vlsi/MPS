@@ -46,10 +46,6 @@ public class ActionConstructorParameterReferenceOperation_Editor extends Default
   }
 
   public static class _Inline_mohbt1_a0a extends InlineCellProvider {
-    public _Inline_mohbt1_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_mohbt1_a0a() {
       super();
     }

@@ -73,10 +73,6 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
   }
 
   public static class _Inline_s8z18l_a2a extends InlineCellProvider {
-    public _Inline_s8z18l_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_s8z18l_a2a() {
       super();
     }

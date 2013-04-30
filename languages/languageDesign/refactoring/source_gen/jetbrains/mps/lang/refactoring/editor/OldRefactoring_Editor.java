@@ -187,10 +187,6 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ivh5g9_a6a0 extends InlineCellProvider {
-    public _Inline_ivh5g9_a6a0(String role) {
-      super(role);
-    }
-
     public _Inline_ivh5g9_a6a0() {
       super();
     }
@@ -350,10 +346,6 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ivh5g9_a2b1b0 extends InlineCellProvider {
-    public _Inline_ivh5g9_a2b1b0(String role) {
-      super(role);
-    }
-
     public _Inline_ivh5g9_a2b1b0() {
       super();
     }

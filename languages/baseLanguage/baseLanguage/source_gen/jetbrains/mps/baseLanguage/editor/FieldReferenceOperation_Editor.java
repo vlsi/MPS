@@ -48,10 +48,6 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_i6724r_a0a extends InlineCellProvider {
-    public _Inline_i6724r_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_i6724r_a0a() {
       super();
     }

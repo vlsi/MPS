@@ -62,10 +62,6 @@ public class GenerationContextOp_GenParameterRef_Editor extends DefaultNodeEdito
   }
 
   public static class _Inline_h52dks_a0a extends InlineCellProvider {
-    public _Inline_h52dks_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_h52dks_a0a() {
       super();
     }

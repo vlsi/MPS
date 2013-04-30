@@ -89,10 +89,6 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_gp4zyx_a1a extends InlineCellProvider {
-    public _Inline_gp4zyx_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_gp4zyx_a1a() {
       super();
     }

@@ -87,10 +87,6 @@ public class Antcall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xq8xtf_a1a0 extends InlineCellProvider {
-    public _Inline_xq8xtf_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_xq8xtf_a1a0() {
       super();
     }
@@ -151,10 +147,6 @@ public class Antcall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_xq8xtf_a3a0 extends InlineCellProvider {
-    public _Inline_xq8xtf_a3a0(String role) {
-      super(role);
-    }
-
     public _Inline_xq8xtf_a3a0() {
       super();
     }

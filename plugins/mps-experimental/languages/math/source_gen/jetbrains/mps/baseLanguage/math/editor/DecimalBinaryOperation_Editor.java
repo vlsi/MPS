@@ -125,10 +125,6 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_sl2ryj_a0a extends InlineCellProvider {
-    public _Inline_sl2ryj_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_sl2ryj_a0a() {
       super();
     }

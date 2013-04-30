@@ -55,10 +55,6 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_hrb2do_a1a extends InlineCellProvider {
-    public _Inline_hrb2do_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_hrb2do_a1a() {
       super();
     }

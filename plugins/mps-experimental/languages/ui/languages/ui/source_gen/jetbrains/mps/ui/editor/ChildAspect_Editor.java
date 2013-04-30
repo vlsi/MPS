@@ -50,10 +50,6 @@ public class ChildAspect_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wz4x5o_a0a extends InlineCellProvider {
-    public _Inline_wz4x5o_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_wz4x5o_a0a() {
       super();
     }

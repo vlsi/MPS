@@ -94,10 +94,6 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_c1olec_a3a extends InlineCellProvider {
-    public _Inline_c1olec_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_c1olec_a3a() {
       super();
     }

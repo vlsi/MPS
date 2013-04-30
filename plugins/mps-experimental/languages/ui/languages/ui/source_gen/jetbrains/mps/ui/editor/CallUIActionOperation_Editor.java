@@ -55,10 +55,6 @@ public class CallUIActionOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_7mdi46_a0a extends InlineCellProvider {
-    public _Inline_7mdi46_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_7mdi46_a0a() {
       super();
     }

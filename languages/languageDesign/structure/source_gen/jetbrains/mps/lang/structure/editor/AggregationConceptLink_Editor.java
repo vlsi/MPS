@@ -58,10 +58,6 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ivlr8m_a0a extends InlineCellProvider {
-    public _Inline_ivlr8m_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_ivlr8m_a0a() {
       super();
     }

@@ -46,10 +46,6 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_iw4mtn_a0a extends InlineCellProvider {
-    public _Inline_iw4mtn_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_iw4mtn_a0a() {
       super();
     }

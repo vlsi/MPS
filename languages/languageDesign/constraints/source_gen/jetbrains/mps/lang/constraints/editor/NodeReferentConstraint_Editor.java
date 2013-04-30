@@ -85,10 +85,6 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_y1wtxd_a2a extends InlineCellProvider {
-    public _Inline_y1wtxd_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_y1wtxd_a2a() {
       super();
     }

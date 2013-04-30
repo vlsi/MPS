@@ -65,10 +65,6 @@ public class ConceptSubstitutePart_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_1d9zej_a1a extends InlineCellProvider {
-    public _Inline_1d9zej_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_1d9zej_a1a() {
       super();
     }

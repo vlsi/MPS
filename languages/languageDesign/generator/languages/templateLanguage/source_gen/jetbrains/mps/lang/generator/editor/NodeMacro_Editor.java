@@ -172,10 +172,6 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_e7cx8x_a2a2a extends InlineCellProvider {
-    public _Inline_e7cx8x_a2a2a(String role) {
-      super(role);
-    }
-
     public _Inline_e7cx8x_a2a2a() {
       super();
     }

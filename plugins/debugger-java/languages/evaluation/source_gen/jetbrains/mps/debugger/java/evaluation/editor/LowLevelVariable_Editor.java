@@ -64,10 +64,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_f5bzsg_a0a extends InlineCellProvider {
-    public _Inline_f5bzsg_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_f5bzsg_a0a() {
       super();
     }
@@ -168,10 +164,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_f5bzsg_a1c0 extends InlineCellProvider {
-    public _Inline_f5bzsg_a1c0(String role) {
-      super(role);
-    }
-
     public _Inline_f5bzsg_a1c0() {
       super();
     }

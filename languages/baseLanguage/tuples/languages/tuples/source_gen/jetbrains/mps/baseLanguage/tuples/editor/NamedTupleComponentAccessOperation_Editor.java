@@ -52,10 +52,6 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
   }
 
   public static class _Inline_rt0op7_a0a extends InlineCellProvider {
-    public _Inline_rt0op7_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_rt0op7_a0a() {
       super();
     }

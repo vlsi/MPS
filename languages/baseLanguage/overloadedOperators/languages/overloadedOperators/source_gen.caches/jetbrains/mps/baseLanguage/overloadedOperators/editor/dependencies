@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.editor.BinaryOperationReference_Editor" file="BinaryOperationReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.AliasEditorComponent" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
@@ -31,7 +30,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.editor.CustomOperatorUsage_Editor" file="CustomOperatorUsage_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BinaryOperation_LeftArgument_Actions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -49,7 +47,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.overloadedOperators.editor.CustomOperator_Editor" file="CustomOperator_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />

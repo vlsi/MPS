@@ -172,10 +172,6 @@ public class Analyzer_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_590xoz_a7a extends InlineCellProvider {
-    public _Inline_590xoz_a7a(String role) {
-      super(role);
-    }
-
     public _Inline_590xoz_a7a() {
       super();
     }
@@ -247,10 +243,6 @@ public class Analyzer_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_590xoz_a01a extends InlineCellProvider {
-    public _Inline_590xoz_a01a(String role) {
-      super(role);
-    }
-
     public _Inline_590xoz_a01a() {
       super();
     }
@@ -322,10 +314,6 @@ public class Analyzer_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_590xoz_a31a extends InlineCellProvider {
-    public _Inline_590xoz_a31a(String role) {
-      super(role);
-    }
-
     public _Inline_590xoz_a31a() {
       super();
     }

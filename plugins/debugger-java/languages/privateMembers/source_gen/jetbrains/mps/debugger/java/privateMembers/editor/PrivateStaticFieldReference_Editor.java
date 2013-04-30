@@ -72,10 +72,6 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_62ivzp_a0a extends InlineCellProvider {
-    public _Inline_62ivzp_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_62ivzp_a0a() {
       super();
     }
@@ -144,10 +140,6 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_62ivzp_a2a extends InlineCellProvider {
-    public _Inline_62ivzp_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_62ivzp_a2a() {
       super();
     }

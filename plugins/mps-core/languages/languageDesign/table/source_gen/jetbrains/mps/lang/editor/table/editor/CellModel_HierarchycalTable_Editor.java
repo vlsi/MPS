@@ -95,10 +95,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_cqolwn_a1b0a extends InlineCellProvider {
-    public _Inline_cqolwn_a1b0a(String role) {
-      super(role);
-    }
-
     public _Inline_cqolwn_a1b0a() {
       super();
     }
@@ -197,10 +193,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_cqolwn_a1a1a extends InlineCellProvider {
-    public _Inline_cqolwn_a1a1a(String role) {
-      super(role);
-    }
-
     public _Inline_cqolwn_a1a1a() {
       super();
     }
@@ -287,10 +279,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_cqolwn_a1b1a extends InlineCellProvider {
-    public _Inline_cqolwn_a1b1a(String role) {
-      super(role);
-    }
-
     public _Inline_cqolwn_a1b1a() {
       super();
     }

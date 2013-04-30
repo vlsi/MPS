@@ -110,10 +110,6 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_ret20j_a4a extends InlineCellProvider {
-    public _Inline_ret20j_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_ret20j_a4a() {
       super();
     }

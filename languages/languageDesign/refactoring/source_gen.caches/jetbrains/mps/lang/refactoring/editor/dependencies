@@ -250,7 +250,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.editor.FinderReference_Editor" file="FinderReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -275,7 +274,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.editor.IsRefactoringApplicable_Editor" file="IsRefactoringApplicable_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -389,7 +387,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.editor.NodeTarget_Editor" file="NodeTarget_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -459,7 +456,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_Editor" file="RefactoringParameterReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -544,7 +540,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.editor.RequiredAdditionalArgumentReference_Editor" file="RequiredAdditionalArgumentReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />

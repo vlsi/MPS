@@ -57,10 +57,6 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_wwx4md_a0a extends InlineCellProvider {
-    public _Inline_wwx4md_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_wwx4md_a0a() {
       super();
     }

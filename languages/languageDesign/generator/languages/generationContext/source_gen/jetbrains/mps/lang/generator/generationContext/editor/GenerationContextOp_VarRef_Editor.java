@@ -52,10 +52,6 @@ public class GenerationContextOp_VarRef_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_4x6n30_a0a extends InlineCellProvider {
-    public _Inline_4x6n30_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_4x6n30_a0a() {
       super();
     }

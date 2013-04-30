@@ -99,10 +99,6 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_kwr3w_a1b0 extends InlineCellProvider {
-    public _Inline_kwr3w_a1b0(String role) {
-      super(role);
-    }
-
     public _Inline_kwr3w_a1b0() {
       super();
     }

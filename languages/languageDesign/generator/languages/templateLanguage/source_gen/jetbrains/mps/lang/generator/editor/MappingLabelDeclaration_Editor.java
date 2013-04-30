@@ -95,10 +95,6 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_sexq64_a3a extends InlineCellProvider {
-    public _Inline_sexq64_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_sexq64_a3a() {
       super();
     }
@@ -162,10 +158,6 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_sexq64_a5a extends InlineCellProvider {
-    public _Inline_sexq64_a5a(String role) {
-      super(role);
-    }
-
     public _Inline_sexq64_a5a() {
       super();
     }

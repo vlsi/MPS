@@ -203,10 +203,6 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_leuqor_a1d0 extends InlineCellProvider {
-    public _Inline_leuqor_a1d0(String role) {
-      super(role);
-    }
-
     public _Inline_leuqor_a1d0() {
       super();
     }

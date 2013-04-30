@@ -46,10 +46,6 @@ public class TestPropertyVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_qm76pe_a0a extends InlineCellProvider {
-    public _Inline_qm76pe_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_qm76pe_a0a() {
       super();
     }

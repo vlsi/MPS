@@ -63,10 +63,6 @@ public class FinishWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_c3e6b4_a1a extends InlineCellProvider {
-    public _Inline_c3e6b4_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_c3e6b4_a1a() {
       super();
     }

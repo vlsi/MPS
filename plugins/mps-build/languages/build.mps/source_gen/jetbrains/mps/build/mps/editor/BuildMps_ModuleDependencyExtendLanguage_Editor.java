@@ -61,10 +61,6 @@ public class BuildMps_ModuleDependencyExtendLanguage_Editor extends DefaultNodeE
   }
 
   public static class _Inline_r99sur_a1a extends InlineCellProvider {
-    public _Inline_r99sur_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_r99sur_a1a() {
       super();
     }

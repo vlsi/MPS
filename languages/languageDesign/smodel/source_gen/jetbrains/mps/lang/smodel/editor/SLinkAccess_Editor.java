@@ -48,10 +48,6 @@ public class SLinkAccess_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_35c8z1_a0a extends InlineCellProvider {
-    public _Inline_35c8z1_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_35c8z1_a0a() {
       super();
     }

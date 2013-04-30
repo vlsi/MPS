@@ -84,10 +84,6 @@ public class BwfTaskPart_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_rjgbfl_a1a extends InlineCellProvider {
-    public _Inline_rjgbfl_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_rjgbfl_a1a() {
       super();
     }

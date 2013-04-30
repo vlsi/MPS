@@ -92,10 +92,6 @@ public class BuildLayout_ImportContent_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_roxgcf_a1a extends InlineCellProvider {
-    public _Inline_roxgcf_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_roxgcf_a1a() {
       super();
     }

@@ -69,10 +69,6 @@ public class BuildSource_JavaDependencyLibrary_Editor extends DefaultNodeEditor 
   }
 
   public static class _Inline_n4mr7u_a1a extends InlineCellProvider {
-    public _Inline_n4mr7u_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_n4mr7u_a1a() {
       super();
     }

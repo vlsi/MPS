@@ -76,10 +76,6 @@ public class BuildLayout_CompileOutputOf_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2ot4tw_a1a extends InlineCellProvider {
-    public _Inline_2ot4tw_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_2ot4tw_a1a() {
       super();
     }

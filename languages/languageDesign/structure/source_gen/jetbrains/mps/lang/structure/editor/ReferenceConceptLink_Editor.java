@@ -54,10 +54,6 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_3r32uy_a0a extends InlineCellProvider {
-    public _Inline_3r32uy_a0a(String role) {
-      super(role);
-    }
-
     public _Inline_3r32uy_a0a() {
       super();
     }
@@ -121,10 +117,6 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_3r32uy_a2a extends InlineCellProvider {
-    public _Inline_3r32uy_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_3r32uy_a2a() {
       super();
     }

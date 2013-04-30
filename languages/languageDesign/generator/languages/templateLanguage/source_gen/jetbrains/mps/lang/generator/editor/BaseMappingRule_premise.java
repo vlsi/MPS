@@ -100,10 +100,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   public static class _Inline_v63wqt_a1a0 extends InlineCellProvider {
-    public _Inline_v63wqt_a1a0(String role) {
-      super(role);
-    }
-
     public _Inline_v63wqt_a1a0() {
       super();
     }

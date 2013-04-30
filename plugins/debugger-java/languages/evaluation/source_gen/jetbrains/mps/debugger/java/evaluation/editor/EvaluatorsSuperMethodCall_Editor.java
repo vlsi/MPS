@@ -105,10 +105,6 @@ public class EvaluatorsSuperMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_2iixvv_a3a extends InlineCellProvider {
-    public _Inline_2iixvv_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_2iixvv_a3a() {
       super();
     }

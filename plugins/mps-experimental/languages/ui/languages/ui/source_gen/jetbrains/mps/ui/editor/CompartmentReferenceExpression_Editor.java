@@ -81,10 +81,6 @@ public class CompartmentReferenceExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_v8f2p9_a2a extends InlineCellProvider {
-    public _Inline_v8f2p9_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_v8f2p9_a2a() {
       super();
     }

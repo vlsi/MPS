@@ -55,10 +55,6 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
   }
 
   public static class _Inline_g0zw24_a1a extends InlineCellProvider {
-    public _Inline_g0zw24_a1a(String role) {
-      super(role);
-    }
-
     public _Inline_g0zw24_a1a() {
       super();
     }

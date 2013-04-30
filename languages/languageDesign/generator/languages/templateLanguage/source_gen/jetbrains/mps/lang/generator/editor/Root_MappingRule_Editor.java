@@ -108,10 +108,6 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pxqe0v_a1a0a extends InlineCellProvider {
-    public _Inline_pxqe0v_a1a0a(String role) {
-      super(role);
-    }
-
     public _Inline_pxqe0v_a1a0a() {
       super();
     }
@@ -312,10 +308,6 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pxqe0v_a0c0 extends InlineCellProvider {
-    public _Inline_pxqe0v_a0c0(String role) {
-      super(role);
-    }
-
     public _Inline_pxqe0v_a0c0() {
       super();
     }
@@ -379,10 +371,6 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pxqe0v_a3a extends InlineCellProvider {
-    public _Inline_pxqe0v_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_pxqe0v_a3a() {
       super();
     }
@@ -504,10 +492,6 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_pxqe0v_a1c0 extends InlineCellProvider {
-    public _Inline_pxqe0v_a1c0(String role) {
-      super(role);
-    }
-
     public _Inline_pxqe0v_a1c0() {
       super();
     }

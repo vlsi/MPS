@@ -92,10 +92,6 @@ public class GeneratorInternal_PropertyDescriptor_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline_6n82d8_a3a extends InlineCellProvider {
-    public _Inline_6n82d8_a3a(String role) {
-      super(role);
-    }
-
     public _Inline_6n82d8_a3a() {
       super();
     }

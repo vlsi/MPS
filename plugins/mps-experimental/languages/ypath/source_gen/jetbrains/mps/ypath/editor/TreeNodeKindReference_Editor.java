@@ -76,10 +76,6 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_g2eo62_a2a extends InlineCellProvider {
-    public _Inline_g2eo62_a2a(String role) {
-      super(role);
-    }
-
     public _Inline_g2eo62_a2a() {
       super();
     }
@@ -142,10 +138,6 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline_g2eo62_a4a extends InlineCellProvider {
-    public _Inline_g2eo62_a4a(String role) {
-      super(role);
-    }
-
     public _Inline_g2eo62_a4a() {
       super();
     }
