@@ -22,8 +22,6 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
-import jetbrains.mps.idea.core.refactoring.MoveRenameBatch;
-import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
@@ -31,7 +29,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * evgeny, 1/25/13
@@ -52,11 +49,6 @@ public class MPSPsiRef extends MPSPsiNodeBase {
   public MPSPsiRef(String role, String referenceText) {
     this.role = role;
     this.referenceText = referenceText;
-  }
-
-  @Override
-  public PsiElement getParent() {
-    return super.getParent();
   }
 
   public String getRole() {
@@ -157,16 +149,13 @@ public class MPSPsiRef extends MPSPsiNodeBase {
 
     @Override
     public PsiElement handleElementRename(String newElementName) throws IncorrectOperationException {
-//        throw new IncorrectOperationException();
-      System.out.println("handleElementRename !!!");
-      throw new RuntimeException("handleElementRename !!!");
+      throw new IncorrectOperationException();
+
     }
 
     @Override
     public PsiElement bindToElement(@NotNull PsiElement element) throws IncorrectOperationException {
-//        throw new IncorrectOperationException();
-      System.out.println("bindToElement !!!");
-      throw new RuntimeException("bindToElement !!!");
+      throw new IncorrectOperationException();
     }
 
     @Override
