@@ -35,7 +35,6 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)/1227084833325">
     <nodeInfo nodeId="1227084833325" fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="8" startPosition="48" endLine="9" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1227084833325" fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="8" startPosition="48" endLine="9" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1227084833325" fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrimitiveTypeDescriptor_Constraints#()V" />
     <scopeInfo nodeId="1227084833325" fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="8" startPosition="48" endLine="9" endPosition="82" />
     <scopeInfo nodeId="1227084833325" fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />

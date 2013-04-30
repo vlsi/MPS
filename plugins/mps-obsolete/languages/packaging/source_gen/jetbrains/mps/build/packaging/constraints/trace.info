@@ -41,7 +41,6 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)/1213104847606">
     <nodeInfo nodeId="1213104847606" fileName="Jar_Constraints.java" startLine="8" startPosition="28" endLine="9" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1213104847606" fileName="Jar_Constraints.java" startLine="8" startPosition="28" endLine="9" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1213104847606" fileName="Jar_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Jar_Constraints#()V" />
     <scopeInfo nodeId="1213104847606" fileName="Jar_Constraints.java" startLine="8" startPosition="28" endLine="9" endPosition="57" />
     <scopeInfo nodeId="1213104847606" fileName="Jar_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />

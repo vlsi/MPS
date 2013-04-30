@@ -36,7 +36,6 @@
   </root>
   <root nodeRef="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)/1622293396948983511">
     <nodeInfo nodeId="1622293396948983511" fileName="XmlContent_Constraints.java" startLine="8" startPosition="35" endLine="9" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1622293396948983511" fileName="XmlContent_Constraints.java" startLine="8" startPosition="35" endLine="9" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1622293396948983511" fileName="XmlContent_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XmlContent_Constraints#()V" />
     <scopeInfo nodeId="1622293396948983511" fileName="XmlContent_Constraints.java" startLine="8" startPosition="35" endLine="9" endPosition="57" />
     <scopeInfo nodeId="1622293396948983511" fileName="XmlContent_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
@@ -334,7 +333,6 @@
     <unitInfo nodeId="3080189811177216002" fileName="XmlCharRefValue_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.core.xml.constraints.XmlCharRefValue_Constraints" />
   </root>
   <root nodeRef="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)/3080189811177243096">
-    <nodeInfo nodeId="3080189811177243096" fileName="XmlValuePart_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3080189811177243096" fileName="XmlValuePart_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3080189811177243096" fileName="XmlValuePart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XmlValuePart_Constraints#()V" />
     <scopeInfo nodeId="3080189811177243096" fileName="XmlValuePart_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="59" />

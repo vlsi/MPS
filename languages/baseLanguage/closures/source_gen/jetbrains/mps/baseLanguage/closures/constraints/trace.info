@@ -786,7 +786,6 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)/8679288141369466327">
     <nodeInfo nodeId="8679288141369466327" fileName="CompactInvokeFunctionExpression_Constraints.java" startLine="8" startPosition="56" endLine="9" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8679288141369466327" fileName="CompactInvokeFunctionExpression_Constraints.java" startLine="8" startPosition="56" endLine="9" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8679288141369466327" fileName="CompactInvokeFunctionExpression_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompactInvokeFunctionExpression_Constraints#()V" />
     <scopeInfo nodeId="8679288141369466327" fileName="CompactInvokeFunctionExpression_Constraints.java" startLine="8" startPosition="56" endLine="9" endPosition="91" />
     <scopeInfo nodeId="8679288141369466327" fileName="CompactInvokeFunctionExpression_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
