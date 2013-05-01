@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("defaultProperty", "diagramProperty", "groovyProperty").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("projectionType", "projectAsCompact").children(new String[]{"richChild", "compactChild", "defaultChild", "conditionallyProjectedChild", "conditionallyRichOrCompactChild"}, new boolean[]{true, true, true, true, true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("projectionType", "projectAsCompact").children(new String[]{"richChild", "compactChild", "defaultChild", "conditionallyProjectedChild", "conditionallyRichOrCompactChild", "notSupportedPresentation"}, new boolean[]{true, true, true, true, true, true}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

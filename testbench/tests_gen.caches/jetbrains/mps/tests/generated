@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8yi4cm0w7tgkhqg2druxtfbeqq26r1f">
+<dependencies version="2" modelHash="-75cweapadpym0hki7cw18769n5eo0dt">
   <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)" hash="f45e1twg54hgw775m9ajnx871o5m56" />
   <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" hash="1g97qphu4vlchckmuogluq58eisulia" />
   <dep model="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test)" hash="-674gew2ozjdq7ctusn4gzeqv5m19ddb" />
@@ -61,7 +61,7 @@
   <dep model="r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)" hash="eug98h89jxnithktgcumahhajnpasc" />
   <dep model="r:cebb2076-d3b2-4d62-a59a-225f2f665af5(jetbrains.mps.vcs@tests)" hash="-4ebrcsj6def2z5wav24g6hct2fiueyr" />
   <dep model="r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)" hash="-834bplg2e9kxuxsta2epsas4r65khbg" />
-  <dep model="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)" hash="b0978d5uhltqxp6fnpukc5z4dcjdum0" />
+  <dep model="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)" hash="1fi4qu3udj3o04luf37qsa0glydpdum" />
   <dep model="r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)" hash="-700zn9xv8szl5nhrc8zuyjd794ovrzu" />
   <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" hash="-byuh3ew6q4t772zg9h4uerwchzwnca" />
   <dep model="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)" hash="7k4j3tinl75tahzoe62043nqvhby7q6" />
@@ -326,7 +326,7 @@
     <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" />
     <file name="TestModule_jetbrains_mps_lang_actions_test.java" />
   </source>
-  <source id="4201170947328891620" name="jetbrains.mps.lang.editor.multiple.tests" hash="1ntzuimy4wwlov4i6n9x6zyq9u5xtaf">
+  <source id="4201170947328891620" name="jetbrains.mps.lang.editor.multiple.tests" hash="-6h08giyh1ojx4kz16sql2k6i47747wk">
     <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" />
     <dep model="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)" />
     <file name="TestModule_jetbrains_mps_lang_editor_multiple_tests.java" />

@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/2601164129533059968">
+    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2601164129533059976" fileName="UnsupportedPresentation_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnsupportedPresentation_Test#()V" />
+    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_UnsupportedPresentation#()V" />
+    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="120" />
+    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="60">
+      <varInfo nodeId="2601164129533059968" varName="editor" />
+      <varInfo nodeId="2601164129533059968" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.UnsupportedPresentation_Test$TestBody" />
+    <unitInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.UnsupportedPresentation_Test" />
+  </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/5950344441601491241">
     <nodeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="18" startPosition="75" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

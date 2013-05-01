@@ -44,6 +44,10 @@
       <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_removeQuery_switch" />
       <property name="description" nameId="tp5g.1883175908513350760" value="Testing if child element projection will be switched from compact to rich type on changing corresponding model property (remove context hint query re-evaluated no model changes)" />
     </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="2601164129533059968">
+      <property name="name" nameId="tpck.1169194664001" value="UnsupportedPresentation" />
+      <property name="description" nameId="tp5g.1883175908513350760" value="Editing MultipleEditorsTestChild child concept instance using default editor (there is no editor associted with unsupported contxt hint pushed down to this child, so default editor should be used here)" />
+    </node>
   </roots>
   <root id="5950344441601491241">
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestRoot" typeId="jap4.6655351613569888021" id="7636045212390385561">
@@ -335,6 +339,39 @@
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="9" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="9" />
           <property name="cellId" nameId="tp5g.1229194968595" value="property_diagramProperty" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="2601164129533059968">
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestRoot" typeId="jap4.6655351613569888021" id="2601164129533059969">
+      <node role="notSupportedPresentation" roleId="jap4.2601164129532819818" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="2601164129533496811">
+        <property name="name" nameId="tpck.1169194664001" value="DefaultChild" />
+        <property name="defaultProperty" nameId="jap4.6655351613569904549" value="oldProperty" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2601164129533496813">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_defaultProperty" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2601164129533059975">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="2601164129533059976">
+        <property name="keys" nameId="tp5g.1227184461946" value="new" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="jap4.MultipleEditorsTestRoot" typeId="jap4.6655351613569888021" id="2601164129533496827">
+      <node role="notSupportedPresentation" roleId="jap4.2601164129532819818" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="2601164129533496828">
+        <property name="name" nameId="tpck.1169194664001" value="DefaultChild" />
+        <property name="defaultProperty" nameId="jap4.6655351613569904549" value="newProperty" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2601164129533496833">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="3" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_defaultProperty" />
         </node>
       </node>
     </node>
