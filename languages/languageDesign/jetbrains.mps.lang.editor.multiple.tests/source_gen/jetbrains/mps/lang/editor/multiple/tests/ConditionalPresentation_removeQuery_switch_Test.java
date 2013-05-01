@@ -8,8 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class ConditionalPresentation_removeQuery_switch_Test extends BaseTransformationTest4 {
@@ -32,8 +30,8 @@ public class ConditionalPresentation_removeQuery_switch_Test extends BaseTransfo
       final Editor editor = TestBody.this.initEditor("7636045212393364920", "7636045212393365018");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "false");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
       BaseEditorTestBody.typeString(editorComponent, "propValue");
     }
   }

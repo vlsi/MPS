@@ -3,11 +3,11 @@
   <persistence version="7" />
   <language namespace="7a80051c-66e9-4bfc-9698-b12adfed3d9f(jetbrains.mps.lang.editor.multiple.testLanguage)" />
   <language namespace="8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)" />
+  <import index="ekwn" modelUID="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="15" implicit="yes" />
   <import index="jap4" modelUID="r:eb859fb0-1cb5-4829-a090-c7f47391d585(jetbrains.mps.lang.editor.multiple.testLanguage.structure)" version="-1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <roots>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5950344441601491241">
       <property name="name" nameId="tpck.1169194664001" value="EditorSpecifiedBy_add_context_hints" />
@@ -264,14 +264,14 @@
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7636045212390416999">
         <property name="keys" nameId="tp5g.1227184461946" value="rich" />
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="7636045212390417004">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7636045212390417006">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_DOWN" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="2601164129532540603">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="2601164129532540615">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297090" resolveInfo="MoveDown" />
         </node>
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="7636045212390417638">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7636045212390417639">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_DOWN" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="2601164129532784640">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="2601164129532784641">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297090" resolveInfo="MoveDown" />
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7636045212390417648">
@@ -298,14 +298,14 @@
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7636045212393365029">
         <property name="keys" nameId="tp5g.1227184461946" value="false" />
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="7636045212393365053">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7636045212393365054">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_DOWN" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="2601164129532808938">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="2601164129532808939">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297090" resolveInfo="MoveDown" />
         </node>
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="7636045212393365055">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7636045212393365056">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_DOWN" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="2601164129532808955">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="2601164129532808956">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297090" resolveInfo="MoveDown" />
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7636045212393364919">
