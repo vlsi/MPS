@@ -18,21 +18,33 @@ package jetbrains.mps.smodel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class LazySNode extends SNode {
+import java.util.HashSet;
+import java.util.Set;
 
-  public LazySNode(@NotNull String conceptFqName) {
+/**
+ * evgeny, 5/2/13
+ */
+public class InterfaceSNode extends SNode {
+
+  private Set<String> skippedRoles;
+
+  public InterfaceSNode(@NotNull String conceptFqName) {
     super(conceptFqName);
   }
 
   @Override
   protected SNode firstChild() {
-    enforceModelLoad();
+    if (skippedRoles != null) {
+      enforceModelLoad();
+    }
     return super.firstChild();
   }
 
   @Override
   protected SNode firstChildInRole(@NotNull String role) {
-    enforceModelLoad();
+    if (skippedRoles != null && skippedRoles.contains(role)) {
+      enforceModelLoad();
+    }
     return super.firstChildInRole(role);
   }
 
@@ -42,9 +54,18 @@ public final class LazySNode extends SNode {
     super.insertChild(role, child, anchor);
   }
 
+  public void skipRole(String role) {
+    if (myModel != null) {
+      throw new IllegalStateException();
+    }
+    if (skippedRoles == null) {
+      skippedRoles = new HashSet<String>();
+    }
+    skippedRoles.add(role);
+  }
+
   private void enforceModelLoad() {
-    if (myModel == null || treeParent() != null) return;
-    if (!myModel.isRoot(this)) return;
+    if (myModel == null) return;
     myModel.enforceFullLoad();
   }
 }
