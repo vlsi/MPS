@@ -4,7 +4,8 @@ package jetbrains.mps.samples.xmlLiterals.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,11 +15,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", "jetbrains.mps.xml.structure.Content", false, new String[]{"jetbrains.mps.xml.structure.Content"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "$${", "element macro", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro").super_("jetbrains.mps.xml.structure.Content").parents("jetbrains.mps.xml.structure.Content").children(new String[]{"expression"}, new boolean[]{false}).alias("$${", "element macro").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.xmlLiterals.structure.TextMacro", "jetbrains.mps.xml.structure.BaseText", false, new String[]{"jetbrains.mps.xml.structure.BaseText"}, new String[]{}, new String[]{}, new String[]{"expression"}, new boolean[]{false}, false, false, "${", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.TextMacro").super_("jetbrains.mps.xml.structure.BaseText").parents("jetbrains.mps.xml.structure.BaseText").children(new String[]{"expression"}, new boolean[]{false}).alias("${", "").create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{"element"}, new boolean[]{false}, false, false, "xml literal", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"element"}, new boolean[]{false}).alias("xml literal", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

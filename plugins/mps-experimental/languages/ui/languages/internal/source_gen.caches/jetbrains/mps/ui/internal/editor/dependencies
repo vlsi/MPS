@@ -149,6 +149,26 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.ui.internal.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ui.internal.editor.AuxObjectHandler_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.internal.editor.ContextBindingWrapper_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.internal.editor.ContextCompartmentWrapper_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.internal.editor.ContextControllerWrapper_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.internal.editor.ContextViewWrapper_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.internal.editor.ContextWrapperExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.internal.editor.ContextWrapper_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.internal.editor.ExpressionStub_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.internal.editor.GeometryHandler_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.internal.editor.StatementStub_Editor" />
+    <classNode dependClassName="jetbrains.mps.ui.internal.editor.TypeStub_Editor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.ui.internal.editor.ExpressionStub_Editor" file="ExpressionStub_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.core.editor.AliasEditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />

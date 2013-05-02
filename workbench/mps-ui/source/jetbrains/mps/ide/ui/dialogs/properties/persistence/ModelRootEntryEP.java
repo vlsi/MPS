@@ -19,7 +19,7 @@ import com.intellij.openapi.extensions.AbstractExtensionPointBean;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.util.LazyInstance;
 import com.intellij.util.xmlb.annotations.Attribute;
-import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryFactory;
 
 public class ModelRootEntryEP extends AbstractExtensionPointBean {
   public static final ExtensionPointName<ModelRootEntryEP> EP_NAME = ExtensionPointName.create("com.intellij.mps.modelRootEntry");
@@ -30,14 +30,14 @@ public class ModelRootEntryEP extends AbstractExtensionPointBean {
   public String className;
 
 
-  private final LazyInstance<ModelRootEntry> myFactory = new LazyInstance<ModelRootEntry>() {
+  private final LazyInstance<ModelRootEntryFactory> myFactory = new LazyInstance<ModelRootEntryFactory>() {
     @Override
-    protected Class<ModelRootEntry> getInstanceClass() throws ClassNotFoundException {
+    protected Class<ModelRootEntryFactory> getInstanceClass() throws ClassNotFoundException {
       return findClass(className);
     }
   };
 
-  public ModelRootEntry getModelRootEntry() {
+  public ModelRootEntryFactory getModelRootEntryFactory() {
     return myFactory.getValue();
   }
 }

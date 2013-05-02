@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class PersistenceComponent implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(PersistenceComponent.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(PersistenceComponent.class));
 
   private final static KeyedExtensionCollector<ModelRootSettingsEditorProvider, String> oursCollector =
     new KeyedExtensionCollector<ModelRootSettingsEditorProvider, String>("com.intellij.mps.modelRootSettings") {

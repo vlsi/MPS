@@ -6,8 +6,7 @@ import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 import com.intellij.openapi.components.ApplicationComponent;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.util.Consumer;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor;
 import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.PsiClass;
@@ -25,7 +24,7 @@ public class JavaPsiStubsNavigationContributor implements NavigationParticipant,
   }
 
   public void findTargets(NavigationParticipant.TargetKind kind, Collection<SModel> collection, Consumer<NavigationParticipant.NavigationTarget> consumer, Consumer<SModel> processedConsumer) {
-    for (SModel model : CollectionSequence.fromCollection(collection)) {
+    for (SModel model : collection) {
       if (!(model instanceof PsiJavaStubModelDescriptor)) {
         continue;
       }

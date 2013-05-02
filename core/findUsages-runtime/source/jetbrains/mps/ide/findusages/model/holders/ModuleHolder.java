@@ -17,13 +17,13 @@ package jetbrains.mps.ide.findusages.model.holders;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-public class ModuleHolder implements IHolder<IModule> {
+public class ModuleHolder implements IHolder<SModule> {
   private static final String UID = "uid";
 
   private String myModuleUID = "";
@@ -32,12 +32,12 @@ public class ModuleHolder implements IHolder<IModule> {
     read(element, project);
   }
 
-  public ModuleHolder(IModule module) {
+  public ModuleHolder(SModule module) {
     myModuleUID = module.getModuleName();
   }
 
   @Override
-  public IModule getObject() {
+  public SModule getObject() {
     return MPSModuleRepository.getInstance().getModuleByFqName(myModuleUID);
   }
 

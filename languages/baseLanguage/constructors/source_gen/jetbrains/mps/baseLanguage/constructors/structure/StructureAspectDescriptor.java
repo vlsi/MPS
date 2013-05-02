@@ -4,7 +4,8 @@ package jetbrains.mps.baseLanguage.constructors.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,25 +15,25 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause", "jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause", false, new String[]{"jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause"}, new String[]{}, new String[]{}, new String[]{"parameter"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause").super_("jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause").parents("jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause").children(new String[]{"parameter"}, new boolean[]{true}).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"description", "separator", "leftParenthesis", "rightParenthesis"}, new String[]{}, new String[]{"returnType", "arguments"}, new boolean[]{false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.core.structure.INamedConcept").properties("description", "separator", "leftParenthesis", "rightParenthesis").children(new String[]{"returnType", "arguments"}, new boolean[]{false, false}).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"constructors"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"constructors"}, new boolean[]{true}).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"type"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"type"}, new boolean[]{false}).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"parameter"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("parameter").staticScope(StaticScope.NONE).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"customConstructor"}, new String[]{"element"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("customConstructor").children(new String[]{"element"}, new boolean[]{true}).staticScope(StaticScope.NONE).create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause", "jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause", false, new String[]{"jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause"}, new String[]{}, new String[]{}, new String[]{"list"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause").super_("jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause").parents("jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause").children(new String[]{"list"}, new boolean[]{false}).create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter", false, new String[]{"jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter").super_("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter").parents("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter").create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference", false, new String[]{"jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference").super_("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference").parents("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

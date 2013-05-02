@@ -210,7 +210,7 @@ import java.util.WeakHashMap;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
     jetbrains.mps.openapi.editor.EditorComponent {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorComponent.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorComponent.class));
   private static final boolean TRACE_ENABLED = false;
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
   public static final Color CARET_ROW_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.CARET_ROW_COLOR);

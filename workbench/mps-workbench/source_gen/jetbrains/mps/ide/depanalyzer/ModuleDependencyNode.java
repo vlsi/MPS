@@ -6,7 +6,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessage;
 import java.awt.Color;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -27,15 +27,15 @@ import com.intellij.openapi.project.Project;
 public class ModuleDependencyNode extends MPSTreeNode {
   private static final TreeMessage HAS_CYCLE = new TreeMessage(Color.RED, "cycle", null);
   private static final TreeMessage BOOTSTRAP_DEPENDENCY = new TreeMessage(Color.RED, "bootstrap dependecy", null);
-  private List<IModule> myModules;
+  private List<SModule> myModules;
   private boolean myInitialized;
   private boolean myCyclic;
 
-  public ModuleDependencyNode(IModule module, IOperationContext context) {
-    this(ListSequence.fromListAndArray(new ArrayList<IModule>(), module), context);
+  public ModuleDependencyNode(SModule module, IOperationContext context) {
+    this(ListSequence.fromListAndArray(new ArrayList<SModule>(), module), context);
   }
 
-  public ModuleDependencyNode(List<IModule> modules, IOperationContext context) {
+  public ModuleDependencyNode(List<SModule> modules, IOperationContext context) {
     super(context);
     myModules = modules;
     if ((int) ListSequence.fromList(modules).count() == 1) {
@@ -52,7 +52,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
     setNodeIdentifier(text);
   }
 
-  public List<IModule> getModules() {
+  public List<SModule> getModules() {
     return myModules;
   }
 
@@ -81,24 +81,24 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
   @Override
   protected void doInit() {
-    Set<IModule> reqModules = SetSequence.fromSet(new HashSet<IModule>());
-    Set<IModule> rtModules = SetSequence.fromSet(new HashSet<IModule>());
-    Set<IModule> usedLanguages = SetSequence.fromSet(new HashSet<IModule>());
+    Set<SModule> reqModules = SetSequence.fromSet(new HashSet<SModule>());
+    Set<SModule> rtModules = SetSequence.fromSet(new HashSet<SModule>());
+    Set<SModule> usedLanguages = SetSequence.fromSet(new HashSet<SModule>());
 
     DependencyTree tree = (DependencyTree) getTree();
 
-    for (IModule module : ListSequence.fromList(myModules)) {
+    for (SModule module : ListSequence.fromList(myModules)) {
       GlobalModuleDependenciesManager depManager = new GlobalModuleDependenciesManager(module);
       SetSequence.fromSet(reqModules).addSequence(CollectionSequence.fromCollection(depManager.getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE)));
       SetSequence.fromSet(rtModules).addSequence(CollectionSequence.fromCollection(depManager.getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE)));
       SetSequence.fromSet(usedLanguages).addSequence(CollectionSequence.fromCollection(depManager.getUsedLanguages()));
     }
 
-    Set<IModule> allModules = (tree.isShowRuntime() ?
+    Set<SModule> allModules = (tree.isShowRuntime() ?
       rtModules :
       reqModules
     );
-    Set<IModule> depLoops = tree.getLoops();
+    Set<SModule> depLoops = tree.getLoops();
     // Dependency manager doesn't add module itself to its dependencies, fixing this here 
     SetSequence.fromSet(allModules).addSequence(SetSequence.fromSet(depLoops).intersect(ListSequence.fromList(myModules)));
 
@@ -107,8 +107,8 @@ public class ModuleDependencyNode extends MPSTreeNode {
       SetSequence.fromSet(usedLanguages).removeSequence(ListSequence.fromList(tree.getModules()));
     }
 
-    for (IModule m : SetSequence.fromSet(allModules).sort(new ISelector<IModule, String>() {
-      public String select(IModule it) {
+    for (SModule m : SetSequence.fromSet(allModules).sort(new ISelector<SModule, String>() {
+      public String select(SModule it) {
         return it.getModuleName();
       }
     }, true)) {
@@ -118,12 +118,12 @@ public class ModuleDependencyNode extends MPSTreeNode {
     if (tree.isShowUsedLanguage()) {
       MPSTreeNode usedlanguages = new TextMPSTreeNode("Used Languages", getOperationContext());
       boolean hasBootstrapDep = false;
-      for (IModule l : SetSequence.fromSet(usedLanguages).sort(new ISelector<IModule, String>() {
-        public String select(IModule it) {
+      for (SModule l : SetSequence.fromSet(usedLanguages).sort(new ISelector<SModule, String>() {
+        public String select(SModule it) {
           return it.getModuleName();
         }
       }, true)) {
-        Iterable<IModule> langModules = new GlobalModuleDependenciesManager(l).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE);
+        Iterable<SModule> langModules = new GlobalModuleDependenciesManager(l).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE);
         boolean isBootstrapDep = Sequence.fromIterable(langModules).intersect(ListSequence.fromList(myModules)).isNotEmpty();
         hasBootstrapDep |= isBootstrapDep;
         usedlanguages.add(new ModuleDependencyNode.ULangDependencyNode(l, isBootstrapDep, getOperationContext()));
@@ -149,7 +149,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
   }
 
   public static class DepDependencyNode extends ModuleDependencyNode {
-    public DepDependencyNode(IModule module, boolean isRuntime, boolean isCyclic, IOperationContext context) {
+    public DepDependencyNode(SModule module, boolean isRuntime, boolean isCyclic, IOperationContext context) {
       super(module, context);
       if (isRuntime) {
         setNodeIdentifier(getNodeIdentifier() + " (runtime)");
@@ -167,7 +167,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
   }
 
   public static class ULangDependencyNode extends ModuleDependencyNode {
-    public ULangDependencyNode(IModule module, boolean isBootstrap, IOperationContext context) {
+    public ULangDependencyNode(SModule module, boolean isBootstrap, IOperationContext context) {
       super(module, context);
       if (isBootstrap) {
         setCyclic();

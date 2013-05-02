@@ -4,7 +4,8 @@ package jetbrains.mps.debugger.java.privateMembers.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,13 +15,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{"jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation").super_("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").parents("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").staticScope(StaticScope.NONE).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", false, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation").super_("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").parents("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").staticScope(StaticScope.NONE).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticFieldReference", false, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldReference"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference").super_("jetbrains.mps.baseLanguage.structure.StaticFieldReference").parents("jetbrains.mps.baseLanguage.structure.StaticFieldReference").staticScope(StaticScope.NONE).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall", "jetbrains.mps.baseLanguage.structure.StaticMethodCall", false, new String[]{"jetbrains.mps.baseLanguage.structure.StaticMethodCall"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall").super_("jetbrains.mps.baseLanguage.structure.StaticMethodCall").parents("jetbrains.mps.baseLanguage.structure.StaticMethodCall").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

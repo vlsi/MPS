@@ -146,4 +146,8 @@ public interface EditorCell {
   void setBig(boolean big);
 
   boolean isBig();
+
+  void setCellContext(EditorCellContext cellContext);
+
+  EditorCellContext getCellContext();
 }

@@ -29,21 +29,21 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
-import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.openapi.editor.TextBuilder;
-import jetbrains.mps.openapi.editor.cells.DfsTraverser;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
-import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -51,7 +51,6 @@ import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ListMap;
@@ -59,6 +58,7 @@ import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.util.Condition;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -79,7 +79,7 @@ import java.util.Set;
  * Created Sep 14, 2003
  */
 public abstract class EditorCell_Basic implements EditorCell {
-  public static final Logger LOG = Logger.getLogger(LogManager.getLogger(EditorCell_Basic.class));
+  public static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorCell_Basic.class));
 
   public static final int BRACKET_WIDTH = 7;
 
@@ -114,6 +114,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   private boolean myIsNeedRelayout = true;
   private boolean myBig;
+  private EditorCellContext myCellContext;
 
   protected EditorCell_Basic(EditorContext editorContext, SNode node) {
     myEditorContext = editorContext;
@@ -1466,5 +1467,15 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void unrequestLayout() {
     myIsNeedRelayout = false;
+  }
+
+  @Override
+  public void setCellContext(EditorCellContext cellContext) {
+    myCellContext = cellContext;
+  }
+
+  @Override
+  public EditorCellContext getCellContext() {
+    return myCellContext;
   }
 }

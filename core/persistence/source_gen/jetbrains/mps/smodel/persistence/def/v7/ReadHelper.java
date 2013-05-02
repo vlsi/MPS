@@ -14,6 +14,10 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -82,6 +86,49 @@ public class ReadHelper {
   public SNodeReference readLinkId(String src) {
     // [modelID.]nodeID[:version] | [modelID.]^[:version] 
     return readLink_internal(src).o2;
+  }
+
+  public Tuples._3<ConceptKind, StaticScope, Boolean> readNodeInfo(String s) {
+    ConceptKind kind;
+    StaticScope scope;
+    if (s.length() != 3 && s.length() != 2) {
+      return null;
+    }
+    switch (s.charAt(0)) {
+      case 'n':
+        kind = ConceptKind.NORMAL;
+        break;
+      case 'i':
+        kind = ConceptKind.INTERFACE;
+        break;
+      case 'l':
+        kind = ConceptKind.IMPLEMENTATION;
+        break;
+      default:
+        return null;
+    }
+    switch (s.charAt(1)) {
+      case 'g':
+        scope = StaticScope.GLOBAL;
+        break;
+      case 'r':
+        scope = StaticScope.ROOT;
+        break;
+      case 'n':
+        scope = StaticScope.NONE;
+        break;
+      default:
+        return null;
+    }
+    boolean unordered = false;
+    if (s.length() == 3) {
+      if (s.charAt(2) == 'u') {
+        unordered = true;
+      } else {
+        return null;
+      }
+    }
+    return MultiTuple.<ConceptKind,StaticScope,Boolean>from(kind, scope, unordered);
   }
 
   public String readType(String s) {

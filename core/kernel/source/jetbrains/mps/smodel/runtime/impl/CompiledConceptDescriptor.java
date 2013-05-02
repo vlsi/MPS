@@ -17,10 +17,18 @@ package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String conceptFqName;
@@ -28,17 +36,23 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final boolean isInterfaceConcept;
   private final List<String> parents;
   private final Set<String> ancestors;
-  private final List<String> propertyNames;
-  private final List<String> referenceNames;
+  private final Set<String> propertyNames;
+  private final Set<String> referenceNames;
   private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
-  private final List<String> childNames;
+  private final Set<String> childNames;
+  private final Set<String> unorderedNames;
   private final boolean isAbstract;
   private final boolean isFinal;
   private final String conceptAlias;
   private final String conceptShortDescription;
   private final String helpUrl;
+  private final StaticScope staticScope;
 
 
+  /**
+   * @deprecated in 3.0
+   */
+  @Deprecated
   public CompiledConceptDescriptor(String conceptFqName,
       @Nullable String superConcept,
       boolean isInterfaceConcept,
@@ -52,6 +66,25 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       String conceptAlias,
       String shortDescription,
       String helpUrl) {
+    this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, ownChildNames, isMultiple, new String[0], isAbstract, isFinal,
+        conceptAlias, shortDescription, helpUrl, StaticScope.GLOBAL);
+  }
+
+  CompiledConceptDescriptor(String conceptFqName,
+      @Nullable String superConcept,
+      boolean isInterfaceConcept,
+      String[] parents,
+      String[] ownPropertyNames,
+      String[] ownReferenceNames,
+      String[] ownChildNames,
+      boolean[] isMultiple,
+      String[] unorderedChildren,
+      boolean isAbstract,
+      boolean isFinal,
+      String conceptAlias,
+      String shortDescription,
+      String helpUrl,
+      StaticScope staticScope) {
     this.conceptFqName = conceptFqName;
     this.superConcept = superConcept;
     this.isInterfaceConcept = isInterfaceConcept;
@@ -61,6 +94,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     this.conceptAlias = conceptAlias;
     this.conceptShortDescription = shortDescription;
     this.helpUrl = helpUrl;
+    this.staticScope = staticScope;
 
     // hierarchy
     // todo: common with StructureAspectInterpreted to new class!
@@ -88,7 +122,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       properties.addAll(parentDescriptor.getPropertyNames());
     }
 
-    propertyNames = new ArrayList<String>(properties);
+    propertyNames = Collections.unmodifiableSet(properties);
 
     // references
     LinkedHashSet<String> references = new LinkedHashSet<String>();
@@ -98,7 +132,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       references.addAll(parentDescriptor.getReferenceNames());
     }
 
-    referenceNames = new ArrayList<String>(references);
+    referenceNames = Collections.unmodifiableSet(references);
 
     //children
     assert ownChildNames.length == isMultiple.length;
@@ -106,14 +140,23 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       childMap.put(ownChildNames[i], isMultiple[i]);
     }
 
+    Set<String> unorderedNamesNew = new HashSet<String>();
+    unorderedNamesNew.addAll(Arrays.asList(unorderedChildren));
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
+      unorderedNamesNew.addAll(parentDescriptor.getUnorderedChildrenNames());
       for (String child : parentDescriptor.getChildrenNames()) {
         childMap.put(child, parentDescriptor.isMultipleChild(child));
       }
     }
 
-    childNames = new ArrayList<String>(childMap.keySet());
+    unorderedNames = Collections.unmodifiableSet(unorderedNamesNew);
+    childNames = Collections.unmodifiableSet(childMap.keySet());
 
+  }
+
+  @Override
+  public Set<String> getUnorderedChildrenNames() {
+    return unorderedNames;
   }
 
   @Override
@@ -132,18 +175,23 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
-  public List<String> getPropertyNames() {
+  public Set<String> getPropertyNames() {
     return propertyNames;
   }
 
   @Override
-  public List<String> getReferenceNames() {
+  public Set<String> getReferenceNames() {
     return referenceNames;
   }
 
   @Override
-  public List<String> getChildrenNames() {
+  public Set<String> getChildrenNames() {
     return childNames;
+  }
+
+  @Override
+  public StaticScope getStaticScope() {
+    return staticScope;
   }
 
   @Override

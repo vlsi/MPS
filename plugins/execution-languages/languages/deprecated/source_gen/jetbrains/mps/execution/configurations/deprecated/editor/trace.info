@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="12" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.execution.configurations.deprecated.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:def9da36-61ed-4f39-9c10-98a9883447d1(jetbrains.mps.execution.configurations.deprecated.editor)/2178855608170754548">
     <nodeInfo nodeId="2178855608170754548" fileName="JavaNodeConfigurationEditorDeclaration_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2178855608170754548" fileName="JavaNodeConfigurationEditorDeclaration_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3835,7 +3836,7 @@
     <nodeInfo nodeId="314981645426569670" fileName="RunConfigurationPresentation.java" startLine="194" startPosition="194" endLine="195" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="314981645426569670" fileName="RunConfigurationPresentation.java" startLine="195" startPosition="50" endLine="196" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6450631368144776611" fileName="RunConfigurationPresentation.java" startLine="199" startPosition="120" endLine="200" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6450631368144784679" fileName="RunConfigurationPresentation.java" startLine="201" startPosition="63" endLine="202" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6450631368144784679" fileName="RunConfigurationPresentation.java" startLine="201" startPosition="82" endLine="202" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="314981645426569740" fileName="RunConfigurationPresentation.java" startLine="203" startPosition="5" endLine="204" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="314981645426569670" fileName="RunConfigurationPresentation.java" startLine="207" startPosition="90" endLine="208" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="314981645426569670" fileName="RunConfigurationPresentation.java" startLine="208" startPosition="99" endLine="209" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3911,7 +3912,7 @@
     <scopeInfo nodeId="314981645426569670" fileName="RunConfigurationPresentation.java" startLine="147" startPosition="40" endLine="148" endPosition="81" />
     <scopeInfo nodeId="314981645426569670" fileName="RunConfigurationPresentation.java" startLine="148" startPosition="81" endLine="149" endPosition="84" />
     <scopeInfo nodeId="314981645426569729" fileName="RunConfigurationPresentation.java" startLine="156" startPosition="30" endLine="157" endPosition="63" />
-    <scopeInfo nodeId="6450631368144757386" fileName="RunConfigurationPresentation.java" startLine="201" startPosition="63" endLine="202" endPosition="32" />
+    <scopeInfo nodeId="6450631368144757386" fileName="RunConfigurationPresentation.java" startLine="201" startPosition="82" endLine="202" endPosition="32" />
     <scopeInfo nodeId="314981645426569670" fileName="RunConfigurationPresentation.java" startLine="212" startPosition="40" endLine="213" endPosition="82" />
     <scopeInfo nodeId="314981645426569670" fileName="RunConfigurationPresentation.java" startLine="213" startPosition="82" endLine="214" endPosition="82" />
     <scopeInfo nodeId="314981645426569670" fileName="RunConfigurationPresentation.java" startLine="48" startPosition="123" endLine="50" endPosition="103" />

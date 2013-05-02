@@ -4,7 +4,7 @@ package jetbrains.mps.samples.secretCompartmentLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,19 +14,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.secretCompartmentLanguage.structure.Event", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"eventName", "code"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.secretCompartmentLanguage.structure.Event").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("eventName", "code").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"event"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("event").create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.secretCompartmentLanguage.structure.State", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"stateName"}, new String[]{}, new String[]{"transition"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.secretCompartmentLanguage.structure.State").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("stateName").children(new String[]{"transition"}, new boolean[]{true}).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"stateMachineName"}, new String[]{"startState"}, new String[]{"event", "state"}, new boolean[]{true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("stateMachineName").references("startState").children(new String[]{"event", "state"}, new boolean[]{true, true}).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"stateMachine"}, new String[]{"testMethod"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("stateMachine").children(new String[]{"testMethod"}, new boolean[]{true}).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"methodName"}, new String[]{"finalState"}, new String[]{"handleEvent"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("methodName").references("finalState").children(new String[]{"handleEvent"}, new boolean[]{true}).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"trigger", "target"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("trigger", "target").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

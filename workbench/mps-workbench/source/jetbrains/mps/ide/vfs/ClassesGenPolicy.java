@@ -17,7 +17,7 @@ package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.smodel.MPSModuleRepository;

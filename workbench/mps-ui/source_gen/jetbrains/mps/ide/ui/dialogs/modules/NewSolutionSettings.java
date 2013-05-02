@@ -60,11 +60,15 @@ public class NewSolutionSettings extends JPanel {
 
 
   protected void updateSolutionLocation() {
+    updateSolutionLocation(false);
+  }
+
+  protected void updateSolutionLocation(boolean force) {
     if (myProjectPath == null) {
       return;
     }
     String prefix = myProjectPath + File.separator + "solutions" + File.separator;
-    if (isEmpty_mn6him_a0a0c0i(mySolutionName.getText()) || isEmpty_mn6him_a0a0c0i_0(mySolutionLocation.getText()) || mySolutionLocation.getText().startsWith(prefix)) {
+    if (isEmpty_mn6him_a0a0a2a9(mySolutionName.getText()) || isEmpty_mn6him_a0a0a2a9_0(mySolutionLocation.getText()) || mySolutionLocation.getText().startsWith(prefix) || force) {
       mySolutionLocation.setText(prefix + mySolutionName.getText());
     }
   }
@@ -89,17 +93,22 @@ public class NewSolutionSettings extends JPanel {
     updateSolutionLocation();
   }
 
+  public void setProjectPath(String projectPath) {
+    myProjectPath = projectPath;
+    updateSolutionLocation(true);
+  }
+
 
 
   public JComponent getPreferredFocusedComponent() {
     return mySolutionName;
   }
 
-  public static boolean isEmpty_mn6him_a0a0c0i(String str) {
+  public static boolean isEmpty_mn6him_a0a0a2a9(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_mn6him_a0a0c0i_0(String str) {
+  public static boolean isEmpty_mn6him_a0a0a2a9_0(String str) {
     return str == null || str.length() == 0;
   }
 }

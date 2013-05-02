@@ -17,7 +17,7 @@ package jetbrains.mps.project.structure.project.testconfigurations;
 
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -57,8 +57,8 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
       throw new IllegalGeneratorConfigurationException("can't execute test configuration " + getName());
     }
 
-    IModule module = null;
-    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+    SModule module = null;
+    for (SModule m : MPSModuleRepository.getInstance().getAllModules()) {
       if (IterableUtil.asCollection(m.getModels()).containsAll(modelDescriptors)) {
         module = m;
         break;

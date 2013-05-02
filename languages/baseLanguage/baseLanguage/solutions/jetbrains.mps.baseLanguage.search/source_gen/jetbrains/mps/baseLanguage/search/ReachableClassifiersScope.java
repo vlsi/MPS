@@ -24,7 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Priority;
-import jetbrains.mps.project.IModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -176,14 +175,14 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       return ListSequence.fromList(classifiers).getElement(0);
     }
 
-    private static IModule check_x9ho2v_a0b0a0h0e7(SModel checkedDotOperand) {
+    private static SModule check_x9ho2v_a0b0a0h0e7(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
       }
       return null;
     }
 
-    private static IModule check_x9ho2v_a0b0a0h0e7_0(SModel checkedDotOperand) {
+    private static SModule check_x9ho2v_a0b0a0h0e7_0(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
       }

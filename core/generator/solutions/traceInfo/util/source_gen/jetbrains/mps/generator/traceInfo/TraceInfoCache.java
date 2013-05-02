@@ -22,8 +22,7 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import org.jdom.JDOMException;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import java.net.MalformedURLException;
@@ -187,12 +186,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Nullable
   public DebugInfo getLastGeneratedDebugInfo(@NotNull SModel model) {
-    String generatorOutputPath;
-    if (neq_xlaj1j_a0b0s(SModelStereotype.getStereotype(model), SModelStereotype.TESTS)) {
-      generatorOutputPath = ((IModule) model.getModule()).getGeneratorOutputPath();
-    } else {
-      generatorOutputPath = ((IModule) model.getModule()).getTestsGeneratorOutputPath();
-    }
+    String generatorOutputPath = SModuleOperations.getOutputPathFor(model);
     if ((generatorOutputPath == null || generatorOutputPath.length() == 0)) {
       return null;
     }
@@ -256,11 +250,4 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   protected static Logger LOG = LogManager.getLogger(TraceInfoCache.class);
-
-  private static boolean neq_xlaj1j_a0b0s(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
-  }
 }

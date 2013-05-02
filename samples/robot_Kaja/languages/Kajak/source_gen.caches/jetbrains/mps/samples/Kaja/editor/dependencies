@@ -61,6 +61,41 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.Kaja.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.CommandList_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.CommentLine_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Drop_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.East_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.EmptyLine_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Heading_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.IfStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.IsFull_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.IsMark_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.IsWall_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.LeftTurn_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Library_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Looking_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.North_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Not_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Pick_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Repeat_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Require_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.RoutineCall_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.RoutineDefinition_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Script_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.South_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Step_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.TraceMessage_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.West_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.While_Editor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.EmptyLine_Editor" file="EmptyLine_Editor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />

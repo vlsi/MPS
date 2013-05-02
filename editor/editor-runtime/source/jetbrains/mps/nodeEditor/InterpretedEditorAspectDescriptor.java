@@ -16,8 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.openapi.editor.node.EditorAspect;
-import jetbrains.mps.openapi.editor.node.EditorAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspect;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -29,6 +29,8 @@ import org.apache.log4j.Logger;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,13 +52,14 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
   }
 
   @Override
-  public EditorAspect getAspect(ConceptDescriptor abstractConcept) {
+  public Collection<EditorAspect> getEditorAspects(ConceptDescriptor abstractConcept) {
     // TODO: check (assert) if passed concept is a part of associated language
     String conceptFQName = abstractConcept.getConceptFqName();
     if (!myEditorAspects.containsKey(conceptFQName)) {
       myEditorAspects.put(conceptFQName, loadEditor(abstractConcept));
     }
-    return myEditorAspects.get(conceptFQName);
+    EditorAspect editorAspect = myEditorAspects.get(conceptFQName);
+    return editorAspect != null ? Collections.singletonList(editorAspect) : Collections.<EditorAspect>emptyList();
   }
 
   private EditorAspect loadEditor(ConceptDescriptor concept) {

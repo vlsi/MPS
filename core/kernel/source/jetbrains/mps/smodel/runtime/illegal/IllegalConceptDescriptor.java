@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.runtime.illegal;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 
 import java.util.Collections;
 import java.util.List;
@@ -44,8 +46,8 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public List<String> getPropertyNames() {
-    return Collections.emptyList();
+  public Set<String> getPropertyNames() {
+    return Collections.emptySet();
   }
 
   @Override
@@ -54,8 +56,8 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public List<String> getReferenceNames() {
-    return Collections.emptyList();
+  public Set<String> getReferenceNames() {
+    return Collections.emptySet();
   }
 
   @Override
@@ -64,13 +66,28 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public List<String> getChildrenNames() {
-    return Collections.emptyList();
+  public Set<String> getChildrenNames() {
+    return Collections.emptySet();
+  }
+
+  @Override
+  public boolean isUnorderedChild(String name) {
+    return false;
+  }
+
+  @Override
+  public Set<String> getUnorderedChildrenNames() {
+    return Collections.emptySet();
   }
 
   @Override
   public boolean hasChild(String name) {
     return false;
+  }
+
+  @Override
+  public StaticScope getStaticScope() {
+    return StaticScope.GLOBAL;
   }
 
   @Override
@@ -91,6 +108,11 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @Override
   public Set<String> getAncestorsNames() {
     return Collections.emptySet();
+  }
+
+  @Override
+  public ConceptKind getConceptKind() {
+    return ConceptKind.NORMAL;
   }
 
   @Override

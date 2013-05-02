@@ -14,19 +14,21 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.DynamicReference;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.persistence.RoleIdsComponent;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.persistence.LightModelEnvironmentInfo;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -39,29 +41,11 @@ public class ModelLinkMap {
   private Map<SNodeReference, List<SReference>> myRefRoleMap = MapSequence.fromMap(new HashMap<SNodeReference, List<SReference>>());
   private Map<SNodeReference, List<Pair<SNode, String>>> myPropNameMap = MapSequence.fromMap(new HashMap<SNodeReference, List<Pair<SNode, String>>>());
   private Map<SModelReference, List<DynamicReference>> myDynRefMap = MapSequence.fromMap(new HashMap<SModelReference, List<DynamicReference>>());
+  private Map<SNode, Tuples._2<ConceptKind, StaticScope>> myMetainfo = MapSequence.fromMap(new HashMap<SNode, Tuples._2<ConceptKind, StaticScope>>());
+  private Map<SNode, Boolean> myRoleMetainfo = MapSequence.fromMap(new HashMap<SNode, Boolean>());
 
   public ModelLinkMap(SModel model) {
     myModel = model;
-  }
-
-  public ModelLinkMap build() {
-    // build map based on already loaded model 
-    for (SNode node : new NodesIterable(myModel)) {
-      addRoleLocation(ptr(SNodeOperations.getContainingLinkDeclaration(node)), node);
-      addTypeLocation(ptr(SNodeOperations.getConceptDeclaration(node)), node);
-      for (String prop : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).keySet())) {
-        addNameLocation(ptr(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(prop)), node, prop);
-      }
-      for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
-        addRoleLocation(ptr(SLinkOperations.findLinkDeclaration(ref)), ref);
-        if (ref instanceof StaticReference) {
-          addTargetLocation(ptr(SLinkOperations.getTargetNode(ref)), (StaticReference) ref);
-        } else {
-          addDynamicReference(ref.getTargetSModelReference(), (DynamicReference) ref);
-        }
-      }
-    }
-    return this;
   }
 
   public void addTargetLocation(SNodeReference ptr, StaticReference ref) {
@@ -70,6 +54,11 @@ public class ModelLinkMap {
 
   public void addTypeLocation(SNodeReference ptr, SNode node) {
     addValue(myNodeTypeMap, ptr, node);
+  }
+
+  public void addNodeMetainfo(ConceptKind kind, StaticScope scope, boolean isUnordered, SNode node) {
+    MapSequence.fromMap(myMetainfo).put(node, MultiTuple.<ConceptKind,StaticScope>from(kind, scope));
+    MapSequence.fromMap(myRoleMetainfo).put(node, isUnordered);
   }
 
   public void addRoleLocation(SNodeReference ptr, SNode node) {
@@ -238,44 +227,58 @@ public class ModelLinkMap {
     return res;
   }
 
-  public void fillRoleIdsComponent() {
-    if (RoleIdsComponent.isEnabled()) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          for (jetbrains.mps.smodel.SModel.ImportElement i : ListSequence.fromList(((SModelInternal) myModel).getAdditionalModelVersions())) {
-            RoleIdsComponent.modelVersionRead(i);
-          }
-          for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {
-            ListSequence.fromList(MapSequence.fromMap(myNodeRoleMap).get(ptr)).visitAll(new IVisitor<SNode>() {
-              public void visit(SNode n) {
-                RoleIdsComponent.nodeRoleRead(n, ptr);
-              }
-            });
-          }
-          for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeTypeMap).keySet())) {
-            ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
-              public void visit(SNode n) {
-                RoleIdsComponent.conceptRead(n, ptr);
-              }
-            });
-          }
-          for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myRefRoleMap).keySet())) {
-            ListSequence.fromList(MapSequence.fromMap(myRefRoleMap).get(ptr)).visitAll(new IVisitor<SReference>() {
-              public void visit(SReference r) {
-                RoleIdsComponent.referenceRoleRead(r, ptr);
-              }
-            });
-          }
-          for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myPropNameMap).keySet())) {
-            ListSequence.fromList(MapSequence.fromMap(myPropNameMap).get(ptr)).visitAll(new IVisitor<Pair<SNode, String>>() {
-              public void visit(Pair<SNode, String> nP) {
-                RoleIdsComponent.propertyNameRead(nP.o1, nP.o2, ptr);
-              }
-            });
-          }
-        }
-      });
+  public void fillModelEnvironmentInfo() {
+    final LightModelEnvironmentInfo info = as_1o71zw_a0a0a22(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), LightModelEnvironmentInfo.class);
+    if (info == null) {
+      return;
     }
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (jetbrains.mps.smodel.SModel.ImportElement i : ListSequence.fromList(((SModelInternal) myModel).getAdditionalModelVersions())) {
+          info.modelVersionRead(i);
+        }
+        for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {
+          ListSequence.fromList(MapSequence.fromMap(myNodeRoleMap).get(ptr)).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode n) {
+              boolean unordered = (MapSequence.fromMap(myRoleMetainfo).containsKey(n) ?
+                MapSequence.fromMap(myRoleMetainfo).get(n) :
+                false
+              );
+              info.nodeRoleRead(n, ptr, unordered);
+            }
+          });
+        }
+        for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeTypeMap).keySet())) {
+          ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode n) {
+              Tuples._2<ConceptKind, StaticScope> pair = MapSequence.fromMap(myMetainfo).get(n);
+              info.conceptRead(n, ptr, (pair == null ?
+                StaticScope.GLOBAL :
+                pair._1()
+              ), (pair == null ?
+                ConceptKind.NORMAL :
+                pair._0()
+              ));
+            }
+          });
+        }
+        for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myRefRoleMap).keySet())) {
+          ListSequence.fromList(MapSequence.fromMap(myRefRoleMap).get(ptr)).visitAll(new IVisitor<SReference>() {
+            public void visit(SReference r) {
+              info.referenceRoleRead(r, ptr);
+            }
+          });
+        }
+        for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myPropNameMap).keySet())) {
+          ListSequence.fromList(MapSequence.fromMap(myPropNameMap).get(ptr)).visitAll(new IVisitor<Pair<SNode, String>>() {
+            public void visit(Pair<SNode, String> nP) {
+              info.propertyNameRead(nP.o1, nP.o2, ptr);
+            }
+          });
+        }
+      }
+    });
   }
 
   private static <K, T> void addValue(Map<K, List<T>> map, K key, T value) {
@@ -345,6 +348,13 @@ public class ModelLinkMap {
     return ((node == null) ?
       null :
       new SNodePointer(node)
+    );
+  }
+
+  private static <T> T as_1o71zw_a0a0a22(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
     );
   }
 }

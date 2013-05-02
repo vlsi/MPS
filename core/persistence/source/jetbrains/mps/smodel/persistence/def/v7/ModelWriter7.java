@@ -34,7 +34,6 @@ import java.util.Map;
 
 public class ModelWriter7 implements IModelWriter {
   private WriteHelper myHelper;
-  private SModel myModel;
 
   protected int getModelPersistenceVersion() {
     return 7;
@@ -42,18 +41,17 @@ public class ModelWriter7 implements IModelWriter {
 
   @Override
   public Document saveModel(SModel sourceModel) {
-    myModel = sourceModel;
     myHelper = new WriteHelper(sourceModel.getReference());
 
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
 
-    int version = (myModel).getVersion();
+    int version = (sourceModel).getVersion();
     if (version >= 0) {
       rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
     }
-    if (myModel instanceof DefaultSModel) {
-      SModelHeader header = ((DefaultSModel) myModel).getSModelHeader();
+    if (sourceModel instanceof DefaultSModel) {
+      SModelHeader header = ((DefaultSModel) sourceModel).getSModelHeader();
       if (header.isDoNotGenerate()) {
         rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, "true");
       }
@@ -138,6 +136,7 @@ public class ModelWriter7 implements IModelWriter {
     DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE_ID, myHelper.genRoleId(node));
     element.setAttribute(ModelPersistence.TYPE, myHelper.genType(node));
     DocUtil.setNotNullAttribute(element, ModelPersistence.TYPE_ID, myHelper.genTypeId(node));
+    //DocUtil.setNotNullAttribute(element, ModelPersistence.NODE_INFO, myHelper.genNodeInfo(node));
     element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
 
     for (String propertyName : node.getPropertyNames()) {

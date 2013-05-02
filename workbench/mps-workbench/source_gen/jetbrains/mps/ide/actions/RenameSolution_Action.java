@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +31,7 @@ public class RenameSolution_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Solution;
+    return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Solution;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -69,7 +69,7 @@ public class RenameSolution_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((Solution) ((IModule) MapSequence.fromMap(_params).get("module")))).show();
+      new RenameSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((Solution) ((SModule) MapSequence.fromMap(_params).get("module")))).show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "RenameSolution", t);

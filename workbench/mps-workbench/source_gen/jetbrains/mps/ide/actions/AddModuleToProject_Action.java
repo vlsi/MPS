@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
@@ -33,7 +33,7 @@ public class AddModuleToProject_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    for (IModule module : ((List<IModule>) MapSequence.fromMap(_params).get("modules"))) {
+    for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
       if (((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules().contains(module)) {
         return false;
       }
@@ -72,7 +72,7 @@ public class AddModuleToProject_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (IModule module : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
+      for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
         ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addModule(module.getModuleReference());
       }
       if (((MPSProject) MapSequence.fromMap(_params).get("mpsProject")) instanceof StandaloneMPSProject) {

@@ -15,7 +15,6 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -78,7 +77,7 @@ public class PrintIScopeAndIModuleMethodsUsages_Action extends BaseAction {
 
   /*package*/ void printMethodsUsages(SNode classifier, final Map<String, Object> _params) {
     Set<SModule> projectModules = SetSequence.fromSet(new HashSet<SModule>());
-    for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModules())) {
+    for (SModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModules())) {
       SetSequence.fromSet(projectModules).addElement(module);
     }
     System.out.println("Method usages for " + classifier);

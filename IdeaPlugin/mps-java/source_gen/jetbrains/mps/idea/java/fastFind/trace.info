@@ -1,84 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeRef="r:714e1a8b-f5ef-43ca-864f-d3aa5fa2e53e(jetbrains.mps.idea.java.fastFind)/1264383190525067829">
+    <nodeInfo nodeId="1264383190525598801" fileName="ClassStubPsiMapper.java" startLine="21" startPosition="52" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1264383190525623187" fileName="ClassStubPsiMapper.java" startLine="22" startPosition="45" endLine="23" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1264383190525624593" fileName="ClassStubPsiMapper.java" startLine="28" startPosition="69" endLine="29" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1264383190525624597" fileName="ClassStubPsiMapper.java" startLine="29" startPosition="45" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1855001631467839931" fileName="ClassStubPsiMapper.java" startLine="30" startPosition="0" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1264383190525626047" fileName="ClassStubPsiMapper.java" startLine="32" startPosition="65" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1264383190525626059" fileName="ClassStubPsiMapper.java" startLine="34" startPosition="5" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1855001631468001314" fileName="ClassStubPsiMapper.java" startLine="35" startPosition="0" endLine="36" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1855001631468001305" fileName="ClassStubPsiMapper.java" startLine="36" startPosition="89" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1855001631467824231" fileName="ClassStubPsiMapper.java" startLine="38" startPosition="96" endLine="39" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1855001631467987025" fileName="ClassStubPsiMapper.java" startLine="39" startPosition="114" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1855001631467386594" fileName="ClassStubPsiMapper.java" startLine="41" startPosition="109" endLine="42" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1855001631467862667" fileName="ClassStubPsiMapper.java" startLine="43" startPosition="29" endLine="44" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1855001631467859981" fileName="ClassStubPsiMapper.java" startLine="45" startPosition="7" endLine="46" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1855001631467898086" fileName="ClassStubPsiMapper.java" startLine="46" startPosition="47" endLine="47" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1855001631467969365" fileName="ClassStubPsiMapper.java" startLine="49" startPosition="51" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1855001631467987026" fileName="ClassStubPsiMapper.java" startLine="52" startPosition="7" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1855001631467972401" fileName="ClassStubPsiMapper.java" startLine="54" startPosition="114" endLine="55" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1855001631467972412" fileName="ClassStubPsiMapper.java" startLine="55" startPosition="101" endLine="56" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1855001631467382596" fileName="ClassStubPsiMapper.java" startLine="57" startPosition="5" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1855001631467833113" fileName="ClassStubPsiMapper.java" startLine="58" startPosition="0" endLine="59" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1264383190525724194" fileName="ClassStubPsiMapper.java" startLine="64" startPosition="62" endLine="65" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1264383190525740029" fileName="ClassStubPsiMapper.java" startLine="65" startPosition="129" endLine="66" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1264383190525624615" fileName="ClassStubPsiMapper.java" startLine="31" startPosition="27" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1855001631467859996" fileName="ClassStubPsiMapper.java" startLine="42" startPosition="227" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1855001631467898072" fileName="ClassStubPsiMapper.java" startLine="48" startPosition="37" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1264383190525598337" fileName="ClassStubPsiMapper.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasCorrespondingPsi#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="1855001631467386604" fileName="ClassStubPsiMapper.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findPsiClass#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Lcom/intellij/psi/PsiClass;" />
+    <nodeInfo nodeId="1855001631467898047" fileName="ClassStubPsiMapper.java" startLine="47" startPosition="151" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1855001631467274399" fileName="ClassStubPsiMapper.java" startLine="37" startPosition="0" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1264383190525598346" fileName="ClassStubPsiMapper.java" startLine="28" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPsiElement#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Lcom/intellij/psi/PsiElement;" />
+    <scopeInfo nodeId="1264383190525624618" fileName="ClassStubPsiMapper.java" startLine="32" startPosition="65" endLine="33" endPosition="18" />
+    <scopeInfo nodeId="1855001631467859999" fileName="ClassStubPsiMapper.java" startLine="43" startPosition="29" endLine="44" endPosition="20" />
+    <scopeInfo nodeId="1855001631467898073" fileName="ClassStubPsiMapper.java" startLine="49" startPosition="51" endLine="50" endPosition="23" />
+    <scopeInfo nodeId="1264383190525598343" fileName="ClassStubPsiMapper.java" startLine="21" startPosition="52" endLine="23" endPosition="57" />
+    <scopeInfo nodeId="1855001631467274402" fileName="ClassStubPsiMapper.java" startLine="38" startPosition="96" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1855001631467969400" fileName="ClassStubPsiMapper.java" startLine="54" startPosition="114" endLine="56" endPosition="49" />
+    <scopeInfo nodeId="1855001631467386607" fileName="ClassStubPsiMapper.java" startLine="64" startPosition="62" endLine="66" endPosition="106">
+      <varInfo nodeId="1264383190525724197" varName="classFqName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1855001631467898053" fileName="ClassStubPsiMapper.java" startLine="48" startPosition="37" endLine="51" endPosition="9" />
+    <scopeInfo nodeId="1264383190525598337" fileName="ClassStubPsiMapper.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1264383190525598340" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="1855001631467386604" fileName="ClassStubPsiMapper.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1855001631467386609" varName="claz" />
+      <varInfo nodeId="1855001631467408535" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="1855001631467898047" fileName="ClassStubPsiMapper.java" startLine="47" startPosition="151" endLine="52" endPosition="7">
+      <varInfo nodeId="1855001631467898049" varName="field" />
+    </scopeInfo>
+    <scopeInfo nodeId="1855001631467382608" fileName="ClassStubPsiMapper.java" startLine="41" startPosition="109" endLine="53" endPosition="0">
+      <varInfo nodeId="1855001631467898089" varName="expectedName" />
+      <varInfo nodeId="1855001631467859982" varName="fields" />
+      <varInfo nodeId="1855001631467386595" varName="psiClass" />
+    </scopeInfo>
+    <scopeInfo nodeId="1264383190525598354" fileName="ClassStubPsiMapper.java" startLine="28" startPosition="69" endLine="59" endPosition="16">
+      <varInfo nodeId="1855001631467839934" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1264383190525598346" fileName="ClassStubPsiMapper.java" startLine="28" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1264383190525598349" varName="nodeParam" />
+      <varInfo nodeId="1264383190525598351" varName="project" />
+    </scopeInfo>
+    <unitInfo nodeId="1264383190525067829" fileName="ClassStubPsiMapper.java" startLine="20" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.idea.java.fastFind.ClassStubPsiMapper" />
+  </root>
+  <root nodeRef="r:714e1a8b-f5ef-43ca-864f-d3aa5fa2e53e(jetbrains.mps.idea.java.fastFind)/2601455755478036261">
+    <nodeInfo nodeId="2601455755478083387" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="21" startPosition="136" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2601455755478083397" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="22" startPosition="0" endLine="23" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2601455755478083441" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="23" startPosition="59" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2601455755478064491" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="26" startPosition="56" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2601455755478072728" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="32" startPosition="141" endLine="33" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2601455755478083385" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="36" startPosition="143" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2601455755478095189" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="40" startPosition="31" endLine="41" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2601455755478097210" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="44" startPosition="34" endLine="45" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2601455755478093260" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="50" startPosition="36" endLine="51" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2601455755478062245" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="25" startPosition="33" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2601455755478061240" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findInstances#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+    <nodeInfo nodeId="2601455755478061257" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModelUsages#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+    <nodeInfo nodeId="2601455755478093238" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="2601455755478093244" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="2601455755478084847" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="24" startPosition="63" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2601455755478093250" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2601455755478061223" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findUsages#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+    <scopeInfo nodeId="2601455755478062246" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="26" startPosition="56" endLine="27" endPosition="41" />
+    <scopeInfo nodeId="2601455755478061256" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="32" startPosition="141" endLine="33" endPosition="65" />
+    <scopeInfo nodeId="2601455755478061273" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="36" startPosition="143" endLine="37" endPosition="65" />
+    <scopeInfo nodeId="2601455755478093243" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="40" startPosition="31" endLine="41" endPosition="67" />
+    <scopeInfo nodeId="2601455755478093249" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="44" startPosition="34" endLine="45" endPosition="70" />
+    <scopeInfo nodeId="2601455755478093258" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="50" startPosition="36" endLine="51" endPosition="57" />
+    <scopeInfo nodeId="2601455755478084850" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="25" startPosition="33" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="2601455755478061240" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="2601455755478061244" varName="collection" />
+      <varInfo nodeId="2601455755478061250" varName="consumer" />
+      <varInfo nodeId="2601455755478061253" varName="consumer1" />
+      <varInfo nodeId="2601455755478061247" varName="set" />
+    </scopeInfo>
+    <scopeInfo nodeId="2601455755478061257" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2601455755478061261" varName="collection" />
+      <varInfo nodeId="2601455755478061267" varName="consumer" />
+      <varInfo nodeId="2601455755478061270" varName="consumer1" />
+      <varInfo nodeId="2601455755478061264" varName="set" />
+    </scopeInfo>
+    <scopeInfo nodeId="2601455755478093238" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2601455755478093244" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="2601455755478084847" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="24" startPosition="63" endLine="29" endPosition="5">
+      <varInfo nodeId="2601455755478084853" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="2601455755478093250" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="48" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="2601455755478061239" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="21" startPosition="136" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="2601455755478061223" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2601455755478061233" varName="consumer" />
+      <varInfo nodeId="2601455755478061227" varName="models" />
+      <varInfo nodeId="2601455755478061236" varName="processedConsumer" />
+      <varInfo nodeId="2601455755478061230" varName="set" />
+    </scopeInfo>
+    <unitInfo nodeId="2601455755478036261" fileName="EmptyJavaPsiStubsFindUsages.java" startLine="20" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.idea.java.fastFind.EmptyJavaPsiStubsFindUsages" />
+  </root>
   <root nodeRef="r:714e1a8b-f5ef-43ca-864f-d3aa5fa2e53e(jetbrains.mps.idea.java.fastFind)/3335509261457006477">
-    <nodeInfo nodeId="5895509475574052967" fileName="JavaPsiStubsNavigationContributor.java" startLine="29" startPosition="59" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7414633741220296162" fileName="JavaPsiStubsNavigationContributor.java" startLine="31" startPosition="7" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7414633741221949162" fileName="JavaPsiStubsNavigationContributor.java" startLine="34" startPosition="57" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7414633741223568635" fileName="JavaPsiStubsNavigationContributor.java" startLine="35" startPosition="0" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7414633741221947837" fileName="JavaPsiStubsNavigationContributor.java" startLine="36" startPosition="44" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7414633741221996650" fileName="JavaPsiStubsNavigationContributor.java" startLine="38" startPosition="55" endLine="39" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7414633741220762633" fileName="JavaPsiStubsNavigationContributor.java" startLine="40" startPosition="11" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7414633741221997359" fileName="JavaPsiStubsNavigationContributor.java" startLine="43" startPosition="45" endLine="44" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7414633741222056036" fileName="JavaPsiStubsNavigationContributor.java" startLine="48" startPosition="47" endLine="49" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7414633741222127277" fileName="JavaPsiStubsNavigationContributor.java" startLine="50" startPosition="49" endLine="51" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7414633741222171550" fileName="JavaPsiStubsNavigationContributor.java" startLine="52" startPosition="44" endLine="53" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7414633741222183837" fileName="JavaPsiStubsNavigationContributor.java" startLine="54" startPosition="22" endLine="55" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7414633741222194509" fileName="JavaPsiStubsNavigationContributor.java" startLine="59" startPosition="54" endLine="60" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7414633741220305033" fileName="JavaPsiStubsNavigationContributor.java" startLine="64" startPosition="7" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9057399934941782158" fileName="JavaPsiStubsNavigationContributor.java" startLine="65" startPosition="0" endLine="66" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3335509261455861031" fileName="JavaPsiStubsNavigationContributor.java" startLine="70" startPosition="31" endLine="71" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9057399934941796046" fileName="JavaPsiStubsNavigationContributor.java" startLine="74" startPosition="34" endLine="75" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5895509475574774268" fileName="JavaPsiStubsNavigationContributor.java" startLine="80" startPosition="36" endLine="81" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3335509261457006479" fileName="JavaPsiStubsNavigationContributor.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaPsiStubsNavigationContributor#()V" />
-    <nodeInfo nodeId="7414633741222180996" fileName="JavaPsiStubsNavigationContributor.java" startLine="54" startPosition="20" endLine="56" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5895509475574050953" fileName="JavaPsiStubsNavigationContributor.java" startLine="28" startPosition="72" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7414633741221905459" fileName="JavaPsiStubsNavigationContributor.java" startLine="37" startPosition="48" endLine="40" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7414633741220760528" fileName="JavaPsiStubsNavigationContributor.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7414633741220760802" fileName="JavaPsiStubsNavigationContributor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="5895509475574774246" fileName="JavaPsiStubsNavigationContributor.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="5895509475574774252" fileName="JavaPsiStubsNavigationContributor.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="5895509475574774258" fileName="JavaPsiStubsNavigationContributor.java" startLine="78" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7414633741222028741" fileName="JavaPsiStubsNavigationContributor.java" startLine="47" startPosition="42" endLine="56" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7414633741220760534" fileName="JavaPsiStubsNavigationContributor.java" startLine="47" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Lorg/jetbrains/mps/openapi/language/SConcept;" />
-    <nodeInfo nodeId="7414633741220729953" fileName="JavaPsiStubsNavigationContributor.java" startLine="41" startPosition="0" endLine="62" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7414633741220702637" fileName="JavaPsiStubsNavigationContributor.java" startLine="33" startPosition="100" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6665967467965583166" fileName="JavaPsiStubsNavigationContributor.java" startLine="32" startPosition="0" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5895509475574050519" fileName="JavaPsiStubsNavigationContributor.java" startLine="27" startPosition="192" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2221716848402027316" fileName="JavaPsiStubsNavigationContributor.java" startLine="27" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findTargets#(Lorg/jetbrains/mps/openapi/persistence/NavigationParticipant/TargetKind;Ljava/util/Collection;Lorg/jetbrains/mps/util/Consumer;Lorg/jetbrains/mps/util/Consumer;)V" />
-    <scopeInfo nodeId="3335509261457006482" fileName="JavaPsiStubsNavigationContributor.java" startLine="24" startPosition="46" endLine="24" endPosition="46" />
-    <scopeInfo nodeId="5895509475574050955" fileName="JavaPsiStubsNavigationContributor.java" startLine="29" startPosition="59" endLine="30" endPosition="17" />
-    <scopeInfo nodeId="7414633741221905461" fileName="JavaPsiStubsNavigationContributor.java" startLine="38" startPosition="55" endLine="39" endPosition="21" />
-    <scopeInfo nodeId="7414633741220760532" fileName="JavaPsiStubsNavigationContributor.java" startLine="43" startPosition="45" endLine="44" endPosition="26" />
-    <scopeInfo nodeId="7414633741222028743" fileName="JavaPsiStubsNavigationContributor.java" startLine="48" startPosition="47" endLine="49" endPosition="130" />
-    <scopeInfo nodeId="7414633741222089485" fileName="JavaPsiStubsNavigationContributor.java" startLine="50" startPosition="49" endLine="51" endPosition="129" />
-    <scopeInfo nodeId="7414633741222136834" fileName="JavaPsiStubsNavigationContributor.java" startLine="52" startPosition="44" endLine="53" endPosition="129" />
-    <scopeInfo nodeId="7414633741222180997" fileName="JavaPsiStubsNavigationContributor.java" startLine="54" startPosition="22" endLine="55" endPosition="132" />
-    <scopeInfo nodeId="7414633741220760806" fileName="JavaPsiStubsNavigationContributor.java" startLine="59" startPosition="54" endLine="60" endPosition="85" />
-    <scopeInfo nodeId="5895509475574774251" fileName="JavaPsiStubsNavigationContributor.java" startLine="70" startPosition="31" endLine="71" endPosition="67" />
-    <scopeInfo nodeId="5895509475574774257" fileName="JavaPsiStubsNavigationContributor.java" startLine="74" startPosition="34" endLine="75" endPosition="70" />
-    <scopeInfo nodeId="5895509475574774266" fileName="JavaPsiStubsNavigationContributor.java" startLine="80" startPosition="36" endLine="81" endPosition="51" />
-    <scopeInfo nodeId="3335509261457006479" fileName="JavaPsiStubsNavigationContributor.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="7414633741220760528" fileName="JavaPsiStubsNavigationContributor.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="7414633741220760802" fileName="JavaPsiStubsNavigationContributor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="5895509475574774246" fileName="JavaPsiStubsNavigationContributor.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5895509475574774252" fileName="JavaPsiStubsNavigationContributor.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="5895509475574774258" fileName="JavaPsiStubsNavigationContributor.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="7414633741220760800" fileName="JavaPsiStubsNavigationContributor.java" startLine="47" startPosition="42" endLine="56" endPosition="15" />
-    <scopeInfo nodeId="7414633741220760534" fileName="JavaPsiStubsNavigationContributor.java" startLine="47" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="7414633741220702640" fileName="JavaPsiStubsNavigationContributor.java" startLine="34" startPosition="57" endLine="62" endPosition="13">
+    <nodeInfo nodeId="5895509475574052967" fileName="JavaPsiStubsNavigationContributor.java" startLine="28" startPosition="59" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7414633741220296162" fileName="JavaPsiStubsNavigationContributor.java" startLine="30" startPosition="7" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7414633741221949162" fileName="JavaPsiStubsNavigationContributor.java" startLine="33" startPosition="57" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7414633741223568635" fileName="JavaPsiStubsNavigationContributor.java" startLine="34" startPosition="0" endLine="35" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7414633741221947837" fileName="JavaPsiStubsNavigationContributor.java" startLine="35" startPosition="44" endLine="36" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7414633741221996650" fileName="JavaPsiStubsNavigationContributor.java" startLine="37" startPosition="55" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7414633741220762633" fileName="JavaPsiStubsNavigationContributor.java" startLine="39" startPosition="11" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7414633741221997359" fileName="JavaPsiStubsNavigationContributor.java" startLine="42" startPosition="45" endLine="43" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7414633741222056036" fileName="JavaPsiStubsNavigationContributor.java" startLine="47" startPosition="47" endLine="48" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7414633741222127277" fileName="JavaPsiStubsNavigationContributor.java" startLine="49" startPosition="49" endLine="50" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7414633741222171550" fileName="JavaPsiStubsNavigationContributor.java" startLine="51" startPosition="44" endLine="52" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7414633741222183837" fileName="JavaPsiStubsNavigationContributor.java" startLine="53" startPosition="22" endLine="54" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7414633741222194509" fileName="JavaPsiStubsNavigationContributor.java" startLine="58" startPosition="54" endLine="59" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7414633741220305033" fileName="JavaPsiStubsNavigationContributor.java" startLine="63" startPosition="7" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9057399934941782158" fileName="JavaPsiStubsNavigationContributor.java" startLine="64" startPosition="0" endLine="65" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3335509261455861031" fileName="JavaPsiStubsNavigationContributor.java" startLine="69" startPosition="31" endLine="70" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9057399934941796046" fileName="JavaPsiStubsNavigationContributor.java" startLine="73" startPosition="34" endLine="74" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5895509475574774268" fileName="JavaPsiStubsNavigationContributor.java" startLine="79" startPosition="36" endLine="80" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3335509261457006479" fileName="JavaPsiStubsNavigationContributor.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaPsiStubsNavigationContributor#()V" />
+    <nodeInfo nodeId="7414633741222180996" fileName="JavaPsiStubsNavigationContributor.java" startLine="53" startPosition="20" endLine="55" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5895509475574050953" fileName="JavaPsiStubsNavigationContributor.java" startLine="27" startPosition="37" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7414633741221905459" fileName="JavaPsiStubsNavigationContributor.java" startLine="36" startPosition="48" endLine="39" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7414633741220760528" fileName="JavaPsiStubsNavigationContributor.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7414633741220760802" fileName="JavaPsiStubsNavigationContributor.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="5895509475574774246" fileName="JavaPsiStubsNavigationContributor.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="5895509475574774252" fileName="JavaPsiStubsNavigationContributor.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="5895509475574774258" fileName="JavaPsiStubsNavigationContributor.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7414633741222028741" fileName="JavaPsiStubsNavigationContributor.java" startLine="46" startPosition="42" endLine="55" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7414633741220760534" fileName="JavaPsiStubsNavigationContributor.java" startLine="46" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Lorg/jetbrains/mps/openapi/language/SConcept;" />
+    <nodeInfo nodeId="7414633741220729953" fileName="JavaPsiStubsNavigationContributor.java" startLine="40" startPosition="0" endLine="61" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7414633741220702637" fileName="JavaPsiStubsNavigationContributor.java" startLine="32" startPosition="100" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6665967467965583166" fileName="JavaPsiStubsNavigationContributor.java" startLine="31" startPosition="0" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3200697098704606065" fileName="JavaPsiStubsNavigationContributor.java" startLine="26" startPosition="192" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2221716848402027316" fileName="JavaPsiStubsNavigationContributor.java" startLine="26" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findTargets#(Lorg/jetbrains/mps/openapi/persistence/NavigationParticipant/TargetKind;Ljava/util/Collection;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+    <scopeInfo nodeId="3335509261457006482" fileName="JavaPsiStubsNavigationContributor.java" startLine="23" startPosition="46" endLine="23" endPosition="46" />
+    <scopeInfo nodeId="5895509475574050955" fileName="JavaPsiStubsNavigationContributor.java" startLine="28" startPosition="59" endLine="29" endPosition="17" />
+    <scopeInfo nodeId="7414633741221905461" fileName="JavaPsiStubsNavigationContributor.java" startLine="37" startPosition="55" endLine="38" endPosition="21" />
+    <scopeInfo nodeId="7414633741220760532" fileName="JavaPsiStubsNavigationContributor.java" startLine="42" startPosition="45" endLine="43" endPosition="26" />
+    <scopeInfo nodeId="7414633741222028743" fileName="JavaPsiStubsNavigationContributor.java" startLine="47" startPosition="47" endLine="48" endPosition="130" />
+    <scopeInfo nodeId="7414633741222089485" fileName="JavaPsiStubsNavigationContributor.java" startLine="49" startPosition="49" endLine="50" endPosition="129" />
+    <scopeInfo nodeId="7414633741222136834" fileName="JavaPsiStubsNavigationContributor.java" startLine="51" startPosition="44" endLine="52" endPosition="129" />
+    <scopeInfo nodeId="7414633741222180997" fileName="JavaPsiStubsNavigationContributor.java" startLine="53" startPosition="22" endLine="54" endPosition="132" />
+    <scopeInfo nodeId="7414633741220760806" fileName="JavaPsiStubsNavigationContributor.java" startLine="58" startPosition="54" endLine="59" endPosition="85" />
+    <scopeInfo nodeId="5895509475574774251" fileName="JavaPsiStubsNavigationContributor.java" startLine="69" startPosition="31" endLine="70" endPosition="67" />
+    <scopeInfo nodeId="5895509475574774257" fileName="JavaPsiStubsNavigationContributor.java" startLine="73" startPosition="34" endLine="74" endPosition="70" />
+    <scopeInfo nodeId="5895509475574774266" fileName="JavaPsiStubsNavigationContributor.java" startLine="79" startPosition="36" endLine="80" endPosition="51" />
+    <scopeInfo nodeId="3335509261457006479" fileName="JavaPsiStubsNavigationContributor.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="7414633741220760528" fileName="JavaPsiStubsNavigationContributor.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="7414633741220760802" fileName="JavaPsiStubsNavigationContributor.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5895509475574774246" fileName="JavaPsiStubsNavigationContributor.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="5895509475574774252" fileName="JavaPsiStubsNavigationContributor.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="5895509475574774258" fileName="JavaPsiStubsNavigationContributor.java" startLine="77" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="7414633741220760800" fileName="JavaPsiStubsNavigationContributor.java" startLine="46" startPosition="42" endLine="55" endPosition="15" />
+    <scopeInfo nodeId="7414633741220760534" fileName="JavaPsiStubsNavigationContributor.java" startLine="46" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="7414633741220702640" fileName="JavaPsiStubsNavigationContributor.java" startLine="33" startPosition="57" endLine="61" endPosition="13">
       <varInfo nodeId="7414633741221947840" varName="name" />
       <varInfo nodeId="7414633741223568633" varName="psiClaz" />
     </scopeInfo>
-    <scopeInfo nodeId="7414633741220662734" fileName="JavaPsiStubsNavigationContributor.java" startLine="33" startPosition="100" endLine="63" endPosition="9" />
-    <scopeInfo nodeId="7414633741220702637" fileName="JavaPsiStubsNavigationContributor.java" startLine="33" startPosition="100" endLine="63" endPosition="9">
+    <scopeInfo nodeId="7414633741220662734" fileName="JavaPsiStubsNavigationContributor.java" startLine="32" startPosition="100" endLine="62" endPosition="9" />
+    <scopeInfo nodeId="7414633741220702637" fileName="JavaPsiStubsNavigationContributor.java" startLine="32" startPosition="100" endLine="62" endPosition="9">
       <varInfo nodeId="7414633741220702638" varName="psiClass" />
     </scopeInfo>
-    <scopeInfo nodeId="6665967467965583166" fileName="JavaPsiStubsNavigationContributor.java" startLine="32" startPosition="0" endLine="64" endPosition="7">
+    <scopeInfo nodeId="6665967467965583166" fileName="JavaPsiStubsNavigationContributor.java" startLine="31" startPosition="0" endLine="63" endPosition="7">
       <varInfo nodeId="6665967467965583585" varName="javaFile" />
     </scopeInfo>
-    <scopeInfo nodeId="5895509475574050525" fileName="JavaPsiStubsNavigationContributor.java" startLine="28" startPosition="72" endLine="66" endPosition="39" />
-    <scopeInfo nodeId="2221716848402027331" fileName="JavaPsiStubsNavigationContributor.java" startLine="27" startPosition="192" endLine="67" endPosition="5" />
-    <scopeInfo nodeId="5895509475574050519" fileName="JavaPsiStubsNavigationContributor.java" startLine="27" startPosition="192" endLine="67" endPosition="5">
-      <varInfo nodeId="5895509475574050521" varName="model" />
+    <scopeInfo nodeId="5895509475574050525" fileName="JavaPsiStubsNavigationContributor.java" startLine="27" startPosition="37" endLine="65" endPosition="39" />
+    <scopeInfo nodeId="2221716848402027331" fileName="JavaPsiStubsNavigationContributor.java" startLine="26" startPosition="192" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="3200697098704606065" fileName="JavaPsiStubsNavigationContributor.java" startLine="26" startPosition="192" endLine="66" endPosition="5">
+      <varInfo nodeId="3200697098704606599" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2221716848402027316" fileName="JavaPsiStubsNavigationContributor.java" startLine="27" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="2221716848402027316" fileName="JavaPsiStubsNavigationContributor.java" startLine="26" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="2221716848402027322" varName="collection" />
       <varInfo nodeId="2221716848402027325" varName="consumer" />
       <varInfo nodeId="2221716848402027320" varName="kind" />
       <varInfo nodeId="2221716848402027328" varName="processedConsumer" />
     </scopeInfo>
-    <unitInfo nodeId="7414633741220760526" fileName="JavaPsiStubsNavigationContributor.java" startLine="42" startPosition="31" endLine="62" endPosition="11" unitName="jetbrains.mps.idea.java.fastFind.JavaPsiStubsNavigationContributor$1" />
-    <unitInfo nodeId="3335509261457006477" fileName="JavaPsiStubsNavigationContributor.java" startLine="23" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.idea.java.fastFind.JavaPsiStubsNavigationContributor" />
+    <unitInfo nodeId="7414633741220760526" fileName="JavaPsiStubsNavigationContributor.java" startLine="41" startPosition="31" endLine="61" endPosition="11" unitName="jetbrains.mps.idea.java.fastFind.JavaPsiStubsNavigationContributor$1" />
+    <unitInfo nodeId="3335509261457006477" fileName="JavaPsiStubsNavigationContributor.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.idea.java.fastFind.JavaPsiStubsNavigationContributor" />
   </root>
 </debugInfo>
 

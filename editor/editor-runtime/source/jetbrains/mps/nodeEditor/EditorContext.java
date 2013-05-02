@@ -19,11 +19,13 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
@@ -55,6 +57,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private IPerformanceTracer myPerformanceTracer = null;
 
   private ReferencedNodeContext myCurrentRefNodeContext;
+  private EditorCellFactory myCellFactory;
 
   public EditorContext(EditorComponent editorComponent, SModel model, IOperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
@@ -411,7 +414,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
 
     return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, (cellWithRole), this, roleAttribute,
-      myModelModifications);
+        myModelModifications);
   }
 
   @Override
@@ -463,5 +466,13 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
       return;
     }
     myPerformanceTracer.pop();
+  }
+
+  @Override
+  public EditorCellFactory getCellFactory() {
+    if (myCellFactory == null) {
+      myCellFactory = new EditorCellFactoryImpl(this);
+    }
+    return myCellFactory;
   }
 }

@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Collection;
 import java.util.Set;
@@ -38,7 +38,7 @@ import java.util.Set;
  */
 public class FindUsagesUtil {
 
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(FindUsagesUtil.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(FindUsagesUtil.class));
 
   public static boolean hasModelUsages(SModel m, Collection<SModelReference> models) {
     if (m == null) return false;

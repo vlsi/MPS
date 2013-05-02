@@ -20,7 +20,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;

@@ -26,7 +26,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
@@ -142,7 +142,7 @@ public class Ant_Command {
     final Wrappers._T<IFile> file = new Wrappers._T<IFile>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(project), FileSystem.getInstance().getFileByPath(SNodeOperations.getModel(project).getModule().getGeneratorOutputPath()));
+        file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(project), ((AbstractModule) SNodeOperations.getModel(project).getModule()).getOutputPath());
         file.value = file.value.getDescendant(SPropertyOperations.getString(project, "name") + ".xml");
       }
     });

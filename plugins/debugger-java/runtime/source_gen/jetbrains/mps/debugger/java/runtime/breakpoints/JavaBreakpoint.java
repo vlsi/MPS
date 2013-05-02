@@ -24,7 +24,7 @@ import com.sun.jdi.IncompatibleThreadStateException;
 public abstract class JavaBreakpoint extends AbstractBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
   private int mySuspendPolicy = EventRequest.SUSPEND_ALL;
   private boolean myLogMessage = false;
-  private final Logger LOG = Logger.getLogger(LogManager.getLogger(JavaBreakpoint.class));
+  private final Logger LOG = Logger.wrap(LogManager.getLogger(JavaBreakpoint.class));
 
   protected JavaBreakpoint(Project project) {
     super(project);

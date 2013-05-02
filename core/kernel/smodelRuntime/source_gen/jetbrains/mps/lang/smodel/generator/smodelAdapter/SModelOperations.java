@@ -23,7 +23,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.ProjectStructureModule;
@@ -178,7 +178,7 @@ public class SModelOperations {
   }
 
   public static SNode getModuleStub(SModel model) {
-    final IModule module = model.getModule();
+    final SModule module = model.getModule();
     if (module instanceof Generator) {
       Language lang = ((Generator) module).getSourceLanguage();
       SModel m = ProjectStructureModule.getInstance().getModelByModule(lang);

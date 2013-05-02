@@ -21,12 +21,10 @@ import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
-import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
@@ -45,7 +43,6 @@ import jetbrains.mps.newTypesystem.state.blocks.ComparableBlock;
 import jetbrains.mps.newTypesystem.state.blocks.ConditionKind;
 import jetbrains.mps.newTypesystem.state.blocks.InequalityBlock;
 import jetbrains.mps.newTypesystem.state.blocks.RelationKind;
-import jetbrains.mps.newTypesystem.state.blocks.TargetBlock;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -53,7 +50,6 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.ManyToManyMap;
@@ -68,7 +64,7 @@ import java.util.Set;
 import java.util.Stack;
 
 public class State {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(State.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(State.class));
 
   private final TypeCheckingContext myTypeCheckingContext;
 

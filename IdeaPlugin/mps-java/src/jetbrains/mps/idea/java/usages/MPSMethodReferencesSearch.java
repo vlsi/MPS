@@ -1,7 +1,6 @@
 package jetbrains.mps.idea.java.usages;
 
 import com.intellij.openapi.application.QueryExecutorBase;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiMethod;
@@ -15,24 +14,17 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.BaseScope;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 
 /**
@@ -95,8 +87,8 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
               if (!(usagePsiElement instanceof MPSPsiNode)) continue;
               for (PsiElement e : usagePsiElement.getChildren()) {
                 if (!(e instanceof MPSPsiRef)) continue;
-                if (role.equals(((MPSPsiRef) e).getContainingRole())) {
-                  consumer.process(((MPSPsiRef) e).getReference());
+                if (role.equals(((MPSPsiRef) e).getRole())) {
+                  consumer.process(e.getReference());
                 }
               }
             }

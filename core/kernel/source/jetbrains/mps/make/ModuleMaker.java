@@ -24,7 +24,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -33,7 +33,6 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -56,7 +55,7 @@ import java.util.*;
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
 public class ModuleMaker {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ModuleMaker.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ModuleMaker.class));
 
   private final static int MAX_ERRORS = 100;
 
@@ -110,7 +109,7 @@ public class ModuleMaker {
     try {
       monitor.step("Collecting candidates");
       ttrace.push("collecting candidates", false);
-      Collection<IModule> candidates = new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE);
+      Collection<SModule> candidates = new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE);
       ttrace.pop();
       monitor.advance(1);
 
@@ -122,7 +121,7 @@ public class ModuleMaker {
 
       ttrace.push("modules to compile", false);
       monitor.step("Calculating modules to compile");
-      Set<IModule> toCompile = (Set) getModulesToCompile((Set) candidates);
+      Set<SModule> toCompile = (Set) getModulesToCompile((Set) candidates);
       ttrace.pop();
       monitor.advance(1);
 
@@ -134,14 +133,14 @@ public class ModuleMaker {
 
       monitor.step("Building module cycles");
       ttrace.push("building cycles", false);
-      List<Set<IModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile);
+      List<Set<SModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile);
       ttrace.pop();
       monitor.advance(1);
 
       ProgressMonitor inner = monitor.subTask(8);
       inner.start("", toCompile.size());
       try {
-        for (Set<IModule> cycle : schedule) {
+        for (Set<SModule> cycle : schedule) {
           if (monitor.isCanceled()) break;
 
           inner.step("compiling " + cycle);
@@ -404,7 +403,7 @@ public class ModuleMaker {
   }
 
   private boolean isExcluded(SModule m) {
-    return m instanceof Generator || m.isReadOnly() || !SModuleOperations.isCompileInMps(m);
+    return m.isReadOnly() || !SModuleOperations.isCompileInMps(m);
   }
 
   private class MyCompilationResultAdapter extends CompilationResultAdapter {

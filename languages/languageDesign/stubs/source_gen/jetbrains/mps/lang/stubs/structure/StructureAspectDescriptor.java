@@ -4,7 +4,8 @@ package jetbrains.mps.lang.stubs.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,29 +15,29 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "canCreate", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.CanCreateFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("canCreate", "").staticScope(StaticScope.NONE).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"canCreateFunc", "createFunc"}, new boolean[]{false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.CreateBlock").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"canCreateFunc", "createFunc"}, new boolean[]{false, false}).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.CreateFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "create", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.CreateFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("create", "").staticScope(StaticScope.NONE).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.DescriptorsFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "descriptors", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.DescriptorsFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("descriptors", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "module", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("module", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"languageId", "languageFqName"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.LanguageRef").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("languageId", "languageFqName").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"importedLanguage"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.ModelCreationSettings").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"importedLanguage"}, new boolean[]{true}).create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", false, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"}, new String[]{}, new String[]{}, new String[]{"descriptorsFunc", "createBlock"}, new boolean[]{false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration").super_("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier").parents("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").children(new String[]{"descriptorsFunc", "createBlock"}, new boolean[]{false, false}).create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "root", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("root", "").staticScope(StaticScope.NONE).create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "model", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("model", "").staticScope(StaticScope.NONE).create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "fqName", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("fqName", "").staticScope(StaticScope.NONE).create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "modelRoot", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("modelRoot", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

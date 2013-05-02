@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.junit.runner.notification.Failure;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -55,7 +55,7 @@ public class MakeRunner extends Runner {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        for (IModule mod : MPSModuleRepository.getInstance().getAllModules()) {
+        for (SModule mod : MPSModuleRepository.getInstance().getAllModules()) {
           if (!(mod instanceof AbstractModule)) {
             continue;
           }

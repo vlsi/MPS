@@ -31,7 +31,7 @@ import com.intellij.psi.PsiWhiteSpace;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.SolutionIdea;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -162,7 +162,7 @@ public class MpsSourcePosition extends SourcePosition {
           return null;
         }
         SModel modelDescriptor = node.getModel();
-        IModule module = modelDescriptor.getModule();
+        SModule module = modelDescriptor.getModule();
         if (!(module instanceof SolutionIdea)) {
           return null;
         }

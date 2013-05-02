@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.TargetKind;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.util.Consumer;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Collection;
 import java.util.HashSet;

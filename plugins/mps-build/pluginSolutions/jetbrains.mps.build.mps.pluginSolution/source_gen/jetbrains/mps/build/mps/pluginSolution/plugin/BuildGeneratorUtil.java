@@ -13,7 +13,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
@@ -59,9 +59,9 @@ public class BuildGeneratorUtil {
     final IFile solutionFile = solutionBaseDirFile.getDescendant(solutionName + MPSExtentions.DOT_SOLUTION);
     final Solution solution;
     if (solutionFile.exists()) {
-      IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+      SModule module = ModelAccess.instance().runReadAction(new Computable<SModule>() {
         @Override
-        public IModule compute() {
+        public SModule compute() {
           return ModuleFileTracker.getInstance().getModuleByFile(solutionFile);
         }
       });

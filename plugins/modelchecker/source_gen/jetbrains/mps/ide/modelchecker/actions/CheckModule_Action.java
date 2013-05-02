@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.apache.log4j.Priority;
@@ -19,7 +19,6 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -42,12 +41,12 @@ public class CheckModule_Action extends BaseAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        List<IModule> modulesToCheck = new ArrayList<IModule>();
-        if (((List<IModule>) MapSequence.fromMap(_params).get("modules")) != null) {
-          modulesToCheck.addAll(((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+        List<SModule> modulesToCheck = new ArrayList<SModule>();
+        if (((List<SModule>) MapSequence.fromMap(_params).get("modules")) != null) {
+          modulesToCheck.addAll(((List<SModule>) MapSequence.fromMap(_params).get("modules")));
         }
-        if (((IModule) MapSequence.fromMap(_params).get("module")) != null && !(modulesToCheck.contains(((IModule) MapSequence.fromMap(_params).get("module"))))) {
-          modulesToCheck.add(((IModule) MapSequence.fromMap(_params).get("module")));
+        if (((SModule) MapSequence.fromMap(_params).get("module")) != null && !(modulesToCheck.contains(((SModule) MapSequence.fromMap(_params).get("module"))))) {
+          modulesToCheck.add(((SModule) MapSequence.fromMap(_params).get("module")));
         }
 
         String whatToCheck = "Module";
@@ -90,12 +89,12 @@ public class CheckModule_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<IModule> modulesToCheck = new ArrayList<IModule>();
-      if (((List<IModule>) MapSequence.fromMap(_params).get("modules")) != null) {
-        modulesToCheck.addAll(((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+      List<SModule> modulesToCheck = new ArrayList<SModule>();
+      if (((List<SModule>) MapSequence.fromMap(_params).get("modules")) != null) {
+        modulesToCheck.addAll(((List<SModule>) MapSequence.fromMap(_params).get("modules")));
       }
-      if (((IModule) MapSequence.fromMap(_params).get("module")) != null && !(modulesToCheck.contains(((IModule) MapSequence.fromMap(_params).get("module"))))) {
-        modulesToCheck.add(((IModule) MapSequence.fromMap(_params).get("module")));
+      if (((SModule) MapSequence.fromMap(_params).get("module")) != null && !(modulesToCheck.contains(((SModule) MapSequence.fromMap(_params).get("module"))))) {
+        modulesToCheck.add(((SModule) MapSequence.fromMap(_params).get("module")));
       }
 
       if (modulesToCheck.isEmpty()) {
@@ -103,7 +102,7 @@ public class CheckModule_Action extends BaseAction {
       }
 
       if (modulesToCheck.size() > 1) {
-        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) modulesToCheck), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) modulesToCheck), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       } else {
         ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModule(modulesToCheck.get(0), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       }

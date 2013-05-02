@@ -21,7 +21,7 @@
     <nodeInfo nodeId="2112637535491845078" fileName="TraceInfoTest.java" startLine="122" startPosition="54" endLine="123" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="443738895322058187" fileName="TraceInfoTest.java" startLine="125" startPosition="19" endLine="126" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="443738895322061894" fileName="TraceInfoTest.java" startLine="126" startPosition="72" endLine="127" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715237098669837837" fileName="TraceInfoTest.java" startLine="132" startPosition="66" endLine="133" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3715237098669837837" fileName="TraceInfoTest.java" startLine="132" startPosition="66" endLine="133" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3715237098669965866" fileName="TraceInfoTest.java" startLine="136" startPosition="27" endLine="137" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669837859" fileName="TraceInfoTest.java" startLine="140" startPosition="15" endLine="141" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669773037" fileName="TraceInfoTest.java" startLine="146" startPosition="9" endLine="147" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -60,7 +60,7 @@
     <nodeInfo nodeId="3715237098669794693" fileName="TraceInfoTest.java" startLine="158" startPosition="45" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="441885278109132720" fileName="TraceInfoTest.java" startLine="78" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="8217016972551063422" fileName="TraceInfoTest.java" startLine="93" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="3715237098669837855" fileName="TraceInfoTest.java" startLine="133" startPosition="134" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="3715237098669837855" fileName="TraceInfoTest.java" startLine="133" startPosition="120" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="3715237098669909804" fileName="TraceInfoTest.java" startLine="34" startPosition="24" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669909863" fileName="TraceInfoTest.java" startLine="48" startPosition="25" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669909898" fileName="TraceInfoTest.java" startLine="62" startPosition="36" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

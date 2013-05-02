@@ -14,19 +14,19 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class TypeCheckingErros_Test extends BaseTransformationTest4 {
   @Test
   public void test_TypesCheck3813896760029621933() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)");
+    this.initTest("${mps_home}", "r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)");
     this.runTest("jetbrains.mps.baseLanguage.methodDispatch.test.tests.TypeCheckingErros_Test$TestBody", "test_TypesCheck3813896760029621933", true);
   }
 
   @Test
   public void test_TypesCheck3813896760029627239() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)");
+    this.initTest("${mps_home}", "r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)");
     this.runTest("jetbrains.mps.baseLanguage.methodDispatch.test.tests.TypeCheckingErros_Test$TestBody", "test_TypesCheck3813896760029627239", true);
   }
 
   @Test
   public void test_TypesCheck3813896760029629781() throws Throwable {
-    this.initTest("${mps_home}/MPS.mpr", "r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)");
+    this.initTest("${mps_home}", "r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)");
     this.runTest("jetbrains.mps.baseLanguage.methodDispatch.test.tests.TypeCheckingErros_Test$TestBody", "test_TypesCheck3813896760029629781", true);
   }
 

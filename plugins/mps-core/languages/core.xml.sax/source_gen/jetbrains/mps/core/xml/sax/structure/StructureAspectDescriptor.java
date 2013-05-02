@@ -4,7 +4,8 @@ package jetbrains.mps.core.xml.sax.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,45 +15,45 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction", false, new String[]{"jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "attribute handler", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler").super_("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction").parents("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction").alias("attribute handler", "").staticScope(StaticScope.NONE).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler_value", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "value", "attribute value", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler_value").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("value", "attribute value").staticScope(StaticScope.NONE).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"attribute"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("attribute").staticScope(StaticScope.NONE).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"isRequired"}, new String[]{}, new String[]{"handler"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("isRequired").children(new String[]{"handler"}, new boolean[]{false}).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"result"}, new boolean[]{false}, false, false, "break parser", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"result"}, new boolean[]{false}).alias("break parser", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction", false, new String[]{"jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "child handler", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler").super_("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction").parents("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction").alias("child handler", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler_childObject", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "child", "parsed child object", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler_childObject").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("child", "parsed child object").staticScope(StaticScope.NONE).create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"tagName", "overrideTag"}, new String[]{"rule"}, new String[]{"handler"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("tagName", "overrideTag").references("rule").children(new String[]{"handler"}, new boolean[]{false}).create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXFieldDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"type"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXFieldDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"type"}, new boolean[]{false}).create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"declaration"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").staticScope(StaticScope.NONE).create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").abstract_().staticScope(StaticScope.NONE).create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXHandler_resultObject", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "result", "an object", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXHandler_resultObject").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("result", "an object").staticScope(StaticScope.NONE).create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "locator", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("locator", "").staticScope(StaticScope.NONE).create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "create", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("create", "").staticScope(StaticScope.NONE).create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"tagName", "isCompact"}, new String[]{}, new String[]{"type", "attrs", "children", "text", "creator", "validator"}, new boolean[]{false, true, true, false, false, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("tagName", "isCompact").children(new String[]{"type", "attrs", "children", "text", "creator", "validator"}, new boolean[]{false, true, true, false, false, false}).create();
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeValidator", "jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction", false, new String[]{"jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "validate", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeValidator").super_("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction").parents("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction").alias("validate", "").staticScope(StaticScope.NONE).create();
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXParser", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"root"}, new String[]{"parameters", "nodes", "fields", "globalText"}, new boolean[]{true, true, true, false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXParser").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("root").children(new String[]{"parameters", "nodes", "fields", "globalText"}, new boolean[]{true, true, true, false}).create();
       case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction", false, new String[]{"jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "text handler", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler").super_("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction").parents("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction").alias("text handler", "").staticScope(StaticScope.NONE).create();
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler_value", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "value", "text value", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler_value").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("value", "text value").staticScope(StaticScope.NONE).create();
       case 19:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.sax.structure.XMLSAXTextRule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"handler"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXTextRule").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"handler"}, new boolean[]{false}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

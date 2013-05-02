@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:60ad1897-dab7-4d3f-88a6-223e75141d15(jetbrains.mps.debugger.java.privateMembers.editor)/5619723216767159054">
     <nodeInfo nodeId="5619723216767159054" fileName="PrivateStaticFieldReference_Editor.java" startLine="41" startPosition="79" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5619723216767159054" fileName="PrivateStaticFieldReference_Editor.java" startLine="45" startPosition="89" endLine="46" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -32,7 +33,7 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.*;
+import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
@@ -77,6 +78,15 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   private ModelLoadingState myNamesLoadingState = ModelLoadingState.NOT_LOADED;
 
   private CachesInvalidator myCachesInvalidator;
+  private SModelRepositoryListener mySModelRepositoryListener = new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
+    @Override
+    public void modelsReplaced(Set<SModel> replacedModels) {
+      if (replacedModels.contains(getStructureModelDescriptor())) {
+        invalidateConceptDeclarationsCache();
+      }
+    }
+  };
+
 
   //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
   private ClassLoader myStubsLoader = new MyClassLoader();
@@ -85,6 +95,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     super(file);
     myLanguageDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
+    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
   }
 
   @Override
@@ -205,6 +216,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Override
   public void dispose() {
     super.dispose();
+    SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
   }
 

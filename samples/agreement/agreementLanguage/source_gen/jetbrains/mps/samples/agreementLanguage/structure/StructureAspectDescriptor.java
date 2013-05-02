@@ -4,7 +4,7 @@ package jetbrains.mps.samples.agreementLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,39 +14,39 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.AccountType").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"eventType", "accountType"}, new boolean[]{true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"eventType", "accountType"}, new boolean[]{true, true}).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"year", "month", "day"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "date", "exect date", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.Date").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("year", "month", "day").alias("date", "exect date").create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "FUTURE", "future time", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.Date_Future").super_("jetbrains.mps.samples.agreementLanguage.structure.Date").parents("jetbrains.mps.samples.agreementLanguage.structure.Date").alias("FUTURE", "future time").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Date", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.Date"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "PAST", "past time", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.Date_Past").super_("jetbrains.mps.samples.agreementLanguage.structure.Date").parents("jetbrains.mps.samples.agreementLanguage.structure.Date").alias("PAST", "past time").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"taxable"}, new String[]{"type"}, new String[]{"postingRule"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.Event").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("taxable").references("type").children(new String[]{"postingRule"}, new boolean[]{true}).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"variable"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.EventType").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"variable"}, new boolean[]{true}).create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"type"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.EventVariable").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("type").create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{"eventVariable"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference").super_("jetbrains.mps.samples.formulaLanguage.structure.Expression").parents("jetbrains.mps.samples.formulaLanguage.structure.Expression").references("eventVariable").create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"value", "event"}, new boolean[]{true, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.Plan").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"value", "event"}, new boolean[]{true, true}).create();
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.formulaLanguage.structure.Formula", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Formula"}, new String[]{}, new String[]{"account"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.PostingRule").super_("jetbrains.mps.samples.formulaLanguage.structure.Formula").parents("jetbrains.mps.samples.formulaLanguage.structure.Formula").references("account").create();
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{}, new String[]{}, new String[]{"postingRule"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty").super_("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty").parents("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty").children(new String[]{"postingRule"}, new boolean[]{false}).create();
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.formulaLanguage.structure.Constant", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{"unit"}, new String[]{}, new String[]{"amount"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.Quantity").super_("jetbrains.mps.samples.formulaLanguage.structure.Constant").parents("jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("unit").children(new String[]{"amount"}, new boolean[]{false}).create();
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", false, new String[]{"jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"}, new String[]{}, new String[]{}, new String[]{"quantity"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty").super_("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty").parents("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty").children(new String[]{"quantity"}, new boolean[]{false}).create();
       case 14:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"date", "value"}, new boolean[]{false, false}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"date", "value"}, new boolean[]{false, false}).abstract_().create();
       case 15:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"type"}, new String[]{}, new String[]{"quantity"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.Value").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("type").children(new String[]{"quantity"}, new boolean[]{true}).create();
       case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.agreementLanguage.structure.ValueReference", "jetbrains.mps.samples.formulaLanguage.structure.Expression", false, new String[]{"jetbrains.mps.samples.formulaLanguage.structure.Expression"}, new String[]{}, new String[]{"value"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.ValueReference").super_("jetbrains.mps.samples.formulaLanguage.structure.Expression").parents("jetbrains.mps.samples.formulaLanguage.structure.Expression").references("value").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

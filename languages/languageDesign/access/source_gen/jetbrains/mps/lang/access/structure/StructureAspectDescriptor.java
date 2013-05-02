@@ -4,7 +4,8 @@ package jetbrains.mps.lang.access.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,25 +15,25 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"commandClosureLiteral"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"commandClosureLiteral"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").staticScope(StaticScope.NONE).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.CommandClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.CommandClosureLiteral").super_("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").parents("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").staticScope(StaticScope.NONE).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement"}, new String[]{}, new String[]{}, new String[]{"project"}, new boolean[]{false}, false, false, "execute command in EDT", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").children(new String[]{"project"}, new boolean[]{false}).alias("execute command in EDT", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "command", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("command", "").staticScope(StaticScope.NONE).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "execute in EDT", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement").alias("execute in EDT", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "read action", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("read action", "").staticScope(StaticScope.NONE).create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "undo-transparent command", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("undo-transparent command", "").staticScope(StaticScope.NONE).create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "write action", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement").super_("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").parents("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync").alias("write action", "").staticScope(StaticScope.NONE).create();
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync", null, true, new String[]{}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync").interface_().create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

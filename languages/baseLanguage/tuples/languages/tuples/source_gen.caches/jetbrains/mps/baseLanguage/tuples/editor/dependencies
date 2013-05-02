@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleLiteral_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleMemberAccessExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleType_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentAccessOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleComponentReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleLiteral_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.NamedTupleType_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.editor.IndexedTupleLiteral_Editor" file="IndexedTupleLiteral_Editor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

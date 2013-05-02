@@ -44,7 +44,7 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -263,7 +263,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     return ModuleUtilCore.findModuleForFile(modelVFile, treeNode.getProject());
   }
 
-  private IModule getModule(AbstractTreeNode selectedNode) {
+  private SModule getModule(AbstractTreeNode selectedNode) {
     EditableSModelDescriptor contextModel = getContextModel(selectedNode);
     return contextModel != null ? contextModel.getModule() : null;
   }

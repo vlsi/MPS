@@ -45,5 +45,12 @@ public interface SModelRepositoryListener {
    */
 
   void modelsReplaced(Set<SModel> reloadedModels);
+
+  SModelRepositoryListenerPriority getPriority();
+
+  public enum SModelRepositoryListenerPriority {
+    PLATFORM,
+    CLIENT
+  }
 }
 

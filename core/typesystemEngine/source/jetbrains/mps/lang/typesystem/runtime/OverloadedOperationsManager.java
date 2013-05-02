@@ -25,7 +25,7 @@ import jetbrains.mps.util.CollectionUtil;
 import java.util.*;
 
 public class OverloadedOperationsManager {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(OverloadedOperationsManager.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(OverloadedOperationsManager.class));
 
   private RuleSet<IOverloadedOpsTypesProvider> myOperationsToTypeProviders =
     new RuleSet<IOverloadedOpsTypesProvider>();

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.dependency;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
@@ -40,23 +40,11 @@ public class GlobalModuleDependenciesManager {
 
   public GlobalModuleDependenciesManager(Collection<? extends SModule> modules) {
     myModules = new HashSet<SModule>(modules);
-    addGenerators();
   }
 
   public GlobalModuleDependenciesManager(@NotNull SModule module) {
     myModules = new HashSet<SModule>();
     myModules.add(module);
-    addGenerators();
-  }
-
-  // this is a temporary fix for MPS-15883, should be removed when generators are compiled with their own classpath
-  private void addGenerators() {
-    Set<SModule> addModules = new HashSet<SModule>();
-    for (SModule m : myModules) {
-      if (!(m instanceof Language)) continue;
-      addModules.addAll(((Language) m).getGenerators());
-    }
-    myModules.addAll(addModules);
   }
 
   /**
@@ -87,7 +75,7 @@ public class GlobalModuleDependenciesManager {
    * @param depType determines the type of dependecies we want to get
    * @return all modules in scope of given
    */
-  public Collection<IModule> getModules(Deptype depType) {
+  public Collection<SModule> getModules(Deptype depType) {
     Set<SModule> neighbours = collectNeighbours(depType);
 
     Set<SModule> result = new HashSet<SModule>();

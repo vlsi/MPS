@@ -23,8 +23,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.IScope;
@@ -48,7 +49,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 public class ReferencesTest extends BaseMPSTest {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(ReferencesTest.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReferencesTest.class));
 
   public void testBrokenReferences() {
     IdeMain.setTestMode(TestMode.CORE_TEST);
@@ -57,7 +58,7 @@ public class ReferencesTest extends BaseMPSTest {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         new ModuleMaker().make(
-            new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()),
+            new LinkedHashSet<SModule>(MPSModuleRepository.getInstance().getAllModules()),
             new EmptyProgressMonitor());
 
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -91,7 +92,7 @@ public class ReferencesTest extends BaseMPSTest {
           checkModel(sm);
         }
 
-        for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+        for (SModule m : MPSModuleRepository.getInstance().getAllModules()) {
           checkModule(m);
         }
       }
@@ -104,7 +105,7 @@ public class ReferencesTest extends BaseMPSTest {
   }
 
   private void checkModel(final SModel sm) {
-    final IScope scope = sm.getModule().getScope();
+    final IScope scope = ((AbstractModule)sm.getModule()).getScope();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
         return new ModelValidator(sm).validate(scope);
@@ -134,7 +135,7 @@ public class ReferencesTest extends BaseMPSTest {
     }
   }
 
-  private void checkModule(IModule m) {
+  private void checkModule(SModule m) {
     List<String> messages = ModuleValidatorFactory.createValidator(m).getErrors();
     for (String msg : messages) {
       LOG.error("Error in module " + m + " : " + msg);

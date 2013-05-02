@@ -141,9 +141,9 @@ public class DefaultEditor extends DefaultNodeEditor {
 
     ConceptDescriptor baseConceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(BASE_CONCEPT_FQ_NAME);
     if (!myNullConcept) {
-      myPropertyNames = myConceptDescriptor.getPropertyNames();
-      myReferencesNames = myConceptDescriptor.getReferenceNames();
-      myChildrenNames = myConceptDescriptor.getChildrenNames();
+      myPropertyNames = new ArrayList<String>(myConceptDescriptor.getPropertyNames());
+      myReferencesNames = new ArrayList<String>(myConceptDescriptor.getReferenceNames());
+      myChildrenNames = new ArrayList<String>(myConceptDescriptor.getChildrenNames());
     } else {
       myPropertyNames = new ArrayList<String>();
       for (String name : mySNode.getPropertyNames()) {
@@ -162,9 +162,9 @@ public class DefaultEditor extends DefaultNodeEditor {
     }
 
 
-    List<String> basePropertyNames = baseConceptDescriptor.getPropertyNames();
-    List<String> baseRefNames = baseConceptDescriptor.getReferenceNames();
-    List<String> baseChildNames = baseConceptDescriptor.getChildrenNames();
+    Set<String> basePropertyNames = baseConceptDescriptor.getPropertyNames();
+    Set<String> baseRefNames = baseConceptDescriptor.getReferenceNames();
+    Set<String> baseChildNames = baseConceptDescriptor.getChildrenNames();
     myPropertyNames.removeAll(basePropertyNames);
     myReferencesNames.removeAll(baseRefNames);
     myChildrenNames.removeAll(baseChildNames);
@@ -501,6 +501,10 @@ public class DefaultEditor extends DefaultNodeEditor {
     public EditorCell createEditorCell(EditorContext editorContext) {
       return EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
+          String name = getSNode().getName();
+          if (name != null) {
+            return name;
+          }
           return getSNode().getPresentation();
         }
 

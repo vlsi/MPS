@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -13,7 +14,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.ImageIcon;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -26,7 +27,7 @@ public class IconResource_Behavior {
     ModelAccess.instance().writeFilesInEDT(new Runnable() {
       public void run() {
         SModel model = SNodeOperations.getModel(thisNode);
-        String outputRoot = model.getModule().getOutputFor(model);
+        String outputRoot = SModuleOperations.getOutputPathFor(model);
         IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
         IFile output = FileGenerationUtil.getDefaultOutputDir(model, outputRootFile);
 
@@ -40,7 +41,7 @@ public class IconResource_Behavior {
   }
 
   public static boolean call_isValid_8974276187400030063(SNode thisNode) {
-    IModule module = SNodeOperations.getModel(thisNode).getModule();
+    SModule module = SNodeOperations.getModel(thisNode).getModule();
     if (!(module instanceof AbstractModule)) {
       return false;
     }

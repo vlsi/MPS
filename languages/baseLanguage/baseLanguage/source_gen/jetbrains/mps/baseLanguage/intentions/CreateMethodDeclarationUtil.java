@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelStereotype;
 
 public class CreateMethodDeclarationUtil {
@@ -45,7 +45,7 @@ public class CreateMethodDeclarationUtil {
       return null;
     }
     SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(operandType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
-    IModule module = SNodeOperations.getModel(classifier).getModule();
+    SModule module = SNodeOperations.getModel(classifier).getModule();
     if (!(SModelStereotype.isUserModel(SNodeOperations.getModel(classifier))) || module.isReadOnly()) {
       return null;
     }

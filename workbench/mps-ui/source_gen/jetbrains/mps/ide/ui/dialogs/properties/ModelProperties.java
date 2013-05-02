@@ -22,9 +22,10 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ScopeOperations;
+import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Collections;
 
@@ -168,8 +169,8 @@ public class ModelProperties {
       if (language == null) {
         continue;
       }
-      if (ScopeOperations.resolveModule(myModelDescriptor.getModule().getScope(), language.getModuleReference(), Language.class) == null) {
-        myModelDescriptor.getModule().addUsedLanguage(language.getModuleReference());
+      if (ScopeOperations.resolveModule(((AbstractModule) myModelDescriptor.getModule()).getScope(), language.getModuleReference(), Language.class) == null) {
+        ((AbstractModule) myModelDescriptor.getModule()).addUsedLanguage(language.getModuleReference());
       }
       ((SModelInternal) myModelDescriptor).addLanguage(language.getModuleReference());
     }
@@ -267,7 +268,7 @@ public class ModelProperties {
 
     @Override
     public boolean met(final SModuleReference object) {
-      IModule module = MPSModuleRepository.getInstance().getModuleByFqName(object.getModuleName());
+      SModule module = MPSModuleRepository.getInstance().getModuleByFqName(object.getModuleName());
       if (!(module instanceof DevKit)) {
         return !(myUsedLanguages.contains(object));
       }

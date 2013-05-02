@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.project;
 
+import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.mps.openapi.module.SModule;
+
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
@@ -43,7 +46,6 @@ import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
 
@@ -51,14 +53,14 @@ import java.util.*;
  * evgeny, 11/10/11
  */
 @State(
-  name = "MPSProject",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$PROJECT_FILE$"
-    )
-  },
-  reloadable = false
+    name = "MPSProject",
+    storages = {
+        @Storage(
+            id = "other",
+            file = "$PROJECT_FILE$"
+        )
+    },
+    reloadable = false
 )
 public class StandaloneMPSProject extends MPSProject implements FileSystemListener, PersistentStateComponent<Element> {
   private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
@@ -94,7 +96,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
       public Element compute() {
         ProjectDescriptor descriptor = getProjectDescriptor();
         return ProjectDescriptorPersistence.saveProjectDescriptorToElement(descriptor,
-          FileSystem.getInstance().getFileByPath(myProject.getPresentableUrl()));
+            FileSystem.getInstance().getFileByPath(myProject.getPresentableUrl()));
       }
     });
   }
@@ -160,10 +162,10 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void addModule(SModuleReference ref) {
-    IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
     if (module != null) {
       super.addModule(ref);
-      IFile descriptorFile = module.getDescriptorFile();
+      IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
       assert descriptorFile != null;
       myProjectDescriptor.addModule(descriptorFile.getPath());
     }
@@ -171,10 +173,10 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void removeModule(SModuleReference ref) {
-    IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
     if (module != null) {
       super.removeModule(ref);
-      IFile descriptorFile = module.getDescriptorFile();
+      IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
       assert descriptorFile != null;
       myProjectDescriptor.removeModule(descriptorFile.getPath());
     }
@@ -194,7 +196,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
         ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
         if (descriptor != null) {
           ModuleHandle handle = new ModuleHandle(descriptorFile, descriptor);
-          IModule module = ModuleRepositoryFacade.createModule(handle, this);
+          SModule module = ModuleRepositoryFacade.createModule(handle, this);
           SModuleReference moduleReference = module.getModuleReference();
           if (!existingModules.remove(moduleReference)) {
             super.addModule(moduleReference);
@@ -311,9 +313,8 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public IFile getFileToListen() {
-    String presentableUrl = myProject.getPresentableUrl();
-    if (presentableUrl == null) return null;
-    return FileSystem.getInstance().getFileByPath(presentableUrl);
+    VirtualFile projectFile = myProject.getProjectFile();
+    return projectFile != null ? FileSystem.getInstance().getFileByPath(projectFile.getPath()) : null;
   }
 
   @Override

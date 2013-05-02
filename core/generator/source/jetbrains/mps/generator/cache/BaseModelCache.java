@@ -19,6 +19,8 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
+import jetbrains.mps.smodel.SModelRepositoryListener;
+import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -175,6 +177,11 @@ public abstract class BaseModelCache<T> implements CoreComponent {
   }
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
+
+    public MyModelRepositoryListener() {
+      super(SModelRepositoryListenerPriority.PLATFORM);
+    }
+
     @Override
     public void beforeModelDeleted(SModel modelDescriptor) {
       invalidateCacheForModel(modelDescriptor);

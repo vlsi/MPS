@@ -4,7 +4,8 @@ package jetbrains.mps.ide.uiLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,21 +15,21 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"left", "top", "width", "height"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("left", "top", "width", "height").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DialogExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "dialog", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ide.uiLanguage.structure.DialogExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("dialog", "").staticScope(StaticScope.NONE).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "disposeDialog", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("disposeDialog", "").staticScope(StaticScope.NONE).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "disposeDialog", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").alias("disposeDialog", "").staticScope(StaticScope.NONE).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.uiLanguage.structure.IComponentInstance"}, new String[]{"stretch", "title"}, new String[]{}, new String[]{"dimensions", "contentPane", "button"}, new boolean[]{false, false, true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ide.uiLanguage.structure.IDEDialog").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.uiLanguage.structure.IComponentInstance").properties("stretch", "title").children(new String[]{"dimensions", "contentPane", "button"}, new boolean[]{false, false, true}).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"text", "isDefault"}, new String[]{}, new String[]{"handler"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("text", "isDefault").children(new String[]{"handler"}, new boolean[]{false}).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{}, new String[]{"errorText"}, new boolean[]{false}, false, false, "reportError", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"errorText"}, new boolean[]{false}).alias("reportError", "").staticScope(StaticScope.NONE).create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{}, new String[]{"errorText"}, new boolean[]{false}, false, false, "reportError", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.ide.uiLanguage.structure.ReportErrorStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"errorText"}, new boolean[]{false}).alias("reportError", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

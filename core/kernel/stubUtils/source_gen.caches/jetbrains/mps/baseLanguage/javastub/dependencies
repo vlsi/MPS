@@ -8,13 +8,13 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.ClassifierLoader" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.SReferenceCreator" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.ASMNodeId" file="ASMNodeId.java">
     <classNode dependClassName="java.lang.RuntimeException" />

@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.reloading.ReflectionUtil;
@@ -41,7 +41,7 @@ public class DotExpression_Behavior {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "operation", true), "virtual_getVariableExpectedName_1213877410087", new Object[]{});
   }
 
-  public static Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
+  public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       Object instance = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, "operand", true), "virtual_eval_1213877519769", new Object[]{module});
       SNode methodCall = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");

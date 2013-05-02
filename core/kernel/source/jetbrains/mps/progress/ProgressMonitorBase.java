@@ -195,7 +195,7 @@ public abstract class ProgressMonitorBase implements ProgressMonitor {
     }
   }
 
-  private static final String combineTasks(String taskName, String subTask) {
+  private static String combineTasks(String taskName, String subTask) {
     if (taskName == null || taskName.isEmpty()) return subTask;
     if (subTask == null || subTask.isEmpty()) return taskName;
     return taskName.trim() + " :: " + subTask;

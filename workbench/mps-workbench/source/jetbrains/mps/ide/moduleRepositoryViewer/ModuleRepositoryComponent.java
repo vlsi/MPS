@@ -26,7 +26,7 @@ import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -95,7 +95,7 @@ public class ModuleRepositoryComponent {
 
           if (MPSCore.getInstance().isTestMode()) return;
 
-          for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
+          for (SModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
             root[0].add(new LanguageTreeNode(module));
           }
         }
@@ -105,9 +105,9 @@ public class ModuleRepositoryComponent {
     }
 
     private class LanguageTreeNode extends MPSTreeNode {
-      private IModule myModule;
+      private SModule myModule;
 
-      public LanguageTreeNode(IModule module) {
+      public LanguageTreeNode(SModule module) {
         super(null);
         myModule = module;
         setNodeIdentifier(myModule.toString());

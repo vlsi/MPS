@@ -16,26 +16,23 @@
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
 import com.intellij.ide.util.treeView.AbstractTreeUi;
-import com.intellij.openapi.Disposable;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileSystemTree.Listener;
 import com.intellij.openapi.fileChooser.ex.FileSystemTreeImpl;
 import com.intellij.openapi.ui.ComboBox;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.ui.ScrollPaneFactory;
-import com.intellij.ui.components.JBLabel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.EventDispatcher;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
@@ -56,16 +53,15 @@ public class SModelRootEntry implements ModelRootEntry {
   private SModelRoot myModelRoot;
   private EventDispatcher<ModelRootEntryListener> myEventDispatcher = EventDispatcher.create(ModelRootEntryListener.class);
 
-  @Override
-  public ModelRoot getModelRoot() {
-    return myModelRoot;
-  }
-
-  @Override
-  public void setModelRoot(ModelRoot modelRoot) {
+  public SModelRootEntry(ModelRoot modelRoot) {
     if (!(modelRoot instanceof SModelRoot))
       throw new ClassCastException("Can't convert " + modelRoot.getClass().getCanonicalName() + " to " + SModelRoot.class.getCanonicalName());
     myModelRoot = (SModelRoot) modelRoot;
+  }
+
+  @Override
+  public ModelRoot getModelRoot() {
+    return myModelRoot;
   }
 
   @Override
@@ -95,10 +91,16 @@ public class SModelRootEntry implements ModelRootEntry {
     myEventDispatcher.addListener(listener);
   }
 
+  @Override
+  public void dispose() {
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
+
   private class SModelRootEntryEditor implements ModelRootEntryEditor {
     private JPanel myTreePanel;
     private ComboBox myComboBox;
     private SModelRoot myModelRoot;
+    private FileSystemTreeImpl myFileSystemTree;
 
     public SModelRootEntryEditor(SModelRoot modelRoot) {
       myModelRoot = modelRoot;
@@ -150,8 +152,13 @@ public class SModelRootEntry implements ModelRootEntry {
     }
 
     private void updateTree() {
-      FileSystemTreeImpl fileSystemTree = new FileSystemTreeImpl(null, new FileChooserDescriptor(true, true, true, true, true, false));
-      AbstractTreeUi ui = fileSystemTree.getTreeBuilder().getUi();
+      if(myFileSystemTree != null) {
+        Disposer.dispose(myFileSystemTree);
+        myFileSystemTree = null;
+      }
+
+      myFileSystemTree = new FileSystemTreeImpl(null, new FileChooserDescriptor(true, true, true, true, true, false));
+      AbstractTreeUi ui = myFileSystemTree.getTreeBuilder().getUi();
 
       String path = myModelRoot.getPath() == null ? "" : myModelRoot.getPath();
       VirtualFile virtualFile = VirtualFileManager.getInstance().findFileByUrl(
@@ -169,9 +176,9 @@ public class SModelRootEntry implements ModelRootEntry {
       }
 
       if (virtualFile != null)
-        fileSystemTree.select(virtualFile, null);
+        myFileSystemTree.select(virtualFile, null);
 
-      fileSystemTree.addListener(
+      myFileSystemTree.addListener(
           new Listener() {
             @Override
             public void selectionChanged(List<VirtualFile> selection) {
@@ -180,12 +187,10 @@ public class SModelRootEntry implements ModelRootEntry {
                 myEventDispatcher.getMulticaster().fireDataChanged();
               }
             }
-          }, new Disposable() {
-            @Override
-            public void dispose() {
-            }
-          }
+          }, SModelRootEntry.this
       );
+
+      Disposer.register(SModelRootEntry.this, myFileSystemTree);
 
       myTreePanel.removeAll();
       myTreePanel.add(ui.getTree(), BorderLayout.CENTER);

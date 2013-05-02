@@ -24,7 +24,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelReferenceTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -110,9 +110,9 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
       List<SModel> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
       for (SModel model : sortedModels) {
-        IModule m = model.getModule();
+        SModule m = model.getModule();
         boolean currentModule = m == null || m == myLanguage;
-        IModule module = m == null ? myLanguage : m;
+        SModule module = m == null ? myLanguage : m;
         if (!currentModule) {
           accessories.add(new SModelReferenceTreeNode(model, new ModuleContext(module, myProject)));
         } else {
@@ -129,7 +129,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     TextTreeNode languageRuntime = new RuntimeModulesTreeNode();
     for (SModuleReference mr : myLanguage.getRuntimeModulesReferences()) {
-      IModule m = MPSModuleRepository.getInstance().getModule(mr);
+      SModule m = MPSModuleRepository.getInstance().getModule(mr);
       if (m == null || m == myLanguage) continue;
       languageRuntime.add(createFor(myProject, m));
     }

@@ -15,15 +15,11 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
-import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 public class DefaultModelRootEntry extends FileBasedModelRootEntry {
 
-  @Override
-  public void setModelRoot(ModelRoot modelRoot) {
-    if(!(modelRoot instanceof DefaultModelRoot))
-      throw new ClassCastException("Can't convert " + modelRoot.getClass().getCanonicalName() + " to " + DefaultModelRoot.class.getCanonicalName());
-    myFileBasedModelRoot = (DefaultModelRoot)modelRoot;
+  public DefaultModelRootEntry(ModelRoot modelRoot) {
+    super(modelRoot);
   }
 }

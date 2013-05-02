@@ -4,7 +4,8 @@ package jetbrains.mps.baseLanguage.extensionMethods.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,23 +15,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer", "jetbrains.mps.baseLanguage.structure.GenericDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.baseLanguage.structure.IMemberContainer"}, new String[]{}, new String[]{}, new String[]{"methods", "staticFields"}, new boolean[]{true, true}, true, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer").super_("jetbrains.mps.baseLanguage.structure.GenericDeclaration").parents("jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.baseLanguage.structure.IMemberContainer").children(new String[]{"methods", "staticFields"}, new boolean[]{true, true}).abstract_().create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.structure.IMethodCall"}, new String[]{}, new String[]{"extension"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.structure.IMethodCall").references("extension").staticScope(StaticScope.NONE).create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.ClassifierMember"}, new String[]{}, new String[]{}, new String[]{"extendedType"}, new boolean[]{false}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration").super_("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.ClassifierMember").children(new String[]{"extendedType"}, new boolean[]{false}).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration").super_("jetbrains.mps.baseLanguage.structure.VariableDeclaration").parents("jetbrains.mps.baseLanguage.structure.VariableDeclaration").create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference", "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{"jetbrains.mps.baseLanguage.structure.VariableReference"}, new String[]{}, new String[]{"staticFieldDeclaration"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference").super_("jetbrains.mps.baseLanguage.structure.VariableReference").parents("jetbrains.mps.baseLanguage.structure.VariableReference").references("staticFieldDeclaration").staticScope(StaticScope.NONE).create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall", "jetbrains.mps.baseLanguage.structure.BaseMethodCall", false, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodCall"}, new String[]{}, new String[]{"instanceMethodDeclaration"}, new String[]{}, new boolean[]{}, false, false, "", "local extended method call", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall").super_("jetbrains.mps.baseLanguage.structure.BaseMethodCall").parents("jetbrains.mps.baseLanguage.structure.BaseMethodCall").references("instanceMethodDeclaration").alias("", "local extended method call").staticScope(StaticScope.NONE).create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer", false, new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "Simple Extension Method Container", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer").super_("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer").parents("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer").alias("Simple Extension Method Container", "").create();
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "this", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("this", "").staticScope(StaticScope.NONE).create();
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension", "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer", false, new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"}, new String[]{}, new String[]{}, new String[]{"type"}, new boolean[]{false}, false, false, "type extension", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension").super_("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer").parents("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer").children(new String[]{"type"}, new boolean[]{false}).alias("type extension", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

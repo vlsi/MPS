@@ -346,6 +346,59 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.packaging.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Antcall_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.BlockReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Block_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Branding_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.BuildLanguageTargetReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.ComponentsList_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.CompositePathComponent_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.CompositeString_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.ConfigurationReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Copy_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Echo_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.FileExistsCondition_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.File_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Folder_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Help_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.IdeaInitializerReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Jar_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Layout_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Library_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.MPSLayoutConfigurationReferencePropertyValueExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.MacroReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Macro_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.ManifestAttribute_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Manifest_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Module_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.NonExistingPath_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.NotCondition_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Pair_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.PathComponent_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.PathHolder_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Path_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.PluginModule_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Plugin_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.PropertyFileImport_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.PropertyNodeImport_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Replace_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.SimpleString_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Space_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.UpdateWebsite_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.VariableReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Variable_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.WelcomeScreen_Editor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.editor.Zip_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.build.packaging.editor.FileExistsCondition_Editor" file="FileExistsCondition_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet" />
@@ -735,11 +788,11 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>

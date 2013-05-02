@@ -90,7 +90,6 @@
     <getDataRule key="MPS_IOperationContext"
                  implementationClass="jetbrains.mps.ide.dataExtraction.ContextRule"/>
     <getDataRule key="MPS_IScope" implementationClass="jetbrains.mps.ide.dataExtraction.ScopeRule"/>
-    <getDataRule key="MPS_IModule" implementationClass="jetbrains.mps.ide.dataExtraction.ModuleRule"/>
 
     <fileBasedIndex implementation="jetbrains.mps.workbench.goTo.index.RootNodeNameIndex"/>
     <gotoClassContributor implementation="jetbrains.mps.workbench.goTo.GoToClassMPSContributor"/>

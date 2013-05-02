@@ -24,6 +24,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -46,7 +47,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SModelRepository implements CoreComponent {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(SModelRepository.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelRepository.class));
 
   public static SModelRepository getInstance() {
     return MPSCore.getInstance().getModelRepository();
@@ -312,7 +313,11 @@ public class SModelRepository implements CoreComponent {
 
   public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
     synchronized (myListenersLock) {
-      mySModelRepositoryListeners.add(l);
+      if (l.getPriority().equals(SModelRepositoryListenerPriority.PLATFORM)) {
+        mySModelRepositoryListeners.add(0, l);
+      } else {
+        mySModelRepositoryListeners.add(l);
+      }
     }
   }
 

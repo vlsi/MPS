@@ -44,7 +44,7 @@ import java.util.List;
 
 public abstract class AbstractReferentCellProvider extends CellProviderWithRole {
 
-  public static final Logger LOG = Logger.getLogger(LogManager.getLogger(AbstractReferentCellProvider.class));
+  public static final Logger LOG = Logger.wrap(LogManager.getLogger(AbstractReferentCellProvider.class));
 
   protected SNode myLinkDeclaration;
   protected String myGenuineRole;
@@ -63,8 +63,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
 
   @Override
-  public void
-  setRole(Object role) {
+  public void setRole(Object role) {
     myLinkDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role.toString());
     if (myLinkDeclaration == null) {
       myErrorText = "?" + role.toString() + "?";

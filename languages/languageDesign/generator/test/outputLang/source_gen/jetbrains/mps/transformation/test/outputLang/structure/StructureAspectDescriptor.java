@@ -4,7 +4,8 @@ package jetbrains.mps.transformation.test.outputLang.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
-import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
@@ -14,19 +15,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.outputLang.structure.CustomRoot", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{}, new String[]{"statement"}, new boolean[]{false}, false, false, "custom root", "root for tests", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.CustomRoot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"statement"}, new boolean[]{false}).alias("custom root", "root for tests").create();
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.outputLang.structure.CustomStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{}, new String[]{"inner"}, new boolean[]{false}, false, false, "work: ", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.CustomStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"inner"}, new boolean[]{false}).alias("work: ", "").create();
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"ii"}, new String[]{"myStatement"}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("ii").references("myStatement").staticScope(StaticScope.NONE).create();
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"text"}, new String[]{}, new String[]{"outputChild"}, new boolean[]{true}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.OutputNode").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("text").children(new String[]{"outputChild"}, new boolean[]{true}).create();
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test", "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false, new String[]{"jetbrains.mps.transformation.test.outputLang.structure.OutputNode"}, new String[]{}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test").super_("jetbrains.mps.transformation.test.outputLang.structure.OutputNode").parents("jetbrains.mps.transformation.test.outputLang.structure.OutputNode").create();
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"text"}, new String[]{}, new String[]{"outputChild", "specialChild"}, new boolean[]{true, false}, false, false, "output root concept", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("text").children(new String[]{"outputChild", "specialChild"}, new boolean[]{true, false}).alias("output root concept", "").create();
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{"name1", "name2"}, new String[]{}, new String[]{}, new boolean[]{}, false, false, "", "", "");
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").properties("name1", "name2").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

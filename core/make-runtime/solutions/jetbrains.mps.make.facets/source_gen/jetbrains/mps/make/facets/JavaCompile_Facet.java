@@ -23,7 +23,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -109,12 +108,12 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
               pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
-              final Set<SModule> toCompile = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(input).select(new ISelector<TResource, IModule>() {
-                public IModule select(TResource it) {
+              final Set<SModule> toCompile = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(input).select(new ISelector<TResource, SModule>() {
+                public SModule select(TResource it) {
                   return it.module();
                 }
-              }).where(new IWhereFilter<IModule>() {
-                public boolean accept(IModule it) {
+              }).where(new IWhereFilter<SModule>() {
+                public boolean accept(SModule it) {
                   return SModuleOperations.isCompileInMps(it);
                 }
               }).distinct());
@@ -308,11 +307,11 @@ public class JavaCompile_Facet extends IFacet.Stub {
               monitor.currentProgress().beginWork("Compiling in IntelliJ IDEA", 1, monitor.currentProgress().workLeft());
 
               monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA", 1);
-              MPSCompilationResult cr = compiler.compileModules(Sequence.fromIterable(toCompile).select(new ISelector<TResource, IModule>() {
-                public IModule select(TResource it) {
+              MPSCompilationResult cr = compiler.compileModules(Sequence.fromIterable(toCompile).select(new ISelector<TResource, SModule>() {
+                public SModule select(TResource it) {
                   return it.module();
                 }
-              }).toGenericArray(IModule.class));
+              }).toGenericArray(SModule.class));
 
               // analyse results 
               if (cr != null) {
@@ -450,7 +449,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               final JavaCompiler jc = new JavaCompiler();
-              final Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
+              final Set<SModule> modules = SetSequence.fromSet(new HashSet<SModule>());
               for (FResource fres : Sequence.fromIterable(input)) {
                 MapSequence.fromMap(fres.contents()).visitAll(new IVisitor<IMapping<String, Object>>() {
                   public void visit(IMapping<String, Object> m) {

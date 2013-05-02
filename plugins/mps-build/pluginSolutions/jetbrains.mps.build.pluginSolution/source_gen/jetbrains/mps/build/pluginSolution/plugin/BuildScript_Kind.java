@@ -5,7 +5,7 @@ package jetbrains.mps.build.pluginSolution.plugin;
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import org.apache.log4j.Priority;
@@ -24,7 +24,7 @@ import org.apache.log4j.LogManager;
 public class BuildScript_Kind implements ConfigurationType {
   private static final Icon ICON = new _FunctionTypes._return_P0_E0<Icon>() {
     public Icon invoke() {
-      IModule module = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("22e72e4c-0f69-46ce-8403-6750153aa615"));
+      SModule module = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("22e72e4c-0f69-46ce-8403-6750153aa615"));
       if (module == null) {
         if (LOG.isEnabledFor(Priority.ERROR)) {
           LOG.error("Can't find language jetbrains.mps.execution.configurations, turn on \"Execution Languages\" plugin.");

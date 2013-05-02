@@ -9,13 +9,18 @@
     <classNode dependClassName="java.rmi.RemoteException" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.MPSCore" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
     <classNode dependClassName="jetbrains.mps.plugin.CompilationResult" />
     <classNode dependClassName="jetbrains.mps.plugin.IProjectHandler" />
     <classNode dependClassName="jetbrains.mps.plugin.MPSPlugin" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler" />
@@ -32,7 +37,10 @@
     <classNode extendsClassName="jetbrains.mps.ide.navigation.NavigationProvider" />
   </dependency>
   <dependency className="jetbrains.mps.plugin.MPSPlugin" file="MPSPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.components.StorageScheme" />
+    <classNode dependClassName="com.intellij.openapi.components.impl.stores.IProjectStore" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.project.ex.ProjectEx" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />

@@ -18,7 +18,7 @@ package jetbrains.mps.stubs;
 import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class BaseStubModelDescriptor extends ReloadableSModelBase implements Cloneable {
-  private static final Logger LOG = Logger.getLogger(LogManager.getLogger(BaseStubModelDescriptor.class));
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(BaseStubModelDescriptor.class));
   private SModule myModule;
   private jetbrains.mps.smodel.SModel mySModel;
 
@@ -56,7 +56,7 @@ public class BaseStubModelDescriptor extends ReloadableSModelBase implements Clo
   }
 
   private jetbrains.mps.smodel.SModel createModel() {
-    jetbrains.mps.smodel.SModel model = getSource().loadSModel((IModule) myModule, this);
+    jetbrains.mps.smodel.SModel model = getSource().loadSModel((SModule) myModule, this);
     updateTimestamp();
     return model;
   }
@@ -93,7 +93,7 @@ public class BaseStubModelDescriptor extends ReloadableSModelBase implements Clo
       updateTimestamp();
       return;
     }
-    final jetbrains.mps.smodel.SModel result = (getSource().loadSModel((IModule) myModule, this));
+    final jetbrains.mps.smodel.SModel result = (getSource().loadSModel((SModule) myModule, this));
     updateTimestamp();
     replaceModel(new Runnable() {
       @Override
