@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,28 @@
  */
 package jetbrains.mps.typesystem.checking;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.Set;
 
-public class TypesEditorChecker extends AbstractTypesystemEditorChecker {
+/**
+ * User: fyodor
+ * Date: 4/30/13
+ */
+public class NonTypesystemEditorChecker extends AbstractTypesystemEditorChecker {
   private static final Logger LOG = LogManager.getLogger(TypesEditorChecker.class);
+
+  @Override
+  protected boolean isEssential() {
+    return false;
+  }
 
   @Override
   protected void doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce, final EditorContext editorContext, final SNode rootNode, final Set<EditorMessage> messages) {
@@ -37,14 +46,19 @@ public class TypesEditorChecker extends AbstractTypesystemEditorChecker {
       @Override
       public void run() {
         IncrementalTypechecking typesComponent = context.getBaseNodeTypesComponent();
-        if (!wasCheckedOnce || !context.isCheckedRoot(true) || context.messagesChanged(editorContext.getEditorComponent().getClass())) {
+
+        //non-typesystem checks
+        if (!wasCheckedOnce || !typesComponent.isCheckedNonTypesystem()) {
           try {
             myMessagesChanged = true;
-            context.checkIfNotChecked(rootNode, false);
+            context.setIsNonTypesystemComputation();
+            typesComponent.applyNonTypesystemRulesToRoot(editorContext.getOperationContext(), context);
+            typesComponent.setCheckedNonTypesystem();
           } catch (Throwable t) {
             LOG.error(t);
-            typesComponent.setCheckedTypesystem();
-            return;
+            typesComponent.setCheckedNonTypesystem();
+          } finally {
+            context.resetIsNonTypesystemComputation();
           }
         }
 

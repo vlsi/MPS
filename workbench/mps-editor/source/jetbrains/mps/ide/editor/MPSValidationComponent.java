@@ -22,6 +22,7 @@ import jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.typesystem.checking.NonTypesystemEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import org.jetbrains.annotations.NotNull;
 import typesystemIntegration.languageChecker.AutoResolver;
@@ -45,6 +46,7 @@ public class MPSValidationComponent implements ProjectComponent {
   public void initComponent() {
     // TODO: create editor-specific "core" component in editor-runtime module and register all common checkers from there
     addChecker(new TypesEditorChecker());
+    addChecker(new NonTypesystemEditorChecker());
     addChecker(new AutoResolver());
     addChecker(new LanguageEditorChecker());
     addChecker(new SuppressErrorsChecker());

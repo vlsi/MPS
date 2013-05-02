@@ -73,6 +73,17 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
     return result[0];
   }
 
+  public final boolean isEssentialProtected(){
+    final boolean[] result = {false};
+    performUninterruptableAction(new Runnable() {
+      @Override
+      public void run() {
+        result[0] = isEssential();
+      }
+    });
+    return result[0];
+  }
+
   public final void clearProtected(final SNode node, final EditorComponent editor) {
     performUninterruptableAction(new Runnable() {
       @Override
@@ -90,6 +101,10 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
 
   protected boolean isLaterThan(BaseEditorChecker editorChecker) {
     return false;
+  }
+
+  protected boolean isEssential () {
+    return true;
   }
 
   protected abstract boolean areMessagesChanged();

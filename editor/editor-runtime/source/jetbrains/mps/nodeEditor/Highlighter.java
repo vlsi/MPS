@@ -54,6 +54,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(Highlighter.class);
@@ -64,6 +66,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object ADD_EDITORS_LOCK = new Object();
 
   private static final Object PENDING_LOCK = new Object();
+  private static final int DEFAULT_GRACE_PERIOD = 200;
 
   private volatile boolean myStopThread = false;
   private FileEditorManager myFileEditorManager;
@@ -78,8 +81,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private boolean myInspectorMessagesCreated = false;
   private InspectorTool myInspectorTool;
   private List<Runnable> myPendingActions = new ArrayList<Runnable>();
-
-  private volatile long myLastCommandTime = 0;
 
   private MessageBusConnection myMessageBusConnection;
   private List<Editor> myAdditionalEditors = new ArrayList<Editor>();
@@ -124,12 +125,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   };
 
   private Project myProject;
-  private ModelAccessListener myCommandListener = new ModelAccessAdapter() {
-    @Override
-    public void commandFinished() {
-      myLastCommandTime = System.currentTimeMillis();
-    }
-  };
+  private CommandWatcher myCommandWatcher = new CommandWatcher();
 
   /*
    * MPSProject was used as a parameter of this constructor because corresponding component should be initialised after
@@ -172,7 +168,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         }
       }
     });
-    ModelAccess.instance().addCommandListener(myCommandListener);
+    ModelAccess.instance().addCommandListener(myCommandWatcher);
     myThread = new HighlighterThread();
     myThread.start();
   }
@@ -180,7 +176,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   @Override
   public void projectClosed() {
     stopUpdater();
-    ModelAccess.instance().removeCommandListener(myCommandListener);
+    ModelAccess.instance().removeCommandListener(myCommandWatcher);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelReloadListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
@@ -285,7 +281,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  protected void doUpdate() {
+  protected void doUpdate(final boolean essentialOnly) {
     if (ApplicationManager.getApplication() == null || ApplicationManager.getApplication().isDisposed()) {
       return;
     }
@@ -345,7 +341,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       TypeContextManager.getInstance().runTypecheckingAction(editorComponent, new Runnable() {
         @Override
         public void run() {
-          if (updateEditorComponent(editorComponent, events, checkers, checkersToRemove, false)) {
+          if (updateEditorComponent(editorComponent, events, checkers, checkersToRemove, false, essentialOnly)) {
             isUpdated[0] = true;
           }
         }
@@ -362,7 +358,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       TypeContextManager.getInstance().runTypecheckingAction(inspector, new Runnable() {
         @Override
         public void run() {
-          if (updateEditorComponent(finalInspector, events, checkers, checkersToRemove, isUpdated[0])) {
+          if (updateEditorComponent(finalInspector, events, checkers, checkersToRemove, isUpdated[0], essentialOnly)) {
             inspectorIsUpdated[0] = true;
           }
         }
@@ -426,7 +422,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<BaseEditorChecker> checkers, final Set<BaseEditorChecker> checkersToRemove, final boolean mainEditorMessagesChanged) {
+  private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<BaseEditorChecker> checkers, final Set<BaseEditorChecker> checkersToRemove, final boolean mainEditorMessagesChanged, final boolean essentialOnly) {
     return runUpdateMessagesAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
@@ -444,7 +440,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
                   return;
                 }
                 for (BaseEditorChecker checker : checkers) {
-                  if (checker.hasDramaticalEventProtected(events)) {
+                  if (checker.hasDramaticalEventProtected(events) && (!essentialOnly || checker.isEssentialProtected())) {
                     checkersToRecheck.add(checker);
                   }
                 }
@@ -619,24 +615,23 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
               if (myStopThread) {
                 return;
               }
-              Thread.sleep(200);
+              Thread.sleep(DEFAULT_GRACE_PERIOD);
             }
             while (dumbService.isDumb()) {
               if (myStopThread) return;
-              Thread.sleep(600);
+              Thread.sleep(DEFAULT_GRACE_PERIOD*3);
             }
-            long current = System.currentTimeMillis();
-            long commandTime = myLastCommandTime;
-            long millisSinceLastCommand = current - commandTime;
-            if (millisSinceLastCommand < 200) {
-              long millis = 200 - millisSinceLastCommand;
-              Thread.sleep(millis);
-            } else break;
+            if (!myCommandWatcher.isGracePeriodExpired()) {
+              Thread.sleep(myCommandWatcher.timeToExpiration());
+              continue;
+            }
+            break;
           }
+
           if (myStopThread) return;
 
           try {
-            doUpdate();
+            doUpdate(!myCommandWatcher.isLargerGracePeriodExpired());
           } catch (IndexNotReadyException ex) {
             myCheckedOnceEditors.clear();
             myInspectorMessagesCreated = false;
@@ -645,11 +640,71 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           if (myStopThread) {
             return;
           }
-          Thread.sleep(300);
+          Thread.sleep(DEFAULT_GRACE_PERIOD);
+
+          if (myCommandWatcher.isLargerGracePeriodExpired()) {
+            myCommandWatcher.resetGracePeriod();
+          }
         } catch (Throwable t) {
           LOG.error(t);
         }
       }
+    }
+  }
+
+  /**
+   * Thread safe.
+   */
+  private static class CommandWatcher extends ModelAccessAdapter{
+    private AtomicLong myLastCommandStarted = new AtomicLong(System.currentTimeMillis());
+    private AtomicLong myLastCommandFinished = new AtomicLong(System.currentTimeMillis());
+    private AtomicLong myGracePeriod = new AtomicLong(DEFAULT_GRACE_PERIOD);
+    private AtomicInteger myCurrentMultiplier = new AtomicInteger(4);
+
+    boolean isGracePeriodExpired() {
+      final long time = System.currentTimeMillis();
+      if (time - myLastCommandFinished.get() >= myGracePeriod.get()) {
+        return true;
+      }
+      return false;
+    }
+
+    boolean isLargerGracePeriodExpired() {
+      final long time = System.currentTimeMillis();
+      if (time - myLastCommandFinished.get() - 2*DEFAULT_GRACE_PERIOD >= myGracePeriod.get()) {
+        return true;
+      }
+      return false;
+    }
+
+    void resetGracePeriod () {
+      myGracePeriod.set(DEFAULT_GRACE_PERIOD);
+      myCurrentMultiplier.set(4);
+    }
+
+    long timeToExpiration () {
+      final long time = System.currentTimeMillis();
+      final long delta = time - myLastCommandFinished.get();
+      final long left = myGracePeriod.get() - delta;
+      return left > 0 ? left : 0L;
+    }
+
+    @Override
+    public void commandStarted() {
+      final long time = System.currentTimeMillis();
+      myLastCommandStarted.set(time);
+      final long delta = time - myLastCommandFinished.get();
+      if (delta < myGracePeriod.get()) {
+        final int mult = myCurrentMultiplier.get();
+        myGracePeriod.getAndAdd(delta * mult);
+        myCurrentMultiplier.set(mult/2);
+      }
+    }
+
+    @Override
+    public void commandFinished() {
+      final long time = System.currentTimeMillis();
+      myLastCommandFinished.set(time);
     }
   }
 }
