@@ -25,7 +25,7 @@ public class check_FinalLocalFieldReferenceNotAssigned_NonTypesystemRule extends
       if (SPropertyOperations.getBoolean(field, "isFinal") && CheckingUtil.isAssignedIllegaly(variableReference)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableReference, "Cannot assign a value to final variable '" + SPropertyOperations.getString(field, "name") + "'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4705425356438183038", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableReference, "Cannot assign a value to a final variable '" + SPropertyOperations.getString(field, "name") + "'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4705425356438183038", null, errorTarget);
         }
       }
     }
