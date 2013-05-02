@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("defaultProperty", "diagramProperty", "groovyProperty").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("defaultProperty", "richProperty", "compactProperty").create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("projectionType", "projectAsCompact").children(new String[]{"richChild", "compactChild", "defaultChild", "conditionallyProjectedChild", "conditionallyRichOrCompactChild", "notSupportedPresentation"}, new boolean[]{true, true, true, true, true, true}).create();
       default:
