@@ -96,7 +96,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       // root 
       current = modelhandler;
     } else {
-      current = current.createChild(qName);
+      current = current.createChild(myValues.peek(), qName, attributes);
     }
 
     // check required 
@@ -125,14 +125,14 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     private ElementHandler() {
     }
 
-    protected Object createObject(Attributes attrs) {
+    protected Object createObject(Attributes attrs) throws SAXException {
       return null;
     }
 
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
 
-    protected ModelReader5Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected ModelReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
     }
 
@@ -162,7 +162,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected ModelLoadResult createObject(Attributes attrs) {
+    protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
       fieldversionsInfo = new SModelVersionsInfo();
       fieldreferenceDescriptors = new ArrayList<IReferencePersister>();
       fieldvisibleModelElements = new SAXVisibleModelElements();
@@ -187,7 +187,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected ModelReader5Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected ModelReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("persistence".equals(tagName)) {
         return persistencehandler;
       }
@@ -212,7 +212,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("visible".equals(tagName)) {
         return visiblehandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
     @Override
@@ -282,7 +282,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected Integer createObject(Attributes attrs) {
+    protected Integer createObject(Attributes attrs) throws SAXException {
       return Integer.parseInt(attrs.getValue("version"));
     }
 
@@ -308,7 +308,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected Integer createObject(Attributes attrs) {
+    protected Integer createObject(Attributes attrs) throws SAXException {
       return Integer.parseInt(attrs.getValue("value"));
     }
 
@@ -334,7 +334,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String[] createObject(Attributes attrs) {
+    protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{attrs.getValue("modelUID"), attrs.getValue("version")};
     }
 
@@ -363,7 +363,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String createObject(Attributes attrs) {
+    protected String createObject(Attributes attrs) throws SAXException {
       return attrs.getValue("namespace");
     }
 
@@ -389,7 +389,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected SModel.ImportElement createObject(Attributes attrs) {
+    protected SModel.ImportElement createObject(Attributes attrs) throws SAXException {
       int indexValue = Integer.parseInt(attrs.getValue("index"));
       int versionValue = Integer.parseInt(attrs.getValue("version"));
       return new SModel.ImportElement(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), indexValue, versionValue);
@@ -423,7 +423,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected SNode createObject(Attributes attrs) {
+    protected SNode createObject(Attributes attrs) throws SAXException {
       String rawFqName = attrs.getValue("type");
       String conceptFQName = VersionUtil.getConceptFQName(rawFqName);
       SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFQName));
@@ -459,7 +459,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected ModelReader5Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected ModelReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("property".equals(tagName)) {
         return propertyhandler;
       }
@@ -469,7 +469,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("node".equals(tagName)) {
         return nodehandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
     @Override
@@ -506,7 +506,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String[] createObject(Attributes attrs) {
+    protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{attrs.getValue("name"), null};
     }
 
@@ -536,7 +536,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String[] createObject(Attributes attrs) {
+    protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{null, null, null};
     }
 
@@ -566,7 +566,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected Object createObject(Attributes attrs) {
+    protected Object createObject(Attributes attrs) throws SAXException {
       fieldvisibleModelElements.addVisible(Integer.parseInt(attrs.getValue("index")), attrs.getValue("modelUID"));
       return null;
     }

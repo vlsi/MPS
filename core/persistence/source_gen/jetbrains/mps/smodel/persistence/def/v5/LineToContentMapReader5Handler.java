@@ -74,7 +74,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
       // root 
       current = modelhandler;
     } else {
-      current = current.createChild(qName);
+      current = current.createChild(myValues.peek(), qName, attributes);
     }
 
     // check required 
@@ -108,14 +108,14 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     private ElementHandler() {
     }
 
-    protected Object createObject(Attributes attrs) {
+    protected Object createObject(Attributes attrs) throws SAXException {
       return null;
     }
 
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
 
-    protected LineToContentMapReader5Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected LineToContentMapReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
     }
 
@@ -145,13 +145,13 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     }
 
     @Override
-    protected List<LineContent> createObject(Attributes attrs) {
+    protected List<LineContent> createObject(Attributes attrs) throws SAXException {
       fieldaccumulator = new LineContentAccumulator();
       return fieldaccumulator.getLineToContentMap();
     }
 
     @Override
-    protected LineToContentMapReader5Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected LineToContentMapReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("persistence".equals(tagName)) {
         return nullhandler;
       }
@@ -179,7 +179,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
       if ("node".equals(tagName)) {
         return nodehandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
     @Override
@@ -243,7 +243,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     }
 
     @Override
-    protected LineToContentMapReader5Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected LineToContentMapReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("property".equals(tagName)) {
         return propertyhandler;
       }
@@ -253,7 +253,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
       if ("node".equals(tagName)) {
         return nodehandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
     @Override
@@ -289,7 +289,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     }
 
     @Override
-    protected String createObject(Attributes attrs) {
+    protected String createObject(Attributes attrs) throws SAXException {
       return VersionUtil.getRole(attrs.getValue("name"));
     }
 
@@ -315,7 +315,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     }
 
     @Override
-    protected String createObject(Attributes attrs) {
+    protected String createObject(Attributes attrs) throws SAXException {
       return VersionUtil.getRole(attrs.getValue("role"));
     }
 

@@ -93,7 +93,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       // root 
       current = modelhandler;
     } else {
-      current = current.createChild(qName);
+      current = current.createChild(myValues.peek(), qName, attributes);
     }
 
     // check required 
@@ -122,14 +122,14 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     private ElementHandler() {
     }
 
-    protected Object createObject(Attributes attrs) {
+    protected Object createObject(Attributes attrs) throws SAXException {
       return null;
     }
 
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
 
-    protected ModelReader6Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected ModelReader6Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
     }
 
@@ -159,7 +159,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected ModelLoadResult createObject(Attributes attrs) {
+    protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
       fieldmodel = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(6);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
@@ -182,7 +182,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected ModelReader6Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected ModelReader6Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("persistence".equals(tagName)) {
         return persistencehandler;
       }
@@ -204,7 +204,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("root_stubs".equals(tagName)) {
         return root_stubshandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
     @Override
@@ -271,7 +271,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected Integer createObject(Attributes attrs) {
+    protected Integer createObject(Attributes attrs) throws SAXException {
       return Integer.parseInt(attrs.getValue("version"));
     }
 
@@ -297,7 +297,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String createObject(Attributes attrs) {
+    protected String createObject(Attributes attrs) throws SAXException {
       return attrs.getValue("namespace");
     }
 
@@ -323,7 +323,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String[] createObject(Attributes attrs) {
+    protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{attrs.getValue("index"), attrs.getValue("modelUID"), attrs.getValue("version"), null};
     }
 
@@ -359,11 +359,11 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected ModelReader6Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected ModelReader6Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("node".equals(tagName)) {
         return nodehandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
     @Override
@@ -387,7 +387,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected SNode createObject(Attributes attrs) {
+    protected SNode createObject(Attributes attrs) throws SAXException {
       return new LazySNode(InternUtil.intern(fieldhelper.readType(attrs.getValue("type"))));
     }
 
@@ -418,7 +418,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected ModelReader6Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected ModelReader6Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("property".equals(tagName)) {
         return propertyhandler;
       }
@@ -428,7 +428,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("node".equals(tagName)) {
         return nodehandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
     @Override
@@ -472,7 +472,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String[] createObject(Attributes attrs) {
+    protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{attrs.getValue("name"), null};
     }
 
@@ -502,7 +502,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String[] createObject(Attributes attrs) {
+    protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{null, null, null};
     }
 

@@ -67,7 +67,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
       // root 
       current = dependenciesRoothandler;
     } else {
-      current = current.createChild(qName);
+      current = current.createChild(myValues.peek(), qName, attributes);
     }
 
     // check required 
@@ -96,14 +96,14 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     private ElementHandler() {
     }
 
-    protected Object createObject(Attributes attrs) {
+    protected Object createObject(Attributes attrs) throws SAXException {
       return null;
     }
 
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
 
-    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXException {
+    protected BLDependenciesHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
     }
 
@@ -133,16 +133,16 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
 
     @Override
-    protected ModelDependencies createObject(Attributes attrs) {
+    protected ModelDependencies createObject(Attributes attrs) throws SAXException {
       return new ModelDependencies();
     }
 
     @Override
-    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXException {
+    protected BLDependenciesHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("dependency".equals(tagName)) {
         return dependencyhandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
     @Override
@@ -164,7 +164,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
 
     @Override
-    protected RootDependencies createObject(Attributes attrs) {
+    protected RootDependencies createObject(Attributes attrs) throws SAXException {
       return new RootDependencies();
     }
 
@@ -188,11 +188,11 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
 
     @Override
-    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXException {
+    protected BLDependenciesHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("classNode".equals(tagName)) {
         return classNodehandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
     @Override
@@ -222,7 +222,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
 
     @Override
-    protected Object[] createObject(Attributes attrs) {
+    protected Object[] createObject(Attributes attrs) throws SAXException {
       return new Object[2];
     }
 
