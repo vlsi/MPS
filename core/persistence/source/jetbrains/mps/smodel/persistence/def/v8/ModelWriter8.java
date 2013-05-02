@@ -15,7 +15,12 @@
  */
 package jetbrains.mps.smodel.persistence.def.v8;
 
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.persistence.def.DocUtil;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.v7.ModelWriter7;
+import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * evgeny, 4/29/13
@@ -25,5 +30,20 @@ public class ModelWriter8 extends ModelWriter7 {
   @Override
   protected int getModelPersistenceVersion() {
     return 8;
+  }
+
+  @Override
+  protected void saveModelNodes(Element parent, SModel sourceModel) {
+    for (SNode root : sourceModel.getRootNodes()) {
+      Element childElement = new Element(ModelPersistence.ROOT_NODE);
+      saveNode(childElement, root, true);
+      parent.addContent(childElement);
+    }
+  }
+
+  @Override
+  protected void saveNodeAttributes(Element element, SNode node) {
+    super.saveNodeAttributes(element, node);
+    DocUtil.setNotNullAttribute(element, ModelPersistence.NODE_INFO, myHelper.genNodeInfo(node));
   }
 }

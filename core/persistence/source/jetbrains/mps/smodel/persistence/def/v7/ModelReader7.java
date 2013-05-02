@@ -59,7 +59,7 @@ public class ModelReader7 implements IModelReader {
 
   @Override
   public DefaultSModel readModel(Document document, SModelHeader header) {
-    Element rootElement = document.getRootElement();
+    final Element rootElement = document.getRootElement();
 
     SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     DefaultSModel model = new DefaultSModel(modelReference);
@@ -114,10 +114,16 @@ public class ModelReader7 implements IModelReader {
           element.getAttributeValue(ModelPersistence.IMPLICIT) != null);
     }
 
+    readModelNodes(rootElement, model);
+    new StructureModificationProcessor(myLinkMap, model).updateModelOnLoad();
+    return model;
+  }
+
+  protected void readModelNodes(Element rootElement, DefaultSModel model) {
     // roots
     Element roots = rootElement.getChild(ModelPersistence.ROOTS);
     for (Element element : (List<Element>) roots.getChildren(ModelPersistence.NODE)) {
-      SNode node = readNode(element, model, true);
+      SNode node = readNode(element, model, false);
       if (node != null) {
         model.addRootNode(node);
       }
@@ -129,15 +135,12 @@ public class ModelReader7 implements IModelReader {
         LOG.errorWithTrace("Cannot find root for " + root.getAttributeValue(ModelPersistence.ID));
         continue;
       }
-      readChildren(node, root);
+      readChildren(root, node);
     }
-
-    new StructureModificationProcessor(myLinkMap, model).updateModelOnLoad();
-    return model;
   }
 
   @Nullable
-  protected SNode readNode(Element nodeElement, SModel model, boolean isRootStub) {
+  protected SNode readNode(Element nodeElement, SModel model, boolean withChildren) {
     String conceptFqName = myHelper.readType(nodeElement.getAttributeValue(ModelPersistence.TYPE));
     jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
 
@@ -195,15 +198,15 @@ public class ModelReader7 implements IModelReader {
 //      }
     }
 
-    if (!isRootStub)
-      readChildren(node, nodeElement);
-
+    if (withChildren) {
+      readChildren(nodeElement, node);
+    }
     return node;
   }
 
-  protected void readChildren(@NotNull SNode node, @NotNull Element nodeElement) {
+  private void readChildren(@NotNull Element nodeElement, @NotNull SNode node) {
     for (Element child : (List<Element>) nodeElement.getChildren(ModelPersistence.NODE)) {
-      SNode childNode = readNode(child, node.getPersistentModel(), false);
+      SNode childNode = readNode(child, node.getPersistentModel(), true);
       String role = myHelper.readRole(child.getAttributeValue(ModelPersistence.ROLE));
       if (role == null || childNode == null) {
         LOG.errorWithTrace("Error reading child node in node " + SNodeUtil.getDebugText(node));
