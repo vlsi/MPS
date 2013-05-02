@@ -77,8 +77,8 @@ public class QueriesGenerated {
     )) + "_" + _context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), "condition", true)).getNodeId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_2264311582634172117(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return XMLSAXChildRule_Behavior.call_getTagName_2264311582634140608(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_1910945748578763716(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "handleChild_" + _context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), "handler", true)).getNodeId();
   }
 
   public static Object propertyMacro_GetPropertyValue_2264311582634172718(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -137,6 +137,10 @@ public class QueriesGenerated {
     }).isNotEmpty();
   }
 
+  public static boolean ifMacro_Condition_1910945748555012445(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "type", true) != null);
+  }
+
   public static boolean ifMacro_Condition_2264311582634171870(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "handler", true) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handler", true), "body", true) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handler", true), "body", true), "statement", true)).isNotEmpty();
   }
@@ -149,6 +153,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "condition", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1910945748580310591(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "handler", true) != null);
+  }
+
   public static boolean ifMacro_Condition_4720003541464879059(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "rule", false), "params", true)).isEmpty();
   }
@@ -158,23 +166,19 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4720003541493794874(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.core.xml.sax.structure.XMLSAXHandler_resultObject", false, new String[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.core.xml.sax.structure.XMLSAXHandler_resultObject", false, new String[]{})).isNotEmpty() && (SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), "type", true) != null);
   }
 
-  public static boolean ifMacro_Condition_2264311582634172048(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "handler", true) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handler", true), "body", true) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handler", true), "body", true), "statement", true)).isNotEmpty();
-  }
-
-  public static boolean ifMacro_Condition_2264311582634172076(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "handler", true) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handler", true), "body", true) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handler", true), "body", true), "statement", true)).isNotEmpty();
-  }
-
-  public static boolean ifMacro_Condition_2264311582634172139(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "children", true)).isNotEmpty();
+  public static boolean ifMacro_Condition_1910945748555598834(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), "type", true) != null) && ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "handler", true), "jetbrains.mps.core.xml.sax.structure.XMLSAXHandler_resultObject", false, new String[]{})).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_2264311582634172157(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "text", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1910945748556190054(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "type", true) != null);
   }
 
   public static boolean ifMacro_Condition_2264311582634172235(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -275,11 +279,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_2264311582634172005(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "type", true);
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), "type", true));
   }
 
   public static SNode sourceNodeQuery_2264311582634172014(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "type", true);
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), "type", true));
   }
 
   public static SNode sourceNodeQuery_2264311582634172027(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -406,12 +410,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "condition", true), "body", true), "statement", true);
   }
 
-  public static Iterable sourceNodesQuery_2264311582634172103(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handler", true), "body", true), "statement", true);
+  public static Iterable sourceNodesQuery_1910945748574897893(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "children", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "handler", true) != null);
+      }
+    });
   }
 
-  public static Iterable sourceNodesQuery_2264311582634172126(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "children", true);
+  public static Iterable sourceNodesQuery_2264311582634172103(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handler", true), "body", true), "statement", true);
   }
 
   public static Iterable sourceNodesQuery_2264311582634172260(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

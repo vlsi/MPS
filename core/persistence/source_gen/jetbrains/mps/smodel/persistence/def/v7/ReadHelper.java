@@ -88,6 +88,10 @@ public class ReadHelper {
     return readLink_internal(src).o2;
   }
 
+  public boolean isInterfaceNode(String nodeInfo) {
+    return nodeInfo.startsWith("i");
+  }
+
   public Tuples._3<ConceptKind, StaticScope, Boolean> readNodeInfo(String s) {
     ConceptKind kind;
     StaticScope scope;
