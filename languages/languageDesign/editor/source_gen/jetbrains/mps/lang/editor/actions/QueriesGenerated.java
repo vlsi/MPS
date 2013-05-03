@@ -610,7 +610,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return !(pattern.equals("[-") || pattern.equals("[/") || pattern.equals("[>") || pattern.startsWith("\""));
+            return !(pattern.equals("[-") || pattern.equals("[/") || pattern.equals("[>") || pattern.startsWith("\"") || pattern.startsWith("<choose cell model>"));
           }
 
           public String getDescriptionText(String pattern) {
