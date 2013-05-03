@@ -55,12 +55,12 @@
       <node role="richChild" roleId="jap4.6655351613569925164" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="7636045212390385564">
         <property name="name" nameId="tpck.1169194664001" value="RichChild" />
         <property name="richProperty" nameId="jap4.6655351613569904551" value="initValue" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7636045212390385566">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7279578193766803276">
           <property name="caretPosition" nameId="tp5g.1229194968596" value="4" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="4" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="4" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_diagramProperty" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
         </node>
       </node>
     </node>
@@ -73,12 +73,12 @@
       <node role="richChild" roleId="jap4.6655351613569925164" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="7636045212390385581">
         <property name="name" nameId="tpck.1169194664001" value="RichChild" />
         <property name="richProperty" nameId="jap4.6655351613569904551" value="initialValue" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7636045212390385586">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7279578193766803462">
           <property name="caretPosition" nameId="tp5g.1229194968596" value="7" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="7" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="7" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_diagramProperty" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
         </node>
       </node>
     </node>
@@ -122,12 +122,12 @@
       <node role="compactChild" roleId="jap4.6822301196698237842" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="7636045212390307726">
         <property name="name" nameId="tpck.1169194664001" value="CompactChild" />
         <property name="compactProperty" nameId="jap4.5950344441601550575" value="value" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7636045212390307728">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7279578193766803868">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="5" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_groovyProperty" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_compactProperty" />
         </node>
       </node>
     </node>
@@ -140,12 +140,12 @@
       <node role="compactChild" roleId="jap4.6822301196698237842" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="7636045212390317720">
         <property name="name" nameId="tpck.1169194664001" value="CompactChild" />
         <property name="compactProperty" nameId="jap4.5950344441601550575" value="newValue" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7636045212390317725">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7279578193766803870">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="8" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="8" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_groovyProperty" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_compactProperty" />
         </node>
       </node>
     </node>
@@ -189,12 +189,12 @@
       <node role="conditionallyProjectedChild" roleId="jap4.7687090409437208719" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="7636045212390411160">
         <property name="name" nameId="tpck.1169194664001" value="RichChildPresentation" />
         <property name="richProperty" nameId="jap4.6655351613569904551" value="oldValue" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7636045212390411162">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7279578193766804211">
           <property name="caretPosition" nameId="tp5g.1229194968596" value="3" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_diagramProperty" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
         </node>
       </node>
     </node>
@@ -208,12 +208,12 @@
       <node role="conditionallyProjectedChild" roleId="jap4.7687090409437208719" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="7636045212390411177">
         <property name="name" nameId="tpck.1169194664001" value="RichChildPresentation" />
         <property name="richProperty" nameId="jap4.6655351613569904551" value="oldPropertyValue" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7636045212390411182">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7279578193766804213">
           <property name="caretPosition" nameId="tp5g.1229194968596" value="11" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="11" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="11" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_diagramProperty" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
         </node>
       </node>
     </node>
@@ -228,12 +228,12 @@
       <property name="projectAsCompact" nameId="jap4.7636045212390435962" value="true" />
       <node role="conditionallyRichOrCompactChild" roleId="jap4.7636045212390435965" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="7636045212393354551">
         <property name="name" nameId="tpck.1169194664001" value="CompactChild" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7636045212393354553">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7279578193766804554">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_groovyProperty" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_compactProperty" />
         </node>
       </node>
     </node>
@@ -242,12 +242,12 @@
       <node role="conditionallyRichOrCompactChild" roleId="jap4.7636045212390435965" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="7636045212393354568">
         <property name="name" nameId="tpck.1169194664001" value="CompactChild" />
         <property name="compactProperty" nameId="jap4.5950344441601550575" value="propValue" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7636045212393354573">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7279578193766804556">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="9" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="9" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_groovyProperty" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_compactProperty" />
         </node>
       </node>
     </node>
@@ -288,12 +288,12 @@
       <node role="conditionallyProjectedChild" roleId="jap4.7687090409437208719" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="7636045212393354333">
         <property name="name" nameId="tpck.1169194664001" value="RichChild" />
         <property name="richProperty" nameId="jap4.6655351613569904551" value="richPropertyValue" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7636045212393354478">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7279578193766808673">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="17" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="17" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_diagramProperty" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
         </node>
       </node>
     </node>
@@ -334,12 +334,12 @@
       <node role="conditionallyRichOrCompactChild" roleId="jap4.7636045212390435965" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="7636045212393365019">
         <property name="name" nameId="tpck.1169194664001" value="CompactChild" />
         <property name="richProperty" nameId="jap4.6655351613569904551" value="propValue" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7636045212393365024">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7279578193766809014">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="9" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="9" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_diagramProperty" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
         </node>
       </node>
     </node>
