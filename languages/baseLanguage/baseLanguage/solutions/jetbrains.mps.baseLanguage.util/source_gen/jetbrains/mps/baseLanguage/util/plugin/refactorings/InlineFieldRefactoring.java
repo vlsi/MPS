@@ -26,10 +26,18 @@ public abstract class InlineFieldRefactoring {
     });
   }
 
+  public Iterable<SNode> findAllReferenceOperations(final SNode variable) {
+    return ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(variable), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "fieldDeclaration", false) == variable;
+      }
+    });
+  }
+
 
 
   public void optimizeDeclaration(SNode variable) {
-    if (Sequence.fromIterable(findAllReferences(variable)).isEmpty()) {
+    if (Sequence.fromIterable(findAllReferences(variable)).isEmpty() && Sequence.fromIterable(findAllReferenceOperations(variable)).isEmpty()) {
       SNodeOperations.deleteNode(variable);
     }
   }

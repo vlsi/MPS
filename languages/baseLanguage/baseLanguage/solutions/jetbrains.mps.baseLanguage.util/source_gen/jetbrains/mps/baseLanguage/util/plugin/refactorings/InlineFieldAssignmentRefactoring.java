@@ -20,6 +20,9 @@ public class InlineFieldAssignmentRefactoring extends InlineFieldRefactoring {
     for (SNode reference : this.findAllReferences(this.myVariable)) {
       SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, "initializer", true)));
     }
+    for (SNode reference : this.findAllReferenceOperations(this.myVariable)) {
+      SNodeOperations.replaceWithAnother(SNodeOperations.getAncestor(reference, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, "initializer", true)));
+    }
     this.optimizeDeclaration(this.myVariable);
     return null;
   }
