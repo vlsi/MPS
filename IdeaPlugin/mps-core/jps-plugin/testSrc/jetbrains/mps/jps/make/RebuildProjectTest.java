@@ -28,9 +28,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import static com.intellij.util.io.TestFileSystemBuilder.fs;
 
-import java.io.File;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 
 import static com.intellij.openapi.util.io.FileUtil.toSystemDependentName;
@@ -40,20 +38,6 @@ import static com.intellij.openapi.util.io.FileUtil.toSystemDependentName;
  * Date: 1/11/13
  */
 public class RebuildProjectTest extends MpsJpsBuildTestCase {
-
-  public static final String[] MPS_LANGUAGE_LOCATIONS = {"mps-core/languages", "mps-java", "mps-core/lib"}; //mps-vcs/languages;
-  private Map<String, String> buildParams = new HashMap<String, String>();
-
-  @Override
-  protected Map<String, String> getBuilderParams() {
-    return this.buildParams;
-  }
-
-  @Override
-  protected void setUp() throws Exception {
-    super.setUp();
-    buildParams.clear();
-  }
 
 
   public void testBuild_blProject () {
@@ -67,7 +51,7 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
     configuration.setModelRoots(Arrays.<ModelRoot>asList(dmr));
 
     JpsMPSExtensionService.getInstance().setExtension(main, new JpsMPSModuleExtensionImpl(configuration));
-    buildParams.put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
+    getBuilderParams().put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
 
     rebuildAll();
 
@@ -93,7 +77,7 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
     configuration.setModelRoots(Arrays.<ModelRoot>asList(dmr));
 
     JpsMPSExtensionService.getInstance().setExtension(main, new JpsMPSModuleExtensionImpl(configuration));
-    buildParams.put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
+    getBuilderParams().put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
 
     rebuildAll();
 
@@ -117,7 +101,7 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
     configuration.setModelRoots(Arrays.<ModelRoot>asList(dmr));
 
     JpsMPSExtensionService.getInstance().setExtension(main, new JpsMPSModuleExtensionImpl(configuration));
-    buildParams.put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
+    getBuilderParams().put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
 
     rebuildAll();
 
@@ -149,7 +133,7 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
     configuration.setModelRoots(Arrays.<ModelRoot>asList(dmr));
 
     JpsMPSExtensionService.getInstance().setExtension(main, new JpsMPSModuleExtensionImpl(configuration));
-    buildParams.put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
+    getBuilderParams().put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
 
     rebuildAll();
 
@@ -184,38 +168,10 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
     configuration.setModelRoots(Arrays.<ModelRoot>asList(dmr));
 
     JpsMPSExtensionService.getInstance().setExtension(main, new JpsMPSModuleExtensionImpl(configuration));
-    buildParams.put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
+    getBuilderParams().put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
 
     doBuild(CompileScopeTestBuilder.rebuild().all()).assertFailed();
   }
 
-  private MPSConfigurationBean createConfiguration(String srcgen) {
-    MPSConfigurationBean configuration = new MPSConfigurationBean();
-    configuration.setGeneratorOutputPath(srcgen);
-    configuration.setUsedLanguages(
-      new String[] {"f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)",
-        "f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)"});
-    return configuration;
-  }
 
-  private DefaultModelRoot createModelRoot(String models) {
-    DefaultModelRoot dmr = new DefaultModelRoot();
-    dmr.setContentRoot(models);
-    dmr.addFile(DefaultModelRoot.SOURCE_ROOTS, models);
-    return dmr;
-  }
-
-
-  private String getLanguageLocations() {
-    String[] baseDirs = {System.getProperty("idea.plugins.path"), System.getProperty("user.dir")};
-    StringBuilder sb = new StringBuilder();
-    String sep = "";
-    for(String loc: MPS_LANGUAGE_LOCATIONS) {
-      File locFile = findFileUnder(baseDirs, loc, getClass());
-      sb.append(sep);
-      sb.append(locFile.getAbsolutePath());
-      sep = ";";
-    }
-    return sb.toString();
-  }
 }
