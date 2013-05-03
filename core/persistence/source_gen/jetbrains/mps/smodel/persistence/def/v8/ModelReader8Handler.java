@@ -176,7 +176,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
       fieldmodel = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")));
       fieldhasSkippedNodes = false;
-      fieldmodel.setPersistenceVersion(7);
+      fieldmodel.setPersistenceVersion(8);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldhelper = new ReadHelper(fieldmodel.getReference());
       fieldlinkMap = new ModelLinkMap(fieldmodel.getModelDescriptor());
