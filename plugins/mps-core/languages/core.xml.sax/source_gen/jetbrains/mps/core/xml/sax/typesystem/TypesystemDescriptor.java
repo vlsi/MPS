@@ -20,6 +20,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_XMLSAXChildRule_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_XMLSAXFieldReference_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -29,6 +33,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_XMLSAXLocatorExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_XMLSAXNodeRuleParamRef_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
   }

@@ -14,6 +14,7 @@ public class TestParserHandler extends DefaultHandler {
   private TestParserHandler.RootElementElementHandler rootElementhandler = new TestParserHandler.RootElementElementHandler();
   private TestParserHandler.ChildElementElementHandler childElementhandler = new TestParserHandler.ChildElementElementHandler();
   private Stack<TestParserHandler.ElementHandler> myHandlersStack = new Stack<TestParserHandler.ElementHandler>();
+  private Stack<TestParserHandler.ChildHandler> myChildHandlersStack = new Stack<TestParserHandler.ChildHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
   private AstRoot myResult;
@@ -45,12 +46,13 @@ public class TestParserHandler extends DefaultHandler {
   public void endElement(String uri, String localName, String qName) throws SAXException {
     TestParserHandler.ElementHandler current = myHandlersStack.pop();
     Object childValue = myValues.pop();
-    if (current != null) {
-      current.validate(childValue);
-      if (myHandlersStack.empty()) {
-        myResult = (AstRoot) childValue;
-      } else {
-        myHandlersStack.peek().handleChild(myValues.peek(), qName, childValue);
+    current.validate(childValue);
+    if (myChildHandlersStack.empty()) {
+      myResult = (AstRoot) childValue;
+    } else {
+      TestParserHandler.ChildHandler ch = myChildHandlersStack.pop();
+      if (ch != null) {
+        ch.apply(myValues.peek(), childValue);
       }
     }
   }
@@ -65,7 +67,7 @@ public class TestParserHandler extends DefaultHandler {
       // root 
       current = rootElementhandler;
     } else {
-      current = current.createChild(qName);
+      current = current.createChild(myValues.peek(), qName, attributes);
     }
 
     // check required 
@@ -90,23 +92,23 @@ public class TestParserHandler extends DefaultHandler {
     myValues.push(result);
   }
 
+  private static interface ChildHandler {
+    public void apply(Object resultObject, Object value) throws SAXException;
+  }
+
   private class ElementHandler {
     private ElementHandler() {
     }
 
-    protected Object createObject(Attributes attrs) {
+    protected Object createObject(Attributes attrs) throws SAXException {
       return null;
     }
 
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
 
-    protected TestParserHandler.ElementHandler createChild(String tagName) throws SAXException {
+    protected TestParserHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
-    }
-
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
-      throw new SAXParseException("unknown child: " + tagName, null);
     }
 
     protected void handleText(Object resultObject, String value) throws SAXException {
@@ -146,22 +148,23 @@ public class TestParserHandler extends DefaultHandler {
     }
 
     @Override
-    protected TestParserHandler.ElementHandler createChild(String tagName) throws SAXException {
+    protected TestParserHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("child".equals(tagName)) {
+        myChildHandlersStack.push(new TestParserHandler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_2059681291147422777(resultObject, value);
+          }
+        });
         return childElementhandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
-    @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
+    private void handleChild_2059681291147422777(Object resultObject, Object value) throws SAXException {
       AstRoot result = (AstRoot) resultObject;
-      if ("child".equals(tagName)) {
-        AstChild child = (AstChild) value;
-        result.setMainChild(child);
-        return;
-      }
-      super.handleChild(resultObject, tagName, value);
+      AstChild child = (AstChild) value;
+      result.setMainChild(child);
     }
 
     @Override
@@ -178,26 +181,16 @@ public class TestParserHandler extends DefaultHandler {
     }
 
     @Override
-    protected TestParserHandler.ElementHandler createChild(String tagName) throws SAXException {
+    protected TestParserHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("mine".equals(tagName)) {
+        myChildHandlersStack.push(null);
         return childElementhandler;
       }
       if ("theirs".equals(tagName)) {
+        myChildHandlersStack.push(null);
         return childElementhandler;
       }
-      return super.createChild(tagName);
-    }
-
-    @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
-      AstChild result = (AstChild) resultObject;
-      if ("mine".equals(tagName)) {
-        return;
-      }
-      if ("theirs".equals(tagName)) {
-        return;
-      }
-      super.handleChild(resultObject, tagName, value);
+      return super.createChild(resultObject, tagName, attrs);
     }
   }
 }

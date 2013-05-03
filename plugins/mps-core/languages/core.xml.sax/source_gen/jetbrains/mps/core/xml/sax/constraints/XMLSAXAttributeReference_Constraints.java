@@ -12,16 +12,15 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescriptor {
@@ -57,24 +56,38 @@ public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescrip
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode creator = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator", true, false);
-            List<SNode> n = ListSequence.fromList(new ArrayList<SNode>());
-            if ((creator != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(creator), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule")) {
-              ListSequence.fromList(n).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(creator), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), "attrs", true)).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SPropertyOperations.getBoolean(it, "isRequired");
-                }
-              }));
+          public boolean hasPresentation() {
+            return true;
+          }
+
+          @Override
+          public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
+            if (SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", true, false) != SNodeOperations.getParent(_context.getParameterNode())) {
+              SNode nodeRule = SNodeOperations.as(SNodeOperations.getParent(_context.getParameterNode()), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule");
+              return ((nodeRule == null ?
+                "<unknown>" :
+                SPropertyOperations.getString(nodeRule, "name")
+              )) + "." + SPropertyOperations.getString(_context.getParameterNode(), "name");
             }
-            return n;
+            return SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
 
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_4osf4s_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_4osf4s_a0a2a0a0a1a0b0a1a3;
+          }
+
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"));
+              return (scope == null ?
+                new EmptyScope() :
+                scope
+              );
+            }
           }
         };
       }
@@ -83,9 +96,9 @@ public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescrip
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator", true, false) != null);
+    return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", true, false) != null);
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140728");
-  private static SNodePointer breakingNode_4osf4s_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140676");
+  private static SNodePointer breakingNode_4osf4s_a0a2a0a0a1a0b0a1a3 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "980633948652566941");
 }

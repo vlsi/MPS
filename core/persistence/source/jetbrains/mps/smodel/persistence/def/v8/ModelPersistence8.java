@@ -38,7 +38,7 @@ public class ModelPersistence8 extends ModelPersistence7 {
 
   @Override
   public IModelReader getModelReader() {
-    return new ModelReader8();
+    throw new UnsupportedOperationException("use sax reader");
   }
 
   @Override
@@ -48,7 +48,7 @@ public class ModelPersistence8 extends ModelPersistence7 {
 
   @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
-    return new ModelReader8Handler(state, header);
+    return new ModelReader8Handler(state == ModelLoadingState.ROOTS_LOADED, header);
   }
 
   @Override
