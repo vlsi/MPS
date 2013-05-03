@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-91fzth7f9wzqeff97t4hsthfz524y7m">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="d6h69lz4jlm2hkaom14gc3k10dkmp2w" />
-  <common hash="2omcg4hou6h0tkcur8i51wsjwokv6le" />
-  <source id="2082624981609760242" name="IMakeService" hash="-et82h3ig5i5fgybw4ni71bbwdrd6jle">
+<dependencies version="2" modelHash="-1ttcqkjvuenuhsejjxqul2d78xf03oc">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="-cbbs3jojn8a880mhg6f45ad4q1y7nm7" />
+  <common hash="-et67lquq23a30owiwj6l23lb5jwqf3c" />
+  <source id="2082624981609760242" name="IMakeService" hash="-2bnj2djyi8a27m45rknmxfc4iu4v43a">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <file name="IMakeService.java" />
   </source>
-  <source id="8695426379435232461" name="MakeSession" hash="-7hqfm4fjbunstlz15z8n3espgt9w8xv">
+  <source id="8695426379435232461" name="MakeSession" hash="-cyyl3u4w483j5gj3b8iohuv7gg6q6dm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MakeSession.java" />
   </source>
-  <source id="8464977774479999203" name="MakeNotification" hash="vm2nxkbax3hp233ezchds6xgx2yrhl">
+  <source id="8464977774479999203" name="MakeNotification" hash="6z6f9i8s5eryoc0i27pvaluamtgaiz9">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MakeNotification.java" />
   </source>
-  <source id="8464977774480012290" name="IMakeNotificationListener" hash="-7khpys9ctkntag6df3rud3664j7kvty">
+  <source id="8464977774480012290" name="IMakeNotificationListener" hash="-ee7oa92dua1piqfq9lvuh2ehz8c9azm">
     <dep root="8464977774479999203" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IMakeNotificationListener.java" />
   </source>
-  <source id="2958721966247272985" name="IHName" hash="o6hq4ifgntk2zyuge2eu53ocz7cn4n">
+  <source id="2958721966247272985" name="IHName" hash="8xdkemtgohgydt3epz2319mn97dltyr">
     <file name="IHName.java" />
   </source>
 </dependencies>

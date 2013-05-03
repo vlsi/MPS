@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-aywn6we3udr7t9jzv6cgnzac3fpbue3">
+<dependencies version="2" modelHash="-chq8hoit0qj45csiisklwdopoaxk94p">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
-  <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="-65yjz5ofvmtff0oq1433gachvyzhkhe" />
-  <common hash="dbtzp31e7mquqvxluh124w5veknc3ko" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="-2cmmqnhee14dfjjk65czwkvhtuvlgjc" />
+  <common hash="dlcbaecwkej9z90wdl5vhxrs8r4ffcl" dependsOnNodes="true">
     <dep root="2990235398088186554" />
     <dep root="349375443596798661" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" />
@@ -12,13 +12,13 @@
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="IconContainer.java" />
   </common>
-  <source id="2990235398088186554" name="Behavior" hash="9dfunkiebacharlt9sxfuzom21lyzta" dependsOnCreated="true">
+  <source id="2990235398088186554" name="Behavior" hash="-5dl14qm1c9rbuoos2zi6m885i05a62l" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="IconResourceBundle_Behavior.java" />
   </source>
-  <source id="349375443596798661" name="Visibility" hash="eelbpanowm4fepdiw8t8ineyihe5g6l" dependsOnCreated="true">
+  <source id="349375443596798661" name="Visibility" hash="brr3npd4cxxu21wzqie8lcqzi5gsw8i" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />

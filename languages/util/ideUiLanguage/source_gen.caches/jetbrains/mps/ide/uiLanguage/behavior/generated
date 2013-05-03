@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8jgk2ekpo2pb4mdsbkpbtji30kacdma">
-  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="4qb6hzq5n1c7ttn0ermxt0qnt48xuco" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="e04c1rxnqbqsa6flvn8w3de8x4phusg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" hash="-b9fna91cfhyen6ky37clfvwtfhsqm23" />
-  <dep model="r:00000000-0000-4000-0000-011c8959054c(jetbrains.mps.uiLanguage.behavior)" hash="-emhpzibatkfnr98laqe3j35mswfywup" />
-  <dep model="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" hash="-2ua62hojrzesg8x2nd2z577e9hyclhe" />
-  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-ay494fudufvl34j9tt93i8vpjfx3z7i" />
-  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="78ysfrpjuhuyadt3m03y6bbyt3b17tp" />
-  <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" hash="95xae2mij6yhh2aq22y72fd4ic7gbe2" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="-7cyxzykci8b63j3j6g1iljkj58te6dr" dependsOnNodes="true">
+<dependencies version="2" modelHash="b0zoxl7uk1jeqtqdnvo6418n8b4mce9">
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-3gd1wjtanyuae8zlmappxzhsoyku4tj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-arvbp4sk4s1cuy53bygk6ld5sghrjco" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" hash="-a6df08cn37eyc4dszf8v79s73lmpa2e" />
+  <dep model="r:00000000-0000-4000-0000-011c8959054c(jetbrains.mps.uiLanguage.behavior)" hash="3r6kniu9ckmxprocuitylir6nirkn5z" />
+  <dep model="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" hash="b9n8hvp0aiv1bqofqnfyptft56ovgsq" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-8kbwkwsxkzs059jlmagbtjq0yhtcnrp" />
+  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="6ggjsqv32zguzobb2exfu46t58nkiwn" />
+  <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" hash="3zfl2af2tjgxlreszu2svgw9p756u61" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <common hash="-6ti2y6xeml3j8kwis3m68bxs0iilehu" dependsOnNodes="true">
     <dep root="1213877315073" />
     <dep root="1213877331196" />
     <dep root="1213877369278" />
@@ -39,22 +39,22 @@
     <file name="ReportErrorExpression_BehaviorDescriptor.java" />
     <file name="ReportErrorStatement_BehaviorDescriptor.java" />
   </common>
-  <source id="1213877315073" name="ReportErrorExpression_Behavior" hash="-1j33q9k0ue2lxptk76q34rq18z4pfk">
+  <source id="1213877315073" name="ReportErrorExpression_Behavior" hash="-9b1m55ma9kwvob53o3dft0orrb6uca">
     <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="ReportErrorExpression_Behavior.java" />
   </source>
-  <source id="1213877331196" name="DialogExpression_Behavior" hash="-7cyb5mmj1xfejjce8bu4wz1h9upkpgv">
+  <source id="1213877331196" name="DialogExpression_Behavior" hash="mywadw92yvr907xhcjy5t8auvyvje2">
     <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="DialogExpression_Behavior.java" />
   </source>
-  <source id="1213877369278" name="IDEDialog_Behavior" hash="-5n4pg71u75gnsexpdhw6z4ncaw43kqg">
+  <source id="1213877369278" name="IDEDialog_Behavior" hash="-14r29ys7ylvsl2py1kgz2a1uw38jhph">
     <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="IDEDialog_Behavior.java" />
   </source>
-  <source id="1213877501207" name="DisposeDialogExpression_Behavior" hash="90g4m8uufm3nspi4md2ww0rj44xti3g">
+  <source id="1213877501207" name="DisposeDialogExpression_Behavior" hash="2g4lyhwymnhvwd7pg1y9awjz9bybmzr">
     <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="DisposeDialogExpression_Behavior.java" />

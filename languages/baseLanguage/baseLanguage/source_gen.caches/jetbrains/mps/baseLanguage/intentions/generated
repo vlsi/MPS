@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dxl4czfxs84ejh4967vvoag17c2m2n4">
+<dependencies version="2" modelHash="4yhhngxgl9v5gmu6l6yenzss50yinj6">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.intentions(MPS.Editor/jetbrains.mps.intentions@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
@@ -16,39 +16,39 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="4qb6hzq5n1c7ttn0ermxt0qnt48xuco" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-6ndj9nlttlyav4hvpcs073x2l1z2614" />
-  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-81huy0fmdhno9qzkzxs51jufv86r4d6" />
-  <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="1e8cnlhpib0c8y2ae75eqzl6puhmyf5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-2ai9yeck2zomeus3va0z3l0hunhhwqd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-2qxctjww3633jjrk3ninkqwr3fw1ajg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="e04c1rxnqbqsa6flvn8w3de8x4phusg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="iak6qkoqvisy1gghydx23iwnxiu2qf" />
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-3gd1wjtanyuae8zlmappxzhsoyku4tj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="ggsqc6rgbf2p0m0z15dk8d5fjhmfbr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-arw7gvobs0uivjrocx6wvn1k4g8q42g" />
+  <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="2j2f1w30dyydhxe3zzvalcj1njwtjvw" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-2ox7dg3ms5eslpcygnxrfls1abr96fg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-77i2jof61xbw8llew8edhv9oi9w4mcz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-arvbp4sk4s1cuy53bygk6ld5sghrjco" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="4298mu054fx6whzlp2w6f6j2etcqkrl" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b7efqpp988394i1ffiwgj2bp6kuza4w" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="1xdbhxbxgxcj0vz3o967fop4sb0ro25" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-z22oiu2i3virhyguef3oewaixjm9hi" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="e4aodjamafijmcm1ggq1itbjxjw4yyr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="96pjjgrifm9n0ijb1jhc6nqxgg54m47" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
-  <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="9a4oig6rbwxk2f2fa8fpvbl3dbjtuyj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590346(jetbrains.mps.lang.pattern.generator.baseLanguage.template.main@generator)" hash="-eon6ko4gfa3wbkqshd3v182uf4z5fzu" />
-  <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" hash="1g97qphu4vlchckmuogluq58eisulia" />
-  <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" hash="304n50cnh8bs5khasauh4w2sp8x5opg" />
-  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="2jrbyo5d531fpanaaqnkdizo4ju9b1t" />
-  <dep model="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" hash="722hp57gfz7rla4jw10qkouici7y4tw" />
-  <dep model="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" hash="-29izym63tar1sqtdr85l4o5yjza7jf9" />
-  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="78ysfrpjuhuyadt3m03y6bbyt3b17tp" />
-  <dep model="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" hash="5mm6zdlgz7k6se0hju3pcz19korhc5x" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="eaarideck6uggp8nn6bpyho4my5sjxz" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-73ksfiy89aqro33y9o3ksbsc4qnds4d" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="6pme6f8cr98yhjna02lpbqkg2n36ah5" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="9s4ew6zs4uduvqajf8pw55fabqfqmkg" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b3wz0owxesi28bm1lrvljioj8jycged" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="escnzqn0hifing8eemstueasix9gmse" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8xjteqk842ql8pbze16i68m1ajw21lk" />
+  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="56n96xq2v8m4j68wn4gfgdkw148ykpn" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="59ea0wchjl1p3fmqjarzl02fje6rngu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="d0g7q2t5xtvcsoq7ht0jewjpc5k0tez" />
+  <dep model="r:00000000-0000-4000-0000-011c89590346(jetbrains.mps.lang.pattern.generator.baseLanguage.template.main@generator)" hash="1u0qcie3e7cstazlpym9d5vsujof29k" />
+  <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" hash="thuzkj44s63yk95td0ediith2itgqx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" hash="-3ohmbc687tuy9w7mx0yfu1hcacxjnvu" />
+  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-1jd06s7y0ws8p9he3cg0rkmliay4f39" />
+  <dep model="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" hash="-9n14vfz1aeu3qmeztx0tzkpy3nciqq2" />
+  <dep model="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" hash="2a5murkiza0fj5msnk1wxc4tfusvlkg" />
+  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="6ggjsqv32zguzobb2exfu46t58nkiwn" />
+  <dep model="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" hash="-dmz5rkyy7rdh6en8e609auxqsbswuet" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="10mp51mbeql449vc6yd910xwfralj9l" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-75hld4xn0j0x620a2ffc7r1mui5k2kp" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2ndxdy2yylqxt61razyif42s9aj25s9" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <common hash="vomwqycki6fde2r1s3dhfazkmzq1qk" dependsOnNodes="true">
     <dep root="1193744597902" />
     <dep root="1195647284978" />
     <dep root="1195647309293" />
@@ -142,7 +142,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" />
     <file name="IntentionsDescriptor.java" />
   </common>
-  <source id="1193744597902" name="AddCastStatement" hash="2hl4z22mg6cu6jazypo3lo96rvosfyw">
+  <source id="1193744597902" name="AddCastStatement" hash="ncz8qharsot12tp1kl191gf7yqv6x">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.intentions(MPS.Editor/jetbrains.mps.intentions@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -162,7 +162,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddCastStatement_Intention.java" />
   </source>
-  <source id="1195647385815" name="SplitStringIntoConcatenation" hash="-9xrykuyub7zc0cavrhqsh9knkwlr29b">
+  <source id="1195647385815" name="SplitStringIntoConcatenation" hash="-c8bn0oipp7edfpgwle7ce8g2iur7yov">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -178,7 +178,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="SplitStringIntoConcatenation_Intention.java" />
   </source>
-  <source id="1195647309293" name="SplitIntoDeclarationAndAssignment" hash="d2uhcwxds8g5b79okblf0opr8qyf4ls">
+  <source id="1195647309293" name="SplitIntoDeclarationAndAssignment" hash="-a8r89kum31tw1m4d2uktnhsoxkritbf">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -190,7 +190,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="SplitIntoDeclarationAndAssignment_Intention.java" />
   </source>
-  <source id="1195647284978" name="AddAnnotation" hash="evir8gyajn2n3d9ab9qo7yv9q1oieax">
+  <source id="1195647284978" name="AddAnnotation" hash="9ejjeyu68lrhugg2kelcmusnx89elv0">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.intentions(MPS.Editor/jetbrains.mps.intentions@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -211,7 +211,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddAnnotation_Intention.java" />
   </source>
-  <source id="1195647334600" name="FlipBinaryOperation" hash="coiubv0zsgyvt1jx9af7w04b3912eyt">
+  <source id="1195647334600" name="FlipBinaryOperation" hash="6uueok0oc1cmvziar3qsxgaleoi11l4">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -221,7 +221,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="FlipBinaryOperation_Intention.java" />
   </source>
-  <source id="1195647359405" name="InvertIfCondition" hash="elwxnclt7e0r0sjaqr6cftfh4v8n7x7">
+  <source id="1195647359405" name="InvertIfCondition" hash="7bji88v6jfllyb06rb36ocoyxmcm2j6">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -236,7 +236,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="InvertIfCondition_Intention.java" />
   </source>
-  <source id="1199557092807" name="ReplaceEqualityWithEquals" hash="dzndwnacodblel0ym7ieo5upw9a2zlq">
+  <source id="1199557092807" name="ReplaceEqualityWithEquals" hash="1nler30087j150wip7vy6h81br9ygtp">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -254,7 +254,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ReplaceEqualityWithEquals_Intention.java" />
   </source>
-  <source id="1199559711021" name="ReplaceEqualsWithEquality" hash="2orxwvm9j84n9zir0q45tynfmufutvr">
+  <source id="1199559711021" name="ReplaceEqualsWithEquality" hash="-5g362qinpefnmjxrf77r8ypq8jwlh8f">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -271,7 +271,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReplaceEqualsWithEquality_Intention.java" />
   </source>
-  <source id="1199561300578" name="ReplaceConditionalWithIf" hash="ja1lzthscmumvrgv36bu96glpujo9h">
+  <source id="1199561300578" name="ReplaceConditionalWithIf" hash="c8pjogb8gkmg1wb6f006djtlyt4ij17">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -290,7 +290,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReplaceConditionalWithIf_Intention.java" />
   </source>
-  <source id="1199621296757" name="ExtractWhileConditionToInternalIfStatement" hash="8484n7avl5my43p8nrlh5y4o7x04q1d">
+  <source id="1199621296757" name="ExtractWhileConditionToInternalIfStatement" hash="57e9ix69djaidabtuo55zzw1e1cnyen">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -306,7 +306,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ExtractWhileConditionToInternalIfStatement_Intention.java" />
   </source>
-  <source id="1199622460250" name="ReplaceAssertWithIf" hash="-epnla5bwv9c6n8mk9mp0p9mge5mtvsk">
+  <source id="1199622460250" name="ReplaceAssertWithIf" hash="72csypijs4do3lc9tcyox57bbzoh0bw">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -325,7 +325,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ReplaceAssertWithIf_Intention.java" />
   </source>
-  <source id="1199623693658" name="ReplaceForLoopWithWhileLoop" hash="-3hpyml4yj8mzpopee3hvtq8rfv6mqc5">
+  <source id="1199623693658" name="ReplaceForLoopWithWhileLoop" hash="4ddo78n3wxsoshcwy90q7450zws2hf">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -340,7 +340,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ReplaceForLoopWithWhileLoop_Intention.java" />
   </source>
-  <source id="1199625900037" name="FilpEqualsIntention" hash="-bb4viiuiatt5a8u96ma4az4rmtim2vq">
+  <source id="1199625900037" name="FilpEqualsIntention" hash="-7eh9y1yiuzhmdiaukpt6wredgdba0lc">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -355,7 +355,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FilpEqualsIntention_Intention.java" />
   </source>
-  <source id="1199627182107" name="ReplaceForEachLoopWithIndexedLoop" hash="37z76jc9f88xllfyz3t1208f2rwaeq4">
+  <source id="1199627182107" name="ReplaceForEachLoopWithIndexedLoop" hash="47n2k00bmdp1sqqb7dekyvg0g2y0dx3">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -378,7 +378,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReplaceForEachLoopWithIndexedLoop_Intention.java" />
   </source>
-  <source id="1199627245932" name="ExpandBoolean" hash="-6h313u77yee695mbzld70oi87d2gluw">
+  <source id="1199627245932" name="ExpandBoolean" hash="dwumyo9zh82kampbgeuhapbe16m4gil">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -399,7 +399,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ExpandBoolean_Intention.java" />
   </source>
-  <source id="1199627248517" name="AddRuntimeExceptionToMethodSignature" hash="-b8ffr19qp5ja4mrn2lkmboipkldyawu">
+  <source id="1199627248517" name="AddRuntimeExceptionToMethodSignature" hash="-2d9v8qlhwckqpm846yojzwyovsofwgu">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -424,7 +424,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddRuntimeExceptionToMethodSignature_Intention.java" />
   </source>
-  <source id="1199892779474" name="ReplaceBlockWithItsContent" hash="-c4pjv7hf91midbe6fpto83g3ay3klt1">
+  <source id="1199892779474" name="ReplaceBlockWithItsContent" hash="-65x9w88zhvkuva8iscv4lygfjpx0lw">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -439,7 +439,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReplaceBlockWithItsContent_Intention.java" />
   </source>
-  <source id="1201102619707" name="MoveInitializerToConstructor" hash="-6ccgkgjuazki42sqo8hs55v3i9yj6gw">
+  <source id="1201102619707" name="MoveInitializerToConstructor" hash="-5wv06skakwnrw15kgjqpw1zjg5878ox">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -458,7 +458,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MoveInitializerToConstructor_Intention.java" />
   </source>
-  <source id="1202130221457" name="MergeStringConcatenation" hash="1bu6pz11et960eztu86nidczllwtk4g">
+  <source id="1202130221457" name="MergeStringConcatenation" hash="8umvsbtngie2axpgx3lyskfldjn7i3k">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -474,7 +474,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MergeStringConcatenation_Intention.java" />
   </source>
-  <source id="1202861044458" name="CreateSetAccessor" hash="2msfxtc4mubf2l5c8p8e21e47pglz19">
+  <source id="1202861044458" name="CreateSetAccessor" hash="e9zr22u69ff8bq4va7s6v7rmvc6j2fc">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -486,7 +486,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="CreateSetAccessor_Intention.java" />
   </source>
-  <source id="1203413213560" name="MakeGeneric" hash="-8w3cfufzxifr9n6gr250yhvmz9vw0v0">
+  <source id="1203413213560" name="MakeGeneric" hash="-esbgfjcs9ikq8jx76lpab6mjwwacmak">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -501,7 +501,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MakeGeneric_Intention.java" />
   </source>
-  <source id="1203701450442" name="AddRemoveStaticMethodModifier" hash="50g7c4ciusuiz7tvhbj09g3noufybpc">
+  <source id="1203701450442" name="AddRemoveStaticMethodModifier" hash="-988tla9ak6c0xg0cupmhi3s8r7x8dht">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -525,7 +525,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddRemoveStaticMethodModifier_Intention.java" />
   </source>
-  <source id="1203703270380" name="AddFinalModifierToAny" hash="e38s9j1as71rg018sp5491wwgtz30yf">
+  <source id="1203703270380" name="AddFinalModifierToAny" hash="-1juyoffq39ye9y3z9wzc0ue0tvb67hf">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -542,7 +542,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddFinalModifierToAny_Intention.java" />
   </source>
-  <source id="1206063267399" name="AddElsifClause" hash="cbp7955wfpp7tdxfsemv4p34b2vg7io">
+  <source id="1206063267399" name="AddElsifClause" hash="1xuzn7cooh1a7vtb2v5zxvbp7tjea1">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -557,7 +557,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddElsifClause_Intention.java" />
   </source>
-  <source id="1206065955177" name="ElsifTransform" hash="4a2xxg1ili8r3sq1vuro5tyddzmuuhl">
+  <source id="1206065955177" name="ElsifTransform" hash="-e7aif5znwspqpqtz7nthewtd5zf7nra">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -568,7 +568,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ElsifTransform_Intention.java" />
   </source>
-  <source id="1206066794083" name="ElsifSwapWithMain" hash="2ml9s4jjxz1yhd2o8zeq3j26rv7h5kx">
+  <source id="1206066794083" name="ElsifSwapWithMain" hash="ehuusj7p1dquhjcvfzfsng5aapfp61r">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -578,7 +578,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ElsifSwapWithMain_Intention.java" />
   </source>
-  <source id="1214431614908" name="ConvertClassCreatorToAnonimous" hash="8tpujbsbpl8pxasuhygnj9it54tgw4d">
+  <source id="1214431614908" name="ConvertClassCreatorToAnonimous" hash="-858hadhy7ana5zzydaejbzeqoruwq0q">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -595,7 +595,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ConvertClassCreatorToAnonimous_Intention.java" />
   </source>
-  <source id="1215507513710" name="CreateReferenceOnClass" hash="-a6b7tvp373etdg0gjrx2w6hjrb585ak">
+  <source id="1215507513710" name="CreateReferenceOnClass" hash="3jmpuap4w31j9impzm19ywhhizd3zmp">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -604,7 +604,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" />
     <file name="CreateReferenceOnClass_Intention.java" />
   </source>
-  <source id="1217838039231" name="ConvertElseToElseIf" hash="-14mijsbbfq89m03chnt23yu38gjut2o">
+  <source id="1217838039231" name="ConvertElseToElseIf" hash="-1uncxeg8snpa7k9bhk8rxl3onmxhsss">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -612,7 +612,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" />
     <file name="ConvertElseToElseIf_Intention.java" />
   </source>
-  <source id="1221573777472" name="ConvertAssignmentToVariableDeclaration" hash="appzfvljsox0nxtksmf4lpzk7or4sa">
+  <source id="1221573777472" name="ConvertAssignmentToVariableDeclaration" hash="-b4j1ucdhi2a6uz1ck7wzj9f4c9puwz3">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -623,7 +623,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" />
     <file name="ConvertAssignmentToVariableDeclaration_Intention.java" />
   </source>
-  <source id="1223648378225" name="DeprecatedJavaDoc" hash="-8by1cm6pcrv75uv6kn6kbeuaha5ibr9">
+  <source id="1223648378225" name="DeprecatedJavaDoc" hash="1i0ljovu62jriuvzv7lws5jsugc7k9q">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -634,7 +634,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="DeprecatedJavaDoc_Intention.java" />
   </source>
-  <source id="1224168785803" name="AddFieldForUnUsedParameter" hash="-emopejax8gh20ypwdaxh9fui0ty7egy">
+  <source id="1224168785803" name="AddFieldForUnUsedParameter" hash="-drm90jl8f6yggq0swcyagux8dttglyx">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -652,7 +652,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddFieldForUnUsedParameter_Intention.java" />
   </source>
-  <source id="1226917954178" name="ConvertToArrayType" hash="-enrnht26r1859p1z4rlnah25i4lum5b">
+  <source id="1226917954178" name="ConvertToArrayType" hash="8o24r8kdy5yptml3b0ifo9stjt9o3wm">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
@@ -666,7 +666,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ConvertToArrayType_Intention.java" />
   </source>
-  <source id="1226918395187" name="RemoveArrayType" hash="32f9rkq62icgc5l6fzqdurco4mepy44">
+  <source id="1226918395187" name="RemoveArrayType" hash="-6lrglj4lg1e35fxrq8tw2w4zjae4r26">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -676,7 +676,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="RemoveArrayType_Intention.java" />
   </source>
-  <source id="1227519137253" name="MakeClassAbstract" hash="-7q0iyko1p4qke9zca9xaobnftclumpw">
+  <source id="1227519137253" name="MakeClassAbstract" hash="csnq8q8mo71uw3b3d6qkf2mognla3w2">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -686,7 +686,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MakeClassAbstract_Intention.java" />
   </source>
-  <source id="1230290102486" name="SpecifyClass" hash="-ahn9ko2bziia1nzcv9ul0vq0k7gr0bu">
+  <source id="1230290102486" name="SpecifyClass" hash="-3cxiqjetvnvloo4su01foavzhepf2v5">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -704,7 +704,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="SpecifyClass_Intention.java" />
   </source>
-  <source id="1231930815009" name="AddThrows" hash="1eyggxtmhz8igvf3u68j2ahfn3gi1ih">
+  <source id="1231930815009" name="AddThrows" hash="-bri1s2ctfbgd4c7wkys0z0fvr246u1u">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -721,7 +721,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddThrows_Intention.java" />
   </source>
-  <source id="1236007216018" name="AddMainMethod" hash="-aafu9k73jaew04vibidt5tdcrrg939g">
+  <source id="1236007216018" name="AddMainMethod" hash="-ds1uhwl2t6l2x03e4uhapzx5udiykv">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -739,7 +739,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AddMainMethod_Intention.java" />
   </source>
-  <source id="1236187435379" name="MakeMethodAbstarct" hash="-aovh2ldc3tuhp9kmdtlo8vf4jpgsfv0">
+  <source id="1236187435379" name="MakeMethodAbstarct" hash="e0kkk14ay01va0ozbse1rjs1uio4s0d">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -760,7 +760,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MakeMethodAbstarct_Intention.java" />
   </source>
-  <source id="1238764345596" name="IterateOverIterable" hash="-5t8qfjqlqlaavjsr9pgo4u7yqfl6a4o">
+  <source id="1238764345596" name="IterateOverIterable" hash="-5ixud568nx340vcr0l9jxvnygkz6lyv">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.intentions(MPS.Editor/jetbrains.mps.intentions@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -786,7 +786,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IterateOverIterable_Intention.java" />
   </source>
-  <source id="1240248297859" name="MakeMethodFinal" hash="9uvx2ro0jvp86gge2an2v7k01bwlqtf">
+  <source id="1240248297859" name="MakeMethodFinal" hash="-cgk9y6kjrx5c27rv45423l9ahdqzi0w">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -807,7 +807,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MakeMethodFinal_Intention.java" />
   </source>
-  <source id="1240251547040" name="MakeFieldVolatile" hash="2d5xp4otq1wgoht3ruaz9296nnu91p5">
+  <source id="1240251547040" name="MakeFieldVolatile" hash="a1fbt9tzyo3g4f9xf59q6ed94g810cd">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -818,7 +818,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MakeFieldVolatile_Intention.java" />
   </source>
-  <source id="3627222673199430317" name="MigrateString" hash="8una6mlienq5567ypwnhohyq3qey604">
+  <source id="3627222673199430317" name="MigrateString" hash="-i8e6gagdw4vh64aspry08fblercjxy">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
@@ -833,7 +833,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MigrateString_Intention.java" />
   </source>
-  <source id="6227066020986359514" name="AddNewLine" hash="-ctl4t3bw0u4z9ox08qnbi2ewomzocry">
+  <source id="6227066020986359514" name="AddNewLine" hash="d7bb829g8kty6q0q6n3u7elswyg5kn">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -846,7 +846,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="AddNewLine_Intention.java" />
   </source>
-  <source id="2357139912674293033" name="MakeClassAbstractFromMethod" hash="-3f1o1lx5735nl3t0zzmwoo6e6qrg9ks">
+  <source id="2357139912674293033" name="MakeClassAbstractFromMethod" hash="-7qgl9hoxsou30owxn6q6uvs8f7yvw44">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -859,7 +859,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MakeClassAbstractFromMethod_Intention.java" />
   </source>
-  <source id="521412098689817330" name="ChangeStaticInInner" hash="-1efozfnbniy680s1i89m5lbhr61a8jg">
+  <source id="521412098689817330" name="ChangeStaticInInner" hash="-9dgxiwpwwp4hqh5jw7wp7zqifddyexr">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -871,7 +871,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ChangeStaticInInner_Intention.java" />
   </source>
-  <source id="1705375422254837433" name="MakeClassFinal" hash="b6iryyx6pohiz1ee60m487nyhuhvvvy">
+  <source id="1705375422254837433" name="MakeClassFinal" hash="-4hp1xqefzg2inyafitw2crt0somjj71">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -881,7 +881,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MakeClassFinal_Intention.java" />
   </source>
-  <source id="3898325814824766814" name="MakeParameterFinal" hash="-7w63y354mn68yiniaoaq23nbelpzepg">
+  <source id="3898325814824766814" name="MakeParameterFinal" hash="3re4ifokskill6t7ei6q2o90fu9x0un">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -897,7 +897,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MakeParameterFinal_Intention.java" />
   </source>
-  <source id="7288587046701126243" name="ConvertToReturnStatement" hash="48s163lon29pbmfgee9xv3n60s1ktjm">
+  <source id="7288587046701126243" name="ConvertToReturnStatement" hash="-75ajz2xgdnjwsbkbvffd7lg3q0zxfkg">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -911,7 +911,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ConvertToReturnStatement_Intention.java" />
   </source>
-  <source id="8145509665020019463" name="ConvertElsifToNewIfStatement" hash="emmou705y7902795qb308xt4o35pccn">
+  <source id="8145509665020019463" name="ConvertElsifToNewIfStatement" hash="-ecoz99n393kw7teuj16wcd9nq6n522y">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -927,7 +927,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ConvertElsifToNewIfStatement_Intention.java" />
   </source>
-  <source id="9163255059340117948" name="CreateInternalLabel" hash="-a040smtlvbzi7m6btox8gh9m2zpgzxl">
+  <source id="9163255059340117948" name="CreateInternalLabel" hash="-39hmwrp22r8lttdknev9qc7x6axqzh6">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -940,7 +940,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CreateInternalLabel_Intention.java" />
   </source>
-  <source id="4467513934994688403" name="MakeOneLiner" hash="7e3k87rsxzenw7ovu26xr97kfr4hnfl">
+  <source id="4467513934994688403" name="MakeOneLiner" hash="7ddq1c570pne746g3pt45qcieals1w">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -952,7 +952,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MakeOneLiner_Intention.java" />
   </source>
-  <source id="4467513934994713259" name="MakeMultiLiner" hash="4f6jcm1hl4mve5xfbm5twe83s6u0e53">
+  <source id="4467513934994713259" name="MakeMultiLiner" hash="5egkd6r6rlktcza4o65w41dowu5pnur">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -964,7 +964,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MakeMultiLiner_Intention.java" />
   </source>
-  <source id="4467513934995351531" name="UsedefaultLayout" hash="-2iv5827oegrl9qm0b5v3vepnw43l9q8">
+  <source id="4467513934995351531" name="UsedefaultLayout" hash="-2lg6sxif3ad4yczzfxg87huvey1jv20">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -975,7 +975,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="UsedefaultLayout_Intention.java" />
   </source>
-  <source id="5742179528877834612" name="CreateMethodDeclaration" hash="-6v8ukppsyqdvxk7orczoeamnf4kmm28">
+  <source id="5742179528877834612" name="CreateMethodDeclaration" hash="-24jvghtw7srgggcc5xgclzwqb119ujc">
     <dep root="6670547060642540858" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -995,12 +995,12 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CreateMethodDeclaration_Intention.java" />
   </source>
-  <source id="6670547060642540858" name="CreateMethodDeclarationUtil" hash="-erv9h9gwr8pxkfozj7qeovolkkgg7pi">
+  <source id="6670547060642540858" name="CreateMethodDeclarationUtil" hash="-aysomjfis5p060m54yqaus9e42wsq8l">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="CreateMethodDeclarationUtil.java" />
   </source>
-  <source id="3366354716707474220" name="SurroundWithIf" hash="d1qabk0m4ap8zev6dmeilyhy17ivss">
+  <source id="3366354716707474220" name="SurroundWithIf" hash="-cprxvlat9eeavsvcamc92wgkcgohpfl">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -1022,7 +1022,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SurroundWithIf_Intention.java" />
   </source>
-  <source id="3366354716707626696" name="SurroundWithIfElse" hash="114zh5kntb98r6elf9xo7t4ru3pgpa5">
+  <source id="3366354716707626696" name="SurroundWithIfElse" hash="-3rp9m40vuac0f7lcebyistteqorite">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -1044,7 +1044,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SurroundWithIfElse_Intention.java" />
   </source>
-  <source id="3366354716707714383" name="SurroundWithWhile" hash="exctio2e7opux43brvhn2p34szcmyqv">
+  <source id="3366354716707714383" name="SurroundWithWhile" hash="-ajf11y2l2dme16dodvkmbboxwx9bkku">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1065,7 +1065,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SurroundWithWhile_Intention.java" />
   </source>
-  <source id="3366354716707819213" name="SurroundWithDoWhile" hash="5p4m77s686rwvo40ouoo64lkrpamzh3">
+  <source id="3366354716707819213" name="SurroundWithDoWhile" hash="-4fj86naybmqf5u48y7egixhc73dungx">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1086,7 +1086,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SurroundWithDoWhile_Intention.java" />
   </source>
-  <source id="3366354716707825816" name="SurroundWithFor" hash="-a7oyfv6gilp501jhgwr0nj2xm8sy887">
+  <source id="3366354716707825816" name="SurroundWithFor" hash="5nvxitmz99fju7wb6ark32dxanwals3">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1107,7 +1107,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SurroundWithFor_Intention.java" />
   </source>
-  <source id="3366354716707825882" name="SurroundStatementsWithForEach" hash="-38mhhhfnmm2v3jlb36en8j4psjuym10">
+  <source id="3366354716707825882" name="SurroundStatementsWithForEach" hash="-b38nd8n7g6vhiw901ot47dr7mriqbdk">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1128,7 +1128,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SurroundStatementsWithForEach_Intention.java" />
   </source>
-  <source id="3366354716707825944" name="SuroundWithTryCatch" hash="btm4gxd4wtkd9tjxhitkhn4zam5wubw">
+  <source id="3366354716707825944" name="SuroundWithTryCatch" hash="4sp33gtdiq4grvhqxr10zd5u369xs05">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1149,7 +1149,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SuroundWithTryCatch_Intention.java" />
   </source>
-  <source id="3366354716707895805" name="SurroundWithTryFinally" hash="8wtf81f1bt0nyiaudt4pz753eaag7k8">
+  <source id="3366354716707895805" name="SurroundWithTryFinally" hash="-djwgaq8anbfufdsx6wxuifn1a2m45yu">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1170,7 +1170,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SurroundWithTryFinally_Intention.java" />
   </source>
-  <source id="3366354716707929765" name="TryCatchFinally" hash="7v3li3blxd118kukyxxm5cckmro0tjr">
+  <source id="3366354716707929765" name="TryCatchFinally" hash="-erp6h8inndkfjejiwripns5c03h403n">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1191,7 +1191,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TryCatchFinally_Intention.java" />
   </source>
-  <source id="3366354716707929843" name="SurroundWithSynchronized" hash="9y7onvuus6or65ifdey35i87y4vcjar">
+  <source id="3366354716707929843" name="SurroundWithSynchronized" hash="-e6hizs9q6r0ypmkypsjet6cdjtr4kyg">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1212,7 +1212,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SurroundWithSynchronized_Intention.java" />
   </source>
-  <source id="3366354716707929907" name="SurroundWithBrackets" hash="-8h2rbd3agjbrpqrf7et893mocippbs">
+  <source id="3366354716707929907" name="SurroundWithBrackets" hash="-bsb42udx8xyh9hmxmp5lq6v3f30zz1l">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1233,7 +1233,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SurroundWithBrackets_Intention.java" />
   </source>
-  <source id="3366354716707929978" name="SurroundWithComment" hash="8vevwq5xzkpjefny1cdo4ufuxeiqyae">
+  <source id="3366354716707929978" name="SurroundWithComment" hash="c8vahdvrrh4523zp4teyn1fat0au1gq">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1254,7 +1254,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SurroundWithComment_Intention.java" />
   </source>
-  <source id="8606350594693687997" name="MakeFieldTransient" hash="-cktgl83t8mvw83vjtl2ei9yqw3cwne1">
+  <source id="8606350594693687997" name="MakeFieldTransient" hash="cchizvt39sfinksm4edaeslohvs32rp">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -1265,7 +1265,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MakeFieldTransient_Intention.java" />
   </source>
-  <source id="985108658453262823" name="SurroundWithParenthesis" hash="9jetxx2n82cwj8jqmqfl20y01jkprw6">
+  <source id="985108658453262823" name="SurroundWithParenthesis" hash="-8cirnrr3vuzwc1qibx4zkm6lqcdpcu5">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -1273,7 +1273,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" />
     <file name="SurroundWithParenthesis_Intention.java" />
   </source>
-  <source id="418779379561917490" name="SurroundWithTypeCast" hash="9dwsjvffd36wt68x11k25fo8t40y9sl">
+  <source id="418779379561917490" name="SurroundWithTypeCast" hash="dehsgrlu27zbewt4zsn2u0y49kd5ml2">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
@@ -1286,7 +1286,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SurroundWithTypeCast_Intention.java" />
   </source>
-  <source id="418779379562176548" name="SurroundWithNegation" hash="3ttnfl9rr68j21q2tesjq2fk5v6wp7n">
+  <source id="418779379562176548" name="SurroundWithNegation" hash="ql77cy5snphd1cua11c12v94pzulhw">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -1294,7 +1294,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" />
     <file name="SurroundWithNegation_Intention.java" />
   </source>
-  <source id="2990635952104560718" name="SurroundWithIfClause" hash="1t921eqq7pmmmrdcikwdv7afw39iza">
+  <source id="2990635952104560718" name="SurroundWithIfClause" hash="3f3t8u5nzss59or1neiqwaroztstdf3">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1312,7 +1312,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="SurroundWithIfClause_Intention.java" />
   </source>
-  <source id="2990635952104684230" name="SurroundWithIfElseClause" hash="17b9txaclg5fy68yuk8myu1hkjxi98s">
+  <source id="2990635952104684230" name="SurroundWithIfElseClause" hash="djkxjvt4ty23t6o89bdfqq4g7t1s497">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1330,7 +1330,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="SurroundWithIfElseClause_Intention.java" />
   </source>
-  <source id="7992933469059517022" name="AddTypeParameters" hash="3jyikdlyosj69rbbtqnobup9jofoisd">
+  <source id="7992933469059517022" name="AddTypeParameters" hash="-1fxkn3gov5zj5f7fj0xm2hgc0f4mz7a">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1344,7 +1344,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddTypeParameters_Intention.java" />
   </source>
-  <source id="4276006055363816691" name="MakeSynchronized" hash="-62dzm0gic0n0tbrb19litwmamk68mrw">
+  <source id="4276006055363816691" name="MakeSynchronized" hash="-4exsa7hbuxjgdwck2r7otpaxezs3y0s">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -1356,7 +1356,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MakeSynchronized_Intention.java" />
   </source>
-  <source id="7638980610829995124" name="ConvertToClosure" hash="-3xh847ydvgy0z08pn1no3v9ac9rana2">
+  <source id="7638980610829995124" name="ConvertToClosure" hash="-90e7ag87z1rkm0yvc0ygqmchqk471jq">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1375,7 +1375,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ConvertToClosure_Intention.java" />
   </source>
-  <source id="917166302015890876" name="UnwrapIfThenBlock" hash="c5c170yxdaraj35j2l3nomj0hs4aack">
+  <source id="917166302015890876" name="UnwrapIfThenBlock" hash="-bsru3sy49kxkqs4i3rief39ov1d6kcd">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1399,7 +1399,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UnwrapIfThenBlock_Intention.java" />
   </source>
-  <source id="7093209195843978568" name="UnwrapTryCatch" hash="-dz6wjajq3oohytp7fpfn7wzu3d0b1iv">
+  <source id="7093209195843978568" name="UnwrapTryCatch" hash="6xoyu714z8jck2uccabw7iceoo2fwok">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1423,7 +1423,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UnwrapTryCatch_Intention.java" />
   </source>
-  <source id="4138629533259838060" name="RemoveTVDInAnonymousClass" hash="-bakw73k9wzqr77sc2p32k1kjoslr9u1">
+  <source id="4138629533259838060" name="RemoveTVDInAnonymousClass" hash="-dvr2qjz7n5kgw0u7ywncuxvfrrol5wx">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1436,7 +1436,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="RemoveTVDInAnonymousClass_Intention.java" />
   </source>
-  <source id="5155195849735077874" name="SplitIf" hash="7crf6t11pinh6fcfi32ug9af55xnxuf">
+  <source id="5155195849735077874" name="SplitIf" hash="-9o21ncewpqkjilvbe6kb428y1bgq91d">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1453,7 +1453,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SplitIf_Intention.java" />
   </source>
-  <source id="2040594400225274133" name="IntentionUtils" hash="-c4kx3e6potjstpn22re4e4s7ys17m8c">
+  <source id="2040594400225274133" name="IntentionUtils" hash="-2voyo1cwvi6x337mbv3jb5lwrn8w55r">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1468,7 +1468,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="IntentionUtils.java" />
   </source>
-  <source id="2040594400225361890" name="ConvertIfReturnConditionToTernaryOperator" hash="2vs5t7xt7xlq37heifrv8yoa6bhyft4">
+  <source id="2040594400225361890" name="ConvertIfReturnConditionToTernaryOperator" hash="-cyj1dnr2i3rg4fzkfsh4urxauublgqu">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1483,7 +1483,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ConvertIfReturnConditionToTernaryOperator_Intention.java" />
   </source>
-  <source id="2040594400225005124" name="ConvertIfConditionToTernaryOperator" hash="218l3vrc9d3dbgguh05m85wdye0kptq">
+  <source id="2040594400225005124" name="ConvertIfConditionToTernaryOperator" hash="1cfi7pbrav5xs4uepu51xqv26n37s0n">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1498,7 +1498,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ConvertIfConditionToTernaryOperator_Intention.java" />
   </source>
-  <source id="3166734731684557381" name="AddModifiers" hash="-9u0fscm2xvq6pqsezcngssscbfk1w43">
+  <source id="3166734731684557381" name="AddModifiers" hash="7si41fi8ko0bx97i2mj8wc34tf7p0hz">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -1506,7 +1506,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" />
     <file name="AddModifiers_Intention.java" />
   </source>
-  <source id="1645752949779063112" name="AddOverrideAnnotation" hash="9b3gzpb9lijpk18ey7pivjrxe8rhl68">
+  <source id="1645752949779063112" name="AddOverrideAnnotation" hash="-dapcesa24eoodk5oau1cywrn3rphqi1">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.intentions(MPS.Editor/jetbrains.mps.intentions@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1529,7 +1529,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddOverrideAnnotation_Intention.java" />
   </source>
-  <source id="8176191621190087466" name="AlterStatementListContainer" hash="-5deahm7eulhzh55u5e98tj08uyx5nsg">
+  <source id="8176191621190087466" name="AlterStatementListContainer" hash="9h47kvbcp840pmpx5yi09xc4t7jw29h">
     <dep root="2040594400225274133" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.intentions(MPS.Editor/jetbrains.mps.intentions@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
@@ -1554,7 +1554,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AlterStatementListContainer_Intention.java" />
   </source>
-  <source id="1809470990894798934" name="RemoveStaticFieldModifier" hash="crb5ago3kjs10xro6jn6zkmd8pxhfk9">
+  <source id="1809470990894798934" name="RemoveStaticFieldModifier" hash="-bjzxnzu4ys5xd518q95dht2naq3104i">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1576,7 +1576,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="RemoveStaticFieldModifier_Intention.java" />
   </source>
-  <source id="1809470990895250346" name="AddStaticFieldModifier" hash="1ugtjo8wx06qnibc7wfsaplfxhltdnt">
+  <source id="1809470990895250346" name="AddStaticFieldModifier" hash="-v4mur1qf119x7x8cdr56ej6n3742rs">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />

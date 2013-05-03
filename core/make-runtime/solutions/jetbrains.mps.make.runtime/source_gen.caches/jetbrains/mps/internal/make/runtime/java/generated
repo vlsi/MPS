@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a9kq05mv06283jrobv6pl6x49scrzzl">
+<dependencies version="2" modelHash="-8jgyduwr4gbr26pyl9xoghdh3c5k7q9">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(MPS.Core/org.jdom@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:0bcaf439-5bc6-429b-a457-4e0d9746449f(jetbrains.mps.make.delta)" hash="1n9mm3hzhe31y7p9677jyf9zwl867ok" />
-  <common hash="-3y1ak68jed9qgatt90bra2tdrf6681f" />
-  <source id="4328738523548225887" name="FileProcessor" hash="-2kexnfcxhj1av3acjcrxj2g7xh58569">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:0bcaf439-5bc6-429b-a457-4e0d9746449f(jetbrains.mps.make.delta)" hash="1l72xzytnrbjay1qs4pkw281e67shw5" />
+  <common hash="-qgwq1p5n169uit3g00ewupxekm6zd4" />
+  <source id="4328738523548225887" name="FileProcessor" hash="-27jtc56pyu298vfoer2ghenyqzzm4ld">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
@@ -17,12 +17,12 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FileProcessor.java" />
   </source>
-  <source id="4328738523548226177" name="JavaStreamHandler" hash="-5d6opm49id0e1icdi7faf9bxn8tszkt">
+  <source id="4328738523548226177" name="JavaStreamHandler" hash="ehyviqf1rfm0mrs0giefs4niwfdzq67">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:0bcaf439-5bc6-429b-a457-4e0d9746449f(jetbrains.mps.make.delta)" />
     <file name="JavaStreamHandler.java" />
   </source>
-  <source id="2974008768272253139" name="IdeaJavaCompiler" hash="2spz6cbk347pmfo9fyvy1lrptoiw0wk">
+  <source id="2974008768272253139" name="IdeaJavaCompiler" hash="-9tggcfl40kwlgtxvth8gv2wehoh06wt">
     <file name="IdeaJavaCompiler.java" />
   </source>
 </dependencies>

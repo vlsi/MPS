@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="78mjwq5hs4ze2butyguqg20bzd95xkf">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="iak6qkoqvisy1gghydx23iwnxiu2qf" />
-  <dep model="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" hash="-62lyc701yfjzlqt3y6zhnbb6xbxuzo6" />
-  <dep model="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" hash="48hgr0p9ditrk2v0o1606wxb962zsbo" />
-  <dep model="r:00000000-0000-4000-0000-011c89590324(jetbrains.mps.lang.script.generator.baseLanguage.template.main@generator)" hash="a271xxdrbb4nz55zmjamqutn3342nv9" />
-  <common hash="-5qo6kj6pu0kt6dgcjp1eg2osjgb67ow" />
-  <source id="3239565862706583464" name="RemoveKeystrokes" hash="6mcz5se9qthgv2r2hdfwncz33j5xvk4">
+<dependencies version="2" modelHash="-b0fo4g2hs57hy3z9gxe5sxem28zxdpo">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="4298mu054fx6whzlp2w6f6j2etcqkrl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" hash="9x5il08yf8hiv7vtawrll4oihiorldt" />
+  <dep model="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" hash="e3lf1xxltelk1s86n28majiisflzjam" />
+  <dep model="r:00000000-0000-4000-0000-011c89590324(jetbrains.mps.lang.script.generator.baseLanguage.template.main@generator)" hash="600hn4r0v29arwg3m29j8qiybwz4wv6" />
+  <common hash="-dnolv8ut3g7kbkn218shnlu8c0kx1rm" />
+  <source id="3239565862706583464" name="RemoveKeystrokes" hash="-9y4rj2cyw8dzyt8h3hbkij0c7toqoum">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" />

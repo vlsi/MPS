@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b2bq0svm0i3kyjk3f30fekgf53wfdsg">
+<dependencies version="2" modelHash="6suws3isym9ymwx718t29gjw17vde2x">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -9,32 +9,32 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="4qb6hzq5n1c7ttn0ermxt0qnt48xuco" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-6ndj9nlttlyav4hvpcs073x2l1z2614" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-2pfgs5l9xgdeg3nuvw9wsk21zkjyohc" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="e04c1rxnqbqsa6flvn8w3de8x4phusg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-3gd1wjtanyuae8zlmappxzhsoyku4tj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="ggsqc6rgbf2p0m0z15dk8d5fjhmfbr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-5qkh0mpu388oets3m8g893qmi77hv6t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-arvbp4sk4s1cuy53bygk6ld5sghrjco" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b7efqpp988394i1ffiwgj2bp6kuza4w" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="1xdbhxbxgxcj0vz3o967fop4sb0ro25" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-z22oiu2i3virhyguef3oewaixjm9hi" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="e4aodjamafijmcm1ggq1itbjxjw4yyr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" hash="-xv2nkhke3avn10tgr2a5lh5jvh136z" />
-  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="96pjjgrifm9n0ijb1jhc6nqxgg54m47" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
-  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-ay494fudufvl34j9tt93i8vpjfx3z7i" />
-  <dep model="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" hash="-8r90err9jjh0aqtvdyxpo53akbj3lxc" />
-  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="78ysfrpjuhuyadt3m03y6bbyt3b17tp" />
-  <dep model="r:94bd2666-1ac8-410a-98e9-2f3a3dca76c3(jetbrains.mps.lang.scopes.generator.template.main@generator)" hash="-ep1p5zfb988cerlbzyu06yn0by74t8h" />
-  <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" hash="95xae2mij6yhh2aq22y72fd4ic7gbe2" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-73ksfiy89aqro33y9o3ksbsc4qnds4d" />
-  <dep model="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)" hash="-ceu61bnd1pb6wncs0bsgo0c9fyq06tf" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="6pme6f8cr98yhjna02lpbqkg2n36ah5" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="duahkiq12txmjc12u2npf98hktud3qn" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b3wz0owxesi28bm1lrvljioj8jycged" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="escnzqn0hifing8eemstueasix9gmse" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8xjteqk842ql8pbze16i68m1ajw21lk" />
+  <dep model="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" hash="-1wetxgozatk6xzkx0o74jlfybgse6yn" />
+  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="56n96xq2v8m4j68wn4gfgdkw148ykpn" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="59ea0wchjl1p3fmqjarzl02fje6rngu" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-8kbwkwsxkzs059jlmagbtjq0yhtcnrp" />
+  <dep model="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" hash="b3n4n58hr0l9witz8gj1h2zd2ory6q1" />
+  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="6ggjsqv32zguzobb2exfu46t58nkiwn" />
+  <dep model="r:94bd2666-1ac8-410a-98e9-2f3a3dca76c3(jetbrains.mps.lang.scopes.generator.template.main@generator)" hash="-a496kut4g0yri7jmmwavomixtuy0u4v" />
+  <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" hash="3zfl2af2tjgxlreszu2svgw9p756u61" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-75hld4xn0j0x620a2ffc7r1mui5k2kp" />
+  <dep model="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)" hash="9a7owwxi6l0drllujruhndq8opsswtk" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2ndxdy2yylqxt61razyif42s9aj25s9" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <common hash="eh4h1crpjni93p267nyz6fi62ex7kzp" dependsOnNodes="true">
     <dep root="1023687332192534913" />
     <dep root="1213877245174" />
     <dep root="1213877497462" />
@@ -269,7 +269,7 @@
     <file name="VisitAllOperation_BehaviorDescriptor.java" />
     <file name="WhereOperation_BehaviorDescriptor.java" />
   </common>
-  <source id="1213877245174" name="SequenceType_Behavior" hash="ae7uypyu915auc2d26u69k12os8p2o4">
+  <source id="1213877245174" name="SequenceType_Behavior" hash="-dp5ozw9kuiwwwfhdisp77az36qg22s5">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -291,14 +291,14 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SequenceType_Behavior.java" />
   </source>
-  <source id="1213877497462" name="SequenceOperation_Behavior" hash="4rpg5sektz08p3op7qaxp2mya5oqewt">
+  <source id="1213877497462" name="SequenceOperation_Behavior" hash="r8j1vrtuxho1qrwz4e2afoer4nrr8j">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="SequenceOperation_Behavior.java" />
   </source>
-  <source id="1213877511286" name="ListType_Behavior" hash="-egflq47vmjv92gb83o497k1by8qzo6p">
+  <source id="1213877511286" name="ListType_Behavior" hash="-ewobvrhwepgnz732ad2czeekjgbdj2b">
     <dep root="1331913329176269837" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -322,7 +322,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ListType_Behavior.java" />
   </source>
-  <source id="1213877520358" name="MapType_Behavior" hash="-7tybf5y601and308emydo96bkmi8vov">
+  <source id="1213877520358" name="MapType_Behavior" hash="-8mlhvehr8z48a96bu8o6c1sqkmvhjsx">
     <dep root="1331913329176269837" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -341,12 +341,12 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MapType_Behavior.java" />
   </source>
-  <source id="1213877532555" name="MapOperation_Behavior" hash="edztpgr5a4qjsk4p3aenzmkldoap0r5">
+  <source id="1213877532555" name="MapOperation_Behavior" hash="5groftan4qgigy3sak7aqov135bm5zl">
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="MapOperation_Behavior.java" />
   </source>
-  <source id="1226515539540" name="SetType_Behavior" hash="3tcr3ucwtnvn8a77w8uxuq7y088dg9q">
+  <source id="1226515539540" name="SetType_Behavior" hash="-dljsk71i8vuzxc7p1301gi9kt4mcjuq">
     <dep root="1331913329176269837" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -369,7 +369,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SetType_Behavior.java" />
   </source>
-  <source id="1237468611264" name="IteratorType_Behavior" hash="cetq4ahpwn3u5nevst5jm2rpngi5e1s">
+  <source id="1237468611264" name="IteratorType_Behavior" hash="-280gi5rni7wfliyscgxndpludm9361l">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -391,7 +391,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="IteratorType_Behavior.java" />
   </source>
-  <source id="1237496376141" name="EnumeratorType_Behavior" hash="-4k5prvj244k9jw3uovb6fwqqn73i9n6">
+  <source id="1237496376141" name="EnumeratorType_Behavior" hash="-4viwkf55gcb0c8pgezkn7yyabeqvf38">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -411,13 +411,13 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="EnumeratorType_Behavior.java" />
   </source>
-  <source id="1237548270025" name="SkipStatement_Behavior" hash="-at51mgzw879tl7dcg37kvzgxa4qpqq0">
+  <source id="1237548270025" name="SkipStatement_Behavior" hash="a55d12t45kd6kkv0610m73yp6usnc0a">
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="SkipStatement_Behavior.java" />
   </source>
-  <source id="1237722435323" name="AbstractContainerCreator_Behavior" hash="-b43yfxi8v5vks4w5t5z21zyoawfmsk3">
+  <source id="1237722435323" name="AbstractContainerCreator_Behavior" hash="-qmnzflvdeqgrd0b7n6u877996pku69">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -426,7 +426,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="AbstractContainerCreator_Behavior.java" />
   </source>
-  <source id="1237724489609" name="ListCreatorWithInit_Behavior" hash="9lmjcmqcby21mu6yn7hhw9qcw1rdixy">
+  <source id="1237724489609" name="ListCreatorWithInit_Behavior" hash="31u2rqx58q6odgqdh7w9wfv543u3o1f">
     <dep root="1237722435323" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -437,7 +437,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ListCreatorWithInit_Behavior.java" />
   </source>
-  <source id="1237724578571" name="HashSetCreator_Behavior" hash="ewhws6jhx5xdquoilsoddrl9e059jmg">
+  <source id="1237724578571" name="HashSetCreator_Behavior" hash="-4ds1de2jqjsydffhchu0mq03tv1tsui">
     <dep root="1237722435323" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -448,7 +448,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="HashSetCreator_Behavior.java" />
   </source>
-  <source id="1237724603556" name="LinkedListCreator_Behavior" hash="b9dc413dkn01d3dhpz0msubhsvobhzj">
+  <source id="1237724603556" name="LinkedListCreator_Behavior" hash="-dbyms5pispmf87ykzpa6t8sy5iyftoy">
     <dep root="1237722435323" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -459,7 +459,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LinkedListCreator_Behavior.java" />
   </source>
-  <source id="1237783270701" name="AllConstant_Behavior" hash="64byix2au0iz3qrg36mwf651452eevl">
+  <source id="1237783270701" name="AllConstant_Behavior" hash="4r0q4lbopwndbl7gnb0ocp14f9iar8i">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -471,7 +471,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="AllConstant_Behavior.java" />
   </source>
-  <source id="1240239413630" name="SortedMapType_Behavior" hash="-7k5v7k9vj3c65uccw32w61b046uc9b3">
+  <source id="1240239413630" name="SortedMapType_Behavior" hash="6un5q7iwslegu9s9uro6ie0ojc4upmv">
     <dep root="1331913329176269837" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -487,7 +487,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SortedMapType_Behavior.java" />
   </source>
-  <source id="1240249640915" name="SortedSetType_Behavior" hash="-9li5oe4vo4qysdravyfjxgmkqeqp7ot">
+  <source id="1240249640915" name="SortedSetType_Behavior" hash="-apoltjbx10hhess0phd9jnb5fc1av46">
     <dep root="1331913329176269837" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -503,7 +503,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SortedSetType_Behavior.java" />
   </source>
-  <source id="1240249694731" name="TreeSetCreator_Behavior" hash="-atcehpw1lzu6hscxzf36z0yyxwfws29">
+  <source id="1240249694731" name="TreeSetCreator_Behavior" hash="-3tscypg91aeqqj8j0f0rz52stojbeqk">
     <dep root="1237722435323" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -515,7 +515,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TreeSetCreator_Behavior.java" />
   </source>
-  <source id="1240823859791" name="MappingType_Behavior" hash="-74s5trjg8vcxh003lbuleamf6sjekcb">
+  <source id="1240823859791" name="MappingType_Behavior" hash="1gsvmy3qitzb93enjbkmvlm3fdbpwal">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -526,7 +526,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MappingType_Behavior.java" />
   </source>
-  <source id="5686963296372576518" name="AbstractContainerType_Behavior" hash="d4l5jeqsrkl9el6z0he2vgp8nfac705">
+  <source id="5686963296372576518" name="AbstractContainerType_Behavior" hash="-4jmh871h58zda3jvp0qestkepuard5k">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -546,17 +546,17 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AbstractContainerType_Behavior.java" />
   </source>
-  <source id="2141797557973018586" name="IContainerOperation_Behavior" hash="-7rsehj0gp50dsgj8hqu0f7rynchpjgy">
+  <source id="2141797557973018586" name="IContainerOperation_Behavior" hash="-87crd235p3f4aq8rmq646zqgprrgt30">
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="IContainerOperation_Behavior.java" />
   </source>
-  <source id="2141797557973018609" name="IListOperation_Behavior" hash="-6gp91s8mba7pg5uktfn6bps8tn5u21a">
+  <source id="2141797557973018609" name="IListOperation_Behavior" hash="30279j5s8pb0h345ou51u3tenwpjszj">
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="IListOperation_Behavior.java" />
   </source>
-  <source id="3358009230509337679" name="QueueType_Behavior" hash="-aw1tg4uy4puowbk3v9esz9vkulwma9r">
+  <source id="3358009230509337679" name="QueueType_Behavior" hash="8xtba38wmegwo3q18lpep2pr25b3apb">
     <dep root="1331913329176269837" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -571,7 +571,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueueType_Behavior.java" />
   </source>
-  <source id="3358009230509514611" name="PriorityQueueCreator_Behavior" hash="2k8nvp6hzhc1934pu2na91afp1x80da">
+  <source id="3358009230509514611" name="PriorityQueueCreator_Behavior" hash="-c0mlutoihv0h7vxds0qc159vqyv18l6">
     <dep root="1237722435323" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -582,7 +582,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PriorityQueueCreator_Behavior.java" />
   </source>
-  <source id="3358009230509734418" name="DequeType_Behavior" hash="-cqezhp21p4ywjx0yd3rno4oe2kn1a8u">
+  <source id="3358009230509734418" name="DequeType_Behavior" hash="dnsymhknmcb53cvphlxcsbq3tzpg6uy">
     <dep root="1331913329176269837" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -597,7 +597,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DequeType_Behavior.java" />
   </source>
-  <source id="3358009230509812020" name="StackType_Behavior" hash="-7tvbysu869ikgq3q5uscv20gtud7krm">
+  <source id="3358009230509812020" name="StackType_Behavior" hash="cz760akv7vi89uy95fxd5wuzz043zpu">
     <dep root="1331913329176269837" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -612,7 +612,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="StackType_Behavior.java" />
   </source>
-  <source id="1331913329176106421" name="CustomContainerCreator_Behavior" hash="a6rugk3mwuwthfgcf22i0puoywqfiqo">
+  <source id="1331913329176106421" name="CustomContainerCreator_Behavior" hash="59ufwc7awqas3g2hn8g8n32tlf8gnex">
     <dep root="1237722435323" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -627,7 +627,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CustomContainerCreator_Behavior.java" />
   </source>
-  <source id="1331913329176269837" name="CustomContainersUtil" hash="b07l9biraud9qzcr9bka3ugnaj94buh">
+  <source id="1331913329176269837" name="CustomContainersUtil" hash="-7w6n61o8gqbp3244v61ja5fe1i3y1ul">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -645,7 +645,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CustomContainersUtil.java" />
   </source>
-  <source id="1576845966386891472" name="CustomMapCreator_Behavior" hash="dozrxcrnl46o6yvjywdnec3z3r3jv0a">
+  <source id="1576845966386891472" name="CustomMapCreator_Behavior" hash="-gjy2q978g7s31ml7i7j5rkbgfk3bnx">
     <dep root="1262430001741497999" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -660,7 +660,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CustomMapCreator_Behavior.java" />
   </source>
-  <source id="3185788474596486341" name="SortOperation_Behavior" hash="-7cipfwrujc8zonbkw4cmbb9u3igw2mm">
+  <source id="3185788474596486341" name="SortOperation_Behavior" hash="-6a82wqw95j3z2z1rqcynqnl32i5slw">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -670,19 +670,19 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="SortOperation_Behavior.java" />
   </source>
-  <source id="2504598135591556453" name="WhereOperation_Behavior" hash="-7chp42srqhdz7ixndty7olklnday250">
+  <source id="2504598135591556453" name="WhereOperation_Behavior" hash="ct53pdrgyt2yjcv1lmmsbi8cehmnfap">
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="WhereOperation_Behavior.java" />
   </source>
-  <source id="2504598135591557835" name="ConcatOperation_Behavior" hash="-1kxaf3x8nh9kg38yo1g90vl8p9wn226">
+  <source id="2504598135591557835" name="ConcatOperation_Behavior" hash="-1dshflao2w0e1ezju9pc0acxfnrlz7p">
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="ConcatOperation_Behavior.java" />
   </source>
-  <source id="7886927014685055056" name="CollectionType_Behavior" hash="1r81fa5mz86cgfbupb2l4bvyy490ifu">
+  <source id="7886927014685055056" name="CollectionType_Behavior" hash="1h6tpqqze9twft5gitypsn9fnd4a9so">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -704,7 +704,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CollectionType_Behavior.java" />
   </source>
-  <source id="1023687332192534913" name="ForEachVariableReference_Behavior" hash="-b9x8vyejlm4vwkjqsrztlkx3xykvbku">
+  <source id="1023687332192534913" name="ForEachVariableReference_Behavior" hash="-2omi7p20ajq57fzp13vgyiq26vah51p">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -713,7 +713,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="ForEachVariableReference_Behavior.java" />
   </source>
-  <source id="6640659353039755348" name="MultiForEachStatement_Behavior" hash="8m24nwh7w7txrd1n84b8sow6fix4yc7">
+  <source id="6640659353039755348" name="MultiForEachStatement_Behavior" hash="-dehr929h2yy7rurnuducevinstikrwl">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -730,7 +730,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MultiForEachStatement_Behavior.java" />
   </source>
-  <source id="6257218603554017649" name="ForEachStatement_Behavior" hash="-1ad63ur248ehf4zfbgbvl73aisnhho2">
+  <source id="6257218603554017649" name="ForEachStatement_Behavior" hash="4vzdzdulam3updtjjrvaqfzn35wwdrg">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
@@ -742,48 +742,48 @@
     <dep model="r:94bd2666-1ac8-410a-98e9-2f3a3dca76c3(jetbrains.mps.lang.scopes.generator.template.main@generator)" />
     <file name="ForEachStatement_Behavior.java" />
   </source>
-  <source id="1262430001741497999" name="HashMapCreator_Behavior" hash="n9ygsmtsxqdlvxg0s2dzx5ac8czh3k">
+  <source id="1262430001741497999" name="HashMapCreator_Behavior" hash="-8t6g246i841xy35dm4xf7rxiol7h6e9">
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="HashMapCreator_Behavior.java" />
   </source>
-  <source id="1262430001741498008" name="TreeMapCreator_Behavior" hash="-az4jpbr6ubnwzsv6dw5icdelrsa8n8s">
+  <source id="1262430001741498008" name="TreeMapCreator_Behavior" hash="-7ikdwlkwaqpnk07l3t8m5hg3scy90uf">
     <dep root="1262430001741497999" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="TreeMapCreator_Behavior.java" />
   </source>
-  <source id="1262430001741641647" name="SortDirection_Behavior" hash="8cc17iqbo0rzallnwvoj9z48bem115">
+  <source id="1262430001741641647" name="SortDirection_Behavior" hash="2w7rfzpfn3sbbu52vst8krzjz801x6f">
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="SortDirection_Behavior.java" />
   </source>
-  <source id="1262430001741642968" name="ListElementAccessExpression_Behavior" hash="-i8mtl77kzta9klrslky6fpt9vekn50">
+  <source id="1262430001741642968" name="ListElementAccessExpression_Behavior" hash="-zq4c2dqkyxtx4u1uw9jl1ptouaqd10">
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="ListElementAccessExpression_Behavior.java" />
   </source>
-  <source id="1262430001741647307" name="MapElement_Behavior" hash="-7fmhxbu5cvskk81edt0ju89je2v2dt1">
+  <source id="1262430001741647307" name="MapElement_Behavior" hash="atshaqw3bl35y5mua0auqb9plryoys7">
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="MapElement_Behavior.java" />
   </source>
-  <source id="1262430001741704797" name="LinkedHashMapCreator_Behavior" hash="277n28txf0izd35q3vl3fy8bc2wy6op">
+  <source id="1262430001741704797" name="LinkedHashMapCreator_Behavior" hash="4596wajj6k4tp3myy8lzq0gtqb5bgpn">
     <dep root="1262430001741497999" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="LinkedHashMapCreator_Behavior.java" />
   </source>
-  <source id="1262430001741718457" name="ValueAccessOperation_Behavior" hash="-4k051be0vo8fn6dakm9r38hbzgn869h">
+  <source id="1262430001741718457" name="ValueAccessOperation_Behavior" hash="4siyiaeqcxhpuvf1wqkj33eyfyg1x8j">
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="ValueAccessOperation_Behavior.java" />
   </source>
-  <source id="1262430001741718689" name="LinkedHashSetCreator_Behavior" hash="1z2znu0uzj8av4kf1stmwvhpxwn525k">
+  <source id="1262430001741718689" name="LinkedHashSetCreator_Behavior" hash="1gfrgbfzsv0x7nbkfyzhfmyxu88m28a">
     <dep root="1237722435323" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -792,7 +792,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="LinkedHashSetCreator_Behavior.java" />
   </source>
-  <source id="5994574781955586073" name="IApplicableToNothing_Behavior" hash="-ar5drginc2skiuyzysujr7pkpiaj5cz">
+  <source id="5994574781955586073" name="IApplicableToNothing_Behavior" hash="-3vwy2j8pp1jae3xo76ua0q3dvf60dsx">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -815,7 +815,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="IApplicableToNothing_Behavior.java" />
   </source>
-  <source id="5994574781955586161" name="IApplicableToDeque_Behavior" hash="-756uz5pq7t90ow3ncsxd8wdsixsr3lf">
+  <source id="5994574781955586161" name="IApplicableToDeque_Behavior" hash="fbw69ufeitcyy7jrhfo5b4odint62t">
     <dep root="5994574781955586073" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -825,7 +825,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IApplicableToDeque_Behavior.java" />
   </source>
-  <source id="5994574781955614657" name="IApplicableToList_Behavior" hash="-bpu8a2h6h8i9nvp8p7guktlgx47m9em">
+  <source id="5994574781955614657" name="IApplicableToList_Behavior" hash="3y282gwjabjl7ehnxltgvto91ajrm4a">
     <dep root="5994574781955586073" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -835,7 +835,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IApplicableToList_Behavior.java" />
   </source>
-  <source id="5994574781955644230" name="IApplicableToCollection_Behavior" hash="8h08tjtm59eqjpylu8ch75ibzm8h8gb">
+  <source id="5994574781955644230" name="IApplicableToCollection_Behavior" hash="-71aa3xiopg1102fucpgwbk5b9n51e95">
     <dep root="5994574781955586073" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -846,7 +846,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IApplicableToCollection_Behavior.java" />
   </source>
-  <source id="5994574781955645631" name="IApplicableToQueue_Behavior" hash="8kgj7om2eodjz9qjjk3gbnm719m896c">
+  <source id="5994574781955645631" name="IApplicableToQueue_Behavior" hash="b05hb5sht2vq1yboof24xi63koq1rfz">
     <dep root="5994574781955586073" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -857,7 +857,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IApplicableToQueue_Behavior.java" />
   </source>
-  <source id="5994574781955646444" name="IApplicableToStack_Behavior" hash="-94v0i9wjytor30w1ezziohgy9f6e3xw">
+  <source id="5994574781955646444" name="IApplicableToStack_Behavior" hash="-esq86yzwzuyl48ca1i3vwuxe8g80pzk">
     <dep root="5994574781955586073" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

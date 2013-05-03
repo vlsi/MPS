@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-biujdawlmledv1rufu0525dppcldw8q">
+<dependencies version="2" modelHash="-6y2zub0ktl1f8ww48hwq4h47e0rcmxd">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellProviders(MPS.Editor/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.descriptor(MPS.Editor/jetbrains.mps.openapi.editor.descriptor@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="64m9jh4k7rrxeiep4hkez4p5lq8drzr" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="2unlbusmzci3z7mk6x76moy6qc05rad" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="-d61h0f9l7180phfnxviz1p0yuvarhal" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" hash="-b9fna91cfhyen6ky37clfvwtfhsqm23" />
-  <dep model="r:00000000-0000-4000-0000-011c8959054f(jetbrains.mps.uiLanguage.editor)" hash="5pqnjgxhybjjk1y4cj5cpxzv24g811o" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="2qpbvmodya7v4b9b01p5okilzkcoyfe">
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="dgzpe8t5xtmfn9j4ba4t7uzkcnsuq7n" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="6rn05s8qpyzdl2hdaxvgdshw01xz5r2" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="-1m3cjs9co15fbvb7pyotjhvjytv1fth" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" hash="-a6df08cn37eyc4dszf8v79s73lmpa2e" />
+  <dep model="r:00000000-0000-4000-0000-011c8959054f(jetbrains.mps.uiLanguage.editor)" hash="-4gfir316zm52npfg6vo2e906qwrg5w4" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <common hash="-1uiet5u0048ima069u5zhjhep5r2xf4">
     <dep root="1203592631206" />
     <dep root="1203592668804" />
     <dep root="1203606607647" />
@@ -30,7 +30,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EditorAspectDescriptorImpl.java" />
   </common>
-  <source id="1203592631206" name="IDEDialog_Editor" hash="-5l224cjqrsvu0r07q0lw7hb83uxb3xy">
+  <source id="1203592631206" name="IDEDialog_Editor" hash="-erh2wbvpt45wff0403m9ne7l07x521n">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellProviders(MPS.Editor/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -42,7 +42,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959054f(jetbrains.mps.uiLanguage.editor)" />
     <file name="IDEDialog_Editor.java" />
   </source>
-  <source id="1203592668804" name="IDEDialogButton_Editor" hash="-2b2uavpi71oft02gh9mi0iyp47fwviq">
+  <source id="1203592668804" name="IDEDialogButton_Editor" hash="3axtunw72nl2fupi9jy340h7v7431yw">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -51,7 +51,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
     <file name="IDEDialogButton_Editor.java" />
   </source>
-  <source id="1203606607647" name="DisposeDialogExpression_Editor" hash="el8nz59n3jpxu6h252qzkr494bl8dmz">
+  <source id="1203606607647" name="DisposeDialogExpression_Editor" hash="-ayl453hnuzewsssvql1v9pmdmjgoi8r">
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
@@ -59,7 +59,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
     <file name="DisposeDialogExpression_Editor.java" />
   </source>
-  <source id="1203607543068" name="ReportErrorExpression_Editor" hash="-h23a7qn85a225xl9kxf41oeqiouwu8">
+  <source id="1203607543068" name="ReportErrorExpression_Editor" hash="6htpi3q77mqd6l917gxtb0ongfb42pq">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -68,7 +68,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
     <file name="ReportErrorExpression_Editor.java" />
   </source>
-  <source id="1203610520597" name="DialogExpression_Editor" hash="-c0nwrc9dwdhiluanew4e8yw8fs4l8uk">
+  <source id="1203610520597" name="DialogExpression_Editor" hash="92lsyihmypjondo9141lu0olxgyr04u">
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
@@ -76,7 +76,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
     <file name="DialogExpression_Editor.java" />
   </source>
-  <source id="1226850414603" name="DialogDimensions_Editor" hash="10rn9eu2cjkgcqd1dxdr9302nm95s9u">
+  <source id="1226850414603" name="DialogDimensions_Editor" hash="-bwiylx0gjwwu299rmdzsdd23p1dyuww">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -85,7 +85,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
     <file name="DialogDimensions_Editor.java" />
   </source>
-  <source id="3734045384532546734" name="ReportErrorStatement_Editor" hash="-bps6infn7yey66cctsj8imovr8n9h4d">
+  <source id="3734045384532546734" name="ReportErrorStatement_Editor" hash="-ee4851qh9wtjo091rq5nihu05o8xkhf">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -94,7 +94,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
     <file name="ReportErrorStatement_Editor.java" />
   </source>
-  <source id="3734045384532546804" name="DisposeDialogStatement_Editor" hash="-sknz3uwmrq5do058qro78i8lwr9fif">
+  <source id="3734045384532546804" name="DisposeDialogStatement_Editor" hash="72zjfc7rm5tj16mt0pwzg71ss389ndj">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />

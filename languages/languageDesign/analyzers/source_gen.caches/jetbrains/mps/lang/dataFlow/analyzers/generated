@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-ofel3wg41cjwcww6ft5owwhjcfpjo1">
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="6fysm68r9nsy2s0jx5imu9kc6k4tmdn" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
-  <dep model="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)" hash="-bg13vnw615j65fz424625jbd3rql78" />
-  <dep model="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)" hash="9oukftzo9n1zx00349eotsrkpmv0t0r" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="dgzpe8t5xtmfn9j4ba4t7uzkcnsuq7n" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)" hash="gl9fe9hoc9hihfza4hqbo30ez2vdwf" />
+  <dep model="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)" hash="-ev11uhgre200ibrcs3hc6a39xodreoj" />
   <common>
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

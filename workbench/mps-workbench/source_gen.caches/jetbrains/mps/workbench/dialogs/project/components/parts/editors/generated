@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="c5ni83zkg90hotsccci13v2tko01hlm">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <common hash="-8phjd95qwbazlfm8040sg2d0vb3dlp2" />
-  <source id="1560298786499490028" name="ModuleEditor" hash="-c3u6e7r6psajb7np4c37lrncefcgjco">
+<dependencies version="2" modelHash="-7uw8qtlnikrv6ak0rherhonpkw2e3u7">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <common hash="-cfgf9npx4hgph9eryjl0jf3fb0eiqlr" />
+  <source id="1560298786499490028" name="ModuleEditor" hash="-dat52lkopzd6stpzvall953psjcddgq">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModuleEditor.java" />
   </source>
-  <source id="1560298786499489240" name="BooleanEditor" hash="-93y8bj146p0141cxu5qjoos2rirt72v">
+  <source id="1560298786499489240" name="BooleanEditor" hash="-8nm76qgbvt0b59citp1cv6tz1xt1k6f">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BooleanEditor.java" />
   </source>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-crr5ysw4nwwz6twtwy3ek8029y96uw0">
+<dependencies version="2" modelHash="-7rpyuwchhqyr1vrsv4xonqma4nq63kn">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
@@ -27,20 +27,20 @@
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.vcs.impl.projectlevelman(MPS.Platform/com.intellij.openapi.vcs.impl.projectlevelman@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.vfs(MPS.Platform/com.intellij.openapi.vfs@java_stub)" />
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-2pfgs5l9xgdeg3nuvw9wsk21zkjyohc" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-5qkh0mpu388oets3m8g893qmi77hv6t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="e4aodjamafijmcm1ggq1itbjxjw4yyr" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
-  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="7hndjrlln3nwjwuqph2f216c17q4zd6" />
-  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-duoogzxo7f7b3vj2j7fvgsw3h3brh6l" />
-  <dep model="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)" hash="crz2nbuyowrsgknlkm6abrji80zlwgl" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="6pme6f8cr98yhjna02lpbqkg2n36ah5" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="-bh477jl6esphydrx1jywwzij994u74y" />
-  <source id="4405032066816070190" name="MergeDriverInstaller" hash="prswj7b1z8jq2oxegqydnaxc1yoxao">
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8xjteqk842ql8pbze16i68m1ajw21lk" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="59ea0wchjl1p3fmqjarzl02fje6rngu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="97bcp20rwvaujtt4z6d96fxd6ude8mm" />
+  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-99megwfgoed1qx4j4jrdybqcflrfwf9" />
+  <dep model="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)" hash="cdpfucpbfi3v8jak55eyo0ee02fkls2" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2ndxdy2yylqxt61razyif42s9aj25s9" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <common hash="7o42dxgik9v7jlwg77a98u9gmwn1htl" />
+  <source id="4405032066816070190" name="MergeDriverInstaller" hash="3t4wh8fsxr2485svp1hfaavqii92el9">
     <dep root="1376744028423385490" />
     <dep root="5006749173646651481" />
     <dep root="572687202609933800" />
@@ -61,7 +61,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MergeDriverInstaller.java" />
   </source>
-  <source id="572687202609933800" name="GitRepositoriesInstaller" hash="-3m6t06ivrytlwdfvoo7p8dlo7zd5imo">
+  <source id="572687202609933800" name="GitRepositoriesInstaller" hash="43grvom31868jvd8mv835ocb81pzdb1">
     <dep root="1376744028423385490" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -85,7 +85,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="GitRepositoriesInstaller.java" />
   </source>
-  <source id="572687202609936946" name="GitGlobalInstaller" hash="-5m79m2g70fejqhezz36cuix7i1uy26p">
+  <source id="572687202609936946" name="GitGlobalInstaller" hash="-859j4nwd8wdtmjpj3d3s7p3b2b71xyp">
     <dep root="1376744028423385490" />
     <dep root="5332772916083838064" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -107,7 +107,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="GitGlobalInstaller.java" />
   </source>
-  <source id="5006749173646651481" name="SvnInstaller" hash="46uxuefz0tlajbtmu6s8hjho3go3s7d">
+  <source id="5006749173646651481" name="SvnInstaller" hash="7pxrhldobv8y5s2habqn7apb2vulwpv">
     <dep root="1376744028423385490" />
     <dep root="5332772916083838064" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -127,17 +127,17 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SvnInstaller.java" />
   </source>
-  <source id="1376744028423385490" name="AbstractInstaller" hash="9zas6dmt88t4giweg5rw5a03nooth7a">
+  <source id="1376744028423385490" name="AbstractInstaller" hash="-7b05dps7awrm4m455r0h9ngvg21nbjl">
     <file name="AbstractInstaller.java" />
   </source>
-  <source id="1016968294606525391" name="CommandLineGenerator" hash="-ehik4cri5cuv30ri9wwsade80qaubff">
+  <source id="1016968294606525391" name="CommandLineGenerator" hash="eonxokmx52enfx1nm4w5jf1lcmj2y5g">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.util(MPS.Platform/com.intellij.openapi.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)" />
     <file name="CommandLineGenerator.java" />
   </source>
-  <source id="5332772916083838064" name="ScriptGenerator" hash="ufarf4jacv58n0waaeus4g4us8zzmd">
+  <source id="5332772916083838064" name="ScriptGenerator" hash="bfcfcncvu44rqo95mkex03ukbn5ky43">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -150,7 +150,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ScriptGenerator.java" />
   </source>
-  <source id="6989360587247930283" name="MergeDriverNotification" hash="1ohruipwkeez7xeebwfyw1yywps9god">
+  <source id="6989360587247930283" name="MergeDriverNotification" hash="-aplvmg27frpdwlq7z0hnskpwjg95l1u">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(JDK/java.net@java_stub)" />
@@ -172,7 +172,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MergeDriverNotification.java" />
   </source>
-  <source id="6590770702563546491" name="GitGlobalConfigFixesInstaller" hash="9u3mibrhl5swphryhlyh4t8r5gjqsh8">
+  <source id="6590770702563546491" name="GitGlobalConfigFixesInstaller" hash="7qlbg6276bqz8npo76rz2plsw11cjw9">
     <dep root="1376744028423385490" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -190,7 +190,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <file name="GitGlobalConfigFixesInstaller.java" />
   </source>
-  <source id="6124943338883990550" name="MergeDriverOptionsDialog" hash="-5ijly78bmeih25ppau0noaa5yv8qjqk">
+  <source id="6124943338883990550" name="MergeDriverOptionsDialog" hash="4quntvccen2zmi1pdrgrzs8v9g65rof">
     <dep root="1376744028423385490" />
     <dep root="572687202609933800" />
     <dep root="572687202609936946" />
@@ -210,7 +210,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MergeDriverOptionsDialog.java" />
   </source>
-  <source id="287989868854455048" name="MergeDriverPacker" hash="d86ohrotq3z1xa7fngk6y6mek9hq86q">
+  <source id="287989868854455048" name="MergeDriverPacker" hash="-4jreaymkg2a01dp3igaeza2vcqxpr6r">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -219,6 +219,7 @@
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.extensions(MPS.Platform/com.intellij.openapi.extensions@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.progress(MPS.Platform/com.intellij.openapi.progress@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />

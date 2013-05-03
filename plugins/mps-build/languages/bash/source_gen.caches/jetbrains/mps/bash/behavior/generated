@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4ierrkxzj05t5l6pfqbgmqftjmi3e99">
+<dependencies version="2" modelHash="-c1u8kfyzt1svsn9v3wguqi2ui6flzde">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -9,21 +9,21 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="4qb6hzq5n1c7ttn0ermxt0qnt48xuco" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b7efqpp988394i1ffiwgj2bp6kuza4w" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="1xdbhxbxgxcj0vz3o967fop4sb0ro25" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-z22oiu2i3virhyguef3oewaixjm9hi" />
-  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-ay494fudufvl34j9tt93i8vpjfx3z7i" />
-  <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="3d7fws9rwjukj1wrlb9t9fm5mlpy01k" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="eaarideck6uggp8nn6bpyho4my5sjxz" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-73ksfiy89aqro33y9o3ksbsc4qnds4d" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="6pme6f8cr98yhjna02lpbqkg2n36ah5" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="-8eutsb2ebo0ni2vxnv1jwsl6p9ftxay" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-3gd1wjtanyuae8zlmappxzhsoyku4tj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b3wz0owxesi28bm1lrvljioj8jycged" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="escnzqn0hifing8eemstueasix9gmse" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-8kbwkwsxkzs059jlmagbtjq0yhtcnrp" />
+  <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="-3dj8w0ev6pth7mse3vaq6nz8kvqmu6r" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="10mp51mbeql449vc6yd910xwfralj9l" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-75hld4xn0j0x620a2ffc7r1mui5k2kp" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2ndxdy2yylqxt61razyif42s9aj25s9" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <common hash="-66gnljm2v6r4mqpjvb3ps21bcte65h1" dependsOnNodes="true">
     <dep root="1262430001741497786" />
     <dep root="1262430001741497825" />
     <dep root="1262430001741497870" />
@@ -366,7 +366,7 @@
     <file name="XorAssingmentExpression_BehaviorDescriptor.java" />
     <file name="ZeroStringConditionalExpression_BehaviorDescriptor.java" />
   </common>
-  <source id="4857814468242259748" name="ExternalCommandCall_Behavior" hash="78w9i3baxekn8qit26lc06ooi1l4x5y">
+  <source id="4857814468242259748" name="ExternalCommandCall_Behavior" hash="5zub1e13e635f0xkv6y01fuyawsjyg2">
     <dep root="4857814468242259823" />
     <dep root="7803330421060043852" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -383,7 +383,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ExternalCommandCall_Behavior.java" />
   </source>
-  <source id="4857814468242259823" name="ExternalCommandDeclaration_Behavior" hash="-efscoxuzopi2le234foazxogjvgxwaa">
+  <source id="4857814468242259823" name="ExternalCommandDeclaration_Behavior" hash="9zbfixc3ury1nxakqqnx6w2ss1kfwo7">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -398,12 +398,12 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ExternalCommandDeclaration_Behavior.java" />
   </source>
-  <source id="4857814468242358999" name="ExternalOptionDeclaration_Behavior" hash="9crrj4f9wk3cx722p540tt7xs4ig9pw">
+  <source id="4857814468242358999" name="ExternalOptionDeclaration_Behavior" hash="-d66hu1ljp4y0k130lb4qonao143adwm">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="ExternalOptionDeclaration_Behavior.java" />
   </source>
-  <source id="7803330421056066137" name="OptionSet_Behavior" hash="827hiwh9854zqq6h1e5hlfhr5um9sa5">
+  <source id="7803330421056066137" name="OptionSet_Behavior" hash="-6b0wup26gj58tk6i8na8056b6cvho89">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -414,12 +414,12 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="OptionSet_Behavior.java" />
   </source>
-  <source id="7803330421059359225" name="ICommandParameter_Behavior" hash="-c99jwlg8hypvdti8ou3114gzdpyf4b5">
+  <source id="7803330421059359225" name="ICommandParameter_Behavior" hash="-t09u4tezy6q9q98rq019q4fkx35h4g">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="ICommandParameter_Behavior.java" />
   </source>
-  <source id="7803330421060043852" name="OptionSetReference_Behavior" hash="-4b35c1llbuaku2vqcn8w56oqjswcq50">
+  <source id="7803330421060043852" name="OptionSetReference_Behavior" hash="-63ytdqq8919hik43ydwlh7unvano17o">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -434,7 +434,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="OptionSetReference_Behavior.java" />
   </source>
-  <source id="7803330421060445580" name="Option_Behavior" hash="4jbt804sy9fzm2x5t9fx1vt7j4d5x8q">
+  <source id="7803330421060445580" name="Option_Behavior" hash="aqj79g51wxm86pg31qdnhb2ulmpcjxt">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -444,12 +444,12 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="Option_Behavior.java" />
   </source>
-  <source id="3147078024749532733" name="ArgumentList_Behavior" hash="-2whl1ba9mkhljp65ej7rqk3qmj29a3s">
+  <source id="3147078024749532733" name="ArgumentList_Behavior" hash="-5oy01klcowdsevhrmwe2i03u1h7lb7d">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="ArgumentList_Behavior.java" />
   </source>
-  <source id="3147078024759440443" name="SimpleWord_Behavior" hash="-90gbyzlt07tshworpg2dj1m0z8ap4h7">
+  <source id="3147078024759440443" name="SimpleWord_Behavior" hash="-2m5ibl0lmfkte82xo66odzj3svatm6k">
     <dep root="3147078024759753558" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -472,7 +472,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SimpleWord_Behavior.java" />
   </source>
-  <source id="3147078024759753558" name="IConcreteWordUnit_Behavior" hash="cdj9ftoy025bc17h8crya13629j2rdg">
+  <source id="3147078024759753558" name="IConcreteWordUnit_Behavior" hash="-4ibarshzdt4vjzejdosf7kj07ah90nm">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
@@ -485,17 +485,17 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="IConcreteWordUnit_Behavior.java" />
   </source>
-  <source id="3263637656460340511" name="HexIntegerLiteral_Behavior" hash="-cnqwotbcmt5jzmees4vo3mhdh49emtd">
+  <source id="3263637656460340511" name="HexIntegerLiteral_Behavior" hash="-6kqi8vx15i3afqr29ht3sye1gaw1vye">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="HexIntegerLiteral_Behavior.java" />
   </source>
-  <source id="2635812496396091799" name="AbstractCommand_Behavior" hash="bqxlourlxmr4q7qejx2kc5kltv0ypqi">
+  <source id="2635812496396091799" name="AbstractCommand_Behavior" hash="-25b838pckm8rzpzix5boqr3wl42zt5e">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="AbstractCommand_Behavior.java" />
   </source>
-  <source id="3905757829894475411" name="CommandList_Behavior" hash="8xt788474k2hecb7b6j3akiqocg5edd">
+  <source id="3905757829894475411" name="CommandList_Behavior" hash="53g6v7i1cz44frzimkx1hmc02dyfpca">
     <dep root="3905757829901719558" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -503,19 +503,19 @@
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="CommandList_Behavior.java" />
   </source>
-  <source id="3905757829901719558" name="Command_Behavior" hash="-ee5fv7fqcvz7yhug7mh0e0qpdmo41v5">
+  <source id="3905757829901719558" name="Command_Behavior" hash="50clqt8q0bxoql2n2rmowvderjs7b9i">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="Command_Behavior.java" />
   </source>
-  <source id="9034131902190619212" name="VariableReference_Behavior" hash="-1qaxn7fa15yhcgwx0cfic4x4v6bzjgb">
+  <source id="9034131902190619212" name="VariableReference_Behavior" hash="-c5ntze2sa5bjqp9pf9ek8aaxuf64b41">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="VariableReference_Behavior.java" />
   </source>
-  <source id="9034131902192956164" name="VariableNameDeclaration_Behavior" hash="-7wld7avrew7tist3kf5tu7shm8kn68v">
+  <source id="9034131902192956164" name="VariableNameDeclaration_Behavior" hash="dedtda1lt37429ipbycelp5bs8wciyu">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -535,709 +535,709 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="VariableNameDeclaration_Behavior.java" />
   </source>
-  <source id="1262430001741497786" name="GroupingCommand_Behavior" hash="3f66idlck60kl5tp9a3klvq7yoxjpp0">
+  <source id="1262430001741497786" name="GroupingCommand_Behavior" hash="-ehva6axi8hbkgbeca81cs5az4562mqj">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="GroupingCommand_Behavior.java" />
   </source>
-  <source id="1262430001741497825" name="CommandTerminator_Behavior" hash="8b9ysumbxktxg9yd46nuuab9t94kyew">
+  <source id="1262430001741497825" name="CommandTerminator_Behavior" hash="60f7a4u41z799ohp2rp5t0304xzjd22">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="CommandTerminator_Behavior.java" />
   </source>
-  <source id="1262430001741497870" name="BaseCommandSubstitution_Behavior" hash="-9ryeu4ub76blgm95ca3xnkzobcc3jwz">
+  <source id="1262430001741497870" name="BaseCommandSubstitution_Behavior" hash="-9tmhel2ld65q9zk7c4a546wkhyyksyh">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BaseCommandSubstitution_Behavior.java" />
   </source>
-  <source id="1262430001741497879" name="IPriorityExpression_Behavior" hash="-63zuj8277wp1i28pevkrxfr6w822che">
+  <source id="1262430001741497879" name="IPriorityExpression_Behavior" hash="-7zblsvirpm2b7xqro6yto5dvvrzfwlb">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="IPriorityExpression_Behavior.java" />
   </source>
-  <source id="1262430001741497888" name="FollowingPipeline_Behavior" hash="-ccy2yhbs0s1p7h49yi1l9d82qfqinj3">
+  <source id="1262430001741497888" name="FollowingPipeline_Behavior" hash="-cbgpz5wsp3h8yq2nlkgvtfjlmextc9m">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="FollowingPipeline_Behavior.java" />
   </source>
-  <source id="1262430001741497912" name="BaseVariableAssingment_Behavior" hash="-b98tr4n8gnno6bj9spsnok4njksgoob">
+  <source id="1262430001741497912" name="BaseVariableAssingment_Behavior" hash="-dyvvlso31l30vfbn6o47m08hm1v1v5s">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BaseVariableAssingment_Behavior.java" />
   </source>
-  <source id="1262430001741497927" name="QuotedWord_Behavior" hash="-2q0sg8e5l0vecaz3o415ldhe6s58wth">
+  <source id="1262430001741497927" name="QuotedWord_Behavior" hash="-ba50k56f7kp3sc07ld5cq30lfdk8f1r">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="QuotedWord_Behavior.java" />
   </source>
-  <source id="1262430001741497954" name="UnaryConditionalExpression_Behavior" hash="-83ytzto88aiunmehk6c6osc5ma2fsxa">
+  <source id="1262430001741497954" name="UnaryConditionalExpression_Behavior" hash="-67yll2l71xcrei6e7d26kmh7pv8mmrz">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="UnaryConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741498109" name="FollowingCommandList_Behavior" hash="-1ck5xcbkapdpgr2loecmi2paj5llqj4">
+  <source id="1262430001741498109" name="FollowingCommandList_Behavior" hash="73sp0llgmug3w0fhkf3z97wygcktzsx">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="FollowingCommandList_Behavior.java" />
   </source>
-  <source id="1262430001741498133" name="BaseAssingmentExpression_Behavior" hash="-1m83l0s35eox69xbn8gj54qyo9ej8pv">
+  <source id="1262430001741498133" name="BaseAssingmentExpression_Behavior" hash="auypk300tsrrmbov2v46eebcaot342z">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BaseAssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741498157" name="CaseTerminator_Behavior" hash="dpzv8tfvhgc1tk48juyf73o2k0z1ost">
+  <source id="1262430001741498157" name="CaseTerminator_Behavior" hash="-2s83lehx8ex5l79wmsh0kih80lm80qn">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="CaseTerminator_Behavior.java" />
   </source>
-  <source id="1262430001741498166" name="UnaryArithmeticExpression_Behavior" hash="9lyzb8fnfckqjjwcsh53ve0ymk0util">
+  <source id="1262430001741498166" name="UnaryArithmeticExpression_Behavior" hash="5psmevwu04q4aj7yh3ebhk97gqs60zw">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="UnaryArithmeticExpression_Behavior.java" />
   </source>
-  <source id="1262430001741498232" name="WordExpression_Behavior" hash="-7fflx30bve3ubp7wjdwue4w68xzia5q">
+  <source id="1262430001741498232" name="WordExpression_Behavior" hash="cxqol3f0l8xf7206orvydlntsp31jcy">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="WordExpression_Behavior.java" />
   </source>
-  <source id="1262430001741498247" name="BinaryArithmeticExpression_Behavior" hash="-cozhhdqdq72sgq6wri5n78f3dewqaxa">
+  <source id="1262430001741498247" name="BinaryArithmeticExpression_Behavior" hash="kaxdth1j24r06igvwmovc2bgneiy9j">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BinaryArithmeticExpression_Behavior.java" />
   </source>
-  <source id="1262430001741498334" name="CombiningConditionalExpression_Behavior" hash="5vd3t2icb7j27qcod4bdfwtryanlx8">
+  <source id="1262430001741498334" name="CombiningConditionalExpression_Behavior" hash="-6kblnfrqqldcx5cof8jn4vqz9u65a6a">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="CombiningConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741498391" name="BinaryConditionalExpression_Behavior" hash="8wy6drijpywfleo5r3bgad3qkff7mn">
+  <source id="1262430001741498391" name="BinaryConditionalExpression_Behavior" hash="1odfxh017mw6rplorbomro82jexz3k">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BinaryConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741498788" name="EffectiveGroupIdConditionalExpression_Behavior" hash="-1i6e5uwmkqmscezkhnewls0qh2jzzi0">
+  <source id="1262430001741498788" name="EffectiveGroupIdConditionalExpression_Behavior" hash="-8nbwwu62qhxanoi6m7cqa14cio5s8im">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="EffectiveGroupIdConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741498876" name="RightBitwiseShiftExpression_Behavior" hash="-9rpn7ged3ll3i7jvv762iy1lhp4zozg">
+  <source id="1262430001741498876" name="RightBitwiseShiftExpression_Behavior" hash="4yfm7rrf8pnebekg1zx1zlqag4q7lmo">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="RightBitwiseShiftExpression_Behavior.java" />
   </source>
-  <source id="1262430001741520010" name="SemicolonTerminator_Behavior" hash="8rx6vz5ycfng4xe1czilyyzwqsmhjma">
+  <source id="1262430001741520010" name="SemicolonTerminator_Behavior" hash="-1adr2qe7ots8jtwf85ysk3hok6ulajs">
     <dep root="1262430001741497825" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="SemicolonTerminator_Behavior.java" />
   </source>
-  <source id="1262430001741520038" name="EqualityExpression_Behavior" hash="7q2r7rx0tijpr5k294ieyzclr7sl7s7">
+  <source id="1262430001741520038" name="EqualityExpression_Behavior" hash="-79lbuolny07j9namqygo0pwca04nnlj">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="EqualityExpression_Behavior.java" />
   </source>
-  <source id="1262430001741520149" name="GreaterThanExpression_Behavior" hash="1ov0g4mvgxnwujj7o5rld91lkxam9jk">
+  <source id="1262430001741520149" name="GreaterThanExpression_Behavior" hash="-4m3bcbneulf1yf7qiqcfw9ntoskc7vf">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="GreaterThanExpression_Behavior.java" />
   </source>
-  <source id="1262430001741520166" name="VariableAddAssingment_Behavior" hash="-dkug0t2m0w5oredc0rxs65t4qo7m4lj">
+  <source id="1262430001741520166" name="VariableAddAssingment_Behavior" hash="95jdn5ditoq42nwtqiroisrbcfdk61">
     <dep root="1262430001741497912" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="VariableAddAssingment_Behavior.java" />
   </source>
-  <source id="1262430001741521992" name="OptnameStringConditionalExpression_Behavior" hash="-8n9q44fge3a69fdvnh1i1m4sg72cgll">
+  <source id="1262430001741521992" name="OptnameStringConditionalExpression_Behavior" hash="-27eyuy4xwdp2o57xlxxjhs0hwcghdiv">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="OptnameStringConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741522238" name="PipelineOperatorErrorConnection_Behavior" hash="2ponqv91u3hngrw492zgtrzx7cb8uw2">
+  <source id="1262430001741522238" name="PipelineOperatorErrorConnection_Behavior" hash="e7zg0injeozqt64sb75zsv8s25a10mn">
     <dep root="1262430001741497888" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="PipelineOperatorErrorConnection_Behavior.java" />
   </source>
-  <source id="1262430001741522253" name="PipelineOperatorConnection_Behavior" hash="8wuy1jmpw84s53z2rqjjid4yu9z8etb">
+  <source id="1262430001741522253" name="PipelineOperatorConnection_Behavior" hash="-bxjyxs0vavtoew797utfes06xbodb17">
     <dep root="1262430001741497888" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="PipelineOperatorConnection_Behavior.java" />
   </source>
-  <source id="1262430001741522631" name="EqualityStrings_Behavior" hash="-7unu07g6l15aytceyuwkeqv0ub82ly6">
+  <source id="1262430001741522631" name="EqualityStrings_Behavior" hash="c4ncghtewvywlqexh4qb5h90hdtz185">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="EqualityStrings_Behavior.java" />
   </source>
-  <source id="1262430001741522640" name="SemicolonEt_Behavior" hash="-2cui4u9ce0fhzo6j1bduyut5ui3yovt">
+  <source id="1262430001741522640" name="SemicolonEt_Behavior" hash="4afgl6f44y223io9i1l3ai5x1mms3dh">
     <dep root="1262430001741498157" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="SemicolonEt_Behavior.java" />
   </source>
-  <source id="1262430001741522665" name="UnaryMinusExpression_Behavior" hash="5fakixxlyazq8cgr7kdo6hg28nvbn6u">
+  <source id="1262430001741522665" name="UnaryMinusExpression_Behavior" hash="-7pgmtq1wkec9r63yxwq1m2tqgg91xpj">
     <dep root="1262430001741498166" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="UnaryMinusExpression_Behavior.java" />
   </source>
-  <source id="1262430001741523291" name="BitwiseNegationExpression_Behavior" hash="6r3xbokrgupfpwxmm8bj9m5dvn0wosj">
+  <source id="1262430001741523291" name="BitwiseNegationExpression_Behavior" hash="9ghzp2sxbtqd9ff26gqyd1gvdiaq7zi">
     <dep root="1262430001741498166" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BitwiseNegationExpression_Behavior.java" />
   </source>
-  <source id="1262430001741523318" name="StickyBitConditionalExpression_Behavior" hash="-3fyhjqtvilnb9ffs3z5lchma6453akp">
+  <source id="1262430001741523318" name="StickyBitConditionalExpression_Behavior" hash="91fzui029e71ps8tblx6itoi8jkb3z7">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="StickyBitConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741523356" name="BlockFileConditionalExpression_Behavior" hash="7561f1psy3n64ant4zyrewt55x43q91">
+  <source id="1262430001741523356" name="BlockFileConditionalExpression_Behavior" hash="-ac34jp888sp67dhh589fzga822mwo5g">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BlockFileConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741523470" name="LessThanOrEqualExpression_Behavior" hash="6xi8at2tfnl782mcqe3bk8el8uhdjkd">
+  <source id="1262430001741523470" name="LessThanOrEqualExpression_Behavior" hash="-afx1y917k1wdsj8jw1z3h6j7z5vco2f">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="LessThanOrEqualExpression_Behavior.java" />
   </source>
-  <source id="1262430001741523479" name="AddExpression_Behavior" hash="32vwfz8zguecvzj4m9uo6kmyvxgtn93">
+  <source id="1262430001741523479" name="AddExpression_Behavior" hash="9rcbtlrwwgtanpnlueatahttr4wyd8f">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="AddExpression_Behavior.java" />
   </source>
-  <source id="1262430001741638236" name="BraceGrouping_Behavior" hash="-9xkiln5zeouxw3miv86ncjbzrtu0d6g">
+  <source id="1262430001741638236" name="BraceGrouping_Behavior" hash="55cc88e5suu2i43ohwmyfknt4y6bmbe">
     <dep root="1262430001741497786" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BraceGrouping_Behavior.java" />
   </source>
-  <source id="1262430001741638255" name="BuckCommandSubstitution_Behavior" hash="307m0kehmcv6mlbw1sj2chqsaywih2c">
+  <source id="1262430001741638255" name="BuckCommandSubstitution_Behavior" hash="-c1algido3qz5idz0qfrvczu6wequ6zj">
     <dep root="1262430001741497870" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BuckCommandSubstitution_Behavior.java" />
   </source>
-  <source id="1262430001741638321" name="OrCombiningConditionalExpression_Behavior" hash="5fvh5l9uyu6bp7tjkmv26ntfvwbcyni">
+  <source id="1262430001741638321" name="OrCombiningConditionalExpression_Behavior" hash="-42ab43h65b9k7elvmhylk7ipzq22t6t">
     <dep root="1262430001741498334" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="OrCombiningConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741639222" name="InequalityExpression_Behavior" hash="bc1zz1q9okba18fcmaa8qc9q90ad8nj">
+  <source id="1262430001741639222" name="InequalityExpression_Behavior" hash="-cu3xc55iq8spm5tv8mubdz3pw8yrpee">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="InequalityExpression_Behavior.java" />
   </source>
-  <source id="1262430001741639233" name="SubExpression_Behavior" hash="d85xjeoz48awar9d940n9qlp85adxom">
+  <source id="1262430001741639233" name="SubExpression_Behavior" hash="etneuzkll5xlx2vd4ciy2k21mnmhanw">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="SubExpression_Behavior.java" />
   </source>
-  <source id="1262430001741639251" name="BitwiseXorExpression_Behavior" hash="-xc4lzryjxwt6r0fpkxagvcap101yi9">
+  <source id="1262430001741639251" name="BitwiseXorExpression_Behavior" hash="1a6867dumms8e67c90wm3inkavqonzm">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BitwiseXorExpression_Behavior.java" />
   </source>
-  <source id="1262430001741639291" name="LogicalNegationExpression_Behavior" hash="-dt4dmr7lm0qwlh47bk476k4qcv7ve6d">
+  <source id="1262430001741639291" name="LogicalNegationExpression_Behavior" hash="20q73i0my2ucqz1kk9b1vimeo8w7v6z">
     <dep root="1262430001741498166" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="LogicalNegationExpression_Behavior.java" />
   </source>
-  <source id="1262430001741641619" name="DivExpression_Behavior" hash="7vtibd38i3iuc8s0izb10ki1tbqrgzi">
+  <source id="1262430001741641619" name="DivExpression_Behavior" hash="-9mwvymlewnh74t84yzolf77n5tiglfq">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="DivExpression_Behavior.java" />
   </source>
-  <source id="1262430001741641677" name="BitwiseOrExpression_Behavior" hash="6nq4vol2drord93vldvq7hhflrz14c5">
+  <source id="1262430001741641677" name="BitwiseOrExpression_Behavior" hash="-allhk9ywztre6pcuea6vkucg8j28zru">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BitwiseOrExpression_Behavior.java" />
   </source>
-  <source id="1262430001741642222" name="RegularFileConditionalExpression_Behavior" hash="-e3g078pdhba3gxmdbq9nb01gcdey3el">
+  <source id="1262430001741642222" name="RegularFileConditionalExpression_Behavior" hash="59q630p9c4vl2t6hyyi6tk628ffwlpd">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="RegularFileConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741642231" name="ModAssingmentExpression_Behavior" hash="-76otbkj2vrh6ynoin5vyyxq1k45eqnq">
+  <source id="1262430001741642231" name="ModAssingmentExpression_Behavior" hash="-7xa0sexmnp1e2c13rja158gxxhr0sll">
     <dep root="1262430001741498133" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="ModAssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741642249" name="LogicalAndExpression_Behavior" hash="8r5tqrqc69qs14wel6qt932xty1oh4e">
+  <source id="1262430001741642249" name="LogicalAndExpression_Behavior" hash="-75fypb1ym84yczy0mdf6m6ooynv3hlk">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="LogicalAndExpression_Behavior.java" />
   </source>
-  <source id="1262430001741642749" name="DoubleSemicolonEt_Behavior" hash="31020ydiwzg6aq2hglwloexe5ldimjp">
+  <source id="1262430001741642749" name="DoubleSemicolonEt_Behavior" hash="-es2rivg3itv8l420n0imcii4bm606an">
     <dep root="1262430001741498157" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="DoubleSemicolonEt_Behavior.java" />
   </source>
-  <source id="1262430001741642758" name="LastReadConditionalExpression_Behavior" hash="-98q8nv99syjjg6349k3zor0emjc6wc5">
+  <source id="1262430001741642758" name="LastReadConditionalExpression_Behavior" hash="-88yfwiucg0hv56l0g8ds4tleeis1cjl">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="LastReadConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741642776" name="MulExpression_Behavior" hash="di5kgb3lnf1c490jnd7742dt3mlknau">
+  <source id="1262430001741642776" name="MulExpression_Behavior" hash="cxr15w6lumskpa9dkewe1vq2jverpfo">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="MulExpression_Behavior.java" />
   </source>
-  <source id="1262430001741642786" name="ExecTestConditionalExpression_Behavior" hash="1nin9yxa9w3zmlijz3k8sba6tegudjn">
+  <source id="1262430001741642786" name="ExecTestConditionalExpression_Behavior" hash="-bqunwjxda816ec51p2lk3yvhk3aevp7">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="ExecTestConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741642987" name="SymlinkConditionalExpression_Behavior" hash="-6ayp22dwsbeakfenjtczihtr4n9d0zj">
+  <source id="1262430001741642987" name="SymlinkConditionalExpression_Behavior" hash="dtxon6x6vgmstsi8fmkeafwcbtone8z">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="SymlinkConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741643022" name="NewerThan_Behavior" hash="-3mid1vxyyhmc7j6aorh90fx4cz434v">
+  <source id="1262430001741643022" name="NewerThan_Behavior" hash="6t0uotslxxgwnjbbi4ws4fqm22iowbc">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="NewerThan_Behavior.java" />
   </source>
-  <source id="1262430001741643041" name="LogicalOrExpression_Behavior" hash="35xvzgh4rgj4nfn41j0r7o89roxbp2b">
+  <source id="1262430001741643041" name="LogicalOrExpression_Behavior" hash="-3tkt91pi6vsrbtvnefxfm9u1qteyb4g">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="LogicalOrExpression_Behavior.java" />
   </source>
-  <source id="1262430001741643059" name="OrAssingmentExpression_Behavior" hash="1y29dweh1lj379di170mj7p3noip3tq">
+  <source id="1262430001741643059" name="OrAssingmentExpression_Behavior" hash="-9wwbjyjndzeol66pnsfl5ridyksowjx">
     <dep root="1262430001741498133" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="OrAssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741643095" name="TerminalConditionalExpression_Behavior" hash="ctyhpk0zia01qbt4yc14kb5d7kvdhay">
+  <source id="1262430001741643095" name="TerminalConditionalExpression_Behavior" hash="-bh8qg5mb5zunx31fp9dvj0w6t5h9s4t">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="TerminalConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741646621" name="BitwiseAndExpression_Behavior" hash="-9vezuv5s1t5yyrmt6yks07d2t7prz9v">
+  <source id="1262430001741646621" name="BitwiseAndExpression_Behavior" hash="-1xd7wqf9albptl7mwjgzh5eaotxt1ma">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BitwiseAndExpression_Behavior.java" />
   </source>
-  <source id="1262430001741646648" name="DoubleSemicolon_Behavior" hash="5uzr049ufjzcyvvjtvm7zrb43a4w553">
+  <source id="1262430001741646648" name="DoubleSemicolon_Behavior" hash="8pv21cpbj8fq4g4qlllhfzt4oxntlcg">
     <dep root="1262430001741498157" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="DoubleSemicolon_Behavior.java" />
   </source>
-  <source id="1262430001741646669" name="ExistConditionalExpression_Behavior" hash="b58dun0iqzjoz32scbizvyxkr83s8g1">
+  <source id="1262430001741646669" name="ExistConditionalExpression_Behavior" hash="-190i77fb6niwmzgw35xp3eh4yt4g1ax">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="ExistConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741646726" name="SocketConditionalExpression_Behavior" hash="bm8xbz8z1mmr4amcj0a2ujx248lle46">
+  <source id="1262430001741646726" name="SocketConditionalExpression_Behavior" hash="13nlgffd0xhht8o9rrweapdjyc1sqwj">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="SocketConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741646763" name="SizeConditionalExpression_Behavior" hash="-22u0nhbkbt3opxacyjorl7n02egnyhw">
+  <source id="1262430001741646763" name="SizeConditionalExpression_Behavior" hash="-5g6vcdwa3rub24ax808scro22ttsfx3">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="SizeConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741646781" name="TildeExpansion_Behavior" hash="6abv9zx2fdy1w4dyq1l8h477de24zsy">
+  <source id="1262430001741646781" name="TildeExpansion_Behavior" hash="cmfbdgd9fb9stg0lijw6i2h5dv6ucuc">
     <dep root="3147078024759753558" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="TildeExpansion_Behavior.java" />
   </source>
-  <source id="1262430001741646792" name="ExpExpression_Behavior" hash="-7yc8kg1i79kj8l6dbr0j9pvh8nlf206">
+  <source id="1262430001741646792" name="ExpExpression_Behavior" hash="-56o8k4f65cgy8h99isj1muf06dsl8m7">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="ExpExpression_Behavior.java" />
   </source>
-  <source id="1262430001741646965" name="PreIncExpression_Behavior" hash="5h3r7o3pcubeaws7phyk6lxrezum3vw">
+  <source id="1262430001741646965" name="PreIncExpression_Behavior" hash="b9jgz7vylikfye0kwzgzr4l5jx3zv1m">
     <dep root="1262430001741498232" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="PreIncExpression_Behavior.java" />
   </source>
-  <source id="1262430001741647007" name="BracketGrouping_Behavior" hash="-7w7hlq926pin7zen76ivzivsp5tw6kz">
+  <source id="1262430001741647007" name="BracketGrouping_Behavior" hash="-9ct073k557bsmt44u67l72v6xv7xu9g">
     <dep root="1262430001741497786" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BracketGrouping_Behavior.java" />
   </source>
-  <source id="1262430001741647018" name="GreaterThanOrEqualExpression_Behavior" hash="-6pipm6ojij58p62qzen4f08ljc2ygen">
+  <source id="1262430001741647018" name="GreaterThanOrEqualExpression_Behavior" hash="-3etdw8gtor1od3473tn7yrngdd4sipx">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="GreaterThanOrEqualExpression_Behavior.java" />
   </source>
-  <source id="1262430001741647049" name="GroupIdConditionalExpression_Behavior" hash="2r3914p3k9zcfv5z3r9qrkc09ivfmhw">
+  <source id="1262430001741647049" name="GroupIdConditionalExpression_Behavior" hash="5gzpd4yjzl4rifoj7av3n5trvjgu931">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="GroupIdConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741647114" name="RightShiftAssingmentExpression_Behavior" hash="-bsgnd5cqrg5v5pi1vreik4o75acgjt6">
+  <source id="1262430001741647114" name="RightShiftAssingmentExpression_Behavior" hash="-dmbctetrboq04s82v4kqk7u1a5a5m16">
     <dep root="1262430001741498133" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="RightShiftAssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741647130" name="LeftShiftAssingmentExpression_Behavior" hash="-11dbnamw44ynvxcexlhli6lpbjtjae2">
+  <source id="1262430001741647130" name="LeftShiftAssingmentExpression_Behavior" hash="-bpxljtz3k0mmpicxkqxa335kbyslhvv">
     <dep root="1262430001741498133" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="LeftShiftAssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741647225" name="DirectoryConditionalExpression_Behavior" hash="2nswi0krm35webf7ig9snflh26zyroi">
+  <source id="1262430001741647225" name="DirectoryConditionalExpression_Behavior" hash="-73ubpwnj01d7fv9nip90t6jv8b24t2a">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="DirectoryConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741647240" name="SingleQuote_Behavior" hash="eb1n9171t543fdn45gthtna70dbbtod">
+  <source id="1262430001741647240" name="SingleQuote_Behavior" hash="-d8du0ai5bkqp3s0g0kxvyl46hx0ggnq">
     <dep root="1262430001741497927" />
     <dep root="3147078024759753558" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="SingleQuote_Behavior.java" />
   </source>
-  <source id="1262430001741647251" name="QuotesCommandSubstitution_Behavior" hash="-3t6smkxnqup5jczb6b86kc3ow9s714y">
+  <source id="1262430001741647251" name="QuotesCommandSubstitution_Behavior" hash="-18kqsamrb35ruqwsg0pkt4w4zr0gt6j">
     <dep root="1262430001741497870" />
     <dep root="3147078024759753558" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="QuotesCommandSubstitution_Behavior.java" />
   </source>
-  <source id="1262430001741647281" name="PostIncExpression_Behavior" hash="-dbz6tsz2hxpkpzh4zn98zbx7f4bswyw">
+  <source id="1262430001741647281" name="PostIncExpression_Behavior" hash="-6friq175w3o8z4t0rceqrg3vt5e2tbn">
     <dep root="1262430001741498232" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="PostIncExpression_Behavior.java" />
   </source>
-  <source id="1262430001741647389" name="GreaterThanString_Behavior" hash="7cdmir3sr2vn3u7nslbtogyjlvsrvor">
+  <source id="1262430001741647389" name="GreaterThanString_Behavior" hash="-dgw5mwctccnd653crbmsa70zuiqu6so">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="GreaterThanString_Behavior.java" />
   </source>
-  <source id="1262430001741647667" name="InequalityStrings_Behavior" hash="-dwp4uls4ymeckctle72dp8x7zt0rx2c">
+  <source id="1262430001741647667" name="InequalityStrings_Behavior" hash="-6qmxtabup8pss2ymtui6rj4up8jm5q0">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="InequalityStrings_Behavior.java" />
   </source>
-  <source id="1262430001741702873" name="PipeConditionalExpression_Behavior" hash="1kxhqfvd9cj94e7mws7zz9f1epad9a2">
+  <source id="1262430001741702873" name="PipeConditionalExpression_Behavior" hash="-ecs3tqxsyogl0m030ck2wpi7sh8nbrf">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="PipeConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741702903" name="AndOperator_Behavior" hash="-1cxqsh281moedm127fvowf0d8zmeqmb">
+  <source id="1262430001741702903" name="AndOperator_Behavior" hash="-e6bcvdry9co22h06qco00c0rgsnrv7w">
     <dep root="1262430001741498109" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="AndOperator_Behavior.java" />
   </source>
-  <source id="1262430001741702941" name="LessThanOrEqualNumber_Behavior" hash="6zo7xj42detkrwiprrd1e6r9h6laquc">
+  <source id="1262430001741702941" name="LessThanOrEqualNumber_Behavior" hash="boxlmejckrglgmv4l6byjg4wqosjvm1">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="LessThanOrEqualNumber_Behavior.java" />
   </source>
-  <source id="1262430001741703073" name="LeftBitwiseShiftExpression_Behavior" hash="2t9h8xjs5weorx8472bysfblr51oku0">
+  <source id="1262430001741703073" name="LeftBitwiseShiftExpression_Behavior" hash="-8r31uxvh9agxrpm26gkeyflhr9nc7d9">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="LeftBitwiseShiftExpression_Behavior.java" />
   </source>
-  <source id="1262430001741703104" name="InequalityNumber_Behavior" hash="b6vphjgfhk0a7rzg14wqme4qz4bq5zy">
+  <source id="1262430001741703104" name="InequalityNumber_Behavior" hash="-7fonvq2584njzw673dm11c7ijvcvpj7">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="InequalityNumber_Behavior.java" />
   </source>
-  <source id="1262430001741703115" name="UnaryPlusExpression_Behavior" hash="tck3cqg799rsgbwjhu21m7s5vktur">
+  <source id="1262430001741703115" name="UnaryPlusExpression_Behavior" hash="1tvxmnaww2s0hxan9q4hkfko818y6rm">
     <dep root="1262430001741498166" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="UnaryPlusExpression_Behavior.java" />
   </source>
-  <source id="1262430001741703164" name="BasicParameterExpansion_Behavior" hash="433930ady3b8yta1g22bg7hmg7gldjz">
+  <source id="1262430001741703164" name="BasicParameterExpansion_Behavior" hash="3po5i1viylct6xe4kfjprikpefn6u0z">
     <dep root="3147078024759753558" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="BasicParameterExpansion_Behavior.java" />
   </source>
-  <source id="1262430001741703180" name="AsyncTerminator_Behavior" hash="-2s8aisvnpjz0kjijlm4ldu8z475cdc2">
+  <source id="1262430001741703180" name="AsyncTerminator_Behavior" hash="4cbre5ik794i7x6l39yef4o7b95s4ev">
     <dep root="1262430001741497825" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="AsyncTerminator_Behavior.java" />
   </source>
-  <source id="1262430001741703195" name="LessThanNumber_Behavior" hash="-6x3f1lldxufpq3pyryaqgzqe3m3u9pu">
+  <source id="1262430001741703195" name="LessThanNumber_Behavior" hash="9f7oex69yk7mkk4t1bquulax44umbw1">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="LessThanNumber_Behavior.java" />
   </source>
-  <source id="1262430001741703204" name="UserIdConditionalExpression_Behavior" hash="-m9d0rmqthg90zh4mjfozg91s4ekvki">
+  <source id="1262430001741703204" name="UserIdConditionalExpression_Behavior" hash="-1hywrfgesqb6kl2fcc35uabx399hxzm">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="UserIdConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741703213" name="CommaExpression_Behavior" hash="cpzu7rir9uk2aljmwa9dx1iitib6p8v">
+  <source id="1262430001741703213" name="CommaExpression_Behavior" hash="6fqrd62hzoq42yzcwoyol8rl0gbvppr">
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="CommaExpression_Behavior.java" />
   </source>
-  <source id="1262430001741703222" name="AsyncOperator_Behavior" hash="e6mjudggmtr51tz412zrz8dtghu7b0">
+  <source id="1262430001741703222" name="AsyncOperator_Behavior" hash="11rkwx76f4qork928dixo38398v9ymg">
     <dep root="1262430001741498109" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="AsyncOperator_Behavior.java" />
   </source>
-  <source id="1262430001741703330" name="OlderThan_Behavior" hash="7qrfu76e4wdh9260idughegql2cqlge">
+  <source id="1262430001741703330" name="OlderThan_Behavior" hash="4t3ke5un4wk77ny3ktukjw660rgtf59">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="OlderThan_Behavior.java" />
   </source>
-  <source id="1262430001741703411" name="LessThanExpression_Behavior" hash="epmqa3qf0i7fns0naj969gf6b3jsd6m">
+  <source id="1262430001741703411" name="LessThanExpression_Behavior" hash="-4nh56stboqkyzcajjgmvtrdricohh47">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="LessThanExpression_Behavior.java" />
   </source>
-  <source id="1262430001741703455" name="OtherExistConditionalExpression_Behavior" hash="-bn6zxvjzegydvb0s8rp3rcl3rj1n6w7">
+  <source id="1262430001741703455" name="OtherExistConditionalExpression_Behavior" hash="cs9atzqtmajzkyydwfnheadxddifcvd">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="OtherExistConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741703483" name="MusAssingmentExpression_Behavior" hash="ar60hivfqx6t3g4eq65rmwmgx909e3c">
+  <source id="1262430001741703483" name="MusAssingmentExpression_Behavior" hash="o9w525vcv5vh4phv02ud5h8pijcl5h">
     <dep root="1262430001741498133" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="MusAssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741703492" name="PlusAssingmentExpression_Behavior" hash="-75156snjla2130iundl7h6ft7q08i6j">
+  <source id="1262430001741703492" name="PlusAssingmentExpression_Behavior" hash="-198pp983h977ekk9txdhimf0crwbafp">
     <dep root="1262430001741498133" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="PlusAssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741703554" name="EffectiveUserIdConditionalExpression_Behavior" hash="-6fpc065vmdpf1v8apafucxjm5oidybs">
+  <source id="1262430001741703554" name="EffectiveUserIdConditionalExpression_Behavior" hash="-akojzwgpfrff2qgxvebnp0oyf8bhwku">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="EffectiveUserIdConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741703564" name="PreDecExpression_Behavior" hash="dfjc4aspujkwnwu4emvlljhbdmxi5l5">
+  <source id="1262430001741703564" name="PreDecExpression_Behavior" hash="-bfyllvcpdmlbm2aoqc4e1afp9j3qbl3">
     <dep root="1262430001741498232" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="PreDecExpression_Behavior.java" />
   </source>
-  <source id="1262430001741703619" name="XorAssingmentExpression_Behavior" hash="d9f9znm2p1f7j3r8vn3o6gvjsixuiq7">
+  <source id="1262430001741703619" name="XorAssingmentExpression_Behavior" hash="-32qa97y0gw4rf00zt4872o8guvn6mt1">
     <dep root="1262430001741498133" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="XorAssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741703803" name="GreaterThanOrEqual_Behavior" hash="-azcih7vfj8okjoiv9owe8gtw7dnvddu">
+  <source id="1262430001741703803" name="GreaterThanOrEqual_Behavior" hash="6tc8qlyk5x08h7z4h5f0xe1b3lf2qj7">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="GreaterThanOrEqual_Behavior.java" />
   </source>
-  <source id="1262430001741703862" name="LessThanString_Behavior" hash="2ushnwjz21lr1pu1rfnxvdhk1bq5xgc">
+  <source id="1262430001741703862" name="LessThanString_Behavior" hash="u9jwolz0veb74w8eaqpb6wbdtnikfv">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="LessThanString_Behavior.java" />
   </source>
-  <source id="1262430001741703938" name="ZeroStringConditionalExpression_Behavior" hash="1j7mmpbv74wae1nijxe3lusypxxk1ra">
+  <source id="1262430001741703938" name="ZeroStringConditionalExpression_Behavior" hash="-4ryetlrhvpbk2w14ufd0pe2fn6w5klm">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="ZeroStringConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741704547" name="EqualityStrings2_Behavior" hash="18jvb186mssbfelsx59b7was2sfph4v">
+  <source id="1262430001741704547" name="EqualityStrings2_Behavior" hash="9v6j5jvwow796v81thqcvlmgdbp6z0i">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="EqualityStrings2_Behavior.java" />
   </source>
-  <source id="1262430001741704559" name="SameReference_Behavior" hash="-e5y7mkay85bpgflsd5h0ywmn7clxp8q">
+  <source id="1262430001741704559" name="SameReference_Behavior" hash="atlh0r2oryxlzqvek43yrpzve8he7j4">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="SameReference_Behavior.java" />
   </source>
-  <source id="1262430001741704677" name="AssingmentExpression_Behavior" hash="1ncnyftxby5e4ss8w8rydehnaoynx76">
+  <source id="1262430001741704677" name="AssingmentExpression_Behavior" hash="-2du4j91i4nsedsfqg4t0xo1cni2v474">
     <dep root="1262430001741498133" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="AssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741704787" name="EqualityNumber_Behavior" hash="25pce9cqp8c89thkndfwg2xfegmt8t4">
+  <source id="1262430001741704787" name="EqualityNumber_Behavior" hash="-9ohbuq77acliq2kkn2pijhwpfe8bonh">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="EqualityNumber_Behavior.java" />
   </source>
-  <source id="1262430001741704960" name="NonZeroStringConditionalExpression_Behavior" hash="-dy7ot8vj8g96fyhixoq6y4vmwcqrl93">
+  <source id="1262430001741704960" name="NonZeroStringConditionalExpression_Behavior" hash="-5m8winmo4407wiqwfg0cz5bu0q6tym4">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="NonZeroStringConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741717402" name="CharFileConditionalExpression_Behavior" hash="-5abcgvu64nzgbklgfzfauh8clhxz994">
+  <source id="1262430001741717402" name="CharFileConditionalExpression_Behavior" hash="-9uc0vvebv73o85b3mun4jgqtukx1hs4">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="CharFileConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741717412" name="SemicolonOperator_Behavior" hash="9ulo1v59ej4gcbzzxezga9rwn4xi1wn">
+  <source id="1262430001741717412" name="SemicolonOperator_Behavior" hash="-dajyq52x5w838csyzpj441rskvxmdic">
     <dep root="1262430001741498109" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="SemicolonOperator_Behavior.java" />
   </source>
-  <source id="1262430001741717427" name="DoubleQuote_Behavior" hash="78njq5v1u2kbjap9qvzdebeoex1rsg3">
+  <source id="1262430001741717427" name="DoubleQuote_Behavior" hash="cky2zmlz8j3objksuegeuv3gjcplngw">
     <dep root="1262430001741497927" />
     <dep root="3147078024759753558" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="DoubleQuote_Behavior.java" />
   </source>
-  <source id="1262430001741717475" name="ModExpression_Behavior" hash="1yxa3dz2x9y2c7qmwz83okufmyl6o2c">
+  <source id="1262430001741717475" name="ModExpression_Behavior" hash="cakels3pltagfhxv28e0gpc5p5by16o">
     <dep root="1262430001741497879" />
     <dep root="1262430001741498247" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="ModExpression_Behavior.java" />
   </source>
-  <source id="1262430001741717510" name="MinusAssingmentExpression_Behavior" hash="evj74cyaxq82ber2wpya5ydvvufi022">
+  <source id="1262430001741717510" name="MinusAssingmentExpression_Behavior" hash="yf6ffvhjh2hxpkh2y2jbxa2qzczfcf">
     <dep root="1262430001741498133" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="MinusAssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741718344" name="AndAssingmentExpression_Behavior" hash="-88x67lr2jugh2lassud5sn02hqxkgqn">
+  <source id="1262430001741718344" name="AndAssingmentExpression_Behavior" hash="djfuv0nkadjvf5mxp62a4tdb9vclf7">
     <dep root="1262430001741498133" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="AndAssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741718516" name="OtherSymlinkConditionalExpression_Behavior" hash="dc08m24r6rja94wuh7bpcr095l86cuh">
+  <source id="1262430001741718516" name="OtherSymlinkConditionalExpression_Behavior" hash="-avnuuzmr797h886j3g0vffkciwfxfem">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="OtherSymlinkConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741718532" name="AndCombiningComditionalExpression_Behavior" hash="agal0jucuot9wrv7dnynjgdv7rr16n3">
+  <source id="1262430001741718532" name="AndCombiningComditionalExpression_Behavior" hash="-5levyubm0k1aaxapecdsr1xns3ywxb3">
     <dep root="1262430001741498334" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="AndCombiningComditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741718552" name="PostDecExpression_Behavior" hash="-6rrc05vw6hvbre8jlgb0vdagmvvab61">
+  <source id="1262430001741718552" name="PostDecExpression_Behavior" hash="3k6qwk6mq9b32lw0mwknrpnz4v1itvl">
     <dep root="1262430001741498232" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="PostDecExpression_Behavior.java" />
   </source>
-  <source id="1262430001741718872" name="GreaterThanNumber_Behavior" hash="-6nk53uk3j3ypaq48ciajrnddbg4dakt">
+  <source id="1262430001741718872" name="GreaterThanNumber_Behavior" hash="25b535qfzfja05iiaq4auw9gde7o8tq">
     <dep root="1262430001741498391" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="GreaterThanNumber_Behavior.java" />
   </source>
-  <source id="1262430001741718917" name="WriteTestConditionalExpression_Behavior" hash="-c9rh1hugj9x82iygjolwaijv5a80ndz">
+  <source id="1262430001741718917" name="WriteTestConditionalExpression_Behavior" hash="-5kum0k5h0aha5eecq9d5cbpf26hcaj9">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="WriteTestConditionalExpression_Behavior.java" />
   </source>
-  <source id="1262430001741718950" name="OrOperator_Behavior" hash="euhq1jf8wuiioem9m2w8jv1ktpmncto">
+  <source id="1262430001741718950" name="OrOperator_Behavior" hash="axi1un8af1lxhuzl64vpujldnhpcn8r">
     <dep root="1262430001741498109" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="OrOperator_Behavior.java" />
   </source>
-  <source id="1262430001741719762" name="ArithmeticExpansion_Behavior" hash="70vva8oc3g872vaa1chmoskgrwlci6z">
+  <source id="1262430001741719762" name="ArithmeticExpansion_Behavior" hash="awct80yyd8w6i2ine8edbglhernufov">
     <dep root="3147078024759753558" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="ArithmeticExpansion_Behavior.java" />
   </source>
-  <source id="1262430001741719840" name="DivAssingmentExpression_Behavior" hash="9qhnmzulf141ksi9cr05lwo9kaftnqd">
+  <source id="1262430001741719840" name="DivAssingmentExpression_Behavior" hash="-3gtcfwpvtt19v6jrzmjkvpw5s7oe72h">
     <dep root="1262430001741498133" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="DivAssingmentExpression_Behavior.java" />
   </source>
-  <source id="1262430001741720125" name="VariableAssingment_Behavior" hash="-30vzunibzykrcokfy2w23ncr5ri38gz">
+  <source id="1262430001741720125" name="VariableAssingment_Behavior" hash="jhzyjmrwl25nbqrchkz8hmmr3412hm">
     <dep root="1262430001741497912" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />
     <file name="VariableAssingment_Behavior.java" />
   </source>
-  <source id="1262430001741720188" name="ReadTestConditionalExpression_Behavior" hash="-mu1eaaw3wd4m2q8jw2a89xuhrhw203">
+  <source id="1262430001741720188" name="ReadTestConditionalExpression_Behavior" hash="-5j2mpgchki0sd7vx67m3sgiqo8x8vsz">
     <dep root="1262430001741497954" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" />

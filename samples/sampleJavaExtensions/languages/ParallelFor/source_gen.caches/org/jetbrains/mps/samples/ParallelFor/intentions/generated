@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3njh378djjcqbcbgu3vbja9hjrs89g1">
+<dependencies version="2" modelHash="-tfsqy82eincqguk8kvy8yu6ghplc1k">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -8,22 +8,22 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-81huy0fmdhno9qzkzxs51jufv86r4d6" />
-  <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="11m944sy2al6dy3x96pkdv706bq7351" />
-  <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-2qxctjww3633jjrk3ninkqwr3fw1ajg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="iak6qkoqvisy1gghydx23iwnxiu2qf" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b7efqpp988394i1ffiwgj2bp6kuza4w" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="5dkchx6vs8ggugooqdxkrkmeks99uon" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-z22oiu2i3virhyguef3oewaixjm9hi" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
-  <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" hash="1g97qphu4vlchckmuogluq58eisulia" />
-  <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" hash="-dkie0ss6cv39i0hzuy4ihsu6i8a9xlt" />
-  <dep model="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)" hash="csn5rm40vrvm7069yanoyot8532mcha" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-2ekzi0vjwcq8rfjo2tkm6ycl04wlvzk" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="-246dx1w1f7c3eu1wel5lseefkloe03g" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-arw7gvobs0uivjrocx6wvn1k4g8q42g" />
+  <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="2j2f1w30dyydhxe3zzvalcj1njwtjvw" />
+  <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-77i2jof61xbw8llew8edhv9oi9w4mcz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="4298mu054fx6whzlp2w6f6j2etcqkrl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b3wz0owxesi28bm1lrvljioj8jycged" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="escnzqn0hifing8eemstueasix9gmse" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="59ea0wchjl1p3fmqjarzl02fje6rngu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" hash="thuzkj44s63yk95td0ediith2itgqx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" hash="-3ohmbc687tuy9w7mx0yfu1hcacxjnvu" />
+  <dep model="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)" hash="b41kc8a69ygew74q2hgh8vbic90ze18" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-75hld4xn0j0x620a2ffc7r1mui5k2kp" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <common hash="-esjatbeg5dbwxcexjqna3n9a8429ow4" dependsOnNodes="true">
     <dep root="2975785153735208385" />
     <dep root="2975785153735222149" />
     <dep root="2975785153735230347" />
@@ -45,7 +45,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" />
     <file name="IntentionsDescriptor.java" />
   </common>
-  <source id="633195941006988431" name="DetachFromThreadPool" hash="2f1aqs0ytt3htrkr3nhhu4uo02h2cak">
+  <source id="633195941006988431" name="DetachFromThreadPool" hash="-6miv3ne4pj2c9i9x4lfe3szctnsjmwm">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -54,7 +54,7 @@
     <dep model="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)" />
     <file name="DetachFromThreadPool_Intention.java" />
   </source>
-  <source id="2975785153735208385" name="MarkAsThreadSafe" hash="-3cc4etllhxztg97jfqy4vn82qbw3rez">
+  <source id="2975785153735208385" name="MarkAsThreadSafe" hash="8zakaxoryq9xgr2waq4o3lp1pc0g186">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -64,7 +64,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MarkAsThreadSafe_Intention.java" />
   </source>
-  <source id="2975785153735222149" name="UnmarkAsThreadSafe" hash="-5q5z3fywkxrjzqog2tzlkrqc9hbch6i">
+  <source id="2975785153735222149" name="UnmarkAsThreadSafe" hash="ck0vb85v4ziz5vzxf8n5cdksf553o7m">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -73,7 +73,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="UnmarkAsThreadSafe_Intention.java" />
   </source>
-  <source id="2975785153735230347" name="MarkAsNonThreadSafe" hash="uarzem584dc655dd9rnkgnbbui5mb1">
+  <source id="2975785153735230347" name="MarkAsNonThreadSafe" hash="-6qrh7om4m9e0f5pcgh24swlfuxgc698">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -87,7 +87,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MarkAsNonThreadSafe_Intention.java" />
   </source>
-  <source id="2975785153735235995" name="UnmarkAsNonThreadSafe" hash="2hirlhxamc1em0op83zp4vxby1xm95t">
+  <source id="2975785153735235995" name="UnmarkAsNonThreadSafe" hash="4mfdtfwo83dz8x9r0m0n94sfbz3mx3a">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -96,7 +96,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="UnmarkAsNonThreadSafe_Intention.java" />
   </source>
-  <source id="2975785153735290139" name="MarkVariableDeclarationAsThreadSafe" hash="-a1fi2wv9gu2rko0fee9yp29trq66zxy">
+  <source id="2975785153735290139" name="MarkVariableDeclarationAsThreadSafe" hash="-5mhestv6t0xrxe7jfl7849b4x7h9h3f">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -106,7 +106,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MarkVariableDeclarationAsThreadSafe_Intention.java" />
   </source>
-  <source id="2975785153735291445" name="UnmarkVariableAsThreadSafe" hash="tzxtl3qqgi1o7gnsvjgbwswbrb2ye0">
+  <source id="2975785153735291445" name="UnmarkVariableAsThreadSafe" hash="-2v73k69kkyd25mflvnjt8nrojaxrqcx">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -115,7 +115,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="UnmarkVariableAsThreadSafe_Intention.java" />
   </source>
-  <source id="5384012304952490058" name="MarkInstanceMethodCallAsThreadSafe" hash="7x04ymh75k9f45o8y39u4zq8wbrf7cz">
+  <source id="5384012304952490058" name="MarkInstanceMethodCallAsThreadSafe" hash="arto3xb32v1g004n4lv4tklb3q2cb2x">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -129,7 +129,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MarkInstanceMethodCallAsThreadSafe_Intention.java" />
   </source>
-  <source id="5384012304952498864" name="MarkStaticMethodCallAsThreadSafe" hash="bcyfgxevnnjhgwxa337w0g2o1qvv6ql">
+  <source id="5384012304952498864" name="MarkStaticMethodCallAsThreadSafe" hash="8d3ll4lrr2o5wkvhhp79pnnda3czkvs">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -143,7 +143,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MarkStaticMethodCallAsThreadSafe_Intention.java" />
   </source>
-  <source id="5384012304952503177" name="UnmarkStaticMethodCallAsThreadSafe" hash="-3sinq03ne9ne5pto8tnfon3y3odelk4">
+  <source id="5384012304952503177" name="UnmarkStaticMethodCallAsThreadSafe" hash="-20t0uy2ask8f9ing3q2q911t542wrel">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -152,7 +152,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="UnmarkStaticMethodCallAsThreadSafe_Intention.java" />
   </source>
-  <source id="5384012304952504715" name="TurnToForEachStatement" hash="5447v203kytl6arvbhm8zsfwubv6g1v">
+  <source id="5384012304952504715" name="TurnToForEachStatement" hash="-6ti8t9yasacizwyjnxu19298pejmfzt">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -175,7 +175,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TurnToForEachStatement_Intention.java" />
   </source>
-  <source id="5384012304952529816" name="TurnToParallelForEachStatement" hash="eaw517no1dj9jhal3eem2yez17fi038">
+  <source id="5384012304952529816" name="TurnToParallelForEachStatement" hash="3ydleuvz876j7807evsucpn4ay4v0ez">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -201,7 +201,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TurnToParallelForEachStatement_Intention.java" />
   </source>
-  <source id="5384012304952537573" name="UnmarkInstanceMethodCallAsThreadSafe" hash="4bphp0xux2ggiaixlgbt6ybjw866w56">
+  <source id="5384012304952537573" name="UnmarkInstanceMethodCallAsThreadSafe" hash="-7duui97stcdr6fx41voovr6zrsaaanx">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -210,7 +210,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="UnmarkInstanceMethodCallAsThreadSafe_Intention.java" />
   </source>
-  <source id="3540747636396475561" name="MarkLocalStaticMethodCallAsThreadSafe" hash="b84f77kabndgy66z6muwov172nn8h62">
+  <source id="3540747636396475561" name="MarkLocalStaticMethodCallAsThreadSafe" hash="bqmb9bkr6fxi44vt0va9njrugh21gld">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -224,7 +224,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="MarkLocalStaticMethodCallAsThreadSafe_Intention.java" />
   </source>
-  <source id="3540747636396569313" name="UnmarkLocalStaticMethodCallAsThreadSafe" hash="5hrg8k0s9ynanaqvujvswmt8mbsjbva">
+  <source id="3540747636396569313" name="UnmarkLocalStaticMethodCallAsThreadSafe" hash="7djr9zetmz28cc1er7ljzjnc866tj56">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -233,7 +233,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="UnmarkLocalStaticMethodCallAsThreadSafe_Intention.java" />
   </source>
-  <source id="3540747636396569349" name="UnmarkLocalInstanceMethodCallAsThreadSafe" hash="-6gdqhfh3eia2ab58i4bya8sea8oxd47">
+  <source id="3540747636396569349" name="UnmarkLocalInstanceMethodCallAsThreadSafe" hash="5khdnfv1rgs3cragz5k20yn3mrzi3nl">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -242,7 +242,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.java" />
   </source>
-  <source id="3540747636396581099" name="MarkLocalInstanceMethodCallAsThreadSafe" hash="-btqrzqdmz2y0prts8qioxhnegdj0lq">
+  <source id="3540747636396581099" name="MarkLocalInstanceMethodCallAsThreadSafe" hash="2etdl6j457mtafsdp9cfxwaasu5v6tu">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />

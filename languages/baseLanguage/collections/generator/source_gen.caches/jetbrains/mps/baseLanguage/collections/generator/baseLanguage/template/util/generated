@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3vqypqew7wqlvet4ptse85lbjpfga09">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <common hash="2v2thct39vplujl1h8369668g52qw6l" />
-  <source id="1241087826068" name="Keys" hash="-79p0ahwwzglutk2vltvxqbq2y40dr6t">
+<dependencies version="2" modelHash="-ebe4a4ggw5aycu044klndz0lxlmx939">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <common hash="6ct3sqk2e5r1dovbe1xldgvvrk7x2hk" />
+  <source id="1241087826068" name="Keys" hash="10zg2kqtemy2exl54gpugjjsvopipx1">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Keys.java" />
   </source>
-  <source id="3444116434173277154" name="Values" hash="89tdvk9o2x6z34ro4g7edftg0s0iw5e">
+  <source id="3444116434173277154" name="Values" hash="-2385shaii68sers340x765q5f4ziahq">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Values.java" />
   </source>
