@@ -116,6 +116,17 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="5950344441601491694">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="jap4.6655351613569925164" />
+            <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_ReadOnlyModelAccessor" typeId="tpc2.1225900081164" id="1048477798205922098">
+              <node role="modelAccessor" roleId="tpc2.1225900141900" type="tpc2.ReadOnlyModelAccessor" typeId="tpc2.1225898583838" id="1048477798205922100">
+                <node role="getter" roleId="tpc2.1225898971709" type="tpc2.QueryFunction_ModelAccess_Getter" typeId="tpc2.1176717841777" id="1048477798205922102">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1048477798205922104">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1048477798205922981">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="1048477798205922980" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5950344441601491695" />
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineChildrenStyleClassItem" typeId="tpc2.1237375020029" id="5950344441601491696">
               <property name="flag" nameId="tpc2.1186414551515" value="true" />
@@ -415,6 +426,39 @@
             </node>
             <node role="removeHints" roleId="tpc2.4242538589862654489" type="tpc2.QueryHintsSpecification" typeId="tpc2.6150987479542522273" id="7636045212390922675">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7636045212390922676">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1398963978202240391">
+                  <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1398963978202240392">
+                    <property name="name" nameId="tpck.1169194664001" value="checkParametersAvailability" />
+                    <node role="initializer" roleId="tpee.1068431790190" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1398963978202240393">
+                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1398963978202240394" />
+                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="1398963978202240395" />
+                    </node>
+                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1398963978202240396" />
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1398963978202240397">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.AndAssignmentExpression" typeId="tpee.7024111702304501418" id="1398963978202240398">
+                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1398963978202240399">
+                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1398963978202240400" />
+                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="1398963978202240401" />
+                    </node>
+                    <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1398963978202240402">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1398963978202240392" resolveInfo="checkParametersAvailability" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1398963978202240403">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.AndAssignmentExpression" typeId="tpee.7024111702304501418" id="1398963978202240404">
+                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1398963978202240405">
+                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1398963978202240406" />
+                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="1398963978202240407" />
+                    </node>
+                    <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1398963978202240408">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1398963978202240392" resolveInfo="checkParametersAvailability" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1398963978202239455" />
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7636045212390978447">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="7636045212390992268">
                     <node role="condition" roleId="tpee.1163668914799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7636045212390980768">
