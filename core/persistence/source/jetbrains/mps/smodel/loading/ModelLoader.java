@@ -24,6 +24,7 @@ import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.util.Iterator;
 
@@ -64,7 +65,13 @@ public class ModelLoader {
 
   private void update(InterfaceSNode node) {
     if (node.hasSkippedChildren()) {
-      Iterator<jetbrains.mps.smodel.SNode> it = myFullModel.getNode(node.getNodeId()).getChildren().iterator();
+      jetbrains.mps.smodel.SNode fullNode = myFullModel.getNode(node.getNodeId());
+      if (fullNode == null) {
+        LOG.error("model " + myModel.getReference().getModelName() + " (" + myModel.getPersistenceVersion() + ")"
+            + ": no peer node in full model for " + node.getNodeId()
+            + " (in " + ((StreamDataSource) myModel.getModelDescriptor().getSource()).getLocation() + ")");
+      }
+      Iterator<jetbrains.mps.smodel.SNode> it = fullNode.getChildren().iterator();
       SNode curr = it.hasNext() ? it.next() : null;
 
       for (SNode child : node.getChildren()) {
@@ -76,6 +83,10 @@ public class ModelLoader {
           // had to use deprecated method to insert _before_ the anchor node
           node.insertChild((jetbrains.mps.smodel.SNode) child, role, (jetbrains.mps.smodel.SNode) curr, true);
           curr = next;
+        }
+        if (curr != null && childId.equals(curr.getNodeId())) {
+          // skip
+          curr = it.hasNext() ? it.next() : null;
         }
         if (curr == null) {
           break;
