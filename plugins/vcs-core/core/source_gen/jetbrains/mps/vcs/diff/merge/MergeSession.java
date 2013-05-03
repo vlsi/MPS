@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -67,12 +66,8 @@ public class MergeSession {
   public static MergeSession createMergeSession(SModel base, SModel mine, SModel repository) {
     // TODO generalize merge for any SModel 
     SModel resModel = CopyUtil.copyModel(base);
-    SModelDescriptor resMD = resModel.getModelDescriptor();
-    SModelDescriptor baseMD = base.getModelDescriptor();
-    SModelDescriptor mineMD = mine.getModelDescriptor();
-    SModelDescriptor repMD = repository.getModelDescriptor();
     if (resModel instanceof DefaultSModel) {
-      int pv = Math.max(getPersistenceVersion(baseMD), Math.max(getPersistenceVersion(mineMD), getPersistenceVersion(repMD)));
+      int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
       ((DefaultSModel) resModel).setPersistenceVersion(pv);
     }
     return new MergeSession(base, mine, repository, resModel);
@@ -328,8 +323,7 @@ public class MergeSession {
     }
   }
 
-  private static int getPersistenceVersion(org.jetbrains.mps.openapi.model.SModel m) {
-    org.jetbrains.mps.openapi.model.SModel model = m;
+  private static int getPersistenceVersion(SModel model) {
     if (model instanceof DefaultSModel) {
       return ((DefaultSModel) model).getPersistenceVersion();
     }
