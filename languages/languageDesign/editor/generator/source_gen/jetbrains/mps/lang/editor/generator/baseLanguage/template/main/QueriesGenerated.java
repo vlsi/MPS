@@ -1260,6 +1260,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "filter", true) != null;
   }
 
+  public static boolean ifMacro_Condition_5613016763935511834(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "addHints", true) != null || SLinkOperations.getTarget(_context.getNode(), "removeHints", true) != null;
+  }
+
   public static boolean ifMacro_Condition_1200438900405(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "createFunction", true) != null;
   }
@@ -1561,6 +1565,22 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1184142273649(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "filter", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_5613016763939052865(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "addHints", true);
+  }
+
+  public static SNode sourceNodeQuery_5613016763939099627(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "removeHints", true);
+  }
+
+  public static SNode sourceNodeQuery_5613016763940447308(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "addHints", true);
+  }
+
+  public static SNode sourceNodeQuery_5613016763940867782(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "removeHints", true);
   }
 
   public static SNode sourceNodeQuery_4772059062238364877(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

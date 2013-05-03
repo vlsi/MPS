@@ -2130,6 +2130,15 @@
     </node>
   </root>
   <root id="4201170947328891620">
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="554589055677430177">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.554589055677209880" resolveInfo="ConditionalPresentation_addQuery_RefNodeList_default" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="554589055677430204">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.5613016763942508875" resolveInfo="ConditionalPresentation_addQuery_RefNodeList_rich" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="554589055677430220">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.554589055677210829" resolveInfo="ConditionalPresentation_addQuery_RefNodeList_switch" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391583">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390392321" resolveInfo="ConditionalPresentation_addQuery_default" />
     </node>
@@ -2138,6 +2147,12 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391615">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390416608" resolveInfo="ConditionalPresentation_addQuery_switch" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="554589055677430268">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.554589055677397793" resolveInfo="ConditionalPresentation_removeQuery_RefNodeList_compact" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="554589055677430269">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.554589055677398009" resolveInfo="ConditionalPresentation_removeQuery_RefNodeList_switch" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391634">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390410965" resolveInfo="ConditionalPresentation_removeQuery_compact" />
@@ -2155,8 +2170,14 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4201170947328956171">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.5950344441601491241" resolveInfo="EditorSpecifiedBy_add_context_hints" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="554589055677430319">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7279578193769046188" resolveInfo="EditorSpecifiedBy_add_context_hints_RefNodeList" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4201170947328956182">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.5950344441601676487" resolveInfo="EditorSpecifiedBy_add_remove_context_hints" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="554589055677430372">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7279578193769147476" resolveInfo="EditorSpecifiedBy_add_remove_context_hints_RefNodeList" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2601164129533511794">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.2601164129533059968" resolveInfo="UnsupportedPresentation" />

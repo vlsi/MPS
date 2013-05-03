@@ -49,6 +49,34 @@
       <property name="name" nameId="tpck.1169194664001" value="UnsupportedPresentation" />
       <property name="description" nameId="tp5g.1883175908513350760" value="Editing MultipleEditorsTestChild child concept instance using default editor (there is no editor associted with unsupported contxt hint pushed down to this child, so default editor should be used here)" />
     </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7279578193769046188">
+      <property name="name" nameId="tpck.1169194664001" value="EditorSpecifiedBy_add_context_hints_RefNodeList" />
+      <property name="description" nameId="tp5g.1883175908513350760" value="Editing MultipleEditorsTestChild child concept instance using rich editor (rich context hint was pushed into context by RefNodeList editor cell)" />
+    </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7279578193769147476">
+      <property name="name" nameId="tpck.1169194664001" value="EditorSpecifiedBy_add_remove_context_hints_RefNodeList" />
+      <property name="description" nameId="tp5g.1883175908513350760" value="Editing MultipleEditorsTestChild child concept instance using compact editor (rich context hint was removed from the context &amp; compact pushed instead by RefNodeList editor cell)" />
+    </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5613016763942508875">
+      <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_addQuery_RefNodeList_rich" />
+      <property name="description" nameId="tp5g.1883175908513350760" value="Testing if rich conditional presentation works as expected (add hint query works properly in RefNodeList cell)" />
+    </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="554589055677209880">
+      <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_addQuery_RefNodeList_default" />
+      <property name="description" nameId="tp5g.1883175908513350760" value="Testing if default conditional presentation works as expected (add hint query works properly in RefNodeList cell)" />
+    </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="554589055677210829">
+      <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_addQuery_RefNodeList_switch" />
+      <property name="description" nameId="tp5g.1883175908513350760" value="Testing if child element projection will be switched from default to rich type on switching corresponding model property (add context hint query in RefNodeList cell re-evaluated no model changes)" />
+    </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="554589055677397793">
+      <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_removeQuery_RefNodeList_compact" />
+      <property name="description" nameId="tp5g.1883175908513350760" value="Testing if compact conditional presentation works as expected (remove hint query works properly in RefNodeList cell)" />
+    </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="554589055677398009">
+      <property name="name" nameId="tpck.1169194664001" value="ConditionalPresentation_removeQuery_RefNodeList_switch" />
+      <property name="description" nameId="tp5g.1883175908513350760" value="Testing if child element projection will be switched from compact to rich type on changing corresponding model property (remove context hint query in RefNodeList cell re-evaluated no model changes)" />
+    </node>
   </roots>
   <root id="5950344441601491241">
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestRoot" typeId="jap4.6655351613569888021" id="7636045212390385561">
@@ -373,6 +401,269 @@
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
           <property name="cellId" nameId="tp5g.1229194968595" value="property_defaultProperty" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="7279578193769046188">
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="7279578193769147367">
+      <node role="richChildren" roleId="jap4.7279578193768938010" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="5613016763942491367">
+        <property name="name" nameId="tpck.1169194664001" value="RichChild" />
+        <property name="richProperty" nameId="jap4.6655351613569904551" value="richProperty" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5613016763942491369">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="4" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="4" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="4" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="5613016763942491383">
+      <node role="richChildren" roleId="jap4.7279578193768938010" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="5613016763942491384">
+        <property name="name" nameId="tpck.1169194664001" value="RichChild" />
+        <property name="richProperty" nameId="jap4.6655351613569904551" value="richNewProperty" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5613016763942491389">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="7" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="7" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="7" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5613016763942494753">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5613016763942494752">
+        <property name="keys" nameId="tp5g.1227184461946" value="New" />
+      </node>
+    </node>
+  </root>
+  <root id="7279578193769147476">
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="7279578193769147477">
+      <node role="compactChildren" roleId="jap4.7279578193768938011" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="5613016763942494859">
+        <property name="name" nameId="tpck.1169194664001" value="CompactChild" />
+        <property name="compactProperty" nameId="jap4.5950344441601550575" value="compactProperty" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5613016763942494861">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="7" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="7" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="7" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_compactProperty" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="5613016763942494875">
+      <node role="compactChildren" roleId="jap4.7279578193768938011" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="5613016763942494876">
+        <property name="name" nameId="tpck.1169194664001" value="CompactChild" />
+        <property name="compactProperty" nameId="jap4.5950344441601550575" value="compactNewProperty" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5613016763942494881">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="10" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="10" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="10" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_compactProperty" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5613016763942494884">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5613016763942494883">
+        <property name="keys" nameId="tp5g.1227184461946" value="New" />
+      </node>
+    </node>
+  </root>
+  <root id="5613016763942508875">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5613016763942508879">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5613016763942508880">
+        <property name="keys" nameId="tp5g.1227184461946" value="Property" />
+      </node>
+    </node>
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="554589055677210619">
+      <property name="projectionType" nameId="jap4.5613016763942517158" value="rich" />
+      <node role="conditionallyProjectedChildren" roleId="jap4.5613016763942533640" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="554589055677210621">
+        <property name="name" nameId="tpck.1169194664001" value="RichChils" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="554589055677210623">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="554589055677210637">
+      <property name="projectionType" nameId="jap4.5613016763942517158" value="rich" />
+      <node role="conditionallyProjectedChildren" roleId="jap4.5613016763942533640" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="554589055677210638">
+        <property name="name" nameId="tpck.1169194664001" value="RichChils" />
+        <property name="richProperty" nameId="jap4.6655351613569904551" value="Property" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="554589055677210643">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="8" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="8" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="554589055677209880">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677209887">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="554589055677209888">
+        <property name="keys" nameId="tp5g.1227184461946" value="newPropertyValue" />
+      </node>
+    </node>
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="554589055677210232">
+      <node role="conditionallyProjectedChildren" roleId="jap4.5613016763942533640" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="554589055677210234">
+        <property name="name" nameId="tpck.1169194664001" value="DefaultChild" />
+        <property name="defaultProperty" nameId="jap4.6655351613569904549" value="propertyValue" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="554589055677210475">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="13" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_defaultProperty" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="554589055677210489">
+      <node role="conditionallyProjectedChildren" roleId="jap4.5613016763942533640" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="554589055677210490">
+        <property name="name" nameId="tpck.1169194664001" value="DefaultChild" />
+        <property name="defaultProperty" nameId="jap4.6655351613569904549" value="newPropertyValue" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="554589055677210495">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="16" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="16" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_defaultProperty" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="554589055677210829">
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="554589055677214880">
+      <node role="conditionallyProjectedChildren" roleId="jap4.5613016763942533640" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="554589055677214883">
+        <property name="name" nameId="tpck.1169194664001" value="RichChild" />
+        <property name="defaultProperty" nameId="jap4.6655351613569904549" value="defaultProperty" />
+      </node>
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="554589055677215046">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="10" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="13" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_projectionType" />
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677210833">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="554589055677210834">
+        <property name="keys" nameId="tp5g.1227184461946" value="rich" />
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="554589055677210835">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="554589055677210836">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297090" resolveInfo="MoveDown" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="554589055677210837">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="554589055677210838">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297090" resolveInfo="MoveDown" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="554589055677210839">
+        <property name="keys" nameId="tp5g.1227184461946" value="richPropertyValue" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="554589055677215040">
+      <property name="projectionType" nameId="jap4.5613016763942517158" value="rich" />
+      <node role="conditionallyProjectedChildren" roleId="jap4.5613016763942533640" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="554589055677215041">
+        <property name="name" nameId="tpck.1169194664001" value="RichChild" />
+        <property name="defaultProperty" nameId="jap4.6655351613569904549" value="defaultProperty" />
+        <property name="richProperty" nameId="jap4.6655351613569904551" value="richPropertyValue" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="554589055677215048">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="17" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="17" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="554589055677397793">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677397794">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="554589055677397795">
+        <property name="keys" nameId="tp5g.1227184461946" value="propValue" />
+      </node>
+    </node>
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="554589055677398353">
+      <property name="projectAsCompact" nameId="jap4.554589055677247838" value="true" />
+      <node role="conditionallyRichOrCompactChildren" roleId="jap4.554589055677215272" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="554589055677398355">
+        <property name="name" nameId="tpck.1169194664001" value="CompactChild" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="554589055677398357">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_compactProperty" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="554589055677398371">
+      <property name="projectAsCompact" nameId="jap4.554589055677247838" value="true" />
+      <node role="conditionallyRichOrCompactChildren" roleId="jap4.554589055677215272" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="554589055677398372">
+        <property name="name" nameId="tpck.1169194664001" value="CompactChild" />
+        <property name="compactProperty" nameId="jap4.5950344441601550575" value="propValue" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="554589055677398377">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="9" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="9" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_compactProperty" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="554589055677398009">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="554589055677398010">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="554589055677398011">
+        <property name="keys" nameId="tp5g.1227184461946" value="false" />
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="554589055677398012">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="554589055677398013">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297090" resolveInfo="MoveDown" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="554589055677398014">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="554589055677398015">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297090" resolveInfo="MoveDown" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="554589055677398016">
+        <property name="keys" nameId="tp5g.1227184461946" value="propValue" />
+      </node>
+    </node>
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="554589055677398709">
+      <property name="projectAsCompact" nameId="jap4.554589055677247838" value="true" />
+      <node role="conditionallyRichOrCompactChildren" roleId="jap4.554589055677215272" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="554589055677398711">
+        <property name="name" nameId="tpck.1169194664001" value="RichChild" />
+        <property name="compactProperty" nameId="jap4.5950344441601550575" value="compactProperty" />
+      </node>
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="554589055677398713">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="3" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="4" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_projectAsCompact" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="jap4.MultipleEditorsTestRefNodeListRoot" typeId="jap4.7279578193768898412" id="554589055677398727">
+      <node role="conditionallyRichOrCompactChildren" roleId="jap4.554589055677215272" type="jap4.MultipleEditorsTestChild" typeId="jap4.6655351613569889729" id="554589055677398728">
+        <property name="name" nameId="tpck.1169194664001" value="RichChild" />
+        <property name="compactProperty" nameId="jap4.5950344441601550575" value="compactProperty" />
+        <property name="richProperty" nameId="jap4.6655351613569904551" value="propValue" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="554589055677398733">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="9" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="9" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richProperty" />
         </node>
       </node>
     </node>

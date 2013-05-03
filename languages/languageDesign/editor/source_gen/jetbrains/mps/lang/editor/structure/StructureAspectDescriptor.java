@@ -201,7 +201,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 92:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_RefNode").super_("jetbrains.mps.lang.editor.structure.CellModel_WithRole").parents("jetbrains.mps.lang.editor.structure.CellModel_WithRole").references("linkDeclaration").alias("%<{linkDeclaration}>%", "single aggregation").create();
       case 93:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList").super_("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole").parents("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole").properties("reverse").references("linkDeclaration", "elementActionMap").children(new String[]{"elementMenuDescriptor", "filter"}, new boolean[]{false, false}).alias("%<{linkDeclaration}>%", "multiple aggregation").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList").super_("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole").parents("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole").properties("reverse").references("linkDeclaration", "elementActionMap").children(new String[]{"elementMenuDescriptor", "filter", "addHints", "removeHints"}, new boolean[]{false, false, false, false}).alias("%<{linkDeclaration}>%", "multiple aggregation").create();
       case 94:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").alias("ref. presentation", "").create();
       case 95:
