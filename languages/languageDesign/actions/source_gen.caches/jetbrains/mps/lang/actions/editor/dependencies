@@ -155,6 +155,54 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.actions.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.AddMenuPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.ConceptRightTransformPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.ConceptSubstitutePart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.ConceptsSubstituteMenuPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.CopyPasteHandlers_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.CopyPreProcessor_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.GenerateCodeAction_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.GenericSubstituteMenuPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.IncludeRightTransformForNodePart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.MenuPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.NF_Concept_NewInstance_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.NF_Model_CreateNewNodeOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.NF_Model_CreateNewRootNodeOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.NodeFactories_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.NodeFactory_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.NodeSubstituteActionsBuilder_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.NodeSubstituteActions_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.ParameterizedSideTransformMenuPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.ParameterizedSubstituteMenuPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.PastePostProcessor_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.PasteWrapper_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.PasteWrappers_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.RemoveByConditionPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.RemoveDefaultsPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.RemovePart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.RemoveSTByConditionPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.SNodeCreatorAndInitializer_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.SideTransformHintSubstituteActionsBuilder_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.SideTransformHintSubstituteActions_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.SideTransformVariableDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.SideTransform_SimpleString_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.SimpleItemSubstitutePart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.SimpleSideTransformMenuPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.SmartActionParameterReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.SmartActionParameter_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.SmartEditorActions_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.SubstituteNodeBuilderVariableDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.Substitute_SimpleString_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.editor.WrapperSubstituteMenuPart_Editor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.actions.editor.GenerateCodeAction_Editor" file="GenerateCodeAction_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />

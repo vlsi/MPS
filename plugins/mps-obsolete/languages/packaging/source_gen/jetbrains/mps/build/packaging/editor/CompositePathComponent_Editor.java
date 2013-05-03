@@ -83,9 +83,9 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), "/");
       editorCell.setSelectable(false);
       Style style = new StyleImpl();
-      PackagingStyles_StyleSheet.applySlash(style, editorCell);
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      PackagingStyles_StyleSheet.applySlash(style, editorCell);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

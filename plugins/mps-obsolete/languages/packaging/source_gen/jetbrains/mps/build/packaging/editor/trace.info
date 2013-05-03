@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="12" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904d5(jetbrains.mps.build.packaging.editor)/1202917336768">
     <nodeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="39" startPosition="79" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1202917336768" fileName="Layout_Editor.java" startLine="43" startPosition="82" endLine="44" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -5713,10 +5714,10 @@
     <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="82" startPosition="104" endLine="83" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="83" startPosition="100" endLine="84" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="84" startPosition="38" endLine="85" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="85" startPosition="36" endLine="86" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="86" startPosition="63" endLine="87" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="87" startPosition="55" endLine="88" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="88" startPosition="56" endLine="89" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="85" startPosition="36" endLine="86" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="86" startPosition="55" endLine="87" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="87" startPosition="56" endLine="88" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="88" startPosition="63" endLine="89" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="89" startPosition="42" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1220974316570" fileName="CompositePathComponent_Editor.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="pathComponentListHandler_ke0l65_a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />

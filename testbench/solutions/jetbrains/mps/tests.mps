@@ -70,6 +70,7 @@
   <import index="m7df" modelUID="r:3b7facd9-99b3-46c2-934e-19c743ff560f(jetbrains.mps.testbench.junit.util)" version="-1" />
   <import index="709f" modelUID="r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest)" version="-1" />
   <import index="t7u" modelUID="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute)" version="-1" />
+  <import index="zosv" modelUID="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707832463" />
@@ -116,6 +117,7 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4246614868164057769" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4246614868164096671" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7917427600705105663" />
+    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4201170947328891620" />
   </roots>
   <root id="2712670354707832463">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707832464">
@@ -2125,6 +2127,39 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8349639607733909667">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.8349639607733366556" resolveInfo="RemovePart" />
+    </node>
+  </root>
+  <root id="4201170947328891620">
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391583">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390392321" resolveInfo="ConditionalPresentation_addQuery_default" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391598">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390401481" resolveInfo="ConditionalPresentation_addQuery_rich" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391615">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390416608" resolveInfo="ConditionalPresentation_addQuery_switch" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391634">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390410965" resolveInfo="ConditionalPresentation_removeQuery_compact" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391655">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212393364917" resolveInfo="ConditionalPresentation_removeQuery_switch" />
+    </node>
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="4201170947328893267">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.lang.editor.multiple.tests" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="3c41aa01-5120-470c-8122-06f284bc0419" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4201170947328895186">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.5950344441601668447" resolveInfo="DefaultEditor" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4201170947328956171">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.5950344441601491241" resolveInfo="EditorSpecifiedBy_add_context_hints" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4201170947328956182">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.5950344441601676487" resolveInfo="EditorSpecifiedBy_add_remove_context_hints" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2601164129533511794">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.2601164129533059968" resolveInfo="UnsupportedPresentation" />
     </node>
   </root>
 </model>

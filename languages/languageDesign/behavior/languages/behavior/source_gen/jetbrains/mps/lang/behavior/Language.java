@@ -5,6 +5,7 @@ package jetbrains.mps.lang.behavior;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.lang.behavior.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.behavior.typesystem.TypesystemDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
@@ -12,9 +13,13 @@ import jetbrains.mps.lang.behavior.findUsages.FindUsagesDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)");
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.lang.structure", "jetbrains.mps.baseLanguage"};
+  private EditorAspectDescriptorImpl myEditorAspectDescriptor;
 
   public Language() {
 
@@ -22,6 +27,11 @@ public class Language extends LanguageRuntime {
 
   public String getNamespace() {
     return "jetbrains.mps.lang.behavior";
+  }
+
+  @Override
+  protected String[] getExtendedLanguageIDs() {
+    return EXTENDED_LANGUAGE_IDS;
   }
 
   @Override
@@ -36,5 +46,16 @@ public class Language extends LanguageRuntime {
 
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "2ca6a34d-0b96-4602-9cdd-f9e33d51126a(jetbrains.mps.lang.behavior#1225195312923)"));
+  }
+
+  @Override
+  public <T extends LanguageAspectDescriptor> T getAspectDescriptor(Class<T> descriptorClass) {
+    if (descriptorClass == EditorAspectDescriptor.class) {
+      if (myEditorAspectDescriptor == null) {
+        myEditorAspectDescriptor = new EditorAspectDescriptorImpl();
+      }
+      return (T) myEditorAspectDescriptor;
+    }
+    return null;
   }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="12" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/2068944020170241615">
     <nodeInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="31" startPosition="79" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2068944020170241615" fileName="ClassifierDocComment_Editor.java" startLine="35" startPosition="89" endLine="36" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1599,7 +1600,6 @@
     <unitInfo nodeId="2565027568480905752" fileName="CodeSnippet_Editor.java" startLine="65" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeSnippet_Editor$statementListHandler_jmxmb2_b0" />
     <unitInfo nodeId="2565027568480905752" fileName="CodeSnippet_Editor.java" startLine="26" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeSnippet_Editor" />
   </root>
-  <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/2668265993332352057" />
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/289993964859883412">
     <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="12" startPosition="95" endLine="13" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="289993964859883412" fileName="HandleEnterInTheEnd_Actions.java" startLine="13" startPosition="122" endLine="14" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5394,7 +5394,6 @@
     </scopeInfo>
     <unitInfo nodeId="8465538089690881935" fileName="ParameterBlockDocTag_Editor.java" startLine="19" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ParameterBlockDocTag_Editor" />
   </root>
-  <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/8512638887617666536" />
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/8970989240999019150">
     <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8970989240999019150" fileName="TextCommentLinePart_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

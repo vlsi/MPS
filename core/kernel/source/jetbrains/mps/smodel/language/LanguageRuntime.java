@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -34,9 +35,14 @@ import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import jetbrains.mps.smodel.structure.FacetDescriptor;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 
 import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguageNamespace;
 
@@ -53,6 +59,7 @@ public abstract class LanguageRuntime {
   protected TextGenAspectDescriptor myTextGenDescriptor;
   private Map<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor> myAspectDescriptors =
       new HashMap<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor>();
+  private List<LanguageRuntime> myExtendingLanguages = new LinkedList<LanguageRuntime>();
 
   public abstract String getNamespace();
 
@@ -146,5 +153,40 @@ public abstract class LanguageRuntime {
       myAspectDescriptors.put(descriptorInterface, aspectDescriptor);
     }
     return aspectDescriptor;
+  }
+
+  public Iterable<LanguageRuntime> getExtendingLanguages() {
+    return myExtendingLanguages;
+  }
+
+  // TODO: make abstract after MPS 3.0
+  protected String[] getExtendedLanguageIDs() {
+    return new String[]{};
+  }
+
+  private void registerExtendingLanguage(LanguageRuntime extendingLanguage) {
+    myExtendingLanguages.add(extendingLanguage);
+  }
+
+  void initialize(LanguageRegistry registry) {
+    Queue<String> extendedLanguageIDs = new java.util.LinkedList<String>(Arrays.asList(getExtendedLanguageIDs()));
+    Set<String> visitedLanguages = new HashSet<String>();
+    visitedLanguages.add(getNamespace());
+    while (!extendedLanguageIDs.isEmpty()) {
+      String nextLanguageID = extendedLanguageIDs.remove();
+      if (visitedLanguages.contains(nextLanguageID)) {
+        continue;
+      }
+      visitedLanguages.add(nextLanguageID);
+      LanguageRuntime extendedLanguage = registry.getLanguage(nextLanguageID);
+      if (extendedLanguage != null) {
+        extendedLanguage.registerExtendingLanguage(this);
+        extendedLanguageIDs.addAll(Arrays.asList(extendedLanguage.getExtendedLanguageIDs()));
+      }
+    }
+  }
+
+  void deinitialize() {
+    myExtendingLanguages.clear();
   }
 }

@@ -1142,6 +1142,7 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="1239877876865" />
     </node>
     <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3236994869861848654">
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2395585628929105777" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3236994869861848655">
         <property name="text" nameId="tpc2.1073389577007" value="do not generate:" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="2395585628932199300" resolveInfo="Keyword" />
@@ -1159,7 +1160,6 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2395585628929145868">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.2395585628928459314" resolveInfo="unordered" />
       </node>
-      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2395585628929105777" />
     </node>
   </root>
   <root id="1087215312703">
@@ -2503,6 +2503,9 @@
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1169127546356" />
             <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1215628279925">
               <property name="nullText" nameId="tpc2.1082639509531" value="&lt;none&gt;" />
+              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="4653693564097984761">
+                <property name="flag" nameId="tpc2.1186414551515" value="true" />
+              </node>
             </node>
             <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="1239877876893" />
           </node>

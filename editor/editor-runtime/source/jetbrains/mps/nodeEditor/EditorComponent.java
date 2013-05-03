@@ -1007,7 +1007,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        disposeTypeCheckingContext();
+        final boolean needNewTypecheckingContext = getNodeForTypechecking(node) != getNodeForTypechecking(myNode);
+        if (needNewTypecheckingContext) {
+          disposeTypeCheckingContext();
+        }
+
         myNode = node;
         if (myNode != null) {
           myNodePointer = new jetbrains.mps.smodel.SNodePointer(myNode);
@@ -1024,7 +1028,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           setEditorContext(new EditorContext(EditorComponent.this, null, null));
           myReadOnly = true;
         }
-        getTypeCheckingContext();
+
+        if (needNewTypecheckingContext) {
+          obtainTypeCheckingContext();
+        }
 
         rebuildEditorContent();
       }
@@ -2377,25 +2384,34 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public TypeCheckingContext getTypeCheckingContext() {
-    TypeCheckingContext context = TypeContextManager.getInstance().lookupTypecheckingContext(getNodeForTypechecking(), this);
-    return context != null ? context : TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(), this);
+    TypeCheckingContext context = TypeContextManager.getInstance().lookupTypecheckingContext(getNodeForTypechecking(myNode), this);
+    return context != null ? context : TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(myNode), this);
   }
 
   public ITypeContextOwner getTypecheckingContextOwner() {
     return this;
   }
 
-  protected void disposeTypeCheckingContext() {
+  protected void obtainTypeCheckingContext() {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        TypeContextManager.getInstance().releaseTypecheckingContext(getNodeForTypechecking(), EditorComponent.this);
+        TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(myNode), EditorComponent.this);
       }
     });
   }
 
-  protected SNode getNodeForTypechecking() {
-    return myNode;
+  protected void disposeTypeCheckingContext() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        TypeContextManager.getInstance().releaseTypecheckingContext(getNodeForTypechecking(myNode), EditorComponent.this);
+      }
+    });
+  }
+
+  protected SNode getNodeForTypechecking(SNode editedNode) {
+    return editedNode;
   }
 
   public void sendKeyEvent(KeyEvent keyEvent) {

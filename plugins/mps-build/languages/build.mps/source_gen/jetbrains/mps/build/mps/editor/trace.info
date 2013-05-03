@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="12" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.build.mps.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)/1265949165890536426">
     <nodeInfo nodeId="1265949165890536426" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="37" startPosition="79" endLine="38" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1265949165890536426" fileName="BuildMpsLayout_ModuleJars_Editor.java" startLine="41" startPosition="82" endLine="42" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -5,15 +5,20 @@ package jetbrains.mps.lang.intentions;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.lang.intentions.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.intentions.typesystem.TypesystemDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)");
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.lang.structure", "jetbrains.mps.lang.checkedName", "jetbrains.mps.lang.core", "jetbrains.mps.lang.sharedConcepts", "jetbrains.mps.baseLanguage"};
+  private EditorAspectDescriptorImpl myEditorAspectDescriptor;
 
   public Language() {
 
@@ -21,6 +26,11 @@ public class Language extends LanguageRuntime {
 
   public String getNamespace() {
     return "jetbrains.mps.lang.intentions";
+  }
+
+  @Override
+  protected String[] getExtendedLanguageIDs() {
+    return EXTENDED_LANGUAGE_IDS;
   }
 
   @Override
@@ -35,5 +45,16 @@ public class Language extends LanguageRuntime {
 
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "79a2d464-32b0-48d2-96f9-b40717277a07(jetbrains.mps.lang.intentions#1192798684353)"));
+  }
+
+  @Override
+  public <T extends LanguageAspectDescriptor> T getAspectDescriptor(Class<T> descriptorClass) {
+    if (descriptorClass == EditorAspectDescriptor.class) {
+      if (myEditorAspectDescriptor == null) {
+        myEditorAspectDescriptor = new EditorAspectDescriptorImpl();
+      }
+      return (T) myEditorAspectDescriptor;
+    }
+    return null;
   }
 }

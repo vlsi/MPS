@@ -13,14 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * evgeny, 2/25/13
- */
 public final class LazySNode extends SNode {
 
   public LazySNode(@NotNull String conceptFqName) {
@@ -31,6 +28,12 @@ public final class LazySNode extends SNode {
   protected SNode firstChild() {
     enforceModelLoad();
     return super.firstChild();
+  }
+
+  @Override
+  protected SNode firstChildInRole(@NotNull String role) {
+    enforceModelLoad();
+    return super.firstChildInRole(role);
   }
 
   @Override

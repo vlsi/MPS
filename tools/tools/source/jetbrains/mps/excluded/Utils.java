@@ -124,9 +124,16 @@ public class Utils {
         LanguageDescriptor ld = LanguageDescriptorPersistence.loadLanguageDescriptor(moduleIFile, expander);
         String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, ld).getPath();
         result.putValue(moduleDir.getPath(), srcPath);
+        // currently same getGeneratorOutputPath used for all generators, so generatorSrcPath will be the same for
+        // all generators in the language. Using only first one for now.
+        boolean generatorAdded = false;
         for (GeneratorDescriptor generator : ld.getGenerators()) {
+          if (generatorAdded) {
+            break;
+          }
           String generatorSrcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, generator).getPath();
           result.putValue(moduleDir.getPath() + "/generator", generatorSrcPath);
+          generatorAdded = true;
         }
       }
     }

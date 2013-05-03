@@ -139,10 +139,10 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
         return;
       }
       myRepository.getModelAccess().checkWriteAccess();
-      if (!UndoHelper.getInstance().isInsideUndoableCommand()){
+      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
         throw new IllegalModelChangeError(
             "registered node can only be modified inside undoable command or in 'loading' model " +
-            org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
+                org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
         );
       }
     }
@@ -326,12 +326,12 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    SNode firstChild = firstChild();
+    SNode firstChild = firstChildInRole(role);
     if (firstChild == null) return Collections.emptyList();
     List<SNode> result = new ArrayList<SNode>();
 
     boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
-    for (SNode child = firstChild; child != null; child = child.nextSibling()) {
+    for (SNode child = firstChild; child != null; child = child.treeNext()) {
       // Note: accessing through child.getRoleInParent() reports excess node read access
       if (role.equals(child.myRoleInParent)) {
         result.add(child);
@@ -548,7 +548,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SNode parentOfChild = schild.getParent();
     if (parentOfChild != null) {
       throw new RuntimeException(
-          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
               parentOfChild) + "\n" +
               "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
@@ -740,7 +741,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     String currentRole = getRoleInParent();
     assert currentRole != null : "role must be not null";
 
-    SNode fc = p.firstChild();
+    SNode fc = p.firstChildInRole(currentRole);
     while (curent != fc) {
       curent = curent.treePrevious();
       if (curent.getRoleInParent().equals(currentRole)) return curent;
@@ -764,6 +765,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     String currentRole = getRoleInParent();
     assert currentRole != null : "role must be not null";
 
+    // to ensure that role is loaded
+    p.firstChildInRole(currentRole);
     while (current.treeNext() != null) {
       current = current.treeNext();
       if (current.getRoleInParent().equals(currentRole)) return current;
@@ -1147,7 +1150,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private SNode parent;
 
   /**
-   * access only in firstChild()
+   * access only in firstChild()/firstChildInRole(role)
    */
   private SNode first;
 
@@ -1160,6 +1163,15 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   protected SNode firstChild() {
     return first;
+  }
+
+  protected SNode firstChildInRole(@NotNull String role) {
+    for (SNode current = first; current != null; current = current.treeNext()) {
+      if (role.equals(current.myRoleInParent)) {
+        return current;
+      }
+    }
+    return null;
   }
 
   protected SNode treePrevious() {

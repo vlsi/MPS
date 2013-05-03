@@ -31,6 +31,37 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.samples.formulaLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspect" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.AndOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.Constant_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.EqualsOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.Expression_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.FloatingPointConstant_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.Formula_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.Function_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.GreaterThanOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.IfFunction_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.IntegerConstant_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.IsNullOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.LessThanOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.MinusOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.MultOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.NotOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.NullConstant_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.Operation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.OrOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.ParenthisizedExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.PlusOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.Reference_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.StringConstant_Editor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.formulaLanguage.editor.EqualsOperation_Editor" file="EqualsOperation_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />

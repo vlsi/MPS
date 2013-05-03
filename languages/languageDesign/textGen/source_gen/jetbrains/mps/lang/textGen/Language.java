@@ -5,15 +5,20 @@ package jetbrains.mps.lang.textGen;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.lang.textGen.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.textGen.typesystem.TypesystemDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)");
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.lang.structure", "jetbrains.mps.baseLanguage"};
+  private EditorAspectDescriptorImpl myEditorAspectDescriptor;
 
   public Language() {
 
@@ -21,6 +26,11 @@ public class Language extends LanguageRuntime {
 
   public String getNamespace() {
     return "jetbrains.mps.lang.textGen";
+  }
+
+  @Override
+  protected String[] getExtendedLanguageIDs() {
+    return EXTENDED_LANGUAGE_IDS;
   }
 
   @Override
@@ -35,5 +45,16 @@ public class Language extends LanguageRuntime {
 
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "6477ee8f-eec2-4bda-bd85-252b93f5f0ec(jetbrains.mps.lang.textGen#1233678176149)"));
+  }
+
+  @Override
+  public <T extends LanguageAspectDescriptor> T getAspectDescriptor(Class<T> descriptorClass) {
+    if (descriptorClass == EditorAspectDescriptor.class) {
+      if (myEditorAspectDescriptor == null) {
+        myEditorAspectDescriptor = new EditorAspectDescriptorImpl();
+      }
+      return (T) myEditorAspectDescriptor;
+    }
+    return null;
   }
 }
