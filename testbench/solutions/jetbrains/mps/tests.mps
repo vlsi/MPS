@@ -2092,6 +2092,15 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="554589055677430220" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.554589055677210829" resolveInfo="ConditionalPresentation_addQuery_RefNodeList_switch" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1947450138887050469" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.1947450138886989116" resolveInfo="ConditionalPresentation_addQuery_RefNode_default" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1947450138887050552" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.1947450138886989214" resolveInfo="ConditionalPresentation_addQuery_RefNode_rich" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1947450138887050595" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.1947450138886989480" resolveInfo="ConditionalPresentation_addQuery_RefNode_switch" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391583" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390392321" resolveInfo="ConditionalPresentation_addQuery_default" />
     </node>
@@ -2106,6 +2115,12 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="554589055677430269" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.554589055677398009" resolveInfo="ConditionalPresentation_removeQuery_RefNodeList_switch" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1947450138887050640" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.1947450138886994476" resolveInfo="ConditionalPresentation_removeQuery_RefNode_compact" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1947450138887050687" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.1947450138886994765" resolveInfo="ConditionalPresentation_removeQuery_RefNode_switch" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7636045212393391634" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7636045212390410965" resolveInfo="ConditionalPresentation_removeQuery_compact" />
@@ -2123,11 +2138,17 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4201170947328956171" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.5950344441601491241" resolveInfo="EditorSpecifiedBy_add_context_hints" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1947450138887050736" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.5861024100074454462" resolveInfo="EditorSpecifiedBy_add_context_hints_RefNode" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="554589055677430319" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7279578193769046188" resolveInfo="EditorSpecifiedBy_add_context_hints_RefNodeList" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4201170947328956182" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.5950344441601676487" resolveInfo="EditorSpecifiedBy_add_remove_context_hints" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1947450138887050787" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.5861024100074455062" resolveInfo="EditorSpecifiedBy_add_remove_context_hints_RefNode" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="554589055677430372" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.7279578193769147476" resolveInfo="EditorSpecifiedBy_add_remove_context_hints_RefNodeList" />

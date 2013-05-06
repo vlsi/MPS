@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6z89gvrvnxaqwfztfwsrd8aejn8uiff">
+<dependencies version="2" modelHash="-bjii9ri5g6b7pwvx3ak5gi8q08jvoxi">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
@@ -268,7 +268,7 @@
   <source id="1073389658414" name="CellModel_Property" hash="-bc3in22ri53gkeho54rrdcmraflixda">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1073389882823" name="CellModel_RefNode" hash="52mtfp4e9eyxtidhfp7flbjelr0n028">
+  <source id="1073389882823" name="CellModel_RefNode" hash="bqgxkh561qn9u7v8dpbgnhyhyq759km">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1073390211982" name="CellModel_RefNodeList" hash="cxzteq0hjh6mtg7h1gf2g729p4shn9t">

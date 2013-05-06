@@ -192,6 +192,17 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="%&lt;{linkDeclaration}&gt;%" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5861024100072578575" nodeInfo="ng">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="addHints" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4653693564097968040" resolveInfo="ContextHintsSpecification" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5861024100072578576" nodeInfo="ng">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="removeHints" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4653693564097968040" resolveInfo="ContextHintsSpecification" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1073389882824" nodeInfo="ng">
       <property name="role" nameId="tpce.1071599776563" value="linkDeclaration" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
