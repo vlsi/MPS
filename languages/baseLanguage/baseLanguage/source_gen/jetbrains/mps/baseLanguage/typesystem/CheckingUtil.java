@@ -38,8 +38,21 @@ public class CheckingUtil {
   }
 
   public static boolean isAssignedIllegaly(SNode node) {
-    return CheckingUtil.isAssigned(node) && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceInitializer", false, false) == null;
+    return CheckingUtil.isAssigned(node) && ((SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceInitializer", false, false) == null) || refersToDeclarationWithInitializer(node));
   }
+
+
+
+  private static boolean refersToDeclarationWithInitializer(SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
+      return (SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "initializer", true) != null);
+    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
+      return (SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", false), "initializer", true) != null);
+    }
+    return false;
+  }
+
+
 
   public static boolean isFieldDuplicated(final SNode fieldDecl) {
     final String name = SPropertyOperations.getString(fieldDecl, "name");

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1tt3njz3b60hrxaaepid125ktldugbe">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-ctxvs1rpiiexlq8dltxstwmrdnqkuz7" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="aih6mod30hbbl8r1xz9vfu4gypkll6l" />
-  <common hash="2sm4wp3ozcmhzqw2t9je7p8uxk8oxve" />
-  <source id="3197704031717961581" name="ActionsTest" hash="-436h118lpjnva7r2bjl3dagq3awfyvw" dependsOnNodes="true">
+<dependencies version="2" modelHash="-6du92cu4ldcji73lrh7uii317p97ux2">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="dgtel9s427vm37iaz9u6ikq38xnt1eq" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-er04ynwwc0babx4ug54abz4i80ig26i" />
+  <common hash="-8g0caoo1tgxpvu2336zzllx04yiyts" />
+  <source id="3197704031717961581" name="ActionsTest" hash="-ayegfcll7lggv1moz4gv4ivvnzp2iyj" dependsOnNodes="true">
     <dep root="4484885613884465103" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="ActionsTest_Test.java" />
   </source>
-  <source id="4484885613884465103" hash="-2fxp78cag9b4vmyf2kzbgzg3x9vk7i7">
+  <source id="4484885613884465103" hash="3v76o7rynotph6o6e33mea7gxn95kat">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

@@ -33,6 +33,9 @@
       <keyboard-shortcut first-keystroke="ctrl I" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.java.actions.ImplementMethodsAsIntention_Action" class="jetbrains.mps.ide.java.actions.ImplementMethodsAsIntention_Action"></action>
+    <action id="jetbrains.mps.ide.java.actions.InlineField_Action" class="jetbrains.mps.ide.java.actions.InlineField_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt N" keymap="$default" />
+    </action>
     <action id="jetbrains.mps.ide.java.actions.InlineLocalVariable_Action" class="jetbrains.mps.ide.java.actions.InlineLocalVariable_Action">
       <keyboard-shortcut first-keystroke="ctrl alt N" keymap="$default" />
     </action>
@@ -84,6 +87,7 @@
       <reference ref="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.ExtractMethod_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.InlineLocalVariable_Action" />
+      <reference ref="jetbrains.mps.ide.java.actions.InlineField_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.InlineMethod_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.IntroduceConstant_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.IntroduceField_Action" />

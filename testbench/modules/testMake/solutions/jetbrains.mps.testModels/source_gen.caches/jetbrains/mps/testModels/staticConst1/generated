@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="e5gkuvc3qlwrn2xi8ut1ns8lo9qp88u">
-  <dep model="r:3d6eb713-f66e-4101-9aa3-d4d364fcec63(jetbrains.mps.testModels.staticConst2)" hash="dmymu0vzb9u3kqhiycqzigip02yxdgu" />
-  <common hash="-1p6u3fb5vhzf4166i68damp5vggkjfo" />
-  <source id="5451769301631257084" name="TestGetter" hash="8s17jrm1iu1v8ra38tq169f81o05vdz">
+<dependencies version="2" modelHash="3jwqo13d8zh1b70s2t8j7nt5ixki0gr">
+  <dep model="r:3d6eb713-f66e-4101-9aa3-d4d364fcec63(jetbrains.mps.testModels.staticConst2)" hash="-6tlx3jftrreikgeydhe9gbv6yj7rjvx" />
+  <common hash="-418qg3ap5lmokpzg3y85fvsu90g1lbs" />
+  <source id="5451769301631257084" name="TestGetter" hash="45s076c1boiop9zunzqk2mmonbgsnde">
     <dep model="r:3d6eb713-f66e-4101-9aa3-d4d364fcec63(jetbrains.mps.testModels.staticConst2)" />
     <file name="TestGetter.java" />
   </source>

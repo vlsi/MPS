@@ -50,7 +50,9 @@ public class InterfaceSNode extends SNode {
 
   @Override
   public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    enforceModelLoad();
+    if (skippedRoles != null) {
+      enforceModelLoad();
+    }
     super.insertChild(role, child, anchor);
   }
 
@@ -62,6 +64,17 @@ public class InterfaceSNode extends SNode {
       skippedRoles = new HashSet<String>();
     }
     skippedRoles.add(role);
+  }
+
+  public boolean hasSkippedChildren() {
+    return skippedRoles != null;
+  }
+
+  public void cleanSkippedRoles() {
+    if (myModel == null || !myModel.isUpdateMode()) {
+      throw new IllegalStateException();
+    }
+    skippedRoles = null;
   }
 
   private void enforceModelLoad() {

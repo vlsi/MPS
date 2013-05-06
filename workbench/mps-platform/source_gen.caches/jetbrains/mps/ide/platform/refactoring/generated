@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6dniux6fa626yhm99p7yhj3cbculdde">
+<dependencies version="2" modelHash="-efgnfl67phsttlckf8ba7kcz9buojpp">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -18,21 +18,21 @@
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.refactoring(MPS.Platform/com.intellij.refactoring@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="e4aodjamafijmcm1ggq1itbjxjw4yyr" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="eaarideck6uggp8nn6bpyho4my5sjxz" />
-  <dep model="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" hash="-a5nnmx6u807imr4iis1lgl04uswrjzz" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="6pme6f8cr98yhjna02lpbqkg2n36ah5" />
-  <dep model="r:d2766b06-4f01-4d0c-929f-9fe2b1a7c0dc(jetbrains.mps.refactoring)" hash="4gi3rhhxnkpi6r1qrwp5b4ikv0dd7vy" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
-  <common hash="3a1blty8s75g6vh807x9odw389jp70t">
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-8xjteqk842ql8pbze16i68m1ajw21lk" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="59ea0wchjl1p3fmqjarzl02fje6rngu" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="10mp51mbeql449vc6yd910xwfralj9l" />
+  <dep model="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" hash="37pwq38z30onon8y21dms2wbv2s4ynh" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2ndxdy2yylqxt61razyif42s9aj25s9" />
+  <dep model="r:d2766b06-4f01-4d0c-929f-9fe2b1a7c0dc(jetbrains.mps.refactoring)" hash="a2wdwxxvhdbu5msnu71pokvw96z2fym" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
+  <common hash="4u4d2mtgj2pq3mlmcvp3kz02is5taz3">
     <dep root="1685972956014334002" />
   </common>
-  <source id="2183214647889839513" name="RefactoringFacade" hash="-75yyqy7ohuqw2xg6fbu7w2oj1exbh33">
+  <source id="2183214647889839513" name="RefactoringFacade" hash="-3t1raurpwjha4w7luh0vwdmtzmj6bi0">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -54,7 +54,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="RefactoringFacade.java" />
   </source>
-  <source id="1685972956014264534" name="RefactoringDialog" hash="-3bx4tcnipxv0yfz4z43x7gccgsowbh6">
+  <source id="1685972956014264534" name="RefactoringDialog" hash="e4bpytm2gctkfnqatk3yhg8iq9i74g9">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -66,13 +66,13 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="RefactoringDialog.java" />
   </source>
-  <source id="1685972956014329975" name="StringChooserDialog" hash="-1p8l4tcpqgl4dfcgroxm7u5h3m27lk3">
+  <source id="1685972956014329975" name="StringChooserDialog" hash="-1pzij9hyx69wp3s472h3al84tznn3b4">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="StringChooserDialog.java" />
   </source>
-  <source id="1685972956014334002" name="RenameDialog" hash="ad31bml2ttywhme40vd1r5jm74dlr4i">
+  <source id="1685972956014334002" name="RenameDialog" hash="2x3ue4kzm8ldix3foz4dtkhhj0ztrp2">
     <dep root="1685972956014329975" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -80,26 +80,26 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RenameDialog.java" />
   </source>
-  <source id="1685972956014334070" name="RenameMethodDialog" hash="242vuf1nzm3clhjf4j59qy0pkh3ay43">
+  <source id="1685972956014334070" name="RenameMethodDialog" hash="8lpuba35t8upaa9ri8nl4j86ncgh47t">
     <dep root="1685972956014329975" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="RenameMethodDialog.java" />
   </source>
-  <source id="1399798136780143890" name="RefactoringAccess" hash="-7gxoj6nvfyicguy1p5n5n0irg2ybj01">
+  <source id="1399798136780143890" name="RefactoringAccess" hash="evjr681sqnqwc1rnvl2mjzql3dkxde">
     <dep root="2183214647889839513" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="RefactoringAccess.java" />
   </source>
-  <source id="5814231631271705710" name="ModelElementTargetChooser" hash="5nhyyhbh6a5b6v2xcpc7a3arrdct40t">
+  <source id="5814231631271705710" name="ModelElementTargetChooser" hash="9sdwxxlcth93pc7bhonwlxa8eha3hi5">
     <file name="ModelElementTargetChooser.java" />
   </source>
-  <source id="6400105291801668894" name="ModelOrNodeChooserDialog" hash="-4pu795liij0lp793fuyvxbdz2xt39t4">
+  <source id="6400105291801668894" name="ModelOrNodeChooserDialog" hash="-9r2kl1v3xcqsyvniqdmjhwqv0rs52z4">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelOrNodeChooserDialog.java" />
   </source>
-  <source id="6400105291801680525" name="MoveNodesDialog" hash="-aluoivhhdjsvpfevsj9y1xdrrihblle">
+  <source id="6400105291801680525" name="MoveNodesDialog" hash="59fxppuuf99essg0nqep8nwbmb841yf">
     <dep root="1685972956014264534" />
     <dep root="6400105291801668894" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -111,7 +111,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <file name="MoveNodesDialog.java" />
   </source>
-  <source id="6400105291801680728" name="MoveNodeDialog" hash="1iq9msgnfdv1tb5etfur3tlgf9s3b9u">
+  <source id="6400105291801680728" name="MoveNodeDialog" hash="cre5lmbzm8buofptg3fz3wfc3osql7t">
     <dep root="1399798136780143890" />
     <dep root="1685972956014264534" />
     <dep root="5814231631271705710" />
@@ -129,13 +129,13 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="MoveNodeDialog.java" />
   </source>
-  <source id="3748064186690605985" name="RefactoringViewAction" hash="c4yne9uohix8hrt7g7x53os2su97c75">
+  <source id="3748064186690605985" name="RefactoringViewAction" hash="-6vl23014mo3limkdv9h27azke2tn0we">
     <file name="RefactoringViewAction.java" />
   </source>
-  <source id="3748064186690606395" name="RefactoringViewItem" hash="-b54qra9k110lh8ntv4q6qyur38udbtq">
+  <source id="3748064186690606395" name="RefactoringViewItem" hash="9zjg4s2bmgkzesdiw57vo4hs2yuvb97">
     <file name="RefactoringViewItem.java" />
   </source>
-  <source id="2632304431905415118" name="RefactoringOptionsDialog" hash="bem05i1bn9krtbsgfw5wgq2mpkhd5hl">
+  <source id="2632304431905415118" name="RefactoringOptionsDialog" hash="4jk4q87ue8f2unvai4er67bvvnijjah">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />

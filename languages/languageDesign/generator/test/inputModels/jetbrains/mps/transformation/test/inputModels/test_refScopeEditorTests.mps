@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)">
-  <persistence version="7" />
+  <persistence version="8" />
   <language namespace="8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)" />
   <language namespace="ab0ae915-e3b5-4f35-b55a-c655d649a03c(jetbrains.mps.transformation.test.inputLang)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -9,30 +9,16 @@
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" implicit="yes" />
   <import index="tpm0" modelUID="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" version="-1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
-  <roots>
-    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5934496548013480005">
-      <property name="name" nameId="tpck.1169194664001" value="refScopesInInputLang" />
-    </node>
-    <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="5934496548013527349">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
-    </node>
-    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3715568794894753648">
-      <property name="name" nameId="tpck.1169194664001" value="refScopeInInputLang_paramConflict" />
-      <property name="description" nameId="tp5g.1883175908513350760" value="no access to parameters from other methods" />
-    </node>
-    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3715568794894764093">
-      <property name="name" nameId="tpck.1169194664001" value="refScopeInInputLang_superMeth" />
-    </node>
-  </roots>
-  <root id="5934496548013480005">
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="5934496548013480007">
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5934496548013480005" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="refScopesInInputLang" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="5934496548013480007" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="ExtClass" />
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="5934496548013480008">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="5934496548013480008" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="aaaa" />
       </node>
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="5934496548013480009">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="5934496548013480009" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="bbb" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5934496548013480011">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5934496548013480011" nodeInfo="ng">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -41,16 +27,16 @@
         </node>
       </node>
     </node>
-    <node role="result" roleId="tp5g.1229187707859" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="5934496548013480013">
+    <node role="result" roleId="tp5g.1229187707859" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="5934496548013480013" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="ExtClass" />
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="5934496548013480014">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="5934496548013480014" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="aaaa" />
       </node>
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="5934496548013480015">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="5934496548013480015" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="bbb" />
-        <node role="expressions" roleId="tpm0.3315811491560119813" type="tpm0.RefTestMethodCall" typeId="tpm0.3315811491560119817" id="5934496548013480018">
+        <node role="expressions" roleId="tpm0.3315811491560119813" type="tpm0.RefTestMethodCall" typeId="tpm0.3315811491560119817" id="5934496548013480018" nodeInfo="ng">
           <link role="method" roleId="tpm0.3315811491560119818" targetNodeId="5934496548013480014" resolveInfo="aaaa" />
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5934496548013480019">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5934496548013480019" nodeInfo="ng">
             <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="4" />
@@ -60,34 +46,38 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5934496548013480020">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5934496548013480021">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5934496548013480020" nodeInfo="nn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5934496548013480021" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="aaaa" />
       </node>
     </node>
   </root>
-  <root id="5934496548013527349" />
-  <root id="3715568794894753648">
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="3715568794894753650">
+  <root type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="5934496548013527349" nodeInfo="ng">
+    <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3715568794894753648" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="refScopeInInputLang_paramConflict" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="no access to parameters from other methods" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="3715568794894753650" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="ExtClass" />
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753651">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753651" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="aaaa" />
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753659">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753659" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="a" />
         </node>
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753660">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753660" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="b" />
         </node>
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753661">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753661" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="c" />
         </node>
       </node>
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753662">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753662" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="c" />
       </node>
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753652">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753652" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="bbb" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3715568794894753653">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3715568794894753653" nodeInfo="ng">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -96,28 +86,28 @@
         </node>
       </node>
     </node>
-    <node role="result" roleId="tp5g.1229187707859" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="3715568794894753665">
+    <node role="result" roleId="tp5g.1229187707859" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="3715568794894753665" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="ExtClass" />
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753666">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753666" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="aaaa" />
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753667">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753667" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="a" />
         </node>
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753668">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753668" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="b" />
         </node>
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753669">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894753669" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="c" />
         </node>
       </node>
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753670">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753670" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="c" />
       </node>
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753671">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894753671" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="bbb" />
-        <node role="expressions" roleId="tpm0.3315811491560119813" type="tpm0.RefTestMethodCall" typeId="tpm0.3315811491560119817" id="3715568794894753673">
+        <node role="expressions" roleId="tpm0.3315811491560119813" type="tpm0.RefTestMethodCall" typeId="tpm0.3315811491560119817" id="3715568794894753673" nodeInfo="ng">
           <link role="method" roleId="tpm0.3315811491560119818" targetNodeId="3715568794894753670" resolveInfo="c" />
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3715568794894753674">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3715568794894753674" nodeInfo="ng">
             <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
@@ -127,34 +117,35 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3715568794894764091">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3715568794894764092">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3715568794894764091" nodeInfo="nn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3715568794894764092" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="c" />
       </node>
     </node>
   </root>
-  <root id="3715568794894764093">
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="3715568794894764095">
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3715568794894764093" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="refScopeInInputLang_superMeth" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="3715568794894764095" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="ExtClass" />
       <link role="extends" roleId="tpm0.3315811491560119805" targetNodeId="rrfl.3315811491560194589" resolveInfo="SubClass" />
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764096">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764096" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="aaaa" />
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764097">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764097" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="a" />
         </node>
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764098">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764098" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="b" />
         </node>
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764099">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764099" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="c" />
         </node>
       </node>
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764100">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764100" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="c" />
       </node>
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764101">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764101" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="bbb" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3715568794894764102">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3715568794894764102" nodeInfo="ng">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -163,29 +154,29 @@
         </node>
       </node>
     </node>
-    <node role="result" roleId="tp5g.1229187707859" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="3715568794894764204">
+    <node role="result" roleId="tp5g.1229187707859" type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="3715568794894764204" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="ExtClass" />
       <link role="extends" roleId="tpm0.3315811491560119805" targetNodeId="rrfl.3315811491560194589" resolveInfo="SubClass" />
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764205">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764205" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="aaaa" />
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764206">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764206" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="a" />
         </node>
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764207">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764207" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="b" />
         </node>
-        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764208">
+        <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3715568794894764208" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="c" />
         </node>
       </node>
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764209">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764209" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="c" />
       </node>
-      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764210">
+      <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764210" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="bbb" />
-        <node role="expressions" roleId="tpm0.3315811491560119813" type="tpm0.RefTestMethodCall" typeId="tpm0.3315811491560119817" id="3715568794894764212">
+        <node role="expressions" roleId="tpm0.3315811491560119813" type="tpm0.RefTestMethodCall" typeId="tpm0.3315811491560119817" id="3715568794894764212" nodeInfo="ng">
           <link role="method" roleId="tpm0.3315811491560119818" targetNodeId="rrfl.3315811491560187090" resolveInfo="equals" />
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3715568794894764213">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3715568794894764213" nodeInfo="ng">
             <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="6" />
@@ -195,8 +186,8 @@
         </node>
       </node>
     </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3715568794894764214">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3715568794894764215">
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3715568794894764214" nodeInfo="nn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3715568794894764215" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="equals" />
       </node>
     </node>

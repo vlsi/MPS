@@ -306,7 +306,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return new CompositeClassPathItem();
   }
 
-  private void invalidateConceptDeclarationsCache() {
+  public void invalidateConceptDeclarationsCache() {
     myNameToConceptCache.clear();
     myNamesWithNoConcepts.clear();
   }

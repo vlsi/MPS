@@ -21,15 +21,15 @@ import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.containers.ManyToManyMap;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
@@ -87,7 +87,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
       if (myFqNameToModulesMap.containsKey(moduleFqName)) {
         SModule m = myFqNameToModulesMap.get(moduleFqName);
         LOG.warning(
-            "duplicate module name " + moduleFqName + " : module with the same UID exists at " + ((AbstractModule)m).getDescriptorFile() + " and " + ((AbstractModule)module).getDescriptorFile(),
+            "duplicate module name " + moduleFqName + " : module with the same UID exists at " + ((AbstractModule) m).getDescriptorFile() + " and " + ((AbstractModule) module).getDescriptorFile(),
             m);
       }
 
@@ -155,7 +155,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   private boolean doUnregisterModule(SModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
     assert myModules.contains(
-        module) : "trying to unregister non-registered module: fqName=" + module.getModuleName() + "; file=" + ((AbstractModule)module).getDescriptorFile();
+        module) : "trying to unregister non-registered module: fqName=" + module.getModuleName() + "; file=" + ((AbstractModule) module).getDescriptorFile();
 
     myModuleToOwners.removeLink(module, owner);
     boolean remove = myModuleToOwners.getByFirst(module).isEmpty();
@@ -249,6 +249,14 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
           p.getScope().invalidateCaches();
         }
         SModelUtil.clearCaches();
+
+        // FIXME temporary workaround: modelReplaced event is delivered in EDT, so Language caches
+        // are not cleared properly
+        for (SModule m : getModules()) {
+          if (m instanceof Language) {
+            ((Language) m).invalidateConceptDeclarationsCache();
+          }
+        }
       }
     });
   }
