@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dny0jqxp0a9kj3ohuh5fawdcogzlz38">
-  <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" hash="-3cgwyuu687u89rxtu1uuayn3ujoztud" />
-  <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" hash="-eis4a9nsu5xc7aqd2j253pch5i7nmip" />
-  <common hash="7e3uflg9g03lpoxsknknipbrbgcuqw" />
-  <source id="8717063129899269333" name="FooBar" hash="6e06380z4k10hltuhqvqhhndsbqrtlo">
+<dependencies version="2" modelHash="1qqyufbfywsbnljo9kf0ea75ncrl7t9">
+  <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" hash="313l3270d1fseljz59xi04pruf7ui3f" />
+  <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" hash="8v1w9wmgn1ry6feuoau0oki1eh4viwe" />
+  <common hash="-bxcujmh2dn4nn4gyho4lzbk60bvkecx" />
+  <source id="8717063129899269333" name="FooBar" hash="7bqcjybjf37d0ns07ek1aeb2l5dvgjs">
     <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" />
     <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" />
     <file name="FooBar_Swing.java" />

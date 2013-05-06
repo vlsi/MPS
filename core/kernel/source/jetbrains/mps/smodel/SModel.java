@@ -763,6 +763,10 @@ public class SModel implements SModelData {
     return false;
   }
 
+  public int getNodesCount() {
+    return myIdToNodeMap != null ? myIdToNodeMap.size() : 0;
+  }
+
   public static class ImportElement {
     private SModelReference myModelReference;
     private int myReferenceID;  // persistence related index

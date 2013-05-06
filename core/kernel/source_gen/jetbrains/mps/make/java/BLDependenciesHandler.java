@@ -16,6 +16,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
   private BLDependenciesHandler.DependencyElementHandler dependencyhandler = new BLDependenciesHandler.DependencyElementHandler();
   private BLDependenciesHandler.ClassNodeElementHandler classNodehandler = new BLDependenciesHandler.ClassNodeElementHandler();
   private Stack<BLDependenciesHandler.ElementHandler> myHandlersStack = new Stack<BLDependenciesHandler.ElementHandler>();
+  private Stack<BLDependenciesHandler.ChildHandler> myChildHandlersStack = new Stack<BLDependenciesHandler.ChildHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
   private ModelDependencies myResult;
@@ -47,12 +48,13 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
   public void endElement(String uri, String localName, String qName) throws SAXException {
     BLDependenciesHandler.ElementHandler current = myHandlersStack.pop();
     Object childValue = myValues.pop();
-    if (current != null) {
-      current.validate(childValue);
-      if (myHandlersStack.empty()) {
-        myResult = (ModelDependencies) childValue;
-      } else {
-        myHandlersStack.peek().handleChild(myValues.peek(), qName, childValue);
+    current.validate(childValue);
+    if (myChildHandlersStack.empty()) {
+      myResult = (ModelDependencies) childValue;
+    } else {
+      BLDependenciesHandler.ChildHandler ch = myChildHandlersStack.pop();
+      if (ch != null) {
+        ch.apply(myValues.peek(), childValue);
       }
     }
   }
@@ -67,7 +69,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
       // root 
       current = dependenciesRoothandler;
     } else {
-      current = current.createChild(qName);
+      current = current.createChild(myValues.peek(), qName, attributes);
     }
 
     // check required 
@@ -92,23 +94,23 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     myValues.push(result);
   }
 
+  private static interface ChildHandler {
+    public void apply(Object resultObject, Object value) throws SAXException;
+  }
+
   private class ElementHandler {
     private ElementHandler() {
     }
 
-    protected Object createObject(Attributes attrs) {
+    protected Object createObject(Attributes attrs) throws SAXException {
       return null;
     }
 
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
 
-    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXException {
+    protected BLDependenciesHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
-    }
-
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
-      throw new SAXParseException("unknown child: " + tagName, null);
     }
 
     protected void handleText(Object resultObject, String value) throws SAXException {
@@ -133,27 +135,28 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
 
     @Override
-    protected ModelDependencies createObject(Attributes attrs) {
+    protected ModelDependencies createObject(Attributes attrs) throws SAXException {
       return new ModelDependencies();
     }
 
     @Override
-    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXException {
+    protected BLDependenciesHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("dependency".equals(tagName)) {
+        myChildHandlersStack.push(new BLDependenciesHandler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_757342313568246030(resultObject, value);
+          }
+        });
         return dependencyhandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
-    @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
+    private void handleChild_757342313568246030(Object resultObject, Object value) throws SAXException {
       ModelDependencies result = (ModelDependencies) resultObject;
-      if ("dependency".equals(tagName)) {
-        RootDependencies child = (RootDependencies) value;
-        result.addDependencies(child);
-        return;
-      }
-      super.handleChild(resultObject, tagName, value);
+      RootDependencies child = (RootDependencies) value;
+      result.addDependencies(child);
     }
   }
 
@@ -164,7 +167,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
 
     @Override
-    protected RootDependencies createObject(Attributes attrs) {
+    protected RootDependencies createObject(Attributes attrs) throws SAXException {
       return new RootDependencies();
     }
 
@@ -188,30 +191,31 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
 
     @Override
-    protected BLDependenciesHandler.ElementHandler createChild(String tagName) throws SAXException {
+    protected BLDependenciesHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("classNode".equals(tagName)) {
+        myChildHandlersStack.push(new BLDependenciesHandler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_757342313568246045(resultObject, value);
+          }
+        });
         return classNodehandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
-    @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
+    private void handleChild_757342313568246045(Object resultObject, Object value) throws SAXException {
       RootDependencies result = (RootDependencies) resultObject;
-      if ("classNode".equals(tagName)) {
-        Object[] child = (Object[]) value;
-        String s = (String) child[0];
-        if ((s == null || s.length() == 0)) {
-          return;
-        }
-        if ((Boolean) child[1]) {
-          result.addExtendsNode(s);
-        } else {
-          result.addDependNode(s);
-        }
+      Object[] child = (Object[]) value;
+      String s = (String) child[0];
+      if ((s == null || s.length() == 0)) {
         return;
       }
-      super.handleChild(resultObject, tagName, value);
+      if ((Boolean) child[1]) {
+        result.addExtendsNode(s);
+      } else {
+        result.addDependNode(s);
+      }
     }
   }
 
@@ -222,7 +226,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
 
     @Override
-    protected Object[] createObject(Attributes attrs) {
+    protected Object[] createObject(Attributes attrs) throws SAXException {
       return new Object[2];
     }
 

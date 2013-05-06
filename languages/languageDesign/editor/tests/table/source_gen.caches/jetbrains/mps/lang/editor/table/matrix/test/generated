@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d1zy8kzqo52y8mvgd7pbqa49q7q3yzd">
+<dependencies version="2" modelHash="-26zf4jyc1tuj8e95ba6vg7rqusadpbm">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="aih6mod30hbbl8r1xz9vfu4gypkll6l" />
-  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="-79ceqocyuuulvuh4u36k093q6s0biig" />
-  <common hash="1ys1syqd2ghu95rgbg5i0ojwlfrndkp" />
-  <source id="4379396156287837026" hash="-cfbbuiw6oqmmq52m54fi8cqa75nm2pj">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-er04ynwwc0babx4ug54abz4i80ig26i" />
+  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="e3tr2n8a2tfpyny3033xdoyq8imfs9v" />
+  <common hash="-5pzbagwbjza9u577bl3b66ic32qsuhv" />
+  <source id="4379396156287837026" hash="d1wh5i1vbcfxu3y0t69t2qcrlnbwrj5">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="4379396156287837027" name="Create" hash="bremvqi14790m54tbpvzgop7g05ghjk" dependsOnNodes="true">
+  <source id="4379396156287837027" name="Create" hash="-88z4e9qek0wmtl4dvi0f5cktr38pr85" dependsOnNodes="true">
     <dep root="1310272842909633660" />
     <dep root="1310272842909656084" />
     <dep root="4379396156287837026" />
@@ -19,7 +19,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="Create_Test.java" />
   </source>
-  <source id="1310272842909633660" name="CreateX" hash="dh2bqjyv652k6tufhtalcu0q9npelny" dependsOnNodes="true">
+  <source id="1310272842909633660" name="CreateX" hash="8k3lxx49cuuzhvkvetfk08qkuak70sj" dependsOnNodes="true">
     <dep root="1310272842909656084" />
     <dep root="4379396156287837026" />
     <dep root="4379396156287837027" />
@@ -30,7 +30,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="CreateX_Test.java" />
   </source>
-  <source id="1310272842909656084" name="CreateY" hash="4t7lelltwmrfqxbfoown778dqsozw0s" dependsOnNodes="true">
+  <source id="1310272842909656084" name="CreateY" hash="daplyt3r6hbx85g6ovymg1tbhg8rnsx" dependsOnNodes="true">
     <dep root="1310272842909633660" />
     <dep root="4379396156287837026" />
     <dep root="4379396156287837027" />
@@ -41,7 +41,7 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="CreateY_Test.java" />
   </source>
-  <source id="8748948598094995664" name="RemoveY" hash="-7fogx3ujvkb0jnyqilb88g8mt3400oi" dependsOnNodes="true">
+  <source id="8748948598094995664" name="RemoveY" hash="-ef59149gx0tpaxlz00ypuw7iz78rkch" dependsOnNodes="true">
     <dep root="1310272842909633660" />
     <dep root="1310272842909656084" />
     <dep root="4379396156287837026" />

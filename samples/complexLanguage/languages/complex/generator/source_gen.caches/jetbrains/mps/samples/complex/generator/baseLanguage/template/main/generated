@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="13pzj6v677tntiijtzdpkmad6s248jx">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="iak6qkoqvisy1gghydx23iwnxiu2qf" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="1ascupa1eofwhw4j3kbv4yj1b75ol5f" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b7efqpp988394i1ffiwgj2bp6kuza4w" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-5auy0xpl1dm7qzjzw5e4phcgoh3am31" />
-  <dep model="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)" hash="2n5qdmla2x224gd9e2h3swciztg90s7" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="box8klx1j0nztidc0mbxnxu1byqt16r">
+<dependencies version="2" modelHash="jvjz70qquhe4glrvpddg4q33oksnbv">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="4298mu054fx6whzlp2w6f6j2etcqkrl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-84wra3huiz5h5pyzthwhm6dgyzvyf0d" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b3wz0owxesi28bm1lrvljioj8jycged" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
+  <dep model="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)" hash="-4vxnhbxqygs6vgh6x3kber8hkl7ig64" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <common hash="clik1hqacjtiur4srxqv8mhdnp5ehqj">
     <dep root="1196260169254" />
     <dep root="1196264987680" />
     <dep root="1196265307237" />
@@ -34,52 +34,52 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1196260169254" name="main" hash="-796bw0sni7pqi3sshvfqpf3nqffsyiu">
+  <source id="1196260169254" name="main" hash="dixfxckcjpixh0v6zy7r87k26pmo69n">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196260333791" name="reduction_Complex" hash="-ekz9vi4dsxf8qjg6k9w28dssyn1tx20">
+  <source id="1196260333791" name="reduction_Complex" hash="-cb5ryd2bn1lw4mvyr68i4xoz53jdub3">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196264987680" name="reduction_ComplexRe" hash="9a07oi612yk6uiffoxfz9jphqjg5pe">
+  <source id="1196264987680" name="reduction_ComplexRe" hash="afc06umbb119cijwi9o4tr1g3o6539y">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196265307237" name="reduction_ComplexIm" hash="-dm7two5m8kvrqyyuhbj31rme5dpp5ip">
+  <source id="1196265307237" name="reduction_ComplexIm" hash="-dn970ydhgk9iy52ph12smeir2jzk8in">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196269825846" name="reduction_ComplexAbs" hash="-5f9z3ih0qxjjlpolsybq8q1g3ww4h8i">
+  <source id="1196269825846" name="reduction_ComplexAbs" hash="5rbwvmi2qzc9u6lesadrdl8mj3rm2qd">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196269971283" name="reduction_ComplexArg" hash="cvo2pifjcnyky662sda68oel7d3qh74">
+  <source id="1196269971283" name="reduction_ComplexArg" hash="-akffcyetdf68li9vxtn9vccrkex1a0g">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196419300916" name="reduction_ComplexConj" hash="-9ahlaeci5ggocyeakw5djzynnh4ew20">
+  <source id="1196419300916" name="reduction_ComplexConj" hash="eroiswkclc60h2ml6gcg8pexz07w6xe">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196422257808" name="reduction_ComplexDegree" hash="-adl50umf1cg82l1taaafwhykpe724o6">
+  <source id="1196422257808" name="reduction_ComplexDegree" hash="9ofjhgrgx92souusff09yv8ul33cuq">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196428365924" name="reduction_ComplexMulDoubleLeft" hash="7pr8d6blmdvcszcwh3ztdls547273us">
+  <source id="1196428365924" name="reduction_ComplexMulDoubleLeft" hash="52yde3fam0gd9ihxgmp2nj1b1r8r81f">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196428709147" name="reduction_ComplexMulDoubleRight" hash="555p5784oo3blor21st0cfv3c7iqh3n">
+  <source id="1196428709147" name="reduction_ComplexMulDoubleRight" hash="3sym5uzsr22hhus94txz3n133byns5n">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196428818653" name="reduction_ComplexSubDoubleRight" hash="6r0e03u88jjmpowjqz62qpkb29z4u5c">
+  <source id="1196428818653" name="reduction_ComplexSubDoubleRight" hash="1wefztjft3kpye2c49llpbf0v4ubsbm">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196429105734" name="reduction_ComplexPlusDoubleLeft" hash="-9wl1xkg2y8dt85qb3fbe15xqv12p2i3">
+  <source id="1196429105734" name="reduction_ComplexPlusDoubleLeft" hash="-8fc5gabpw2uh2nlesq85ipr4qdstltj">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196429268994" name="reduction_ComplexSubDoubleLeft" hash="-af1islyz6vpx35y6crx7pmobsao0ot2">
+  <source id="1196429268994" name="reduction_ComplexSubDoubleLeft" hash="-4gvtftkdavtrtfwtxmaq68x3fmkekmz">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196429269028" name="reduction_ComplexPlusDoubleRight" hash="9s4svdy4g5g5vdnielxnu2m0nos0shf">
+  <source id="1196429269028" name="reduction_ComplexPlusDoubleRight" hash="-7grvnt3vdopyfj8k4fmf3vo57vc5e0u">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196429328947" name="reduction_ComplexDivDoubleLeft" hash="e0ro522bx3cv3pp9u1zi0n00lq1lg4m">
+  <source id="1196429328947" name="reduction_ComplexDivDoubleLeft" hash="-2ozkiposkcme32x6292sg6k2slttkdw">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196429328981" name="reduction_ComplexDivDoubleRight" hash="-8nqapg11c8opyilxy2mvblwqhd36v8h">
+  <source id="1196429328981" name="reduction_ComplexDivDoubleRight" hash="-3dfcprm88s9eq3amgewuv0h3cpgtllf">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

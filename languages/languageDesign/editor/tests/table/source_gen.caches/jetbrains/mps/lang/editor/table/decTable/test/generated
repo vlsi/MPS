@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ahk40s9lsl82hbqop37nti0fxkvcc2a">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="aih6mod30hbbl8r1xz9vfu4gypkll6l" />
-  <common hash="4nv8vobbxfanifi1uapbj9fgh3vso5y" />
-  <source id="7651593722933722504" name="TableColumnsDefaultWrapping" hash="-agthaosv7vsr26l5bds1eqbwc7o9253" dependsOnNodes="true">
+<dependencies version="2" modelHash="6usd8fswbb7neyj8cdhe89rdq0sudz1">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-er04ynwwc0babx4ug54abz4i80ig26i" />
+  <common hash="bhp59nq644iyapr5mmscyz95kcbvzfr" />
+  <source id="7651593722933722504" name="TableColumnsDefaultWrapping" hash="2itxcvfbhr4tim2a5kubk4lrz89632z" dependsOnNodes="true">
     <dep root="7651593722933724220" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="TableColumnsDefaultWrapping_Test.java" />
   </source>
-  <source id="7651593722933724220" hash="30fbipqsqd1wif75cka1sbkjkbyqjqs">
+  <source id="7651593722933724220" hash="2ywre4iag1ltlxocqxf8ctgjhs8joti">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

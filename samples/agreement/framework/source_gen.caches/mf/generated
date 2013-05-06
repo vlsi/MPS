@@ -1,104 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ekwrt5h8zw1jibugarmvy7a6deqm7mb">
+<dependencies version="2" modelHash="4cdizuxikh2jn9ebrpwf4kd7z12es5s">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.text(JDK/java.text@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <common hash="8q7blijtoyae8m5ubxsdmcn4twk8hmd" />
-  <source id="6531435794299649916" name="NamedObject" hash="e1lzaky4ksby45ryvc7ahpe78v4zzhi">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <common hash="9ou34k3z8r601i9qj50boky7fi876b1" />
+  <source id="6531435794299649916" name="NamedObject" hash="-826bu3u8o1lg37fa2xixw3nxnw0bjeh">
     <file name="NamedObject.java" />
   </source>
-  <source id="6531435794299649979" name="Registry" hash="-d6vw6mrrhbfb5n7q3836qefoylxkuzn">
+  <source id="6531435794299649979" name="Registry" hash="4tm3fbkxlqrjsvqf6dd0a9uiguhrh84">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Registry.java" />
   </source>
-  <source id="6531435794299650151" name="Money" hash="-bkfaetsxonstwxmvtapk556eyqesct8">
+  <source id="6531435794299650151" name="Money" hash="3ypne3e7zqrepbmwuomci6hl9lo4nll">
     <dep root="6531435794299652623" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Money.java" />
   </source>
-  <source id="6531435794299650588" name="DoubleRangeTester" hash="-4cdlz8k0zycbvygj10z6e6geqp3k2pf">
+  <source id="6531435794299650588" name="DoubleRangeTester" hash="qonugdwwakg9o2t0qauo1syq1ml51o">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DoubleRangeTester.java" />
   </source>
-  <source id="6531435794299651063" name="MfTester" hash="4yazg7m1dar6ncr4qag87skh8mxtpth">
+  <source id="6531435794299651063" name="MfTester" hash="-8e2emtuplt7p4t094m4vcxxrinzntkj">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MfTester.java" />
   </source>
-  <source id="6531435794299651469" name="SingleTemporalCollectionTester" hash="27kcq3tdjsggy5dupivov4q2fdyz8gs">
+  <source id="6531435794299651469" name="SingleTemporalCollectionTester" hash="-cghgok862rox03tf8drfrky3wmch8vc">
     <dep root="6531435794299652799" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SingleTemporalCollectionTester.java" />
   </source>
-  <source id="6531435794299651581" name="Unit" hash="85iqzi3cv8ktqqteuugmuerj8hjri9e">
+  <source id="6531435794299651581" name="Unit" hash="4pzdlg1og3icq0gedxl142ysnjmo7zd">
     <file name="Unit.java" />
   </source>
-  <source id="6531435794299651641" name="SingleTemporalCollection" hash="djohu9lr0skj8q5hcr8pycvgqmn39or">
+  <source id="6531435794299651641" name="SingleTemporalCollection" hash="duvjepkj42m0iwwn3mzzbdqlzeqzsk5">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SingleTemporalCollection.java" />
   </source>
-  <source id="6531435794299651807" name="MoneyTester" hash="-5fgm0j4i6gdvrnxhcluyxkd2kwr3cn5">
+  <source id="6531435794299651807" name="MoneyTester" hash="b6volw0svwur65ov74nem4h05fhn70w">
     <dep root="6531435794299652623" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MoneyTester.java" />
   </source>
-  <source id="6531435794299652233" name="MfDate" hash="9sc5pvwhdzjf0n7ikttj59di2zfm1l9">
+  <source id="6531435794299652233" name="MfDate" hash="-25o75138w5yu7zje504cek9ocn9leh1">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.text(JDK/java.text@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MfDate.java" />
   </source>
-  <source id="6531435794299652623" name="Currency" hash="1gx1o29fw2euoxu91ftn1izmqtr4nqx">
+  <source id="6531435794299652623" name="Currency" hash="c6ttx516vmii6g7byiuxcdh7yne8x6j">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <file name="Currency.java" />
   </source>
-  <source id="6531435794299652799" name="TemporalCollectionTester" hash="-1c90iehinranhme81tytjdwbnlfq2oy">
+  <source id="6531435794299652799" name="TemporalCollectionTester" hash="ckdsy4x6xd3zwgeag3fnnveruqluhr7">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TemporalCollectionTester.java" />
   </source>
-  <source id="6531435794299653063" name="MfDateTester" hash="cv87jz3ahu9us1m5qcama1m2dribtdg">
+  <source id="6531435794299653063" name="MfDateTester" hash="-7yhxdc83eb3ndbu1w3tufic7ghd8hbj">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MfDateTester.java" />
   </source>
-  <source id="6531435794299653360" name="TemporalCollection" hash="-ca1djufp5j7h7yxs4ni54g29a68cerr">
+  <source id="6531435794299653360" name="TemporalCollection" hash="4rxquoe2zbdu5u3w5s778yokrhwrlpv">
     <file name="TemporalCollection.java" />
   </source>
-  <source id="6531435794299653895" name="DateRange" hash="-67jtd2wjtab5lt9mf8wpy297ey2j3md">
+  <source id="6531435794299653895" name="DateRange" hash="7j4x8pwng1bl6vd9qsuhwy2sb0ljyz1">
     <dep root="6531435794299652233" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DateRange.java" />
   </source>
-  <source id="6531435794299654340" name="DateRangeTester" hash="e3qo75qp9t94drxkwjrgoqo4shu2jk5">
+  <source id="6531435794299654340" name="DateRangeTester" hash="9iw42jvfb3zunjjv9h33pde5ao5di9q">
     <dep root="6531435794299653895" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DateRangeTester.java" />
   </source>
-  <source id="6531435794299655420" name="BitemporalCollection" hash="dwkbxvhun9s2nclhatkvhnymzcxmjok">
+  <source id="6531435794299655420" name="BitemporalCollection" hash="-arxhwe43geq2zq6uss7re5aampsh7zp">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BitemporalCollection.java" />
   </source>
-  <source id="6531435794299655590" name="Quantity" hash="-9zyzyxt6xa1xu9cnvmawthql9akd7f">
+  <source id="6531435794299655590" name="Quantity" hash="-evnwctm8c812lzzmsymh6ahqsbbfa6p">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Quantity.java" />
   </source>
-  <source id="6531435794299655950" name="QuantityTester" hash="d7lqvo6av9oefdbs6c59qhh1bjjszuy">
+  <source id="6531435794299655950" name="QuantityTester" hash="ekq03bldr7icpq29mjlo46ag9y8sxpl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="QuantityTester.java" />
   </source>
-  <source id="6531435794299656047" name="BitemporalCollectionTester" hash="-55fx6yb818mf5ln1qa8rli2wt1v5ag9">
+  <source id="6531435794299656047" name="BitemporalCollectionTester" hash="-z6ctsfp7vyllvm3lmzjee3isyaza1s">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BitemporalCollectionTester.java" />
   </source>
-  <source id="6531435794299656340" name="DoubleRange" hash="-2igu3j0djpzqmqy503ysvf7rctmd81u">
+  <source id="6531435794299656340" name="DoubleRange" hash="3y1v125sxtuo1xhw3x1ndhwzlvqa0j6">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DoubleRange.java" />
   </source>
-  <source id="6531435794299656560" name="BitemporalCollectionSuperclassTester" hash="-6o8pk218eovsbbzqqy84jnbyq5bx12w">
+  <source id="6531435794299656560" name="BitemporalCollectionSuperclassTester" hash="-93vwjf27smovewad8pmj0qcqwp5moby">
     <dep root="6531435794299652799" />
     <file name="BitemporalCollectionSuperclassTester.java" />
   </source>

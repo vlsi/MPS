@@ -2705,7 +2705,7 @@
     <unitInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="23" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action" />
   </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/4193578441192301505">
-    <unitInfo nodeId="4193578441192301505" fileName="JavaActions.xml" startLine="1" startPosition="0" endLine="146" endPosition="13" unitName="jetbrains.mps.ide.java.actions.JavaActions" />
+    <unitInfo nodeId="4193578441192301505" fileName="JavaActions.xml" startLine="1" startPosition="0" endLine="150" endPosition="13" unitName="jetbrains.mps.ide.java.actions.JavaActions" />
   </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/4326588611400152009">
     <nodeInfo nodeId="4326588611400152009" fileName="ResolveStubReferencesToMPSGlobal_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -7718,6 +7718,190 @@
       <varInfo nodeId="7111916581652593152" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="7111916581652593130" fileName="SelectFieldsDialog.java" startLine="13" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.java.actions.SelectFieldsDialog" />
+  </root>
+  <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/8032461659228784896">
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="37" startPosition="31" endLine="38" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="38" startPosition="36" endLine="39" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="39" startPosition="35" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="44" startPosition="32" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8032461659228785093" fileName="InlineField_Action.java" startLine="48" startPosition="87" endLine="49" endPosition="2368" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5937490932312804740" fileName="InlineField_Action.java" startLine="49" startPosition="2368" endLine="50" endPosition="1472" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228785120" fileName="InlineField_Action.java" startLine="50" startPosition="1472" endLine="51" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="56" startPosition="7" endLine="57" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="57" startPosition="60" endLine="58" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="61" startPosition="45" endLine="62" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="63" startPosition="7" endLine="64" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="69" startPosition="53" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="73" startPosition="68" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="76" startPosition="5" endLine="77" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="79" startPosition="7" endLine="80" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="82" startPosition="59" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="84" startPosition="5" endLine="85" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="86" startPosition="60" endLine="87" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="88" startPosition="5" endLine="89" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="90" startPosition="70" endLine="91" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="92" startPosition="5" endLine="93" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8032461659228784909" fileName="InlineField_Action.java" startLine="97" startPosition="9" endLine="98" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784914" fileName="InlineField_Action.java" startLine="98" startPosition="81" endLine="99" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228784917" fileName="InlineField_Action.java" startLine="99" startPosition="96" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8032461659228784918" fileName="InlineField_Action.java" startLine="100" startPosition="0" endLine="101" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228784922" fileName="InlineField_Action.java" startLine="101" startPosition="72" endLine="102" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228784926" fileName="InlineField_Action.java" startLine="102" startPosition="49" endLine="103" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228784930" fileName="InlineField_Action.java" startLine="103" startPosition="76" endLine="104" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228784939" fileName="InlineField_Action.java" startLine="107" startPosition="301" endLine="108" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228784946" fileName="InlineField_Action.java" startLine="108" startPosition="170" endLine="109" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228784952" fileName="InlineField_Action.java" startLine="109" startPosition="114" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8032461659228784955" fileName="InlineField_Action.java" startLine="111" startPosition="93" endLine="112" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784964" fileName="InlineField_Action.java" startLine="113" startPosition="13" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8032461659228784965" fileName="InlineField_Action.java" startLine="114" startPosition="0" endLine="115" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228784971" fileName="InlineField_Action.java" startLine="115" startPosition="87" endLine="116" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228784981" fileName="InlineField_Action.java" startLine="117" startPosition="34" endLine="118" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784994" fileName="InlineField_Action.java" startLine="119" startPosition="20" endLine="120" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228785008" fileName="InlineField_Action.java" startLine="121" startPosition="13" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8032461659228785009" fileName="InlineField_Action.java" startLine="122" startPosition="0" endLine="123" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4812946390336445417" fileName="InlineField_Action.java" startLine="124" startPosition="168" endLine="125" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4812946390336210124" fileName="InlineField_Action.java" startLine="126" startPosition="18" endLine="127" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4812946390336210131" fileName="InlineField_Action.java" startLine="127" startPosition="174" endLine="128" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228785036" fileName="InlineField_Action.java" startLine="132" startPosition="33" endLine="133" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8032461659228785039" fileName="InlineField_Action.java" startLine="134" startPosition="7" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8032461659228785042" fileName="InlineField_Action.java" startLine="136" startPosition="38" endLine="137" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228785049" fileName="InlineField_Action.java" startLine="137" startPosition="125" endLine="138" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8032461659228785055" fileName="InlineField_Action.java" startLine="140" startPosition="39" endLine="141" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228785070" fileName="InlineField_Action.java" startLine="142" startPosition="24" endLine="143" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8032461659228785074" fileName="InlineField_Action.java" startLine="145" startPosition="7" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8032461659228785078" fileName="InlineField_Action.java" startLine="148" startPosition="27" endLine="149" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8032461659228785084" fileName="InlineField_Action.java" startLine="149" startPosition="51" endLine="150" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="154" startPosition="45" endLine="155" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="160" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="77" startPosition="57" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228784992" fileName="InlineField_Action.java" startLine="119" startPosition="18" endLine="121" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="60" startPosition="27" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="60" startPosition="27" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="68" startPosition="95" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="72" startPosition="103" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="81" startPosition="5" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="85" startPosition="86" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="89" startPosition="107" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228784953" fileName="InlineField_Action.java" startLine="110" startPosition="0" endLine="113" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4812946390336278080" fileName="InlineField_Action.java" startLine="126" startPosition="16" endLine="129" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8032461659228785034" fileName="InlineField_Action.java" startLine="131" startPosition="9" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228785065" fileName="InlineField_Action.java" startLine="141" startPosition="143" endLine="144" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="153" startPosition="27" endLine="156" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="153" startPosition="27" endLine="156" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="55" startPosition="9" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="84" startPosition="5" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="88" startPosition="5" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8032461659228785040" fileName="InlineField_Action.java" startLine="135" startPosition="0" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228785076" fileName="InlineField_Action.java" startLine="148" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineField_Action#()V" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="8032461659228784979" fileName="InlineField_Action.java" startLine="116" startPosition="198" endLine="121" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="75" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8032461659228785053" fileName="InlineField_Action.java" startLine="139" startPosition="7" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228785075" fileName="InlineField_Action.java" startLine="146" startPosition="0" endLine="152" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="75" startPosition="5" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="54" startPosition="89" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8032461659228784937" fileName="InlineField_Action.java" startLine="106" startPosition="27" endLine="129" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8032461659228784935" fileName="InlineField_Action.java" startLine="106" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="68" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="8032461659228784934" fileName="InlineField_Action.java" startLine="104" startPosition="77" endLine="131" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="96" startPosition="96" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="96" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="78" startPosition="25" endLine="78" endPosition="25" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="44" startPosition="32" endLine="45" endPosition="16" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="61" startPosition="45" endLine="62" endPosition="86" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="69" startPosition="53" endLine="70" endPosition="19" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="73" startPosition="68" endLine="74" endPosition="19" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="82" startPosition="59" endLine="83" endPosition="19" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="86" startPosition="60" endLine="87" endPosition="19" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="90" startPosition="70" endLine="91" endPosition="19" />
+    <scopeInfo nodeId="8032461659228784954" fileName="InlineField_Action.java" startLine="111" startPosition="93" endLine="112" endPosition="40" />
+    <scopeInfo nodeId="8032461659228784980" fileName="InlineField_Action.java" startLine="117" startPosition="34" endLine="118" endPosition="74" />
+    <scopeInfo nodeId="8032461659228784993" fileName="InlineField_Action.java" startLine="119" startPosition="20" endLine="120" endPosition="137" />
+    <scopeInfo nodeId="4812946390336210123" fileName="InlineField_Action.java" startLine="124" startPosition="168" endLine="125" endPosition="207" />
+    <scopeInfo nodeId="8032461659228785035" fileName="InlineField_Action.java" startLine="132" startPosition="33" endLine="133" endPosition="15" />
+    <scopeInfo nodeId="8032461659228785069" fileName="InlineField_Action.java" startLine="142" startPosition="24" endLine="143" endPosition="17" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="154" startPosition="45" endLine="155" endPosition="85" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="56" startPosition="7" endLine="58" endPosition="63">
+      <varInfo nodeId="8032461659228784896" varName="enabled" />
+    </scopeInfo>
+    <scopeInfo nodeId="4812946390336278081" fileName="InlineField_Action.java" startLine="126" startPosition="18" endLine="128" endPosition="84">
+      <varInfo nodeId="4812946390336210125" varName="localVariableReference" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228785041" fileName="InlineField_Action.java" startLine="136" startPosition="38" endLine="138" endPosition="15" />
+    <scopeInfo nodeId="8032461659228785077" fileName="InlineField_Action.java" startLine="148" startPosition="27" endLine="150" endPosition="93">
+      <varInfo nodeId="8032461659228785079" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="37" startPosition="31" endLine="40" endPosition="40" />
+    <scopeInfo nodeId="8032461659228785092" fileName="InlineField_Action.java" startLine="48" startPosition="87" endLine="51" endPosition="151">
+      <varInfo nodeId="8032461659228785094" varName="isFieldDeclaration" />
+      <varInfo nodeId="5937490932312804741" varName="isStaticFieldDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="60" startPosition="27" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="153" startPosition="0" endLine="156" endPosition="7">
+      <varInfo nodeId="8032461659228784896" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="153" startPosition="27" endLine="156" endPosition="7" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="55" startPosition="9" endLine="59" endPosition="7" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="60" startPosition="0" endLine="64" endPosition="44">
+      <varInfo nodeId="8032461659228784896" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="60" startPosition="27" endLine="64" endPosition="44" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="76" startPosition="5" endLine="80" endPosition="53">
+      <varInfo nodeId="8032461659228784896" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="84" startPosition="5" endLine="88" endPosition="5" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="88" startPosition="5" endLine="92" endPosition="5" />
+    <scopeInfo nodeId="8032461659228785054" fileName="InlineField_Action.java" startLine="140" startPosition="39" endLine="144" endPosition="9">
+      <varInfo nodeId="8032461659228785056" varName="code" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228785076" fileName="InlineField_Action.java" startLine="148" startPosition="0" endLine="152" endPosition="0" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="48" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="8032461659228784896" varName="_params" />
+      <varInfo nodeId="8032461659228784896" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="75" startPosition="5" endLine="84" endPosition="5" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="54" startPosition="89" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="54" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="8032461659228784896" varName="_params" />
+      <varInfo nodeId="8032461659228784896" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228784938" fileName="InlineField_Action.java" startLine="107" startPosition="301" endLine="123" endPosition="36">
+      <varInfo nodeId="8032461659228784940" varName="fieldDeclaration" />
+      <varInfo nodeId="8032461659228784966" varName="fieldName" />
+      <varInfo nodeId="8032461659228784947" varName="inlineVARef" />
+      <varInfo nodeId="8032461659228784972" varName="nodesCount" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228784936" fileName="InlineField_Action.java" startLine="106" startPosition="27" endLine="129" endPosition="11" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="68" startPosition="95" endLine="93" endPosition="16" />
+    <scopeInfo nodeId="8032461659228784935" fileName="InlineField_Action.java" startLine="106" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="68" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="8032461659228784896" varName="_params" />
+      <varInfo nodeId="8032461659228784896" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="97" startPosition="9" endLine="152" endPosition="9">
+      <varInfo nodeId="8032461659228784927" varName="infoMessage" />
+      <varInfo nodeId="8032461659228784919" varName="isAvailable" />
+      <varInfo nodeId="8032461659228784923" varName="messageDialogTitle" />
+      <varInfo nodeId="8032461659228784915" varName="ref" />
+      <varInfo nodeId="8032461659228784931" varName="yesNoMessage" />
+    </scopeInfo>
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="96" startPosition="96" endLine="157" endPosition="5" />
+    <scopeInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="96" startPosition="0" endLine="159" endPosition="0">
+      <varInfo nodeId="8032461659228784896" varName="_params" />
+      <varInfo nodeId="8032461659228784896" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="8032461659228785076" fileName="InlineField_Action.java" startLine="147" startPosition="57" endLine="152" endPosition="7" unitName="jetbrains.mps.ide.java.actions.InlineField_Action$2" />
+    <unitInfo nodeId="8032461659228784935" fileName="InlineField_Action.java" startLine="105" startPosition="47" endLine="131" endPosition="7" unitName="jetbrains.mps.ide.java.actions.InlineField_Action$1" />
+    <unitInfo nodeId="8032461659228784896" fileName="InlineField_Action.java" startLine="34" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.ide.java.actions.InlineField_Action" />
   </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/8178553721056072523">
     <nodeInfo nodeId="8178553721056072534" fileName="MemberContainerStructureModel.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="container" />

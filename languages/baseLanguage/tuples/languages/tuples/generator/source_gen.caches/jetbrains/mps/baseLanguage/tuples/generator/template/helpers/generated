@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-961vfyvjcf8bz9rlgz96euywt6mpchr">
-  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="9mxxgk2k829uwrli196hhef54pkyd1f" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b7efqpp988394i1ffiwgj2bp6kuza4w" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-5auy0xpl1dm7qzjzw5e4phcgoh3am31" />
-  <common hash="-dk3241psi2duawm40f204v3ew0o0k9n" />
-  <source id="1241010420895" name="TupleDeclarationUtil" hash="bgolpmwqv91faup6ty9g5s4w5dj8eqn">
+<dependencies version="2" modelHash="b6vkt12mb8xlhmnb36uap924tjkncid">
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-3gd1wjtanyuae8zlmappxzhsoyku4tj" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="b3wz0owxesi28bm1lrvljioj8jycged" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9iow8oinjz3flhnokp65cdgbcfbisw5" />
+  <common hash="co0dkvkfpqsubcx4hqggiuj8m5bwosn" />
+  <source id="1241010420895" name="TupleDeclarationUtil" hash="e0ayzosmzcd6ousjtxyo86vx1iw4z42">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="TupleDeclarationUtil.java" />
   </source>
-  <source id="1241091679770" name="Keys" hash="-9io9lhqdl1d07b6dizhsindh2k9vc4">
+  <source id="1241091679770" name="Keys" hash="-71g6su9uzvh553dvime0zs4f6e7l1gy">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Keys.java" />
   </source>
-  <source id="1241092045116" name="Values" hash="-a69acdnmqfngi4av84xenou4opu1v3a">
+  <source id="1241092045116" name="Values" hash="-a8zavvlxazv1l65gtqee9zhlq3ma5d6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Values.java" />
   </source>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9g6n0igtcyf4f7bp08fvrvkshk8y73r">
+<dependencies version="2" modelHash="dgeo3gmyhh9xhkqk8dk5pwz826fg7jo">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="bzwhscc44snkaqbcb0kkmlyif9kvete" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="-bvi06jxipgyfmr6qgbce2q5c6t5526q">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <common hash="2fxcmt5merg57v9j1xb73fy2pb24rlo">
     <dep root="2679357232283750087" />
     <dep root="5389689214216557332" />
     <dep root="5389689214216990954" />
@@ -40,79 +40,79 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="7057666463730155275" name="Builder" hash="bku6czxiqgc14nq4xd63nagzqxho1m9">
+  <source id="7057666463730155275" name="Builder" hash="91bf0nud145lokga9iopvaql5z5hnwb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7057666463730155278" name="BuilderCreator" hash="bm7icg32dbnybn256bqwcs6tml4wass">
+  <source id="7057666463730155278" name="BuilderCreator" hash="-9utliym59o9144duuv0cywgzafnbgc4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7057666463730155299" name="BuilderStatement" hash="cae6i3qcsz9hv6t1oi4rlyqz19pqvn0">
+  <source id="7057666463730155299" name="BuilderStatement" hash="-4qvtbok32dcd5tq1ffbnydkrsv41we1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7288041816792292064" name="ResultExpression" hash="-df17e8o6y1sx3nk1wbz50ibitpuurmv">
+  <source id="7288041816792292064" name="ResultExpression" hash="2zmawp4tpuzpb9saubdoxju54j06u3o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7288041816792374843" name="SimpleBuilders" hash="-dcgcpu62sue0v7j97jwyv2op8eu2qj">
+  <source id="7288041816792374843" name="SimpleBuilders" hash="-2a5qso2s0vct5y5rm6twjcz7yuvf0tb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7288041816792577338" name="SimpleBuilderChild" hash="be89chy66lw3fev8zfiqh966njm8ex2">
+  <source id="7288041816792577338" name="SimpleBuilderChild" hash="5sqh5fffs7f8hxizfp86tuxsateny5r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7288041816792577340" name="SimpleBuilderParentExpression" hash="a27pwi5itsdiqyhutiz7v4vy1necxdu">
+  <source id="7288041816792577340" name="SimpleBuilderParentExpression" hash="bzn9vrbla3233d0hfjeadooc23m3qh8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7288041816792577342" name="SimpleBuilderChildExpression" hash="4hh6a7zw1i7304cvnatmzwq40molsqs">
+  <source id="7288041816792577342" name="SimpleBuilderChildExpression" hash="-1gs1awiyybhomkwawvavf6g5d9iaqnm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7288041816792577344" name="SimpleBuilderExpression" hash="-3ep2f0cogyjfk8c5rayatjpq0qhpheb">
+  <source id="7288041816792577344" name="SimpleBuilderExpression" hash="-9ffbksyu80vteqw32xust6w9srblhoi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7288041816792374840" name="SimpleBuilderDeclaration" hash="7esghk85a01kxb98k6bmacnflvs1ktj">
+  <source id="7288041816792374840" name="SimpleBuilderDeclaration" hash="ax9e5k4org4cfz3vx5b21zosw3web1h">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7288041816793071802" name="SimpleBuilder" hash="egs6b3vcbhjvokjimdzmdujdirq42fb">
+  <source id="7288041816793071802" name="SimpleBuilder" hash="83eqmmmj8w7c5unilsp1ttm280l13i5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5425713840853682520" name="SimpleBuilderParameter" hash="61sjvdycn0k3pl3v7154nqom0tpdevb">
+  <source id="5425713840853682520" name="SimpleBuilderParameter" hash="e0gaa4cd7pfx57nx4bxe6hxfzwo9xp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5425713840853785828" name="SimpleBuilderParameterReference" hash="902ei95jvqdvpbkwokr13vkdlylk0bc">
+  <source id="5425713840853785828" name="SimpleBuilderParameterReference" hash="49qvef7kgrwltc34x706hhbl2921msy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7802271442981707292" name="AsBuilderStatement" hash="d1xnqu09g3vuoo7az41hxtqbj4lgxoe">
+  <source id="7802271442981707292" name="AsBuilderStatement" hash="8mzk6zca8ovcnfktns4y9xvwjzmylg7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7802271442981792228" name="BuilderContainer" hash="62pzj6unckyeey9t6wt8hvvzq0oa6eb">
+  <source id="7802271442981792228" name="BuilderContainer" hash="4wkgkjsbqjcaptkeqtgb9019aojmkvz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2679357232283750087" name="BeanPropertyBuilder" hash="-ahmfs2olbmfj9wn2akbi3l082ho5rp7">
+  <source id="2679357232283750087" name="BeanPropertyBuilder" hash="-7cjuwxcjsifsqyhg27p4aa4ad9on1uh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6666322667909540799" name="BeanBuilder" hash="bh9asb53kjq2i3q7ayg5d86knoqgg83">
+  <source id="6666322667909540799" name="BeanBuilder" hash="-1crqijmsffiox1hb9mf7cp3wnqgugd4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5389689214216557332" name="AsTypeBuilder" hash="-cdc7wiz565tgvl888lzg4p0hvo0t9dy">
+  <source id="5389689214216557332" name="AsTypeBuilder" hash="-7qlrapwjq47knsrn06yxqc4ftqeo5rn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5389689214216990954" name="SimpleBuilderProperty" hash="-bwxjkml2u7898i0mgxgrb3l2d4hdbvp">
+  <source id="5389689214216990954" name="SimpleBuilderProperty" hash="qv6hefyx14y2t9z18ngo7te3vyf9hy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5389689214217242850" name="SimpleBuilderPropertyExpression" hash="-4grnk0o3mhjhft3q6bi53qxp614br31">
+  <source id="5389689214217242850" name="SimpleBuilderPropertyExpression" hash="a28t1cm3jldy01etwup6wf0fji59ul5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5389689214217248368" name="SimpleBuilderPropertyParent" hash="e8cv16mwr3lpzwvkgaekx4vehm82tbj">
+  <source id="5389689214217248368" name="SimpleBuilderPropertyParent" hash="-6kt6gf5sqqujxtavcu2sbr2jgza9jli">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5389689214217248394" name="SimpleBuilderPropertyValue" hash="99m9qt0y7nkl076sca3np5qwq330zoc">
+  <source id="5389689214217248394" name="SimpleBuilderPropertyValue" hash="-29edp5btks8dkub1kvmzfg5iragbpl6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5389689214217404511" name="SimpleBuilderPropertyBuilder" hash="-6unzx5oaz1rzs6tj23e0pczdza2f6yc">
+  <source id="5389689214217404511" name="SimpleBuilderPropertyBuilder" hash="b2zyr5tz5726riookvzia4t3xq1sbwo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6254726786820421041" name="BaseSimpleBuilderDeclaration" hash="-erqicj4zisan660h9iu5id8j8rgqyt">
+  <source id="6254726786820421041" name="BaseSimpleBuilderDeclaration" hash="-9q7hc00enubw4cjr9swwwfeigqd58du">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6254726786820459251" name="SimpleBuilderExtensionDeclaration" hash="dimkuxqyn4eotnp3rkg77pbqivopiwu">
+  <source id="6254726786820459251" name="SimpleBuilderExtensionDeclaration" hash="-1dqokky9dxtrg1ycn3a9z5y4qb0fr1u">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

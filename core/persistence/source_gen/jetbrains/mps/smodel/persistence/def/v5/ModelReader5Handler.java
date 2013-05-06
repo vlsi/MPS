@@ -39,6 +39,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
   private ModelReader5Handler.LinkElementHandler linkhandler = new ModelReader5Handler.LinkElementHandler();
   private ModelReader5Handler.VisibleElementHandler visiblehandler = new ModelReader5Handler.VisibleElementHandler();
   private Stack<ModelReader5Handler.ElementHandler> myHandlersStack = new Stack<ModelReader5Handler.ElementHandler>();
+  private Stack<ModelReader5Handler.ChildHandler> myChildHandlersStack = new Stack<ModelReader5Handler.ChildHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
   private ModelLoadResult myResult;
@@ -76,12 +77,13 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
   public void endElement(String uri, String localName, String qName) throws SAXException {
     ModelReader5Handler.ElementHandler current = myHandlersStack.pop();
     Object childValue = myValues.pop();
-    if (current != null) {
-      current.validate(childValue);
-      if (myHandlersStack.empty()) {
-        myResult = (ModelLoadResult) childValue;
-      } else {
-        myHandlersStack.peek().handleChild(myValues.peek(), qName, childValue);
+    current.validate(childValue);
+    if (myChildHandlersStack.empty()) {
+      myResult = (ModelLoadResult) childValue;
+    } else {
+      ModelReader5Handler.ChildHandler ch = myChildHandlersStack.pop();
+      if (ch != null) {
+        ch.apply(myValues.peek(), childValue);
       }
     }
   }
@@ -96,7 +98,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       // root 
       current = modelhandler;
     } else {
-      current = current.createChild(qName);
+      current = current.createChild(myValues.peek(), qName, attributes);
     }
 
     // check required 
@@ -121,23 +123,23 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     myValues.push(result);
   }
 
+  private static interface ChildHandler {
+    public void apply(Object resultObject, Object value) throws SAXException;
+  }
+
   private class ElementHandler {
     private ElementHandler() {
     }
 
-    protected Object createObject(Attributes attrs) {
+    protected Object createObject(Attributes attrs) throws SAXException {
       return null;
     }
 
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
 
-    protected ModelReader5Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected ModelReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
-    }
-
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
-      throw new SAXParseException("unknown child: " + tagName, null);
     }
 
     protected void handleText(Object resultObject, String value) throws SAXException {
@@ -162,7 +164,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected ModelLoadResult createObject(Attributes attrs) {
+    protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
       fieldversionsInfo = new SModelVersionsInfo();
       fieldreferenceDescriptors = new ArrayList<IReferencePersister>();
       fieldvisibleModelElements = new SAXVisibleModelElements();
@@ -187,77 +189,103 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected ModelReader5Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected ModelReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("persistence".equals(tagName)) {
+        myChildHandlersStack.push(null);
         return persistencehandler;
       }
       if ("languageAspect".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader5Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_2286463592495498109(resultObject, value);
+          }
+        });
         return languageAspecthandler;
       }
       if ("language".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader5Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_2286463592495498227(resultObject, value);
+          }
+        });
         return tag_with_namespacehandler;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader5Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_2286463592495498259(resultObject, value);
+          }
+        });
         return tag_with_namespacehandler;
       }
       if ("devkit".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader5Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_2286463592495498276(resultObject, value);
+          }
+        });
         return tag_with_namespacehandler;
       }
       if ("import".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader5Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_2286463592495498335(resultObject, value);
+          }
+        });
         return importhandler;
       }
       if ("node".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader5Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_2286463592495515690(resultObject, value);
+          }
+        });
         return nodehandler;
       }
       if ("visible".equals(tagName)) {
+        myChildHandlersStack.push(null);
         return visiblehandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
-    @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
-      ModelLoadResult result = (ModelLoadResult) resultObject;
-      if ("persistence".equals(tagName)) {
-        return;
+    private void handleChild_2286463592495498109(Object resultObject, Object value) throws SAXException {
+      String[] child = (String[]) value;
+      int version = Integer.parseInt(child[1]);
+      (fieldmodel).addAdditionalModelVersion(PersistenceFacade.getInstance().createModelReference(child[0]), version);
+    }
+
+    private void handleChild_2286463592495498227(Object resultObject, Object value) throws SAXException {
+      String child = (String) value;
+      (fieldmodel).addLanguage(ModuleReference.fromString(child));
+    }
+
+    private void handleChild_2286463592495498259(Object resultObject, Object value) throws SAXException {
+      String child = (String) value;
+      (fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+    }
+
+    private void handleChild_2286463592495498276(Object resultObject, Object value) throws SAXException {
+      String child = (String) value;
+      (fieldmodel).addDevKit(ModuleReference.fromString(child));
+    }
+
+    private void handleChild_2286463592495498335(Object resultObject, Object value) throws SAXException {
+      SModel.ImportElement child = (SModel.ImportElement) value;
+      (fieldmodel).addModelImport(child);
+    }
+
+    private void handleChild_2286463592495515690(Object resultObject, Object value) throws SAXException {
+      SNode child = (SNode) value;
+      if (child != null) {
+        fieldmodel.addRootNode(child);
       }
-      if ("languageAspect".equals(tagName)) {
-        String[] child = (String[]) value;
-        int version = Integer.parseInt(child[1]);
-        (fieldmodel).addAdditionalModelVersion(PersistenceFacade.getInstance().createModelReference(child[0]), version);
-        return;
-      }
-      if ("language".equals(tagName)) {
-        String child = (String) value;
-        (fieldmodel).addLanguage(ModuleReference.fromString(child));
-        return;
-      }
-      if ("language-engaged-on-generation".equals(tagName)) {
-        String child = (String) value;
-        (fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
-        return;
-      }
-      if ("devkit".equals(tagName)) {
-        String child = (String) value;
-        (fieldmodel).addDevKit(ModuleReference.fromString(child));
-        return;
-      }
-      if ("import".equals(tagName)) {
-        SModel.ImportElement child = (SModel.ImportElement) value;
-        (fieldmodel).addModelImport(child);
-        return;
-      }
-      if ("node".equals(tagName)) {
-        SNode child = (SNode) value;
-        if (child != null) {
-          fieldmodel.addRootNode(child);
-        }
-        return;
-      }
-      if ("visible".equals(tagName)) {
-        return;
-      }
-      super.handleChild(resultObject, tagName, value);
     }
 
     @Override
@@ -282,7 +310,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected Integer createObject(Attributes attrs) {
+    protected Integer createObject(Attributes attrs) throws SAXException {
       return Integer.parseInt(attrs.getValue("version"));
     }
 
@@ -308,7 +336,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected Integer createObject(Attributes attrs) {
+    protected Integer createObject(Attributes attrs) throws SAXException {
       return Integer.parseInt(attrs.getValue("value"));
     }
 
@@ -334,7 +362,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String[] createObject(Attributes attrs) {
+    protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{attrs.getValue("modelUID"), attrs.getValue("version")};
     }
 
@@ -363,7 +391,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String createObject(Attributes attrs) {
+    protected String createObject(Attributes attrs) throws SAXException {
       return attrs.getValue("namespace");
     }
 
@@ -389,7 +417,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected SModel.ImportElement createObject(Attributes attrs) {
+    protected SModel.ImportElement createObject(Attributes attrs) throws SAXException {
       int indexValue = Integer.parseInt(attrs.getValue("index"));
       int versionValue = Integer.parseInt(attrs.getValue("version"));
       return new SModel.ImportElement(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), indexValue, versionValue);
@@ -423,7 +451,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected SNode createObject(Attributes attrs) {
+    protected SNode createObject(Attributes attrs) throws SAXException {
       String rawFqName = attrs.getValue("type");
       String conceptFQName = VersionUtil.getConceptFQName(rawFqName);
       SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFQName));
@@ -459,43 +487,58 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected ModelReader5Handler.ElementHandler createChild(String tagName) throws SAXException {
+    protected ModelReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("property".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader5Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_7707758858786147473(resultObject, value);
+          }
+        });
         return propertyhandler;
       }
       if ("link".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader5Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_355506112072964454(resultObject, value);
+          }
+        });
         return linkhandler;
       }
       if ("node".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader5Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_7707758858785937650(resultObject, value);
+          }
+        });
         return nodehandler;
       }
-      return super.createChild(tagName);
+      return super.createChild(resultObject, tagName, attrs);
     }
 
-    @Override
-    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
+    private void handleChild_7707758858786147473(Object resultObject, Object value) throws SAXException {
       SNode result = (SNode) resultObject;
-      if ("property".equals(tagName)) {
-        String[] child = (String[]) value;
-        if (child[1] != null) {
-          SNodeAccessUtil.setProperty(result, VersionUtil.getPropertyName(child[0], result, fieldversionsInfo), child[1]);
-        }
-        return;
+      String[] child = (String[]) value;
+      if (child[1] != null) {
+        SNodeAccessUtil.setProperty(result, VersionUtil.getPropertyName(child[0], result, fieldversionsInfo), child[1]);
       }
-      if ("link".equals(tagName)) {
-        String[] child = (String[]) value;
-        ReferencePersister4 rp = new ReferencePersister4();
-        rp.fillFields(child[0], child[1], child[2], result, false, fieldversionsInfo);
-        fieldreferenceDescriptors.add(rp);
-        return;
-      }
-      if ("node".equals(tagName)) {
-        SNode child = (SNode) value;
-        result.addChild(((String) child.getUserObject("role")), child);
-        child.putUserObject("role", null);
-        return;
-      }
-      super.handleChild(resultObject, tagName, value);
+    }
+
+    private void handleChild_355506112072964454(Object resultObject, Object value) throws SAXException {
+      SNode result = (SNode) resultObject;
+      String[] child = (String[]) value;
+      ReferencePersister4 rp = new ReferencePersister4();
+      rp.fillFields(child[0], child[1], child[2], result, false, fieldversionsInfo);
+      fieldreferenceDescriptors.add(rp);
+    }
+
+    private void handleChild_7707758858785937650(Object resultObject, Object value) throws SAXException {
+      SNode result = (SNode) resultObject;
+      SNode child = (SNode) value;
+      result.addChild(((String) child.getUserObject("role")), child);
+      child.putUserObject("role", null);
     }
   }
 
@@ -506,7 +549,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String[] createObject(Attributes attrs) {
+    protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{attrs.getValue("name"), null};
     }
 
@@ -536,7 +579,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected String[] createObject(Attributes attrs) {
+    protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{null, null, null};
     }
 
@@ -566,7 +609,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected Object createObject(Attributes attrs) {
+    protected Object createObject(Attributes attrs) throws SAXException {
       fieldvisibleModelElements.addVisible(Integer.parseInt(attrs.getValue("index")), attrs.getValue("modelUID"));
       return null;
     }

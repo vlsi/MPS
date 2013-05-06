@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1fi4qu3udj3o04luf37qsa0glydpdum">
+<dependencies version="2" modelHash="-3bfzmxrq2jdipgkt6xuy7li0uvfvh6b">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="aih6mod30hbbl8r1xz9vfu4gypkll6l" />
-  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="-4jane02xeojv7i0gbjebbvg5hsfjk1f" />
-  <common hash="-drq1637fxb0q3pgyc233xrggegr7e3f" />
-  <source id="5950344441601491241" name="EditorSpecifiedBy_add_context_hints" hash="84va3biq8y8chjq85v36x3hzarz8orz" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-er04ynwwc0babx4ug54abz4i80ig26i" />
+  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="e3tr2n8a2tfpyny3033xdoyq8imfs9v" />
+  <common hash="-s1by59jmwspoz90dyqzebbia0gjttt" />
+  <source id="5950344441601491241" name="EditorSpecifiedBy_add_context_hints" hash="57rl5o2gofyhj538qxpqfsws9g7ryhf" dependsOnNodes="true">
     <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
     <dep root="5950344441601613251" />
     <dep root="5950344441601668447" />
     <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
     <dep root="7636045212390392321" />
     <dep root="7636045212390401481" />
     <dep root="7636045212390410965" />
@@ -20,14 +27,21 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="EditorSpecifiedBy_add_context_hints_Test.java" />
   </source>
-  <source id="5950344441601613251" hash="-7zw4sid1f1nac5tientkpp2iseu0n6c">
+  <source id="5950344441601613251" hash="c8534edxbtef61i0rsvwo2e9mdu5vr7">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5950344441601668447" name="DefaultEditor" hash="-5qcfptucke3t9dxzvta1xo0frpzeplx" dependsOnNodes="true">
+  <source id="5950344441601668447" name="DefaultEditor" hash="-etptnvrdm4448mqxmdlg4na75p2hh04" dependsOnNodes="true">
     <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
     <dep root="5950344441601491241" />
     <dep root="5950344441601613251" />
     <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
     <dep root="7636045212390392321" />
     <dep root="7636045212390401481" />
     <dep root="7636045212390410965" />
@@ -38,11 +52,18 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="DefaultEditor_Test.java" />
   </source>
-  <source id="5950344441601676487" name="EditorSpecifiedBy_add_remove_context_hints" hash="bg2zlzybqmy4kzqx93i3azykdsisiu7" dependsOnNodes="true">
+  <source id="5950344441601676487" name="EditorSpecifiedBy_add_remove_context_hints" hash="-er4fjitu4prm3sbavtzdmkasvivqm8i" dependsOnNodes="true">
     <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
     <dep root="5950344441601491241" />
     <dep root="5950344441601613251" />
     <dep root="5950344441601668447" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
     <dep root="7636045212390392321" />
     <dep root="7636045212390401481" />
     <dep root="7636045212390410965" />
@@ -53,12 +74,19 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="EditorSpecifiedBy_add_remove_context_hints_Test.java" />
   </source>
-  <source id="7636045212390392321" name="ConditionalPresentation_addQuery_default" hash="-8gcogv0gutphfrgsmkldnggryielivz" dependsOnNodes="true">
+  <source id="7636045212390392321" name="ConditionalPresentation_addQuery_default" hash="6gp4vwlw46tp1pprq7qm38r8sfczahd" dependsOnNodes="true">
     <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
     <dep root="5950344441601491241" />
     <dep root="5950344441601613251" />
     <dep root="5950344441601668447" />
     <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
     <dep root="7636045212390401481" />
     <dep root="7636045212390410965" />
     <dep root="7636045212390416608" />
@@ -68,12 +96,19 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="ConditionalPresentation_addQuery_default_Test.java" />
   </source>
-  <source id="7636045212390401481" name="ConditionalPresentation_addQuery_rich" hash="-ebdet373mfbcsg4fuyhmk2l42hbxpdj" dependsOnNodes="true">
+  <source id="7636045212390401481" name="ConditionalPresentation_addQuery_rich" hash="bq9bdri36d8eh42hm3f0coo4qinucgx" dependsOnNodes="true">
     <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
     <dep root="5950344441601491241" />
     <dep root="5950344441601613251" />
     <dep root="5950344441601668447" />
     <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
     <dep root="7636045212390392321" />
     <dep root="7636045212390410965" />
     <dep root="7636045212390416608" />
@@ -83,12 +118,19 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="ConditionalPresentation_addQuery_rich_Test.java" />
   </source>
-  <source id="7636045212390410965" name="ConditionalPresentation_removeQuery_compact" hash="-e5huymlsnjy0ikjvj6yaxgm9as48uy8" dependsOnNodes="true">
+  <source id="7636045212390410965" name="ConditionalPresentation_removeQuery_compact" hash="e5ugawxcbe6n9k7r3nxbghpk0v9omg3" dependsOnNodes="true">
     <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
     <dep root="5950344441601491241" />
     <dep root="5950344441601613251" />
     <dep root="5950344441601668447" />
     <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
     <dep root="7636045212390392321" />
     <dep root="7636045212390401481" />
     <dep root="7636045212390416608" />
@@ -98,12 +140,19 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="ConditionalPresentation_removeQuery_compact_Test.java" />
   </source>
-  <source id="7636045212390416608" name="ConditionalPresentation_addQuery_switch" hash="-bfj98wlsxd2mg23omzlfcwmvohwbmqg" dependsOnNodes="true">
+  <source id="7636045212390416608" name="ConditionalPresentation_addQuery_switch" hash="2h3l7sz7kq4f5b63t9n79ulnni421dj" dependsOnNodes="true">
     <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
     <dep root="5950344441601491241" />
     <dep root="5950344441601613251" />
     <dep root="5950344441601668447" />
     <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
     <dep root="7636045212390392321" />
     <dep root="7636045212390401481" />
     <dep root="7636045212390410965" />
@@ -114,12 +163,19 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="ConditionalPresentation_addQuery_switch_Test.java" />
   </source>
-  <source id="7636045212393364917" name="ConditionalPresentation_removeQuery_switch" hash="-aucxosgsxexfx4npehcgbdpch70drs6" dependsOnNodes="true">
+  <source id="7636045212393364917" name="ConditionalPresentation_removeQuery_switch" hash="-638zpcs77mpemibik5k2lk67k0lh8te" dependsOnNodes="true">
     <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
     <dep root="5950344441601491241" />
     <dep root="5950344441601613251" />
     <dep root="5950344441601668447" />
     <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
     <dep root="7636045212390392321" />
     <dep root="7636045212390401481" />
     <dep root="7636045212390410965" />
@@ -130,11 +186,18 @@
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="ConditionalPresentation_removeQuery_switch_Test.java" />
   </source>
-  <source id="2601164129533059968" name="UnsupportedPresentation" hash="-di1r1l7z5ynm2tkt82zjigux3gltt3j" dependsOnNodes="true">
+  <source id="2601164129533059968" name="UnsupportedPresentation" hash="-dwwho3wf12ttpqoxw057a57wlx8h42a" dependsOnNodes="true">
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
     <dep root="5950344441601491241" />
     <dep root="5950344441601613251" />
     <dep root="5950344441601668447" />
     <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
     <dep root="7636045212390392321" />
     <dep root="7636045212390401481" />
     <dep root="7636045212390410965" />
@@ -144,6 +207,162 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="UnsupportedPresentation_Test.java" />
+  </source>
+  <source id="7279578193769046188" name="EditorSpecifiedBy_add_context_hints_RefNodeList" hash="4cudi4eu7zmb966ukg8dvha4a1yllmw" dependsOnNodes="true">
+    <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
+    <dep root="5950344441601491241" />
+    <dep root="5950344441601613251" />
+    <dep root="5950344441601668447" />
+    <dep root="5950344441601676487" />
+    <dep root="7279578193769147476" />
+    <dep root="7636045212390392321" />
+    <dep root="7636045212390401481" />
+    <dep root="7636045212390410965" />
+    <dep root="7636045212390416608" />
+    <dep root="7636045212393364917" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" />
+  </source>
+  <source id="7279578193769147476" name="EditorSpecifiedBy_add_remove_context_hints_RefNodeList" hash="6ros7aetucfcoe3s4ux0okwitr543lf" dependsOnNodes="true">
+    <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
+    <dep root="5950344441601491241" />
+    <dep root="5950344441601613251" />
+    <dep root="5950344441601668447" />
+    <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7636045212390392321" />
+    <dep root="7636045212390401481" />
+    <dep root="7636045212390410965" />
+    <dep root="7636045212390416608" />
+    <dep root="7636045212393364917" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" />
+  </source>
+  <source id="5613016763942508875" name="ConditionalPresentation_addQuery_RefNodeList_rich" hash="-4bfpvzdam7ti8ozb7hztzq9h2b7awhn" dependsOnNodes="true">
+    <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5950344441601491241" />
+    <dep root="5950344441601613251" />
+    <dep root="5950344441601668447" />
+    <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
+    <dep root="7636045212390392321" />
+    <dep root="7636045212390401481" />
+    <dep root="7636045212390410965" />
+    <dep root="7636045212390416608" />
+    <dep root="7636045212393364917" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" />
+  </source>
+  <source id="554589055677209880" name="ConditionalPresentation_addQuery_RefNodeList_default" hash="-2nt4np8qjufrxcyy8f84hoimyhd15kp" dependsOnNodes="true">
+    <dep root="2601164129533059968" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
+    <dep root="5950344441601491241" />
+    <dep root="5950344441601613251" />
+    <dep root="5950344441601668447" />
+    <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
+    <dep root="7636045212390392321" />
+    <dep root="7636045212390401481" />
+    <dep root="7636045212390410965" />
+    <dep root="7636045212390416608" />
+    <dep root="7636045212393364917" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" />
+  </source>
+  <source id="554589055677210829" name="ConditionalPresentation_addQuery_RefNodeList_switch" hash="-77eng06xyw5vbhto6hitwsu0r44bkfd" dependsOnNodes="true">
+    <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677397793" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
+    <dep root="5950344441601491241" />
+    <dep root="5950344441601613251" />
+    <dep root="5950344441601668447" />
+    <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
+    <dep root="7636045212390392321" />
+    <dep root="7636045212390401481" />
+    <dep root="7636045212390410965" />
+    <dep root="7636045212390416608" />
+    <dep root="7636045212393364917" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" />
+  </source>
+  <source id="554589055677397793" name="ConditionalPresentation_removeQuery_RefNodeList_compact" hash="egzshogdk04ghmdnvch1dgaaeioboj4" dependsOnNodes="true">
+    <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677398009" />
+    <dep root="5613016763942508875" />
+    <dep root="5950344441601491241" />
+    <dep root="5950344441601613251" />
+    <dep root="5950344441601668447" />
+    <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
+    <dep root="7636045212390392321" />
+    <dep root="7636045212390401481" />
+    <dep root="7636045212390410965" />
+    <dep root="7636045212390416608" />
+    <dep root="7636045212393364917" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" />
+  </source>
+  <source id="554589055677398009" name="ConditionalPresentation_removeQuery_RefNodeList_switch" hash="-9bwrs1drco9fvojzjkq3ufyc75kixzg" dependsOnNodes="true">
+    <dep root="2601164129533059968" />
+    <dep root="554589055677209880" />
+    <dep root="554589055677210829" />
+    <dep root="554589055677397793" />
+    <dep root="5613016763942508875" />
+    <dep root="5950344441601491241" />
+    <dep root="5950344441601613251" />
+    <dep root="5950344441601668447" />
+    <dep root="5950344441601676487" />
+    <dep root="7279578193769046188" />
+    <dep root="7279578193769147476" />
+    <dep root="7636045212390392321" />
+    <dep root="7636045212390401481" />
+    <dep root="7636045212390410965" />
+    <dep root="7636045212390416608" />
+    <dep root="7636045212393364917" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" />
   </source>
 </dependencies>
 

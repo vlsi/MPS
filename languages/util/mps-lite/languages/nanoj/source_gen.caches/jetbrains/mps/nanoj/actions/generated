@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4d44fwtwpwmvgp0aoympdrm25n1iuyf">
-  <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="6ucp0sgic9s84bwa1cxcbkt7lzyqz3b" />
-  <common hash="1am2ed1kxg9bcave6dqdhhuqjcokosf">
+<dependencies version="2" modelHash="-djfy5zak80s3f3eexielt75usg3t6ti">
+  <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="2j2f1w30dyydhxe3zzvalcj1njwtjvw" />
+  <common hash="exxbcwmbcubxmhk0z0al4vcb9jzg97j">
     <dep root="689680155165915391" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="689680155165915391" name="_BinaryOperations_SideTransform" hash="-b07dkqo55nitye8ytfmkvmajslpjyt0">
+  <source id="689680155165915391" name="_BinaryOperations_SideTransform" hash="b1zvijvirgwa6jpvxsqdmzoylpem2un">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

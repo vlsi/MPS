@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b9fna91cfhyen6ky37clfvwtfhsqm23">
+<dependencies version="2" modelHash="-a6df08cn37eyc4dszf8v79s73lmpa2e">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="bzwhscc44snkaqbcb0kkmlyif9kvete" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9omljnr0qmuhdm17ctdj34wawfs3971" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" hash="-2ua62hojrzesg8x2nd2z577e9hyclhe" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="-7qacfl0sb8xb2odml3f6idd5x0ik5xm">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" hash="b9n8hvp0aiv1bqofqnfyptft56ovgsq" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
+  <common hash="-7ughx7pm6amgwgg12t3bd2albxycbyg">
     <dep root="1203592595174" />
     <dep root="1203592642690" />
     <dep root="1203606241544" />
@@ -25,28 +25,28 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1203592595174" name="IDEDialog" hash="-criswe7z2uz569m3idd4uvhw0y7mgo3">
+  <source id="1203592595174" name="IDEDialog" hash="-d1s4ktdutdbhnssid68gzzxcplqw5dy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203592642690" name="IDEDialogButton" hash="-8zj4i1lv2xsppnc77behahw73mjun8q">
+  <source id="1203592642690" name="IDEDialogButton" hash="-2g29w08lzim6tlpahe80kei9kfo53po">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203606241544" name="DisposeDialogExpression" hash="-6e1p3xwqk4mfg3tyi9h751w3agpvh76">
+  <source id="1203606241544" name="DisposeDialogExpression" hash="ru3epsmewszcblxdztpcon6ssaltd4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203607523033" name="ReportErrorExpression" hash="-2iwpf5l7f6bwhc5etzr5jm2ba8bq8pb">
+  <source id="1203607523033" name="ReportErrorExpression" hash="-cq1ct7hnixgf0dc1njaevg1p29la8mu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1203610466731" name="DialogExpression" hash="-dnht7nq6t8yi689k0ihkyk3g9sj2e5e">
+  <source id="1203610466731" name="DialogExpression" hash="-5o3kudfvv3aynz0y7sx3gbimvooaye9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1226850367300" name="DialogDimensions" hash="9yvjwm3bb2dg4wpt2ea3a9qyp4b836f">
+  <source id="1226850367300" name="DialogDimensions" hash="-20u8dy6opkwpuq5tkjcmedm3yg68lao">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3734045384532546729" name="ReportErrorStatement" hash="d0smuvvc6260sc6eee1e94opqwb2wm5">
+  <source id="3734045384532546729" name="ReportErrorStatement" hash="-3ye9wqq0bopbuxl6uazwco244kot2z3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3734045384532546800" name="DisposeDialogStatement" hash="c6ky1wmsu0ck9nftdn06oke9e2lc0ai">
+  <source id="3734045384532546800" name="DisposeDialogStatement" hash="uwjscxx3kfby5c4e8t5lcdxw1iraiw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

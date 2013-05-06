@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6mpp0i1ve1uz6i6yoxeyzd9kx50pvjf">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-ctxvs1rpiiexlq8dltxstwmrdnqkuz7" />
-  <dep model="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)" hash="-e03tusb49ujx9fm3mrm32yxym7pg0hd" />
-  <common hash="drbss19cty32w9ivkllrw57ss00bail" />
-  <source id="1197150020790" name="MrsH State Machine" hash="-ckjui1rqzhreu9j4q15roii5fjd8mcx">
+<dependencies version="2" modelHash="-5k1y18oiznh9rci6zrv3wqr504yazxn">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="dgtel9s427vm37iaz9u6ikq38xnt1eq" />
+  <dep model="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)" hash="-acsg8ggr9ex4kawu0mzx2wo57esv01l" />
+  <common hash="a9leq8q5a1w2pn0o8ffwq462vufphcg" />
+  <source id="1197150020790" name="MrsH State Machine" hash="3ziweupzntrraz19dlhqtiz4t7ij6i">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)" />
     <file name="MrsH_StateMachineFactory.java" />
   </source>
-  <source id="1197247437082" name="MrsH State Machine Test" hash="c4350l312g9qo5wkfj4yl3w06l8n0yw">
+  <source id="1197247437082" name="MrsH State Machine Test" hash="36802sq2ezs00lww2b30edhhywhznbt">
     <dep root="1197150020790" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" />

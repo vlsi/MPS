@@ -75,11 +75,11 @@ public class MultipleEditorsTestChild_compact_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_bdtuju_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("groovyProperty");
-    provider.setNoTargetText("<no groovyProperty>");
+    provider.setRole("compactProperty");
+    provider.setNoTargetText("<no compactProperty>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_groovyProperty");
+    editorCell.setCellId("property_compactProperty");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
