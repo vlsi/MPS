@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-8vdt5kzbzk3onyv1bjik3o252t7l24l">
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-4hroxmcqc8yz2muzswdppo8hs32j27o" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="d6c8wh8o7q4pvm9wplrig5vf54lm38l" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
   <dep model="r:10b3b956-11f8-4dce-a96b-c10e225a71df(jetbrains.mps.make.outlook.typesystem)" hash="7gtzrg7um4t4alf9xbnm8qwh6v6z6lv" />
   <dep model="r:6df9b1ec-2a82-4a17-9636-f155e1db2678(jetbrains.mps.make.outlook.editor)" hash="cx03ndz2coycqzpn2dzjnplz5xa2wmb" />
   <common>
