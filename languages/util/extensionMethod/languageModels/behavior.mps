@@ -132,7 +132,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3386826992796747827" resolveInfo="classifierType" />
                   </node>
                   <node role="rValue" roleId="tpee.1068498886297" type="tpd4.CoerceStrongExpression" typeId="tpd4.1178871491133" id="3386826992796747845" nodeInfo="nn">
-                    <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3386826992796747846" nodeInfo="ng">
+                    <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3386826992796747846" nodeInfo="ig">
                       <property name="name" nameId="tpck.1169194664001" value="classifierType" />
                       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                     </node>

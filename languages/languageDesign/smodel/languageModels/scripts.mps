@@ -1447,9 +1447,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3169279647024715600" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3169279647024715601" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3169279647024715602" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024715603" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024715603" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024715604" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024715604" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024715605" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024715606" nodeInfo="nn">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3169279647024715607" nodeInfo="nn">
@@ -1511,9 +1511,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3169279647024657052" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3169279647024657421" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3169279647024657056" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024657852" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024657852" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024657854" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024657854" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024658640" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024659918" nodeInfo="nn">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3169279647024664688" nodeInfo="nn">
@@ -1557,9 +1557,9 @@
                       <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="3169279647024689127" nodeInfo="nn">
-                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024689128" nodeInfo="ng">
+                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024689128" nodeInfo="ig">
                         <property name="name" nameId="tpck.1169194664001" value="re" />
-                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024689129" nodeInfo="nn">
+                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024689129" nodeInfo="in">
                           <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3169279647024689130" nodeInfo="in">
                             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
                           </node>
@@ -1598,9 +1598,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3169279647024913500" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3169279647024913501" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3169279647024913502" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024913503" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024913503" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024913504" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024913504" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024913505" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024913506" nodeInfo="nn">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3169279647024913507" nodeInfo="nn">
@@ -1662,9 +1662,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3169279647024913530" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3169279647024913531" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3169279647024913532" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024913533" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024913533" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024913534" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024913534" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024913535" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024913536" nodeInfo="nn">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3169279647024913537" nodeInfo="nn">
@@ -1708,9 +1708,9 @@
                       <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="3169279647024913554" nodeInfo="nn">
-                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024913555" nodeInfo="ng">
+                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024913555" nodeInfo="ig">
                         <property name="name" nameId="tpck.1169194664001" value="re" />
-                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024913556" nodeInfo="nn">
+                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024913556" nodeInfo="in">
                           <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3169279647024913557" nodeInfo="in">
                             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
                           </node>
@@ -1749,9 +1749,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3452465916695934753" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3452465916695934754" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3452465916695934755" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916695934756" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916695934756" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916695934757" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916695934757" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3452465916695934758" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3452465916695934759" nodeInfo="nn">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3452465916695934760" nodeInfo="nn">
@@ -1806,9 +1806,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3452465916695934783" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3452465916695934784" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3452465916695934785" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916695934786" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916695934786" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916695934787" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916695934787" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3452465916695934788" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3452465916695934789" nodeInfo="nn">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3452465916695934790" nodeInfo="nn">
@@ -1852,9 +1852,9 @@
                       <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="3452465916695934807" nodeInfo="nn">
-                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916695934808" nodeInfo="ng">
+                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916695934808" nodeInfo="ig">
                         <property name="name" nameId="tpck.1169194664001" value="re" />
-                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916695934809" nodeInfo="nn">
+                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916695934809" nodeInfo="in">
                           <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3452465916695934810" nodeInfo="in">
                             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
                           </node>
@@ -1893,9 +1893,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3452465916700179008" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3452465916700179009" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3452465916700179010" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700179011" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700179011" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700179012" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700179012" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3452465916700202372" nodeInfo="nn">
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.Expression" typeId="tpee.1068431790191" id="3452465916700202373" nodeInfo="nn">
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="3452465916700202374" nodeInfo="ng">
@@ -1964,9 +1964,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3452465916700179034" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3452465916700179035" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3452465916700179036" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700179037" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700179037" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700179038" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700179038" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3452465916700186650" nodeInfo="nn">
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.Expression" typeId="tpee.1068431790191" id="3452465916700186651" nodeInfo="nn">
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="3452465916700187210" nodeInfo="ng">
@@ -2012,9 +2012,9 @@
                       <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="3452465916700179058" nodeInfo="nn">
-                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700179059" nodeInfo="ng">
+                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700179059" nodeInfo="ig">
                         <property name="name" nameId="tpck.1169194664001" value="re" />
-                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700179060" nodeInfo="nn">
+                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700179060" nodeInfo="in">
                           <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3452465916700179061" nodeInfo="in">
                             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
                           </node>
@@ -2053,9 +2053,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3452465916700231287" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3452465916700231288" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3452465916700231289" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700231290" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700231290" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700231291" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700231291" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3452465916700268755" nodeInfo="nn">
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.Expression" typeId="tpee.1068431790191" id="3452465916700268756" nodeInfo="nn">
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="3452465916700268757" nodeInfo="ng">
@@ -2124,9 +2124,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3452465916700231320" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3452465916700231321" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3452465916700231322" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700231323" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700231323" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700231324" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700231324" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3452465916700231325" nodeInfo="nn">
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.Expression" typeId="tpee.1068431790191" id="3452465916700265680" nodeInfo="nn">
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="3452465916700265681" nodeInfo="ng">
@@ -2172,9 +2172,9 @@
                       <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="3452465916700231345" nodeInfo="nn">
-                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700231346" nodeInfo="ng">
+                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3452465916700231346" nodeInfo="ig">
                         <property name="name" nameId="tpck.1169194664001" value="re" />
-                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700231347" nodeInfo="nn">
+                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3452465916700231347" nodeInfo="in">
                           <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3452465916700231348" nodeInfo="in">
                             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
                           </node>
@@ -2213,9 +2213,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3169279647024732088" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3169279647024732089" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3169279647024732090" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024732091" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024732091" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024732092" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024732092" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024732093" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024732094" nodeInfo="nn">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3169279647024732095" nodeInfo="nn">
@@ -2277,9 +2277,9 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.MatchStatement" typeId="tpd4.1177514343197" id="3169279647024732118" nodeInfo="nn">
             <node role="expression" roleId="tpd4.1177514369598" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="3169279647024732119" nodeInfo="nn" />
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="3169279647024732120" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024732121" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024732121" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="mre" />
-                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024732122" nodeInfo="nn">
+                <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024732122" nodeInfo="in">
                   <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024732123" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3169279647024732124" nodeInfo="nn">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3169279647024732125" nodeInfo="nn">
@@ -2323,9 +2323,9 @@
                       <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="3169279647024732142" nodeInfo="nn">
-                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024732143" nodeInfo="ng">
+                      <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3169279647024732143" nodeInfo="ig">
                         <property name="name" nameId="tpck.1169194664001" value="re" />
-                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024732144" nodeInfo="nn">
+                        <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3169279647024732144" nodeInfo="in">
                           <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3169279647024732145" nodeInfo="in">
                             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
                           </node>

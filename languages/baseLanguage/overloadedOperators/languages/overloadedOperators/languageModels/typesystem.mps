@@ -52,7 +52,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6677452554239169672" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6677452554239169672" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="leftOperand" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="vgj4.483844232470668960" resolveInfo="LeftOperand" />
     </node>
@@ -90,7 +90,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6677452554239170998" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6677452554239170998" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="rightOperand" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="vgj4.7789383629180756961" resolveInfo="RightOperand" />
     </node>

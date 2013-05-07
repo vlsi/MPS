@@ -6,7 +6,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public abstract class ExportScope_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
+public abstract class ExportScope_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements InterfacePart_BehaviorDescriptor {
   public ExportScope_BehaviorDescriptor() {
   }
 

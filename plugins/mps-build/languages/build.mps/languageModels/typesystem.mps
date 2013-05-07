@@ -85,7 +85,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4278635856200804511" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4278635856200804511" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="jarEntry" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="kdzh.4278635856200804496" resolveInfo="BuildMps_ModuleJarRuntime" />
     </node>
@@ -154,7 +154,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4278635856200826400" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4278635856200826400" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="jarEntry" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="kdzh.4278635856200826393" resolveInfo="BuildMps_ModuleDependencyJar" />
     </node>
@@ -510,7 +510,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2531699772406302329" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2531699772406302329" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="buildProject" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="3ior.5617550519002745363" resolveInfo="BuildProject" />
     </node>
@@ -983,7 +983,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1392391688313307203" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1392391688313307203" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="plugin" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="kdzh.6592112598314498932" resolveInfo="BuildMps_IdeaPlugin" />
     </node>

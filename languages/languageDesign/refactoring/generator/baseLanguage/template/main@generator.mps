@@ -1814,7 +1814,7 @@
                                   <link role="link" roleId="tp25.1138056516764" targetNodeId="tp1h.1190637130098" />
                                 </node>
                               </node>
-                              <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1200935760163" nodeInfo="ng">
+                              <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1200935760163" nodeInfo="ig">
                                 <property name="name" nameId="tpck.1169194664001" value="classifierType" />
                                 <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                               </node>
@@ -4327,7 +4327,7 @@
                     <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7573235936722759863" nodeInfo="nn">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5679731535836394392" nodeInfo="nn">
                         <node role="expression" roleId="tpee.1068580123156" type="tpd4.CoerceExpression" typeId="tpd4.1178870617262" id="5679731535836394393" nodeInfo="nn">
-                          <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5679731535836394402" nodeInfo="ng">
+                          <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5679731535836394402" nodeInfo="ig">
                             <property name="name" nameId="tpck.1169194664001" value="classifierType" />
                             <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                           </node>

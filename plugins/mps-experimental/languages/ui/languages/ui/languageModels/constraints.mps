@@ -1269,7 +1269,7 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CoerceStatement" typeId="tpd4.1176558773329" id="6261739386030569985" nodeInfo="nn">
-            <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6261739386030569990" nodeInfo="ng">
+            <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6261739386030569990" nodeInfo="ig">
               <property name="name" nameId="tpck.1169194664001" value="uiot" />
               <link role="concept" roleId="tpd4.1174642800329" targetNodeId="fb0y.2144302022143885807" resolveInfo="UIObjectType" />
             </node>
@@ -1358,7 +1358,7 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CoerceStatement" typeId="tpd4.1176558773329" id="1870423755832759864" nodeInfo="nn">
-            <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1870423755832759865" nodeInfo="ng">
+            <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1870423755832759865" nodeInfo="ig">
               <property name="name" nameId="tpck.1169194664001" value="uiot" />
               <link role="concept" roleId="tpd4.1174642800329" targetNodeId="fb0y.2144302022143885807" resolveInfo="UIObjectType" />
             </node>

@@ -36,7 +36,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5447719361346553546" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5447719361346553546" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="moneyType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v0h4.5447719361346490730" resolveInfo="MoneyType" />
                 </node>
@@ -57,7 +57,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2864272256649708388" nodeInfo="ng">
+                <node role="pattern" roleId="tpd4.1178870894644" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2864272256649708388" nodeInfo="ig">
                   <property name="name" nameId="tpck.1169194664001" value="moneyType" />
                   <link role="concept" roleId="tpd4.1174642800329" targetNodeId="v0h4.5447719361346490730" resolveInfo="MoneyType" />
                 </node>

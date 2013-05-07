@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4a6ojdu29sxrk50cykax0ufz3tor9cb">
+<dependencies version="2" modelHash="2op8y9fig1r9t602jduaxchhejyx723">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8a8g8c3samqxd7s54bm1fyxossfyafx" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-98t29efwmnhx95l2dy0yl52hl0tewrf" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c3wykz1pbxeuwqddsti0zwg3d2aw2bf" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-mjxs0m2jun2n8oda8eyh1sj6wp5zko" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
   <common hash="5kcz3lz57y4ctwbqqd7rldtw060de4d">
@@ -102,7 +102,7 @@
     <file name="LinkMetaclass.java" />
     <file name="LinkMetaclass_PropertySupport.java" />
   </source>
-  <source id="1105725006687" name="ConceptPropertyDeclaration" hash="94q83jh0wpimvhfjji337w7yvzytyoz">
+  <source id="1105725006687" name="ConceptPropertyDeclaration" hash="4qglc7ev1w03mhzhil8pfvzsykr0rlc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1105725141344" name="IntegerConceptPropertyDeclaration" hash="-b8noemdefl6jtxwtzcxym4829ucc9pa">
@@ -114,7 +114,7 @@
   <source id="1105725281956" name="StringConceptPropertyDeclaration" hash="-1ir3zkj2qkh7yea5ujqf0fh33z99ol2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1105725413739" name="ConceptProperty" hash="-8yk5op8bi8x3ya6fltkinosf98tkmw9">
+  <source id="1105725413739" name="ConceptProperty" hash="-31y9pfafgt1dh9dgyluj47z0pgnygio">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1105725498741" name="IntegerConceptProperty" hash="-1evaq6f02khdy4iqlww3b5zhqgtpehn">
@@ -132,7 +132,7 @@
   <source id="1105736674127" name="ConceptLink" hash="ednz374jqcv8msorf3snka8nlb3z9d2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1105736778597" name="ReferenceConceptLink" hash="-1sseiz6bsdboyzsit91jvtz2u9ove32">
+  <source id="1105736778597" name="ReferenceConceptLink" hash="-4m59n7dd6mloim4fwjing3nvyvq6syi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1105736889287" name="AggregationConceptLink" hash="7mx2az9kbzqfjq6xojaocco5rr6cnaf">
@@ -141,10 +141,10 @@
   <source id="1105741535888" name="AggregationConceptLinkDeclaration" hash="1qatjqcl6mb86sbwjdi7wz673y90aqf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1105741578420" name="ReferenceConceptLinkDeclaration" hash="cotqgvd3y1pva0tnv6yvp9d2s5bc1jf">
+  <source id="1105741578420" name="ReferenceConceptLinkDeclaration" hash="-er8om81u73242a4sdnggepkrxq6mc48">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1149608206811" name="AnnotationLinkDeclaration" hash="524fkofkdy24by3gve8duq99b3b3ckz">
+  <source id="1149608206811" name="AnnotationLinkDeclaration" hash="69opyhw13ynidlarlo8uh152i5rvj6f">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1149608316235" name="AnnotationLinkStereotype" hash="-5869ydmmsvwaktygnqnctoz34rjw2p3">
@@ -189,7 +189,7 @@
     <file name="AnnotationLinkCardinality.java" />
     <file name="AnnotationLinkCardinality_PropertySupport.java" />
   </source>
-  <source id="1224240836180" name="DeprecatedNodeAnnotation" hash="-2icp6tsusdva3211eelgb1brnmpc7ph">
+  <source id="1224240836180" name="DeprecatedNodeAnnotation" hash="50nuczp0htzf4hs9ykq7fb8600t83v0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1224848324737" name="IStructureDeprecatable" hash="8b0or1odjvdn7fvjpbnfo985noohkj9">

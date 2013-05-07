@@ -2432,7 +2432,7 @@
               <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2c.1199542457201" />
             </node>
           </node>
-          <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1213877405273" nodeInfo="ng">
+          <node role="pattern" roleId="tpd4.1176558876970" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1213877405273" nodeInfo="ig">
             <property name="name" nameId="tpck.1169194664001" value="sequenceType" />
             <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.1151689724996" resolveInfo="SequenceType" />
           </node>

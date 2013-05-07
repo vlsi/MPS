@@ -219,7 +219,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1199547501672" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1199547501672" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="invoke" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1199547238293" resolveInfo="InvokeFunctionExpression" />
     </node>
@@ -367,7 +367,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1199711537849" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1199711537849" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="invoke" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1199711271002" resolveInfo="InvokeExpression" />
     </node>
@@ -704,11 +704,11 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1201614774958" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1201614774958" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="funTypeLeft" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1199542442495" resolveInfo="FunctionType" />
     </node>
-    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1201614802826" nodeInfo="ng">
+    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1201614802826" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="funTypeRight" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1199542442495" resolveInfo="FunctionType" />
     </node>
@@ -1112,14 +1112,14 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202212852924" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202212852924" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ct" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
     </node>
   </root>
   <root type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="1202742148675" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="FunctionType_subtypeOf_ClassifierType" />
-    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202742215241" nodeInfo="ng">
+    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202742215241" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ct" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
     </node>
@@ -1509,7 +1509,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202742207433" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202742207433" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ft" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1199542442495" resolveInfo="FunctionType" />
     </node>
@@ -1620,7 +1620,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202756483922" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1202756483922" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ft" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1199542442495" resolveInfo="FunctionType" />
     </node>
@@ -1634,11 +1634,11 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1203019104605" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1203019104605" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="wct" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1171903607971" resolveInfo="WildCardType" />
     </node>
-    <node role="anotherNode" roleId="tpd4.1188820750135" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1203019338626" nodeInfo="ng">
+    <node role="anotherNode" roleId="tpd4.1188820750135" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1203019338626" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="type" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
@@ -3708,7 +3708,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1221579075934" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1221579075934" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="closure" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
     </node>
@@ -3823,7 +3823,7 @@
               <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="4359876593789669877" resolveInfo="reifiedRet" />
             </node>
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="4359876593789669882" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4359876593789669886" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4359876593789669886" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="meetType" />
                 <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpd4.1188473524530" resolveInfo="MeetType" />
               </node>
@@ -3880,7 +3880,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1225797528201" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1225797528201" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="invoke" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1225797177491" resolveInfo="InvokeFunctionOperation" />
     </node>
@@ -3931,7 +3931,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1228998025050" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1228998025050" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="statement" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1228997946467" resolveInfo="YieldAllStatement" />
     </node>
@@ -4177,14 +4177,14 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1232453816876" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1232453816876" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ccs" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1229599010201" resolveInfo="ClosureControlStatement" />
     </node>
   </root>
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1235747312129" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_CompactInvokeFunctionExpression" />
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1235747312131" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1235747312131" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="invoke" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1235746970280" resolveInfo="CompactInvokeFunctionExpression" />
     </node>
@@ -4296,7 +4296,7 @@
               <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="4359876593789720547" resolveInfo="reifiedRet" />
             </node>
             <node role="item" roleId="tpd4.1177514347409" type="tpd4.MatchStatementItem" typeId="tpd4.1177514840044" id="4359876593789720526" nodeInfo="ng">
-              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4359876593789720527" nodeInfo="ng">
+              <node role="condition" roleId="tpd4.1177514849858" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4359876593789720527" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="meetType" />
                 <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpd4.1188473524530" resolveInfo="MeetType" />
               </node>
@@ -4386,7 +4386,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="81108310549037925" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="81108310549037925" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="closureLiteral" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
     </node>
@@ -4568,7 +4568,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="100821637069280485" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="100821637069280485" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="ft" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2c.1199542442495" resolveInfo="FunctionType" />
     </node>
@@ -4576,7 +4576,7 @@
   <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="9215127012916007634" nodeInfo="ng">
     <property name="overrides" nameId="tpd4.1195213689297" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="check_ReturnStatement" />
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1200829827607" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1200829827607" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="returnStatement" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1068581242878" resolveInfo="ReturnStatement" />
     </node>

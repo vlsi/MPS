@@ -66,7 +66,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1177463048014" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1177463048014" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="node" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp33.1177458237937" resolveInfo="MigrationScriptPart_node" />
     </node>
@@ -134,7 +134,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2598676492883170111" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2598676492883170111" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="part" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp33.2598676492883164205" resolveInfo="FactoryMigrationScriptPart" />
     </node>
@@ -180,7 +180,7 @@
         </node>
       </node>
     </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7867202088808416393" nodeInfo="ng">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7867202088808416393" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="pullUpMethod" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp33.849077997121870276" resolveInfo="PullUpMethod" />
     </node>
