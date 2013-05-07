@@ -43,6 +43,9 @@
     <property name="iconPath" nameId="1160488491229" value="${language_descriptor}/icons/link.png" />
     <property name="name" nameId="tpck.1169194664001" value="LinkDeclaration" />
     <link role="extends" roleId="1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="5774959771349578768" nodeInfo="ng">
+      <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+    </node>
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="1071599776563" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="role" />
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
@@ -83,6 +86,9 @@
     <property name="iconPath" nameId="1160488491229" value="${language_descriptor}/icons/property.png" />
     <property name="name" nameId="tpck.1169194664001" value="PropertyDeclaration" />
     <link role="extends" roleId="1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="5774959771349578775" nodeInfo="ng">
+      <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+    </node>
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="9026942911489198753" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="doNotGenerate" />
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
@@ -223,6 +229,9 @@
     <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1169198088508" nodeInfo="ng">
       <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="5774959771349579070" nodeInfo="ng">
+      <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+    </node>
     <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1224848442599" nodeInfo="ng">
       <link role="intfc" roleId="1169127628841" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
     </node>
@@ -266,6 +275,9 @@
       <link role="target" roleId="1071599976176" targetNodeId="1105725006687" resolveInfo="ConceptPropertyDeclaration" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="1224240836180" id="1782603346000202422" nodeInfo="ng" />
+    <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="5774959771349754011" nodeInfo="ng">
+      <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="1071489090640" id="1105725498741" nodeInfo="ng">
     <property name="abstract" nameId="4628067390765956802" value="false" />
@@ -320,6 +332,9 @@
     <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1169197959642" nodeInfo="ng">
       <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="5774959771349579084" nodeInfo="ng">
+      <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+    </node>
     <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1224848449418" nodeInfo="ng">
       <link role="intfc" roleId="1169127628841" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
     </node>
@@ -338,6 +353,9 @@
       <property name="role" nameId="1071599776563" value="conceptLinkDeclaration" />
       <property name="sourceCardinality" nameId="1071599893252" value="1" />
       <link role="target" roleId="1071599976176" targetNodeId="1105736576531" resolveInfo="ConceptLinkDeclaration" />
+    </node>
+    <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="5774959771349754013" nodeInfo="ng">
+      <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="1071489090640" id="1105736778597" nodeInfo="ng">
@@ -480,6 +498,9 @@
     <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1169197806875" nodeInfo="ng">
       <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="5774959771349578484" nodeInfo="ng">
+      <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+    </node>
     <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1224848455018" nodeInfo="ng">
       <link role="intfc" roleId="1169127628841" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
     </node>
@@ -542,6 +563,9 @@
       <property name="role" nameId="1071599776563" value="intfc" />
       <property name="sourceCardinality" nameId="1071599893252" value="1" />
       <link role="target" roleId="1071599976176" targetNodeId="1169125989551" resolveInfo="InterfaceConceptDeclaration" />
+    </node>
+    <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="5774959771349579231" nodeInfo="ng">
+      <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
     </node>
   </root>
   <root type="tpce.EnumerationDataTypeDeclaration" typeId="1082978164219" id="1197590884613" nodeInfo="ng">
