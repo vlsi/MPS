@@ -77,6 +77,8 @@ public class ConceptEditorHintDeclarationReferenceExpression_Editor extends Defa
       super();
     }
 
+
+
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }

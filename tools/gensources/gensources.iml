@@ -622,6 +622,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/gtext/solutions/pluginSolution/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/solutions/jetbrains.mps.webr.xml.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/solutions/jetbrains.mps.xml.tests/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlInternal/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlInternal/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlQuery/classes_gen" />
@@ -629,8 +631,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlQuery/runtime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlSchema/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xmlSchema/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/solutions/jetbrains.mps.webr.xml.sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/util/xml/xml/solutions/jetbrains.mps.xml.tests/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mps-experimental/languages/math">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-experimental/languages/math/generator/source_gen" isTestSource="false" />

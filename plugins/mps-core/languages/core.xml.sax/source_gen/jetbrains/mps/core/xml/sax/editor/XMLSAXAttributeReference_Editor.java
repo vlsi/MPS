@@ -68,7 +68,7 @@ public class XMLSAXAttributeReference_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_air6th_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "attribute");
       editorCell.setCellId("ReferencePresentation_air6th_a0a0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
