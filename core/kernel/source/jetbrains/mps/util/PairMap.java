@@ -17,6 +17,7 @@ package jetbrains.mps.util;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Bidirectional map from pair (K1, K2) <-> V
@@ -83,6 +84,10 @@ public class PairMap<K1, K2, V> {
         myValueToK2Map.remove(removedV);
       }
     }
+  }
+
+  public Set<V> values(){
+    return myValueToK1Map.keySet();
   }
 
   public void clear() {

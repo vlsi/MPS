@@ -94,11 +94,12 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
       myFqNameToModulesMap.put(moduleFqName, module);
     }
 
+    module.attach(this);
+
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
 
-    module.attach(this);
-    ((AbstractModule) module).attach();
+    ((AbstractModule)module).attach();
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);
@@ -122,6 +123,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     for (SModule module : modulesToDispose) {
       fireModuleRemoved(module);
       ((AbstractModule) module).dispose();
+      module.detach();
     }
     if (repositoryChanged) {
       fireRepositoryChanged();
@@ -136,6 +138,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     if (moduleRemoved) {
       fireModuleRemoved(module);
       ((AbstractModule) module).dispose();
+      module.detach();
     } else {
       fireRepositoryChanged();
     }
@@ -162,7 +165,6 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     if (remove) {
       fireBeforeModuleRemoved(module);
       myModules.remove(module);
-      module.detach();
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
       myFqNameToModulesMap.remove(module.getModuleName());
       return true;

@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.UnregisteredNodes;
+import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;

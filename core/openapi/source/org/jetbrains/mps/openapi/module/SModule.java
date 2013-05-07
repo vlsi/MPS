@@ -60,8 +60,6 @@ public interface SModule {
    */
   SRepository getRepository();
 
-  boolean isInRepository();
-
   void attach(SRepository repo);
 
   void detach();

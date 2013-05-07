@@ -66,7 +66,7 @@ public class UndoHelper {
     return myHandler.needRegisterUndo(model);
   }
 
-  boolean isInsideUndoableCommand() {
+  public boolean isInsideUndoableCommand() {
     return myHandler.isInsideUndoableCommand();
   }
 }

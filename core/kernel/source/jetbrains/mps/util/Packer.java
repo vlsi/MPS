@@ -59,9 +59,8 @@ public abstract class Packer {
       try {
         out.putNextEntry(entry);
         if (current.isFile()) {
-          byte[] bytes = new byte[(int) current.length()];
           is = new FileInputStream(current);
-          ReadUtil.read(bytes, is);
+          byte[] bytes = ReadUtil.read(is);
           out.write(bytes);
         }
         out.closeEntry();
