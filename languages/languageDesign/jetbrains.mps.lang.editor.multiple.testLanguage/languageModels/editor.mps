@@ -79,7 +79,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5950344441601491687" nodeInfo="nn">
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5950344441601491820" nodeInfo="nn">
           <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5944657839036525605" nodeInfo="ng">
-            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525609" nodeInfo="ng">
+            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525609" nodeInfo="ig">
               <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
             </node>
           </node>
@@ -119,7 +119,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5950344441601492557" nodeInfo="nn">
             <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5944657839036525849" nodeInfo="ng">
-              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525853" nodeInfo="ng">
+              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525853" nodeInfo="ig">
                 <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576567" resolveInfo="compact" />
               </node>
             </node>
@@ -153,7 +153,7 @@
               </node>
             </node>
             <node role="removeHints" roleId="tpc2.4242538589862654489" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5944657839036525727" nodeInfo="ng">
-              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525730" nodeInfo="ng">
+              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525730" nodeInfo="ig">
                 <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
               </node>
             </node>
@@ -465,7 +465,7 @@
             </node>
           </node>
           <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="7636045212390892616" nodeInfo="ng">
-            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="7636045212390897421" nodeInfo="ng">
+            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="7636045212390897421" nodeInfo="ig">
               <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
             </node>
           </node>
@@ -504,7 +504,7 @@
           </node>
           <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2601164129532859132" nodeInfo="nn" />
           <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="2601164129532936306" nodeInfo="ng">
-            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="2601164129532936307" nodeInfo="ng">
+            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="2601164129532936307" nodeInfo="ig">
               <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="2601164129532817776" resolveInfo="unsupported" />
             </node>
           </node>
@@ -520,7 +520,7 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="379263600995426991" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="MultipleEditorsTestChild" />
-    <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036524877" nodeInfo="ng">
+    <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036524877" nodeInfo="ig">
       <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
     </node>
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="379263600995427107" nodeInfo="nn">
@@ -589,7 +589,7 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="472381747515631686" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="jap4.6655351613569889729" resolveInfo="MultipleEditorsTestChild" />
-    <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525184" nodeInfo="ng">
+    <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5944657839036525184" nodeInfo="ig">
       <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576567" resolveInfo="compact" />
     </node>
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="472381747515631687" nodeInfo="nn">
@@ -641,17 +641,17 @@
       </node>
     </node>
   </root>
-  <root type="tpc2.ConceptEditorContextHints" typeId="tpc2.5944657839000868711" id="5944657839008259594" nodeInfo="ng">
+  <root type="tpc2.ConceptEditorContextHints" typeId="tpc2.5944657839000868711" id="5944657839008259594" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MultipleEditorTestHints" />
-    <node role="hints" roleId="tpc2.5944657839000877563" type="tpc2.ConceptEditorHintDeclaration" typeId="tpc2.5944657839003601246" id="5944657839017576565" nodeInfo="ng">
+    <node role="hints" roleId="tpc2.5944657839000877563" type="tpc2.ConceptEditorHintDeclaration" typeId="tpc2.5944657839003601246" id="5944657839017576565" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="rich" />
       <property name="presentation" nameId="tpc2.5944657839012629576" value="Use colourful presentation of child nodes" />
     </node>
-    <node role="hints" roleId="tpc2.5944657839000877563" type="tpc2.ConceptEditorHintDeclaration" typeId="tpc2.5944657839003601246" id="5944657839017576567" nodeInfo="ng">
+    <node role="hints" roleId="tpc2.5944657839000877563" type="tpc2.ConceptEditorHintDeclaration" typeId="tpc2.5944657839003601246" id="5944657839017576567" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="compact" />
       <property name="presentation" nameId="tpc2.5944657839012629576" value="Use compact presentation of child nodes" />
     </node>
-    <node role="hints" roleId="tpc2.5944657839000877563" type="tpc2.ConceptEditorHintDeclaration" typeId="tpc2.5944657839003601246" id="2601164129532817776" nodeInfo="ng">
+    <node role="hints" roleId="tpc2.5944657839000877563" type="tpc2.ConceptEditorHintDeclaration" typeId="tpc2.5944657839003601246" id="2601164129532817776" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="unsupported" />
       <property name="presentation" nameId="tpc2.5944657839012629576" value="Use presentation which is not supported in testLanguage" />
     </node>
@@ -702,7 +702,7 @@
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
           <node role="addHints" roleId="tpc2.7279578193766667846" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="7279578193768939380" nodeInfo="ng">
-            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="7279578193768939387" nodeInfo="ng">
+            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="7279578193768939387" nodeInfo="ig">
               <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
             </node>
           </node>
@@ -742,18 +742,18 @@
               <property name="flag" nameId="tpc2.1186414551515" value="true" />
             </node>
             <node role="removeHints" roleId="tpc2.7279578193766667847" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="7279578193768939703" nodeInfo="ng">
-              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="7279578193768939704" nodeInfo="ng">
+              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="7279578193768939704" nodeInfo="ig">
                 <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
               </node>
             </node>
             <node role="addHints" roleId="tpc2.7279578193766667846" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="7279578193768939710" nodeInfo="ng">
-              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="7279578193768939711" nodeInfo="ng">
+              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="7279578193768939711" nodeInfo="ig">
                 <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576567" resolveInfo="compact" />
               </node>
             </node>
           </node>
           <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="7279578193768939698" nodeInfo="ng">
-            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="7279578193768939699" nodeInfo="ng">
+            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="7279578193768939699" nodeInfo="ig">
               <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
             </node>
           </node>
@@ -1018,7 +1018,7 @@
             </node>
           </node>
           <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="554589055677240485" nodeInfo="ng">
-            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="554589055677240486" nodeInfo="ng">
+            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="554589055677240486" nodeInfo="ig">
               <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
             </node>
           </node>
@@ -1074,7 +1074,7 @@
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
           <node role="addHints" roleId="tpc2.5861024100072578575" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5861024100074317015" nodeInfo="ng">
-            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5861024100074317016" nodeInfo="ng">
+            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5861024100074317016" nodeInfo="ig">
               <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
             </node>
           </node>
@@ -1110,18 +1110,18 @@
               <property name="flag" nameId="tpc2.1186414551515" value="true" />
             </node>
             <node role="removeHints" roleId="tpc2.5861024100072578576" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5861024100074317477" nodeInfo="ng">
-              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5861024100074317478" nodeInfo="ng">
+              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5861024100074317478" nodeInfo="ig">
                 <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
               </node>
             </node>
             <node role="addHints" roleId="tpc2.5861024100072578575" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5861024100074317483" nodeInfo="ng">
-              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5861024100074317484" nodeInfo="ng">
+              <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5861024100074317484" nodeInfo="ig">
                 <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576567" resolveInfo="compact" />
               </node>
             </node>
           </node>
           <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="5861024100072342094" nodeInfo="ng">
-            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5861024100072342095" nodeInfo="ng">
+            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5861024100072342095" nodeInfo="ig">
               <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
             </node>
           </node>
@@ -1378,7 +1378,7 @@
             </node>
           </node>
           <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.ExplicitHintsSpecification" typeId="tpc2.4242538589859161874" id="1947450138886773602" nodeInfo="ng">
-            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="1947450138886773603" nodeInfo="ng">
+            <node role="hints" roleId="tpc2.4242538589859162459" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="1947450138886773603" nodeInfo="ig">
               <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="5944657839017576565" resolveInfo="rich" />
             </node>
           </node>
