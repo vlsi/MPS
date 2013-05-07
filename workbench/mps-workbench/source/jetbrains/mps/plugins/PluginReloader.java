@@ -28,6 +28,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.tempmodel.TempModule;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -38,6 +39,8 @@ import java.util.List;
 import java.util.Set;
 
 public class PluginReloader implements ApplicationComponent {
+  private static final Logger LOG = Logger.getLogger(PluginReloader.class);
+
   private MPSClassesListener myReloadListener = new MyReloadAdapter();
   private ProjectManagerListener myProjectListener = new MyProjectManagerAdapter();
 
@@ -180,6 +183,9 @@ public class PluginReloader implements ApplicationComponent {
     }
 
     private void unloadAll() {
+      if (!ModelAccess.instance().isInEDT()) {
+        LOG.warn("PluginReloader#unloadAll executed not from EDT", new Throwable());
+      }
       //write action is needed the because user can acquire write action inside of this [see MPS-9139]
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
@@ -190,6 +196,9 @@ public class PluginReloader implements ApplicationComponent {
     }
 
     private void onAfterReloadAll() {
+      if (!ModelAccess.instance().isInEDT()) {
+        LOG.warn("PluginReloader#onAfterReloadAll executed not from EDT", new Throwable());
+      }
       //write action is needed the because user can acquire write action inside of this [see MPS-9139]
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
