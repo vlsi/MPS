@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.testbench.suite.structure.IModuleRef").interface_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.testbench.suite.structure.IModuleRef").interface_().parents("jetbrains.mps.lang.core.structure.InterfacePart").create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.testbench.suite.structure.ITestRef").interface_().properties("muted").create();
       case 2:
