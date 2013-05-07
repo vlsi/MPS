@@ -19,6 +19,8 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
+import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -44,8 +46,8 @@ public class PluginUtil {
   private static final Logger LOG = LogManager.getLogger(PluginUtil.class);
 
   public static final String IDE_MODULE_ID = "jetbrains.mps.ide";
-  public static final String IDE_MODULE_PROJECTPLUGIN = "jetbrains.mps.ide.actions.Ide_ProjectPlugin"; // FIXME Ide_ProjectPlugin.class.getName();
-  public static final String IDE_MODULE_APPPLUGIN = "jetbrains.mps.ide.actions.Ide_ApplicationPlugin";// FIXME  Ide_ApplicationPlugin.class.getName();
+  public static final String IDE_MODULE_PROJECTPLUGIN = Ide_ProjectPlugin.class.getName();
+  public static final String IDE_MODULE_APPPLUGIN = Ide_ApplicationPlugin.class.getName();
 
   // todo: move to ClassLoaderManager module?
   public static boolean isPluginModule(SModule module) {
