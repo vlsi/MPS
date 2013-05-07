@@ -910,5 +910,40 @@
       </node>
     </node>
   </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6355695904178436203" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="MostSpecificEditor" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Editing MultipleEditorsTestMostSpecificChild child concept instance using editor applicable to both compact &amp; rich context hints. This editor is specified ina sub-language + there are &quot;less-specific&quot; editors specified for &quot;rich&quot; or &quot;compact&quot; hints" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="jap4.MultipleEditorsTestMostSpecificRoot" typeId="jap4.8572332134193782048" id="6355695904178436590" nodeInfo="ng">
+      <node role="mostSpecificChildren" roleId="jap4.8572332134193783193" type="jap4.MultipleEditorsTestMostSpecificChild" typeId="jap4.8572332134193783053" id="6355695904178436835" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="RichCompactChild" />
+        <property name="richCompactProperty" nameId="jap4.8572332134193785182" value="richCompactProperty" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6355695904178436837" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="11" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="19" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richCompactProperty" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="jap4.MultipleEditorsTestMostSpecificRoot" typeId="jap4.8572332134193782048" id="6355695904178436851" nodeInfo="ng">
+      <node role="mostSpecificChildren" roleId="jap4.8572332134193783193" type="jap4.MultipleEditorsTestMostSpecificChild" typeId="jap4.8572332134193783053" id="6355695904178436852" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="RichCompactChild" />
+        <property name="richCompactProperty" nameId="jap4.8572332134193785182" value="newPropertyValue" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6355695904178436857" nodeInfo="ng">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="16" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="16" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_richCompactProperty" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6355695904178440221" nodeInfo="nn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="6355695904178440220" nodeInfo="nn">
+        <property name="keys" nameId="tp5g.1227184461946" value="newPropertyValue" />
+      </node>
+    </node>
+  </root>
 </model>
 
