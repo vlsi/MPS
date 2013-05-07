@@ -134,5 +134,14 @@
     <action id="FindPrevious" class="com.intellij.ide.actions.SearchBackAction"/>
     <action id="FindWordAtCaret" class="com.intellij.openapi.editor.actions.FindWordAtCaretAction"/>
     <action id="FindUsages" class="com.intellij.find.actions.FindUsagesAction"/>
+
+    <!--Do not merge LocalHistory to MPS3.0-->
+    <group id="LocalHistory" class="com.intellij.history.integration.ui.actions.LocalHistoryGroup" popup="true">
+      <action id="LocalHistory.ShowHistory" class="com.intellij.history.integration.ui.actions.ShowHistoryAction"/>
+      <action id="LocalHistory.PutLabel" class="com.intellij.history.integration.ui.actions.PutLabelAction"/>
+
+      <add-to-group group-id="VersionControlsGroup" anchor="first"/>
+      <add-to-group group-id="VcsGroups" anchor="first"/>
+    </group>
   </actions>
 </component>
