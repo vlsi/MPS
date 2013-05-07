@@ -94,7 +94,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public void attach(@NotNull SRepository repo) {
-    assert !(myRepository instanceof DisposedRepository) : "Not supposed to do this, just detach the node";
+//    assert !(myRepository instanceof DisposedRepository) : "Not supposed to do this, just detach the node";
     repo.getModelAccess().checkReadAccess();
 //    if (!myModel.isUpdateMode()) {
 //      repo.getModelAccess().checkWriteAccess();
@@ -102,9 +102,9 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (myRepository == repo) return;
     synchronized (REPO_LOCK) {
       if (myRepository == repo) return;
-      org.jetbrains.mps.openapi.model.SModel model = getModel();
+  //    org.jetbrains.mps.openapi.model.SModel model = getModel();
       //assert model != null && model.getModule() != null && model.getModule().getRepository() != null;
-      assert myRepository == null : "Can't register disposed node or node from another repo. Repo:" + myRepository + ", attaching to " + repo;
+  //    assert myRepository == null : "Can't register disposed node or node from another repo. Repo:" + myRepository + ", attaching to " + repo;
       myRepository = repo;
     }
   }
