@@ -200,10 +200,10 @@
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6895093993902318240" nodeInfo="nn">
-              <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6895093993902318243" nodeInfo="ng">
+              <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6895093993902318243" nodeInfo="ig">
                 <property name="name" nameId="tpck.1169194664001" value="Name" />
                 <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-                <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6895093993902318253" nodeInfo="ng">
+                <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6895093993902318253" nodeInfo="ig">
                   <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
                   <property name="role" nameId="tpce.1071599776563" value="role" />
                   <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />

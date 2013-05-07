@@ -722,7 +722,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="1238595741102" nodeInfo="nn">
                   <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238595927616" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1238595898013" nodeInfo="nn">
-                      <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1238595913758" nodeInfo="ng">
+                      <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1238595913758" nodeInfo="ig">
                         <property name="name" nameId="tpck.1169194664001" value="_" />
                         <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
                       </node>
@@ -776,7 +776,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="1238595954979" nodeInfo="nn">
                     <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238595954980" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1238595954981" nodeInfo="nn">
-                        <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1238595954982" nodeInfo="ng">
+                        <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1238595954982" nodeInfo="ig">
                           <property name="name" nameId="tpck.1169194664001" value="_" />
                           <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
                         </node>
@@ -3199,7 +3199,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="1239891769052" nodeInfo="nn">
               <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1239891769053" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1239891769054" nodeInfo="nn">
-                  <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1239891769055" nodeInfo="ng">
+                  <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1239891769055" nodeInfo="ig">
                     <property name="name" nameId="tpck.1169194664001" value="_" />
                     <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
                   </node>

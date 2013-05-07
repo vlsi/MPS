@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="e3lf1xxltelk1s86n28majiisflzjam">
+<dependencies version="2" modelHash="-ojamnyn3afc036fxliyudmicpq27bp">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
   <common hash="-871owsh1b5qpi51nrj2f63ywoyw217f">
@@ -36,19 +36,19 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1177457067821" name="MigrationScript" hash="41ip996bxmb0wjonddeczasjg8ik8y7">
+  <source id="1177457067821" name="MigrationScript" hash="-al861kcgnj0uptygak7me7ulqxvw5ml">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177457850499" name="MigrationScriptPart_Instance" hash="-cqisi6qdlz54tb9uzsc98k2zwi49wy9">
+  <source id="1177457850499" name="MigrationScriptPart_Instance" hash="3s020lk83n3knqgyptv9uye8c1oj834">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177458061340" name="MigrationScriptPart_Instance_Predicate" hash="6dvwwckskq2ricet9n6jr8eac49t6bv">
+  <source id="1177458061340" name="MigrationScriptPart_Instance_Predicate" hash="-50m7g3gqo9lueq2sv3ze5sc43sllnr5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177458237937" name="MigrationScriptPart_node" hash="-asspi120o82y3aresj6d3s72cyfk3rt">
+  <source id="1177458237937" name="MigrationScriptPart_node" hash="anx6htupnci2iipvecx7fle7e0awdfb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177458491964" name="MigrationScriptPart_Instance_Updater" hash="54ga6rw1jzvxt5jbfvp7rxkk7r04sp1">
+  <source id="1177458491964" name="MigrationScriptPart_Instance_Updater" hash="-19k1k82y1a0xyt8t0uo7yss14tbxrsa">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5299416737274925392" name="ScriptType" hash="-ld1nthb9z4lyk0horww08jth1ntncp">
@@ -62,40 +62,40 @@
     <file name="ScriptType.java" />
     <file name="ScriptType_PropertySupport.java" />
   </source>
-  <source id="2598676492883164205" name="FactoryMigrationScriptPart" hash="785v5g2obu5lobs7h2wccgkwkpu0nl3">
+  <source id="2598676492883164205" name="FactoryMigrationScriptPart" hash="-7lxd4go66qrly5u10hvsnwl7fxaoe9c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2598676492883244606" name="WhitespaceMigrationScriptPart" hash="4hnklejd1exm0z2cnnhkldl0hkx5f3x">
+  <source id="2598676492883244606" name="WhitespaceMigrationScriptPart" hash="-d14pkptvbvniwqw3k14k7zcpmjhyvac">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6970965131508596229" name="MigrationScriptPart" hash="95j69g0m3brdnjs2o3fzzqfts1lpe3z">
+  <source id="6970965131508596229" name="MigrationScriptPart" hash="ddpn3lusc0j966rh6qmpfudmtb0fbe2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6655357163912204546" name="CommentMigrationScriptPart" hash="-1jd2tau6syfn4j176s5oqe2t4e183xk">
+  <source id="6655357163912204546" name="CommentMigrationScriptPart" hash="3nd9xu8v2r90f1v5ahvpbmts31zwm9j">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6655357163912246425" name="ExtractInterfaceMigration" hash="-7dvowq6wr42tkzua6mmeodcjnpq192d">
+  <source id="6655357163912246425" name="ExtractInterfaceMigration" hash="caut5d8dumzd55jlxl4km739neboxy0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="849077997121870276" name="PullUpMethod" hash="br3yfeqpjiyf1wkrbtakct2rdz1ma7t">
+  <source id="849077997121870276" name="PullUpMethod" hash="1g1qtng9hj380gwf1b4uzqqd8zfl0v1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5434557751112081978" name="AbstractClassifierSpecification" hash="6f2nw4xvmheul3dgbewsfu6leys28t6">
+  <source id="5434557751112081978" name="AbstractClassifierSpecification" hash="boflf510qftktypy41q5edzi26rx3ps">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5434557751112207651" name="DirectClassifierSpecification" hash="-5qcak6k7hruqu1hhatl5ugp2fycjahf">
+  <source id="5434557751112207651" name="DirectClassifierSpecification" hash="-1vlrg6m1ix9iuc2ksh8i98ml76k220p">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5434557751112207835" name="FQNameClassifierSpecification" hash="66yuwby2ewve3en2rab3fzty1klxx5g">
+  <source id="5434557751112207835" name="FQNameClassifierSpecification" hash="-6jsiot9gw38uiftfv9jiu8cuui29ek3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4774682482449847011" name="FQNameMethodSpecification" hash="-8akrdl8dbv0jxwdmx58ch7mijvc1xqs">
+  <source id="4774682482449847011" name="FQNameMethodSpecification" hash="-e4y7r5jt79ninspqeerg4aipjfwv3mb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4774682482449869981" name="AbstractMethodSpecification" hash="3l9iaxwex4msos2kbulu61tl9i52wnn">
+  <source id="4774682482449869981" name="AbstractMethodSpecification" hash="-6k56lj8fag1iylq4tj6zdsjs53nl5yl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2291767839159498115" name="DirectMethodSpecification" hash="1nnwkl2zo7u7inz5bqv0y1qbdf084jd">
+  <source id="2291767839159498115" name="DirectMethodSpecification" hash="-27zom98lirgy5vjfkcir9np451ieo6i">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

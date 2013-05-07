@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-17fq7ayniqu3ik9c245uw9x66dje5x2">
+<dependencies version="2" modelHash="oyoyaaoq4zhhzbo6p5pfwk10wb7ffz">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="dw2rv2zt056d2ld6s1bp70f91ccyjpl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-ckvx7xj7vym184bemtsv4ea2vras21z" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-cktl500jgk8r21itxeo7kjmocob2zs5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7mxihkcc0vv2q7mmukrgbm8b18oc3tu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-dil8onhn8hatvbhqvlz0fq2nsudfixn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5gwsobz6ajuvxb1x3a7osxwpluja71i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cs6cqtb0suk7gurzknzm5z2gav4b0jx" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="ckk7u2kjk5lwqta6jwv64dr9ksfac7c" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="30wpo2za1rc0zf5vwwy3fdx7rb6qejl" />
   <common hash="-aqhq0901gmm0fm0gpcyt1p74nu9l49m">
@@ -153,130 +153,130 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="5617550519002745363" name="BuildProject" hash="8d4hx2ngy8cf890rivhslezay74xlfx">
+  <source id="5617550519002745363" name="BuildProject" hash="f188w5xyoqxckukd6om02lbjkev99p">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5617550519002745364" name="BuildLayout" hash="-d9bvndjztcg3tczydo7t3fgycfcr0on">
+  <source id="5617550519002745364" name="BuildLayout" hash="-3mq184w28zj72qc99gcxz8r1vr16uma">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5617550519002745375" name="BuildMacro" hash="-crb09i0euzq9behr8uyddn4d49mv8xr">
+  <source id="5617550519002745375" name="BuildMacro" hash="-48wqgd422kz3txho48aga9c3c2imvp4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5617550519002745379" name="BuildDependency" hash="-6ydqnmpvjhz0iu2frxcitg7taq291r8">
+  <source id="5617550519002745379" name="BuildDependency" hash="-5p8v0rqdo2zs41l050qfw5492ychfou">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848004876" name="BuildLayout_AbstractContainer" hash="-4tbqize2hxevpo3v0pasfjsqzd1toij">
+  <source id="7389400916848004876" name="BuildLayout_AbstractContainer" hash="-81iv0beq74nncg2r58keq29h7gjunug">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848036984" name="BuildLayout_Folder" hash="ca5rjb1xe1b148w7naij1ytxcrmrgro">
+  <source id="7389400916848036984" name="BuildLayout_Folder" hash="-3lbglhzmo9a5eki9ahzbjoctuopwvpz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848036997" name="BuildLayout_Node" hash="-a2mlyybesu47h9gcjbpib6gihjd2os8">
+  <source id="7389400916848036997" name="BuildLayout_Node" hash="39w5owykqljrgbdmbyvunir3cod2j7d">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848050060" name="BuildLayout_NamedContainer" hash="-c7ybv5zvnws7e8hmfoovrk6fs45iczq">
+  <source id="7389400916848050060" name="BuildLayout_NamedContainer" hash="-3lj9kcuwhonme47qh6mqr8gx5w88uqn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848050071" name="BuildLayout_Zip" hash="a7ofmm8zczsayghctiizpdhbdd2q2ps">
+  <source id="7389400916848050071" name="BuildLayout_Zip" hash="qhkpnim9xmurncwetxjogg8v6n2f24">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848050074" name="BuildLayout_Jar" hash="-6sz2ykiq9toh1xz5maue5z95qx3gwry">
+  <source id="7389400916848050074" name="BuildLayout_Jar" hash="9lvbtfp6x5kwsdxov3b8r6tdytwp64k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848073736" name="BuildProjectPart" hash="-bmrj2s2hfiwaxu2inoxd8xwcmkesuwn">
+  <source id="7389400916848073736" name="BuildProjectPart" hash="cxt2iwm3v1xow05qrpkyg7111pod9ep">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848073784" name="BuildSource_JavaModule" hash="4zc3fts66tej60ka8rwn0yiqrpkjs34">
+  <source id="7389400916848073784" name="BuildSource_JavaModule" hash="-4zgj7jxmv5hsxetrdjldfqal4llythy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848073790" name="BuildSourcePath" hash="-8e00ztfxykpffyiegx4hot78xjnuh2l">
+  <source id="7389400916848073790" name="BuildSourcePath" hash="91hpah0g4jexfx7x6vo0ku03dok3exw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848073810" name="BuildSource_JavaContentRoot" hash="a5a66ykdtpy8c2xq6u48tax1u0zrpji">
+  <source id="7389400916848073810" name="BuildSource_JavaContentRoot" hash="-2at8mvop30guamt713fsia6zy5popt1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848136194" name="BuildFolderMacro" hash="-d48y8ia278as9krb7gpwe8yr1momapy">
+  <source id="7389400916848136194" name="BuildFolderMacro" hash="-c5u9c1o6kmi3z3f0np0vwugrew37wo5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7389400916848153117" name="BuildSourceMacroRelativePath" hash="-7q5mdv5zfkdp49bz0ugk9lf7al4mbci">
+  <source id="7389400916848153117" name="BuildSourceMacroRelativePath" hash="d0r1izhl5ti75uum5vnd6z8ta9e0b36">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2754769020641429190" name="BuildSource_JavaContentFolder" hash="-6yvk4sb8gw3en0tvkgzexn2fl2i9hep">
+  <source id="2754769020641429190" name="BuildSource_JavaContentFolder" hash="-3tx3wlifih33ddt7rv41gxncmwgbzut">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2754769020641646199" name="BuildSource_JavaDependency" hash="-32eico0kk0bw9qjdmzw8t9arh547sac">
+  <source id="2754769020641646199" name="BuildSource_JavaDependency" hash="a4oa7cmb7dtvj3ff35gpia0ttbc66p7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2754769020641646247" name="BuildSource_JavaDependencyModule" hash="7d2ghib5us1jmhd36tzid8ikp9gz1m2">
+  <source id="2754769020641646247" name="BuildSource_JavaDependencyModule" hash="1b6bqrw9d4ge0cxfg925x9c3k4djtoi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6057319140845467763" name="BuildSource_JavaLibrary" hash="-awmm5jf7r83703nl8d1cs2atax3pycy">
+  <source id="6057319140845467763" name="BuildSource_JavaLibrary" hash="49jf1wer8wbrvfqctht6ur88x3nfpb9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6057319140845478688" name="BuildSource_JavaLibraryElement" hash="-d9ah32llmyr27p1fw105rebvgorcdek">
+  <source id="6057319140845478688" name="BuildSource_JavaLibraryElement" hash="c28tn38msk6we7ed35vjcsqmmeyk7e1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4993211115183250894" name="BuildSource_JavaDependencyLibrary" hash="8g3qrg6u8fm2f7bk2zd27m06n15ffgu">
+  <source id="4993211115183250894" name="BuildSource_JavaDependencyLibrary" hash="a7o6m5ixsbotgu380a9iaakf5u0n4x3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4993211115183325728" name="BuildProjectDependency" hash="-8q64evc4v6evmq0xusvgslgocwqpch5">
+  <source id="4993211115183325728" name="BuildProjectDependency" hash="-6z731pyy7v6v7dcsqb2gpk57fwq22it">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3542413272732529456" name="BuildNamedLayout" hash="9n93q9g904s589c46ss6xux3jhdb2r9">
+  <source id="3542413272732529456" name="BuildNamedLayout" hash="-99bplkp63cdt3ktdlz4rl710pqu82j9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3542413272732750877" name="BuildAspect" hash="-2a152nrn4q0cfl5r4m2nl410wggo5h5">
+  <source id="3542413272732750877" name="BuildAspect" hash="965aoog2k6xtjeqeaefa7obmyzq64al">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5481553824944787378" name="BuildSourceProjectRelativePath" hash="-etjrod6i87kd5atn14m28twa5py33ug">
+  <source id="5481553824944787378" name="BuildSourceProjectRelativePath" hash="11i0rkscpfy2ff82njqxptjttbh5eyu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8618885170173601777" name="BuildCompositePath" hash="39vq9p2h1tjoxh3d9029jbwhhxsvof9">
+  <source id="8618885170173601777" name="BuildCompositePath" hash="-6o1mwwwjvy23zwaegh8o67qwag792hu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7321017245476976379" name="BuildRelativePath" hash="743kphchmzhoaipzhfpc9do7z11sd7y">
+  <source id="7321017245476976379" name="BuildRelativePath" hash="d7628vbpcjis803pp62vmelk74eim1z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1117643560963351145" name="BuildLayout_FileSet" hash="-16lczae8vmpodqqv4bphs9f6wd8lf7">
+  <source id="1117643560963351145" name="BuildLayout_FileSet" hash="-1n75jjieqskukj0pxw4gylwjiyfuo3p">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6647099934206689694" name="BuildPlugin" hash="-aryng5ir14gfd0crorj1gv0oofjkv0t">
+  <source id="6647099934206689694" name="BuildPlugin" hash="11vzq3z8n7v5pinryx1uc9udz70sx8w">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6647099934206700647" name="BuildJavaPlugin" hash="4ia8jcebiifii37c4j83npwa30qvqvt">
+  <source id="6647099934206700647" name="BuildJavaPlugin" hash="bncmj9neoek0j3hammb5k0n25f3kc90">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3767587139141066978" name="BuildVariableMacro" hash="787xqda4b27v2jsfpyuy9ox80t41771">
+  <source id="3767587139141066978" name="BuildVariableMacro" hash="-11hgcfc907b6dfc5ap8ry6tty7h51n3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5248329904288051100" name="BuildFileIncludeSelector" hash="-kp4h18ik2nnh3mfy0k9aeka9aruk9q">
+  <source id="5248329904288051100" name="BuildFileIncludeSelector" hash="-ded96sr7m27gzpx3yfwhq0rc08fyte4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5248329904287794599" name="BuildFileSelector" hash="2aqr69gj67bknab3fse49aeqib3jggr">
+  <source id="5248329904287794599" name="BuildFileSelector" hash="dotcsg1rg2q1wt7w6txlonyiowho1a1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5248329904287794596" name="BuildInputFiles" hash="-90350ettvi335l7gmh739ggrm0zlfdr">
+  <source id="5248329904287794596" name="BuildInputFiles" hash="-c0v3mzq70dvedarvcxua0tmiiaz3f2t">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4903714810883702017" name="BuildVarRefStringPart" hash="88bo8p5gq3sf46ghac4w0kl4ra6703a">
+  <source id="4903714810883702017" name="BuildVarRefStringPart" hash="emky316knnav5gqi34hb2k87yfhn96l">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4903714810883702019" name="BuildTextStringPart" hash="3smwtt99jxalzl11lnazdseyo96tgaj">
+  <source id="4903714810883702019" name="BuildTextStringPart" hash="b44mmds9yb2d4ybvs9yt8km10hfuxqa">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4903714810883702015" name="BuildStringPart" hash="-qn31snwxl62lp5f4sh333dde76d1rj">
+  <source id="4903714810883702015" name="BuildStringPart" hash="e3hy4u6ts22zi6langan10a5mr0nmgk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5248329904288166441" name="BuildLayout_ContainerAcceptingFileSet" hash="-3x91bm2bkncm3a30s76jnlrex3tt23q">
+  <source id="5248329904288166441" name="BuildLayout_ContainerAcceptingFileSet" hash="-4v6bucvpkhfl2bngo3kbfnmxf3y9myq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5248329904287739114" name="BuildInputResourceSet" hash="-3ocwrx70vmai2wvzba9pljl8bmb3khz">
+  <source id="5248329904287739114" name="BuildInputResourceSet" hash="egesj6xeyfon845seqh7coz8qxes7rh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5248329904287739115" name="BuildInputFileSet" hash="3ndo2wjvg0v5xgj5v5u7jbcpic77v8r">
+  <source id="5248329904287739115" name="BuildInputFileSet" hash="-5ylqe70iwymgn9mvs1kzs94phjlf5ci">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5248329904287739116" name="BuildInputFolderSet" hash="dltxbqehbcvd77zx3ovg0swraiafzkb">
+  <source id="5248329904287739116" name="BuildInputFolderSet" hash="1640gjp592ugsyfxc8zejgdd5qznlxa">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5248329904288265463" name="BuildSource_JavaContentFolderKind" hash="eg6pdsfra1mltr585vi79jgd13qw9tf">
@@ -290,145 +290,145 @@
     <file name="BuildSource_JavaContentFolderKind.java" />
     <file name="BuildSource_JavaContentFolderKind_PropertySupport.java" />
   </source>
-  <source id="5248329904287857081" name="BuildLayout_Copy" hash="-cmavmye69oqfjbjfgmggdkzbyyhu7bx">
+  <source id="5248329904287857081" name="BuildLayout_Copy" hash="1rnnsdg78t69uz080x8y9kgc06yw52f">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5248329904287794582" name="BuildInputSingleFile" hash="51ldnv672dr4go1corhi9k45obq0qyu">
+  <source id="5248329904287794582" name="BuildInputSingleFile" hash="-9nn9iyazf7zm7f1pnpx6rau87b4ufi7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5248329904288265468" name="BuildSource_JavaSources" hash="-6o2652kjqb5wnaazwzqnp7advu4qv2j">
+  <source id="5248329904288265468" name="BuildSource_JavaSources" hash="5uxvtjcwkni757zw5p0ts4rmxeoubxv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5248329904288051111" name="BuildFileExcludeSelector" hash="e5cq6bbl2g2s3bj2ehvy8s1r7nt1s6s">
+  <source id="5248329904288051111" name="BuildFileExcludeSelector" hash="3by04f14nj8rjbg71rixssxye313olw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4380385936562003279" name="BuildString" hash="-5afcovply94kmnxqrvbf5axx6fm7ng3">
+  <source id="4380385936562003279" name="BuildString" hash="8hziseloi564k4f84a60kim4glpd8yt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1258644073388922138" name="BuildSource_JavaJar" hash="-8fpbkvrp9re7zfokpezkt4xaxeiwmsv">
+  <source id="1258644073388922138" name="BuildSource_JavaJar" hash="-1dgrgy9jfagt7qstr1ewb9jnmz365c5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1258644073389103449" name="BuildSource_JavaClassFolder" hash="-3bccm5hgtwowlnb6cjbou2vpum1agf8">
+  <source id="1258644073389103449" name="BuildSource_JavaClassFolder" hash="1n4clyp5c870n75kut82hf0bisfpx9o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="841011766565753074" name="BuildLayout_Import" hash="drghy97csc7v0lycf7cy9i78s0n5o0r">
+  <source id="841011766565753074" name="BuildLayout_Import" hash="-65a7jzw3oogn7bbjxof7hmiazih53nw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="841011766566059607" name="BuildStringNotEmpty" hash="67gqnf12thfxv8fvd5ajju6eb3ggba1">
+  <source id="841011766566059607" name="BuildStringNotEmpty" hash="egcb9tpbdyo3x7x1yexmtmw8fz56rox">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="841011766566205091" name="BuildExternalDependency" hash="-6kmvnoqaef99sooty4ibqi92wp0yjmw">
+  <source id="841011766566205091" name="BuildExternalDependency" hash="7mflzcdzji73ahxpimr4onh5pv2zior">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4701820937132281259" name="BuildCustomWorkflow" hash="3y7brvaycpjdj3hcabk7m87ll0tl0dl">
+  <source id="4701820937132281259" name="BuildCustomWorkflow" hash="6a577i102m6xa7odkcg7zelyqbj08f3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4701820937132344003" name="BuildLayout_Container" hash="6p09kx1ht5833ax7j5jncm89bxiyds4">
+  <source id="4701820937132344003" name="BuildLayout_Container" hash="-9j3440sawydzitw15sxh0pw9nqpqmee">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7128123785277710723" name="BuildLayout_PathElement" hash="99kalgna6u3p9mbn6b7gxxcaapz1m4e">
+  <source id="7128123785277710723" name="BuildLayout_PathElement" hash="delg7g60heuhod6jfkrz8maxttkkxbp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2913098736709313156" name="BuildLayout_TransparentContainer" hash="2y51kj7bl6lnp2hs793xtc9b1foaor1">
+  <source id="2913098736709313156" name="BuildLayout_TransparentContainer" hash="-881hsspn17x5ghsuyrpfbclpalkgvbx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2913098736709465755" name="BuildLayout_ExportAsJavaLibrary" hash="-8qej57o0kddj9xstfgot8znpvnoyfsx">
+  <source id="2913098736709465755" name="BuildLayout_ExportAsJavaLibrary" hash="7s5635ilvkw2naw5woqhya5jhz4h18n">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1500819558096177282" name="BuildSource_JavaFiles" hash="1lp075ir3ouu2bpehuvcsinswvgyjve">
+  <source id="1500819558096177282" name="BuildSource_JavaFiles" hash="6zhxcku11fnxa023p3erikrcxz64k8o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3717132724152589376" name="BuildSource_JavaDependencyJar" hash="7a9e6ru2j8hny2crbu9cnq6bj3nvsb8">
+  <source id="3717132724152589376" name="BuildSource_JavaDependencyJar" hash="2x7lqs7awjt25cnk1xgfz9g9i4f7sbc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3717132724152837124" name="BuildSource_JavaCP" hash="bzd2suw1musjfenwtj0ed4gaw2u2wsr">
+  <source id="3717132724152837124" name="BuildSource_JavaCP" hash="6uumnqaxstuyuat6dx9jnags6m6xm0m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3717132724152913083" name="BuildSource_JavaLibraryCP" hash="-8u2211bga4419ym4unntm7334vzwod5">
+  <source id="3717132724152913083" name="BuildSource_JavaLibraryCP" hash="1sazoy92gfomj5ht29hu2pztci9o8jt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3717132724153083947" name="BuildSourceSetContainer" hash="29jm3llub4gaz3ghujfs8rc9bexixvg">
+  <source id="3717132724153083947" name="BuildSourceSetContainer" hash="9rjeijy11qyhdagb2b82c3irwwn2dlm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3717132724153084007" name="BuildSource_JavaJars" hash="cncl7pt3sbzfgyl6us3zuufr6r07t16">
+  <source id="3717132724153084007" name="BuildSource_JavaJars" hash="-7y8nfw9f1eq51nsvrbh1y1p1uaw3ki9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7866279537988666687" name="BuildInputFolders" hash="-3bp6aacp1p05h71mluqvtel7k4rnqq1">
+  <source id="7866279537988666687" name="BuildInputFolders" hash="9v3x1kvt0jaj8vcuaw0xy7903yeqiy0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2303926226081001727" name="BuildInputSingleFolder" hash="-9froe0helb2j0um5pyjnv4cp2vfh03o">
+  <source id="2303926226081001727" name="BuildInputSingleFolder" hash="-16j2yprba26gwzm9zxxyokajv567d5j">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8654221991637384182" name="BuildFileIncludesSelector" hash="brr72naseicodsmfz3txrqe6h0hmzgx">
+  <source id="8654221991637384182" name="BuildFileIncludesSelector" hash="btkavwdhh2v0o7oxbgigpwmvzphd90q">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8654221991637384267" name="BuildFileSelectorInAttribute" hash="n8817fz6fbjvon0mq9q1jbsjsmieva">
+  <source id="8654221991637384267" name="BuildFileSelectorInAttribute" hash="4nghuol1em0qgxttsrtgvkifwaqybjx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2591537044435828004" name="BuildLayout_CompileOutputOf" hash="3wogel9r8tbpqfbo1kjpg4b9nkv9mvs">
+  <source id="2591537044435828004" name="BuildLayout_CompileOutputOf" hash="-ewiltkvc4em306f0cxuq02rnp2v3hfw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2591537044435828007" name="BuildSource_CompilablePart" hash="elu3jajflbrhwflcg3551ybqocfpcy7">
+  <source id="2591537044435828007" name="BuildSource_CompilablePart" hash="egcpof0ltud3aepief0kr1s4v5w52xo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6859736767834557908" name="BuildSource_JavaDependencyExternalJar" hash="21uwnrwun93myesy3rk199zef5wnmjq">
+  <source id="6859736767834557908" name="BuildSource_JavaDependencyExternalJar" hash="9ojkrwus4qya0fmeantilhi48oo40pz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7181125477683216329" name="BuildExternalLayout" hash="-dojtp2q44jaf9iwcdh1q4pp0hsrtfkk">
+  <source id="7181125477683216329" name="BuildExternalLayout" hash="-2dj6z8ia5jz8s7io8w1y0fq9td0thba">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7181125477683218683" name="BuildLayout_PureNode" hash="18tra2s8lhxzb9g3dnfoyg5u8v5yzne">
+  <source id="7181125477683218683" name="BuildLayout_PureNode" hash="bcd0a2qg7q1t2quy19rvb1154zh7rbj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7181125477683370806" name="BuildLayout_FileStub" hash="-1a7jwr59zembvpj72ujkzmsyte6oiqa">
+  <source id="7181125477683370806" name="BuildLayout_FileStub" hash="b8lkhg3w54u2f65ey36zu8i3kr2ul72">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7181125477683417252" name="BuildExternalLayoutDependency" hash="-copaxxu5x8c6aen2x38qod4u4z8twcu">
+  <source id="7181125477683417252" name="BuildExternalLayoutDependency" hash="-84mzcin4q92u6vajkwk2vw4870kelqv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5610619299013057363" name="BuildLayout_ImportContent" hash="4tfou4hkwgalveh3bw0vzy43snmhbe7">
+  <source id="5610619299013057363" name="BuildLayout_ImportContent" hash="c8epaqthh3j0masm7u4ozk6hcxqnuwl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5610619299013425874" name="BuildSource_SingleFile" hash="7joy8k0pi8veug0frot1qyuqau4okbm">
+  <source id="5610619299013425874" name="BuildSource_SingleFile" hash="-1tb7g34zupxh1c60tlaehd48pgfpd1s">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5610619299014309452" name="BuildSource_JavaExternalJarRef" hash="-50k77cxdnzt8gx7r2hr9nz5ez8bmdd9">
+  <source id="5610619299014309452" name="BuildSource_JavaExternalJarRef" hash="9ertw38kqk0m1k953h2v42sblr7e235">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5610619299014446503" name="BuildSource_JavaLibraryExternalJar" hash="5q8lppyeykgkqav6gnf8amx6h6yvkgy">
+  <source id="5610619299014446503" name="BuildSource_JavaLibraryExternalJar" hash="4t8c45alr04ve9q8hbf73a1r9kjbt3e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5610619299014531543" name="BuildSource_SingleFolder" hash="a1zfzagy4igyoshmftwnm55qc011ojp">
+  <source id="5610619299014531543" name="BuildSource_SingleFolder" hash="-c4cqdy1sbbjzfeqnfv3x5y839owvbeb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5610619299014531647" name="BuildSource_JavaExternalJarFolderRef" hash="1faislmwa2ny7fnjnyd0ntqjnzhvu40">
+  <source id="5610619299014531647" name="BuildSource_JavaExternalJarFolderRef" hash="45brfzj1asxtcgufo0jdq4nkowtjn3b">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5610619299014531832" name="BuildSource_JavaLibraryExternalJarFolder" hash="afl8cly251ssv58736n3dghhmi2255l">
+  <source id="5610619299014531832" name="BuildSource_JavaLibraryExternalJarFolder" hash="3obr57tfbdaudqwqvrjyd3xg4tgnnsb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="927724900262033858" name="BuildSource_JavaOptions" hash="-2eu7fy69i79tjwzufh5ze6gpb5hxqnu">
+  <source id="927724900262033858" name="BuildSource_JavaOptions" hash="6mh7nosgx6tp88ab3x9pho0ca648rmu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1659807394254261074" name="BuildSource_JavaModuleOptions" hash="-dpuj7rrrax906d9949c1y63ypjiuf0">
+  <source id="1659807394254261074" name="BuildSource_JavaModuleOptions" hash="182d95fohblxttsplihyhuzexp1ir7m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1659807394254684269" name="BuildSource_JavaResources" hash="7la5ckh7b9mee5d2j735vedv6c1n6l3">
+  <source id="1659807394254684269" name="BuildSource_JavaResources" hash="dmnuukjk2ijz1jv7hwyqxfi1d39z3nr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9184644532456495794" name="BuildLayout_CustomCopy" hash="-cnrauy4xvkmzx4byemjccsklhuikrf2">
+  <source id="9184644532456495794" name="BuildLayout_CustomCopy" hash="-3vcs8dh210insack3l4nif6w8jsdjhq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9184644532456496017" name="BuildLayout_AbstractCopy" hash="c376wqh05r81c4d81o8z0dqsmwinxoh">
+  <source id="9184644532456496017" name="BuildLayout_AbstractCopy" hash="dbpph0uyz5nj3aw9d8mz8kuwimuwig3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9184644532456508467" name="BuildLayout_CopyHandler" hash="-apzw4xdyohz9xsrrjoxrblzfoesseg8">
+  <source id="9184644532456508467" name="BuildLayout_CopyHandler" hash="81kox7f7w31w5w607ndqgd9kclzzdf2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9184644532456814147" name="BuildLayout_CopyFilter" hash="d2jug527gcjw22uuspaik6aqhe2r2zy">
+  <source id="9184644532456814147" name="BuildLayout_CopyFilter" hash="73vdasedeb16lm6atp6dqagybmx3on5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9184644532456814149" name="BuildLayout_CopyFilterReplaceTokens" hash="-qzek3c70jnbjsciytxjqewp4fqvwsa">
+  <source id="9184644532456814149" name="BuildLayout_CopyFilterReplaceTokens" hash="-2wo37424r0x55r84a3s4j160up0myjb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8618885170173708134" name="FileName" hash="c54t7m1idlfsqcn1pzwhvmcj873yvqf">
@@ -436,10 +436,10 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FileName_PropertySupport.java" />
   </source>
-  <source id="9184644532456897460" name="BuildStringContainer" hash="c195g8wjzk4qvieawh85qrgsd7k3vfg">
+  <source id="9184644532456897460" name="BuildStringContainer" hash="-bf00afy1jha699d2izn98b062yiko77">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9184644532457106504" name="BuildLayout_CopyFilterReplaceRegex" hash="56zyyt9dkquopn4egf5byk6nvow1c11">
+  <source id="9184644532457106504" name="BuildLayout_CopyFilterReplaceRegex" hash="b94d3j2g55dxkmvd0yos2qkk3rcfu5c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="9184644532457106613" name="AntRegexFlags" hash="5eukvvd9rqyciyebxons1bfpzgmmgrw">
@@ -447,19 +447,19 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AntRegexFlags_PropertySupport.java" />
   </source>
-  <source id="7655580649838832276" name="BuildLayout_EchoXml" hash="-4fwj673z8qwkvyu3nn8vcb0vqr1osj2">
+  <source id="7655580649838832276" name="BuildLayout_EchoXml" hash="-8x2qgk1qsiyehp1uf5mbzrkkqaqcr5h">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="202934866059043946" name="BuildLayout_EchoProperties" hash="4bg5betp7hlyq5xp8ygc8bbr9kfa0n5">
+  <source id="202934866059043946" name="BuildLayout_EchoProperties" hash="be4wvlmip0pkmxclyjr1htj937k5pso">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="202934866059043959" name="BuildLayout_EchoPropertyEntry" hash="-4ou6cm2vao1zyw730uhlzh8n0jat6hv">
+  <source id="202934866059043959" name="BuildLayout_EchoPropertyEntry" hash="-n7y1y504ccbb9klblkp4flxq4ggn02">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8577651205286814211" name="BuildLayout_Tar" hash="4h9kll6ejakmkrgvt0zexd496shxujr">
+  <source id="8577651205286814211" name="BuildLayout_Tar" hash="1448hyhxol5qkq59gtw56synv7ql4su">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4198392933254416812" name="BuildLayout_CopyFilterFixCRLF" hash="-8bl6fuh25ayt6c21rv13huugxresprd">
+  <source id="4198392933254416812" name="BuildLayout_CopyFilterFixCRLF" hash="-35g37cx63c8yo42kfwtq12ts38xh0ly">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4198392933254416814" name="BuildLayout_CopyFilterEolStyle" hash="-3czo8lwfzmj3w7vpdhr53219lhhr6ty">
@@ -473,10 +473,10 @@
     <file name="BuildLayout_CopyFilterEolStyle.java" />
     <file name="BuildLayout_CopyFilterEolStyle_PropertySupport.java" />
   </source>
-  <source id="7801138212747054656" name="BuildLayout_Filemode" hash="3q20j9wummm7rwmc1t3h0c122u2sw3r">
+  <source id="7801138212747054656" name="BuildLayout_Filemode" hash="7tib1e9mynq4j0wp5qlnijohzf547ia">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6977615362525721939" name="BuildLayout_CopyFlattenMapper" hash="-bg3enbc692d691dg7gcem454dfgchwn">
+  <source id="6977615362525721939" name="BuildLayout_CopyFlattenMapper" hash="-191oi1yhjlhbr163vd46knjgoymb7wy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7801138212747054659" name="BuildLayout_UnixFilemode" hash="3470fepiaq72lsw41r1avisdhrvy9h">
@@ -484,7 +484,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BuildLayout_UnixFilemode_PropertySupport.java" />
   </source>
-  <source id="6977615362525721938" name="BuildLayout_CopyMapper" hash="-3wmc63ryk1iofuf2z0jcalyybpcw3qc">
+  <source id="6977615362525721938" name="BuildLayout_CopyMapper" hash="yzsmwd26a778p6ojzjp4iz1p4wn5v4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1979010778009209124" name="BuildLayout_TarCompression" hash="9xjyhsxkhtxkug4ad7te9jhgdtfduhl">
@@ -498,94 +498,94 @@
     <file name="BuildLayout_TarCompression.java" />
     <file name="BuildLayout_TarCompression_PropertySupport.java" />
   </source>
-  <source id="8056730377013322101" name="BuildSource_JavaDependencyFileset" hash="2moqtkyzrmdy8ntkr89qxaakdql1ud7">
+  <source id="8056730377013322101" name="BuildSource_JavaDependencyFileset" hash="a1ep3isn01bklvyfy4avoo74ugjyg66">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7753544965996647426" name="BuildSource_FilesetProjectPart" hash="7jskpx0vmcgt8mauqhokpti99fqzp7u">
+  <source id="7753544965996647426" name="BuildSource_FilesetProjectPart" hash="6r7sj6shtmk82wpc6d29fl91fsvzhtf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7753544965996647428" name="BuildLayout_FilesOf" hash="adzvwsev60t2e5zci900u1qegx3jg77">
+  <source id="7753544965996647428" name="BuildLayout_FilesOf" hash="468qw1v556zp19k0a65rm0z1soczzdx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3970102152660702410" name="BuildLayout_CopyGlobMapper" hash="3ugro5bwds8u83qn8wh3198ppym5gq6">
+  <source id="3970102152660702410" name="BuildLayout_CopyGlobMapper" hash="-o8thm3c2cwr7pl343lsoqhnujriair">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3970102152660876447" name="BuildLayout_CopyRegexMapper" hash="-bv3rm49y3fe49tuezlh7tms3nld10jw">
+  <source id="3970102152660876447" name="BuildLayout_CopyRegexMapper" hash="3qbhukbyn0onqpik5b6g1wjicbkv1ts">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2755237150521942442" name="BuildVariableMacroInitValue" hash="9cqxn57jky8rusllgp6n216yb7hwi7">
+  <source id="2755237150521942442" name="BuildVariableMacroInitValue" hash="-bkfjqk2s7636rjivuzlj5gurg8uyo67">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2755237150521975431" name="BuildVariableMacroInitWithString" hash="-5ve8czcy98ck42tnxgfopf811k51nl0">
+  <source id="2755237150521975431" name="BuildVariableMacroInitWithString" hash="955wr1yyclusurmrcoxh2t7i6mqsi6y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="244868996532454372" name="BuildVariableMacroInitWithDate" hash="8e1a500m79sgv34pzla32l3gcmjuryz">
+  <source id="244868996532454372" name="BuildVariableMacroInitWithDate" hash="-a346r5s6k327sybbpqo9t8icg4c4kqy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="244868996532550359" name="BuildVariableMacroInitWithValueFromFile" hash="-84ivq6tq69o1h5oup3q3rlgyavdlofp">
+  <source id="244868996532550359" name="BuildVariableMacroInitWithValueFromFile" hash="azluzsj8bvsr2xptqcm6elnht8it3bo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9126048691954557131" name="BuildLayout_Comment" hash="-5rzb8fbl61tgsl6p3g99kgdlq8qynqx">
+  <source id="9126048691954557131" name="BuildLayout_Comment" hash="-6gmj7lapdqmy0l8o80q44zqyde45wx8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9126048691955220717" name="BuildLayout_File" hash="-1jzbood9lzqatswrxwqo4r2t3zji3tt">
+  <source id="9126048691955220717" name="BuildLayout_File" hash="-27zobr4ppllifw5x3x29yyqhz1kjgl7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9126048691955220772" name="BuildLayout_CopyParameter" hash="-7c47pm7zp9inlqpayo165qkylh9vrx3">
+  <source id="9126048691955220772" name="BuildLayout_CopyParameter" hash="-1oy69znksocm5vmd5fp5jtddo4x6mhn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2750015747481074431" name="BuildLayout_Files" hash="-7qrdn6bukbt4urlisangwpwhhg51oc6">
+  <source id="2750015747481074431" name="BuildLayout_Files" hash="-7diwe9t61i55buun2rnb93gf83wdan0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6967233722066057020" name="BuildLayout_War" hash="34tqydu64q9rnemppbyfe8u8uge9647">
+  <source id="6967233722066057020" name="BuildLayout_War" hash="cl9vn8seieon3oxgb5ncxr3nn22e5rx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="342830306171203038" name="BuildSource_JavaDependencyExternalJarInFolder" hash="-1tp87aib9tg4zy9ed2dkf5v1tpl79pj">
+  <source id="342830306171203038" name="BuildSource_JavaDependencyExternalJarInFolder" hash="4awpcko21yw22gpejc1r0h0mgv3m3g8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1251221292903960366" name="BuildLayout_JarManifest" hash="a4vrf28111fmgmmcmx0sihzghsgc475">
+  <source id="1251221292903960366" name="BuildLayout_JarManifest" hash="ycytksgnjlzmebtsh4mevrcku074m2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1251221292903960368" name="BuildLayout_JarManifest_Attribute" hash="jtuoy6rqakvud4gkm1lwf36oohqm2o">
+  <source id="1251221292903960368" name="BuildLayout_JarManifest_Attribute" hash="cjhe0wu6mbnq3r0sawum5qr1q0yb3uy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1251221292904119675" name="BuildLayout_JarManifest_Section" hash="cgmmj8lz74ob3kqzrx0gqugo4o7vjy">
+  <source id="1251221292904119675" name="BuildLayout_JarManifest_Section" hash="-acb5stdoccobrrhs5zrc8i1qpi95h40">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2539347366864541544" name="BuildSourceArchiveRelativePath" hash="-1xaahf3wjezn8hvxjjigmxgvw7pghhp">
+  <source id="2539347366864541544" name="BuildSourceArchiveRelativePath" hash="-7k4835hivfz1o2f8irpht95b0matggi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8563603456895840654" name="BuildLayout_JarManifest_Part" hash="e51dx9j8705svv49yp8y637b3ktrvnk">
+  <source id="8563603456895840654" name="BuildLayout_JarManifest_Part" hash="b3wwdzfvbmuxixl2u3c7eirb8wggj8f">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6083230236994833215" name="IWorkflowParticipant" hash="7zap9j4ukvgyku8b35b3554ua91q1mv">
+  <source id="6083230236994833215" name="IWorkflowParticipant" hash="-d6f3ifece20f68jknt63wal3b2qbczm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6854204111265764357" name="GeneratorInternal_IWorkfowParticipants" hash="-4n50b3btrm4wsoq2jm03wuhq0a413nx">
+  <source id="6854204111265764357" name="GeneratorInternal_IWorkfowParticipants" hash="-843r0gqenurgn4sit9nefx13f58520m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6667029362524340680" name="GeneratorInternal_IWorkflowParticipantReference" hash="-bfacc4s4qix1guigaq4dgbfxxdfttf6">
+  <source id="6667029362524340680" name="GeneratorInternal_IWorkflowParticipantReference" hash="74ig0qjlcrmreokjo7zai23i04ohn4m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4964617264469642264" name="GeneratorInternal_BuildSource_JavaModule" hash="6bkobn93vk5gua6llu3w3ts3054da04">
+  <source id="4964617264469642264" name="GeneratorInternal_BuildSource_JavaModule" hash="-4tbmo7b59a4v4g2np9iy3gg76ciz1z9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4964617264469642570" name="GeneratorInternal_BuildSource_SingleFile" hash="e6654ospnz0t8byizuh4ban82jzuuay">
+  <source id="4964617264469642570" name="GeneratorInternal_BuildSource_SingleFile" hash="-7nl2sbx6hgygtbrnh8r6hs18pzs54s4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4964617264469642863" name="GeneratorInternal_BuildSource_JavaLibrary" hash="6e6i9jdvcnbsk4hgivpp6pl34sqtxpd">
+  <source id="4964617264469642863" name="GeneratorInternal_BuildSource_JavaLibrary" hash="2g6zq0bn25xn5swlg17bzez4tpi6de5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4964617264469642724" name="GeneratorInternal_BuildSource_JavaJar" hash="eu1w9e8ikhf2b3f5wbgqgekkpxyusgj">
+  <source id="4964617264469642724" name="GeneratorInternal_BuildSource_JavaJar" hash="alqte1r82fsowan3auw4p18vhlinax9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5970181360961342215" name="BuildLayout_InJarNode" hash="1nhw6khk3jtra19plwcgs056z76x2sq">
+  <source id="5970181360961342215" name="BuildLayout_InJarNode" hash="ajyi4nmbhfyh05vkaou2l85nd6wq3s3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1330375798058820290" name="BuildLayout_CopyProcessor" hash="-aqskklc6vl9ockzwj8k1s8ju4v5mfd1">
+  <source id="1330375798058820290" name="BuildLayout_CopyProcessor" hash="-1gnobu08u4ho644ksuj1fsydg5n0ozg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6354776497066088012" name="GeneratorInternal_ProjectDependency" hash="3mjh785do5y0cc0ysybv357vm96wrhx">
+  <source id="6354776497066088012" name="GeneratorInternal_ProjectDependency" hash="bcqnkuabyvcpzb2rxnib5ynpkho2wyo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>
