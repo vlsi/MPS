@@ -27,7 +27,6 @@ import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.tempmodel.TempModule;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -155,55 +154,48 @@ public class PluginReloader implements ApplicationComponent {
   }
 
   private class MyReloadAdapter extends MPSClassesListenerAdapter {
-    private boolean classesUnloaded = false;
+    private boolean reloadScheduled = false;
 
     @Override
     public void onClassesUnload(Set<SModule> unloadedModules) {
       if (hasSignificantModule(unloadedModules)) {
-        unloadAll();
-        classesUnloaded = true;
+        schedulePluginsReload();
       }
     }
 
     @Override
     public void onClassesLoad(Set<SModule> loadedModules) {
-      if (classesUnloaded) {
-        onAfterReloadAll();
-        classesUnloaded = false;
+      if (hasSignificantModule(loadedModules)) {
+        schedulePluginsReload();
       }
     }
 
     private boolean hasSignificantModule(Set<SModule> modules) {
       for (SModule module : modules) {
-        if (!(module instanceof TempModule)) {
+        if (PluginUtil.isPluginModule(module)) {
           return true;
         }
       }
       return false;
     }
 
-    private void unloadAll() {
-      if (!ModelAccess.instance().isInEDT()) {
-        LOG.warn("PluginReloader#unloadAll executed not from EDT", new Throwable());
-      }
-      //write action is needed the because user can acquire write action inside of this [see MPS-9139]
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          disposePlugins();
-        }
-      });
-    }
+    private void schedulePluginsReload() {
+      reloadScheduled = true;
 
-    private void onAfterReloadAll() {
-      if (!ModelAccess.instance().isInEDT()) {
-        LOG.warn("PluginReloader#onAfterReloadAll executed not from EDT", new Throwable());
-      }
       //write action is needed the because user can acquire write action inside of this [see MPS-9139]
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
-          if (!isDisposed()) loadPlugins();
+          if (reloadScheduled && !isDisposed()) {
+            long beginTime = System.currentTimeMillis();
+            try {
+              reloadScheduled = false;
+              disposePlugins();
+              loadPlugins();
+            } finally {
+              LOG.info("Plugin reload took " + (System.currentTimeMillis() - beginTime) / 1000.0 + " s");
+            }
+          }
         }
       });
     }
